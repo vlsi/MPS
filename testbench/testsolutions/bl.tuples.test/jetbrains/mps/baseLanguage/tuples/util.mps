@@ -7,7 +7,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -188,10 +188,10 @@
               </node>
               <node concept="1LlUBW" id="Q6pOoz7dWn" role="HW$YZ">
                 <node concept="3uibUv" id="Q6pOoz7dWo" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
                 <node concept="3uibUv" id="DJmshCqqTj" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
               </node>
             </node>
@@ -201,10 +201,10 @@
       <node concept="A3Dl8" id="Q6pOoz7d1U" role="3clF45">
         <node concept="1LlUBW" id="Q6pOoz7d1V" role="A3Ik2">
           <node concept="3uibUv" id="Q6pOoz7d1W" role="1Lm7xW">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
           <node concept="3uibUv" id="DJmshCqqTg" role="1Lm7xW">
-            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
           </node>
         </node>
       </node>
@@ -323,7 +323,7 @@
         <node concept="YS8fn" id="2kTEJfb8HqM" role="3cqZAp">
           <node concept="2ShNRf" id="2kTEJfb8HqO" role="YScLw">
             <node concept="1pGfFk" id="2kTEJfb8Jwk" role="2ShVmc">
-              <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+              <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
             </node>
           </node>
         </node>
@@ -341,7 +341,7 @@
     </node>
     <node concept="3Tm1VV" id="2kTEJfb8Gc7" role="1B3o_S" />
     <node concept="3uibUv" id="2kTEJfb8HqL" role="3TOOP4">
-      <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
+      <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
     </node>
   </node>
   <node concept="2fD8I5" id="1rR31otmNEa">

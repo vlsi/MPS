@@ -10,7 +10,7 @@
     <import index="v0h4" ref="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)" />
     <import index="eyn7" ref="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)" />
     <import index="717u" ref="r:50b262dd-a4ec-4590-840b-ad3be9b20f9c(org.jetbrains.mps.samples.Money.generator.main.util)" />
-    <import index="epq1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -625,7 +625,7 @@
                 </node>
                 <node concept="2OqwBi" id="2uZW74tBdOr" role="3uHU7B">
                   <node concept="liA8E" id="2uZW74tBe7V" role="2OqNvi">
-                    <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
                     <node concept="2OqwBi" id="2uZW74tBesh" role="37wK5m">
                       <node concept="iyuNs" id="2uZW74tBeAM" role="2OqNvi" />
                       <node concept="37vLTw" id="2uZW74tBeg4" role="2Oq$k0">
@@ -701,7 +701,7 @@
               <node concept="2d3UOw" id="2uZW74tHt0D" role="3K4Cdx">
                 <node concept="2OqwBi" id="2uZW74tHt0G" role="3uHU7B">
                   <node concept="liA8E" id="2uZW74tHt0H" role="2OqNvi">
-                    <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
                     <node concept="2OqwBi" id="2uZW74tHt0I" role="37wK5m">
                       <node concept="iyuNs" id="2uZW74tHt0J" role="2OqNvi" />
                       <node concept="37vLTw" id="2uZW74tHt0K" role="2Oq$k0">
@@ -786,7 +786,7 @@
               <node concept="3eOVzh" id="2uZW74tHvj_" role="3K4Cdx">
                 <node concept="2OqwBi" id="2uZW74tHvjC" role="3uHU7B">
                   <node concept="liA8E" id="2uZW74tHvjD" role="2OqNvi">
-                    <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
                     <node concept="2OqwBi" id="2uZW74tHvjE" role="37wK5m">
                       <node concept="iyuNs" id="2uZW74tHvjF" role="2OqNvi" />
                       <node concept="37vLTw" id="2uZW74tHvjG" role="2Oq$k0">
@@ -871,7 +871,7 @@
               <node concept="2dkUwp" id="2uZW74tHwdh" role="3K4Cdx">
                 <node concept="2OqwBi" id="2uZW74tHwdk" role="3uHU7B">
                   <node concept="liA8E" id="2uZW74tHwdl" role="2OqNvi">
-                    <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
                     <node concept="2OqwBi" id="2uZW74tHwdm" role="37wK5m">
                       <node concept="iyuNs" id="2uZW74tHwdn" role="2OqNvi" />
                       <node concept="37vLTw" id="2uZW74tHwdo" role="2Oq$k0">

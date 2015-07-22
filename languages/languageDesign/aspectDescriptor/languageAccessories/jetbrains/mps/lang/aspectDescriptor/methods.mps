@@ -6,13 +6,13 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspectDescriptor.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -66,7 +66,7 @@
     <node concept="q3mfq" id="2Y$EcRKLScp" role="QNr5C">
       <property role="TrG5h" value="getPresentableAspectName" />
       <node concept="3uibUv" id="2Y$EcRKLZcL" role="q3mfk">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="2IRzkw" id="2Y$EcRKLZcV" role="2IRzpu" />
     </node>
@@ -76,7 +76,7 @@
       <node concept="q3mfp" id="4r8JClTmU4H" role="q3mfl">
         <property role="TrG5h" value="language" />
         <node concept="3uibUv" id="4r8JClTmU4L" role="q3mfr">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
       <node concept="10P_77" id="4r8JClTmU4S" role="q3mfk" />
@@ -90,7 +90,7 @@
       <node concept="q3mfp" id="ghIDlF6GDr" role="q3mfl">
         <property role="TrG5h" value="language" />
         <node concept="3uibUv" id="ghIDlF6GDz" role="q3mfr">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
       <node concept="3vKaQO" id="ghIDlF6GDc" role="q3mfk">
@@ -103,7 +103,7 @@
       <property role="TrG5h" value="getMainLanguages" />
       <node concept="3vKaQO" id="ghIDlF6HdW" role="q3mfk">
         <node concept="3uibUv" id="ghIDlF6Hem" role="3O5elw">
-          <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+          <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
         </node>
       </node>
       <node concept="2IRzkw" id="ghIDlF6Her" role="2IRzpu" />
@@ -113,7 +113,7 @@
       <property role="TrG5h" value="getAdditionalLanguages" />
       <node concept="3vKaQO" id="ghIDlF6HeO" role="q3mfk">
         <node concept="3uibUv" id="ghIDlF6HeP" role="3O5elw">
-          <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+          <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
         </node>
       </node>
       <node concept="QcxE9" id="ghIDlF6Hf$" role="2IRzpu">
@@ -136,21 +136,21 @@
       <node concept="q3mfp" id="74Oxs8ALpTn" role="q3mfl">
         <property role="TrG5h" value="language" />
         <node concept="3uibUv" id="74Oxs8ALpTs" role="q3mfr">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
       <node concept="QcxE9" id="5KGdJjE2Btq" role="2IRzpu">
         <property role="QcwnP" value="aspect not generated" />
       </node>
       <node concept="3uibUv" id="4r8JClTmUaS" role="q3mfk">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
     </node>
     <node concept="qMXn0" id="ghIDlF6Hhv" role="QNr5C" />
     <node concept="q3mfq" id="ghIDlF6GE1" role="QNr5C">
       <property role="TrG5h" value="getIcon" />
       <node concept="3uibUv" id="ghIDlF6GEd" role="q3mfk">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="QcxE9" id="ghIDlF6HcF" role="2IRzpu">
         <property role="QcwnP" value="&lt;default icon&gt;" />
@@ -160,7 +160,7 @@
     <node concept="q3mfq" id="ghIDlF6HcX" role="QNr5C">
       <property role="TrG5h" value="getHelpUrl" />
       <node concept="3uibUv" id="ghIDlF6Hda" role="q3mfk">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="QcxE9" id="6zkSwmUFPMJ" role="2IRzpu">
         <property role="QcwnP" value="&lt;no help URL&gt;" />

@@ -11,11 +11,11 @@
   <imports>
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
-    <import index="r9fo" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
+    <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -493,7 +493,7 @@
                               </node>
                               <node concept="2ShNRf" id="i1xEoEA" role="37vLTx">
                                 <node concept="1pGfFk" id="i1xEoEB" role="2ShVmc">
-                                  <ref role="37wK5l" to="msyo:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
+                                  <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
                                   <node concept="3Tqbb2" id="i1xEoEC" role="1pMfVU" />
                                   <node concept="3Tqbb2" id="i1xEoED" role="1pMfVU">
                                     <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
@@ -578,7 +578,7 @@
                               </node>
                               <node concept="2ShNRf" id="i1xEoEf" role="37vLTx">
                                 <node concept="1pGfFk" id="i1xEoEg" role="2ShVmc">
-                                  <ref role="37wK5l" to="msyo:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
+                                  <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
                                   <node concept="3Tqbb2" id="i1xEoEh" role="1pMfVU" />
                                   <node concept="3Tqbb2" id="i1xEoEi" role="1pMfVU">
                                     <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
@@ -643,7 +643,7 @@
                                     </node>
                                     <node concept="2ShNRf" id="i1xEoEV" role="37vLTx">
                                       <node concept="1pGfFk" id="i1xEoEW" role="2ShVmc">
-                                        <ref role="37wK5l" to="msyo:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
+                                        <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
                                         <node concept="3Tqbb2" id="i1xEoEX" role="1pMfVU" />
                                         <node concept="3Tqbb2" id="i1xEoEY" role="1pMfVU">
                                           <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
@@ -825,8 +825,8 @@
                                       <node concept="3Tqbb2" id="i05QJza" role="_ZDj9" />
                                     </node>
                                     <node concept="2YIFZM" id="hoTJGpY" role="33vP2m">
-                                      <ref role="1Pybhc" to="msyo:~CollectionUtil" resolve="CollectionUtil" />
-                                      <ref role="37wK5l" to="msyo:~CollectionUtil.filter(java.util.List,org.jetbrains.mps.util.Condition):java.util.List" resolve="filter" />
+                                      <ref role="1Pybhc" to="18ew:~CollectionUtil" resolve="CollectionUtil" />
+                                      <ref role="37wK5l" to="18ew:~CollectionUtil.filter(java.util.List,org.jetbrains.mps.util.Condition):java.util.List" resolve="filter" />
                                       <node concept="2YIFZM" id="1HQWUj8kbVC" role="37wK5m">
                                         <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
                                         <ref role="37wK5l" to="unno:1GH7SoqS5UT" resolve="getChildren" />
@@ -843,8 +843,8 @@
                                         <node concept="YeOm9" id="hoTJOQf" role="2ShVmc">
                                           <node concept="1Y3b0j" id="hoTJOQg" role="YeSDq">
                                             <property role="1sVAO0" value="true" />
-                                            <ref role="1Y3XeK" to="r9fo:~Condition" resolve="Condition" />
-                                            <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                                            <ref role="1Y3XeK" to="y49u:~Condition" resolve="Condition" />
+                                            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                             <node concept="3Tm1VV" id="hoTJOQh" role="1B3o_S" />
                                             <node concept="3clFb_" id="hoTJRcF" role="jymVt">
                                               <property role="TrG5h" value="met" />
@@ -853,7 +853,7 @@
                                               <node concept="37vLTG" id="hoTJRcI" role="3clF46">
                                                 <property role="TrG5h" value="p0" />
                                                 <node concept="3uibUv" id="hoTO6Qm" role="1tU5fm">
-                                                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                                                 </node>
                                               </node>
                                               <node concept="3clFbS" id="hoTJRcK" role="3clF47">
@@ -876,7 +876,7 @@
                                                 </node>
                                               </node>
                                               <node concept="2AHcQZ" id="3tYsUK_p7sx" role="2AJF6D">
-                                                <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                                                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                                               </node>
                                             </node>
                                           </node>
@@ -899,7 +899,7 @@
                                         </node>
                                         <node concept="2ShNRf" id="i1xEoDU" role="37vLTx">
                                           <node concept="1pGfFk" id="i1xEoDV" role="2ShVmc">
-                                            <ref role="37wK5l" to="msyo:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
+                                            <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
                                             <node concept="3Tqbb2" id="i1xEoDW" role="1pMfVU" />
                                             <node concept="3Tqbb2" id="i1xEoDX" role="1pMfVU">
                                               <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
@@ -1028,7 +1028,7 @@
         <node concept="3rvAFt" id="i1xEmc6" role="1tU5fm">
           <node concept="3Tqbb2" id="i1xEmc7" role="3rvQeY" />
           <node concept="3uibUv" id="i1xEmc8" role="3rvSg0">
-            <ref role="3uigEE" to="msyo:~Pair" resolve="Pair" />
+            <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
             <node concept="3Tqbb2" id="i1xEmc9" role="11_B2D" />
             <node concept="3Tqbb2" id="i1xEmca" role="11_B2D">
               <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />

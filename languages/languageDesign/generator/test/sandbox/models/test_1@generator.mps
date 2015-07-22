@@ -12,8 +12,8 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="q383" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </imports>
   <registry>
@@ -493,7 +493,7 @@
             <node concept="3cpWsn" id="hz41cEJ" role="3cpWs9">
               <property role="TrG5h" value="c" />
               <node concept="3uibUv" id="hz41cEK" role="1tU5fm">
-                <ref role="3uigEE" to="q383:~BaseMappingRuleContext" resolve="BaseMappingRuleContext" />
+                <ref role="3uigEE" to="q1l7:~BaseMappingRuleContext" resolve="BaseMappingRuleContext" />
               </node>
             </node>
           </node>
@@ -510,7 +510,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hz41eRI" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Object.clone():java.lang.Object" resolve="clone" />
+                <ref role="37wK5l" to="wyt6:~Object.clone():java.lang.Object" resolve="clone" />
               </node>
             </node>
             <node concept="raruj" id="hPzQK0E" role="lGtFl" />
@@ -524,7 +524,7 @@
                     <ref role="3cqZAo" node="hz41cEJ" resolve="c" />
                   </node>
                   <node concept="liA8E" id="hPzR8v0" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+                    <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
                   </node>
                 </node>
               </node>
@@ -541,7 +541,7 @@
       <node concept="2DMOqp" id="1$dcvTE7Jvp" role="1N7Fz$">
         <node concept="2OqwBi" id="1GF9yVLIU0Q" role="2DMOqq">
           <node concept="liA8E" id="1GF9yVLIXWa" role="2OqNvi">
-            <ref role="37wK5l" to="e2lb:~String.hashCode():int" resolve="hashCode" />
+            <ref role="37wK5l" to="wyt6:~String.hashCode():int" resolve="hashCode" />
             <node concept="2DMOqr" id="1GF9yVLIYdm" role="lGtFl">
               <property role="2DMOqs" value="x" />
             </node>
@@ -549,7 +549,7 @@
           <node concept="1eOMI4" id="1GF9yVLIUOI" role="2Oq$k0">
             <node concept="10QFUN" id="1GF9yVLIUOF" role="1eOMHV">
               <node concept="3uibUv" id="1GF9yVLIUZq" role="10QFUM">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
               <node concept="10Nm6u" id="1GF9yVLIUOK" role="10QFUP" />
             </node>
@@ -582,7 +582,7 @@
       <node concept="2DMOqp" id="3YMQ4vlp0e$" role="1N7Fz$">
         <node concept="2OqwBi" id="1GF9yVLIZkz" role="2DMOqq">
           <node concept="liA8E" id="1GF9yVLJ0LC" role="2OqNvi">
-            <ref role="37wK5l" to="e2lb:~String.hashCode():int" resolve="hashCode" />
+            <ref role="37wK5l" to="wyt6:~String.hashCode():int" resolve="hashCode" />
             <node concept="2DMOqr" id="1GF9yVLJ17g" role="lGtFl">
               <property role="2DMOqs" value="right" />
             </node>
@@ -591,7 +591,7 @@
             <node concept="10QFUN" id="1GF9yVLIZoi" role="1eOMHV">
               <node concept="10Nm6u" id="1GF9yVLIZt9" role="10QFUP" />
               <node concept="3uibUv" id="1GF9yVLIZs8" role="10QFUM">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
             </node>
             <node concept="2DMOqr" id="1GF9yVLIZwp" role="lGtFl">
@@ -1156,7 +1156,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="51uY6u8kQjA" role="1zkMxy">
-      <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       <node concept="1ZhdrF" id="51uY6u8kQjB" role="lGtFl">
         <property role="2qtEX8" value="classifier" />
         <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
@@ -1227,7 +1227,7 @@
           <node concept="3cpWsn" id="3YMQ4vlnPuu" role="3cpWs9">
             <property role="TrG5h" value="s" />
             <node concept="3uibUv" id="3YMQ4vlnPuv" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
             <node concept="Xl_RD" id="3YMQ4vlnPux" role="33vP2m">
               <property role="Xl_RC" value="" />

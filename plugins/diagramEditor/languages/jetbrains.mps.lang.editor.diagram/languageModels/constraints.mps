@@ -8,9 +8,9 @@
   <imports>
     <import index="gbdf" ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
     <import index="6xgk" ref="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations()" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -306,12 +306,12 @@
                       <property role="TrG5h" value="target" />
                       <node concept="3Tqbb2" id="5nQpa4t13GC" role="1tU5fm" />
                       <node concept="2AHcQZ" id="5nQpa4t13GD" role="2AJF6D">
-                        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+                        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
                       </node>
                     </node>
                     <node concept="17QB3L" id="5nQpa4t13GE" role="3clF45" />
                     <node concept="2AHcQZ" id="5nQpa4t13GF" role="2AJF6D">
-                      <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+                      <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
                     </node>
                     <node concept="3clFbS" id="5nQpa4t13GG" role="3clF47">
                       <node concept="3clFbF" id="5nQpa4t1eYw" role="3cqZAp">
@@ -322,7 +322,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="5nQpa4t1flu" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SNode.getName():java.lang.String" resolve="getName" />
+                            <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
                           </node>
                         </node>
                       </node>

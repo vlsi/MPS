@@ -14,7 +14,7 @@
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -275,7 +275,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="hLrLS02" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2b32R4" id="hLrLUBz" role="lGtFl">
           <node concept="3JmXsc" id="hLrLUB$" role="2P8S$">
             <node concept="3clFbS" id="hLrLUB_" role="2VODD2">
@@ -292,7 +292,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="2yd3r5FCpI9" role="Sfmx6">
-        <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
         <node concept="2b32R4" id="2yd3r5FCpId" role="lGtFl">
           <node concept="3JmXsc" id="2yd3r5FCpIe" role="2P8S$">
             <node concept="3clFbS" id="2yd3r5FCpIf" role="2VODD2">
@@ -349,7 +349,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="hEC46dh" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         <node concept="29HgVG" id="hECiBR_" role="lGtFl">
           <node concept="3NFfHV" id="hECiBRA" role="3NFExx">
             <node concept="3clFbS" id="hECiBRB" role="2VODD2">
@@ -400,7 +400,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="hLrLGhQ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         <node concept="2b32R4" id="hLrLO_S" role="lGtFl">
           <node concept="3JmXsc" id="hLrLO_T" role="2P8S$">
             <node concept="3clFbS" id="hLrLO_U" role="2VODD2">
@@ -647,7 +647,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4xkAmSwpKJ9" role="1Ez5kq">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         <node concept="29HgVG" id="4xkAmSwpKJb" role="lGtFl">
           <node concept="3NFfHV" id="4xkAmSwpKJc" role="3NFExx">
             <node concept="3clFbS" id="4xkAmSwpKJd" role="2VODD2">

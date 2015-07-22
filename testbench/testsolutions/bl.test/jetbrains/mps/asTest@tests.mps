@@ -6,7 +6,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -127,11 +127,11 @@
             <node concept="3cpWsn" id="2aok5Jw84jT" role="3cpWs9">
               <property role="TrG5h" value="o" />
               <node concept="3uibUv" id="2aok5Jw84jU" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
               <node concept="2ShNRf" id="2aok5Jw84jW" role="33vP2m">
                 <node concept="1pGfFk" id="2aok5Jw84jY" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -139,7 +139,7 @@
           <node concept="3ykFI1" id="2aok5Jw84k0" role="3cqZAp">
             <node concept="0kSF2" id="2aok5Jw84k3" role="3ykU8v">
               <node concept="3uibUv" id="2aok5Jw84k6" role="0kSFW">
-                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84k2" role="0kSFX">
                 <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
@@ -149,7 +149,7 @@
           <node concept="2Hmddi" id="2aok5Jw84k_" role="3cqZAp">
             <node concept="0kSF2" id="2aok5Jw84kC" role="2Hmdds">
               <node concept="3uibUv" id="2aok5Jw84kF" role="0kSFW">
-                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84kB" role="0kSFX">
                 <ref role="3cqZAo" node="2aok5Jw84jK" resolve="i" />
@@ -162,7 +162,7 @@
                 <ref role="3cqZAo" node="2aok5Jw84jT" resolve="o" />
               </node>
               <node concept="3uibUv" id="2aok5Jw84ke" role="0kSFW">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
             </node>
           </node>
@@ -172,7 +172,7 @@
             </node>
             <node concept="0kSF2" id="2aok5Jw84kl" role="3tpDZA">
               <node concept="3uibUv" id="2aok5Jw84ko" role="0kSFW">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84kk" role="0kSFX">
                 <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
@@ -185,7 +185,7 @@
             </node>
             <node concept="0kSF2" id="2aok5Jw84kv" role="3tpDZA">
               <node concept="3uibUv" id="2aok5Jw84ky" role="0kSFW">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84ku" role="0kSFX">
                 <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />

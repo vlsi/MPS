@@ -16,11 +16,11 @@
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="2obm" ref="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)" />
-    <import index="7juq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(MPS.Core/jetbrains.mps.lang.pattern.util@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
@@ -499,7 +499,7 @@
         <node concept="mw_s8" id="hNUXKot" role="1ZfhKB">
           <node concept="2c44tf" id="hqhcu8C" role="mwGJk">
             <node concept="3uibUv" id="hqhcu8D" role="2c44tc">
-              <ref role="3uigEE" to="ua2a:~TypeChecker" resolve="TypeChecker" />
+              <ref role="3uigEE" to="u78q:~TypeChecker" resolve="TypeChecker" />
             </node>
           </node>
         </node>
@@ -569,7 +569,7 @@
         <node concept="mw_s8" id="hNUXKo4" role="1ZfhKB">
           <node concept="2c44tf" id="hqhcu8I" role="mwGJk">
             <node concept="3uibUv" id="hqhcu8J" role="2c44tc">
-              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
               <node concept="3Tqbb2" id="5Nef64p5Gfl" role="11_B2D" />
             </node>
           </node>
@@ -972,11 +972,11 @@
       <node concept="3Tm1VV" id="hgVoBt0" role="1B3o_S" />
       <node concept="2ShNRf" id="hIfNE$n" role="33vP2m">
         <node concept="1pGfFk" id="hIfNE$p" role="2ShVmc">
-          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
         </node>
       </node>
       <node concept="3uibUv" id="hgVoCSl" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
     <node concept="3clFbW" id="7jdbUcGNafC" role="jymVt">
@@ -1666,7 +1666,7 @@
         <node concept="mw_s8" id="hv62oEo" role="1ZfhKB">
           <node concept="2c44tf" id="hv62oEp" role="mwGJk">
             <node concept="3uibUv" id="hzK1fFM" role="2c44tc">
-              <ref role="3uigEE" to="ua2a:~EquationInfo" resolve="EquationInfo" />
+              <ref role="3uigEE" to="u78q:~EquationInfo" resolve="EquationInfo" />
             </node>
           </node>
         </node>
@@ -3203,7 +3203,7 @@
         <node concept="mw_s8" id="VKl2IWfkwI" role="1ZfhKB">
           <node concept="2c44tf" id="VKl2IWfkwJ" role="mwGJk">
             <node concept="3uibUv" id="VKl2IWfkwN" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
             </node>
           </node>
         </node>
@@ -3870,7 +3870,7 @@
                         <ref role="3cqZAo" node="1lzwuy2UDlf" resolve="name" />
                       </node>
                       <node concept="liA8E" id="ROe8AA5FmW" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equalsIgnoreCase(java.lang.String):boolean" resolve="equalsIgnoreCase" />
+                        <ref role="37wK5l" to="wyt6:~String.equalsIgnoreCase(java.lang.String):boolean" resolve="equalsIgnoreCase" />
                         <node concept="2OqwBi" id="ROe8AA5FBf" role="37wK5m">
                           <node concept="37vLTw" id="ROe8AA5Ftc" role="2Oq$k0">
                             <ref role="3cqZAo" node="7k8A8aD934Q" resolve="it" />
@@ -3920,8 +3920,8 @@
               <node concept="3cpWs6" id="9OfcwEiKqU" role="3cqZAp" />
             </node>
             <node concept="2YIFZM" id="9OfcwEiJ4I" role="3clFbw">
-              <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
-              <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
+              <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+              <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
               <node concept="37vLTw" id="9OfcwEiJ4J" role="37wK5m">
                 <ref role="3cqZAo" node="9OfcwEiJ4L" resolve="arg" />
               </node>
@@ -4115,8 +4115,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="9OfcwEiHaG" role="3clFbw">
-                <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
-                <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
+                <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+                <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
                 <node concept="37vLTw" id="9OfcwEiHFG" role="37wK5m">
                   <ref role="3cqZAo" node="9OfcwEi$tK" resolve="arg" />
                 </node>
@@ -4336,8 +4336,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="6KWqjXlavN8" role="3clFbw">
-              <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
-              <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
+              <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+              <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
               <node concept="37vLTw" id="6KWqjXlavNs" role="37wK5m">
                 <ref role="3cqZAo" node="6KWqjXlahCW" resolve="arg" />
               </node>
@@ -4350,7 +4350,7 @@
         <node concept="3cpWsn" id="6KWqjXlahCW" role="1Duv9x">
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6KWqjXlahD0" role="1tU5fm">
-            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
           </node>
         </node>
         <node concept="2OqwBi" id="6KWqjXlahD1" role="1DdaDG">
@@ -4397,8 +4397,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="5tUET537XUk" role="3clFbw">
-                <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
-                <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
+                <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+                <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
                 <node concept="37vLTw" id="5tUET537Z3O" role="37wK5m">
                   <ref role="3cqZAo" node="5tUET537S$4" resolve="arg" />
                 </node>
@@ -4411,7 +4411,7 @@
           <node concept="3cpWsn" id="5tUET537S$4" role="1Duv9x">
             <property role="TrG5h" value="arg" />
             <node concept="3uibUv" id="5tUET537S$8" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
           </node>
           <node concept="2OqwBi" id="5tUET537S$9" role="1DdaDG">

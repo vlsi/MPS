@@ -6,9 +6,9 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -104,9 +104,9 @@
       <property role="TrG5h" value="a" />
       <node concept="3Tm1VV" id="3I9XST$B4VA" role="1B3o_S" />
       <node concept="3uibUv" id="3I9XST$B4VB" role="1tU5fm">
-        <ref role="3uigEE" to="k7g3:~HashMap" resolve="HashMap" />
+        <ref role="3uigEE" to="33ny:~HashMap" resolve="HashMap" />
         <node concept="3uibUv" id="3I9XST$B4VC" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
         </node>
         <node concept="1LlUBW" id="3I9XST$B4VD" role="11_B2D">
           <node concept="10Oyi0" id="3I9XST$B4VE" role="1Lm7xW" />
@@ -115,9 +115,9 @@
       </node>
       <node concept="2ShNRf" id="3I9XST$B4VN" role="33vP2m">
         <node concept="1pGfFk" id="3I9XST$B4VO" role="2ShVmc">
-          <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+          <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
           <node concept="3uibUv" id="3I9XST$B4VP" role="1pMfVU">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
           </node>
           <node concept="1LlUBW" id="3I9XST$B4VQ" role="1pMfVU">
             <node concept="10Oyi0" id="3I9XST$B4VR" role="1Lm7xW" />
@@ -139,7 +139,7 @@
               <node concept="Xjq3P" id="3I9XST$B6UJ" role="2Oq$k0" />
             </node>
             <node concept="liA8E" id="3I9XST$B6UQ" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="33ny:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
               <node concept="3cmrfG" id="3I9XST$B6UV" role="37wK5m">
                 <property role="3cmrfH" value="1" />
               </node>
@@ -164,11 +164,11 @@
         <node concept="3clFbF" id="3I9XST$B6Qj" role="3cqZAp">
           <node concept="2OqwBi" id="3I9XST$B6Qk" role="3clFbG">
             <node concept="10M0yZ" id="3I9XST$B6Ql" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="3I9XST$B6Qm" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
               <node concept="1LFfDK" id="3I9XST$B6Qn" role="37wK5m">
                 <node concept="3cmrfG" id="3I9XST$B6Qo" role="1LF_Uc">
                   <property role="3cmrfH" value="0" />
@@ -185,7 +185,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3I9XST$B6Qu" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
                     <node concept="3cmrfG" id="3I9XST$B6Qv" role="37wK5m">
                       <property role="3cmrfH" value="1" />
                     </node>
@@ -200,7 +200,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="3I9XST$B73z" role="1tU5fm">
           <node concept="3uibUv" id="3I9XST$B73y" role="10Q1$1">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>

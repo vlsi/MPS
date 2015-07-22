@@ -12,7 +12,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpnk" ref="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" />
     <import index="bbjx" ref="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -301,7 +301,7 @@
       <node concept="1pGfFk" id="hERvxdf" role="2ShVmc">
         <ref role="37wK5l" to="bbjx:7dakP4KK4oF" resolve="IfFunction" />
         <node concept="3uibUv" id="gcyKfp$" role="1pMfVU">
-          <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+          <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
         </node>
         <node concept="10Nm6u" id="gcyJQLL" role="37wK5m">
           <node concept="1sPUBX" id="1WfddY$XI48" role="lGtFl">

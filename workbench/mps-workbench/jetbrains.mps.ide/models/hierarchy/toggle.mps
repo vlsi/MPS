@@ -5,10 +5,10 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -127,7 +127,7 @@
     <property role="1sVAO0" value="true" />
     <node concept="3Tm1VV" id="51NkKCgB4kf" role="1B3o_S" />
     <node concept="3uibUv" id="51NkKCgB4kg" role="1zkMxy">
-      <ref role="3uigEE" to="nx1:~ToggleAction" resolve="ToggleAction" />
+      <ref role="3uigEE" to="qkt:~ToggleAction" resolve="ToggleAction" />
     </node>
     <node concept="312cEg" id="51NkKCgB4kh" role="jymVt">
       <property role="TrG5h" value="mySelected" />
@@ -157,7 +157,7 @@
       <node concept="37vLTG" id="51NkKCgB4kw" role="3clF46">
         <property role="TrG5h" value="icon" />
         <node concept="3uibUv" id="51NkKCgB4kx" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
         </node>
       </node>
       <node concept="37vLTG" id="51NkKCgB4ky" role="3clF46">
@@ -166,7 +166,7 @@
       </node>
       <node concept="3clFbS" id="51NkKCgB4k$" role="3clF47">
         <node concept="XkiVB" id="51NkKCgB4k_" role="3cqZAp">
-          <ref role="37wK5l" to="nx1:~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="ToggleAction" />
+          <ref role="37wK5l" to="qkt:~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="ToggleAction" />
           <node concept="37vLTw" id="2BHiRxgmheB" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB4ks" resolve="text" />
           </node>
@@ -219,7 +219,7 @@
       <node concept="37vLTG" id="51NkKCgB4kU" role="3clF46">
         <property role="TrG5h" value="e" />
         <node concept="3uibUv" id="51NkKCgB4kV" role="1tU5fm">
-          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4kW" role="3clF47">
@@ -230,7 +230,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXSd" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="51NkKCgB4kZ" role="jymVt">
@@ -240,7 +240,7 @@
       <node concept="37vLTG" id="51NkKCgB4l2" role="3clF46">
         <property role="TrG5h" value="e" />
         <node concept="3uibUv" id="51NkKCgB4l3" role="1tU5fm">
-          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="37vLTG" id="51NkKCgB4l4" role="3clF46">
@@ -296,7 +296,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXSc" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="51NkKCgB4ls" role="jymVt">
@@ -339,7 +339,7 @@
     <node concept="312cEg" id="51NkKCgB4nr" role="jymVt">
       <property role="TrG5h" value="myActions" />
       <node concept="3uibUv" id="51NkKCgB4ns" role="1tU5fm">
-        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="51NkKCgB4nt" role="11_B2D">
           <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
         </node>
@@ -347,7 +347,7 @@
       <node concept="3Tm6S6" id="51NkKCgB4nu" role="1B3o_S" />
       <node concept="2ShNRf" id="51NkKCgB4nv" role="33vP2m">
         <node concept="1pGfFk" id="51NkKCgB4nw" role="2ShVmc">
-          <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+          <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
           <node concept="3uibUv" id="51NkKCgB4nx" role="1pMfVU">
             <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
           </node>
@@ -387,7 +387,7 @@
               <ref role="3cqZAo" node="51NkKCgB4nr" resolve="myActions" />
             </node>
             <node concept="liA8E" id="51NkKCgB4nO" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
               <node concept="37vLTw" id="2BHiRxgmLpI" role="37wK5m">
                 <ref role="3cqZAo" node="51NkKCgB4nD" resolve="action" />
               </node>

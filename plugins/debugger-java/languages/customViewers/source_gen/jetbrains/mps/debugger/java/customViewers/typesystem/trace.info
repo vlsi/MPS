@@ -23,8 +23,8 @@
       <node id="1842653058274902924" at="28,27,29,17" concept="6" />
       <node id="9116681015574412896" at="31,59,32,63" concept="5" />
       <node id="9116681015574412896" at="32,63,33,223" concept="5" />
-      <node id="9116681015574412896" at="34,5,35,478" concept="2" />
-      <node id="9116681015574412896" at="35,478,36,244" concept="5" />
+      <node id="9116681015574412896" at="34,5,35,415" concept="2" />
+      <node id="9116681015574412896" at="35,415,36,244" concept="5" />
       <node id="9116681015574412896" at="36,244,37,148" concept="2" />
       <node id="9116681015574412896" at="38,5,39,14" concept="6" />
       <node id="1842653058274902924" at="17,0,19,0" concept="1" trace="WatchableListIsAListOrWatchables_SubtypingRule#()V" />
@@ -73,13 +73,13 @@
       <node id="1842653058275008955" at="32,63,33,30" concept="5" />
       <node id="1842653058275008955" at="33,30,34,30" concept="5" />
       <node id="1842653058275008955" at="34,30,35,227" concept="2" />
-      <node id="1842653058275008955" at="35,227,36,496" concept="2" />
-      <node id="1842653058275008955" at="36,496,37,225" concept="2" />
+      <node id="1842653058275008955" at="35,227,36,433" concept="2" />
+      <node id="1842653058275008955" at="36,433,37,225" concept="2" />
       <node id="1842653058275008955" at="37,225,38,166" concept="2" />
       <node id="1842653058275008955" at="38,166,39,24" concept="6" />
       <node id="1842653058275008950" at="17,0,19,0" concept="1" trace="WatchableListIsAList_SubtypingRule#()V" />
-      <node id="1842653058275008955" at="36,496,38,166" concept="0" />
-      <node id="1842653058275008955" at="36,496,38,166" concept="0" />
+      <node id="1842653058275008955" at="36,433,38,166" concept="0" />
+      <node id="1842653058275008955" at="36,433,38,166" concept="0" />
       <node id="1842653058275008950" at="19,0,22,0" concept="4" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1842653058275008950" at="22,0,25,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1842653058275008950" at="25,0,28,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -93,7 +93,7 @@
       <scope id="1842653058275008950" at="25,68,26,102" />
       <scope id="1842653058275008950" at="28,27,29,17" />
       <scope id="1842653058275008950" at="17,0,19,0" />
-      <scope id="1842653058275008955" at="36,496,38,166" />
+      <scope id="1842653058275008955" at="36,433,38,166" />
       <scope id="1842653058275008950" at="19,0,22,0">
         <var name="status" id="1842653058275008950" />
         <var name="typeCheckingContext" id="1842653058275008950" />

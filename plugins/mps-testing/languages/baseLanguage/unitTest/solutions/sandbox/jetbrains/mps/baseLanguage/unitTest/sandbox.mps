@@ -8,14 +8,14 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="qjxg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-    <import index="eupq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" />
-    <import index="aj7d" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runners(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runners@java_stub)" />
-    <import index="ik6s" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runners.model(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runners.model@java_stub)" />
-    <import index="vzhb" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.notification@java_stub)" />
-    <import index="u67u" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="bbnd" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runners(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="7cms" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runners.model(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="k76n" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="cvlm" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -162,11 +162,11 @@
         <node concept="3clFbF" id="79C96s2bVZ5" role="3cqZAp">
           <node concept="2OqwBi" id="79C96s2bVZ6" role="3clFbG">
             <node concept="10M0yZ" id="79C96s2bVZ7" role="2Oq$k0">
-              <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
             </node>
             <node concept="liA8E" id="79C96s2bVZ8" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="79C96s2bVZ9" role="37wK5m">
                 <property role="Xl_RC" value="setup test!!" />
               </node>
@@ -180,11 +180,11 @@
         <node concept="3clFbF" id="79C96s2bVZo" role="3cqZAp">
           <node concept="2OqwBi" id="79C96s2bVZp" role="3clFbG">
             <node concept="10M0yZ" id="79C96s2bVZq" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
             </node>
             <node concept="liA8E" id="79C96s2bVZr" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="79C96s2bVZs" role="37wK5m">
                 <property role="Xl_RC" value="teardown test!!" />
               </node>
@@ -249,11 +249,11 @@
         <node concept="3clFbF" id="2kGTfCQPUi8" role="3cqZAp">
           <node concept="2OqwBi" id="2kGTfCQPUx2" role="3clFbG">
             <node concept="10M0yZ" id="2kGTfCQPUi9" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="2kGTfCQPUx6" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="2kGTfCQPUx7" role="37wK5m">
                 <property role="Xl_RC" value="Hi!" />
               </node>
@@ -262,8 +262,8 @@
         </node>
         <node concept="3clFbF" id="3GY2l4dhyjX" role="3cqZAp">
           <node concept="2YIFZM" id="5uy3kSHexcI" role="3clFbG">
-            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="eupq:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="u132:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
             <node concept="3clFbT" id="5uy3kSHexcJ" role="37wK5m" />
           </node>
         </node>
@@ -277,9 +277,9 @@
     </node>
     <node concept="3Tm1VV" id="3LkRnt2ZcnS" role="1B3o_S" />
     <node concept="2AHcQZ" id="7JmqdyD79sK" role="2AJF6D">
-      <ref role="2AI5Lk" to="u67u:~RunWith" resolve="RunWith" />
+      <ref role="2AI5Lk" to="cvlm:~RunWith" resolve="RunWith" />
       <node concept="1SXeKx" id="7JmqdyD7aSw" role="2B76xF">
-        <ref role="2B6OnR" to="u67u:~RunWith.value()" resolve="value" />
+        <ref role="2B6OnR" to="cvlm:~RunWith.value()" resolve="value" />
         <node concept="3VsKOn" id="7JmqdyD7aSy" role="2B70Vg">
           <ref role="3VsUkX" node="7JmqdyD78ZX" resolve="SimpleRunner" />
         </node>
@@ -302,7 +302,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3LkRnt2Zcoa" role="2AJF6D">
-        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="3LkRnt2Zcob" role="jymVt">
@@ -318,7 +318,7 @@
         <node concept="YS8fn" id="3GY2l4dhykl" role="3cqZAp">
           <node concept="2ShNRf" id="3GY2l4dhykm" role="YScLw">
             <node concept="1pGfFk" id="3GY2l4dhykn" role="2ShVmc">
-              <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+              <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
               <node concept="Xl_RD" id="3GY2l4dhyko" role="37wK5m">
                 <property role="Xl_RC" value="!" />
               </node>
@@ -327,7 +327,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3LkRnt2Zcof" role="2AJF6D">
-        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="6XsMd4iC21g" role="jymVt">
@@ -342,10 +342,10 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="6XsMd4iC21k" role="2AJF6D">
-        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
       <node concept="2AHcQZ" id="6XsMd4iC21l" role="2AJF6D">
-        <ref role="2AI5Lk" to="qjxg:~Ignore" resolve="Ignore" />
+        <ref role="2AI5Lk" to="rjhg:~Ignore" resolve="Ignore" />
       </node>
     </node>
   </node>
@@ -353,14 +353,14 @@
     <property role="TrG5h" value="SimpleRunner" />
     <node concept="3Tm1VV" id="7JmqdyD78ZY" role="1B3o_S" />
     <node concept="3uibUv" id="7tSsAj3a6e6" role="1zkMxy">
-      <ref role="3uigEE" to="aj7d:~BlockJUnit4ClassRunner" resolve="BlockJUnit4ClassRunner" />
+      <ref role="3uigEE" to="bbnd:~BlockJUnit4ClassRunner" resolve="BlockJUnit4ClassRunner" />
     </node>
     <node concept="3clFbW" id="7JmqdyD78ZZ" role="jymVt">
       <node concept="3cqZAl" id="7JmqdyD7900" role="3clF45" />
       <node concept="3Tm1VV" id="7JmqdyD7901" role="1B3o_S" />
       <node concept="3clFbS" id="7JmqdyD7902" role="3clF47">
         <node concept="XkiVB" id="7JmqdyD79si" role="3cqZAp">
-          <ref role="37wK5l" to="aj7d:~BlockJUnit4ClassRunner.&lt;init&gt;(java.lang.Class)" resolve="BlockJUnit4ClassRunner" />
+          <ref role="37wK5l" to="bbnd:~BlockJUnit4ClassRunner.&lt;init&gt;(java.lang.Class)" resolve="BlockJUnit4ClassRunner" />
           <node concept="37vLTw" id="2BHiRxgm6Fc" role="37wK5m">
             <ref role="3cqZAo" node="7JmqdyD79sg" resolve="clazz" />
           </node>
@@ -369,11 +369,11 @@
       <node concept="37vLTG" id="7JmqdyD79sg" role="3clF46">
         <property role="TrG5h" value="clazz" />
         <node concept="3uibUv" id="7JmqdyD79sh" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
         </node>
       </node>
       <node concept="3uibUv" id="7tSsAj3a6n0" role="Sfmx6">
-        <ref role="3uigEE" to="ik6s:~InitializationError" resolve="InitializationError" />
+        <ref role="3uigEE" to="7cms:~InitializationError" resolve="InitializationError" />
       </node>
     </node>
     <node concept="3clFb_" id="7JmqdyD79sp" role="jymVt">
@@ -383,24 +383,24 @@
       <node concept="37vLTG" id="7JmqdyD79ss" role="3clF46">
         <property role="TrG5h" value="method" />
         <node concept="3uibUv" id="7JmqdyD79st" role="1tU5fm">
-          <ref role="3uigEE" to="ik6s:~FrameworkMethod" resolve="FrameworkMethod" />
+          <ref role="3uigEE" to="7cms:~FrameworkMethod" resolve="FrameworkMethod" />
         </node>
       </node>
       <node concept="37vLTG" id="7JmqdyD79su" role="3clF46">
         <property role="TrG5h" value="notifier" />
         <node concept="3uibUv" id="7tSsAj3a6n1" role="1tU5fm">
-          <ref role="3uigEE" to="vzhb:~RunNotifier" resolve="RunNotifier" />
+          <ref role="3uigEE" to="k76n:~RunNotifier" resolve="RunNotifier" />
         </node>
       </node>
       <node concept="3clFbS" id="7JmqdyD79sw" role="3clF47">
         <node concept="3clFbF" id="7JmqdyD79sB" role="3cqZAp">
           <node concept="2OqwBi" id="7JmqdyD79sC" role="3clFbG">
             <node concept="10M0yZ" id="7JmqdyD79sD" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="7JmqdyD79sE" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="7JmqdyD79sG" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxgm8u9" role="3uHU7w">
                   <ref role="3cqZAo" node="7JmqdyD79ss" resolve="method" />
@@ -414,7 +414,7 @@
         </node>
         <node concept="3clFbF" id="7JmqdyD79sy" role="3cqZAp">
           <node concept="3nyPlj" id="7JmqdyD79sz" role="3clFbG">
-            <ref role="37wK5l" to="aj7d:~BlockJUnit4ClassRunner.runChild(org.junit.runners.model.FrameworkMethod,org.junit.runner.notification.RunNotifier):void" resolve="runChild" />
+            <ref role="37wK5l" to="bbnd:~BlockJUnit4ClassRunner.runChild(org.junit.runners.model.FrameworkMethod,org.junit.runner.notification.RunNotifier):void" resolve="runChild" />
             <node concept="37vLTw" id="2BHiRxgmyVh" role="37wK5m">
               <ref role="3cqZAo" node="7JmqdyD79ss" resolve="method" />
             </node>
@@ -425,7 +425,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="7JmqdyD79sx" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -451,11 +451,11 @@
         <node concept="3clFbF" id="5V6TCVQm_ni" role="3cqZAp">
           <node concept="2OqwBi" id="5V6TCVQm_nj" role="3clFbG">
             <node concept="10M0yZ" id="5V6TCVQm_nk" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
             </node>
             <node concept="liA8E" id="5V6TCVQm_nl" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="5V6TCVQm_nm" role="37wK5m">
                 <property role="Xl_RC" value="Hello, Universe!" />
               </node>
@@ -470,7 +470,7 @@
     <property role="1sVAO0" value="true" />
     <node concept="3Tm1VV" id="1URdE03Io3M" role="1B3o_S" />
     <node concept="3uibUv" id="7tSsAj3a4VL" role="1zkMxy">
-      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
+      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
     </node>
     <node concept="3clFbW" id="1URdE03Io3N" role="jymVt">
       <node concept="3cqZAl" id="1URdE03Io3O" role="3clF45" />
@@ -484,8 +484,8 @@
       <node concept="3clFbS" id="1URdE03IsJv" role="3clF47">
         <node concept="3clFbF" id="1URdE03IsJy" role="3cqZAp">
           <node concept="2YIFZM" id="5uy3kSHe$rG" role="3clFbG">
-            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
+            <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="u132:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
             <node concept="Xl_RD" id="5uy3kSHe$rH" role="37wK5m">
               <property role="Xl_RC" value="" />
             </node>
@@ -521,7 +521,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1URdE03I_IN" role="2AJF6D">
-        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
   </node>

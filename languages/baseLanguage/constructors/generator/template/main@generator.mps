@@ -19,8 +19,8 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -523,11 +523,11 @@
               <property role="TrG5h" value="l" />
               <node concept="2ShNRf" id="xDsYzSxsJW" role="33vP2m">
                 <node concept="1pGfFk" id="xDsYzSxsJY" role="2ShVmc">
-                  <ref role="37wK5l" to="k7g3:~LinkedList.&lt;init&gt;()" resolve="LinkedList" />
+                  <ref role="37wK5l" to="33ny:~LinkedList.&lt;init&gt;()" resolve="LinkedList" />
                 </node>
               </node>
               <node concept="3uibUv" id="xDsYzSxyhI" role="1tU5fm">
-                <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+                <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
               </node>
             </node>
           </node>
@@ -537,11 +537,11 @@
               <property role="1npUBZ" value="classFQName" />
               <property role="1npL6y" value="methodName" />
               <node concept="2YIFZM" id="6tDhftmH5ZI" role="2U24H$">
-                <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-                <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+                <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
                 <node concept="10QFUN" id="6tDhftmH5ZJ" role="37wK5m">
                   <node concept="3uibUv" id="6tDhftmH5ZK" role="10QFUM">
-                    <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                    <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                     <node concept="1W57fq" id="6tDhftmH5ZL" role="lGtFl">
                       <node concept="3IZrLx" id="6tDhftmH5ZM" role="3IZSJc">
                         <node concept="3clFbS" id="6tDhftmH5ZN" role="2VODD2">
@@ -769,7 +769,7 @@
         <node concept="37vLTG" id="xDsYzSxsJH" role="3clF46">
           <property role="TrG5h" value="o" />
           <node concept="3uibUv" id="xDsYzSxsJI" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -786,9 +786,9 @@
       <node concept="37vLTG" id="3Xj90How6m3" role="3clF46">
         <property role="TrG5h" value="elements" />
         <node concept="3uibUv" id="3Xj90How6m4" role="1tU5fm">
-          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="3Xj90How6m8" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
             <node concept="29HgVG" id="3Xj90How6mb" role="lGtFl">
               <node concept="3NFfHV" id="3Xj90How6mc" role="3NFExx">
                 <node concept="3clFbS" id="3Xj90How6md" role="2VODD2">
@@ -897,11 +897,11 @@
               <property role="TrG5h" value="l" />
               <node concept="2ShNRf" id="6H$as0kr5kK" role="33vP2m">
                 <node concept="1pGfFk" id="6H$as0kr5kL" role="2ShVmc">
-                  <ref role="37wK5l" to="k7g3:~LinkedList.&lt;init&gt;()" resolve="LinkedList" />
+                  <ref role="37wK5l" to="33ny:~LinkedList.&lt;init&gt;()" resolve="LinkedList" />
                 </node>
               </node>
               <node concept="3uibUv" id="6H$as0kr5kM" role="1tU5fm">
-                <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+                <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
               </node>
             </node>
           </node>
@@ -990,7 +990,7 @@
         <node concept="37vLTG" id="6H$as0kr5m8" role="3clF46">
           <property role="TrG5h" value="o" />
           <node concept="3uibUv" id="6H$as0kr5m9" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>

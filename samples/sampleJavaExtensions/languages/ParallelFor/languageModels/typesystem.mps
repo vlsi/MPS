@@ -9,10 +9,10 @@
   <imports>
     <import index="cgfx" ref="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="vft3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)" />
-    <import index="53gy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
+    <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -279,7 +279,7 @@
         <node concept="mw_s8" id="42COxuQQfQW" role="1ZfhKB">
           <node concept="2c44tf" id="42COxuQQfQX" role="mwGJk">
             <node concept="3uibUv" id="42COxuQQfR0" role="2c44tc">
-              <ref role="3uigEE" to="53gy:~ExecutorService" resolve="ExecutorService" />
+              <ref role="3uigEE" to="5zyv:~ExecutorService" resolve="ExecutorService" />
             </node>
           </node>
         </node>
@@ -581,7 +581,7 @@
         <node concept="mw_s8" id="2QRLUePBOmm" role="1ZfhKB">
           <node concept="2c44tf" id="2QRLUePBOmn" role="mwGJk">
             <node concept="3uibUv" id="2QRLUePBOmq" role="2c44tc">
-              <ref role="3uigEE" to="53gy:~ExecutorService" resolve="ExecutorService" />
+              <ref role="3uigEE" to="5zyv:~ExecutorService" resolve="ExecutorService" />
             </node>
           </node>
         </node>
@@ -1885,62 +1885,62 @@
               <node concept="Tc6Ow" id="34zgNsMIuHp" role="2ShVmc">
                 <node concept="2c44tf" id="34zgNsMIuHq" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHr" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicBoolean" resolve="AtomicBoolean" />
+                    <ref role="3uigEE" to="i5cy:~AtomicBoolean" resolve="AtomicBoolean" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHs" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHt" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicInteger" resolve="AtomicInteger" />
+                    <ref role="3uigEE" to="i5cy:~AtomicInteger" resolve="AtomicInteger" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHu" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHv" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicLong" resolve="AtomicLong" />
+                    <ref role="3uigEE" to="i5cy:~AtomicLong" resolve="AtomicLong" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHw" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHx" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicLongArray" resolve="AtomicLongArray" />
+                    <ref role="3uigEE" to="i5cy:~AtomicLongArray" resolve="AtomicLongArray" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHy" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHz" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicIntegerArray" resolve="AtomicIntegerArray" />
+                    <ref role="3uigEE" to="i5cy:~AtomicIntegerArray" resolve="AtomicIntegerArray" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuH$" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuH_" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicReference" resolve="AtomicReference" />
+                    <ref role="3uigEE" to="i5cy:~AtomicReference" resolve="AtomicReference" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHA" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHB" role="2c44tc">
-                    <ref role="3uigEE" to="vft3:~AtomicReferenceArray" resolve="AtomicReferenceArray" />
+                    <ref role="3uigEE" to="i5cy:~AtomicReferenceArray" resolve="AtomicReferenceArray" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHC" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHD" role="2c44tc">
-                    <ref role="3uigEE" to="53gy:~ConcurrentHashMap" resolve="ConcurrentHashMap" />
+                    <ref role="3uigEE" to="5zyv:~ConcurrentHashMap" resolve="ConcurrentHashMap" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHE" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHF" role="2c44tc">
-                    <ref role="3uigEE" to="53gy:~ConcurrentSkipListMap" resolve="ConcurrentSkipListMap" />
+                    <ref role="3uigEE" to="5zyv:~ConcurrentSkipListMap" resolve="ConcurrentSkipListMap" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHG" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHH" role="2c44tc">
-                    <ref role="3uigEE" to="53gy:~ConcurrentSkipListSet" resolve="ConcurrentSkipListSet" />
+                    <ref role="3uigEE" to="5zyv:~ConcurrentSkipListSet" resolve="ConcurrentSkipListSet" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIuHI" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIuHJ" role="2c44tc">
-                    <ref role="3uigEE" to="e2lb:~Thread" resolve="Thread" />
+                    <ref role="3uigEE" to="wyt6:~Thread" resolve="Thread" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIJym" role="HW$Y0">
                   <node concept="3uibUv" id="34zgNsMIJyp" role="2c44tc">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                   </node>
                 </node>
                 <node concept="2c44tf" id="34zgNsMIJyr" role="HW$Y0">

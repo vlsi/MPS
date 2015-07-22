@@ -6,9 +6,9 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" />
-    <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
-    <import index="c4ym" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing()" />
+    <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
+    <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -71,14 +71,14 @@
       <property role="TrG5h" value="BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxI7" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxI8" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZxO" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTbJj" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTc3A" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_set_breakpoint" resolve="Db_set_breakpoint" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_set_breakpoint" resolve="Db_set_breakpoint" />
           </node>
         </node>
       </node>
@@ -87,14 +87,14 @@
       <property role="TrG5h" value="INV_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIg" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIh" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZxR" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTeKa" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTeKb" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_invalid_breakpoint" resolve="Db_invalid_breakpoint" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_breakpoint" resolve="Db_invalid_breakpoint" />
           </node>
         </node>
       </node>
@@ -103,14 +103,14 @@
       <property role="TrG5h" value="DISABLED_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIp" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIq" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZxU" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTfTH" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTfTI" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_disabled_breakpoint" resolve="Db_disabled_breakpoint" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_breakpoint" resolve="Db_disabled_breakpoint" />
           </node>
         </node>
       </node>
@@ -119,14 +119,14 @@
       <property role="TrG5h" value="MUTED_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIy" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIz" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZxX" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTgYD" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTgYE" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_muted_breakpoint" resolve="Db_muted_breakpoint" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_breakpoint" resolve="Db_muted_breakpoint" />
           </node>
         </node>
       </node>
@@ -135,14 +135,14 @@
       <property role="TrG5h" value="SHOW_AS_TREE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIF" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIG" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZy0" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTi3i" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTiSh" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
           </node>
         </node>
       </node>
@@ -151,14 +151,14 @@
       <property role="TrG5h" value="FRAMES" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIO" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIP" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZy3" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTjsU" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTjsV" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Frame" resolve="Frame" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Frame" resolve="Frame" />
           </node>
         </node>
       </node>
@@ -167,14 +167,14 @@
       <property role="TrG5h" value="VARIABLES" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxIX" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIY" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZy6" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTkmT" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTkmU" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Value" resolve="Value" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Value" resolve="Value" />
           </node>
         </node>
       </node>
@@ -183,14 +183,14 @@
       <property role="TrG5h" value="WATCHES" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SnNvqCbxJ6" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxJ7" role="1B3o_S" />
       <node concept="1QGGTA" id="1ubXCPlTZy9" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTlk3" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTlk4" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Watches" resolve="Watches" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Watches" resolve="Watches" />
           </node>
         </node>
       </node>
@@ -199,14 +199,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_DELETE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz58F" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58G" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz58H" role="33vP2m">
         <node concept="1QGGSu" id="1_rASLzvMTy" role="1QGGTw">
           <node concept="10M0yZ" id="1aRZRpeXMT7" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Debug.DeleteBreakpoint" resolve="DeleteBreakpoint" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.DeleteBreakpoint" resolve="DeleteBreakpoint" />
           </node>
         </node>
       </node>
@@ -215,14 +215,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_ADD" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="3SQRqvYXt97" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SQRqvYXt98" role="1B3o_S" />
       <node concept="1QGGTA" id="3SQRqvYXt99" role="33vP2m">
         <node concept="1QGGSu" id="1aRZRpeXMZf" role="1QGGTw">
           <node concept="10M0yZ" id="1aRZRpeXMZg" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Debug.AddBreakPoint" resolve="AddBreakPoint" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.AddBreakPoint" resolve="AddBreakPoint" />
           </node>
         </node>
       </node>
@@ -231,14 +231,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_GOTO" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz58K" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58L" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz58M" role="33vP2m">
         <node concept="1QGGSu" id="1aRZRpeXN0I" role="1QGGTw">
           <node concept="10M0yZ" id="1aRZRpeXN0J" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Debug.GoToSource" resolve="GoToSource" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.GoToSource" resolve="GoToSource" />
           </node>
         </node>
       </node>
@@ -247,14 +247,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_GROUP_BY_MODEL" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz58P" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58Q" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz58R" role="33vP2m">
         <node concept="1QGGSu" id="1aRZRpeXN2A" role="1QGGTw">
           <node concept="10M0yZ" id="4TMD6bS7gQu" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Actions.GroupByModel" resolve="GroupByModel" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModel" resolve="GroupByModel" />
           </node>
         </node>
       </node>
@@ -263,14 +263,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_GROUP_BY_MODULE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz58U" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58V" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz58W" role="33vP2m">
         <node concept="1QGGSu" id="1aRZRpeXN4k" role="1QGGTw">
           <node concept="10M0yZ" id="4TMD6bS7gX1" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Actions.GroupByModule" resolve="GroupByModule" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModule" resolve="GroupByModule" />
           </node>
         </node>
       </node>
@@ -279,14 +279,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_GROUP_BY_ROOT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz58Z" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz590" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz591" role="33vP2m">
         <node concept="1QGGSu" id="1aRZRpeXN5M" role="1QGGTw">
           <node concept="10M0yZ" id="4TMD6bS7gYj" role="3xaMm5">
-            <ref role="1PxDUh" to="c4ym:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="c4ym:~MPSIcons$Actions.GroupByRoot" resolve="GroupByRoot" />
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByRoot" resolve="GroupByRoot" />
           </node>
         </node>
       </node>
@@ -295,14 +295,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_VIEW_SOURCE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz594" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz595" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz596" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTzFM" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTzFN" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.ShowViewer" resolve="ShowViewer" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowViewer" resolve="ShowViewer" />
           </node>
         </node>
       </node>
@@ -311,14 +311,14 @@
       <property role="TrG5h" value="BREAKPOINTS_DIALOG_TREE_VIEW" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1gqtULBz599" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz59a" role="1B3o_S" />
       <node concept="1QGGTA" id="1gqtULBz59b" role="33vP2m">
         <node concept="1QGGSu" id="3SQRqvYTxBN" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvYTxBO" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
           </node>
         </node>
       </node>

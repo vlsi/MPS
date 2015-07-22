@@ -15,15 +15,15 @@
   <imports>
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
-    <import index="7juq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(MPS.Core/jetbrains.mps.lang.pattern.util@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="r9fo" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="17gi" ref="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)" />
@@ -643,8 +643,8 @@
               <node concept="3eNFk2" id="i3nVrva" role="3eNLev">
                 <node concept="1Wc70l" id="i3nVrvb" role="3eO9$A">
                   <node concept="2YIFZM" id="i3nVrvc" role="3uHU7w">
-                    <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
-                    <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+                    <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
+                    <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
                     <node concept="2OqwBi" id="i3nVrvd" role="37wK5m">
                       <node concept="2GrUjf" id="i3nVrve" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="i3nVruB" resolve="method" />
@@ -760,7 +760,7 @@
                         <property role="Xl_RC" value="equals" />
                       </node>
                       <node concept="liA8E" id="i3nVrw4" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="i3nVrw5" role="37wK5m">
                           <node concept="2GrUjf" id="i3nVrw6" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="i3nVruB" resolve="method" />
@@ -813,7 +813,7 @@
                         <property role="Xl_RC" value="hashCode" />
                       </node>
                       <node concept="liA8E" id="i3nVrwq" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="i3nVrwr" role="37wK5m">
                           <node concept="2GrUjf" id="i3nVrws" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="i3nVruB" resolve="method" />
@@ -1006,7 +1006,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="i3nYkmM" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.compareTo(java.lang.String):int" resolve="compareTo" />
+                      <ref role="37wK5l" to="wyt6:~String.compareTo(java.lang.String):int" resolve="compareTo" />
                       <node concept="2OqwBi" id="i3nYmMk" role="37wK5m">
                         <node concept="2OqwBi" id="i3nYl0k" role="2Oq$k0">
                           <node concept="37vLTw" id="3GM_nagTwsx" role="2Oq$k0">
@@ -1051,8 +1051,8 @@
                   </node>
                   <node concept="3fqX7Q" id="i3nYEor" role="3clFbw">
                     <node concept="2YIFZM" id="i3nYFwe" role="3fr31v">
-                      <ref role="1Pybhc" to="7juq:~MatchingUtil" resolve="MatchingUtil" />
-                      <ref role="37wK5l" to="7juq:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
+                      <ref role="1Pybhc" to="ggp6:~MatchingUtil" resolve="MatchingUtil" />
+                      <ref role="37wK5l" to="ggp6:~MatchingUtil.matchNodes(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="matchNodes" />
                       <node concept="2OqwBi" id="i3nYG87" role="37wK5m">
                         <node concept="2OqwBi" id="i3nYFOC" role="2Oq$k0">
                           <node concept="37vLTw" id="3GM_nagTz23" role="2Oq$k0">
@@ -1111,7 +1111,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="i3nY_5F" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="2OqwBi" id="i3nY_HQ" role="37wK5m">
                       <node concept="2OqwBi" id="i3nY_p_" role="2Oq$k0">
                         <node concept="37vLTw" id="3GM_nagTsfJ" role="2Oq$k0">

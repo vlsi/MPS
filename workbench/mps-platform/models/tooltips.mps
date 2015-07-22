@@ -5,20 +5,20 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" />
-    <import index="8q6x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(java.awt.event@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" />
-    <import index="f0dr" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.border(javax.swing.border@java_stub)" />
-    <import index="oj8w" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(javax.swing.text@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
-    <import index="ayyu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(com.intellij.ui@java_stub)" />
-    <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" />
-    <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(com.intellij.util.ui@java_stub)" />
-    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(com.intellij.ide@java_stub)" />
-    <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
-    <import index="m0ws" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.codeInsight.hint(MPS.IDEA/com.intellij.codeInsight.hint@java_stub)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt()" />
+    <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing()" />
+    <import index="9z78" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.border()" />
+    <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text()" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util()" />
+    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui()" />
+    <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components()" />
+    <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui()" />
+    <import index="ddhc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide()" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application()" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations()" />
+    <import index="439w" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.codeInsight.hint(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -208,12 +208,12 @@
       <property role="TrG5h" value="BACKGROUND_COLOR" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="4MyJhaCOtZ3" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="3Tm1VV" id="1HEP6IJFlwT" role="1B3o_S" />
       <node concept="10M0yZ" id="dkzNBRmKbB" role="33vP2m">
-        <ref role="1PxDUh" to="m0ws:~HintUtil" resolve="HintUtil" />
-        <ref role="3cqZAo" to="m0ws:~HintUtil.INFORMATION_COLOR" resolve="INFORMATION_COLOR" />
+        <ref role="1PxDUh" to="439w:~HintUtil" resolve="HintUtil" />
+        <ref role="3cqZAo" to="439w:~HintUtil.INFORMATION_COLOR" resolve="INFORMATION_COLOR" />
       </node>
     </node>
     <node concept="Wx3nA" id="36pH7EachJR" role="jymVt">
@@ -292,14 +292,14 @@
             </node>
             <node concept="2ShNRf" id="36pH7EachK5" role="37vLTx">
               <node concept="1pGfFk" id="36pH7EachK6" role="2ShVmc">
-                <ref role="37wK5l" to="1t7x:~Point.&lt;init&gt;(int,int)" resolve="Point" />
+                <ref role="37wK5l" to="z60i:~Point.&lt;init&gt;(int,int)" resolve="Point" />
                 <node concept="3cpWs3" id="7YCrM4FN3a2" role="37wK5m">
                   <node concept="2OqwBi" id="7YCrM4FN39X" role="3uHU7B">
                     <node concept="37vLTw" id="2BHiRxgm_ng" role="2Oq$k0">
                       <ref role="3cqZAo" node="1s17jCa4UGM" resolve="location" />
                     </node>
                     <node concept="2OwXpG" id="7YCrM4FN3a1" role="2OqNvi">
-                      <ref role="2Oxat5" to="1t7x:~Point.x" resolve="x" />
+                      <ref role="2Oxat5" to="z60i:~Point.x" resolve="x" />
                     </node>
                   </node>
                   <node concept="1eOMI4" id="7YCrM4FN3a5" role="3uHU7w">
@@ -324,7 +324,7 @@
                   </node>
                   <node concept="2OqwBi" id="36pH7EachKf" role="3uHU7B">
                     <node concept="2OwXpG" id="36pH7EachKj" role="2OqNvi">
-                      <ref role="2Oxat5" to="1t7x:~Point.y" resolve="y" />
+                      <ref role="2Oxat5" to="z60i:~Point.y" resolve="y" />
                     </node>
                     <node concept="37vLTw" id="2BHiRxgmN_l" role="2Oq$k0">
                       <ref role="3cqZAo" node="1s17jCa4UGM" resolve="location" />
@@ -365,7 +365,7 @@
               <ref role="3cqZAo" node="5lZmAXelVHI" resolve="myDialog" />
             </node>
             <node concept="liA8E" id="5S0i23LVwJU" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Window.setVisible(boolean):void" resolve="setVisible" />
+              <ref role="37wK5l" to="z60i:~Window.setVisible(boolean):void" resolve="setVisible" />
               <node concept="3clFbT" id="5S0i23LVwJV" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -377,13 +377,13 @@
       <node concept="37vLTG" id="1s17jCa4UGK" role="3clF46">
         <property role="TrG5h" value="owner" />
         <node concept="3uibUv" id="1s17jCa4UGL" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Frame" resolve="Frame" />
+          <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
         </node>
       </node>
       <node concept="37vLTG" id="1s17jCa4UGM" role="3clF46">
         <property role="TrG5h" value="location" />
         <node concept="3uibUv" id="1s17jCa4UGO" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+          <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
         </node>
       </node>
       <node concept="37vLTG" id="1s17jCa4UGP" role="3clF46">
@@ -461,21 +461,21 @@
       <node concept="312cEg" id="4MyJhaCOtYV" role="jymVt">
         <property role="TrG5h" value="myPrevFocusOwner" />
         <node concept="3uibUv" id="4MyJhaCOtYY" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
         <node concept="3Tm6S6" id="4MyJhaCOtYW" role="1B3o_S" />
       </node>
       <node concept="312cEg" id="4MyJhaCOtZe" role="jymVt">
         <property role="TrG5h" value="myOwnerFocusListener" />
         <node concept="3uibUv" id="4MyJhaCOtZh" role="1tU5fm">
-          <ref role="3uigEE" to="8q6x:~FocusListener" resolve="FocusListener" />
+          <ref role="3uigEE" to="hyam:~FocusListener" resolve="FocusListener" />
         </node>
         <node concept="2ShNRf" id="4MyJhaCOtZj" role="33vP2m">
           <node concept="YeOm9" id="4MyJhaCOtZl" role="2ShVmc">
             <node concept="1Y3b0j" id="4MyJhaCOtZm" role="YeSDq">
               <property role="2bfB8j" value="true" />
-              <ref role="1Y3XeK" to="8q6x:~FocusAdapter" resolve="FocusAdapter" />
-              <ref role="37wK5l" to="8q6x:~FocusAdapter.&lt;init&gt;()" resolve="FocusAdapter" />
+              <ref role="1Y3XeK" to="hyam:~FocusAdapter" resolve="FocusAdapter" />
+              <ref role="37wK5l" to="hyam:~FocusAdapter.&lt;init&gt;()" resolve="FocusAdapter" />
               <node concept="3Tm1VV" id="4MyJhaCOtZn" role="1B3o_S" />
               <node concept="3clFb_" id="4MyJhaCOtZo" role="jymVt">
                 <property role="TrG5h" value="focusLost" />
@@ -484,7 +484,7 @@
                 <node concept="37vLTG" id="4MyJhaCOtZr" role="3clF46">
                   <property role="TrG5h" value="p0" />
                   <node concept="3uibUv" id="4MyJhaCOtZs" role="1tU5fm">
-                    <ref role="3uigEE" to="8q6x:~FocusEvent" resolve="FocusEvent" />
+                    <ref role="3uigEE" to="hyam:~FocusEvent" resolve="FocusEvent" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="4MyJhaCOtZt" role="3clF47">
@@ -496,7 +496,7 @@
                   <node concept="3clFbH" id="4MyJhaCOtZU" role="3cqZAp" />
                 </node>
                 <node concept="2AHcQZ" id="4MyJhaCOtZu" role="2AJF6D">
-                  <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                  <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                 </node>
               </node>
             </node>
@@ -507,15 +507,15 @@
       <node concept="312cEg" id="4MyJhaCOtZz" role="jymVt">
         <property role="TrG5h" value="myOwnerMouseListener" />
         <node concept="3uibUv" id="4MyJhaCOtZA" role="1tU5fm">
-          <ref role="3uigEE" to="8q6x:~MouseListener" resolve="MouseListener" />
+          <ref role="3uigEE" to="hyam:~MouseListener" resolve="MouseListener" />
         </node>
         <node concept="3Tm6S6" id="4MyJhaCOtZ$" role="1B3o_S" />
         <node concept="2ShNRf" id="4MyJhaCOtZD" role="33vP2m">
           <node concept="YeOm9" id="4MyJhaCOtZF" role="2ShVmc">
             <node concept="1Y3b0j" id="4MyJhaCOtZG" role="YeSDq">
               <property role="2bfB8j" value="true" />
-              <ref role="1Y3XeK" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
-              <ref role="37wK5l" to="8q6x:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
+              <ref role="1Y3XeK" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
+              <ref role="37wK5l" to="hyam:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
               <node concept="3clFb_" id="4MyJhaCOtZI" role="jymVt">
                 <property role="TrG5h" value="mousePressed" />
                 <node concept="3clFbS" id="4MyJhaCOtZN" role="3clF47">
@@ -529,11 +529,11 @@
                 <node concept="37vLTG" id="4MyJhaCOtZL" role="3clF46">
                   <property role="TrG5h" value="p0" />
                   <node concept="3uibUv" id="4MyJhaCOtZM" role="1tU5fm">
-                    <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+                    <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
                   </node>
                 </node>
                 <node concept="2AHcQZ" id="4MyJhaCOtZO" role="2AJF6D">
-                  <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                  <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                 </node>
                 <node concept="3Tm1VV" id="4MyJhaCOtZJ" role="1B3o_S" />
               </node>
@@ -543,7 +543,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5S0i23LVwuS" role="1zkMxy">
-        <ref role="3uigEE" to="1t7x:~Window" resolve="Window" />
+        <ref role="3uigEE" to="z60i:~Window" resolve="Window" />
       </node>
       <node concept="312cEg" id="1s17jCa3rwA" role="jymVt">
         <property role="TrG5h" value="myOwnerKeyListener" />
@@ -552,8 +552,8 @@
           <node concept="YeOm9" id="1s17jCa3ylS" role="2ShVmc">
             <node concept="1Y3b0j" id="1s17jCa3ylT" role="YeSDq">
               <property role="2bfB8j" value="true" />
-              <ref role="1Y3XeK" to="8q6x:~KeyAdapter" resolve="KeyAdapter" />
-              <ref role="37wK5l" to="8q6x:~KeyAdapter.&lt;init&gt;()" resolve="KeyAdapter" />
+              <ref role="1Y3XeK" to="hyam:~KeyAdapter" resolve="KeyAdapter" />
+              <ref role="37wK5l" to="hyam:~KeyAdapter.&lt;init&gt;()" resolve="KeyAdapter" />
               <node concept="3Tm1VV" id="1s17jCa3ylU" role="1B3o_S" />
               <node concept="3clFb_" id="1s17jCa3ylV" role="jymVt">
                 <property role="TrG5h" value="keyPressed" />
@@ -565,12 +565,12 @@
                   </node>
                 </node>
                 <node concept="2AHcQZ" id="1s17jCa3ym1" role="2AJF6D">
-                  <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                  <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                 </node>
                 <node concept="37vLTG" id="1s17jCa3ylY" role="3clF46">
                   <property role="TrG5h" value="p0" />
                   <node concept="3uibUv" id="1s17jCa3ylZ" role="1tU5fm">
-                    <ref role="3uigEE" to="8q6x:~KeyEvent" resolve="KeyEvent" />
+                    <ref role="3uigEE" to="hyam:~KeyEvent" resolve="KeyEvent" />
                   </node>
                 </node>
                 <node concept="3Tm1VV" id="1s17jCa3ylW" role="1B3o_S" />
@@ -580,13 +580,13 @@
           </node>
         </node>
         <node concept="3uibUv" id="1s17jCa3rwD" role="1tU5fm">
-          <ref role="3uigEE" to="8q6x:~KeyListener" resolve="KeyListener" />
+          <ref role="3uigEE" to="hyam:~KeyListener" resolve="KeyListener" />
         </node>
       </node>
       <node concept="3clFbW" id="4MyJhaCOtYM" role="jymVt">
         <node concept="3clFbS" id="4MyJhaCOtYP" role="3clF47">
           <node concept="XkiVB" id="1Adn5sJ0llC" role="3cqZAp">
-            <ref role="37wK5l" to="1t7x:~Window.&lt;init&gt;(java.awt.Frame)" resolve="Window" />
+            <ref role="37wK5l" to="z60i:~Window.&lt;init&gt;(java.awt.Frame)" resolve="Window" />
             <node concept="37vLTw" id="2BHiRxgmaDc" role="37wK5m">
               <ref role="3cqZAo" node="1s17jCa3yCz" resolve="owner" />
             </node>
@@ -598,7 +598,7 @@
                   <ref role="3cqZAo" node="1s17jCa3yCz" resolve="owner" />
                 </node>
                 <node concept="liA8E" id="1s17jCa4g5s" role="2OqNvi">
-                  <ref role="37wK5l" to="1t7x:~Window.getFocusOwner():java.awt.Component" resolve="getFocusOwner" />
+                  <ref role="37wK5l" to="z60i:~Window.getFocusOwner():java.awt.Component" resolve="getFocusOwner" />
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxeuuZC" role="37vLTJ">
@@ -609,7 +609,7 @@
           <node concept="3clFbH" id="1s17jCa4g5t" role="3cqZAp" />
           <node concept="3clFbF" id="1s17jCa4g5H" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyzeuk" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Window.setFocusableWindowState(boolean):void" resolve="setFocusableWindowState" />
+              <ref role="37wK5l" to="z60i:~Window.setFocusableWindowState(boolean):void" resolve="setFocusableWindowState" />
               <node concept="3clFbT" id="1s17jCa4g5L" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
@@ -620,11 +620,11 @@
             <node concept="3cpWsn" id="1s17jCa4h2i" role="3cpWs9">
               <property role="TrG5h" value="scrollPane" />
               <node concept="3uibUv" id="1s17jCa4h2j" role="1tU5fm">
-                <ref role="3uigEE" to="dbrf:~JScrollPane" resolve="JScrollPane" />
+                <ref role="3uigEE" to="dxuu:~JScrollPane" resolve="JScrollPane" />
               </node>
               <node concept="2YIFZM" id="23qY$NaTJLR" role="33vP2m">
-                <ref role="1Pybhc" to="ayyu:~ScrollPaneFactory" resolve="ScrollPaneFactory" />
-                <ref role="37wK5l" to="ayyu:~ScrollPaneFactory.createScrollPane(java.awt.Component):javax.swing.JScrollPane" resolve="createScrollPane" />
+                <ref role="1Pybhc" to="lzb2:~ScrollPaneFactory" resolve="ScrollPaneFactory" />
+                <ref role="37wK5l" to="lzb2:~ScrollPaneFactory.createScrollPane(java.awt.Component):javax.swing.JScrollPane" resolve="createScrollPane" />
                 <node concept="2OqwBi" id="23qY$NaTJLS" role="37wK5m">
                   <node concept="liA8E" id="23qY$NaTJLU" role="2OqNvi">
                     <ref role="37wK5l" node="1HEP6IJFflo" resolve="getComponent" />
@@ -639,13 +639,13 @@
           <node concept="3clFbF" id="1s17jCa4h7M" role="3cqZAp">
             <node concept="2OqwBi" id="1s17jCa4h7O" role="3clFbG">
               <node concept="liA8E" id="1s17jCa4h7S" role="2OqNvi">
-                <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
+                <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
                 <node concept="2ShNRf" id="1s17jCa4h7T" role="37wK5m">
                   <node concept="1pGfFk" id="1s17jCa4h7V" role="2ShVmc">
-                    <ref role="37wK5l" to="f0dr:~LineBorder.&lt;init&gt;(java.awt.Color)" resolve="LineBorder" />
+                    <ref role="37wK5l" to="9z78:~LineBorder.&lt;init&gt;(java.awt.Color)" resolve="LineBorder" />
                     <node concept="10M0yZ" id="1s17jCa4h7W" role="37wK5m">
-                      <ref role="1PxDUh" to="1t7x:~Color" resolve="Color" />
-                      <ref role="3cqZAo" to="1t7x:~Color.BLACK" resolve="BLACK" />
+                      <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
+                      <ref role="3cqZAo" to="z60i:~Color.BLACK" resolve="BLACK" />
                     </node>
                   </node>
                 </node>
@@ -657,7 +657,7 @@
           </node>
           <node concept="3clFbF" id="1s17jCa4h7Y" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyz7FU" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
               <node concept="37vLTw" id="3GM_nagTuoW" role="37wK5m">
                 <ref role="3cqZAo" node="1s17jCa4h2i" resolve="scrollPane" />
               </node>
@@ -666,7 +666,7 @@
           <node concept="3clFbH" id="1s17jCa4h83" role="3cqZAp" />
           <node concept="3clFbF" id="1s17jCa4h85" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyyPgr" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Window.pack():void" resolve="pack" />
+              <ref role="37wK5l" to="z60i:~Window.pack():void" resolve="pack" />
             </node>
           </node>
           <node concept="3clFbJ" id="ZpMnc7KQ9_" role="3cqZAp">
@@ -678,22 +678,22 @@
                       <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
                     </node>
                     <node concept="2OwXpG" id="ZpMnc7KQcD" role="2OqNvi">
-                      <ref role="2Oxat5" to="1t7x:~Point.x" resolve="x" />
+                      <ref role="2Oxat5" to="z60i:~Point.x" resolve="x" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="ZpMnc7KQ9N" role="37vLTx">
-                    <ref role="37wK5l" to="e2lb:~Math.max(int,int):int" resolve="max" />
-                    <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
+                    <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+                    <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
                     <node concept="3cmrfG" id="ZpMnc7KQ9O" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
                     <node concept="3cpWsd" id="ZpMnc7KQ9S" role="37wK5m">
                       <node concept="1rXfSq" id="4hiugqyz9UD" role="3uHU7w">
-                        <ref role="37wK5l" to="1t7x:~Component.getWidth():int" resolve="getWidth" />
+                        <ref role="37wK5l" to="z60i:~Component.getWidth():int" resolve="getWidth" />
                       </node>
                       <node concept="2OqwBi" id="ZpMnc7KQcF" role="3uHU7B">
                         <node concept="2OwXpG" id="ZpMnc7KQcJ" role="2OqNvi">
-                          <ref role="2Oxat5" to="1t7x:~Point.x" resolve="x" />
+                          <ref role="2Oxat5" to="z60i:~Point.x" resolve="x" />
                         </node>
                         <node concept="37vLTw" id="2BHiRxgmakb" role="2Oq$k0">
                           <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
@@ -712,14 +712,14 @@
             <node concept="3cpWsn" id="ZpMnc7KQa3" role="3cpWs9">
               <property role="TrG5h" value="rect" />
               <node concept="2YIFZM" id="ZpMnc7KQa5" role="33vP2m">
-                <ref role="37wK5l" to="msyo:~WindowsUtil.findDeviceBoundsAt(java.awt.Point):java.awt.Rectangle" resolve="findDeviceBoundsAt" />
-                <ref role="1Pybhc" to="msyo:~WindowsUtil" resolve="WindowsUtil" />
+                <ref role="37wK5l" to="18ew:~WindowsUtil.findDeviceBoundsAt(java.awt.Point):java.awt.Rectangle" resolve="findDeviceBoundsAt" />
+                <ref role="1Pybhc" to="18ew:~WindowsUtil" resolve="WindowsUtil" />
                 <node concept="37vLTw" id="2BHiRxglRd4" role="37wK5m">
                   <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
                 </node>
               </node>
               <node concept="3uibUv" id="ZpMnc7KQa4" role="1tU5fm">
-                <ref role="3uigEE" to="1t7x:~Rectangle" resolve="Rectangle" />
+                <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
               </node>
             </node>
           </node>
@@ -727,11 +727,11 @@
             <node concept="3eOVzh" id="ZpMnc7KQas" role="3clFbw">
               <node concept="3cpWs3" id="ZpMnc7KQat" role="3uHU7w">
                 <node concept="1rXfSq" id="4hiugqyyIdQ" role="3uHU7w">
-                  <ref role="37wK5l" to="1t7x:~Component.getWidth():int" resolve="getWidth" />
+                  <ref role="37wK5l" to="z60i:~Component.getWidth():int" resolve="getWidth" />
                 </node>
                 <node concept="2OqwBi" id="ZpMnc7KQcL" role="3uHU7B">
                   <node concept="2OwXpG" id="ZpMnc7KQcP" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Point.x" resolve="x" />
+                    <ref role="2Oxat5" to="z60i:~Point.x" resolve="x" />
                   </node>
                   <node concept="37vLTw" id="2BHiRxgkWhy" role="2Oq$k0">
                     <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
@@ -744,12 +744,12 @@
                     <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
                   </node>
                   <node concept="2OwXpG" id="ZpMnc7KQaE" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Rectangle.width" resolve="width" />
+                    <ref role="2Oxat5" to="z60i:~Rectangle.width" resolve="width" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="ZpMnc7KQa_" role="3uHU7B">
                   <node concept="2OwXpG" id="ZpMnc7KQaB" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Rectangle.x" resolve="x" />
+                    <ref role="2Oxat5" to="z60i:~Rectangle.x" resolve="x" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTxwN" role="2Oq$k0">
                     <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
@@ -765,18 +765,18 @@
                       <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
                     </node>
                     <node concept="2OwXpG" id="ZpMnc7KQcV" role="2OqNvi">
-                      <ref role="2Oxat5" to="1t7x:~Point.x" resolve="x" />
+                      <ref role="2Oxat5" to="z60i:~Point.x" resolve="x" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="ZpMnc7KQbZ" role="37vLTx">
-                    <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
-                    <ref role="37wK5l" to="e2lb:~Math.max(int,int):int" resolve="max" />
+                    <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                    <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
                     <node concept="3cmrfG" id="ZpMnc7KQc0" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
                     <node concept="3cpWsd" id="ZpMnc7KQc2" role="37wK5m">
                       <node concept="1rXfSq" id="4hiugqyyHW7" role="3uHU7w">
-                        <ref role="37wK5l" to="1t7x:~Component.getWidth():int" resolve="getWidth" />
+                        <ref role="37wK5l" to="z60i:~Component.getWidth():int" resolve="getWidth" />
                       </node>
                       <node concept="3cpWs3" id="ZpMnc7KQc6" role="3uHU7B">
                         <node concept="2OqwBi" id="ZpMnc7KQc7" role="3uHU7B">
@@ -784,12 +784,12 @@
                             <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
                           </node>
                           <node concept="2OwXpG" id="ZpMnc7KQc9" role="2OqNvi">
-                            <ref role="2Oxat5" to="1t7x:~Rectangle.x" resolve="x" />
+                            <ref role="2Oxat5" to="z60i:~Rectangle.x" resolve="x" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="ZpMnc7KQca" role="3uHU7w">
                           <node concept="2OwXpG" id="ZpMnc7KQcc" role="2OqNvi">
-                            <ref role="2Oxat5" to="1t7x:~Rectangle.width" resolve="width" />
+                            <ref role="2Oxat5" to="z60i:~Rectangle.width" resolve="width" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTrB9" role="2Oq$k0">
                             <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
@@ -806,11 +806,11 @@
             <node concept="3eOVzh" id="ZpMnc7KQaZ" role="3clFbw">
               <node concept="3cpWs3" id="ZpMnc7KQb0" role="3uHU7w">
                 <node concept="1rXfSq" id="4hiugqyzbKN" role="3uHU7w">
-                  <ref role="37wK5l" to="1t7x:~Component.getHeight():int" resolve="getHeight" />
+                  <ref role="37wK5l" to="z60i:~Component.getHeight():int" resolve="getHeight" />
                 </node>
                 <node concept="2OqwBi" id="ZpMnc7KQcX" role="3uHU7B">
                   <node concept="2OwXpG" id="ZpMnc7KQd1" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Point.y" resolve="y" />
+                    <ref role="2Oxat5" to="z60i:~Point.y" resolve="y" />
                   </node>
                   <node concept="37vLTw" id="2BHiRxgm74M" role="2Oq$k0">
                     <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
@@ -820,7 +820,7 @@
               <node concept="3cpWs3" id="ZpMnc7KQb7" role="3uHU7B">
                 <node concept="2OqwBi" id="ZpMnc7KQbb" role="3uHU7w">
                   <node concept="2OwXpG" id="ZpMnc7KQbd" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Rectangle.height" resolve="height" />
+                    <ref role="2Oxat5" to="z60i:~Rectangle.height" resolve="height" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagT_z$" role="2Oq$k0">
                     <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
@@ -828,7 +828,7 @@
                 </node>
                 <node concept="2OqwBi" id="ZpMnc7KQb8" role="3uHU7B">
                   <node concept="2OwXpG" id="ZpMnc7KQba" role="2OqNvi">
-                    <ref role="2Oxat5" to="1t7x:~Rectangle.y" resolve="y" />
+                    <ref role="2Oxat5" to="z60i:~Rectangle.y" resolve="y" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTAm$" role="2Oq$k0">
                     <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
@@ -844,12 +844,12 @@
                       <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
                     </node>
                     <node concept="2OwXpG" id="ZpMnc7KQd7" role="2OqNvi">
-                      <ref role="2Oxat5" to="1t7x:~Point.y" resolve="y" />
+                      <ref role="2Oxat5" to="z60i:~Point.y" resolve="y" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="ZpMnc7KQcm" role="37vLTx">
-                    <ref role="37wK5l" to="e2lb:~Math.max(int,int):int" resolve="max" />
-                    <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
+                    <ref role="37wK5l" to="wyt6:~Math.max(int,int):int" resolve="max" />
+                    <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
                     <node concept="3cmrfG" id="ZpMnc7KQcn" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
@@ -860,7 +860,7 @@
                             <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
                           </node>
                           <node concept="2OwXpG" id="ZpMnc7KQcw" role="2OqNvi">
-                            <ref role="2Oxat5" to="1t7x:~Rectangle.y" resolve="y" />
+                            <ref role="2Oxat5" to="z60i:~Rectangle.y" resolve="y" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="ZpMnc7KQcx" role="3uHU7w">
@@ -868,12 +868,12 @@
                             <ref role="3cqZAo" node="ZpMnc7KQa3" resolve="rect" />
                           </node>
                           <node concept="2OwXpG" id="ZpMnc7KQcz" role="2OqNvi">
-                            <ref role="2Oxat5" to="1t7x:~Rectangle.height" resolve="height" />
+                            <ref role="2Oxat5" to="z60i:~Rectangle.height" resolve="height" />
                           </node>
                         </node>
                       </node>
                       <node concept="1rXfSq" id="4hiugqyz0yW" role="3uHU7w">
-                        <ref role="37wK5l" to="1t7x:~Component.getHeight():int" resolve="getHeight" />
+                        <ref role="37wK5l" to="z60i:~Component.getHeight():int" resolve="getHeight" />
                       </node>
                     </node>
                   </node>
@@ -883,7 +883,7 @@
           </node>
           <node concept="3clFbF" id="ZpMnc7KQbJ" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyzklf" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Component.setLocation(java.awt.Point):void" resolve="setLocation" />
+              <ref role="37wK5l" to="z60i:~Component.setLocation(java.awt.Point):void" resolve="setLocation" />
               <node concept="37vLTw" id="2BHiRxgm8iq" role="37wK5m">
                 <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
               </node>
@@ -899,13 +899,13 @@
         <node concept="37vLTG" id="1s17jCa3yCz" role="3clF46">
           <property role="TrG5h" value="owner" />
           <node concept="3uibUv" id="1s17jCa3yC$" role="1tU5fm">
-            <ref role="3uigEE" to="1t7x:~Frame" resolve="Frame" />
+            <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
           </node>
         </node>
         <node concept="37vLTG" id="1s17jCa3yC_" role="3clF46">
           <property role="TrG5h" value="location" />
           <node concept="3uibUv" id="1s17jCa3yCB" role="1tU5fm">
-            <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+            <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
           </node>
         </node>
         <node concept="37vLTG" id="2hLc3u3m9oZ" role="3clF46">
@@ -929,7 +929,7 @@
               <node concept="3clFbF" id="7c3OfTH6tye" role="3cqZAp">
                 <node concept="2OqwBi" id="7c3OfTH6tyf" role="3clFbG">
                   <node concept="liA8E" id="7c3OfTH6tyj" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.addFocusListener(java.awt.event.FocusListener):void" resolve="addFocusListener" />
+                    <ref role="37wK5l" to="z60i:~Component.addFocusListener(java.awt.event.FocusListener):void" resolve="addFocusListener" />
                     <node concept="37vLTw" id="2BHiRxeuhTt" role="37wK5m">
                       <ref role="3cqZAo" node="4MyJhaCOtZe" resolve="myOwnerFocusListener" />
                     </node>
@@ -945,7 +945,7 @@
                     <ref role="3cqZAo" node="4MyJhaCOtYV" resolve="myPrevFocusOwner" />
                   </node>
                   <node concept="liA8E" id="7c3OfTH6tys" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
+                    <ref role="37wK5l" to="z60i:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
                     <node concept="37vLTw" id="2BHiRxeukFS" role="37wK5m">
                       <ref role="3cqZAo" node="4MyJhaCOtZz" resolve="myOwnerMouseListener" />
                     </node>
@@ -958,7 +958,7 @@
                     <ref role="3cqZAo" node="4MyJhaCOtYV" resolve="myPrevFocusOwner" />
                   </node>
                   <node concept="liA8E" id="7c3OfTH6ty_" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.addKeyListener(java.awt.event.KeyListener):void" resolve="addKeyListener" />
+                    <ref role="37wK5l" to="z60i:~Component.addKeyListener(java.awt.event.KeyListener):void" resolve="addKeyListener" />
                     <node concept="37vLTw" id="2BHiRxeuFhg" role="37wK5m">
                       <ref role="3cqZAo" node="1s17jCa3rwA" resolve="myOwnerKeyListener" />
                     </node>
@@ -975,7 +975,7 @@
           </node>
           <node concept="3clFbF" id="1s17jCa3yBe" role="3cqZAp">
             <node concept="3nyPlj" id="1s17jCa3yBf" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Window.dispose():void" resolve="dispose" />
+              <ref role="37wK5l" to="z60i:~Window.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>
@@ -997,7 +997,7 @@
                     <ref role="3cqZAo" node="4MyJhaCOtYV" resolve="myPrevFocusOwner" />
                   </node>
                   <node concept="liA8E" id="7c3OfTH6u2G" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.removeFocusListener(java.awt.event.FocusListener):void" resolve="removeFocusListener" />
+                    <ref role="37wK5l" to="z60i:~Component.removeFocusListener(java.awt.event.FocusListener):void" resolve="removeFocusListener" />
                     <node concept="37vLTw" id="2BHiRxeufA3" role="37wK5m">
                       <ref role="3cqZAo" node="4MyJhaCOtZe" resolve="myOwnerFocusListener" />
                     </node>
@@ -1010,7 +1010,7 @@
                     <ref role="3cqZAo" node="4MyJhaCOtYV" resolve="myPrevFocusOwner" />
                   </node>
                   <node concept="liA8E" id="7c3OfTH6u2P" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
+                    <ref role="37wK5l" to="z60i:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
                     <node concept="37vLTw" id="2BHiRxeuO15" role="37wK5m">
                       <ref role="3cqZAo" node="4MyJhaCOtZz" resolve="myOwnerMouseListener" />
                     </node>
@@ -1020,7 +1020,7 @@
               <node concept="3clFbF" id="7c3OfTH6u2T" role="3cqZAp">
                 <node concept="2OqwBi" id="7c3OfTH6u2U" role="3clFbG">
                   <node concept="liA8E" id="7c3OfTH6u2Y" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.removeKeyListener(java.awt.event.KeyListener):void" resolve="removeKeyListener" />
+                    <ref role="37wK5l" to="z60i:~Component.removeKeyListener(java.awt.event.KeyListener):void" resolve="removeKeyListener" />
                     <node concept="37vLTw" id="2BHiRxeusl7" role="37wK5m">
                       <ref role="3cqZAo" node="1s17jCa3rwA" resolve="myOwnerKeyListener" />
                     </node>
@@ -1034,14 +1034,14 @@
           </node>
           <node concept="3clFbF" id="1s17jCa3yCr" role="3cqZAp">
             <node concept="3nyPlj" id="1s17jCa3yCs" role="3clFbG">
-              <ref role="37wK5l" to="1t7x:~Window.dispose():void" resolve="dispose" />
+              <ref role="37wK5l" to="z60i:~Window.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>
         <node concept="3cqZAl" id="1s17jCa3yBY" role="3clF45" />
         <node concept="3Tm1VV" id="1s17jCa3yBX" role="1B3o_S" />
         <node concept="2AHcQZ" id="1s17jCa3yCt" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -1057,7 +1057,7 @@
     <node concept="312cEg" id="1HEP6IJEWvt" role="jymVt">
       <property role="TrG5h" value="myComponent" />
       <node concept="3uibUv" id="1HEP6IJEWNw" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+        <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
       </node>
       <node concept="3Tm6S6" id="1HEP6IJEWvu" role="1B3o_S" />
     </node>
@@ -1098,7 +1098,7 @@
       <node concept="37vLTG" id="1HEP6IJEWNx" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="1HEP6IJEWNy" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
     </node>
@@ -1123,11 +1123,11 @@
                 <node concept="3cpWsn" id="1HEP6IJFlx$" role="3cpWs9">
                   <property role="TrG5h" value="text" />
                   <node concept="3uibUv" id="1HEP6IJFlx_" role="1tU5fm">
-                    <ref role="3uigEE" to="dbrf:~JTextArea" resolve="JTextArea" />
+                    <ref role="3uigEE" to="dxuu:~JTextArea" resolve="JTextArea" />
                   </node>
                   <node concept="2ShNRf" id="1HEP6IJFlxB" role="33vP2m">
                     <node concept="1pGfFk" id="1HEP6IJFlxD" role="2ShVmc">
-                      <ref role="37wK5l" to="dbrf:~JTextArea.&lt;init&gt;()" resolve="JTextArea" />
+                      <ref role="37wK5l" to="dxuu:~JTextArea.&lt;init&gt;()" resolve="JTextArea" />
                     </node>
                   </node>
                 </node>
@@ -1135,7 +1135,7 @@
               <node concept="3clFbF" id="1HEP6IJFlx1" role="3cqZAp">
                 <node concept="2OqwBi" id="1HEP6IJFlx2" role="3clFbG">
                   <node concept="liA8E" id="1HEP6IJFlx6" role="2OqNvi">
-                    <ref role="37wK5l" to="oj8w:~JTextComponent.setEditable(boolean):void" resolve="setEditable" />
+                    <ref role="37wK5l" to="r791:~JTextComponent.setEditable(boolean):void" resolve="setEditable" />
                     <node concept="3clFbT" id="1HEP6IJFlx7" role="37wK5m">
                       <property role="3clFbU" value="false" />
                     </node>
@@ -1148,7 +1148,7 @@
               <node concept="3clFbF" id="1HEP6IJFlx8" role="3cqZAp">
                 <node concept="2OqwBi" id="1HEP6IJFlx9" role="3clFbG">
                   <node concept="liA8E" id="1HEP6IJFlxd" role="2OqNvi">
-                    <ref role="37wK5l" to="oj8w:~JTextComponent.setText(java.lang.String):void" resolve="setText" />
+                    <ref role="37wK5l" to="r791:~JTextComponent.setText(java.lang.String):void" resolve="setText" />
                     <node concept="37vLTw" id="2BHiRxeuofx" role="37wK5m">
                       <ref role="3cqZAo" node="1s17jCa3yCM" resolve="myText" />
                     </node>
@@ -1161,10 +1161,10 @@
               <node concept="3clFbF" id="1HEP6IJFlxh" role="3cqZAp">
                 <node concept="2OqwBi" id="1HEP6IJFlxi" role="3clFbG">
                   <node concept="liA8E" id="1HEP6IJFlxm" role="2OqNvi">
-                    <ref role="37wK5l" to="dbrf:~JTextArea.setFont(java.awt.Font):void" resolve="setFont" />
+                    <ref role="37wK5l" to="dxuu:~JTextArea.setFont(java.awt.Font):void" resolve="setFont" />
                     <node concept="2YIFZM" id="2ks2ddTDjPT" role="37wK5m">
-                      <ref role="37wK5l" to="vuby:~UIUtil.getLabelFont():java.awt.Font" resolve="getLabelFont" />
-                      <ref role="1Pybhc" to="vuby:~UIUtil" resolve="UIUtil" />
+                      <ref role="37wK5l" to="g1qu:~UIUtil.getLabelFont():java.awt.Font" resolve="getLabelFont" />
+                      <ref role="1Pybhc" to="g1qu:~UIUtil" resolve="UIUtil" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3GM_nagTrvW" role="2Oq$k0">
@@ -1175,10 +1175,10 @@
               <node concept="3clFbF" id="4eNDljzZCpj" role="3cqZAp">
                 <node concept="2OqwBi" id="4eNDljzZCpl" role="3clFbG">
                   <node concept="liA8E" id="4eNDljzZCpp" role="2OqNvi">
-                    <ref role="37wK5l" to="dbrf:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
+                    <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
                     <node concept="2ShNRf" id="4eNDljzZCpq" role="37wK5m">
                       <node concept="1pGfFk" id="4eNDljzZCps" role="2ShVmc">
-                        <ref role="37wK5l" to="f0dr:~EmptyBorder.&lt;init&gt;(int,int,int,int)" resolve="EmptyBorder" />
+                        <ref role="37wK5l" to="9z78:~EmptyBorder.&lt;init&gt;(int,int,int,int)" resolve="EmptyBorder" />
                         <node concept="3cmrfG" id="4eNDljzZCpt" role="37wK5m">
                           <property role="3cmrfH" value="0" />
                         </node>
@@ -1202,7 +1202,7 @@
               <node concept="3clFbF" id="1HEP6IJFlxr" role="3cqZAp">
                 <node concept="2OqwBi" id="1HEP6IJFlxs" role="3clFbG">
                   <node concept="liA8E" id="1HEP6IJFlxw" role="2OqNvi">
-                    <ref role="37wK5l" to="dbrf:~JComponent.setBackground(java.awt.Color):void" resolve="setBackground" />
+                    <ref role="37wK5l" to="dxuu:~JComponent.setBackground(java.awt.Color):void" resolve="setBackground" />
                     <node concept="10M0yZ" id="1HEP6IJFlxx" role="37wK5m">
                       <ref role="1PxDUh" node="4MyJhaCOtYC" resolve="ToolTip" />
                       <ref role="3cqZAo" node="4MyJhaCOtYZ" resolve="BACKGROUND_COLOR" />
@@ -1236,7 +1236,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1HEP6IJFlxQ" role="3clF45">
-        <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+        <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
       </node>
     </node>
     <node concept="3Tm1VV" id="1s17jCa3yCF" role="1B3o_S" />
@@ -1247,14 +1247,14 @@
       <property role="TrG5h" value="myMouseListener" />
       <node concept="3Tm6S6" id="6y0kmpGxfJJ" role="1B3o_S" />
       <node concept="3uibUv" id="6y0kmpGxfKR" role="1tU5fm">
-        <ref role="3uigEE" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
+        <ref role="3uigEE" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
       </node>
       <node concept="2ShNRf" id="6y0kmpGxfJL" role="33vP2m">
         <node concept="YeOm9" id="6y0kmpGxfJM" role="2ShVmc">
           <node concept="1Y3b0j" id="6y0kmpGxfJN" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
-            <ref role="37wK5l" to="8q6x:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
+            <ref role="1Y3XeK" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
+            <ref role="37wK5l" to="hyam:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
             <node concept="3Tm1VV" id="6y0kmpGxfJO" role="1B3o_S" />
             <node concept="3clFb_" id="6y0kmpGxfKx" role="jymVt">
               <property role="TrG5h" value="mouseMoved" />
@@ -1263,7 +1263,7 @@
               <node concept="37vLTG" id="6y0kmpGxfK$" role="3clF46">
                 <property role="TrG5h" value="p0" />
                 <node concept="3uibUv" id="6y0kmpGxfK_" role="1tU5fm">
-                  <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+                  <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
                 </node>
               </node>
               <node concept="3clFbS" id="6y0kmpGxfKA" role="3clF47">
@@ -1285,7 +1285,7 @@
                 </node>
               </node>
               <node concept="2AHcQZ" id="6y0kmpGxfKG" role="2AJF6D">
-                <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
           </node>
@@ -1296,7 +1296,7 @@
       <property role="TrG5h" value="myRightAlignedMouseListener" />
       <node concept="3Tm6S6" id="ZpMnc7KRkT" role="1B3o_S" />
       <node concept="3uibUv" id="ZpMnc7KRlM" role="1tU5fm">
-        <ref role="3uigEE" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
+        <ref role="3uigEE" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
       </node>
     </node>
     <node concept="312cEg" id="2G5$lddxR80" role="jymVt">
@@ -1310,7 +1310,7 @@
       <property role="TrG5h" value="myIdeTooltip" />
       <node concept="3Tm6S6" id="5sHC7TuRIib" role="1B3o_S" />
       <node concept="3uibUv" id="5sHC7TuRMMV" role="1tU5fm">
-        <ref role="3uigEE" to="4xk:~IdeTooltip" resolve="IdeTooltip" />
+        <ref role="3uigEE" to="ddhc:~IdeTooltip" resolve="IdeTooltip" />
       </node>
     </node>
     <node concept="312cEg" id="2_hdIw20dk4" role="jymVt">
@@ -1329,10 +1329,10 @@
       <node concept="3Tm1VV" id="1s17jCa4YDr" role="1B3o_S" />
       <node concept="17QB3L" id="1s17jCa4YDC" role="3clF45" />
       <node concept="2AHcQZ" id="1s17jCa4YDt" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
+        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
       </node>
       <node concept="2AHcQZ" id="1s17jCa4YDu" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="1s17jCa4YDv" role="3clF47">
         <node concept="3cpWs6" id="1s17jCa4YDD" role="3cqZAp">
@@ -1342,7 +1342,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Sd1F" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="1s17jCa4YDw" role="jymVt">
@@ -1351,7 +1351,7 @@
       <node concept="3cqZAl" id="1s17jCa4YDy" role="3clF45" />
       <node concept="3clFbS" id="1s17jCa4YDz" role="3clF47" />
       <node concept="2AHcQZ" id="3tYsUK_Sd1D" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="1s17jCa4YD$" role="jymVt">
@@ -1360,7 +1360,7 @@
       <node concept="3cqZAl" id="1s17jCa4YDA" role="3clF45" />
       <node concept="3clFbS" id="1s17jCa4YDB" role="3clF47" />
       <node concept="2AHcQZ" id="3tYsUK_Sd1E" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="1s17jCa51wx" role="jymVt">
@@ -1370,7 +1370,7 @@
       <node concept="37vLTG" id="1s17jCa51wv" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="1s17jCa51ww" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
       <node concept="3clFbS" id="1s17jCa51wt" role="3clF47">
@@ -1380,7 +1380,7 @@
               <ref role="3cqZAo" node="1s17jCa51wv" resolve="component" />
             </node>
             <node concept="liA8E" id="5FgjsmMmVSJ" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
+              <ref role="37wK5l" to="z60i:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
               <node concept="37vLTw" id="2BHiRxeuoPU" role="37wK5m">
                 <ref role="3cqZAo" node="6y0kmpGxfJI" resolve="myMouseListener" />
               </node>
@@ -1393,7 +1393,7 @@
               <ref role="3cqZAo" node="1s17jCa51wv" resolve="component" />
             </node>
             <node concept="liA8E" id="6y0kmpGxfKN" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.addMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="addMouseMotionListener" />
+              <ref role="37wK5l" to="z60i:~Component.addMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="addMouseMotionListener" />
               <node concept="37vLTw" id="2BHiRxeuu2_" role="37wK5m">
                 <ref role="3cqZAo" node="6y0kmpGxfJI" resolve="myMouseListener" />
               </node>
@@ -1408,7 +1408,7 @@
       <node concept="37vLTG" id="5Ib2SMdWudJ" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="5Ib2SMdWwIG" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
       <node concept="3cqZAl" id="5Ib2SMdWudF" role="3clF45" />
@@ -1420,7 +1420,7 @@
               <ref role="3cqZAo" node="5Ib2SMdWudJ" resolve="component" />
             </node>
             <node concept="liA8E" id="5Ib2SMdWxe$" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
+              <ref role="37wK5l" to="z60i:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
               <node concept="37vLTw" id="2BHiRxeuk23" role="37wK5m">
                 <ref role="3cqZAo" node="6y0kmpGxfJI" resolve="myMouseListener" />
               </node>
@@ -1433,7 +1433,7 @@
               <ref role="3cqZAo" node="5Ib2SMdWudJ" resolve="component" />
             </node>
             <node concept="liA8E" id="5Ib2SMdWxeM" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.removeMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="removeMouseMotionListener" />
+              <ref role="37wK5l" to="z60i:~Component.removeMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="removeMouseMotionListener" />
               <node concept="37vLTw" id="2BHiRxeudIf" role="37wK5m">
                 <ref role="3cqZAo" node="6y0kmpGxfJI" resolve="myMouseListener" />
               </node>
@@ -1447,7 +1447,7 @@
       <node concept="37vLTG" id="ZpMnc7KRkw" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="ZpMnc7KRky" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
       <node concept="3cqZAl" id="ZpMnc7KRks" role="3clF45" />
@@ -1459,7 +1459,7 @@
               <ref role="3cqZAo" node="ZpMnc7KRkw" resolve="component" />
             </node>
             <node concept="liA8E" id="ZpMnc7KRkD" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
+              <ref role="37wK5l" to="z60i:~Component.addMouseListener(java.awt.event.MouseListener):void" resolve="addMouseListener" />
               <node concept="1rXfSq" id="4hiugqyzhBN" role="37wK5m">
                 <ref role="37wK5l" node="ZpMnc7KRkM" resolve="getRightAlignedMouseListener" />
               </node>
@@ -1472,7 +1472,7 @@
               <ref role="3cqZAo" node="ZpMnc7KRkw" resolve="component" />
             </node>
             <node concept="liA8E" id="ZpMnc7KRkL" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.addMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="addMouseMotionListener" />
+              <ref role="37wK5l" to="z60i:~Component.addMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="addMouseMotionListener" />
               <node concept="1rXfSq" id="4hiugqyyIi2" role="37wK5m">
                 <ref role="37wK5l" node="ZpMnc7KRkM" resolve="getRightAlignedMouseListener" />
               </node>
@@ -1486,7 +1486,7 @@
       <node concept="37vLTG" id="5Ib2SMdWxeY" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="5Ib2SMdWxf0" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
       <node concept="3cqZAl" id="5Ib2SMdWxeU" role="3clF45" />
@@ -1498,7 +1498,7 @@
               <ref role="3cqZAo" node="5Ib2SMdWxeY" resolve="component" />
             </node>
             <node concept="liA8E" id="5Ib2SMdWxf7" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
+              <ref role="37wK5l" to="z60i:~Component.removeMouseListener(java.awt.event.MouseListener):void" resolve="removeMouseListener" />
               <node concept="1rXfSq" id="4hiugqyzkcD" role="37wK5m">
                 <ref role="37wK5l" node="ZpMnc7KRkM" resolve="getRightAlignedMouseListener" />
               </node>
@@ -1511,7 +1511,7 @@
               <ref role="3cqZAo" node="5Ib2SMdWxeY" resolve="component" />
             </node>
             <node concept="liA8E" id="5Ib2SMdWxfi" role="2OqNvi">
-              <ref role="37wK5l" to="1t7x:~Component.removeMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="removeMouseMotionListener" />
+              <ref role="37wK5l" to="z60i:~Component.removeMouseMotionListener(java.awt.event.MouseMotionListener):void" resolve="removeMouseMotionListener" />
               <node concept="1rXfSq" id="4hiugqyz9xz" role="37wK5m">
                 <ref role="37wK5l" node="ZpMnc7KRkM" resolve="getRightAlignedMouseListener" />
               </node>
@@ -1523,7 +1523,7 @@
     <node concept="3clFb_" id="ZpMnc7KRkM" role="jymVt">
       <property role="TrG5h" value="getRightAlignedMouseListener" />
       <node concept="3uibUv" id="ZpMnc7KRlL" role="3clF45">
-        <ref role="3uigEE" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
+        <ref role="3uigEE" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
       </node>
       <node concept="3Tm6S6" id="ZpMnc7KRkR" role="1B3o_S" />
       <node concept="3clFbS" id="ZpMnc7KRkP" role="3clF47">
@@ -1541,8 +1541,8 @@
                   <node concept="YeOm9" id="ZpMnc7KRln" role="2ShVmc">
                     <node concept="1Y3b0j" id="ZpMnc7KRlo" role="YeSDq">
                       <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="8q6x:~MouseAdapter" resolve="MouseAdapter" />
-                      <ref role="37wK5l" to="8q6x:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
+                      <ref role="1Y3XeK" to="hyam:~MouseAdapter" resolve="MouseAdapter" />
+                      <ref role="37wK5l" to="hyam:~MouseAdapter.&lt;init&gt;()" resolve="MouseAdapter" />
                       <node concept="3Tm1VV" id="ZpMnc7KRlp" role="1B3o_S" />
                       <node concept="3clFb_" id="ZpMnc7KRlq" role="jymVt">
                         <property role="TrG5h" value="mouseMoved" />
@@ -1551,7 +1551,7 @@
                         <node concept="37vLTG" id="ZpMnc7KRlt" role="3clF46">
                           <property role="TrG5h" value="event" />
                           <node concept="3uibUv" id="ZpMnc7KRlu" role="1tU5fm">
-                            <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+                            <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="ZpMnc7KRlv" role="3clF47">
@@ -1573,7 +1573,7 @@
                           </node>
                         </node>
                         <node concept="2AHcQZ" id="ZpMnc7KRlw" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                         </node>
                       </node>
                     </node>
@@ -1602,14 +1602,14 @@
           <node concept="3cpWsn" id="35QfjTUxsFk" role="3cpWs9">
             <property role="TrG5h" value="c" />
             <node concept="3uibUv" id="35QfjTUxsFl" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+              <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
             </node>
             <node concept="2OqwBi" id="35QfjTUxsFm" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxglB61" role="2Oq$k0">
                 <ref role="3cqZAo" node="5FgjsmMmWOM" resolve="event" />
               </node>
               <node concept="liA8E" id="35QfjTUxsFo" role="2OqNvi">
-                <ref role="37wK5l" to="8q6x:~ComponentEvent.getComponent():java.awt.Component" resolve="getComponent" />
+                <ref role="37wK5l" to="hyam:~ComponentEvent.getComponent():java.awt.Component" resolve="getComponent" />
               </node>
             </node>
           </node>
@@ -1631,7 +1631,7 @@
                 </node>
                 <node concept="2ZW3vV" id="35QfjTUxsFr" role="3uHU7B">
                   <node concept="3uibUv" id="35QfjTUxsFu" role="2ZW6by">
-                    <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+                    <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTBfl" role="2ZW6bz">
                     <ref role="3cqZAo" node="35QfjTUxsFk" resolve="c" />
@@ -1645,14 +1645,14 @@
           <node concept="3cpWsn" id="5FgjsmMn1km" role="3cpWs9">
             <property role="TrG5h" value="component" />
             <node concept="3uibUv" id="5FgjsmMn1kn" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
             <node concept="10QFUN" id="5FgjsmMn1ko" role="33vP2m">
               <node concept="37vLTw" id="3GM_nagT$OH" role="10QFUP">
                 <ref role="3cqZAo" node="35QfjTUxsFk" resolve="c" />
               </node>
               <node concept="3uibUv" id="5FgjsmMn1ks" role="10QFUM">
-                <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+                <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
               </node>
             </node>
           </node>
@@ -1661,14 +1661,14 @@
           <node concept="3cpWsn" id="4o3l0Vx6l5" role="3cpWs9">
             <property role="TrG5h" value="point" />
             <node concept="3uibUv" id="4o3l0Vx6l6" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+              <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
             </node>
             <node concept="2OqwBi" id="4ZQU_byBhD7" role="33vP2m">
               <node concept="37vLTw" id="3GM_nagTvR4" role="2Oq$k0">
                 <ref role="3cqZAo" node="5FgjsmMn1km" resolve="component" />
               </node>
               <node concept="liA8E" id="4ZQU_byBimE" role="2OqNvi">
-                <ref role="37wK5l" to="dbrf:~JComponent.getToolTipLocation(java.awt.event.MouseEvent):java.awt.Point" resolve="getToolTipLocation" />
+                <ref role="37wK5l" to="dxuu:~JComponent.getToolTipLocation(java.awt.event.MouseEvent):java.awt.Point" resolve="getToolTipLocation" />
                 <node concept="37vLTw" id="2BHiRxghgc4" role="37wK5m">
                   <ref role="3cqZAo" node="5FgjsmMmWOM" resolve="event" />
                 </node>
@@ -1685,7 +1685,7 @@
                     <ref role="3cqZAo" node="5FgjsmMmWOM" resolve="event" />
                   </node>
                   <node concept="liA8E" id="59fDHBrVsYe" role="2OqNvi">
-                    <ref role="37wK5l" to="8q6x:~MouseEvent.getPoint():java.awt.Point" resolve="getPoint" />
+                    <ref role="37wK5l" to="hyam:~MouseEvent.getPoint():java.awt.Point" resolve="getPoint" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTxXe" role="37vLTJ">
@@ -1736,7 +1736,7 @@
                   <ref role="3cqZAo" node="5FgjsmMmX3b" resolve="text" />
                 </node>
                 <node concept="liA8E" id="1aBvOpfI5Xo" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                  <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                 </node>
               </node>
             </node>
@@ -1780,7 +1780,7 @@
       <node concept="37vLTG" id="5FgjsmMmWOM" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="3uibUv" id="5FgjsmMmWON" role="1tU5fm">
-          <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+          <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
         </node>
       </node>
       <node concept="37vLTG" id="ZpMnc7KRlN" role="3clF46">
@@ -1791,7 +1791,7 @@
     <node concept="3clFb_" id="5AJb1TPc3vK" role="jymVt">
       <property role="TrG5h" value="getContainingFrame" />
       <node concept="3uibUv" id="5AJb1TPc3NK" role="3clF45">
-        <ref role="3uigEE" to="1t7x:~Frame" resolve="Frame" />
+        <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
       </node>
       <node concept="3Tm6S6" id="ZpMnc7KRlU" role="1B3o_S" />
       <node concept="3clFbS" id="5AJb1TPc3vN" role="3clF47">
@@ -1803,7 +1803,7 @@
                 <ref role="3cqZAo" node="5AJb1TPc3NL" resolve="component" />
               </node>
               <node concept="liA8E" id="5AJb1TPc40$" role="2OqNvi">
-                <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
+                <ref role="37wK5l" to="z60i:~Component.getParent():java.awt.Container" resolve="getParent" />
               </node>
             </node>
           </node>
@@ -1815,7 +1815,7 @@
                     <ref role="3cqZAo" node="5AJb1TPc3NL" resolve="component" />
                   </node>
                   <node concept="liA8E" id="5AJb1TPc4jV" role="2OqNvi">
-                    <ref role="37wK5l" to="1t7x:~Component.getParent():java.awt.Container" resolve="getParent" />
+                    <ref role="37wK5l" to="z60i:~Component.getParent():java.awt.Container" resolve="getParent" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgll7a" role="37vLTJ">
@@ -1828,7 +1828,7 @@
         <node concept="3cpWs6" id="5AJb1TPc4jX" role="3cqZAp">
           <node concept="10QFUN" id="5AJb1TPc4jZ" role="3cqZAk">
             <node concept="3uibUv" id="5AJb1TPc4k0" role="10QFUM">
-              <ref role="3uigEE" to="1t7x:~Frame" resolve="Frame" />
+              <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm8qG" role="10QFUP">
               <ref role="3cqZAo" node="5AJb1TPc3NL" resolve="component" />
@@ -1839,7 +1839,7 @@
       <node concept="37vLTG" id="5AJb1TPc3NL" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="5AJb1TPc3NM" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+          <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
         </node>
       </node>
     </node>
@@ -1854,13 +1854,13 @@
       <node concept="37vLTG" id="ZpMnc7KSiq" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="ZpMnc7KSir" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+          <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
         </node>
       </node>
       <node concept="37vLTG" id="ZpMnc7KSis" role="3clF46">
         <property role="TrG5h" value="point" />
         <node concept="3uibUv" id="ZpMnc7KSit" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+          <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
         </node>
       </node>
       <node concept="3cqZAl" id="ZpMnc7KSik" role="3clF45" />
@@ -1898,13 +1898,13 @@
       <node concept="37vLTG" id="14d_vc4TXM9" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="14d_vc4TXMa" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+          <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
         </node>
       </node>
       <node concept="37vLTG" id="14d_vc4TXMb" role="3clF46">
         <property role="TrG5h" value="point" />
         <node concept="3uibUv" id="14d_vc4TXMc" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+          <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
         </node>
       </node>
       <node concept="37vLTG" id="ZpMnc7KRm0" role="3clF46">
@@ -1969,7 +1969,7 @@
           <node concept="3cpWsn" id="14d_vc4TXMF" role="3cpWs9">
             <property role="TrG5h" value="frame" />
             <node concept="3uibUv" id="14d_vc4TXMG" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~Frame" resolve="Frame" />
+              <ref role="3uigEE" to="z60i:~Frame" resolve="Frame" />
             </node>
             <node concept="1rXfSq" id="4hiugqyzeEM" role="33vP2m">
               <ref role="37wK5l" node="5AJb1TPc3vK" resolve="getContainingFrame" />
@@ -1981,8 +1981,8 @@
         </node>
         <node concept="3clFbF" id="14d_vc4TXML" role="3cqZAp">
           <node concept="2YIFZM" id="14d_vc4TXMM" role="3clFbG">
-            <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-            <ref role="37wK5l" to="dbrf:~SwingUtilities.convertPointToScreen(java.awt.Point,java.awt.Component):void" resolve="convertPointToScreen" />
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.convertPointToScreen(java.awt.Point,java.awt.Component):void" resolve="convertPointToScreen" />
             <node concept="37vLTw" id="2BHiRxgl5P7" role="37wK5m">
               <ref role="3cqZAo" node="14d_vc4TXMb" resolve="point" />
             </node>
@@ -2021,13 +2021,13 @@
       <node concept="37vLTG" id="ZpMnc7KSiN" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="ZpMnc7KSiO" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+          <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
         </node>
       </node>
       <node concept="37vLTG" id="ZpMnc7KSiP" role="3clF46">
         <property role="TrG5h" value="point" />
         <node concept="3uibUv" id="ZpMnc7KSiQ" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+          <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
         </node>
       </node>
       <node concept="3cqZAl" id="ZpMnc7KSiH" role="3clF45" />
@@ -2063,13 +2063,13 @@
       <node concept="37vLTG" id="4o3l0Vx6lg" role="3clF46">
         <property role="TrG5h" value="component" />
         <node concept="3uibUv" id="4o3l0Vx6lh" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+          <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
         </node>
       </node>
       <node concept="37vLTG" id="4o3l0Vx6li" role="3clF46">
         <property role="TrG5h" value="point" />
         <node concept="3uibUv" id="4o3l0Vx6lj" role="1tU5fm">
-          <ref role="3uigEE" to="1t7x:~Point" resolve="Point" />
+          <ref role="3uigEE" to="z60i:~Point" resolve="Point" />
         </node>
       </node>
       <node concept="37vLTG" id="ZpMnc7KRm3" role="3clF46">
@@ -2101,8 +2101,8 @@
                       <property role="Xl_RC" value="&lt;html&gt;" />
                     </node>
                     <node concept="2YIFZM" id="6aq2GANQoRw" role="3uHU7w">
-                      <ref role="37wK5l" to="msyo:~HtmlCharsUtil.asHtml(java.lang.String,boolean):java.lang.String" resolve="asHtml" />
-                      <ref role="1Pybhc" to="msyo:~HtmlCharsUtil" resolve="HtmlCharsUtil" />
+                      <ref role="37wK5l" to="18ew:~HtmlCharsUtil.asHtml(java.lang.String,boolean):java.lang.String" resolve="asHtml" />
+                      <ref role="1Pybhc" to="18ew:~HtmlCharsUtil" resolve="HtmlCharsUtil" />
                       <node concept="37vLTw" id="2BHiRxghfTl" role="37wK5m">
                         <ref role="3cqZAo" node="4o3l0Vx6le" resolve="text" />
                       </node>
@@ -2123,7 +2123,7 @@
               <ref role="3cqZAo" node="4o3l0Vx6le" resolve="text" />
             </node>
             <node concept="liA8E" id="6aq2GANQoR0" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+              <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
               <node concept="Xl_RD" id="6aq2GANQoR1" role="37wK5m">
                 <property role="Xl_RC" value="\n" />
               </node>
@@ -2157,11 +2157,11 @@
           <node concept="3cpWsn" id="7J1cflPDZ1t" role="3cpWs9">
             <property role="TrG5h" value="label" />
             <node concept="3uibUv" id="7J1cflPDZ1u" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JLabel" resolve="JLabel" />
+              <ref role="3uigEE" to="dxuu:~JLabel" resolve="JLabel" />
             </node>
             <node concept="2ShNRf" id="7J1cflPDZ1v" role="33vP2m">
               <node concept="1pGfFk" id="7J1cflPDZ1w" role="2ShVmc">
-                <ref role="37wK5l" to="dbrf:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
+                <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
                 <node concept="37vLTw" id="2BHiRxglB1K" role="37wK5m">
                   <ref role="3cqZAo" node="4o3l0Vx6le" resolve="text" />
                 </node>
@@ -2175,7 +2175,7 @@
               <ref role="3cqZAo" node="7J1cflPDZ1t" resolve="label" />
             </node>
             <node concept="liA8E" id="5sHC7TuRN14" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setOpaque(boolean):void" resolve="setOpaque" />
+              <ref role="37wK5l" to="dxuu:~JComponent.setOpaque(boolean):void" resolve="setOpaque" />
               <node concept="3clFbT" id="5sHC7TuRN15" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
@@ -2191,8 +2191,8 @@
               <node concept="YeOm9" id="5sHC7TuRXt$" role="2ShVmc">
                 <node concept="1Y3b0j" id="5sHC7TuRXt_" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="4xk:~IdeTooltip" resolve="IdeTooltip" />
-                  <ref role="37wK5l" to="4xk:~IdeTooltip.&lt;init&gt;(java.awt.Component,java.awt.Point,javax.swing.JComponent,java.lang.Object...)" resolve="IdeTooltip" />
+                  <ref role="1Y3XeK" to="ddhc:~IdeTooltip" resolve="IdeTooltip" />
+                  <ref role="37wK5l" to="ddhc:~IdeTooltip.&lt;init&gt;(java.awt.Component,java.awt.Point,javax.swing.JComponent,java.lang.Object...)" resolve="IdeTooltip" />
                   <node concept="3Tm1VV" id="5sHC7TuRXtA" role="1B3o_S" />
                   <node concept="37vLTw" id="2BHiRxgmP5q" role="37wK5m">
                     <ref role="3cqZAo" node="4o3l0Vx6lg" resolve="component" />
@@ -2210,7 +2210,7 @@
                     <node concept="37vLTG" id="5sHC7TuRXRa" role="3clF46">
                       <property role="TrG5h" value="event" />
                       <node concept="3uibUv" id="5KKo5dfNh0s" role="1tU5fm">
-                        <ref role="3uigEE" to="4xk:~TooltipEvent" resolve="TooltipEvent" />
+                        <ref role="3uigEE" to="ddhc:~TooltipEvent" resolve="TooltipEvent" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="5sHC7TuRXRe" role="3clF47">
@@ -2234,14 +2234,14 @@
                         </node>
                         <node concept="2ZW3vV" id="30uKrivZdeF" role="3clFbw">
                           <node concept="3uibUv" id="30uKrivZdeI" role="2ZW6by">
-                            <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+                            <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
                           </node>
                           <node concept="2OqwBi" id="30uKrivZdey" role="2ZW6bz">
                             <node concept="37vLTw" id="2BHiRxgm608" role="2Oq$k0">
                               <ref role="3cqZAo" node="5sHC7TuRXRa" resolve="event" />
                             </node>
                             <node concept="liA8E" id="30uKrivZdeB" role="2OqNvi">
-                              <ref role="37wK5l" to="4xk:~TooltipEvent.getInputEvent():java.awt.event.InputEvent" resolve="getInputEvent" />
+                              <ref role="37wK5l" to="ddhc:~TooltipEvent.getInputEvent():java.awt.event.InputEvent" resolve="getInputEvent" />
                             </node>
                           </node>
                         </node>
@@ -2253,14 +2253,14 @@
                               <ref role="3cqZAo" node="5sHC7TuRXRa" resolve="event" />
                             </node>
                             <node concept="liA8E" id="N962StKMOA" role="2OqNvi">
-                              <ref role="37wK5l" to="4xk:~TooltipEvent.isIsEventInsideBalloon():boolean" resolve="isIsEventInsideBalloon" />
+                              <ref role="37wK5l" to="ddhc:~TooltipEvent.isIsEventInsideBalloon():boolean" resolve="isIsEventInsideBalloon" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="5sHC7TuRXRf" role="2AJF6D">
-                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                     </node>
                   </node>
                 </node>
@@ -2271,11 +2271,11 @@
         <node concept="3clFbF" id="7J1cflPDDJK" role="3cqZAp">
           <node concept="2OqwBi" id="7J1cflPDDJO" role="3clFbG">
             <node concept="2YIFZM" id="7J1cflPDDJN" role="2Oq$k0">
-              <ref role="37wK5l" to="4xk:~IdeTooltipManager.getInstance():com.intellij.ide.IdeTooltipManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="4xk:~IdeTooltipManager" resolve="IdeTooltipManager" />
+              <ref role="37wK5l" to="ddhc:~IdeTooltipManager.getInstance():com.intellij.ide.IdeTooltipManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="ddhc:~IdeTooltipManager" resolve="IdeTooltipManager" />
             </node>
             <node concept="liA8E" id="7J1cflPDDJS" role="2OqNvi">
-              <ref role="37wK5l" to="4xk:~IdeTooltipManager.show(com.intellij.ide.IdeTooltip,boolean):com.intellij.ide.IdeTooltip" resolve="show" />
+              <ref role="37wK5l" to="ddhc:~IdeTooltipManager.show(com.intellij.ide.IdeTooltip,boolean):com.intellij.ide.IdeTooltip" resolve="show" />
               <node concept="37vLTw" id="2BHiRxeuE0x" role="37wK5m">
                 <ref role="3cqZAo" node="5sHC7TuRIia" resolve="myIdeTooltip" />
               </node>
@@ -2328,7 +2328,7 @@
                   <ref role="3cqZAo" node="5sHC7TuRIia" resolve="myIdeTooltip" />
                 </node>
                 <node concept="liA8E" id="5sHC7TuRXRD" role="2OqNvi">
-                  <ref role="37wK5l" to="4xk:~IdeTooltip.hide():void" resolve="hide" />
+                  <ref role="37wK5l" to="ddhc:~IdeTooltip.hide():void" resolve="hide" />
                 </node>
               </node>
             </node>
@@ -2371,17 +2371,17 @@
             <node concept="3clFbC" id="4RLywq6vNOS" role="3K4Cdx">
               <node concept="10Nm6u" id="4RLywq6vNOT" role="3uHU7w" />
               <node concept="2YIFZM" id="4RLywq6vNOU" role="3uHU7B">
-                <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+                <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
               </node>
             </node>
             <node concept="2OqwBi" id="4RLywq6vNOV" role="3K4GZi">
               <node concept="2YIFZM" id="4RLywq6vNOW" role="2Oq$k0">
-                <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
-                <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
               </node>
               <node concept="liA8E" id="4RLywq6vNOX" role="2OqNvi">
-                <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="4RLywq6vNOY" role="37wK5m">
                   <ref role="3VsUkX" node="1s17jCa4YDf" resolve="MPSToolTipManager" />
                 </node>
@@ -2393,7 +2393,7 @@
     </node>
     <node concept="3Tm1VV" id="1s17jCa4YDg" role="1B3o_S" />
     <node concept="3uibUv" id="1s17jCa4YDp" role="EKbjA">
-      <ref role="3uigEE" to="iiw6:~ApplicationComponent" resolve="ApplicationComponent" />
+      <ref role="3uigEE" to="1m72:~ApplicationComponent" resolve="ApplicationComponent" />
     </node>
   </node>
   <node concept="3HP615" id="35QfjTUxgYp">
@@ -2407,7 +2407,7 @@
       <node concept="37vLTG" id="35QfjTUxjaV" role="3clF46">
         <property role="TrG5h" value="mouseEvent" />
         <node concept="3uibUv" id="35QfjTUxjaW" role="1tU5fm">
-          <ref role="3uigEE" to="8q6x:~MouseEvent" resolve="MouseEvent" />
+          <ref role="3uigEE" to="hyam:~MouseEvent" resolve="MouseEvent" />
         </node>
       </node>
     </node>

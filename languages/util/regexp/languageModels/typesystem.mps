@@ -11,8 +11,8 @@
   <imports>
     <import index="tpfo" ref="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <import index="tpfs" ref="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="lgzw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(java.util.regex@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -244,7 +244,7 @@
         <node concept="mw_s8" id="hNV0byI" role="1ZfhKB">
           <node concept="2c44tf" id="hrWDUH5" role="mwGJk">
             <node concept="3uibUv" id="hrWDUH6" role="2c44tc">
-              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="17QB3L" id="hP3iQT1" role="11_B2D" />
             </node>
           </node>
@@ -323,7 +323,7 @@
         <node concept="mw_s8" id="hNV0byc" role="1ZfhKB">
           <node concept="2c44tf" id="hMko4TF" role="mwGJk">
             <node concept="3uibUv" id="hMko4TG" role="2c44tc">
-              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="17QB3L" id="hP3iPh6" role="11_B2D" />
             </node>
           </node>
@@ -397,7 +397,7 @@
         <node concept="mw_s8" id="zc38bydN8G" role="1ZfhKB">
           <node concept="2c44tf" id="zc38bydN8H" role="mwGJk">
             <node concept="3uibUv" id="zc38bydN8K" role="2c44tc">
-              <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
+              <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
             </node>
           </node>
         </node>

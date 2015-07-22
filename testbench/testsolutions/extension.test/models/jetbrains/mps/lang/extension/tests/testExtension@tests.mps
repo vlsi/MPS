@@ -10,12 +10,12 @@
   </languages>
   <imports>
     <import index="d0sk" ref="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)" />
-    <import index="bltl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.structure(MPS.Core/jetbrains.mps.smodel.structure@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
-    <import index="oqw1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application.ex(MPS.IDEA/com.intellij.openapi.application.ex@java_stub)" />
-    <import index="hxfr" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" />
+    <import index="bmr5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.structure(MPS.Core/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="f061" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application.ex(MPS.IDEA/)" />
+    <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -244,10 +244,10 @@
             <node concept="3cpWsn" id="66AaOfxlrba" role="3cpWs9">
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="66AaOfxlrbb" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                 <node concept="3qUE_q" id="549iHX$aXP9" role="11_B2D">
                   <node concept="3uibUv" id="66AaOfxlrbc" role="3qUE_r">
-                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <ref role="3uigEE" to="bmr5:~Extension" resolve="Extension" />
                     <node concept="3uibUv" id="66AaOfxlrbd" role="11_B2D">
                       <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                     </node>
@@ -258,7 +258,7 @@
                 <node concept="1eOMI4" id="3R7uD3D6Cyj" role="2Oq$k0">
                   <node concept="10QFUN" id="3R7uD3D6Cyk" role="1eOMHV">
                     <node concept="3uibUv" id="3R7uD3D6Cyn" role="10QFUM">
-                      <ref role="3uigEE" to="bltl:~ExtensionPoint" resolve="ExtensionPoint" />
+                      <ref role="3uigEE" to="bmr5:~ExtensionPoint" resolve="ExtensionPoint" />
                       <node concept="3uibUv" id="3R7uD3D6Cyp" role="11_B2D">
                         <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                       </node>
@@ -269,7 +269,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="66AaOfxlrbg" role="2OqNvi">
-                  <ref role="37wK5l" to="bltl:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
+                  <ref role="37wK5l" to="bmr5:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
                 </node>
               </node>
             </node>
@@ -283,10 +283,10 @@
             <node concept="3cpWsn" id="66AaOfxlrdF" role="3cpWs9">
               <property role="TrG5h" value="it" />
               <node concept="3uibUv" id="66AaOfxlrdG" role="1tU5fm">
-                <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
+                <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                 <node concept="3qUE_q" id="549iHX$aYm4" role="11_B2D">
                   <node concept="3uibUv" id="66AaOfxlrdH" role="3qUE_r">
-                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <ref role="3uigEE" to="bmr5:~Extension" resolve="Extension" />
                     <node concept="3uibUv" id="66AaOfxlrdI" role="11_B2D">
                       <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                     </node>
@@ -298,7 +298,7 @@
                   <ref role="3cqZAo" node="66AaOfxlrba" resolve="extensions" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrdL" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                  <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -309,7 +309,7 @@
                 <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
               </node>
               <node concept="liA8E" id="66AaOfxlre8" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
+                <ref role="37wK5l" to="33ny:~Iterator.hasNext():boolean" resolve="hasNext" />
               </node>
             </node>
           </node>
@@ -317,7 +317,7 @@
             <node concept="3cpWsn" id="66AaOfxlrbO" role="3cpWs9">
               <property role="TrG5h" value="ext" />
               <node concept="3uibUv" id="66AaOfxlrbP" role="1tU5fm">
-                <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                <ref role="3uigEE" to="bmr5:~Extension" resolve="Extension" />
                 <node concept="3uibUv" id="66AaOfxlrbQ" role="11_B2D">
                   <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                 </node>
@@ -327,14 +327,14 @@
                   <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrbV" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3$NI$W" id="66AaOfxlrdA" role="3cqZAp">
             <node concept="3uibUv" id="66AaOfxlrdD" role="3$Qgvv">
-              <ref role="3uigEE" to="k7g3:~NoSuchElementException" resolve="NoSuchElementException" />
+              <ref role="3uigEE" to="33ny:~NoSuchElementException" resolve="NoSuchElementException" />
             </node>
             <node concept="3clFbF" id="66AaOfxlrdN" role="3$Oloe">
               <node concept="2OqwBi" id="66AaOfxlrdR" role="3clFbG">
@@ -342,7 +342,7 @@
                   <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrdW" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                 </node>
               </node>
             </node>
@@ -363,7 +363,7 @@
                   <ref role="3cqZAo" node="66AaOfxlrbO" resolve="ext" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrce" role="2OqNvi">
-                  <ref role="37wK5l" to="bltl:~Extension.get():java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="bmr5:~Extension.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
@@ -403,7 +403,7 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="2hA_2dv1Dss" role="2AJF6D">
-          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
       <node concept="3s$Bmu" id="2hA_2dv2TXX" role="3s_gse">
@@ -421,10 +421,10 @@
             <node concept="3cpWsn" id="2hA_2dv2TY3" role="3cpWs9">
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="2hA_2dv2TY4" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                 <node concept="3qUE_q" id="549iHX$aYKB" role="11_B2D">
                   <node concept="3uibUv" id="2hA_2dv2TY5" role="3qUE_r">
-                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <ref role="3uigEE" to="bmr5:~Extension" resolve="Extension" />
                     <node concept="3uibUv" id="2hA_2dv2Uo_" role="11_B2D">
                       <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
                     </node>
@@ -435,7 +435,7 @@
                 <node concept="1eOMI4" id="3R7uD3D6CxZ" role="2Oq$k0">
                   <node concept="10QFUN" id="3R7uD3D6Cy0" role="1eOMHV">
                     <node concept="3uibUv" id="3R7uD3D6Cy3" role="10QFUM">
-                      <ref role="3uigEE" to="bltl:~ExtensionPoint" resolve="ExtensionPoint" />
+                      <ref role="3uigEE" to="bmr5:~ExtensionPoint" resolve="ExtensionPoint" />
                       <node concept="3uibUv" id="3R7uD3D6Cy5" role="11_B2D">
                         <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
                       </node>
@@ -446,7 +446,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="2hA_2dv2TY9" role="2OqNvi">
-                  <ref role="37wK5l" to="bltl:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
+                  <ref role="37wK5l" to="bmr5:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
                 </node>
               </node>
             </node>
@@ -464,15 +464,15 @@
                       <ref role="3cqZAo" node="2hA_2dv2TY3" resolve="extensions" />
                     </node>
                     <node concept="liA8E" id="2hA_2dv2Upc" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                      <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                     </node>
                   </node>
                   <node concept="liA8E" id="2hA_2dv2Upd" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
+                    <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2hA_2dv2Upe" role="2OqNvi">
-                  <ref role="37wK5l" to="bltl:~Extension.get():java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="bmr5:~Extension.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
@@ -493,7 +493,7 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="2hA_2dv2TY1" role="2AJF6D">
-          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
       <node concept="3s$Bmu" id="2KgYA8kbIU6" role="3s_gse">
@@ -550,7 +550,7 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="2KgYA8kbIUa" role="2AJF6D">
-          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
     </node>
@@ -571,24 +571,24 @@
             <node concept="3clFbF" id="2hA_2dv2AwK" role="3cqZAp">
               <node concept="2OqwBi" id="2hA_2dv2G6T" role="3clFbG">
                 <node concept="2YIFZM" id="2hA_2dv2G6Q" role="2Oq$k0">
-                  <ref role="37wK5l" to="oqw1:~ApplicationManagerEx.getApplicationEx():com.intellij.openapi.application.ex.ApplicationEx" resolve="getApplicationEx" />
-                  <ref role="1Pybhc" to="oqw1:~ApplicationManagerEx" resolve="ApplicationManagerEx" />
+                  <ref role="37wK5l" to="f061:~ApplicationManagerEx.getApplicationEx():com.intellij.openapi.application.ex.ApplicationEx" resolve="getApplicationEx" />
+                  <ref role="1Pybhc" to="f061:~ApplicationManagerEx" resolve="ApplicationManagerEx" />
                 </node>
                 <node concept="liA8E" id="2hA_2dv2Ihi" role="2OqNvi">
-                  <ref role="37wK5l" to="yla8:~Application.addApplicationListener(com.intellij.openapi.application.ApplicationListener):void" resolve="addApplicationListener" />
+                  <ref role="37wK5l" to="bd8o:~Application.addApplicationListener(com.intellij.openapi.application.ApplicationListener):void" resolve="addApplicationListener" />
                   <node concept="2ShNRf" id="2hA_2dv2Ihj" role="37wK5m">
                     <node concept="YeOm9" id="2hA_2dv2L1P" role="2ShVmc">
                       <node concept="1Y3b0j" id="2hA_2dv2L1Q" role="YeSDq">
                         <property role="2bfB8j" value="true" />
-                        <ref role="1Y3XeK" to="yla8:~ApplicationAdapter" resolve="ApplicationAdapter" />
-                        <ref role="37wK5l" to="yla8:~ApplicationAdapter.&lt;init&gt;()" resolve="ApplicationAdapter" />
+                        <ref role="1Y3XeK" to="bd8o:~ApplicationAdapter" resolve="ApplicationAdapter" />
+                        <ref role="37wK5l" to="bd8o:~ApplicationAdapter.&lt;init&gt;()" resolve="ApplicationAdapter" />
                         <node concept="3clFb_" id="2hA_2dv2L2D" role="jymVt">
                           <property role="IEkAT" value="false" />
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="applicationExiting" />
                           <property role="DiZV1" value="false" />
                           <node concept="2AHcQZ" id="2hA_2dv2L2H" role="2AJF6D">
-                            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                           <node concept="3clFbS" id="2hA_2dv2L2G" role="3clF47">
                             <node concept="3clFbJ" id="2hA_2dv2L2K" role="3cqZAp">
@@ -596,7 +596,7 @@
                                 <node concept="YS8fn" id="2hA_2dv2L2Y" role="3cqZAp">
                                   <node concept="2ShNRf" id="2hA_2dv2L30" role="YScLw">
                                     <node concept="1pGfFk" id="2hA_2dv2L32" role="2ShVmc">
-                                      <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                                      <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
                                       <node concept="Xl_RD" id="2hA_2dv2L33" role="37wK5m">
                                         <property role="Xl_RC" value="!TestObject.shutDown" />
                                       </node>

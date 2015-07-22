@@ -17,8 +17,8 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="k2b1" ref="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" />
-    <import index="epq1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1065,8 +1065,8 @@
               <node concept="3cpWs6" id="18aNfH5BRIg" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BRIh" role="3cqZAk">
                   <node concept="10M0yZ" id="18aNfH5BRIi" role="2c44tc">
-                    <ref role="1PxDUh" to="epq1:~MathContext" resolve="MathContext" />
-                    <ref role="3cqZAo" to="epq1:~MathContext.DECIMAL32" resolve="DECIMAL32" />
+                    <ref role="1PxDUh" to="xlxw:~MathContext" resolve="MathContext" />
+                    <ref role="3cqZAo" to="xlxw:~MathContext.DECIMAL32" resolve="DECIMAL32" />
                   </node>
                 </node>
               </node>
@@ -1080,8 +1080,8 @@
               <node concept="3cpWs6" id="18aNfH5BRIm" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BRIn" role="3cqZAk">
                   <node concept="10M0yZ" id="18aNfH5BRIo" role="2c44tc">
-                    <ref role="1PxDUh" to="epq1:~MathContext" resolve="MathContext" />
-                    <ref role="3cqZAo" to="epq1:~MathContext.DECIMAL64" resolve="DECIMAL64" />
+                    <ref role="1PxDUh" to="xlxw:~MathContext" resolve="MathContext" />
+                    <ref role="3cqZAo" to="xlxw:~MathContext.DECIMAL64" resolve="DECIMAL64" />
                   </node>
                 </node>
               </node>
@@ -1095,8 +1095,8 @@
               <node concept="3cpWs6" id="18aNfH5BRIs" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BRIt" role="3cqZAk">
                   <node concept="10M0yZ" id="18aNfH5BRIu" role="2c44tc">
-                    <ref role="1PxDUh" to="epq1:~MathContext" resolve="MathContext" />
-                    <ref role="3cqZAo" to="epq1:~MathContext.DECIMAL128" resolve="DECIMAL128" />
+                    <ref role="1PxDUh" to="xlxw:~MathContext" resolve="MathContext" />
+                    <ref role="3cqZAo" to="xlxw:~MathContext.DECIMAL128" resolve="DECIMAL128" />
                   </node>
                 </node>
               </node>
@@ -1110,8 +1110,8 @@
               <node concept="3cpWs6" id="18aNfH5BRIy" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BRIz" role="3cqZAk">
                   <node concept="10M0yZ" id="18aNfH5BRI$" role="2c44tc">
-                    <ref role="1PxDUh" to="epq1:~MathContext" resolve="MathContext" />
-                    <ref role="3cqZAo" to="epq1:~MathContext.UNLIMITED" resolve="UNLIMITED" />
+                    <ref role="1PxDUh" to="xlxw:~MathContext" resolve="MathContext" />
+                    <ref role="3cqZAo" to="xlxw:~MathContext.UNLIMITED" resolve="UNLIMITED" />
                   </node>
                 </node>
               </node>
@@ -1157,7 +1157,7 @@
               <node concept="2c44tf" id="18aNfH5BRIS" role="3cqZAk">
                 <node concept="2ShNRf" id="18aNfH5BRIT" role="2c44tc">
                   <node concept="1pGfFk" id="18aNfH5BRIU" role="2ShVmc">
-                    <ref role="37wK5l" to="epq1:~MathContext.&lt;init&gt;(int,java.math.RoundingMode)" resolve="MathContext" />
+                    <ref role="37wK5l" to="xlxw:~MathContext.&lt;init&gt;(int,java.math.RoundingMode)" resolve="MathContext" />
                     <node concept="33vP2n" id="18aNfH5BRIV" role="37wK5m">
                       <node concept="2c44te" id="18aNfH5BRIW" role="lGtFl">
                         <node concept="37vLTw" id="3GM_nagTyJu" role="2c44t1">
@@ -1217,8 +1217,8 @@
               <node concept="3cpWs6" id="18aNfH5BS1$" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS1_" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS1A" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.CEILING" resolve="CEILING" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.CEILING" resolve="CEILING" />
                   </node>
                 </node>
               </node>
@@ -1232,8 +1232,8 @@
               <node concept="3cpWs6" id="18aNfH5BS1E" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS1F" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS1G" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.DOWN" resolve="DOWN" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.DOWN" resolve="DOWN" />
                   </node>
                 </node>
               </node>
@@ -1247,8 +1247,8 @@
               <node concept="3cpWs6" id="18aNfH5BS1K" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS1L" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS1M" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.FLOOR" resolve="FLOOR" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.FLOOR" resolve="FLOOR" />
                   </node>
                 </node>
               </node>
@@ -1262,8 +1262,8 @@
               <node concept="3cpWs6" id="18aNfH5BS1Q" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS1R" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS1S" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.HALF_DOWN" resolve="HALF_DOWN" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.HALF_DOWN" resolve="HALF_DOWN" />
                   </node>
                 </node>
               </node>
@@ -1277,8 +1277,8 @@
               <node concept="3cpWs6" id="18aNfH5BS1W" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS1X" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS1Y" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.HALF_EVEN" resolve="HALF_EVEN" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.HALF_EVEN" resolve="HALF_EVEN" />
                   </node>
                 </node>
               </node>
@@ -1292,8 +1292,8 @@
               <node concept="3cpWs6" id="18aNfH5BS22" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS23" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS24" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.HALF_UP" resolve="HALF_UP" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.HALF_UP" resolve="HALF_UP" />
                   </node>
                 </node>
               </node>
@@ -1307,8 +1307,8 @@
               <node concept="3cpWs6" id="18aNfH5BS28" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS29" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS2a" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.UNNECESSARY" resolve="UNNECESSARY" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.UNNECESSARY" resolve="UNNECESSARY" />
                   </node>
                 </node>
               </node>
@@ -1322,8 +1322,8 @@
               <node concept="3cpWs6" id="18aNfH5BS2e" role="3cqZAp">
                 <node concept="2c44tf" id="18aNfH5BS2f" role="3cqZAk">
                   <node concept="Rm8GO" id="18aNfH5BS2g" role="2c44tc">
-                    <ref role="1Px2BO" to="epq1:~RoundingMode" resolve="RoundingMode" />
-                    <ref role="Rm8GQ" to="epq1:~RoundingMode.UP" resolve="UP" />
+                    <ref role="1Px2BO" to="xlxw:~RoundingMode" resolve="RoundingMode" />
+                    <ref role="Rm8GQ" to="xlxw:~RoundingMode.UP" resolve="UP" />
                   </node>
                 </node>
               </node>
@@ -1419,7 +1419,7 @@
           <node concept="2YFouu" id="2md8y1nUaar" role="3clFbw">
             <node concept="2c44tf" id="2md8y1nUaas" role="3uHU7w">
               <node concept="3uibUv" id="2md8y1nUaat" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Short" resolve="Short" />
+                <ref role="3uigEE" to="wyt6:~Short" resolve="Short" />
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqysiZt" role="3uHU7B">
@@ -1444,7 +1444,7 @@
           <node concept="2YFouu" id="2md8y1nUaaA" role="3clFbw">
             <node concept="2c44tf" id="2md8y1nUaaB" role="3uHU7w">
               <node concept="3uibUv" id="2md8y1nUaaC" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyspBK" role="3uHU7B">
@@ -1469,7 +1469,7 @@
           <node concept="2YFouu" id="2md8y1nUaaL" role="3clFbw">
             <node concept="2c44tf" id="2md8y1nUaaM" role="3uHU7w">
               <node concept="3uibUv" id="2md8y1nUaaN" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Long" resolve="Long" />
+                <ref role="3uigEE" to="wyt6:~Long" resolve="Long" />
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyso2O" role="3uHU7B">
@@ -1494,7 +1494,7 @@
           <node concept="2YFouu" id="2md8y1nUaaW" role="3clFbw">
             <node concept="2c44tf" id="2md8y1nUaaX" role="3uHU7w">
               <node concept="3uibUv" id="2md8y1nUaaY" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Float" resolve="Float" />
+                <ref role="3uigEE" to="wyt6:~Float" resolve="Float" />
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqysqsz" role="3uHU7B">
@@ -1519,7 +1519,7 @@
           <node concept="2YFouu" id="2md8y1nUab7" role="3clFbw">
             <node concept="2c44tf" id="2md8y1nUab8" role="3uHU7w">
               <node concept="3uibUv" id="2md8y1nUab9" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+                <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyso2G" role="3uHU7B">

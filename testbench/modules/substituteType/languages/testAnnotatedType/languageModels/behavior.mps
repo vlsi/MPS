@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tp5x" ref="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)" implicit="true" />
   </imports>
@@ -108,8 +108,8 @@
       <node concept="3clFbS" id="5zzawu2JLe2" role="3clF47">
         <node concept="3clFbF" id="5zzawu2JLeh" role="3cqZAp">
           <node concept="2YIFZM" id="2EOQLmJcuTc" role="3clFbG">
-            <ref role="37wK5l" to="e2lb:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
-            <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
+            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
             <node concept="2OqwBi" id="2EOQLmJcuTd" role="37wK5m">
               <node concept="13iPFW" id="2EOQLmJcuTe" role="2Oq$k0" />
               <node concept="3TrcHB" id="2EOQLmJcuTf" role="2OqNvi">

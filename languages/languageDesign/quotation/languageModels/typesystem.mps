@@ -14,7 +14,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -310,7 +310,7 @@
         <node concept="mw_s8" id="2KyHUfrw9SX" role="1ZfhKB">
           <node concept="2c44tf" id="2KyHUfrw9SY" role="mwGJk">
             <node concept="3uibUv" id="2KyHUfrwc4Z" role="2c44tc">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
           </node>
         </node>
@@ -331,7 +331,7 @@
         <node concept="mw_s8" id="2KyHUfrwc57" role="1ZfhKB">
           <node concept="2c44tf" id="2KyHUfrwc58" role="mwGJk">
             <node concept="3uibUv" id="2KyHUfrwc5m" role="2c44tc">
-              <ref role="3uigEE" to="ec5l:~SNodeId" resolve="SNodeId" />
+              <ref role="3uigEE" to="mhbf:~SNodeId" resolve="SNodeId" />
             </node>
           </node>
         </node>

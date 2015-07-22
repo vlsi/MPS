@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="upz5" ref="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -816,7 +816,7 @@
                         <node concept="3clFbF" id="4V$BJAdTcRz" role="3cqZAp">
                           <node concept="2OqwBi" id="4V$BJAdTcR$" role="3clFbG">
                             <node concept="liA8E" id="4V$BJAdTcR_" role="2OqNvi">
-                              <ref role="37wK5l" to="e2lb:~String.matches(java.lang.String):boolean" resolve="matches" />
+                              <ref role="37wK5l" to="wyt6:~String.matches(java.lang.String):boolean" resolve="matches" />
                               <node concept="Xl_RD" id="4V$BJAdTcRA" role="37wK5m">
                                 <property role="Xl_RC" value="_[0-9]+" />
                               </node>
@@ -845,7 +845,7 @@
                   <property role="Xl_RC" value="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
                 </node>
                 <node concept="liA8E" id="i1Po5J1" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="2OqwBi" id="4V$BJAdT1SW" role="37wK5m">
                     <node concept="2qgKlT" id="4V$BJAdT2vj" role="2OqNvi">
                       <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />

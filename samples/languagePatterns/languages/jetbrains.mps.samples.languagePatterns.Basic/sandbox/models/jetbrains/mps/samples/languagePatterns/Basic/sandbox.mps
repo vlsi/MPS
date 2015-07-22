@@ -7,8 +7,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -414,11 +414,11 @@
             <node concept="1I7xeh" id="4yAESKAJhwT" role="2OqNvi" />
           </node>
           <node concept="liA8E" id="4yAESKAKGnK" role="2OqNvi">
-            <ref role="37wK5l" to="e2lb:~String.toUpperCase():java.lang.String" resolve="toUpperCase" />
+            <ref role="37wK5l" to="wyt6:~String.toUpperCase():java.lang.String" resolve="toUpperCase" />
           </node>
         </node>
         <node concept="liA8E" id="4yAESKAKGwr" role="2OqNvi">
-          <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+          <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
           <node concept="2OqwBi" id="4yAESKAKGDQ" role="37wK5m">
             <node concept="2OqwBi" id="4yAESKAKG$z" role="2Oq$k0">
               <node concept="1I4TUT" id="4yAESKAKGyi" role="2Oq$k0">
@@ -427,7 +427,7 @@
               <node concept="1I7xeh" id="4yAESKAKGAM" role="2OqNvi" />
             </node>
             <node concept="liA8E" id="4yAESKAKGHA" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.toUpperCase():java.lang.String" resolve="toUpperCase" />
+              <ref role="37wK5l" to="wyt6:~String.toUpperCase():java.lang.String" resolve="toUpperCase" />
             </node>
           </node>
         </node>
@@ -441,7 +441,7 @@
             <node concept="1I7L_F" id="4yAESKAJhE4" role="2OqNvi" />
           </node>
           <node concept="liA8E" id="4yAESKAJuGK" role="2OqNvi">
-            <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+            <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
           </node>
         </node>
         <node concept="3cmrfG" id="4yAESKAJv6M" role="3uHU7w">
@@ -497,11 +497,11 @@
         <node concept="3clFbF" id="7UfLy9aMcLU" role="3cqZAp">
           <node concept="2OqwBi" id="7UfLy9aMcLR" role="3clFbG">
             <node concept="10M0yZ" id="7UfLy9aMcLS" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="7UfLy9aMcLT" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="37vLTw" id="7UfLy9aMcNg" role="37wK5m">
                 <ref role="3cqZAo" node="7UfLy9aMcyc" resolve="s" />
               </node>
@@ -526,11 +526,11 @@
         <node concept="3clFbF" id="7UfLy9aMdc$" role="3cqZAp">
           <node concept="2OqwBi" id="7UfLy9aMdc_" role="3clFbG">
             <node concept="10M0yZ" id="7UfLy9aMdcA" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="7UfLy9aMdcB" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="37vLTw" id="7UfLy9aMdcC" role="37wK5m">
                 <ref role="3cqZAo" node="7UfLy9aMcyc" resolve="s" />
               </node>

@@ -6,8 +6,8 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
     <import index="c7kk" ref="r:f452be5e-b693-4373-bee9-3f7a3df5e603(testPrimitiveType.structure)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
@@ -130,7 +130,7 @@
                     <node concept="pncrf" id="Bcyb5kElRt" role="2JrQYb" />
                   </node>
                   <node concept="liA8E" id="Bcyb5kElRu" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
+                    <ref role="37wK5l" to="mhbf:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                     <node concept="355D3s" id="Bcyb5kElRv" role="37wK5m">
                       <ref role="355D3t" to="c7kk:Bcyb5kDkPG" resolve="TypeWithProperties" />
                       <ref role="355D3u" to="c7kk:Bcyb5kDlqy" resolve="str" />
@@ -186,7 +186,7 @@
                     <node concept="pncrf" id="Bcyb5kEhoT" role="2JrQYb" />
                   </node>
                   <node concept="liA8E" id="Bcyb5kEjek" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
+                    <ref role="37wK5l" to="mhbf:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                     <node concept="355D3s" id="Bcyb5kEkGx" role="37wK5m">
                       <ref role="355D3t" to="c7kk:Bcyb5kDkPG" resolve="TypeWithProperties" />
                       <ref role="355D3u" to="c7kk:Bcyb5kDlqC" resolve="num" />
@@ -244,7 +244,7 @@
                     <node concept="pncrf" id="Bcyb5kEq$H" role="2JrQYb" />
                   </node>
                   <node concept="liA8E" id="Bcyb5kEq$I" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
+                    <ref role="37wK5l" to="mhbf:~SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                     <node concept="355D3s" id="Bcyb5kEq$J" role="37wK5m">
                       <ref role="355D3t" to="c7kk:Bcyb5kDkPG" resolve="TypeWithProperties" />
                       <ref role="355D3u" to="c7kk:Bcyb5kDlqF" resolve="bool" />

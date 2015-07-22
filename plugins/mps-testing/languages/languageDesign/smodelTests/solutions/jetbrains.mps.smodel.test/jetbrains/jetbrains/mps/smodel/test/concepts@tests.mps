@@ -15,10 +15,10 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -157,7 +157,7 @@
               <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="liA8E" id="5Kxyj$3A5v9" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
               <node concept="35c_gC" id="5Kxyj$3A5va" role="37wK5m">
                 <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
@@ -196,7 +196,7 @@
               <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="3uibUv" id="jWvgfwd24F" role="2ZW6by">
-              <ref role="3uigEE" to="t3eg:~SInterfaceConcept" resolve="SInterfaceConcept" />
+              <ref role="3uigEE" to="c17a:~SInterfaceConcept" resolve="SInterfaceConcept" />
             </node>
           </node>
         </node>
@@ -258,7 +258,7 @@
               <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
             </node>
             <node concept="liA8E" id="jWvgfwghxm" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="jWvgfwghxn" role="37wK5m">
                 <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>
@@ -271,7 +271,7 @@
               <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="liA8E" id="jWvgfwgjsO" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
               <node concept="37vLTw" id="jWvgfwgoIh" role="37wK5m">
                 <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
               </node>
@@ -282,7 +282,7 @@
         <node concept="3vwNmj" id="4All8U4xZK9" role="3cqZAp">
           <node concept="2ZW3vV" id="4All8U4xZKa" role="3vwVQn">
             <node concept="3uibUv" id="4All8U4xZKb" role="2ZW6by">
-              <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+              <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
             </node>
             <node concept="37vLTw" id="4All8U4xZKc" role="2ZW6bz">
               <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
@@ -295,7 +295,7 @@
               <node concept="1eOMI4" id="4All8U4y1U1" role="2Oq$k0">
                 <node concept="10QFUN" id="4All8U4y1U2" role="1eOMHV">
                   <node concept="3uibUv" id="4All8U4y1U3" role="10QFUM">
-                    <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+                    <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                   </node>
                   <node concept="37vLTw" id="4All8U4y1U4" role="10QFUP">
                     <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
@@ -303,11 +303,11 @@
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4y1U5" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SConcept.getSuperConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getSuperConcept" />
+                <ref role="37wK5l" to="c17a:~SConcept.getSuperConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getSuperConcept" />
               </node>
             </node>
             <node concept="liA8E" id="4All8U4y1U6" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="4All8U4y1U7" role="37wK5m">
                 <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
@@ -318,13 +318,13 @@
           <node concept="3clFbC" id="4All8U4yIGD" role="3vwVQn">
             <node concept="2OqwBi" id="4All8U4ynkv" role="3uHU7B">
               <node concept="2YIFZM" id="4All8U4ynkw" role="2Oq$k0">
-                <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
-                <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
+                <ref role="37wK5l" to="18ew:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
+                <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
                 <node concept="2OqwBi" id="4All8U4ynkx" role="37wK5m">
                   <node concept="1eOMI4" id="4All8U4ynky" role="2Oq$k0">
                     <node concept="10QFUN" id="4All8U4ynkz" role="1eOMHV">
                       <node concept="3uibUv" id="4All8U4ynk$" role="10QFUM">
-                        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+                        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                       </node>
                       <node concept="37vLTw" id="4All8U4ynk_" role="10QFUP">
                         <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
@@ -332,12 +332,12 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4All8U4ynkA" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
+                    <ref role="37wK5l" to="c17a:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4ynkB" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Collection.size():int" resolve="size" />
+                <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
               </node>
             </node>
             <node concept="3cmrfG" id="4All8U4ynku" role="3uHU7w">
@@ -353,7 +353,7 @@
                   <node concept="1eOMI4" id="4All8U4y0yO" role="2Oq$k0">
                     <node concept="10QFUN" id="4All8U4y0yL" role="1eOMHV">
                       <node concept="3uibUv" id="4All8U4y0AX" role="10QFUM">
-                        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+                        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                       </node>
                       <node concept="37vLTw" id="4All8U4y0Bi" role="10QFUP">
                         <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
@@ -361,19 +361,19 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4All8U4y13B" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
+                    <ref role="37wK5l" to="c17a:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4All8U4yu91" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                  <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4yuKh" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
+                <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
               </node>
             </node>
             <node concept="liA8E" id="4All8U4yv$t" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="4All8U4yvFU" role="37wK5m">
                 <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>

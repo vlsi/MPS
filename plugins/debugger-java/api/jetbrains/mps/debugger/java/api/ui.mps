@@ -6,8 +6,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" />
-    <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing()" />
+    <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -70,14 +70,14 @@
       <property role="TrG5h" value="VALUE_PRIMITIVE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwyW" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwyX" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx1O" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UExaD" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UExaZ" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_primitive" resolve="Db_primitive" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_primitive" resolve="Db_primitive" />
           </node>
         </node>
       </node>
@@ -86,14 +86,14 @@
       <property role="TrG5h" value="VALUE_OBJECT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwyN" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwyO" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx1R" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEukT" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEjzS" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Value" resolve="Value" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Value" resolve="Value" />
           </node>
         </node>
       </node>
@@ -102,14 +102,14 @@
       <property role="TrG5h" value="VALUE_ARRAY" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="Udqlnt87$B" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="Udqlnt87$C" role="1B3o_S" />
       <node concept="1QGGTA" id="Udqlnt87$D" role="33vP2m">
         <node concept="1QGGSu" id="Udqlnt87$E" role="1QGGTw">
           <node concept="10M0yZ" id="Udqlnt8szd" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_array" resolve="Db_array" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_array" resolve="Db_array" />
           </node>
         </node>
       </node>
@@ -118,14 +118,14 @@
       <property role="TrG5h" value="WATCHABLE_STATIC" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="Udqlnt7A0o" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="Udqlnt7A0p" role="1B3o_S" />
       <node concept="1QGGTA" id="Udqlnt7A0q" role="33vP2m">
         <node concept="1QGGSu" id="Udqlnt7A0r" role="1QGGTw">
           <node concept="10M0yZ" id="Udqlnt7A0s" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.Static" resolve="Static" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.Static" resolve="Static" />
           </node>
         </node>
       </node>
@@ -134,14 +134,14 @@
       <property role="TrG5h" value="WATCH" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxO" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxP" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2c" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEuKN" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEuL1" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Watch" resolve="Watch" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Watch" resolve="Watch" />
           </node>
         </node>
       </node>
@@ -150,14 +150,14 @@
       <property role="TrG5h" value="THREAD_RUNNING" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxF" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxG" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2f" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEvgq" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEvgC" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadRunning" resolve="ThreadRunning" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.ThreadRunning" resolve="ThreadRunning" />
           </node>
         </node>
       </node>
@@ -166,14 +166,14 @@
       <property role="TrG5h" value="THREAD_SUSPENDED" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxy" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxz" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2i" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEvDt" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEvDK" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadSuspended" resolve="ThreadSuspended" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.ThreadSuspended" resolve="ThreadSuspended" />
           </node>
         </node>
       </node>
@@ -182,14 +182,14 @@
       <property role="TrG5h" value="THREAD_AT_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxp" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxq" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2l" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEwcj" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEwcx" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadAtBreakpoint" resolve="ThreadAtBreakpoint" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.ThreadAtBreakpoint" resolve="ThreadAtBreakpoint" />
           </node>
         </node>
       </node>

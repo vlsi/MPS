@@ -17,7 +17,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -454,7 +454,7 @@
                       <node concept="3cpWs6" id="16t6kMkZM17" role="3cqZAp">
                         <node concept="2c44tf" id="16t6kMkZM18" role="3cqZAk">
                           <node concept="3uibUv" id="16t6kMkZM19" role="2c44tc">
-                            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                           </node>
                         </node>
                       </node>
@@ -630,7 +630,7 @@
                         <node concept="3clFbF" id="16t6kMkZM2k" role="3cqZAp">
                           <node concept="2c44tf" id="16t6kMkZM2l" role="3clFbG">
                             <node concept="3uibUv" id="16t6kMkZM2m" role="2c44tc">
-                              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                             </node>
                           </node>
                         </node>
@@ -991,7 +991,7 @@
                             <node concept="2OqwBi" id="1p5Rk4z2PJR" role="3uHU7w">
                               <node concept="2c44tf" id="1p5Rk4z2OvT" role="2Oq$k0">
                                 <node concept="3uibUv" id="1p5Rk4z2SiA" role="2c44tc">
-                                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="1p5Rk4z2RL4" role="2OqNvi">
@@ -1006,7 +1006,7 @@
                             <node concept="2OqwBi" id="1p5Rk4z2JK$" role="3uHU7w">
                               <node concept="2c44tf" id="1p5Rk4z2Izq" role="2Oq$k0">
                                 <node concept="3uibUv" id="1p5Rk4z2Izr" role="2c44tc">
-                                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="1p5Rk4z2LIX" role="2OqNvi">
@@ -1450,7 +1450,7 @@
                         <node concept="3cpWs6" id="16t6kMkZM5B" role="3cqZAp">
                           <node concept="2c44tf" id="16t6kMkZM5C" role="3cqZAk">
                             <node concept="3uibUv" id="16t6kMkZM5D" role="2c44tc">
-                              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                             </node>
                           </node>
                         </node>

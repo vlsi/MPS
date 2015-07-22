@@ -5,10 +5,10 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="ai1m" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="c4ym" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
-    <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
+    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
+    <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -58,11 +58,11 @@
       <property role="TrG5h" value="CHILDREN_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnPbp" role="33vP2m">
-        <ref role="1PxDUh" to="zxm0:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
-        <ref role="3cqZAo" to="zxm0:~AllIcons$Hierarchy.Subtypes" resolve="Subtypes" />
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Hierarchy.Subtypes" resolve="Subtypes" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4mj" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mk" role="1B3o_S" />
     </node>
@@ -70,23 +70,23 @@
       <property role="TrG5h" value="PARENT_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4ms" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mt" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnQNA" role="33vP2m">
-        <ref role="1PxDUh" to="zxm0:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
-        <ref role="3cqZAo" to="zxm0:~AllIcons$Hierarchy.Supertypes" resolve="Supertypes" />
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Hierarchy.Supertypes" resolve="Supertypes" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4m$" role="jymVt">
       <property role="TrG5h" value="ZOOM_IN_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnR$M" role="33vP2m">
-        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ZoomIn" resolve="ZoomIn" />
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Graph.ZoomIn" resolve="ZoomIn" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4m_" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mA" role="1B3o_S" />
     </node>
@@ -94,47 +94,47 @@
       <property role="TrG5h" value="ZOOM_OUT_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4mI" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mJ" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnS2c" role="33vP2m">
-        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ZoomOut" resolve="ZoomOut" />
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Graph.ZoomOut" resolve="ZoomOut" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4mQ" role="jymVt">
       <property role="TrG5h" value="ACTUAL_ZOOM_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4mR" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mS" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnSlt" role="33vP2m">
-        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ActualZoom" resolve="ActualZoom" />
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Graph.ActualZoom" resolve="ActualZoom" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4n8" role="jymVt">
       <property role="TrG5h" value="THIS_MODEL_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4n9" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4na" role="1B3o_S" />
       <node concept="10M0yZ" id="51NkKCgB4nb" role="33vP2m">
-        <ref role="3cqZAo" to="ai1m:~IdeIcons.MODEL_ICON" resolve="MODEL_ICON" />
-        <ref role="1PxDUh" to="ai1m:~IdeIcons" resolve="IdeIcons" />
+        <ref role="3cqZAo" to="xnls:~IdeIcons.MODEL_ICON" resolve="MODEL_ICON" />
+        <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4nc" role="jymVt">
       <property role="TrG5h" value="GENERATOR_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnOau" role="33vP2m">
-        <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <ref role="3cqZAo" to="c4ym:~MPSIcons$Nodes.Generator" resolve="Generator" />
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Generator" resolve="Generator" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4nd" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4ne" role="1B3o_S" />
     </node>

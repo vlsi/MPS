@@ -8,9 +8,9 @@
   <imports>
     <import index="rzqf" ref="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
-    <import index="ymw7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
+    <import index="uu3z" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.process(MPS.IDEA/)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="mdoc" ref="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)" implicit="true" />
   </imports>
@@ -337,7 +337,7 @@
       <node concept="3cpWs6" id="O$iR4JBiHo" role="3cqZAp">
         <node concept="2c44tf" id="O$iR4JBiHp" role="3cqZAk">
           <node concept="3uibUv" id="O$iR4JBiHq" role="2c44tc">
-            <ref role="3uigEE" to="ymw7:~ProcessHandler" resolve="ProcessHandler" />
+            <ref role="3uigEE" to="uu3z:~ProcessHandler" resolve="ProcessHandler" />
           </node>
         </node>
       </node>
@@ -377,7 +377,7 @@
         <node concept="mw_s8" id="O$iR4JBiHE" role="1ZfhKB">
           <node concept="2c44tf" id="O$iR4JBiHF" role="mwGJk">
             <node concept="3uibUv" id="O$iR4JBiHG" role="2c44tc">
-              <ref role="3uigEE" to="ymw7:~ProcessListener" resolve="ProcessListener" />
+              <ref role="3uigEE" to="uu3z:~ProcessListener" resolve="ProcessListener" />
             </node>
           </node>
         </node>
@@ -604,7 +604,7 @@
             <node concept="2usRSg" id="7953dFbyDwH" role="2c44tc">
               <node concept="17QB3L" id="7953dFbyDwJ" role="2usUpS" />
               <node concept="3uibUv" id="7953dFbyDwM" role="2usUpS">
-                <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+                <ref role="3uigEE" to="guwi:~File" resolve="File" />
               </node>
             </node>
           </node>
@@ -667,7 +667,7 @@
                     <node concept="2pIpSj" id="2F8bNQrJoU" role="2pJxcM">
                       <ref role="2pIpSl" to="tpee:g7uigIF" />
                       <node concept="36bGnv" id="2F8bNQrJoV" role="2pJxcZ">
-                        <ref role="36bGnp" to="fxg7:~File" resolve="File" />
+                        <ref role="36bGnp" to="guwi:~File" resolve="File" />
                       </node>
                     </node>
                   </node>
@@ -764,7 +764,7 @@
         <node concept="mw_s8" id="LoP3E1y4wq" role="1ZfhKB">
           <node concept="2c44tf" id="LoP3E1y4wr" role="mwGJk">
             <node concept="3uibUv" id="LoP3E1y5IW" role="2c44tc">
-              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
             </node>
           </node>
         </node>
@@ -810,7 +810,7 @@
                         <node concept="2pIpSj" id="2F8bNQrJ$9" role="2pJxcM">
                           <ref role="2pIpSl" to="tpee:g7uigIF" />
                           <node concept="36bGnv" id="2F8bNQrJ$a" role="2pJxcZ">
-                            <ref role="36bGnp" to="fxg7:~File" resolve="File" />
+                            <ref role="36bGnp" to="guwi:~File" resolve="File" />
                           </node>
                         </node>
                       </node>

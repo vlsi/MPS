@@ -18,10 +18,10 @@
     <import index="tpf5" ref="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="q383" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
-    <import index="ierg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
+    <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -201,7 +201,7 @@
       <ref role="30HIoZ" to="tpf3:hHiwH3x" resolve="GenerationContextType" />
       <node concept="gft3U" id="hHiDaB$" role="1lVwrX">
         <node concept="3uibUv" id="hHiDaB_" role="gfFT$">
-          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
         </node>
       </node>
     </node>
@@ -283,7 +283,7 @@
             <node concept="10QFUN" id="hHiDaC7" role="1eOMHV">
               <node concept="10Nm6u" id="hHiDaC8" role="10QFUP" />
               <node concept="3uibUv" id="hHiDaC9" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHiDaCa" role="lGtFl">
@@ -308,7 +308,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHiDaCk" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByMappingLabel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByMappingLabel" />
             <node concept="Xl_RD" id="hHiDaCl" role="37wK5m">
               <property role="Xl_RC" value="label" />
               <node concept="17Uvod" id="hHiDaCm" role="lGtFl">
@@ -371,7 +371,7 @@
             <node concept="10QFUN" id="4FXH7d67CMo" role="1eOMHV">
               <node concept="10Nm6u" id="4FXH7d67CMp" role="10QFUP" />
               <node concept="3uibUv" id="4FXH7d67CMq" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="4FXH7d67CMr" role="lGtFl">
@@ -396,7 +396,7 @@
             </node>
           </node>
           <node concept="liA8E" id="4FXH7d67CM_" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.isDirty(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDirty" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.isDirty(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDirty" />
             <node concept="10Nm6u" id="4FXH7d67CMA" role="37wK5m">
               <node concept="29HgVG" id="4FXH7d67CMB" role="lGtFl">
                 <node concept="3NFfHV" id="4FXH7d67CMC" role="3NFExx">
@@ -425,7 +425,7 @@
             <node concept="10QFUN" id="hHiDaCz" role="1eOMHV">
               <node concept="10Nm6u" id="hHiDaC$" role="10QFUP" />
               <node concept="3uibUv" id="hHiDaC_" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHiDaCA" role="lGtFl">
@@ -450,7 +450,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHiDaCK" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabel" />
             <node concept="10Nm6u" id="hHiDaCL" role="37wK5m">
               <node concept="29HgVG" id="hHiDaCM" role="lGtFl">
                 <node concept="3NFfHV" id="hHiDaCN" role="3NFExx">
@@ -529,7 +529,7 @@
             <node concept="10QFUN" id="hLiF2f0" role="1eOMHV">
               <node concept="10Nm6u" id="hLiF2f1" role="10QFUP" />
               <node concept="3uibUv" id="hLiF2f2" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hLiF2f3" role="lGtFl">
@@ -554,7 +554,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hLiFHPx" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getAllOutputNodesByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.util.List" resolve="getAllOutputNodesByInputNodeAndMappingLabel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getAllOutputNodesByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.util.List" resolve="getAllOutputNodesByInputNodeAndMappingLabel" />
             <node concept="10Nm6u" id="hLiFTpL" role="37wK5m">
               <node concept="29HgVG" id="hLiFTpM" role="lGtFl">
                 <node concept="3NFfHV" id="hLiFTpN" role="3NFExx">
@@ -633,7 +633,7 @@
             <node concept="10QFUN" id="hLmowq8" role="1eOMHV">
               <node concept="10Nm6u" id="hLmowq9" role="10QFUP" />
               <node concept="3uibUv" id="hLmowqa" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hLmowqb" role="lGtFl">
@@ -658,7 +658,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hLmowql" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.smodel.IOperationContext):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.smodel.IOperationContext):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
             <node concept="10Nm6u" id="hLmowqm" role="37wK5m">
               <node concept="29HgVG" id="hLmowqn" role="lGtFl">
                 <node concept="3NFfHV" id="hLmowqo" role="3NFExx">
@@ -728,7 +728,7 @@
             <node concept="3VmV3z" id="hLmp5yc" role="37wK5m">
               <property role="3VnrPo" value="operationContext" />
               <node concept="3uibUv" id="hLmpCNK" role="3Vn4Tt">
-                <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+                <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
               </node>
             </node>
           </node>
@@ -743,7 +743,7 @@
             <node concept="10QFUN" id="hIfskBu" role="1eOMHV">
               <node concept="10Nm6u" id="hIfskBv" role="10QFUP" />
               <node concept="3uibUv" id="hIfskBw" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIfskBx" role="lGtFl">
@@ -768,7 +768,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIfskBF" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getPreviousInputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getPreviousInputNodeByMappingLabel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getPreviousInputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getPreviousInputNodeByMappingLabel" />
             <node concept="Xl_RD" id="hIfskBG" role="37wK5m">
               <property role="Xl_RC" value="label" />
               <node concept="17Uvod" id="hIfskBH" role="lGtFl">
@@ -831,7 +831,7 @@
             <node concept="10QFUN" id="hIfAOAK" role="1eOMHV">
               <node concept="10Nm6u" id="hIfAOAL" role="10QFUP" />
               <node concept="3uibUv" id="hIfAOAM" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIfAOAN" role="lGtFl">
@@ -856,7 +856,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIfAOAX" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getCopiedOutputNodeForInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getCopiedOutputNodeForInputNode" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getCopiedOutputNodeForInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getCopiedOutputNodeForInputNode" />
             <node concept="10Nm6u" id="hIfAOAY" role="37wK5m">
               <node concept="29HgVG" id="hIfAOAZ" role="lGtFl">
                 <node concept="3NFfHV" id="hIfAOB0" role="3NFExx">
@@ -885,7 +885,7 @@
             <node concept="10QFUN" id="hT2IMEr" role="1eOMHV">
               <node concept="10Nm6u" id="hT2IMEs" role="10QFUP" />
               <node concept="3uibUv" id="hT2IMEt" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hT2IMEu" role="lGtFl">
@@ -910,7 +910,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hT2IMEC" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOriginalCopiedInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getOriginalCopiedInputNode" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOriginalCopiedInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getOriginalCopiedInputNode" />
             <node concept="10Nm6u" id="hT2IMED" role="37wK5m">
               <node concept="29HgVG" id="hT2IMEE" role="lGtFl">
                 <node concept="3NFfHV" id="hT2IMEF" role="3NFExx">
@@ -939,7 +939,7 @@
             <node concept="10QFUN" id="hO2ezwi" role="1eOMHV">
               <node concept="10Nm6u" id="hO2ezwj" role="10QFUP" />
               <node concept="3uibUv" id="hO2ezwk" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hO2ezwl" role="lGtFl">
@@ -964,7 +964,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hO2eIBa" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolve="getInvocationContext" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolve="getInvocationContext" />
           </node>
         </node>
       </node>
@@ -977,7 +977,7 @@
             <node concept="10QFUN" id="hHr9TeL" role="1eOMHV">
               <node concept="10Nm6u" id="hHr9TeM" role="10QFUP" />
               <node concept="3uibUv" id="hHr9TeN" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHr9TeO" role="lGtFl">
@@ -1002,7 +1002,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHr9TeY" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getInputModel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getInputModel" />
           </node>
         </node>
       </node>
@@ -1015,7 +1015,7 @@
             <node concept="10QFUN" id="hHFFm$o" role="1eOMHV">
               <node concept="10Nm6u" id="hHFFm$p" role="10QFUP" />
               <node concept="3uibUv" id="hHFFm$q" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHFFm$r" role="lGtFl">
@@ -1040,7 +1040,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHFFm$_" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
           </node>
         </node>
       </node>
@@ -1053,7 +1053,7 @@
             <node concept="10QFUN" id="hHsty2B" role="1eOMHV">
               <node concept="10Nm6u" id="hHsty2C" role="10QFUP" />
               <node concept="3uibUv" id="hHsty2D" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHsty2E" role="lGtFl">
@@ -1078,7 +1078,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHsty2O" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOriginalInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOriginalInputModel" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOriginalInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOriginalInputModel" />
           </node>
         </node>
       </node>
@@ -1093,7 +1093,7 @@
                 <node concept="10QFUN" id="bO2uiccnUm" role="1eOMHV">
                   <node concept="10Nm6u" id="bO2uiccnUn" role="10QFUP" />
                   <node concept="3uibUv" id="bO2uiccnUo" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="bO2uiccnUp" role="lGtFl">
@@ -1118,7 +1118,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="bO2uiccnUz" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
                 <node concept="Xl_RD" id="bO2uiccnU$" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="bO2uiccnU_" role="lGtFl">
@@ -1141,7 +1141,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="78xOK0ZzeG2" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="78xOK0ZzeG3" role="lGtFl">
                 <node concept="3NFfHV" id="78xOK0ZzeG4" role="3NFExx">
                   <node concept="3clFbS" id="78xOK0ZzeG5" role="2VODD2">
@@ -1184,7 +1184,7 @@
                 <node concept="10QFUN" id="2n6lsTIwoiH" role="1eOMHV">
                   <node concept="10Nm6u" id="2n6lsTIwoiI" role="10QFUP" />
                   <node concept="3uibUv" id="2n6lsTIwoiJ" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="2n6lsTIwoiK" role="lGtFl">
@@ -1209,7 +1209,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2n6lsTIwoiU" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
                 <node concept="Xl_RD" id="2n6lsTIwoiV" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="2n6lsTIwoiW" role="lGtFl">
@@ -1232,7 +1232,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="2n6lsTIwoj3" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="2n6lsTIwoj4" role="lGtFl">
                 <node concept="3NFfHV" id="2n6lsTIwoj5" role="3NFExx">
                   <node concept="3clFbS" id="2n6lsTIwoj6" role="2VODD2">
@@ -1275,7 +1275,7 @@
                 <node concept="10QFUN" id="6suuiWXLjvD" role="1eOMHV">
                   <node concept="10Nm6u" id="6suuiWXLjvE" role="10QFUP" />
                   <node concept="3uibUv" id="6suuiWXLjvF" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="6suuiWXLjvG" role="lGtFl">
@@ -1300,7 +1300,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6suuiWXLjvQ" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
                 <node concept="Xl_RD" id="6suuiWXLjvR" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="6suuiWXLjvS" role="lGtFl">
@@ -1328,7 +1328,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="6suuiWXLjvZ" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="6suuiWXLjw0" role="lGtFl">
                 <node concept="3NFfHV" id="6suuiWXLjw1" role="3NFExx">
                   <node concept="3clFbS" id="6suuiWXLjw2" role="2VODD2">
@@ -1371,7 +1371,7 @@
                 <node concept="10QFUN" id="bO2uiccnUN" role="1eOMHV">
                   <node concept="10Nm6u" id="bO2uiccnUO" role="10QFUP" />
                   <node concept="3uibUv" id="bO2uiccnUP" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="bO2uiccnUQ" role="lGtFl">
@@ -1396,7 +1396,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="bO2uiccnV0" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="bO2uiccnV1" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="bO2uiccnV2" role="lGtFl">
@@ -1419,7 +1419,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="bO2uiccnVb" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="bO2uicct8y" role="lGtFl">
                 <node concept="3NFfHV" id="bO2uicct8z" role="3NFExx">
                   <node concept="3clFbS" id="bO2uicct8$" role="2VODD2">
@@ -1462,7 +1462,7 @@
                 <node concept="10QFUN" id="1fE1$qdfyaN" role="1eOMHV">
                   <node concept="10Nm6u" id="1fE1$qdfyaO" role="10QFUP" />
                   <node concept="3uibUv" id="1fE1$qdfyaP" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1fE1$qdfyaQ" role="lGtFl">
@@ -1487,7 +1487,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1fE1$qdfyb0" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerationParameter(java.lang.String):java.lang.Object" resolve="getGenerationParameter" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerationParameter(java.lang.String):java.lang.Object" resolve="getGenerationParameter" />
                 <node concept="Xl_RD" id="1fE1$qdfyb1" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1fE1$qdfyb2" role="lGtFl">
@@ -1510,7 +1510,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="1fE1$qdfyb9" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="1fE1$qdfyba" role="lGtFl">
                 <node concept="3NFfHV" id="1fE1$qdfybb" role="3NFExx">
                   <node concept="3clFbS" id="1fE1$qdfybc" role="2VODD2">
@@ -1553,7 +1553,7 @@
                 <node concept="10QFUN" id="1xCtdgeQQB5" role="1eOMHV">
                   <node concept="10Nm6u" id="1xCtdgeQQB6" role="10QFUP" />
                   <node concept="3uibUv" id="1xCtdgeQQB7" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1xCtdgeQQB8" role="lGtFl">
@@ -1578,7 +1578,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1xCtdgeQQBi" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="1xCtdgeQQBj" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1xCtdgeQQBk" role="lGtFl">
@@ -1601,7 +1601,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="1xCtdgeQQBr" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="1xCtdgeQQBs" role="lGtFl">
                 <node concept="3NFfHV" id="1xCtdgeQQBt" role="3NFExx">
                   <node concept="3clFbS" id="1xCtdgeQQBu" role="2VODD2">
@@ -1644,7 +1644,7 @@
                 <node concept="10QFUN" id="1xCtdgeQQBK" role="1eOMHV">
                   <node concept="10Nm6u" id="1xCtdgeQQBL" role="10QFUP" />
                   <node concept="3uibUv" id="1xCtdgeQQBM" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1xCtdgeQQBN" role="lGtFl">
@@ -1669,7 +1669,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1xCtdgeQQBX" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="1xCtdgeQQBY" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1xCtdgeQQBZ" role="lGtFl">
@@ -1692,7 +1692,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="1xCtdgeQQC6" role="10QFUM">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               <node concept="29HgVG" id="1xCtdgeQQC7" role="lGtFl">
                 <node concept="3NFfHV" id="1xCtdgeQQC8" role="3NFExx">
                   <node concept="3clFbS" id="1xCtdgeQQC9" role="2VODD2">
@@ -1733,7 +1733,7 @@
             <node concept="10QFUN" id="hHKT0OI" role="1eOMHV">
               <node concept="10Nm6u" id="hHKT0OJ" role="10QFUP" />
               <node concept="3uibUv" id="hHKT0OK" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHKT0OL" role="lGtFl">
@@ -1758,7 +1758,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHKT0OV" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.getTemplateNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTemplateNode" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getTemplateNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTemplateNode" />
           </node>
         </node>
       </node>
@@ -1771,7 +1771,7 @@
             <node concept="10QFUN" id="hIps2ID" role="1eOMHV">
               <node concept="10Nm6u" id="hIps2IE" role="10QFUP" />
               <node concept="3uibUv" id="hIps2IF" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIps2IG" role="lGtFl">
@@ -1796,7 +1796,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIps2IQ" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.createUniqueName(java.lang.String,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="createUniqueName" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.createUniqueName(java.lang.String,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="createUniqueName" />
             <node concept="10Nm6u" id="hIps2IR" role="37wK5m">
               <node concept="29HgVG" id="hIps2IS" role="lGtFl">
                 <node concept="3NFfHV" id="hIps2IT" role="3NFExx">
@@ -1861,7 +1861,7 @@
             <node concept="10QFUN" id="hIkiEMD" role="1eOMHV">
               <node concept="10Nm6u" id="hIkiEME" role="10QFUP" />
               <node concept="3uibUv" id="hIkiEMF" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkiEMG" role="lGtFl">
@@ -1886,7 +1886,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkiEMQ" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.showErrorMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showErrorMessage" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.showErrorMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showErrorMessage" />
             <node concept="10Nm6u" id="hIkiKej" role="37wK5m">
               <node concept="1W57fq" id="hIkiXv9" role="lGtFl">
                 <node concept="3IZrLx" id="hIkiXva" role="3IZSJc">
@@ -1951,7 +1951,7 @@
             <node concept="10QFUN" id="hIkFsUD" role="1eOMHV">
               <node concept="10Nm6u" id="hIkFsUE" role="10QFUP" />
               <node concept="3uibUv" id="hIkFsUF" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkFsUG" role="lGtFl">
@@ -1976,7 +1976,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkFsUQ" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.showWarningMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showWarningMessage" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.showWarningMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showWarningMessage" />
             <node concept="10Nm6u" id="hIkFsUR" role="37wK5m">
               <node concept="1W57fq" id="hIkFsUS" role="lGtFl">
                 <node concept="3IZrLx" id="hIkFsUT" role="3IZSJc">
@@ -2041,7 +2041,7 @@
             <node concept="10QFUN" id="hIkFzmJ" role="1eOMHV">
               <node concept="10Nm6u" id="hIkFzmK" role="10QFUP" />
               <node concept="3uibUv" id="hIkFzmL" role="10QFUM">
-                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkFzmM" role="lGtFl">
@@ -2066,7 +2066,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkFzmW" role="2OqNvi">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.showInformationMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showInformationMessage" />
+            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.showInformationMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showInformationMessage" />
             <node concept="10Nm6u" id="hIkFzmX" role="37wK5m">
               <node concept="1W57fq" id="hIkFzmY" role="lGtFl">
                 <node concept="3IZrLx" id="hIkFzmZ" role="3IZSJc">
@@ -2207,7 +2207,7 @@
                 <node concept="10QFUN" id="hIg2NLC" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg2NLD" role="10QFUP" />
                   <node concept="3uibUv" id="hIg2NLE" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg2NLF" role="lGtFl">
@@ -2232,7 +2232,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg2NLP" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.putSessionObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putSessionObject" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.putSessionObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putSessionObject" />
                 <node concept="10Nm6u" id="hIg2NLQ" role="37wK5m">
                   <node concept="29HgVG" id="hIg2NLR" role="lGtFl">
                     <node concept="3NFfHV" id="hIg2NLS" role="3NFExx">
@@ -2287,7 +2287,7 @@
               <node concept="10QFUN" id="hIg2CJ9" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg2CJa" role="10QFUP" />
                 <node concept="3uibUv" id="hIg2CJb" role="10QFUM">
-                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg2CJc" role="lGtFl">
@@ -2312,7 +2312,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg2CJm" role="2OqNvi">
-              <ref role="37wK5l" to="q383:~TemplateQueryContext.getSessionObject(java.lang.Object):java.lang.Object" resolve="getSessionObject" />
+              <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getSessionObject(java.lang.Object):java.lang.Object" resolve="getSessionObject" />
               <node concept="10Nm6u" id="hIg2HgF" role="37wK5m">
                 <node concept="29HgVG" id="hIg2IuP" role="lGtFl">
                   <node concept="3NFfHV" id="hIg2IuQ" role="3NFExx">
@@ -2356,7 +2356,7 @@
                 <node concept="10QFUN" id="hIg9ERe" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg9ERf" role="10QFUP" />
                   <node concept="3uibUv" id="hIg9ERg" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg9ERh" role="lGtFl">
@@ -2381,7 +2381,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg9ERr" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.putStepObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putStepObject" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.putStepObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putStepObject" />
                 <node concept="10Nm6u" id="hIg9ERs" role="37wK5m">
                   <node concept="29HgVG" id="hIg9ERt" role="lGtFl">
                     <node concept="3NFfHV" id="hIg9ERu" role="3NFExx">
@@ -2436,7 +2436,7 @@
               <node concept="10QFUN" id="hIg9ERP" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg9ERQ" role="10QFUP" />
                 <node concept="3uibUv" id="hIg9ERR" role="10QFUM">
-                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg9ERS" role="lGtFl">
@@ -2461,7 +2461,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg9ES2" role="2OqNvi">
-              <ref role="37wK5l" to="q383:~TemplateQueryContext.getStepObject(java.lang.Object):java.lang.Object" resolve="getStepObject" />
+              <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getStepObject(java.lang.Object):java.lang.Object" resolve="getStepObject" />
               <node concept="10Nm6u" id="hIg9ES3" role="37wK5m">
                 <node concept="29HgVG" id="hIg9ES4" role="lGtFl">
                   <node concept="3NFfHV" id="hIg9ES5" role="3NFExx">
@@ -2505,7 +2505,7 @@
                 <node concept="10QFUN" id="hIg9Ffk" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg9Ffl" role="10QFUP" />
                   <node concept="3uibUv" id="hIg9Ffm" role="10QFUM">
-                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg9Ffn" role="lGtFl">
@@ -2530,7 +2530,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg9Ffx" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~TemplateQueryContext.putTransientObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putTransientObject" />
+                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.putTransientObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putTransientObject" />
                 <node concept="10Nm6u" id="hIg9Ffy" role="37wK5m">
                   <node concept="29HgVG" id="hIg9Ffz" role="lGtFl">
                     <node concept="3NFfHV" id="hIg9Ff$" role="3NFExx">
@@ -2585,7 +2585,7 @@
               <node concept="10QFUN" id="hIg9FfV" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg9FfW" role="10QFUP" />
                 <node concept="3uibUv" id="hIg9FfX" role="10QFUM">
-                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg9FfY" role="lGtFl">
@@ -2610,7 +2610,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg9Fg8" role="2OqNvi">
-              <ref role="37wK5l" to="q383:~TemplateQueryContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
+              <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
               <node concept="10Nm6u" id="hIg9Fg9" role="37wK5m">
                 <node concept="29HgVG" id="hIg9Fga" role="lGtFl">
                   <node concept="3NFfHV" id="hIg9Fgb" role="3NFExx">
@@ -2668,7 +2668,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5fJgQL6l$9a" role="2OqNvi">
-                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeProxy(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeProxy" />
+                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputNodeProxy(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeProxy" />
                   <node concept="10Nm6u" id="5fJgQL6lB3T" role="37wK5m">
                     <node concept="29HgVG" id="5fJgQL6lP12" role="lGtFl">
                       <node concept="3NFfHV" id="5fJgQL6lP13" role="3NFExx">
@@ -2712,7 +2712,7 @@
           <node concept="37vLTG" id="5fJgQL6lzml" role="3clF46">
             <property role="TrG5h" value="ctx" />
             <node concept="3uibUv" id="5fJgQL6lzmk" role="1tU5fm">
-              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
             </node>
           </node>
         </node>
@@ -2753,7 +2753,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="4RJ0ilaWn4L" role="2OqNvi">
-                  <ref role="37wK5l" to="q383:~TemplateQueryContext.registerMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void" resolve="registerMappingLabel" />
+                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.registerMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void" resolve="registerMappingLabel" />
                   <node concept="10Nm6u" id="4RJ0ilaWn4M" role="37wK5m">
                     <node concept="29HgVG" id="4RJ0ilaWn4N" role="lGtFl">
                       <node concept="3NFfHV" id="4RJ0ilaWn4O" role="3NFExx">
@@ -2813,7 +2813,7 @@
           <node concept="37vLTG" id="4RJ0ilaWn53" role="3clF46">
             <property role="TrG5h" value="ctx" />
             <node concept="3uibUv" id="4RJ0ilaWn54" role="1tU5fm">
-              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
             </node>
           </node>
         </node>
@@ -2829,8 +2829,8 @@
           <node concept="3clFbS" id="2cPzl2lSSGA" role="3clF47">
             <node concept="3clFbF" id="2cPzl2lSTWS" role="3cqZAp">
               <node concept="2YIFZM" id="2cPzl2lSUEg" role="3clFbG">
-                <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copyWithTrace" />
-                <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
+                <ref role="37wK5l" to="fwk:~TracingUtil.copyWithTrace(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copyWithTrace" />
+                <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
                 <node concept="10Nm6u" id="2cPzl2lSUEr" role="37wK5m">
                   <node concept="29HgVG" id="2cPzl2lSUJo" role="lGtFl">
                     <node concept="3NFfHV" id="2cPzl2lSUJp" role="3NFExx">
@@ -2854,7 +2854,7 @@
           <node concept="37vLTG" id="2cPzl2lSSHe" role="3clF46">
             <property role="TrG5h" value="ctx" />
             <node concept="3uibUv" id="2cPzl2lSSHf" role="1tU5fm">
-              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
             </node>
           </node>
         </node>

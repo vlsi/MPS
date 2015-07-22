@@ -7,9 +7,9 @@
   </languages>
   <imports>
     <import index="7b7w" ref="r:94910e79-1d3f-434f-b2c0-94371a9bbe8d(jetbrains.mps.baseLanguage.tuples.sandbox.foo)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -99,11 +99,11 @@
         <node concept="3clFbF" id="3I9XST$B74l" role="3cqZAp">
           <node concept="2OqwBi" id="3I9XST$B74m" role="3clFbG">
             <node concept="10M0yZ" id="3I9XST$B74n" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="3I9XST$B74o" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
               <node concept="1LFfDK" id="3I9XST$B74p" role="37wK5m">
                 <node concept="3cmrfG" id="3I9XST$B74q" role="1LF_Uc">
                   <property role="3cmrfH" value="0" />
@@ -120,7 +120,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3I9XST$B74w" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
                     <node concept="3cmrfG" id="3I9XST$B74x" role="37wK5m">
                       <property role="3cmrfH" value="1" />
                     </node>
@@ -135,7 +135,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="3I9XST$B74z" role="1tU5fm">
           <node concept="3uibUv" id="3I9XST$B74$" role="10Q1$1">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>

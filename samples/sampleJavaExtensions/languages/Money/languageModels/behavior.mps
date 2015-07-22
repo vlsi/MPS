@@ -7,15 +7,15 @@
   </languages>
   <imports>
     <import index="v0h4" ref="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="eyn7" ref="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)" />
-    <import index="22fg" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="epq1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
+    <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="j9pa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.text(JDK/java.text@java_stub)" />
+    <import index="25x5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.text(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -254,14 +254,14 @@
               <ref role="3cqZAo" node="5A8yV0Pe4qR" resolve="text" />
             </node>
             <node concept="2YIFZM" id="x3u75dlyLX" role="37vLTx">
-              <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-              <ref role="37wK5l" to="msyo:~NameUtil.pluralize(java.lang.String):java.lang.String" resolve="pluralize" />
+              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+              <ref role="37wK5l" to="18ew:~NameUtil.pluralize(java.lang.String):java.lang.String" resolve="pluralize" />
               <node concept="2YIFZM" id="x3u75dlzDZ" role="37wK5m">
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                <ref role="37wK5l" to="msyo:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
                 <node concept="2YIFZM" id="x3u75dlzyC" role="37wK5m">
-                  <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                  <ref role="37wK5l" to="msyo:~NameUtil.decapitalize(java.lang.String):java.lang.String" resolve="decapitalize" />
+                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                  <ref role="37wK5l" to="18ew:~NameUtil.decapitalize(java.lang.String):java.lang.String" resolve="decapitalize" />
                   <node concept="2OqwBi" id="x3u75dlyLY" role="37wK5m">
                     <node concept="2OqwBi" id="x3u75dlyLZ" role="2Oq$k0">
                       <node concept="13iPFW" id="x3u75dlyM0" role="2Oq$k0" />
@@ -680,8 +680,8 @@
                       <ref role="3cqZAo" node="x3u75dl$Hi" resolve="text" />
                     </node>
                     <node concept="2YIFZM" id="x3u75dl_Av" role="37vLTx">
-                      <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                      <ref role="37wK5l" to="msyo:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
+                      <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                      <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
                       <node concept="3EllGN" id="x3u75dl$Nc" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagT$8w" role="3ElVtu">
                           <ref role="3cqZAo" node="x3u75dl$MT" resolve="mod" />
@@ -755,8 +755,8 @@
                 <node concept="1pGfFk" id="3u6SZi0EK2z" role="2ShVmc">
                   <ref role="37wK5l" to="eyn7:4IqbYlp4REx" resolve="Money" />
                   <node concept="10M0yZ" id="3u6SZi0EK2$" role="37wK5m">
-                    <ref role="3cqZAo" to="epq1:~BigDecimal.ZERO" resolve="ZERO" />
-                    <ref role="1PxDUh" to="epq1:~BigDecimal" resolve="BigDecimal" />
+                    <ref role="3cqZAo" to="xlxw:~BigDecimal.ZERO" resolve="ZERO" />
+                    <ref role="1PxDUh" to="xlxw:~BigDecimal" resolve="BigDecimal" />
                   </node>
                   <node concept="Xl_RD" id="3u6SZi0EK2_" role="37wK5m">
                     <property role="Xl_RC" value="USD" />
@@ -810,8 +810,8 @@
                 <node concept="1pGfFk" id="3u6SZi0EH5c" role="2ShVmc">
                   <ref role="37wK5l" to="eyn7:4IqbYlp4REx" resolve="Money" />
                   <node concept="10M0yZ" id="3u6SZi0EH7N" role="37wK5m">
-                    <ref role="1PxDUh" to="epq1:~BigDecimal" resolve="BigDecimal" />
-                    <ref role="3cqZAo" to="epq1:~BigDecimal.ZERO" resolve="ZERO" />
+                    <ref role="1PxDUh" to="xlxw:~BigDecimal" resolve="BigDecimal" />
+                    <ref role="3cqZAo" to="xlxw:~BigDecimal.ZERO" resolve="ZERO" />
                   </node>
                   <node concept="Xl_RD" id="3u6SZi0EHhC" role="37wK5m">
                     <property role="Xl_RC" value="USD" />
@@ -891,7 +891,7 @@
       <node concept="3Tm1VV" id="3u6SZi0GsCh" role="1B3o_S" />
       <node concept="A3Dl8" id="3u6SZi0GsCo" role="3clF45">
         <node concept="3uibUv" id="3u6SZi0GsCt" role="A3Ik2">
-          <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
+          <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
         </node>
       </node>
       <node concept="3clFbS" id="3u6SZi0GsCj" role="3clF47">

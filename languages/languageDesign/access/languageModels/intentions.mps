@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="qff7" ref="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" />
-    <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -160,7 +160,7 @@
             <node concept="2OqwBi" id="7DH4b15vgjl" role="33vP2m">
               <node concept="1XNTG" id="7DH4b15vgjk" role="2Oq$k0" />
               <node concept="liA8E" id="7DH4b15vgjp" role="2OqNvi">
-                <ref role="37wK5l" to="srng:~EditorContext.getSelectedNodes():java.util.List" resolve="getSelectedNodes" />
+                <ref role="37wK5l" to="cj4x:~EditorContext.getSelectedNodes():java.util.List" resolve="getSelectedNodes" />
               </node>
             </node>
           </node>
@@ -226,7 +226,7 @@
           <node concept="2OqwBi" id="7DH4b15vgkA" role="3clFbG">
             <node concept="1XNTG" id="7DH4b15vgk_" role="2Oq$k0" />
             <node concept="liA8E" id="7DH4b15vgkE" role="2OqNvi">
-              <ref role="37wK5l" to="srng:~EditorContext.select(org.jetbrains.mps.openapi.model.SNode):void" resolve="select" />
+              <ref role="37wK5l" to="cj4x:~EditorContext.select(org.jetbrains.mps.openapi.model.SNode):void" resolve="select" />
               <node concept="2OqwBi" id="7DH4b15vgkV" role="37wK5m">
                 <node concept="2OqwBi" id="7DH4b15vgkQ" role="2Oq$k0">
                   <node concept="2OqwBi" id="7DH4b15vgkL" role="2Oq$k0">

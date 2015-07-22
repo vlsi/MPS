@@ -8,9 +8,9 @@
   </languages>
   <imports>
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="53gy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(java.util.concurrent@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent()" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -144,11 +144,11 @@
           <node concept="3cpWsn" id="6wtORYsNMD3" role="3cpWs9">
             <property role="TrG5h" value="id" />
             <node concept="3uibUv" id="6wtORYsNMD4" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
             </node>
             <node concept="10QFUN" id="6wtORYsNMDb" role="33vP2m">
               <node concept="3uibUv" id="6wtORYsNMDe" role="10QFUM">
-                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
               </node>
               <node concept="2OqwBi" id="6wtORYsNMD6" role="10QFUP">
                 <node concept="37vLTw" id="2BHiRxglt6v" role="2Oq$k0">
@@ -225,7 +225,7 @@
               <ref role="3cqZAo" node="6wtORYsNMD3" resolve="id" />
             </node>
             <node concept="liA8E" id="6wtORYsNMRT" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Integer.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="wyt6:~Integer.toString():java.lang.String" resolve="toString" />
             </node>
           </node>
         </node>
@@ -259,7 +259,7 @@
         <node concept="17QB3L" id="nQfYv_g$ht" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="6bGbH3SvRVs" role="3clF45">
-        <ref role="3uigEE" to="53gy:~ConcurrentMap" resolve="ConcurrentMap" />
+        <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
         <node concept="16syzq" id="6bGbH3SvRVy" role="11_B2D">
           <ref role="16sUi3" node="6bGbH3SvRVv" resolve="K" />
         </node>
@@ -294,7 +294,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="nQfYv_g$iq" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                  <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                 </node>
               </node>
             </node>
@@ -304,7 +304,7 @@
           <node concept="3cpWsn" id="6bGbH3SvRWP" role="3cpWs9">
             <property role="TrG5h" value="map" />
             <node concept="3uibUv" id="6bGbH3SvRWW" role="1tU5fm">
-              <ref role="3uigEE" to="53gy:~ConcurrentMap" resolve="ConcurrentMap" />
+              <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
               <node concept="16syzq" id="6bGbH3SvRWY" role="11_B2D">
                 <ref role="16sUi3" node="6bGbH3SvRVv" resolve="K" />
               </node>
@@ -314,7 +314,7 @@
             </node>
             <node concept="10QFUN" id="6bGbH3SvRX4" role="33vP2m">
               <node concept="3uibUv" id="6bGbH3SvRX7" role="10QFUM">
-                <ref role="3uigEE" to="53gy:~ConcurrentMap" resolve="ConcurrentMap" />
+                <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
                 <node concept="16syzq" id="6bGbH3SvRX9" role="11_B2D">
                   <ref role="16sUi3" node="6bGbH3SvRVv" resolve="K" />
                 </node>
@@ -344,7 +344,7 @@
                 </node>
                 <node concept="2ShNRf" id="6bGbH3SvRYu" role="37vLTx">
                   <node concept="1pGfFk" id="6bGbH3SvRYz" role="2ShVmc">
-                    <ref role="37wK5l" to="53gy:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
+                    <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
                     <node concept="16syzq" id="6bGbH3SvRY_" role="1pMfVU">
                       <ref role="16sUi3" node="6bGbH3SvRVv" resolve="K" />
                     </node>

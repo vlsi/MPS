@@ -5,8 +5,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -102,11 +102,11 @@
         <node concept="3clFbF" id="4X5j05vMETu" role="3cqZAp">
           <node concept="2OqwBi" id="4X5j05vMETr" role="3clFbG">
             <node concept="10M0yZ" id="4X5j05vMETs" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4X5j05vMETt" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="4X5j05vMEUj" role="37wK5m">
                 <property role="Xl_RC" value="Hello from MPS" />
               </node>
@@ -117,11 +117,11 @@
           <node concept="3cpWsn" id="4X5j05vMYwl" role="3cpWs9">
             <property role="TrG5h" value="resultFile" />
             <node concept="3uibUv" id="4X5j05vMYwm" role="1tU5fm">
-              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
             </node>
             <node concept="2ShNRf" id="4X5j05vMYxK" role="33vP2m">
               <node concept="1pGfFk" id="4X5j05vMYxJ" role="2ShVmc">
-                <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                 <node concept="Xl_RD" id="4X5j05vMYyc" role="37wK5m">
                   <property role="Xl_RC" value="ok.log" />
                 </node>
@@ -136,18 +136,18 @@
                 <node concept="3clFbF" id="4X5j05vNf_H" role="3cqZAp">
                   <node concept="2OqwBi" id="4X5j05vNf_E" role="3clFbG">
                     <node concept="10M0yZ" id="4X5j05vNf_F" role="2Oq$k0">
-                      <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                      <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
+                      <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                      <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
                     </node>
                     <node concept="liA8E" id="4X5j05vNf_G" role="2OqNvi">
-                      <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                      <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                       <node concept="3cpWs3" id="4X5j05vNg1c" role="37wK5m">
                         <node concept="2OqwBi" id="4X5j05vNgGV" role="3uHU7w">
                           <node concept="37vLTw" id="4X5j05vNgAI" role="2Oq$k0">
                             <ref role="3cqZAo" node="4X5j05vMYwl" resolve="resultFile" />
                           </node>
                           <node concept="liA8E" id="4X5j05vNgPQ" role="2OqNvi">
-                            <ref role="37wK5l" to="fxg7:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                            <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                           </node>
                         </node>
                         <node concept="Xl_RD" id="4X5j05vNfAT" role="3uHU7B">
@@ -164,7 +164,7 @@
                     <ref role="3cqZAo" node="4X5j05vMYwl" resolve="resultFile" />
                   </node>
                   <node concept="liA8E" id="4X5j05vNf$v" role="2OqNvi">
-                    <ref role="37wK5l" to="fxg7:~File.createNewFile():boolean" resolve="createNewFile" />
+                    <ref role="37wK5l" to="guwi:~File.createNewFile():boolean" resolve="createNewFile" />
                   </node>
                 </node>
               </node>
@@ -175,18 +175,18 @@
               <node concept="3clFbF" id="4X5j05vNdUz" role="3cqZAp">
                 <node concept="2OqwBi" id="4X5j05vNdUw" role="3clFbG">
                   <node concept="10M0yZ" id="4X5j05vNdUx" role="2Oq$k0">
-                    <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                    <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                    <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
                   </node>
                   <node concept="liA8E" id="4X5j05vNdUy" role="2OqNvi">
-                    <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                     <node concept="3cpWs3" id="4X5j05vNe4P" role="37wK5m">
                       <node concept="2OqwBi" id="4X5j05vNejj" role="3uHU7w">
                         <node concept="37vLTw" id="4X5j05vNe6B" role="2Oq$k0">
                           <ref role="3cqZAo" node="4X5j05vMYwl" resolve="resultFile" />
                         </node>
                         <node concept="liA8E" id="4X5j05vNew5" role="2OqNvi">
-                          <ref role="37wK5l" to="fxg7:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                          <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                         </node>
                       </node>
                       <node concept="Xl_RD" id="4X5j05vNdVu" role="3uHU7B">
@@ -202,7 +202,7 @@
                     <ref role="3cqZAo" node="4X5j05vNdSo" resolve="e" />
                   </node>
                   <node concept="liA8E" id="4X5j05vNfQi" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                    <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
                   </node>
                 </node>
               </node>
@@ -210,7 +210,7 @@
             <node concept="3cpWsn" id="4X5j05vNdSo" role="TDEfY">
               <property role="TrG5h" value="e" />
               <node concept="3uibUv" id="4X5j05vNdSp" role="1tU5fm">
-                <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
+                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
               </node>
             </node>
           </node>

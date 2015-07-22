@@ -8,14 +8,14 @@
   </languages>
   <imports>
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" />
-    <import index="3y6k" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps.testbench.junit.runners(Testbench/jetbrains.mps.testbench.junit.runners@java_stub)" />
+    <import index="2t25" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.runners(Testbench/)" />
     <import index="5rc7" ref="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)" />
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
-    <import index="u67u" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="cvlm" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -328,9 +328,9 @@
       </node>
     </node>
     <node concept="2AHcQZ" id="3z1mdFUF$hl" role="2AJF6D">
-      <ref role="2AI5Lk" to="3y6k:~ModuleSymbolicSuite$ModuleReference" resolve="ModuleSymbolicSuite.ModuleReference" />
+      <ref role="2AI5Lk" to="2t25:~ModuleSymbolicSuite$ModuleReference" resolve="ModuleSymbolicSuite.ModuleReference" />
       <node concept="1SXeKx" id="3z1mdFUF$hn" role="2B76xF">
-        <ref role="2B6OnR" to="3y6k:~ModuleSymbolicSuite$ModuleReference.value()" resolve="value" />
+        <ref role="2B6OnR" to="2t25:~ModuleSymbolicSuite$ModuleReference.value()" resolve="value" />
         <node concept="Xl_RD" id="3z1mdFUF$ho" role="2B70Vg">
           <property role="Xl_RC" value="" />
           <node concept="17Uvod" id="3z1mdFUF$hp" role="lGtFl">
@@ -352,7 +352,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3z1mdFUF$hG" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
+                      <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                     </node>
                   </node>
                 </node>
@@ -363,11 +363,11 @@
       </node>
     </node>
     <node concept="2AHcQZ" id="2$98zG5lgbT" role="2AJF6D">
-      <ref role="2AI5Lk" to="u67u:~RunWith" resolve="RunWith" />
+      <ref role="2AI5Lk" to="cvlm:~RunWith" resolve="RunWith" />
       <node concept="1SXeKx" id="2$98zG5lhcf" role="2B76xF">
-        <ref role="2B6OnR" to="u67u:~RunWith.value()" resolve="value" />
+        <ref role="2B6OnR" to="cvlm:~RunWith.value()" resolve="value" />
         <node concept="3VsKOn" id="3z1mdFUF$hk" role="2B70Vg">
-          <ref role="3VsUkX" to="3y6k:~ModuleSymbolicSuite" resolve="ModuleSymbolicSuite" />
+          <ref role="3VsUkX" to="2t25:~ModuleSymbolicSuite" resolve="ModuleSymbolicSuite" />
         </node>
       </node>
     </node>
@@ -379,8 +379,8 @@
           <node concept="3clFbF" id="2$98zG5lmFT" role="3cqZAp">
             <node concept="3cpWs3" id="2$98zG5lmFZ" role="3clFbG">
               <node concept="2YIFZM" id="2$98zG5lmG3" role="3uHU7w">
-                <ref role="37wK5l" to="msyo:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <node concept="2OqwBi" id="2$98zG5lmG5" role="37wK5m">
                   <node concept="30H73N" id="2$98zG5lmG4" role="2Oq$k0" />
                   <node concept="3TrcHB" id="2$98zG5lmG9" role="2OqNvi">

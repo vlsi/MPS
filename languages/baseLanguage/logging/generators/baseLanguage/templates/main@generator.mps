@@ -15,11 +15,11 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
     <import index="tpjx" ref="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.util)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="fagr" ref="a3e4657f-a76c-45bb-bbda-c764596ecc65/f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" implicit="true" />
+    <import index="q7tw" ref="a3e4657f-a76c-45bb-bbda-c764596ecc65/java:org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -499,7 +499,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5A5fOV$LkzC" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~List.isEmpty():boolean" resolve="isEmpty" />
+                  <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
                 </node>
               </node>
             </node>
@@ -517,7 +517,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5A5fOV$LkVK" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~List.isEmpty():boolean" resolve="isEmpty" />
+                  <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
                 </node>
               </node>
             </node>
@@ -536,14 +536,14 @@
       <node concept="Wx3nA" id="h19CPKI" role="jymVt">
         <property role="TrG5h" value="log" />
         <node concept="2YIFZM" id="4NZEZuORxDD" role="33vP2m">
-          <ref role="37wK5l" to="fagr:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-          <ref role="1Pybhc" to="fagr:~LogManager" resolve="LogManager" />
+          <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+          <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
           <node concept="3VsKOn" id="4NZEZuORxDE" role="37wK5m">
             <ref role="3VsUkX" node="h19CKg7" resolve="ClassWithLog" />
           </node>
         </node>
         <node concept="3uibUv" id="4NZEZuOQSjN" role="1tU5fm">
-          <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+          <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
         </node>
       </node>
       <node concept="3clFbW" id="26wO4Z1xEEQ" role="jymVt">
@@ -591,7 +591,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="h$MJ$Gh" role="2OqNvi">
-                    <ref role="37wK5l" to="fagr:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
+                    <ref role="37wK5l" to="q7tw:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
                     <node concept="1sPUBX" id="35T$L$TYQd$" role="lGtFl">
                       <ref role="v9R2y" node="hB3F9lA" resolve="switch_IsEnabled" />
                     </node>
@@ -633,7 +633,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="h$MJ_oG" role="2OqNvi">
-                        <ref role="37wK5l" to="fagr:~Category.debug(java.lang.Object,java.lang.Throwable):void" resolve="debug" />
+                        <ref role="37wK5l" to="q7tw:~Category.debug(java.lang.Object,java.lang.Throwable):void" resolve="debug" />
                         <node concept="Xl_RD" id="h19F8Nu" role="37wK5m">
                           <property role="Xl_RC" value="Message" />
                           <node concept="29HgVG" id="h19Fefu" role="lGtFl">
@@ -667,7 +667,7 @@
                             </node>
                           </node>
                           <node concept="1pGfFk" id="hIfNqA3" role="2ShVmc">
-                            <ref role="37wK5l" to="e2lb:~Exception.&lt;init&gt;()" resolve="Exception" />
+                            <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;()" resolve="Exception" />
                           </node>
                         </node>
                         <node concept="1ZhdrF" id="h19Xz72" role="lGtFl">
@@ -691,7 +691,7 @@
                                       <node concept="2OqwBi" id="hB3RMNe" role="37vLTx">
                                         <node concept="2c44tf" id="hB3RBDu" role="2Oq$k0">
                                           <node concept="liA8E" id="4NZEZuOSu_K" role="2c44tc">
-                                            <ref role="37wK5l" to="fagr:~Category.fatal(java.lang.Object,java.lang.Throwable):void" resolve="fatal" />
+                                            <ref role="37wK5l" to="q7tw:~Category.fatal(java.lang.Object,java.lang.Throwable):void" resolve="fatal" />
                                             <node concept="Xl_RD" id="4NZEZuOSu_L" role="37wK5m">
                                               <property role="Xl_RC" value="" />
                                             </node>
@@ -741,7 +741,7 @@
                                         <node concept="2OqwBi" id="hB3Si3D" role="37vLTx">
                                           <node concept="2c44tf" id="hB3Si3E" role="2Oq$k0">
                                             <node concept="liA8E" id="4NZEZuOSiou" role="2c44tc">
-                                              <ref role="37wK5l" to="fagr:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                                              <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
                                               <node concept="Xl_RD" id="4NZEZuOSiov" role="37wK5m">
                                                 <property role="Xl_RC" value="" />
                                               </node>
@@ -779,7 +779,7 @@
                                         <node concept="2OqwBi" id="hB3Sp4a" role="37vLTx">
                                           <node concept="2c44tf" id="hB3Sp4b" role="2Oq$k0">
                                             <node concept="liA8E" id="4NZEZuOSeQe" role="2c44tc">
-                                              <ref role="37wK5l" to="fagr:~Category.warn(java.lang.Object,java.lang.Throwable):void" resolve="warn" />
+                                              <ref role="37wK5l" to="q7tw:~Category.warn(java.lang.Object,java.lang.Throwable):void" resolve="warn" />
                                               <node concept="Xl_RD" id="4NZEZuOSeQf" role="37wK5m">
                                                 <property role="Xl_RC" value="" />
                                               </node>
@@ -817,7 +817,7 @@
                                         <node concept="2OqwBi" id="hB3Spqg" role="37vLTx">
                                           <node concept="2c44tf" id="hB3Spqh" role="2Oq$k0">
                                             <node concept="liA8E" id="4NZEZuORKHB" role="2c44tc">
-                                              <ref role="37wK5l" to="fagr:~Category.debug(java.lang.Object):void" resolve="debug" />
+                                              <ref role="37wK5l" to="q7tw:~Category.debug(java.lang.Object):void" resolve="debug" />
                                               <node concept="Xl_RD" id="4NZEZuORKHD" role="37wK5m">
                                                 <property role="Xl_RC" value="" />
                                               </node>
@@ -855,7 +855,7 @@
                                         <node concept="2OqwBi" id="hB3SpJx" role="37vLTx">
                                           <node concept="2c44tf" id="hB3SpJy" role="2Oq$k0">
                                             <node concept="liA8E" id="4NZEZuOS0_y" role="2c44tc">
-                                              <ref role="37wK5l" to="fagr:~Category.info(java.lang.Object,java.lang.Throwable):void" resolve="info" />
+                                              <ref role="37wK5l" to="q7tw:~Category.info(java.lang.Object,java.lang.Throwable):void" resolve="info" />
                                               <node concept="Xl_RD" id="4NZEZuOS0_$" role="37wK5m">
                                                 <property role="Xl_RC" value="" />
                                               </node>
@@ -893,7 +893,7 @@
                                         <node concept="2OqwBi" id="hB3Sq4J" role="37vLTx">
                                           <node concept="2c44tf" id="hB3Sq4K" role="2Oq$k0">
                                             <node concept="liA8E" id="4NZEZuOS9V0" role="2c44tc">
-                                              <ref role="37wK5l" to="fagr:~Category.debug(java.lang.Object):void" resolve="debug" />
+                                              <ref role="37wK5l" to="q7tw:~Category.debug(java.lang.Object):void" resolve="debug" />
                                               <node concept="Xl_RD" id="4NZEZuOS9V1" role="37wK5m">
                                                 <property role="Xl_RC" value="" />
                                               </node>
@@ -940,11 +940,11 @@
     <node concept="3clFbF" id="h0acUMa" role="13RCb5">
       <node concept="2OqwBi" id="h$MJADP" role="3clFbG">
         <node concept="10M0yZ" id="h0acUMb" role="2Oq$k0">
-          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
         </node>
         <node concept="liA8E" id="h$MJADQ" role="2OqNvi">
-          <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+          <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
           <node concept="Xl_RD" id="h0adwDj" role="37wK5m">
             <property role="Xl_RC" value="text" />
             <node concept="29HgVG" id="h0afiRn" role="lGtFl">
@@ -981,14 +981,14 @@
       <node concept="Wx3nA" id="h19wS$8" role="jymVt">
         <property role="TrG5h" value="LOG" />
         <node concept="2YIFZM" id="4NZEZuOSMkY" role="33vP2m">
-          <ref role="37wK5l" to="fagr:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-          <ref role="1Pybhc" to="fagr:~LogManager" resolve="LogManager" />
+          <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+          <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
           <node concept="3VsKOn" id="4NZEZuOSMkZ" role="37wK5m">
             <ref role="3VsUkX" node="h19wJUI" resolve="ClassWithLogStatements" />
           </node>
         </node>
         <node concept="3uibUv" id="4NZEZuOSLxd" role="1tU5fm">
-          <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+          <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
         </node>
         <node concept="raruj" id="h19x3Nf" role="lGtFl" />
         <node concept="3Tmbuc" id="hB3Ghe4" role="1B3o_S" />
@@ -1057,11 +1057,11 @@
                       <ref role="3cqZAo" node="26wO4Z1xHu4" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHu2" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
+                      <ref role="37wK5l" to="q7tw:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
                       <node concept="raruj" id="26wO4Z1xHu3" role="lGtFl" />
                       <node concept="10M0yZ" id="4NZEZuORhpA" role="37wK5m">
-                        <ref role="1PxDUh" to="fagr:~Level" resolve="Level" />
-                        <ref role="3cqZAo" to="fagr:~Level.FATAL" resolve="FATAL" />
+                        <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
+                        <ref role="3cqZAo" to="q7tw:~Level.FATAL" resolve="FATAL" />
                       </node>
                     </node>
                   </node>
@@ -1070,7 +1070,7 @@
               <node concept="37vLTG" id="26wO4Z1xHu4" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR82L" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>
@@ -1108,11 +1108,11 @@
                       <ref role="3cqZAo" node="26wO4Z1xHtS" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHtQ" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
+                      <ref role="37wK5l" to="q7tw:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
                       <node concept="raruj" id="26wO4Z1xHtR" role="lGtFl" />
                       <node concept="10M0yZ" id="4NZEZuORg4U" role="37wK5m">
-                        <ref role="1PxDUh" to="fagr:~Level" resolve="Level" />
-                        <ref role="3cqZAo" to="fagr:~Level.ERROR" resolve="ERROR" />
+                        <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
+                        <ref role="3cqZAo" to="q7tw:~Level.ERROR" resolve="ERROR" />
                       </node>
                     </node>
                   </node>
@@ -1121,7 +1121,7 @@
               <node concept="37vLTG" id="26wO4Z1xHtS" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR8my" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>
@@ -1159,11 +1159,11 @@
                       <ref role="3cqZAo" node="26wO4Z1xHtG" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHtE" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
+                      <ref role="37wK5l" to="q7tw:~Category.isEnabledFor(org.apache.log4j.Priority):boolean" resolve="isEnabledFor" />
                       <node concept="raruj" id="26wO4Z1xHtF" role="lGtFl" />
                       <node concept="10M0yZ" id="4NZEZuORawy" role="37wK5m">
-                        <ref role="1PxDUh" to="fagr:~Level" resolve="Level" />
-                        <ref role="3cqZAo" to="fagr:~Level.WARN" resolve="WARN" />
+                        <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
+                        <ref role="3cqZAo" to="q7tw:~Level.WARN" resolve="WARN" />
                       </node>
                     </node>
                   </node>
@@ -1172,7 +1172,7 @@
               <node concept="37vLTG" id="26wO4Z1xHtG" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR8m$" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>
@@ -1210,7 +1210,7 @@
                       <ref role="3cqZAo" node="26wO4Z1xHtk" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHti" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
+                      <ref role="37wK5l" to="q7tw:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
                       <node concept="raruj" id="26wO4Z1xHtj" role="lGtFl" />
                     </node>
                   </node>
@@ -1219,7 +1219,7 @@
               <node concept="37vLTG" id="26wO4Z1xHtk" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR9b6" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>
@@ -1257,7 +1257,7 @@
                       <ref role="3cqZAo" node="26wO4Z1xHtw" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHtu" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isInfoEnabled():boolean" resolve="isInfoEnabled" />
+                      <ref role="37wK5l" to="q7tw:~Category.isInfoEnabled():boolean" resolve="isInfoEnabled" />
                       <node concept="raruj" id="26wO4Z1xHtv" role="lGtFl" />
                     </node>
                   </node>
@@ -1265,7 +1265,7 @@
                 <node concept="3clFbF" id="4NZEZuORJ7J" role="3cqZAp">
                   <node concept="2OqwBi" id="4NZEZuORJcM" role="3clFbG">
                     <node concept="liA8E" id="4NZEZuORJAx" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.fatal(java.lang.Object,java.lang.Throwable):void" resolve="fatal" />
+                      <ref role="37wK5l" to="q7tw:~Category.fatal(java.lang.Object,java.lang.Throwable):void" resolve="fatal" />
                       <node concept="Xl_RD" id="4NZEZuORJRi" role="37wK5m">
                         <property role="Xl_RC" value="" />
                       </node>
@@ -1280,7 +1280,7 @@
               <node concept="37vLTG" id="26wO4Z1xHtw" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR9b8" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>
@@ -1323,7 +1323,7 @@
                       <ref role="3cqZAo" node="26wO4Z1xHsY" resolve="log" />
                     </node>
                     <node concept="liA8E" id="26wO4Z1xHt6" role="2OqNvi">
-                      <ref role="37wK5l" to="fagr:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
+                      <ref role="37wK5l" to="q7tw:~Category.isDebugEnabled():boolean" resolve="isDebugEnabled" />
                       <node concept="raruj" id="26wO4Z1xHt8" role="lGtFl" />
                     </node>
                   </node>
@@ -1332,7 +1332,7 @@
               <node concept="37vLTG" id="26wO4Z1xHsY" role="3clF46">
                 <property role="TrG5h" value="log" />
                 <node concept="3uibUv" id="4NZEZuOR9ba" role="1tU5fm">
-                  <ref role="3uigEE" to="fagr:~Logger" resolve="Logger" />
+                  <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
                 </node>
               </node>
             </node>

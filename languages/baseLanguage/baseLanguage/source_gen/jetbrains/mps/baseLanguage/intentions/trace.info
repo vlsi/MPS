@@ -586,12 +586,12 @@
       <node id="1199558928255" at="84,30,85,226" concept="4" />
       <node id="1199558928255" at="85,226,86,233" concept="4" />
       <node id="1199558928255" at="86,233,87,225" concept="4" />
-      <node id="1199558928255" at="87,225,88,527" concept="4" />
-      <node id="1199558928255" at="88,527,89,164" concept="4" />
+      <node id="1199558928255" at="87,225,88,460" concept="4" />
+      <node id="1199558928255" at="88,460,89,164" concept="4" />
       <node id="1199558928255" at="89,164,90,164" concept="4" />
       <node id="1199558928255" at="90,164,91,240" concept="4" />
-      <node id="1199558928255" at="91,240,92,551" concept="4" />
-      <node id="1199558928255" at="92,551,93,225" concept="4" />
+      <node id="1199558928255" at="91,240,92,484" concept="4" />
+      <node id="1199558928255" at="92,484,93,225" concept="4" />
       <node id="1199558928255" at="93,225,94,163" concept="4" />
       <node id="1199558928255" at="94,163,95,170" concept="4" />
       <node id="1199558928255" at="95,170,96,166" concept="4" />
@@ -603,8 +603,8 @@
       <node id="1199557092807" at="49,99,52,5" concept="7" />
       <node id="1199558928255" at="86,233,89,164" concept="0" />
       <node id="1199558928255" at="86,233,89,164" concept="0" />
-      <node id="1199558928255" at="92,551,95,170" concept="0" />
-      <node id="1199558928255" at="92,551,95,170" concept="0" />
+      <node id="1199558928255" at="92,484,95,170" concept="0" />
+      <node id="1199558928255" at="92,484,95,170" concept="0" />
       <node id="1199557092807" at="31,0,35,0" concept="8" trace="getPresentation#()Ljava/lang/String;" />
       <node id="1199557092807" at="45,0,49,0" concept="8" trace="isSurroundWith#()Z" />
       <node id="1199557092807" at="58,0,62,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
@@ -635,7 +635,7 @@
         <var name="node" id="1199557092807" />
       </scope>
       <scope id="1199558928255" at="86,233,89,164" />
-      <scope id="1199558928255" at="92,551,95,170" />
+      <scope id="1199558928255" at="92,484,95,170" />
       <scope id="1199557092807" at="31,0,35,0" />
       <scope id="1199557092807" at="36,84,40,16" />
       <scope id="1199557092807" at="45,0,49,0" />
@@ -988,8 +988,8 @@
       <node id="1227649619486" at="84,30,85,30" concept="9" />
       <node id="1227649619486" at="85,30,86,233" concept="4" />
       <node id="1227649619486" at="86,233,87,225" concept="4" />
-      <node id="1227649619486" at="87,225,88,545" concept="4" />
-      <node id="1227649619486" at="88,545,89,164" concept="4" />
+      <node id="1227649619486" at="87,225,88,478" concept="4" />
+      <node id="1227649619486" at="88,478,89,164" concept="4" />
       <node id="1227649619486" at="89,164,90,24" concept="10" />
       <node id="1199622460250" at="55,0,57,0" concept="2" trace="IntentionImplementation#()V" />
       <node id="1199622460250" at="27,0,30,0" concept="2" trace="ReplaceAssertWithIf_Intention#()V" />
@@ -1594,11 +1594,11 @@
       <node id="1199633278641" at="100,65,101,63" concept="9" />
       <node id="1199633278641" at="101,63,102,30" concept="9" />
       <node id="1199633278641" at="102,30,103,227" concept="4" />
-      <node id="1199633278641" at="103,227,104,508" concept="4" />
-      <node id="1199633278641" at="104,508,105,24" concept="10" />
+      <node id="1199633278641" at="103,227,104,441" concept="4" />
+      <node id="1199633278641" at="104,441,105,24" concept="10" />
       <node id="1199627248517" at="84,0,86,0" concept="2" trace="IntentionImplementation#()V" />
-      <node id="1199633278641" at="102,30,104,508" concept="0" />
-      <node id="1199633278641" at="102,30,104,508" concept="0" />
+      <node id="1199633278641" at="102,30,104,441" concept="0" />
+      <node id="1199633278641" at="102,30,104,441" concept="0" />
       <node id="1199627248517" at="30,0,33,0" concept="2" trace="AddRuntimeExceptionToMethodSignature_Intention#()V" />
       <node id="1199627248517" at="38,84,41,5" concept="7" />
       <node id="1199633278588" at="46,225,49,5" concept="7" />
@@ -1635,7 +1635,7 @@
       <scope id="1199633266084" at="91,78,93,557">
         <var name="methodDecl" id="1199633266086" />
       </scope>
-      <scope id="1199633278641" at="102,30,104,508" />
+      <scope id="1199633278641" at="102,30,104,441" />
       <scope id="1199627248517" at="30,0,33,0" />
       <scope id="1227876798951" at="65,0,68,0">
         <var name="it" id="1227876798951" />
@@ -3768,9 +3768,9 @@
       <node id="1645752949779063112" at="87,48,88,50" concept="10" />
       <node id="1645752949777350409" at="91,67,92,63" concept="9" />
       <node id="1645752949777350409" at="92,63,93,227" concept="9" />
-      <node id="1645752949777350409" at="93,227,94,480" concept="0" />
-      <node id="1645752949777350409" at="93,227,94,480" concept="4" />
-      <node id="1645752949777350409" at="94,480,95,14" concept="10" />
+      <node id="1645752949777350409" at="93,227,94,417" concept="0" />
+      <node id="1645752949777350409" at="93,227,94,417" concept="4" />
+      <node id="1645752949777350409" at="94,417,95,14" concept="10" />
       <node id="1645752949779063112" at="71,0,73,0" concept="2" trace="IntentionImplementation#()V" />
       <node id="1645752949779063112" at="31,0,34,0" concept="2" trace="AddOverrideAnnotation_Intention#()V" />
       <node id="1645752949779063112" at="39,84,42,5" concept="7" />
@@ -3800,7 +3800,7 @@
       <scope id="1645752949779063114" at="74,87,75,40" />
       <scope id="1645752949777081750" at="81,77,82,247" />
       <scope id="1645752949779063112" at="87,48,88,50" />
-      <scope id="1645752949777350409" at="93,227,94,480" />
+      <scope id="1645752949777350409" at="93,227,94,417" />
       <scope id="1645752949779063112" at="71,0,73,0" />
       <scope id="1645752949779063112" at="31,0,34,0" />
       <scope id="1645752949779333624" at="51,0,54,0">

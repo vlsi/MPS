@@ -7,9 +7,9 @@
   </languages>
   <imports>
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="fu7b" ref="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)" />
   </imports>
   <registry>
@@ -135,14 +135,14 @@
         <node concept="3cpWsn" id="Y2EImGHAiu" role="3cpWs9">
           <property role="TrG5h" value="libsSet" />
           <node concept="3uibUv" id="Y2EImGHAiv" role="1tU5fm">
-            <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
             <node concept="3Tqbb2" id="Y2EImGHAix" role="11_B2D">
               <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
             </node>
           </node>
           <node concept="2ShNRf" id="Y2EImGHAiz" role="33vP2m">
             <node concept="1pGfFk" id="Y2EImGHAi_" role="2ShVmc">
-              <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
+              <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
               <node concept="3Tqbb2" id="Y2EImGHAiB" role="1pMfVU">
                 <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
               </node>
@@ -156,7 +156,7 @@
             <ref role="3cqZAo" node="Y2EImGHAiu" resolve="libsSet" />
           </node>
           <node concept="liA8E" id="Y2EImGHXDN" role="2OqNvi">
-            <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+            <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
             <node concept="1YBJjd" id="Y2EImGHXDP" role="37wK5m">
               <ref role="1YBMHb" node="Y2EImGHLQK" resolve="lib" />
             </node>
@@ -171,7 +171,7 @@
                 <ref role="3cqZAo" node="Y2EImGHAiu" resolve="libsSet" />
               </node>
               <node concept="liA8E" id="Y2EImGHAiM" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                 <node concept="2OqwBi" id="Y2EImGHwxe" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTuIG" role="2Oq$k0">
                     <ref role="3cqZAo" node="Y2EImGHwwW" resolve="tldep" />
@@ -211,8 +211,8 @@
       </node>
       <node concept="1DcWWT" id="Y2EImGHLSt" role="3cqZAp">
         <node concept="2YIFZM" id="RmEX7Kc24Y" role="1DdaDG">
-          <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
-          <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode):java.lang.Iterable" resolve="getDescendants" />
+          <ref role="1Pybhc" to="mhbf:~SNodeUtil" resolve="SNodeUtil" />
+          <ref role="37wK5l" to="mhbf:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode):java.lang.Iterable" resolve="getDescendants" />
           <node concept="2JrnkZ" id="RmEX7Kc24Z" role="37wK5m">
             <node concept="1YBJjd" id="RmEX7Kc250" role="2JrQYb">
               <ref role="1YBMHb" node="Y2EImGHLQK" resolve="lib" />
@@ -237,7 +237,7 @@
             <node concept="3cpWsn" id="Y2EImGHLSC" role="1Duv9x">
               <property role="TrG5h" value="ref" />
               <node concept="3uibUv" id="Y2EImGHLSD" role="1tU5fm">
-                <ref role="3uigEE" to="ec5l:~SReference" resolve="SReference" />
+                <ref role="3uigEE" to="mhbf:~SReference" resolve="SReference" />
               </node>
             </node>
             <node concept="3clFbS" id="Y2EImGHLSI" role="2LFqv$">
@@ -252,7 +252,7 @@
                     </node>
                   </node>
                   <node concept="3uibUv" id="Y2EImGHLSL" role="1tU5fm">
-                    <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                    <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>
                 </node>
               </node>
@@ -280,10 +280,10 @@
                         <ref role="3cqZAo" node="Y2EImGHAiu" resolve="libsSet" />
                       </node>
                       <node concept="liA8E" id="Y2EImGHLTn" role="2OqNvi">
-                        <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                        <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                         <node concept="2OqwBi" id="46wqQ5NQwsJ" role="37wK5m">
                           <node concept="liA8E" id="46wqQ5NQwsK" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
+                            <ref role="37wK5l" to="mhbf:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTx9s" role="2Oq$k0">
                             <ref role="3cqZAo" node="Y2EImGHLSK" resolve="targetNode" />

@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="rzz2" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(java.lang.annotation@java_stub)" />
+    <import index="ouhv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.annotation()" />
     <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
   </imports>
   <registry>
@@ -50,27 +50,27 @@
     <property role="TrG5h" value="MPSLaunch" />
     <node concept="3Tm1VV" id="4_TMdeLkOBS" role="1B3o_S" />
     <node concept="2AHcQZ" id="4_TMdeLkOBT" role="2AJF6D">
-      <ref role="2AI5Lk" to="rzz2:~Retention" resolve="Retention" />
+      <ref role="2AI5Lk" to="ouhv:~Retention" resolve="Retention" />
       <node concept="2B6LJw" id="4_TMdeLkOBU" role="2B76xF">
-        <ref role="2B6OnR" to="rzz2:~Retention.value()" resolve="value" />
+        <ref role="2B6OnR" to="ouhv:~Retention.value()" resolve="value" />
         <node concept="Rm8GO" id="4_TMdeLlJQO" role="2B70Vg">
-          <ref role="1Px2BO" to="rzz2:~RetentionPolicy" resolve="RetentionPolicy" />
-          <ref role="Rm8GQ" to="rzz2:~RetentionPolicy.RUNTIME" resolve="RUNTIME" />
+          <ref role="1Px2BO" to="ouhv:~RetentionPolicy" resolve="RetentionPolicy" />
+          <ref role="Rm8GQ" to="ouhv:~RetentionPolicy.RUNTIME" resolve="RUNTIME" />
         </node>
       </node>
     </node>
     <node concept="2AHcQZ" id="4_TMdeLkOBY" role="2AJF6D">
-      <ref role="2AI5Lk" to="rzz2:~Target" resolve="Target" />
+      <ref role="2AI5Lk" to="ouhv:~Target" resolve="Target" />
       <node concept="2B6LJw" id="4_TMdeLkOBZ" role="2B76xF">
-        <ref role="2B6OnR" to="rzz2:~Target.value()" resolve="value" />
+        <ref role="2B6OnR" to="ouhv:~Target.value()" resolve="value" />
         <node concept="2BsdOp" id="4_TMdeLkOC6" role="2B70Vg">
           <node concept="Rm8GO" id="4_TMdeLlJQQ" role="2BsfMF">
-            <ref role="1Px2BO" to="rzz2:~ElementType" resolve="ElementType" />
-            <ref role="Rm8GQ" to="rzz2:~ElementType.METHOD" resolve="METHOD" />
+            <ref role="1Px2BO" to="ouhv:~ElementType" resolve="ElementType" />
+            <ref role="Rm8GQ" to="ouhv:~ElementType.METHOD" resolve="METHOD" />
           </node>
           <node concept="Rm8GO" id="4_TMdeLlJQS" role="2BsfMF">
-            <ref role="1Px2BO" to="rzz2:~ElementType" resolve="ElementType" />
-            <ref role="Rm8GQ" to="rzz2:~ElementType.TYPE" resolve="TYPE" />
+            <ref role="1Px2BO" to="ouhv:~ElementType" resolve="ElementType" />
+            <ref role="Rm8GQ" to="ouhv:~ElementType.TYPE" resolve="TYPE" />
           </node>
         </node>
       </node>

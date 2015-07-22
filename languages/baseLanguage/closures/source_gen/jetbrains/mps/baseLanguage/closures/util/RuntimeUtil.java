@@ -38,12 +38,12 @@ public class RuntimeUtil {
 
   public static SNode functionClassifierContainer() {
     // these references must point to the @java_stub models 
-    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes");
+    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes");
   }
 
   public static SNode ufunctionClassifierContainer() {
     // these references must point to the @java_stub models 
-    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedFunctionTypes");
+    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes");
   }
 
   private static SNode function(String fnsignature) {

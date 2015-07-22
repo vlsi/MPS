@@ -8,8 +8,8 @@
   </languages>
   <imports>
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
-    <import index="xjo8" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.generator(MPS.Workbench/jetbrains.mps.ide.generator@java_stub)" />
-    <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
+    <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
@@ -77,19 +77,19 @@
           <node concept="3clFbC" id="10xl2gwRel_" role="3clFbw">
             <node concept="10Nm6u" id="10xl2gwRelC" role="3uHU7w" />
             <node concept="2YIFZM" id="10xl2gwRely" role="3uHU7B">
-              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="76aXy8jgU92" role="3cqZAp">
           <node concept="2OqwBi" id="76aXy8jgVex" role="3clFbw">
             <node concept="liA8E" id="76aXy8jgY55" role="2OqNvi">
-              <ref role="37wK5l" to="yla8:~Application.isDisposed():boolean" resolve="isDisposed" />
+              <ref role="37wK5l" to="bd8o:~Application.isDisposed():boolean" resolve="isDisposed" />
             </node>
             <node concept="2YIFZM" id="76aXy8jgV9R" role="2Oq$k0">
-              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
           </node>
           <node concept="3clFbS" id="76aXy8jgU95" role="3clFbx">
@@ -106,11 +106,11 @@
         <node concept="3clFbF" id="5ZkGupNvQZD" role="3cqZAp">
           <node concept="2OqwBi" id="5ZkGupNvQRn" role="3clFbG">
             <node concept="2YIFZM" id="5ZkGupNvQRo" role="2Oq$k0">
-              <ref role="1Pybhc" to="xjo8:~GeneratorCacheComponent" resolve="GeneratorCacheComponent" />
-              <ref role="37wK5l" to="xjo8:~GeneratorCacheComponent.getInstance():jetbrains.mps.ide.generator.GeneratorCacheComponent" resolve="getInstance" />
+              <ref role="1Pybhc" to="o6ex:~GeneratorCacheComponent" resolve="GeneratorCacheComponent" />
+              <ref role="37wK5l" to="o6ex:~GeneratorCacheComponent.getInstance():jetbrains.mps.ide.generator.GeneratorCacheComponent" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="5ZkGupNvQRp" role="2OqNvi">
-              <ref role="37wK5l" to="xjo8:~GeneratorCacheComponent.getCache():jetbrains.mps.generator.GenerationCacheContainer" resolve="getCache" />
+              <ref role="37wK5l" to="o6ex:~GeneratorCacheComponent.getCache():jetbrains.mps.generator.GenerationCacheContainer" resolve="getCache" />
             </node>
           </node>
         </node>

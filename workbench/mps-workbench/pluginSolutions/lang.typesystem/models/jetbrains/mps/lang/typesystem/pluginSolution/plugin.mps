@@ -11,30 +11,30 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="nax5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors(MPS.Core/jetbrains.mps.errors@java_stub)" />
-    <import index="9a8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="5fm0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="g9ly" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" />
-    <import index="7kbf" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.typesystem.uiActions(MPS.Workbench/jetbrains.mps.typesystem.uiActions@java_stub)" />
-    <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="pvwh" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />
-    <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
-    <import index="1d7m" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
-    <import index="c4ym" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="ngmm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.view(MPS.Core/)" />
+    <import index="gt7e" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.typesystem.uiActions(MPS.Workbench/)" />
+    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" />
+    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
-    <import index="tpy3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.tempmodel(MPS.Core/jetbrains.mps.smodel.tempmodel@java_stub)" />
-    <import index="n8sb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" />
+    <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
+    <import index="6qgz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.model(MPS.Core/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -219,12 +219,12 @@
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4KDfkUwMaBL" role="1NuT2Z">
       <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
       <node concept="1oajcY" id="4KDfkUwMaBM" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwMaBN" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
       <node concept="1oajcY" id="4KDfkUwMaBO" role="1oa70y" />
     </node>
     <node concept="2S4$dB" id="7yrT30bWG3K" role="1NuT2Z">
@@ -235,7 +235,7 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwMaBR" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
-      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="4KDfkUwMaBS" role="1oa70y" />
     </node>
     <node concept="tnohg" id="4KDfkUwMaBT" role="tncku">
@@ -244,7 +244,7 @@
           <node concept="3cpWsn" id="4KDfkUwMaC_" role="3cpWs9">
             <property role="TrG5h" value="reporter" />
             <node concept="3uibUv" id="4KDfkUwMaCA" role="1tU5fm">
-              <ref role="3uigEE" to="nax5:~IErrorReporter" resolve="IErrorReporter" />
+              <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
             </node>
           </node>
         </node>
@@ -252,7 +252,7 @@
           <node concept="3cpWsn" id="4KDfkUwMaBZ" role="3cpWs9">
             <property role="TrG5h" value="type" />
             <node concept="3uibUv" id="4KDfkUwMaC0" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
           </node>
         </node>
@@ -260,21 +260,21 @@
         <node concept="3clFbF" id="1KUoCiqb5ET" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCiqb5EU" role="3clFbG">
             <node concept="2YIFZM" id="1KUoCiqb5EV" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
             </node>
             <node concept="liA8E" id="1KUoCiqb5EW" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="1KUoCiqb5EX" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCiqb5EY" role="1bW5cS">
                   <node concept="3clFbF" id="7yrT30bVmxO" role="3cqZAp">
                     <node concept="2OqwBi" id="7yrT30bVnYg" role="3clFbG">
                       <node concept="2YIFZM" id="7yrT30bVnof" role="2Oq$k0">
-                        <ref role="37wK5l" to="ua2a:~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolve="getInstance" />
-                        <ref role="1Pybhc" to="ua2a:~TypeContextManager" resolve="TypeContextManager" />
+                        <ref role="37wK5l" to="u78q:~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolve="getInstance" />
+                        <ref role="1Pybhc" to="u78q:~TypeContextManager" resolve="TypeContextManager" />
                       </node>
                       <node concept="liA8E" id="7yrT30bVoG6" role="2OqNvi">
-                        <ref role="37wK5l" to="ua2a:~TypeContextManager.runTypeCheckingAction(jetbrains.mps.typesystem.inference.ITypeContextOwner,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.typesystem.inference.ITypechecking$Action):void" resolve="runTypeCheckingAction" />
+                        <ref role="37wK5l" to="u78q:~TypeContextManager.runTypeCheckingAction(jetbrains.mps.typesystem.inference.ITypeContextOwner,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.typesystem.inference.ITypechecking$Action):void" resolve="runTypeCheckingAction" />
                         <node concept="2OqwBi" id="7yrT30bVwHo" role="37wK5m">
                           <node concept="2WthIp" id="7yrT30bVoUF" role="2Oq$k0" />
                           <node concept="1DTwFV" id="7yrT30bVxsx" role="2OqNvi">
@@ -289,14 +289,14 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="7yrT30c0JqA" role="2OqNvi">
-                            <ref role="37wK5l" to="9a8:~EditorComponent.getNodeForTypechecking():org.jetbrains.mps.openapi.model.SNode" resolve="getNodeForTypechecking" />
+                            <ref role="37wK5l" to="exr9:~EditorComponent.getNodeForTypechecking():org.jetbrains.mps.openapi.model.SNode" resolve="getNodeForTypechecking" />
                           </node>
                         </node>
                         <node concept="1bVj0M" id="7yrT30bVycr" role="37wK5m">
                           <node concept="37vLTG" id="7yrT30bVyzU" role="1bW2Oz">
                             <property role="TrG5h" value="typeCheckingContext" />
                             <node concept="3uibUv" id="7yrT30bVz5F" role="1tU5fm">
-                              <ref role="3uigEE" to="ua2a:~TypeCheckingContext" resolve="TypeCheckingContext" />
+                              <ref role="3uigEE" to="u78q:~TypeCheckingContext" resolve="TypeCheckingContext" />
                             </node>
                           </node>
                           <node concept="3clFbS" id="7yrT30bVyct" role="1bW5cS">
@@ -308,7 +308,7 @@
                                       <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
                                     </node>
                                     <node concept="liA8E" id="1KUoCiqb5Fc" role="2OqNvi">
-                                      <ref role="37wK5l" to="ua2a:~TypeCheckingContext.checkIfNotChecked(org.jetbrains.mps.openapi.model.SNode,boolean):boolean" resolve="checkIfNotChecked" />
+                                      <ref role="37wK5l" to="u78q:~TypeCheckingContext.checkIfNotChecked(org.jetbrains.mps.openapi.model.SNode,boolean):boolean" resolve="checkIfNotChecked" />
                                       <node concept="2OqwBi" id="1KUoCiqb5Fd" role="37wK5m">
                                         <node concept="2WthIp" id="1KUoCiqb5Fe" role="2Oq$k0" />
                                         <node concept="3gHZIF" id="7yrT30bWJgZ" role="2OqNvi">
@@ -328,7 +328,7 @@
                                     <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
                                   </node>
                                   <node concept="liA8E" id="1KUoCiqb5Fk" role="2OqNvi">
-                                    <ref role="37wK5l" to="ua2a:~TypeCheckingContext.isCheckedRoot(boolean):boolean" resolve="isCheckedRoot" />
+                                    <ref role="37wK5l" to="u78q:~TypeCheckingContext.isCheckedRoot(boolean):boolean" resolve="isCheckedRoot" />
                                     <node concept="3clFbT" id="1KUoCiqb5Fl" role="37wK5m">
                                       <property role="3clFbU" value="false" />
                                     </node>
@@ -343,7 +343,7 @@
                                     <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
                                   </node>
                                   <node concept="liA8E" id="1KUoCiqb5Fq" role="2OqNvi">
-                                    <ref role="37wK5l" to="ua2a:~TypeCheckingContext.getTypeDontCheck(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getTypeDontCheck" />
+                                    <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeDontCheck(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getTypeDontCheck" />
                                     <node concept="2OqwBi" id="1KUoCiqb5Fr" role="37wK5m">
                                       <node concept="2WthIp" id="1KUoCiqb5Fs" role="2Oq$k0" />
                                       <node concept="3gHZIF" id="7yrT30bWKb0" role="2OqNvi">
@@ -367,7 +367,7 @@
                                     <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
                                   </node>
                                   <node concept="liA8E" id="1KUoCiqb5F$" role="2OqNvi">
-                                    <ref role="37wK5l" to="ua2a:~TypeCheckingContext.getTypeMessageDontCheck(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.errors.IErrorReporter" resolve="getTypeMessageDontCheck" />
+                                    <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeMessageDontCheck(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.errors.IErrorReporter" resolve="getTypeMessageDontCheck" />
                                     <node concept="2OqwBi" id="1KUoCiqb5F_" role="37wK5m">
                                       <node concept="2WthIp" id="1KUoCiqb5FA" role="2Oq$k0" />
                                       <node concept="1DTwFV" id="1KUoCiqb5FB" role="2OqNvi">
@@ -393,8 +393,8 @@
           <node concept="3clFbS" id="5stwRNvKktY" role="3clFbx">
             <node concept="3clFbF" id="5stwRNvKktZ" role="3cqZAp">
               <node concept="2YIFZM" id="5stwRNvKku0" role="3clFbG">
-                <ref role="37wK5l" to="dbrf:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
-                <ref role="1Pybhc" to="dbrf:~JOptionPane" resolve="JOptionPane" />
+                <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
+                <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
                 <node concept="2OqwBi" id="5stwRNvKku1" role="37wK5m">
                   <node concept="2WthIp" id="5stwRNvKku2" role="2Oq$k0" />
                   <node concept="1DTwFV" id="5stwRNvKku3" role="2OqNvi">
@@ -420,7 +420,7 @@
           <node concept="3cpWsn" id="6s6llYhn9lM" role="3cpWs9">
             <property role="TrG5h" value="tmpModel" />
             <node concept="3uibUv" id="2TqrD6rZpv0" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
           </node>
         </node>
@@ -430,29 +430,29 @@
             <node concept="3clFbF" id="1KUoCiqEI0V" role="3cqZAp">
               <node concept="2OqwBi" id="1KUoCiqEI0W" role="3clFbG">
                 <node concept="2YIFZM" id="1KUoCiqEI0X" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
                 </node>
                 <node concept="liA8E" id="1KUoCiqEI0Y" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
+                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
                   <node concept="1bVj0M" id="1KUoCiqEI0Z" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCiqEI10" role="1bW5cS">
                       <node concept="3clFbF" id="1KUoCiqEI11" role="3cqZAp">
                         <node concept="37vLTI" id="1KUoCiqEI12" role="3clFbG">
                           <node concept="2OqwBi" id="1KUoCiqEI13" role="37vLTx">
                             <node concept="liA8E" id="1KUoCiqEI14" role="2OqNvi">
-                              <ref role="37wK5l" to="tpy3:~TemporaryModels.create(boolean,jetbrains.mps.smodel.tempmodel.TempModuleOptions):org.jetbrains.mps.openapi.model.SModel" resolve="create" />
+                              <ref role="37wK5l" to="tqvn:~TemporaryModels.create(boolean,jetbrains.mps.smodel.tempmodel.TempModuleOptions):org.jetbrains.mps.openapi.model.SModel" resolve="create" />
                               <node concept="3clFbT" id="1KUoCiqEI15" role="37wK5m">
                                 <property role="3clFbU" value="false" />
                               </node>
                               <node concept="2YIFZM" id="1KUoCiqEI16" role="37wK5m">
-                                <ref role="37wK5l" to="tpy3:~TempModuleOptions.forDefaultModule():jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forDefaultModule" />
-                                <ref role="1Pybhc" to="tpy3:~TempModuleOptions" resolve="TempModuleOptions" />
+                                <ref role="37wK5l" to="tqvn:~TempModuleOptions.forDefaultModule():jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forDefaultModule" />
+                                <ref role="1Pybhc" to="tqvn:~TempModuleOptions" resolve="TempModuleOptions" />
                               </node>
                             </node>
                             <node concept="2YIFZM" id="1KUoCiqEI17" role="2Oq$k0">
-                              <ref role="37wK5l" to="tpy3:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
-                              <ref role="1Pybhc" to="tpy3:~TemporaryModels" resolve="TemporaryModels" />
+                              <ref role="37wK5l" to="tqvn:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
+                              <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="1KUoCiqEI18" role="37vLTJ">
@@ -466,7 +466,7 @@
                             <ref role="3cqZAo" node="6s6llYhn9lM" resolve="tmpModel" />
                           </node>
                           <node concept="liA8E" id="1KUoCiqEI1c" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
+                            <ref role="37wK5l" to="mhbf:~SModel.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
                             <node concept="37vLTw" id="1KUoCiqEI1d" role="37wK5m">
                               <ref role="3cqZAo" node="4KDfkUwMaBZ" resolve="type" />
                             </node>
@@ -476,14 +476,14 @@
                       <node concept="3clFbF" id="1KUoCiqEI1e" role="3cqZAp">
                         <node concept="2OqwBi" id="1KUoCiqEI1f" role="3clFbG">
                           <node concept="liA8E" id="1KUoCiqEI1g" role="2OqNvi">
-                            <ref role="37wK5l" to="tpy3:~TemporaryModels.addMissingImports(org.jetbrains.mps.openapi.model.SModel):void" resolve="addMissingImports" />
+                            <ref role="37wK5l" to="tqvn:~TemporaryModels.addMissingImports(org.jetbrains.mps.openapi.model.SModel):void" resolve="addMissingImports" />
                             <node concept="37vLTw" id="1KUoCiqEI1h" role="37wK5m">
                               <ref role="3cqZAo" node="6s6llYhn9lM" resolve="tmpModel" />
                             </node>
                           </node>
                           <node concept="2YIFZM" id="1KUoCiqEI1i" role="2Oq$k0">
-                            <ref role="37wK5l" to="tpy3:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
-                            <ref role="1Pybhc" to="tpy3:~TemporaryModels" resolve="TemporaryModels" />
+                            <ref role="37wK5l" to="tqvn:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
+                            <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
                           </node>
                         </node>
                       </node>
@@ -495,11 +495,11 @@
             <node concept="3clFbF" id="4KDfkUwMaD0" role="3cqZAp">
               <node concept="2OqwBi" id="5stwRNvKnOh" role="3clFbG">
                 <node concept="liA8E" id="5stwRNvKpps" role="2OqNvi">
-                  <ref role="37wK5l" to="7kbf:~BaseNodeDialog.show():void" resolve="show" />
+                  <ref role="37wK5l" to="gt7e:~BaseNodeDialog.show():void" resolve="show" />
                 </node>
                 <node concept="2ShNRf" id="4KDfkUwMaCP" role="2Oq$k0">
                   <node concept="1pGfFk" id="4KDfkUwMaCQ" role="2ShVmc">
-                    <ref role="37wK5l" to="7kbf:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
+                    <ref role="37wK5l" to="gt7e:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
                     <node concept="2OqwBi" id="4KDfkUwMaCR" role="37wK5m">
                       <node concept="2WthIp" id="4KDfkUwMaCS" role="2Oq$k0" />
                       <node concept="1DTwFV" id="4KDfkUwMaCT" role="2OqNvi">
@@ -527,11 +527,11 @@
             <node concept="3clFbF" id="1KUoCiqEI1S" role="3cqZAp">
               <node concept="2OqwBi" id="1KUoCiqEI1T" role="3clFbG">
                 <node concept="2YIFZM" id="1KUoCiqEI1U" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
                 </node>
                 <node concept="liA8E" id="1KUoCiqEI1V" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
+                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
                   <node concept="1bVj0M" id="1KUoCiqEI1W" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCiqEI1X" role="1bW5cS">
                       <node concept="3clFbF" id="1KUoCiqEI1Y" role="3cqZAp">
@@ -540,7 +540,7 @@
                             <ref role="3cqZAo" node="6s6llYhn9lM" resolve="tmpModel" />
                           </node>
                           <node concept="liA8E" id="1KUoCiqEI21" role="2OqNvi">
-                            <ref role="37wK5l" to="ec5l:~SModel.removeRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="removeRootNode" />
+                            <ref role="37wK5l" to="mhbf:~SModel.removeRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="removeRootNode" />
                             <node concept="37vLTw" id="1KUoCiqEI22" role="37wK5m">
                               <ref role="3cqZAo" node="4KDfkUwMaBZ" resolve="type" />
                             </node>
@@ -550,14 +550,14 @@
                       <node concept="3clFbF" id="1KUoCiqEI23" role="3cqZAp">
                         <node concept="2OqwBi" id="1KUoCiqEI24" role="3clFbG">
                           <node concept="liA8E" id="1KUoCiqEI25" role="2OqNvi">
-                            <ref role="37wK5l" to="tpy3:~TemporaryModels.dispose(org.jetbrains.mps.openapi.model.SModel):void" resolve="dispose" />
+                            <ref role="37wK5l" to="tqvn:~TemporaryModels.dispose(org.jetbrains.mps.openapi.model.SModel):void" resolve="dispose" />
                             <node concept="37vLTw" id="1KUoCiqEI26" role="37wK5m">
                               <ref role="3cqZAo" node="6s6llYhn9lM" resolve="tmpModel" />
                             </node>
                           </node>
                           <node concept="2YIFZM" id="1KUoCiqEI27" role="2Oq$k0">
-                            <ref role="37wK5l" to="tpy3:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
-                            <ref role="1Pybhc" to="tpy3:~TemporaryModels" resolve="TemporaryModels" />
+                            <ref role="37wK5l" to="tqvn:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
+                            <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
                           </node>
                         </node>
                       </node>
@@ -572,8 +572,8 @@
     </node>
     <node concept="1QGGSu" id="W9jQfsKz6H" role="3Uehp1">
       <node concept="10M0yZ" id="W9jQfsKzcE" role="3xaMm5">
-        <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <ref role="3cqZAo" to="c4ym:~MPSIcons$Nodes.Type" resolve="Type" />
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Type" resolve="Type" />
       </node>
     </node>
   </node>

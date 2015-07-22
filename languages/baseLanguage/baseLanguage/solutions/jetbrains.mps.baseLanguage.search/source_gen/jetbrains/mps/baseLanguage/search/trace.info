@@ -260,7 +260,7 @@
       <node id="3161373106581138299" at="200,71,201,128" concept="5" />
       <node id="3161373106581138305" at="201,128,202,50" concept="11" />
       <node id="9107121562752364375" at="202,50,203,74" concept="5" />
-      <node id="3161373106581138313" at="203,74,204,185" concept="11" />
+      <node id="3161373106581138313" at="203,74,204,122" concept="11" />
       <node id="3161373106581138340" at="205,85,206,38" concept="11" />
       <node id="3161373106581138354" at="208,204,209,18" concept="2" />
       <node id="3161373106581138355" at="210,11,211,34" concept="5" />
@@ -279,7 +279,7 @@
       <node id="3161373106581138473" at="243,194,244,361" concept="11" />
       <node id="3161373106581138487" at="245,38,246,458" concept="5" />
       <node id="3161373106581138507" at="248,379,249,458" concept="5" />
-      <node id="3161373106581138542" at="251,193,252,281" concept="5" />
+      <node id="3161373106581138542" at="251,193,252,218" concept="5" />
       <node id="3161373106581138462" at="256,375,257,456" concept="5" />
       <node id="3161373106581137643" at="263,0,264,0" concept="15" trace="ID" />
       <node id="3161373106581137646" at="264,0,265,0" concept="6" trace="myMethodsByName" />
@@ -492,7 +492,7 @@
       <node id="3161373106581139438" at="453,9,466,9" concept="9" />
       <node id="3161373106581137758" at="472,0,485,0" concept="10" trace="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
       <node id="3161373106581137763" at="485,0,498,0" concept="10" trace="childRemoved#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
-      <node id="3161373106581138333" at="204,185,218,7" concept="9" />
+      <node id="3161373106581138333" at="204,122,218,7" concept="9" />
       <node id="3161373106581138888" at="322,11,337,11" concept="9" />
       <node id="3161373106581137703" at="390,0,405,0" concept="10" trace="childRemoved#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
       <node id="3161373106581137689" at="358,0,374,0" concept="10" trace="createMethodParameterTypesString#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Ljava/lang/String;" />
@@ -531,7 +531,7 @@
       <scope id="3161373106581138425" at="232,38,233,18" />
       <scope id="3161373106581138486" at="245,38,246,458" />
       <scope id="3161373106581138506" at="248,379,249,458" />
-      <scope id="3161373106581138521" at="251,193,252,281" />
+      <scope id="3161373106581138521" at="251,193,252,218" />
       <scope id="3161373106581138461" at="256,375,257,456" />
       <scope id="3161373106581138653" at="267,53,268,80" />
       <scope id="3161373106581138698" at="280,25,281,20" />

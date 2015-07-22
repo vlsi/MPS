@@ -12,7 +12,7 @@
   <imports>
     <import index="fbxt" ref="r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -220,8 +220,8 @@
               <property role="TrG5h" value="min" />
               <node concept="10Oyi0" id="1ZERt_dQceo" role="1tU5fm" />
               <node concept="2YIFZM" id="1ZERt_dQcer" role="33vP2m">
-                <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
-                <ref role="37wK5l" to="e2lb:~Math.min(int,int):int" resolve="min" />
+                <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                <ref role="37wK5l" to="wyt6:~Math.min(int,int):int" resolve="min" />
                 <node concept="2OqwBi" id="1ZERt_dQhrN" role="37wK5m">
                   <node concept="2OqwBi" id="1ZERt_dQces" role="2Oq$k0">
                     <node concept="1PxgMI" id="1ZERt_dQcet" role="2Oq$k0">

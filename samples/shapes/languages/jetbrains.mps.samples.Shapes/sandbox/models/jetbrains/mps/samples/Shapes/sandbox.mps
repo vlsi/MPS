@@ -6,7 +6,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports>
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" implicit="true" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" name="jetbrains.mps.samples.Shapes">
@@ -43,7 +43,7 @@
       <property role="36$QIM" value="300" />
       <property role="36$QIR" value="100" />
       <node concept="3_2g0H" id="3CF0obva7f_" role="3_3Tce">
-        <ref role="3_2gco" to="1t7x:~Color.BLUE" resolve="BLUE" />
+        <ref role="3_2gco" to="z60i:~Color.BLUE" resolve="BLUE" />
       </node>
     </node>
     <node concept="36$QIb" id="3CF0obva7fH" role="36$P1I">
@@ -51,7 +51,7 @@
       <property role="36$QIc" value="150" />
       <property role="36$QI1" value="100" />
       <node concept="3_2g0H" id="3CF0obva7fR" role="3_3Tce">
-        <ref role="3_2gco" to="1t7x:~Color.GREEN" resolve="GREEN" />
+        <ref role="3_2gco" to="z60i:~Color.GREEN" resolve="GREEN" />
       </node>
     </node>
     <node concept="36$QIb" id="2gqr8W6y9l0" role="36$P1I">
@@ -59,7 +59,7 @@
       <property role="36$QIc" value="150" />
       <property role="36$QI1" value="100" />
       <node concept="3_2g0H" id="2gqr8W6ycpM" role="3_3Tce">
-        <ref role="3_2gco" to="1t7x:~Color.RED" resolve="RED" />
+        <ref role="3_2gco" to="z60i:~Color.RED" resolve="RED" />
       </node>
     </node>
   </node>

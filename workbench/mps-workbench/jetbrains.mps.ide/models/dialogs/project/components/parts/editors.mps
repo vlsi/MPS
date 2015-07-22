@@ -5,11 +5,11 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="oj8w" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -112,12 +112,12 @@
     <property role="TrG5h" value="ModuleEditor" />
     <node concept="3Tm1VV" id="1mBiRF0LB3H" role="1B3o_S" />
     <node concept="3uibUv" id="1mBiRF0LB3I" role="1zkMxy">
-      <ref role="3uigEE" to="dbrf:~DefaultCellEditor" resolve="DefaultCellEditor" />
+      <ref role="3uigEE" to="dxuu:~DefaultCellEditor" resolve="DefaultCellEditor" />
     </node>
     <node concept="312cEg" id="1mBiRF0LB3J" role="jymVt">
       <property role="TrG5h" value="myTextField" />
       <node concept="3uibUv" id="1mBiRF0LB3K" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~JTextField" resolve="JTextField" />
+        <ref role="3uigEE" to="dxuu:~JTextField" resolve="JTextField" />
       </node>
       <node concept="3Tm6S6" id="1mBiRF0LB3L" role="1B3o_S" />
     </node>
@@ -125,10 +125,10 @@
       <node concept="3Tm1VV" id="1mBiRF0LB3N" role="1B3o_S" />
       <node concept="3clFbS" id="1mBiRF0LB3O" role="3clF47">
         <node concept="XkiVB" id="1mBiRF0LB3P" role="3cqZAp">
-          <ref role="37wK5l" to="dbrf:~DefaultCellEditor.&lt;init&gt;(javax.swing.JTextField)" resolve="DefaultCellEditor" />
+          <ref role="37wK5l" to="dxuu:~DefaultCellEditor.&lt;init&gt;(javax.swing.JTextField)" resolve="DefaultCellEditor" />
           <node concept="2ShNRf" id="1mBiRF0LB3Q" role="37wK5m">
             <node concept="1pGfFk" id="1mBiRF0LB3R" role="2ShVmc">
-              <ref role="37wK5l" to="dbrf:~JTextField.&lt;init&gt;()" resolve="JTextField" />
+              <ref role="37wK5l" to="dxuu:~JTextField.&lt;init&gt;()" resolve="JTextField" />
             </node>
           </node>
         </node>
@@ -139,10 +139,10 @@
             </node>
             <node concept="10QFUN" id="1mBiRF0LB3X" role="37vLTx">
               <node concept="3nyPlj" id="1mBiRF0LB3Y" role="10QFUP">
-                <ref role="37wK5l" to="dbrf:~DefaultCellEditor.getComponent():java.awt.Component" resolve="getComponent" />
+                <ref role="37wK5l" to="dxuu:~DefaultCellEditor.getComponent():java.awt.Component" resolve="getComponent" />
               </node>
               <node concept="3uibUv" id="1mBiRF0LB3Z" role="10QFUM">
-                <ref role="3uigEE" to="dbrf:~JTextField" resolve="JTextField" />
+                <ref role="3uigEE" to="dxuu:~JTextField" resolve="JTextField" />
               </node>
             </node>
           </node>
@@ -153,7 +153,7 @@
               <ref role="3cqZAo" node="1mBiRF0LB3J" resolve="myTextField" />
             </node>
             <node concept="liA8E" id="1mBiRF0LB45" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setOpaque(boolean):void" resolve="setOpaque" />
+              <ref role="37wK5l" to="dxuu:~JComponent.setOpaque(boolean):void" resolve="setOpaque" />
               <node concept="3clFbT" id="1mBiRF0LB46" role="37wK5m" />
             </node>
           </node>
@@ -164,7 +164,7 @@
       <property role="TrG5h" value="getCellEditorValue" />
       <node concept="3Tm1VV" id="1mBiRF0LB48" role="1B3o_S" />
       <node concept="3uibUv" id="1mBiRF0LB49" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="3clFbS" id="1mBiRF0LB4a" role="3clF47">
         <node concept="3cpWs6" id="1mBiRF0LB4b" role="3cqZAp">
@@ -173,32 +173,32 @@
               <ref role="3cqZAo" node="1mBiRF0LB3J" resolve="myTextField" />
             </node>
             <node concept="liA8E" id="1mBiRF0LB4g" role="2OqNvi">
-              <ref role="37wK5l" to="oj8w:~JTextComponent.getText():java.lang.String" resolve="getText" />
+              <ref role="37wK5l" to="r791:~JTextComponent.getText():java.lang.String" resolve="getText" />
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SkMB" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="1mBiRF0LB4h" role="jymVt">
       <property role="TrG5h" value="getTableCellEditorComponent" />
       <node concept="3Tm1VV" id="1mBiRF0LB4i" role="1B3o_S" />
       <node concept="3uibUv" id="1mBiRF0LB4j" role="3clF45">
-        <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+        <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
       </node>
       <node concept="37vLTG" id="1mBiRF0LB4k" role="3clF46">
         <property role="TrG5h" value="table" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="1mBiRF0LB4l" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JTable" resolve="JTable" />
+          <ref role="3uigEE" to="dxuu:~JTable" resolve="JTable" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB4m" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="1mBiRF0LB4n" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB4o" role="3clF46">
@@ -222,10 +222,10 @@
               <ref role="3cqZAo" node="1mBiRF0LB3J" resolve="myTextField" />
             </node>
             <node concept="liA8E" id="1mBiRF0LB4$" role="2OqNvi">
-              <ref role="37wK5l" to="oj8w:~JTextComponent.setText(java.lang.String):void" resolve="setText" />
+              <ref role="37wK5l" to="r791:~JTextComponent.setText(java.lang.String):void" resolve="setText" />
               <node concept="2OqwBi" id="6R1MmuNKsuh" role="37wK5m">
                 <node concept="liA8E" id="6R1MmuNKsui" role="2OqNvi">
-                  <ref role="37wK5l" to="kqhl:~ModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
+                  <ref role="37wK5l" to="w0gx:~ModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
                 </node>
                 <node concept="1eOMI4" id="6R1MmuNKsuj" role="2Oq$k0">
                   <node concept="10QFUN" id="6R1MmuNKsuk" role="1eOMHV">
@@ -233,7 +233,7 @@
                       <ref role="3cqZAo" node="1mBiRF0LB4m" resolve="value" />
                     </node>
                     <node concept="3uibUv" id="6R1MmuNKsum" role="10QFUM">
-                      <ref role="3uigEE" to="kqhl:~ModuleReference" resolve="ModuleReference" />
+                      <ref role="3uigEE" to="w0gx:~ModuleReference" resolve="ModuleReference" />
                     </node>
                   </node>
                 </node>
@@ -243,7 +243,7 @@
         </node>
         <node concept="3cpWs6" id="1mBiRF0LB4F" role="3cqZAp">
           <node concept="3nyPlj" id="1mBiRF0LB4G" role="3cqZAk">
-            <ref role="37wK5l" to="dbrf:~DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int):java.awt.Component" resolve="getTableCellEditorComponent" />
+            <ref role="37wK5l" to="dxuu:~DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int):java.awt.Component" resolve="getTableCellEditorComponent" />
             <node concept="37vLTw" id="2BHiRxghiw2" role="37wK5m">
               <ref role="3cqZAo" node="1mBiRF0LB4k" resolve="table" />
             </node>
@@ -263,7 +263,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SkMC" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -271,16 +271,16 @@
     <property role="TrG5h" value="BooleanEditor" />
     <node concept="3Tm1VV" id="1mBiRF0LB9i" role="1B3o_S" />
     <node concept="3uibUv" id="1mBiRF0LB9j" role="1zkMxy">
-      <ref role="3uigEE" to="dbrf:~DefaultCellEditor" resolve="DefaultCellEditor" />
+      <ref role="3uigEE" to="dxuu:~DefaultCellEditor" resolve="DefaultCellEditor" />
     </node>
     <node concept="3clFbW" id="1mBiRF0LB9k" role="jymVt">
       <node concept="3Tm1VV" id="1mBiRF0LB9l" role="1B3o_S" />
       <node concept="3clFbS" id="1mBiRF0LB9m" role="3clF47">
         <node concept="XkiVB" id="1mBiRF0LB9n" role="3cqZAp">
-          <ref role="37wK5l" to="dbrf:~DefaultCellEditor.&lt;init&gt;(javax.swing.JCheckBox)" resolve="DefaultCellEditor" />
+          <ref role="37wK5l" to="dxuu:~DefaultCellEditor.&lt;init&gt;(javax.swing.JCheckBox)" resolve="DefaultCellEditor" />
           <node concept="2ShNRf" id="1mBiRF0LB9o" role="37wK5m">
             <node concept="1pGfFk" id="1mBiRF0LB9p" role="2ShVmc">
-              <ref role="37wK5l" to="dbrf:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
+              <ref role="37wK5l" to="dxuu:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
               <node concept="Xl_RD" id="1mBiRF0LB9q" role="37wK5m">
                 <property role="Xl_RC" value="" />
               </node>
@@ -297,13 +297,13 @@
         <property role="TrG5h" value="table" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="1mBiRF0LB9v" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JTable" resolve="JTable" />
+          <ref role="3uigEE" to="dxuu:~JTable" resolve="JTable" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB9w" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="1mBiRF0LB9x" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB9y" role="3clF46">
@@ -332,19 +332,19 @@
       <property role="TrG5h" value="getTableCellEditorComponent" />
       <node concept="3Tm1VV" id="1mBiRF0LB9G" role="1B3o_S" />
       <node concept="3uibUv" id="1mBiRF0LB9H" role="3clF45">
-        <ref role="3uigEE" to="1t7x:~Component" resolve="Component" />
+        <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
       </node>
       <node concept="37vLTG" id="1mBiRF0LB9I" role="3clF46">
         <property role="TrG5h" value="table" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="1mBiRF0LB9J" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JTable" resolve="JTable" />
+          <ref role="3uigEE" to="dxuu:~JTable" resolve="JTable" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB9K" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="1mBiRF0LB9L" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="1mBiRF0LB9M" role="3clF46">
@@ -366,11 +366,11 @@
           <node concept="3cpWsn" id="1mBiRF0LB9U" role="3cpWs9">
             <property role="TrG5h" value="component" />
             <node concept="3uibUv" id="1mBiRF0LB9V" role="1tU5fm">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
             <node concept="10QFUN" id="1mBiRF0LB9W" role="33vP2m">
               <node concept="3nyPlj" id="1mBiRF0LB9X" role="10QFUP">
-                <ref role="37wK5l" to="dbrf:~DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int):java.awt.Component" resolve="getTableCellEditorComponent" />
+                <ref role="37wK5l" to="dxuu:~DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int):java.awt.Component" resolve="getTableCellEditorComponent" />
                 <node concept="37vLTw" id="2BHiRxgm5Oh" role="37wK5m">
                   <ref role="3cqZAo" node="1mBiRF0LB9I" resolve="table" />
                 </node>
@@ -388,7 +388,7 @@
                 </node>
               </node>
               <node concept="3uibUv" id="1mBiRF0LBa3" role="10QFUM">
-                <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+                <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
               </node>
             </node>
           </node>
@@ -399,13 +399,13 @@
               <ref role="3cqZAo" node="1mBiRF0LB9U" resolve="component" />
             </node>
             <node concept="liA8E" id="1mBiRF0LBa7" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setBackground(java.awt.Color):void" resolve="setBackground" />
+              <ref role="37wK5l" to="dxuu:~JComponent.setBackground(java.awt.Color):void" resolve="setBackground" />
               <node concept="2OqwBi" id="1mBiRF0LBa8" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxgm6Rl" role="2Oq$k0">
                   <ref role="3cqZAo" node="1mBiRF0LB9I" resolve="table" />
                 </node>
                 <node concept="liA8E" id="1mBiRF0LBaa" role="2OqNvi">
-                  <ref role="37wK5l" to="dbrf:~JTable.getSelectionBackground():java.awt.Color" resolve="getSelectionBackground" />
+                  <ref role="37wK5l" to="dxuu:~JTable.getSelectionBackground():java.awt.Color" resolve="getSelectionBackground" />
                 </node>
               </node>
             </node>
@@ -417,13 +417,13 @@
               <ref role="3cqZAo" node="1mBiRF0LB9U" resolve="component" />
             </node>
             <node concept="liA8E" id="1mBiRF0LBae" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setForeground(java.awt.Color):void" resolve="setForeground" />
+              <ref role="37wK5l" to="dxuu:~JComponent.setForeground(java.awt.Color):void" resolve="setForeground" />
               <node concept="2OqwBi" id="1mBiRF0LBaf" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxghfGL" role="2Oq$k0">
                   <ref role="3cqZAo" node="1mBiRF0LB9I" resolve="table" />
                 </node>
                 <node concept="liA8E" id="1mBiRF0LBah" role="2OqNvi">
-                  <ref role="37wK5l" to="dbrf:~JTable.getSelectionForeground():java.awt.Color" resolve="getSelectionForeground" />
+                  <ref role="37wK5l" to="dxuu:~JTable.getSelectionForeground():java.awt.Color" resolve="getSelectionForeground" />
                 </node>
               </node>
             </node>
@@ -435,7 +435,7 @@
               <ref role="3cqZAo" node="1mBiRF0LB9U" resolve="component" />
             </node>
             <node concept="liA8E" id="1mBiRF0LBal" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JComponent.setEnabled(boolean):void" resolve="setEnabled" />
+              <ref role="37wK5l" to="dxuu:~JComponent.setEnabled(boolean):void" resolve="setEnabled" />
               <node concept="1rXfSq" id="4hiugqyzcNX" role="37wK5m">
                 <ref role="37wK5l" node="1mBiRF0LB9r" resolve="isEnabledFor" />
                 <node concept="37vLTw" id="2BHiRxglXOM" role="37wK5m">
@@ -464,7 +464,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SfYZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

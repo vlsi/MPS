@@ -6,12 +6,12 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="wlgq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.plugins(com.intellij.ide.plugins@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="zwkq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(org.jdom@java_stub)" />
-    <import index="mo84" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(com.intellij.openapi.extensions@java_stub)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem()" />
+    <import index="ctgy" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins()" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom()" />
+    <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -159,23 +159,23 @@
       <property role="TrG5h" value="myActionManager" />
       <node concept="3Tm6S6" id="1ns9w4VAN7_" role="1B3o_S" />
       <node concept="3uibUv" id="1ns9w4VAN7C" role="1tU5fm">
-        <ref role="3uigEE" to="nx1:~ActionManager" resolve="ActionManager" />
+        <ref role="3uigEE" to="qkt:~ActionManager" resolve="ActionManager" />
       </node>
       <node concept="2YIFZM" id="1ns9w4VAN9A" role="33vP2m">
-        <ref role="1Pybhc" to="nx1:~ActionManager" resolve="ActionManager" />
-        <ref role="37wK5l" to="nx1:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+        <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+        <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
       </node>
     </node>
     <node concept="312cEg" id="3SXwVgLRUGV" role="jymVt">
       <property role="TrG5h" value="myFlyingActions" />
       <node concept="3Tm6S6" id="3SXwVgLRUGW" role="1B3o_S" />
       <node concept="3uibUv" id="3SXwVgLRUGZ" role="1tU5fm">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="17QB3L" id="3SXwVgLRUH1" role="11_B2D" />
       </node>
       <node concept="2ShNRf" id="3SXwVgLRUH3" role="33vP2m">
         <node concept="1pGfFk" id="3SXwVgLRUH5" role="2ShVmc">
-          <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+          <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
           <node concept="17QB3L" id="3SXwVgLRUH7" role="1pMfVU" />
         </node>
       </node>
@@ -196,7 +196,7 @@
     <node concept="3clFb_" id="1YKWOow4fNY" role="jymVt">
       <property role="TrG5h" value="getIdeaCoreActions" />
       <node concept="3uibUv" id="3SXwVgLRUHz" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="17QB3L" id="3SXwVgLRUHA" role="11_B2D" />
       </node>
       <node concept="3Tm6S6" id="1YKWOow4fO3" role="1B3o_S" />
@@ -205,14 +205,14 @@
           <node concept="3cpWsn" id="3SXwVgLRG_s" role="3cpWs9">
             <property role="TrG5h" value="pluginId" />
             <node concept="3uibUv" id="3SXwVgLRG_t" role="1tU5fm">
-              <ref role="3uigEE" to="mo84:~PluginId" resolve="PluginId" />
+              <ref role="3uigEE" to="9ti4:~PluginId" resolve="PluginId" />
             </node>
             <node concept="2YIFZM" id="3SXwVgLRG_m" role="33vP2m">
-              <ref role="37wK5l" to="mo84:~PluginId.getId(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getId" />
-              <ref role="1Pybhc" to="mo84:~PluginId" resolve="PluginId" />
+              <ref role="37wK5l" to="9ti4:~PluginId.getId(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getId" />
+              <ref role="1Pybhc" to="9ti4:~PluginId" resolve="PluginId" />
               <node concept="10M0yZ" id="3SXwVgLRG_n" role="37wK5m">
-                <ref role="1PxDUh" to="wlgq:~PluginManager" resolve="PluginManager" />
-                <ref role="3cqZAo" to="wlgq:~PluginManagerCore.CORE_PLUGIN_ID" resolve="CORE_PLUGIN_ID" />
+                <ref role="1PxDUh" to="ctgy:~PluginManager" resolve="PluginManager" />
+                <ref role="3cqZAo" to="ctgy:~PluginManagerCore.CORE_PLUGIN_ID" resolve="CORE_PLUGIN_ID" />
               </node>
             </node>
           </node>
@@ -221,11 +221,11 @@
           <node concept="3cpWsn" id="1YKWOow4fO7" role="3cpWs9">
             <property role="TrG5h" value="descriptor" />
             <node concept="3uibUv" id="1YKWOow4fO8" role="1tU5fm">
-              <ref role="3uigEE" to="wlgq:~IdeaPluginDescriptor" resolve="IdeaPluginDescriptor" />
+              <ref role="3uigEE" to="ctgy:~IdeaPluginDescriptor" resolve="IdeaPluginDescriptor" />
             </node>
             <node concept="2YIFZM" id="3SXwVgLRE0p" role="33vP2m">
-              <ref role="1Pybhc" to="wlgq:~PluginManager" resolve="PluginManager" />
-              <ref role="37wK5l" to="wlgq:~PluginManager.getPlugin(com.intellij.openapi.extensions.PluginId):com.intellij.ide.plugins.IdeaPluginDescriptor" resolve="getPlugin" />
+              <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
+              <ref role="37wK5l" to="ctgy:~PluginManager.getPlugin(com.intellij.openapi.extensions.PluginId):com.intellij.ide.plugins.IdeaPluginDescriptor" resolve="getPlugin" />
               <node concept="37vLTw" id="3GM_nagTxf4" role="37wK5m">
                 <ref role="3cqZAo" node="3SXwVgLRG_s" resolve="pluginId" />
               </node>
@@ -236,12 +236,12 @@
           <node concept="3cpWsn" id="3SXwVgLRUHW" role="3cpWs9">
             <property role="TrG5h" value="ideaCoreActions" />
             <node concept="3uibUv" id="3SXwVgLRUHX" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
               <node concept="17QB3L" id="3SXwVgLRUHZ" role="11_B2D" />
             </node>
             <node concept="2ShNRf" id="3SXwVgLRUI1" role="33vP2m">
               <node concept="1pGfFk" id="3SXwVgLRUI2" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+                <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
                 <node concept="17QB3L" id="3SXwVgLRUI3" role="1pMfVU" />
               </node>
             </node>
@@ -271,13 +271,13 @@
                   <ref role="3cqZAo" node="3SXwVgLRUHW" resolve="ideaCoreActions" />
                 </node>
                 <node concept="liA8E" id="1YKWOow4g7J" role="2OqNvi">
-                  <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                  <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                   <node concept="2OqwBi" id="1YKWOow4g7j" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTu8J" role="2Oq$k0">
                       <ref role="3cqZAo" node="1YKWOow4fOr" resolve="element" />
                     </node>
                     <node concept="liA8E" id="1YKWOow4g7p" role="2OqNvi">
-                      <ref role="37wK5l" to="zwkq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                      <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
                       <node concept="Xl_RD" id="1YKWOow4g7q" role="37wK5m">
                         <property role="Xl_RC" value="id" />
                       </node>
@@ -290,7 +290,7 @@
           <node concept="3cpWsn" id="1YKWOow4fOr" role="1Duv9x">
             <property role="TrG5h" value="element" />
             <node concept="3uibUv" id="1YKWOow4g7a" role="1tU5fm">
-              <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
+              <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
             </node>
           </node>
           <node concept="2OqwBi" id="1YKWOow4fVv" role="1DdaDG">
@@ -298,7 +298,7 @@
               <ref role="3cqZAo" node="1YKWOow4fO7" resolve="descriptor" />
             </node>
             <node concept="liA8E" id="1YKWOow4fV_" role="2OqNvi">
-              <ref role="37wK5l" to="wlgq:~IdeaPluginDescriptor.getActionsDescriptionElements():java.util.List" resolve="getActionsDescriptionElements" />
+              <ref role="37wK5l" to="ctgy:~IdeaPluginDescriptor.getActionsDescriptionElements():java.util.List" resolve="getActionsDescriptionElements" />
             </node>
           </node>
         </node>
@@ -337,17 +337,17 @@
             </node>
             <node concept="2ShNRf" id="3SXwVgLRItB" role="37vLTx">
               <node concept="1pGfFk" id="3SXwVgLRPWp" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
+                <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
                 <node concept="17QB3L" id="3SXwVgLRRwP" role="1pMfVU" />
                 <node concept="2YIFZM" id="3SXwVgLRRyM" role="37wK5m">
-                  <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                  <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                  <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                  <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <node concept="2OqwBi" id="3SXwVgLRRyQ" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxeusuL" role="2Oq$k0">
                       <ref role="3cqZAo" node="1ns9w4VAN7$" resolve="myActionManager" />
                     </node>
                     <node concept="liA8E" id="3SXwVgLRRyS" role="2OqNvi">
-                      <ref role="37wK5l" to="nx1:~ActionManager.getActionIds(java.lang.String):java.lang.String[]" resolve="getActionIds" />
+                      <ref role="37wK5l" to="qkt:~ActionManager.getActionIds(java.lang.String):java.lang.String[]" resolve="getActionIds" />
                       <node concept="Xl_RD" id="3SXwVgLRRyT" role="37wK5m">
                         <property role="Xl_RC" value="" />
                       </node>
@@ -362,12 +362,12 @@
           <node concept="3cpWsn" id="3SXwVgLRRzl" role="3cpWs9">
             <property role="TrG5h" value="childrenOrShortCutActionsSet" />
             <node concept="3uibUv" id="3SXwVgLRRzm" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
               <node concept="17QB3L" id="3SXwVgLRRzq" role="11_B2D" />
             </node>
             <node concept="2ShNRf" id="3SXwVgLRRzs" role="33vP2m">
               <node concept="1pGfFk" id="3SXwVgLRRzu" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+                <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
                 <node concept="17QB3L" id="3SXwVgLRRzw" role="1pMfVU" />
               </node>
             </node>
@@ -378,7 +378,7 @@
           <node concept="3cpWsn" id="3SXwVgLRR$b" role="3cpWs9">
             <property role="TrG5h" value="anAction" />
             <node concept="3uibUv" id="3SXwVgLRR$c" role="1tU5fm">
-              <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
             </node>
           </node>
         </node>
@@ -394,7 +394,7 @@
                     <ref role="3cqZAo" node="1ns9w4VAN7$" resolve="myActionManager" />
                   </node>
                   <node concept="liA8E" id="3SXwVgLRR$0" role="2OqNvi">
-                    <ref role="37wK5l" to="nx1:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                    <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
                     <node concept="37vLTw" id="3GM_nagT$9X" role="37wK5m">
                       <ref role="3cqZAo" node="3SXwVgLRRzE" resolve="id" />
                     </node>
@@ -410,7 +410,7 @@
                       <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
                     </node>
                     <node concept="liA8E" id="3SXwVgLS3Ca" role="2OqNvi">
-                      <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                      <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                       <node concept="37vLTw" id="3GM_nagTsPI" role="37wK5m">
                         <ref role="3cqZAo" node="3SXwVgLRRzE" resolve="id" />
                       </node>
@@ -429,11 +429,11 @@
                         <ref role="3cqZAo" node="3SXwVgLRR$b" resolve="anAction" />
                       </node>
                       <node concept="liA8E" id="3SXwVgLS3Bj" role="2OqNvi">
-                        <ref role="37wK5l" to="nx1:~AnAction.getShortcutSet():com.intellij.openapi.actionSystem.ShortcutSet" resolve="getShortcutSet" />
+                        <ref role="37wK5l" to="qkt:~AnAction.getShortcutSet():com.intellij.openapi.actionSystem.ShortcutSet" resolve="getShortcutSet" />
                       </node>
                     </node>
                     <node concept="liA8E" id="3SXwVgLS3Bw" role="2OqNvi">
-                      <ref role="37wK5l" to="nx1:~ShortcutSet.getShortcuts():com.intellij.openapi.actionSystem.Shortcut[]" resolve="getShortcuts" />
+                      <ref role="37wK5l" to="qkt:~ShortcutSet.getShortcuts():com.intellij.openapi.actionSystem.Shortcut[]" resolve="getShortcuts" />
                     </node>
                   </node>
                   <node concept="1Rwk04" id="3SXwVgLS3BK" role="2OqNvi" />
@@ -450,13 +450,13 @@
                           <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
                         </node>
                         <node concept="liA8E" id="3SXwVgLRTL7" role="2OqNvi">
-                          <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                          <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                           <node concept="2OqwBi" id="3SXwVgLRTLs" role="37wK5m">
                             <node concept="37vLTw" id="2BHiRxeuyRx" role="2Oq$k0">
                               <ref role="3cqZAo" node="1ns9w4VAN7$" resolve="myActionManager" />
                             </node>
                             <node concept="liA8E" id="3SXwVgLRTLy" role="2OqNvi">
-                              <ref role="37wK5l" to="nx1:~ActionManager.getId(com.intellij.openapi.actionSystem.AnAction):java.lang.String" resolve="getId" />
+                              <ref role="37wK5l" to="qkt:~ActionManager.getId(com.intellij.openapi.actionSystem.AnAction):java.lang.String" resolve="getId" />
                               <node concept="37vLTw" id="3GM_nagTtLC" role="37wK5m">
                                 <ref role="3cqZAo" node="3SXwVgLRTKQ" resolve="child" />
                               </node>
@@ -469,14 +469,14 @@
                   <node concept="3cpWsn" id="3SXwVgLRTKQ" role="1Duv9x">
                     <property role="TrG5h" value="child" />
                     <node concept="3uibUv" id="3SXwVgLRTKS" role="1tU5fm">
-                      <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
+                      <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="3SXwVgLRTzX" role="1DdaDG">
                     <node concept="1eOMI4" id="3SXwVgLRTzQ" role="2Oq$k0">
                       <node concept="10QFUN" id="3SXwVgLRTzL" role="1eOMHV">
                         <node concept="3uibUv" id="3SXwVgLRTzO" role="10QFUM">
-                          <ref role="3uigEE" to="nx1:~ActionGroup" resolve="ActionGroup" />
+                          <ref role="3uigEE" to="qkt:~ActionGroup" resolve="ActionGroup" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTsDq" role="10QFUP">
                           <ref role="3cqZAo" node="3SXwVgLRR$b" resolve="anAction" />
@@ -484,7 +484,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3SXwVgLRT$3" role="2OqNvi">
-                      <ref role="37wK5l" to="nx1:~ActionGroup.getChildren(com.intellij.openapi.actionSystem.AnActionEvent):com.intellij.openapi.actionSystem.AnAction[]" resolve="getChildren" />
+                      <ref role="37wK5l" to="qkt:~ActionGroup.getChildren(com.intellij.openapi.actionSystem.AnActionEvent):com.intellij.openapi.actionSystem.AnAction[]" resolve="getChildren" />
                       <node concept="10Nm6u" id="3SXwVgLRT$4" role="37wK5m" />
                     </node>
                   </node>
@@ -492,10 +492,10 @@
               </node>
               <node concept="2OqwBi" id="3SXwVgLRTNf" role="3clFbw">
                 <node concept="3VsKOn" id="3SXwVgLRTN8" role="2Oq$k0">
-                  <ref role="3VsUkX" to="nx1:~ActionGroup" resolve="ActionGroup" />
+                  <ref role="3VsUkX" to="qkt:~ActionGroup" resolve="ActionGroup" />
                 </node>
                 <node concept="liA8E" id="3SXwVgLRTNl" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Class.isInstance(java.lang.Object):boolean" resolve="isInstance" />
+                  <ref role="37wK5l" to="wyt6:~Class.isInstance(java.lang.Object):boolean" resolve="isInstance" />
                   <node concept="37vLTw" id="3GM_nagTzjh" role="37wK5m">
                     <ref role="3cqZAo" node="3SXwVgLRR$b" resolve="anAction" />
                   </node>
@@ -518,7 +518,7 @@
               <ref role="3cqZAo" node="3SXwVgLRUGV" resolve="myFlyingActions" />
             </node>
             <node concept="liA8E" id="3SXwVgLRTPW" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
+              <ref role="37wK5l" to="33ny:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
               <node concept="37vLTw" id="3GM_nagTsL_" role="37wK5m">
                 <ref role="3cqZAo" node="3SXwVgLRRzl" resolve="childrenOrShortCutActionsSet" />
               </node>
@@ -531,7 +531,7 @@
               <ref role="3cqZAo" node="3SXwVgLRUGV" resolve="myFlyingActions" />
             </node>
             <node concept="liA8E" id="3SXwVgLRUGT" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
+              <ref role="37wK5l" to="33ny:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
               <node concept="1rXfSq" id="4hiugqyyYiP" role="37wK5m">
                 <ref role="37wK5l" node="1YKWOow4fNY" resolve="getIdeaCoreActions" />
               </node>
@@ -544,7 +544,7 @@
               <ref role="3cqZAo" node="3SXwVgLRUGV" resolve="myFlyingActions" />
             </node>
             <node concept="liA8E" id="ThWTaQhJw5" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
+              <ref role="37wK5l" to="33ny:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
               <node concept="1rXfSq" id="4hiugqyso4g" role="37wK5m">
                 <ref role="37wK5l" node="1YKWOow4ryp" resolve="getMPSRootActionIds" />
               </node>
@@ -575,7 +575,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3SXwVgLRUId" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="17QB3L" id="3SXwVgLRUIg" role="11_B2D" />
       </node>
     </node>
@@ -588,12 +588,12 @@
           <node concept="3cpWsn" id="1YKWOow4nWc" role="3cpWs9">
             <property role="TrG5h" value="set" />
             <node concept="3uibUv" id="1YKWOow4nWd" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
               <node concept="17QB3L" id="1YKWOow4nWf" role="11_B2D" />
             </node>
             <node concept="2ShNRf" id="1YKWOow4nWh" role="33vP2m">
               <node concept="1pGfFk" id="1YKWOow4nWk" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+                <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
                 <node concept="17QB3L" id="1YKWOow4nWm" role="1pMfVU" />
               </node>
             </node>
@@ -606,7 +606,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="2LwxHZFoyZR" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="2LwxHZFoyZS" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
               </node>
@@ -619,7 +619,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="4tZNbTvQiIN" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="4tZNbTvQiIO" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup" />
               </node>
@@ -632,7 +632,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="4tZNbTvQUlh" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="4tZNbTvQUli" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.vcs.plugin.TestMergeAction_Action" />
               </node>
@@ -645,7 +645,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="4tZNbTvREWb" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="4tZNbTvREWc" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DataFlowInternal_ActionGroup" />
               </node>
@@ -658,7 +658,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="6ACV$2CJtvQ" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="6ACV$2CJtvR" role="37wK5m">
                 <property role="Xl_RC" value="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" />
               </node>
@@ -671,7 +671,7 @@
               <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
             </node>
             <node concept="liA8E" id="3nWZTp1WAJf" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="Xl_RD" id="3nWZTp1WARn" role="37wK5m">
                 <property role="Xl_RC" value="Git.LogContextMenu" />
               </node>
@@ -686,7 +686,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1YKWOow4nW0" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="17QB3L" id="1YKWOow4nW2" role="11_B2D" />
       </node>
       <node concept="P$JXv" id="_$eaC67kKZ" role="lGtFl">
@@ -735,7 +735,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="ThWTaQhJwc" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="17QB3L" id="ThWTaQhJwd" role="11_B2D" />
       </node>
     </node>

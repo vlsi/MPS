@@ -38,7 +38,7 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
     Collection<SModule> depsReexport = depManager.getOnlyReexportModules();
     for (SNode extendedClassifierType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
       SNode extendedClassifier = SLinkOperations.getTarget(extendedClassifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-      if (extendedClassifier == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")) {
+      if (extendedClassifier == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")) {
         continue;
       }
       SModule classifierModule = extendedClassifier.getModel().getModule();

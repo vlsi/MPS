@@ -8,7 +8,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -259,7 +259,7 @@
     <node concept="3uibUv" id="h2tSkWX" role="1zkMxy">
       <ref role="3uigEE" node="h2tOD5R" resolve="MySequence" />
       <node concept="3uibUv" id="h2tSmpK" role="11_B2D">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
     </node>
     <node concept="312cEg" id="h2tStf8" role="jymVt">
@@ -275,7 +275,7 @@
     <node concept="3clFb_" id="h2tSnmk" role="jymVt">
       <property role="TrG5h" value="getNext" />
       <node concept="3uibUv" id="h2tSox4" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
       <node concept="3clFbS" id="h2tSnmm" role="3clF47">
         <node concept="3clFbJ" id="h2tSxTN" role="3cqZAp">
@@ -324,7 +324,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Uu2a" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -333,7 +333,7 @@
     <node concept="3uibUv" id="h2tTwQL" role="1zkMxy">
       <ref role="3uigEE" node="h2tOD5R" resolve="MySequence" />
       <node concept="3uibUv" id="h2tTzGs" role="11_B2D">
-        <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+        <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
       </node>
     </node>
     <node concept="312cEg" id="h2tTwQf" role="jymVt">
@@ -349,7 +349,7 @@
     <node concept="3clFb_" id="h2tTwQl" role="jymVt">
       <property role="TrG5h" value="getNext" />
       <node concept="3uibUv" id="h2tTAxQ" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+        <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
       </node>
       <node concept="3clFbS" id="h2tTwQn" role="3clF47">
         <node concept="3clFbJ" id="h2tTwQo" role="3cqZAp">
@@ -401,7 +401,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RWka" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -443,7 +443,7 @@
                     <ref role="2Gs0qQ" node="h3yoyE7" resolve="bool" />
                   </node>
                   <node concept="liA8E" id="hyYnsww" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Boolean.booleanValue():boolean" resolve="booleanValue" />
+                    <ref role="37wK5l" to="wyt6:~Boolean.booleanValue():boolean" resolve="booleanValue" />
                   </node>
                 </node>
               </node>
@@ -499,7 +499,7 @@
                     <ref role="2Gs0qQ" node="h3yoAmv" resolve="i" />
                   </node>
                   <node concept="liA8E" id="hyYnsvI" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Integer.intValue():int" resolve="intValue" />
+                    <ref role="37wK5l" to="wyt6:~Integer.intValue():int" resolve="intValue" />
                   </node>
                 </node>
               </node>

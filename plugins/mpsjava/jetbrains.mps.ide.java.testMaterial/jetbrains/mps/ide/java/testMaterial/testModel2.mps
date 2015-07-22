@@ -6,7 +6,7 @@
   </languages>
   <imports>
     <import index="79ja" ref="r:4bf8b65f-f792-4142-b0d6-29e233d89bf9(jetbrains.mps.ide.java.testMaterial.testModel1.sub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -50,7 +50,7 @@
     <node concept="Wx3nA" id="70HT6wFs4hL" role="jymVt">
       <property role="TrG5h" value="x" />
       <node concept="3uibUv" id="4x76aUTQRpY" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+        <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
       </node>
     </node>
     <node concept="2YIFZL" id="70HT6wFs4hE" role="jymVt">
@@ -62,7 +62,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="70HT6wFs4hJ" role="1tU5fm">
           <node concept="3uibUv" id="70HT6wFs4hK" role="10Q1$1">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>

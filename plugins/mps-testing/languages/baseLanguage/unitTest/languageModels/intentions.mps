@@ -16,12 +16,12 @@
   <imports>
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="eupq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="pb7l" ref="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -315,7 +315,7 @@
               <node concept="2OqwBi" id="1ngiNkTy4oJ" role="3uHU7w">
                 <node concept="2c44tf" id="1ngiNkTy4oF" role="2Oq$k0">
                   <node concept="3uibUv" id="4kXw2YQyF4d" role="2c44tc">
-                    <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
+                    <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="1ngiNkTy4oN" role="2OqNvi">
@@ -358,7 +358,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1VOvYDNp9RM" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                  <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                   <node concept="Xl_RD" id="1VOvYDNp9RN" role="37wK5m">
                     <property role="Xl_RC" value="test" />
                   </node>
@@ -412,13 +412,13 @@
                                 </node>
                               </node>
                               <node concept="liA8E" id="1VOvYDNp9Up" role="2OqNvi">
-                                <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                                <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                                 <node concept="2OqwBi" id="1VOvYDNp9Uq" role="37wK5m">
                                   <node concept="Xl_RD" id="1VOvYDNp9Ur" role="2Oq$k0">
                                     <property role="Xl_RC" value="test" />
                                   </node>
                                   <node concept="liA8E" id="1VOvYDNp9Us" role="2OqNvi">
-                                    <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                                    <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                                   </node>
                                 </node>
                               </node>
@@ -514,7 +514,7 @@
               </node>
               <node concept="2c44tf" id="1VOvYDNp9p$" role="3JuZjQ">
                 <node concept="3uibUv" id="1VOvYDNp9p_" role="2c44tc">
-                  <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
+                  <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
                 </node>
               </node>
             </node>

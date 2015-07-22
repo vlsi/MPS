@@ -17,9 +17,9 @@
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="plom" ref="r:99451de3-aa41-4a05-92a3-2879d5c07b99(jetbrains.mps.baseLanguageInternal.generator.template.util)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -857,7 +857,7 @@
         <property role="TrG5h" value="FIELD" />
         <node concept="3Tm6S6" id="i1dzbDQ" role="1B3o_S" />
         <node concept="3uibUv" id="i1dzemY" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="i1d$43g" role="lGtFl">
             <node concept="3NFfHV" id="i1d$43h" role="3NFExx">
               <node concept="3clFbS" id="i1d$43i" role="2VODD2">
@@ -1402,7 +1402,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="53cdeWkjJrx" role="1zkMxy">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="53cdeWkjJrM" role="lGtFl">
             <node concept="3NFfHV" id="53cdeWkjJrN" role="3NFExx">
               <node concept="3clFbS" id="53cdeWkjJrO" role="2VODD2">
@@ -1419,7 +1419,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="53cdeWkjJs1" role="EKbjA">
-          <ref role="3uigEE" to="fxg7:~Serializable" resolve="Serializable" />
+          <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
           <node concept="2b32R4" id="53cdeWkjJs3" role="lGtFl">
             <node concept="3JmXsc" id="53cdeWkjJs4" role="2P8S$">
               <node concept="3clFbS" id="53cdeWkjJs5" role="2VODD2">
@@ -1594,7 +1594,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="6LinJfWuf3L" role="1zkMxy">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="6LinJfWuf3M" role="lGtFl">
             <node concept="3NFfHV" id="6LinJfWuf3N" role="3NFExx">
               <node concept="3clFbS" id="6LinJfWuf3O" role="2VODD2">
@@ -1611,7 +1611,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="6LinJfWuf3T" role="EKbjA">
-          <ref role="3uigEE" to="fxg7:~Serializable" resolve="Serializable" />
+          <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
           <node concept="2b32R4" id="6LinJfWuf3U" role="lGtFl">
             <node concept="3JmXsc" id="6LinJfWuf3V" role="2P8S$">
               <node concept="3clFbS" id="6LinJfWuf3W" role="2VODD2">

@@ -6,11 +6,11 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="4to0" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(Jetpad.Editor/jetbrains.jetpad.projectional.view@java_stub)" />
+    <import index="jqfx" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(Jetpad.Editor/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="ctj7" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)" />
+    <import index="lgza" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(Jetpad.Editor/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="m2p3" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.collections(Jetpad.Editor/jetbrains.jetpad.model.collections@java_stub)" />
+    <import index="zh0" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.collections(Jetpad.Editor/)" />
     <import index="ny2" ref="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" implicit="true" />
   </imports>
   <registry>
@@ -243,7 +243,7 @@
             </node>
             <node concept="3JPx81" id="4H19mAwG$DU" role="2OqNvi">
               <node concept="3B5_sB" id="4H19mAw3$WC" role="25WWJ7">
-                <ref role="3B5MYn" to="4to0:~View" resolve="View" />
+                <ref role="3B5MYn" to="jqfx:~View" resolve="View" />
               </node>
             </node>
           </node>
@@ -444,7 +444,7 @@
             </node>
             <node concept="3JPx81" id="4H19mAwNm5b" role="2OqNvi">
               <node concept="3B5_sB" id="4H19mAwNrV3" role="25WWJ7">
-                <ref role="3B5MYn" to="ctj7:~Property" resolve="Property" />
+                <ref role="3B5MYn" to="lgza:~Property" resolve="Property" />
               </node>
             </node>
           </node>
@@ -650,7 +650,7 @@
             </node>
             <node concept="3JPx81" id="1NIE5SZQ2Vw" role="2OqNvi">
               <node concept="3B5_sB" id="1NIE5SZQ2Vx" role="25WWJ7">
-                <ref role="3B5MYn" to="ctj7:~Property" resolve="Property" />
+                <ref role="3B5MYn" to="lgza:~Property" resolve="Property" />
               </node>
             </node>
           </node>
@@ -851,7 +851,7 @@
             </node>
             <node concept="3JPx81" id="6mlphA0D7p2" role="2OqNvi">
               <node concept="3B5_sB" id="6mlphA0D7p3" role="25WWJ7">
-                <ref role="3B5MYn" to="4to0:~ViewPropertySpec" resolve="ViewPropertySpec" />
+                <ref role="3B5MYn" to="jqfx:~ViewPropertySpec" resolve="ViewPropertySpec" />
               </node>
             </node>
           </node>

@@ -12,7 +12,7 @@
     <import index="bj1v" ref="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -663,8 +663,8 @@
                         <property role="TrG5h" value="name" />
                         <node concept="17QB3L" id="4ipeeu8VyeJ" role="1tU5fm" />
                         <node concept="2YIFZM" id="4ipeeu8VyeK" role="33vP2m">
-                          <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                          <ref role="37wK5l" to="msyo:~NameUtil.decapitalize(java.lang.String):java.lang.String" resolve="decapitalize" />
+                          <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                          <ref role="37wK5l" to="18ew:~NameUtil.decapitalize(java.lang.String):java.lang.String" resolve="decapitalize" />
                           <node concept="2OqwBi" id="4ipeeu8VyeL" role="37wK5m">
                             <node concept="2OqwBi" id="4ipeeu8VyeM" role="2Oq$k0">
                               <node concept="3GMtW1" id="4ipeeu8VyeN" role="2Oq$k0" />
@@ -689,8 +689,8 @@
                             <node concept="17QB3L" id="7y2QyN30T9T" role="_ZDj9" />
                           </node>
                           <node concept="2YIFZM" id="4ipeeu8VyeT" role="10QFUP">
-                            <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                            <ref role="37wK5l" to="msyo:~NameUtil.splitByCamels(java.lang.String):java.util.List" resolve="splitByCamels" />
+                            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                            <ref role="37wK5l" to="18ew:~NameUtil.splitByCamels(java.lang.String):java.util.List" resolve="splitByCamels" />
                             <node concept="37vLTw" id="3GM_nagT$wo" role="37wK5m">
                               <ref role="3cqZAo" node="4ipeeu8VyeI" resolve="name" />
                             </node>

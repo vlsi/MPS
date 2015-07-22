@@ -9,9 +9,9 @@
   <imports>
     <import index="6ms5" ref="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="c2kz" ref="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" implicit="true" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -272,7 +272,7 @@
                 <node concept="2OqwBi" id="1DJg4Tz2$pP" role="3clFbw">
                   <node concept="uNquD" id="1DJg4Tz2$pw" role="2Oq$k0" />
                   <node concept="liA8E" id="1DJg4Tz2$pV" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="Xl_RD" id="1DJg4Tz2$pW" role="37wK5m">
                       <property role="Xl_RC" value="and" />
                     </node>
@@ -297,7 +297,7 @@
                   <node concept="2OqwBi" id="2MeG3eCe7fz" role="3eO9$A">
                     <node concept="uNquD" id="2MeG3eCe7fe" role="2Oq$k0" />
                     <node concept="liA8E" id="2MeG3eCe7fD" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="2MeG3eCe7fE" role="37wK5m">
                         <property role="Xl_RC" value="or" />
                       </node>
@@ -309,7 +309,7 @@
                     <node concept="YS8fn" id="2MeG3eCe7ev" role="3cqZAp">
                       <node concept="2ShNRf" id="2MeG3eCe7ex" role="YScLw">
                         <node concept="1pGfFk" id="2MeG3eCe7ez" role="2ShVmc">
-                          <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                          <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                           <node concept="3cpWs3" id="2MeG3eCe7eV" role="37wK5m">
                             <node concept="uNquD" id="2MeG3eCe7f1" role="3uHU7w" />
                             <node concept="Xl_RD" id="2MeG3eCe7e$" role="3uHU7B">
@@ -432,7 +432,7 @@
                 <node concept="2OqwBi" id="1DJg4Tz2IPI" role="3clFbw">
                   <node concept="uNquD" id="1DJg4Tz2IPJ" role="2Oq$k0" />
                   <node concept="liA8E" id="1DJg4Tz2IPK" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="Xl_RD" id="1DJg4Tz2IPL" role="37wK5m">
                       <property role="Xl_RC" value="and" />
                     </node>
@@ -581,7 +581,7 @@
                 <node concept="2OqwBi" id="2XA_ayKxETu" role="3clFbG">
                   <node concept="uNquD" id="zEL6hQatj$" role="2Oq$k0" />
                   <node concept="liA8E" id="4k9eBecwvX5" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
                   </node>
                 </node>
               </node>
@@ -600,7 +600,7 @@
                             <node concept="3fqX7Q" id="zEL6hQbaL0" role="3clFbG">
                               <node concept="2OqwBi" id="zEL6hQbaL2" role="3fr31v">
                                 <node concept="liA8E" id="2XA_ayKxBmL" role="2OqNvi">
-                                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                                 </node>
                                 <node concept="37vLTw" id="zEL6hQbaL4" role="2Oq$k0">
                                   <ref role="3cqZAo" node="zEL6hQb6vs" resolve="it" />
@@ -633,7 +633,7 @@
               <node concept="3clFbF" id="zEL6hQcNLo" role="3cqZAp">
                 <node concept="2OqwBi" id="zEL6hQcNT$" role="3clFbG">
                   <node concept="liA8E" id="2XA_ayKxE8A" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                   <node concept="uNquD" id="zEL6hQcNLn" role="2Oq$k0" />
                 </node>
@@ -730,7 +730,7 @@
                             <node concept="3fqX7Q" id="67X5IgzI_SA" role="3clFbG">
                               <node concept="2OqwBi" id="67X5IgzI_SB" role="3fr31v">
                                 <node concept="liA8E" id="2XA_ayKxJ$S" role="2OqNvi">
-                                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                                 </node>
                                 <node concept="37vLTw" id="67X5IgzI_SD" role="2Oq$k0">
                                   <ref role="3cqZAo" node="67X5IgzI_SE" resolve="it" />
@@ -763,7 +763,7 @@
               <node concept="3clFbF" id="67X5IgzI_SN" role="3cqZAp">
                 <node concept="2OqwBi" id="67X5IgzI_SO" role="3clFbG">
                   <node concept="liA8E" id="2XA_ayKxLv1" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                   <node concept="uNquD" id="67X5IgzI_SQ" role="2Oq$k0" />
                 </node>
@@ -795,7 +795,7 @@
                           <node concept="3fqX7Q" id="zEL6hQ7M3y" role="3clFbG">
                             <node concept="2OqwBi" id="zEL6hQ7M3$" role="3fr31v">
                               <node concept="liA8E" id="2XA_ayKxOE8" role="2OqNvi">
-                                <ref role="37wK5l" to="t3eg:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                                <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                               </node>
                               <node concept="37vLTw" id="zEL6hQ7M3A" role="2Oq$k0">
                                 <ref role="3cqZAo" node="zEL6hQ7Gju" resolve="it" />
@@ -851,7 +851,7 @@
                 <node concept="2OqwBi" id="2XA_ayKxP03" role="3clFbG">
                   <node concept="uNquD" id="zEL6hPNt3t" role="2Oq$k0" />
                   <node concept="liA8E" id="4k9eBecwbY_" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getConceptAlias():java.lang.String" resolve="getConceptAlias" />
                   </node>
                 </node>
               </node>
@@ -862,7 +862,7 @@
               <node concept="3clFbF" id="zEL6hQ9jcc" role="3cqZAp">
                 <node concept="2OqwBi" id="zEL6hQ9jkm" role="3clFbG">
                   <node concept="liA8E" id="2XA_ayKxQa1" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                   <node concept="uNquD" id="zEL6hQ9jcb" role="2Oq$k0" />
                 </node>

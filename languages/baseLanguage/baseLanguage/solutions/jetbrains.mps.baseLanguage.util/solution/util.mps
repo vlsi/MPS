@@ -9,13 +9,13 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -307,7 +307,7 @@
       <node concept="3Tm6S6" id="N70ffAI6j2" role="1B3o_S" />
       <node concept="3rvAFt" id="N70ffAI6j4" role="1tU5fm">
         <node concept="3uibUv" id="N70ffAI6j7" role="3rvQeY">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
         <node concept="3uibUv" id="N70ffAI6j8" role="3rvSg0">
           <ref role="3uigEE" node="1rCfCLmmtyy" resolve="CodeStyleSettings" />
@@ -319,7 +319,7 @@
             <ref role="3uigEE" node="1rCfCLmmtyy" resolve="CodeStyleSettings" />
           </node>
           <node concept="3uibUv" id="N70ffAI6jc" role="3rHrn6">
-            <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+            <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
           </node>
         </node>
       </node>
@@ -350,7 +350,7 @@
       <node concept="37vLTG" id="1rCfCLmmtyh" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="1rCfCLmmtyi" role="1tU5fm">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
     </node>
@@ -378,7 +378,7 @@
       <node concept="37vLTG" id="N70ffAI0vt" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="N70ffAI0vu" role="1tU5fm">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="N70ffAI0vv" role="3clF46">
@@ -394,7 +394,7 @@
       <node concept="37vLTG" id="N70ffAI0vA" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="N70ffAI0vB" role="1tU5fm">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="N70ffAI0v_" role="3clF47">
@@ -544,8 +544,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="4n$sOE9Wv29" role="3K4GZi">
-              <ref role="37wK5l" to="e2lb:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-              <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
               <node concept="Xl_RD" id="4n$sOE9Wv2a" role="37wK5m">
                 <property role="Xl_RC" value="line.separator" />
               </node>
@@ -555,7 +555,7 @@
       </node>
       <node concept="3Tm1VV" id="4n$sOE9Wu7W" role="1B3o_S" />
       <node concept="2AHcQZ" id="4n$sOE9Wv2b" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
   </node>
@@ -1026,7 +1026,7 @@
                     </node>
                   </node>
                   <node concept="3B5_sB" id="7k6J8c3tHSE" role="3K4GZi">
-                    <ref role="3B5MYn" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3B5MYn" to="wyt6:~Object" resolve="Object" />
                   </node>
                   <node concept="2OqwBi" id="7k6J8c3tHSF" role="3K4Cdx">
                     <node concept="2OqwBi" id="7k6J8c3tHSG" role="2Oq$k0">
@@ -1727,7 +1727,7 @@
               </node>
             </node>
             <node concept="liA8E" id="6uKywTfYh1y" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2YIFZM" id="6uKywTg12Ex" role="37wK5m">
                 <ref role="37wK5l" to="5h2r:2LflJcA4jVF" resolve="packageName" />
                 <ref role="1Pybhc" to="5h2r:2Jvt1sWfuv6" resolve="VisibilityUtil" />

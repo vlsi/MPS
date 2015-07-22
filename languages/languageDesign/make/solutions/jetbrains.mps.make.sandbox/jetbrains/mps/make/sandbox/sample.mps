@@ -11,7 +11,7 @@
   </languages>
   <imports>
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
   </imports>
   <registry>
@@ -358,21 +358,21 @@
           <property role="3dDGau" value="false" />
           <property role="TrG5h" value="FooFoo" />
           <node concept="3uibUv" id="247Zp6cg7vI" role="2lK19J">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="2lGYhJ" id="247Zp6cg7vJ" role="2pHZQ9">
           <property role="3dDGau" value="false" />
           <property role="TrG5h" value="BarBar" />
           <node concept="3uibUv" id="247Zp6cg7vL" role="2lK19J">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
           </node>
         </node>
         <node concept="2lGYhJ" id="247Zp6cg7vM" role="2pHZQ9">
           <property role="3dDGau" value="false" />
           <property role="TrG5h" value="BazBaz" />
           <node concept="3uibUv" id="247Zp6cg7vO" role="2lK19J">
-            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
           </node>
         </node>
         <node concept="3Tm1VV" id="6moN$OJ8HPc" role="1B3o_S" />

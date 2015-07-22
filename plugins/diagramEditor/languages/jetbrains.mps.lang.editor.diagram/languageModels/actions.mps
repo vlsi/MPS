@@ -12,7 +12,7 @@
     <import index="gbdf" ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
   </imports>
   <registry>
@@ -336,8 +336,8 @@
                 <node concept="3clFbS" id="fQU43XLhNZ" role="3clFbx">
                   <node concept="3cpWs6" id="fQU43XLhO0" role="3cqZAp">
                     <node concept="2YIFZM" id="fQU43XLhO1" role="3cqZAk">
-                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
-                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
                     </node>
                   </node>
                 </node>
@@ -485,8 +485,8 @@
                 <node concept="3clFbS" id="fQU43XLhP7" role="3clFbx">
                   <node concept="3cpWs6" id="fQU43XLhP8" role="3cqZAp">
                     <node concept="2YIFZM" id="fQU43XLhP9" role="3cqZAk">
-                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
-                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
                     </node>
                   </node>
                 </node>

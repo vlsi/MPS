@@ -6,18 +6,18 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="3hgr" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.vcs(MPS.Workbench/jetbrains.mps.ide.vcs@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="wcn7" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea(jetbrains.mps.vcs.platform/git4idea@java_stub)" />
-    <import index="xl3n" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.commands(jetbrains.mps.vcs.platform/git4idea.commands@java_stub)" />
+    <import index="4hos" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.vcs(MPS.Workbench/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="hr4p" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea(jetbrains.mps.vcs.platform/)" />
+    <import index="l8al" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea.commands(jetbrains.mps.vcs.platform/)" />
     <import index="4rb9" ref="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" />
-    <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
-    <import index="3df7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
-    <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
-    <import index="3dcm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />
-    <import index="r17x" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.branch(jetbrains.mps.ide.vcs.platform/git4idea.branch@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
+    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="jlcu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs(MPS.IDEA/)" />
+    <import index="rfyv" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea.branch(jetbrains.mps.ide.vcs.platform/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -170,7 +170,7 @@
     <property role="TrG5h" value="MPSSourceRevision" />
     <node concept="3Tm1VV" id="3Lj0jv7ELv$" role="1B3o_S" />
     <node concept="3uibUv" id="3Lj0jv7ELvH" role="1zkMxy">
-      <ref role="3uigEE" to="3hgr:~SourceRevision" resolve="SourceRevision" />
+      <ref role="3uigEE" to="4hos:~SourceRevision" resolve="SourceRevision" />
     </node>
     <node concept="3clFbW" id="3Lj0jv7ELv_" role="jymVt">
       <node concept="3cqZAl" id="3Lj0jv7ELvA" role="3clF45" />
@@ -196,7 +196,7 @@
       <node concept="3Tm1VV" id="3Lj0jv7ELvJ" role="1B3o_S" />
       <node concept="17QB3L" id="3Lj0jv7ELvK" role="3clF45" />
       <node concept="2AHcQZ" id="3Lj0jv7ELvL" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="3clFbS" id="3Lj0jv7ELvM" role="3clF47">
         <node concept="3clFbJ" id="3Lj0jv7ELvN" role="3cqZAp">
@@ -216,18 +216,18 @@
           <node concept="3cpWsn" id="3Lj0jv7ELvU" role="3cpWs9">
             <property role="TrG5h" value="mpsHome" />
             <node concept="3uibUv" id="3Lj0jv7ELvV" role="1tU5fm">
-              <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
             </node>
             <node concept="2OqwBi" id="3Lj0jv7ELvW" role="33vP2m">
               <node concept="2YIFZM" id="3Lj0jv7ELvX" role="2Oq$k0">
-                <ref role="37wK5l" to="3df7:~LocalFileSystem.getInstance():com.intellij.openapi.vfs.LocalFileSystem" resolve="getInstance" />
-                <ref role="1Pybhc" to="3df7:~LocalFileSystem" resolve="LocalFileSystem" />
+                <ref role="37wK5l" to="jlff:~LocalFileSystem.getInstance():com.intellij.openapi.vfs.LocalFileSystem" resolve="getInstance" />
+                <ref role="1Pybhc" to="jlff:~LocalFileSystem" resolve="LocalFileSystem" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELvY" role="2OqNvi">
-                <ref role="37wK5l" to="3df7:~VirtualFileSystem.findFileByPath(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="findFileByPath" />
+                <ref role="37wK5l" to="jlff:~VirtualFileSystem.findFileByPath(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="findFileByPath" />
                 <node concept="2YIFZM" id="3Lj0jv7ELvZ" role="37wK5m">
-                  <ref role="37wK5l" to="yla8:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                  <ref role="1Pybhc" to="yla8:~PathManager" resolve="PathManager" />
+                  <ref role="37wK5l" to="bd8o:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                  <ref role="1Pybhc" to="bd8o:~PathManager" resolve="PathManager" />
                 </node>
               </node>
             </node>
@@ -250,7 +250,7 @@
           <node concept="3cpWsn" id="3Lj0jv7ELw8" role="3cpWs9">
             <property role="TrG5h" value="project" />
             <node concept="3uibUv" id="3Lj0jv7ELw9" role="1tU5fm">
-              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
             </node>
             <node concept="AH0OO" id="3Lj0jv7ELwa" role="33vP2m">
               <node concept="3cmrfG" id="3Lj0jv7ELwb" role="AHEQo">
@@ -258,11 +258,11 @@
               </node>
               <node concept="2OqwBi" id="3Lj0jv7ELwc" role="AHHXb">
                 <node concept="2YIFZM" id="3Lj0jv7ELwd" role="2Oq$k0">
-                  <ref role="1Pybhc" to="b2mh:~ProjectManager" resolve="ProjectManager" />
-                  <ref role="37wK5l" to="b2mh:~ProjectManager.getInstance():com.intellij.openapi.project.ProjectManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="4nm9:~ProjectManager" resolve="ProjectManager" />
+                  <ref role="37wK5l" to="4nm9:~ProjectManager.getInstance():com.intellij.openapi.project.ProjectManager" resolve="getInstance" />
                 </node>
                 <node concept="liA8E" id="3Lj0jv7ELwe" role="2OqNvi">
-                  <ref role="37wK5l" to="b2mh:~ProjectManager.getOpenProjects():com.intellij.openapi.project.Project[]" resolve="getOpenProjects" />
+                  <ref role="37wK5l" to="4nm9:~ProjectManager.getOpenProjects():com.intellij.openapi.project.Project[]" resolve="getOpenProjects" />
                 </node>
               </node>
             </node>
@@ -276,8 +276,8 @@
                 <node concept="17QB3L" id="3Lj0jv7ELwj" role="1tU5fm" />
                 <node concept="2EnYce" id="3Lj0jv7ELwk" role="33vP2m">
                   <node concept="2YIFZM" id="46_v$3HTVy7" role="2Oq$k0">
-                    <ref role="37wK5l" to="r17x:~GitBranchUtil.getCurrentBranch(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):git4idea.GitLocalBranch" resolve="getCurrentBranch" />
-                    <ref role="1Pybhc" to="r17x:~GitBranchUtil" resolve="GitBranchUtil" />
+                    <ref role="37wK5l" to="rfyv:~GitBranchUtil.getCurrentBranch(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):git4idea.GitLocalBranch" resolve="getCurrentBranch" />
+                    <ref role="1Pybhc" to="rfyv:~GitBranchUtil" resolve="GitBranchUtil" />
                     <node concept="37vLTw" id="3GM_nagTwhI" role="37wK5m">
                       <ref role="3cqZAo" node="3Lj0jv7ELw8" resolve="project" />
                     </node>
@@ -286,7 +286,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3Lj0jv7ELwo" role="2OqNvi">
-                    <ref role="37wK5l" to="wcn7:~GitReference.getName():java.lang.String" resolve="getName" />
+                    <ref role="37wK5l" to="hr4p:~GitReference.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
               </node>
@@ -354,8 +354,8 @@
                       <ref role="3cqZAo" node="3Lj0jv7ELwH" resolve="headDescription" />
                     </node>
                     <node concept="2YIFZM" id="3Lj0jv7ELwP" role="37vLTx">
-                      <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                      <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                       <node concept="Xl_RD" id="3Lj0jv7ELwQ" role="37wK5m">
                         <property role="Xl_RC" value=", origin/master@%s + %s" />
                       </node>
@@ -363,8 +363,8 @@
                         <ref role="3cqZAo" node="3Lj0jv7ELww" resolve="mergeBase" />
                       </node>
                       <node concept="2YIFZM" id="3Lj0jv7ELwS" role="37wK5m">
-                        <ref role="37wK5l" to="msyo:~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolve="formatNumericalString" />
-                        <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                        <ref role="37wK5l" to="18ew:~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolve="formatNumericalString" />
+                        <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                         <node concept="37vLTw" id="3GM_nagTxNP" role="37wK5m">
                           <ref role="3cqZAo" node="3Lj0jv7ELwA" resolve="distance" />
                         </node>
@@ -401,8 +401,8 @@
                       <ref role="3cqZAo" node="3Lj0jv7ELwH" resolve="headDescription" />
                     </node>
                     <node concept="2YIFZM" id="3Lj0jv7ELx7" role="37vLTx">
-                      <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                      <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                       <node concept="Xl_RD" id="3Lj0jv7ELx8" role="37wK5m">
                         <property role="Xl_RC" value="%s (%s)" />
                       </node>
@@ -433,7 +433,7 @@
             <node concept="3cpWsn" id="3Lj0jv7ELxh" role="TDEfY">
               <property role="TrG5h" value="e" />
               <node concept="3uibUv" id="3Lj0jv7ELxi" role="1tU5fm">
-                <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
+                <ref role="3uigEE" to="jlcu:~VcsException" resolve="VcsException" />
               </node>
             </node>
             <node concept="3clFbS" id="3Lj0jv7ELxj" role="TDEfX" />
@@ -444,7 +444,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_SdZG" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2YIFZL" id="3Lj0jv7ELtp" role="jymVt">
@@ -456,11 +456,11 @@
           <node concept="3cpWsn" id="3Lj0jv7ELtu" role="3cpWs9">
             <property role="TrG5h" value="h" />
             <node concept="3uibUv" id="3Lj0jv7ELtv" role="1tU5fm">
-              <ref role="3uigEE" to="xl3n:~GitSimpleHandler" resolve="GitSimpleHandler" />
+              <ref role="3uigEE" to="l8al:~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
             <node concept="2ShNRf" id="3Lj0jv7ELtw" role="33vP2m">
               <node concept="1pGfFk" id="3Lj0jv7ELtx" role="2ShVmc">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
                 <node concept="37vLTw" id="2BHiRxgm_5S" role="37wK5m">
                   <ref role="3cqZAo" node="3Lj0jv7ELtV" resolve="project" />
                 </node>
@@ -468,8 +468,8 @@
                   <ref role="3cqZAo" node="3Lj0jv7ELtX" resolve="root" />
                 </node>
                 <node concept="10M0yZ" id="3Lj0jv7ELt$" role="37wK5m">
-                  <ref role="1PxDUh" to="xl3n:~GitCommand" resolve="GitCommand" />
-                  <ref role="3cqZAo" to="xl3n:~GitCommand.LOG" resolve="LOG" />
+                  <ref role="1PxDUh" to="l8al:~GitCommand" resolve="GitCommand" />
+                  <ref role="3cqZAo" to="l8al:~GitCommand.LOG" resolve="LOG" />
                 </node>
               </node>
             </node>
@@ -481,7 +481,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELtu" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELtH" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
+              <ref role="37wK5l" to="l8al:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
               <node concept="3clFbT" id="3Lj0jv7ELtI" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -494,7 +494,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELtu" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELtM" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
+              <ref role="37wK5l" to="l8al:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
               <node concept="Xl_RD" id="3Lj0jv7ELtN" role="37wK5m">
                 <property role="Xl_RC" value="--max-count=1" />
               </node>
@@ -511,11 +511,11 @@
                 <ref role="3cqZAo" node="3Lj0jv7ELtu" resolve="h" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELtT" role="2OqNvi">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.run():java.lang.String" resolve="run" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.run():java.lang.String" resolve="run" />
               </node>
             </node>
             <node concept="liA8E" id="3Lj0jv7ELtU" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.trim():java.lang.String" resolve="trim" />
+              <ref role="37wK5l" to="wyt6:~String.trim():java.lang.String" resolve="trim" />
             </node>
           </node>
         </node>
@@ -523,17 +523,17 @@
       <node concept="37vLTG" id="3Lj0jv7ELtV" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="3Lj0jv7ELtW" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="3Lj0jv7ELtX" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3Lj0jv7ELtY" role="1tU5fm">
-          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
       <node concept="3uibUv" id="3Lj0jv7ELtZ" role="Sfmx6">
-        <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
+        <ref role="3uigEE" to="jlcu:~VcsException" resolve="VcsException" />
       </node>
     </node>
     <node concept="2YIFZL" id="3Lj0jv7ELu0" role="jymVt">
@@ -541,13 +541,13 @@
       <node concept="37vLTG" id="3Lj0jv7ELu1" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="3Lj0jv7ELu2" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="3Lj0jv7ELu3" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3Lj0jv7ELu4" role="1tU5fm">
-          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
       <node concept="17QB3L" id="3Lj0jv7ELu5" role="3clF45" />
@@ -557,11 +557,11 @@
           <node concept="3cpWsn" id="3Lj0jv7ELu9" role="3cpWs9">
             <property role="TrG5h" value="h" />
             <node concept="3uibUv" id="3Lj0jv7ELua" role="1tU5fm">
-              <ref role="3uigEE" to="xl3n:~GitSimpleHandler" resolve="GitSimpleHandler" />
+              <ref role="3uigEE" to="l8al:~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
             <node concept="2ShNRf" id="3Lj0jv7ELub" role="33vP2m">
               <node concept="1pGfFk" id="3Lj0jv7ELuc" role="2ShVmc">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
                 <node concept="37vLTw" id="2BHiRxgm9w6" role="37wK5m">
                   <ref role="3cqZAo" node="3Lj0jv7ELu1" resolve="project" />
                 </node>
@@ -569,8 +569,8 @@
                   <ref role="3cqZAo" node="3Lj0jv7ELu3" resolve="root" />
                 </node>
                 <node concept="10M0yZ" id="3Lj0jv7ELuf" role="37wK5m">
-                  <ref role="1PxDUh" to="xl3n:~GitCommand" resolve="GitCommand" />
-                  <ref role="3cqZAo" to="xl3n:~GitCommand.MERGE_BASE" resolve="MERGE_BASE" />
+                  <ref role="1PxDUh" to="l8al:~GitCommand" resolve="GitCommand" />
+                  <ref role="3cqZAo" to="l8al:~GitCommand.MERGE_BASE" resolve="MERGE_BASE" />
                 </node>
               </node>
             </node>
@@ -582,7 +582,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELu9" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELuo" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
+              <ref role="37wK5l" to="l8al:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
               <node concept="3clFbT" id="3Lj0jv7ELup" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -595,7 +595,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELu9" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELut" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
+              <ref role="37wK5l" to="l8al:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
               <node concept="Xl_RD" id="3Lj0jv7ELuu" role="37wK5m">
                 <property role="Xl_RC" value="origin/master" />
               </node>
@@ -614,7 +614,7 @@
                 <ref role="3cqZAo" node="3Lj0jv7ELu9" resolve="h" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELu_" role="2OqNvi">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.run():java.lang.String" resolve="run" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.run():java.lang.String" resolve="run" />
               </node>
             </node>
           </node>
@@ -627,7 +627,7 @@
                   <ref role="3cqZAo" node="3Lj0jv7ELux" resolve="longRev" />
                 </node>
                 <node concept="liA8E" id="3Lj0jv7ELuF" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.substring(int,int):java.lang.String" resolve="substring" />
+                  <ref role="37wK5l" to="wyt6:~String.substring(int,int):java.lang.String" resolve="substring" />
                   <node concept="3cmrfG" id="3Lj0jv7ELuG" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -647,7 +647,7 @@
                 <ref role="3cqZAo" node="3Lj0jv7ELux" resolve="longRev" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELuM" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
               </node>
             </node>
           </node>
@@ -661,7 +661,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3Lj0jv7ELuR" role="Sfmx6">
-        <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
+        <ref role="3uigEE" to="jlcu:~VcsException" resolve="VcsException" />
       </node>
     </node>
     <node concept="2YIFZL" id="3Lj0jv7ELuS" role="jymVt">
@@ -669,13 +669,13 @@
       <node concept="37vLTG" id="3Lj0jv7ELuT" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="3Lj0jv7ELuU" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="3Lj0jv7ELuV" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3Lj0jv7ELuW" role="1tU5fm">
-          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
       <node concept="10Oyi0" id="3Lj0jv7ELuX" role="3clF45" />
@@ -685,11 +685,11 @@
           <node concept="3cpWsn" id="3Lj0jv7ELv1" role="3cpWs9">
             <property role="TrG5h" value="h" />
             <node concept="3uibUv" id="3Lj0jv7ELv2" role="1tU5fm">
-              <ref role="3uigEE" to="xl3n:~GitSimpleHandler" resolve="GitSimpleHandler" />
+              <ref role="3uigEE" to="l8al:~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
             <node concept="2ShNRf" id="3Lj0jv7ELv3" role="33vP2m">
               <node concept="1pGfFk" id="3Lj0jv7ELv4" role="2ShVmc">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
                 <node concept="37vLTw" id="2BHiRxgkWAa" role="37wK5m">
                   <ref role="3cqZAo" node="3Lj0jv7ELuT" resolve="project" />
                 </node>
@@ -697,8 +697,8 @@
                   <ref role="3cqZAo" node="3Lj0jv7ELuV" resolve="root" />
                 </node>
                 <node concept="10M0yZ" id="3Lj0jv7ELv7" role="37wK5m">
-                  <ref role="1PxDUh" to="xl3n:~GitCommand" resolve="GitCommand" />
-                  <ref role="3cqZAo" to="xl3n:~GitCommand.REV_LIST" resolve="REV_LIST" />
+                  <ref role="1PxDUh" to="l8al:~GitCommand" resolve="GitCommand" />
+                  <ref role="3cqZAo" to="l8al:~GitCommand.REV_LIST" resolve="REV_LIST" />
                 </node>
               </node>
             </node>
@@ -710,7 +710,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELv1" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELvg" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
+              <ref role="37wK5l" to="l8al:~GitHandler.setSilent(boolean):void" resolve="setSilent" />
               <node concept="3clFbT" id="3Lj0jv7ELvh" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
@@ -723,7 +723,7 @@
               <ref role="3cqZAo" node="3Lj0jv7ELv1" resolve="h" />
             </node>
             <node concept="liA8E" id="3Lj0jv7ELvl" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
+              <ref role="37wK5l" to="l8al:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
               <node concept="Xl_RD" id="3Lj0jv7ELvm" role="37wK5m">
                 <property role="Xl_RC" value="origin/master..HEAD" />
               </node>
@@ -742,28 +742,28 @@
                 <ref role="3cqZAo" node="3Lj0jv7ELv1" resolve="h" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELvt" role="2OqNvi">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.run():java.lang.String" resolve="run" />
+                <ref role="37wK5l" to="l8al:~GitSimpleHandler.run():java.lang.String" resolve="run" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="3Lj0jv7ELvu" role="3cqZAp">
           <node concept="2YIFZM" id="3Lj0jv7ELvv" role="3cqZAk">
-            <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-            <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
             <node concept="2OqwBi" id="3Lj0jv7ELvw" role="37wK5m">
               <node concept="37vLTw" id="3GM_nagTAJP" role="2Oq$k0">
                 <ref role="3cqZAo" node="3Lj0jv7ELvp" resolve="count" />
               </node>
               <node concept="liA8E" id="3Lj0jv7ELvy" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.trim():java.lang.String" resolve="trim" />
+                <ref role="37wK5l" to="wyt6:~String.trim():java.lang.String" resolve="trim" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="3Lj0jv7ELvz" role="Sfmx6">
-        <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
+        <ref role="3uigEE" to="jlcu:~VcsException" resolve="VcsException" />
       </node>
     </node>
   </node>

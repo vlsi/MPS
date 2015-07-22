@@ -10,7 +10,7 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   </imports>
   <registry>
@@ -144,7 +144,7 @@
                             <property role="Xl_RC" value="registerSelf" />
                           </node>
                           <node concept="liA8E" id="hRzagZ2" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="hRzagZ3" role="37wK5m">
                               <node concept="37vLTw" id="2BHiRxgm6Or" role="2Oq$k0">
                                 <ref role="3cqZAo" node="hRzagYW" resolve="it" />
@@ -218,7 +218,7 @@
                             <property role="Xl_RC" value="unRegisterSelf" />
                           </node>
                           <node concept="liA8E" id="hRzaipd" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="hRzaipe" role="37wK5m">
                               <node concept="37vLTw" id="2BHiRxgm1AH" role="2Oq$k0">
                                 <ref role="3cqZAo" node="hRzaip7" resolve="it" />

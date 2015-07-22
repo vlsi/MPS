@@ -11,11 +11,11 @@
   </languages>
   <imports>
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
-    <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpe5" ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -292,11 +292,11 @@
                 </node>
               </node>
               <node concept="liA8E" id="7Cm4l4B9s7j" role="2OqNvi">
-                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
             <node concept="3uibUv" id="7Cm4l4B9s7k" role="1tU5fm">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
@@ -325,12 +325,12 @@
                 <node concept="3y3z36" id="7Cm4l4B9s7t" role="3uHU7w">
                   <node concept="2OqwBi" id="7Cm4l4B9s7x" role="3uHU7B">
                     <node concept="liA8E" id="7Cm4l4B9s7y" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Solution.getKind():jetbrains.mps.project.structure.modules.SolutionKind" resolve="getKind" />
+                      <ref role="37wK5l" to="z1c3:~Solution.getKind():jetbrains.mps.project.structure.modules.SolutionKind" resolve="getKind" />
                     </node>
                     <node concept="1eOMI4" id="7Cm4l4B9s7z" role="2Oq$k0">
                       <node concept="10QFUN" id="7Cm4l4B9s7$" role="1eOMHV">
                         <node concept="3uibUv" id="7Cm4l4B9s7_" role="10QFUM">
-                          <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+                          <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
                         </node>
                         <node concept="37vLTw" id="7Cm4l4B9s7A" role="10QFUP">
                           <ref role="3cqZAo" node="7Cm4l4B9s7b" resolve="module" />
@@ -339,13 +339,13 @@
                     </node>
                   </node>
                   <node concept="Rm8GO" id="7Cm4l4B9s7u" role="3uHU7w">
-                    <ref role="Rm8GQ" to="kqhl:~SolutionKind.NONE" resolve="NONE" />
-                    <ref role="1Px2BO" to="kqhl:~SolutionKind" resolve="SolutionKind" />
+                    <ref role="Rm8GQ" to="w0gx:~SolutionKind.NONE" resolve="NONE" />
+                    <ref role="1Px2BO" to="w0gx:~SolutionKind" resolve="SolutionKind" />
                   </node>
                 </node>
                 <node concept="2ZW3vV" id="7Cm4l4B9s7B" role="3uHU7B">
                   <node concept="3uibUv" id="7Cm4l4B9s7C" role="2ZW6by">
-                    <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+                    <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
                   </node>
                   <node concept="37vLTw" id="7Cm4l4B9s7D" role="2ZW6bz">
                     <ref role="3cqZAo" node="7Cm4l4B9s7b" resolve="module" />
@@ -398,7 +398,7 @@
           <node concept="3cpWsn" id="HPU8mWQyYy" role="3cpWs9">
             <property role="TrG5h" value="module" />
             <node concept="3uibUv" id="2SWgdY_NnRp" role="1tU5fm">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
             <node concept="2EnYce" id="HPU8mWQyYz" role="33vP2m">
               <node concept="2JrnkZ" id="HPU8mWQyY_" role="2Oq$k0">
@@ -410,7 +410,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="HPU8mWQyYD" role="2OqNvi">
-                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
           </node>
@@ -418,7 +418,7 @@
         <node concept="3clFbJ" id="7Cm4l4B9DJA" role="3cqZAp">
           <node concept="2ZW3vV" id="7Cm4l4B9DX4" role="3clFbw">
             <node concept="3uibUv" id="7Cm4l4B9DXV" role="2ZW6by">
-              <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+              <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
             </node>
             <node concept="37vLTw" id="7Cm4l4B9DRE" role="2ZW6bz">
               <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
@@ -430,12 +430,12 @@
                 <property role="TrG5h" value="descriptor" />
                 <node concept="2OqwBi" id="7Cm4l4B9Fox" role="33vP2m">
                   <node concept="liA8E" id="7Cm4l4B9Iqw" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolve="getModuleDescriptor" />
+                    <ref role="37wK5l" to="z1c3:~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolve="getModuleDescriptor" />
                   </node>
                   <node concept="1eOMI4" id="7Cm4l4B9Ff_" role="2Oq$k0">
                     <node concept="10QFUN" id="7Cm4l4B9Ffy" role="1eOMHV">
                       <node concept="3uibUv" id="7Cm4l4B9FfB" role="10QFUM">
-                        <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+                        <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
                       </node>
                       <node concept="37vLTw" id="7Cm4l4B9FfC" role="10QFUP">
                         <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
@@ -444,17 +444,17 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="7Cm4l4B9FdR" role="1tU5fm">
-                  <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
+                  <ref role="3uigEE" to="w0gx:~SolutionDescriptor" resolve="SolutionDescriptor" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="7Cm4l4B9IvE" role="3cqZAp">
               <node concept="2OqwBi" id="7Cm4l4B9I$U" role="3clFbG">
                 <node concept="liA8E" id="7Cm4l4B9J9o" role="2OqNvi">
-                  <ref role="37wK5l" to="kqhl:~SolutionDescriptor.setKind(jetbrains.mps.project.structure.modules.SolutionKind):void" resolve="setKind" />
+                  <ref role="37wK5l" to="w0gx:~SolutionDescriptor.setKind(jetbrains.mps.project.structure.modules.SolutionKind):void" resolve="setKind" />
                   <node concept="Rm8GO" id="7Cm4l4B9JhK" role="37wK5m">
-                    <ref role="Rm8GQ" to="kqhl:~SolutionKind.PLUGIN_OTHER" resolve="PLUGIN_OTHER" />
-                    <ref role="1Px2BO" to="kqhl:~SolutionKind" resolve="SolutionKind" />
+                    <ref role="Rm8GQ" to="w0gx:~SolutionKind.PLUGIN_OTHER" resolve="PLUGIN_OTHER" />
+                    <ref role="1Px2BO" to="w0gx:~SolutionKind" resolve="SolutionKind" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="7Cm4l4B9IvD" role="2Oq$k0">
@@ -467,7 +467,7 @@
                 <node concept="1eOMI4" id="2SWgdY_NmGp" role="2Oq$k0">
                   <node concept="10QFUN" id="2SWgdY_NmGq" role="1eOMHV">
                     <node concept="3uibUv" id="2SWgdY_Nofy" role="10QFUM">
-                      <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+                      <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
                     </node>
                     <node concept="37vLTw" id="2SWgdY_NmGo" role="10QFUP">
                       <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
@@ -475,7 +475,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="HPU8mWQbmn" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.setChanged():void" resolve="setChanged" />
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.setChanged():void" resolve="setChanged" />
                 </node>
               </node>
             </node>

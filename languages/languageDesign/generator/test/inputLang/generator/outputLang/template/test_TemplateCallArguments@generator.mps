@@ -10,7 +10,7 @@
   </languages>
   <imports>
     <import index="tpm0" ref="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -349,8 +349,8 @@
         <ref role="v9R2y" node="5PVjbugrzR2" resolve="produce_OutputNode" />
         <node concept="3cpWs3" id="bxo68MylKZ" role="v9R3O">
           <node concept="2YIFZM" id="5PVjbugr$HA" role="3uHU7w">
-            <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-            <ref role="37wK5l" to="e2lb:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+            <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+            <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
             <node concept="v3LJS" id="5PVjbugr$Kn" role="37wK5m">
               <ref role="v3LJV" node="5PVjbugrmzG" resolve="value" />
             </node>
@@ -417,8 +417,8 @@
                 <ref role="v3LJV" node="5PVjbugrmzE" resolve="text" />
               </node>
               <node concept="2YIFZM" id="5PVjbugrDL0" role="3uHU7B">
-                <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                <ref role="37wK5l" to="e2lb:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
                 <node concept="3cpWs3" id="5PVjbugrCLf" role="37wK5m">
                   <node concept="2OqwBi" id="5PVjbugrD2l" role="3uHU7w">
                     <node concept="30H73N" id="5PVjbugrCOk" role="2Oq$k0" />

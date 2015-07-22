@@ -11,7 +11,7 @@
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
     <import index="serg" ref="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" implicit="true" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -356,7 +356,7 @@
                     <node concept="2OqwBi" id="6fG3n$Ah1$8" role="3clFbG">
                       <node concept="1XNTG" id="6fG3n$Ah1ne" role="2Oq$k0" />
                       <node concept="liA8E" id="6fG3n$Ah26r" role="2OqNvi">
-                        <ref role="37wK5l" to="srng:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
+                        <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
                         <node concept="2OqwBi" id="4EPKw6tVkXi" role="37wK5m">
                           <node concept="2OqwBi" id="4EPKw6tVhPK" role="2Oq$k0">
                             <node concept="2OqwBi" id="6fG3n$Ah2jA" role="2Oq$k0">
@@ -629,7 +629,7 @@
                     <node concept="2OqwBi" id="3g1u8Joz51$" role="3clFbG">
                       <node concept="1XNTG" id="3g1u8Joz4JN" role="2Oq$k0" />
                       <node concept="liA8E" id="3g1u8Joz5zb" role="2OqNvi">
-                        <ref role="37wK5l" to="srng:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
+                        <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
                         <node concept="37vLTw" id="3g1u8Joz5OJ" role="37wK5m">
                           <ref role="3cqZAo" node="3g1u8Joz1ku" resolve="tag" />
                         </node>

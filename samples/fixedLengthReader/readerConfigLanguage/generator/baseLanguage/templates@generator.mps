@@ -15,7 +15,7 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="732t" ref="r:628f4908-1ab8-453a-b89e-0fbcb5a43fdb(jetbrains.mps.samples.readerConfigLanguage.dsl)" />
     <import index="waq5" ref="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -411,7 +411,7 @@
                     <ref role="3cqZAo" node="hrrmQeU" resolve="suffix" />
                   </node>
                   <node concept="liA8E" id="hxQuvif" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
+                    <ref role="37wK5l" to="wyt6:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
                     <node concept="Xl_RD" id="hrrn4q4" role="37wK5m">
                       <property role="Xl_RC" value="." />
                     </node>
@@ -428,7 +428,7 @@
                         <ref role="3cqZAo" node="hrrmQeU" resolve="suffix" />
                       </node>
                       <node concept="liA8E" id="hxQuvhX" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                        <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                         <node concept="3cpWs3" id="hrrnfFn" role="37wK5m">
                           <node concept="3cmrfG" id="hrrng53" role="3uHU7w">
                             <property role="3cmrfH" value="1" />

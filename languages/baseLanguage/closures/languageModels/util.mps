@@ -10,8 +10,8 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="y5ux" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="v7n5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -270,7 +270,7 @@
               </node>
             </node>
             <node concept="liA8E" id="7Qab_gmbziM" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="37vLTw" id="zNJqyklGHf" role="37wK5m">
                 <ref role="3cqZAo" node="7Qab_gm9Nk5" resolve="fnClassifierName" />
               </node>
@@ -287,7 +287,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="7Qab_gmbDQ6" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="37vLTw" id="i$$tvcA7YI" role="37wK5m">
                   <ref role="3cqZAo" node="7Qab_gm9Nk5" resolve="fnClassifierName" />
                 </node>
@@ -348,7 +348,7 @@
         </node>
         <node concept="3clFbF" id="7Qab_gmkN5q" role="3cqZAp">
           <node concept="3B5_sB" id="7Qab_gmkN5s" role="3clFbG">
-            <ref role="3B5MYn" to="y5ux:~_FunctionTypes" resolve="_FunctionTypes" />
+            <ref role="3B5MYn" to="v7n5:~_FunctionTypes" resolve="_FunctionTypes" />
           </node>
         </node>
       </node>
@@ -368,7 +368,7 @@
         </node>
         <node concept="3clFbF" id="7Qab_gmkN9R" role="3cqZAp">
           <node concept="3B5_sB" id="7Qab_gmkN9S" role="3clFbG">
-            <ref role="3B5MYn" to="y5ux:~_UnrestrictedFunctionTypes" resolve="_UnrestrictedFunctionTypes" />
+            <ref role="3B5MYn" to="v7n5:~_UnrestrictedFunctionTypes" resolve="_UnrestrictedFunctionTypes" />
           </node>
         </node>
       </node>

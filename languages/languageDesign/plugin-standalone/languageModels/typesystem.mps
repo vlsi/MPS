@@ -8,7 +8,7 @@
   <imports>
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" />
     <import index="tp4h" ref="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" />
-    <import index="hm52" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.custom(MPS.Workbench/jetbrains.mps.plugins.custom@java_stub)" />
+    <import index="qv9x" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.custom(MPS.Workbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -86,7 +86,7 @@
       <node concept="3cpWs6" id="qKmr2orM1H" role="3cqZAp">
         <node concept="2c44tf" id="qKmr2orM1I" role="3cqZAk">
           <node concept="3uibUv" id="qKmr2orM1J" role="2c44tc">
-            <ref role="3uigEE" to="hm52:~BaseCustomProjectPlugin" resolve="BaseCustomProjectPlugin" />
+            <ref role="3uigEE" to="qv9x:~BaseCustomProjectPlugin" resolve="BaseCustomProjectPlugin" />
           </node>
         </node>
       </node>
@@ -103,7 +103,7 @@
       <node concept="3cpWs6" id="qKmr2orM1N" role="3cqZAp">
         <node concept="2c44tf" id="qKmr2orM1O" role="3cqZAk">
           <node concept="3uibUv" id="3WeIhZsBG6S" role="2c44tc">
-            <ref role="3uigEE" to="hm52:~BaseCustomApplicationPlugin" resolve="BaseCustomApplicationPlugin" />
+            <ref role="3uigEE" to="qv9x:~BaseCustomApplicationPlugin" resolve="BaseCustomApplicationPlugin" />
           </node>
         </node>
       </node>

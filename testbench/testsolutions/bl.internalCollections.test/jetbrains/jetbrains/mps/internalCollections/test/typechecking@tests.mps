@@ -10,8 +10,8 @@
   </languages>
   <imports>
     <import index="tp82" ref="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
   </imports>
   <registry>
@@ -384,7 +384,7 @@
                 <property role="TrG5h" value="test" />
                 <node concept="A3Dl8" id="WuSHxkqukX" role="1tU5fm">
                   <node concept="3uibUv" id="WuSHxkqukY" role="A3Ik2">
-                    <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                    <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="WuSHxkqukZ" role="33vP2m" />
@@ -394,8 +394,8 @@
               <node concept="1rXfSq" id="WuSHxkqul1" role="3clFbG">
                 <ref role="37wK5l" node="WuSHxkqtql" resolve="acceptTwoSeqs" />
                 <node concept="2YIFZM" id="WuSHxkqul2" role="37wK5m">
-                  <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-                  <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+                  <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                  <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
                   <node concept="3cmrfG" id="WuSHxkqul3" role="37wK5m">
                     <property role="3cmrfH" value="5" />
                   </node>
@@ -411,8 +411,8 @@
                 <node concept="liA8E" id="WuSHxkqul8" role="2OqNvi">
                   <ref role="37wK5l" node="WuSHxkqtql" resolve="acceptTwoSeqs" />
                   <node concept="2YIFZM" id="WuSHxkqul9" role="37wK5m">
-                    <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                    <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                    <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                    <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                     <node concept="3cmrfG" id="WuSHxkqula" role="37wK5m">
                       <property role="3cmrfH" value="5" />
                     </node>
@@ -427,8 +427,8 @@
               <node concept="1rXfSq" id="WuSHxkquld" role="3clFbG">
                 <ref role="37wK5l" node="WuSHxkqtwI" resolve="acceptTwoSeqsRaw" />
                 <node concept="2YIFZM" id="3rohxPV7IJJ" role="37wK5m">
-                  <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                  <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                  <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                  <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <node concept="3cmrfG" id="3rohxPV7IJK" role="37wK5m">
                     <property role="3cmrfH" value="5" />
                   </node>
@@ -447,8 +447,8 @@
                 <node concept="liA8E" id="WuSHxkqulk" role="2OqNvi">
                   <ref role="37wK5l" node="WuSHxkqtwI" resolve="acceptTwoSeqsRaw" />
                   <node concept="2YIFZM" id="WuSHxkqull" role="37wK5m">
-                    <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                    <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                    <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                    <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                     <node concept="3cmrfG" id="WuSHxkqulm" role="37wK5m">
                       <property role="3cmrfH" value="5" />
                     </node>
@@ -469,7 +469,7 @@
           <node concept="37vLTG" id="WuSHxkqtre" role="3clF46">
             <property role="TrG5h" value="a" />
             <node concept="3uibUv" id="WuSHxkqtrB" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
               <node concept="16syzq" id="WuSHxkqtsN" role="11_B2D">
                 <ref role="16sUi3" node="WuSHxkqtq$" resolve="T" />
               </node>
@@ -478,7 +478,7 @@
           <node concept="37vLTG" id="WuSHxkqttF" role="3clF46">
             <property role="TrG5h" value="b" />
             <node concept="3uibUv" id="WuSHxkqtu7" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
               <node concept="16syzq" id="WuSHxkqtvz" role="11_B2D">
                 <ref role="16sUi3" node="WuSHxkqtq$" resolve="T" />
               </node>
@@ -496,13 +496,13 @@
           <node concept="37vLTG" id="WuSHxkqtxP" role="3clF46">
             <property role="TrG5h" value="a" />
             <node concept="3uibUv" id="WuSHxkqtye" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
             </node>
           </node>
           <node concept="37vLTG" id="WuSHxkqtzv" role="3clF46">
             <property role="TrG5h" value="b" />
             <node concept="3uibUv" id="WuSHxkqtzU" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
             </node>
           </node>
           <node concept="3cqZAl" id="WuSHxkqtwK" role="3clF45" />
@@ -528,7 +528,7 @@
                 <node concept="3uibUv" id="jZLrEqVNAb" role="1tU5fm">
                   <ref role="3uigEE" to="urs3:5Ffu4tBUx5R" resolve="ISequence" />
                   <node concept="3uibUv" id="jZLrEqVNAc" role="11_B2D">
-                    <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                    <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="jZLrEqVP1i" role="33vP2m">
@@ -542,12 +542,12 @@
                 <property role="TrG5h" value="traintint" />
                 <node concept="1ajhzC" id="jZLrEqVNAg" role="1tU5fm">
                   <node concept="3uibUv" id="jZLrEqVNAh" role="1ajw0F">
-                    <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                    <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                   </node>
                   <node concept="3uibUv" id="jZLrEqVNAi" role="1ajl9A">
-                    <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                    <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                     <node concept="3uibUv" id="jZLrEqVNAj" role="11_B2D">
-                      <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                      <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                     </node>
                   </node>
                 </node>
@@ -588,7 +588,7 @@
           <node concept="37vLTG" id="jZLrEqVNyu" role="3clF46">
             <property role="TrG5h" value="seq" />
             <node concept="3uibUv" id="jZLrEqVNyv" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
             </node>
           </node>
           <node concept="3cqZAl" id="jZLrEqVNyw" role="3clF45" />
@@ -633,7 +633,7 @@
                                         <ref role="3cqZAo" node="5xvSMnuGPDY" resolve="it" />
                                       </node>
                                       <node concept="liA8E" id="5xvSMnuGPDX" role="2OqNvi">
-                                        <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                                        <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                                       </node>
                                     </node>
                                   </node>

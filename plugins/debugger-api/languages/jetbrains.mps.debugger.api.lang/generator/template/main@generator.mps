@@ -20,18 +20,18 @@
     <import index="86gq" ref="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="rw00" ref="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <import index="5ths" ref="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)" />
     <import index="1l1h" ref="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
-    <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
-    <import index="mo84" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
-    <import index="wlgq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.plugins(MPS.IDEA/com.intellij.ide.plugins@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="9ti4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.extensions(MPS.IDEA/)" />
+    <import index="ctgy" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins(MPS.IDEA/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -559,7 +559,7 @@
             </node>
             <node concept="3Tqbb2" id="74nKSDp1YGz" role="1ajw0F" />
             <node concept="3uibUv" id="74nKSDp1YG_" role="1ajw0F">
-              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
             </node>
           </node>
         </node>
@@ -578,7 +578,7 @@
               </node>
               <node concept="3Tqbb2" id="6KMJeTjkJh3" role="1ajw0F" />
               <node concept="3uibUv" id="6KMJeTjkJh4" role="1ajw0F">
-                <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
               </node>
             </node>
           </node>
@@ -594,11 +594,11 @@
           <node concept="3cpWsn" id="56ID84F0kSp" role="3cpWs9">
             <property role="TrG5h" value="debuggerPlugin" />
             <node concept="3uibUv" id="56ID84F0kSq" role="1tU5fm">
-              <ref role="3uigEE" to="mo84:~PluginId" resolve="PluginId" />
+              <ref role="3uigEE" to="9ti4:~PluginId" resolve="PluginId" />
             </node>
             <node concept="2YIFZM" id="56ID84F0kSr" role="33vP2m">
-              <ref role="1Pybhc" to="wlgq:~PluginManager" resolve="PluginManager" />
-              <ref role="37wK5l" to="wlgq:~PluginManagerCore.getPluginByClassName(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getPluginByClassName" />
+              <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
+              <ref role="37wK5l" to="ctgy:~PluginManagerCore.getPluginByClassName(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getPluginByClassName" />
               <node concept="3iG29X" id="56ID84F0kSs" role="37wK5m">
                 <ref role="3iG29W" to="1l1h:3SnNvqCaJDx" resolve="BreakpointCreatorsManager" />
               </node>
@@ -669,12 +669,12 @@
               <node concept="3cpWsn" id="NMROizkFLP" role="3cpWs9">
                 <property role="TrG5h" value="creator" />
                 <node concept="3uibUv" id="NMROizkFLQ" role="1tU5fm">
-                  <ref role="3uigEE" to="msyo:~Mapper2" resolve="Mapper2" />
+                  <ref role="3uigEE" to="18ew:~Mapper2" resolve="Mapper2" />
                   <node concept="3uibUv" id="NMROizkFLT" role="11_B2D">
-                    <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                    <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>
                   <node concept="3uibUv" id="NMROizkFLU" role="11_B2D">
-                    <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                    <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
                   </node>
                   <node concept="3uibUv" id="6bvGP6XT9xy" role="11_B2D">
                     <ref role="3uigEE" to="rw00:3SnNvqCaJeL" resolve="ILocationBreakpoint" />
@@ -684,14 +684,14 @@
                   <node concept="YeOm9" id="NMROizkG46" role="2ShVmc">
                     <node concept="1Y3b0j" id="NMROizkG47" role="YeSDq">
                       <property role="2bfB8j" value="true" />
-                      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                      <ref role="1Y3XeK" to="msyo:~Mapper2" resolve="Mapper2" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <ref role="1Y3XeK" to="18ew:~Mapper2" resolve="Mapper2" />
                       <node concept="3Tm1VV" id="NMROizkG48" role="1B3o_S" />
                       <node concept="3uibUv" id="NMROizkG4q" role="2Ghqu4">
-                        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                       </node>
                       <node concept="3uibUv" id="NMROizkG4r" role="2Ghqu4">
-                        <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
                       </node>
                       <node concept="3uibUv" id="6bvGP6XT9xw" role="2Ghqu4">
                         <ref role="3uigEE" to="rw00:3SnNvqCaJeL" resolve="ILocationBreakpoint" />
@@ -706,13 +706,13 @@
                         <node concept="37vLTG" id="NMROizkG4c" role="3clF46">
                           <property role="TrG5h" value="debuggableNode" />
                           <node concept="3uibUv" id="NMROizkG4d" role="1tU5fm">
-                            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                           </node>
                         </node>
                         <node concept="37vLTG" id="NMROizkG4e" role="3clF46">
                           <property role="TrG5h" value="project" />
                           <node concept="3uibUv" id="NMROizkG4f" role="1tU5fm">
-                            <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                            <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="3vIYpK5hIfz" role="3clF47">
@@ -1141,7 +1141,7 @@
                           <node concept="37vLTG" id="6KMJeTjkJcm" role="1bW2Oz">
                             <property role="TrG5h" value="project" />
                             <node concept="3uibUv" id="6KMJeTjkJcp" role="1tU5fm">
-                              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
                             </node>
                           </node>
                         </node>
@@ -1158,7 +1158,7 @@
                           </node>
                           <node concept="3Tqbb2" id="6KMJeTjkJ9i" role="1ajw0F" />
                           <node concept="3uibUv" id="6KMJeTjkJ9j" role="1ajw0F">
-                            <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+                            <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
                           </node>
                         </node>
                       </node>
@@ -1205,11 +1205,11 @@
           <node concept="3cpWsn" id="56ID84F0kT5" role="3cpWs9">
             <property role="TrG5h" value="debuggerPlugin" />
             <node concept="3uibUv" id="56ID84F0kT6" role="1tU5fm">
-              <ref role="3uigEE" to="mo84:~PluginId" resolve="PluginId" />
+              <ref role="3uigEE" to="9ti4:~PluginId" resolve="PluginId" />
             </node>
             <node concept="2YIFZM" id="56ID84F0kT7" role="33vP2m">
-              <ref role="1Pybhc" to="wlgq:~PluginManager" resolve="PluginManager" />
-              <ref role="37wK5l" to="wlgq:~PluginManagerCore.getPluginByClassName(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getPluginByClassName" />
+              <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
+              <ref role="37wK5l" to="ctgy:~PluginManagerCore.getPluginByClassName(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getPluginByClassName" />
               <node concept="3iG29X" id="56ID84F0kT8" role="37wK5m">
                 <ref role="3iG29W" to="1l1h:3SnNvqCaJDx" resolve="BreakpointCreatorsManager" />
               </node>
@@ -1376,7 +1376,7 @@
       <node concept="YeOm9" id="43z0$7Pj2YH" role="2ShVmc">
         <node concept="1Y3b0j" id="43z0$7Pj2YI" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
           <ref role="1Y3XeK" to="5ths:3SnNvqCaJfg" resolve="IDebuggerConfiguration" />
           <node concept="3Tm1VV" id="43z0$7Pj2YJ" role="1B3o_S" />
           <node concept="3clFb_" id="43z0$7Pj2YK" role="jymVt">
@@ -1389,7 +1389,7 @@
               <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
             </node>
             <node concept="2AHcQZ" id="43z0$7Pj2YN" role="2AJF6D">
-              <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+              <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
             </node>
             <node concept="3clFbS" id="43z0$7Pj4pa" role="3clF47">
               <node concept="3clFbF" id="43z0$7Pj4pb" role="3cqZAp">

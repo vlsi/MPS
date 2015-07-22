@@ -10,7 +10,7 @@
     <import index="278c" ref="r:885978b0-baca-4eda-8c29-d1384945a64e(org.jetbrains.mps.samples.DecisionTable.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="ku7l" ref="r:313b0e77-ca79-4386-be7b-42bffe9745bf(org.jetbrains.mps.samples.DecisionTable.behavior)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -590,7 +590,7 @@
                                       <node concept="30H73N" id="3mtcPBWFJN5" role="2JrQYb" />
                                     </node>
                                     <node concept="liA8E" id="3mtcPBWFJNx" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                                      <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
                                       <node concept="Xl_RD" id="3mtcPBWFJN$" role="37wK5m">
                                         <property role="Xl_RC" value="colHeader" />
                                       </node>
@@ -697,7 +697,7 @@
                                       </node>
                                     </node>
                                     <node concept="liA8E" id="79m2eqVFdyF" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
+                                      <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
                                       <node concept="Xl_RD" id="79m2eqVFdyN" role="37wK5m">
                                         <property role="Xl_RC" value="colHeader" />
                                       </node>

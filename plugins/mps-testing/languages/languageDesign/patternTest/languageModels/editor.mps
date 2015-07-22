@@ -13,8 +13,8 @@
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpe5" ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" implicit="true" />
   </imports>
   <registry>
@@ -488,7 +488,7 @@
                   <node concept="2OqwBi" id="3AAOMCHcyFQ" role="3clFbw">
                     <node concept="3TQ6bP" id="3AAOMCHcywq" role="2Oq$k0" />
                     <node concept="liA8E" id="3AAOMCHczE6" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="3AAOMCHczER" role="37wK5m">
                         <property role="Xl_RC" value="true" />
                       </node>
@@ -498,7 +498,7 @@
                     <node concept="2OqwBi" id="3AAOMCHc$XI" role="3eO9$A">
                       <node concept="3TQ6bP" id="3AAOMCHc$Mi" role="2Oq$k0" />
                       <node concept="liA8E" id="3AAOMCHc_VY" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="Xl_RD" id="3AAOMCHc_WJ" role="37wK5m">
                           <property role="Xl_RC" value="false" />
                         </node>
@@ -530,7 +530,7 @@
                     <node concept="2OqwBi" id="3AAOMCHcFoV" role="3uHU7w">
                       <node concept="3TQ6bP" id="3AAOMCHcFcA" role="2Oq$k0" />
                       <node concept="liA8E" id="3AAOMCHcGzN" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="Xl_RD" id="3AAOMCHcGLb" role="37wK5m">
                           <property role="Xl_RC" value="false" />
                         </node>
@@ -539,7 +539,7 @@
                     <node concept="2OqwBi" id="3AAOMCHcDnI" role="3uHU7B">
                       <node concept="3TQ6bP" id="3AAOMCHcD76" role="2Oq$k0" />
                       <node concept="liA8E" id="3AAOMCHcEw7" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="Xl_RD" id="3AAOMCHcEFu" role="37wK5m">
                           <property role="Xl_RC" value="true" />
                         </node>

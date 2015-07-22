@@ -10,9 +10,9 @@
   <imports>
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
-    <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
-    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
+    <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -152,7 +152,7 @@
       <property role="TrG5h" value="mySkipCompilation" />
       <node concept="3Tm6S6" id="5OeL7nc8E1y" role="1B3o_S" />
       <node concept="3uibUv" id="5OeL7nc8E1$" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
     </node>
     <node concept="312cEg" id="bvkaYAGRqx" role="jymVt">
@@ -162,7 +162,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="bvkaYAGQVv" role="1B3o_S" />
       <node concept="3uibUv" id="bvkaYAGRqm" role="1tU5fm">
-        <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+        <ref role="3uigEE" to="l46t:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
       </node>
     </node>
     <node concept="2tJIrI" id="5OeL7nc8EkL" role="jymVt" />
@@ -195,7 +195,7 @@
       <node concept="37vLTG" id="5OeL7nc8E12" role="3clF46">
         <property role="TrG5h" value="skip" />
         <node concept="3uibUv" id="5OeL7nc8E11" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
       </node>
     </node>
@@ -228,7 +228,7 @@
       <node concept="37vLTG" id="bvkaYAGPZT" role="3clF46">
         <property role="TrG5h" value="options" />
         <node concept="3uibUv" id="bvkaYAGPZS" role="1tU5fm">
-          <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+          <ref role="3uigEE" to="l46t:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
         </node>
       </node>
     </node>
@@ -243,25 +243,25 @@
             <property role="TrG5h" value="compileProps" />
             <node concept="1LlUBW" id="71egOude_N5" role="1tU5fm">
               <node concept="3uibUv" id="71egOude_N6" role="1Lm7xW">
-                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
               </node>
               <node concept="3uibUv" id="71egOude_N7" role="1Lm7xW">
-                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
               </node>
               <node concept="3uibUv" id="bvkaYAHOjI" role="1Lm7xW">
-                <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+                <ref role="3uigEE" to="l46t:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
               </node>
             </node>
             <node concept="10QFUN" id="71egOude_N8" role="33vP2m">
               <node concept="1LlUBW" id="71egOude_N9" role="10QFUM">
                 <node concept="3uibUv" id="71egOude_Na" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
                 <node concept="3uibUv" id="71egOude_Nb" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
                 <node concept="3uibUv" id="bvkaYAHOFd" role="1Lm7xW">
-                  <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+                  <ref role="3uigEE" to="l46t:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
                 </node>
               </node>
               <node concept="2OqwBi" id="71egOude_Nc" role="10QFUP">
@@ -279,7 +279,7 @@
                     </node>
                   </node>
                   <node concept="3VsKOn" id="71egOude_Ni" role="37wK5m">
-                    <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -349,7 +349,7 @@
       <node concept="3Tm6S6" id="5OeL7nc7QqS" role="1B3o_S" />
       <node concept="1ajhzC" id="5OeL7nc7Q$H" role="1tU5fm">
         <node concept="3uibUv" id="5OeL7nc7Q$I" role="1ajl9A">
-          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
         <node concept="17QB3L" id="5OeL7nc7Q$J" role="1ajw0F" />
       </node>
@@ -361,7 +361,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="5OeL7nca18I" role="1B3o_S" />
       <node concept="3uibUv" id="5OeL7nca1Ls" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
     </node>
     <node concept="3clFbW" id="5OeL7nc7VFF" role="jymVt">
@@ -394,7 +394,7 @@
         <property role="TrG5h" value="f" />
         <node concept="1ajhzC" id="5OeL7nc7QcI" role="1tU5fm">
           <node concept="3uibUv" id="5OeL7nc7QgG" role="1ajl9A">
-            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
           </node>
           <node concept="17QB3L" id="5OeL7nc7Qgq" role="1ajw0F" />
         </node>
@@ -424,7 +424,7 @@
       <node concept="37vLTG" id="5OeL7nc9XeU" role="3clF46">
         <property role="TrG5h" value="skip" />
         <node concept="3uibUv" id="5OeL7nc9Z51" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
       </node>
     </node>
@@ -441,7 +441,7 @@
                 <node concept="1LlUBW" id="4_Slee3u3Dk" role="1tU5fm">
                   <node concept="1ajhzC" id="4_Slee3u3Dl" role="1Lm7xW">
                     <node concept="3uibUv" id="4_Slee3u3Dm" role="1ajl9A">
-                      <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+                      <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                     </node>
                     <node concept="17QB3L" id="4_Slee3u3Dn" role="1ajw0F" />
                   </node>
@@ -450,7 +450,7 @@
                   <node concept="1LlUBW" id="4_Slee3u3Dq" role="10QFUM">
                     <node concept="1ajhzC" id="4_Slee3u3Dr" role="1Lm7xW">
                       <node concept="3uibUv" id="4_Slee3u3Ds" role="1ajl9A">
-                        <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+                        <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                       </node>
                       <node concept="17QB3L" id="4_Slee3u3Dt" role="1ajw0F" />
                     </node>
@@ -470,7 +470,7 @@
                         </node>
                       </node>
                       <node concept="3VsKOn" id="4_Slee3u3D_" role="37wK5m">
-                        <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                        <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                       </node>
                     </node>
                   </node>
@@ -517,13 +517,13 @@
                 <property role="TrG5h" value="skipReconcile" />
                 <node concept="1LlUBW" id="71egOude_Or" role="1tU5fm">
                   <node concept="3uibUv" id="71egOude_Os" role="1Lm7xW">
-                    <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                    <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                   </node>
                 </node>
                 <node concept="10QFUN" id="71egOude_Ot" role="33vP2m">
                   <node concept="1LlUBW" id="71egOude_Ou" role="10QFUM">
                     <node concept="3uibUv" id="71egOude_Ov" role="1Lm7xW">
-                      <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="71egOude_Ow" role="10QFUP">
@@ -541,7 +541,7 @@
                         </node>
                       </node>
                       <node concept="3VsKOn" id="71egOude_OA" role="37wK5m">
-                        <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                        <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                       </node>
                     </node>
                   </node>

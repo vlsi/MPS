@@ -17,9 +17,9 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
-    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -2452,17 +2452,17 @@
               <node concept="3fqX7Q" id="uktU6AWHQ1" role="3clFbw">
                 <node concept="2OqwBi" id="4wG2MBHCYVH" role="3fr31v">
                   <node concept="2YIFZM" id="4wG2MBHCYUr" role="2Oq$k0">
-                    <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                    <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                    <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                    <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
                     <node concept="37vLTw" id="4wG2MBHCYU_" role="37wK5m">
                       <ref role="3cqZAo" node="uktU6AWHPO" resolve="nodeConcept" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4wG2MBHCZ3t" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
                     <node concept="2YIFZM" id="4wG2MBHCZ6O" role="37wK5m">
-                      <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                      <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                      <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                      <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                       <node concept="37vLTw" id="4wG2MBHCZaq" role="37wK5m">
                         <ref role="3cqZAo" node="uktU6AWHPr" resolve="templateApplicableConcept" />
                       </node>
@@ -3873,8 +3873,8 @@
                       <property role="TrG5h" value="msg" />
                       <node concept="17QB3L" id="3lJIBUNcmXQ" role="1tU5fm" />
                       <node concept="2YIFZM" id="3lJIBUNcmXR" role="33vP2m">
-                        <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                        <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                         <node concept="Xl_RD" id="3lJIBUNcmXS" role="37wK5m">
                           <property role="Xl_RC" value="Input node (%s) is not an instance of template's expected concept (%s)" />
                         </node>
@@ -3914,17 +3914,17 @@
                 <node concept="3fqX7Q" id="3lJIBUNcmY4" role="3clFbw">
                   <node concept="2OqwBi" id="3lJIBUNcmY5" role="3fr31v">
                     <node concept="2YIFZM" id="3lJIBUNcmY6" role="2Oq$k0">
-                      <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                      <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                      <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                      <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                       <node concept="37vLTw" id="3lJIBUNcmY7" role="37wK5m">
                         <ref role="3cqZAo" node="3lJIBUNcmXF" resolve="inputNodeConcept" />
                       </node>
                     </node>
                     <node concept="liA8E" id="3lJIBUNcmY8" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
                       <node concept="2YIFZM" id="3lJIBUNcmY9" role="37wK5m">
-                        <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                        <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                         <node concept="2OqwBi" id="3lJIBUNcmYa" role="37wK5m">
                           <node concept="3TrEf2" id="3lJIBUNcmYc" role="2OqNvi">
                             <ref role="3Tt5mk" to="tpf8:h03gUQu" />
@@ -4036,8 +4036,8 @@
                         <property role="TrG5h" value="msg" />
                         <node concept="17QB3L" id="6j1nfBdCgWc" role="1tU5fm" />
                         <node concept="2YIFZM" id="6j1nfBdCh4T" role="33vP2m">
-                          <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                          <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                           <node concept="Xl_RD" id="6j1nfBdCgWf" role="37wK5m">
                             <property role="Xl_RC" value="Input node (%s) is not an instance of template's expected concept (%s)" />
                           </node>
@@ -4077,17 +4077,17 @@
                   <node concept="3fqX7Q" id="6j1nfBdCgBE" role="3clFbw">
                     <node concept="2OqwBi" id="6j1nfBdCgBG" role="3fr31v">
                       <node concept="2YIFZM" id="6j1nfBdCgBH" role="2Oq$k0">
-                        <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                        <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                         <node concept="37vLTw" id="6j1nfBdCgBI" role="37wK5m">
                           <ref role="3cqZAo" node="6j1nfBdCeY9" resolve="inputNodeConcept" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6j1nfBdCgBJ" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                        <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
                         <node concept="2YIFZM" id="6j1nfBdCgBK" role="37wK5m">
-                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                          <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                          <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                          <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                           <node concept="2OqwBi" id="6j1nfBdCgBL" role="37wK5m">
                             <node concept="37vLTw" id="6j1nfBdCgBM" role="2Oq$k0">
                               <ref role="3cqZAo" node="6j1nfBdBOIS" resolve="template" />
@@ -4353,8 +4353,8 @@
                         <property role="TrG5h" value="msg" />
                         <node concept="17QB3L" id="3lJIBUNck9w" role="1tU5fm" />
                         <node concept="2YIFZM" id="3lJIBUNck9x" role="33vP2m">
-                          <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                          <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                           <node concept="Xl_RD" id="3lJIBUNck9y" role="37wK5m">
                             <property role="Xl_RC" value="Input node (%s) is not an instance of template's expected concept (%s)" />
                           </node>
@@ -4394,17 +4394,17 @@
                   <node concept="3fqX7Q" id="3lJIBUNck9I" role="3clFbw">
                     <node concept="2OqwBi" id="3lJIBUNck9J" role="3fr31v">
                       <node concept="2YIFZM" id="3lJIBUNck9K" role="2Oq$k0">
-                        <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                        <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
                         <node concept="37vLTw" id="3lJIBUNck9L" role="37wK5m">
                           <ref role="3cqZAo" node="3lJIBUNck9l" resolve="inputNodeConcept" />
                         </node>
                       </node>
                       <node concept="liA8E" id="3lJIBUNck9M" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                        <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
                         <node concept="2YIFZM" id="3lJIBUNck9N" role="37wK5m">
-                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                          <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                          <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                          <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
                           <node concept="2OqwBi" id="3lJIBUNck9O" role="37wK5m">
                             <node concept="37vLTw" id="3lJIBUNck9P" role="2Oq$k0">
                               <ref role="3cqZAo" node="3lJIBUNcjU3" resolve="template" />

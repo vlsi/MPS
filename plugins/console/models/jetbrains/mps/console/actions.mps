@@ -10,14 +10,14 @@
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="zyb2" ref="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
+    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="qgo0" ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
-    <import index="pvwh" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />
-    <import index="bzqj" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.cells(jetbrains.mps.editor.runtime.cells@java_stub)" />
-    <import index="1d7m" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" />
-    <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" implicit="true" />
+    <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" />
+    <import index="3ahc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.cells()" />
+    <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
+    <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -259,7 +259,7 @@
           <node concept="37vLTI" id="2ONldth5Fto" role="3clFbG">
             <node concept="2ShNRf" id="2ONldth5Ftp" role="37vLTx">
               <node concept="1pGfFk" id="MOQdGoUVeM" role="2ShVmc">
-                <ref role="37wK5l" to="k7g3:~WeakHashMap.&lt;init&gt;()" resolve="WeakHashMap" />
+                <ref role="37wK5l" to="33ny:~WeakHashMap.&lt;init&gt;()" resolve="WeakHashMap" />
                 <node concept="3Tqbb2" id="3D6DpvagA$A" role="1pMfVU">
                   <ref role="ehGHo" to="eynw:XHjpmeKJb6" resolve="NodeWithClosure" />
                 </node>
@@ -444,14 +444,14 @@
     <property role="2uzpH1" value="Execute Attached Action" />
     <node concept="1DS2jV" id="26Zgp9fCgIn" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
       <node concept="hp_a4" id="3D0DuOpsgjZ" role="1oa70y">
         <ref role="hp_a8" to="eynw:7oNS25de_xm" resolve="IActionHolder" />
       </node>
     </node>
     <node concept="1DS2jV" id="26Zgp9fCmYK" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="26Zgp9fCmYL" role="1oa70y" />
     </node>
     <node concept="tnohg" id="2ONldtgwNPG" role="tncku">
@@ -514,17 +514,17 @@
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4c815Y20ZO0" role="1NuT2Z">
       <property role="TrG5h" value="editor" />
-      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="4c815Y20ZO1" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="MlMxr8v42x" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
-      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
       <node concept="1oajcY" id="MlMxr8v42y" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="3weXYUup8PS" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="3weXYUup8PT" role="1oa70y" />
     </node>
     <node concept="tnohg" id="4c815Y20Qci" role="tncku">
@@ -539,7 +539,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3weXYUupfw1" role="2OqNvi">
-                <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="3weXYUupfHo" role="37wK5m">
                   <ref role="3VsUkX" to="qgo0:1iC2RjkXjYJ" resolve="ConsoleTool" />
                 </node>
@@ -551,18 +551,18 @@
                 <node concept="3clFbS" id="3weXYUupkic" role="1bW5cS">
                   <node concept="3clFbF" id="2BT5gU6EdIX" role="3cqZAp">
                     <node concept="2YIFZM" id="2BT5gU6EdIY" role="3clFbG">
-                      <ref role="1Pybhc" to="pvwh:~ActionUtils" resolve="ActionUtils" />
-                      <ref role="37wK5l" to="pvwh:~ActionUtils.updateAndPerformAction(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="updateAndPerformAction" />
+                      <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
+                      <ref role="37wK5l" to="7bx7:~ActionUtils.updateAndPerformAction(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="updateAndPerformAction" />
                       <node concept="2OqwBi" id="2BT5gU6EdIZ" role="37wK5m">
                         <node concept="2YIFZM" id="2BT5gU6EdJ0" role="2Oq$k0">
-                          <ref role="1Pybhc" to="nx1:~ActionManager" resolve="ActionManager" />
-                          <ref role="37wK5l" to="nx1:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                          <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                          <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
                         </node>
                         <node concept="liA8E" id="2BT5gU6EdJ1" role="2OqNvi">
-                          <ref role="37wK5l" to="nx1:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                          <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
                           <node concept="10M0yZ" id="2BT5gU6EdJ2" role="37wK5m">
-                            <ref role="1PxDUh" to="nx1:~IdeActions" resolve="IdeActions" />
-                            <ref role="3cqZAo" to="nx1:~IdeActions.ACTION_PASTE" resolve="ACTION_PASTE" />
+                            <ref role="1PxDUh" to="qkt:~IdeActions" resolve="IdeActions" />
+                            <ref role="3cqZAo" to="qkt:~IdeActions.ACTION_PASTE" resolve="ACTION_PASTE" />
                           </node>
                         </node>
                       </node>
@@ -586,11 +586,11 @@
               </node>
               <node concept="2OqwBi" id="4ASMi_2ftG_" role="2ZW6bz">
                 <node concept="10M0yZ" id="4ASMi_2ftdw" role="2Oq$k0">
-                  <ref role="1PxDUh" to="nx1:~PlatformDataKeys" resolve="PlatformDataKeys" />
-                  <ref role="3cqZAo" to="nx1:~PlatformDataKeys.PASTE_PROVIDER" resolve="PASTE_PROVIDER" />
+                  <ref role="1PxDUh" to="qkt:~PlatformDataKeys" resolve="PlatformDataKeys" />
+                  <ref role="3cqZAo" to="qkt:~PlatformDataKeys.PASTE_PROVIDER" resolve="PASTE_PROVIDER" />
                 </node>
                 <node concept="liA8E" id="4ASMi_2fuRs" role="2OqNvi">
-                  <ref role="37wK5l" to="nx1:~DataKey.getData(com.intellij.openapi.actionSystem.DataProvider):java.lang.Object" resolve="getData" />
+                  <ref role="37wK5l" to="qkt:~DataKey.getData(com.intellij.openapi.actionSystem.DataProvider):java.lang.Object" resolve="getData" />
                   <node concept="2OqwBi" id="4ASMi_2fv7N" role="37wK5m">
                     <node concept="2WthIp" id="4ASMi_2fv7Q" role="2Oq$k0" />
                     <node concept="1DTwFV" id="4ASMi_2fv7S" role="2OqNvi">
@@ -602,8 +602,8 @@
             </node>
             <node concept="3fqX7Q" id="1hGiwlkTU6u" role="3uHU7w">
               <node concept="2YIFZM" id="MlMxr8v9$N" role="3fr31v">
-                <ref role="37wK5l" to="bzqj:~ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent,jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isCellOrSelectionReadOnlyInEditor" />
-                <ref role="1Pybhc" to="bzqj:~ReadOnlyUtil" resolve="ReadOnlyUtil" />
+                <ref role="37wK5l" to="3ahc:~ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent,jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isCellOrSelectionReadOnlyInEditor" />
+                <ref role="1Pybhc" to="3ahc:~ReadOnlyUtil" resolve="ReadOnlyUtil" />
                 <node concept="2OqwBi" id="MlMxr8vagd" role="37wK5m">
                   <node concept="2WthIp" id="MlMxr8vagg" role="2Oq$k0" />
                   <node concept="1DTwFV" id="MlMxr8vagi" role="2OqNvi">

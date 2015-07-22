@@ -6,9 +6,9 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="ar19" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.geom(JDK/java.awt.geom@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="fbzs" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.geom(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -135,7 +135,7 @@
           <node concept="3cpWsn" id="2WhjvKEQPfj" role="3cpWs9">
             <property role="TrG5h" value="r" />
             <node concept="3uibUv" id="2WhjvKEQPfk" role="1tU5fm">
-              <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
+              <ref role="3uigEE" to="fbzs:~Rectangle2D" resolve="Rectangle2D" />
             </node>
             <node concept="2AoxLU" id="4ediw4t42BN" role="33vP2m">
               <ref role="2Ap75J" node="3P1yT_0YxhT" resolve="Rectangle" />
@@ -163,11 +163,11 @@
         <node concept="3clFbF" id="2WhjvKEQPfC" role="3cqZAp">
           <node concept="2OqwBi" id="2WhjvKEQPqd" role="3clFbG">
             <node concept="10M0yZ" id="2WhjvKEQPfD" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="2WhjvKEQPqh" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.Object):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object):void" resolve="println" />
               <node concept="37vLTw" id="3GM_nagTxHW" role="37wK5m">
                 <ref role="3cqZAo" node="2WhjvKEQPfj" resolve="r" />
               </node>
@@ -179,7 +179,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="2WhjvKEQPqV" role="1tU5fm">
           <node concept="3uibUv" id="2WhjvKEQPqM" role="10Q1$1">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>
@@ -193,7 +193,7 @@
       <property role="1_lXKI" value="{" />
       <property role="1_lXKL" value="," />
       <node concept="3uibUv" id="3P1yT_0Ywfe" role="1_lXKH">
-        <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
+        <ref role="3uigEE" to="fbzs:~Point2D" resolve="Point2D" />
       </node>
       <node concept="3XUIV8" id="3P1yT_0Ywf8" role="3XUO1_">
         <node concept="3XUO1F" id="3P1yT_0Ywf9" role="3XUO1j">
@@ -209,7 +209,7 @@
         <node concept="3cpWs6" id="3P1yT_0Ywff" role="3cqZAp">
           <node concept="2ShNRf" id="3P1yT_0Ywfh" role="3cqZAk">
             <node concept="1pGfFk" id="3P1yT_0YxhP" role="2ShVmc">
-              <ref role="37wK5l" to="ar19:~Point2D$Double.&lt;init&gt;(double,double)" resolve="Point2D.Double" />
+              <ref role="37wK5l" to="fbzs:~Point2D$Double.&lt;init&gt;(double,double)" resolve="Point2D.Double" />
               <node concept="MIHzR" id="3P1yT_0YxhQ" role="37wK5m">
                 <ref role="3XVpon" node="3P1yT_0Ywf9" resolve="x" />
               </node>
@@ -227,19 +227,19 @@
       <property role="1_lXKI" value="[" />
       <property role="1_lXKL" value="&gt;" />
       <node concept="3uibUv" id="3P1yT_0Yxi3" role="1_lXKH">
-        <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
+        <ref role="3uigEE" to="fbzs:~Rectangle2D" resolve="Rectangle2D" />
       </node>
       <node concept="3XUIV8" id="3P1yT_0YxhX" role="3XUO1_">
         <node concept="3XUO1F" id="3P1yT_0YxhY" role="3XUO1j">
           <property role="TrG5h" value="topleft" />
           <node concept="3uibUv" id="3P1yT_0YxhZ" role="3XUQxq">
-            <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
+            <ref role="3uigEE" to="fbzs:~Point2D" resolve="Point2D" />
           </node>
         </node>
         <node concept="3XUO1F" id="3P1yT_0Yxi0" role="3XUO1j">
           <property role="TrG5h" value="bottomright" />
           <node concept="3uibUv" id="3P1yT_0Yxi2" role="3XUQxq">
-            <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
+            <ref role="3uigEE" to="fbzs:~Point2D" resolve="Point2D" />
           </node>
         </node>
       </node>
@@ -253,7 +253,7 @@
                 <ref role="3XVpon" node="3P1yT_0YxhY" resolve="topleft" />
               </node>
               <node concept="liA8E" id="3P1yT_0Yxis" role="2OqNvi">
-                <ref role="37wK5l" to="ar19:~Point2D.getX():double" resolve="getX" />
+                <ref role="37wK5l" to="fbzs:~Point2D.getX():double" resolve="getX" />
               </node>
             </node>
           </node>
@@ -267,7 +267,7 @@
                 <ref role="3XVpon" node="3P1yT_0YxhY" resolve="topleft" />
               </node>
               <node concept="liA8E" id="3P1yT_0Yxiz" role="2OqNvi">
-                <ref role="37wK5l" to="ar19:~Point2D.getY():double" resolve="getY" />
+                <ref role="37wK5l" to="fbzs:~Point2D.getY():double" resolve="getY" />
               </node>
             </node>
           </node>
@@ -275,7 +275,7 @@
         <node concept="3cpWs6" id="3P1yT_0Yxi4" role="3cqZAp">
           <node concept="2ShNRf" id="3P1yT_0Yxi6" role="3cqZAk">
             <node concept="1pGfFk" id="3P1yT_0Yxi8" role="2ShVmc">
-              <ref role="37wK5l" to="ar19:~Rectangle2D$Double.&lt;init&gt;(double,double,double,double)" resolve="Rectangle2D.Double" />
+              <ref role="37wK5l" to="fbzs:~Rectangle2D$Double.&lt;init&gt;(double,double,double,double)" resolve="Rectangle2D.Double" />
               <node concept="37vLTw" id="3GM_nagTrKS" role="37wK5m">
                 <ref role="3cqZAo" node="3P1yT_0Yxio" resolve="x" />
               </node>
@@ -288,7 +288,7 @@
                     <ref role="3XVpon" node="3P1yT_0Yxi0" resolve="bottomright" />
                   </node>
                   <node concept="liA8E" id="3P1yT_0YxiW" role="2OqNvi">
-                    <ref role="37wK5l" to="ar19:~Point2D.getX():double" resolve="getX" />
+                    <ref role="37wK5l" to="fbzs:~Point2D.getX():double" resolve="getX" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagT$_s" role="3uHU7w">
@@ -301,7 +301,7 @@
                     <ref role="3XVpon" node="3P1yT_0Yxi0" resolve="bottomright" />
                   </node>
                   <node concept="liA8E" id="3P1yT_0Yxj0" role="2OqNvi">
-                    <ref role="37wK5l" to="ar19:~Point2D.getY():double" resolve="getY" />
+                    <ref role="37wK5l" to="fbzs:~Point2D.getY():double" resolve="getY" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTy32" role="3uHU7w">

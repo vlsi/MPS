@@ -19,12 +19,12 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="9a8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="eaoh" ref="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)" />
-    <import index="qe67" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" implicit="true" />
     <import index="dekf" ref="r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="nu8v" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" implicit="true" />
+    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -163,7 +163,7 @@
                   <node concept="2OqwBi" id="3yp29n1qRTW" role="1PxMeX">
                     <node concept="369mXd" id="3yp29n1qRTX" role="2Oq$k0" />
                     <node concept="liA8E" id="3yp29n1qRTY" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -241,18 +241,18 @@
                   <node concept="2OqwBi" id="3yp29n1qKWN" role="2Oq$k0">
                     <node concept="369mXd" id="3yp29n1qKFD" role="2Oq$k0" />
                     <node concept="liA8E" id="3yp29n1qNkM" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="3yp29n1qS6e" role="37wK5m">
                         <ref role="3cqZAo" node="3yp29n1qRTV" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3yp29n1qSyq" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3yp29n1qUyE" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="3yp29n1qUAQ" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -268,18 +268,18 @@
                   <node concept="2OqwBi" id="3yp29n1ra7G" role="2Oq$k0">
                     <node concept="369mXd" id="3yp29n1ra7H" role="2Oq$k0" />
                     <node concept="liA8E" id="3yp29n1ra7I" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="3yp29n1ra7J" role="37wK5m">
                         <ref role="3cqZAo" node="3yp29n1r3Pu" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3yp29n1ra7K" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3yp29n1ra7L" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="3yp29n1ra7M" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -295,18 +295,18 @@
                   <node concept="2OqwBi" id="3yp29n1qWA$" role="2Oq$k0">
                     <node concept="369mXd" id="3yp29n1qWA_" role="2Oq$k0" />
                     <node concept="liA8E" id="3yp29n1qWAA" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="3yp29n1raUb" role="37wK5m">
                         <ref role="3cqZAo" node="3yp29n1r6mW" resolve="inner" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3yp29n1qWAC" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3yp29n1qWAD" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="3yp29n1qWAE" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -322,18 +322,18 @@
                   <node concept="2OqwBi" id="3yp29n1raE$" role="2Oq$k0">
                     <node concept="369mXd" id="3yp29n1raE_" role="2Oq$k0" />
                     <node concept="liA8E" id="3yp29n1raEA" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="3yp29n1raWu" role="37wK5m">
                         <ref role="3cqZAo" node="3yp29n1qX_V" resolve="innerLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3yp29n1raEC" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3yp29n1raED" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="3yp29n1raEE" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -377,7 +377,7 @@
                   <node concept="2OqwBi" id="1iKgLyhIPO" role="1PxMeX">
                     <node concept="369mXd" id="1iKgLyhIPP" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhIPQ" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -495,26 +495,26 @@
                   <node concept="2OqwBi" id="1iKgLyhIQj" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhIQk" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhIQl" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhIQm" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhIPL" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhIQn" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhIQo" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhIQp" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
                 </node>
               </node>
               <node concept="10M0yZ" id="1iKgLyi3aF" role="3tpDZA">
-                <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
-                <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
+                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
               </node>
             </node>
             <node concept="3vlDli" id="1iKgLyhUXr" role="3cqZAp">
@@ -523,18 +523,18 @@
                   <node concept="2OqwBi" id="1iKgLyhUXu" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhUXv" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhUXw" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhUXx" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhIPS" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhUXy" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhUXz" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhUX$" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
@@ -545,7 +545,7 @@
                   <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                 </node>
                 <node concept="liA8E" id="1iKgLyhUXB" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
+                  <ref role="37wK5l" to="hox0:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
                   <node concept="10Nm6u" id="1iKgLyhUXC" role="37wK5m" />
                   <node concept="10Nm6u" id="1iKgLyhUXD" role="37wK5m" />
                 </node>
@@ -557,26 +557,26 @@
                   <node concept="2OqwBi" id="1iKgLyhXr7" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhXr8" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhXr9" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhXra" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhKKP" resolve="inner1" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhXrb" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhXrc" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhXrd" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
                 </node>
               </node>
               <node concept="10M0yZ" id="1iKgLyi3Z2" role="3tpDZA">
-                <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
-                <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
+                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
               </node>
             </node>
             <node concept="3vlDli" id="1iKgLyhXrf" role="3cqZAp">
@@ -585,18 +585,18 @@
                   <node concept="2OqwBi" id="1iKgLyhXri" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhXrj" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhXrk" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhXrl" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhIQ8" resolve="inner1Leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhXrm" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhXrn" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhXro" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
@@ -607,7 +607,7 @@
                   <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                 </node>
                 <node concept="liA8E" id="1iKgLyhXrr" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
+                  <ref role="37wK5l" to="hox0:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
                   <node concept="10Nm6u" id="1iKgLyhXrs" role="37wK5m" />
                   <node concept="10Nm6u" id="1iKgLyhXrt" role="37wK5m" />
                 </node>
@@ -619,26 +619,26 @@
                   <node concept="2OqwBi" id="1iKgLyhWjT" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhWjU" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhWjV" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhYzm" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhIQ0" resolve="inner2" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhWjX" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhWjY" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhWjZ" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
                 </node>
               </node>
               <node concept="10M0yZ" id="1iKgLyi4eN" role="3tpDZA">
-                <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
-                <ref role="3cqZAo" to="e2lb:~Boolean.FALSE" resolve="FALSE" />
+                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                <ref role="3cqZAo" to="wyt6:~Boolean.FALSE" resolve="FALSE" />
               </node>
             </node>
             <node concept="3vlDli" id="1iKgLyhIQq" role="3cqZAp">
@@ -647,18 +647,18 @@
                   <node concept="2OqwBi" id="1iKgLyhIQu" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyhIQv" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyhIQw" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyhYM3" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyhPrQ" resolve="inner2Leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyhIQy" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyhIQz" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyhIQ$" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                   </node>
@@ -669,7 +669,7 @@
                   <ref role="1Z6EpT" to="eaoh:5ISglset19V" resolve="test-simple-attribute" />
                 </node>
                 <node concept="liA8E" id="1iKgLyhXc8" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
+                  <ref role="37wK5l" to="hox0:~StyleAttribute.combine(java.lang.Object,java.lang.Object):java.lang.Object" resolve="combine" />
                   <node concept="10Nm6u" id="1iKgLyhXc9" role="37wK5m" />
                   <node concept="10Nm6u" id="1iKgLyhXca" role="37wK5m" />
                 </node>
@@ -712,7 +712,7 @@
                   <node concept="2OqwBi" id="1iKgLyicTy" role="1PxMeX">
                     <node concept="369mXd" id="1iKgLyicTz" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyicT$" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -830,18 +830,18 @@
                   <node concept="2OqwBi" id="1iKgLyipE$" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyipE_" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyipEA" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyipEB" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyicTv" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyipEC" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyipED" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyipEE" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -857,18 +857,18 @@
                   <node concept="2OqwBi" id="1iKgLyicUh" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyicUi" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyicUj" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiqNL" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyicTA" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyicUl" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyicUm" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyicUn" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -884,18 +884,18 @@
                   <node concept="2OqwBi" id="1iKgLyiq44" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiq45" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiq46" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiqW7" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyicTI" resolve="priority" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiq48" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiq49" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiq4a" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -911,18 +911,18 @@
                   <node concept="2OqwBi" id="1iKgLyiuch" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiuci" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiucj" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiuck" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyicTQ" resolve="innerLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiucl" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiucm" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiucn" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -938,18 +938,18 @@
                   <node concept="2OqwBi" id="1iKgLyiqij" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiqik" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiqil" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiuXy" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyimH_" resolve="ignore" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiqin" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiqio" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiqip" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -965,18 +965,18 @@
                   <node concept="2OqwBi" id="1iKgLyiuFk" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiuFl" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiuFm" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiv71" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyicU6" resolve="ignoreLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiuFo" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiuFp" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiuFq" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1023,7 +1023,7 @@
                   <node concept="2OqwBi" id="1iKgLyiEbz" role="1PxMeX">
                     <node concept="369mXd" id="1iKgLyiEb$" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEb_" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -1141,18 +1141,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEci" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEcj" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEck" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEcl" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEbw" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEcm" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEcn" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEco" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1168,18 +1168,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEct" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEcu" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEcv" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEcw" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEbB" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEcx" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEcy" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEcz" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1195,18 +1195,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEcC" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEcD" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEcE" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEcF" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEbJ" resolve="priority" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEcG" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEcH" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEcI" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1222,18 +1222,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEcN" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEcO" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEcP" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEcQ" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEbR" resolve="innerLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEcR" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEcS" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEcT" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1249,18 +1249,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEcY" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEcZ" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEd0" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEd1" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEbZ" resolve="unapply" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEd2" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEd3" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEd4" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1276,18 +1276,18 @@
                   <node concept="2OqwBi" id="1iKgLyiEd9" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiEda" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiEdb" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiEdc" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiEc7" resolve="unapplyLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiEdd" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiEde" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiEdf" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1333,7 +1333,7 @@
                   <node concept="2OqwBi" id="1iKgLyiPo2" role="1PxMeX">
                     <node concept="369mXd" id="1iKgLyiPo3" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPo4" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -1451,18 +1451,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPoL" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPoM" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPoN" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPoO" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPnZ" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPoP" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPoQ" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPoR" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1478,18 +1478,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPoW" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPoX" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPoY" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPoZ" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPo6" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPp0" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPp1" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPp2" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1505,18 +1505,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPp7" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPp8" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPp9" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPpa" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPoe" resolve="hidden" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPpb" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPpc" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPpd" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1532,18 +1532,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPpi" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPpj" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPpk" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPpl" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPom" resolve="hiddenLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPpm" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPpn" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPpo" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1559,18 +1559,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPpt" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPpu" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPpv" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPpw" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPou" resolve="unapply" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPpx" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPpy" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPpz" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1586,18 +1586,18 @@
                   <node concept="2OqwBi" id="1iKgLyiPpC" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyiPpD" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyiPpE" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyiPpF" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyiPoA" resolve="unapplyLeaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyiPpG" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyiPpH" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyiPpI" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1643,7 +1643,7 @@
                   <node concept="2OqwBi" id="1iKgLyjoNb" role="1PxMeX">
                     <node concept="369mXd" id="1iKgLyjoNc" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjoNd" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
                     </node>
                   </node>
                 </node>
@@ -1741,18 +1741,18 @@
                   <node concept="2OqwBi" id="1iKgLyjv6C" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyjv6D" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjv6E" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyjv6F" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyjoN8" resolve="root" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyjv6G" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyjv6H" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyjv6I" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1768,18 +1768,18 @@
                   <node concept="2OqwBi" id="1iKgLyjoNU" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyjoNV" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjoNW" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyjw$b" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyjoNn" resolve="huge" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyjoNY" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyjoNZ" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyjoO0" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1795,18 +1795,18 @@
                   <node concept="2OqwBi" id="1iKgLyjvzS" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyjvzT" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjvzU" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyjwTF" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyjoNv" resolve="priority" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyjvzW" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyjvzX" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyjvzY" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1822,18 +1822,18 @@
                   <node concept="2OqwBi" id="1iKgLyjvLR" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyjvLS" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjvLT" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyjx0Q" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyjtLP" resolve="unapplyPriority" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyjvLV" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyjvLW" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyjvLX" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>
@@ -1849,18 +1849,18 @@
                   <node concept="2OqwBi" id="1iKgLyjxka" role="2Oq$k0">
                     <node concept="369mXd" id="1iKgLyjxkb" role="2Oq$k0" />
                     <node concept="liA8E" id="1iKgLyjxkc" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
+                      <ref role="37wK5l" to="exr9:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findNodeCell" />
                       <node concept="37vLTw" id="1iKgLyjxMc" role="37wK5m">
                         <ref role="3cqZAo" node="1iKgLyjoNJ" resolve="leaf" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="1iKgLyjxkd" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1iKgLyjxke" role="2OqNvi">
-                  <ref role="37wK5l" to="qe67:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
                   <node concept="1Z6Ecs" id="1iKgLyjxkf" role="37wK5m">
                     <ref role="1Z6EpT" to="eaoh:5ISglset19s" resolve="test-inherited-attribute" />
                   </node>

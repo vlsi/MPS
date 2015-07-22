@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -196,7 +196,7 @@
           <node concept="37vLTG" id="5NS7ww3zaFt" role="3clF46">
             <property role="TrG5h" value="c" />
             <node concept="3uibUv" id="5NS7ww3zaFL" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+              <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
               <node concept="16syzq" id="5NS7ww3zaG5" role="11_B2D">
                 <ref role="16sUi3" node="5NS7ww3zaCD" resolve="C" />
               </node>
@@ -305,7 +305,7 @@
             </node>
           </node>
           <node concept="3uibUv" id="5NS7ww3zG5W" role="3clF45">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3Tm1VV" id="5NS7ww3zwTg" role="1B3o_S" />
         </node>

@@ -6,10 +6,10 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
-    <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="86um" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(MPS.Platform/jetbrains.mps.ide@java_stub)" />
-    <import index="3hjd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs.impl(MPS.Core/jetbrains.mps.vfs.impl@java_stub)" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -89,34 +89,34 @@
       <node concept="3clFbS" id="7GotP_FDhs" role="3clF47">
         <node concept="3clFbF" id="1E8U0XDKj4L" role="3cqZAp">
           <node concept="2YIFZM" id="1E8U0XDKjey" role="3clFbG">
-            <ref role="37wK5l" to="86um:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
-            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
+            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             <node concept="1bVj0M" id="1E8U0XDKjfU" role="37wK5m">
               <node concept="3clFbS" id="1E8U0XDKjfV" role="1bW5cS">
                 <node concept="3clFbF" id="4CYT8qWE_3m" role="3cqZAp">
                   <node concept="2OqwBi" id="4CYT8qWE_8u" role="3clFbG">
                     <node concept="2YIFZM" id="4CYT8qWE_7o" role="2Oq$k0">
-                      <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                      <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                      <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                      <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
                     </node>
                     <node concept="liA8E" id="4CYT8qWE_gg" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runWriteAction" />
+                      <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runWriteAction" />
                       <node concept="1bVj0M" id="4CYT8qWE_rc" role="37wK5m">
                         <node concept="3clFbS" id="4CYT8qWE_rd" role="1bW5cS">
                           <node concept="3cpWs8" id="7GotP_EY3x" role="3cqZAp">
                             <node concept="3cpWsn" id="7GotP_EY3y" role="3cpWs9">
                               <property role="TrG5h" value="okFile" />
                               <node concept="3uibUv" id="7GotP_EY3z" role="1tU5fm">
-                                <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+                                <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                               </node>
                               <node concept="2OqwBi" id="1E8U0XDKusJ" role="33vP2m">
                                 <node concept="2ShNRf" id="1E8U0XDKsV4" role="2Oq$k0">
                                   <node concept="1pGfFk" id="1E8U0XDKuo4" role="2ShVmc">
-                                    <ref role="37wK5l" to="3hjd:~IoFileSystemProvider.&lt;init&gt;()" resolve="IoFileSystemProvider" />
+                                    <ref role="37wK5l" to="amo1:~IoFileSystemProvider.&lt;init&gt;()" resolve="IoFileSystemProvider" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="1E8U0XDKv5V" role="2OqNvi">
-                                  <ref role="37wK5l" to="3hjd:~IoFileSystemProvider.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                                  <ref role="37wK5l" to="amo1:~IoFileSystemProvider.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                                   <node concept="Xl_RD" id="1E8U0XDKvjR" role="37wK5m">
                                     <property role="Xl_RC" value="ok.log" />
                                   </node>
@@ -130,7 +130,7 @@
                                 <ref role="3cqZAo" node="7GotP_EY3y" resolve="okFile" />
                               </node>
                               <node concept="liA8E" id="4CYT8qWE_wo" role="2OqNvi">
-                                <ref role="37wK5l" to="59et:~IFile.createNewFile():boolean" resolve="createNewFile" />
+                                <ref role="37wK5l" to="3ju5:~IFile.createNewFile():boolean" resolve="createNewFile" />
                               </node>
                             </node>
                           </node>

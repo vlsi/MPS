@@ -17,7 +17,7 @@
     <import index="pmg0" ref="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" />
     <import index="j8l" ref="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -287,11 +287,11 @@
                     <node concept="3cpWsn" id="67LR$5LQRNc" role="3cpWs9">
                       <property role="TrG5h" value="result" />
                       <node concept="3uibUv" id="67LR$5LQRNd" role="1tU5fm">
-                        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                       </node>
                       <node concept="2ShNRf" id="67LR$5LQRNw" role="33vP2m">
                         <node concept="1pGfFk" id="67LR$5LQRNx" role="2ShVmc">
-                          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                         </node>
                       </node>
                     </node>
@@ -414,7 +414,7 @@
               <property role="TrG5h" value="result" />
               <property role="3TUv4t" value="true" />
               <node concept="3uibUv" id="67LR$5LQRMy" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 <node concept="29HgVG" id="67LR$5LQRMD" role="lGtFl">
                   <node concept="3NFfHV" id="67LR$5LQRME" role="3NFExx">
                     <node concept="3clFbS" id="67LR$5LQRMF" role="2VODD2">
@@ -432,7 +432,7 @@
               </node>
               <node concept="2ShNRf" id="67LR$5LQRM$" role="33vP2m">
                 <node concept="1pGfFk" id="67LR$5LQRM_" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
                 <node concept="1pdMLZ" id="55H484zYboI" role="lGtFl">
                   <node concept="2kFOW8" id="55H484zYboJ" role="2kGFt3">
@@ -540,11 +540,11 @@
             <node concept="3cpWsn" id="67LR$5LR5gl" role="3cpWs9">
               <property role="TrG5h" value="result" />
               <node concept="3uibUv" id="67LR$5LR5gm" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
               <node concept="2ShNRf" id="67LR$5LR5go" role="33vP2m">
                 <node concept="1pGfFk" id="67LR$5LR5gp" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -773,7 +773,7 @@
             <node concept="3cpWsn" id="6WAXCfAAsAA" role="3cpWs9">
               <property role="TrG5h" value="result" />
               <node concept="3uibUv" id="6WAXCfAAsAB" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 <node concept="29HgVG" id="6WAXCfAAsB7" role="lGtFl">
                   <node concept="3NFfHV" id="6WAXCfAAsB8" role="3NFExx">
                     <node concept="3clFbS" id="6WAXCfAAsB9" role="2VODD2">

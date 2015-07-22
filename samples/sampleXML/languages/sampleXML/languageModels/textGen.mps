@@ -9,11 +9,11 @@
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="zwkq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" />
-    <import index="jhs5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" />
-    <import index="to5d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />
-    <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
+    <import index="se19" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom.output(MPS.Core/)" />
+    <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -206,18 +206,18 @@
     <node concept="1JqxBV" id="hZL6rFm" role="1Jy66y">
       <property role="TrG5h" value="createElement" />
       <node concept="3uibUv" id="hZL6t3M" role="3clF45">
-        <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
+        <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
       </node>
       <node concept="3clFbS" id="hZL6rFo" role="3clF47">
         <node concept="3cpWs8" id="hZL6zSb" role="3cqZAp">
           <node concept="3cpWsn" id="hZL6zSc" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="hZL6zSd" role="1tU5fm">
-              <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
+              <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
             </node>
             <node concept="2ShNRf" id="hZL6zSe" role="33vP2m">
               <node concept="1pGfFk" id="hZL6zSf" role="2ShVmc">
-                <ref role="37wK5l" to="zwkq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
+                <ref role="37wK5l" to="mmaq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
                 <node concept="2OqwBi" id="hZL6zSg" role="37wK5m">
                   <node concept="37vLTw" id="2BHiRxgm8Bs" role="2Oq$k0">
                     <ref role="3cqZAo" node="hZL6vfW" resolve="element" />
@@ -240,7 +240,7 @@
                       <ref role="3cqZAo" node="hZL6zSc" resolve="result" />
                     </node>
                     <node concept="liA8E" id="hZL6zSq" role="2OqNvi">
-                      <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+                      <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
                       <node concept="2OqwBi" id="hZL6zSr" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTxJ1" role="2Oq$k0">
                           <ref role="3cqZAo" node="hZL6zSD" resolve="attribute" />
@@ -310,7 +310,7 @@
                           <ref role="3cqZAo" node="hZL6zSc" resolve="result" />
                         </node>
                         <node concept="liA8E" id="hZL6zSS" role="2OqNvi">
-                          <ref role="37wK5l" to="zwkq:~Element.addContent(java.lang.String):org.jdom.Element" resolve="addContent" />
+                          <ref role="37wK5l" to="mmaq:~Element.addContent(java.lang.String):org.jdom.Element" resolve="addContent" />
                           <node concept="Xl_RD" id="hZL6zST" role="37wK5m">
                             <property role="Xl_RC" value="\n" />
                           </node>
@@ -330,7 +330,7 @@
                       <ref role="3cqZAo" node="hZL6zSc" resolve="result" />
                     </node>
                     <node concept="liA8E" id="hZL6zSZ" role="2OqNvi">
-                      <ref role="37wK5l" to="zwkq:~Element.addContent(java.lang.String):org.jdom.Element" resolve="addContent" />
+                      <ref role="37wK5l" to="mmaq:~Element.addContent(java.lang.String):org.jdom.Element" resolve="addContent" />
                       <node concept="2OqwBi" id="hZL6zT0" role="37wK5m">
                         <node concept="1PxgMI" id="hZL6zT1" role="2Oq$k0">
                           <ref role="1PxNhF" to="dghb:hP5Yaz1" resolve="Text" />
@@ -365,7 +365,7 @@
                       <ref role="3cqZAo" node="hZL6zSc" resolve="result" />
                     </node>
                     <node concept="liA8E" id="hZL6zTd" role="2OqNvi">
-                      <ref role="37wK5l" to="zwkq:~Element.addContent(org.jdom.Element):org.jdom.Element" resolve="addContent" />
+                      <ref role="37wK5l" to="mmaq:~Element.addContent(org.jdom.Element):org.jdom.Element" resolve="addContent" />
                       <node concept="1JECQ7" id="hZL6Mxk" role="37wK5m">
                         <ref role="1JF1rN" node="hZL6rFm" resolve="createElement" />
                         <node concept="1PxgMI" id="hZL705l" role="1JF4iq">
@@ -453,7 +453,7 @@
           <node concept="3cpWsn" id="hZL6iz1" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="hZL6iz2" role="1tU5fm">
-              <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
+              <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
             </node>
             <node concept="1JECQ7" id="hZL6I7j" role="33vP2m">
               <ref role="1JF1rN" node="hZL6rFm" resolve="createElement" />
@@ -467,11 +467,11 @@
           <node concept="3cpWsn" id="hZL784l" role="3cpWs9">
             <property role="TrG5h" value="document" />
             <node concept="3uibUv" id="hZL784m" role="1tU5fm">
-              <ref role="3uigEE" to="zwkq:~Document" resolve="Document" />
+              <ref role="3uigEE" to="mmaq:~Document" resolve="Document" />
             </node>
             <node concept="2ShNRf" id="hZL7cQi" role="33vP2m">
               <node concept="1pGfFk" id="hZL7cQj" role="2ShVmc">
-                <ref role="37wK5l" to="zwkq:~Document.&lt;init&gt;()" resolve="Document" />
+                <ref role="37wK5l" to="mmaq:~Document.&lt;init&gt;()" resolve="Document" />
               </node>
             </node>
           </node>
@@ -482,7 +482,7 @@
               <ref role="3cqZAo" node="hZL784l" resolve="document" />
             </node>
             <node concept="liA8E" id="hZL7fAh" role="2OqNvi">
-              <ref role="37wK5l" to="zwkq:~Document.setRootElement(org.jdom.Element):org.jdom.Document" resolve="setRootElement" />
+              <ref role="37wK5l" to="mmaq:~Document.setRootElement(org.jdom.Element):org.jdom.Document" resolve="setRootElement" />
               <node concept="37vLTw" id="3GM_nagTsut" role="37wK5m">
                 <ref role="3cqZAo" node="hZL6iz1" resolve="result" />
               </node>
@@ -495,11 +495,11 @@
               <node concept="3cpWsn" id="hZL7r6Q" role="3cpWs9">
                 <property role="TrG5h" value="prettyFormat" />
                 <node concept="3uibUv" id="hZL7r6R" role="1tU5fm">
-                  <ref role="3uigEE" to="jhs5:~Format" resolve="Format" />
+                  <ref role="3uigEE" to="se19:~Format" resolve="Format" />
                 </node>
                 <node concept="2YIFZM" id="hZL7uYu" role="33vP2m">
-                  <ref role="37wK5l" to="jhs5:~Format.getPrettyFormat():org.jdom.output.Format" resolve="getPrettyFormat" />
-                  <ref role="1Pybhc" to="jhs5:~Format" resolve="Format" />
+                  <ref role="37wK5l" to="se19:~Format.getPrettyFormat():org.jdom.output.Format" resolve="getPrettyFormat" />
+                  <ref role="1Pybhc" to="se19:~Format" resolve="Format" />
                 </node>
               </node>
             </node>
@@ -509,10 +509,10 @@
                   <ref role="3cqZAo" node="hZL7r6Q" resolve="prettyFormat" />
                 </node>
                 <node concept="liA8E" id="hZL7wJS" role="2OqNvi">
-                  <ref role="37wK5l" to="jhs5:~Format.setTextMode(org.jdom.output.Format$TextMode):org.jdom.output.Format" resolve="setTextMode" />
+                  <ref role="37wK5l" to="se19:~Format.setTextMode(org.jdom.output.Format$TextMode):org.jdom.output.Format" resolve="setTextMode" />
                   <node concept="10M0yZ" id="hZL7H7r" role="37wK5m">
-                    <ref role="1PxDUh" to="jhs5:~Format$TextMode" resolve="Format.TextMode" />
-                    <ref role="3cqZAo" to="jhs5:~Format$TextMode.PRESERVE" resolve="PRESERVE" />
+                    <ref role="1PxDUh" to="se19:~Format$TextMode" resolve="Format.TextMode" />
+                    <ref role="3cqZAo" to="se19:~Format$TextMode.PRESERVE" resolve="PRESERVE" />
                   </node>
                 </node>
               </node>
@@ -521,11 +521,11 @@
               <node concept="3cpWsn" id="hZL7JTe" role="3cpWs9">
                 <property role="TrG5h" value="xmlOutputter" />
                 <node concept="3uibUv" id="hZL7JTf" role="1tU5fm">
-                  <ref role="3uigEE" to="jhs5:~XMLOutputter" resolve="XMLOutputter" />
+                  <ref role="3uigEE" to="se19:~XMLOutputter" resolve="XMLOutputter" />
                 </node>
                 <node concept="2ShNRf" id="hZL7Pu5" role="33vP2m">
                   <node concept="1pGfFk" id="hZL7Pu6" role="2ShVmc">
-                    <ref role="37wK5l" to="jhs5:~XMLOutputter.&lt;init&gt;(org.jdom.output.Format)" resolve="XMLOutputter" />
+                    <ref role="37wK5l" to="se19:~XMLOutputter.&lt;init&gt;(org.jdom.output.Format)" resolve="XMLOutputter" />
                     <node concept="37vLTw" id="3GM_nagTyFV" role="37wK5m">
                       <ref role="3cqZAo" node="hZL7r6Q" resolve="prettyFormat" />
                     </node>
@@ -542,7 +542,7 @@
                     <ref role="3cqZAo" node="hZL7JTe" resolve="xmlOutputter" />
                   </node>
                   <node concept="liA8E" id="hZL7XsM" role="2OqNvi">
-                    <ref role="37wK5l" to="jhs5:~XMLOutputter.outputString(org.jdom.Document):java.lang.String" resolve="outputString" />
+                    <ref role="37wK5l" to="se19:~XMLOutputter.outputString(org.jdom.Document):java.lang.String" resolve="outputString" />
                     <node concept="37vLTw" id="3GM_nagTtpK" role="37wK5m">
                       <ref role="3cqZAo" node="hZL784l" resolve="document" />
                     </node>
@@ -562,21 +562,21 @@
             <node concept="3cpWsn" id="hZL7gVO" role="TDEfY">
               <property role="TrG5h" value="e" />
               <node concept="3uibUv" id="hZL8cgV" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+                <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
               </node>
             </node>
             <node concept="3clFbS" id="hZL7gVQ" role="TDEfX">
               <node concept="3clFbF" id="hZL8l3c" role="3cqZAp">
                 <node concept="2OqwBi" id="4xhLyTUSCYB" role="3clFbG">
                   <node concept="2YIFZM" id="hZL8Ahx" role="2Oq$k0">
-                    <ref role="1Pybhc" to="ajxo:~LogManager" resolve="LogManager" />
-                    <ref role="37wK5l" to="ajxo:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+                    <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+                    <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
                     <node concept="3VsKOn" id="hZL8Ahy" role="37wK5m">
-                      <ref role="3VsUkX" to="zwkq:~Document" resolve="Document" />
+                      <ref role="3VsUkX" to="mmaq:~Document" resolve="Document" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4xhLyTUSCYF" role="2OqNvi">
-                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
                     <node concept="10Nm6u" id="4t57iE9WT3_" role="37wK5m" />
                     <node concept="37vLTw" id="3GM_nagTBEK" role="37wK5m">
                       <ref role="3cqZAo" node="hZL7gVO" resolve="e" />

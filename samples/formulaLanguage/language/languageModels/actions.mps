@@ -11,7 +11,7 @@
   <imports>
     <import index="tpnk" ref="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -229,8 +229,8 @@
                   </node>
                   <node concept="tyxLq" id="h8HCrMz" role="2OqNvi">
                     <node concept="2YIFZM" id="h8HCvsm" role="tz02z">
-                      <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-                      <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+                      <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+                      <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                       <node concept="ub8z3" id="h8HCvMR" role="37wK5m" />
                     </node>
                   </node>
@@ -312,7 +312,7 @@
                 <node concept="2OqwBi" id="hERvwLJ" role="3clFbw">
                   <node concept="ub8z3" id="h8HCPbU" role="2Oq$k0" />
                   <node concept="liA8E" id="hERvwLK" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
                     <node concept="Xl_RD" id="h8HCQcd" role="37wK5m">
                       <property role="Xl_RC" value="." />
                     </node>

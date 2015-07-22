@@ -15,23 +15,23 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
-    <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
-    <import index="810" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
-    <import index="tilo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.language(MPS.Core/jetbrains.mps.smodel.adapter.structure.language@java_stub)" />
-    <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
+    <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
+    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -263,7 +263,7 @@
           <node concept="3cpWsn" id="IkVTleIcuL" role="3cpWs9">
             <property role="TrG5h" value="lang" />
             <node concept="3uibUv" id="IkVTleIcuM" role="1tU5fm">
-              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
             </node>
             <node concept="1eOMI4" id="IkVTleIcuN" role="33vP2m">
               <node concept="10QFUN" id="IkVTleIcuO" role="1eOMHV">
@@ -274,7 +274,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="IkVTleIcuS" role="10QFUM">
-                  <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
                 </node>
               </node>
             </node>
@@ -284,15 +284,15 @@
           <node concept="3cpWsn" id="IkVTleIcuU" role="3cpWs9">
             <property role="TrG5h" value="mig" />
             <node concept="3uibUv" id="IkVTleIcuV" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="IkVTleIcuW" role="33vP2m">
               <node concept="Rm8GO" id="IkVTleIcuX" role="2Oq$k0">
-                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
-                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="IkVTleIcuY" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
                 <node concept="37vLTw" id="IkVTleIcuZ" role="37wK5m">
                   <ref role="3cqZAo" node="IkVTleIcuL" resolve="lang" />
                 </node>
@@ -371,7 +371,7 @@
                   <ref role="3cqZAo" node="IkVTleIcuL" resolve="lang" />
                 </node>
                 <node concept="liA8E" id="5$lI4SjhWt4" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~Language.setLanguageVersion(int):void" resolve="setLanguageVersion" />
+                  <ref role="37wK5l" to="w1kc:~Language.setLanguageVersion(int):void" resolve="setLanguageVersion" />
                   <node concept="3cpWs3" id="5$lI4SjhWP6" role="37wK5m">
                     <node concept="3cmrfG" id="5$lI4SjhWPl" role="3uHU7w">
                       <property role="3cmrfH" value="1" />
@@ -401,29 +401,29 @@
                       <ref role="3cqZAo" node="IkVTleIcuL" resolve="lang" />
                     </node>
                     <node concept="liA8E" id="5_ej6Dna7Wq" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                      <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="3clFbF" id="5_ej6Dn9EIC" role="3cqZAp">
                 <node concept="2YIFZM" id="5_ej6Dn9EP3" role="3clFbG">
-                  <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                  <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
+                  <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
                   <node concept="1bVj0M" id="5_ej6Dn9EPJ" role="37wK5m">
                     <node concept="3clFbS" id="5_ej6Dn9EPK" role="1bW5cS">
                       <node concept="3cpWs8" id="5_ej6Dnb2iY" role="3cqZAp">
                         <node concept="3cpWsn" id="5_ej6Dnb2iZ" role="3cpWs9">
                           <property role="TrG5h" value="validator" />
                           <node concept="3uibUv" id="5_ej6Dnb2iX" role="1tU5fm">
-                            <ref role="3uigEE" to="810:~InputValidator" resolve="InputValidator" />
+                            <ref role="3uigEE" to="jkm4:~InputValidator" resolve="InputValidator" />
                           </node>
                           <node concept="2ShNRf" id="5_ej6Dnb2j0" role="33vP2m">
                             <node concept="YeOm9" id="5_ej6Dnb2j1" role="2ShVmc">
                               <node concept="1Y3b0j" id="5_ej6Dnb2j2" role="YeSDq">
                                 <property role="2bfB8j" value="true" />
-                                <ref role="1Y3XeK" to="810:~InputValidator" resolve="InputValidator" />
-                                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                                <ref role="1Y3XeK" to="jkm4:~InputValidator" resolve="InputValidator" />
+                                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                 <node concept="3Tm1VV" id="5_ej6Dnb2j3" role="1B3o_S" />
                                 <node concept="3clFb_" id="5_ej6Dnb2j4" role="jymVt">
                                   <property role="1EzhhJ" value="false" />
@@ -435,7 +435,7 @@
                                   <node concept="37vLTG" id="5_ej6Dnb2j7" role="3clF46">
                                     <property role="TrG5h" value="s" />
                                     <node concept="3uibUv" id="5_ej6Dnb2j8" role="1tU5fm">
-                                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                                     </node>
                                   </node>
                                   <node concept="3clFbS" id="5_ej6Dnb2j9" role="3clF47">
@@ -447,8 +447,8 @@
                                               <property role="3cmrfH" value="0" />
                                             </node>
                                             <node concept="2YIFZM" id="5_ej6Dnb2jf" role="3uHU7B">
-                                              <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-                                              <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+                                              <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+                                              <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                                               <node concept="37vLTw" id="5_ej6Dnb2jg" role="37wK5m">
                                                 <ref role="3cqZAo" node="5_ej6Dnb2j7" resolve="s" />
                                               </node>
@@ -460,7 +460,7 @@
                                         <node concept="3cpWsn" id="5_ej6Dnb2ji" role="TDEfY">
                                           <property role="TrG5h" value="e" />
                                           <node concept="3uibUv" id="5_ej6Dnb2jj" role="1tU5fm">
-                                            <ref role="3uigEE" to="e2lb:~NumberFormatException" resolve="NumberFormatException" />
+                                            <ref role="3uigEE" to="wyt6:~NumberFormatException" resolve="NumberFormatException" />
                                           </node>
                                         </node>
                                         <node concept="3clFbS" id="5_ej6Dnb2jk" role="TDEfX">
@@ -484,7 +484,7 @@
                                   <node concept="37vLTG" id="5_ej6Dnb2jq" role="3clF46">
                                     <property role="TrG5h" value="s" />
                                     <node concept="3uibUv" id="5_ej6Dnb2jr" role="1tU5fm">
-                                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                                     </node>
                                   </node>
                                   <node concept="3clFbS" id="5_ej6Dnb2js" role="3clF47">
@@ -507,11 +507,11 @@
                         <node concept="3cpWsn" id="5_ej6Dnb3Zm" role="3cpWs9">
                           <property role="TrG5h" value="result" />
                           <node concept="3uibUv" id="5_ej6Dnb3Z2" role="1tU5fm">
-                            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                           </node>
                           <node concept="2YIFZM" id="5_ej6Dnb3Zn" role="33vP2m">
-                            <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
-                            <ref role="37wK5l" to="810:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
+                            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                            <ref role="37wK5l" to="jkm4:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
                             <node concept="2OqwBi" id="5_ej6Dnb3Zo" role="37wK5m">
                               <node concept="2WthIp" id="5_ej6Dnb3Zp" role="2Oq$k0" />
                               <node concept="1DTwFV" id="5_ej6Dnb3Zq" role="2OqNvi">
@@ -575,10 +575,10 @@
                                   <ref role="3cqZAo" node="IkVTleIcuL" resolve="lang" />
                                 </node>
                                 <node concept="liA8E" id="5$lI4SjhTU9" role="2OqNvi">
-                                  <ref role="37wK5l" to="cu2c:~Language.setLanguageVersion(int):void" resolve="setLanguageVersion" />
+                                  <ref role="37wK5l" to="w1kc:~Language.setLanguageVersion(int):void" resolve="setLanguageVersion" />
                                   <node concept="2YIFZM" id="5$lI4SjgTae" role="37wK5m">
-                                    <ref role="37wK5l" to="e2lb:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
-                                    <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+                                    <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
+                                    <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                                     <node concept="37vLTw" id="5$lI4SjgTaf" role="37wK5m">
                                       <ref role="3cqZAo" node="5_ej6Dnb3Zm" resolve="result" />
                                     </node>
@@ -600,12 +600,12 @@
     </node>
     <node concept="1DS2jV" id="5VZG9FqCIyg" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
       <node concept="1oajcY" id="MGgIRlKYhO" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="5VZG9FqE87q" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="5VZG9FqE87r" role="1oa70y" />
     </node>
     <node concept="2ScWuX" id="LEy1UHDOrc" role="tmbBb">
@@ -621,7 +621,7 @@
           <node concept="3fqX7Q" id="MGgIRlL21N" role="3clFbw">
             <node concept="2ZW3vV" id="IkVTleGDpr" role="3fr31v">
               <node concept="3uibUv" id="IkVTleGDEi" role="2ZW6by">
-                <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
               </node>
               <node concept="2OqwBi" id="MGgIRlL34a" role="2ZW6bz">
                 <node concept="2WthIp" id="MGgIRlL34d" role="2Oq$k0" />
@@ -637,7 +637,7 @@
           <node concept="3cpWsn" id="IkVTleGFeF" role="3cpWs9">
             <property role="TrG5h" value="lang" />
             <node concept="3uibUv" id="IkVTleGFeC" role="1tU5fm">
-              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
             </node>
             <node concept="1eOMI4" id="IkVTleGFeG" role="33vP2m">
               <node concept="10QFUN" id="IkVTleGFeH" role="1eOMHV">
@@ -648,7 +648,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="IkVTleGFeL" role="10QFUM">
-                  <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
                 </node>
               </node>
             </node>
@@ -658,11 +658,11 @@
           <node concept="3cpWsn" id="6ErrHV2$AsI" role="3cpWs9">
             <property role="TrG5h" value="langId" />
             <node concept="3uibUv" id="6ErrHV2$AsF" role="1tU5fm">
-              <ref role="3uigEE" to="a7z3:~SLanguageId" resolve="SLanguageId" />
+              <ref role="3uigEE" to="e8bb:~SLanguageId" resolve="SLanguageId" />
             </node>
             <node concept="2YIFZM" id="6ErrHV2$AsJ" role="33vP2m">
-              <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-              <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLanguageId(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
+              <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
+              <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getLanguageId(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
               <node concept="37vLTw" id="6ErrHV2$AsK" role="37wK5m">
                 <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
               </node>
@@ -673,11 +673,11 @@
           <node concept="3cpWsn" id="6ErrHV2$M8a" role="3cpWs9">
             <property role="TrG5h" value="slang" />
             <node concept="3uibUv" id="2G4N_X5GKYl" role="1tU5fm">
-              <ref role="3uigEE" to="t3eg:~SLanguage" resolve="SLanguage" />
+              <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
             </node>
             <node concept="2YIFZM" id="2G4N_X5HwN_" role="33vP2m">
-              <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-              <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+              <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+              <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
               <node concept="37vLTw" id="2G4N_X5HwNA" role="37wK5m">
                 <ref role="3cqZAo" node="6ErrHV2$AsI" resolve="langId" />
               </node>
@@ -686,7 +686,7 @@
                   <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                 </node>
                 <node concept="liA8E" id="2G4N_X5HwND" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                 </node>
               </node>
             </node>
@@ -697,15 +697,15 @@
           <node concept="3cpWsn" id="IkVTleGLuR" role="3cpWs9">
             <property role="TrG5h" value="mig" />
             <node concept="3uibUv" id="IkVTleGLuE" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="IkVTleGLuS" role="33vP2m">
               <node concept="Rm8GO" id="IkVTleGLuT" role="2Oq$k0">
-                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
-                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="IkVTleGLuU" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
                 <node concept="37vLTw" id="IkVTleGLuV" role="37wK5m">
                   <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                 </node>
@@ -725,7 +725,7 @@
                     <ref role="3cqZAo" node="6ErrHV2$M8a" resolve="slang" />
                   </node>
                   <node concept="liA8E" id="14XAQ5_$B30" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SLanguage.getLanguageVersion():int" resolve="getLanguageVersion" />
+                    <ref role="37wK5l" to="c17a:~SLanguage.getLanguageVersion():int" resolve="getLanguageVersion" />
                   </node>
                 </node>
               </node>
@@ -777,7 +777,7 @@
                 <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
               </node>
               <node concept="liA8E" id="41oOO0Ge2sS" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
               </node>
             </node>
           </node>
@@ -800,7 +800,7 @@
                   <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                 </node>
                 <node concept="liA8E" id="5_ej6DnbvNl" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                  <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
                 </node>
               </node>
             </node>
@@ -871,18 +871,18 @@
                   <node concept="2OqwBi" id="5$lI4SjggvB" role="2Oq$k0">
                     <node concept="2OqwBi" id="5$lI4SjggvC" role="2Oq$k0">
                       <node concept="liA8E" id="5$lI4SjggvD" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
+                        <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
                       </node>
                       <node concept="37vLTw" id="5$lI4Sjgz20" role="2Oq$k0">
                         <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                       </node>
                     </node>
                     <node concept="liA8E" id="5$lI4SjggvI" role="2OqNvi">
-                      <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
+                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
                     </node>
                   </node>
                   <node concept="liA8E" id="5$lI4Sjgk$u" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
                     <node concept="37vLTw" id="6ErrHV2$Q7s" role="37wK5m">
                       <ref role="3cqZAo" node="6ErrHV2$M8a" resolve="slang" />
                     </node>
@@ -893,7 +893,7 @@
                     <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                   </node>
                   <node concept="liA8E" id="5$lI4SjgDOm" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                    <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
                   </node>
                 </node>
               </node>
@@ -903,18 +903,18 @@
             <node concept="2OqwBi" id="5$lI4Sjfulh" role="2Oq$k0">
               <node concept="2OqwBi" id="5$lI4Sjfmzn" role="2Oq$k0">
                 <node concept="liA8E" id="5$lI4SjftNv" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
+                  <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
                 </node>
                 <node concept="37vLTw" id="5$lI4Sjgtns" role="2Oq$k0">
                   <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
                 </node>
               </node>
               <node concept="liA8E" id="5$lI4SjfvtZ" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
               </node>
             </node>
             <node concept="liA8E" id="5$lI4SjfCcX" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+              <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
               <node concept="37vLTw" id="6ErrHV2$M8h" role="37wK5m">
                 <ref role="3cqZAo" node="6ErrHV2$M8a" resolve="slang" />
               </node>
@@ -928,7 +928,7 @@
                 <ref role="3cqZAo" node="IkVTleGFeF" resolve="lang" />
               </node>
               <node concept="liA8E" id="MGgIRlJxpf" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
               </node>
             </node>
             <node concept="3cpWs3" id="MGgIRlJxpa" role="3uHU7w">

@@ -19,13 +19,13 @@
     <import index="tp4s" ref="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
     <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <import index="tpdu" ref="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="pvwh" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />
-    <import index="zb6h" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem.impl(MPS.IDEA/com.intellij.openapi.actionSystem.impl@java_stub)" />
-    <import index="5h2r" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.actions(MPS.Platform/jetbrains.mps.plugins.actions@java_stub)" />
-    <import index="2yea" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.tool(MPS.Platform/jetbrains.mps.plugins.tool@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" />
+    <import index="xcyp" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem.impl(MPS.IDEA/)" />
+    <import index="obo9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins.actions(MPS.Platform/)" />
+    <import index="eqyk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins.tool(MPS.Platform/)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
@@ -239,7 +239,7 @@
         <node concept="mw_s8" id="hxKdSw9" role="1ZfhKB">
           <node concept="2c44tf" id="hFf4CWX" role="mwGJk">
             <node concept="3uibUv" id="hFf4R3P" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -346,7 +346,7 @@
       <node concept="3cpWs6" id="h$$5dIq" role="3cqZAp">
         <node concept="2c44tf" id="h$$5dIr" role="3cqZAk">
           <node concept="3uibUv" id="h$$5dIs" role="2c44tc">
-            <ref role="3uigEE" to="5h2r:~GeneratedActionGroup" resolve="GeneratedActionGroup" />
+            <ref role="3uigEE" to="obo9:~GeneratedActionGroup" resolve="GeneratedActionGroup" />
           </node>
         </node>
       </node>
@@ -363,7 +363,7 @@
       <node concept="3cpWs6" id="1WJEr2RAQuy" role="3cqZAp">
         <node concept="2c44tf" id="1WJEr2RAQuz" role="3cqZAk">
           <node concept="3uibUv" id="1bQZa9eRqgy" role="2c44tc">
-            <ref role="3uigEE" to="2yea:~BaseGeneratedTool" resolve="BaseGeneratedTool" />
+            <ref role="3uigEE" to="eqyk:~BaseGeneratedTool" resolve="BaseGeneratedTool" />
           </node>
         </node>
       </node>
@@ -381,7 +381,7 @@
         <node concept="mw_s8" id="hAOl9dL" role="1ZfhKB">
           <node concept="2c44tf" id="hGimIJQ" role="mwGJk">
             <node concept="3uibUv" id="hGimK5O" role="2c44tc">
-              <ref role="3uigEE" to="pvwh:~BaseGroup" resolve="BaseGroup" />
+              <ref role="3uigEE" to="7bx7:~BaseGroup" resolve="BaseGroup" />
             </node>
           </node>
         </node>
@@ -479,7 +479,7 @@
         <node concept="mw_s8" id="hByNBjD" role="1ZfhKB">
           <node concept="2c44tf" id="hByNBjE" role="mwGJk">
             <node concept="3uibUv" id="hByNGDI" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -509,7 +509,7 @@
       <node concept="3cpWs6" id="hGincEK" role="3cqZAp">
         <node concept="2c44tf" id="hGinelv" role="3cqZAk">
           <node concept="3uibUv" id="Z8f04962u3" role="2c44tc">
-            <ref role="3uigEE" to="pvwh:~BaseAction" resolve="BaseAction" />
+            <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
           </node>
         </node>
       </node>
@@ -771,7 +771,7 @@
         <node concept="mw_s8" id="52YnOubdn9r" role="1ZfhKB">
           <node concept="2c44tf" id="52YnOubdn9s" role="mwGJk">
             <node concept="3uibUv" id="52YnOubdn9t" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -919,7 +919,7 @@
         <node concept="mw_s8" id="618UJ37zUOB" role="1ZfhKB">
           <node concept="2c44tf" id="618UJ37zUOC" role="mwGJk">
             <node concept="3uibUv" id="618UJ37zUOD" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -954,7 +954,7 @@
         <node concept="mw_s8" id="618UJ37zUOS" role="1ZfhKB">
           <node concept="2c44tf" id="618UJ37zUOT" role="mwGJk">
             <node concept="3uibUv" id="618UJ37zUOU" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
@@ -1012,7 +1012,7 @@
         <node concept="mw_s8" id="2LWQ9F8OklB" role="1ZfhKB">
           <node concept="2c44tf" id="2LWQ9F8OklC" role="mwGJk">
             <node concept="3uibUv" id="2LWQ9F8OklJ" role="2c44tc">
-              <ref role="3uigEE" to="pvwh:~BaseAction" resolve="BaseAction" />
+              <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
             </node>
           </node>
         </node>
@@ -1037,7 +1037,7 @@
         <node concept="mw_s8" id="2LWQ9F8OnQ7" role="1ZfhKB">
           <node concept="2c44tf" id="2LWQ9F8OnQ8" role="mwGJk">
             <node concept="3uibUv" id="2LWQ9F8OnQe" role="2c44tc">
-              <ref role="3uigEE" to="pvwh:~BaseGroup" resolve="BaseGroup" />
+              <ref role="3uigEE" to="7bx7:~BaseGroup" resolve="BaseGroup" />
             </node>
           </node>
         </node>
@@ -1092,13 +1092,13 @@
           <node concept="2c44tf" id="dsJPRBJZ1m" role="mwGJk">
             <node concept="2usRSg" id="dsJPRBJZ1w" role="2c44tc">
               <node concept="3uibUv" id="dsJPRBJZ1y" role="2usUpS">
-                <ref role="3uigEE" to="e2lb:~Cloneable" resolve="Cloneable" />
+                <ref role="3uigEE" to="wyt6:~Cloneable" resolve="Cloneable" />
               </node>
               <node concept="3uibUv" id="dsJPRBJZ1_" role="2usUpS">
-                <ref role="3uigEE" to="e2lb:~Enum" resolve="Enum" />
+                <ref role="3uigEE" to="wyt6:~Enum" resolve="Enum" />
               </node>
               <node concept="3uibUv" id="dsJPRBJZ1C" role="2usUpS">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
               <node concept="2VYdi" id="dsJPRBLBbJ" role="2usUpS">
                 <node concept="2c44te" id="dsJPRBLBbK" role="lGtFl">
@@ -1266,7 +1266,7 @@
         <node concept="mw_s8" id="7Og6y43zE$6" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43zE$7" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43zE$8" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -1284,7 +1284,7 @@
         <node concept="mw_s8" id="7Og6y43yUis" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43yUit" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43yUiw" role="2c44tc">
-              <ref role="3uigEE" to="nx1:~ActionGroup" resolve="ActionGroup" />
+              <ref role="3uigEE" to="qkt:~ActionGroup" resolve="ActionGroup" />
             </node>
           </node>
         </node>
@@ -1315,7 +1315,7 @@
         <node concept="mw_s8" id="7Og6y43zE$0" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43zE$1" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43zE$4" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>
@@ -1333,7 +1333,7 @@
         <node concept="mw_s8" id="7Og6y43yUi_" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43yUiA" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43yUiB" role="2c44tc">
-              <ref role="3uigEE" to="nx1:~ActionGroup" resolve="ActionGroup" />
+              <ref role="3uigEE" to="qkt:~ActionGroup" resolve="ActionGroup" />
             </node>
           </node>
         </node>
@@ -1364,7 +1364,7 @@
         <node concept="mw_s8" id="7Og6y43zE$h" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43zE$i" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43zE$n" role="2c44tc">
-              <ref role="3uigEE" to="zb6h:~ActionButton" resolve="ActionButton" />
+              <ref role="3uigEE" to="xcyp:~ActionButton" resolve="ActionButton" />
             </node>
           </node>
         </node>
@@ -1382,7 +1382,7 @@
         <node concept="mw_s8" id="7Og6y43zE$r" role="1ZfhKB">
           <node concept="2c44tf" id="7Og6y43zE$s" role="mwGJk">
             <node concept="3uibUv" id="7Og6y43zE$_" role="2c44tc">
-              <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
             </node>
           </node>
         </node>
@@ -1415,7 +1415,7 @@
         <node concept="mw_s8" id="h$fuQA9" role="1ZfhKB">
           <node concept="2c44tf" id="h$fuQAa" role="mwGJk">
             <node concept="3uibUv" id="h$fwQQf" role="2c44tc">
-              <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
             </node>
           </node>
         </node>
@@ -1470,7 +1470,7 @@
         <node concept="mw_s8" id="$lsh0EhDby" role="1ZfhKB">
           <node concept="2c44tf" id="$lsh0EhDbu" role="mwGJk">
             <node concept="3uibUv" id="$lsh0EhFQN" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
             </node>
           </node>
         </node>

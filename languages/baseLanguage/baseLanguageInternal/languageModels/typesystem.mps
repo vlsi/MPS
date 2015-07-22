@@ -14,7 +14,7 @@
   <imports>
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="n0ti" ref="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)" />
   </imports>
   <registry>
@@ -263,7 +263,7 @@
                 </node>
                 <node concept="2c44tf" id="hqmu47L" role="37vLTx">
                   <node concept="3uibUv" id="hqmu47M" role="2c44tc">
-                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -389,7 +389,7 @@
         <node concept="mw_s8" id="hqmu48d" role="1ZfhKB">
           <node concept="2c44tf" id="hqmu48e" role="mwGJk">
             <node concept="3uibUv" id="hqmu48f" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+              <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
               <node concept="33vP2l" id="hqmu48g" role="11_B2D">
                 <node concept="2c44te" id="hqmu48h" role="lGtFl">
                   <node concept="2OqwBi" id="hxokjmH" role="2c44t1">
@@ -1050,7 +1050,7 @@
                 </node>
                 <node concept="2c44tf" id="X6WsgITZ9m" role="37vLTx">
                   <node concept="3uibUv" id="X6WsgITZ9n" role="2c44tc">
-                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>

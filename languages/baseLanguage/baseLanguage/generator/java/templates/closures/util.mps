@@ -15,15 +15,15 @@
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="y5px" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
-    <import index="q383" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
-    <import index="53gy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(java.util.concurrent@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="r9fo" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator()" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
+    <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template()" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util()" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent()" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
+    <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -422,7 +422,7 @@
                 <ref role="3cqZAo" node="h2kXev1" resolve="generator" />
               </node>
               <node concept="liA8E" id="hxBCQk$" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~ITemplateGenerator.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
+                <ref role="37wK5l" to="q1l7:~ITemplateGenerator.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
               </node>
             </node>
           </node>
@@ -528,7 +528,7 @@
       <node concept="37vLTG" id="h2kXev1" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="h2kXev2" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3Tm1VV" id="h9AO$FS" role="1B3o_S" />
@@ -864,7 +864,7 @@
             <node concept="2OqwBi" id="hJ_PyjK" role="1PxMeX">
               <node concept="2c44tf" id="hJ_PtFj" role="2Oq$k0">
                 <node concept="3uibUv" id="hJ_Pv2g" role="2c44tc">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
               <node concept="3TrEf2" id="hJ_PyJF" role="2OqNvi">
@@ -883,11 +883,11 @@
       <property role="TrG5h" value="CLOSURE_CONTEXT_DATA" />
       <node concept="3Tm6S6" id="i1QEyty" role="1B3o_S" />
       <node concept="3uibUv" id="i1QEzCL" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="2ShNRf" id="i1QEAVv" role="33vP2m">
         <node concept="1pGfFk" id="i1QEAVw" role="2ShVmc">
-          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
         </node>
       </node>
     </node>
@@ -984,8 +984,8 @@
                 <node concept="2ShNRf" id="6FOfPzYXAzC" role="37wK5m">
                   <node concept="YeOm9" id="6FOfPzYXAzD" role="2ShVmc">
                     <node concept="1Y3b0j" id="6FOfPzYXAzE" role="YeSDq">
-                      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                      <ref role="1Y3XeK" to="r9fo:~Condition" resolve="Condition" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <ref role="1Y3XeK" to="y49u:~Condition" resolve="Condition" />
                       <node concept="3Tm1VV" id="6FOfPzYXAzF" role="1B3o_S" />
                       <node concept="3Tqbb2" id="12T8mS49gTa" role="2Ghqu4" />
                       <node concept="3clFb_" id="6FOfPzYXAzG" role="jymVt">
@@ -1015,7 +1015,7 @@
                                         <ref role="3VsUkX" node="i1Q_53_" resolve="ClosuresUtil" />
                                       </node>
                                       <node concept="liA8E" id="5m9i7fsVeBE" role="2OqNvi">
-                                        <ref role="37wK5l" to="e2lb:~Class.toString():java.lang.String" resolve="toString" />
+                                        <ref role="37wK5l" to="wyt6:~Class.toString():java.lang.String" resolve="toString" />
                                       </node>
                                     </node>
                                   </node>
@@ -1030,7 +1030,7 @@
                             <node concept="3fqX7Q" id="5m9i7fsVdft" role="3clFbw">
                               <node concept="2ZW3vV" id="5m9i7fsVdfw" role="3fr31v">
                                 <node concept="3uibUv" id="12T8mS49gTc" role="2ZW6by">
-                                  <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                                 </node>
                                 <node concept="37vLTw" id="2BHiRxgm5W6" role="2ZW6bz">
                                   <ref role="3cqZAo" node="6FOfPzYXAzJ" resolve="n" />
@@ -1110,7 +1110,7 @@
       <node concept="37vLTG" id="i1QCcii" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QCcM3" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1163,7 +1163,7 @@
       <node concept="37vLTG" id="i1QCGNA" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QCGNB" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1238,7 +1238,7 @@
       <node concept="37vLTG" id="i1QD1HI" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QD1HJ" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1284,7 +1284,7 @@
       <node concept="37vLTG" id="i1QD9UL" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QD9UM" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1306,7 +1306,7 @@
             <node concept="YS8fn" id="i1QFJyt" role="3cqZAp">
               <node concept="2ShNRf" id="i1QFKbg" role="YScLw">
                 <node concept="1pGfFk" id="i1QFMu1" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
                   <node concept="3cpWs3" id="i1QFPl9" role="37wK5m">
                     <node concept="2YIFZM" id="4PBcmcw5Gtl" role="3uHU7w">
                       <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
@@ -1417,7 +1417,7 @@
       <node concept="37vLTG" id="i1QFBUg" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QFCf2" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1433,7 +1433,7 @@
       <node concept="37vLTG" id="5e3uFT61w8u" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="5e3uFT61w8$" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="5e3uFT61w8_" role="3clF47">
@@ -1451,14 +1451,14 @@
               <node concept="3cpWsn" id="5e3uFT61w8s" role="3cpWs9">
                 <property role="TrG5h" value="sessionContext" />
                 <node concept="3uibUv" id="5e3uFT61w8D" role="1tU5fm">
-                  <ref role="3uigEE" to="y5px:~GenerationSessionContext" resolve="GenerationSessionContext" />
+                  <ref role="3uigEE" to="ap4t:~GenerationSessionContext" resolve="GenerationSessionContext" />
                 </node>
                 <node concept="2OqwBi" id="5e3uFT61w8E" role="33vP2m">
                   <node concept="37vLTw" id="2BHiRxghePN" role="2Oq$k0">
                     <ref role="3cqZAo" node="5e3uFT61w8u" resolve="generator" />
                   </node>
                   <node concept="liA8E" id="5e3uFT61w8G" role="2OqNvi">
-                    <ref role="37wK5l" to="q383:~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolve="getGeneratorSessionContext" />
+                    <ref role="37wK5l" to="q1l7:~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolve="getGeneratorSessionContext" />
                   </node>
                 </node>
               </node>
@@ -1479,7 +1479,7 @@
                         <ref role="3cqZAo" node="5e3uFT61w8s" resolve="sessionContext" />
                       </node>
                       <node concept="liA8E" id="5e3uFT61w8P" role="2OqNvi">
-                        <ref role="37wK5l" to="y5px:~GenerationSessionContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
+                        <ref role="37wK5l" to="ap4t:~GenerationSessionContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
                         <node concept="37vLTw" id="2BHiRxeodkL" role="37wK5m">
                           <ref role="3cqZAo" node="i1QEytx" resolve="CLOSURE_CONTEXT_DATA" />
                         </node>
@@ -1501,7 +1501,7 @@
                   <node concept="37vLTI" id="5e3uFT61w8X" role="3clFbG">
                     <node concept="2ShNRf" id="5e3uFT61w8Y" role="37vLTx">
                       <node concept="1pGfFk" id="5e3uFT61w8Z" role="2ShVmc">
-                        <ref role="37wK5l" to="53gy:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
+                        <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
                         <node concept="3Tqbb2" id="5e3uFT61w90" role="1pMfVU" />
                         <node concept="3uibUv" id="5e3uFT61w91" role="1pMfVU">
                           <ref role="3uigEE" node="i1QOOfr" resolve="ClosuresUtil.ClosureContextData" />
@@ -1519,7 +1519,7 @@
                       <ref role="3cqZAo" node="5e3uFT61w8s" resolve="sessionContext" />
                     </node>
                     <node concept="liA8E" id="5e3uFT61w96" role="2OqNvi">
-                      <ref role="37wK5l" to="y5px:~GenerationSessionContext.putTransientObject(java.lang.Object,java.lang.Object):void" resolve="putTransientObject" />
+                      <ref role="37wK5l" to="ap4t:~GenerationSessionContext.putTransientObject(java.lang.Object,java.lang.Object):void" resolve="putTransientObject" />
                       <node concept="37vLTw" id="2BHiRxeosnq" role="37wK5m">
                         <ref role="3cqZAo" node="i1QEytx" resolve="CLOSURE_CONTEXT_DATA" />
                       </node>
@@ -1657,7 +1657,7 @@
       <node concept="37vLTG" id="i1QHwc4" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QHwFP" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1751,7 +1751,7 @@
       <node concept="37vLTG" id="i1QIY2K" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QIYkQ" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1911,7 +1911,7 @@
       <node concept="37vLTG" id="i1QJI_J" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QJIWu" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -1984,7 +1984,7 @@
       <node concept="37vLTG" id="i1QMFzN" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QMFPE" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -2225,7 +2225,7 @@
       <node concept="37vLTG" id="i1QNlSH" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QNm95" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -2240,14 +2240,14 @@
           <node concept="3cpWsn" id="i1QE07U" role="3cpWs9">
             <property role="TrG5h" value="sessionContext" />
             <node concept="3uibUv" id="i1QE07V" role="1tU5fm">
-              <ref role="3uigEE" to="y5px:~GenerationSessionContext" resolve="GenerationSessionContext" />
+              <ref role="3uigEE" to="ap4t:~GenerationSessionContext" resolve="GenerationSessionContext" />
             </node>
             <node concept="2OqwBi" id="i1QE4cv" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxgm6pv" role="2Oq$k0">
                 <ref role="3cqZAo" node="i1QDRe2" resolve="generator" />
               </node>
               <node concept="liA8E" id="i1QE5Bi" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolve="getGeneratorSessionContext" />
+                <ref role="37wK5l" to="q1l7:~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolve="getGeneratorSessionContext" />
               </node>
             </node>
           </node>
@@ -2268,7 +2268,7 @@
                     <ref role="3cqZAo" node="i1QE07U" resolve="sessionContext" />
                   </node>
                   <node concept="liA8E" id="i1QEIV5" role="2OqNvi">
-                    <ref role="37wK5l" to="y5px:~GenerationSessionContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
+                    <ref role="37wK5l" to="ap4t:~GenerationSessionContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
                     <node concept="37vLTw" id="2BHiRxeosn0" role="37wK5m">
                       <ref role="3cqZAo" node="i1QEytx" resolve="CLOSURE_CONTEXT_DATA" />
                     </node>
@@ -2315,7 +2315,7 @@
       <node concept="37vLTG" id="i1QDRe2" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="i1QDR_w" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -2725,7 +2725,7 @@
       <property role="TrG5h" value="CLOSURE__ADAPTER_CLASS" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7jRpv62ampk" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7jRpv62ampl" role="1B3o_S" />
       <node concept="Xl_RD" id="7jRpv62ampm" role="33vP2m">
@@ -2736,7 +2736,7 @@
       <property role="TrG5h" value="CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7jRpv62ampo" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7jRpv62ampp" role="1B3o_S" />
       <node concept="Xl_RD" id="7jRpv62ampq" role="33vP2m">
@@ -2747,7 +2747,7 @@
       <property role="TrG5h" value="CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7jRpv62amps" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7jRpv62ampt" role="1B3o_S" />
       <node concept="Xl_RD" id="7jRpv62ampu" role="33vP2m">
@@ -2758,7 +2758,7 @@
       <property role="TrG5h" value="VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7jRpv62ampw" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7jRpv62ampx" role="1B3o_S" />
       <node concept="Xl_RD" id="7jRpv62ampy" role="33vP2m">
@@ -2769,7 +2769,7 @@
       <property role="TrG5h" value="NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7jRpv62amp$" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7jRpv62amp_" role="1B3o_S" />
       <node concept="Xl_RD" id="7jRpv62ampA" role="33vP2m">
@@ -2789,18 +2789,18 @@
       <property role="TrG5h" value="find_EnclosingContextOwner_ClosureContext_generatedClass" />
       <node concept="3Tm1VV" id="7jRpv62ampI" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62ampJ" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="37vLTG" id="7jRpv62ampK" role="3clF46">
         <property role="TrG5h" value="inputNode" />
         <node concept="3uibUv" id="7jRpv62ampL" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62ampM" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62ampN" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62ampO" role="3clF47">
@@ -2808,7 +2808,7 @@
           <node concept="3cpWsn" id="7jRpv62ampQ" role="3cpWs9">
             <property role="TrG5h" value="contextOwner" />
             <node concept="3uibUv" id="7jRpv62ampR" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
             <node concept="2YIFZM" id="7jRpv62ampS" role="33vP2m">
               <ref role="1Pybhc" node="i1Q_53_" resolve="ClosuresUtil" />
@@ -2831,7 +2831,7 @@
               <node concept="3cpWsn" id="7jRpv62amq0" role="3cpWs9">
                 <property role="TrG5h" value="generatedClass" />
                 <node concept="3uibUv" id="7jRpv62amq1" role="1tU5fm">
-                  <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                 </node>
                 <node concept="1rXfSq" id="4hiugqysw63" role="33vP2m">
                   <ref role="37wK5l" node="7jRpv62amqk" resolve="find_ContextOwner_ClosureContext_generatedClass" />
@@ -2863,7 +2863,7 @@
         </node>
         <node concept="3clFbF" id="4k6fz1VhRmt" role="3cqZAp">
           <node concept="3B5_sB" id="4k6fz1VhRmu" role="3clFbG">
-            <ref role="3B5MYn" to="e2lb:~Object" resolve="Object" />
+            <ref role="3B5MYn" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -2872,18 +2872,18 @@
       <property role="TrG5h" value="find_ContextOwner_ClosureContext_generatedClass" />
       <node concept="3Tm1VV" id="7jRpv62amql" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amqm" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="37vLTG" id="7jRpv62amqn" role="3clF46">
         <property role="TrG5h" value="inputNode" />
         <node concept="3uibUv" id="7jRpv62amqo" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amqp" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amqq" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amqr" role="3clF47">
@@ -2893,7 +2893,7 @@
               <ref role="3cqZAo" node="7jRpv62amqp" resolve="generator" />
             </node>
             <node concept="liA8E" id="7jRpv62amqv" role="2OqNvi">
-              <ref role="37wK5l" to="q383:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
+              <ref role="37wK5l" to="q1l7:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
               <node concept="37vLTw" id="2BHiRxglYDA" role="37wK5m">
                 <ref role="3cqZAo" node="7jRpv62amqn" resolve="inputNode" />
               </node>
@@ -2910,18 +2910,18 @@
       <property role="TrG5h" value="find_ContextOwner_ClosureContext_generatedClass_constructor" />
       <node concept="3Tm1VV" id="7jRpv62amqz" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amq$" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="37vLTG" id="7jRpv62amq_" role="3clF46">
         <property role="TrG5h" value="inputNode" />
         <node concept="3uibUv" id="7jRpv62amqA" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amqB" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amqC" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amqD" role="3clF47">
@@ -2979,18 +2979,18 @@
       <property role="TrG5h" value="find_Closure_generatedClosureAdapter_constructor" />
       <node concept="3Tm1VV" id="7jRpv62amr5" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amr6" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="37vLTG" id="7jRpv62amr7" role="3clF46">
         <property role="TrG5h" value="closure" />
         <node concept="3uibUv" id="7jRpv62amr8" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amr9" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amra" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amrb" role="3clF47">
@@ -3009,7 +3009,7 @@
                   <ref role="3cqZAo" node="7jRpv62amr9" resolve="generator" />
                 </node>
                 <node concept="liA8E" id="7jRpv62amrh" role="2OqNvi">
-                  <ref role="37wK5l" to="q383:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
+                  <ref role="37wK5l" to="q1l7:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
                   <node concept="37vLTw" id="2BHiRxgm8v7" role="37wK5m">
                     <ref role="3cqZAo" node="7jRpv62amr7" resolve="closure" />
                   </node>
@@ -3052,7 +3052,7 @@
       <node concept="37vLTG" id="7jRpv62amrA" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amrB" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amrC" role="3clF47">
@@ -3090,7 +3090,7 @@
                     <ref role="3cqZAo" node="7jRpv62amrA" resolve="generator" />
                   </node>
                   <node concept="liA8E" id="7jRpv62amrW" role="2OqNvi">
-                    <ref role="37wK5l" to="q383:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
+                    <ref role="37wK5l" to="q1l7:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
                     <node concept="37vLTw" id="3GM_nagTr91" role="37wK5m">
                       <ref role="3cqZAo" node="2rqw8i0Jpbg" resolve="var" />
                     </node>
@@ -3124,7 +3124,7 @@
       <node concept="37vLTG" id="7jRpv62ams8" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62ams9" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amsa" role="3clF47">
@@ -3162,7 +3162,7 @@
                     <ref role="3cqZAo" node="7jRpv62ams8" resolve="generator" />
                   </node>
                   <node concept="liA8E" id="7jRpv62amsu" role="2OqNvi">
-                    <ref role="37wK5l" to="q383:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
+                    <ref role="37wK5l" to="q1l7:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
                     <node concept="37vLTw" id="3GM_nagTxVl" role="37wK5m">
                       <ref role="3cqZAo" node="7jRpv62amsc" resolve="variableAdapter" />
                     </node>
@@ -3185,9 +3185,9 @@
       <property role="TrG5h" value="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
       <node concept="3Tm1VV" id="7jRpv62amsA" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amsB" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="7jRpv62amsC" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amsD" role="3clF46">
@@ -3197,7 +3197,7 @@
       <node concept="37vLTG" id="7jRpv62amsF" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amsG" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amsH" role="3clF47">
@@ -3219,8 +3219,8 @@
           <node concept="3clFbS" id="7jRpv62amsU" role="3clFbx">
             <node concept="3cpWs6" id="7jRpv62amsV" role="3cqZAp">
               <node concept="2YIFZM" id="7jRpv62amsW" role="3cqZAk">
-                <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
-                <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
               </node>
             </node>
           </node>
@@ -3283,7 +3283,7 @@
                       <ref role="3cqZAo" node="7jRpv62amt6" resolve="parms" />
                     </node>
                     <node concept="liA8E" id="7jRpv62amtp" role="2OqNvi">
-                      <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+                      <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
                       <node concept="37vLTw" id="3GM_nagTwdF" role="37wK5m">
                         <ref role="3cqZAo" node="7jRpv62amte" resolve="var" />
                       </node>
@@ -3305,21 +3305,21 @@
       <property role="TrG5h" value="getList_ContextOwner_VariablesUsedInClosure" />
       <node concept="3Tm1VV" id="7jRpv62amtv" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amtw" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="7jRpv62amtx" role="11_B2D">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amty" role="3clF46">
         <property role="TrG5h" value="inputNode" />
         <node concept="3uibUv" id="7jRpv62amtz" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="7jRpv62amt$" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amt_" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amtA" role="3clF47">
@@ -3341,7 +3341,7 @@
       <property role="TrG5h" value="getString_VariableDeclaration_nameInClosureContext" />
       <node concept="3Tm1VV" id="7jRpv62amtG" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amtH" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="37vLTG" id="7jRpv62amtI" role="3clF46">
         <property role="TrG5h" value="varDecl" />
@@ -3352,7 +3352,7 @@
       <node concept="37vLTG" id="7jRpv62amtK" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amtL" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amtM" role="3clF47">
@@ -3390,7 +3390,7 @@
       <property role="TrG5h" value="create_closureContextObject" />
       <node concept="3Tm1VV" id="7jRpv62amtY" role="1B3o_S" />
       <node concept="3uibUv" id="7jRpv62amtZ" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="37vLTG" id="7jRpv62amu0" role="3clF46">
         <property role="TrG5h" value="nodeInsideClosure" />
@@ -3399,7 +3399,7 @@
       <node concept="37vLTG" id="7jRpv62amu2" role="3clF46">
         <property role="TrG5h" value="generator" />
         <node concept="3uibUv" id="7jRpv62amu3" role="1tU5fm">
-          <ref role="3uigEE" to="q383:~ITemplateGenerator" resolve="ITemplateGenerator" />
+          <ref role="3uigEE" to="q1l7:~ITemplateGenerator" resolve="ITemplateGenerator" />
         </node>
       </node>
       <node concept="3clFbS" id="7jRpv62amu4" role="3clF47">
@@ -3425,8 +3425,8 @@
                     <node concept="YeOm9" id="6FOfPzYXAEL" role="2ShVmc">
                       <node concept="1Y3b0j" id="6FOfPzYXAEM" role="YeSDq">
                         <property role="TrG5h" value="" />
-                        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                        <ref role="1Y3XeK" to="r9fo:~Condition" resolve="Condition" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                        <ref role="1Y3XeK" to="y49u:~Condition" resolve="Condition" />
                         <node concept="3Tqbb2" id="12T8mS49h01" role="2Ghqu4" />
                         <node concept="3clFb_" id="6FOfPzYXAEO" role="jymVt">
                           <property role="TrG5h" value="met" />
@@ -3454,7 +3454,7 @@
                                           <ref role="3VsUkX" node="7jRpv62ampB" resolve="_QueriesUtil" />
                                         </node>
                                         <node concept="liA8E" id="5m9i7fsVeAF" role="2OqNvi">
-                                          <ref role="37wK5l" to="e2lb:~Class.toString():java.lang.String" resolve="toString" />
+                                          <ref role="37wK5l" to="wyt6:~Class.toString():java.lang.String" resolve="toString" />
                                         </node>
                                       </node>
                                     </node>
@@ -3469,7 +3469,7 @@
                               <node concept="3fqX7Q" id="5m9i7fsVdfR" role="3clFbw">
                                 <node concept="2ZW3vV" id="5m9i7fsVdfS" role="3fr31v">
                                   <node concept="3uibUv" id="5m9i7fsVdfT" role="2ZW6by">
-                                    <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                                    <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                                   </node>
                                   <node concept="37vLTw" id="2BHiRxgkWzH" role="2ZW6bz">
                                     <ref role="3cqZAo" node="6FOfPzYXAER" resolve="object" />
@@ -3531,7 +3531,7 @@
                 <ref role="3cqZAo" node="7jRpv62amu2" resolve="generator" />
               </node>
               <node concept="liA8E" id="7jRpv62amuC" role="2OqNvi">
-                <ref role="37wK5l" to="q383:~ITemplateGenerator.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
+                <ref role="37wK5l" to="q1l7:~ITemplateGenerator.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
               </node>
             </node>
           </node>
@@ -3568,7 +3568,7 @@
                       <ref role="3cqZAo" node="7jRpv62amu2" resolve="generator" />
                     </node>
                     <node concept="liA8E" id="7jRpv62amuR" role="2OqNvi">
-                      <ref role="37wK5l" to="q383:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
+                      <ref role="37wK5l" to="q1l7:~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findOutputNodeByInputNodeAndMappingName" />
                       <node concept="37vLTw" id="3GM_nagTyVM" role="37wK5m">
                         <ref role="3cqZAo" node="7jRpv62amu6" resolve="enclosingClosureOrContextOwner" />
                       </node>

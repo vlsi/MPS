@@ -1477,11 +1477,11 @@
       <node id="5452844340287051158" at="17,60,18,63" concept="7" />
       <node id="5452844340287051158" at="18,63,19,30" concept="7" />
       <node id="5452844340287051158" at="19,30,20,227" concept="2" />
-      <node id="5452844340287051158" at="20,227,21,550" concept="2" />
-      <node id="5452844340287051158" at="21,550,22,24" concept="8" />
+      <node id="5452844340287051158" at="20,227,21,468" concept="2" />
+      <node id="5452844340287051158" at="21,468,22,24" concept="8" />
       <node id="5452844340287051155" at="12,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5452844340287051158" at="19,30,21,550" concept="0" />
-      <node id="5452844340287051158" at="19,30,21,550" concept="0" />
+      <node id="5452844340287051158" at="19,30,21,468" concept="0" />
+      <node id="5452844340287051158" at="19,30,21,468" concept="0" />
       <node id="5452844340287051155" at="14,0,17,0" concept="10" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5452844340287051158" at="17,0,24,0" concept="10" trace="_quotation_createNode_t5vwvm_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5452844340287051157" at="12,43,12,43" />
@@ -1489,7 +1489,7 @@
       <scope id="5452844340287051155" at="12,0,14,0">
         <var name="thisNode" id="5452844340287051155" />
       </scope>
-      <scope id="5452844340287051158" at="19,30,21,550" />
+      <scope id="5452844340287051158" at="19,30,21,468" />
       <scope id="5452844340287051155" at="14,0,17,0">
         <var name="thisNode" id="5452844340287051155" />
       </scope>

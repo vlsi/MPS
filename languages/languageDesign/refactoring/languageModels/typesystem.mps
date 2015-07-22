@@ -12,8 +12,8 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tp1q" ref="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)" />
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project()" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -483,7 +483,7 @@
         <node concept="mw_s8" id="hFCFn1a" role="1ZfhKB">
           <node concept="2c44tf" id="hFCFn1b" role="mwGJk">
             <node concept="3uibUv" id="hFCFnQE" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
@@ -636,7 +636,7 @@
         <node concept="mw_s8" id="3P0Mnt4FwG0" role="1ZfhKB">
           <node concept="2c44tf" id="3P0Mnt4FwG1" role="mwGJk">
             <node concept="3uibUv" id="3P0Mnt4FwG5" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
@@ -698,7 +698,7 @@
               <node concept="mw_s8" id="1$UaBONtt0F" role="1ZfhKB">
                 <node concept="2c44tf" id="1$UaBONtt0G" role="mwGJk">
                   <node concept="3uibUv" id="1$UaBONtt0H" role="2c44tc">
-                    <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+                    <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                   </node>
                 </node>
               </node>
@@ -892,7 +892,7 @@
         <node concept="mw_s8" id="6nthb2Jwq2x" role="1ZfhKB">
           <node concept="2c44tf" id="6nthb2Jwq2y" role="mwGJk">
             <node concept="3uibUv" id="6nthb2Jx2TJ" role="2c44tc">
-              <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
           </node>
         </node>
@@ -1338,7 +1338,7 @@
         <node concept="mw_s8" id="1Z$ZeXyO1yW" role="1ZfhKB">
           <node concept="2c44tf" id="1Z$ZeXyO1yX" role="mwGJk">
             <node concept="3uibUv" id="1Z$ZeXyO1yY" role="2c44tc">
-              <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
           </node>
         </node>

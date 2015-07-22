@@ -16,12 +16,12 @@
     <import index="tpd9" ref="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -661,8 +661,8 @@
                         <node concept="3clFbS" id="hRzah3e" role="1bW5cS">
                           <node concept="3clFbF" id="hRzah3f" role="3cqZAp">
                             <node concept="2YIFZM" id="7vc5PjWumpf" role="3clFbG">
-                              <ref role="37wK5l" to="cu2c:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDefaultSubstitutable" />
-                              <ref role="1Pybhc" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                              <ref role="37wK5l" to="w1kc:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDefaultSubstitutable" />
+                              <ref role="1Pybhc" to="w1kc:~SNodeUtil" resolve="SNodeUtil" />
                               <node concept="37vLTw" id="7vc5PjWumHb" role="37wK5m">
                                 <ref role="3cqZAo" node="hRzah3c" resolve="it" />
                               </node>
@@ -937,7 +937,7 @@
                 <node concept="2OqwBi" id="6IgGpZkOUXo" role="3clFbw">
                   <node concept="uNquD" id="6IgGpZkOUxX" role="2Oq$k0" />
                   <node concept="liA8E" id="6IgGpZkOXyK" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="Xl_RD" id="6IgGpZkOXBx" role="37wK5m">
                       <property role="Xl_RC" value="check typeof" />
                     </node>

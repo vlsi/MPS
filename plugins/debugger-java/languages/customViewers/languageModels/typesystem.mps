@@ -11,7 +11,7 @@
   <imports>
     <import index="kisg" ref="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -184,7 +184,7 @@
             <node concept="2pIpSj" id="7U4XhjnR3Tr" role="2pJxcM">
               <ref role="2pIpSl" to="tpee:g7uigIF" />
               <node concept="36bGnv" id="7U4XhjnR3Ts" role="2pJxcZ">
-                <ref role="36bGnp" to="k7g3:~List" resolve="List" />
+                <ref role="36bGnp" to="33ny:~List" resolve="List" />
               </node>
             </node>
             <node concept="2pIpSj" id="7U4XhjnR3Tu" role="2pJxcM">
@@ -209,7 +209,7 @@
       <node concept="3cpWs6" id="1AiqN6mLe6T" role="3cqZAp">
         <node concept="2c44tf" id="1AiqN6mLe6V" role="3cqZAk">
           <node concept="3uibUv" id="5jmCI3fO$UN" role="2c44tc">
-            <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+            <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3qTvmN" id="5jmCI3fO$UR" role="11_B2D" />
           </node>
         </node>

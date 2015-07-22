@@ -9,7 +9,7 @@
   </languages>
   <imports>
     <import index="v54s" ref="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" />
-    <import index="bltl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.structure(MPS.Core/jetbrains.mps.smodel.structure@java_stub)" />
+    <import index="bmr5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.structure(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
@@ -826,7 +826,7 @@
                   <property role="TrG5h" value="ef" />
                   <node concept="2DMOqp" id="21KXiZCIXUm" role="1YbcFS">
                     <node concept="3uibUv" id="21KXiZCJ6Ma" role="2DMOqq">
-                      <ref role="3uigEE" to="bltl:~ExtensionFunction" resolve="ExtensionFunction" />
+                      <ref role="3uigEE" to="bmr5:~ExtensionFunction" resolve="ExtensionFunction" />
                       <node concept="33vP2l" id="21KXiZCJ6Ml" role="11_B2D">
                         <node concept="2DMOqr" id="21KXiZCJ6MF" role="lGtFl">
                           <property role="2DMOqs" value="arg" />
@@ -887,7 +887,7 @@
             <node concept="mw_s8" id="21KXiZCJ626" role="1ZfhKB">
               <node concept="2c44tf" id="4u7uetTQC3Q" role="mwGJk">
                 <node concept="3uibUv" id="4u7uetTQC4I" role="2c44tc">
-                  <ref role="3uigEE" to="bltl:~ExtensionFunction$FunctionInstance" resolve="ExtensionFunction.FunctionInstance" />
+                  <ref role="3uigEE" to="bmr5:~ExtensionFunction$FunctionInstance" resolve="ExtensionFunction.FunctionInstance" />
                   <node concept="33vP2l" id="4u7uetTQC5k" role="11_B2D">
                     <node concept="2c44te" id="4u7uetTQC5T" role="lGtFl">
                       <node concept="37vLTw" id="4u7uetTQC64" role="2c44t1">
@@ -983,7 +983,7 @@
             </node>
             <node concept="2c44tf" id="2KgYA8kbIMH" role="HW$Y0">
               <node concept="3uibUv" id="2KgYA8kbIMK" role="2c44tc">
-                <ref role="3uigEE" to="bltl:~ExtensionPoint" resolve="ExtensionPoint" />
+                <ref role="3uigEE" to="bmr5:~ExtensionPoint" resolve="ExtensionPoint" />
                 <node concept="33vP2l" id="2KgYA8kbPtH" role="11_B2D">
                   <node concept="2c44te" id="2KgYA8kbPtI" role="lGtFl">
                     <node concept="2OqwBi" id="2KgYA8kbPtX" role="2c44t1">

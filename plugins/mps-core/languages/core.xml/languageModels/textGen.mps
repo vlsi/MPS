@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="t7at" ref="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -1366,7 +1366,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1Qs9WekXLyL" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                    <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                     <node concept="Xl_RD" id="1Qs9WekXLyM" role="37wK5m">
                       <property role="Xl_RC" value="'" />
                     </node>
@@ -1447,7 +1447,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1Qs9WekXLxI" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                 <node concept="Xl_RD" id="1Qs9WekXLxJ" role="37wK5m">
                   <property role="Xl_RC" value="'" />
                 </node>

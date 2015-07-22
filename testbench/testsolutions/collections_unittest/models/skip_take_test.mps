@@ -8,7 +8,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -140,7 +140,7 @@
               <property role="TrG5h" value="s" />
               <node concept="A3Dl8" id="h48q6D9" role="1tU5fm">
                 <node concept="3uibUv" id="h48qv$0" role="A3Ik2">
-                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                  <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
               </node>
               <node concept="2ShNRf" id="h48qbFu" role="33vP2m">
@@ -288,7 +288,7 @@
               <property role="TrG5h" value="s" />
               <node concept="A3Dl8" id="h48r3bs" role="1tU5fm">
                 <node concept="3uibUv" id="h48r3bt" role="A3Ik2">
-                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                  <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
               </node>
               <node concept="2ShNRf" id="h48r3bu" role="33vP2m">
@@ -438,7 +438,7 @@
               <property role="TrG5h" value="s" />
               <node concept="A3Dl8" id="h48rtQE" role="1tU5fm">
                 <node concept="3uibUv" id="h48rtQF" role="A3Ik2">
-                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                  <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
               </node>
               <node concept="2ShNRf" id="h48rtQG" role="33vP2m">
@@ -552,7 +552,7 @@
               <property role="TrG5h" value="s" />
               <node concept="A3Dl8" id="h48uRpf" role="1tU5fm">
                 <node concept="3uibUv" id="h48uRpg" role="A3Ik2">
-                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                  <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
               </node>
               <node concept="2ShNRf" id="h48uRph" role="33vP2m">

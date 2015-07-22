@@ -9,18 +9,18 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="nax5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors(MPS.Core/jetbrains.mps.errors@java_stub)" />
-    <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="kgxg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
+    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -153,11 +153,11 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="63oasX2duts" role="1B3o_S" />
       <node concept="3uibUv" id="63oasX2du$t" role="1tU5fm">
-        <ref role="3uigEE" to="ua2a:~DefaultTypecheckingContextOwner" resolve="DefaultTypecheckingContextOwner" />
+        <ref role="3uigEE" to="u78q:~DefaultTypecheckingContextOwner" resolve="DefaultTypecheckingContextOwner" />
       </node>
       <node concept="2ShNRf" id="63oasX2duJs" role="33vP2m">
         <node concept="1pGfFk" id="63oasX2duJr" role="2ShVmc">
-          <ref role="37wK5l" to="ua2a:~DefaultTypecheckingContextOwner.&lt;init&gt;()" resolve="DefaultTypecheckingContextOwner" />
+          <ref role="37wK5l" to="u78q:~DefaultTypecheckingContextOwner.&lt;init&gt;()" resolve="DefaultTypecheckingContextOwner" />
         </node>
       </node>
     </node>
@@ -177,13 +177,13 @@
             <property role="TrG5h" value="errors" />
             <node concept="2hMVRd" id="63oasX2dnSd" role="1tU5fm">
               <node concept="3uibUv" id="63oasX2dnSg" role="2hN53Y">
-                <ref role="3uigEE" to="nax5:~IErrorReporter" resolve="IErrorReporter" />
+                <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
               </node>
             </node>
             <node concept="2ShNRf" id="63oasX2emcv" role="33vP2m">
               <node concept="2i4dXS" id="63oasX2emcq" role="2ShVmc">
                 <node concept="3uibUv" id="63oasX2emcr" role="HW$YZ">
-                  <ref role="3uigEE" to="nax5:~IErrorReporter" resolve="IErrorReporter" />
+                  <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
                 </node>
               </node>
             </node>
@@ -192,11 +192,11 @@
         <node concept="3clFbF" id="4Et1D9aUT$D" role="3cqZAp">
           <node concept="2OqwBi" id="4Et1D9aUT$F" role="3clFbG">
             <node concept="2YIFZM" id="4Et1D9aUT$G" role="2Oq$k0">
-              <ref role="1Pybhc" to="ua2a:~TypeContextManager" resolve="TypeContextManager" />
-              <ref role="37wK5l" to="ua2a:~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="u78q:~TypeContextManager" resolve="TypeContextManager" />
+              <ref role="37wK5l" to="u78q:~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="4Et1D9aUT$H" role="2OqNvi">
-              <ref role="37wK5l" to="ua2a:~TypeContextManager.runTypeCheckingAction(jetbrains.mps.typesystem.inference.ITypeContextOwner,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.typesystem.inference.ITypechecking$Action):void" resolve="runTypeCheckingAction" />
+              <ref role="37wK5l" to="u78q:~TypeContextManager.runTypeCheckingAction(jetbrains.mps.typesystem.inference.ITypeContextOwner,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.typesystem.inference.ITypechecking$Action):void" resolve="runTypeCheckingAction" />
               <node concept="37vLTw" id="63oasX2duNz" role="37wK5m">
                 <ref role="3cqZAo" node="63oasX2du_R" resolve="myContextOwner" />
               </node>
@@ -207,7 +207,7 @@
                 <node concept="37vLTG" id="63oasX2dnym" role="1bW2Oz">
                   <property role="TrG5h" value="typeContext" />
                   <node concept="3uibUv" id="63oasX2dn$1" role="1tU5fm">
-                    <ref role="3uigEE" to="ua2a:~TypeCheckingContext" resolve="TypeCheckingContext" />
+                    <ref role="3uigEE" to="u78q:~TypeCheckingContext" resolve="TypeCheckingContext" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="63oasX2dnws" role="1bW5cS">
@@ -215,14 +215,14 @@
                     <node concept="3cpWsn" id="63oasX2dsrK" role="1Duv9x">
                       <property role="TrG5h" value="pair" />
                       <node concept="3uibUv" id="63oasX2dsrL" role="1tU5fm">
-                        <ref role="3uigEE" to="msyo:~Pair" resolve="Pair" />
+                        <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
                         <node concept="3uibUv" id="63oasX2dsrM" role="11_B2D">
-                          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                         </node>
                         <node concept="3uibUv" id="63oasX2dsrN" role="11_B2D">
-                          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                          <ref role="3uigEE" to="33ny:~List" resolve="List" />
                           <node concept="3uibUv" id="63oasX2dsrO" role="11_B2D">
-                            <ref role="3uigEE" to="nax5:~IErrorReporter" resolve="IErrorReporter" />
+                            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
                           </node>
                         </node>
                       </node>
@@ -236,7 +236,7 @@
                           <node concept="X8dFx" id="63oasX2dsrT" role="2OqNvi">
                             <node concept="2OqwBi" id="63oasX2dsrU" role="25WWJ7">
                               <node concept="2OwXpG" id="63oasX2dsrV" role="2OqNvi">
-                                <ref role="2Oxat5" to="msyo:~Pair.o2" resolve="o2" />
+                                <ref role="2Oxat5" to="18ew:~Pair.o2" resolve="o2" />
                               </node>
                               <node concept="37vLTw" id="63oasX2dsrW" role="2Oq$k0">
                                 <ref role="3cqZAo" node="63oasX2dsrK" resolve="pair" />
@@ -251,7 +251,7 @@
                         <ref role="3cqZAo" node="63oasX2dnym" resolve="typeContext" />
                       </node>
                       <node concept="liA8E" id="63oasX2dsrZ" role="2OqNvi">
-                        <ref role="37wK5l" to="ua2a:~TypeCheckingContext.checkRootAndGetErrors(boolean):java.util.Set" resolve="checkRootAndGetErrors" />
+                        <ref role="37wK5l" to="u78q:~TypeCheckingContext.checkRootAndGetErrors(boolean):java.util.Set" resolve="checkRootAndGetErrors" />
                         <node concept="3clFbT" id="63oasX2dss0" role="37wK5m">
                           <property role="3clFbU" value="true" />
                         </node>
@@ -272,24 +272,24 @@
       <node concept="37vLTG" id="4yqv8vrxVuF" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3uibUv" id="4yqv8vrxVuG" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="4yqv8vrxVuH" role="3clF46">
         <property role="TrG5h" value="repository" />
         <node concept="3uibUv" id="50Q$OHe3_CL" role="1tU5fm">
-          <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4yqv8vrxVuC" role="1B3o_S" />
       <node concept="3uibUv" id="4yqv8vrxVuD" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="3uibUv" id="4yqv8vrxVuE" role="11_B2D">
-          <ref role="3uigEE" to="nax5:~IErrorReporter" resolve="IErrorReporter" />
+          <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p6mr" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3Tm1VV" id="4yqv8vrxVut" role="1B3o_S" />

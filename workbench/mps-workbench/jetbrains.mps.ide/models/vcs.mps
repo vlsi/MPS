@@ -6,14 +6,14 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="tbz9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.platform(MPS.IDEA/com.intellij.platform@java_stub)" />
-    <import index="3dcm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />
-    <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
-    <import index="15tk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs.impl(MPS.IDEA/com.intellij.openapi.vcs.impl@java_stub)" />
-    <import index="o84r" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs.changes(MPS.IDEA/com.intellij.openapi.vcs.changes@java_stub)" />
-    <import index="3df7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="ofh9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.platform(MPS.IDEA/)" />
+    <import index="jlcu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs(MPS.IDEA/)" />
+    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="j86o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.impl(MPS.IDEA/)" />
+    <import index="1037" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.changes(MPS.IDEA/)" />
+    <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -210,7 +210,7 @@
                 </node>
               </node>
               <node concept="2AHcQZ" id="4mqZImXW57S" role="2AJF6D">
-                <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
           </node>
@@ -236,7 +236,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXW57s" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2YIFZL" id="4mqZImXW57t" role="jymVt">
@@ -282,7 +282,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXW57J" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
   </node>
@@ -292,14 +292,14 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="4mqZImXXUXs" role="1B3o_S" />
     <node concept="3uibUv" id="4mqZImXXUXt" role="1zkMxy">
-      <ref role="3uigEE" to="15tk:~BasicDefaultVcsRootPolicy" resolve="BasicDefaultVcsRootPolicy" />
+      <ref role="3uigEE" to="j86o:~BasicDefaultVcsRootPolicy" resolve="BasicDefaultVcsRootPolicy" />
     </node>
     <node concept="312cEg" id="4mqZImXXUXu" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4mqZImXXUXv" role="1tU5fm">
-        <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
       </node>
       <node concept="3Tm6S6" id="4mqZImXXUXw" role="1B3o_S" />
     </node>
@@ -310,12 +310,12 @@
         <property role="TrG5h" value="project" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUX_" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUXA" role="3clF47">
         <node concept="XkiVB" id="4mqZImXXUXB" role="3cqZAp">
-          <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="BasicDefaultVcsRootPolicy" />
+          <ref role="37wK5l" to="j86o:~BasicDefaultVcsRootPolicy.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="BasicDefaultVcsRootPolicy" />
           <node concept="37vLTw" id="2BHiRxgm5Eu" role="37wK5m">
             <ref role="3cqZAo" node="4mqZImXXUX$" resolve="project" />
           </node>
@@ -342,20 +342,20 @@
         <property role="TrG5h" value="builder" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUXL" role="1tU5fm">
-          <ref role="3uigEE" to="o84r:~DirtBuilder" resolve="DirtBuilder" />
+          <ref role="3uigEE" to="1037:~DirtBuilder" resolve="DirtBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="4mqZImXXUXM" role="3clF46">
         <property role="TrG5h" value="vcsGuess" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="4mqZImXXUXN" role="1tU5fm">
-          <ref role="3uigEE" to="o84r:~VcsGuess" resolve="VcsGuess" />
+          <ref role="3uigEE" to="1037:~VcsGuess" resolve="VcsGuess" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUXO" role="3clF47">
         <node concept="3clFbF" id="4mqZImXXUXP" role="3cqZAp">
           <node concept="3nyPlj" id="4mqZImXXUXQ" role="3clFbG">
-            <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.markDefaultRootsDirty(com.intellij.openapi.vcs.changes.DirtBuilder,com.intellij.openapi.vcs.changes.VcsGuess):void" resolve="markDefaultRootsDirty" />
+            <ref role="37wK5l" to="j86o:~BasicDefaultVcsRootPolicy.markDefaultRootsDirty(com.intellij.openapi.vcs.changes.DirtBuilder,com.intellij.openapi.vcs.changes.VcsGuess):void" resolve="markDefaultRootsDirty" />
             <node concept="37vLTw" id="2BHiRxglnUx" role="37wK5m">
               <ref role="3cqZAo" node="4mqZImXXUXK" resolve="builder" />
             </node>
@@ -374,11 +374,11 @@
             <property role="TrG5h" value="manager" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="4mqZImXXUXV" role="1tU5fm">
-              <ref role="3uigEE" to="3dcm:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
+              <ref role="3uigEE" to="jlcu:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
             </node>
             <node concept="2YIFZM" id="4mqZImXXUXW" role="33vP2m">
-              <ref role="1Pybhc" to="3dcm:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
-              <ref role="37wK5l" to="3dcm:~ProjectLevelVcsManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.ProjectLevelVcsManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="jlcu:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
+              <ref role="37wK5l" to="jlcu:~ProjectLevelVcsManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.ProjectLevelVcsManager" resolve="getInstance" />
               <node concept="37vLTw" id="2BHiRxeuQwu" role="37wK5m">
                 <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
               </node>
@@ -391,7 +391,7 @@
             <property role="3TUv4t" value="false" />
             <node concept="10Q1$e" id="4mqZImXXUY0" role="1tU5fm">
               <node concept="3uibUv" id="4mqZImXXUY1" role="10Q1$1">
-                <ref role="3uigEE" to="3dcm:~VcsRoot" resolve="VcsRoot" />
+                <ref role="3uigEE" to="jlcu:~VcsRoot" resolve="VcsRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="4mqZImXXUY2" role="33vP2m">
@@ -399,7 +399,7 @@
                 <ref role="3cqZAo" node="4mqZImXXUXU" resolve="manager" />
               </node>
               <node concept="liA8E" id="4mqZImXXUY4" role="2OqNvi">
-                <ref role="37wK5l" to="3dcm:~ProjectLevelVcsManager.getAllVcsRoots():com.intellij.openapi.vcs.VcsRoot[]" resolve="getAllVcsRoots" />
+                <ref role="37wK5l" to="jlcu:~ProjectLevelVcsManager.getAllVcsRoots():com.intellij.openapi.vcs.VcsRoot[]" resolve="getAllVcsRoots" />
               </node>
             </node>
           </node>
@@ -412,7 +412,7 @@
             <property role="TrG5h" value="root" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="4mqZImXXUY8" role="1tU5fm">
-              <ref role="3uigEE" to="3dcm:~VcsRoot" resolve="VcsRoot" />
+              <ref role="3uigEE" to="jlcu:~VcsRoot" resolve="VcsRoot" />
             </node>
           </node>
           <node concept="3clFbS" id="4mqZImXXUY9" role="2LFqv$">
@@ -422,7 +422,7 @@
                   <ref role="3cqZAo" node="4mqZImXXUXK" resolve="builder" />
                 </node>
                 <node concept="liA8E" id="4mqZImXXUYd" role="2OqNvi">
-                  <ref role="37wK5l" to="o84r:~DirtBuilder.addDirtyDirRecursively(com.intellij.openapi.vcs.VcsRoot):void" resolve="addDirtyDirRecursively" />
+                  <ref role="37wK5l" to="1037:~DirtBuilder.addDirtyDirRecursively(com.intellij.openapi.vcs.VcsRoot):void" resolve="addDirtyDirRecursively" />
                   <node concept="37vLTw" id="3GM_nagTrPm" role="37wK5m">
                     <ref role="3cqZAo" node="4mqZImXXUY7" resolve="root" />
                   </node>
@@ -433,7 +433,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXXUYf" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="4mqZImXXUYg" role="jymVt">
@@ -446,14 +446,14 @@
         <property role="TrG5h" value="file" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUYk" role="1tU5fm">
-          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
       <node concept="37vLTG" id="4mqZImXXUYl" role="3clF46">
         <property role="TrG5h" value="matchContext" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUYm" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUYn" role="3clF47">
@@ -461,14 +461,14 @@
           <node concept="3clFbC" id="4mqZImXXUYp" role="3clFbw">
             <node concept="2OqwBi" id="4mqZImXXUYq" role="3uHU7B">
               <node concept="2YIFZM" id="4mqZImXXUYr" role="2Oq$k0">
-                <ref role="37wK5l" to="tbz9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
-                <ref role="1Pybhc" to="tbz9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
+                <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
+                <ref role="1Pybhc" to="ofh9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
                 <node concept="37vLTw" id="2BHiRxeuoVj" role="37wK5m">
                   <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
                 </node>
               </node>
               <node concept="liA8E" id="4mqZImXXUYt" role="2OqNvi">
-                <ref role="37wK5l" to="tbz9:~ProjectBaseDirectory.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
+                <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
               </node>
             </node>
             <node concept="10Nm6u" id="4mqZImXXUYu" role="3uHU7w" />
@@ -488,7 +488,7 @@
         </node>
         <node concept="3cpWs6" id="4mqZImXXUYy" role="3cqZAp">
           <node concept="3nyPlj" id="4mqZImXXUYz" role="3cqZAk">
-            <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.matchesDefaultMapping(com.intellij.openapi.vfs.VirtualFile,java.lang.Object):boolean" resolve="matchesDefaultMapping" />
+            <ref role="37wK5l" to="j86o:~BasicDefaultVcsRootPolicy.matchesDefaultMapping(com.intellij.openapi.vfs.VirtualFile,java.lang.Object):boolean" resolve="matchesDefaultMapping" />
             <node concept="37vLTw" id="2BHiRxgmhCI" role="37wK5m">
               <ref role="3cqZAo" node="4mqZImXXUYj" resolve="file" />
             </node>
@@ -499,7 +499,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXXUYA" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

@@ -90,7 +90,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5337045848190669725(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException");
+        return it != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException");
       }
     });
   }

@@ -11,7 +11,7 @@
   </languages>
   <imports>
     <import index="tpfo" ref="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpfs" ref="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -613,7 +613,7 @@
               <node concept="2OqwBi" id="3iI_KKpcfT6" role="3uHU7B">
                 <node concept="1Wqviy" id="3iI_KKpcfT7" role="2Oq$k0" />
                 <node concept="liA8E" id="3iI_KKpcfT8" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.charAt(int):char" resolve="charAt" />
+                  <ref role="37wK5l" to="wyt6:~String.charAt(int):char" resolve="charAt" />
                   <node concept="3cpWsd" id="4Tc5uQul3CL" role="37wK5m">
                     <node concept="3cmrfG" id="4Tc5uQul3CQ" role="3uHU7w">
                       <property role="3cmrfH" value="1" />
@@ -621,7 +621,7 @@
                     <node concept="2OqwBi" id="4Tc5uQul050" role="3uHU7B">
                       <node concept="1Wqviy" id="4Tc5uQukZCN" role="2Oq$k0" />
                       <node concept="liA8E" id="4Tc5uQul1kF" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                        <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                       </node>
                     </node>
                   </node>
@@ -823,7 +823,7 @@
               <node concept="2OqwBi" id="3iI_KKpaM1a" role="3uHU7B">
                 <node concept="1Wqviy" id="3iI_KKpaM19" role="2Oq$k0" />
                 <node concept="liA8E" id="3iI_KKpaM1e" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.indexOf(java.lang.String):int" resolve="indexOf" />
+                  <ref role="37wK5l" to="wyt6:~String.indexOf(java.lang.String):int" resolve="indexOf" />
                   <node concept="Xl_RD" id="3iI_KKpaM1f" role="37wK5m">
                     <property role="Xl_RC" value=" " />
                   </node>

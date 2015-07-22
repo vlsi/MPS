@@ -11,7 +11,7 @@
   <imports>
     <import index="pnao" ref="r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -174,12 +174,12 @@
             <node concept="3cpWsn" id="7cC8ee7wq0p" role="3cpWs9">
               <property role="TrG5h" value="names" />
               <node concept="3uibUv" id="7cC8ee7wq0q" role="1tU5fm">
-                <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+                <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
                 <node concept="17QB3L" id="7cC8ee7wrLB" role="11_B2D" />
               </node>
               <node concept="2ShNRf" id="7cC8ee7wrLD" role="33vP2m">
                 <node concept="1pGfFk" id="7cC8ee7wrLF" role="2ShVmc">
-                  <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+                  <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
                 </node>
               </node>
             </node>
@@ -212,7 +212,7 @@
                         <ref role="3cqZAo" node="7cC8ee7wq0p" resolve="names" />
                       </node>
                       <node concept="liA8E" id="7cC8ee7wrMl" role="2OqNvi">
-                        <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                        <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                         <node concept="2OqwBi" id="7cC8ee7wrMn" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTyyY" role="2Oq$k0">
                             <ref role="3cqZAo" node="7cC8ee7wq03" resolve="var" />
@@ -231,7 +231,7 @@
                       <ref role="3cqZAo" node="7cC8ee7wq0p" resolve="names" />
                     </node>
                     <node concept="liA8E" id="7cC8ee7wrLW" role="2OqNvi">
-                      <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                      <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                       <node concept="2OqwBi" id="7cC8ee7wrLY" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTs9B" role="2Oq$k0">
                           <ref role="3cqZAo" node="7cC8ee7wq03" resolve="var" />

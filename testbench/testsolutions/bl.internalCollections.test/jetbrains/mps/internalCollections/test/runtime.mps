@@ -7,8 +7,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -216,7 +216,7 @@
                 <ref role="37wK5l" node="24JFuV99i9$" resolve="MPS13933" />
                 <node concept="3Tm1VV" id="24JFuV99nbu" role="1B3o_S" />
                 <node concept="3uibUv" id="24JFuV99nbr" role="2Ghqu4">
-                  <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+                  <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
                 </node>
                 <node concept="3clFb_" id="24JFuV99nbE" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -230,7 +230,7 @@
                         <node concept="2ShNRf" id="24JFuV99nbN" role="37wK5m">
                           <node concept="Tc6Ow" id="24JFuV99nbP" role="2ShVmc">
                             <node concept="3uibUv" id="24JFuV99nbR" role="HW$YZ">
-                              <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+                              <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
                             </node>
                             <node concept="10Nm6u" id="24JFuV99nbT" role="HW$Y0" />
                           </node>
@@ -245,7 +245,7 @@
                           <node concept="2ShNRf" id="24JFuV9a3DW" role="37wK5m">
                             <node concept="Tc6Ow" id="24JFuV9a3DX" role="2ShVmc">
                               <node concept="3uibUv" id="24JFuV9a3DY" role="HW$YZ">
-                                <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+                                <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
                               </node>
                               <node concept="10Nm6u" id="24JFuV9a3DZ" role="HW$Y0" />
                             </node>
@@ -255,7 +255,7 @@
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="24JFuV99nbI" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>
@@ -285,7 +285,7 @@
               <node concept="3uibUv" id="24JFuV9aos8" role="1tU5fm">
                 <ref role="3uigEE" node="24JFuV99i9y" resolve="MPS13933" />
                 <node concept="3uibUv" id="24JFuV9aos9" role="11_B2D">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
               <node concept="2ShNRf" id="24JFuV9aosa" role="33vP2m">
@@ -296,7 +296,7 @@
                     <ref role="1Y3XeK" node="24JFuV99i9y" resolve="MPS13933" />
                     <node concept="3Tm1VV" id="24JFuV9aosd" role="1B3o_S" />
                     <node concept="3uibUv" id="24JFuV9aose" role="2Ghqu4">
-                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                     </node>
                     <node concept="3clFb_" id="24JFuV9aosf" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -310,7 +310,7 @@
                             <node concept="2ShNRf" id="24JFuV9aosl" role="37wK5m">
                               <node concept="Tc6Ow" id="24JFuV9aosm" role="2ShVmc">
                                 <node concept="3uibUv" id="24JFuV9aosn" role="HW$YZ">
-                                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                                 </node>
                                 <node concept="Xl_RD" id="24JFuV9aoso" role="HW$Y0">
                                   <property role="Xl_RC" value="foo" />
@@ -324,7 +324,7 @@
                         </node>
                       </node>
                       <node concept="2AHcQZ" id="24JFuV9aosq" role="2AJF6D">
-                        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>
@@ -346,7 +346,7 @@
             <node concept="2ShNRf" id="24JFuV9aoo8" role="3tpDZB">
               <node concept="Tc6Ow" id="24JFuV9aooa" role="2ShVmc">
                 <node concept="3uibUv" id="24JFuV9aoob" role="HW$YZ">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
                 <node concept="Xl_RD" id="24JFuV9aooc" role="HW$Y0">
                   <property role="Xl_RC" value="foo" />
@@ -371,7 +371,7 @@
               <node concept="3uibUv" id="24JFuV9aosA" role="1tU5fm">
                 <ref role="3uigEE" node="24JFuV99i9y" resolve="MPS13933" />
                 <node concept="3uibUv" id="24JFuV9aosB" role="11_B2D">
-                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                  <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
               </node>
               <node concept="2ShNRf" id="24JFuV9aosC" role="33vP2m">
@@ -382,7 +382,7 @@
                     <ref role="1Y3XeK" node="24JFuV99i9y" resolve="MPS13933" />
                     <node concept="3Tm1VV" id="24JFuV9aosF" role="1B3o_S" />
                     <node concept="3uibUv" id="24JFuV9aosG" role="2Ghqu4">
-                      <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                      <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                     </node>
                     <node concept="3clFb_" id="24JFuV9aosH" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -411,7 +411,7 @@
                         </node>
                       </node>
                       <node concept="2AHcQZ" id="24JFuV9aosU" role="2AJF6D">
-                        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>
@@ -493,7 +493,7 @@
                         </node>
                       </node>
                       <node concept="2AHcQZ" id="24JFuV9aouk" role="2AJF6D">
-                        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>

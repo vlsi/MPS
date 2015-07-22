@@ -9,14 +9,14 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="7vmx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.property(MPS.Core/jetbrains.mps.smodel.adapter.structure.property@java_stub)" />
-    <import index="g3cv" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.ref(MPS.Core/jetbrains.mps.smodel.adapter.structure.ref@java_stub)" />
+    <import index="pwx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.property(MPS.Core/)" />
+    <import index="rzjr" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.ref(MPS.Core/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -187,7 +187,7 @@
             <property role="TrG5h" value="models" />
             <node concept="A3Dl8" id="7_qPA17J9cO" role="1tU5fm">
               <node concept="3uibUv" id="7_qPA17J9cQ" role="A3Ik2">
-                <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
               </node>
             </node>
             <node concept="2OqwBi" id="7_qPA17J8Yz" role="33vP2m">
@@ -195,7 +195,7 @@
                 <ref role="3cqZAo" node="7_qPA17IYDP" resolve="m" />
               </node>
               <node concept="liA8E" id="7_qPA17J8Y_" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
               </node>
             </node>
           </node>
@@ -258,7 +258,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="7_qPA17KbEF" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
+                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
                         <node concept="355D3s" id="7_qPA17KbEG" role="37wK5m">
                           <ref role="355D3t" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
                           <ref role="355D3u" to="tpck:1avfQ4BzllH" resolve="propertyId" />
@@ -268,7 +268,7 @@
                             <node concept="1eOMI4" id="7_qPA17KbEJ" role="2Oq$k0">
                               <node concept="10QFUN" id="7_qPA17KbEK" role="1eOMHV">
                                 <node concept="3uibUv" id="7_qPA17KbEL" role="10QFUM">
-                                  <ref role="3uigEE" to="7vmx:~SPropertyAdapter" resolve="SPropertyAdapter" />
+                                  <ref role="3uigEE" to="pwx:~SPropertyAdapter" resolve="SPropertyAdapter" />
                                 </node>
                                 <node concept="2OqwBi" id="7_qPA17KbEM" role="10QFUP">
                                   <node concept="37vLTw" id="7_qPA17KbEN" role="2Oq$k0">
@@ -281,11 +281,11 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="7_qPA17KbEP" role="2OqNvi">
-                              <ref role="37wK5l" to="7vmx:~SPropertyAdapter.getId():jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getId" />
+                              <ref role="37wK5l" to="pwx:~SPropertyAdapter.getId():jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getId" />
                             </node>
                           </node>
                           <node concept="liA8E" id="7_qPA17KbEQ" role="2OqNvi">
-                            <ref role="37wK5l" to="a7z3:~SPropertyId.serialize():java.lang.String" resolve="serialize" />
+                            <ref role="37wK5l" to="e8bb:~SPropertyId.serialize():java.lang.String" resolve="serialize" />
                           </node>
                         </node>
                       </node>
@@ -360,7 +360,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="1avfQ4BFAoe" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
+                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
                         <node concept="355D3s" id="1avfQ4BFAof" role="37wK5m">
                           <ref role="355D3t" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
                           <ref role="355D3u" to="tpck:1avfQ4B$JLs" resolve="linkId" />
@@ -370,7 +370,7 @@
                             <node concept="1eOMI4" id="7_qPA17K3op" role="2Oq$k0">
                               <node concept="10QFUN" id="7_qPA17K3om" role="1eOMHV">
                                 <node concept="3uibUv" id="7_qPA17Kgsb" role="10QFUM">
-                                  <ref role="3uigEE" to="g3cv:~SReferenceLinkAdapter" resolve="SReferenceLinkAdapter" />
+                                  <ref role="3uigEE" to="rzjr:~SReferenceLinkAdapter" resolve="SReferenceLinkAdapter" />
                                 </node>
                                 <node concept="2OqwBi" id="7_qPA17K4AV" role="10QFUP">
                                   <node concept="37vLTw" id="7_qPA17K4tW" role="2Oq$k0">
@@ -383,11 +383,11 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="7_qPA17K7Ct" role="2OqNvi">
-                              <ref role="37wK5l" to="g3cv:~SReferenceLinkAdapter.getRoleId():jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRoleId" />
+                              <ref role="37wK5l" to="rzjr:~SReferenceLinkAdapter.getRoleId():jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRoleId" />
                             </node>
                           </node>
                           <node concept="liA8E" id="7_qPA17K8fs" role="2OqNvi">
-                            <ref role="37wK5l" to="a7z3:~SReferenceLinkId.serialize():java.lang.String" resolve="serialize" />
+                            <ref role="37wK5l" to="e8bb:~SReferenceLinkId.serialize():java.lang.String" resolve="serialize" />
                           </node>
                         </node>
                       </node>
@@ -406,7 +406,7 @@
       <node concept="37vLTG" id="7_qPA17IYDP" role="3clF46">
         <property role="TrG5h" value="m" />
         <node concept="3uibUv" id="7_qPA17IYDO" role="1tU5fm">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
       <node concept="q3mfm" id="7_qPA17IYDQ" role="3clF45">

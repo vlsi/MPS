@@ -12,9 +12,9 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -138,11 +138,11 @@
         <node concept="3clFbF" id="4D3RMlPNfXK" role="3cqZAp">
           <node concept="2OqwBi" id="4D3RMlPNgd9" role="3clFbG">
             <node concept="10M0yZ" id="4D3RMlPNfXL" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4D3RMlPNgdd" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.Object):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object):void" resolve="println" />
               <node concept="37vLTw" id="2BHiRxgm_vd" role="37wK5m">
                 <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
                 <node concept="1ZhdrF" id="gCCYkhC" role="lGtFl">
@@ -184,7 +184,7 @@
                     <node concept="1DoJHT" id="htupesf" role="gfFT$">
                       <property role="1Dpdpm" value="getXYZ" />
                       <node concept="3uibUv" id="htuphsG" role="1Ez5kq">
-                        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                       </node>
                       <node concept="37vLTw" id="2BHiRxgsAW0" role="1EMhIo">
                         <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
@@ -209,8 +209,8 @@
                           <node concept="3clFbS" id="htuplMC" role="2VODD2">
                             <node concept="3clFbF" id="htupGX2" role="3cqZAp">
                               <node concept="2YIFZM" id="htupTS5" role="3clFbG">
-                                <ref role="37wK5l" to="msyo:~NameUtil.getGetterName(java.lang.String):java.lang.String" resolve="getGetterName" />
-                                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                                <ref role="37wK5l" to="18ew:~NameUtil.getGetterName(java.lang.String):java.lang.String" resolve="getGetterName" />
+                                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                                 <node concept="2OqwBi" id="2wdLO7KeqQI" role="37wK5m">
                                   <node concept="3TrcHB" id="2wdLO7KeqQJ" role="2OqNvi">
                                     <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
@@ -236,7 +236,7 @@
       <node concept="37vLTG" id="gCCYkhD" role="3clF46">
         <property role="TrG5h" value="_parameter_" />
         <node concept="3uibUv" id="gCCYkhE" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3Tm1VV" id="h9AO$gD" role="1B3o_S" />

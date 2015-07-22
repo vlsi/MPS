@@ -12,7 +12,7 @@
   <imports>
     <import index="vvvw" ref="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="17gi" ref="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)" implicit="true" />
@@ -534,8 +534,8 @@
             </node>
             <node concept="3cpWs3" id="7FuGcnvxpWa" role="3uHU7B">
               <node concept="2YIFZM" id="7FuGcnvxpWe" role="3uHU7B">
-                <ref role="37wK5l" to="msyo:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <node concept="2OqwBi" id="7FuGcnvxpWg" role="37wK5m">
                   <node concept="13iPFW" id="7FuGcnvxpWf" role="2Oq$k0" />
                   <node concept="3TrcHB" id="7FuGcnvxpWl" role="2OqNvi">
@@ -682,8 +682,8 @@
         <node concept="3clFbF" id="5cTNP_RQA0V" role="3cqZAp">
           <node concept="3cpWs3" id="5L5h3brCm0B" role="3clFbG">
             <node concept="2YIFZM" id="5L5h3brCm0M" role="3uHU7w">
-              <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-              <ref role="37wK5l" to="msyo:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
+              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+              <ref role="37wK5l" to="18ew:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
               <node concept="2OqwBi" id="5L5h3brCm0O" role="37wK5m">
                 <node concept="13iPFW" id="5cTNP_RQ_Zd" role="2Oq$k0" />
                 <node concept="3TrcHB" id="5L5h3brCm0S" role="2OqNvi">

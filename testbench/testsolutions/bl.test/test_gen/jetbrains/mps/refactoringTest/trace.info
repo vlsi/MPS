@@ -729,16 +729,16 @@
       <node id="1230052902961" at="46,64,47,65" concept="5" />
       <node id="1230052902961" at="47,65,48,32" concept="5" />
       <node id="1230052902961" at="48,32,49,229" concept="1" />
-      <node id="1230052902961" at="49,229,50,514" concept="1" />
-      <node id="1230052902961" at="50,514,51,26" concept="6" />
-      <node id="1230052902961" at="48,32,50,514" concept="0" />
-      <node id="1230052902961" at="48,32,50,514" concept="0" />
+      <node id="1230052902961" at="49,229,50,451" concept="1" />
+      <node id="1230052902961" at="50,451,51,26" concept="6" />
+      <node id="1230052902961" at="48,32,50,451" concept="0" />
+      <node id="1230052902961" at="48,32,50,451" concept="0" />
       <node id="1230052902925" at="26,0,31,0" concept="4" trace="test_AddThrowDeclaration#()V" />
       <node id="1230052902974" at="39,26,44,7" concept="0" />
       <node id="1230052902961" at="46,0,53,0" concept="8" trace="_quotation_createNode_imjg6i_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1230052902944" at="33,0,46,0" concept="4" trace="test_AddThrowDeclaration#()V" />
       <scope id="1230052902925" at="27,59,29,118" />
-      <scope id="1230052902961" at="48,32,50,514" />
+      <scope id="1230052902961" at="48,32,50,451" />
       <scope id="1230052902974" at="40,7,43,146">
         <var name="nodesAfter" id="1230052902974" />
         <var name="nodesBefore" id="1230052902974" />

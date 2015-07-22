@@ -14,9 +14,9 @@
     <import index="pmg0" ref="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -386,7 +386,7 @@
         <node concept="YS8fn" id="4ak9ytIaIgC" role="3cqZAp">
           <node concept="2ShNRf" id="4ak9ytIaIgE" role="YScLw">
             <node concept="1pGfFk" id="4ak9ytIaJup" role="2ShVmc">
-              <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
             </node>
           </node>
         </node>
@@ -716,7 +716,7 @@
             <node concept="YS8fn" id="3JyUPcAPp_x" role="3cqZAp">
               <node concept="2ShNRf" id="3JyUPcAPp_y" role="YScLw">
                 <node concept="1pGfFk" id="3JyUPcAPp_z" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
                 </node>
               </node>
             </node>
@@ -1834,7 +1834,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="4ak9ytIaSoq" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="10Nm6u" id="4ak9ytIaSor" role="37wK5m">
                     <node concept="2c44te" id="4ak9ytIaSos" role="lGtFl">
                       <node concept="37vLTw" id="2BHiRxgm89t" role="2c44t1">
@@ -1936,7 +1936,7 @@
                 <ref role="3cqZAo" node="2kIZjjSEx5S" resolve="methodName" />
               </node>
               <node concept="liA8E" id="2kIZjjSE$J$" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                 <node concept="37vLTw" id="3GM_nagTx4$" role="37wK5m">
                   <ref role="3cqZAo" node="2kIZjjSEx5V" resolve="prefix" />
                 </node>
@@ -1956,7 +1956,7 @@
                 <ref role="3cqZAo" node="2kIZjjSEx5V" resolve="prefix" />
               </node>
               <node concept="liA8E" id="2kIZjjSE$Kc" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
               </node>
             </node>
             <node concept="2OqwBi" id="2kIZjjSE$JW" role="3uHU7B">
@@ -1964,7 +1964,7 @@
                 <ref role="3cqZAo" node="2kIZjjSEx5S" resolve="methodName" />
               </node>
               <node concept="liA8E" id="2kIZjjSE$K0" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
               </node>
             </node>
           </node>
@@ -1978,13 +1978,13 @@
                 <ref role="3cqZAo" node="2kIZjjSEx5S" resolve="methodName" />
               </node>
               <node concept="liA8E" id="2kIZjjSE$Kr" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                 <node concept="2OqwBi" id="2kIZjjSE$Kt" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTAf_" role="2Oq$k0">
                     <ref role="3cqZAo" node="2kIZjjSEx5V" resolve="prefix" />
                   </node>
                   <node concept="liA8E" id="2kIZjjSE$Kx" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                    <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                   </node>
                 </node>
               </node>
@@ -1998,21 +1998,21 @@
                 <ref role="3cqZAo" node="2kIZjjSE$Kj" resolve="suffix" />
               </node>
               <node concept="liA8E" id="2kIZjjSE$KN" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                 <node concept="3cmrfG" id="2kIZjjSE$KO" role="37wK5m">
                   <property role="3cmrfH" value="1" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="2kIZjjSEQ4S" role="3uHU7B">
-              <ref role="37wK5l" to="e2lb:~Character.toLowerCase(char):char" resolve="toLowerCase" />
-              <ref role="1Pybhc" to="e2lb:~Character" resolve="Character" />
+              <ref role="37wK5l" to="wyt6:~Character.toLowerCase(char):char" resolve="toLowerCase" />
+              <ref role="1Pybhc" to="wyt6:~Character" resolve="Character" />
               <node concept="2OqwBi" id="2kIZjjSEQ4T" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTAOd" role="2Oq$k0">
                   <ref role="3cqZAo" node="2kIZjjSE$Kj" resolve="suffix" />
                 </node>
                 <node concept="liA8E" id="2kIZjjSEQ4V" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.charAt(int):char" resolve="charAt" />
+                  <ref role="37wK5l" to="wyt6:~String.charAt(int):char" resolve="charAt" />
                   <node concept="3cmrfG" id="2kIZjjSEQ4W" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -2052,7 +2052,7 @@
           <node concept="2c44tf" id="5M3yimiSTnh" role="3clFbG">
             <node concept="2ShNRf" id="5M3yimiSTnj" role="2c44tc">
               <node concept="1pGfFk" id="5M3yimiSUlv" role="2ShVmc">
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="10Nm6u" id="5M3yimiSUlx" role="37wK5m">
                   <node concept="2c44t8" id="5M3yimiSUlE" role="lGtFl">
                     <node concept="2OqwBi" id="5M3yimiSUlH" role="2c44t1">
@@ -2137,7 +2137,7 @@
         <node concept="YS8fn" id="4Fc1szn8uLj" role="3cqZAp">
           <node concept="2ShNRf" id="4Fc1szn8uLl" role="YScLw">
             <node concept="1pGfFk" id="4Fc1szn8vJx" role="2ShVmc">
-              <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
             </node>
           </node>
         </node>

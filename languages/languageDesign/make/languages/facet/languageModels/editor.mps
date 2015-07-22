@@ -15,7 +15,7 @@
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -565,7 +565,7 @@
                             <node concept="2ZYiMu" id="6AQAnCFht5" role="2OqNvi" />
                           </node>
                           <node concept="liA8E" id="6AQAnCFht6" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="6AQAnCFht7" role="37wK5m">
                               <node concept="pncrf" id="6AQAnCFht8" role="2Oq$k0" />
                               <node concept="3TrcHB" id="6AQAnCFht9" role="2OqNvi">
@@ -585,7 +585,7 @@
                             <node concept="2ZYiMu" id="6AQAnCFhte" role="2OqNvi" />
                           </node>
                           <node concept="liA8E" id="6AQAnCFhtf" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="6AQAnCFhtg" role="37wK5m">
                               <node concept="pncrf" id="6AQAnCFhth" role="2Oq$k0" />
                               <node concept="3TrcHB" id="6AQAnCFhti" role="2OqNvi">
@@ -615,7 +615,7 @@
                           <node concept="2ZYiMu" id="6AQAnCFhtx" role="2OqNvi" />
                         </node>
                         <node concept="liA8E" id="6AQAnCFhty" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                          <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                           <node concept="2OqwBi" id="6AQAnCFhtz" role="37wK5m">
                             <node concept="pncrf" id="6AQAnCFht$" role="2Oq$k0" />
                             <node concept="3TrcHB" id="6AQAnCFht_" role="2OqNvi">
@@ -645,7 +645,7 @@
                             <node concept="2ZYiMu" id="6AQAnCFhtL" role="2OqNvi" />
                           </node>
                           <node concept="liA8E" id="6AQAnCFhtM" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="6AQAnCFhtN" role="37wK5m">
                               <node concept="pncrf" id="6AQAnCFhtO" role="2Oq$k0" />
                               <node concept="3TrcHB" id="6AQAnCFhtP" role="2OqNvi">
@@ -665,7 +665,7 @@
                             <node concept="2ZYiMu" id="6AQAnCFhtU" role="2OqNvi" />
                           </node>
                           <node concept="liA8E" id="6AQAnCFhtV" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="6AQAnCFhtW" role="37wK5m">
                               <node concept="pncrf" id="6AQAnCFhtX" role="2Oq$k0" />
                               <node concept="3TrcHB" id="6AQAnCFhtY" role="2OqNvi">

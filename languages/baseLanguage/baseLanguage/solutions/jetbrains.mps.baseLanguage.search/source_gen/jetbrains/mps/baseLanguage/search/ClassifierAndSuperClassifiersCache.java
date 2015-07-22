@@ -201,7 +201,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(classifier, set, null, typeByTypeVar);
       List<SNode> result = new ArrayList<SNode>();
       ListSequence.fromList(result).addSequence(SetSequence.fromSet(set));
-      SNode objectClass = SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+      SNode objectClass = SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object");
       if (objectClass != null && !(SetSequence.fromSet(set).contains(objectClass))) {
         int indexOfFirstInterface = 0;
         for (SNode classifierInResult : set) {
@@ -249,7 +249,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
           ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SLinkOperations.getTarget(classifierType1, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), result, SLinkOperations.getChildren(classifierType1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter")), typeByTypeVar);
         }
         if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-          ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), result, null, typeByTypeVar);
+          ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"), result, null, typeByTypeVar);
         }
       } else
       if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {

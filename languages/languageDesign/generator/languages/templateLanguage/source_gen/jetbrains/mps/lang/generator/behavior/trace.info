@@ -2526,11 +2526,11 @@
       <node id="5015072279636624592" at="39,60,40,63" concept="9" />
       <node id="5015072279636624592" at="40,63,41,30" concept="9" />
       <node id="5015072279636624592" at="41,30,42,227" concept="4" />
-      <node id="5015072279636624592" at="42,227,43,498" concept="4" />
-      <node id="5015072279636624592" at="43,498,44,24" concept="10" />
+      <node id="5015072279636624592" at="42,227,43,431" concept="4" />
+      <node id="5015072279636624592" at="43,431,44,24" concept="10" />
       <node id="5015072279636592417" at="18,0,20,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5015072279636624592" at="41,30,43,498" concept="0" />
-      <node id="5015072279636624592" at="41,30,43,498" concept="0" />
+      <node id="5015072279636624592" at="41,30,43,431" concept="0" />
+      <node id="5015072279636624592" at="41,30,43,431" concept="0" />
       <node id="5015072279636625542" at="22,380,25,7" concept="7" />
       <node id="5015072279636592417" at="29,0,32,0" concept="13" trace="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="5015072279636625512" at="20,83,26,5" concept="7" />
@@ -2543,7 +2543,7 @@
       <scope id="5015072279636592417" at="18,0,20,0">
         <var name="thisNode" id="5015072279636592417" />
       </scope>
-      <scope id="5015072279636624592" at="41,30,43,498" />
+      <scope id="5015072279636624592" at="41,30,43,431" />
       <scope id="5015072279636592417" at="29,0,32,0">
         <var name="thisConcept" id="5015072279636592417" />
       </scope>

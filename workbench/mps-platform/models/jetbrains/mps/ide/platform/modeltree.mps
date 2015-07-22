@@ -8,17 +8,17 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="osf5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="lcqf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" />
-    <import index="ayyu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(MPS.IDEA/com.intellij.ui@java_stub)" />
-    <import index="ai1m" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="rgfa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.tree(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
+    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
+    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -236,13 +236,13 @@
     <property role="1sVAO0" value="true" />
     <node concept="3Tm1VV" id="3I2kZbZOf5w" role="1B3o_S" />
     <node concept="3uibUv" id="3I2kZbZOf5K" role="EKbjA">
-      <ref role="3uigEE" to="lcqf:~TreeExpansionListener" resolve="TreeExpansionListener" />
+      <ref role="3uigEE" to="gsia:~TreeExpansionListener" resolve="TreeExpansionListener" />
     </node>
     <node concept="312cEg" id="3I2kZbZOf27" role="jymVt">
       <property role="TrG5h" value="myTree" />
       <node concept="3Tm6S6" id="3I2kZbZOf28" role="1B3o_S" />
       <node concept="3uibUv" id="3I2kZbZOf29" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~JTree" resolve="JTree" />
+        <ref role="3uigEE" to="dxuu:~JTree" resolve="JTree" />
       </node>
     </node>
     <node concept="3clFbW" id="3I2kZbZOf5x" role="jymVt">
@@ -265,7 +265,7 @@
               <ref role="3cqZAo" node="3I2kZbZOf27" resolve="myTree" />
             </node>
             <node concept="liA8E" id="3I2kZbZOf5G" role="2OqNvi">
-              <ref role="37wK5l" to="dbrf:~JTree.addTreeExpansionListener(javax.swing.event.TreeExpansionListener):void" resolve="addTreeExpansionListener" />
+              <ref role="37wK5l" to="dxuu:~JTree.addTreeExpansionListener(javax.swing.event.TreeExpansionListener):void" resolve="addTreeExpansionListener" />
               <node concept="Xjq3P" id="3I2kZbZOf5H" role="37wK5m" />
             </node>
           </node>
@@ -274,7 +274,7 @@
       <node concept="37vLTG" id="3I2kZbZOf5I" role="3clF46">
         <property role="TrG5h" value="tree" />
         <node concept="3uibUv" id="3I2kZbZOf5J" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JTree" resolve="JTree" />
+          <ref role="3uigEE" to="dxuu:~JTree" resolve="JTree" />
         </node>
       </node>
     </node>
@@ -288,7 +288,7 @@
       <node concept="37vLTG" id="3I2kZbZOf5O" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="3uibUv" id="3I2kZbZOf5P" role="1tU5fm">
-          <ref role="3uigEE" to="lcqf:~TreeExpansionEvent" resolve="TreeExpansionEvent" />
+          <ref role="3uigEE" to="gsia:~TreeExpansionEvent" resolve="TreeExpansionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="3I2kZbZOf5Q" role="3clF47">
@@ -296,7 +296,7 @@
           <node concept="3cpWsn" id="3I2kZbZOf5S" role="3cpWs9">
             <property role="TrG5h" value="lastNode" />
             <node concept="3uibUv" id="3I2kZbZOf5T" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
             <node concept="2OqwBi" id="3I2kZbZOf5U" role="33vP2m">
               <node concept="2OqwBi" id="3I2kZbZOf5V" role="2Oq$k0">
@@ -304,11 +304,11 @@
                   <ref role="3cqZAo" node="3I2kZbZOf5O" resolve="event" />
                 </node>
                 <node concept="liA8E" id="3I2kZbZOf5X" role="2OqNvi">
-                  <ref role="37wK5l" to="lcqf:~TreeExpansionEvent.getPath():javax.swing.tree.TreePath" resolve="getPath" />
+                  <ref role="37wK5l" to="gsia:~TreeExpansionEvent.getPath():javax.swing.tree.TreePath" resolve="getPath" />
                 </node>
               </node>
               <node concept="liA8E" id="3I2kZbZOf5Y" role="2OqNvi">
-                <ref role="37wK5l" to="osf5:~TreePath.getLastPathComponent():java.lang.Object" resolve="getLastPathComponent" />
+                <ref role="37wK5l" to="rgfa:~TreePath.getLastPathComponent():java.lang.Object" resolve="getLastPathComponent" />
               </node>
             </node>
           </node>
@@ -383,7 +383,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_no" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3I2kZbZOf6q" role="jymVt">
@@ -396,12 +396,12 @@
       <node concept="37vLTG" id="3I2kZbZOf6t" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="3uibUv" id="3I2kZbZOf6u" role="1tU5fm">
-          <ref role="3uigEE" to="lcqf:~TreeExpansionEvent" resolve="TreeExpansionEvent" />
+          <ref role="3uigEE" to="gsia:~TreeExpansionEvent" resolve="TreeExpansionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="3I2kZbZOf6v" role="3clF47" />
       <node concept="2AHcQZ" id="3tYsUK_U_nn" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3I2kZbZOf6w" role="jymVt">
@@ -433,20 +433,20 @@
             <node concept="1eOMI4" id="3I2kZbZOf6I" role="2Oq$k0">
               <node concept="10QFUN" id="3I2kZbZOf6J" role="1eOMHV">
                 <node concept="3uibUv" id="3I2kZbZOf6K" role="10QFUM">
-                  <ref role="3uigEE" to="osf5:~DefaultTreeModel" resolve="DefaultTreeModel" />
+                  <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
                 </node>
                 <node concept="2OqwBi" id="3I2kZbZOf6L" role="10QFUP">
                   <node concept="37vLTw" id="2BHiRxeug69" role="2Oq$k0">
                     <ref role="3cqZAo" node="3I2kZbZOf27" resolve="myTree" />
                   </node>
                   <node concept="liA8E" id="3I2kZbZOf6N" role="2OqNvi">
-                    <ref role="37wK5l" to="dbrf:~JTree.getModel():javax.swing.tree.TreeModel" resolve="getModel" />
+                    <ref role="37wK5l" to="dxuu:~JTree.getModel():javax.swing.tree.TreeModel" resolve="getModel" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="3I2kZbZOf6O" role="2OqNvi">
-              <ref role="37wK5l" to="osf5:~DefaultTreeModel.nodeStructureChanged(javax.swing.tree.TreeNode):void" resolve="nodeStructureChanged" />
+              <ref role="37wK5l" to="rgfa:~DefaultTreeModel.nodeStructureChanged(javax.swing.tree.TreeNode):void" resolve="nodeStructureChanged" />
               <node concept="37vLTw" id="2BHiRxgmzqn" role="37wK5m">
                 <ref role="3cqZAo" node="3I2kZbZOf6B" resolve="modelTreeNode" />
               </node>
@@ -460,7 +460,7 @@
       <node concept="37vLTG" id="3I2kZbZOf2b" role="3clF46">
         <property role="TrG5h" value="descriptor" />
         <node concept="3uibUv" id="3I2kZbZOf2c" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
         </node>
       </node>
       <node concept="3uibUv" id="3I2kZbZOf2d" role="3clF45">
@@ -473,14 +473,14 @@
             <property role="TrG5h" value="sModelReference" />
             <node concept="2OqwBi" id="791rit5f5LW" role="33vP2m">
               <node concept="liA8E" id="791rit5f5LX" role="2OqNvi">
-                <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
               </node>
               <node concept="37vLTw" id="2BHiRxgmaS3" role="2Oq$k0">
                 <ref role="3cqZAo" node="3I2kZbZOf2b" resolve="descriptor" />
               </node>
             </node>
             <node concept="3uibUv" id="3I2kZbZOf2i" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
           </node>
         </node>
@@ -488,11 +488,11 @@
           <node concept="3cpWsn" id="3I2kZbZOf2n" role="3cpWs9">
             <property role="TrG5h" value="label" />
             <node concept="2YIFZM" id="4DcpLEzkH$" role="33vP2m">
-              <ref role="37wK5l" to="cu2c:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
               <node concept="2OqwBi" id="4DcpLEzkH_" role="37wK5m">
                 <node concept="liA8E" id="4DcpLEzkHA" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                  <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTtrE" role="2Oq$k0">
                   <ref role="3cqZAo" node="3I2kZbZOf2h" resolve="sModelReference" />
@@ -508,11 +508,11 @@
               <node concept="d57v9" id="3I2kZbZOf2v" role="3clFbG">
                 <node concept="3cpWs3" id="3I2kZbZOf2w" role="37vLTx">
                   <node concept="2YIFZM" id="4DcpLEzkFL" role="3uHU7w">
-                    <ref role="37wK5l" to="cu2c:~SModelStereotype.getStereotype(java.lang.String):java.lang.String" resolve="getStereotype" />
-                    <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(java.lang.String):java.lang.String" resolve="getStereotype" />
+                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
                     <node concept="2OqwBi" id="4DcpLEzkFM" role="37wK5m">
                       <node concept="liA8E" id="4DcpLEzkFN" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                        <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTxVQ" role="2Oq$k0">
                         <ref role="3cqZAo" node="3I2kZbZOf2h" resolve="sModelReference" />
@@ -535,11 +535,11 @@
             </node>
             <node concept="2OqwBi" id="3I2kZbZOf2C" role="3uHU7B">
               <node concept="2YIFZM" id="4DcpLEzkFh" role="2Oq$k0">
-                <ref role="37wK5l" to="cu2c:~SModelStereotype.getStereotype(java.lang.String):java.lang.String" resolve="getStereotype" />
-                <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(java.lang.String):java.lang.String" resolve="getStereotype" />
+                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
                 <node concept="2OqwBi" id="4DcpLEzkFi" role="37wK5m">
                   <node concept="liA8E" id="4DcpLEzkFj" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                    <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTxYH" role="2Oq$k0">
                     <ref role="3cqZAo" node="3I2kZbZOf2h" resolve="sModelReference" />
@@ -547,7 +547,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3I2kZbZOf2G" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
               </node>
             </node>
           </node>
@@ -565,8 +565,8 @@
                   <ref role="3cqZAo" node="3I2kZbZOf2n" resolve="label" />
                 </node>
                 <node concept="2YIFZM" id="3I2kZbZOf2N" role="37wK5m">
-                  <ref role="1Pybhc" to="ai1m:~IconManager" resolve="IconManager" />
-                  <ref role="37wK5l" to="ai1m:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SModel):javax.swing.Icon" resolve="getIconFor" />
+                  <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
+                  <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SModel):javax.swing.Icon" resolve="getIconFor" />
                   <node concept="37vLTw" id="2BHiRxglJX9" role="37wK5m">
                     <ref role="3cqZAo" node="3I2kZbZOf2b" resolve="descriptor" />
                   </node>
@@ -624,19 +624,19 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3I2kZbZOf3a" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getPresentation():java.lang.String" resolve="getPresentation" />
+                  <ref role="37wK5l" to="mhbf:~SNode.getPresentation():java.lang.String" resolve="getPresentation" />
                 </node>
               </node>
               <node concept="2YIFZM" id="3I2kZbZOf3b" role="37wK5m">
-                <ref role="1Pybhc" to="ai1m:~IconManager" resolve="IconManager" />
-                <ref role="37wK5l" to="ai1m:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode):javax.swing.Icon" resolve="getIconFor" />
+                <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
+                <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode):javax.swing.Icon" resolve="getIconFor" />
                 <node concept="37vLTw" id="2BHiRxgm6QW" role="37wK5m">
                   <ref role="3cqZAo" node="3I2kZbZOf2Z" resolve="node" />
                 </node>
               </node>
               <node concept="2ShNRf" id="3I2kZbZOf3d" role="37wK5m">
                 <node concept="1pGfFk" id="3I2kZbZOf3e" role="2ShVmc">
-                  <ref role="37wK5l" to="cu2c:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodePointer" />
+                  <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodePointer" />
                   <node concept="37vLTw" id="2BHiRxgm6Av" role="37wK5m">
                     <ref role="3cqZAo" node="3I2kZbZOf2Z" resolve="node" />
                   </node>
@@ -666,12 +666,12 @@
                 <ref role="3cqZAo" node="3I2kZbZOf3h" resolve="folderName" />
               </node>
               <node concept="10M0yZ" id="3I2kZbZOf3q" role="37wK5m">
-                <ref role="1PxDUh" to="ai1m:~IdeIcons" resolve="IdeIcons" />
-                <ref role="3cqZAo" to="ai1m:~IdeIcons.CLOSED_FOLDER" resolve="CLOSED_FOLDER" />
+                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
+                <ref role="3cqZAo" to="xnls:~IdeIcons.CLOSED_FOLDER" resolve="CLOSED_FOLDER" />
               </node>
               <node concept="10M0yZ" id="3I2kZbZOf3r" role="37wK5m">
-                <ref role="3cqZAo" to="ai1m:~IdeIcons.OPENED_FOLDER" resolve="OPENED_FOLDER" />
-                <ref role="1PxDUh" to="ai1m:~IdeIcons" resolve="IdeIcons" />
+                <ref role="3cqZAo" to="xnls:~IdeIcons.OPENED_FOLDER" resolve="OPENED_FOLDER" />
+                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
               </node>
             </node>
           </node>
@@ -816,7 +816,7 @@
                           <ref role="3cqZAo" node="3I2kZbZOf42" resolve="parentTreeNode" />
                         </node>
                         <node concept="liA8E" id="3I2kZbZOf4p" role="2OqNvi">
-                          <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
+                          <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
                           <node concept="37vLTw" id="3GM_nagT_ws" role="37wK5m">
                             <ref role="3cqZAo" node="3I2kZbZOf4a" resolve="packageTreeNode" />
                           </node>
@@ -851,7 +851,7 @@
                   <ref role="3cqZAo" node="3I2kZbZOf3W" resolve="virtualPackage" />
                 </node>
                 <node concept="liA8E" id="3I2kZbZOf4A" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
+                  <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
                   <node concept="Xl_RD" id="3I2kZbZOf4B" role="37wK5m">
                     <property role="Xl_RC" value="\\." />
                   </node>
@@ -872,7 +872,7 @@
               <ref role="3cqZAo" node="3I2kZbZOf42" resolve="parentTreeNode" />
             </node>
             <node concept="liA8E" id="3I2kZbZOf4I" role="2OqNvi">
-              <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
+              <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
               <node concept="37vLTw" id="2BHiRxghbCJ" role="37wK5m">
                 <ref role="3cqZAo" node="3I2kZbZOf3U" resolve="sNodeTreeNode" />
               </node>
@@ -894,14 +894,14 @@
               <node concept="3cpWsn" id="3I2kZbZOf4R" role="3cpWs9">
                 <property role="TrG5h" value="nextChild" />
                 <node concept="3uibUv" id="3I2kZbZOf4S" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
                 <node concept="2OqwBi" id="3I2kZbZOf4T" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTrQC" role="2Oq$k0">
                     <ref role="3cqZAo" node="3I2kZbZOf5i" resolve="children" />
                   </node>
                   <node concept="liA8E" id="3I2kZbZOf4V" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~Enumeration.nextElement():java.lang.Object" resolve="nextElement" />
+                    <ref role="37wK5l" to="33ny:~Enumeration.nextElement():java.lang.Object" resolve="nextElement" />
                   </node>
                 </node>
               </node>
@@ -939,7 +939,7 @@
                       <ref role="3cqZAo" node="3I2kZbZOf5u" resolve="childName" />
                     </node>
                     <node concept="liA8E" id="3I2kZbZOf5b" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="2OqwBi" id="3I2kZbZOf5c" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTvWN" role="2Oq$k0">
                           <ref role="3cqZAo" node="3I2kZbZOf4Z" resolve="treeNode" />
@@ -965,14 +965,14 @@
           <node concept="3cpWsn" id="3I2kZbZOf5i" role="1Duv9x">
             <property role="TrG5h" value="children" />
             <node concept="3uibUv" id="3I2kZbZOf5j" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~Enumeration" resolve="Enumeration" />
+              <ref role="3uigEE" to="33ny:~Enumeration" resolve="Enumeration" />
             </node>
             <node concept="2OqwBi" id="3I2kZbZOf5k" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxgmjzp" role="2Oq$k0">
                 <ref role="3cqZAo" node="3I2kZbZOf5s" resolve="parentTreeNode" />
               </node>
               <node concept="liA8E" id="3I2kZbZOf5m" role="2OqNvi">
-                <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.children():java.util.Enumeration" resolve="children" />
+                <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.children():java.util.Enumeration" resolve="children" />
               </node>
             </node>
           </node>
@@ -981,7 +981,7 @@
               <ref role="3cqZAo" node="3I2kZbZOf5i" resolve="children" />
             </node>
             <node concept="liA8E" id="3I2kZbZOf5p" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Enumeration.hasMoreElements():boolean" resolve="hasMoreElements" />
+              <ref role="37wK5l" to="33ny:~Enumeration.hasMoreElements():boolean" resolve="hasMoreElements" />
             </node>
           </node>
         </node>
@@ -1005,10 +1005,10 @@
     <property role="TrG5h" value="ModelTreeCellRenderer" />
     <node concept="3Tm1VV" id="3I2kZbZOf6R" role="1B3o_S" />
     <node concept="3uibUv" id="3I2kZbZOf6W" role="EKbjA">
-      <ref role="3uigEE" to="osf5:~TreeCellRenderer" resolve="TreeCellRenderer" />
+      <ref role="3uigEE" to="rgfa:~TreeCellRenderer" resolve="TreeCellRenderer" />
     </node>
     <node concept="3uibUv" id="3I2kZbZOf6X" role="1zkMxy">
-      <ref role="3uigEE" to="ayyu:~ColoredTreeCellRenderer" resolve="ColoredTreeCellRenderer" />
+      <ref role="3uigEE" to="lzb2:~ColoredTreeCellRenderer" resolve="ColoredTreeCellRenderer" />
     </node>
     <node concept="3clFbW" id="3I2kZbZOf6S" role="jymVt">
       <node concept="3cqZAl" id="3I2kZbZOf6T" role="3clF45" />
@@ -1025,13 +1025,13 @@
       <node concept="37vLTG" id="3I2kZbZOf71" role="3clF46">
         <property role="TrG5h" value="tree" />
         <node concept="3uibUv" id="3I2kZbZOf72" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~JTree" resolve="JTree" />
+          <ref role="3uigEE" to="dxuu:~JTree" resolve="JTree" />
         </node>
       </node>
       <node concept="37vLTG" id="3I2kZbZOf73" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="3I2kZbZOf74" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="3I2kZbZOf75" role="3clF46">
@@ -1058,7 +1058,7 @@
         <node concept="3clFbJ" id="3I2kZbZOf7g" role="3cqZAp">
           <node concept="2ZW3vV" id="3I2kZbZOf7h" role="3clFbw">
             <node concept="3uibUv" id="3I2kZbZOf7i" role="2ZW6by">
-              <ref role="3uigEE" to="osf5:~TreeNode" resolve="TreeNode" />
+              <ref role="3uigEE" to="rgfa:~TreeNode" resolve="TreeNode" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmJfe" role="2ZW6bz">
               <ref role="3cqZAo" node="3I2kZbZOf73" resolve="value" />
@@ -1083,7 +1083,7 @@
             </node>
             <node concept="3clFbF" id="3I2kZbZOf7r" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyz9NW" role="3clFbG">
-                <ref role="37wK5l" to="ayyu:~SimpleColoredComponent.append(java.lang.String):com.intellij.ui.SimpleColoredComponent" resolve="append" />
+                <ref role="37wK5l" to="lzb2:~SimpleColoredComponent.append(java.lang.String):com.intellij.ui.SimpleColoredComponent" resolve="append" />
                 <node concept="2OqwBi" id="3I2kZbZOf7t" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTwdc" role="2Oq$k0">
                     <ref role="3cqZAo" node="3I2kZbZOf7m" resolve="treeNode" />
@@ -1096,7 +1096,7 @@
             </node>
             <node concept="3clFbF" id="3I2kZbZOf7w" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyyNAA" role="3clFbG">
-                <ref role="37wK5l" to="ayyu:~SimpleColoredComponent.setIcon(javax.swing.Icon):void" resolve="setIcon" />
+                <ref role="37wK5l" to="lzb2:~SimpleColoredComponent.setIcon(javax.swing.Icon):void" resolve="setIcon" />
                 <node concept="2OqwBi" id="3I2kZbZOf7y" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTATK" role="2Oq$k0">
                     <ref role="3cqZAo" node="3I2kZbZOf7m" resolve="treeNode" />
@@ -1114,7 +1114,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Ut7y" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -1122,7 +1122,7 @@
     <property role="TrG5h" value="ModelTreeNode" />
     <node concept="3Tm1VV" id="3I2kZbZOf82" role="1B3o_S" />
     <node concept="3uibUv" id="3I2kZbZOf8V" role="1zkMxy">
-      <ref role="3uigEE" to="osf5:~DefaultMutableTreeNode" resolve="DefaultMutableTreeNode" />
+      <ref role="3uigEE" to="rgfa:~DefaultMutableTreeNode" resolve="DefaultMutableTreeNode" />
     </node>
     <node concept="2RhdJD" id="3I2kZbZOf7H" role="jymVt">
       <property role="2RkwnN" value="text" />
@@ -1161,14 +1161,14 @@
       <property role="TrG5h" value="myCollapsedIcon" />
       <node concept="3Tm6S6" id="3I2kZbZOf7C" role="1B3o_S" />
       <node concept="3uibUv" id="3I2kZbZOf7D" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
     </node>
     <node concept="312cEg" id="3I2kZbZOf7E" role="jymVt">
       <property role="TrG5h" value="myExpandedIcon" />
       <node concept="3Tm6S6" id="3I2kZbZOf7F" role="1B3o_S" />
       <node concept="3uibUv" id="3I2kZbZOf7G" role="1tU5fm">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
     </node>
     <node concept="3clFbW" id="3I2kZbZOf83" role="jymVt">
@@ -1225,13 +1225,13 @@
       <node concept="37vLTG" id="3I2kZbZOf8r" role="3clF46">
         <property role="TrG5h" value="icon" />
         <node concept="3uibUv" id="3I2kZbZOf8s" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
         </node>
       </node>
       <node concept="37vLTG" id="3I2kZbZOf8t" role="3clF46">
         <property role="TrG5h" value="expandedIcon" />
         <node concept="3uibUv" id="3I2kZbZOf8u" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
         </node>
       </node>
     </node>
@@ -1240,7 +1240,7 @@
       <node concept="3Tm1VV" id="3I2kZbZOf8x" role="1B3o_S" />
       <node concept="3clFbS" id="3I2kZbZOf8y" role="3clF47">
         <node concept="XkiVB" id="3I2kZbZOf8z" role="3cqZAp">
-          <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.&lt;init&gt;(java.lang.Object)" resolve="DefaultMutableTreeNode" />
+          <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.&lt;init&gt;(java.lang.Object)" resolve="DefaultMutableTreeNode" />
           <node concept="37vLTw" id="2BHiRxgm6ih" role="37wK5m">
             <ref role="3cqZAo" node="3I2kZbZOf8T" resolve="data" />
           </node>
@@ -1293,13 +1293,13 @@
       <node concept="37vLTG" id="3I2kZbZOf8R" role="3clF46">
         <property role="TrG5h" value="icon" />
         <node concept="3uibUv" id="3I2kZbZOf8S" role="1tU5fm">
-          <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
         </node>
       </node>
       <node concept="37vLTG" id="3I2kZbZOf8T" role="3clF46">
         <property role="TrG5h" value="data" />
         <node concept="3uibUv" id="3I2kZbZOf8U" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
     </node>
@@ -1328,19 +1328,19 @@
             <node concept="3clFbC" id="3I2kZbZOf97" role="3uHU7w">
               <node concept="10Nm6u" id="3I2kZbZOf98" role="3uHU7w" />
               <node concept="37vLTw" id="2BHiRxeuqOo" role="3uHU7B">
-                <ref role="3cqZAo" to="osf5:~DefaultMutableTreeNode.children" resolve="children" />
+                <ref role="3cqZAo" to="rgfa:~DefaultMutableTreeNode.children" resolve="children" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="3I2kZbZOf9a" role="3cqZAp">
           <node concept="3nyPlj" id="3I2kZbZOf9b" role="3cqZAk">
-            <ref role="37wK5l" to="osf5:~DefaultMutableTreeNode.isLeaf():boolean" resolve="isLeaf" />
+            <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.isLeaf():boolean" resolve="isLeaf" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3I2kZbZOf9c" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3I2kZbZOf9d" role="jymVt">
@@ -1358,7 +1358,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3I2kZbZOf9j" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3I2kZbZOf9k" role="jymVt">
@@ -1368,7 +1368,7 @@
         <node concept="10P_77" id="3I2kZbZOf9m" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3I2kZbZOf9n" role="3clF45">
-        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3I2kZbZOf9o" role="1B3o_S" />
       <node concept="3clFbS" id="3I2kZbZOf9p" role="3clF47">

@@ -10,8 +10,8 @@
     <import index="vseb" ref="r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="antn" ref="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -301,17 +301,17 @@
                 <node concept="2OqwBi" id="3j8xjFBy$Sy" role="3uHU7B">
                   <node concept="1Wqviy" id="3j8xjFBy$hv" role="2Oq$k0" />
                   <node concept="liA8E" id="3j8xjFByA1K" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                    <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                   </node>
                 </node>
               </node>
               <node concept="2YIFZM" id="3j8xjFByIAY" role="3uHU7w">
-                <ref role="37wK5l" to="e2lb:~Character.isUpperCase(char):boolean" resolve="isUpperCase" />
-                <ref role="1Pybhc" to="e2lb:~Character" resolve="Character" />
+                <ref role="37wK5l" to="wyt6:~Character.isUpperCase(char):boolean" resolve="isUpperCase" />
+                <ref role="1Pybhc" to="wyt6:~Character" resolve="Character" />
                 <node concept="2OqwBi" id="3j8xjFByuZY" role="37wK5m">
                   <node concept="1Wqviy" id="3j8xjFByulN" role="2Oq$k0" />
                   <node concept="liA8E" id="3j8xjFBywHz" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.charAt(int):char" resolve="charAt" />
+                    <ref role="37wK5l" to="wyt6:~String.charAt(int):char" resolve="charAt" />
                     <node concept="3cmrfG" id="3j8xjFByzpl" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>

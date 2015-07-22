@@ -7,10 +7,10 @@
   </languages>
   <imports>
     <import index="fb9u" ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="ic0f" ref="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
     <import index="hilv" ref="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -394,7 +394,7 @@
                     <node concept="2pIpSj" id="2F8bNQsJlr" role="2pJxcM">
                       <ref role="2pIpSl" to="tpee:g7uigIF" />
                       <node concept="36bGnv" id="2F8bNQsJls" role="2pJxcZ">
-                        <ref role="36bGnp" to="e2lb:~Cloneable" resolve="Cloneable" />
+                        <ref role="36bGnp" to="wyt6:~Cloneable" resolve="Cloneable" />
                       </node>
                     </node>
                   </node>
@@ -403,7 +403,7 @@
                     <node concept="2pIpSj" id="2F8bNQsJlw" role="2pJxcM">
                       <ref role="2pIpSl" to="tpee:g7uigIF" />
                       <node concept="36bGnv" id="2F8bNQsJlx" role="2pJxcZ">
-                        <ref role="36bGnp" to="e2lb:~Enum" resolve="Enum" />
+                        <ref role="36bGnp" to="wyt6:~Enum" resolve="Enum" />
                       </node>
                     </node>
                   </node>
@@ -412,7 +412,7 @@
                     <node concept="2pIpSj" id="2F8bNQsJlz" role="2pJxcM">
                       <ref role="2pIpSl" to="tpee:g7uigIF" />
                       <node concept="36bGnv" id="2F8bNQsJl$" role="2pJxcZ">
-                        <ref role="36bGnp" to="e2lb:~String" resolve="String" />
+                        <ref role="36bGnp" to="wyt6:~String" resolve="String" />
                       </node>
                     </node>
                   </node>
@@ -632,7 +632,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="63yBSeEXxHx" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~List.get(int):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
                     <node concept="37vLTw" id="3GM_nagTwYj" role="37wK5m">
                       <ref role="3cqZAo" node="63yBSeEXxHz" resolve="i" />
                     </node>
@@ -856,7 +856,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4AWjvCLCF3O" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~List.get(int):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
                     <node concept="37vLTw" id="3GM_nagTunk" role="37wK5m">
                       <ref role="3cqZAo" node="63yBSeEXxJ2" resolve="i" />
                     </node>
@@ -1021,7 +1021,7 @@
         <node concept="mw_s8" id="2n8I3DYjuYu" role="1ZfhKB">
           <node concept="2c44tf" id="2n8I3DYjuYv" role="mwGJk">
             <node concept="3uibUv" id="2n8I3DYjuYy" role="2c44tc">
-              <ref role="3uigEE" to="1t7x:~GridBagConstraints" resolve="GridBagConstraints" />
+              <ref role="3uigEE" to="z60i:~GridBagConstraints" resolve="GridBagConstraints" />
             </node>
           </node>
         </node>
@@ -1052,7 +1052,7 @@
             <node concept="2usRSg" id="1RNUzzI3z8C" role="2c44tc">
               <node concept="10Oyi0" id="1RNUzzI3z8D" role="2usUpS" />
               <node concept="3uibUv" id="1RNUzzI3z8E" role="2usUpS">
-                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
               </node>
             </node>
           </node>
@@ -1070,7 +1070,7 @@
       <node concept="3cpWs6" id="1glKvNTAkm7" role="3cqZAp">
         <node concept="2c44tf" id="1glKvNTAkm9" role="3cqZAk">
           <node concept="3uibUv" id="1glKvNTAkmc" role="2c44tc">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>

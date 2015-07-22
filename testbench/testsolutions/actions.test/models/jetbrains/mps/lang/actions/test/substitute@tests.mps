@@ -10,8 +10,8 @@
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <import index="9a8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-    <import index="4ky7" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -134,11 +134,11 @@
       <node concept="3vwNmj" id="2d_KkSmuEHF" role="3cqZAp">
         <node concept="2OqwBi" id="2d_KkSmuDAN" role="3vwVQn">
           <node concept="liA8E" id="2d_KkSmuE6o" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
           </node>
           <node concept="2OqwBi" id="2d_KkSmuAOz" role="2Oq$k0">
             <node concept="liA8E" id="2d_KkSmuDzf" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="2d_KkSmu_Xh" role="2Oq$k0" />
           </node>
@@ -147,11 +147,11 @@
       <node concept="3vwNmj" id="5XbhVerKKnm" role="3cqZAp">
         <node concept="2OqwBi" id="2d_KkSmuH3R" role="3vwVQn">
           <node concept="liA8E" id="5XbhVerKKfD" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isMenuEmpty():boolean" resolve="isMenuEmpty" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isMenuEmpty():boolean" resolve="isMenuEmpty" />
           </node>
           <node concept="2OqwBi" id="2d_KkSmuFJa" role="2Oq$k0">
             <node concept="liA8E" id="2d_KkSmuH0S" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="2d_KkSmuFcG" role="2Oq$k0" />
           </node>
@@ -160,14 +160,14 @@
       <node concept="3clFbF" id="5XbhVerKK$L" role="3cqZAp">
         <node concept="2OqwBi" id="5XbhVerKWyl" role="3clFbG">
           <node concept="liA8E" id="5XbhVerKWWw" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
             <node concept="3clFbT" id="5XbhVerKWY2" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
           <node concept="2OqwBi" id="5XbhVerKTwj" role="2Oq$k0">
             <node concept="liA8E" id="5XbhVerKWvd" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="5XbhVerKKB7" role="2Oq$k0" />
           </node>
@@ -346,11 +346,11 @@
       <node concept="3vwNmj" id="2cHV7yGKiYw" role="3cqZAp">
         <node concept="2OqwBi" id="2cHV7yGKiYx" role="3vwVQn">
           <node concept="liA8E" id="2cHV7yGKiYy" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
           </node>
           <node concept="2OqwBi" id="2cHV7yGKiYz" role="2Oq$k0">
             <node concept="liA8E" id="2cHV7yGKiY$" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="2cHV7yGKiY_" role="2Oq$k0" />
           </node>
@@ -359,14 +359,14 @@
       <node concept="3clFbF" id="2cHV7yGKjb3" role="3cqZAp">
         <node concept="2OqwBi" id="2cHV7yGKjb4" role="3clFbG">
           <node concept="liA8E" id="2cHV7yGKjb5" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
             <node concept="3clFbT" id="2cHV7yGKjb6" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
           <node concept="2OqwBi" id="2cHV7yGKjb7" role="2Oq$k0">
             <node concept="liA8E" id="2cHV7yGKjb8" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="2cHV7yGKjb9" role="2Oq$k0" />
           </node>
@@ -445,11 +445,11 @@
       <node concept="3vwNmj" id="4uH7WCIJQOD" role="3cqZAp">
         <node concept="2OqwBi" id="4uH7WCIJQOE" role="3vwVQn">
           <node concept="liA8E" id="4uH7WCIJQOF" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
           </node>
           <node concept="2OqwBi" id="4uH7WCIJQOG" role="2Oq$k0">
             <node concept="liA8E" id="4uH7WCIJQOH" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="4uH7WCIJQOI" role="2Oq$k0" />
           </node>
@@ -458,14 +458,14 @@
       <node concept="3clFbF" id="4uH7WCIJQOJ" role="3cqZAp">
         <node concept="2OqwBi" id="4uH7WCIJQOK" role="3clFbG">
           <node concept="liA8E" id="4uH7WCIJQOL" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
             <node concept="3clFbT" id="4uH7WCIJQOM" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
           <node concept="2OqwBi" id="4uH7WCIJQON" role="2Oq$k0">
             <node concept="liA8E" id="4uH7WCIJQOO" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="4uH7WCIJQOP" role="2Oq$k0" />
           </node>
@@ -636,11 +636,11 @@
       <node concept="3vwNmj" id="7fvSfK_w1rh" role="3cqZAp">
         <node concept="2OqwBi" id="7fvSfK_w1ri" role="3vwVQn">
           <node concept="liA8E" id="7fvSfK_w1rj" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
           </node>
           <node concept="2OqwBi" id="7fvSfK_w1rk" role="2Oq$k0">
             <node concept="liA8E" id="7fvSfK_w1rl" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="7fvSfK_w1rm" role="2Oq$k0" />
           </node>
@@ -649,11 +649,11 @@
       <node concept="3vwNmj" id="7fvSfK_w1rn" role="3cqZAp">
         <node concept="2OqwBi" id="7fvSfK_w1ro" role="3vwVQn">
           <node concept="liA8E" id="7fvSfK_w1rp" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.isMenuEmpty():boolean" resolve="isMenuEmpty" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isMenuEmpty():boolean" resolve="isMenuEmpty" />
           </node>
           <node concept="2OqwBi" id="7fvSfK_w1rq" role="2Oq$k0">
             <node concept="liA8E" id="7fvSfK_w1rr" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="7fvSfK_w1rs" role="2Oq$k0" />
           </node>
@@ -662,14 +662,14 @@
       <node concept="3clFbF" id="7fvSfK_w1rt" role="3cqZAp">
         <node concept="2OqwBi" id="7fvSfK_w1ru" role="3clFbG">
           <node concept="liA8E" id="7fvSfK_w1rv" role="2OqNvi">
-            <ref role="37wK5l" to="4ky7:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.setVisible(boolean):void" resolve="setVisible" />
             <node concept="3clFbT" id="7fvSfK_w1rw" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
           <node concept="2OqwBi" id="7fvSfK_w1rx" role="2Oq$k0">
             <node concept="liA8E" id="7fvSfK_w1ry" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
             <node concept="369mXd" id="7fvSfK_w1rz" role="2Oq$k0" />
           </node>

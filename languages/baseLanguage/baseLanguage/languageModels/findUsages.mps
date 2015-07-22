@@ -16,12 +16,12 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="89o2" ref="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tped" ref="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)" />
-    <import index="ff4b" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
-    <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -969,7 +969,7 @@
         <node concept="3clFbF" id="7kBaCiqWYu6" role="3cqZAp">
           <node concept="2OqwBi" id="7kBaCiqWYTr" role="3clFbG">
             <node concept="liA8E" id="7kBaCiqWZfz" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
               <node concept="Xl_RD" id="7kBaCiqWZj2" role="37wK5m">
                 <property role="Xl_RC" value="All method usages" />
               </node>
@@ -997,7 +997,7 @@
                       <node concept="39LhUk" id="hzAiEc2" role="3mZe$s" />
                       <node concept="2OqwBi" id="7kBaCir5lTY" role="3JOdhr">
                         <node concept="liA8E" id="7kBaCir5lTZ" role="2OqNvi">
-                          <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                          <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                           <node concept="3cmrfG" id="7kBaCir5lU0" role="37wK5m">
                             <property role="3cmrfH" value="1" />
                           </node>
@@ -1058,7 +1058,7 @@
                     <ref role="3mZe$g" node="htYVccT" resolve="InterfaceMethodImplementations" />
                     <node concept="2OqwBi" id="7kBaCir5kvG" role="3JOdhr">
                       <node concept="liA8E" id="7kBaCir5lj0" role="2OqNvi">
-                        <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                        <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                         <node concept="3cmrfG" id="7kBaCir5lj2" role="37wK5m">
                           <property role="3cmrfH" value="1" />
                         </node>
@@ -1091,7 +1091,7 @@
             <property role="TrG5h" value="sm" />
             <node concept="2OqwBi" id="7kBaCiqX9mT" role="33vP2m">
               <node concept="liA8E" id="7kBaCiqXa2K" role="2OqNvi">
-                <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                 <node concept="3cmrfG" id="7kBaCiqXa3C" role="37wK5m">
                   <property role="3cmrfH" value="9" />
                 </node>
@@ -1099,7 +1099,7 @@
               <node concept="24CIHX" id="7kBaCiqX9iw" role="2Oq$k0" />
             </node>
             <node concept="3uibUv" id="7kBaCiqX8U0" role="1tU5fm">
-              <ref role="3uigEE" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
+              <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
             </node>
           </node>
         </node>
@@ -1108,7 +1108,7 @@
             <node concept="3clFbF" id="7kBaCiqXaUU" role="3cqZAp">
               <node concept="2OqwBi" id="7kBaCiqXaZv" role="3clFbG">
                 <node concept="liA8E" id="7kBaCiqXblA" role="2OqNvi">
-                  <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
                   <node concept="Xl_RD" id="7kBaCiqXbnM" role="37wK5m">
                     <property role="Xl_RC" value="" />
                   </node>
@@ -1134,7 +1134,7 @@
                     <ref role="3mZe$g" to="tpci:hroFk9u" resolve="NodeUsages" />
                     <node concept="2OqwBi" id="7kBaCir5d_F" role="3JOdhr">
                       <node concept="liA8E" id="7kBaCir5ejJ" role="2OqNvi">
-                        <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                        <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                         <node concept="3cmrfG" id="7kBaCir5eo1" role="37wK5m">
                           <property role="3cmrfH" value="1" />
                         </node>
@@ -1186,7 +1186,7 @@
             <node concept="3clFbF" id="7kBaCiqXqwy" role="3cqZAp">
               <node concept="2OqwBi" id="7kBaCiqXq_d" role="3clFbG">
                 <node concept="liA8E" id="7kBaCiqXrgZ" role="2OqNvi">
-                  <ref role="37wK5l" to="z8de:~ProgressMonitor.done():void" resolve="done" />
+                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.done():void" resolve="done" />
                 </node>
                 <node concept="37vLTw" id="7kBaCiqXqwx" role="2Oq$k0">
                   <ref role="3cqZAo" node="7kBaCiqX8TZ" resolve="sm" />
@@ -1706,7 +1706,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="hxBNFDq" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="hxiFs_b" role="37wK5m">
                           <node concept="2OqwBi" id="hxiFsDD" role="2Oq$k0">
                             <node concept="39LhUk" id="hz_Iu$W" role="2Oq$k0" />
@@ -1730,7 +1730,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="hxBNFDs" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="hxiFqgi" role="37wK5m">
                           <node concept="39LhUk" id="hz_ItFj" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hu3mqyN" role="2OqNvi">
@@ -2908,7 +2908,7 @@
         <node concept="3clFbF" id="7kBaCir5BBv" role="3cqZAp">
           <node concept="2OqwBi" id="7kBaCir5Cg3" role="3clFbG">
             <node concept="liA8E" id="7kBaCir5D21" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
               <node concept="Xl_RD" id="7kBaCir5D38" role="37wK5m">
                 <property role="Xl_RC" value="Base method" />
               </node>
@@ -3020,7 +3020,7 @@
                     <node concept="2OqwBi" id="7kBaCir6ecf" role="3JOdhr">
                       <node concept="24CIHX" id="7kBaCir6dPi" role="2Oq$k0" />
                       <node concept="liA8E" id="7kBaCir6fAP" role="2OqNvi">
-                        <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                        <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                         <node concept="3cmrfG" id="7kBaCir6fAR" role="37wK5m">
                           <property role="3cmrfH" value="1" />
                         </node>
@@ -3047,7 +3047,7 @@
                     <node concept="2OqwBi" id="7kBaCir6fO5" role="3JOdhr">
                       <node concept="24CIHX" id="7kBaCir6fO6" role="2Oq$k0" />
                       <node concept="liA8E" id="7kBaCir6fO7" role="2OqNvi">
-                        <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                        <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                         <node concept="3cmrfG" id="7kBaCir6fO8" role="37wK5m">
                           <property role="3cmrfH" value="1" />
                         </node>
@@ -3092,7 +3092,7 @@
                       <node concept="2OqwBi" id="7kBaCir6gcI" role="3JOdhr">
                         <node concept="24CIHX" id="7kBaCir6gcJ" role="2Oq$k0" />
                         <node concept="liA8E" id="7kBaCir6gcK" role="2OqNvi">
-                          <ref role="37wK5l" to="z8de:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                          <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
                           <node concept="3cmrfG" id="7kBaCir6gcL" role="37wK5m">
                             <property role="3cmrfH" value="1" />
                           </node>
@@ -3105,7 +3105,7 @@
               <node concept="3clFbF" id="7kBaCir6jjj" role="3cqZAp">
                 <node concept="2OqwBi" id="7kBaCir6jr_" role="3clFbG">
                   <node concept="liA8E" id="7kBaCir6jLH" role="2OqNvi">
-                    <ref role="37wK5l" to="z8de:~ProgressMonitor.advance(int):void" resolve="advance" />
+                    <ref role="37wK5l" to="yyf4:~ProgressMonitor.advance(int):void" resolve="advance" />
                     <node concept="3cmrfG" id="7kBaCir6jMx" role="37wK5m">
                       <property role="3cmrfH" value="1" />
                     </node>
@@ -3447,8 +3447,8 @@
               <ref role="3mZe$g" node="hy9zzqV" resolve="BaseMethod" />
               <node concept="39LhUk" id="hGQK3Hd" role="3mZe$s" />
               <node concept="2YIFZM" id="hGQK3He" role="3mZe$t">
-                <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-                <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
+                <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
               </node>
             </node>
           </node>
@@ -3493,8 +3493,8 @@
               <ref role="3mZe$g" node="hy9zzqV" resolve="BaseMethod" />
               <node concept="39LhUk" id="hGQO6Jp" role="3mZe$s" />
               <node concept="2YIFZM" id="hGQO6Jq" role="3mZe$t">
-                <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-                <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
+                <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
               </node>
             </node>
           </node>

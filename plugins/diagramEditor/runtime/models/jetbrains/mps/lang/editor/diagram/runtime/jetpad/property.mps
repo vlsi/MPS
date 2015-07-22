@@ -5,10 +5,10 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="931o" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.event(jetbrains.jetpad/jetbrains.jetpad.model.event@java_stub)" />
-    <import index="ctj7" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)" />
-    <import index="qkka" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.base(jetbrains.jetpad/jetbrains.jetpad.base@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="x7mh" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.event(jetbrains.jetpad/)" />
+    <import index="lgza" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)" />
+    <import index="chl9" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.base(jetbrains.jetpad/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -177,12 +177,12 @@
       <property role="TrG5h" value="myHandlers" />
       <node concept="3Tm6S6" id="1o1N$5kG2x5" role="1B3o_S" />
       <node concept="3uibUv" id="1o1N$5kG2x6" role="1tU5fm">
-        <ref role="3uigEE" to="931o:~Listeners" resolve="Listeners" />
+        <ref role="3uigEE" to="x7mh:~Listeners" resolve="Listeners" />
         <node concept="3uibUv" id="1o1N$5kG2x7" role="11_B2D">
-          <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+          <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
           <node concept="3qUtgH" id="1o1N$5kG2x8" role="11_B2D">
             <node concept="3uibUv" id="1o1N$5kG2x9" role="3qUvdb">
-              <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+              <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
               <node concept="16syzq" id="1o1N$5kG2xa" role="11_B2D">
                 <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
               </node>
@@ -196,7 +196,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="1o1N$5kG2xc" role="1B3o_S" />
       <node concept="3uibUv" id="1o1N$5kG2xd" role="1tU5fm">
-        <ref role="3uigEE" to="ctj7:~ReadableProperty" resolve="ReadableProperty" />
+        <ref role="3uigEE" to="lgza:~ReadableProperty" resolve="ReadableProperty" />
         <node concept="16syzq" id="1o1N$5kG2xe" role="11_B2D">
           <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
         </node>
@@ -207,7 +207,7 @@
       <node concept="3Tm6S6" id="1o1N$5kG2xg" role="1B3o_S" />
       <node concept="10Q1$e" id="1o1N$5kG2xh" role="1tU5fm">
         <node concept="3uibUv" id="1o1N$5kG2xi" role="10Q1$1">
-          <ref role="3uigEE" to="ctj7:~ReadableProperty" resolve="ReadableProperty" />
+          <ref role="3uigEE" to="lgza:~ReadableProperty" resolve="ReadableProperty" />
           <node concept="3qTvmN" id="1o1N$5kG2xj" role="11_B2D" />
         </node>
       </node>
@@ -217,7 +217,7 @@
       <node concept="3Tm6S6" id="1o1N$5kG2xl" role="1B3o_S" />
       <node concept="10Q1$e" id="1o1N$5kG2xm" role="1tU5fm">
         <node concept="3uibUv" id="5pJ3qUj_6Zg" role="10Q1$1">
-          <ref role="3uigEE" to="qkka:~Registration" resolve="Registration" />
+          <ref role="3uigEE" to="chl9:~Registration" resolve="Registration" />
         </node>
       </node>
     </node>
@@ -261,7 +261,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="1o1N$5kG2xI" role="3$_nBY">
-                  <ref role="3uigEE" to="ctj7:~ReadableProperty" resolve="ReadableProperty" />
+                  <ref role="3uigEE" to="lgza:~ReadableProperty" resolve="ReadableProperty" />
                   <node concept="3qTvmN" id="1o1N$5kG2xJ" role="11_B2D" />
                 </node>
               </node>
@@ -288,8 +288,8 @@
         </node>
         <node concept="3clFbF" id="1o1N$5kG2xR" role="3cqZAp">
           <node concept="2YIFZM" id="1o1N$5kG2xS" role="3clFbG">
-            <ref role="37wK5l" to="e2lb:~System.arraycopy(java.lang.Object,int,java.lang.Object,int,int):void" resolve="arraycopy" />
-            <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+            <ref role="37wK5l" to="wyt6:~System.arraycopy(java.lang.Object,int,java.lang.Object,int,int):void" resolve="arraycopy" />
+            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
             <node concept="37vLTw" id="1o1N$5kG2xT" role="37wK5m">
               <ref role="3cqZAo" node="1o1N$5kG2y4" resolve="dependencies" />
             </node>
@@ -315,7 +315,7 @@
       <node concept="37vLTG" id="1o1N$5kG2y1" role="3clF46">
         <property role="TrG5h" value="mainProperty" />
         <node concept="3uibUv" id="1o1N$5kG2y2" role="1tU5fm">
-          <ref role="3uigEE" to="ctj7:~ReadableProperty" resolve="ReadableProperty" />
+          <ref role="3uigEE" to="lgza:~ReadableProperty" resolve="ReadableProperty" />
           <node concept="16syzq" id="1o1N$5kG2y3" role="11_B2D">
             <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
           </node>
@@ -325,7 +325,7 @@
         <property role="TrG5h" value="dependencies" />
         <node concept="8X2XB" id="1o1N$5kG2y5" role="1tU5fm">
           <node concept="3uibUv" id="1o1N$5kG2y6" role="8Xvag">
-            <ref role="3uigEE" to="ctj7:~ReadableProperty" resolve="ReadableProperty" />
+            <ref role="3uigEE" to="lgza:~ReadableProperty" resolve="ReadableProperty" />
             <node concept="3qTvmN" id="1o1N$5kG2y7" role="11_B2D" />
           </node>
         </node>
@@ -347,7 +347,7 @@
               <ref role="3cqZAo" node="1o1N$5kG2xb" resolve="myMainProperty" />
             </node>
             <node concept="liA8E" id="1o1N$5kG2yf" role="2OqNvi">
-              <ref role="37wK5l" to="ctj7:~ReadableProperty.get():java.lang.Object" resolve="get" />
+              <ref role="37wK5l" to="lgza:~ReadableProperty.get():java.lang.Object" resolve="get" />
             </node>
           </node>
         </node>
@@ -360,15 +360,15 @@
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1o1N$5kG2yh" role="1B3o_S" />
       <node concept="3uibUv" id="1o1N$5kG2yi" role="3clF45">
-        <ref role="3uigEE" to="qkka:~Registration" resolve="Registration" />
+        <ref role="3uigEE" to="chl9:~Registration" resolve="Registration" />
       </node>
       <node concept="37vLTG" id="1o1N$5kG2yj" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="3uibUv" id="1o1N$5kG2yk" role="1tU5fm">
-          <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+          <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
           <node concept="3qUtgH" id="1o1N$5kG2yl" role="11_B2D">
             <node concept="3uibUv" id="1o1N$5kG2ym" role="3qUvdb">
-              <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+              <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
               <node concept="16syzq" id="1o1N$5kG2yn" role="11_B2D">
                 <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
               </node>
@@ -383,12 +383,12 @@
               <node concept="37vLTI" id="1o1N$5kG2ys" role="3clFbG">
                 <node concept="2ShNRf" id="1o1N$5kG2yt" role="37vLTx">
                   <node concept="1pGfFk" id="1o1N$5kG2yu" role="2ShVmc">
-                    <ref role="37wK5l" to="931o:~Listeners.&lt;init&gt;()" resolve="Listeners" />
+                    <ref role="37wK5l" to="x7mh:~Listeners.&lt;init&gt;()" resolve="Listeners" />
                     <node concept="3uibUv" id="1o1N$5kG2yv" role="1pMfVU">
-                      <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+                      <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
                       <node concept="3qUtgH" id="1o1N$5kG2yw" role="11_B2D">
                         <node concept="3uibUv" id="1o1N$5kG2yx" role="3qUvdb">
-                          <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                          <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                           <node concept="16syzq" id="1o1N$5kG2yy" role="11_B2D">
                             <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
                           </node>
@@ -423,7 +423,7 @@
               <ref role="3cqZAo" node="1o1N$5kG2x4" resolve="myHandlers" />
             </node>
             <node concept="liA8E" id="1o1N$5kG2yH" role="2OqNvi">
-              <ref role="37wK5l" to="931o:~Listeners.isEmpty():boolean" resolve="isEmpty" />
+              <ref role="37wK5l" to="x7mh:~Listeners.isEmpty():boolean" resolve="isEmpty" />
             </node>
           </node>
         </node>
@@ -432,14 +432,14 @@
             <property role="TrG5h" value="reg" />
             <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="1o1N$5kG2yK" role="1tU5fm">
-              <ref role="3uigEE" to="qkka:~Registration" resolve="Registration" />
+              <ref role="3uigEE" to="chl9:~Registration" resolve="Registration" />
             </node>
             <node concept="2OqwBi" id="1o1N$5kG2yL" role="33vP2m">
               <node concept="37vLTw" id="1o1N$5kG2yM" role="2Oq$k0">
                 <ref role="3cqZAo" node="1o1N$5kG2x4" resolve="myHandlers" />
               </node>
               <node concept="liA8E" id="1o1N$5kG2yN" role="2OqNvi">
-                <ref role="37wK5l" to="931o:~Listeners.add(java.lang.Object):jetbrains.jetpad.base.Registration" resolve="add" />
+                <ref role="37wK5l" to="x7mh:~Listeners.add(java.lang.Object):jetbrains.jetpad.base.Registration" resolve="add" />
                 <node concept="37vLTw" id="1o1N$5kG2yO" role="37wK5m">
                   <ref role="3cqZAo" node="1o1N$5kG2yj" resolve="handler" />
                 </node>
@@ -452,8 +452,8 @@
             <node concept="YeOm9" id="1o1N$5kG2yR" role="2ShVmc">
               <node concept="1Y3b0j" id="1o1N$5kG2yS" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" to="qkka:~Registration" resolve="Registration" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="1Y3XeK" to="chl9:~Registration" resolve="Registration" />
                 <node concept="3Tm1VV" id="1o1N$5kG2yT" role="1B3o_S" />
                 <node concept="3clFb_" id="1o1N$5kG2yU" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -469,7 +469,7 @@
                           <ref role="3cqZAo" node="1o1N$5kG2yJ" resolve="reg" />
                         </node>
                         <node concept="liA8E" id="1o1N$5kG2z1" role="2OqNvi">
-                          <ref role="37wK5l" to="qkka:~Registration.remove():void" resolve="remove" />
+                          <ref role="37wK5l" to="chl9:~Registration.remove():void" resolve="remove" />
                         </node>
                       </node>
                     </node>
@@ -486,7 +486,7 @@
                           <ref role="3cqZAo" node="1o1N$5kG2x4" resolve="myHandlers" />
                         </node>
                         <node concept="liA8E" id="1o1N$5kG2z8" role="2OqNvi">
-                          <ref role="37wK5l" to="931o:~Listeners.isEmpty():boolean" resolve="isEmpty" />
+                          <ref role="37wK5l" to="x7mh:~Listeners.isEmpty():boolean" resolve="isEmpty" />
                         </node>
                       </node>
                     </node>
@@ -508,9 +508,9 @@
           <node concept="3cpWsn" id="1o1N$5kG2zc" role="3cpWs9">
             <property role="TrG5h" value="handler" />
             <node concept="3uibUv" id="1o1N$5kG2zd" role="1tU5fm">
-              <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+              <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
               <node concept="3uibUv" id="1o1N$5kG2ze" role="11_B2D">
-                <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                 <node concept="3qTvmN" id="1o1N$5kG2zf" role="11_B2D" />
               </node>
             </node>
@@ -518,8 +518,8 @@
               <node concept="YeOm9" id="1o1N$5kG2zh" role="2ShVmc">
                 <node concept="1Y3b0j" id="1o1N$5kG2zi" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="931o:~EventHandler" resolve="EventHandler" />
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="1Y3XeK" to="x7mh:~EventHandler" resolve="EventHandler" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                   <node concept="3Tm1VV" id="1o1N$5kG2zj" role="1B3o_S" />
                   <node concept="3clFb_" id="1o1N$5kG2zk" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -531,7 +531,7 @@
                     <node concept="37vLTG" id="1o1N$5kG2zn" role="3clF46">
                       <property role="TrG5h" value="event" />
                       <node concept="3uibUv" id="1o1N$5kG2zo" role="1tU5fm">
-                        <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                        <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                         <node concept="3qTvmN" id="1o1N$5kG2zp" role="11_B2D" />
                       </node>
                     </node>
@@ -544,7 +544,7 @@
                     </node>
                   </node>
                   <node concept="3uibUv" id="1o1N$5kG2zt" role="2Ghqu4">
-                    <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                    <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                     <node concept="3qTvmN" id="1o1N$5kG2zu" role="11_B2D" />
                   </node>
                 </node>
@@ -565,7 +565,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="1o1N$5kG2zB" role="3$_nBY">
-                  <ref role="3uigEE" to="qkka:~Registration" resolve="Registration" />
+                  <ref role="3uigEE" to="chl9:~Registration" resolve="Registration" />
                 </node>
               </node>
             </node>
@@ -598,7 +598,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1o1N$5kG2zP" role="2OqNvi">
-                    <ref role="37wK5l" to="931o:~EventSource.addHandler(jetbrains.jetpad.model.event.EventHandler):jetbrains.jetpad.base.Registration" resolve="addHandler" />
+                    <ref role="37wK5l" to="x7mh:~EventSource.addHandler(jetbrains.jetpad.model.event.EventHandler):jetbrains.jetpad.base.Registration" resolve="addHandler" />
                     <node concept="37vLTw" id="1o1N$5kG2zQ" role="37wK5m">
                       <ref role="3cqZAo" node="1o1N$5kG2zc" resolve="handler" />
                     </node>
@@ -657,7 +657,7 @@
                   <ref role="3cqZAo" node="1o1N$5kG2$e" resolve="reg" />
                 </node>
                 <node concept="liA8E" id="1o1N$5kG2$d" role="2OqNvi">
-                  <ref role="37wK5l" to="qkka:~Registration.remove():void" resolve="remove" />
+                  <ref role="37wK5l" to="chl9:~Registration.remove():void" resolve="remove" />
                 </node>
               </node>
             </node>
@@ -665,7 +665,7 @@
           <node concept="3cpWsn" id="1o1N$5kG2$e" role="1Duv9x">
             <property role="TrG5h" value="reg" />
             <node concept="3uibUv" id="1o1N$5kG2$f" role="1tU5fm">
-              <ref role="3uigEE" to="qkka:~Registration" resolve="Registration" />
+              <ref role="3uigEE" to="chl9:~Registration" resolve="Registration" />
             </node>
           </node>
           <node concept="37vLTw" id="1o1N$5kG2$g" role="1DdaDG">
@@ -729,14 +729,14 @@
                 <property role="TrG5h" value="event" />
                 <property role="3TUv4t" value="true" />
                 <node concept="3uibUv" id="1o1N$5kG2$D" role="1tU5fm">
-                  <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                  <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                   <node concept="16syzq" id="1o1N$5kG2$E" role="11_B2D">
                     <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
                   </node>
                 </node>
                 <node concept="2ShNRf" id="1o1N$5kG2$F" role="33vP2m">
                   <node concept="1pGfFk" id="1o1N$5kG2$G" role="2ShVmc">
-                    <ref role="37wK5l" to="ctj7:~PropertyChangeEvent.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="PropertyChangeEvent" />
+                    <ref role="37wK5l" to="lgza:~PropertyChangeEvent.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="PropertyChangeEvent" />
                     <node concept="16syzq" id="1o1N$5kG2$H" role="1pMfVU">
                       <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
                     </node>
@@ -756,13 +756,13 @@
                   <ref role="3cqZAo" node="1o1N$5kG2x4" resolve="myHandlers" />
                 </node>
                 <node concept="liA8E" id="1o1N$5kG2$N" role="2OqNvi">
-                  <ref role="37wK5l" to="931o:~Listeners.fire(jetbrains.jetpad.model.event.ListenerCaller):void" resolve="fire" />
+                  <ref role="37wK5l" to="x7mh:~Listeners.fire(jetbrains.jetpad.model.event.ListenerCaller):void" resolve="fire" />
                   <node concept="2ShNRf" id="1o1N$5kG2$O" role="37wK5m">
                     <node concept="YeOm9" id="1o1N$5kG2$P" role="2ShVmc">
                       <node concept="1Y3b0j" id="1o1N$5kG2$Q" role="YeSDq">
                         <property role="2bfB8j" value="true" />
-                        <ref role="1Y3XeK" to="931o:~ListenerCaller" resolve="ListenerCaller" />
-                        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                        <ref role="1Y3XeK" to="x7mh:~ListenerCaller" resolve="ListenerCaller" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                         <node concept="3Tm1VV" id="1o1N$5kG2$R" role="1B3o_S" />
                         <node concept="3clFb_" id="1o1N$5kG2$S" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -774,10 +774,10 @@
                           <node concept="37vLTG" id="1o1N$5kG2$V" role="3clF46">
                             <property role="TrG5h" value="handler" />
                             <node concept="3uibUv" id="1o1N$5kG2$W" role="1tU5fm">
-                              <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+                              <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
                               <node concept="3qUtgH" id="1o1N$5kG2$X" role="11_B2D">
                                 <node concept="3uibUv" id="1o1N$5kG2$Y" role="3qUvdb">
-                                  <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                                  <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                                   <node concept="16syzq" id="1o1N$5kG2$Z" role="11_B2D">
                                     <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
                                   </node>
@@ -792,7 +792,7 @@
                                   <ref role="3cqZAo" node="1o1N$5kG2$V" resolve="handler" />
                                 </node>
                                 <node concept="liA8E" id="1o1N$5kG2_4" role="2OqNvi">
-                                  <ref role="37wK5l" to="931o:~EventHandler.onEvent(java.lang.Object):void" resolve="onEvent" />
+                                  <ref role="37wK5l" to="x7mh:~EventHandler.onEvent(java.lang.Object):void" resolve="onEvent" />
                                   <node concept="37vLTw" id="1o1N$5kG2_5" role="37wK5m">
                                     <ref role="3cqZAo" node="1o1N$5kG2$C" resolve="event" />
                                   </node>
@@ -802,10 +802,10 @@
                           </node>
                         </node>
                         <node concept="3uibUv" id="1o1N$5kG2_6" role="2Ghqu4">
-                          <ref role="3uigEE" to="931o:~EventHandler" resolve="EventHandler" />
+                          <ref role="3uigEE" to="x7mh:~EventHandler" resolve="EventHandler" />
                           <node concept="3qUtgH" id="1o1N$5kG2_7" role="11_B2D">
                             <node concept="3uibUv" id="1o1N$5kG2_8" role="3qUvdb">
-                              <ref role="3uigEE" to="ctj7:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
+                              <ref role="3uigEE" to="lgza:~PropertyChangeEvent" resolve="PropertyChangeEvent" />
                               <node concept="16syzq" id="1o1N$5kG2_9" role="11_B2D">
                                 <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
                               </node>
@@ -832,7 +832,7 @@
     </node>
     <node concept="3Tm1VV" id="1o1N$5kG2_f" role="1B3o_S" />
     <node concept="3uibUv" id="1o1N$5kG2_g" role="1zkMxy">
-      <ref role="3uigEE" to="ctj7:~BaseReadableProperty" resolve="BaseReadableProperty" />
+      <ref role="3uigEE" to="lgza:~BaseReadableProperty" resolve="BaseReadableProperty" />
       <node concept="16syzq" id="1o1N$5kG2_h" role="11_B2D">
         <ref role="16sUi3" node="1o1N$5kG2_i" resolve="ValueT" />
       </node>

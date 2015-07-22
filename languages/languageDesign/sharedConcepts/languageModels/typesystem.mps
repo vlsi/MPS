@@ -7,8 +7,8 @@
   </languages>
   <imports>
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
-    <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -63,7 +63,7 @@
         <node concept="mw_s8" id="2wC_gGKX3RU" role="1ZfhKB">
           <node concept="2c44tf" id="2wC_gGKX3RQ" role="mwGJk">
             <node concept="3uibUv" id="6LpCX$U1tCL" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SearchScope" resolve="SearchScope" />
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
             </node>
           </node>
         </node>
@@ -88,7 +88,7 @@
         <node concept="mw_s8" id="uYrIA37evQ" role="1ZfhKB">
           <node concept="2c44tf" id="uYrIA37evR" role="mwGJk">
             <node concept="3uibUv" id="uYrIA37eTR" role="2c44tc">
-              <ref role="3uigEE" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
+              <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
             </node>
           </node>
         </node>

@@ -10,7 +10,7 @@
   </languages>
   <imports>
     <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -407,7 +407,7 @@
         <ref role="uz4UX" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
         <node concept="uMFAO" id="hb3SMgi" role="uz6Si">
           <node concept="3uibUv" id="hb3T1iI" role="uMOYW">
-            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
           </node>
           <node concept="uNCsQ" id="hb3SMgk" role="uO7ob">
             <node concept="3clFbS" id="hb3SMgl" role="2VODD2">
@@ -415,15 +415,15 @@
                 <node concept="2ShNRf" id="hb3SV4V" role="3clFbG">
                   <node concept="Tc6Ow" id="hb3SV4W" role="2ShVmc">
                     <node concept="3uibUv" id="hb3SV4X" role="HW$YZ">
-                      <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                     </node>
                     <node concept="10M0yZ" id="hb3SV4Y" role="HW$Y0">
-                      <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
-                      <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
+                      <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                      <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
                     </node>
                     <node concept="10M0yZ" id="hb3SV4Z" role="HW$Y0">
-                      <ref role="3cqZAo" to="e2lb:~Boolean.FALSE" resolve="FALSE" />
-                      <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
+                      <ref role="3cqZAo" to="wyt6:~Boolean.FALSE" resolve="FALSE" />
+                      <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
                     </node>
                   </node>
                 </node>
@@ -460,7 +460,7 @@
                     <node concept="2OqwBi" id="hxBNLx8" role="tz02z">
                       <node concept="uNquD" id="hb3Tc$m" role="2Oq$k0" />
                       <node concept="liA8E" id="hxBNLx9" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~Boolean.booleanValue():boolean" resolve="booleanValue" />
+                        <ref role="37wK5l" to="wyt6:~Boolean.booleanValue():boolean" resolve="booleanValue" />
                       </node>
                     </node>
                   </node>
@@ -479,7 +479,7 @@
                 <node concept="2OqwBi" id="hxBNAe9" role="3clFbG">
                   <node concept="uNquD" id="hb3T3xa" role="2Oq$k0" />
                   <node concept="liA8E" id="hxBNAea" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Boolean.toString():java.lang.String" resolve="toString" />
+                    <ref role="37wK5l" to="wyt6:~Boolean.toString():java.lang.String" resolve="toString" />
                   </node>
                 </node>
               </node>

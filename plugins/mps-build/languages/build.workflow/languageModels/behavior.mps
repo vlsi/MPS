@@ -9,9 +9,9 @@
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -366,8 +366,8 @@
       <node concept="3clFbS" id="3Par5_LaIPo" role="3clF47">
         <node concept="3cpWs6" id="3Par5_LaJ79" role="3cqZAp">
           <node concept="2YIFZM" id="1Mjrj7j48B8" role="3cqZAk">
-            <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-            <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+            <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+            <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
             <node concept="2ShNRf" id="1Mjrj7j48_F" role="37wK5m">
               <node concept="3g6Rrh" id="1Mjrj7j48A5" role="2ShVmc">
                 <node concept="17QB3L" id="1Mjrj7j48_K" role="3g7fb8" />
@@ -457,7 +457,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3Par5_LaUot" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="Xl_RD" id="3Par5_LaUou" role="37wK5m">
                       <property role="Xl_RC" value="modern" />
                     </node>
@@ -483,7 +483,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3Par5_LaHIR" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="3Par5_LaHIS" role="37wK5m">
                         <property role="Xl_RC" value="IntelliJ" />
                       </node>
@@ -805,7 +805,7 @@
                             </node>
                           </node>
                           <node concept="2AHcQZ" id="3rV3sBXetCP" role="2AJF6D">
-                            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                           <node concept="37vLTG" id="3rV3sBXetCL" role="3clF46">
                             <property role="TrG5h" value="node" />

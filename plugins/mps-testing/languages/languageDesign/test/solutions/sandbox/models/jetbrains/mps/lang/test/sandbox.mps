@@ -6,8 +6,8 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
     <import index="tp5l" ref="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)" />
   </imports>
   <registry>
@@ -194,11 +194,11 @@
             <node concept="3clFbF" id="5I3K3cUQNxU" role="3cqZAp">
               <node concept="2OqwBi" id="5I3K3cUQNxV" role="3clFbG">
                 <node concept="10M0yZ" id="5I3K3cUQNxW" role="2Oq$k0">
-                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
                 </node>
                 <node concept="liA8E" id="5I3K3cUQNxX" role="2OqNvi">
-                  <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
                   <node concept="37vLTw" id="3rohxPV7J71" role="37wK5m">
                     <ref role="3cqZAo" node="5I3K3cUQJj7" resolve="i" />
                     <node concept="7CXmI" id="3rohxPV7J75" role="lGtFl">

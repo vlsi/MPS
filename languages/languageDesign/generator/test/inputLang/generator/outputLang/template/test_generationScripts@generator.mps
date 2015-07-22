@@ -15,9 +15,9 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tq1l" ref="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" />
     <import index="tplz" ref="r:00000000-0000-4000-0000-011c895905fb(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.util)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
   </imports>
   <registry>
@@ -510,7 +510,7 @@
             </node>
             <node concept="2ShNRf" id="hFrG$Le" role="37vLTx">
               <node concept="1pGfFk" id="hFrG$Lg" role="2ShVmc">
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
               </node>
             </node>
           </node>
@@ -518,11 +518,11 @@
         <node concept="3clFbF" id="hppYx_D" role="3cqZAp">
           <node concept="2OqwBi" id="hzBGo4k" role="3clFbG">
             <node concept="10M0yZ" id="hppYx_F" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hzBGo4l" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="hppYx_G" role="37wK5m">
                 <node concept="2YIFZM" id="2n9zn0CqMPr" role="3uHU7w">
                   <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
@@ -602,7 +602,7 @@
           <node concept="3cpWsn" id="hzBI3vw" role="3cpWs9">
             <property role="TrG5h" value="object" />
             <node concept="3uibUv" id="hzBI3vx" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
             <node concept="2OqwBi" id="hI$3v5C" role="33vP2m">
               <node concept="1iwH7S" id="hI$3v5E" role="2Oq$k0" />
@@ -628,11 +628,11 @@
         <node concept="3clFbF" id="hppYczB" role="3cqZAp">
           <node concept="2OqwBi" id="hzBGonx" role="3clFbG">
             <node concept="10M0yZ" id="hppYczD" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hzBGony" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="hppYmxS" role="37wK5m">
                 <node concept="2YIFZM" id="2n9zn0CqMNe" role="3uHU7w">
                   <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />

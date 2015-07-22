@@ -16,7 +16,7 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1411,7 +1411,7 @@
       <node concept="37vLTG" id="5CNG5xvkBqO" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="5CNG5xvkBrY" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3uibUv" id="50H9TEDl$KX" role="Sfmx6">
@@ -1518,7 +1518,7 @@
       <node concept="37vLTG" id="4upLbA2Wa9p" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="4upLbA2WaD7" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3cqZAl" id="4upLbA2W7xf" role="3clF45" />
@@ -2454,7 +2454,7 @@
       <node concept="2tJIrI" id="50H9TEDlu96" role="jymVt" />
       <node concept="3Tm1VV" id="50H9TEDlu97" role="1B3o_S" />
       <node concept="3uibUv" id="50H9TEDlu98" role="1zkMxy">
-        <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
     <node concept="2tJIrI" id="50H9TEDlsCf" role="jymVt" />
@@ -2464,15 +2464,15 @@
       <node concept="3Tm1VV" id="5CNG5xvluuP" role="1B3o_S" />
       <node concept="QsSxf" id="3L_P6qKH8RO" role="Qtgdg">
         <property role="TrG5h" value="OK" />
-        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="5CNG5xvlu3F" role="Qtgdg">
         <property role="TrG5h" value="REPAIRABLE" />
-        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="5CNG5xvlurQ" role="Qtgdg">
         <property role="TrG5h" value="NON_REPAIRABLE" />
-        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
     </node>
     <node concept="3Tm1VV" id="5CNG5xvkDDk" role="1B3o_S" />
@@ -2494,7 +2494,7 @@
       <node concept="37vLTG" id="50H9TEDl_78" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="50H9TEDl_79" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3clFbS" id="50H9TEDl_7a" role="3clF47">
@@ -2675,7 +2675,7 @@
       <node concept="37vLTG" id="4upLbA2WbjT" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="4upLbA2WbjU" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3cqZAl" id="4upLbA2WbjV" role="3clF45" />
@@ -2773,7 +2773,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="50H9TEDl$TA" role="1B3o_S" />
       <node concept="3uibUv" id="50H9TEDl$VT" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="50H9TEDl$Zi" role="33vP2m">
         <property role="Xl_RC" value="" />
@@ -2794,7 +2794,7 @@
       <node concept="37vLTG" id="5CNG5xvlw1U" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="5CNG5xvlw1V" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3clFbS" id="5CNG5xvlw1W" role="3clF47">
@@ -3012,7 +3012,7 @@
       <node concept="37vLTG" id="4upLbA2WiY9" role="3clF46">
         <property role="TrG5h" value="corrected" />
         <node concept="3uibUv" id="4upLbA2WiYa" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3cqZAl" id="4upLbA2WiYb" role="3clF45" />
@@ -3103,7 +3103,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getErrorMessage" />
       <node concept="3uibUv" id="50H9TEDltPT" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="50H9TEDltOv" role="1B3o_S" />
       <node concept="3clFbS" id="50H9TEDltOw" role="3clF47">

@@ -13,10 +13,10 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpea" ref="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="q383" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template()" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -292,12 +292,12 @@
                   <node concept="10QFUN" id="hRrq3f1" role="1eOMHV">
                     <node concept="1iwH7S" id="hRrq3f2" role="10QFUP" />
                     <node concept="3uibUv" id="hRrq3f3" role="10QFUM">
-                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="hRrq3f4" role="2OqNvi">
-                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                 </node>
               </node>
             </node>
@@ -324,12 +324,12 @@
                       <node concept="10QFUN" id="hRrq337" role="1eOMHV">
                         <node concept="1iwH7S" id="hRrq338" role="10QFUP" />
                         <node concept="3uibUv" id="hRrq339" role="10QFUM">
-                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hRrq33a" role="2OqNvi">
-                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -423,12 +423,12 @@
                       <node concept="10QFUN" id="hRrq3eG" role="1eOMHV">
                         <node concept="1iwH7S" id="hRrq3eH" role="10QFUP" />
                         <node concept="3uibUv" id="hRrq3eI" role="10QFUM">
-                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hRrq3eJ" role="2OqNvi">
-                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -559,12 +559,12 @@
                       <node concept="10QFUN" id="1AibU_CrXvd" role="1eOMHV">
                         <node concept="1iwH7S" id="1AibU_CrXve" role="10QFUP" />
                         <node concept="3uibUv" id="1AibU_CrXvf" role="10QFUM">
-                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="1AibU_CrXvg" role="2OqNvi">
-                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -647,12 +647,12 @@
                           <node concept="10QFUN" id="i1QTSNS" role="1eOMHV">
                             <node concept="1iwH7S" id="i1QTSNT" role="10QFUP" />
                             <node concept="3uibUv" id="i1QTSNU" role="10QFUM">
-                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="i1QTSNV" role="2OqNvi">
-                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -699,7 +699,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6QrrVJU_5UT" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~List.size():int" resolve="size" />
+                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
               </node>
             </node>
           </node>
@@ -734,7 +734,7 @@
     <node concept="312cEg" id="gLpw899" role="jymVt">
       <property role="TrG5h" value="_variable_" />
       <node concept="3uibUv" id="gLpw8Tx" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         <node concept="29HgVG" id="gLpxrku" role="lGtFl">
           <node concept="3NFfHV" id="h1Y94n8" role="3NFExx">
             <node concept="3clFbS" id="h1Y94n9" role="2VODD2">
@@ -769,12 +769,12 @@
                       <node concept="10QFUN" id="hZVkko3" role="1eOMHV">
                         <node concept="1iwH7S" id="hZVkko4" role="10QFUP" />
                         <node concept="3uibUv" id="hZVkko5" role="10QFUM">
-                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hZVkko6" role="2OqNvi">
-                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -808,12 +808,12 @@
                     <node concept="10QFUN" id="hRrq44n" role="1eOMHV">
                       <node concept="1iwH7S" id="hRrq44o" role="10QFUP" />
                       <node concept="3uibUv" id="hRrq44p" role="10QFUM">
-                        <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                        <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="hRrq44q" role="2OqNvi">
-                    <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                    <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                   </node>
                 </node>
               </node>
@@ -827,7 +827,7 @@
       <node concept="37vLTG" id="4D3RMlPNgh7" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="4D3RMlPNgh8" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
         <node concept="2b32R4" id="4D3RMlPNgh9" role="lGtFl">
           <node concept="3JmXsc" id="4D3RMlPNgha" role="2P8S$">
@@ -847,12 +847,12 @@
                         <node concept="10QFUN" id="4D3RMlPNghk" role="1eOMHV">
                           <node concept="1iwH7S" id="4D3RMlPNghl" role="10QFUP" />
                           <node concept="3uibUv" id="4D3RMlPNghm" role="10QFUM">
-                            <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                            <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="4D3RMlPNghn" role="2OqNvi">
-                        <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                        <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                       </node>
                     </node>
                   </node>
@@ -905,12 +905,12 @@
                           <node concept="10QFUN" id="4D3RMlPNghH" role="1eOMHV">
                             <node concept="1iwH7S" id="4D3RMlPNghI" role="10QFUP" />
                             <node concept="3uibUv" id="4D3RMlPNghJ" role="10QFUM">
-                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="4D3RMlPNghK" role="2OqNvi">
-                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -971,12 +971,12 @@
                                 <node concept="10QFUN" id="hRrq3Ar" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3As" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3At" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3Au" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1009,12 +1009,12 @@
                                     <node concept="10QFUN" id="hRrq3BG" role="1eOMHV">
                                       <node concept="1iwH7S" id="hRrq3BH" role="10QFUP" />
                                       <node concept="3uibUv" id="hRrq3BI" role="10QFUM">
-                                        <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                        <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="hRrq3BJ" role="2OqNvi">
-                                    <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                    <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                   </node>
                                 </node>
                               </node>
@@ -1067,12 +1067,12 @@
                                   <node concept="10QFUN" id="hRrq3j8" role="1eOMHV">
                                     <node concept="1iwH7S" id="hRrq3j9" role="10QFUP" />
                                     <node concept="3uibUv" id="hRrq3ja" role="10QFUM">
-                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="hRrq3jb" role="2OqNvi">
-                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                               </node>
                             </node>
@@ -1119,11 +1119,11 @@
           <node concept="3clFbF" id="gLzrIOF" role="3cqZAp">
             <node concept="2OqwBi" id="4D3RMlPNgfC" role="3clFbG">
               <node concept="10M0yZ" id="4D3RMlPNgfB" role="2Oq$k0">
-                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
               </node>
               <node concept="liA8E" id="4D3RMlPNgfG" role="2OqNvi">
-                <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
+                <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
               </node>
             </node>
             <node concept="2b32R4" id="gLzrIOH" role="lGtFl">
@@ -1146,7 +1146,7 @@
         <node concept="37vLTG" id="gLzrIOZ" role="3clF46">
           <property role="TrG5h" value="parm" />
           <node concept="3uibUv" id="gLzrIP0" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3Tm1VV" id="h9AO$q2" role="1B3o_S" />
@@ -1196,7 +1196,7 @@
       <node concept="312cEg" id="gL$1EHn" role="jymVt">
         <property role="TrG5h" value="_enclosingClass" />
         <node concept="3uibUv" id="gL$1EHo" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="hgueH1r" role="lGtFl">
             <node concept="3NFfHV" id="hgueH1s" role="3NFExx">
               <node concept="3clFbS" id="hgueH1t" role="2VODD2">
@@ -1210,12 +1210,12 @@
                         <node concept="10QFUN" id="hRrq2Gl" role="1eOMHV">
                           <node concept="1iwH7S" id="hRrq2Gm" role="10QFUP" />
                           <node concept="3uibUv" id="hRrq2Gn" role="10QFUM">
-                            <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                            <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="hRrq2Go" role="2OqNvi">
-                        <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                        <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                       </node>
                     </node>
                   </node>
@@ -1229,7 +1229,7 @@
       <node concept="312cEg" id="gLDnJ3$" role="jymVt">
         <property role="TrG5h" value="_closureContext" />
         <node concept="3uibUv" id="gLDnK7e" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="1ZhdrF" id="gLDobt0" role="lGtFl">
             <property role="2qtEX8" value="classifier" />
             <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
@@ -1247,12 +1247,12 @@
                           <node concept="10QFUN" id="hRrq2NM" role="1eOMHV">
                             <node concept="1iwH7S" id="hRrq2NN" role="10QFUP" />
                             <node concept="3uibUv" id="hRrq2NO" role="10QFUM">
-                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="hRrq2NP" role="2OqNvi">
-                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -1268,7 +1268,7 @@
         <node concept="37vLTG" id="4D3RMlPNfL3" role="3clF46">
           <property role="TrG5h" value="enclosingClass" />
           <node concept="3uibUv" id="4D3RMlPNfL4" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             <node concept="29HgVG" id="4D3RMlPNfL5" role="lGtFl">
               <node concept="3NFfHV" id="4D3RMlPNfL6" role="3NFExx">
                 <node concept="3clFbS" id="4D3RMlPNfL7" role="2VODD2">
@@ -1282,12 +1282,12 @@
                           <node concept="10QFUN" id="4D3RMlPNfLd" role="1eOMHV">
                             <node concept="1iwH7S" id="4D3RMlPNfLe" role="10QFUP" />
                             <node concept="3uibUv" id="4D3RMlPNfLf" role="10QFUM">
-                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="4D3RMlPNfLg" role="2OqNvi">
-                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -1300,7 +1300,7 @@
         <node concept="37vLTG" id="4D3RMlPNfLj" role="3clF46">
           <property role="TrG5h" value="closureContext" />
           <node concept="3uibUv" id="4D3RMlPNfLk" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3cqZAl" id="4D3RMlPNfK_" role="3clF45" />
@@ -1329,7 +1329,7 @@
               </node>
               <node concept="10QFUN" id="4D3RMlPNfKO" role="37vLTx">
                 <node concept="3uibUv" id="4D3RMlPNfKP" role="10QFUM">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   <node concept="1ZhdrF" id="4D3RMlPNfKQ" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
                     <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
@@ -1347,12 +1347,12 @@
                                   <node concept="10QFUN" id="4D3RMlPNfKY" role="1eOMHV">
                                     <node concept="1iwH7S" id="4D3RMlPNfKZ" role="10QFUP" />
                                     <node concept="3uibUv" id="4D3RMlPNfL0" role="10QFUM">
-                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="4D3RMlPNfL1" role="2OqNvi">
-                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                               </node>
                             </node>
@@ -1380,13 +1380,13 @@
       <node concept="37vLTG" id="4D3RMlPNghV" role="3clF46">
         <property role="TrG5h" value="enclosingClass" />
         <node concept="3uibUv" id="4D3RMlPNghW" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="4D3RMlPNghZ" role="3clF46">
         <property role="TrG5h" value="outerContext" />
         <node concept="3uibUv" id="4D3RMlPNgi0" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3cqZAl" id="4D3RMlPNghS" role="3clF45" />
@@ -1403,7 +1403,7 @@
       <node concept="312cEg" id="gL$ILXj" role="jymVt">
         <property role="TrG5h" value="_enclosingClass" />
         <node concept="3uibUv" id="gL$ILXk" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbW" id="20xx8pH6cI8" role="jymVt">
@@ -1481,12 +1481,12 @@
                                 <node concept="10QFUN" id="hRrq3rh" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3ri" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3rj" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3rk" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1512,12 +1512,12 @@
                                 <node concept="10QFUN" id="hRrq3nv" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3nw" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3nx" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3ny" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1541,7 +1541,7 @@
     <node concept="312cEg" id="gL$MVh5" role="jymVt">
       <property role="TrG5h" value="_field_" />
       <node concept="3uibUv" id="gL$MWav" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
     <node concept="3clFbW" id="20xx8pH6cI0" role="jymVt">
@@ -1597,12 +1597,12 @@
                                 <node concept="10QFUN" id="hRrq3rW" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3rX" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3rY" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3rZ" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1627,12 +1627,12 @@
                               <node concept="30H73N" id="h1Yd$Qk" role="37wK5m" />
                               <node concept="2OqwBi" id="hRrq3lB" role="37wK5m">
                                 <node concept="liA8E" id="hRrq3lG" role="2OqNvi">
-                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                                 <node concept="1eOMI4" id="4D3RMlPNhkA" role="2Oq$k0">
                                   <node concept="10QFUN" id="4D3RMlPNhkD" role="1eOMHV">
                                     <node concept="3uibUv" id="4D3RMlPNhkG" role="10QFUM">
-                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                     <node concept="1iwH7S" id="4D3RMlPNhkC" role="10QFUP" />
                                   </node>
@@ -1695,11 +1695,11 @@
             <node concept="3cpWsn" id="gLDDrZ3" role="3cpWs9">
               <property role="TrG5h" value="_closureContext" />
               <node concept="3uibUv" id="gLDDrZ4" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
               <node concept="2ShNRf" id="4D3RMlPNgeN" role="33vP2m">
                 <node concept="1pGfFk" id="4D3RMlPNgeP" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -1739,12 +1739,12 @@
                                 <node concept="10QFUN" id="hRrq34X" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq34Y" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq34Z" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq350" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1770,12 +1770,12 @@
                                 <node concept="10QFUN" id="hRrq3fW" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3fX" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3fY" role="10QFUM">
-                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3fZ" role="2OqNvi">
-                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1842,7 +1842,7 @@
         <node concept="37vLTG" id="gM3ARD8" role="3clF46">
           <property role="TrG5h" value="_parameter_" />
           <node concept="3uibUv" id="gM3ARD9" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3Tm1VV" id="h9AO$jo" role="1B3o_S" />

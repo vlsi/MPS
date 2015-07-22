@@ -6,9 +6,9 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -190,13 +190,13 @@
       <property role="TrG5h" value="T" />
     </node>
     <node concept="3uibUv" id="5Ffu4tBUxO$" role="3HQHJm">
-      <ref role="3uigEE" to="k7g3:~Queue" resolve="Queue" />
+      <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
       <node concept="16syzq" id="5Ffu4tBUxO_" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxOz" resolve="T" />
       </node>
     </node>
     <node concept="3uibUv" id="6gPw0iAPuKO" role="3HQHJm">
-      <ref role="3uigEE" to="k7g3:~Deque" resolve="Deque" />
+      <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
       <node concept="16syzq" id="6gPw0iAPvQa" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxOz" resolve="T" />
       </node>
@@ -232,7 +232,7 @@
       <property role="TrG5h" value="descendingIterator" />
       <node concept="3Tm1VV" id="5Ffu4tBUxON" role="1B3o_S" />
       <node concept="3uibUv" id="5Ffu4tBUxOO" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
+        <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
         <node concept="16syzq" id="5Ffu4tBUxOP" role="11_B2D">
           <ref role="16sUi3" node="5Ffu4tBUxOz" resolve="T" />
         </node>
@@ -358,7 +358,7 @@
       <node concept="37vLTG" id="5Ffu4tBUxPG" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="5Ffu4tBUxPH" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUxPI" role="3clF47" />
@@ -380,13 +380,13 @@
       <node concept="37vLTG" id="5Ffu4tBUxPQ" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="5Ffu4tBUxPR" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUxPS" role="3clF47" />
     </node>
     <node concept="2AHcQZ" id="3lc436X69pQ" role="2AJF6D">
-      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
     <node concept="3UR2Jj" id="3lc436X6e52" role="lGtFl">
       <node concept="TZ5HA" id="3lc436X6e53" role="TZ5H$">
@@ -396,7 +396,7 @@
         <node concept="1dT_AA" id="3lc436X6fAh" role="1dT_Ay">
           <node concept="92FcH" id="3lc436X6fAn" role="qph3F">
             <node concept="VXe08" id="3lc436X6j$m" role="92FcQ">
-              <ref role="VXe09" to="k7g3:~Deque" resolve="Deque" />
+              <ref role="VXe09" to="33ny:~Deque" resolve="Deque" />
             </node>
             <node concept="TZ5HA" id="3lc436X6fAr" role="2XjZqd" />
           </node>
@@ -415,7 +415,7 @@
       <property role="TrG5h" value="T" />
     </node>
     <node concept="3uibUv" id="5Ffu4tBUyZp" role="1zkMxy">
-      <ref role="3uigEE" to="k7g3:~LinkedList" resolve="LinkedList" />
+      <ref role="3uigEE" to="33ny:~LinkedList" resolve="LinkedList" />
       <node concept="16syzq" id="5Ffu4tBUyZq" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUyZo" resolve="T" />
       </node>
@@ -427,7 +427,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="5Ffu4tBUyZt" role="EKbjA">
-      <ref role="3uigEE" to="fxg7:~Serializable" resolve="Serializable" />
+      <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
     </node>
     <node concept="Wx3nA" id="5Ffu4tBUyZQ" role="jymVt">
       <property role="TrG5h" value="serialVersionUID" />
@@ -449,7 +449,7 @@
       <property role="TrG5h" value="descendingIterator" />
       <node concept="3Tm1VV" id="5Ffu4tBUz00" role="1B3o_S" />
       <node concept="3uibUv" id="5Ffu4tBUz01" role="3clF45">
-        <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
+        <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
         <node concept="16syzq" id="5Ffu4tBUz02" role="11_B2D">
           <ref role="16sUi3" node="5Ffu4tBUyZo" resolve="T" />
         </node>
@@ -463,9 +463,9 @@
                 <ref role="16sUi3" node="5Ffu4tBUyZo" resolve="T" />
               </node>
               <node concept="1rXfSq" id="4hiugqyz9RP" role="37wK5m">
-                <ref role="37wK5l" to="k7g3:~LinkedList.listIterator(int):java.util.ListIterator" resolve="listIterator" />
+                <ref role="37wK5l" to="33ny:~LinkedList.listIterator(int):java.util.ListIterator" resolve="listIterator" />
                 <node concept="1rXfSq" id="4hiugqyz3xe" role="37wK5m">
-                  <ref role="37wK5l" to="k7g3:~LinkedList.size():int" resolve="size" />
+                  <ref role="37wK5l" to="33ny:~LinkedList.size():int" resolve="size" />
                 </node>
               </node>
             </node>
@@ -473,7 +473,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0c" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0a" role="jymVt">
@@ -489,7 +489,7 @@
       <node concept="3clFbS" id="5Ffu4tBUz0f" role="3clF47">
         <node concept="3clFbF" id="5Ffu4tBUz0g" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz94Q" role="3clFbG">
-            <ref role="37wK5l" to="k7g3:~LinkedList.addFirst(java.lang.Object):void" resolve="addFirst" />
+            <ref role="37wK5l" to="33ny:~LinkedList.addFirst(java.lang.Object):void" resolve="addFirst" />
             <node concept="37vLTw" id="2BHiRxgm6Op" role="37wK5m">
               <ref role="3cqZAo" node="5Ffu4tBUz0d" resolve="t" />
             </node>
@@ -502,7 +502,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_09" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0l" role="jymVt">
@@ -518,7 +518,7 @@
       <node concept="3clFbS" id="5Ffu4tBUz0q" role="3clF47">
         <node concept="3clFbF" id="5Ffu4tBUz0r" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyZvB" role="3clFbG">
-            <ref role="37wK5l" to="k7g3:~LinkedList.addLast(java.lang.Object):void" resolve="addLast" />
+            <ref role="37wK5l" to="33ny:~LinkedList.addLast(java.lang.Object):void" resolve="addLast" />
             <node concept="37vLTw" id="2BHiRxgmJrA" role="37wK5m">
               <ref role="3cqZAo" node="5Ffu4tBUz0o" resolve="t" />
             </node>
@@ -531,7 +531,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0h" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0w" role="jymVt">
@@ -543,7 +543,7 @@
       <node concept="3clFbS" id="5Ffu4tBUz0z" role="3clF47">
         <node concept="3clFbJ" id="5Ffu4tBUz0$" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz5Zf" role="3clFbw">
-            <ref role="37wK5l" to="k7g3:~AbstractCollection.isEmpty():boolean" resolve="isEmpty" />
+            <ref role="37wK5l" to="33ny:~AbstractCollection.isEmpty():boolean" resolve="isEmpty" />
           </node>
           <node concept="3clFbS" id="5Ffu4tBUz0A" role="3clFbx">
             <node concept="3cpWs6" id="5Ffu4tBUz0B" role="3cqZAp">
@@ -553,12 +553,12 @@
         </node>
         <node concept="3cpWs6" id="5Ffu4tBUz0D" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyZvn" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.getFirst():java.lang.Object" resolve="getFirst" />
+            <ref role="37wK5l" to="33ny:~LinkedList.getFirst():java.lang.Object" resolve="getFirst" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0a" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0F" role="jymVt">
@@ -570,7 +570,7 @@
       <node concept="3clFbS" id="5Ffu4tBUz0I" role="3clF47">
         <node concept="3clFbJ" id="5Ffu4tBUz0J" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz9tt" role="3clFbw">
-            <ref role="37wK5l" to="k7g3:~AbstractCollection.isEmpty():boolean" resolve="isEmpty" />
+            <ref role="37wK5l" to="33ny:~AbstractCollection.isEmpty():boolean" resolve="isEmpty" />
           </node>
           <node concept="3clFbS" id="5Ffu4tBUz0L" role="3clFbx">
             <node concept="3cpWs6" id="5Ffu4tBUz0M" role="3cqZAp">
@@ -580,12 +580,12 @@
         </node>
         <node concept="3cpWs6" id="5Ffu4tBUz0O" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzhhR" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.getLast():java.lang.Object" resolve="getLast" />
+            <ref role="37wK5l" to="33ny:~LinkedList.getLast():java.lang.Object" resolve="getLast" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0b" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0Q" role="jymVt">
@@ -597,12 +597,12 @@
       <node concept="3clFbS" id="5Ffu4tBUz0T" role="3clF47">
         <node concept="3cpWs6" id="5Ffu4tBUz0U" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyziXK" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.getFirst():java.lang.Object" resolve="getFirst" />
+            <ref role="37wK5l" to="33ny:~LinkedList.getFirst():java.lang.Object" resolve="getFirst" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0g" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz0W" role="jymVt">
@@ -614,12 +614,12 @@
       <node concept="3clFbS" id="5Ffu4tBUz0Z" role="3clF47">
         <node concept="3cpWs6" id="5Ffu4tBUz10" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzdNx" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.getLast():java.lang.Object" resolve="getLast" />
+            <ref role="37wK5l" to="33ny:~LinkedList.getLast():java.lang.Object" resolve="getLast" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0j" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz12" role="jymVt">
@@ -631,12 +631,12 @@
       <node concept="3clFbS" id="5Ffu4tBUz15" role="3clF47">
         <node concept="3cpWs6" id="5Ffu4tBUz16" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzcNR" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.removeFirst():java.lang.Object" resolve="removeFirst" />
+            <ref role="37wK5l" to="33ny:~LinkedList.removeFirst():java.lang.Object" resolve="removeFirst" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0e" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz18" role="jymVt">
@@ -652,7 +652,7 @@
       <node concept="3clFbS" id="5Ffu4tBUz1d" role="3clF47">
         <node concept="3clFbF" id="5Ffu4tBUz1e" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz5Ax" role="3clFbG">
-            <ref role="37wK5l" to="k7g3:~LinkedList.addFirst(java.lang.Object):void" resolve="addFirst" />
+            <ref role="37wK5l" to="33ny:~LinkedList.addFirst(java.lang.Object):void" resolve="addFirst" />
             <node concept="37vLTw" id="2BHiRxghfvX" role="37wK5m">
               <ref role="3cqZAo" node="5Ffu4tBUz1b" resolve="t" />
             </node>
@@ -660,7 +660,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0i" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz1h" role="jymVt">
@@ -670,13 +670,13 @@
       <node concept="37vLTG" id="5Ffu4tBUz1k" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="5Ffu4tBUz1l" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUz1m" role="3clF47">
         <node concept="3cpWs6" id="5Ffu4tBUz1n" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz6ju" role="3cqZAk">
-            <ref role="37wK5l" to="k7g3:~LinkedList.remove(java.lang.Object):boolean" resolve="remove" />
+            <ref role="37wK5l" to="33ny:~LinkedList.remove(java.lang.Object):boolean" resolve="remove" />
             <node concept="37vLTw" id="2BHiRxglQ$O" role="37wK5m">
               <ref role="3cqZAo" node="5Ffu4tBUz1k" resolve="o" />
             </node>
@@ -684,7 +684,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0d" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUz1q" role="jymVt">
@@ -694,7 +694,7 @@
       <node concept="37vLTG" id="5Ffu4tBUz1t" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="5Ffu4tBUz1u" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUz1v" role="3clF47">
@@ -704,18 +704,18 @@
               <ref role="3cqZAo" node="5Ffu4tBUz1$" resolve="li" />
             </node>
             <node concept="liA8E" id="5Ffu4tBUz1z" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~ListIterator.hasPrevious():boolean" resolve="hasPrevious" />
+              <ref role="37wK5l" to="33ny:~ListIterator.hasPrevious():boolean" resolve="hasPrevious" />
             </node>
           </node>
           <node concept="3cpWsn" id="5Ffu4tBUz1$" role="1Duv9x">
             <property role="TrG5h" value="li" />
             <node concept="3uibUv" id="5Ffu4tBUz1_" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~ListIterator" resolve="ListIterator" />
+              <ref role="3uigEE" to="33ny:~ListIterator" resolve="ListIterator" />
             </node>
             <node concept="1rXfSq" id="4hiugqyzc89" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~LinkedList.listIterator(int):java.util.ListIterator" resolve="listIterator" />
+              <ref role="37wK5l" to="33ny:~LinkedList.listIterator(int):java.util.ListIterator" resolve="listIterator" />
               <node concept="1rXfSq" id="4hiugqyyYhe" role="37wK5m">
-                <ref role="37wK5l" to="k7g3:~LinkedList.size():int" resolve="size" />
+                <ref role="37wK5l" to="33ny:~LinkedList.size():int" resolve="size" />
               </node>
             </node>
           </node>
@@ -732,7 +732,7 @@
                     <ref role="3cqZAo" node="5Ffu4tBUz1$" resolve="li" />
                   </node>
                   <node concept="liA8E" id="5Ffu4tBUz1I" role="2OqNvi">
-                    <ref role="37wK5l" to="k7g3:~ListIterator.previous():java.lang.Object" resolve="previous" />
+                    <ref role="37wK5l" to="33ny:~ListIterator.previous():java.lang.Object" resolve="previous" />
                   </node>
                 </node>
               </node>
@@ -743,7 +743,7 @@
                       <ref role="3cqZAo" node="5Ffu4tBUz1$" resolve="li" />
                     </node>
                     <node concept="liA8E" id="5Ffu4tBUz1N" role="2OqNvi">
-                      <ref role="37wK5l" to="k7g3:~ListIterator.remove():void" resolve="remove" />
+                      <ref role="37wK5l" to="33ny:~ListIterator.remove():void" resolve="remove" />
                     </node>
                   </node>
                 </node>
@@ -761,7 +761,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_0f" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2YIFZL" id="5Ffu4tBUz1S" role="jymVt">
@@ -771,13 +771,13 @@
       <node concept="37vLTG" id="5Ffu4tBUz1V" role="3clF46">
         <property role="TrG5h" value="a" />
         <node concept="3uibUv" id="5Ffu4tBUz1W" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="5Ffu4tBUz1X" role="3clF46">
         <property role="TrG5h" value="b" />
         <node concept="3uibUv" id="5Ffu4tBUz1Y" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUz1Z" role="3clF47">
@@ -794,7 +794,7 @@
                 <ref role="3cqZAo" node="5Ffu4tBUz1V" resolve="a" />
               </node>
               <node concept="liA8E" id="5Ffu4tBUz27" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="37vLTw" id="2BHiRxgha2q" role="37wK5m">
                   <ref role="3cqZAo" node="5Ffu4tBUz1X" resolve="b" />
                 </node>
@@ -819,7 +819,7 @@
         <property role="TrG5h" value="U" />
       </node>
       <node concept="3uibUv" id="5Ffu4tBUyZx" role="EKbjA">
-        <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
+        <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
         <node concept="16syzq" id="5Ffu4tBUyZy" role="11_B2D">
           <ref role="16sUi3" node="5Ffu4tBUyZw" resolve="U" />
         </node>
@@ -827,7 +827,7 @@
       <node concept="312cEg" id="5Ffu4tBUyZz" role="jymVt">
         <property role="TrG5h" value="listIterator" />
         <node concept="3uibUv" id="5Ffu4tBUyZ$" role="1tU5fm">
-          <ref role="3uigEE" to="k7g3:~ListIterator" resolve="ListIterator" />
+          <ref role="3uigEE" to="33ny:~ListIterator" resolve="ListIterator" />
           <node concept="16syzq" id="5Ffu4tBUyZ_" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUyZw" resolve="U" />
           </node>
@@ -840,7 +840,7 @@
         <node concept="37vLTG" id="5Ffu4tBUyZE" role="3clF46">
           <property role="TrG5h" value="listIterator" />
           <node concept="3uibUv" id="5Ffu4tBUyZF" role="1tU5fm">
-            <ref role="3uigEE" to="k7g3:~ListIterator" resolve="ListIterator" />
+            <ref role="3uigEE" to="33ny:~ListIterator" resolve="ListIterator" />
             <node concept="16syzq" id="5Ffu4tBUyZG" role="11_B2D">
               <ref role="16sUi3" node="5Ffu4tBUyZw" resolve="U" />
             </node>
@@ -873,13 +873,13 @@
                 <ref role="3cqZAo" node="5Ffu4tBUyZz" resolve="listIterator" />
               </node>
               <node concept="liA8E" id="5Ffu4tBUz2n" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~ListIterator.hasPrevious():boolean" resolve="hasPrevious" />
+                <ref role="37wK5l" to="33ny:~ListIterator.hasPrevious():boolean" resolve="hasPrevious" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_SfoV" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="5Ffu4tBUyZK" role="jymVt">
@@ -895,13 +895,13 @@
                 <ref role="3cqZAo" node="5Ffu4tBUyZz" resolve="listIterator" />
               </node>
               <node concept="liA8E" id="5Ffu4tBUz2s" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~ListIterator.previous():java.lang.Object" resolve="previous" />
+                <ref role="37wK5l" to="33ny:~ListIterator.previous():java.lang.Object" resolve="previous" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_SfoW" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="5Ffu4tBUyZN" role="jymVt">
@@ -915,13 +915,13 @@
                 <ref role="3cqZAo" node="5Ffu4tBUyZz" resolve="listIterator" />
               </node>
               <node concept="liA8E" id="5Ffu4tBUz2x" role="2OqNvi">
-                <ref role="37wK5l" to="k7g3:~ListIterator.remove():void" resolve="remove" />
+                <ref role="37wK5l" to="33ny:~ListIterator.remove():void" resolve="remove" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_SfoX" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -934,7 +934,7 @@
           <node concept="1dT_AA" id="3lc436X4eH1" role="1dT_Ay">
             <node concept="92FcH" id="3lc436X4eH7" role="qph3F">
               <node concept="VXe08" id="3lc436X4iF6" role="92FcQ">
-                <ref role="VXe09" to="k7g3:~LinkedList" resolve="LinkedList" />
+                <ref role="VXe09" to="33ny:~LinkedList" resolve="LinkedList" />
               </node>
               <node concept="TZ5HA" id="3lc436X4eHb" role="2XjZqd" />
             </node>
@@ -946,7 +946,7 @@
       </node>
     </node>
     <node concept="2AHcQZ" id="3lc436X4cGI" role="2AJF6D">
-      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
 </model>

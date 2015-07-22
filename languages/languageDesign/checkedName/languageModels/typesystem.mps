@@ -8,11 +8,11 @@
   </languages>
   <imports>
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="y51d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.checkedName(MPS.Editor/jetbrains.mps.checkedName@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="ttfg" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.checkedName(MPS.Editor/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="mjwp" ref="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -216,8 +216,8 @@
           <node concept="3clFbJ" id="4cWf37B8oYx" role="3cqZAp">
             <node concept="3fqX7Q" id="4cWf37B8oYy" role="3clFbw">
               <node concept="2YIFZM" id="4cWf37B8oYz" role="3fr31v">
-                <ref role="37wK5l" to="msyo:~NameUtil.satisfiesPartNamingPolicy(java.lang.String):boolean" resolve="satisfiesPartNamingPolicy" />
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.satisfiesPartNamingPolicy(java.lang.String):boolean" resolve="satisfiesPartNamingPolicy" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <node concept="2OqwBi" id="4cWf37B8oY$" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTvMj" role="2Oq$k0">
                     <ref role="3cqZAo" node="4cWf37B8oYZ" resolve="s" />
@@ -314,7 +314,7 @@
                   <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                 </node>
                 <node concept="liA8E" id="4cWf37B8oZa" role="2OqNvi">
-                  <ref role="37wK5l" to="y51d:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
+                  <ref role="37wK5l" to="ttfg:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
                 </node>
               </node>
             </node>
@@ -322,14 +322,14 @@
           <node concept="3clFbJ" id="4cWf37B8oZb" role="3cqZAp">
             <node concept="3fqX7Q" id="4cWf37B8oZc" role="3clFbw">
               <node concept="2YIFZM" id="4cWf37B8oZd" role="3fr31v">
-                <ref role="37wK5l" to="msyo:~NameUtil.satisfiesNamingPolicy(java.lang.String):boolean" resolve="satisfiesNamingPolicy" />
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.satisfiesNamingPolicy(java.lang.String):boolean" resolve="satisfiesNamingPolicy" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <node concept="2OqwBi" id="4cWf37B8oZe" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTAwK" role="2Oq$k0">
                     <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                   </node>
                   <node concept="liA8E" id="4cWf37B8oZg" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
                   </node>
                 </node>
               </node>
@@ -355,7 +355,7 @@
                     <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                   </node>
                   <node concept="liA8E" id="4cWf37B8oZr" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTxMP" role="a7wSD">
@@ -376,7 +376,7 @@
                       <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                     </node>
                     <node concept="liA8E" id="4cWf37B8oZz" role="2OqNvi">
-                      <ref role="37wK5l" to="y51d:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
+                      <ref role="37wK5l" to="ttfg:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
                     </node>
                   </node>
                 </node>
@@ -391,14 +391,14 @@
                     <ref role="QkamJ" node="1qqzrpLeR1o" resolve="caption" />
                     <node concept="3cpWs3" id="4cWf37B8oZC" role="3CoRuB">
                       <node concept="2YIFZM" id="4cWf37B8oZD" role="3uHU7w">
-                        <ref role="37wK5l" to="msyo:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
-                        <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                        <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
+                        <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                         <node concept="2OqwBi" id="4cWf37B8oZE" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTzWq" role="2Oq$k0">
                             <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                           </node>
                           <node concept="liA8E" id="4cWf37B8oZG" role="2OqNvi">
-                            <ref role="37wK5l" to="y51d:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
+                            <ref role="37wK5l" to="ttfg:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
                           </node>
                         </node>
                       </node>
@@ -419,7 +419,7 @@
                     <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                   </node>
                   <node concept="liA8E" id="4cWf37B8oZM" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                   </node>
                 </node>
                 <node concept="2PiL5Q" id="4cWf37B8oZN" role="2OEWyd">
@@ -428,7 +428,7 @@
                       <ref role="3cqZAo" node="4cWf37B8oZU" resolve="p" />
                     </node>
                     <node concept="liA8E" id="4cWf37B8oZQ" role="2OqNvi">
-                      <ref role="37wK5l" to="y51d:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
+                      <ref role="37wK5l" to="ttfg:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
                     </node>
                   </node>
                 </node>
@@ -522,7 +522,7 @@
       <node concept="3cpWs6" id="4cWf37B8p0m" role="3cqZAp">
         <node concept="2c44tf" id="4cWf37B8p0n" role="3cqZAk">
           <node concept="3uibUv" id="4cWf37B8p0o" role="2c44tc">
-            <ref role="3uigEE" to="y51d:~PropertyReference" resolve="PropertyReference" />
+            <ref role="3uigEE" to="ttfg:~PropertyReference" resolve="PropertyReference" />
           </node>
         </node>
       </node>
@@ -556,8 +556,8 @@
                 </node>
                 <node concept="tyxLq" id="1qqzrpLeR0h" role="2OqNvi">
                   <node concept="2YIFZM" id="1qqzrpLeR0i" role="tz02z">
-                    <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                    <ref role="37wK5l" to="msyo:~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionPartWithNamingPolicy" />
+                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                    <ref role="37wK5l" to="18ew:~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionPartWithNamingPolicy" />
                     <node concept="2OqwBi" id="1qqzrpLeR0j" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagTzJ1" role="2Oq$k0">
                         <ref role="3cqZAo" node="1qqzrpLeR0p" resolve="s" />
@@ -592,14 +592,14 @@
               <node concept="3cpWsn" id="1qqzrpLeR0u" role="3cpWs9">
                 <property role="TrG5h" value="value" />
                 <node concept="2YIFZM" id="5CFnob0Pbaq" role="33vP2m">
-                  <ref role="1Pybhc" to="ec5l:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                  <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String" resolve="getProperty" />
+                  <ref role="1Pybhc" to="mhbf:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
+                  <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String" resolve="getProperty" />
                   <node concept="2OqwBi" id="5CFnob0Pbar" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTuxa" role="2Oq$k0">
                       <ref role="3cqZAo" node="1qqzrpLeR0U" resolve="p" />
                     </node>
                     <node concept="liA8E" id="5CFnob0Pbat" role="2OqNvi">
-                      <ref role="37wK5l" to="y51d:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="ttfg:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5CFnob0Pbau" role="37wK5m">
@@ -607,7 +607,7 @@
                       <ref role="3cqZAo" node="1qqzrpLeR0U" resolve="p" />
                     </node>
                     <node concept="liA8E" id="5CFnob0Pbaw" role="2OqNvi">
-                      <ref role="37wK5l" to="y51d:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
+                      <ref role="37wK5l" to="ttfg:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
                     </node>
                   </node>
                 </node>
@@ -619,8 +619,8 @@
                 <property role="TrG5h" value="newValue" />
                 <node concept="17QB3L" id="1qqzrpLeR0E" role="1tU5fm" />
                 <node concept="2YIFZM" id="1qqzrpLeR0F" role="33vP2m">
-                  <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                  <ref role="37wK5l" to="msyo:~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionWithNamingPolicy" />
+                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                  <ref role="37wK5l" to="18ew:~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionWithNamingPolicy" />
                   <node concept="37vLTw" id="3GM_nagTB7J" role="37wK5m">
                     <ref role="3cqZAo" node="1qqzrpLeR0u" resolve="value" />
                   </node>
@@ -629,14 +629,14 @@
             </node>
             <node concept="3clFbF" id="1qqzrpLeR0H" role="3cqZAp">
               <node concept="2YIFZM" id="5CFnob0Pbe3" role="3clFbG">
-                <ref role="1Pybhc" to="ec5l:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String):void" resolve="setProperty" />
+                <ref role="1Pybhc" to="mhbf:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
+                <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String):void" resolve="setProperty" />
                 <node concept="2OqwBi" id="5CFnob0Pbe4" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTAWW" role="2Oq$k0">
                     <ref role="3cqZAo" node="1qqzrpLeR0U" resolve="p" />
                   </node>
                   <node concept="liA8E" id="5CFnob0Pbe6" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="5CFnob0Pbe7" role="37wK5m">
@@ -644,7 +644,7 @@
                     <ref role="3cqZAo" node="1qqzrpLeR0U" resolve="p" />
                   </node>
                   <node concept="liA8E" id="5CFnob0Pbe9" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getProperty():java.lang.String" resolve="getProperty" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTvl8" role="37wK5m">
@@ -696,8 +696,8 @@
           <node concept="2OqwBi" id="1qqzrpLeR1a" role="3clFbG">
             <node concept="tyxLq" id="1qqzrpLeR1b" role="2OqNvi">
               <node concept="2YIFZM" id="1qqzrpLeR1c" role="tz02z">
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                <ref role="37wK5l" to="msyo:~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionPartWithNamingPolicy" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.captionPartWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionPartWithNamingPolicy" />
                 <node concept="2OqwBi" id="1qqzrpLeR1d" role="37wK5m">
                   <node concept="QwW4i" id="1qqzrpLeR1e" role="2Oq$k0">
                     <ref role="QwW4h" node="1qqzrpLeR15" resolve="literal" />
@@ -748,16 +748,16 @@
               <ref role="QwW4h" node="1qqzrpLeR1q" resolve="property" />
             </node>
             <node concept="liA8E" id="1qqzrpLeR1x" role="2OqNvi">
-              <ref role="37wK5l" to="y51d:~PropertyReference.setValue(java.lang.String):void" resolve="setValue" />
+              <ref role="37wK5l" to="ttfg:~PropertyReference.setValue(java.lang.String):void" resolve="setValue" />
               <node concept="2YIFZM" id="1qqzrpLeR1y" role="37wK5m">
-                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                <ref role="37wK5l" to="msyo:~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionWithNamingPolicy" />
+                <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                <ref role="37wK5l" to="18ew:~NameUtil.captionWithNamingPolicy(java.lang.String):java.lang.String" resolve="captionWithNamingPolicy" />
                 <node concept="2OqwBi" id="1qqzrpLeR1z" role="37wK5m">
                   <node concept="QwW4i" id="1qqzrpLeR1$" role="2Oq$k0">
                     <ref role="QwW4h" node="1qqzrpLeR1q" resolve="property" />
                   </node>
                   <node concept="liA8E" id="1qqzrpLeR1_" role="2OqNvi">
-                    <ref role="37wK5l" to="y51d:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
+                    <ref role="37wK5l" to="ttfg:~PropertyReference.getValue():java.lang.String" resolve="getValue" />
                   </node>
                 </node>
               </node>

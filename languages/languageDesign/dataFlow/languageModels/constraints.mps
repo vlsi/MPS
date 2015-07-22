@@ -13,7 +13,7 @@
   <imports>
     <import index="tp41" ref="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </imports>
   <registry>
@@ -194,11 +194,11 @@
         <node concept="3clFbF" id="hQOdwLX" role="3cqZAp">
           <node concept="2OqwBi" id="hQOdwLY" role="3clFbG">
             <node concept="Rm8GO" id="hQOd$Kc" role="2Oq$k0">
-              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+              <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+              <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
             </node>
             <node concept="liA8E" id="hQOdwM0" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
               <node concept="2JrnkZ" id="6MGyrQSowZs" role="37wK5m">
                 <node concept="1Q6Npb" id="hQOdwM1" role="2JrQYb" />
               </node>

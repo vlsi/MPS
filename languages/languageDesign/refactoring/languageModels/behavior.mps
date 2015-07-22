@@ -12,15 +12,15 @@
     <import index="tp1h" ref="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="5fm0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" implicit="true" />
+    <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -346,7 +346,7 @@
         <node concept="3clFbF" id="65fYhwGpPl5" role="3cqZAp">
           <node concept="2c44tf" id="65fYhwGpPl6" role="3clFbG">
             <node concept="3uibUv" id="65fYhwGpPla" role="2c44tc">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
           </node>
         </node>
@@ -371,7 +371,7 @@
         <node concept="3clFbF" id="65fYhwGpPli" role="3cqZAp">
           <node concept="2c44tf" id="65fYhwGpPlj" role="3clFbG">
             <node concept="3uibUv" id="65fYhwGpPlm" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
@@ -569,7 +569,7 @@
         <node concept="3clFbF" id="65fYhwGpPlG" role="3cqZAp">
           <node concept="2c44tf" id="65fYhwGpPlH" role="3clFbG">
             <node concept="3uibUv" id="65fYhwGpPlJ" role="2c44tc">
-              <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+              <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
             </node>
           </node>
         </node>
@@ -594,7 +594,7 @@
         <node concept="3clFbF" id="65fYhwGpPlZ" role="3cqZAp">
           <node concept="2c44tf" id="65fYhwGpPm0" role="3clFbG">
             <node concept="3uibUv" id="65fYhwGpPm2" role="2c44tc">
-              <ref role="3uigEE" to="jrbx:~MPSProject" resolve="MPSProject" />
+              <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
             </node>
           </node>
         </node>
@@ -619,7 +619,7 @@
         <node concept="3clFbF" id="65fYhwGpPma" role="3cqZAp">
           <node concept="2c44tf" id="65fYhwGpPmb" role="3clFbG">
             <node concept="3uibUv" id="6LpCX$U1ts_" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SearchScope" resolve="SearchScope" />
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
             </node>
           </node>
         </node>
@@ -644,7 +644,7 @@
         <node concept="3clFbF" id="72p_rFnslwE" role="3cqZAp">
           <node concept="2c44tf" id="72p_rFnslwF" role="3clFbG">
             <node concept="3uibUv" id="4My7loym4oX" role="2c44tc">
-              <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
           </node>
         </node>
@@ -1002,7 +1002,7 @@
         <node concept="3cpWs6" id="$yZ68hB6Cz" role="3cqZAp">
           <node concept="2c44tf" id="$yZ68hB6yQ" role="3cqZAk">
             <node concept="3uibUv" id="hutad9S" role="2c44tc">
-              <ref role="3uigEE" to="5fm0:~SearchResults" resolve="SearchResults" />
+              <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />
             </node>
           </node>
         </node>
@@ -1486,7 +1486,7 @@
         <node concept="3clFbF" id="59D800tSCfe" role="3cqZAp">
           <node concept="2c44tf" id="59D800tSCff" role="3clFbG">
             <node concept="3uibUv" id="59D800tSCzk" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
           </node>
         </node>

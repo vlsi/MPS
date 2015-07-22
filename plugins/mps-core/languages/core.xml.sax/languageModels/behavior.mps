@@ -10,12 +10,12 @@
     <import index="nv7r" ref="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="fmpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax(JDK/org.xml.sax@java_stub)" />
+    <import index="kart" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -401,7 +401,7 @@
                   </node>
                   <node concept="2c44tf" id="$yZ68hBYoo" role="HW$Y0">
                     <node concept="3uibUv" id="1QEstvw48In" role="2c44tc">
-                      <ref role="3uigEE" to="fmpa:~SAXException" resolve="SAXException" />
+                      <ref role="3uigEE" to="kart:~SAXException" resolve="SAXException" />
                     </node>
                   </node>
                 </node>
@@ -590,7 +590,7 @@
           <node concept="1Wc70l" id="460OzqriVAv" role="3clFbw">
             <node concept="2OqwBi" id="460Ozqrj0jT" role="3uHU7w">
               <node concept="liA8E" id="460Ozqrj3Rq" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="prKvN" id="460Ozqrj46g" role="37wK5m">
                   <ref role="prhl4" to="nv7r:1XGsQcRHubo" resolve="XMLSAXChildRule" />
                   <ref role="prhl7" to="nv7r:fz7wK6I" />
@@ -598,7 +598,7 @@
               </node>
               <node concept="2OqwBi" id="460OzqriXjq" role="2Oq$k0">
                 <node concept="liA8E" id="460OzqriYgz" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                  <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
                 </node>
                 <node concept="2JrnkZ" id="460OzqriXdF" role="2Oq$k0">
                   <node concept="37vLTw" id="460OzqriVOM" role="2JrQYb">
@@ -738,7 +738,7 @@
               <ref role="3cqZAo" node="460Ozqrjbg6" resolve="role" />
             </node>
             <node concept="liA8E" id="460Ozqrjfx0" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="prKvN" id="460Ozqrjfx1" role="37wK5m">
                 <ref role="prhl7" to="nv7r:fz7wK6I" />
                 <ref role="prhl4" to="nv7r:1XGsQcRHubo" resolve="XMLSAXChildRule" />
@@ -828,7 +828,7 @@
             </node>
             <node concept="2c44tf" id="1XGsQcRHufV" role="3K4GZi">
               <node concept="3uibUv" id="1XGsQcRHufW" role="2c44tc">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
           </node>
@@ -1051,7 +1051,7 @@
                   </node>
                   <node concept="2c44tf" id="$yZ68hBYpk" role="HW$Y0">
                     <node concept="3uibUv" id="1XGsQcRHubC" role="2c44tc">
-                      <ref role="3uigEE" to="fmpa:~SAXException" resolve="SAXException" />
+                      <ref role="3uigEE" to="kart:~SAXException" resolve="SAXException" />
                     </node>
                   </node>
                 </node>
@@ -1403,7 +1403,7 @@
                   </node>
                   <node concept="2c44tf" id="$yZ68hBYoG" role="HW$Y0">
                     <node concept="3uibUv" id="460OzqrVpbc" role="2c44tc">
-                      <ref role="3uigEE" to="fmpa:~SAXException" resolve="SAXException" />
+                      <ref role="3uigEE" to="kart:~SAXException" resolve="SAXException" />
                     </node>
                   </node>
                 </node>

@@ -14,9 +14,9 @@
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="qjxg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-    <import index="eupq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   </imports>
   <registry>
@@ -231,7 +231,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="h3sA56X" role="1zkMxy">
-      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
+      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
       <node concept="29HgVG" id="h3sA56Y" role="lGtFl">
         <node concept="3NFfHV" id="h3sA56Z" role="3NFExx">
           <node concept="3clFbS" id="h3sA570" role="2VODD2">
@@ -254,7 +254,7 @@
                 <node concept="3cpWs6" id="h_VzkFx" role="3cqZAp">
                   <node concept="2c44tf" id="h_Vzn6O" role="3cqZAk">
                     <node concept="3uibUv" id="h_VzorW" role="2c44tc">
-                      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
+                      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
                     </node>
                   </node>
                 </node>
@@ -621,7 +621,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="h3sA57w" role="Sfmx6">
-        <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
       <node concept="3Tm1VV" id="h9AOQsg" role="1B3o_S" />
       <node concept="2AHcQZ" id="7THlWl_mYjQ" role="2AJF6D">
@@ -648,8 +648,8 @@
     <ref role="3gUMe" to="tpe3:h3vlDh2" resolve="AssertEquals" />
     <node concept="3clFbF" id="h3vovNO" role="13RCb5">
       <node concept="2YIFZM" id="UtZ9hSL7jt" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String,java.lang.String):void" resolve="assertEquals" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertEquals(java.lang.String,java.lang.String,java.lang.String):void" resolve="assertEquals" />
         <node concept="Xl_RD" id="UtZ9hSL7ju" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="UtZ9hSL7jv" role="lGtFl">
@@ -738,8 +738,8 @@
     <ref role="3gUMe" to="tpe3:h3vwNi3" resolve="AssertTrue" />
     <node concept="3clFbF" id="h3vxiIU" role="13RCb5">
       <node concept="2YIFZM" id="h3vxknF" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertTrue(java.lang.String,boolean):void" resolve="assertTrue" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertTrue(java.lang.String,boolean):void" resolve="assertTrue" />
         <node concept="Xl_RD" id="692cUnf6U8x" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6U8y" role="lGtFl">
@@ -811,8 +811,8 @@
     <ref role="3gUMe" to="tpe3:h3vFxO8" resolve="AssertFalse" />
     <node concept="3clFbF" id="h3vFX7j" role="13RCb5">
       <node concept="2YIFZM" id="h3vFY6N" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertFalse(java.lang.String,boolean):void" resolve="assertFalse" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertFalse(java.lang.String,boolean):void" resolve="assertFalse" />
         <node concept="Xl_RD" id="692cUnf6TM8" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TM9" role="lGtFl">
@@ -884,8 +884,8 @@
     <ref role="3gUMe" to="tpe3:h3vMLX3" resolve="AssertSame" />
     <node concept="3clFbF" id="h3vNfvf" role="13RCb5">
       <node concept="2YIFZM" id="h3vNgBy" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertSame(java.lang.String,java.lang.Object,java.lang.Object):void" resolve="assertSame" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertSame(java.lang.String,java.lang.Object,java.lang.Object):void" resolve="assertSame" />
         <node concept="Xl_RD" id="692cUnf6TNc" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TNd" role="lGtFl">
@@ -974,8 +974,8 @@
     <ref role="3gUMe" to="tpe3:h3xETia" resolve="Fail" />
     <node concept="3clFbF" id="h3xFRgJ" role="13RCb5">
       <node concept="2YIFZM" id="h3xFS9q" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.fail(java.lang.String):void" resolve="fail" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.fail(java.lang.String):void" resolve="fail" />
         <node concept="Xl_RD" id="692cUnf72hy" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf72hC" role="lGtFl">
@@ -1030,8 +1030,8 @@
     <ref role="3gUMe" to="tpe3:h3ykFEh" resolve="AssertIsNull" />
     <node concept="3clFbF" id="h3ylpCm" role="13RCb5">
       <node concept="2YIFZM" id="h3ylt6M" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertNull(java.lang.String,java.lang.Object):void" resolve="assertNull" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertNull(java.lang.String,java.lang.Object):void" resolve="assertNull" />
         <node concept="Xl_RD" id="692cUnf6TMO" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TMP" role="lGtFl">
@@ -1148,7 +1148,7 @@
         <node concept="3cpWsn" id="h3_k8lB" role="TDEfY">
           <property role="TrG5h" value="e" />
           <node concept="3uibUv" id="h3_k8lC" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+            <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
             <node concept="29HgVG" id="h3_k8lD" role="lGtFl">
               <node concept="3NFfHV" id="h3_k8lE" role="3NFExx">
                 <node concept="3clFbS" id="h3_k8lF" role="2VODD2">
@@ -1182,8 +1182,8 @@
     <ref role="3gUMe" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
     <node concept="3clFbF" id="692cUnf6I4l" role="13RCb5">
       <node concept="2YIFZM" id="692cUnf6I4x" role="3clFbG">
-        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-        <ref role="37wK5l" to="eupq:~Assert.assertNotNull(java.lang.String,java.lang.Object):void" resolve="assertNotNull" />
+        <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="u132:~Assert.assertNotNull(java.lang.String,java.lang.Object):void" resolve="assertNotNull" />
         <node concept="Xl_RD" id="692cUnf6TMu" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TMv" role="lGtFl">

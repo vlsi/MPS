@@ -68,12 +68,12 @@
       <node id="7704855178166514891" at="68,65,69,63" concept="3" />
       <node id="7704855178166514891" at="69,63,70,30" concept="3" />
       <node id="7704855178166514891" at="70,30,71,227" concept="1" />
-      <node id="7704855178166514891" at="71,227,72,529" concept="1" />
-      <node id="7704855178166514891" at="72,529,73,24" concept="4" />
+      <node id="7704855178166514891" at="71,227,72,455" concept="1" />
+      <node id="7704855178166514891" at="72,455,73,24" concept="4" />
       <node id="4120418308311043819" at="27,0,29,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4120418308311043819" at="40,0,42,0" concept="6" trace="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Z)V" />
-      <node id="7704855178166514891" at="70,30,72,529" concept="0" />
-      <node id="7704855178166514891" at="70,30,72,529" concept="0" />
+      <node id="7704855178166514891" at="70,30,72,455" concept="0" />
+      <node id="7704855178166514891" at="70,30,72,455" concept="0" />
       <node id="2832018561209150776" at="31,53,34,7" concept="2" />
       <node id="4120418308311043819" at="46,0,49,0" concept="6" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="4120418308311043819" at="49,0,52,0" concept="6" trace="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -105,7 +105,7 @@
       <scope id="3331512479731115652" at="42,119,44,18">
         <var name="result" id="3331512479731121370" />
       </scope>
-      <scope id="7704855178166514891" at="70,30,72,529" />
+      <scope id="7704855178166514891" at="70,30,72,455" />
       <scope id="4120418308311043819" at="46,0,49,0">
         <var name="thisNode" id="4120418308311043819" />
       </scope>

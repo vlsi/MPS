@@ -9,8 +9,8 @@
   <imports>
     <import index="v0h4" ref="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)" />
     <import index="eyn7" ref="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="epq1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(java.math@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math()" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </imports>
   <registry>
@@ -187,7 +187,7 @@
       <node concept="3cpWs6" id="3d6x66$tF6P" role="3cqZAp">
         <node concept="2c44tf" id="3d6x66$tF6R" role="3cqZAk">
           <node concept="3uibUv" id="3d6x66$tF6U" role="2c44tc">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -204,7 +204,7 @@
         <node concept="mw_s8" id="$lsh0EhDby" role="1ZfhKB">
           <node concept="2c44tf" id="$lsh0EhDbu" role="mwGJk">
             <node concept="3uibUv" id="$lsh0EhEWE" role="2c44tc">
-              <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
+              <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
             </node>
           </node>
         </node>
@@ -308,7 +308,7 @@
           <node concept="2c44tf" id="3u6SZi0GsxR" role="mwGJk">
             <node concept="A3Dl8" id="3u6SZi0Gszv" role="2c44tc">
               <node concept="3uibUv" id="3u6SZi0Gs$k" role="A3Ik2">
-                <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
+                <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
               </node>
             </node>
           </node>

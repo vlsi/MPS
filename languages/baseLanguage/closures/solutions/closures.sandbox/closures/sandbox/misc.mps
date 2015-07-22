@@ -9,9 +9,9 @@
   </languages>
   <imports>
     <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -122,7 +122,7 @@
       <node concept="37vLTG" id="hLK5_1K" role="3clF46">
         <property role="TrG5h" value="duration" />
         <node concept="3uibUv" id="hLK5_1L" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
         </node>
       </node>
       <node concept="17QB3L" id="hP4bF9B" role="3clF45" />
@@ -146,7 +146,7 @@
       <node concept="37vLTG" id="hMY1a7y" role="3clF46">
         <property role="TrG5h" value="duration" />
         <node concept="3uibUv" id="hMY1a7z" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
         </node>
       </node>
       <node concept="17QB3L" id="hP4bFc5" role="3clF45" />
@@ -157,7 +157,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXt7" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -178,11 +178,11 @@
           <node concept="3cpWsn" id="2SPaJIPRUE1" role="3cpWs9">
             <property role="TrG5h" value="rec" />
             <node concept="3uibUv" id="2SPaJIPRUE2" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~Rectangle" resolve="Rectangle" />
+              <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
             </node>
             <node concept="2ShNRf" id="2SPaJIPRUE4" role="33vP2m">
               <node concept="1pGfFk" id="2SPaJIPRUE5" role="2ShVmc">
-                <ref role="37wK5l" to="1t7x:~Rectangle.&lt;init&gt;(int,int,int,int)" resolve="Rectangle" />
+                <ref role="37wK5l" to="z60i:~Rectangle.&lt;init&gt;(int,int,int,int)" resolve="Rectangle" />
                 <node concept="3cmrfG" id="2SPaJIPRUE6" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                 </node>
@@ -203,11 +203,11 @@
           <node concept="3cpWsn" id="2SPaJIPRTqf" role="3cpWs9">
             <property role="TrG5h" value="dim" />
             <node concept="3uibUv" id="2SPaJIPRTqg" role="1tU5fm">
-              <ref role="3uigEE" to="1t7x:~Dimension" resolve="Dimension" />
+              <ref role="3uigEE" to="z60i:~Dimension" resolve="Dimension" />
             </node>
             <node concept="2ShNRf" id="2SPaJIPRTqi" role="33vP2m">
               <node concept="1pGfFk" id="2SPaJIPRTqj" role="2ShVmc">
-                <ref role="37wK5l" to="1t7x:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
+                <ref role="37wK5l" to="z60i:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
                 <node concept="3cmrfG" id="2SPaJIPRTqk" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                 </node>
@@ -225,7 +225,7 @@
                 <ref role="3cqZAo" node="2SPaJIPRTqf" resolve="dim" />
               </node>
               <node concept="2OwXpG" id="2SPaJIPRUEs" role="2OqNvi">
-                <ref role="2Oxat5" to="1t7x:~Dimension.width" resolve="width" />
+                <ref role="2Oxat5" to="z60i:~Dimension.width" resolve="width" />
               </node>
             </node>
             <node concept="2OqwBi" id="2SPaJIPRUEf" role="37vLTJ">
@@ -233,7 +233,7 @@
                 <ref role="3cqZAo" node="2SPaJIPRUE1" resolve="rec" />
               </node>
               <node concept="2OwXpG" id="2SPaJIPRUEj" role="2OqNvi">
-                <ref role="2Oxat5" to="1t7x:~Rectangle.x" resolve="x" />
+                <ref role="2Oxat5" to="z60i:~Rectangle.x" resolve="x" />
               </node>
             </node>
           </node>
@@ -245,7 +245,7 @@
                 <ref role="3cqZAo" node="2SPaJIPRTqf" resolve="dim" />
               </node>
               <node concept="2OwXpG" id="2SPaJIPRUEH" role="2OqNvi">
-                <ref role="2Oxat5" to="1t7x:~Dimension.height" resolve="height" />
+                <ref role="2Oxat5" to="z60i:~Dimension.height" resolve="height" />
               </node>
             </node>
             <node concept="2OqwBi" id="2SPaJIPRUEw" role="37vLTJ">
@@ -253,7 +253,7 @@
                 <ref role="3cqZAo" node="2SPaJIPRUE1" resolve="rec" />
               </node>
               <node concept="2OwXpG" id="2SPaJIPRUE$" role="2OqNvi">
-                <ref role="2Oxat5" to="1t7x:~Rectangle.y" resolve="y" />
+                <ref role="2Oxat5" to="z60i:~Rectangle.y" resolve="y" />
               </node>
             </node>
           </node>
@@ -270,11 +270,11 @@
             <property role="TrG5h" value="o" />
             <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="2SPaJIPRYjF" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
             <node concept="2ShNRf" id="2SPaJIPRUEU" role="33vP2m">
               <node concept="1pGfFk" id="2SPaJIPRUEV" role="2ShVmc">
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
               </node>
             </node>
           </node>
@@ -284,8 +284,8 @@
             <node concept="YeOm9" id="2SPaJIPRUF0" role="2ShVmc">
               <node concept="1Y3b0j" id="2SPaJIPRUF1" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
                 <node concept="3Tm1VV" id="2SPaJIPRUF2" role="1B3o_S" />
                 <node concept="312cEg" id="2SPaJIPRUFj" role="jymVt">
                   <property role="TrG5h" value="h" />
@@ -295,7 +295,7 @@
                       <ref role="3cqZAo" node="2SPaJIPRUER" resolve="o" />
                     </node>
                     <node concept="liA8E" id="2SPaJIPRYjL" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Object.hashCode():int" resolve="hashCode" />
+                      <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
                     </node>
                   </node>
                   <node concept="10Oyi0" id="2SPaJIPRYjG" role="1tU5fm" />
@@ -308,11 +308,11 @@
                     <node concept="3clFbF" id="2SPaJIPRYjR" role="3cqZAp">
                       <node concept="2OqwBi" id="2SPaJIPRYjS" role="3clFbG">
                         <node concept="10M0yZ" id="2SPaJIPRYjT" role="2Oq$k0">
-                          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
                         </node>
                         <node concept="liA8E" id="2SPaJIPRYjU" role="2OqNvi">
-                          <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+                          <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
                           <node concept="2OqwBi" id="2SPaJIPRYk2" role="37wK5m">
                             <node concept="2OwXpG" id="2SPaJIPRYk3" role="2OqNvi">
                               <ref role="2Oxat5" node="2SPaJIPRUFj" resolve="h" />
@@ -324,7 +324,7 @@
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="3tYsUK_UoWu" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>

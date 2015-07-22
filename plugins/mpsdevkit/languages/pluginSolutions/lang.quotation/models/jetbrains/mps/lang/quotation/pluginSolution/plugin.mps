@@ -11,8 +11,8 @@
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -121,7 +121,7 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM8Vf" role="1NuT2Z">
       <property role="TrG5h" value="component" />
-      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.CONTEXT_COMPONENT" resolve="CONTEXT_COMPONENT" />
+      <ref role="1DUlNI" to="qkt:~PlatformDataKeys.CONTEXT_COMPONENT" resolve="CONTEXT_COMPONENT" />
       <node concept="1oajcY" id="4KDfkUwM8Vg" role="1oa70y" />
     </node>
     <node concept="tnohg" id="4KDfkUwM8Vh" role="tncku">
@@ -145,8 +145,8 @@
         </node>
         <node concept="3clFbF" id="4KDfkUwM8Vr" role="3cqZAp">
           <node concept="2YIFZM" id="4KDfkUwM8Vs" role="3clFbG">
-            <ref role="37wK5l" to="dbrf:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
-            <ref role="1Pybhc" to="dbrf:~JOptionPane" resolve="JOptionPane" />
+            <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
+            <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
             <node concept="2OqwBi" id="4KDfkUwM8Vt" role="37wK5m">
               <node concept="2WthIp" id="4KDfkUwM8Vu" role="2Oq$k0" />
               <node concept="1DTwFV" id="4KDfkUwM8Vv" role="2OqNvi">

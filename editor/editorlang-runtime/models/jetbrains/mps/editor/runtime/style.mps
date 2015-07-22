@@ -7,7 +7,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
   </imports>
   <registry>
@@ -135,7 +135,7 @@
       <node concept="37vLTG" id="1ObOLrjiGr9" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiGra" role="1tU5fm">
-          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ObOLrjiFDI" role="1B3o_S" />
@@ -156,7 +156,7 @@
       <node concept="37vLTG" id="1ObOLrjiNuX" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiNuY" role="1tU5fm">
-          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="37vLTG" id="1ObOLrjiNuZ" role="3clF46">
@@ -185,7 +185,7 @@
       <node concept="37vLTG" id="1ObOLrjiNAm" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiNAn" role="1tU5fm">
-          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="37vLTG" id="1ObOLrjiNAo" role="3clF46">

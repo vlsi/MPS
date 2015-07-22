@@ -6,8 +6,8 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="6k24" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.validation(MPS.Core/jetbrains.mps.project.validation@java_stub)" />
-    <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
   </imports>
   <registry>
@@ -134,9 +134,9 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="w2yda4ezrC" role="1B3o_S" />
       <node concept="3uibUv" id="w2yda4ezsT" role="1tU5fm">
-        <ref role="3uigEE" to="z8de:~Processor" resolve="Processor" />
+        <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
         <node concept="3uibUv" id="w2yda4ezua" role="11_B2D">
-          <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
         </node>
       </node>
     </node>
@@ -159,9 +159,9 @@
       <node concept="37vLTG" id="w2yda4ezwQ" role="3clF46">
         <property role="TrG5h" value="processor" />
         <node concept="3uibUv" id="w2yda4ezwO" role="1tU5fm">
-          <ref role="3uigEE" to="z8de:~Processor" resolve="Processor" />
+          <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
           <node concept="3uibUv" id="w2yda4ezwP" role="11_B2D">
-            <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+            <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
           </node>
         </node>
       </node>
@@ -177,7 +177,7 @@
       <node concept="37vLTG" id="w2yda4ezoT" role="3clF46">
         <property role="TrG5h" value="problem" />
         <node concept="3uibUv" id="w2yda4ezoV" role="1tU5fm">
-          <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
         </node>
       </node>
       <node concept="3clFbS" id="w2yda4ezoW" role="3clF47">
@@ -191,7 +191,7 @@
                   <ref role="3cqZAo" node="w2yda4ezve" resolve="myProcessor" />
                 </node>
                 <node concept="liA8E" id="w2yda4e$nM" role="2OqNvi">
-                  <ref role="37wK5l" to="z8de:~Processor.process(java.lang.Object):boolean" resolve="process" />
+                  <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
                   <node concept="37vLTw" id="w2yda4e$rg" role="37wK5m">
                     <ref role="3cqZAo" node="w2yda4ezoT" resolve="problem" />
                   </node>
@@ -203,7 +203,7 @@
             <node concept="1eOMI4" id="w2yda4ezGB" role="3fr31v">
               <node concept="2ZW3vV" id="w2yda4ezIn" role="1eOMHV">
                 <node concept="3uibUv" id="w2yda4ezJR" role="2ZW6by">
-                  <ref role="3uigEE" to="6k24:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
                 </node>
                 <node concept="37vLTw" id="w2yda4ezHp" role="2ZW6bz">
                   <ref role="3cqZAo" node="w2yda4ezoT" resolve="problem" />
@@ -223,12 +223,12 @@
                     <ref role="3cqZAo" node="w2yda4ezoT" resolve="problem" />
                   </node>
                   <node concept="3uibUv" id="w2yda4e$HL" role="10QFUM">
-                    <ref role="3uigEE" to="6k24:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                    <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="w2yda4e$HM" role="2OqNvi">
-                <ref role="37wK5l" to="6k24:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
               </node>
             </node>
           </node>
@@ -257,7 +257,7 @@
               <ref role="3cqZAo" node="w2yda4ezve" resolve="myProcessor" />
             </node>
             <node concept="liA8E" id="w2yda4f6pw" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~Processor.process(java.lang.Object):boolean" resolve="process" />
+              <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
               <node concept="37vLTw" id="w2yda4f6px" role="37wK5m">
                 <ref role="3cqZAo" node="w2yda4ezoT" resolve="problem" />
               </node>
@@ -268,9 +268,9 @@
     </node>
     <node concept="3Tm1VV" id="w2yda4eyF9" role="1B3o_S" />
     <node concept="3uibUv" id="w2yda4eznF" role="EKbjA">
-      <ref role="3uigEE" to="z8de:~Processor" resolve="Processor" />
+      <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
       <node concept="3uibUv" id="w2yda4eznZ" role="11_B2D">
-        <ref role="3uigEE" to="6k24:~ValidationProblem" resolve="ValidationProblem" />
+        <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
       </node>
     </node>
   </node>

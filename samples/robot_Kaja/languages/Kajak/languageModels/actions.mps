@@ -11,7 +11,7 @@
   </languages>
   <imports>
     <import index="c2kz" ref="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -478,7 +478,7 @@
                 <node concept="2OqwBi" id="6tmz5v672sc" role="3clFbw">
                   <node concept="uNquD" id="6tmz5v672rR" role="2Oq$k0" />
                   <node concept="liA8E" id="6tmz5v672si" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="Xl_RD" id="6tmz5v672sj" role="37wK5m">
                       <property role="Xl_RC" value="heading" />
                     </node>
@@ -488,7 +488,7 @@
                   <node concept="2OqwBi" id="6tmz5v672t9" role="3eO9$A">
                     <node concept="uNquD" id="6tmz5v672sO" role="2Oq$k0" />
                     <node concept="liA8E" id="6tmz5v672tf" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="6tmz5v672tg" role="37wK5m">
                         <property role="Xl_RC" value="mark" />
                       </node>
@@ -515,7 +515,7 @@
                   <node concept="2OqwBi" id="JFO1DNuYLc" role="3eO9$A">
                     <node concept="uNquD" id="JFO1DNuYKR" role="2Oq$k0" />
                     <node concept="liA8E" id="JFO1DNuYVU" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="JFO1DNuYVV" role="37wK5m">
                         <property role="Xl_RC" value="full" />
                       </node>
@@ -558,7 +558,7 @@
                   <node concept="2OqwBi" id="2MeG3eCe73H" role="3eO9$A">
                     <node concept="uNquD" id="2MeG3eCe73o" role="2Oq$k0" />
                     <node concept="liA8E" id="2MeG3eCe7er" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="2MeG3eCe7es" role="37wK5m">
                         <property role="Xl_RC" value="wall" />
                       </node>
@@ -568,7 +568,7 @@
                 <node concept="3eNFk2" id="67X5IgzD8eT" role="3eNLev">
                   <node concept="2OqwBi" id="67X5IgzD9Dj" role="3eO9$A">
                     <node concept="liA8E" id="67X5IgzDcyu" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="Xl_RD" id="67X5IgzDc$D" role="37wK5m">
                         <property role="Xl_RC" value="looking" />
                       </node>
@@ -597,7 +597,7 @@
                     <node concept="YS8fn" id="67X5IgzD8eV" role="3cqZAp">
                       <node concept="2ShNRf" id="67X5IgzD8eW" role="YScLw">
                         <node concept="1pGfFk" id="67X5IgzD8eX" role="2ShVmc">
-                          <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                          <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                           <node concept="3cpWs3" id="67X5IgzD8eY" role="37wK5m">
                             <node concept="uNquD" id="67X5IgzD8eZ" role="3uHU7w" />
                             <node concept="Xl_RD" id="67X5IgzD8f0" role="3uHU7B">

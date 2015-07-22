@@ -17,7 +17,7 @@
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -930,7 +930,7 @@
         <node concept="mw_s8" id="ObbTRzs$YU" role="1ZfhKB">
           <node concept="2c44tf" id="ObbTRzs$YV" role="mwGJk">
             <node concept="3uibUv" id="ObbTRztrWN" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
@@ -956,7 +956,7 @@
         <node concept="mw_s8" id="ObbTRzs_12" role="1ZfhKB">
           <node concept="2c44tf" id="ObbTRztBaf" role="mwGJk">
             <node concept="3uibUv" id="ObbTRztBcE" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
@@ -1161,7 +1161,7 @@
         <node concept="mw_s8" id="18ftwC4d_xb" role="1ZfhKB">
           <node concept="2c44tf" id="18ftwC4d_x7" role="mwGJk">
             <node concept="3uibUv" id="18ftwC4d_z9" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
             </node>
           </node>
         </node>
@@ -1183,7 +1183,7 @@
         <node concept="mw_s8" id="iZqVFY$YT4" role="1ZfhKB">
           <node concept="2c44tf" id="iZqVFY$YT5" role="mwGJk">
             <node concept="3uibUv" id="18ftwC4d_A5" role="2c44tc">
-              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
             </node>
           </node>
         </node>

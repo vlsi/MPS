@@ -10,9 +10,9 @@
   <imports>
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
   </imports>
   <registry>
@@ -184,7 +184,7 @@
                     <ref role="3cqZAo" node="7IHlAc70Zhz" resolve="fqName" />
                   </node>
                   <node concept="liA8E" id="7IHlAc70ZhX" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                    <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                     <node concept="3cpWs3" id="7IHlAc70ZhY" role="37wK5m">
                       <node concept="3cmrfG" id="7IHlAc70ZhZ" role="3uHU7w">
                         <property role="3cmrfH" value="1" />
@@ -194,7 +194,7 @@
                           <ref role="3cqZAo" node="7IHlAc70ZhF" resolve="packageName" />
                         </node>
                         <node concept="liA8E" id="7IHlAc70Zi2" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                          <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                         </node>
                       </node>
                     </node>
@@ -221,7 +221,7 @@
               <ref role="3cqZAo" node="7IHlAc70Zhz" resolve="fqName" />
             </node>
             <node concept="liA8E" id="7IHlAc70Zi8" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+              <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
               <node concept="3cpWs3" id="7IHlAc70Zi9" role="37wK5m">
                 <node concept="Xl_RD" id="7IHlAc70Zia" role="3uHU7w">
                   <property role="Xl_RC" value="." />
@@ -311,8 +311,8 @@
         <node concept="3clFbF" id="i3QP2ov" role="3cqZAp">
           <node concept="3cpWs3" id="i3QP2ox" role="3clFbG">
             <node concept="2YIFZM" id="i3QP2oy" role="3uHU7w">
-              <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
-              <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
               <node concept="37vLTw" id="2BHiRxghg9K" role="37wK5m">
                 <ref role="3cqZAo" node="i3QP2oC" resolve="o" />
               </node>
@@ -334,7 +334,7 @@
       <node concept="37vLTG" id="i3QP2oC" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="i3QP2oD" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
     </node>
@@ -417,7 +417,7 @@
       <node concept="37vLTG" id="i3QQr_0" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="i3QQr_1" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3cqZAl" id="i3QQr_2" role="3clF45" />
@@ -431,7 +431,7 @@
               </node>
             </node>
             <node concept="liA8E" id="i3QQr_9" role="2OqNvi">
-              <ref role="37wK5l" to="ec5l:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
+              <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
               <node concept="Xjq3P" id="i3QQr_a" role="37wK5m" />
               <node concept="37vLTw" id="2BHiRxgm8ES" role="37wK5m">
                 <ref role="3cqZAo" node="i3QQr_0" resolve="value" />
@@ -453,14 +453,14 @@
               </node>
             </node>
             <node concept="liA8E" id="i3QQr_j" role="2OqNvi">
-              <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+              <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
               <node concept="Xjq3P" id="i3QQr_k" role="37wK5m" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="i3QQr_l" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="37vLTG" id="i3QQr_m" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -481,7 +481,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="i3QQr_x" role="2OqNvi">
-                <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
                 <node concept="Xjq3P" id="i3QQr_y" role="37wK5m" />
               </node>
             </node>

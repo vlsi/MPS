@@ -11,7 +11,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="6xgk" ref="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
@@ -337,14 +337,14 @@
                       </node>
                     </node>
                     <node concept="2YIFZM" id="6Gn$TkOxPO8" role="3uHU7w">
-                      <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
-                      <ref role="37wK5l" to="e2lb:~Integer.toString(int):java.lang.String" resolve="toString" />
+                      <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
+                      <ref role="37wK5l" to="wyt6:~Integer.toString(int):java.lang.String" resolve="toString" />
                       <node concept="2YIFZM" id="4MUSpJu90__" role="37wK5m">
-                        <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
-                        <ref role="37wK5l" to="e2lb:~Math.abs(int):int" resolve="abs" />
+                        <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                        <ref role="37wK5l" to="wyt6:~Math.abs(int):int" resolve="abs" />
                         <node concept="2OqwBi" id="6Gn$TkOxPOa" role="37wK5m">
                           <node concept="liA8E" id="6Gn$TkOxPOc" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.hashCode():int" resolve="hashCode" />
+                            <ref role="37wK5l" to="wyt6:~String.hashCode():int" resolve="hashCode" />
                           </node>
                           <node concept="2OqwBi" id="4MUSpJu8Zns" role="2Oq$k0">
                             <node concept="37vLTw" id="2BHiRxgm9EL" role="2Oq$k0">
@@ -384,7 +384,7 @@
                                 <ref role="3cqZAo" node="3yfK3xXHBMC" resolve="baseName" />
                               </node>
                               <node concept="liA8E" id="2lOCDx$azZ$" role="2OqNvi">
-                                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                 <node concept="2OqwBi" id="2lOCDx$azXJ" role="37wK5m">
                                   <node concept="1PxgMI" id="2lOCDx$azY5" role="2Oq$k0">
                                     <ref role="1PxNhF" to="tpee:fz3uBXI" resolve="VariableDeclaration" />

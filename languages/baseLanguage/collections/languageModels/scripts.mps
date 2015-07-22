@@ -14,8 +14,8 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -306,13 +306,13 @@
                 <node concept="Tc6Ow" id="i04NufG" role="2ShVmc">
                   <node concept="3Tqbb2" id="i04NufH" role="HW$YZ" />
                   <node concept="3B5_sB" id="i04Nwjx" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~List" resolve="List" />
+                    <ref role="3B5MYn" to="33ny:~List" resolve="List" />
                   </node>
                   <node concept="3B5_sB" id="i04NxKo" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~ArrayList" resolve="ArrayList" />
+                    <ref role="3B5MYn" to="33ny:~ArrayList" resolve="ArrayList" />
                   </node>
                   <node concept="3B5_sB" id="i04N$8V" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~LinkedList" resolve="LinkedList" />
+                    <ref role="3B5MYn" to="33ny:~LinkedList" resolve="LinkedList" />
                   </node>
                 </node>
               </node>
@@ -1895,13 +1895,13 @@
                 <node concept="Tc6Ow" id="i0fPF$F" role="2ShVmc">
                   <node concept="3Tqbb2" id="i0fPF$G" role="HW$YZ" />
                   <node concept="3B5_sB" id="i0fPF$H" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~Set" resolve="Set" />
+                    <ref role="3B5MYn" to="33ny:~Set" resolve="Set" />
                   </node>
                   <node concept="3B5_sB" id="i0fPF$I" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~HashSet" resolve="HashSet" />
+                    <ref role="3B5MYn" to="33ny:~HashSet" resolve="HashSet" />
                   </node>
                   <node concept="3B5_sB" id="i33FHkA" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~LinkedHashSet" resolve="LinkedHashSet" />
+                    <ref role="3B5MYn" to="33ny:~LinkedHashSet" resolve="LinkedHashSet" />
                   </node>
                 </node>
               </node>
@@ -2772,7 +2772,7 @@
                 <node concept="Tc6Ow" id="i1Vc8B4" role="2ShVmc">
                   <node concept="3Tqbb2" id="i1Vc8B5" role="HW$YZ" />
                   <node concept="3B5_sB" id="i1Vc8B6" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~Iterator" resolve="Iterator" />
+                    <ref role="3B5MYn" to="33ny:~Iterator" resolve="Iterator" />
                   </node>
                 </node>
               </node>
@@ -3882,10 +3882,10 @@
                 <node concept="Tc6Ow" id="i1tm0kR" role="2ShVmc">
                   <node concept="3Tqbb2" id="i1tm0kS" role="HW$YZ" />
                   <node concept="3B5_sB" id="i1tm0kT" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~Map" resolve="Map" />
+                    <ref role="3B5MYn" to="33ny:~Map" resolve="Map" />
                   </node>
                   <node concept="3B5_sB" id="i1tm0kU" role="HW$Y0">
-                    <ref role="3B5MYn" to="k7g3:~HashMap" resolve="HashMap" />
+                    <ref role="3B5MYn" to="33ny:~HashMap" resolve="HashMap" />
                   </node>
                 </node>
               </node>
@@ -4491,7 +4491,7 @@
                   <node concept="_YI3z" id="1eApgdEHLGZ" role="2JrQYb" />
                 </node>
                 <node concept="liA8E" id="38Q9nYyUDH_" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+                  <ref role="37wK5l" to="mhbf:~SNode.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
                   <node concept="Xl_RD" id="1eApgdEHM9p" role="37wK5m">
                     <property role="Xl_RC" value="value" />
                   </node>

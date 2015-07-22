@@ -15,8 +15,8 @@
     <import index="fq2o" ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="nu8v" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
+    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -1127,26 +1127,26 @@
             <node concept="3cpWsn" id="3_Z1D7UzvIL" role="3cpWs9">
               <property role="TrG5h" value="action" />
               <node concept="3uibUv" id="3_Z1D7UzvIC" role="1tU5fm">
-                <ref role="3uigEE" to="nu8v:~CellAction" resolve="CellAction" />
+                <ref role="3uigEE" to="f4zo:~CellAction" resolve="CellAction" />
               </node>
               <node concept="2OqwBi" id="3_Z1D7UzvIM" role="33vP2m">
                 <node concept="2OqwBi" id="3_Z1D7UzvIN" role="2Oq$k0">
                   <node concept="2OqwBi" id="3_Z1D7UzvIO" role="2Oq$k0">
                     <node concept="1Q80Hx" id="3_Z1D7UzvIP" role="2Oq$k0" />
                     <node concept="liA8E" id="3_Z1D7UzvIQ" role="2OqNvi">
-                      <ref role="37wK5l" to="srng:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
                     </node>
                   </node>
                   <node concept="liA8E" id="3_Z1D7UzvIR" role="2OqNvi">
-                    <ref role="37wK5l" to="srng:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findNodeCell" />
+                    <ref role="37wK5l" to="cj4x:~EditorComponent.findNodeCell(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findNodeCell" />
                     <node concept="0IXxy" id="3_Z1D7UzvIS" role="37wK5m" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3_Z1D7UzvIT" role="2OqNvi">
-                  <ref role="37wK5l" to="nu8v:~EditorCell.getAction(jetbrains.mps.openapi.editor.cells.CellActionType):jetbrains.mps.openapi.editor.cells.CellAction" resolve="getAction" />
+                  <ref role="37wK5l" to="f4zo:~EditorCell.getAction(jetbrains.mps.openapi.editor.cells.CellActionType):jetbrains.mps.openapi.editor.cells.CellAction" resolve="getAction" />
                   <node concept="Rm8GO" id="3_Z1D7UzvIU" role="37wK5m">
-                    <ref role="Rm8GQ" to="nu8v:~CellActionType.DELETE" resolve="DELETE" />
-                    <ref role="1Px2BO" to="nu8v:~CellActionType" resolve="CellActionType" />
+                    <ref role="Rm8GQ" to="f4zo:~CellActionType.DELETE" resolve="DELETE" />
+                    <ref role="1Px2BO" to="f4zo:~CellActionType" resolve="CellActionType" />
                   </node>
                 </node>
               </node>
@@ -1160,7 +1160,7 @@
                     <ref role="3cqZAo" node="3_Z1D7UzvIL" resolve="action" />
                   </node>
                   <node concept="liA8E" id="3_Z1D7Uzy65" role="2OqNvi">
-                    <ref role="37wK5l" to="nu8v:~CellAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                    <ref role="37wK5l" to="f4zo:~CellAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                     <node concept="1Q80Hx" id="3_Z1D7Uzy6E" role="37wK5m" />
                   </node>
                 </node>
@@ -1173,7 +1173,7 @@
                   <ref role="3cqZAo" node="3_Z1D7UzvIL" resolve="action" />
                 </node>
                 <node concept="liA8E" id="3_Z1D7UzxGL" role="2OqNvi">
-                  <ref role="37wK5l" to="nu8v:~CellAction.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+                  <ref role="37wK5l" to="f4zo:~CellAction.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
                   <node concept="1Q80Hx" id="3_Z1D7UzxI8" role="37wK5m" />
                 </node>
               </node>

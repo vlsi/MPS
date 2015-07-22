@@ -8,13 +8,13 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
-    <import index="y5px" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -190,7 +190,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="5OeL7ncckJx" role="1B3o_S" />
       <node concept="3uibUv" id="5OeL7nccllm" role="1tU5fm">
-        <ref role="3uigEE" to="y5px:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
+        <ref role="3uigEE" to="ap4t:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
       </node>
     </node>
     <node concept="3clFbW" id="7UozGIENpId" role="jymVt">
@@ -301,7 +301,7 @@
       <node concept="37vLTG" id="5OeL7ncc90V" role="3clF46">
         <property role="TrG5h" value="optionsBuilder" />
         <node concept="3uibUv" id="5OeL7ncck1L" role="1tU5fm">
-          <ref role="3uigEE" to="y5px:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
+          <ref role="3uigEE" to="ap4t:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
         </node>
       </node>
     </node>
@@ -341,7 +341,7 @@
                     </node>
                   </node>
                   <node concept="3VsKOn" id="KL8Aqll4cR" role="37wK5m">
-                    <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -396,14 +396,14 @@
                 <node concept="1LlUBW" id="7V$GMzHGXZt" role="1tU5fm">
                   <node concept="10P_77" id="7V$GMzHGXZu" role="1Lm7xW" />
                   <node concept="3uibUv" id="7V$GMzHGZI_" role="1Lm7xW">
-                    <ref role="3uigEE" to="y5px:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
+                    <ref role="3uigEE" to="ap4t:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
                   </node>
                 </node>
                 <node concept="10QFUN" id="7V$GMzHGXZw" role="33vP2m">
                   <node concept="1LlUBW" id="7V$GMzHGXZx" role="10QFUM">
                     <node concept="10P_77" id="7V$GMzHGXZy" role="1Lm7xW" />
                     <node concept="3uibUv" id="7V$GMzHGZI$" role="1Lm7xW">
-                      <ref role="3uigEE" to="y5px:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
+                      <ref role="3uigEE" to="ap4t:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="7V$GMzHGXZ$" role="10QFUP">
@@ -421,7 +421,7 @@
                         </node>
                       </node>
                       <node concept="3VsKOn" id="7V$GMzHGZFb" role="37wK5m">
-                        <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                        <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                       </node>
                     </node>
                   </node>
@@ -518,14 +518,14 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="7UozGIEP8WL" role="1B3o_S" />
       <node concept="3uibUv" id="7UozGIEPmWB" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
     </node>
     <node concept="312cEg" id="7UozGIEP8Xn" role="jymVt">
       <property role="TrG5h" value="myDebugInfo" />
       <node concept="3Tm6S6" id="7UozGIEP8Xo" role="1B3o_S" />
       <node concept="3uibUv" id="7UozGIEPmWN" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
       </node>
     </node>
     <node concept="3clFbW" id="7UozGIEOUu1" role="jymVt">
@@ -577,7 +577,7 @@
       <node concept="37vLTG" id="7UozGIEPn15" role="3clF46">
         <property role="TrG5h" value="fail" />
         <node concept="3uibUv" id="7UozGIEPn14" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
       </node>
     </node>
@@ -605,7 +605,7 @@
       <node concept="37vLTG" id="7UozGIEPsmq" role="3clF46">
         <property role="TrG5h" value="needDebug" />
         <node concept="3uibUv" id="7UozGIEPsmp" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
       </node>
     </node>
@@ -643,7 +643,7 @@
                     </node>
                   </node>
                   <node concept="3VsKOn" id="72ouys9JWqU" role="37wK5m">
-                    <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -680,19 +680,19 @@
             <property role="TrG5h" value="tparams" />
             <node concept="1LlUBW" id="6gBOL9KCKhY" role="1tU5fm">
               <node concept="3uibUv" id="6B3XByVedmD" role="1Lm7xW">
-                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
               </node>
               <node concept="3uibUv" id="7UozGIEPtCY" role="1Lm7xW">
-                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
               </node>
             </node>
             <node concept="10QFUN" id="6gBOL9KCKi2" role="33vP2m">
               <node concept="1LlUBW" id="6gBOL9KCKi3" role="10QFUM">
                 <node concept="3uibUv" id="6B3XByVedmF" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
                 <node concept="3uibUv" id="7UozGIEPtjN" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
               </node>
               <node concept="2OqwBi" id="6gBOL9KCKi7" role="10QFUP">
@@ -710,7 +710,7 @@
                     </node>
                   </node>
                   <node concept="3VsKOn" id="6gBOL9KCKid" role="37wK5m">
-                    <ref role="3VsUkX" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>

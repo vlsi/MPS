@@ -11,11 +11,11 @@
   <imports>
     <import index="nwdh" ref="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)" />
     <import index="c5w2" ref="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)" />
-    <import index="9m56" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.traceInfo(MPS.Core/jetbrains.mps.generator.traceInfo@java_stub)" />
+    <import index="kv4y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.traceInfo(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="a2l1" ref="r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)" />
-    <import index="ierg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" implicit="true" />
+    <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -406,18 +406,18 @@
                     <node concept="10QFUN" id="2g7jLxiwHMN" role="JAdkl">
                       <node concept="3Tqbb2" id="2g7jLxiwHMQ" role="10QFUM" />
                       <node concept="2YIFZM" id="2swde3nL7qA" role="10QFUP">
-                        <ref role="1Pybhc" to="9m56:~TraceInfoUtil" resolve="TraceInfoUtil" />
-                        <ref role="37wK5l" to="9m56:~TraceInfoUtil.getNode(java.lang.String,java.lang.String,int):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                        <ref role="1Pybhc" to="kv4y:~TraceInfoUtil" resolve="TraceInfoUtil" />
+                        <ref role="37wK5l" to="kv4y:~TraceInfoUtil.getNode(java.lang.String,java.lang.String,int):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                         <node concept="2OqwBi" id="4RRGlPmpLQz" role="37wK5m">
                           <node concept="2YIFZM" id="4RRGlPmpKbo" role="2Oq$k0">
-                            <ref role="37wK5l" to="ierg:~TraceInfo.unitNames(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="unitNames" />
-                            <ref role="1Pybhc" to="ierg:~TraceInfo" resolve="TraceInfo" />
+                            <ref role="37wK5l" to="fwk:~TraceInfo.unitNames(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="unitNames" />
+                            <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
                             <node concept="37vLTw" id="4RRGlPmpKbp" role="37wK5m">
                               <ref role="3cqZAo" node="2swde3nL7qZ" resolve="root" />
                             </node>
                           </node>
                           <node concept="liA8E" id="4RRGlPmpOaG" role="2OqNvi">
-                            <ref role="37wK5l" to="k7g3:~List.get(int):java.lang.Object" resolve="get" />
+                            <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
                             <node concept="3cmrfG" id="4RRGlPmpOI0" role="37wK5m">
                               <property role="3cmrfH" value="0" />
                             </node>
@@ -526,18 +526,18 @@
                         <node concept="10QFUN" id="2g7jLxiwHMR" role="JAdkl">
                           <node concept="3Tqbb2" id="2g7jLxiwHMU" role="10QFUM" />
                           <node concept="2YIFZM" id="2swde3nL7rI" role="10QFUP">
-                            <ref role="1Pybhc" to="9m56:~TraceInfoUtil" resolve="TraceInfoUtil" />
-                            <ref role="37wK5l" to="9m56:~TraceInfoUtil.getNode(java.lang.String,java.lang.String,int):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                            <ref role="1Pybhc" to="kv4y:~TraceInfoUtil" resolve="TraceInfoUtil" />
+                            <ref role="37wK5l" to="kv4y:~TraceInfoUtil.getNode(java.lang.String,java.lang.String,int):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                             <node concept="2OqwBi" id="4RRGlPmpQev" role="37wK5m">
                               <node concept="2YIFZM" id="4RRGlPmpPrW" role="2Oq$k0">
-                                <ref role="37wK5l" to="ierg:~TraceInfo.unitNames(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="unitNames" />
-                                <ref role="1Pybhc" to="ierg:~TraceInfo" resolve="TraceInfo" />
+                                <ref role="37wK5l" to="fwk:~TraceInfo.unitNames(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="unitNames" />
+                                <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
                                 <node concept="37vLTw" id="4RRGlPmpPrX" role="37wK5m">
                                   <ref role="3cqZAo" node="2swde3nL7rY" resolve="root" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="4RRGlPmpSeg" role="2OqNvi">
-                                <ref role="37wK5l" to="k7g3:~List.get(int):java.lang.Object" resolve="get" />
+                                <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
                                 <node concept="3cmrfG" id="4RRGlPmpSte" role="37wK5m">
                                   <property role="3cmrfH" value="0" />
                                 </node>

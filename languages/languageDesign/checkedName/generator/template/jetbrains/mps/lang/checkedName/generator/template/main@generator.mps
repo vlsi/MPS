@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
-    <import index="y51d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.checkedName(MPS.Editor/jetbrains.mps.checkedName@java_stub)" />
+    <import index="ttfg" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.checkedName(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -93,7 +93,7 @@
       <node concept="gft3U" id="4lITsQs52AD" role="1lVwrX">
         <node concept="2ShNRf" id="4lITsQs52AE" role="gfFT$">
           <node concept="1pGfFk" id="4lITsQs52AF" role="2ShVmc">
-            <ref role="37wK5l" to="y51d:~PropertyReference.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="PropertyReference" />
+            <ref role="37wK5l" to="ttfg:~PropertyReference.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="PropertyReference" />
             <node concept="10Nm6u" id="4lITsQs52AG" role="37wK5m">
               <node concept="29HgVG" id="4lITsQs52AH" role="lGtFl">
                 <node concept="3NFfHV" id="4lITsQs52AI" role="3NFExx">
@@ -142,7 +142,7 @@
       <ref role="30HIoZ" to="4j10:4cWf37B8oWY" resolve="PropertyRefType" />
       <node concept="gft3U" id="4lITsQs52AZ" role="1lVwrX">
         <node concept="3uibUv" id="4lITsQs52B0" role="gfFT$">
-          <ref role="3uigEE" to="y51d:~PropertyReference" resolve="PropertyReference" />
+          <ref role="3uigEE" to="ttfg:~PropertyReference" resolve="PropertyReference" />
         </node>
       </node>
     </node>

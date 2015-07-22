@@ -12,8 +12,8 @@
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="dmyu" ref="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -201,7 +201,7 @@
                     <ref role="3cqZAo" node="hZL9ibi" resolve="fqClassName" />
                   </node>
                   <node concept="liA8E" id="hZL9mdZ" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                    <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                     <node concept="Xl_RD" id="hZL9mrs" role="37wK5m">
                       <property role="Xl_RC" value="@" />
                     </node>
@@ -238,7 +238,7 @@
                       <ref role="3cqZAo" node="hZL9ibi" resolve="fqClassName" />
                     </node>
                     <node concept="liA8E" id="hZL9Ej6" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
+                      <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
                       <node concept="Xl_RD" id="hZL9Eum" role="37wK5m">
                         <property role="Xl_RC" value="!" />
                       </node>
@@ -295,8 +295,8 @@
                     <node concept="3clFbF" id="hZL9QC8" role="3cqZAp">
                       <node concept="37vLTI" id="hZL9Rbk" role="3clFbG">
                         <node concept="2YIFZM" id="umZuBMPmRI" role="37vLTx">
-                          <ref role="37wK5l" to="msyo:~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolve="packageName" />
-                          <ref role="1Pybhc" to="msyo:~JavaNameUtil" resolve="JavaNameUtil" />
+                          <ref role="37wK5l" to="18ew:~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolve="packageName" />
+                          <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
                           <node concept="37vLTw" id="2BHiRxgm9ZT" role="37wK5m">
                             <ref role="3cqZAo" node="hZL9ibi" resolve="fqClassName" />
                           </node>
@@ -309,8 +309,8 @@
                     <node concept="3clFbF" id="hZLa1VX" role="3cqZAp">
                       <node concept="37vLTI" id="hZLa2ua" role="3clFbG">
                         <node concept="2YIFZM" id="umZuBMPmRK" role="37vLTx">
-                          <ref role="37wK5l" to="msyo:~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolve="shortName" />
-                          <ref role="1Pybhc" to="msyo:~JavaNameUtil" resolve="JavaNameUtil" />
+                          <ref role="37wK5l" to="18ew:~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolve="shortName" />
+                          <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
                           <node concept="37vLTw" id="2BHiRxgm_tn" role="37wK5m">
                             <ref role="3cqZAo" node="hZL9ibi" resolve="fqClassName" />
                           </node>
@@ -392,8 +392,8 @@
                     <property role="TrG5h" value="pack" />
                     <node concept="17QB3L" id="hZLbalJ" role="1tU5fm" />
                     <node concept="2YIFZM" id="hZLbjBq" role="33vP2m">
-                      <ref role="37wK5l" to="msyo:~NameUtil.namespaceFromLongName(java.lang.String):java.lang.String" resolve="namespaceFromLongName" />
-                      <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                      <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromLongName(java.lang.String):java.lang.String" resolve="namespaceFromLongName" />
+                      <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                       <node concept="2OqwBi" id="hZLbkeK" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTtQe" role="2Oq$k0">
                           <ref role="3cqZAo" node="hZLb2sd" resolve="icf" />
@@ -410,8 +410,8 @@
                     <property role="TrG5h" value="name" />
                     <node concept="17QB3L" id="hZLblHB" role="1tU5fm" />
                     <node concept="2YIFZM" id="hZLboPn" role="33vP2m">
-                      <ref role="37wK5l" to="msyo:~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolve="shortNameFromLongName" />
-                      <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                      <ref role="37wK5l" to="18ew:~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolve="shortNameFromLongName" />
+                      <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                       <node concept="2OqwBi" id="hZLbpsW" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTxqR" role="2Oq$k0">
                           <ref role="3cqZAo" node="hZLb2sd" resolve="icf" />

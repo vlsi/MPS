@@ -8,7 +8,7 @@
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
-    <import index="g3pv" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.impl.cellActions(MPS.Editor/jetbrains.mps.editor.runtime.impl.cellActions@java_stub)" />
+    <import index="b3bi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.impl.cellActions(MPS.Editor/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -465,12 +465,12 @@
             <node concept="2OqwBi" id="4aotOFCaJXI" role="3clFbG">
               <node concept="2ShNRf" id="4aotOFCaJXJ" role="2Oq$k0">
                 <node concept="1pGfFk" id="4aotOFCaJXK" role="2ShVmc">
-                  <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="Cell_Action_Uncomment" />
+                  <ref role="37wK5l" to="b3bi:~Cell_Action_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="Cell_Action_Uncomment" />
                   <node concept="0IXxy" id="4aotOFCaJXL" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="4aotOFCaJXM" role="2OqNvi">
-                <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <ref role="37wK5l" to="b3bi:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                 <node concept="1Q80Hx" id="4aotOFCaJXN" role="37wK5m" />
               </node>
             </node>

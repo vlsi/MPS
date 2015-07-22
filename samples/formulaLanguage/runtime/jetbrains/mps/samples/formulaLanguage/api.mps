@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -109,7 +109,7 @@
     <node concept="3uibUv" id="7dakP4KK4nA" role="EKbjA">
       <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
       <node concept="3uibUv" id="7dakP4KK4nB" role="11_B2D">
-        <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+        <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
       </node>
     </node>
     <node concept="312cEg" id="7dakP4KK4nC" role="jymVt">
@@ -117,7 +117,7 @@
       <node concept="3uibUv" id="7dakP4KK4nD" role="1tU5fm">
         <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
         <node concept="3uibUv" id="7dakP4KK4nE" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+          <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7dakP4KK4nF" role="1B3o_S" />
@@ -127,7 +127,7 @@
       <node concept="3uibUv" id="7dakP4KK4nH" role="1tU5fm">
         <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
         <node concept="3uibUv" id="7dakP4KK4nI" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+          <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7dakP4KK4nJ" role="1B3o_S" />
@@ -140,7 +140,7 @@
         <node concept="3uibUv" id="7dakP4KK4nO" role="1tU5fm">
           <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
           <node concept="3uibUv" id="7dakP4KK4nP" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+            <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
           </node>
         </node>
       </node>
@@ -149,7 +149,7 @@
         <node concept="3uibUv" id="7dakP4KK4nR" role="1tU5fm">
           <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
           <node concept="3uibUv" id="7dakP4KK4nS" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+            <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
           </node>
         </node>
       </node>
@@ -180,12 +180,12 @@
       <property role="TrG5h" value="compute" />
       <node concept="3Tm1VV" id="7dakP4KK4o3" role="1B3o_S" />
       <node concept="3uibUv" id="7dakP4KK4o4" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+        <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
       </node>
       <node concept="37vLTG" id="7dakP4KK4o5" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="7dakP4KK4o6" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="7dakP4KK4o7" role="3clF47">
@@ -193,7 +193,7 @@
           <node concept="3cpWsn" id="7dakP4KK4o9" role="3cpWs9">
             <property role="TrG5h" value="num1" />
             <node concept="3uibUv" id="7dakP4KK4oa" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+              <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
             </node>
             <node concept="2OqwBi" id="7dakP4KK4ob" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxeujPW" role="2Oq$k0">
@@ -212,7 +212,7 @@
           <node concept="3cpWsn" id="7dakP4KK4og" role="3cpWs9">
             <property role="TrG5h" value="num2" />
             <node concept="3uibUv" id="7dakP4KK4oh" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+              <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
             </node>
             <node concept="2OqwBi" id="7dakP4KK4oi" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxeuoQi" role="2Oq$k0">
@@ -239,7 +239,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYPc" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -260,7 +260,7 @@
       <node concept="3uibUv" id="7dakP4KK4ow" role="1tU5fm">
         <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
         <node concept="3uibUv" id="7dakP4KK4ox" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7dakP4KK4oy" role="1B3o_S" />
@@ -293,7 +293,7 @@
         <node concept="3uibUv" id="7dakP4KK4oJ" role="1tU5fm">
           <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
           <node concept="3uibUv" id="7dakP4KK4oK" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
           </node>
         </node>
       </node>
@@ -357,7 +357,7 @@
       <node concept="37vLTG" id="7dakP4KK4p7" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="7dakP4KK4p8" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="7dakP4KK4p9" role="3clF47">
@@ -404,7 +404,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXPY" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -424,7 +424,7 @@
       <node concept="37vLTG" id="7dakP4KK4pw" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="7dakP4KK4px" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="7dakP4KK4py" role="3clF47" />
@@ -436,13 +436,13 @@
     <node concept="3uibUv" id="7dakP4KK4p_" role="EKbjA">
       <ref role="3uigEE" node="7dakP4KK4pq" resolve="Function" />
       <node concept="3uibUv" id="7dakP4KK4pA" role="11_B2D">
-        <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+        <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
       </node>
     </node>
     <node concept="312cEg" id="7dakP4KK4pB" role="jymVt">
       <property role="TrG5h" value="myDouble" />
       <node concept="3uibUv" id="7dakP4KK4pC" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+        <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
       </node>
       <node concept="3Tm6S6" id="7dakP4KK4pD" role="1B3o_S" />
     </node>
@@ -470,12 +470,12 @@
       <property role="TrG5h" value="compute" />
       <node concept="3Tm1VV" id="7dakP4KK4pP" role="1B3o_S" />
       <node concept="3uibUv" id="7dakP4KK4pQ" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Double" resolve="Double" />
+        <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
       </node>
       <node concept="37vLTG" id="7dakP4KK4pR" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="7dakP4KK4pS" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="7dakP4KK4pT" role="3clF47">
@@ -486,7 +486,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UAxi" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

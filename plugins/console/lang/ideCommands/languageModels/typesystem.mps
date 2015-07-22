@@ -10,13 +10,13 @@
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="2u9t" ref="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <import index="tp4s" ref="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -249,7 +249,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="bxo68MxEVq" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                 </node>
               </node>
             </node>
@@ -327,7 +327,7 @@
         <node concept="mw_s8" id="4PRmqZe_ov3" role="1ZfhKB">
           <node concept="2c44tf" id="4PRmqZe_ov4" role="mwGJk">
             <node concept="3uibUv" id="4PRmqZe_ov5" role="2c44tc">
-              <ref role="3uigEE" to="nx1:~DataKey" resolve="DataKey" />
+              <ref role="3uigEE" to="qkt:~DataKey" resolve="DataKey" />
             </node>
           </node>
         </node>
@@ -401,7 +401,7 @@
                 </node>
               </node>
               <node concept="3B5_sB" id="4PRmqZe_ov$" role="3uHU7w">
-                <ref role="3B5MYn" to="nx1:~DataKey" resolve="DataKey" />
+                <ref role="3B5MYn" to="qkt:~DataKey" resolve="DataKey" />
               </node>
             </node>
           </node>
@@ -934,7 +934,7 @@
         <node concept="mw_s8" id="4PRmqZe_oz5" role="1ZfhKB">
           <node concept="2c44tf" id="4PRmqZe_oz6" role="mwGJk">
             <node concept="3uibUv" id="4PRmqZe_oz7" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
@@ -995,7 +995,7 @@
           <node concept="2c44tf" id="2tFdLTRKaJn" role="mwGJk">
             <node concept="2usRSg" id="2tFdLTRKaJo" role="2c44tc">
               <node concept="3uibUv" id="2tFdLTRKaJs" role="2usUpS">
-                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                 <node concept="2c44te" id="127aYrrKmvN" role="lGtFl">
                   <node concept="1Z$b5t" id="127aYrrKmw7" role="2c44t1">
                     <ref role="1Z$eMM" node="127aYrrKmv0" resolve="v" />
@@ -1020,7 +1020,7 @@
           <node concept="2c44tf" id="127aYrrKmCw" role="mwGJk">
             <node concept="2usRSg" id="127aYrrKmD5" role="2c44tc">
               <node concept="3uibUv" id="127aYrrKmDE" role="2usUpS">
-                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
               </node>
               <node concept="H_c77" id="127aYrrKmEV" role="2usUpS" />
             </node>

@@ -9,11 +9,11 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wfc9" ref="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -427,7 +427,7 @@
           <property role="TrG5h" value="staticField" />
           <node concept="3Tm6S6" id="70HT6wFrGLy" role="1B3o_S" />
           <node concept="3uibUv" id="70HT6wFrGLB" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
           </node>
         </node>
         <node concept="312cEg" id="70HT6wFrGLr" role="jymVt">
@@ -454,7 +454,7 @@
           <node concept="37vLTG" id="70HT6wFrGLp" role="3clF46">
             <property role="TrG5h" value="arg" />
             <node concept="3uibUv" id="70HT6wFrGLq" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
           </node>
         </node>
@@ -482,7 +482,7 @@
           <node concept="37vLTG" id="70HT6wFrHbL" role="3clF46">
             <property role="TrG5h" value="arg" />
             <node concept="3uibUv" id="70HT6wFrHbM" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
             </node>
           </node>
         </node>
@@ -495,7 +495,7 @@
           <node concept="37vLTG" id="70HT6wFrHbS" role="3clF46">
             <property role="TrG5h" value="arg" />
             <node concept="3uibUv" id="70HT6wFrHbT" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
           </node>
         </node>
@@ -506,10 +506,10 @@
           <node concept="3clFbS" id="70HT6wFrHbX" role="3clF47" />
           <node concept="3cpWsb" id="70HT6wFrHbZ" role="3clF45" />
           <node concept="3uibUv" id="70HT6wFrMqx" role="Sfmx6">
-            <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+            <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
           </node>
           <node concept="3uibUv" id="70HT6wFrMqz" role="Sfmx6">
-            <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
+            <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
           </node>
         </node>
         <node concept="3clFb_" id="70HT6wFrMq$" role="jymVt">
@@ -519,7 +519,7 @@
           <node concept="3Tm1VV" id="70HT6wFrMqA" role="1B3o_S" />
           <node concept="3clFbS" id="70HT6wFrMqB" role="3clF47" />
           <node concept="2AHcQZ" id="70HT6wFrMqC" role="2AJF6D">
-            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
           <node concept="37vLTG" id="70HT6wFrMqD" role="3clF46">
             <property role="TrG5h" value="a1" />
@@ -528,13 +528,13 @@
           <node concept="37vLTG" id="70HT6wFrMqF" role="3clF46">
             <property role="TrG5h" value="a2" />
             <node concept="3uibUv" id="70HT6wFrMqH" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
           <node concept="37vLTG" id="70HT6wFrMqI" role="3clF46">
             <property role="TrG5h" value="a3" />
             <node concept="3uibUv" id="70HT6wFrMqK" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
           </node>
         </node>
@@ -564,7 +564,7 @@
           <property role="TrG5h" value="prot" />
           <node concept="3Tmbuc" id="70HT6wFrXOr" role="1B3o_S" />
           <node concept="3uibUv" id="70HT6wFrXOq" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="312cEg" id="70HT6wFrXOs" role="jymVt">
@@ -613,10 +613,10 @@
         <node concept="16euLQ" id="66hA68pgQXK" role="16eVyc">
           <property role="TrG5h" value="Y" />
           <node concept="3uibUv" id="66hA68pgQXV" role="3ztrMU">
-            <ref role="3uigEE" to="e2lb:~Number" resolve="Number" />
+            <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
           </node>
           <node concept="3uibUv" id="66hA68pgQXW" role="3D4UlG">
-            <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+            <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
           </node>
         </node>
         <node concept="3xLA65" id="66hA68pgQYn" role="lGtFl">
@@ -653,7 +653,7 @@
           <node concept="3Tm1VV" id="66hA68pgQY6" role="1B3o_S" />
           <node concept="3clFbS" id="66hA68pgQY7" role="3clF47" />
           <node concept="3uibUv" id="66hA68ph$Yy" role="3clF45">
-            <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+            <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
             <node concept="3qUtgH" id="66hA68pgQY8" role="11_B2D">
               <node concept="16syzq" id="66hA68pgQYa" role="3qUvdb">
                 <ref role="16sUi3" node="66hA68pgQXK" resolve="Y" />
@@ -777,11 +777,11 @@
                           <ref role="3cqZAo" node="1c0m78S63iQ" resolve="itrbl" />
                         </node>
                         <node concept="liA8E" id="1c0m78S6aaL" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                          <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1c0m78S6aaM" role="2OqNvi">
-                        <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
+                        <ref role="37wK5l" to="33ny:~Iterator.hasNext():boolean" resolve="hasNext" />
                       </node>
                     </node>
                   </node>
@@ -790,7 +790,7 @@
                   <node concept="3cpWsn" id="1c0m78S6aHA" role="3cpWs9">
                     <property role="TrG5h" value="str" />
                     <node concept="3uibUv" id="1c0m78S6aHB" role="1tU5fm">
-                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                     </node>
                     <node concept="2OqwBi" id="1c0m78S6d51" role="33vP2m">
                       <node concept="2OqwBi" id="1c0m78S6buQ" role="2Oq$k0">
@@ -798,11 +798,11 @@
                           <ref role="3cqZAo" node="1c0m78S63iQ" resolve="itrbl" />
                         </node>
                         <node concept="liA8E" id="1c0m78S6cJ9" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                          <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1c0m78S6eDl" role="2OqNvi">
-                        <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
+                        <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                       </node>
                     </node>
                   </node>
@@ -820,7 +820,7 @@
                         <ref role="3cqZAo" node="1c0m78S6aHA" resolve="str" />
                       </node>
                       <node concept="liA8E" id="1c0m78S6ktA" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                        <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                       </node>
                     </node>
                   </node>
@@ -829,9 +829,9 @@
               <node concept="3cpWsn" id="1c0m78S63iQ" role="1Duv9x">
                 <property role="TrG5h" value="itrbl" />
                 <node concept="3uibUv" id="1c0m78S63Fb" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                  <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                   <node concept="3uibUv" id="1c0m78S6axM" role="11_B2D">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                   </node>
                 </node>
               </node>
@@ -846,9 +846,9 @@
             <property role="TrG5h" value="iterables" />
             <node concept="8X2XB" id="1c0m78S636U" role="1tU5fm">
               <node concept="3uibUv" id="1c0m78S6352" role="8Xvag">
-                <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                 <node concept="3uibUv" id="1c0m78S6ara" role="11_B2D">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
@@ -874,8 +874,8 @@
             <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
             <node concept="3cpWs3" id="66hA68pgQ4o" role="37wK5m">
               <node concept="2YIFZM" id="66hA68pgQ4p" role="3uHU7B">
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
               </node>
               <node concept="Xl_RD" id="66hA68pgQ4q" role="3uHU7w">
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/singleFiles/selfref" />
@@ -899,8 +899,8 @@
             <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
             <node concept="3cpWs3" id="70HT6wFsbSI" role="37wK5m">
               <node concept="2YIFZM" id="70HT6wFsbSJ" role="3uHU7B">
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
               </node>
               <node concept="Xl_RD" id="70HT6wFsbSK" role="3uHU7w">
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/singleFiles/classwiface" />
@@ -926,8 +926,8 @@
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir1" />
               </node>
               <node concept="2YIFZM" id="70HT6wFsbR4" role="3uHU7B">
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
               </node>
             </node>
             <node concept="2ShNRf" id="70HT6wFrYmw" role="37wK5m">
@@ -962,8 +962,8 @@
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir2" />
               </node>
               <node concept="2YIFZM" id="70HT6wFsbRa" role="3uHU7B">
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
               </node>
             </node>
             <node concept="2ShNRf" id="70HT6wFs4iC" role="37wK5m">
@@ -998,8 +998,8 @@
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir3" />
               </node>
               <node concept="2YIFZM" id="70HT6wFsbRg" role="3uHU7B">
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
               </node>
             </node>
             <node concept="2ShNRf" id="70HT6wFs4pz" role="37wK5m">
@@ -1031,8 +1031,8 @@
             <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
             <node concept="3cpWs3" id="66hA68ph_PP" role="37wK5m">
               <node concept="2YIFZM" id="66hA68ph_PQ" role="3uHU7B">
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
               </node>
               <node concept="Xl_RD" id="66hA68ph_PR" role="3uHU7w">
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/singleFiles/nestcontainer" />
@@ -1060,8 +1060,8 @@
                     <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir4/jetbrains/mps/ide/java/testMaterial4" />
                   </node>
                   <node concept="2YIFZM" id="LfG6aZ92Mr" role="3uHU7B">
-                    <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                    <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
+                    <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                    <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
                   </node>
                 </node>
                 <node concept="BaHAS" id="LfG6aZ92N4" role="37wK5m">
@@ -1087,8 +1087,8 @@
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/singleFiles/statements" />
               </node>
               <node concept="2YIFZM" id="6YV7lv2CRUn" role="3uHU7B">
-                <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
-                <ref role="37wK5l" to="msyo:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
               </node>
             </node>
             <node concept="BaHAS" id="6YV7lv2CRUx" role="37wK5m">
@@ -1143,7 +1143,7 @@
             <node concept="10Oyi0" id="13DhuT6A_Wj" role="1tU5fm" />
           </node>
           <node concept="2AHcQZ" id="3tYsUK_Uvff" role="2AJF6D">
-            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
           </node>
         </node>
         <node concept="3HP615" id="13DhuT6A_Vf" role="jymVt">

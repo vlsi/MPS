@@ -13,7 +13,7 @@
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="inbo" ref="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" />
     <import index="tp2z" ref="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -952,7 +952,7 @@
                   <node concept="2OqwBi" id="5i_Pov1ZH6b" role="33vP2m">
                     <node concept="1Wqviy" id="5i_Pov1ZH6a" role="2Oq$k0" />
                     <node concept="liA8E" id="5i_Pov1ZH6f" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.charAt(int):char" resolve="charAt" />
+                      <ref role="37wK5l" to="wyt6:~String.charAt(int):char" resolve="charAt" />
                       <node concept="37vLTw" id="3GM_nagTyau" role="37wK5m">
                         <ref role="3cqZAo" node="5i_Pov1ZH5O" resolve="i" />
                       </node>
@@ -974,8 +974,8 @@
                       <node concept="1eOMI4" id="5i_Pov1ZR$p" role="3uHU7w">
                         <node concept="1Wc70l" id="5i_Pov1ZR$q" role="1eOMHV">
                           <node concept="2YIFZM" id="5i_Pov1ZR$r" role="3uHU7w">
-                            <ref role="37wK5l" to="e2lb:~Character.isJavaIdentifierPart(char):boolean" resolve="isJavaIdentifierPart" />
-                            <ref role="1Pybhc" to="e2lb:~Character" resolve="Character" />
+                            <ref role="37wK5l" to="wyt6:~Character.isJavaIdentifierPart(char):boolean" resolve="isJavaIdentifierPart" />
+                            <ref role="1Pybhc" to="wyt6:~Character" resolve="Character" />
                             <node concept="37vLTw" id="3GM_nagTwcv" role="37wK5m">
                               <ref role="3cqZAo" node="5i_Pov1ZH67" resolve="c" />
                             </node>
@@ -993,8 +993,8 @@
                       <node concept="1eOMI4" id="5i_Pov1ZR$w" role="3uHU7B">
                         <node concept="1Wc70l" id="5i_Pov1ZR$x" role="1eOMHV">
                           <node concept="2YIFZM" id="5i_Pov1ZR$y" role="3uHU7w">
-                            <ref role="37wK5l" to="e2lb:~Character.isJavaIdentifierStart(char):boolean" resolve="isJavaIdentifierStart" />
-                            <ref role="1Pybhc" to="e2lb:~Character" resolve="Character" />
+                            <ref role="37wK5l" to="wyt6:~Character.isJavaIdentifierStart(char):boolean" resolve="isJavaIdentifierStart" />
+                            <ref role="1Pybhc" to="wyt6:~Character" resolve="Character" />
                             <node concept="37vLTw" id="3GM_nagTuA9" role="37wK5m">
                               <ref role="3cqZAo" node="5i_Pov1ZH67" resolve="c" />
                             </node>
@@ -1025,7 +1025,7 @@
               <node concept="2OqwBi" id="5i_Pov1ZH5Y" role="3uHU7w">
                 <node concept="1Wqviy" id="5i_Pov1ZH5X" role="2Oq$k0" />
                 <node concept="liA8E" id="5i_Pov1ZH62" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
+                  <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
                 </node>
               </node>
               <node concept="37vLTw" id="3GM_nagTATw" role="3uHU7B">

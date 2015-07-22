@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -73,7 +73,7 @@
         <node concept="mw_s8" id="7Mb2akaesvO" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaesvP" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaesvQ" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
@@ -99,7 +99,7 @@
         <node concept="mw_s8" id="7Mb2akaesvY" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaesvZ" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaesw0" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
@@ -129,7 +129,7 @@
         <node concept="mw_s8" id="7Mb2akaeswa" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaeswb" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaeswc" role="2c44tc">
-              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>

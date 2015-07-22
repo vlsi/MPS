@@ -19,7 +19,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpfr" ref="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)" />
     <import index="tpfs" ref="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
-    <import index="lgzw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
+    <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="cpb3" ref="r:92729f14-904d-49b9-944a-e9e4aeec5f56(jetbrains.mps.baseLanguage.regexp.runtime)" />
     <import index="tpft" ref="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" />
   </imports>
@@ -839,15 +839,15 @@
             <node concept="3cpWsn" id="h5QjuFK" role="3cpWs9">
               <property role="TrG5h" value="p" />
               <node concept="3uibUv" id="h5QjuFL" role="1tU5fm">
-                <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
+                <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
               </node>
               <node concept="1dyn4i" id="5OTxl17S_Rf" role="33vP2m">
                 <property role="1zomUR" value="true" />
                 <property role="1dyqJU" value="REGEXP" />
                 <node concept="raruj" id="5OTxl17S_S8" role="lGtFl" />
                 <node concept="2YIFZM" id="5OTxl17S_S9" role="1dyrYi">
-                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
-                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5OTxl17S_Sa" role="37wK5m">
                     <property role="Xl_RC" value="" />
                     <node concept="17Uvod" id="5OTxl17S_Sb" role="lGtFl">
@@ -903,8 +903,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_S$" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_S_" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.MULTILINE" resolve="MULTILINE" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.MULTILINE" resolve="MULTILINE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTrlo" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
@@ -929,8 +929,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_SJ" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_SK" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.DOTALL" resolve="DOTALL" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.DOTALL" resolve="DOTALL" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagT$3w" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
@@ -955,8 +955,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_SU" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_SV" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagT_YH" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
@@ -1001,7 +1001,7 @@
                 <node concept="3cpWsn" id="h5QqNtD" role="3cpWs9">
                   <property role="TrG5h" value="pattern" />
                   <node concept="3uibUv" id="h5QqNtE" role="1tU5fm">
-                    <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
+                    <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
                   </node>
                   <node concept="10Nm6u" id="h5QqQk$" role="33vP2m">
                     <node concept="29HgVG" id="h5QqR8m" role="lGtFl">
@@ -1062,14 +1062,14 @@
                 <node concept="3cpWsn" id="h5Qr9gn" role="3cpWs9">
                   <property role="TrG5h" value="matcher" />
                   <node concept="3uibUv" id="h5Qr9go" role="1tU5fm">
-                    <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+                    <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
                   </node>
                   <node concept="2OqwBi" id="hAUPATA" role="33vP2m">
                     <node concept="37vLTw" id="3GM_nagT$Jv" role="2Oq$k0">
                       <ref role="3cqZAo" node="h5QqNtD" resolve="pattern" />
                     </node>
                     <node concept="liA8E" id="hAUPATB" role="2OqNvi">
-                      <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                      <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                       <node concept="10Nm6u" id="h5Qrb6C" role="37wK5m">
                         <node concept="29HgVG" id="h5QrbPj" role="lGtFl">
                           <node concept="3NFfHV" id="h5QrbPk" role="3NFExx">
@@ -1136,7 +1136,7 @@
                     <ref role="3cqZAo" node="h5Qr9gn" resolve="matcher" />
                   </node>
                   <node concept="liA8E" id="hAUPB1c" role="2OqNvi">
-                    <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
+                    <ref role="37wK5l" to="ni5j:~Matcher.matches():boolean" resolve="matches" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="h5QreVX" role="3clFbx">
@@ -1195,8 +1195,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5OTxl17T4tl" role="37wK5m">
-              <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
-              <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+              <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+              <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
               <node concept="Xl_RD" id="5OTxl17T4tm" role="37wK5m">
                 <property role="Xl_RC" value="" />
               </node>
@@ -1271,7 +1271,7 @@
       <node concept="37vLTG" id="h5Zb1fQ" role="3clF46">
         <property role="TrG5h" value="matcher" />
         <node concept="3uibUv" id="h5Zb1YK" role="1tU5fm">
-          <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+          <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
         </node>
       </node>
       <node concept="17QB3L" id="hP3iQhN" role="3clF45" />
@@ -1305,7 +1305,7 @@
       <node concept="37vLTG" id="h5ZaLUI" role="3clF46">
         <property role="TrG5h" value="matcher" />
         <node concept="3uibUv" id="h5ZaLUJ" role="1tU5fm">
-          <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+          <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
         </node>
       </node>
       <node concept="3clFbS" id="h5ZaJOq" role="3clF47">
@@ -1315,7 +1315,7 @@
               <ref role="3cqZAo" node="h5ZaLUI" resolve="matcher" />
             </node>
             <node concept="liA8E" id="hAUPAXT" role="2OqNvi">
-              <ref role="37wK5l" to="lgzw:~Matcher.group(int):java.lang.String" resolve="group" />
+              <ref role="37wK5l" to="ni5j:~Matcher.group(int):java.lang.String" resolve="group" />
               <node concept="3cmrfG" id="h5ZaNTN" role="37wK5m">
                 <property role="3cmrfH" value="23" />
                 <node concept="17Uvod" id="h5ZaPrY" role="lGtFl">
@@ -1433,7 +1433,7 @@
               <node concept="3cpWsn" id="h6sIiw5" role="3cpWs9">
                 <property role="TrG5h" value="_pattern" />
                 <node concept="3uibUv" id="h6sIiw6" role="1tU5fm">
-                  <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
                 </node>
                 <node concept="10Nm6u" id="h6sIk6V" role="33vP2m">
                   <node concept="29HgVG" id="h6sIKik" role="lGtFl">
@@ -1494,14 +1494,14 @@
               <node concept="3cpWsn" id="h6sIlpY" role="3cpWs9">
                 <property role="TrG5h" value="_matcher" />
                 <node concept="3uibUv" id="h6sIlpZ" role="1tU5fm">
-                  <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+                  <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
                 </node>
                 <node concept="2OqwBi" id="hAUPAOL" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTy7m" role="2Oq$k0">
                     <ref role="3cqZAo" node="h6sIiw5" resolve="_pattern" />
                   </node>
                   <node concept="liA8E" id="hAUPAOM" role="2OqNvi">
-                    <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                    <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                     <node concept="10Nm6u" id="h6sIp3w" role="37wK5m">
                       <node concept="29HgVG" id="h6sIZro" role="lGtFl">
                         <node concept="3NFfHV" id="h6sIZrp" role="3NFExx">
@@ -1568,7 +1568,7 @@
                   <ref role="3cqZAo" node="h6sIlpY" resolve="_matcher" />
                 </node>
                 <node concept="liA8E" id="hAUPAYE" role="2OqNvi">
-                  <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
+                  <ref role="37wK5l" to="ni5j:~Matcher.find():boolean" resolve="find" />
                 </node>
               </node>
               <node concept="3clFbS" id="h6sJaO9" role="2LFqv$">
@@ -1660,7 +1660,7 @@
               <node concept="3cpWsn" id="h6t$gzk" role="3cpWs9">
                 <property role="TrG5h" value="_pattern" />
                 <node concept="3uibUv" id="h6t$gzl" role="1tU5fm">
-                  <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
                 </node>
                 <node concept="10Nm6u" id="h6t$hn8" role="33vP2m">
                   <node concept="29HgVG" id="h6t$CaI" role="lGtFl">
@@ -1721,7 +1721,7 @@
               <node concept="3cpWsn" id="h6t$ibr" role="3cpWs9">
                 <property role="TrG5h" value="_matcher" />
                 <node concept="3uibUv" id="h6t$ibs" role="1tU5fm">
-                  <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+                  <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
                 </node>
                 <node concept="17Uvod" id="h6t$sq5" role="lGtFl">
                   <property role="2qtEX9" value="name" />
@@ -1765,7 +1765,7 @@
                     <ref role="3cqZAo" node="h6t$gzk" resolve="_pattern" />
                   </node>
                   <node concept="liA8E" id="hAUPAPN" role="2OqNvi">
-                    <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                    <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                     <node concept="10Nm6u" id="h6t$_0j" role="37wK5m">
                       <node concept="29HgVG" id="h6t$Ef7" role="lGtFl">
                         <node concept="3NFfHV" id="h6t$Ef8" role="3NFExx">
@@ -1795,7 +1795,7 @@
                   <ref role="3cqZAo" node="h6t$ibr" resolve="_matcher" />
                 </node>
                 <node concept="liA8E" id="hAUPB2e" role="2OqNvi">
-                  <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
+                  <ref role="37wK5l" to="ni5j:~Matcher.find():boolean" resolve="find" />
                 </node>
               </node>
               <node concept="3clFbS" id="h6t_24K" role="3clFbx">
@@ -1834,7 +1834,7 @@
           <node concept="3cpWsn" id="h6t_SIe" role="3cpWs9">
             <property role="TrG5h" value="matcher" />
             <node concept="3uibUv" id="h6t_SIf" role="1tU5fm">
-              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
             </node>
           </node>
         </node>
@@ -1865,7 +1865,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hAUPARQ" role="2OqNvi">
-              <ref role="37wK5l" to="lgzw:~Matcher.group(int):java.lang.String" resolve="group" />
+              <ref role="37wK5l" to="ni5j:~Matcher.group(int):java.lang.String" resolve="group" />
               <node concept="3cmrfG" id="h6t_SIr" role="37wK5m">
                 <property role="3cmrfH" value="23" />
                 <node concept="17Uvod" id="h6t_SIs" role="lGtFl">
@@ -1977,8 +1977,8 @@
     <node concept="2OqwBi" id="hAUPAV6" role="13RCb5">
       <node concept="2OqwBi" id="hAUPB1t" role="2Oq$k0">
         <node concept="2YIFZM" id="haneJLn" role="2Oq$k0">
-          <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
-          <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+          <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+          <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
           <node concept="29HgVG" id="haneUKb" role="lGtFl">
             <node concept="3NFfHV" id="haneUKc" role="3NFExx">
               <node concept="3clFbS" id="haneUKd" role="2VODD2">
@@ -1995,7 +1995,7 @@
           </node>
         </node>
         <node concept="liA8E" id="hAUPB1u" role="2OqNvi">
-          <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+          <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
           <node concept="Xl_RD" id="hanf31O" role="37wK5m">
             <property role="Xl_RC" value="input" />
             <node concept="29HgVG" id="hanf8cp" role="lGtFl">
@@ -2016,7 +2016,7 @@
         </node>
       </node>
       <node concept="liA8E" id="hAUPAV7" role="2OqNvi">
-        <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
+        <ref role="37wK5l" to="ni5j:~Matcher.matches():boolean" resolve="matches" />
       </node>
       <node concept="raruj" id="haneRU1" role="lGtFl" />
     </node>
@@ -2256,8 +2256,8 @@
             <node concept="2OqwBi" id="hMkuxR8" role="3clFbG">
               <node concept="2OqwBi" id="hMkuxR9" role="2Oq$k0">
                 <node concept="2YIFZM" id="hMkuxRa" role="2Oq$k0">
-                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
-                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
                   <node concept="29HgVG" id="hMkuxRb" role="lGtFl">
                     <node concept="3NFfHV" id="hMkuxRc" role="3NFExx">
                       <node concept="3clFbS" id="hMkuxRd" role="2VODD2">
@@ -2285,7 +2285,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="hMkuxRi" role="2OqNvi">
-                  <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                   <node concept="Xl_RD" id="hMkuxRj" role="37wK5m">
                     <property role="Xl_RC" value="input" />
                     <node concept="29HgVG" id="hMkuxRk" role="lGtFl">
@@ -2306,7 +2306,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hMkuxRr" role="2OqNvi">
-                <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
+                <ref role="37wK5l" to="ni5j:~Matcher.matches():boolean" resolve="matches" />
               </node>
               <node concept="raruj" id="hMkuxRs" role="lGtFl" />
             </node>
@@ -2328,8 +2328,8 @@
             <node concept="2OqwBi" id="5kfJOUWnQo8" role="33vP2m">
               <node concept="2OqwBi" id="5kfJOUWnQo2" role="2Oq$k0">
                 <node concept="2YIFZM" id="5kfJOUWnQo0" role="2Oq$k0">
-                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
-                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5kfJOUWnQo1" role="37wK5m">
                     <property role="Xl_RC" value="" />
                   </node>
@@ -2349,7 +2349,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5kfJOUWnQo6" role="2OqNvi">
-                  <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                   <node concept="Xl_RD" id="5kfJOUWnQo7" role="37wK5m">
                     <node concept="29HgVG" id="5kfJOUWnQFL" role="lGtFl">
                       <node concept="3NFfHV" id="5kfJOUWnQFM" role="3NFExx">
@@ -2369,7 +2369,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5kfJOUWnQoc" role="2OqNvi">
-                <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
+                <ref role="37wK5l" to="ni5j:~Matcher.find():boolean" resolve="find" />
               </node>
               <node concept="raruj" id="5kfJOUWs5Xn" role="lGtFl" />
             </node>
@@ -2492,7 +2492,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="3Hqlh1$CCQU" role="1tU5fm">
-              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
             </node>
             <node concept="1pdMLZ" id="2fFuTuK0lk6" role="lGtFl">
               <ref role="2rW$FS" node="hG0dCHL" resolve="matcher" />
@@ -2513,7 +2513,7 @@
           <node concept="3cpWsn" id="3Hqlh1$F2TP" role="3cpWs9">
             <property role="TrG5h" value="m" />
             <node concept="3uibUv" id="2btkCdUeqCj" role="1tU5fm">
-              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="ni5j:~Matcher" resolve="Matcher" />
             </node>
           </node>
         </node>
@@ -2523,7 +2523,7 @@
             <node concept="10P_77" id="3Hqlh1$F2T6" role="1tU5fm" />
             <node concept="2OqwBi" id="3Hqlh1$F2T7" role="33vP2m">
               <node concept="liA8E" id="3Hqlh1$F2Tr" role="2OqNvi">
-                <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
+                <ref role="37wK5l" to="ni5j:~Matcher.find():boolean" resolve="find" />
               </node>
               <node concept="raruj" id="3Hqlh1$F2Ts" role="lGtFl" />
               <node concept="1eOMI4" id="3Hqlh1$F2Tt" role="2Oq$k0">
@@ -2550,8 +2550,8 @@
                   </node>
                   <node concept="2OqwBi" id="3Hqlh1$F2TW" role="37vLTx">
                     <node concept="2YIFZM" id="3Hqlh1$F2TX" role="2Oq$k0">
-                      <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
-                      <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+                      <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
+                      <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
                       <node concept="Xl_RD" id="3Hqlh1$F2TY" role="37wK5m">
                         <property role="Xl_RC" value="" />
                       </node>
@@ -2571,7 +2571,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3Hqlh1$F2U6" role="2OqNvi">
-                      <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                      <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                       <node concept="Xl_RD" id="3Hqlh1$F2U7" role="37wK5m">
                         <node concept="29HgVG" id="3Hqlh1$F2U8" role="lGtFl">
                           <node concept="3NFfHV" id="3Hqlh1$F2U9" role="3NFExx">
@@ -2608,7 +2608,7 @@
           <node concept="2OqwBi" id="3iI_KKp9qyf" role="3clFbG">
             <node concept="2OqwBi" id="3iI_KKp9qyg" role="2Oq$k0">
               <node concept="liA8E" id="3iI_KKp9qys" role="2OqNvi">
-                <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
+                <ref role="37wK5l" to="ni5j:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                 <node concept="Xl_RD" id="3iI_KKp9qyt" role="37wK5m">
                   <property role="Xl_RC" value="input" />
                   <node concept="29HgVG" id="3iI_KKp9qyu" role="lGtFl">
@@ -2630,8 +2630,8 @@
               <node concept="1dyn4i" id="5OTxl17SWlg" role="2Oq$k0">
                 <property role="1dyqJU" value="aa" />
                 <node concept="2YIFZM" id="5OTxl17SWli" role="1dyrYi">
-                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
-                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5OTxl17SWlj" role="37wK5m">
                     <property role="Xl_RC" value="text" />
                     <node concept="17Uvod" id="5OTxl17SWlk" role="lGtFl">
@@ -2714,8 +2714,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWlK" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWlL" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.MULTILINE" resolve="MULTILINE" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.MULTILINE" resolve="MULTILINE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTA3T" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
@@ -2742,8 +2742,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWlV" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWlW" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.DOTALL" resolve="DOTALL" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.DOTALL" resolve="DOTALL" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTud$" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
@@ -2770,8 +2770,8 @@
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWm6" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWm7" role="3uHU7w">
-                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
-                                      <ref role="3cqZAo" to="lgzw:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
+                                      <ref role="1PxDUh" to="ni5j:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="ni5j:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTv3n" role="3uHU7B">
                                       <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
@@ -2812,7 +2812,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3iI_KKp9qyE" role="2OqNvi">
-              <ref role="37wK5l" to="lgzw:~Matcher.replaceFirst(java.lang.String):java.lang.String" resolve="replaceFirst" />
+              <ref role="37wK5l" to="ni5j:~Matcher.replaceFirst(java.lang.String):java.lang.String" resolve="replaceFirst" />
               <node concept="Xl_RD" id="3iI_KKp9qyF" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="17Uvod" id="3iI_KKp9qzc" role="lGtFl">

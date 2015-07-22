@@ -6,9 +6,9 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -220,7 +220,7 @@
         <node concept="VUp57" id="3veQ_zQwjEe" role="3nqlJM">
           <property role="VUp50" value="see, yes" />
           <node concept="VXe08" id="3pXDj_D6c$R" role="VUp5m">
-            <ref role="VXe09" to="e2lb:~CharacterDataUndefined" resolve="CharacterDataUndefined" />
+            <ref role="VXe09" to="wyt6:~CharacterDataUndefined" resolve="CharacterDataUndefined" />
           </node>
         </node>
       </node>
@@ -266,11 +266,11 @@
         <node concept="3clFbF" id="7LZmMWLBju9" role="3cqZAp">
           <node concept="2OqwBi" id="7LZmMWLBjCI" role="3clFbG">
             <node concept="10M0yZ" id="7LZmMWLBjua" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="7LZmMWLBjCM" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
               <node concept="3cmrfG" id="7LZmMWLBjCN" role="37wK5m">
                 <property role="3cmrfH" value="3" />
               </node>
@@ -284,7 +284,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5VgPTPXJf2V" role="Sfmx6">
-        <ref role="3uigEE" to="e2lb:~ArrayStoreException" resolve="ArrayStoreException" />
+        <ref role="3uigEE" to="wyt6:~ArrayStoreException" resolve="ArrayStoreException" />
       </node>
       <node concept="10Oyi0" id="3veQ_zQsYdF" role="3clF45" />
       <node concept="P$JXv" id="3veQ_zQsYdK" role="lGtFl">
@@ -340,7 +340,7 @@
           <node concept="1dT_AA" id="3veQ_zQyJWK" role="1dT_Ay">
             <node concept="qph4o" id="3veQ_zQyJWM" role="qph3F">
               <node concept="1RlsK7" id="3pXDj_D6c$Q" role="3xLUeX">
-                <ref role="YTMYt" to="1t7x:~GridBagConstraints.NORTH" resolve="NORTH" />
+                <ref role="YTMYt" to="z60i:~GridBagConstraints.NORTH" resolve="NORTH" />
               </node>
             </node>
           </node>
@@ -381,12 +381,12 @@
         </node>
         <node concept="VUp57" id="3veQ_zQtnVz" role="3nqlJM">
           <node concept="VXe0Z" id="3veQ_zQtM$j" role="VUp5m">
-            <ref role="VXe0S" to="e2lb:~Integer.toString(int,int):java.lang.String" resolve="toString" />
+            <ref role="VXe0S" to="wyt6:~Integer.toString(int,int):java.lang.String" resolve="toString" />
           </node>
         </node>
         <node concept="VUp57" id="3veQ_zQve0H" role="3nqlJM">
           <node concept="VXe08" id="3veQ_zQv$6i" role="VUp5m">
-            <ref role="VXe09" to="1t7x:~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
+            <ref role="VXe09" to="z60i:~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
           </node>
         </node>
         <node concept="TUZQ0" id="3veQ_zQsYdN" role="3nqlJM">
@@ -398,7 +398,7 @@
         <node concept="x0GOo" id="3veQ_zQsYdP" role="3nqlJM">
           <property role="x0GOq" value="ase :)" />
           <node concept="3uibUv" id="3veQ_zQsYdQ" role="zrq5$">
-            <ref role="3uigEE" to="e2lb:~ArrayStoreException" resolve="ArrayStoreException" />
+            <ref role="3uigEE" to="wyt6:~ArrayStoreException" resolve="ArrayStoreException" />
           </node>
         </node>
         <node concept="x79VA" id="3veQ_zQsYdR" role="3nqlJM">
@@ -415,7 +415,7 @@
         <property role="TrG5h" value="s" />
         <node concept="8X2XB" id="3veQ_zQuD86" role="1tU5fm">
           <node concept="3uibUv" id="3veQ_zQuD85" role="8Xvag">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>

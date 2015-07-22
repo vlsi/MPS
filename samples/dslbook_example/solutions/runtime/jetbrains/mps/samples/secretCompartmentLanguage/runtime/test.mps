@@ -6,8 +6,8 @@
   </languages>
   <imports>
     <import index="gf2w" ref="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)" />
-    <import index="eupq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -166,8 +166,8 @@
         </node>
         <node concept="3clFbF" id="5XNkAKP6$DI" role="3cqZAp">
           <node concept="2YIFZM" id="5XNkAKP6$DJ" role="3clFbG">
-            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
+            <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="u132:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
             <node concept="Xl_RD" id="5XNkAKP6$DK" role="37wK5m">
               <property role="Xl_RC" value="unlockedPanel" />
             </node>
@@ -515,7 +515,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UzeP" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

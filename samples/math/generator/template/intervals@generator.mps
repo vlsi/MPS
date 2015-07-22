@@ -12,7 +12,7 @@
   <imports>
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="k2b1" ref="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="39kg" ref="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -118,7 +118,7 @@
         <node concept="3uibUv" id="hZx6d8a" role="gfFT$">
           <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
           <node concept="3uibUv" id="hZx6d8b" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
             <node concept="29HgVG" id="hZx6d8c" role="lGtFl">
               <node concept="3NFfHV" id="hZx6d8d" role="3NFExx">
                 <node concept="3clFbS" id="hZx6d8e" role="2VODD2">

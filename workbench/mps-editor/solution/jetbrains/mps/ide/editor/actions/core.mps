@@ -10,13 +10,13 @@
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <import index="9a8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="810" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
-    <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
-    <import index="1d7m" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="2vit" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.message(MPS.Editor/jetbrains.mps.openapi.editor.message@java_stub)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -182,7 +182,7 @@
             <property role="TrG5h" value="messages" />
             <node concept="_YKpA" id="6G33IkaAPC4" role="1tU5fm">
               <node concept="3uibUv" id="71qRyYfdBNP" role="_ZDj9">
-                <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+                <ref role="3uigEE" to="kpve:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
               </node>
             </node>
             <node concept="2OqwBi" id="6G33IkaAPC6" role="33vP2m">
@@ -194,11 +194,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCb" role="2OqNvi">
-                  <ref role="37wK5l" to="9a8:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
                 </node>
               </node>
               <node concept="liA8E" id="6G33IkaAPCc" role="2OqNvi">
-                <ref role="37wK5l" to="9a8:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
+                <ref role="37wK5l" to="exr9:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
                 <node concept="2OqwBi" id="6G33IkaAPCd" role="37wK5m">
                   <node concept="2WthIp" id="6G33IkaAPCe" role="2Oq$k0" />
                   <node concept="1DTwFV" id="6G33IkaAPCf" role="2OqNvi">
@@ -213,11 +213,11 @@
           <node concept="3cpWsn" id="6G33IkaAPCh" role="3cpWs9">
             <property role="TrG5h" value="sb" />
             <node concept="3uibUv" id="6G33IkaAPCi" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~StringBuilder" resolve="StringBuilder" />
+              <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
             </node>
             <node concept="2ShNRf" id="6G33IkaAPCj" role="33vP2m">
               <node concept="1pGfFk" id="6G33IkaAPCk" role="2ShVmc">
-                <ref role="37wK5l" to="e2lb:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
+                <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
               </node>
             </node>
           </node>
@@ -230,13 +230,13 @@
                   <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCq" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="2OqwBi" id="6G33IkaAPCr" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTtnJ" role="2Oq$k0">
                       <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
                     </node>
                     <node concept="liA8E" id="6G33IkaAPCt" role="2OqNvi">
-                      <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
+                      <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                     </node>
                   </node>
                 </node>
@@ -248,7 +248,7 @@
                   <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCx" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="Xl_RD" id="6G33IkaAPCy" role="37wK5m">
                     <property role="Xl_RC" value="; owner is " />
                   </node>
@@ -261,13 +261,13 @@
                   <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCA" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolve="append" />
                   <node concept="2OqwBi" id="6G33IkaAPCB" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTyeg" role="2Oq$k0">
                       <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
                     </node>
                     <node concept="liA8E" id="6G33IkaAPCD" role="2OqNvi">
-                      <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getOwner():jetbrains.mps.openapi.editor.message.EditorMessageOwner" resolve="getOwner" />
+                      <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getOwner():jetbrains.mps.openapi.editor.message.EditorMessageOwner" resolve="getOwner" />
                     </node>
                   </node>
                 </node>
@@ -279,7 +279,7 @@
                   <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCH" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="Xl_RD" id="6G33IkaAPCI" role="37wK5m">
                     <property role="Xl_RC" value="\n" />
                   </node>
@@ -301,7 +301,7 @@
                           <ref role="3cqZAo" node="5bSVmgRQu4V" resolve="it" />
                         </node>
                         <node concept="liA8E" id="5bSVmgRQuUB" role="2OqNvi">
-                          <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
+                          <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                         </node>
                       </node>
                       <node concept="17RvpY" id="5bSVmgRQxd7" role="2OqNvi" />
@@ -318,14 +318,14 @@
           <node concept="3cpWsn" id="6G33IkaAPCK" role="1Duv9x">
             <property role="TrG5h" value="message" />
             <node concept="3uibUv" id="71qRyYfdCaG" role="1tU5fm">
-              <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+              <ref role="3uigEE" to="kpve:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="6G33IkaAPCM" role="3cqZAp">
           <node concept="2YIFZM" id="6G33IkaAPCN" role="3clFbG">
-            <ref role="37wK5l" to="810:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
-            <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+            <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
             <node concept="2OqwBi" id="6G33IkaAPCO" role="37wK5m">
               <node concept="2WthIp" id="6G33IkaAPCP" role="2Oq$k0" />
               <node concept="1DTwFV" id="6G33IkaAPCQ" role="2OqNvi">
@@ -337,15 +337,15 @@
                 <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
               </node>
               <node concept="liA8E" id="6G33IkaAPCT" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
               </node>
             </node>
             <node concept="Xl_RD" id="6G33IkaAPCU" role="37wK5m">
               <property role="Xl_RC" value="Node Messages" />
             </node>
             <node concept="2YIFZM" id="6G33IkaAPCV" role="37wK5m">
-              <ref role="37wK5l" to="810:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
-              <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+              <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
+              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
             </node>
           </node>
         </node>
@@ -367,11 +367,11 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="6G33IkaAPD8" role="2OqNvi">
-                        <ref role="37wK5l" to="9a8:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
                       </node>
                     </node>
                     <node concept="liA8E" id="6G33IkaAPD9" role="2OqNvi">
-                      <ref role="37wK5l" to="9a8:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
+                      <ref role="37wK5l" to="exr9:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
                       <node concept="2OqwBi" id="6G33IkaAPDa" role="37wK5m">
                         <node concept="2WthIp" id="6G33IkaAPDb" role="2Oq$k0" />
                         <node concept="1DTwFV" id="6G33IkaAPDc" role="2OqNvi">
@@ -382,7 +382,7 @@
                   </node>
                   <node concept="_YKpA" id="6G33IkaAPDd" role="10QFUM">
                     <node concept="3uibUv" id="71qRyYfgnev" role="_ZDj9">
-                      <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+                      <ref role="3uigEE" to="kpve:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
                     </node>
                   </node>
                 </node>
@@ -397,7 +397,7 @@
                             <ref role="3cqZAo" node="5bSVmgRQdWY" resolve="it" />
                           </node>
                           <node concept="liA8E" id="5bSVmgRQkvW" role="2OqNvi">
-                            <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
+                            <ref role="37wK5l" to="kpve:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                           </node>
                         </node>
                         <node concept="17RvpY" id="5bSVmgRQnib" role="2OqNvi" />
@@ -418,22 +418,22 @@
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="6G33IkaAPDh" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDi" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
       <node concept="1oajcY" id="6G33IkaAPDj" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDk" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
-      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="6G33IkaAPDl" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDm" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
       <node concept="1oajcY" id="6G33IkaAPDn" role="1oa70y" />
     </node>
   </node>

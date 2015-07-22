@@ -29,11 +29,11 @@
       <node id="1050311802978903970" at="40,62,41,63" concept="5" />
       <node id="1050311802978903970" at="41,63,42,30" concept="5" />
       <node id="1050311802978903970" at="42,30,43,227" concept="2" />
-      <node id="1050311802978903970" at="43,227,44,549" concept="2" />
-      <node id="1050311802978903970" at="44,549,45,24" concept="6" />
+      <node id="1050311802978903970" at="43,227,44,464" concept="2" />
+      <node id="1050311802978903970" at="44,464,45,24" concept="6" />
       <node id="1050311802978903957" at="47,0,48,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="1050311802978903970" at="42,30,44,549" concept="0" />
-      <node id="1050311802978903970" at="42,30,44,549" concept="0" />
+      <node id="1050311802978903970" at="42,30,44,464" concept="0" />
+      <node id="1050311802978903970" at="42,30,44,464" concept="0" />
       <node id="1050311802978903957" at="20,0,23,0" concept="1" trace="ConceptCondition_Constraints#()V" />
       <node id="1050311802978903957" at="30,0,33,5" concept="3" />
       <node id="1050311802978903957" at="37,0,40,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
@@ -44,7 +44,7 @@
       <scope id="1050311802978903957" at="24,43,25,16" />
       <scope id="1050311802978903957" at="31,51,32,67" />
       <scope id="1050311802978903959" at="37,148,38,362" />
-      <scope id="1050311802978903970" at="42,30,44,549" />
+      <scope id="1050311802978903970" at="42,30,44,464" />
       <scope id="1050311802978903957" at="20,0,23,0" />
       <scope id="1050311802978903957" at="37,0,40,0">
         <var name="childConcept" id="1050311802978903957" />
@@ -747,11 +747,11 @@
       <node id="3339131993542058177" at="45,65,46,63" concept="5" />
       <node id="3339131993542058177" at="46,63,47,30" concept="5" />
       <node id="3339131993542058177" at="47,30,48,227" concept="2" />
-      <node id="3339131993542058177" at="48,227,49,542" concept="2" />
-      <node id="3339131993542058177" at="49,542,50,24" concept="6" />
+      <node id="3339131993542058177" at="48,227,49,460" concept="2" />
+      <node id="3339131993542058177" at="49,460,50,24" concept="6" />
       <node id="3339131993542058155" at="52,0,53,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="3339131993542058177" at="47,30,49,542" concept="0" />
-      <node id="3339131993542058177" at="47,30,49,542" concept="0" />
+      <node id="3339131993542058177" at="47,30,49,460" concept="0" />
+      <node id="3339131993542058177" at="47,30,49,460" concept="0" />
       <node id="3339131993542058155" at="21,0,24,0" concept="1" trace="BaseProjectOperation_Constraints#()V" />
       <node id="3339131993542058155" at="31,0,34,5" concept="3" />
       <node id="3339131993542058162" at="39,24,42,5" concept="3" />
@@ -763,7 +763,7 @@
       <scope id="3339131993542058155" at="25,43,26,16" />
       <scope id="3339131993542058155" at="32,51,33,67" />
       <scope id="3339131993542058167" at="40,194,41,477" />
-      <scope id="3339131993542058177" at="47,30,49,542" />
+      <scope id="3339131993542058177" at="47,30,49,460" />
       <scope id="3339131993542058155" at="21,0,24,0" />
       <scope id="3339131993542058155" at="24,0,28,0" />
       <scope id="3339131993542058157" at="38,148,43,15">
@@ -1058,11 +1058,11 @@
       <node id="8713489730824201199" at="40,62,41,63" concept="5" />
       <node id="8713489730824201199" at="41,63,42,30" concept="5" />
       <node id="8713489730824201199" at="42,30,43,227" concept="2" />
-      <node id="8713489730824201199" at="43,227,44,550" concept="2" />
-      <node id="8713489730824201199" at="44,550,45,24" concept="6" />
+      <node id="8713489730824201199" at="43,227,44,465" concept="2" />
+      <node id="8713489730824201199" at="44,465,45,24" concept="6" />
       <node id="8713489730824201065" at="47,0,48,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="8713489730824201199" at="42,30,44,550" concept="0" />
-      <node id="8713489730824201199" at="42,30,44,550" concept="0" />
+      <node id="8713489730824201199" at="42,30,44,465" concept="0" />
+      <node id="8713489730824201199" at="42,30,44,465" concept="0" />
       <node id="8713489730824201065" at="20,0,23,0" concept="1" trace="EditableModel_Constraints#()V" />
       <node id="8713489730824201065" at="30,0,33,5" concept="3" />
       <node id="8713489730824201065" at="37,0,40,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
@@ -1073,7 +1073,7 @@
       <scope id="8713489730824201065" at="24,43,25,16" />
       <scope id="8713489730824201065" at="31,51,32,67" />
       <scope id="8713489730824201067" at="37,148,38,362" />
-      <scope id="8713489730824201199" at="42,30,44,550" />
+      <scope id="8713489730824201199" at="42,30,44,465" />
       <scope id="8713489730824201065" at="20,0,23,0" />
       <scope id="8713489730824201065" at="37,0,40,0">
         <var name="childConcept" id="8713489730824201065" />

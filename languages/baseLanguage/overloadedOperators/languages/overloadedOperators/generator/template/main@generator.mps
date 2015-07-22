@@ -18,10 +18,10 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="p369" ref="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5q41" ref="r:9657ec16-7dab-4be4-9ea2-13982a8c441b(jetbrains.mps.baseLanguage.overloadedOperators.util)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -485,7 +485,7 @@
                         </node>
                         <node concept="10QFUN" id="2kpoMNxbMKr" role="3clFbw">
                           <node concept="3uibUv" id="2kpoMNxbMKu" role="10QFUM">
-                            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                           </node>
                           <node concept="1eOMI4" id="2kpoMNxbMKp" role="10QFUP">
                             <node concept="2OqwBi" id="2kpoMNxbMKf" role="1eOMHV">
@@ -493,7 +493,7 @@
                                 <node concept="30H73N" id="2kpoMNxbNsM" role="2JrQYb" />
                               </node>
                               <node concept="liA8E" id="2kpoMNxbMKl" role="2OqNvi">
-                                <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
                                 <node concept="Xl_RD" id="2kpoMNxbMKm" role="37wK5m">
                                   <property role="Xl_RC" value="reversed" />
                                 </node>
@@ -567,7 +567,7 @@
                         </node>
                         <node concept="10QFUN" id="2kpoMNxbML9" role="3clFbw">
                           <node concept="3uibUv" id="2kpoMNxbMLa" role="10QFUM">
-                            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                           </node>
                           <node concept="1eOMI4" id="2kpoMNxbMLb" role="10QFUP">
                             <node concept="2OqwBi" id="2kpoMNxbMLc" role="1eOMHV">
@@ -575,7 +575,7 @@
                                 <node concept="30H73N" id="2kpoMNxbNsN" role="2JrQYb" />
                               </node>
                               <node concept="liA8E" id="2kpoMNxbMLf" role="2OqNvi">
-                                <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
                                 <node concept="Xl_RD" id="2kpoMNxbMLg" role="37wK5m">
                                   <property role="Xl_RC" value="reversed" />
                                 </node>

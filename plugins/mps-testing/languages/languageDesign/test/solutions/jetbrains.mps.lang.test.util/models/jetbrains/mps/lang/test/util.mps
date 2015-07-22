@@ -6,9 +6,9 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="vft3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -154,7 +154,7 @@
       <property role="TrG5h" value="myValue" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5uCAHWJUZF8" role="1tU5fm">
-        <ref role="3uigEE" to="vft3:~AtomicReference" resolve="AtomicReference" />
+        <ref role="3uigEE" to="i5cy:~AtomicReference" resolve="AtomicReference" />
         <node concept="3uibUv" id="5uCAHWJV2sQ" role="11_B2D">
           <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
@@ -174,7 +174,7 @@
             </node>
             <node concept="2ShNRf" id="5uCAHWJVbo3" role="37vLTx">
               <node concept="1pGfFk" id="5uCAHWJVbo1" role="2ShVmc">
-                <ref role="37wK5l" to="vft3:~AtomicReference.&lt;init&gt;(java.lang.Object)" resolve="AtomicReference" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.&lt;init&gt;(java.lang.Object)" resolve="AtomicReference" />
                 <node concept="3uibUv" id="5uCAHWJVbo2" role="1pMfVU">
                   <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
                 </node>
@@ -202,7 +202,7 @@
               <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWrgR" role="2OqNvi">
-              <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+              <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
             </node>
           </node>
         </node>
@@ -231,7 +231,7 @@
               <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWsMa" role="2OqNvi">
-              <ref role="37wK5l" to="vft3:~AtomicReference.set(java.lang.Object):void" resolve="set" />
+              <ref role="37wK5l" to="i5cy:~AtomicReference.set(java.lang.Object):void" resolve="set" />
               <node concept="37vLTw" id="5uCAHWJWsT1" role="37wK5m">
                 <ref role="3cqZAo" node="1$FrpHy4udS" resolve="value" />
               </node>
@@ -267,7 +267,7 @@
               <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWvTn" role="2OqNvi">
-              <ref role="37wK5l" to="vft3:~AtomicReference.compareAndSet(java.lang.Object,java.lang.Object):boolean" resolve="compareAndSet" />
+              <ref role="37wK5l" to="i5cy:~AtomicReference.compareAndSet(java.lang.Object,java.lang.Object):boolean" resolve="compareAndSet" />
               <node concept="37vLTw" id="5uCAHWJWxB2" role="37wK5m">
                 <ref role="3cqZAo" node="5uCAHWJWwrx" resolve="oldValue" />
               </node>
@@ -309,7 +309,7 @@
               <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWy7x" role="2OqNvi">
-              <ref role="37wK5l" to="vft3:~AtomicReference.set(java.lang.Object):void" resolve="set" />
+              <ref role="37wK5l" to="i5cy:~AtomicReference.set(java.lang.Object):void" resolve="set" />
               <node concept="Rm8GO" id="2A5UIbg6F5o" role="37wK5m">
                 <ref role="Rm8GQ" node="1$FrpHy4ufD" resolve="IDLE" />
                 <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
@@ -334,11 +334,11 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWz_I" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="liA8E" id="1$FrpHy4uem" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Enum.ordinal():int" resolve="ordinal" />
+              <ref role="37wK5l" to="wyt6:~Enum.ordinal():int" resolve="ordinal" />
             </node>
           </node>
         </node>
@@ -372,7 +372,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ueq" resolve="another" />
               </node>
               <node concept="liA8E" id="1$FrpHy4ue$" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Enum.ordinal():int" resolve="ordinal" />
+                <ref role="37wK5l" to="wyt6:~Enum.ordinal():int" resolve="ordinal" />
               </node>
             </node>
           </node>
@@ -422,13 +422,13 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="1$FrpHy4ueQ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="37vLTG" id="1$FrpHy4ueR" role="3clF46">
         <property role="TrG5h" value="another" />
         <property role="3TUv4t" value="false" />
         <node concept="2AHcQZ" id="1$FrpHy4ueS" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
         <node concept="3uibUv" id="1$FrpHy4ueT" role="1tU5fm">
           <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
@@ -442,11 +442,11 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWFNJ" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="liA8E" id="1$FrpHy4ueY" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Enum.compareTo(java.lang.Enum):int" resolve="compareTo" />
+              <ref role="37wK5l" to="wyt6:~Enum.compareTo(java.lang.Enum):int" resolve="compareTo" />
               <node concept="2OqwBi" id="5uCAHWJWJjJ" role="37wK5m">
                 <node concept="2OqwBi" id="1$FrpHy4ueZ" role="2Oq$k0">
                   <node concept="37vLTw" id="1$FrpHy4uf0" role="2Oq$k0">
@@ -457,7 +457,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5uCAHWJWKoL" role="2OqNvi">
-                  <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
@@ -480,7 +480,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWOk0" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4uf9" role="3uHU7w">
@@ -511,7 +511,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWQr2" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
           </node>
@@ -533,7 +533,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWSod" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufh" role="3uHU7w">
@@ -559,7 +559,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWUav" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufp" role="3uHU7w">
@@ -585,7 +585,7 @@
                 <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWVB1" role="2OqNvi">
-                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="i5cy:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufx" role="3uHU7w">
@@ -601,7 +601,7 @@
     <node concept="2tJIrI" id="1$FrpHy4uf$" role="jymVt" />
     <node concept="3Tm1VV" id="1$FrpHy4uf_" role="1B3o_S" />
     <node concept="3uibUv" id="1$FrpHy4ufA" role="EKbjA">
-      <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+      <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
       <node concept="3uibUv" id="1$FrpHy4ufB" role="11_B2D">
         <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
       </node>
@@ -613,27 +613,27 @@
     <node concept="2tJIrI" id="2A5UIbg5pM0" role="jymVt" />
     <node concept="QsSxf" id="1$FrpHy4ufD" role="Qtgdg">
       <property role="TrG5h" value="IDLE" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufE" role="Qtgdg">
       <property role="TrG5h" value="INITIALIZED" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="2A5UIbg56dC" role="Qtgdg">
       <property role="TrG5h" value="READYTOEXECUTE" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufF" role="Qtgdg">
       <property role="TrG5h" value="RUNNING" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufG" role="Qtgdg">
       <property role="TrG5h" value="TERMINATING" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufH" role="Qtgdg">
       <property role="TrG5h" value="TERMINATED" />
-      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="3Tm1VV" id="1$FrpHy4ufI" role="1B3o_S" />
   </node>

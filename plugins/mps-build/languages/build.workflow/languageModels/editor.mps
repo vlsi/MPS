@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
     <import index="73rs" ref="r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -827,8 +827,8 @@
               <node concept="3clFbS" id="64wWIxoT1ez" role="2VODD2">
                 <node concept="3clFbF" id="64wWIxoT1e$" role="3cqZAp">
                   <node concept="2YIFZM" id="64wWIxoT1e_" role="3clFbG">
-                    <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-                    <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                    <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                    <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                     <node concept="2ShNRf" id="64wWIxoT1eA" role="37wK5m">
                       <node concept="3g6Rrh" id="64wWIxoT1eB" role="2ShVmc">
                         <node concept="17QB3L" id="64wWIxoT1eC" role="3g7fb8" />
@@ -870,8 +870,8 @@
               <node concept="3clFbS" id="64wWIxoTqTb" role="2VODD2">
                 <node concept="3clFbF" id="64wWIxoTqTc" role="3cqZAp">
                   <node concept="2YIFZM" id="64wWIxoTqTd" role="3clFbG">
-                    <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-                    <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+                    <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                    <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
                     <node concept="2ShNRf" id="64wWIxoTqTe" role="37wK5m">
                       <node concept="3g6Rrh" id="64wWIxoTqTf" role="2ShVmc">
                         <node concept="17QB3L" id="64wWIxoTqTg" role="3g7fb8" />

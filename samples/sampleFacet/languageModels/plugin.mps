@@ -8,13 +8,13 @@
   </languages>
   <imports>
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
-    <import index="y5px" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
   </imports>
@@ -247,7 +247,7 @@
                   <node concept="3cpWsn" id="1aF0PuY45bv" role="3cpWs9">
                     <property role="TrG5h" value="countVal" />
                     <node concept="3uibUv" id="1aF0PuY45bw" role="1tU5fm">
-                      <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                      <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                     </node>
                     <node concept="1aIXbY" id="1aF0PuY45bx" role="33vP2m">
                       <node concept="1aIXbZ" id="1aF0PuY45by" role="2Oq$k0" />
@@ -290,7 +290,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="4Ql6f00WXrN" role="2OqNvi">
-                              <ref role="37wK5l" to="y5px:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
+                              <ref role="37wK5l" to="ap4t:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
                               <node concept="37vLTw" id="3GM_nagTyrl" role="37wK5m">
                                 <ref role="3cqZAo" node="4Ql6f00WXrR" resolve="smd" />
                               </node>
@@ -324,7 +324,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="6SBjtG_yMen" role="2OqNvi">
-                              <ref role="37wK5l" to="y5px:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
+                              <ref role="37wK5l" to="ap4t:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
                               <node concept="37vLTw" id="3GM_nagT_Gr" role="37wK5m">
                                 <ref role="3cqZAo" node="4Ql6f00WXrR" resolve="smd" />
                               </node>
@@ -358,7 +358,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="6WUlHAohcEV" role="2OqNvi">
-                              <ref role="37wK5l" to="y5px:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
+                              <ref role="37wK5l" to="ap4t:~DefaultGenerationParametersProvider.addParameter(org.jetbrains.mps.openapi.model.SModel,java.lang.String,java.lang.Object):void" resolve="addParameter" />
                               <node concept="37vLTw" id="3GM_nagT$wQ" role="37wK5m">
                                 <ref role="3cqZAo" node="4Ql6f00WXrR" resolve="smd" />
                               </node>
@@ -383,7 +383,7 @@
                   <node concept="3cpWsn" id="4Ql6f00WXrR" role="1Duv9x">
                     <property role="TrG5h" value="smd" />
                     <node concept="3uibUv" id="4Ql6f00WXrS" role="1tU5fm">
-                      <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+                      <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="4Ql6f00WXrT" role="1DdaDG">
@@ -413,7 +413,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1aF0PuY4hwN" role="2OqNvi">
-                  <ref role="37wK5l" to="y5px:~DefaultGenerationParametersProvider.addParameter(java.lang.String,java.lang.Object):void" resolve="addParameter" />
+                  <ref role="37wK5l" to="ap4t:~DefaultGenerationParametersProvider.addParameter(java.lang.String,java.lang.Object):void" resolve="addParameter" />
                   <node concept="Xl_RD" id="1aF0PuY4hwO" role="37wK5m">
                     <property role="Xl_RC" value="count" />
                   </node>
@@ -451,7 +451,7 @@
           <property role="3dDGau" value="false" />
           <property role="TrG5h" value="Count" />
           <node concept="3uibUv" id="6SBjtG_yYDQ" role="2lK19J">
-            <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
           </node>
         </node>
         <node concept="2lGYhJ" id="6WUlHAohcF4" role="2pHZQ9">
@@ -524,7 +524,7 @@
                               <node concept="37vLTG" id="1sKpG65mEjT" role="3clF46">
                                 <property role="TrG5h" value="file" />
                                 <node concept="3uibUv" id="1sKpG65mEjU" role="1tU5fm">
-                                  <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+                                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                                 </node>
                               </node>
                               <node concept="3clFbS" id="1sKpG65mEjV" role="3clF47">
@@ -546,7 +546,7 @@
                                 </node>
                               </node>
                               <node concept="2AHcQZ" id="1sKpG65mEjW" role="2AJF6D">
-                                <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                               </node>
                             </node>
                           </node>

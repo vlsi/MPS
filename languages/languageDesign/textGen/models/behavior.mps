@@ -16,9 +16,9 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="zrid" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" implicit="true" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" implicit="true" />
+    <import index="yy4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textGen(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -1414,7 +1414,7 @@
         <node concept="3cpWs6" id="4IGpg_YjKyX" role="3cqZAp">
           <node concept="2c44tf" id="4IGpg_YjKyT" role="3cqZAk">
             <node concept="3uibUv" id="hXwRVCf" role="2c44tc">
-              <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+              <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
             </node>
           </node>
         </node>
@@ -1439,7 +1439,7 @@
         <node concept="3cpWs6" id="4IGpg_YjLFq" role="3cqZAp">
           <node concept="2c44tf" id="4IGpg_YjLtN" role="3cqZAk">
             <node concept="3uibUv" id="hX_6Jk2" role="2c44tc">
-              <ref role="3uigEE" to="zrid:~TextGenBuffer" resolve="TextGenBuffer" />
+              <ref role="3uigEE" to="yy4t:~TextGenBuffer" resolve="TextGenBuffer" />
             </node>
           </node>
         </node>

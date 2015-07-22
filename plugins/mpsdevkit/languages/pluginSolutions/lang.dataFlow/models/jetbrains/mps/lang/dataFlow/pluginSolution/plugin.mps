@@ -10,21 +10,21 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
-    <import index="hxuy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
+    <import index="1fjm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)" />
     <import index="aplb" ref="r:a1d8bbbf-d4f0-431f-8dcd-a6badc777315(jetbrains.mps.lang.dataFlow)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="cxih" ref="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)" />
-    <import index="flgp" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework.instructions(MPS.Core/jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" />
-    <import index="i0jt" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework.analyzers(MPS.Core/jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" />
-    <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="810" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
-    <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
+    <import index="dau9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework.instructions(MPS.Core/)" />
+    <import index="autt" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework.analyzers(MPS.Core/)" />
+    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -161,7 +161,7 @@
           <node concept="3cpWsn" id="4KDfkUwM7D_" role="3cpWs9">
             <property role="TrG5h" value="program" />
             <node concept="3uibUv" id="4KDfkUwM7DA" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~Program" resolve="Program" />
+              <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
             </node>
             <node concept="2OqwBi" id="4KDfkUwM7DB" role="33vP2m">
               <node concept="liA8E" id="4KDfkUwM7DC" role="2OqNvi">
@@ -183,17 +183,17 @@
         <node concept="3clFbF" id="4KDfkUwM7DH" role="3cqZAp">
           <node concept="2OqwBi" id="4KDfkUwM7DI" role="3clFbG">
             <node concept="10M0yZ" id="4KDfkUwM7DJ" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4KDfkUwM7DK" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="2OqwBi" id="4KDfkUwM7DL" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTyjS" role="2Oq$k0">
                   <ref role="3cqZAo" node="4KDfkUwM7D_" resolve="program" />
                 </node>
                 <node concept="liA8E" id="4KDfkUwM7DN" role="2OqNvi">
-                  <ref role="37wK5l" to="hxuy:~Program.toString(boolean):java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="1fjm:~Program.toString(boolean):java.lang.String" resolve="toString" />
                   <node concept="3clFbT" id="4KDfkUwM7DO" role="37wK5m">
                     <property role="3clFbU" value="true" />
                   </node>
@@ -233,7 +233,7 @@
           <node concept="3cpWsn" id="4KDfkUwM7E1" role="3cpWs9">
             <property role="TrG5h" value="program" />
             <node concept="3uibUv" id="4KDfkUwM7E2" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~Program" resolve="Program" />
+              <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
             </node>
           </node>
         </node>
@@ -258,11 +258,11 @@
                 </node>
               </node>
               <node concept="liA8E" id="3D0DuOpxZZH" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
             </node>
             <node concept="liA8E" id="1KUoCipvzh8" role="2OqNvi">
-              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="1KUoCipvzh9" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCipvzha" role="1bW5cS">
                   <node concept="3clFbF" id="1KUoCipvzhb" role="3cqZAp">
@@ -340,7 +340,7 @@
               </node>
             </node>
             <node concept="liA8E" id="1ekf28usAW_" role="2OqNvi">
-              <ref role="37wK5l" to="810:~DialogWrapper.show():void" resolve="show" />
+              <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
             </node>
           </node>
         </node>
@@ -354,7 +354,7 @@
     </node>
     <node concept="1DS2jV" id="3D0DuOpxYDJ" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="3D0DuOpxYDK" role="1oa70y" />
     </node>
   </node>
@@ -367,7 +367,7 @@
           <node concept="3cpWsn" id="4KDfkUwM7Ev" role="3cpWs9">
             <property role="TrG5h" value="program" />
             <node concept="3uibUv" id="4KDfkUwM7Ew" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~Program" resolve="Program" />
+              <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
             </node>
             <node concept="2OqwBi" id="4KDfkUwM7Ex" role="33vP2m">
               <node concept="liA8E" id="4KDfkUwM7Ey" role="2OqNvi">
@@ -390,19 +390,19 @@
           <node concept="3cpWsn" id="4KDfkUwM7EC" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="4KDfkUwM7ED" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~AnalysisResult" resolve="AnalysisResult" />
+              <ref role="3uigEE" to="1fjm:~AnalysisResult" resolve="AnalysisResult" />
               <node concept="2hMVRd" id="4KDfkUwM7EE" role="11_B2D">
                 <node concept="3uibUv" id="4KDfkUwM7EF" role="2hN53Y">
-                  <ref role="3uigEE" to="flgp:~WriteInstruction" resolve="WriteInstruction" />
+                  <ref role="3uigEE" to="dau9:~WriteInstruction" resolve="WriteInstruction" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4KDfkUwM7EG" role="33vP2m">
               <node concept="liA8E" id="4KDfkUwM7EH" role="2OqNvi">
-                <ref role="37wK5l" to="hxuy:~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolve="analyze" />
+                <ref role="37wK5l" to="1fjm:~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolve="analyze" />
                 <node concept="2ShNRf" id="4KDfkUwM7EI" role="37wK5m">
                   <node concept="1pGfFk" id="4KDfkUwM7EJ" role="2ShVmc">
-                    <ref role="37wK5l" to="i0jt:~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolve="ReachingDefinitionsAnalyzer" />
+                    <ref role="37wK5l" to="autt:~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolve="ReachingDefinitionsAnalyzer" />
                   </node>
                 </node>
               </node>
@@ -415,17 +415,17 @@
         <node concept="3clFbF" id="4KDfkUwM7EL" role="3cqZAp">
           <node concept="2OqwBi" id="4KDfkUwM7EM" role="3clFbG">
             <node concept="10M0yZ" id="4KDfkUwM7EN" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4KDfkUwM7EO" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="2OqwBi" id="4KDfkUwM7EP" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTvjf" role="2Oq$k0">
                   <ref role="3cqZAo" node="4KDfkUwM7EC" resolve="result" />
                 </node>
                 <node concept="liA8E" id="4KDfkUwM7ER" role="2OqNvi">
-                  <ref role="37wK5l" to="hxuy:~AnalysisResult.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="1fjm:~AnalysisResult.toString():java.lang.String" resolve="toString" />
                 </node>
               </node>
             </node>
@@ -449,7 +449,7 @@
           <node concept="3cpWsn" id="4KDfkUwM7F0" role="3cpWs9">
             <property role="TrG5h" value="program" />
             <node concept="3uibUv" id="4KDfkUwM7F1" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~Program" resolve="Program" />
+              <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
             </node>
             <node concept="2OqwBi" id="4KDfkUwM7F2" role="33vP2m">
               <node concept="liA8E" id="4KDfkUwM7F3" role="2OqNvi">
@@ -472,17 +472,17 @@
           <node concept="3cpWsn" id="4KDfkUwM7F9" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="4KDfkUwM7Fa" role="1tU5fm">
-              <ref role="3uigEE" to="hxuy:~AnalysisResult" resolve="AnalysisResult" />
+              <ref role="3uigEE" to="1fjm:~AnalysisResult" resolve="AnalysisResult" />
               <node concept="3uibUv" id="4KDfkUwM7Fb" role="11_B2D">
-                <ref role="3uigEE" to="hxuy:~VarSet" resolve="VarSet" />
+                <ref role="3uigEE" to="1fjm:~VarSet" resolve="VarSet" />
               </node>
             </node>
             <node concept="2OqwBi" id="4KDfkUwM7Fc" role="33vP2m">
               <node concept="liA8E" id="4KDfkUwM7Fd" role="2OqNvi">
-                <ref role="37wK5l" to="hxuy:~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolve="analyze" />
+                <ref role="37wK5l" to="1fjm:~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolve="analyze" />
                 <node concept="2ShNRf" id="4KDfkUwM7Fe" role="37wK5m">
                   <node concept="1pGfFk" id="4KDfkUwM7Ff" role="2ShVmc">
-                    <ref role="37wK5l" to="i0jt:~InitializedVariablesAnalyzer.&lt;init&gt;()" resolve="InitializedVariablesAnalyzer" />
+                    <ref role="37wK5l" to="autt:~InitializedVariablesAnalyzer.&lt;init&gt;()" resolve="InitializedVariablesAnalyzer" />
                   </node>
                 </node>
               </node>
@@ -495,17 +495,17 @@
         <node concept="3clFbF" id="4KDfkUwM7Fh" role="3cqZAp">
           <node concept="2OqwBi" id="4KDfkUwM7Fi" role="3clFbG">
             <node concept="10M0yZ" id="4KDfkUwM7Fj" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4KDfkUwM7Fk" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="2OqwBi" id="4KDfkUwM7Fl" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTA31" role="2Oq$k0">
                   <ref role="3cqZAo" node="4KDfkUwM7F9" resolve="result" />
                 </node>
                 <node concept="liA8E" id="4KDfkUwM7Fn" role="2OqNvi">
-                  <ref role="37wK5l" to="hxuy:~AnalysisResult.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="1fjm:~AnalysisResult.toString():java.lang.String" resolve="toString" />
                 </node>
               </node>
             </node>

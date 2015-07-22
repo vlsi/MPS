@@ -13,12 +13,12 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="ff4b" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(jetbrains.mps.progress@java_stub)" />
-    <import index="5fm0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(org.jetbrains.mps.openapi.module@java_stub)" />
-    <import index="z8de" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress()" />
+    <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model()" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
   </imports>
   <registry>
@@ -205,7 +205,7 @@
         <node concept="mw_s8" id="htRYeRw" role="1ZfhKB">
           <node concept="2c44tf" id="htRYeRx" role="mwGJk">
             <node concept="3uibUv" id="htRYeRy" role="2c44tc">
-              <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
           </node>
         </node>
@@ -236,7 +236,7 @@
         <node concept="mw_s8" id="htRZkjL" role="1ZfhKB">
           <node concept="2c44tf" id="htRZkjM" role="mwGJk">
             <node concept="3uibUv" id="htRZkjN" role="2c44tc">
-              <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
             </node>
           </node>
         </node>
@@ -295,7 +295,7 @@
               <node concept="2pIpSj" id="7kBaCiqY3I9" role="2pJxcM">
                 <ref role="2pIpSl" to="tpee:g7uigIF" />
                 <node concept="36bGnv" id="6LpCX$U1qRq" role="2pJxcZ">
-                  <ref role="36bGnp" to="88zw:~SearchScope" resolve="SearchScope" />
+                  <ref role="36bGnp" to="lui2:~SearchScope" resolve="SearchScope" />
                 </node>
               </node>
             </node>
@@ -324,7 +324,7 @@
               <node concept="2pIpSj" id="7kBaCiqY3os" role="2pJxcM">
                 <ref role="2pIpSl" to="tpee:g7uigIF" />
                 <node concept="36bGnv" id="7kBaCiqY3ot" role="2pJxcZ">
-                  <ref role="36bGnp" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
+                  <ref role="36bGnp" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
                 </node>
               </node>
             </node>
@@ -397,7 +397,7 @@
         <node concept="mw_s8" id="5xq1uvO4ju3" role="1ZfhKB">
           <node concept="2c44tf" id="5xq1uvO4ju4" role="mwGJk">
             <node concept="3uibUv" id="kda1jWtvsA" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SearchScope" resolve="SearchScope" />
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
             </node>
           </node>
         </node>
@@ -420,7 +420,7 @@
         <node concept="mw_s8" id="5xq1uvO4jug" role="1ZfhKB">
           <node concept="2c44tf" id="5xq1uvO4juh" role="mwGJk">
             <node concept="3uibUv" id="6TUx0SkZO5t" role="2c44tc">
-              <ref role="3uigEE" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
+              <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
             </node>
           </node>
         </node>
@@ -467,7 +467,7 @@
         <node concept="mw_s8" id="5xq1uvO2yRz" role="1ZfhKB">
           <node concept="2c44tf" id="5xq1uvO2yR$" role="mwGJk">
             <node concept="3uibUv" id="5xq1uvO2yRB" role="2c44tc">
-              <ref role="3uigEE" to="5fm0:~IResultProvider" resolve="IResultProvider" />
+              <ref role="3uigEE" to="9erk:~IResultProvider" resolve="IResultProvider" />
             </node>
           </node>
         </node>

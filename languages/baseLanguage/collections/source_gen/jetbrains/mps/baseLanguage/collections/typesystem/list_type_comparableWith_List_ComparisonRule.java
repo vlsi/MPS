@@ -94,5 +94,5 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_ovtchh_a0a0a0a0b0b0a0b0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List");
+  private static SNodePointer SNODE_POINTER_ovtchh_a0a0a0a0b0b0a0b0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)", "~List");
 }

@@ -8,8 +8,8 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -165,11 +165,11 @@
           <node concept="3clFbF" id="HioGaijva2" role="3cqZAp">
             <node concept="2OqwBi" id="HioGaijva3" role="3clFbG">
               <node concept="10M0yZ" id="HioGaijva4" role="2Oq$k0">
-                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
               </node>
               <node concept="liA8E" id="HioGaijva5" role="2OqNvi">
-                <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                 <node concept="Xl_RD" id="HioGaijva6" role="37wK5m">
                   <property role="Xl_RC" value=" " />
                 </node>
@@ -220,11 +220,11 @@
         <node concept="3clFbF" id="HioGaijvam" role="3cqZAp">
           <node concept="2OqwBi" id="HioGaijvan" role="3clFbG">
             <node concept="10M0yZ" id="HioGaijvao" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="HioGaijvap" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="HioGaijvaq" role="37wK5m">
                 <property role="Xl_RC" value=" " />
               </node>
@@ -253,8 +253,8 @@
     <node concept="2DMOqp" id="1mO8VfSNOiZ" role="1fjN5k">
       <node concept="2OqwBi" id="1mO8VfSNWEJ" role="2DMOqq">
         <node concept="10M0yZ" id="1mO8VfSNWEK" role="2Oq$k0">
-          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
           <node concept="3jrphi" id="1mO8VfSNWEU" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
@@ -267,7 +267,7 @@
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSNWEL" role="2OqNvi">
-          <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
+          <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
           <node concept="33vP2n" id="1mO8VfSNWER" role="37wK5m">
             <node concept="2DMOqr" id="1mO8VfSNWES" role="lGtFl">
               <property role="2DMOqs" value="printed" />
@@ -283,11 +283,11 @@
     </node>
     <node concept="2OqwBi" id="1mO8VfSNW3J" role="1fjN5n">
       <node concept="10M0yZ" id="1mO8VfSNW3I" role="2Oq$k0">
-        <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-        <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
       </node>
       <node concept="liA8E" id="1mO8VfSNW3N" role="2OqNvi">
-        <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+        <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
         <node concept="Xl_RD" id="1mO8VfSNW3O" role="37wK5m">
           <property role="Xl_RC" value="d" />
         </node>
@@ -313,8 +313,8 @@
     <node concept="2DMOqp" id="1mO8VfSNPUA" role="1fjN5k">
       <node concept="2OqwBi" id="1mO8VfSO68l" role="2DMOqq">
         <node concept="10M0yZ" id="1mO8VfSO68m" role="2Oq$k0">
-          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
           <node concept="3jrphi" id="1mO8VfSO68n" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
@@ -327,7 +327,7 @@
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSO68p" role="2OqNvi">
-          <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
+          <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
           <node concept="33vP2n" id="1mO8VfSO68t" role="37wK5m">
             <node concept="2EdB8i" id="1mO8VfSO68u" role="lGtFl">
               <property role="2DMOqs" value="list" />
@@ -346,11 +346,11 @@
     </node>
     <node concept="2OqwBi" id="1mO8VfSOday" role="1fjN5n">
       <node concept="10M0yZ" id="1mO8VfSOda_" role="2Oq$k0">
-        <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-        <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
       </node>
       <node concept="liA8E" id="1mO8VfSOdaA" role="2OqNvi">
-        <ref role="37wK5l" to="e2lb:~Object.wait(long,int):void" resolve="wait" />
+        <ref role="37wK5l" to="wyt6:~Object.wait(long,int):void" resolve="wait" />
         <node concept="3cmrfG" id="1mO8VfSOdaB" role="37wK5m">
           <property role="3cmrfH" value="10" />
         </node>
@@ -376,8 +376,8 @@
     <node concept="2DMOqp" id="1mO8VfSNXW4" role="1fjN5k">
       <node concept="2OqwBi" id="1mO8VfSNXW5" role="2DMOqq">
         <node concept="10M0yZ" id="1mO8VfSNXW6" role="2Oq$k0">
-          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
           <node concept="3jrphi" id="1mO8VfSNXW7" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
@@ -390,7 +390,7 @@
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSNXW9" role="2OqNvi">
-          <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+          <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
           <node concept="Xl_RD" id="1mO8VfSNXWh" role="37wK5m">
             <property role="Xl_RC" value="" />
             <node concept="2DMOqt" id="1mO8VfSNXWi" role="lGtFl">
@@ -409,11 +409,11 @@
     </node>
     <node concept="2OqwBi" id="1mO8VfSNXWd" role="1fjN5n">
       <node concept="10M0yZ" id="1mO8VfSNXWe" role="2Oq$k0">
-        <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-        <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
       </node>
       <node concept="liA8E" id="1mO8VfSNXWf" role="2OqNvi">
-        <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+        <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
         <node concept="Xl_RD" id="1mO8VfSNXWg" role="37wK5m">
           <property role="Xl_RC" value="something" />
         </node>
@@ -439,8 +439,8 @@
     <node concept="2DMOqp" id="1mO8VfSOiQB" role="1fjN5k">
       <node concept="2OqwBi" id="1mO8VfSOiQC" role="2DMOqq">
         <node concept="10M0yZ" id="1mO8VfSOiQD" role="2Oq$k0">
-          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
           <node concept="3jrphi" id="1mO8VfSOiQE" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
@@ -453,7 +453,7 @@
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSOiQG" role="2OqNvi">
-          <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
+          <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
           <node concept="33vP2n" id="1mO8VfSOiQH" role="37wK5m">
             <node concept="2EdB8i" id="1mO8VfSOiQI" role="lGtFl">
               <property role="2DMOqs" value="list" />
@@ -472,11 +472,11 @@
     </node>
     <node concept="2OqwBi" id="1mO8VfSOiQL" role="1fjN5n">
       <node concept="10M0yZ" id="1mO8VfSOiQM" role="2Oq$k0">
-        <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-        <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
       </node>
       <node concept="liA8E" id="1mO8VfSOiQN" role="2OqNvi">
-        <ref role="37wK5l" to="e2lb:~Object.wait(long,int):void" resolve="wait" />
+        <ref role="37wK5l" to="wyt6:~Object.wait(long,int):void" resolve="wait" />
         <node concept="3cmrfG" id="1mO8VfSOiQO" role="37wK5m">
           <property role="3cmrfH" value="10" />
         </node>
@@ -490,7 +490,7 @@
     <property role="TrG5h" value="OrPattern" />
     <node concept="1fjN5g" id="4dzCQkRHbCp" role="2s_iVe">
       <node concept="3VsKOn" id="4dzCQkRHbCv" role="2s_iVb">
-        <ref role="3VsUkX" to="fxg7:~BufferedOutputStream" resolve="BufferedOutputStream" />
+        <ref role="3VsUkX" to="guwi:~BufferedOutputStream" resolve="BufferedOutputStream" />
       </node>
       <node concept="1fjN5f" id="pgXfhRbOFR" role="1fjN5h">
         <ref role="1fjN5c" node="4TeIhvLxgW7" resolve="#ds" />
@@ -503,7 +503,7 @@
       <node concept="3y3z36" id="4dzCQkRHbCl" role="3clFbw">
         <node concept="10Nm6u" id="4dzCQkRHbCo" role="3uHU7w" />
         <node concept="3VsKOn" id="4dzCQkRHbCu" role="3uHU7B">
-          <ref role="3VsUkX" to="fxg7:~BufferedOutputStream" resolve="BufferedOutputStream" />
+          <ref role="3VsUkX" to="guwi:~BufferedOutputStream" resolve="BufferedOutputStream" />
         </node>
       </node>
     </node>
@@ -550,7 +550,7 @@
         <ref role="1fjN5c" node="6hfv7YbX5YY" resolve="#s" />
       </node>
       <node concept="3VsKOn" id="4dzCQkRHhjG" role="2s_iVb">
-        <ref role="3VsUkX" to="fxg7:~BufferedOutputStream" resolve="BufferedOutputStream" />
+        <ref role="3VsUkX" to="guwi:~BufferedOutputStream" resolve="BufferedOutputStream" />
       </node>
     </node>
     <node concept="3clFbJ" id="4dzCQkRHhjH" role="1fjN5n">
@@ -560,7 +560,7 @@
       <node concept="3y3z36" id="4dzCQkRHhjK" role="3clFbw">
         <node concept="10Nm6u" id="4dzCQkRHhk4" role="3uHU7B" />
         <node concept="3VsKOn" id="4dzCQkRHhk5" role="3uHU7w">
-          <ref role="3VsUkX" to="fxg7:~BufferedOutputStream" resolve="BufferedOutputStream" />
+          <ref role="3VsUkX" to="guwi:~BufferedOutputStream" resolve="BufferedOutputStream" />
         </node>
       </node>
     </node>

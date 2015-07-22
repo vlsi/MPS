@@ -7,13 +7,13 @@
   <imports>
     <import index="lt1n" ref="r:4a0301da-c964-420c-8e35-486843de9df5(jetbrains.mps.debug.api.evaluation)" />
     <import index="1l1h" ref="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
-    <import index="nx1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <import index="ymw7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
-    <import index="jgti" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
-    <import index="l9cs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
-    <import index="wut4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
-    <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="uu3z" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.process(MPS.IDEA/)" />
+    <import index="3v5a" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution(MPS.IDEA/)" />
+    <import index="cjdg" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.ui(MPS.IDEA/)" />
+    <import index="9mrk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.executors(MPS.IDEA/)" />
+    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -127,7 +127,7 @@
       <node concept="37vLTG" id="24OxoGwU3J4" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="3uibUv" id="24OxoGwU3J5" role="1tU5fm">
-          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="24OxoGwU3J6" role="3clF47">
@@ -135,14 +135,14 @@
           <node concept="3cpWsn" id="24OxoGwU3J8" role="3cpWs9">
             <property role="TrG5h" value="dataContext" />
             <node concept="3uibUv" id="24OxoGwU3J9" role="1tU5fm">
-              <ref role="3uigEE" to="nx1:~DataContext" resolve="DataContext" />
+              <ref role="3uigEE" to="qkt:~DataContext" resolve="DataContext" />
             </node>
             <node concept="2OqwBi" id="24OxoGwU3Ja" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxgmaZ$" role="2Oq$k0">
                 <ref role="3cqZAo" node="24OxoGwU3J4" resolve="event" />
               </node>
               <node concept="liA8E" id="24OxoGwU3Jc" role="2OqNvi">
-                <ref role="37wK5l" to="nx1:~AnActionEvent.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
               </node>
             </node>
           </node>
@@ -158,7 +158,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="24OxoGwU3Jg" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2YIFZL" id="24OxoGwU3Jh" role="jymVt">
@@ -170,7 +170,7 @@
       <node concept="37vLTG" id="24OxoGwU3Jk" role="3clF46">
         <property role="TrG5h" value="event" />
         <node concept="3uibUv" id="24OxoGwU3Jl" role="1tU5fm">
-          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="24OxoGwU3Jm" role="3clF47">
@@ -214,7 +214,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="24OxoGwU3JB" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2YIFZL" id="24OxoGwU3JC" role="jymVt">
@@ -226,7 +226,7 @@
       <node concept="37vLTG" id="24OxoGwU3JF" role="3clF46">
         <property role="TrG5h" value="dataContext" />
         <node concept="3uibUv" id="24OxoGwU3JG" role="1tU5fm">
-          <ref role="3uigEE" to="nx1:~DataContext" resolve="DataContext" />
+          <ref role="3uigEE" to="qkt:~DataContext" resolve="DataContext" />
         </node>
       </node>
       <node concept="3clFbS" id="24OxoGwU3JH" role="3clF47">
@@ -234,15 +234,15 @@
           <node concept="3cpWsn" id="24OxoGwU3JQ" role="3cpWs9">
             <property role="TrG5h" value="project" />
             <node concept="3uibUv" id="24OxoGwU3JR" role="1tU5fm">
-              <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
             </node>
             <node concept="2OqwBi" id="24OxoGwU3JS" role="33vP2m">
               <node concept="10M0yZ" id="24OxoGwU3JT" role="2Oq$k0">
-                <ref role="1PxDUh" to="nx1:~PlatformDataKeys" resolve="PlatformDataKeys" />
-                <ref role="3cqZAo" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+                <ref role="1PxDUh" to="qkt:~PlatformDataKeys" resolve="PlatformDataKeys" />
+                <ref role="3cqZAo" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
               </node>
               <node concept="liA8E" id="24OxoGwU3JU" role="2OqNvi">
-                <ref role="37wK5l" to="nx1:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
+                <ref role="37wK5l" to="qkt:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
                 <node concept="37vLTw" id="2BHiRxgh9Xj" role="37wK5m">
                   <ref role="3cqZAo" node="24OxoGwU3JF" resolve="dataContext" />
                 </node>
@@ -268,15 +268,15 @@
           <node concept="3cpWsn" id="24OxoGwU3JJ" role="3cpWs9">
             <property role="TrG5h" value="runContentDescriptor" />
             <node concept="3uibUv" id="24OxoGwU3JK" role="1tU5fm">
-              <ref role="3uigEE" to="l9cs:~RunContentDescriptor" resolve="RunContentDescriptor" />
+              <ref role="3uigEE" to="cjdg:~RunContentDescriptor" resolve="RunContentDescriptor" />
             </node>
             <node concept="2OqwBi" id="24OxoGwU3JL" role="33vP2m">
               <node concept="10M0yZ" id="24OxoGwU3JM" role="2Oq$k0">
-                <ref role="1PxDUh" to="l9cs:~RunContentManager" resolve="RunContentManager" />
-                <ref role="3cqZAo" to="l9cs:~RunContentManager.RUN_CONTENT_DESCRIPTOR" resolve="RUN_CONTENT_DESCRIPTOR" />
+                <ref role="1PxDUh" to="cjdg:~RunContentManager" resolve="RunContentManager" />
+                <ref role="3cqZAo" to="cjdg:~RunContentManager.RUN_CONTENT_DESCRIPTOR" resolve="RUN_CONTENT_DESCRIPTOR" />
               </node>
               <node concept="liA8E" id="24OxoGwU3JN" role="2OqNvi">
-                <ref role="37wK5l" to="nx1:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
+                <ref role="37wK5l" to="qkt:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
                 <node concept="37vLTw" id="2BHiRxgmP7g" role="37wK5m">
                   <ref role="3cqZAo" node="24OxoGwU3JF" resolve="dataContext" />
                 </node>
@@ -307,7 +307,7 @@
                       <ref role="3cqZAo" node="24OxoGwU3JJ" resolve="runContentDescriptor" />
                     </node>
                     <node concept="liA8E" id="5N5J$YBiDZ5" role="2OqNvi">
-                      <ref role="37wK5l" to="l9cs:~RunContentDescriptor.getProcessHandler():com.intellij.execution.process.ProcessHandler" resolve="getProcessHandler" />
+                      <ref role="37wK5l" to="cjdg:~RunContentDescriptor.getProcessHandler():com.intellij.execution.process.ProcessHandler" resolve="getProcessHandler" />
                     </node>
                   </node>
                 </node>
@@ -331,23 +331,23 @@
           <node concept="3cpWsn" id="5N5J$YBiDYm" role="3cpWs9">
             <property role="TrG5h" value="selectedContent" />
             <node concept="3uibUv" id="5N5J$YBiDYn" role="1tU5fm">
-              <ref role="3uigEE" to="l9cs:~RunContentDescriptor" resolve="RunContentDescriptor" />
+              <ref role="3uigEE" to="cjdg:~RunContentDescriptor" resolve="RunContentDescriptor" />
             </node>
             <node concept="2OqwBi" id="5N5J$YBiDYo" role="33vP2m">
               <node concept="2OqwBi" id="5N5J$YBiDYp" role="2Oq$k0">
                 <node concept="2YIFZM" id="5N5J$YBiDYq" role="2Oq$k0">
-                  <ref role="1Pybhc" to="jgti:~ExecutionManager" resolve="ExecutionManager" />
-                  <ref role="37wK5l" to="jgti:~ExecutionManager.getInstance(com.intellij.openapi.project.Project):com.intellij.execution.ExecutionManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="3v5a:~ExecutionManager" resolve="ExecutionManager" />
+                  <ref role="37wK5l" to="3v5a:~ExecutionManager.getInstance(com.intellij.openapi.project.Project):com.intellij.execution.ExecutionManager" resolve="getInstance" />
                   <node concept="37vLTw" id="5N5J$YBiDYr" role="37wK5m">
                     <ref role="3cqZAo" node="24OxoGwU3JQ" resolve="project" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5N5J$YBiDYs" role="2OqNvi">
-                  <ref role="37wK5l" to="jgti:~ExecutionManager.getContentManager():com.intellij.execution.ui.RunContentManager" resolve="getContentManager" />
+                  <ref role="37wK5l" to="3v5a:~ExecutionManager.getContentManager():com.intellij.execution.ui.RunContentManager" resolve="getContentManager" />
                 </node>
               </node>
               <node concept="liA8E" id="5N5J$YBiDYt" role="2OqNvi">
-                <ref role="37wK5l" to="l9cs:~RunContentManager.getSelectedContent():com.intellij.execution.ui.RunContentDescriptor" resolve="getSelectedContent" />
+                <ref role="37wK5l" to="cjdg:~RunContentManager.getSelectedContent():com.intellij.execution.ui.RunContentDescriptor" resolve="getSelectedContent" />
               </node>
             </node>
           </node>
@@ -378,21 +378,21 @@
                 <node concept="2OqwBi" id="5N5J$YBiDYE" role="37vLTx">
                   <node concept="2OqwBi" id="5N5J$YBiDYF" role="2Oq$k0">
                     <node concept="2YIFZM" id="5N5J$YBiDYG" role="2Oq$k0">
-                      <ref role="37wK5l" to="jgti:~ExecutionManager.getInstance(com.intellij.openapi.project.Project):com.intellij.execution.ExecutionManager" resolve="getInstance" />
-                      <ref role="1Pybhc" to="jgti:~ExecutionManager" resolve="ExecutionManager" />
+                      <ref role="37wK5l" to="3v5a:~ExecutionManager.getInstance(com.intellij.openapi.project.Project):com.intellij.execution.ExecutionManager" resolve="getInstance" />
+                      <ref role="1Pybhc" to="3v5a:~ExecutionManager" resolve="ExecutionManager" />
                       <node concept="37vLTw" id="5N5J$YBiDYH" role="37wK5m">
                         <ref role="3cqZAo" node="24OxoGwU3JQ" resolve="project" />
                       </node>
                     </node>
                     <node concept="liA8E" id="5N5J$YBiDYI" role="2OqNvi">
-                      <ref role="37wK5l" to="jgti:~ExecutionManager.getContentManager():com.intellij.execution.ui.RunContentManager" resolve="getContentManager" />
+                      <ref role="37wK5l" to="3v5a:~ExecutionManager.getContentManager():com.intellij.execution.ui.RunContentManager" resolve="getContentManager" />
                     </node>
                   </node>
                   <node concept="liA8E" id="5N5J$YBiDYJ" role="2OqNvi">
-                    <ref role="37wK5l" to="l9cs:~RunContentManager.getSelectedContent(com.intellij.execution.Executor):com.intellij.execution.ui.RunContentDescriptor" resolve="getSelectedContent" />
+                    <ref role="37wK5l" to="cjdg:~RunContentManager.getSelectedContent(com.intellij.execution.Executor):com.intellij.execution.ui.RunContentDescriptor" resolve="getSelectedContent" />
                     <node concept="2YIFZM" id="5N5J$YBiDYK" role="37wK5m">
-                      <ref role="1Pybhc" to="wut4:~DefaultDebugExecutor" resolve="DefaultDebugExecutor" />
-                      <ref role="37wK5l" to="wut4:~DefaultDebugExecutor.getDebugExecutorInstance():com.intellij.execution.Executor" resolve="getDebugExecutorInstance" />
+                      <ref role="1Pybhc" to="9mrk:~DefaultDebugExecutor" resolve="DefaultDebugExecutor" />
+                      <ref role="37wK5l" to="9mrk:~DefaultDebugExecutor.getDebugExecutorInstance():com.intellij.execution.Executor" resolve="getDebugExecutorInstance" />
                     </node>
                   </node>
                 </node>
@@ -429,7 +429,7 @@
                   <ref role="3cqZAo" node="5N5J$YBiDYm" resolve="selectedContent" />
                 </node>
                 <node concept="liA8E" id="5N5J$YBiDYW" role="2OqNvi">
-                  <ref role="37wK5l" to="l9cs:~RunContentDescriptor.getProcessHandler():com.intellij.execution.process.ProcessHandler" resolve="getProcessHandler" />
+                  <ref role="37wK5l" to="cjdg:~RunContentDescriptor.getProcessHandler():com.intellij.execution.process.ProcessHandler" resolve="getProcessHandler" />
                 </node>
               </node>
             </node>
@@ -437,7 +437,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="24OxoGwU3K0" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
   </node>

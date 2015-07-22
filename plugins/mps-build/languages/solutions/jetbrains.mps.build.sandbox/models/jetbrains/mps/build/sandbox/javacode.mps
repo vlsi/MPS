@@ -14,8 +14,8 @@
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -173,7 +173,7 @@
         <property role="TrG5h" value="prefix" />
         <node concept="17QB3L" id="6JLVtGzv25Y" role="1tU5fm" />
         <node concept="2AHcQZ" id="6JLVtGzv25Z" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
         </node>
       </node>
       <node concept="3clFbS" id="6JLVtGzv266" role="3clF47">
@@ -228,7 +228,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Uvp1" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6JLVtGzv267" role="jymVt">
@@ -244,11 +244,11 @@
         <property role="TrG5h" value="refText" />
         <node concept="17QB3L" id="6JLVtGzv26d" role="1tU5fm" />
         <node concept="2AHcQZ" id="6JLVtGzv26e" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="2AHcQZ" id="6JLVtGzv26r" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="3clFbS" id="6JLVtGzv26s" role="3clF47">
         <node concept="3clFbF" id="6JLVtGzv28k" role="3cqZAp">
@@ -256,7 +256,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UvoW" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6JLVtGzv26t" role="jymVt">
@@ -272,11 +272,11 @@
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="6JLVtGzv26z" role="1tU5fm" />
         <node concept="2AHcQZ" id="6JLVtGzv26$" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="2AHcQZ" id="6JLVtGzv26N" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="3clFbS" id="6JLVtGzv26O" role="3clF47">
         <node concept="3clFbF" id="6JLVtGzv28p" role="3cqZAp">
@@ -295,7 +295,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Uvp4" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

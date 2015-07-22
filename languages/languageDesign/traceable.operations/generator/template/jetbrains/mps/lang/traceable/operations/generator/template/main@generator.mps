@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="lyxe" ref="r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)" />
-    <import index="ierg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
+    <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -82,8 +82,8 @@
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="1cH0k8MMAiS" role="1lVwrX">
         <node concept="2YIFZM" id="1cH0k8MMC39" role="gfFT$">
-          <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
-          <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
+          <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
+          <ref role="37wK5l" to="fwk:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
           <node concept="10Nm6u" id="1cH0k8MMC3a" role="37wK5m">
             <node concept="29HgVG" id="1cH0k8MMC3c" role="lGtFl">
               <node concept="3NFfHV" id="1cH0k8MMC3d" role="3NFExx">
@@ -126,8 +126,8 @@
       <ref role="30HIoZ" to="lyxe:2gx$rhdCaW7" resolve="NList_CopyWithTraceOperation" />
       <node concept="gft3U" id="2gx$rhdCkAB" role="1lVwrX">
         <node concept="2YIFZM" id="2gx$rhdCkBi" role="gfFT$">
-          <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
-          <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
+          <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
+          <ref role="37wK5l" to="fwk:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
           <node concept="10Nm6u" id="2gx$rhdCkBj" role="37wK5m">
             <node concept="29HgVG" id="2gx$rhdCkBk" role="lGtFl">
               <node concept="3NFfHV" id="2gx$rhdCkBl" role="3NFExx">

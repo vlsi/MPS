@@ -9,7 +9,7 @@
   <imports>
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <import index="tp4s" ref="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
-    <import index="kt54" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench(MPS.Workbench/jetbrains.mps.workbench@java_stub)" />
+    <import index="3s15" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench(MPS.Workbench/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -135,7 +135,7 @@
                     <node concept="2OqwBi" id="hRlaacC" role="1PxMeX">
                       <node concept="2c44tf" id="hRlaacD" role="2Oq$k0">
                         <node concept="3uibUv" id="hRlaacE" role="2c44tc">
-                          <ref role="3uigEE" to="kt54:~MPSDataKeys" resolve="MPSDataKeys" />
+                          <ref role="3uigEE" to="3s15:~MPSDataKeys" resolve="MPSDataKeys" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hRlaacF" role="2OqNvi">

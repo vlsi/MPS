@@ -21,7 +21,7 @@
     <import index="39kg" ref="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1241,7 +1241,7 @@
         <node concept="3cpWsn" id="i09I$Lf" role="3cpWs9">
           <property role="TrG5h" value="p" />
           <node concept="3uibUv" id="i09IA5h" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+            <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
           </node>
         </node>
       </node>
@@ -1332,7 +1332,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="i09UV9J" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Comparable.compareTo(java.lang.Object):int" resolve="compareTo" />
+                <ref role="37wK5l" to="wyt6:~Comparable.compareTo(java.lang.Object):int" resolve="compareTo" />
                 <node concept="37vLTw" id="3GM_nagTuSs" role="37wK5m">
                   <ref role="3cqZAo" node="i09I$Lf" resolve="p" />
                   <node concept="1ZhdrF" id="i09V_kN" role="lGtFl">
@@ -1380,7 +1380,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="i09V7s$" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Comparable.compareTo(java.lang.Object):int" resolve="compareTo" />
+                      <ref role="37wK5l" to="wyt6:~Comparable.compareTo(java.lang.Object):int" resolve="compareTo" />
                       <node concept="37vLTw" id="3GM_nagTt8d" role="37wK5m">
                         <ref role="3cqZAo" node="i09I$Lf" resolve="p" />
                         <node concept="1ZhdrF" id="i09V_Z6" role="lGtFl">

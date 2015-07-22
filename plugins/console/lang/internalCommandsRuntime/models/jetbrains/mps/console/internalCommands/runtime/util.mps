@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="1p1s" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
+    <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -74,8 +74,8 @@
       <node concept="3clFbS" id="7E9dkpktrj0" role="3clF47">
         <node concept="3cpWs6" id="7E9dkpktrjh" role="3cqZAp">
           <node concept="2YIFZM" id="7E9dkpkts8V" role="3cqZAk">
-            <ref role="37wK5l" to="1p1s:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
-            <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
+            <ref role="37wK5l" to="fyhk:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
+            <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
           </node>
         </node>
       </node>
@@ -91,11 +91,11 @@
         <node concept="3clFbF" id="7E9dkpktsb$" role="3cqZAp">
           <node concept="2OqwBi" id="7E9dkpktsga" role="3clFbG">
             <node concept="2YIFZM" id="7E9dkpktsbL" role="2Oq$k0">
-              <ref role="37wK5l" to="1p1s:~InternalFlag.getInstance():jetbrains.mps.InternalFlag" resolve="getInstance" />
-              <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
+              <ref role="37wK5l" to="fyhk:~InternalFlag.getInstance():jetbrains.mps.InternalFlag" resolve="getInstance" />
+              <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
             </node>
             <node concept="liA8E" id="7E9dkpktsW0" role="2OqNvi">
-              <ref role="37wK5l" to="1p1s:~InternalFlag.setInternalFlag(boolean):void" resolve="setInternalFlag" />
+              <ref role="37wK5l" to="fyhk:~InternalFlag.setInternalFlag(boolean):void" resolve="setInternalFlag" />
               <node concept="37vLTw" id="7E9dkpktsYv" role="37wK5m">
                 <ref role="3cqZAo" node="7E9dkpktsaX" resolve="flag" />
               </node>

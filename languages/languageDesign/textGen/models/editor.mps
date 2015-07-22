@@ -14,8 +14,8 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpd3" ref="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="595t" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.nio.charset(JDK/java.nio.charset@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="7x5y" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.charset(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wbvt" ref="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" implicit="true" />
@@ -410,11 +410,11 @@
                             </node>
                             <node concept="2OqwBi" id="2fKiB6PjtBp" role="10QFUP">
                               <node concept="2YIFZM" id="2fKiB6PjtBq" role="2Oq$k0">
-                                <ref role="37wK5l" to="595t:~Charset.availableCharsets():java.util.SortedMap" resolve="availableCharsets" />
-                                <ref role="1Pybhc" to="595t:~Charset" resolve="Charset" />
+                                <ref role="37wK5l" to="7x5y:~Charset.availableCharsets():java.util.SortedMap" resolve="availableCharsets" />
+                                <ref role="1Pybhc" to="7x5y:~Charset" resolve="Charset" />
                               </node>
                               <node concept="liA8E" id="2fKiB6PjtBr" role="2OqNvi">
-                                <ref role="37wK5l" to="k7g3:~SortedMap.keySet():java.util.Set" resolve="keySet" />
+                                <ref role="37wK5l" to="33ny:~SortedMap.keySet():java.util.Set" resolve="keySet" />
                               </node>
                             </node>
                           </node>

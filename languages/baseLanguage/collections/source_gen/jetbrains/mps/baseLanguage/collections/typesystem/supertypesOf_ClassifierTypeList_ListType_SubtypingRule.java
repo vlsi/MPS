@@ -102,5 +102,5 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     }
     return quotedNode_2;
   }
-  private static SNodePointer SNODE_POINTER_u9nlj8_a0a0a0a0b0b0a0b0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List");
+  private static SNodePointer SNODE_POINTER_u9nlj8_a0a0a0a0b0b0a0b0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)", "~List");
 }

@@ -5,8 +5,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="epq1" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -145,14 +145,14 @@
     <node concept="312cEg" id="3ld3pDuecqd" role="jymVt">
       <property role="TrG5h" value="myCurrency" />
       <node concept="3uibUv" id="3ld3pDuecqe" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm6S6" id="3ld3pDuecqf" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="3ld3pDuecqg" role="jymVt">
       <property role="TrG5h" value="myAmount" />
       <node concept="3uibUv" id="3ld3pDuecqh" role="1tU5fm">
-        <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
+        <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
       </node>
       <node concept="3Tm6S6" id="3ld3pDuecqi" role="1B3o_S" />
     </node>
@@ -162,13 +162,13 @@
       <node concept="37vLTG" id="3ld3pDuecqm" role="3clF46">
         <property role="TrG5h" value="amount" />
         <node concept="3uibUv" id="3ld3pDuecqn" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="37vLTG" id="3ld3pDuecqo" role="3clF46">
         <property role="TrG5h" value="currency" />
         <node concept="3uibUv" id="3ld3pDuecqp" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3clFbS" id="3ld3pDuecqq" role="3clF47">
@@ -176,7 +176,7 @@
           <ref role="37wK5l" node="3ld3pDuecqw" resolve="Currency" />
           <node concept="2ShNRf" id="3ld3pDuecqs" role="37wK5m">
             <node concept="1pGfFk" id="3ld3pDuecqt" role="2ShVmc">
-              <ref role="37wK5l" to="epq1:~BigDecimal.&lt;init&gt;(java.lang.String)" resolve="BigDecimal" />
+              <ref role="37wK5l" to="xlxw:~BigDecimal.&lt;init&gt;(java.lang.String)" resolve="BigDecimal" />
               <node concept="37vLTw" id="2BHiRxgmpMg" role="37wK5m">
                 <ref role="3cqZAo" node="3ld3pDuecqm" resolve="amount" />
               </node>
@@ -194,13 +194,13 @@
       <node concept="37vLTG" id="3ld3pDuecqz" role="3clF46">
         <property role="TrG5h" value="amount" />
         <node concept="3uibUv" id="3ld3pDuecq$" role="1tU5fm">
-          <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
+          <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
         </node>
       </node>
       <node concept="37vLTG" id="3ld3pDuecq_" role="3clF46">
         <property role="TrG5h" value="currency" />
         <node concept="3uibUv" id="3ld3pDuecqA" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3clFbS" id="3ld3pDuecqB" role="3clF47">
@@ -233,7 +233,7 @@
       <property role="TrG5h" value="getCurrency" />
       <node concept="3Tm1VV" id="3ld3pDuecqN" role="1B3o_S" />
       <node concept="3uibUv" id="3ld3pDuecqO" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="3ld3pDuecqP" role="3clF47">
         <node concept="3cpWs6" id="3ld3pDuecqQ" role="3cqZAp">
@@ -247,7 +247,7 @@
       <property role="TrG5h" value="getAmount" />
       <node concept="3Tm1VV" id="3ld3pDuecqT" role="1B3o_S" />
       <node concept="3uibUv" id="3ld3pDuecqU" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="3ld3pDuecqV" role="3clF47">
         <node concept="3cpWs6" id="3ld3pDuecqW" role="3cqZAp">
@@ -256,7 +256,7 @@
               <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
             </node>
             <node concept="liA8E" id="3ld3pDuecqZ" role="2OqNvi">
-              <ref role="37wK5l" to="epq1:~BigDecimal.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="xlxw:~BigDecimal.toString():java.lang.String" resolve="toString" />
             </node>
           </node>
         </node>
@@ -280,7 +280,7 @@
                 <ref role="3cqZAo" node="3ld3pDuecqd" resolve="myCurrency" />
               </node>
               <node concept="liA8E" id="3ld3pDuecra" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="3ld3pDuecrb" role="37wK5m">
                   <node concept="2OwXpG" id="3ld3pDuecrc" role="2OqNvi">
                     <ref role="2Oxat5" node="3ld3pDuecqd" resolve="myCurrency" />
@@ -337,7 +337,7 @@
                   <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
                 </node>
                 <node concept="liA8E" id="3ld3pDuecrx" role="2OqNvi">
-                  <ref role="37wK5l" to="epq1:~BigDecimal.add(java.math.BigDecimal):java.math.BigDecimal" resolve="add" />
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.add(java.math.BigDecimal):java.math.BigDecimal" resolve="add" />
                   <node concept="2OqwBi" id="3ld3pDuecry" role="37wK5m">
                     <node concept="2OwXpG" id="3ld3pDuecrz" role="2OqNvi">
                       <ref role="2Oxat5" node="3ld3pDuecqg" resolve="myAmount" />
@@ -389,7 +389,7 @@
                   <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
                 </node>
                 <node concept="liA8E" id="3ld3pDuecrP" role="2OqNvi">
-                  <ref role="37wK5l" to="epq1:~BigDecimal.add(java.math.BigDecimal):java.math.BigDecimal" resolve="add" />
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.add(java.math.BigDecimal):java.math.BigDecimal" resolve="add" />
                   <node concept="2OqwBi" id="3ld3pDuecrQ" role="37wK5m">
                     <node concept="2OqwBi" id="3ld3pDuecrR" role="2Oq$k0">
                       <node concept="2OwXpG" id="3ld3pDuecrS" role="2OqNvi">
@@ -400,7 +400,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3ld3pDuecrU" role="2OqNvi">
-                      <ref role="37wK5l" to="epq1:~BigDecimal.negate():java.math.BigDecimal" resolve="negate" />
+                      <ref role="37wK5l" to="xlxw:~BigDecimal.negate():java.math.BigDecimal" resolve="negate" />
                     </node>
                   </node>
                 </node>
@@ -439,10 +439,10 @@
                   <node concept="Xjq3P" id="3ld3pDuecs9" role="2Oq$k0" />
                 </node>
                 <node concept="liA8E" id="3ld3pDuecsa" role="2OqNvi">
-                  <ref role="37wK5l" to="epq1:~BigDecimal.multiply(java.math.BigDecimal):java.math.BigDecimal" resolve="multiply" />
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.multiply(java.math.BigDecimal):java.math.BigDecimal" resolve="multiply" />
                   <node concept="2ShNRf" id="3ld3pDuecsb" role="37wK5m">
                     <node concept="1pGfFk" id="3ld3pDuecsc" role="2ShVmc">
-                      <ref role="37wK5l" to="epq1:~BigDecimal.&lt;init&gt;(int)" resolve="BigDecimal" />
+                      <ref role="37wK5l" to="xlxw:~BigDecimal.&lt;init&gt;(int)" resolve="BigDecimal" />
                       <node concept="37vLTw" id="2BHiRxglrzy" role="37wK5m">
                         <ref role="3cqZAo" node="3ld3pDuecs0" resolve="n" />
                       </node>
@@ -481,10 +481,10 @@
                   <node concept="Xjq3P" id="3ld3pDuecsr" role="2Oq$k0" />
                 </node>
                 <node concept="liA8E" id="3ld3pDuecss" role="2OqNvi">
-                  <ref role="37wK5l" to="epq1:~BigDecimal.divide(java.math.BigDecimal):java.math.BigDecimal" resolve="divide" />
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.divide(java.math.BigDecimal):java.math.BigDecimal" resolve="divide" />
                   <node concept="2ShNRf" id="3ld3pDuecst" role="37wK5m">
                     <node concept="1pGfFk" id="3ld3pDuecsu" role="2ShVmc">
-                      <ref role="37wK5l" to="epq1:~BigDecimal.&lt;init&gt;(int)" resolve="BigDecimal" />
+                      <ref role="37wK5l" to="xlxw:~BigDecimal.&lt;init&gt;(int)" resolve="BigDecimal" />
                       <node concept="37vLTw" id="2BHiRxgmFmD" role="37wK5m">
                         <ref role="3cqZAo" node="3ld3pDuecsi" resolve="n" />
                       </node>
@@ -525,7 +525,7 @@
               <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
             </node>
             <node concept="liA8E" id="3ld3pDuecsH" role="2OqNvi">
-              <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+              <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
               <node concept="2OqwBi" id="3ld3pDuecsI" role="37wK5m">
                 <node concept="2OwXpG" id="3ld3pDuecsJ" role="2OqNvi">
                   <ref role="2Oxat5" node="3ld3pDuecqg" resolve="myAmount" />
@@ -546,7 +546,7 @@
       <property role="TrG5h" value="toString" />
       <node concept="3Tm1VV" id="3ld3pDuecsN" role="1B3o_S" />
       <node concept="3uibUv" id="3ld3pDuecsO" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="3ld3pDuecsP" role="3clF47">
         <node concept="3cpWs6" id="3ld3pDuecsQ" role="3cqZAp">
@@ -561,7 +561,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RU7O" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3ld3pDuecsU" role="jymVt">
@@ -576,10 +576,10 @@
                 <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
               </node>
               <node concept="liA8E" id="3ld3pDuect2" role="2OqNvi">
-                <ref role="37wK5l" to="epq1:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
+                <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal):int" resolve="compareTo" />
                 <node concept="2ShNRf" id="3ld3pDuect3" role="37wK5m">
                   <node concept="1pGfFk" id="3ld3pDuect4" role="2ShVmc">
-                    <ref role="37wK5l" to="epq1:~BigDecimal.&lt;init&gt;(java.lang.String)" resolve="BigDecimal" />
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.&lt;init&gt;(java.lang.String)" resolve="BigDecimal" />
                     <node concept="Xl_RD" id="3ld3pDuect5" role="37wK5m">
                       <property role="Xl_RC" value="0.00" />
                     </node>
@@ -601,7 +601,7 @@
       <node concept="37vLTG" id="3ld3pDuecta" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="3ld3pDuectb" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="3ld3pDuectc" role="3clF47">
@@ -644,7 +644,7 @@
                         <ref role="3cqZAo" node="3ld3pDuecqd" resolve="myCurrency" />
                       </node>
                       <node concept="liA8E" id="3ld3pDuectw" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="3ld3pDuectx" role="37wK5m">
                           <node concept="2OwXpG" id="3ld3pDuecty" role="2OqNvi">
                             <ref role="2Oxat5" node="3ld3pDuecqd" resolve="myCurrency" />
@@ -662,7 +662,7 @@
                         <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
                       </node>
                       <node concept="liA8E" id="3ld3pDuectB" role="2OqNvi">
-                        <ref role="37wK5l" to="epq1:~BigDecimal.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="xlxw:~BigDecimal.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="3ld3pDuectC" role="37wK5m">
                           <node concept="2OwXpG" id="3ld3pDuectD" role="2OqNvi">
                             <ref role="2Oxat5" node="3ld3pDuecqg" resolve="myAmount" />
@@ -700,7 +700,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RU7P" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="3ld3pDuectP" role="jymVt">
@@ -716,7 +716,7 @@
                   <ref role="3cqZAo" node="3ld3pDuecqg" resolve="myAmount" />
                 </node>
                 <node concept="liA8E" id="3ld3pDuectY" role="2OqNvi">
-                  <ref role="37wK5l" to="epq1:~BigDecimal.hashCode():int" resolve="hashCode" />
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.hashCode():int" resolve="hashCode" />
                 </node>
               </node>
               <node concept="3cmrfG" id="3ld3pDuectZ" role="3uHU7w">
@@ -728,14 +728,14 @@
                 <ref role="3cqZAo" node="3ld3pDuecqd" resolve="myCurrency" />
               </node>
               <node concept="liA8E" id="3ld3pDuecu2" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.hashCode():int" resolve="hashCode" />
+                <ref role="37wK5l" to="wyt6:~String.hashCode():int" resolve="hashCode" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RU7Q" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -743,7 +743,7 @@
     <property role="TrG5h" value="NotCompatibleCurrencies" />
     <node concept="3Tm1VV" id="3ld3pDuecu4" role="1B3o_S" />
     <node concept="3uibUv" id="3ld3pDuecu5" role="1zkMxy">
-      <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+      <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
     </node>
     <node concept="3clFbW" id="3ld3pDuecu6" role="jymVt">
       <node concept="3Tm1VV" id="3ld3pDuecu7" role="1B3o_S" />

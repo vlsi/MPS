@@ -10,11 +10,11 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="53gy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
-    <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="vkwc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.locks(JDK/java.util.concurrent.locks@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
+    <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="17wx" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.locks(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -222,14 +222,14 @@
       <node concept="3Tm6S6" id="5ABJGODKe7U" role="1B3o_S" />
       <node concept="2ShNRf" id="5ABJGODL8l6" role="33vP2m">
         <node concept="1pGfFk" id="2ErCJ2zWY6S" role="2ShVmc">
-          <ref role="37wK5l" to="53gy:~LinkedBlockingQueue.&lt;init&gt;()" resolve="LinkedBlockingQueue" />
+          <ref role="37wK5l" to="5zyv:~LinkedBlockingQueue.&lt;init&gt;()" resolve="LinkedBlockingQueue" />
           <node concept="3uibUv" id="5DZ5wiJ6hlF" role="1pMfVU">
             <ref role="3uigEE" node="5DZ5wiJ6hk3" resolve="IManagerCommand" />
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="2ErCJ2zWY3F" role="1tU5fm">
-        <ref role="3uigEE" to="53gy:~BlockingQueue" resolve="BlockingQueue" />
+        <ref role="3uigEE" to="5zyv:~BlockingQueue" resolve="BlockingQueue" />
         <node concept="3uibUv" id="5DZ5wiJ6hlD" role="11_B2D">
           <ref role="3uigEE" node="5DZ5wiJ6hk3" resolve="IManagerCommand" />
         </node>
@@ -268,7 +268,7 @@
               <ref role="3cqZAo" node="5ABJGODKe8i" resolve="myThread" />
             </node>
             <node concept="liA8E" id="5ABJGODKe9v" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Thread.start():void" resolve="start" />
+              <ref role="37wK5l" to="wyt6:~Thread.start():void" resolve="start" />
             </node>
           </node>
         </node>
@@ -346,11 +346,11 @@
                 <node concept="3cpWsn" id="5ABJGODKeh9" role="3cpWs9">
                   <property role="TrG5h" value="countDown" />
                   <node concept="3uibUv" id="5ABJGODKeha" role="1tU5fm">
-                    <ref role="3uigEE" to="53gy:~CountDownLatch" resolve="CountDownLatch" />
+                    <ref role="3uigEE" to="5zyv:~CountDownLatch" resolve="CountDownLatch" />
                   </node>
                   <node concept="2ShNRf" id="5ABJGODKehc" role="33vP2m">
                     <node concept="1pGfFk" id="5ABJGODKehe" role="2ShVmc">
-                      <ref role="37wK5l" to="53gy:~CountDownLatch.&lt;init&gt;(int)" resolve="CountDownLatch" />
+                      <ref role="37wK5l" to="5zyv:~CountDownLatch.&lt;init&gt;(int)" resolve="CountDownLatch" />
                       <node concept="3cmrfG" id="5ABJGODKehf" role="37wK5m">
                         <property role="3cmrfH" value="1" />
                       </node>
@@ -386,7 +386,7 @@
                                   <ref role="3cqZAo" node="5ABJGODKeh9" resolve="countDown" />
                                 </node>
                                 <node concept="liA8E" id="2ErCJ2zWY_6" role="2OqNvi">
-                                  <ref role="37wK5l" to="53gy:~CountDownLatch.countDown():void" resolve="countDown" />
+                                  <ref role="37wK5l" to="5zyv:~CountDownLatch.countDown():void" resolve="countDown" />
                                 </node>
                               </node>
                             </node>
@@ -416,7 +416,7 @@
                                   <ref role="3cqZAo" node="5ABJGODKeh9" resolve="countDown" />
                                 </node>
                                 <node concept="liA8E" id="5DZ5wiJ6hnc" role="2OqNvi">
-                                  <ref role="37wK5l" to="53gy:~CountDownLatch.countDown():void" resolve="countDown" />
+                                  <ref role="37wK5l" to="5zyv:~CountDownLatch.countDown():void" resolve="countDown" />
                                 </node>
                               </node>
                             </node>
@@ -435,7 +435,7 @@
                         <ref role="3cqZAo" node="5ABJGODKeh9" resolve="countDown" />
                       </node>
                       <node concept="liA8E" id="5ABJGODKehL" role="2OqNvi">
-                        <ref role="37wK5l" to="53gy:~CountDownLatch.await():void" resolve="await" />
+                        <ref role="37wK5l" to="5zyv:~CountDownLatch.await():void" resolve="await" />
                       </node>
                     </node>
                   </node>
@@ -444,7 +444,7 @@
                   <node concept="3cpWsn" id="5ABJGODKehZ" role="TDEfY">
                     <property role="TrG5h" value="ignore" />
                     <node concept="3uibUv" id="5ABJGODKei2" role="1tU5fm">
-                      <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
+                      <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="5ABJGODKei1" role="TDEfX" />
@@ -493,7 +493,7 @@
                     <ref role="3cqZAo" node="5ABJGODKe7T" resolve="myCommandQueue" />
                   </node>
                   <node concept="liA8E" id="2ErCJ2zWYzy" role="2OqNvi">
-                    <ref role="37wK5l" to="53gy:~BlockingQueue.offer(java.lang.Object):boolean" resolve="offer" />
+                    <ref role="37wK5l" to="5zyv:~BlockingQueue.offer(java.lang.Object):boolean" resolve="offer" />
                     <node concept="37vLTw" id="2BHiRxgm6La" role="37wK5m">
                       <ref role="3cqZAo" node="5ABJGODKecH" resolve="command" />
                     </node>
@@ -539,8 +539,8 @@
               <ref role="3uigEE" node="5ABJGODKe7r" resolve="ManagerThread.WorkerThread" />
             </node>
             <node concept="2YIFZM" id="5ABJGODKea1" role="2ZW6bz">
-              <ref role="37wK5l" to="e2lb:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
-              <ref role="1Pybhc" to="e2lb:~Thread" resolve="Thread" />
+              <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
+              <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
             </node>
           </node>
         </node>
@@ -564,7 +564,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm6S6" id="5ABJGODKe7y" role="1B3o_S" />
       <node concept="3uibUv" id="5ABJGODKe8t" role="1zkMxy">
-        <ref role="3uigEE" to="e2lb:~Thread" resolve="Thread" />
+        <ref role="3uigEE" to="wyt6:~Thread" resolve="Thread" />
       </node>
       <node concept="3clFbW" id="5ABJGODKe7t" role="jymVt">
         <node concept="3cqZAl" id="5ABJGODKe7u" role="3clF45" />
@@ -592,7 +592,7 @@
                         <ref role="3cqZAo" node="2ErCJ2zWYv0" resolve="myClosed" />
                       </node>
                       <node concept="1rXfSq" id="4hiugqyzeKQ" role="3uHU7B">
-                        <ref role="37wK5l" to="e2lb:~Thread.isInterrupted():boolean" resolve="isInterrupted" />
+                        <ref role="37wK5l" to="wyt6:~Thread.isInterrupted():boolean" resolve="isInterrupted" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="5ABJGODKe8s" role="3clFbx">
@@ -607,7 +607,7 @@
                           <ref role="3cqZAo" node="5ABJGODKe7T" resolve="myCommandQueue" />
                         </node>
                         <node concept="liA8E" id="5ABJGODKec0" role="2OqNvi">
-                          <ref role="37wK5l" to="53gy:~BlockingQueue.take():java.lang.Object" resolve="take" />
+                          <ref role="37wK5l" to="5zyv:~BlockingQueue.take():java.lang.Object" resolve="take" />
                         </node>
                       </node>
                     </node>
@@ -640,7 +640,7 @@
                         <ref role="3cqZAo" node="5ABJGODKe7T" resolve="myCommandQueue" />
                       </node>
                       <node concept="liA8E" id="5DZ5wiJ6ho2" role="2OqNvi">
-                        <ref role="37wK5l" to="53gy:~BlockingQueue.drainTo(java.util.Collection):int" resolve="drainTo" />
+                        <ref role="37wK5l" to="5zyv:~BlockingQueue.drainTo(java.util.Collection):int" resolve="drainTo" />
                         <node concept="37vLTw" id="3GM_nagTxeV" role="37wK5m">
                           <ref role="3cqZAo" node="5DZ5wiJ6hoh" resolve="unprocessed" />
                         </node>
@@ -672,7 +672,7 @@
                           <node concept="3cpWsn" id="5DZ5wiJ6hox" role="TDEfY">
                             <property role="TrG5h" value="t" />
                             <node concept="3uibUv" id="5DZ5wiJ6ho$" role="1tU5fm">
-                              <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
+                              <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
                             </node>
                           </node>
                           <node concept="3clFbS" id="5DZ5wiJ6hoz" role="TDEfX">
@@ -711,7 +711,7 @@
               <node concept="3cpWsn" id="2ErCJ2zX3$O" role="TDEfY">
                 <property role="TrG5h" value="ignore" />
                 <node concept="3uibUv" id="2ErCJ2zX3$R" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
+                  <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
                 </node>
               </node>
               <node concept="3clFbS" id="2ErCJ2zX3$Q" role="TDEfX">
@@ -739,7 +739,7 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_Seo_" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="5ABJGODKebA" role="jymVt">
@@ -785,7 +785,7 @@
               <node concept="3cpWsn" id="5ABJGODKeb$" role="TDEfY">
                 <property role="TrG5h" value="t" />
                 <node concept="3uibUv" id="5ABJGODKebM" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
+                  <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
                 </node>
               </node>
               <node concept="3clFbS" id="5ABJGODKebN" role="TDEfX">
@@ -875,7 +875,7 @@
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="3tYsUK_UoT8" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>
@@ -921,7 +921,7 @@
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="3tYsUK_RU1i" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
                 <node concept="3clFb_" id="5DZ5wiJ6hlw" role="jymVt">
@@ -930,7 +930,7 @@
                   <node concept="3cqZAl" id="5DZ5wiJ6hlx" role="3clF45" />
                   <node concept="3Tm1VV" id="5DZ5wiJ6hly" role="1B3o_S" />
                   <node concept="2AHcQZ" id="5DZ5wiJ6hlz" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                   <node concept="3clFbS" id="5DZ5wiJ6hl$" role="3clF47">
                     <node concept="3clFbF" id="5DZ5wiJ6hlB" role="3cqZAp">
@@ -983,7 +983,7 @@
         <node concept="3Tm1VV" id="5DZ5wiJ6hku" role="1B3o_S" />
         <node concept="3clFbS" id="5DZ5wiJ6hkv" role="3clF47" />
         <node concept="2AHcQZ" id="5DZ5wiJ6hkw" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
     </node>

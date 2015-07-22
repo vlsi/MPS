@@ -5,11 +5,11 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="to5d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />
-    <import index="jj9h" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
+    <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
+    <import index="dj99" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.configurations(MPS.IDEA/)" />
     <import index="1l1h" ref="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
-    <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -132,7 +132,7 @@
       </node>
       <node concept="3clFbS" id="3SnNvqCaJfl" role="3clF47" />
       <node concept="2AHcQZ" id="3SnNvqCaJfm" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3clFb_" id="3SnNvqCaJfn" role="jymVt">
@@ -152,21 +152,21 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="3SnNvqCaJfO" role="1B3o_S" />
     <node concept="3uibUv" id="3SnNvqCaJfP" role="EKbjA">
-      <ref role="3uigEE" to="jj9h:~RunProfileState" resolve="RunProfileState" />
+      <ref role="3uigEE" to="dj99:~RunProfileState" resolve="RunProfileState" />
     </node>
     <node concept="Wx3nA" id="3SnNvqCaJfQ" role="jymVt">
       <property role="TrG5h" value="LOG" />
       <property role="3TUv4t" value="true" />
       <node concept="2YIFZM" id="3AvZeSkP3sv" role="33vP2m">
-        <ref role="37wK5l" to="ajxo:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-        <ref role="1Pybhc" to="ajxo:~LogManager" resolve="LogManager" />
+        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
         <node concept="3VsKOn" id="3AvZeSkP3sw" role="37wK5m">
           <ref role="3VsUkX" node="3SnNvqCaJfM" resolve="DebuggerRunProfileState" />
         </node>
       </node>
       <node concept="3Tm6S6" id="3SnNvqCaJfS" role="1B3o_S" />
       <node concept="3uibUv" id="3AvZeSkP3sn" role="1tU5fm">
-        <ref role="3uigEE" to="ajxo:~Logger" resolve="Logger" />
+        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
       </node>
     </node>
     <node concept="312cEg" id="3SnNvqCaJfV" role="jymVt">
@@ -182,7 +182,7 @@
         <ref role="37wK5l" to="1l1h:3SnNvqCaJwV" resolve="getInstance" />
       </node>
       <node concept="2AHcQZ" id="3SnNvqCaJfZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="312cEg" id="3SnNvqCaJg0" role="jymVt">
@@ -215,7 +215,7 @@
             <node concept="3clFbF" id="3SnNvqCaJgf" role="3cqZAp">
               <node concept="2OqwBi" id="3AvZeSkP3sC" role="3clFbG">
                 <node concept="liA8E" id="3AvZeSkP3sD" role="2OqNvi">
-                  <ref role="37wK5l" to="ajxo:~Category.warn(java.lang.Object):void" resolve="warn" />
+                  <ref role="37wK5l" to="q7tw:~Category.warn(java.lang.Object):void" resolve="warn" />
                   <node concept="Xl_RD" id="3SnNvqCaJgj" role="37wK5m">
                     <property role="Xl_RC" value="Updating debugger settings twice." />
                   </node>
@@ -298,7 +298,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3SnNvqCaJgK" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="3SnNvqCaJgL" role="jymVt">
@@ -311,7 +311,7 @@
       </node>
       <node concept="3clFbS" id="3SnNvqCaJgO" role="3clF47" />
       <node concept="2AHcQZ" id="3SnNvqCaJgP" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
   </node>

@@ -5,12 +5,12 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
-    <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <import index="mysr" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.project(MPS.Core/jetbrains.mps.project.structure.project@java_stub)" />
-    <import index="mfhd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="y8s3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.project(MPS.Core/)" />
+    <import index="etl3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -98,27 +98,27 @@
     <property role="TrG5h" value="ModulePathChooser" />
     <node concept="3Tm1VV" id="1mBiRF0LCRr" role="1B3o_S" />
     <node concept="3uibUv" id="1mBiRF0LCRs" role="EKbjA">
-      <ref role="3uigEE" to="msyo:~Computable" resolve="Computable" />
+      <ref role="3uigEE" to="18ew:~Computable" resolve="Computable" />
       <node concept="3uibUv" id="1mBiRF0LCRt" role="11_B2D">
-        <ref role="3uigEE" to="mysr:~Path" resolve="Path" />
+        <ref role="3uigEE" to="y8s3:~Path" resolve="Path" />
       </node>
     </node>
     <node concept="3clFb_" id="1mBiRF0LCRR" role="jymVt">
       <property role="TrG5h" value="compute" />
       <node concept="3Tm1VV" id="1mBiRF0LCRS" role="1B3o_S" />
       <node concept="3uibUv" id="1mBiRF0LCRT" role="3clF45">
-        <ref role="3uigEE" to="mysr:~Path" resolve="Path" />
+        <ref role="3uigEE" to="y8s3:~Path" resolve="Path" />
       </node>
       <node concept="3clFbS" id="1mBiRF0LCRU" role="3clF47">
         <node concept="3cpWs8" id="1mBiRF0LCRV" role="3cqZAp">
           <node concept="3cpWsn" id="1mBiRF0LCRW" role="3cpWs9">
             <property role="TrG5h" value="chooser" />
             <node concept="3uibUv" id="1mBiRF0LCRX" role="1tU5fm">
-              <ref role="3uigEE" to="mfhd:~TreeFileChooser" resolve="TreeFileChooser" />
+              <ref role="3uigEE" to="etl3:~TreeFileChooser" resolve="TreeFileChooser" />
             </node>
             <node concept="2ShNRf" id="1mBiRF0LCRY" role="33vP2m">
               <node concept="1pGfFk" id="1mBiRF0LCRZ" role="2ShVmc">
-                <ref role="37wK5l" to="mfhd:~TreeFileChooser.&lt;init&gt;()" resolve="TreeFileChooser" />
+                <ref role="37wK5l" to="etl3:~TreeFileChooser.&lt;init&gt;()" resolve="TreeFileChooser" />
               </node>
             </node>
           </node>
@@ -129,22 +129,22 @@
               <ref role="3cqZAo" node="1mBiRF0LCRW" resolve="chooser" />
             </node>
             <node concept="liA8E" id="1mBiRF0LCS3" role="2OqNvi">
-              <ref role="37wK5l" to="mfhd:~TreeFileChooser.setExtensionFileFilter(java.lang.String...):void" resolve="setExtensionFileFilter" />
+              <ref role="37wK5l" to="etl3:~TreeFileChooser.setExtensionFileFilter(java.lang.String...):void" resolve="setExtensionFileFilter" />
               <node concept="10M0yZ" id="3WcIkZatY7c" role="37wK5m">
-                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_LANGUAGE" resolve="DOT_LANGUAGE" />
+                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_LANGUAGE" resolve="DOT_LANGUAGE" />
               </node>
               <node concept="10M0yZ" id="3WcIkZatY7e" role="37wK5m">
-                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_SOLUTION" resolve="DOT_SOLUTION" />
+                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_SOLUTION" resolve="DOT_SOLUTION" />
               </node>
               <node concept="10M0yZ" id="3WcIkZatY7g" role="37wK5m">
-                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_LIBRARY" resolve="DOT_LIBRARY" />
+                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_LIBRARY" resolve="DOT_LIBRARY" />
               </node>
               <node concept="10M0yZ" id="3WcIkZatY7i" role="37wK5m">
-                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_DEVKIT" resolve="DOT_DEVKIT" />
+                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_DEVKIT" resolve="DOT_DEVKIT" />
               </node>
             </node>
           </node>
@@ -153,14 +153,14 @@
           <node concept="3cpWsn" id="1mBiRF0LCS8" role="3cpWs9">
             <property role="TrG5h" value="file" />
             <node concept="3uibUv" id="1mBiRF0LCS9" role="1tU5fm">
-              <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
             <node concept="2OqwBi" id="1mBiRF0LCSa" role="33vP2m">
               <node concept="37vLTw" id="3GM_nagTBhc" role="2Oq$k0">
                 <ref role="3cqZAo" node="1mBiRF0LCRW" resolve="chooser" />
               </node>
               <node concept="liA8E" id="1mBiRF0LCSc" role="2OqNvi">
-                <ref role="37wK5l" to="mfhd:~TreeFileChooser.showDialog():jetbrains.mps.vfs.IFile" resolve="showDialog" />
+                <ref role="37wK5l" to="etl3:~TreeFileChooser.showDialog():jetbrains.mps.vfs.IFile" resolve="showDialog" />
               </node>
             </node>
           </node>
@@ -181,13 +181,13 @@
         <node concept="3cpWs6" id="1mBiRF0LCSp" role="3cqZAp">
           <node concept="2ShNRf" id="1mBiRF0LCSq" role="3cqZAk">
             <node concept="1pGfFk" id="1mBiRF0LCSr" role="2ShVmc">
-              <ref role="37wK5l" to="mysr:~Path.&lt;init&gt;(java.lang.String)" resolve="Path" />
+              <ref role="37wK5l" to="y8s3:~Path.&lt;init&gt;(java.lang.String)" resolve="Path" />
               <node concept="2OqwBi" id="1mBiRF0LCSs" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTyfy" role="2Oq$k0">
                   <ref role="3cqZAo" node="1mBiRF0LCS8" resolve="file" />
                 </node>
                 <node concept="liA8E" id="1mBiRF0LCSu" role="2OqNvi">
-                  <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
+                  <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
                 </node>
               </node>
             </node>
@@ -195,7 +195,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Sjmn" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

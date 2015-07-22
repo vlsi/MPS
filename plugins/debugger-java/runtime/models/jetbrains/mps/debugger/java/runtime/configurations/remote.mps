@@ -5,16 +5,16 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="ieao" ref="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)" />
     <import index="1l1h" ref="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
-    <import index="b2mh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
-    <import index="ymw7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
+    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="uu3z" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.process(MPS.IDEA/)" />
     <import index="xptu" ref="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)" />
     <import index="1nsa" ref="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)" />
     <import index="d822" ref="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" />
-    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -145,13 +145,13 @@
     <property role="TrG5h" value="RemoteProcessHandler" />
     <node concept="3Tm1VV" id="5yNeVI8LPLO" role="1B3o_S" />
     <node concept="3uibUv" id="5yNeVI8LPLP" role="1zkMxy">
-      <ref role="3uigEE" to="ymw7:~ProcessHandler" resolve="ProcessHandler" />
+      <ref role="3uigEE" to="uu3z:~ProcessHandler" resolve="ProcessHandler" />
     </node>
     <node concept="312cEg" id="5yNeVI8LPLQ" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5yNeVI8LPLR" role="1tU5fm">
-        <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
       </node>
       <node concept="3Tm6S6" id="5yNeVI8LPLS" role="1B3o_S" />
     </node>
@@ -161,7 +161,7 @@
       <node concept="37vLTG" id="5yNeVI8LPLW" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="5yNeVI8LPLX" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="5yNeVI8LPLY" role="3clF47">
@@ -282,7 +282,7 @@
                             <ref role="3uigEE" to="xptu:5ABJGODL8qN" resolve="EventsProcessor" />
                           </node>
                           <node concept="2AHcQZ" id="5yNeVI8LPMI" role="2AJF6D">
-                            <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+                            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
                           </node>
                         </node>
                         <node concept="37vLTG" id="5yNeVI8LPMJ" role="3clF46">
@@ -321,14 +321,14 @@
                               </node>
                               <node concept="3clFbF" id="5yNeVI8LPMZ" role="3cqZAp">
                                 <node concept="1rXfSq" id="4hiugqyz8Ow" role="3clFbG">
-                                  <ref role="37wK5l" to="ymw7:~ProcessHandler.notifyProcessDetached():void" resolve="notifyProcessDetached" />
+                                  <ref role="37wK5l" to="uu3z:~ProcessHandler.notifyProcessDetached():void" resolve="notifyProcessDetached" />
                                 </node>
                               </node>
                             </node>
                           </node>
                         </node>
                         <node concept="2AHcQZ" id="5yNeVI8LPN1" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                         </node>
                       </node>
                     </node>
@@ -386,7 +386,7 @@
                     </node>
                     <node concept="3clFbF" id="5yNeVI8LPNn" role="3cqZAp">
                       <node concept="1rXfSq" id="4hiugqyzafo" role="3clFbG">
-                        <ref role="37wK5l" to="ymw7:~ProcessHandler.notifyProcessDetached():void" resolve="notifyProcessDetached" />
+                        <ref role="37wK5l" to="uu3z:~ProcessHandler.notifyProcessDetached():void" resolve="notifyProcessDetached" />
                       </node>
                     </node>
                   </node>
@@ -395,7 +395,7 @@
               <node concept="3clFbS" id="5yNeVI8LPNp" role="2GV8ay">
                 <node concept="3clFbF" id="5yNeVI8LPNq" role="3cqZAp">
                   <node concept="3nyPlj" id="5yNeVI8LPNr" role="3clFbG">
-                    <ref role="37wK5l" to="ymw7:~ProcessHandler.startNotify():void" resolve="startNotify" />
+                    <ref role="37wK5l" to="uu3z:~ProcessHandler.startNotify():void" resolve="startNotify" />
                   </node>
                 </node>
               </node>
@@ -404,7 +404,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYOQ" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5yNeVI8LPNs" role="jymVt">
@@ -458,7 +458,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYOP" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5yNeVI8LPNM" role="jymVt">
@@ -510,7 +510,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYOO" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5yNeVI8LPO8" role="jymVt">
@@ -525,14 +525,14 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYOS" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5yNeVI8LPOe" role="jymVt">
       <property role="TrG5h" value="getProcessInput" />
       <node concept="3Tm1VV" id="5yNeVI8LPOf" role="1B3o_S" />
       <node concept="3uibUv" id="5yNeVI8LPOg" role="3clF45">
-        <ref role="3uigEE" to="fxg7:~OutputStream" resolve="OutputStream" />
+        <ref role="3uigEE" to="guwi:~OutputStream" resolve="OutputStream" />
       </node>
       <node concept="3clFbS" id="5yNeVI8LPOh" role="3clF47">
         <node concept="3cpWs6" id="5yNeVI8LPOi" role="3cqZAp">
@@ -540,7 +540,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYOR" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

@@ -15,15 +15,15 @@
     <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="y5ux" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
-    <import index="7juq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="to5d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="v7n5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
+    <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util()" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging()" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
-    <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" />
+    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference()" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -581,7 +581,7 @@
             <node concept="3cpWs6" id="nP$eD5cnS4" role="3cqZAp">
               <node concept="2c44tf" id="nP$eD5cnSq" role="3cqZAk">
                 <node concept="3uibUv" id="nP$eD5cnSL" role="2c44tc">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -1281,11 +1281,11 @@
             <node concept="17R0WA" id="2vY4iJ7I30g" role="3uHU7w">
               <node concept="2OqwBi" id="2n9zn0CqN0_" role="3uHU7B">
                 <node concept="liA8E" id="2n9zn0CqN0A" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                  <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                 </node>
                 <node concept="2OqwBi" id="2n9zn0CqN0B" role="2Oq$k0">
                   <node concept="liA8E" id="2n9zn0CqN0C" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                   </node>
                   <node concept="2JrnkZ" id="2n9zn0CqN0D" role="2Oq$k0">
                     <node concept="2OqwBi" id="2n9zn0CqN0E" role="2JrQYb">
@@ -1299,18 +1299,18 @@
               </node>
               <node concept="2OqwBi" id="2n9zn0CqN0a" role="3uHU7w">
                 <node concept="liA8E" id="2n9zn0CqN0b" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                  <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                 </node>
                 <node concept="2OqwBi" id="2n9zn0CqN0c" role="2Oq$k0">
                   <node concept="liA8E" id="2n9zn0CqN0d" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                   </node>
                   <node concept="2JrnkZ" id="2n9zn0CqN0e" role="2Oq$k0">
                     <node concept="2OqwBi" id="2n9zn0CqN0f" role="2JrQYb">
                       <node concept="2OqwBi" id="2n9zn0CqN0g" role="2Oq$k0">
                         <node concept="2c44tf" id="2n9zn0CqN0h" role="2Oq$k0">
                           <node concept="3uibUv" id="6_GbqW$8gtW" role="2c44tc">
-                            <ref role="3uigEE" to="y5ux:~_FunctionTypes" resolve="_FunctionTypes" />
+                            <ref role="3uigEE" to="v7n5:~_FunctionTypes" resolve="_FunctionTypes" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="2n9zn0CqN0j" role="2OqNvi">
@@ -1361,7 +1361,7 @@
                     <ref role="3cqZAo" node="yQ$PZMQhUU" resolve="cname" />
                   </node>
                   <node concept="liA8E" id="yQ$PZMQhV4" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
+                    <ref role="37wK5l" to="wyt6:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
                     <node concept="Xl_RD" id="yQ$PZMQhV5" role="37wK5m">
                       <property role="Xl_RC" value="." />
                     </node>
@@ -1389,7 +1389,7 @@
                   </node>
                   <node concept="2OqwBi" id="yQ$PZMQhVc" role="3K4E3e">
                     <node concept="liA8E" id="yQ$PZMQhVe" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                      <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
                       <node concept="3cpWs3" id="yQ$PZMQhVf" role="37wK5m">
                         <node concept="3cmrfG" id="yQ$PZMQhVg" role="3uHU7w">
                           <property role="3cmrfH" value="1" />
@@ -1410,7 +1410,7 @@
               <node concept="3fqX7Q" id="yQ$PZMQhVl" role="3cqZAk">
                 <node concept="2OqwBi" id="yQ$PZMQhVm" role="3fr31v">
                   <node concept="liA8E" id="yQ$PZMQhVo" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                    <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                     <node concept="Xl_RD" id="yQ$PZMQhVp" role="37wK5m">
                       <property role="Xl_RC" value="_void" />
                     </node>
@@ -1658,7 +1658,7 @@
         <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
       </node>
       <node concept="2AHcQZ" id="3L7$2AxWznH" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="3Tm6S6" id="3L7$2AxWznG" role="1B3o_S" />
       <node concept="37vLTG" id="hBxo2nN" role="3clF46">
@@ -2863,21 +2863,21 @@
               <node concept="3cpWsn" id="5B55o7kpRKF" role="1Duv9x">
                 <property role="TrG5h" value="imsup" />
                 <node concept="3uibUv" id="5B55o7ks62B" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5B55o7kpSru" role="1DdaDG">
                 <node concept="2OqwBi" id="5B55o7kpSrv" role="2Oq$k0">
                   <node concept="2YIFZM" id="5B55o7kpSrw" role="2Oq$k0">
-                    <ref role="37wK5l" to="ua2a:~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolve="getInstance" />
-                    <ref role="1Pybhc" to="ua2a:~TypeChecker" resolve="TypeChecker" />
+                    <ref role="37wK5l" to="u78q:~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolve="getInstance" />
+                    <ref role="1Pybhc" to="u78q:~TypeChecker" resolve="TypeChecker" />
                   </node>
                   <node concept="liA8E" id="5B55o7kpSrx" role="2OqNvi">
-                    <ref role="37wK5l" to="ua2a:~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolve="getSubtypingManager" />
+                    <ref role="37wK5l" to="u78q:~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolve="getSubtypingManager" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5B55o7kpSry" role="2OqNvi">
-                  <ref role="37wK5l" to="ua2a:~SubtypingManager.collectImmediateSupertypes(org.jetbrains.mps.openapi.model.SNode,boolean):jetbrains.mps.typesystem.inference.util.StructuralNodeSet" resolve="collectImmediateSupertypes" />
+                  <ref role="37wK5l" to="u78q:~SubtypingManager.collectImmediateSupertypes(org.jetbrains.mps.openapi.model.SNode,boolean):jetbrains.mps.typesystem.inference.util.StructuralNodeSet" resolve="collectImmediateSupertypes" />
                   <node concept="37vLTw" id="5B55o7kpSrz" role="37wK5m">
                     <ref role="3cqZAo" node="hRODIFf" resolve="type" />
                   </node>
@@ -3080,11 +3080,11 @@
         <node concept="3clFbF" id="4RyexnR6l9d" role="3cqZAp">
           <node concept="2OqwBi" id="4RyexnR6l9e" role="3clFbG">
             <node concept="Rm8GO" id="4RyexnR6l9f" role="2Oq$k0">
-              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+              <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
             </node>
             <node concept="liA8E" id="4RyexnR6l9g" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
               <node concept="2JrnkZ" id="6MGyrQSnDJI" role="37wK5m">
                 <node concept="2OqwBi" id="4RyexnR6mLP" role="2JrQYb">
                   <node concept="nLn13" id="4RyexnR6mLO" role="2Oq$k0" />

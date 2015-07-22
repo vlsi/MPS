@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="zxm0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
+    <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -44,8 +44,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5EW" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1zzh" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1zHd" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.FinalMark" resolve="FinalMark" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.FinalMark" resolve="FinalMark" />
           </node>
         </node>
       </node>
@@ -55,8 +55,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5F0" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1zRP" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1zVd" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.StaticMark" resolve="StaticMark" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.StaticMark" resolve="StaticMark" />
           </node>
         </node>
       </node>
@@ -66,8 +66,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5F8" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$3N" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$42" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.RunnableMark" resolve="RunnableMark" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.RunnableMark" resolve="RunnableMark" />
           </node>
         </node>
       </node>
@@ -80,8 +80,8 @@
       <node concept="1QGGTA" id="jpeLPCPeF7" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1_$D" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1_$E" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_plocal" resolve="C_plocal" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.C_plocal" resolve="C_plocal" />
           </node>
         </node>
       </node>
@@ -91,8 +91,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFa" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$jp" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$jF" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_public" resolve="C_public" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.C_public" resolve="C_public" />
           </node>
         </node>
       </node>
@@ -102,8 +102,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFd" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$Z4" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$Z5" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_private" resolve="C_private" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.C_private" resolve="C_private" />
           </node>
         </node>
       </node>
@@ -113,8 +113,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFg" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1_jd" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1_je" role="3xaMm5">
-            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_protected" resolve="C_protected" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.C_protected" resolve="C_protected" />
           </node>
         </node>
       </node>

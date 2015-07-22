@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="3rf1" ref="r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -124,7 +124,7 @@
               <ref role="3cqZAo" node="4fnbQpI7aia" resolve="str" />
             </node>
             <node concept="liA8E" id="4fnbQpI7air" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.concat(java.lang.String):java.lang.String" resolve="concat" />
+              <ref role="37wK5l" to="wyt6:~String.concat(java.lang.String):java.lang.String" resolve="concat" />
               <node concept="Xl_RD" id="4fnbQpI7ais" role="37wK5m">
                 <property role="Xl_RC" value="a" />
               </node>
@@ -137,7 +137,7 @@
               <ref role="3cqZAo" node="4fnbQpI7aia" resolve="str" />
             </node>
             <node concept="liA8E" id="4fnbQpI7ai$" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.concat(java.lang.String):java.lang.String" resolve="concat" />
+              <ref role="37wK5l" to="wyt6:~String.concat(java.lang.String):java.lang.String" resolve="concat" />
               <node concept="Xl_RD" id="4fnbQpI7ai_" role="37wK5m">
                 <property role="Xl_RC" value="b" />
               </node>
@@ -291,7 +291,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="3m17xeX$zZH" role="1tU5fm">
           <node concept="3uibUv" id="3m17xeX$zZI" role="10Q1$1">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>
