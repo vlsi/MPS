@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -38,6 +39,7 @@ public class SModelReferenceTest {
     if (PersistenceFacade.getInstance() == null) {
       myPersistenceRegistry = new PersistenceRegistry();
       myPersistenceRegistry.init();
+      new JavaClassesPersistence(myPersistenceRegistry).init();
     }
     Assert.assertNotNull(PersistenceFacade.getInstance());
   }
@@ -65,10 +67,13 @@ public class SModelReferenceTest {
     SModelReference r2 = getPersistenceFacade().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)");
     SModelReference r3 = getPersistenceFacade().createModelReference(
         "6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)");
+    SModelReference r4 = getPersistenceFacade().createModelReference(
+        "6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#java.util(JDK/java.util@java_stub)");
 
+    // need () otherwise id is treated as module name
     SModuleReference moduleRefNoName = getPersistenceFacade().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065()");
     SModuleReference moduleRefWithName = getPersistenceFacade().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
-    SModelId modelId = SModelId.foreign("java_stub#java.util");
+    org.jetbrains.mps.openapi.model.SModelId modelId = getPersistenceFacade().createModelId("java:java.util");
     SModelReference expected1 = getPersistenceFacade().createModelReference(moduleRefNoName, modelId, "java.util@java_stub");
     SModelReference expected2 = getPersistenceFacade().createModelReference(moduleRefWithName, modelId, "java.util@java_stub");
     assertEquals("[sanity]", expected1, expected2);
@@ -76,9 +81,11 @@ public class SModelReferenceTest {
     assertEquals(expected1, r1);
     assertEquals(expected1, r2);
     assertEquals(expected1, r3);
+    assertEquals(expected1, r4);
     assertEquals(expected2, r1);
     assertEquals(expected2, r2);
     assertEquals(expected2, r3);
+    assertEquals(expected2, r4);
   }
 
   @Test
@@ -92,6 +99,7 @@ public class SModelReferenceTest {
     // new
     testToString("9ef82768-a1b1-451e-b136-5a86b2b5fdbb/r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.persistence/jetbrains.mps.smodel.persistence.def.v7)");
     testToString("9ef82768-a1b1-451e-b136-5a86b2b5fdbb/r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)");
+    testToString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)");
 
     // escaping
     String ref1 = "~module1%25/f:models%2Faa.xml(aa.xml)";

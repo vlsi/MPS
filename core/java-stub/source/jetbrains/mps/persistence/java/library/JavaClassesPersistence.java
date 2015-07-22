@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.java.stub.JavaPackageModelId;
+import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -31,10 +33,12 @@ public class JavaClassesPersistence implements CoreComponent {
   @Override
   public void init() {
     myFacade.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, new JavaClassStubModelRootFactory());
+    myFacade.setModelIdFactory(LanguageID.JAVA, new JavaPackageModelId.Factory());
   }
 
   @Override
   public void dispose() {
+    myFacade.setModelIdFactory(LanguageID.JAVA, null);
     myFacade.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
   }
 

@@ -42,6 +42,7 @@ public abstract class PersistenceFacade {
 
   /**
    * Retrieves all registered types of model roots
+   * FIXME shall rename to smth more meaningful (to reflect it's about model roots)
    */
   public abstract Iterable<String> getTypeIds();
 

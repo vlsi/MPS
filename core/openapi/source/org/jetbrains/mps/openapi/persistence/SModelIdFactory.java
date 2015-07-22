@@ -24,6 +24,7 @@ public interface SModelIdFactory {
 
   /**
    *  Given a serialized representation (without a type+colon prefix), creates an Immutable class.
+   *  @throws IllegalArgumentException if this factory can't parse given value
    */
   SModelId create(String text);
 }

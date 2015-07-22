@@ -16,7 +16,6 @@
 package jetbrains.mps.java.stub;
 
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -48,9 +47,7 @@ public class JavaPackageNameStub {
    */
   @NotNull
   public SModelId asModelId() {
-    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    // XXX shall become PersistenceFacade.getInstance().getModelIdFactory().create(); once we expose ModelIdFactory there
-    return jetbrains.mps.smodel.SModelId.foreign(stereo, myPackageName);
+    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + myPackageName);
   }
 
   /**
@@ -58,7 +55,7 @@ public class JavaPackageNameStub {
    */
   @NotNull
   public SModelReference asModelReference(@NotNull SModuleReference inModule) {
-    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return PersistenceFacade.getInstance().createModelReference(inModule, asModelId(), SModelStereotype.withStereotype(myPackageName, stereo));
+    SModelId modelId = asModelId();
+    return PersistenceFacade.getInstance().createModelReference(inModule, modelId, modelId.getModelName());
   }
 }

@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPri
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
@@ -42,6 +43,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -149,6 +151,9 @@ public class SModelRepository implements CoreComponent {
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
     if (value == null && isVerboseJavaStubModelId(id) ) {
+      // basically, we've changed stub references to new on reference read/parse, and I don't see how we could
+      // get here, but doesn't hurt to be extra cautious here.
+      // The reason why we don't try new modelId here is that new ids are not global and never get into myIdToModelDescriptorMap
       SModelId newStubModelId = stripModuleIdFromVerboseJavaStubModelId(id);
       value = myIdToModelDescriptorMap.get(newStubModelId);
     }
@@ -180,9 +185,36 @@ public class SModelRepository implements CoreComponent {
     return false;
   }
 
+  /**
+   * @return <code>true</code> if it's model id of java stub in its legacy form (i.e. foreign, f:java_stub#...), either with or without module id part.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  /*package*/ static boolean isLegacyJavaStubModelId(SModelId id) {
+    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
+      String idValue = ((ForeignSModelId) id).getId();
+      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+      return (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#');
+    }
+    return false;
+  }
+
+  /**
+   * Here we duplicate code if JavaPackageNameStub, not to introduce dependency to [java-stub] module
+   */
+  @ToRemove(version = 3.3)
+  @Hack
+  /*package*/ static SModelId newJavaPackageStubFromLegacy(SModelId id) {
+    // pre: isLegacyJavaStubModel()
+    String idValue = ((ForeignSModelId) id).getId();
+    int lastHash = idValue.lastIndexOf('#');
+    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + idValue.substring(lastHash+1));
+  }
+
+
   // here we rely on internals otherwise hidden in JavaPackageNameStub. Since it's for transition period of 1 release only, deemed tolerable.
   @ToRemove(version = 3.3)
-  /*package*/ static SModelId stripModuleIdFromVerboseJavaStubModelId(SModelId verboseJavaStubId) {
+  private static SModelId stripModuleIdFromVerboseJavaStubModelId(SModelId verboseJavaStubId) {
     // pre: isVerboseJavaStubModelId()
     String idValue = ((ForeignSModelId) verboseJavaStubId).getId();
     int firstHash = idValue.indexOf('#');
