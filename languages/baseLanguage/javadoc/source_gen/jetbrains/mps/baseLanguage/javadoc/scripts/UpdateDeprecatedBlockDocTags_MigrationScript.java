@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigrationScript {
   public UpdateDeprecatedBlockDocTags_MigrationScript() {
@@ -39,5 +42,11 @@ public final class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigr
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)/992603585967257187");
   }
 }

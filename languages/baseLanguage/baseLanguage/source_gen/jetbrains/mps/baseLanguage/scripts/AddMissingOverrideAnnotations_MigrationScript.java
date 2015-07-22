@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -73,6 +75,12 @@ public final class AddMissingOverrideAnnotations_MigrationScript extends BaseMig
         return true;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1645752949772869851");
   }
   private static SNode createAnnotationInstance_eltaeh_a0a0a2a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -19,6 +19,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -484,6 +486,12 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/5571879668402512180");
   }
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a4a1a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

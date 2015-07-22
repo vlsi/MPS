@@ -16,9 +16,11 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.util.RuntimeUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -116,6 +118,12 @@ public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/9046093740212371828");
   }
   protected static Logger LOG = LogManager.getLogger(UpdateRuntimeUtil_MigrationScript.class);
   private static SNode _quotation_createNode_tdy3l4_a0a0a21a0a(Object parameter_1, Object parameter_2, Object parameter_3) {

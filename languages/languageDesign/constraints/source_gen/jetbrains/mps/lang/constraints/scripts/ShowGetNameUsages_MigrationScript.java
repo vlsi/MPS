@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class ShowGetNameUsages_MigrationScript extends BaseMigrationScript {
   public ShowGetNameUsages_MigrationScript() {
@@ -38,6 +41,12 @@ public final class ShowGetNameUsages_MigrationScript extends BaseMigrationScript
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)/6243486444683604044");
   }
   private static boolean eq_th6w08_a0a0d0a0a0a0b0a(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

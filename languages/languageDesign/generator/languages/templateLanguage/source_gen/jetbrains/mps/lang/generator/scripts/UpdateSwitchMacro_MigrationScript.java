@@ -10,6 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
   public UpdateSwitchMacro_MigrationScript() {
@@ -44,5 +47,11 @@ public final class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c895902e7(jetbrains.mps.lang.generator.scripts)/982871510076818109");
   }
 }

@@ -12,6 +12,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMigrationScript {
   public EscapeSpecialCharactersInProperties_MigrationScript() {
@@ -55,5 +58,11 @@ public final class EscapeSpecialCharactersInProperties_MigrationScript extends B
         return true;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)/5426775851424578122");
   }
 }

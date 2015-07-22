@@ -10,6 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrationScript {
   public RemoveThisWhereAppropriate_MigrationScript() {
@@ -101,5 +104,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         return true;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1704189004094297789");
   }
 }

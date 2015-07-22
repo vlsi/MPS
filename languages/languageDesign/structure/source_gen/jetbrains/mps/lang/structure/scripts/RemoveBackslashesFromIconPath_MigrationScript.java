@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class RemoveBackslashesFromIconPath_MigrationScript extends BaseMigrationScript {
   public RemoveBackslashesFromIconPath_MigrationScript() {
@@ -39,5 +42,11 @@ public final class RemoveBackslashesFromIconPath_MigrationScript extends BaseMig
         return true;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)/4376713410984067201");
   }
 }

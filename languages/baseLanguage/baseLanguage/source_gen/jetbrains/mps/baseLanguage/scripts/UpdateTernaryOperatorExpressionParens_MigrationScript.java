@@ -10,6 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class UpdateTernaryOperatorExpressionParens_MigrationScript extends BaseMigrationScript {
   public UpdateTernaryOperatorExpressionParens_MigrationScript() {
@@ -42,6 +45,12 @@ public final class UpdateTernaryOperatorExpressionParens_MigrationScript extends
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/818296778609449086");
   }
   private static boolean eq_lkooh4_a0a0a0a3a0a0a0a1a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

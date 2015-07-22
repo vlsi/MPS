@@ -14,6 +14,9 @@ import java.util.List;
 import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class HorizontalGapMigration_MigrationScript extends BaseMigrationScript {
   public HorizontalGapMigration_MigrationScript() {
@@ -200,5 +203,11 @@ public final class HorizontalGapMigration_MigrationScript extends BaseMigrationS
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/1234198385755");
   }
 }

@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class MigrationFromMapsToCollections_MigrationScript extends BaseMigrationScript {
   public MigrationFromMapsToCollections_MigrationScript() {
@@ -217,6 +220,12 @@ public final class MigrationFromMapsToCollections_MigrationScript extends BaseMi
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)/1238516564139");
   }
   private static boolean eq_ds6c8y_a0a0a0d0a0a0a0h0a(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

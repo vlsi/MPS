@@ -305,6 +305,9 @@
       </concept>
     </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
+      <concept id="1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" flags="nn" index="12$id9">
+        <child id="1229477520175" name="outputNode" index="12$y8L" />
+      </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="7430509679014182526" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef" flags="ng" index="1qCSth">
         <property id="7430509679014182818" name="contextVarName" index="1qCSqd" />
@@ -554,6 +557,67 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="h9AO$wG" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="rl14sQwxb8" role="jymVt" />
+    <node concept="3clFb_" id="rl14sQwxpy" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getScriptNode" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="rl14sQwxpz" role="1B3o_S" />
+      <node concept="3uibUv" id="rl14sQwxp_" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="2AHcQZ" id="rl14sQwxpA" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3clFbS" id="rl14sQwxpB" role="3clF47">
+        <node concept="3cpWs6" id="rl14sQwyJp" role="3cqZAp">
+          <node concept="2OqwBi" id="rl14sQwG2c" role="3cqZAk">
+            <node concept="2YIFZM" id="rl14sQwFOj" role="2Oq$k0">
+              <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+              <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+            </node>
+            <node concept="liA8E" id="rl14sQwGjj" role="2OqNvi">
+              <ref role="37wK5l" to="dush:~PersistenceFacade.createNodeReference(java.lang.String):org.jetbrains.mps.openapi.model.SNodeReference" resolve="createNodeReference" />
+              <node concept="Xl_RD" id="rl14sQwGzC" role="37wK5m">
+                <property role="Xl_RC" value="" />
+                <node concept="17Uvod" id="rl14sQwGLs" role="lGtFl">
+                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                  <property role="2qtEX9" value="value" />
+                  <node concept="3zFVjK" id="rl14sQwGLt" role="3zH0cK">
+                    <node concept="3clFbS" id="rl14sQwGLu" role="2VODD2">
+                      <node concept="3clFbF" id="rl14sQwGQR" role="3cqZAp">
+                        <node concept="2OqwBi" id="rl14sQwIX1" role="3clFbG">
+                          <node concept="2OqwBi" id="rl14sQwH_f" role="2Oq$k0">
+                            <node concept="2JrnkZ" id="rl14sQwHuQ" role="2Oq$k0">
+                              <node concept="2OqwBi" id="5ys$QFO3fu" role="2JrQYb">
+                                <node concept="1iwH7S" id="5ys$QFO3fv" role="2Oq$k0" />
+                                <node concept="12$id9" id="5ys$QFO3fw" role="2OqNvi">
+                                  <node concept="30H73N" id="5ys$QFO3fx" role="12$y8L" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="rl14sQwHIM" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="rl14sQwJ7h" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="rl14sQwxpC" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
   </node>
   <node concept="13MO4I" id="2ggmC1Wttlp">

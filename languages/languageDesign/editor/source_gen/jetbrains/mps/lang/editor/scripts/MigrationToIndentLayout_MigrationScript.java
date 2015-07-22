@@ -13,6 +13,9 @@ import jetbrains.mps.lang.editor.intentions.IndentLayoutUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public final class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript {
   public MigrationToIndentLayout_MigrationScript() {
@@ -75,5 +78,11 @@ public final class MigrationToIndentLayout_MigrationScript extends BaseMigration
         return false;
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return PersistenceFacade.getInstance().createNodeReference("r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/1237726848485");
   }
 }
