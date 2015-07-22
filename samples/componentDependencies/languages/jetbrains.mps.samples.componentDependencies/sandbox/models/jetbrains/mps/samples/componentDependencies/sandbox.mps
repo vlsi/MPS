@@ -6,9 +6,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
-  <imports>
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-  </imports>
+  <imports />
   <registry>
     <language id="3066bc09-2438-4300-a936-5bd59917ae9b" name="jetbrains.mps.samples.componentDependencies">
       <concept id="6223439730610762144" name="jetbrains.mps.samples.componentDependencies.structure.Dependency" flags="ng" index="1Ihmzm">
