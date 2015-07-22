@@ -50,7 +50,7 @@ public class GeneratorsRunner {
 
   public static void main(String[] args) throws JDOMException, IOException {
     assertNull(PersistenceFacade.getInstance());
-    Platform platform = PlatformFactory.initPlatform(PlatformOptionsBuilder.CORE);
+    Platform platform = PlatformFactory.initPlatform(PlatformOptionsBuilder.PERSISTENCE);
 
     generateGenSourcesIml();
     generateCompilerXmlFile();

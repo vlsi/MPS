@@ -51,7 +51,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   @BeforeClass
   public static void init() {
     assertNull(PersistenceFacade.getInstance());
-    ourPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.CORE);
+    ourPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.PERSISTENCE);
   }
 
   @AfterClass
