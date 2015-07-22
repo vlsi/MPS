@@ -38,6 +38,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.ArrayList;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -212,7 +213,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }).select(new ISelector<MigrationScriptReference, String>() {
       public String select(MigrationScriptReference it) {
-        return fetchScript(it).getCaption();
+        return fetchScript(it).getCaption() + "  [" + NameUtil.compactNamespace(it.getLanguage().getQualifiedName()) + "]";
       }
     });
     return SetSequence.fromSetWithValues(new HashSet<String>(), names);
