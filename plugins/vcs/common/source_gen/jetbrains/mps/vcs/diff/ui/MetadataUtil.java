@@ -5,14 +5,14 @@ package jetbrains.mps.vcs.diff.ui;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -36,8 +36,8 @@ public class MetadataUtil {
   }
   public static SModel createMetadataModel(SModel model, String version, boolean editable) {
     EditableSModelBase metadataModel = new MergeTemporaryModel(model.getReference(), !(editable));
-    metadataModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
-    metadataModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
+    metadataModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x6df0089f32884998L, 0x9d57e698e7c8e145L), "jetbrains.mps.ide.vcs.modelmetadata"));
+    metadataModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project"));
     SModelOperations.addRootNode(((SModel) metadataModel), createModelRoot(model));
     DiffModelUtil.renameModelAndRegister(metadataModel, version);
     metadataModel.setChanged(false);
