@@ -147,7 +147,7 @@
     </language>
   </registry>
   <node concept="2S6QgY" id="1LJzqOWisAB">
-    <property role="3GE5qa" value="member.methodDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="SwitchConditional" />
     <property role="2ZfUl0" value="true" />
     <ref role="2ZfgGC" to="oubp:3geGFOI0X5$" resolve="ParameterDescriptor" />
@@ -187,7 +187,7 @@
                 <node concept="37vLTG" id="5KZRo2kkPSU" role="1bW2Oz">
                   <property role="TrG5h" value="method" />
                   <node concept="3Tqbb2" id="2h59CdJqFy3" role="1tU5fm">
-                    <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+                    <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
                   </node>
                 </node>
               </node>
@@ -254,14 +254,14 @@
           <node concept="3cpWsn" id="UBgfI9fEJo" role="3cpWs9">
             <property role="TrG5h" value="descr" />
             <node concept="3Tqbb2" id="UBgfI9fEJp" role="1tU5fm">
-              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
             </node>
             <node concept="2OqwBi" id="5KZRo2klumm" role="33vP2m">
               <node concept="2OqwBi" id="UBgfI9eMDf" role="2Oq$k0">
                 <node concept="2Sf5sV" id="5KZRo2kltiW" role="2Oq$k0" />
                 <node concept="3CFZ6_" id="5KZRo2klu7j" role="2OqNvi">
                   <node concept="3CFYIy" id="5KZRo2kluau" role="3CFYIz">
-                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
@@ -279,14 +279,14 @@
               </node>
               <node concept="3CFZ6_" id="UBgfI9fEIx" role="2OqNvi">
                 <node concept="3CFYIy" id="UBgfI9fEIy" role="3CFYIz">
-                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                 </node>
               </node>
             </node>
             <node concept="2ShNRf" id="UBgfI9fEIz" role="37vLTx">
               <node concept="3zrR0B" id="UBgfI9fEI$" role="2ShVmc">
                 <node concept="3Tqbb2" id="UBgfI9fEI_" role="3zrR0E">
-                  <ref role="ehGHo" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                  <ref role="ehGHo" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                 </node>
               </node>
             </node>
@@ -304,7 +304,7 @@
                 </node>
                 <node concept="3CFZ6_" id="UBgfI9fEIG" role="2OqNvi">
                   <node concept="3CFYIy" id="UBgfI9fEIH" role="3CFYIz">
-                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
@@ -378,7 +378,7 @@
                   <node concept="2Sf5sV" id="5KZRo2klq2j" role="2Oq$k0" />
                   <node concept="3CFZ6_" id="5KZRo2klqRH" role="2OqNvi">
                     <node concept="3CFYIy" id="5KZRo2klqX0" role="3CFYIz">
-                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                     </node>
                   </node>
                 </node>
@@ -405,7 +405,7 @@
               <node concept="2Sf5sV" id="5KZRo2klhzB" role="2Oq$k0" />
               <node concept="3CFZ6_" id="5KZRo2kloJJ" role="2OqNvi">
                 <node concept="3CFYIy" id="5KZRo2kloRr" role="3CFYIz">
-                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                 </node>
               </node>
             </node>

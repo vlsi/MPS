@@ -193,7 +193,7 @@
   </registry>
   <node concept="1M2fIO" id="3geGFOI1yLF">
     <property role="3GE5qa" value="instances" />
-    <ref role="1M2myG" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+    <ref role="1M2myG" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
     <node concept="nKS2y" id="3geGFOI1yLG" role="1MLUbF">
       <node concept="3clFbS" id="3geGFOI1yLH" role="2VODD2">
         <node concept="3clFbF" id="3geGFOI1yLI" role="3cqZAp">
@@ -208,7 +208,7 @@
                   </node>
                   <node concept="3CFZ6_" id="1XvrRm0Vm7C" role="2OqNvi">
                     <node concept="3CFYIy" id="1XvrRm0Vmsb" role="3CFYIz">
-                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                     </node>
                   </node>
                 </node>
@@ -231,7 +231,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2WSWNq1TGrt">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="member.modifier" />
     <ref role="1M2myG" to="oubp:2WSWNq1TGom" resolve="RequiredModifier" />
     <node concept="nKS2y" id="2WSWNq1TGrK" role="1MLUbF">
       <node concept="3clFbS" id="2WSWNq1TGrL" role="2VODD2">
@@ -244,7 +244,7 @@
               <node concept="2OqwBi" id="2WSWNq1TITV" role="2Oq$k0">
                 <node concept="2OqwBi" id="2WSWNq1THBo" role="2Oq$k0">
                   <node concept="1PxgMI" id="2WSWNq1THee" role="2Oq$k0">
-                    <ref role="1PxNhF" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+                    <ref role="1PxNhF" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
                     <node concept="nLn13" id="2WSWNq1TGAa" role="1PxMeX" />
                   </node>
                   <node concept="3Tsc0h" id="2WSWNq1THWk" role="2OqNvi">
@@ -266,7 +266,7 @@
   </node>
   <node concept="1M2fIO" id="4auf8pY9$1T">
     <property role="3GE5qa" value="" />
-    <ref role="1M2myG" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+    <ref role="1M2myG" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
     <node concept="1N5Pfh" id="2iCqkkxCXUO" role="1Mr941">
       <ref role="1N5Vy1" to="oubp:1_lSsE3TuQi" />
       <node concept="13QW63" id="2iCqkkxCXUW" role="1N6uqs">
@@ -363,7 +363,7 @@
                   <property role="3clFbU" value="true" />
                 </node>
                 <node concept="35c_gC" id="4auf8pY9B7J" role="37wK5m">
-                  <ref role="35c_gD" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+                  <ref role="35c_gD" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
                 </node>
               </node>
             </node>
@@ -373,7 +373,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1QReUKII9ud">
-    <property role="3GE5qa" value="member.customMemberDeclaration" />
+    <property role="3GE5qa" value="member.customDescriptor" />
     <ref role="1M2myG" to="oubp:7aMlq14w5Qs" resolve="CustomMemberDescriptor" />
     <node concept="EnEH3" id="3JYspdAJSoH" role="1MhHOB">
       <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
@@ -457,7 +457,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3CPpk7pFP3t">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="member.modifier" />
     <ref role="1M2myG" to="oubp:1QReUKIFP7I" resolve="MultipleModifier" />
     <node concept="nKS2y" id="3CPpk7pFP3u" role="1MLUbF">
       <node concept="3clFbS" id="3CPpk7pFP3v" role="2VODD2">

@@ -243,7 +243,7 @@
     <node concept="3FOIzC" id="3geGFOI14$Q" role="3FOPby">
       <ref role="3FOWKa" to="tpee:h9ngReX" resolve="ClassifierMember" />
       <node concept="tYCnQ" id="3geGFOI14$R" role="tZc4B">
-        <ref role="uz4UX" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+        <ref role="uz4UX" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
         <node concept="uMFAO" id="3geGFOI14$S" role="uz6Si">
           <node concept="3Tqbb2" id="2Dhc50dts3q" role="uMOYW">
             <ref role="ehGHo" to="oubp:3geGFOI0X5B" resolve="MethodDescriptor" />
@@ -313,7 +313,7 @@
                       </node>
                     </node>
                     <node concept="3Tqbb2" id="7ay_HjIQx0P" role="10QFUM">
-                      <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+                      <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
                     </node>
                   </node>
                 </node>
@@ -344,7 +344,7 @@
         </node>
       </node>
       <node concept="tYCnQ" id="snlvQWeVx3" role="tZc4B">
-        <ref role="uz4UX" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
+        <ref role="uz4UX" to="oubp:5BD$AU43p5h" resolve="PropertyInstance" />
         <node concept="uMFAO" id="snlvQWeVx4" role="uz6Si">
           <node concept="3Tqbb2" id="snlvQWeVx5" role="uMOYW">
             <ref role="ehGHo" to="oubp:7aMlq14vVGL" resolve="PropertyDescriptor" />
@@ -414,7 +414,7 @@
                       </node>
                     </node>
                     <node concept="3Tqbb2" id="7s$_UJMTUmS" role="10QFUM">
-                      <ref role="ehGHo" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
+                      <ref role="ehGHo" to="oubp:5BD$AU43p5h" resolve="PropertyInstance" />
                     </node>
                   </node>
                 </node>
@@ -607,7 +607,7 @@
       <property role="TrG5h" value="getMembers2Substitute" />
       <node concept="A3Dl8" id="snlvQWgC4N" role="3clF45">
         <node concept="3Tqbb2" id="snlvQWgC4O" role="A3Ik2">
-          <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+          <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
         </node>
       </node>
       <node concept="3Tm1VV" id="snlvQWgC4P" role="1B3o_S" />
@@ -653,7 +653,7 @@
           <node concept="3cpWsn" id="snlvQWgC54" role="3cpWs9">
             <property role="TrG5h" value="descr" />
             <node concept="3Tqbb2" id="snlvQWgC55" role="1tU5fm">
-              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
             </node>
             <node concept="2OqwBi" id="snlvQWgC56" role="33vP2m">
               <node concept="2OqwBi" id="snlvQWgC57" role="2Oq$k0">
@@ -662,7 +662,7 @@
                 </node>
                 <node concept="3CFZ6_" id="snlvQWgC5a" role="2OqNvi">
                   <node concept="3CFYIy" id="snlvQWgC5b" role="3CFYIz">
-                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
@@ -757,7 +757,7 @@
       <node concept="37vLTG" id="5kVFkwb5y$m" role="3clF46">
         <property role="TrG5h" value="memberConcept" />
         <node concept="3bZ5Sz" id="5kVFkwb5Aps" role="1tU5fm">
-          <ref role="3bZ5Sy" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+          <ref role="3bZ5Sy" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
         </node>
       </node>
       <node concept="37vLTG" id="snlvQWgC5u" role="3clF46">
@@ -770,7 +770,7 @@
       <property role="TrG5h" value="getAllMembers" />
       <node concept="A3Dl8" id="3RmJrVJJZBH" role="3clF45">
         <node concept="3Tqbb2" id="3RmJrVJJZBI" role="A3Ik2">
-          <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+          <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
         </node>
       </node>
       <node concept="3Tm1VV" id="3RmJrVJJZBJ" role="1B3o_S" />
@@ -816,7 +816,7 @@
           <node concept="3cpWsn" id="3RmJrVJJZC1" role="3cpWs9">
             <property role="TrG5h" value="descr" />
             <node concept="3Tqbb2" id="3RmJrVJJZC2" role="1tU5fm">
-              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+              <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
             </node>
             <node concept="2OqwBi" id="3RmJrVJJZC3" role="33vP2m">
               <node concept="2OqwBi" id="3RmJrVJJZC4" role="2Oq$k0">
@@ -825,7 +825,7 @@
                 </node>
                 <node concept="3CFZ6_" id="3RmJrVJJZC6" role="2OqNvi">
                   <node concept="3CFYIy" id="3RmJrVJJZC7" role="3CFYIz">
-                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
@@ -875,7 +875,7 @@
       <node concept="37vLTG" id="3RmJrVJJZCO" role="3clF46">
         <property role="TrG5h" value="memberConcept" />
         <node concept="3bZ5Sz" id="3RmJrVJJZCP" role="1tU5fm">
-          <ref role="3bZ5Sy" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+          <ref role="3bZ5Sy" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
         </node>
       </node>
       <node concept="37vLTG" id="3RmJrVJJZCQ" role="3clF46">
@@ -886,10 +886,10 @@
     <node concept="3Tm1VV" id="1XvrRm0Wd03" role="1B3o_S" />
   </node>
   <node concept="37WguZ" id="7T23sO8z6Hx">
-    <property role="3GE5qa" value="member.methodDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="DependentType_factory" />
     <node concept="37WvkG" id="7T23sO8z6Hy" role="37WGs$">
-      <ref role="37XkoT" to="oubp:3geGFOI0X5s" resolve="DependentTypeDeclaration" />
+      <ref role="37XkoT" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
       <node concept="37Y9Zx" id="7T23sO8z6KW" role="37ZfLb">
         <node concept="3clFbS" id="7T23sO8z6KX" role="2VODD2">
           <node concept="3clFbF" id="7T23sO8zvkO" role="3cqZAp">
@@ -962,7 +962,7 @@
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="ClassLike" />
     <node concept="37WvkG" id="UBgfI9ezdA" role="37WGs$">
-      <ref role="37XkoT" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="37XkoT" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
       <node concept="37Y9Zx" id="UBgfI9ezdB" role="37ZfLb">
         <node concept="3clFbS" id="UBgfI9ezdC" role="2VODD2">
           <node concept="3cpWs8" id="UBgfI9fEJm" role="3cqZAp">
@@ -981,7 +981,7 @@
             <node concept="3cpWsn" id="UBgfI9fEJo" role="3cpWs9">
               <property role="TrG5h" value="descr" />
               <node concept="3Tqbb2" id="UBgfI9fEJp" role="1tU5fm">
-                <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+                <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
               </node>
               <node concept="2OqwBi" id="UBgfI9eMDf" role="33vP2m">
                 <node concept="1r4Lsj" id="UBgfI9eMBf" role="2Oq$k0" />
@@ -999,14 +999,14 @@
                 </node>
                 <node concept="3CFZ6_" id="UBgfI9fEIx" role="2OqNvi">
                   <node concept="3CFYIy" id="UBgfI9fEIy" role="3CFYIz">
-                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
               <node concept="2ShNRf" id="UBgfI9fEIz" role="37vLTx">
                 <node concept="3zrR0B" id="UBgfI9fEI$" role="2ShVmc">
                   <node concept="3Tqbb2" id="UBgfI9fEI_" role="3zrR0E">
-                    <ref role="ehGHo" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                    <ref role="ehGHo" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                   </node>
                 </node>
               </node>
@@ -1024,7 +1024,7 @@
                   </node>
                   <node concept="3CFZ6_" id="UBgfI9fEIG" role="2OqNvi">
                     <node concept="3CFYIy" id="UBgfI9fEIH" role="3CFYIz">
-                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                     </node>
                   </node>
                 </node>

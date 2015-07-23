@@ -379,8 +379,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="3geGFOI14uf">
-    <property role="3GE5qa" value="member.methodDeclaration" />
-    <ref role="1XX52x" to="oubp:3geGFOI0X5s" resolve="DependentTypeDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
+    <ref role="1XX52x" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
     <node concept="3F1sOY" id="3geGFOI14ug" role="6VMZX">
       <ref role="1NtTu8" to="oubp:3geGFOI0X5t" />
     </node>
@@ -392,7 +392,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3geGFOI14ui">
-    <property role="3GE5qa" value="member.methodDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <ref role="1XX52x" to="oubp:3geGFOI0X5B" resolve="MethodDescriptor" />
     <node concept="3EZMnI" id="2WSWNq1SH1x" role="2wV5jI">
       <node concept="3F0ifn" id="2WSWNq1SH1C" role="3EZMnx">
@@ -456,7 +456,7 @@
   </node>
   <node concept="24kQdi" id="3geGFOI14uC">
     <property role="3GE5qa" value="" />
-    <ref role="1XX52x" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+    <ref role="1XX52x" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
     <node concept="3EZMnI" id="3geGFOI14uD" role="2wV5jI">
       <node concept="3F0ifn" id="3crTN2XYLYs" role="3EZMnx">
         <property role="3F0ifm" value="class-like" />
@@ -535,7 +535,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3geGFOI14uQ">
-    <property role="3GE5qa" value="member.methodDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <ref role="1XX52x" to="oubp:3geGFOI0X5$" resolve="ParameterDescriptor" />
     <node concept="3EZMnI" id="3geGFOI14uR" role="2wV5jI">
       <node concept="3F0ifn" id="1LJzqOWimxX" role="3EZMnx">
@@ -575,7 +575,7 @@
   </node>
   <node concept="24kQdi" id="3geGFOI14vb">
     <property role="3GE5qa" value="instances" />
-    <ref role="1XX52x" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+    <ref role="1XX52x" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
     <node concept="3EZMnI" id="3geGFOI14vc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <property role="S$Qs1" value="false" />
@@ -672,7 +672,7 @@
   </node>
   <node concept="24kQdi" id="36gOZBLN72l">
     <property role="3GE5qa" value="" />
-    <ref role="1XX52x" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+    <ref role="1XX52x" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
     <node concept="3EZMnI" id="36gOZBLN72q" role="2wV5jI">
       <node concept="3EZMnI" id="36gOZBLN74R" role="3EZMnx">
         <node concept="2iRfu4" id="36gOZBLN74S" role="2iSdaV" />
@@ -700,14 +700,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="2WSWNq1TGop">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="member.modifier" />
     <ref role="1XX52x" to="oubp:2WSWNq1TGom" resolve="RequiredModifier" />
     <node concept="PMmxH" id="2WSWNq1U20e" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="24kQdi" id="7aMlq14w525">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="member.modifier" />
     <ref role="1XX52x" to="oubp:7aMlq14w4WD" resolve="PlaceholderModifier" />
     <node concept="3EZMnI" id="7aMlq14w5DN" role="2wV5jI">
       <node concept="PMmxH" id="3m06JgscScy" role="3EZMnx">
@@ -735,7 +735,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7aMlq14w5MW">
-    <property role="3GE5qa" value="member.propertyDeclaration" />
+    <property role="3GE5qa" value="member.propertyDescriptor" />
     <ref role="1XX52x" to="oubp:7aMlq14vVGL" resolve="PropertyDescriptor" />
     <node concept="3EZMnI" id="7aMlq14w5N2" role="2wV5jI">
       <node concept="PMmxH" id="7aMlq14w5N9" role="3EZMnx">
@@ -772,7 +772,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="ilX9hHjBZF">
-    <property role="3GE5qa" value="member.customMemberDeclaration" />
+    <property role="3GE5qa" value="member.customDescriptor" />
     <ref role="1XX52x" to="oubp:7aMlq14w5Qs" resolve="CustomMemberDescriptor" />
     <node concept="3EZMnI" id="ilX9hHjBZH" role="2wV5jI">
       <node concept="3F0ifn" id="ilX9hHjC0e" role="3EZMnx">
@@ -804,7 +804,7 @@
   </node>
   <node concept="24kQdi" id="5BD$AU43o40">
     <property role="3GE5qa" value="instances" />
-    <ref role="1XX52x" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
+    <ref role="1XX52x" to="oubp:5BD$AU43nQM" resolve="MemberPlaceholder" />
     <node concept="gc7cB" id="klpHT7qUsc" role="2wV5jI">
       <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
       <node concept="VPM3Z" id="2nUiI4k5Cui" role="3F10Kt">
@@ -959,7 +959,7 @@
   </node>
   <node concept="24kQdi" id="5BD$AU440OP">
     <property role="3GE5qa" value="instances.property" />
-    <ref role="1XX52x" to="oubp:5BD$AU440O4" resolve="ClassLikeStringProperty" />
+    <ref role="1XX52x" to="oubp:5BD$AU440O4" resolve="StringPropertyInstance" />
     <node concept="3EZMnI" id="5BD$AU440S6" role="2wV5jI">
       <node concept="PMmxH" id="7T23sO8vRbf" role="3EZMnx">
         <ref role="PMmxG" node="7T23sO8vRbc" resolve="ClassLikeProperty_Name_EditorComponent" />
@@ -973,7 +973,7 @@
   </node>
   <node concept="24kQdi" id="5BD$AU440Wn">
     <property role="3GE5qa" value="instances.property" />
-    <ref role="1XX52x" to="oubp:5BD$AU440V5" resolve="ClassLikeIntegerProperty" />
+    <ref role="1XX52x" to="oubp:5BD$AU440V5" resolve="IntegerPropertyInstance" />
     <node concept="3EZMnI" id="5BD$AU440WC" role="2wV5jI">
       <node concept="PMmxH" id="7T23sO8vRcn" role="3EZMnx">
         <ref role="PMmxG" node="7T23sO8vRbc" resolve="ClassLikeProperty_Name_EditorComponent" />
@@ -987,7 +987,7 @@
   </node>
   <node concept="24kQdi" id="5BD$AU440X9">
     <property role="3GE5qa" value="instances.property" />
-    <ref role="1XX52x" to="oubp:5BD$AU440V3" resolve="ClassLikeBooleanProperty" />
+    <ref role="1XX52x" to="oubp:5BD$AU440V3" resolve="BooleanPropertyInstance" />
     <node concept="3EZMnI" id="5BD$AU440Xq" role="2wV5jI">
       <node concept="PMmxH" id="7T23sO8vRbU" role="3EZMnx">
         <ref role="PMmxG" node="7T23sO8vRbc" resolve="ClassLikeProperty_Name_EditorComponent" />
@@ -1001,7 +1001,7 @@
   </node>
   <node concept="1h_SRR" id="7ay_HjINiwm">
     <property role="TrG5h" value="Placeholder2RealObject" />
-    <ref role="1h_SK9" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
+    <ref role="1h_SK9" to="oubp:5BD$AU43nQM" resolve="MemberPlaceholder" />
     <node concept="1hA7zw" id="7ay_HjINiFL" role="1h_SK8">
       <property role="1hAc7j" value="insert_action_id" />
       <node concept="1hAIg9" id="7ay_HjINiFM" role="1hA7z_">
@@ -1064,7 +1064,7 @@
       <node concept="37vLTG" id="7ay_HjIOSB9" role="3clF46">
         <property role="TrG5h" value="ph" />
         <node concept="3Tqbb2" id="7ay_HjIOSB8" role="1tU5fm">
-          <ref role="ehGHo" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
+          <ref role="ehGHo" to="oubp:5BD$AU43nQM" resolve="MemberPlaceholder" />
         </node>
       </node>
     </node>
@@ -1077,7 +1077,7 @@
           <node concept="3cpWsn" id="UBgfI9cvr6" role="3cpWs9">
             <property role="TrG5h" value="decl" />
             <node concept="3Tqbb2" id="UBgfI9cvr4" role="1tU5fm">
-              <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+              <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
             </node>
             <node concept="10Nm6u" id="UBgfI9cxHP" role="33vP2m" />
           </node>
@@ -1091,7 +1091,7 @@
                     <ref role="37wK5l" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
                   </node>
                   <node concept="1PxgMI" id="UBgfI9cwSz" role="2Oq$k0">
-                    <ref role="1PxNhF" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                    <ref role="1PxNhF" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                     <node concept="37vLTw" id="UBgfI9cvr9" role="1PxMeX">
                       <ref role="3cqZAo" node="7T23sO8wicy" resolve="mi" />
                     </node>
@@ -1109,7 +1109,7 @@
             </node>
             <node concept="1mIQ4w" id="UBgfI9cuQW" role="2OqNvi">
               <node concept="chp4Y" id="UBgfI9cuRB" role="cj9EA">
-                <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
               </node>
             </node>
           </node>
@@ -1151,7 +1151,7 @@
                                           </node>
                                           <node concept="3CFZ6_" id="UBgfI9cLas" role="2OqNvi">
                                             <node concept="3CFYIy" id="UBgfI9cLgC" role="3CFYIz">
-                                              <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                                              <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                                             </node>
                                           </node>
                                         </node>
@@ -1168,7 +1168,7 @@
                             </node>
                             <node concept="3CFZ6_" id="UBgfI9cMGq" role="2OqNvi">
                               <node concept="3CFYIy" id="UBgfI9cMMz" role="3CFYIz">
-                                <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
+                                <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
                               </node>
                             </node>
                           </node>
@@ -1268,7 +1268,7 @@
                       </node>
                       <node concept="v3k3i" id="5xXiDaJZ5wI" role="2OqNvi">
                         <node concept="chp4Y" id="5xXiDaJZ5wJ" role="v3oSu">
-                          <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                          <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                         </node>
                       </node>
                     </node>
@@ -1377,7 +1377,7 @@
       <node concept="37vLTG" id="7T23sO8wicy" role="3clF46">
         <property role="TrG5h" value="mi" />
         <node concept="3Tqbb2" id="7T23sO8wicz" role="1tU5fm">
-          <ref role="ehGHo" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+          <ref role="ehGHo" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
         </node>
       </node>
     </node>
@@ -1385,13 +1385,13 @@
   </node>
   <node concept="24kQdi" id="536fTXa3uEJ">
     <property role="3GE5qa" value="member" />
-    <ref role="1XX52x" to="oubp:536fTXa3uDv" resolve="EmptyMember" />
+    <ref role="1XX52x" to="oubp:536fTXa3uDv" resolve="EmptyMemberDescriptor" />
     <node concept="3F0ifn" id="536fTXa3uOY" role="2wV5jI" />
   </node>
   <node concept="1h_SRR" id="7T23sO8tbnq">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="RealObject2Placeholder" />
-    <ref role="1h_SK9" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+    <ref role="1h_SK9" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     <node concept="1hA7zw" id="7T23sO8tbsg" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="7T23sO8tbsh" role="1hA7z_">
@@ -1423,7 +1423,7 @@
   </node>
   <node concept="PKFIW" id="7T23sO8vRbc">
     <property role="TrG5h" value="ClassLikeProperty_Name_EditorComponent" />
-    <ref role="1XX52x" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
+    <ref role="1XX52x" to="oubp:5BD$AU43p5h" resolve="PropertyInstance" />
     <node concept="3EZMnI" id="7T23sO8vRbu" role="2wV5jI">
       <node concept="3F0A7n" id="7T23sO8vRbd" role="3EZMnx">
         <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
@@ -1440,7 +1440,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="1Dz4WsDz1jX">
-    <property role="3GE5qa" value="member.methodDeclaration" />
+    <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="ParameterDescriptor_Actions" />
     <ref role="1h_SK9" to="oubp:3geGFOI0X5$" resolve="ParameterDescriptor" />
     <node concept="1hA7zw" id="1Dz4WsDz1Kh" role="1h_SK8">
@@ -1458,7 +1458,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3crTN2Y1y6l">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="DEPRECATED" />
     <ref role="1XX52x" to="oubp:3crTN2XY8Qo" resolve="GenerateModifier" />
     <node concept="3EZMnI" id="3m06Jgsd1qs" role="2wV5jI">
       <node concept="PMmxH" id="3m06Jgsd1qt" role="3EZMnx">
@@ -1496,7 +1496,7 @@
                   <node concept="2Xjw5R" id="3m06Jgsd2it" role="2OqNvi">
                     <node concept="1xMEDy" id="3m06Jgsd2iv" role="1xVPHs">
                       <node concept="chp4Y" id="3m06JgsdELl" role="ri$Ld">
-                        <ref role="cht4Q" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+                        <ref role="cht4Q" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
                       </node>
                     </node>
                   </node>
@@ -1532,7 +1532,7 @@
         <property role="TrG5h" value="node" />
         <property role="3TUv4t" value="false" />
         <node concept="3Tqbb2" id="2nUiI4k5TCu" role="1tU5fm">
-          <ref role="ehGHo" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
+          <ref role="ehGHo" to="oubp:5BD$AU43nQM" resolve="MemberPlaceholder" />
         </node>
       </node>
       <node concept="37vLTG" id="2nUiI4k5D6X" role="3clF46">
@@ -1596,7 +1596,7 @@
                   <ref role="3cqZAo" node="2nUiI4k7ptt" resolve="object" />
                 </node>
                 <node concept="3Tqbb2" id="2nUiI4k7pSE" role="10QFUM">
-                  <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+                  <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
                 </node>
               </node>
             </node>
@@ -1683,7 +1683,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1QReUKIIjID">
-    <property role="3GE5qa" value="member" />
+    <property role="3GE5qa" value="member.modifier" />
     <ref role="1XX52x" to="oubp:1QReUKIFP7I" resolve="MultipleModifier" />
     <node concept="PMmxH" id="1QReUKIIjIE" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
