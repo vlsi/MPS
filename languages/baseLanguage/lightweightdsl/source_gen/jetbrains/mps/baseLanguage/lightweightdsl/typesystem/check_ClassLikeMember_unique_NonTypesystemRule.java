@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMember_Behavior;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -24,12 +24,12 @@ public class check_ClassLikeMember_unique_NonTypesystemRule extends AbstractNonT
   public check_ClassLikeMember_unique_NonTypesystemRule() {
   }
   public void applyRule(final SNode classLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeAnnotation"))) == null) {
+    if (AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"))) == null) {
       return;
     }
 
-    for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor")), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
-      if (!(ClassLikeMember_Behavior.call_isMultiple_2141245758541890151(memberDescriptor))) {
+    for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor")), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
+      if (!(DSLClassMember_Behavior.call_isMultiple_2141245758541890151(memberDescriptor))) {
         if (Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_find_2603987804376013077", new Object[]{classLike})).count() > 1) {
           for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_find_2603987804376013077", new Object[]{classLike}))) {
             {

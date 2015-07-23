@@ -21,15 +21,15 @@ public class PropertyDescriptor_Behavior {
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
     SNode res;
     if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, 0x478b68dcf4b1763fL, "type")))) {
-      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeStringProperty")));
+      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance")));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_j9hr46_a0b0b0a());
       res = node;
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, 0x478b68dcf4b1763fL, "type")))) {
-      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeBooleanProperty")));
+      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance")));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_j9hr46_a0b0a1a0());
       res = node;
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, 0x478b68dcf4b1763fL, "type")))) {
-      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec5L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeIntegerProperty")));
+      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec5L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.IntegerPropertyInstance")));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_j9hr46_a0b0b1a0());
       res = node;
     } else {
@@ -42,7 +42,7 @@ public class PropertyDescriptor_Behavior {
     return res;
   }
   public static Iterable<SNode> virtual_find_2603987804376013077(final SNode thisNode, SNode cls) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeProperty"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl")) == thisNode;
       }

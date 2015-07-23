@@ -27,18 +27,18 @@
     <file name="ClassLike.java">
       <node id="1055884086725225430" at="21,91,22,200" concept="4" />
       <node id="1055884086725225434" at="22,200,23,162" concept="4" />
-      <node id="1055884086725225373" at="23,162,24,496" concept="1" />
-      <node id="1055884086725225382" at="24,496,25,427" concept="1" />
+      <node id="1055884086725225373" at="23,162,24,484" concept="1" />
+      <node id="1055884086725225382" at="24,484,25,421" concept="1" />
       <node id="1055884086725225399" at="27,37,28,119" concept="1" />
-      <node id="1055884086725225406" at="30,9,31,103" concept="1" />
+      <node id="1055884086725225406" at="30,9,31,97" concept="1" />
       <node id="1055884086725225397" at="27,0,30,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1055884086725225391" at="25,427,30,9" concept="1" />
+      <node id="1055884086725225391" at="25,421,30,9" concept="1" />
       <node id="1055884086724932454" at="21,0,33,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="1055884086725225398" at="27,37,28,119" />
       <scope id="1055884086725225397" at="27,0,30,0">
         <var name="it" id="1055884086725225397" />
       </scope>
-      <scope id="1055884086724932454" at="21,91,31,103">
+      <scope id="1055884086724932454" at="21,91,31,97">
         <var name="descr" id="1055884086725225432" />
         <var name="newClass" id="1055884086725225428" />
       </scope>
@@ -48,7 +48,7 @@
         <var name="newNode" id="1055884086724932454" />
         <var name="sampleNode" id="1055884086724932454" />
       </scope>
-      <unit id="1055884086725225397" at="26,123,30,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike$1" />
+      <unit id="1055884086725225397" at="26,117,30,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike$1" />
       <unit id="1055884086724932454" at="20,0,34,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike$NodeFactory_1055884086724932454" />
       <unit id="1055884086724932453" at="19,0,35,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike" />
     </file>
@@ -58,37 +58,37 @@
       <node id="510971631003402553" at="21,189,22,37" concept="5" />
       <node id="510971631003402562" at="23,5,24,0" concept="6" />
       <node id="6909536935411286829" at="24,0,25,196" concept="4" />
-      <node id="510971631003402563" at="25,196,26,433" concept="4" />
+      <node id="510971631003402563" at="25,196,26,427" concept="4" />
       <node id="510971631003402575" at="27,24,28,37" concept="5" />
       <node id="510971631003402582" at="29,5,30,0" concept="6" />
-      <node id="6909536935410777064" at="33,79,34,22" concept="5" />
+      <node id="6909536935410777064" at="33,78,34,22" concept="5" />
       <node id="6909536935410830099" at="35,9,36,195" concept="5" />
       <node id="4455957509093456371" at="42,189,43,37" concept="5" />
       <node id="4455957509093456378" at="44,5,45,0" concept="6" />
       <node id="4455957509093456379" at="45,0,46,190" concept="4" />
-      <node id="4455957509093456384" at="46,190,47,433" concept="4" />
+      <node id="4455957509093456384" at="46,190,47,427" concept="4" />
       <node id="4455957509093456395" at="48,24,49,37" concept="5" />
       <node id="4455957509093456400" at="50,5,51,0" concept="6" />
-      <node id="4455957509093456401" at="51,0,52,162" concept="5" />
+      <node id="4455957509093456401" at="51,0,52,156" concept="5" />
       <node id="510971631003402551" at="20,99,23,5" concept="2" />
-      <node id="510971631003402573" at="26,433,29,5" concept="2" />
+      <node id="510971631003402573" at="26,427,29,5" concept="2" />
       <node id="6909536935410771993" at="32,39,35,9" concept="2" />
       <node id="4455957509093456369" at="41,91,44,5" concept="2" />
-      <node id="4455957509093456393" at="47,433,50,5" concept="2" />
+      <node id="4455957509093456393" at="47,427,50,5" concept="2" />
       <node id="2141245758542056547" at="32,0,38,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="510971631003402583" at="30,0,38,7" concept="5" />
       <node id="4455957509093456364" at="41,0,54,0" concept="7" trace="getAllMembers#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="510971631003402546" at="20,0,40,0" concept="7" trace="getMembers2Substitute#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <scope id="510971631003402552" at="21,189,22,37" />
       <scope id="510971631003402574" at="27,24,28,37" />
-      <scope id="6909536935410771995" at="33,79,34,22" />
+      <scope id="6909536935410771995" at="33,78,34,22" />
       <scope id="4455957509093456370" at="42,189,43,37" />
       <scope id="4455957509093456394" at="48,24,49,37" />
       <scope id="2141245758542056548" at="32,39,36,195" />
       <scope id="2141245758542056547" at="32,0,38,0">
         <var name="md" id="2141245758542056547" />
       </scope>
-      <scope id="4455957509093456368" at="41,91,52,162">
+      <scope id="4455957509093456368" at="41,91,52,156">
         <var name="classNode" id="4455957509093456380" />
         <var name="descr" id="4455957509093456385" />
       </scope>
@@ -104,7 +104,7 @@
         <var name="memberConcept" id="6141693041785055510" />
         <var name="node" id="510971631003402590" />
       </scope>
-      <unit id="2141245758542056547" at="31,195,38,5" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil$1" />
+      <unit id="2141245758542056547" at="31,189,38,5" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil$1" />
       <unit id="2260648088428400642" at="19,0,55,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" />
     </file>
   </root>

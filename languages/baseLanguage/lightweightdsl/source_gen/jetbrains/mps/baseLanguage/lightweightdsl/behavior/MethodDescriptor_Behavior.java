@@ -20,7 +20,7 @@ public class MethodDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
-    final SNode method = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethod")), null);
+    final SNode method = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance")), null);
     SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))));
     ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, 0x340eb2bd2e03d168L, "param"))).select(new ISelector<SNode, SNode>() {
@@ -28,7 +28,7 @@ public class MethodDescriptor_Behavior {
         return ParameterDescriptor_Behavior.call_create_2613537504709874302(it, method);
       }
     }));
-    SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), (SNodeOperations.isInstanceOf(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDeclaration")) ? DependentTypeDeclaration_Behavior.call_create_2613537504709871067(SNodeOperations.cast(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDeclaration")), method) : SNodeOperations.copyNode(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode))));
+    SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), (SNodeOperations.isInstanceOf(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")) ? DependentTypeDescriptor_Behavior.call_create_2613537504709871067(SNodeOperations.cast(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")), method) : SNodeOperations.copyNode(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode))));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, 0x443e89bb321537L, "decl"), thisNode);
     return method;
   }
@@ -40,7 +40,7 @@ public class MethodDescriptor_Behavior {
     }
   }
   public static Iterable<SNode> virtual_find_2603987804376013077(final SNode thisNode, SNode cls) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethod"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, 0x443e89bb321537L, "decl")) == thisNode;
       }

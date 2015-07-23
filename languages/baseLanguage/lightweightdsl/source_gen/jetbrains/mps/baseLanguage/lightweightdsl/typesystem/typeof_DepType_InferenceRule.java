@@ -28,7 +28,7 @@ public class typeof_DepType_InferenceRule extends AbstractInferenceRule_Runtime 
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDeclaration");
+    return MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMember_Behavior;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.PlaceholderModifier_Behavior;
 
 public class EditorUtil {
@@ -22,15 +22,15 @@ public class EditorUtil {
   }
   public static void restorePlaceholder(final SNode mi) {
     final Wrappers._T<SNode> decl = new Wrappers._T<SNode>(null);
-    if (SNodeOperations.isInstanceOf(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMemberInstance"))) {
-      decl.value = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMemberInstance")), "virtual_getDeclaration_9097849371503884215", new Object[]{});
+    if (SNodeOperations.isInstanceOf(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))) {
+      decl.value = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance")), "virtual_getDeclaration_9097849371503884215", new Object[]{});
     } else {
       // custom members 
       decl.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getNodeAncestors(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeAnnotation"))) != null);
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"))) != null);
         }
-      }), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor")), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor"))).findFirst(new IWhereFilter<SNode>() {
+      }), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor")), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == SNodeOperations.getConcept(mi).getDeclarationNode();
         }
@@ -40,7 +40,7 @@ public class EditorUtil {
       return;
     }
 
-    boolean lastInstance = ClassLikeMember_Behavior.call_isRequired_3402736933911994098(decl.value) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMemberInstance"))).where(new IWhereFilter<SNode>() {
+    boolean lastInstance = DSLClassMember_Behavior.call_isRequired_3402736933911994098(decl.value) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getDeclaration_9097849371503884215", new Object[]{}) == decl.value;
       }
@@ -49,8 +49,8 @@ public class EditorUtil {
       return;
     }
 
-    if ((ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(decl.value) != null)) {
-      SNodeOperations.replaceWithAnother(mi, PlaceholderModifier_Behavior.call_create_9097849371503335421(ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(decl.value)));
+    if ((DSLClassMember_Behavior.call_getPlaceholder_9097849371503188814(decl.value) != null)) {
+      SNodeOperations.replaceWithAnother(mi, PlaceholderModifier_Behavior.call_create_9097849371503335421(DSLClassMember_Behavior.call_getPlaceholder_9097849371503188814(decl.value)));
     } else {
       SNodeOperations.deleteNode(mi);
     }

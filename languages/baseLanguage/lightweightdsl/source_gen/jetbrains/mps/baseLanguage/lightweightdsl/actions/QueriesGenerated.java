@@ -30,7 +30,7 @@ public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierMember_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      SNode outputConcept = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethod").getDeclarationNode();
+      SNode outputConcept = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
@@ -64,7 +64,7 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode outputConcept = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeProperty").getDeclarationNode();
+      SNode outputConcept = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {

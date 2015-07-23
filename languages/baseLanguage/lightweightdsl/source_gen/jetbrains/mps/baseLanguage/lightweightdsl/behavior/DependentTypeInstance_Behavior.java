@@ -11,7 +11,7 @@ public class DependentTypeInstance_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getMyType_9097849371504546165(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")) == null ? null : DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"))));
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")) == null ? null : DependentTypeDescriptor_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"))));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode);

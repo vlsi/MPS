@@ -50,7 +50,7 @@ public class GenerateModifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_q4qyfk_a1a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMember"), false, false), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor"));
+    return SNodeOperations.isInstanceOf(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember"), false, false), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor"));
   }
   private EditorCell createConstant_q4qyfk_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");

@@ -14,7 +14,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeDescriptor_Behavior;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -37,7 +37,7 @@ public class typeof_ClassLikeDescriptor_InferenceRule extends AbstractInferenceR
       {
         SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(cld, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).getElement(0);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.typesystem)", "1825613483881518848", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.typesystem)", "1825613483881473786", true), (SNode) _quotation_createNode_m9mjmr_a0a0a2a1(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(cld)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.typesystem)", "1825613483881473786", true), (SNode) _quotation_createNode_m9mjmr_a0a0a2a1(DSLDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(cld)), _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(cld, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).getElement(1);
@@ -47,7 +47,7 @@ public class typeof_ClassLikeDescriptor_InferenceRule extends AbstractInferenceR
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeDescriptor");
+    return MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

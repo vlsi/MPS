@@ -7,7 +7,7 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeDescriptor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />

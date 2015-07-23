@@ -11,47 +11,47 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new ClassLikeMethod_BehaviorDescriptor();
-      case 9:
-        return new DependentTypeDeclaration_BehaviorDescriptor();
-      case 2:
-        return new ClassLikeDescriptor_BehaviorDescriptor();
-      case 15:
-        return new ParameterDescriptor_BehaviorDescriptor();
-      case 13:
-        return new MethodDescriptor_BehaviorDescriptor();
-      case 10:
-        return new DependentTypeInstance_BehaviorDescriptor();
-      case 0:
-        return new ClassLikeAnnotation_BehaviorDescriptor();
-      case 18:
-        return new RequiredModifier_BehaviorDescriptor();
-      case 17:
-        return new PropertyDescriptor_BehaviorDescriptor();
-      case 16:
-        return new PlaceholderModifier_BehaviorDescriptor();
-      case 8:
-        return new CustomMemberDescriptor_BehaviorDescriptor();
-      case 4:
-        return new ClassLikeMemberPlaceholder_BehaviorDescriptor();
-      case 7:
-        return new ClassLikeStringProperty_BehaviorDescriptor();
-      case 1:
-        return new ClassLikeBooleanProperty_BehaviorDescriptor();
-      case 3:
-        return new ClassLikeIntegerProperty_BehaviorDescriptor();
       case 11:
-        return new EmptyMember_BehaviorDescriptor();
-      case 12:
-        return new GenerateModifier_BehaviorDescriptor();
+        return new MethodInstance_BehaviorDescriptor();
+      case 4:
+        return new DependentTypeDescriptor_BehaviorDescriptor();
+      case 3:
+        return new DSLDescriptor_BehaviorDescriptor();
       case 14:
-        return new MultipleModifier_BehaviorDescriptor();
+        return new ParameterDescriptor_BehaviorDescriptor();
+      case 10:
+        return new MethodDescriptor_BehaviorDescriptor();
+      case 5:
+        return new DependentTypeInstance_BehaviorDescriptor();
+      case 2:
+        return new DSLAnnotation_BehaviorDescriptor();
+      case 17:
+        return new RequiredModifier_BehaviorDescriptor();
+      case 16:
+        return new PropertyDescriptor_BehaviorDescriptor();
+      case 15:
+        return new PlaceholderModifier_BehaviorDescriptor();
+      case 1:
+        return new CustomMemberDescriptor_BehaviorDescriptor();
+      case 9:
+        return new MemberPlaceholder_BehaviorDescriptor();
+      case 18:
+        return new StringPropertyInstance_BehaviorDescriptor();
+      case 0:
+        return new BooleanPropertyInstance_BehaviorDescriptor();
+      case 8:
+        return new IntegerPropertyInstance_BehaviorDescriptor();
       case 6:
-        return new ClassLikeMethodParameter_BehaviorDescriptor();
+        return new EmptyMemberDescriptor_BehaviorDescriptor();
+      case 7:
+        return new GenerateModifier_BehaviorDescriptor();
+      case 13:
+        return new MultipleModifier_BehaviorDescriptor();
+      case 12:
+        return new MethodParameterInstance_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeAnnotation", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeBooleanProperty", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeIntegerProperty", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethod", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethodParameter", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeStringProperty", "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDeclaration", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMember", "jetbrains.mps.baseLanguage.lightweightdsl.structure.GenerateModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ParameterDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.GenerateModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.IntegerPropertyInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodParameterInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ParameterDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance"};
 }

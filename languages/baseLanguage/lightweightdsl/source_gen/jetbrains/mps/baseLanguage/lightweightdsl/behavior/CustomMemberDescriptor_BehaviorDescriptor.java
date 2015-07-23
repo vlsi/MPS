@@ -7,14 +7,14 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMember_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
+public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements DSLClassMember_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public CustomMemberDescriptor_BehaviorDescriptor() {
   }
   public SNode virtual_create_8260330507834998478(SNode thisNode) {
     return CustomMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
   }
   public Iterable<SNode> virtual_findPlaceholders_6909536935410952255(SNode thisNode, SNode cls) {
-    return ClassLikeMember_Behavior.virtual_findPlaceholders_6909536935410952255(thisNode, cls);
+    return DSLClassMember_Behavior.virtual_findPlaceholders_6909536935410952255(thisNode, cls);
   }
   public Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls) {
     return CustomMemberDescriptor_Behavior.virtual_find_2603987804376013077(thisNode, cls);
@@ -29,7 +29,7 @@ public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_Behav
     return CustomMemberDescriptor_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
-    ClassLikeMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
+    DSLClassMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }
   @Override
   public String getConceptFqName() {

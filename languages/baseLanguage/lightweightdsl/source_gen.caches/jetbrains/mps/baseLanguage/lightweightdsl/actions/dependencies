@@ -15,7 +15,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeDescriptor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -77,8 +77,8 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeDescriptor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMember_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />

@@ -17,7 +17,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.MethodDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ParameterDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodProblemVisitor" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMember_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMember_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -205,7 +205,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_ClassLikeDescriptor_InferenceRule" file="typeof_ClassLikeDescriptor_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeDescriptor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
