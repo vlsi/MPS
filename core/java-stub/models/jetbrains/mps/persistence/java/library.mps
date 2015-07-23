@@ -16,20 +16,14 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="tzbx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.nodeidmap(MPS.Core/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="1ltj" ref="r:aa7e8178-3b66-4295-bcce-165c85d78006(jetbrains.mps.baseLanguage.javastub)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="3j2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.stubs.javastub.classpath(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
-    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
   </imports>
   <registry>
@@ -2228,23 +2222,29 @@
                   <node concept="3cpWsn" id="5JsnGMj1qlh" role="3cpWs9">
                     <property role="TrG5h" value="modelReference" />
                     <property role="3TUv4t" value="false" />
-                    <node concept="2YIFZM" id="1B6odZAMNao" role="33vP2m">
-                      <ref role="37wK5l" to="3j2:~StubHelper.uidForPackageInStubs(org.jetbrains.mps.openapi.module.SModuleReference,java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="uidForPackageInStubs" />
-                      <ref role="1Pybhc" to="3j2:~StubHelper" resolve="StubHelper" />
-                      <node concept="2OqwBi" id="1B6odZAMNar" role="37wK5m">
-                        <node concept="37vLTw" id="1B6odZAMNas" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5JsnGMj1qkT" resolve="module" />
-                        </node>
-                        <node concept="liA8E" id="1B6odZAMNat" role="2OqNvi">
-                          <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="6_lpxsUUepv" role="37wK5m">
-                        <ref role="3cqZAo" node="3oDzK78kSOG" resolve="pack" />
-                      </node>
-                    </node>
                     <node concept="3uibUv" id="5JsnGMj1qli" role="1tU5fm">
                       <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+                    </node>
+                    <node concept="2OqwBi" id="5nsK8s7uzX6" role="33vP2m">
+                      <node concept="2ShNRf" id="5nsK8s7uutA" role="2Oq$k0">
+                        <node concept="1pGfFk" id="5nsK8s7uzFS" role="2ShVmc">
+                          <ref role="37wK5l" to="i290:~JavaPackageNameStub.&lt;init&gt;(java.lang.String)" resolve="JavaPackageNameStub" />
+                          <node concept="37vLTw" id="5nsK8s7uzP_" role="37wK5m">
+                            <ref role="3cqZAo" node="3oDzK78kSOG" resolve="pack" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5nsK8s7u$bd" role="2OqNvi">
+                        <ref role="37wK5l" to="i290:~JavaPackageNameStub.asModelReference(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.model.SModelReference" resolve="asModelReference" />
+                        <node concept="2OqwBi" id="5nsK8s7u$Lk" role="37wK5m">
+                          <node concept="37vLTw" id="5nsK8s7u$BL" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5JsnGMj1qkT" resolve="module" />
+                          </node>
+                          <node concept="liA8E" id="5nsK8s7u_0h" role="2OqNvi">
+                            <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

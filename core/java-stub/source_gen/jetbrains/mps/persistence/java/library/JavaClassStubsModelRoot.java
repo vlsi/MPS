@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.Nullable;
 
@@ -148,7 +148,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       });
 
       if (Sequence.fromIterable(rootClasses).isNotEmpty()) {
-        final SModelReference modelReference = StubHelper.uidForPackageInStubs(module.getModuleReference(), pack);
+        final SModelReference modelReference = new JavaPackageNameStub(pack).asModelReference(module.getModuleReference());
         JavaClassStubModelDescriptor smd;
         // FIXME: hack, see comment below 
         SModel modelDescriptor = getModelAlreadyRegistered(module, modelReference);
