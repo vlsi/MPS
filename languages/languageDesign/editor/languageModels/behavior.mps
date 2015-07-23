@@ -16330,5 +16330,36 @@
       <node concept="3clFbS" id="301qoOzKuyD" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="tEDRXbRJ0N">
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <ref role="13h7C2" to="tpc2:2RDuzOVyaJU" resolve="QueryFunction_ColorComposit" />
+    <node concept="13hLZK" id="tEDRXbRJ0O" role="13h7CW">
+      <node concept="3clFbS" id="tEDRXbRJ0P" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="tEDRXbRJ0Q" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="tEDRXbRJ0R" role="1B3o_S" />
+      <node concept="3clFbS" id="tEDRXbRJ0X" role="3clF47">
+        <node concept="3clFbF" id="tEDRXbRJ4E" role="3cqZAp">
+          <node concept="2c44tf" id="tEDRXbRJ4F" role="3clFbG">
+            <node concept="3uibUv" id="5xCMw4B9DVb" role="2c44tc">
+              <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
+              <node concept="3uibUv" id="5xCMw4B9DWr" role="11_B2D">
+                <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
+              </node>
+              <node concept="3uibUv" id="5xCMw4B9DXq" role="11_B2D">
+                <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="tEDRXbRJ0Y" role="3clF45" />
+    </node>
+  </node>
 </model>
 

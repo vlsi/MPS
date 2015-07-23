@@ -47,6 +47,13 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   }
 
   @Override
+  public boolean isAbstract() {
+    ConceptDescriptor d = getConceptDescriptor();
+    //isInterfaceConcept means this is a "fake concept" and needs to be considered as abstract
+    return d == null || d.isAbstract() || d.isInterfaceConcept();
+  }
+
+  @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof SConceptAdapter)) return false;
     return (obj instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) obj).myConceptId) : myFqName.equals(((SConceptAdapter) obj).myFqName);

@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -7052,6 +7052,26 @@
               </node>
             </node>
           </node>
+          <node concept="1oHujT" id="5xCMw4BaCdJ" role="OY2wv">
+            <property role="1oHujS" value="default/dark" />
+            <node concept="1oIgkG" id="5xCMw4BaCdK" role="1oHujR">
+              <node concept="3clFbS" id="5xCMw4BaCdL" role="2VODD2">
+                <node concept="3clFbF" id="5xCMw4BaCdM" role="3cqZAp">
+                  <node concept="2OqwBi" id="5xCMw4BaCdN" role="3clFbG">
+                    <node concept="2OqwBi" id="5xCMw4BaCdO" role="2Oq$k0">
+                      <node concept="3GMtW1" id="5xCMw4BaCdP" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="5xCMw4BaCdQ" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:hgVblYF" />
+                      </node>
+                    </node>
+                    <node concept="2DeJnY" id="5xCMw4BaCdR" role="2OqNvi">
+                      <ref role="1A9B2P" to="tpc2:2RDuzOVyaJU" resolve="QueryFunction_ColorComposit" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3F1sOY" id="hgVGUvk" role="3EZMnx">
@@ -7154,6 +7174,26 @@
                     </node>
                     <node concept="2DeJnY" id="5wUAOoBBfq5" role="2OqNvi">
                       <ref role="1A9B2P" to="tpc2:h7ZlJ1A" resolve="QueryFunction_Color" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1oHujT" id="5xCMw4B5qZx" role="OY2wv">
+            <property role="1oHujS" value="default/dark" />
+            <node concept="1oIgkG" id="5xCMw4B5qZz" role="1oHujR">
+              <node concept="3clFbS" id="5xCMw4B5qZ_" role="2VODD2">
+                <node concept="3clFbF" id="5xCMw4B5wX0" role="3cqZAp">
+                  <node concept="2OqwBi" id="5xCMw4B5xCV" role="3clFbG">
+                    <node concept="2OqwBi" id="5xCMw4B5wZ9" role="2Oq$k0">
+                      <node concept="3GMtW1" id="5xCMw4B5wWZ" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="5xCMw4B5xso" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:hgVblYF" />
+                      </node>
+                    </node>
+                    <node concept="2DeJnY" id="5xCMw4B5xPu" role="2OqNvi">
+                      <ref role="1A9B2P" to="tpc2:2RDuzOVyaJU" resolve="QueryFunction_ColorComposit" />
                     </node>
                   </node>
                 </node>

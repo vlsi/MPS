@@ -9,7 +9,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" implicit="true" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
@@ -63,7 +63,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrCG" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="4iMwkz$0syh">
@@ -97,7 +97,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="UBgfI9geXt" role="PzmwI">
-      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="536fTXa3qNV">
@@ -115,7 +115,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrDt" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="6d7r2FpJdsQ">
@@ -146,7 +146,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrBV" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="3A3gNhf2pHU">
