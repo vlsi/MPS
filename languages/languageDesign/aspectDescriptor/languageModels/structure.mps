@@ -50,7 +50,7 @@
     <property role="TrG5h" value="LanguageAspectDescriptor" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="UBgfI9gdyY" role="PzmwI">
-      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Y$EcRKMr1Q">

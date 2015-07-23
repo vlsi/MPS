@@ -7,7 +7,7 @@
     <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspectDescriptor" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike2" version="0" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -230,14 +230,14 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike2">
-      <concept id="3751132065236767060" name="jetbrains.mps.lang.classLike2.structure.ClassLikeMethod" flags="ig" index="q3mfD">
+    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
+      <concept id="3751132065236767060" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" flags="ig" index="q3mfD">
         <reference id="19209059688387895" name="decl" index="2VtyIY" />
       </concept>
-      <concept id="3571587574961713354" name="jetbrains.mps.lang.classLike2.structure.ClassLikeAnnotation" flags="ng" index="30mAcN">
+      <concept id="3571587574961713354" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation" flags="ng" index="30mAcN">
         <reference id="3571587574961717879" name="descriptor" index="30mx6e" />
       </concept>
-      <concept id="6478870542308703666" name="jetbrains.mps.lang.classLike2.structure.ClassLikeMemberPlaceholder" flags="ng" index="3tTeZs">
+      <concept id="6478870542308703666" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder" flags="ng" index="3tTeZs">
         <property id="6478870542308703667" name="caption" index="3tTeZt" />
         <reference id="6478870542308703669" name="decl" index="3tTeZr" />
       </concept>
@@ -849,7 +849,7 @@
                                           </node>
                                           <node concept="1mIQ4w" id="74Oxs8AK7HX" role="2OqNvi">
                                             <node concept="chp4Y" id="74Oxs8AK7St" role="cj9EA">
-                                              <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                                              <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                                             </node>
                                           </node>
                                         </node>

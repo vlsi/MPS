@@ -38,7 +38,7 @@
   </registry>
   <node concept="3_zdsH" id="1oCF8ETalDv">
     <property role="3GE5qa" value="instances.property" />
-    <ref role="3_znuS" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
+    <ref role="3_znuS" to="oubp:5BD$AU43p5h" resolve="PropertyInstance" />
     <node concept="3__wT9" id="1oCF8ETalDw" role="3_A6iZ">
       <node concept="3clFbS" id="1oCF8ETalDx" role="2VODD2">
         <node concept="3_FXB6" id="1oCF8ETaqIz" role="3cqZAp">

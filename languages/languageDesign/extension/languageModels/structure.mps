@@ -215,7 +215,7 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="PrWs8" id="UBgfI9ge5M" role="PzmwI">
-      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="2UKVRofbKn5">
@@ -274,7 +274,7 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="PrWs8" id="UBgfI9gejr" role="PzmwI">
-      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="1it1kXyre2A">
@@ -300,7 +300,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kncDv" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="1QReUKIIK3z">
@@ -338,7 +338,7 @@
     <property role="34LRSv" value="argument" />
     <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     <node concept="PrWs8" id="5KZRo2knc8K" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
 </model>

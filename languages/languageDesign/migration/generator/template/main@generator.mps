@@ -958,7 +958,7 @@
                               </node>
                               <node concept="1mIQ4w" id="3NNdDGT51kS" role="2OqNvi">
                                 <node concept="chp4Y" id="3NNdDGT51kT" role="cj9EA">
-                                  <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                                  <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                                 </node>
                               </node>
                             </node>

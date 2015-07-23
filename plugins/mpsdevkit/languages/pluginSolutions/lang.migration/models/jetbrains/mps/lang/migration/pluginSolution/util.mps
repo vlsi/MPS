@@ -584,7 +584,7 @@
       <property role="TrG5h" value="getExecuteMethod" />
       <node concept="3Tm1VV" id="3YBeIJ0a8gZ" role="1B3o_S" />
       <node concept="3Tqbb2" id="3YBeIJ0a6AV" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
       </node>
       <node concept="3clFbS" id="3YBeIJ0a64q" role="3clF47">
         <node concept="3cpWs6" id="3YBeIJ0a77J" role="3cqZAp">

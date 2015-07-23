@@ -1955,7 +1955,7 @@
                   <node concept="3clFbF" id="4u7uetTN_6X" role="3cqZAp">
                     <node concept="2OqwBi" id="4u7uetTPklR" role="3clFbG">
                       <node concept="1PxgMI" id="4u7uetTPjP0" role="2Oq$k0">
-                        <ref role="1PxNhF" to="oubp:5BD$AU440O4" resolve="ClassLikeStringProperty" />
+                        <ref role="1PxNhF" to="oubp:5BD$AU440O4" resolve="StringPropertyInstance" />
                         <node concept="2OqwBi" id="4u7uetTOe6v" role="1PxMeX">
                           <node concept="2OqwBi" id="4u7uetTN_qY" role="2Oq$k0">
                             <node concept="3fl2lp" id="4u7uetTNDLx" role="2Oq$k0">
@@ -2011,7 +2011,7 @@
                             </node>
                             <node concept="v3k3i" id="2vnI1ojyc3k" role="2OqNvi">
                               <node concept="chp4Y" id="2vnI1ojyk1G" role="v3oSu">
-                                <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+                                <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
                               </node>
                             </node>
                           </node>
@@ -2087,7 +2087,7 @@
                             </node>
                             <node concept="v3k3i" id="2vnI1ojzB3t" role="2OqNvi">
                               <node concept="chp4Y" id="2vnI1ojzIdX" role="v3oSu">
-                                <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+                                <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
                               </node>
                             </node>
                           </node>
@@ -2195,7 +2195,7 @@
                               </node>
                               <node concept="1mIQ4w" id="F2yxz7CGYB" role="2OqNvi">
                                 <node concept="chp4Y" id="F2yxz7CGYC" role="cj9EA">
-                                  <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+                                  <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                                 </node>
                               </node>
                             </node>

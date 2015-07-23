@@ -117,7 +117,7 @@
       <property role="TrG5h" value="getMethod" />
       <node concept="3Tm1VV" id="6d7r2Fq2j7g" role="1B3o_S" />
       <node concept="3Tqbb2" id="6d7r2Fq2jkO" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
       </node>
       <node concept="3clFbS" id="6d7r2Fq2j7i" role="3clF47">
         <node concept="3clFbF" id="6d7r2Fq2jDi" role="3cqZAp">
@@ -131,7 +131,7 @@
               </node>
               <node concept="v3k3i" id="14fCAVexYl" role="2OqNvi">
                 <node concept="chp4Y" id="14fCAVexYm" role="v3oSu">
-                  <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+                  <ref role="cht4Q" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
                 </node>
               </node>
             </node>
@@ -184,7 +184,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="UBgfI9gdE8" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
       </node>
     </node>
     <node concept="13hLZK" id="2Sw9hCAHV4L" role="13h7CW">

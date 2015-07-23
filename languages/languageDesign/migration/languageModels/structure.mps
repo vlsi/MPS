@@ -63,7 +63,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrCG" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="4iMwkz$0syh">
@@ -97,7 +97,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="UBgfI9geXt" role="PzmwI">
-      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="536fTXa3qNV">
@@ -115,7 +115,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrDt" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="6d7r2FpJdsQ">
@@ -146,7 +146,7 @@
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="5KZRo2kmrBV" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="3A3gNhf2pHU">

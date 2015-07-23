@@ -867,7 +867,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="5KZRo2kncE0" role="3clF45">
-        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
   </node>
@@ -959,7 +959,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="UBgfI9gery" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
       </node>
     </node>
   </node>
@@ -979,7 +979,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="UBgfI9gdE8" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
       </node>
     </node>
     <node concept="13hLZK" id="UBgfI9ge6f" role="13h7CW">
@@ -1009,7 +1009,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="5KZRo2knc9k" role="3clF45">
-        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
   </node>

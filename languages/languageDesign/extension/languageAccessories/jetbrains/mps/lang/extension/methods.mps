@@ -2,7 +2,7 @@
 <model ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)">
   <persistence version="9" />
   <languages>
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike2" version="0" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -43,32 +43,32 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike2">
-      <concept id="3682791316837141912" name="jetbrains.mps.lang.classLike2.structure.GenerateModifier" flags="ng" index="2eSQEC" />
-      <concept id="3751132065236767079" name="jetbrains.mps.lang.classLike2.structure.MethodDescriptor" flags="ng" index="q3mfq">
+    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
+      <concept id="3682791316837141912" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.GenerateModifier" flags="ng" index="2eSQEC" />
+      <concept id="3751132065236767079" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor" flags="ng" index="q3mfq">
         <child id="3751132065236767081" name="retType" index="q3mfk" />
       </concept>
-      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike2.structure.ClassLikeDescriptor" flags="ng" index="q3mft">
+      <concept id="3751132065236767072" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor" flags="ng" index="q3mft">
         <reference id="1825613483881131410" name="preferredConcept" index="2qG0Lo" />
         <child id="1825613483881472526" name="initializer" index="2qJGf4" />
         <child id="8264762413010642120" name="classLikeMember" index="QNr5C" />
       </concept>
-      <concept id="3751132065236767068" name="jetbrains.mps.lang.classLike2.structure.DependentTypeDeclaration" flags="ig" index="q3mfx">
+      <concept id="3751132065236767068" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor" flags="ig" index="q3mfx">
         <child id="3751132065236767069" name="getter" index="q3mfw" />
       </concept>
-      <concept id="5820409521797720671" name="jetbrains.mps.lang.classLike2.structure.EmptyMember" flags="ng" index="qMXn0" />
-      <concept id="3402736933911578134" name="jetbrains.mps.lang.classLike2.structure.RequiredModifier" flags="ng" index="2IRzkw" />
-      <concept id="2141245758541615598" name="jetbrains.mps.lang.classLike2.structure.MultipleModifier" flags="ng" index="N66D2" />
-      <concept id="8264762413010673052" name="jetbrains.mps.lang.classLike2.structure.CustomMemberDescriptor" flags="ng" index="QcwwW">
+      <concept id="5820409521797720671" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor" flags="ng" index="qMXn0" />
+      <concept id="3402736933911578134" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier" flags="ng" index="2IRzkw" />
+      <concept id="2141245758541615598" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier" flags="ng" index="N66D2" />
+      <concept id="8264762413010673052" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor" flags="ng" index="QcwwW">
         <reference id="8264762413010673055" name="cncpt" index="QcwwZ" />
       </concept>
-      <concept id="8264762413010669353" name="jetbrains.mps.lang.classLike2.structure.PlaceholderModifier" flags="ng" index="QcxE9">
+      <concept id="8264762413010669353" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier" flags="ng" index="QcxE9">
         <property id="8264762413010669653" name="caption" index="QcwnP" />
       </concept>
-      <concept id="8264762413010642119" name="jetbrains.mps.lang.classLike2.structure.ClassLikeMember" flags="ng" index="QNr5B">
+      <concept id="8264762413010642119" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember" flags="ng" index="QNr5B">
         <child id="3402736933911577960" name="modifier" index="2IRzpu" />
       </concept>
-      <concept id="8264762413010631473" name="jetbrains.mps.lang.classLike2.structure.PropertyDescriptor" flags="ng" index="QNuUh">
+      <concept id="8264762413010631473" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor" flags="ng" index="QNuUh">
         <reference id="5155329496663029311" name="type" index="2NexVz" />
       </concept>
     </language>
