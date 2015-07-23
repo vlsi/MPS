@@ -17,13 +17,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 
 public class DirParser {
@@ -149,7 +150,7 @@ public class DirParser {
           SModel mdl = registerModelForPackage(finalPkg);
 
           if (mdl != null) {
-            ((SModelInternal) mdl).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+            ((SModelInternal) mdl).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }
@@ -166,18 +167,14 @@ public class DirParser {
     return myJavaParser.parseCompilationUnit(contents);
   }
   private SModel registerModelForPackage(String fqName) {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
-    if (modelDescriptor != null) {
-      if (!(Sequence.fromIterable(((Iterable<SModel>) myModule.getModels())).contains(modelDescriptor))) {
-        LOG.error("model with fq name " + fqName + " is not owned by module " + myModule.getModuleName());
-        return null;
+    for (SModel model : myModule.getModels()) {
+      if (SModelStereotype.withoutStereotype(model.getModelName()).equals(fqName)) {
+        // package is already present... 
+        // maybe we shouldn't touch it then, maybe it should be an option 
+        return model;
       }
-      // package is already present... 
-      // maybe we shouldn't touch it then, maybe it should be an option 
-      return modelDescriptor;
-    } else {
-      return createModel(fqName);
     }
+    return createModel(fqName);
   }
   private SModel createModel(String packageName) {
     // first check if it is possible 

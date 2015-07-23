@@ -152,8 +152,6 @@ public class JavaToMpsConverter {
     runCommand("roots creation pass", new Runnable() {
       public void run() {
 
-        SModule module;
-
         if (myModel == null) {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
@@ -179,7 +177,6 @@ public class JavaToMpsConverter {
             ((EditableSModelBase) model).save();
             ListSequence.fromList(myModels).addElement(model);
           }
-          module = myModule;
 
         } else {
           // todo maybe do something clever with packages <-> java imports 
@@ -189,9 +186,8 @@ public class JavaToMpsConverter {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
-          ((SModelBase) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-          ((SModelBase) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
-          module = myModel.getModule();
+          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
+          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc"));
         }
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
