@@ -57,8 +57,7 @@ public class GotoNavigationUtil {
         subMonitor.step(m.getModelName());
         for (SNode root : RootNodeNameIndex.getRootsToIterate(m)) {
           String nodeName = (root.getName() == null) ? "null" : root.getName();
-          consumer.consume(
-            SNodeDescriptor.fromModelReference(nodeName, root.getConcept(), root.getModel().getReference(), root.getNodeId()));
+          consumer.consume(new SNodeDescriptor(nodeName, root));
         }
         if (monitor.isCanceled()) break;
         subMonitor.advance(1);

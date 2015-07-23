@@ -54,8 +54,7 @@ class SNodeDescriptorListEnumerator implements KeyDescriptor<List<SNodeDescripto
     int size = in.readInt();
     List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
     for (int i = 0; i < size; i++) {
-      SNodeDescriptor d = new SNodeDescriptor();
-      d.read(in);
+      SNodeDescriptor d = SNodeDescriptor.read(in);
       result.add(d);
     }
     return result;

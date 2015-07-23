@@ -41,9 +41,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.util.Condition;
@@ -170,9 +168,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
             for (final SNode node : getRootsToIterate(model)) {
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
-              SModelReference modelRef = model.getReference();
-              SNodeId id = node.getNodeId();
-              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, node.getConcept(), modelRef, id);
+              SNodeDescriptor value = new SNodeDescriptor(nodeName, node);
               descriptors.add(value);
             }
           }

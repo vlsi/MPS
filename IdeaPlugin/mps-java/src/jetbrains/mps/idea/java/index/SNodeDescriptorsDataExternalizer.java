@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,8 +47,7 @@ class SNodeDescriptorsDataExternalizer implements DataExternalizer<Collection<SN
     int size = in.readInt();
     List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
     for (int i = 0; i < size; i++) {
-      SNodeDescriptor d = new SNodeDescriptor();
-      d.read(in);
+      SNodeDescriptor d = SNodeDescriptor.read(in);
       result.add(d);
     }
     return result;

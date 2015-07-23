@@ -21,12 +21,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
@@ -38,26 +38,22 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * Element to be stored in index for each of root nodes in a model
+ * Element to be stored in index for each of root nodes in a model.
+ * Also used as NavigationTarget, though it's bad idea - we shall keep them separate, for persistence
+ * we don't need to save model id for each node within the model, and in MPSModelNavigationContributor we could restore model reference as needed.
  */
 public final class SNodeDescriptor implements NavigationTarget {
-  private String myNodeName;
-  private SModelReference myModelReference;
-  private SNodeId myId;
-  protected SConcept myConcept;
+  private final String myNodeName;
+  private final SNodeReference myNodePointer;
+  private final SConcept myConcept;
 
-  public SNodeDescriptor() {
-
+  public SNodeDescriptor(String nodeName, @NotNull SNode node) {
+    this(nodeName, node.getConcept(), node.getReference());
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, SConcept concept, SModelReference ref, SNodeId id) {
-    return new SNodeDescriptor(nodeName, concept, ref, id);
-  }
-
-  public SNodeDescriptor(String nodeName, SConcept concept, SModelReference modelReference, SNodeId id) {
-    myNodeName = InternUtil.intern(nodeName);
-    myModelReference = modelReference;
-    myId = id;
+  public SNodeDescriptor(String nodeName, SConcept concept, @NotNull SNodeReference nodePtr) {
+    myNodeName = nodeName;
+    myNodePointer = nodePtr;
     myConcept = concept;
   }
 
@@ -73,23 +69,24 @@ public final class SNodeDescriptor implements NavigationTarget {
 
   @Override
   public SNodeReference getNodeReference() {
-    return new SNodePointer(myModelReference, myId);
+    return myNodePointer;
   }
 
   public void save(DataOutput out) throws IOException {
-    SModelId modelId = myModelReference.getModelId();
+    // FIXME shall use ModelOutputStream not to duplicate serialization code. What's the point to handle RegularSModelId here?
+    SModelId modelId = myNodePointer.getModelReference().getModelId();
     if (modelId instanceof RegularSModelId) {
       out.writeByte(7);
       UUID id = ((RegularSModelId) modelId).getId();
       out.writeLong(id.getMostSignificantBits());
       out.writeLong(id.getLeastSignificantBits());
-      writeString(out, myModelReference.getModelName());
+      writeString(out, myNodePointer.getModelReference().getModelName());
     } else {
       out.writeByte(8);
-      writeString(out, modelId.toString());
+      writeString(out, PersistenceFacade.getInstance().asString(myNodePointer.getModelReference()));
     }
 
-    SNodeId id = myId;
+    SNodeId id = myNodePointer.getNodeId();
     if (id == null) {
       out.writeByte(0x70);
     } else if (id instanceof Regular) {
@@ -106,40 +103,39 @@ public final class SNodeDescriptor implements NavigationTarget {
     writeString(out, myNodeName);
   }
 
-  public void read(DataInput in) throws IOException {
+  public static SNodeDescriptor read(DataInput in) throws IOException {
+    SModelReference modelReference;
     byte c = in.readByte();
     if (c == 7) {
       SModelId id = jetbrains.mps.smodel.SModelId.regular(new UUID(in.readLong(), in.readLong()));
-      myModelReference = PersistenceFacade.getInstance().createModelReference(null, id, readString(in));
+      modelReference = PersistenceFacade.getInstance().createModelReference(null, id, readString(in));
     } else {
-      myModelReference = PersistenceFacade.getInstance().createModelReference(readString(in));
+      modelReference = PersistenceFacade.getInstance().createModelReference(readString(in));
     }
-
+    SNodeId nodeId;
     c = in.readByte();
     if (c == 0x70) {
-      myId = null;
+      nodeId = null;
     } else if (c == 11) {
-      myId = new jetbrains.mps.smodel.SNodeId.Regular(in.readLong());
+      nodeId = new jetbrains.mps.smodel.SNodeId.Regular(in.readLong());
     } else {
-      myId = jetbrains.mps.smodel.SNodeId.fromString(readString(in));
+      nodeId = jetbrains.mps.smodel.SNodeId.fromString(readString(in));
     }
-
-    myConcept = MetaAdapterFactory.getConcept(SConceptId.deserialize(readString(in)), readString(in));
-    myNodeName = readString(in);
+    SConcept concept = MetaAdapterFactory.getConcept(SConceptId.deserialize(readString(in)), readString(in));
+    return new SNodeDescriptor(readString(in), concept, new SNodePointer(modelReference, nodeId));
   }
 
   public boolean equals(Object obj) {
     if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
     return
-        sd.myModelReference.equals(myModelReference)
-            && EqualUtil.equals(sd.myId, myId)
+        sd.myNodePointer.equals(myNodePointer)
             && sd.myConcept.equals(myConcept)
             && sd.myNodeName.equals(myNodeName);
   }
 
   public int hashCode() {
-    return myNodeName.hashCode();
+    return myNodePointer.hashCode();
   }
 
 

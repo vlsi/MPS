@@ -30,6 +30,6 @@ import java.util.Collection;
   @Override
   protected void updateCollection(SModelReference modelRef, SNode node, Collection<SNodeDescriptor> descriptors) {
     String nodeName = getSNodeName(node);
-    descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept(), modelRef, node.getNodeId()));
+    descriptors.add(new SNodeDescriptor(nodeName, node));
   }
 }

@@ -20,8 +20,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Arrays;
@@ -50,8 +51,12 @@ import java.util.Set;
  * @see RootNodeNameIndex
  */
 public class MPSModelNavigationContributor implements ApplicationComponent, NavigationParticipant {
-
   private final Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
+  private final PersistenceFacade myPersistenceFacade;
+
+  public MPSModelNavigationContributor(MPSCoreComponents coreComponents) {
+    myPersistenceFacade = coreComponents.getMPSCore().getPersistenceFacade();
+  }
 
   @Override
   public void findTargets(TargetKind kind, Collection<SModel> scope, Consumer<NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
@@ -103,12 +108,12 @@ public class MPSModelNavigationContributor implements ApplicationComponent, Navi
 
   @Override
   public void initComponent() {
-    PersistenceRegistry.getInstance().addNavigationParticipant(this);
+    myPersistenceFacade.addNavigationParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    PersistenceRegistry.getInstance().removeNavigationParticipant(this);
+    myPersistenceFacade.removeNavigationParticipant(this);
   }
 
   @NotNull

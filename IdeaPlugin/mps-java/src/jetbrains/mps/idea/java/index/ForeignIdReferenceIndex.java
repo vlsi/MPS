@@ -75,7 +75,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected void updateCollection(SModelReference modelRef, SReference sref, Collection<Pair<SNodeDescriptor, String>> collection) {
         SNode src = sref.getSourceNode();
         String role = sref.getRole();
-        SNodeDescriptor descriptor = SNodeDescriptor.fromModelReference(getSNodeName(src), src.getConcept(), modelRef, src.getNodeId());
+        SNodeDescriptor descriptor = new SNodeDescriptor(getSNodeName(src), src);
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
@@ -154,8 +154,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
         int size = in.readInt();
         List<Pair<SNodeDescriptor, String>> result = new ArrayList<Pair<SNodeDescriptor, String> >();
         for (int i = 0; i < size; i++) {
-          SNodeDescriptor d = new SNodeDescriptor();
-          d.read(in);
+          SNodeDescriptor d = SNodeDescriptor.read(in);
           String r = in.readUTF();
           result.add(new Pair<SNodeDescriptor, String>(d, r));
         }

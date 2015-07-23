@@ -33,5 +33,6 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="platform" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
   </component>
 </module>
