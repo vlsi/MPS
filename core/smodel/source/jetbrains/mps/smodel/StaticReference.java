@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -155,8 +156,26 @@ public final class StaticReference extends SReferenceBase {
     if (targetModelReference == null) return null;
 
     SModel modelDescriptor = null;
-    if (current != null && current.getRepository() != null) {
+    if (current != null) {
+      // indeed, repository might ne null, and present resolve() implementation tolerates null, see below.
+      // likely, shall change once SRepository story is complete
       modelDescriptor = targetModelReference.resolve(current.getRepository());
+      if (modelDescriptor == null && current.getModule() != null) {
+        // FIXME this hack is a replacement for deprecated SModule.resolveInDependencies
+        // which used to help in resolution of transient proxy models. Transient models are not
+        // available in a repository unless published, and regular model id we use for them are
+        // globally unique, thus resolution through SModelReference.resolve() fails.
+        // For regular transient models, resolution works as we use transient module id as part of the reference,
+        // while for proxy models we use ModelFactory.create API which doesn't provide mechanism to specify model reference yet,
+        // and generates one without module id.
+        // Even if there's mechanism to specify module id for proxy model, shall decide how to approach greater control of a module
+        // over resolution of its models, whether it should be new resolveInDependencies(SModelReference) or a dedicated SRepository with
+        // transient/proxy models.
+        // Perhaps, immature references in transient models would be even better way to go.
+        // In fact, that's how proxy resolution works in in-place == true mode, as source nodes the moment their references got replaced
+        // are free-floating (without in-place, they are part of output model), and references get created with immature target node.
+        modelDescriptor = current.getModule().getModel(targetModelReference.getModelId());
+      }
     } else if (!RuntimeFlags.isMergeDriverMode()) {
       // [artem] here comes essential piece of MPS functionality - one can create node hanging in the thin air
       // set reference using string for model name and node id, and then magically resolve this simply navigating the reference

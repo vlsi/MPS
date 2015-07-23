@@ -180,13 +180,27 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   @Override
   public SModel resolveInDependencies(SModelId reference) {
-    // FIXME what's the purpose of this implementation?
+    SModel rv = findInVault(reference);
+    return rv == null ? super.resolveInDependencies(reference) : rv;
+  }
+
+  // Purpose of this implementation is to resolve references to yet not public transient models
+  private SModel findInVault(SModelId reference) {
     for (SModel m : myModelVault.allModels()) {
       if (reference.equals(m.getModelId())) {
         return m;
       }
     }
-    return super.resolveInDependencies(reference);
+    return null;
+  }
+
+  @Override
+  public SModel getModel(SModelId id) {
+    SModel rv = super.getModel(id);
+    if (rv != null) {
+      return rv;
+    }
+    return findInVault(id);
   }
 
   public boolean isMyTransientModel(SModelReference modelRef) {

@@ -193,7 +193,11 @@ public abstract class SModuleBase implements SModule {
   }
 
   @Override
-  public final SModel getModel(SModelId id) {
+  public SModel getModel(SModelId id) {
+    // XXX used to be final, which looks right, but there's scenario with TransientModule which needs to answer
+    // models not yet published (i.e. resolve references to proxy models, see StaticReference#getTargetSModel())
+    // Re-consider once understand better if TransientModelsModule should indeed be that special, and whether we need
+    // new resolveInDependencies(SModelReference)
     assertCanRead();
 
     return myIdToModelMap.get(id);
