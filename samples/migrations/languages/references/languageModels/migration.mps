@@ -8,7 +8,7 @@
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" version="0" />
     <use id="1d2b03a4-7404-4a1e-939c-9c1c316327e7" name="declarations" version="1" />
     <use id="16100485-31ac-4899-9112-2289e22843dd" name="references" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -44,7 +44,7 @@
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -193,28 +193,6 @@
       <node concept="3Tm1VV" id="14sMr$jTewV" role="1B3o_S" />
       <node concept="3clFbS" id="14sMr$jTewX" role="3clF47">
         <node concept="3SqFnK" id="14sMr$jTeW8" role="3cqZAp">
-          <node concept="2DMOqp" id="14sMr$jTeWa" role="3SqFnn">
-            <node concept="zNBHt" id="7Cx8$vCcio$" role="2DMOqq">
-              <node concept="3jrphi" id="7Cx8$vCciqB" role="lGtFl">
-                <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540647757/7709929535540733594" />
-                <property role="2qtEX8" value="target" />
-                <property role="3jrwYG" value="comp" />
-              </node>
-            </node>
-          </node>
-          <node concept="3SqKpS" id="14sMr$jTf2f" role="3SqFn9">
-            <node concept="2c44tf" id="14sMr$jTf2h" role="2SEiMu">
-              <node concept="zNoFp" id="14sMr$jTf2S" role="2c44tc">
-                <node concept="2c44tb" id="14sMr$jTf3r" role="lGtFl">
-                  <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540733641/7709929535540733642" />
-                  <property role="2qtEX8" value="target" />
-                  <node concept="spIps" id="7Cx8$vCcirW" role="2c44t1">
-                    <ref role="spIpr" node="7Cx8$vCciqB" resolve="#comp" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="1bVj0M" id="14sMr$jSWc2" role="3SqFnd">
             <node concept="3clFbS" id="14sMr$jSWc3" role="1bW5cS">
               <node concept="3cpWs6" id="14sMr$jSWc4" role="3cqZAp">
@@ -241,6 +219,28 @@
               <property role="TrG5h" value="n" />
               <node concept="3Tqbb2" id="14sMr$jSWcd" role="1tU5fm">
                 <ref role="ehGHo" to="gdil:6FZb119cltd" resolve="OldComponentRef" />
+              </node>
+            </node>
+          </node>
+          <node concept="2DMOqp" id="14sMr$jTeWa" role="3SqFnn">
+            <node concept="zNBHt" id="7Cx8$vCcio$" role="2DMOqq">
+              <node concept="3jrphi" id="7Cx8$vCciqB" role="lGtFl">
+                <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540647757/7709929535540733594" />
+                <property role="2qtEX8" value="target" />
+                <property role="3jrwYG" value="comp" />
+              </node>
+            </node>
+          </node>
+          <node concept="3SqKpS" id="14sMr$jTf2f" role="3SqFn9">
+            <node concept="2c44tf" id="14sMr$jTf2h" role="2SEiMu">
+              <node concept="zNoFp" id="14sMr$jTf2S" role="2c44tc">
+                <node concept="2c44tb" id="14sMr$jTf3r" role="lGtFl">
+                  <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540733641/7709929535540733642" />
+                  <property role="2qtEX8" value="target" />
+                  <node concept="spIps" id="7Cx8$vCcirW" role="2c44t1">
+                    <ref role="spIpr" node="7Cx8$vCciqB" resolve="#comp" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

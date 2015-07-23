@@ -126,7 +126,8 @@ public final class StubReferenceFactory implements ReferenceFactory {
   }
 
   /**
-   * FIXME use SModelId
+   * FIXME use SModelId, once have switched to package id without module id (now need module reference to build stub ModuleId)
+   * Also, shall use myModule.resolveInDependencies() then, to keep GMDM knowledge private to module implementation
    * @param modelName qualified name including stereotype (if any), not <code>null</code>
    * @return ordered collection, first come local matches, if any; never <code>null</code>
    */

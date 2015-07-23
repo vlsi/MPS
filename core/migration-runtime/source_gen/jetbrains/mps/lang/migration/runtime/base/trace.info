@@ -136,7 +136,7 @@
       <node id="2521103492728906888" at="52,60,53,57" concept="7" />
       <node id="2083405790277264605" at="57,28,58,24" concept="7" />
       <node id="1745840781283078214" at="62,107,63,70" concept="2" />
-      <node id="1758937410078939651" at="68,0,69,0" concept="5" trace="isNodeRemoved#()Z" />
+      <node id="1758937410078939651" at="68,0,69,0" concept="5" trace="isNodeInPlace#()Z" />
       <node id="1758937410078924226" at="69,0,70,0" concept="5" trace="insertOrReplace#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1758937410079237899" at="70,0,71,0" concept="5" trace="remove#()V" />
       <node id="1758937410078941635" at="72,0,73,0" concept="3" trace="node" />
@@ -148,7 +148,7 @@
       <node id="1758937410078934018" at="78,34,79,41" concept="2" />
       <node id="1758937410078937466" at="79,41,80,44" concept="2" />
       <node id="1758937410079116005" at="82,38,83,42" concept="7" />
-      <node id="1758937410079128036" at="86,33,87,54" concept="2" />
+      <node id="1758937410079128036" at="86,30,87,54" concept="2" />
       <node id="1758937410079000476" at="88,16,89,63" concept="2" />
       <node id="1758937410079226353" at="93,33,94,35" concept="2" />
       <node id="1758937410079137805" at="99,0,100,0" concept="3" trace="node" />
@@ -156,7 +156,7 @@
       <node id="1758937410079137820" at="101,43,102,25" concept="2" />
       <node id="1758937410079137826" at="102,25,103,32" concept="2" />
       <node id="1758937410079167348" at="105,38,106,68" concept="7" />
-      <node id="1758937410079137865" at="109,33,110,54" concept="2" />
+      <node id="1758937410079137865" at="109,30,110,54" concept="2" />
       <node id="1758937410079137873" at="111,16,112,37" concept="2" />
       <node id="1758937410079253626" at="116,33,117,37" concept="2" />
       <node id="1758937410079182037" at="123,35,124,74" concept="7" />
@@ -185,9 +185,9 @@
       <node id="7153805464405088424" at="48,0,51,0" concept="5" trace="requiresData#()Ljava/lang/Iterable;" />
       <node id="2521103492728906469" at="52,0,55,0" concept="5" trace="executeAfter#()Ljava/lang/Iterable;" />
       <node id="1745840781283011290" at="61,64,64,5" concept="4" />
-      <node id="1758937410078940246" at="82,0,85,0" concept="5" trace="isNodeRemoved#()Z" />
+      <node id="1758937410078940246" at="82,0,85,0" concept="5" trace="isNodeInPlace#()Z" />
       <node id="1758937410079216004" at="92,28,95,9" concept="4" />
-      <node id="1758937410079137846" at="105,0,108,0" concept="5" trace="isNodeRemoved#()Z" />
+      <node id="1758937410079137846" at="105,0,108,0" concept="5" trace="isNodeInPlace#()Z" />
       <node id="1758937410079249200" at="115,28,118,9" concept="4" />
       <node id="3815816958998196259" at="135,0,138,5" concept="4" />
       <node id="6816167251982695539" at="158,0,161,0" concept="5" trace="collectData#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;)Ljava/util/Map;" />
@@ -224,11 +224,11 @@
       </scope>
       <scope id="1758937410079237899" at="70,0,71,0" />
       <scope id="1758937410078940250" at="82,38,83,42" />
-      <scope id="1758937410079003448" at="86,33,87,54" />
+      <scope id="1758937410079003448" at="86,30,87,54" />
       <scope id="1758937410079128636" at="88,16,89,63" />
       <scope id="1758937410079216005" at="93,33,94,35" />
       <scope id="1758937410079137849" at="105,38,106,68" />
-      <scope id="1758937410079137864" at="109,33,110,54" />
+      <scope id="1758937410079137864" at="109,30,110,54" />
       <scope id="1758937410079137872" at="111,16,112,37" />
       <scope id="1758937410079249201" at="116,33,117,37" />
       <scope id="1758937410079180317" at="123,35,124,74" />

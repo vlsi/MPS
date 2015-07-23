@@ -17,9 +17,12 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -115,13 +118,14 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
           if (module == null) {
             return null;
           }
-          SModel rv = module.getModel(myModelId);
-          return rv != null ? rv : module.resolveInDependencies(myModelId);
+          return module.resolveInDependencies(myModelId);
         }
       };
       if (!repository.getModelAccess().canRead()) {
-        LOG.warn("Attempt to resolve a model not from read action. What are you going to do with return value?", new Throwable());
+        LOG.warn("Attempt to resolve a model not from read action. What are you going to do with return value? Hint: at least, read. Please ensure proper model access then.", new Throwable());
         return new ModelAccessHelper(repository).runReadAction(c);
+      } else {
+        return c.compute();
       }
     }
 
@@ -177,6 +181,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     SModuleId moduleId = null;
     int slash = s.indexOf('/');
     if (slash >= 0) {
+      // FIXME I wonder why there's no SModuleIdFactory and corresponding methods in PersistenceFacade
       moduleId = ModuleId.fromString(StringUtil.unescapeRefChars(s.substring(0, slash)));
       s = s.substring(slash + 1);
     }
@@ -186,10 +191,16 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     if (modelIDString.indexOf(':') >= 0) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       // temporary: SModelReference can be created without active PersistenceFacade
+      if (facade == null) {
+        // FIXME get rid of facade == null case, if any
+        // Besides, shall pass PersistenceFacade in there, instead of static access
+        LOG.warn("Please report stacktrace, which would help us to find out improper MPS initialization sequence", new Throwable());
+      }
       modelId = facade != null
           ? facade.createModelId(modelIDString)
           : jetbrains.mps.smodel.SModelId.fromString(modelIDString);
     } else {
+      // dead code? I suspect ModelNameSModelId, if any, would start with "m:" prefix and we'd never get into else clause
       modelId = new ModelNameSModelId(modelIDString);
     }
 
@@ -212,9 +223,42 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       }
     }
 
+    if (moduleId == null) {
+      moduleId = extractModuleIdFromModelIdIfJavaStub(modelId);
+    }
+
     SModuleReference moduleRef =
         moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
     return new SModelReference(moduleRef, modelId, modelName);
+  }
+
+  /**
+   * This temporary code suites the purpose to homogenize java_stub model references, that used
+   * to be kept in two different formats (one is "module id/model id including module id/(module name/model name)"
+   * and another "model id including module id(module name/model name)". If there's module id anyway, why
+   * would anyone keep it to model id then, and common patter for model reference (with module id coming first) shall be used.
+   *
+   * Once all model references to java stub are updated, this code shall cease to exist.
+   */
+  @ToRemove(version = 3.3)
+  @Nullable
+  @Hack
+  private static SModuleId extractModuleIdFromModelIdIfJavaStub(SModelId modelId) {
+    if (modelId instanceof ForeignSModelId) {
+      // FIXME use JavaPackageNameStub or any other code that keeps knowledge about "java_stub" kind
+      String idValue = ((ForeignSModelId) modelId).getId();
+      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+      if (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#') {
+        // legacy stub model id: f:java_stub#module id#package name
+        //    new stub model id: f:java_stub#package name
+        int secondHashIndex = idValue.indexOf('#', stereo.length() + 1);
+        // there are two hash chars and non-empty package name
+        if (secondHashIndex != -1 && idValue.length() > secondHashIndex) {
+          return ModuleId.fromString(idValue.substring(stereo.length()+1, secondHashIndex));
+        }
+      }
+    }
+    return null;
   }
 
   public String toString() {

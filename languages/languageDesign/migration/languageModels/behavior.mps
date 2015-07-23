@@ -22,8 +22,8 @@
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" />
-    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -230,12 +230,12 @@
       <property role="TrG5h" value="getDescription" />
       <node concept="3Tm1VV" id="7s$_UJMUysR" role="1B3o_S" />
       <node concept="3Tqbb2" id="7s$_UJMUHYO" role="3clF45">
-        <ref role="ehGHo" to="oubp:5BD$AU440O4" resolve="ClassLikeStringProperty" />
+        <ref role="ehGHo" to="oubp:5BD$AU440O4" resolve="StringPropertyInstance" />
       </node>
       <node concept="3clFbS" id="7s$_UJMUysT" role="3clF47">
         <node concept="3clFbF" id="5kVFkwb7Tte" role="3cqZAp">
           <node concept="1PxgMI" id="5kVFkwb7V4H" role="3clFbG">
-            <ref role="1PxNhF" to="oubp:5BD$AU440O4" resolve="ClassLikeStringProperty" />
+            <ref role="1PxNhF" to="oubp:5BD$AU440O4" resolve="StringPropertyInstance" />
             <node concept="2OqwBi" id="5kVFkwb7U6_" role="1PxMeX">
               <node concept="2OqwBi" id="5kVFkwb7TAo" role="2Oq$k0">
                 <node concept="3fl2lp" id="7s$_UJMUwZE" role="2Oq$k0">
@@ -365,12 +365,12 @@
       <property role="TrG5h" value="getMethod" />
       <node concept="3Tm1VV" id="6d7r2Fq2j7g" role="1B3o_S" />
       <node concept="3Tqbb2" id="6d7r2Fq2jkO" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
       </node>
       <node concept="3clFbS" id="6d7r2Fq2j7i" role="3clF47">
         <node concept="3clFbF" id="5kVFkwb7XXd" role="3cqZAp">
           <node concept="1PxgMI" id="5kVFkwb7Z8s" role="3clFbG">
-            <ref role="1PxNhF" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
+            <ref role="1PxNhF" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
             <node concept="2OqwBi" id="5kVFkwb7Yzp" role="1PxMeX">
               <node concept="2OqwBi" id="5kVFkwb7Y1W" role="2Oq$k0">
                 <node concept="37vLTw" id="5kVFkwb7XXb" role="2Oq$k0">
@@ -524,7 +524,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="UBgfI9gdE8" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
       </node>
     </node>
     <node concept="13hLZK" id="7fCCGqboPK$" role="13h7CW">
@@ -610,7 +610,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="5KZRo2kms8$" role="3clF45">
-        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
   </node>
@@ -946,7 +946,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="5KZRo2kmsfs" role="3clF45">
-        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
     <node concept="13hLZK" id="5xXiDaJYpgJ" role="13h7CW">
@@ -976,7 +976,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="5KZRo2kmrEa" role="3clF45">
-        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
   </node>

@@ -65,7 +65,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
   }
 
   private static interface SNodePlacePointer {
-    public boolean isNodeRemoved();
+    public boolean isNodeInPlace();
     public void insertOrReplace(SNode newNode);
     public void remove();
     /*package*/ static class ChildPointer implements MigrationScriptBase.SNodePlacePointer {
@@ -79,18 +79,18 @@ public abstract class MigrationScriptBase implements MigrationScript {
         link = node.getContainmentLink();
         nextSibling = node.getNextSibling();
       }
-      public boolean isNodeRemoved() {
+      public boolean isNodeInPlace() {
         return node.getParent() == parent;
       }
       public void insertOrReplace(SNode newNode) {
-        if (!(isNodeRemoved())) {
+        if (isNodeInPlace()) {
           SNodeUtil.replaceWithAnother(node, newNode);
         } else {
           parent.insertChildBefore(link, newNode, nextSibling);
         }
       }
       public void remove() {
-        if (!(isNodeRemoved())) {
+        if (!(isNodeInPlace())) {
           parent.removeChild(node);
         }
       }
@@ -102,25 +102,25 @@ public abstract class MigrationScriptBase implements MigrationScript {
         this.node = node;
         model = node.getModel();
       }
-      public boolean isNodeRemoved() {
+      public boolean isNodeInPlace() {
         return node.getParent() == null && node.getModel() == model;
       }
       public void insertOrReplace(SNode newNode) {
-        if (!(isNodeRemoved())) {
+        if (isNodeInPlace()) {
           SNodeUtil.replaceWithAnother(node, newNode);
         } else {
           model.addRootNode(newNode);
         }
       }
       public void remove() {
-        if (!(isNodeRemoved())) {
+        if (!(isNodeInPlace())) {
           model.removeRootNode(node);
         }
       }
     }
   }
   private static MigrationScriptBase.SNodePlacePointer createSNodePlacePointer(SNode node) {
-    if (node.getParent() == null) {
+    if (node.getParent() != null) {
       return new MigrationScriptBase.SNodePlacePointer.ChildPointer(node);
     } else {
       return new MigrationScriptBase.SNodePlacePointer.RootPointer(node);

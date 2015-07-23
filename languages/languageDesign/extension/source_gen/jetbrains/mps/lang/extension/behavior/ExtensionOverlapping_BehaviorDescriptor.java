@@ -4,11 +4,11 @@ package jetbrains.mps.lang.extension.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import jetbrains.mps.lang.classLike.behavior.AutoInitClassLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 
-public class ExtensionOverlapping_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, AutoInitClassLike_BehaviorDescriptor {
+public class ExtensionOverlapping_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, AutoInitDSLClass_BehaviorDescriptor {
   public ExtensionOverlapping_BehaviorDescriptor() {
   }
   public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {

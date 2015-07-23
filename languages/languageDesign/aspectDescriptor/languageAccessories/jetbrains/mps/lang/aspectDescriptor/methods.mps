@@ -2,7 +2,7 @@
 <model ref="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)">
   <persistence version="9" />
   <languages>
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" version="0" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -10,9 +10,9 @@
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspectDescriptor.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -21,24 +21,24 @@
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
     </language>
-    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike">
-      <concept id="3751132065236767076" name="jetbrains.mps.lang.classLike.structure.ParameterDescriptor" flags="ng" index="q3mfp">
+    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
+      <concept id="3751132065236767076" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.ParameterDescriptor" flags="ng" index="q3mfp">
         <child id="3751132065236767078" name="type" index="q3mfr" />
       </concept>
-      <concept id="3751132065236767079" name="jetbrains.mps.lang.classLike.structure.MethodDescriptor" flags="ng" index="q3mfq">
+      <concept id="3751132065236767079" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor" flags="ng" index="q3mfq">
         <child id="3751132065236767081" name="retType" index="q3mfk" />
         <child id="3751132065236767080" name="param" index="q3mfl" />
       </concept>
-      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor" flags="ig" index="q3mft">
+      <concept id="3751132065236767072" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor" flags="ng" index="q3mft">
         <reference id="1825613483881131410" name="preferredConcept" index="2qG0Lo" />
         <child id="8264762413010642120" name="classLikeMember" index="QNr5C" />
       </concept>
-      <concept id="5820409521797720671" name="jetbrains.mps.lang.classLike.structure.EmptyMember" flags="ng" index="qMXn0" />
-      <concept id="3402736933911578134" name="jetbrains.mps.lang.classLike.structure.RequiredModifier" flags="ng" index="2IRzkw" />
-      <concept id="8264762413010669353" name="jetbrains.mps.lang.classLike.structure.PlaceholderModifier" flags="ng" index="QcxE9">
+      <concept id="5820409521797720671" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor" flags="ng" index="qMXn0" />
+      <concept id="3402736933911578134" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier" flags="ng" index="2IRzkw" />
+      <concept id="8264762413010669353" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier" flags="ng" index="QcxE9">
         <property id="8264762413010669653" name="caption" index="QcwnP" />
       </concept>
-      <concept id="8264762413010642119" name="jetbrains.mps.lang.classLike.structure.ClassLikeMember" flags="ng" index="QNr5B">
+      <concept id="8264762413010642119" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember" flags="ng" index="QNr5B">
         <child id="3402736933911577960" name="modifier" index="2IRzpu" />
       </concept>
     </language>

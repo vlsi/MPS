@@ -40,6 +40,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk8/languages/jdk8/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk8/languages/jdk8/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/lightweightdsl/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/lightweightdsl/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/source_gen" isTestSource="false" />
@@ -65,8 +67,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/testlang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/classLike/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/classLike/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/generator/source_gen" isTestSource="false" />
@@ -196,6 +196,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk8/languages/jdk8/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/jdk8/languages/jdk8/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/lightweightdsl/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/lightweightdsl/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/logging/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
@@ -221,8 +223,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/testlang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/checkedName/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/classLike/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/classLike/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/classes_gen" />

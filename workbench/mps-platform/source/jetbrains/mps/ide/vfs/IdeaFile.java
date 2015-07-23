@@ -46,7 +46,7 @@ class IdeaFile implements IFileEx {
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
    */
-  private final String myPath;
+  private String myPath;
   private VirtualFile myVirtualFile = null;
 
   IdeaFile(@NotNull String path) {
@@ -163,7 +163,7 @@ class IdeaFile implements IFileEx {
   }
 
   //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
-  public VirtualFile createDirs(final String directoryPath) throws IOException{
+  public VirtualFile createDirs(final String directoryPath) throws IOException {
     return new WriteAction<VirtualFile>() {
       @Override
       protected void run(Result<VirtualFile> result) throws Throwable {
@@ -228,6 +228,7 @@ class IdeaFile implements IFileEx {
   public boolean rename(String newName) {
     try {
       myVirtualFile.rename(ourRequestor(), newName);
+      myPath = myVirtualFile.getPath();
       return true;
     } catch (IOException e) {
       LOG.warn("Could not rename file: ", e);

@@ -77,15 +77,20 @@ public interface SModule {
   int getUsedLanguageVersion(SLanguage usedLanguage);
 
   /**
+   * FIXME document whether this method required model read
    * Find the specified model among the dependencies.
+   * Models of this module ({@link #getModel(SModelId)}) are considered and take precedence over models from dependency modules
    *
    * @return The desired model or null, if not found.
    */
+  @Nullable
   SModel resolveInDependencies(SModelId ref);
 
   /**
+   * FIXME document whether this method required model read
    * Retrieves a module's model by id
    */
+  @Nullable
   SModel getModel(SModelId id);
 
   /**

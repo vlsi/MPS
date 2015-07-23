@@ -8,10 +8,10 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -35,7 +35,7 @@
     <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
-    <import index="pt5l" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(jetbrains.mps.ide.project@java_stub)" />
+    <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(jetbrains.mps.ide.project@java_stub)" />
     <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
   </imports>
   <registry>
@@ -1508,15 +1508,44 @@
                 <node concept="1bVj0M" id="1Gt179wo8pg" role="23t8la">
                   <node concept="3clFbS" id="1Gt179wo8ph" role="1bW5cS">
                     <node concept="3clFbF" id="1Gt179wo8pi" role="3cqZAp">
-                      <node concept="2OqwBi" id="1Gt179wo8pj" role="3clFbG">
-                        <node concept="1rXfSq" id="1Gt179wo8pk" role="2Oq$k0">
-                          <ref role="37wK5l" node="5TtkZMYUq8y" resolve="fetchScript" />
-                          <node concept="37vLTw" id="1Gt179wo8pl" role="37wK5m">
-                            <ref role="3cqZAo" node="1Gt179wo8pn" resolve="it" />
-                          </node>
+                      <node concept="3cpWs3" id="2yS$FUXnoxX" role="3clFbG">
+                        <node concept="Xl_RD" id="2yS$FUXnoE8" role="3uHU7w">
+                          <property role="Xl_RC" value="]" />
                         </node>
-                        <node concept="liA8E" id="1Gt179wo8pm" role="2OqNvi">
-                          <ref role="37wK5l" to="6f4m:2RG318eVG20" resolve="getCaption" />
+                        <node concept="3cpWs3" id="2yS$FUXnr7V" role="3uHU7B">
+                          <node concept="3cpWs3" id="2yS$FUXnkGy" role="3uHU7B">
+                            <node concept="2OqwBi" id="1Gt179wo8pj" role="3uHU7B">
+                              <node concept="1rXfSq" id="1Gt179wo8pk" role="2Oq$k0">
+                                <ref role="37wK5l" node="5TtkZMYUq8y" resolve="fetchScript" />
+                                <node concept="37vLTw" id="1Gt179wo8pl" role="37wK5m">
+                                  <ref role="3cqZAo" node="1Gt179wo8pn" resolve="it" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="1Gt179wo8pm" role="2OqNvi">
+                                <ref role="37wK5l" to="6f4m:2RG318eVG20" resolve="getCaption" />
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="2yS$FUXnm7M" role="3uHU7w">
+                              <property role="Xl_RC" value="  [" />
+                            </node>
+                          </node>
+                          <node concept="2YIFZM" id="2yS$FUXnG77" role="3uHU7w">
+                            <ref role="37wK5l" to="msyo:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
+                            <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                            <node concept="2OqwBi" id="2yS$FUXnG78" role="37wK5m">
+                              <node concept="2OqwBi" id="2yS$FUXnG79" role="2Oq$k0">
+                                <node concept="37vLTw" id="2yS$FUXnG7a" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1Gt179wo8pn" resolve="it" />
+                                </node>
+                                <node concept="liA8E" id="2yS$FUXnG7b" role="2OqNvi">
+                                  <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2yS$FUXnG7c" role="2OqNvi">
+                                <ref role="37wK5l" to="t3eg:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
