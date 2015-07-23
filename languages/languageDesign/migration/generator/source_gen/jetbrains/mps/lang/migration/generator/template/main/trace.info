@@ -94,7 +94,7 @@
         <var name="member" id="4391914101921809880" />
       </scope>
       <scope id="4391914101921870206" at="166,120,183,7" />
-      <unit id="1758937410082127539" at="169,838,173,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
+      <unit id="1758937410082127539" at="169,829,173,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
       <unit id="1758937410082127539" at="173,22,177,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
       <unit id="1758937410082127549" at="177,19,181,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
       <unit id="4391914101921809880" at="167,220,183,5" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2" />
