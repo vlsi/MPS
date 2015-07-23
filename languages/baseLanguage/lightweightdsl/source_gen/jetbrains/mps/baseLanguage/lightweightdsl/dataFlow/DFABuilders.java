@@ -7,6 +7,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
-    manager.register("jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeProperty", new ClassLikeProperty_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance", new PropertyInstance_DataFlow());
   }
 }
