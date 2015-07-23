@@ -4,7 +4,7 @@ package jetbrains.mps.lang.extension.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import jetbrains.mps.lang.classLike.behavior.AutoInitClassLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitClassLike_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class Extension_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, AutoInitClassLike_BehaviorDescriptor {

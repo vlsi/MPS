@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVariableDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
-import jetbrains.mps.lang.classLike.behavior.ClassLikeMemberInstance_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.ClassLikeMemberInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;

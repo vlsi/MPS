@@ -29,8 +29,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitClassLike_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.aspectDescriptor.behavior.LanguageAspectDescriptor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.AutoInitClassLike_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
