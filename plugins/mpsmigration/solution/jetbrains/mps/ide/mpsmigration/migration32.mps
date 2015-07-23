@@ -27,7 +27,7 @@
     <import index="ncv8" ref="r:685205a6-461a-4df8-bd8a-7041162f64fb(jetbrains.mps.ide.mpsmigration.migration32.migrations)" />
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
-    <import index="tprs" ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb/r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide/jetbrains.mps.ide.actions)" implicit="true" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -40,7 +40,6 @@
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
-      <concept id="1203082903663" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" flags="nn" index="tl45R" />
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
         <property id="1204991940915" name="caption" index="2f7twF" />
@@ -66,9 +65,6 @@
         <reference id="331224023792854816" name="group" index="2zDL_u" />
       </concept>
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
-      <concept id="3205675194086589964" name="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" flags="nn" index="3$FdUm">
-        <reference id="3205675194086671728" name="action" index="3$FpRE" />
-      </concept>
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
         <reference id="1217252646389" name="key" index="1DUlNI" />
       </concept>
@@ -84,10 +80,6 @@
       </concept>
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
-      </concept>
-      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
-        <child id="1068498886297" name="rValue" index="37vLTx" />
-        <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
@@ -118,7 +110,6 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
-      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -135,9 +126,6 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -216,55 +204,6 @@
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
   </registry>
-  <node concept="sE7Ow" id="6ST_gT5KOkh">
-    <property role="1WHSii" value="All model references should have module reference" />
-    <property role="TrG5h" value="MigrateSModelReference" />
-    <property role="2uzpH1" value="Migrate Model Reference" />
-    <node concept="tnohg" id="6ST_gT5KRq5" role="tncku">
-      <node concept="3clFbS" id="6ST_gT5KRq6" role="2VODD2">
-        <node concept="3clFbF" id="6ST_gT5M2_Y" role="3cqZAp">
-          <node concept="2YIFZM" id="6ysF3v1j_vU" role="3clFbG">
-            <ref role="37wK5l" to="7bx7:~ActionUtils.updateAndPerformAction(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="updateAndPerformAction" />
-            <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
-            <node concept="3$FdUm" id="6ysF3v1j_vV" role="37wK5m">
-              <ref role="3$FpRE" to="tprs:2cEqqWVQVCm" resolve="ForcedSaveAll" />
-            </node>
-            <node concept="tl45R" id="6ST_gT5M2Al" role="37wK5m" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ST_gT5M2Uo" role="3cqZAp">
-          <node concept="37vLTI" id="6ST_gT5M2Up" role="3clFbG">
-            <node concept="3clFbT" id="6ST_gT5M2Uq" role="37vLTx">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="10M0yZ" id="6ST_gT5M2Ur" role="37vLTJ">
-              <ref role="3cqZAo" to="w1kc:~SModelReference.replaceModuleReferences" resolve="replaceModuleReferences" />
-              <ref role="1PxDUh" to="w1kc:~SModelReference" resolve="SModelReference" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ST_gT5M2X8" role="3cqZAp">
-          <node concept="2YIFZM" id="6ST_gT5M2X9" role="3clFbG">
-            <ref role="37wK5l" to="7bx7:~ActionUtils.updateAndPerformAction(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="updateAndPerformAction" />
-            <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
-            <node concept="3$FdUm" id="6ST_gT5M2Xa" role="37wK5m">
-              <ref role="3$FpRE" to="tprs:2cEqqWVQVCm" resolve="ForcedSaveAll" />
-            </node>
-            <node concept="tl45R" id="6ST_gT5M2Xb" role="37wK5m" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ST_gT5M2JG" role="3cqZAp">
-          <node concept="37vLTI" id="6ST_gT5M2SF" role="3clFbG">
-            <node concept="3clFbT" id="6ST_gT5M2U0" role="37vLTx" />
-            <node concept="10M0yZ" id="6ST_gT5M2JW" role="37vLTJ">
-              <ref role="3cqZAo" to="w1kc:~SModelReference.replaceModuleReferences" resolve="replaceModuleReferences" />
-              <ref role="1PxDUh" to="w1kc:~SModelReference" resolve="SModelReference" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="sE7Ow" id="7vy2u1BNC$F">
     <property role="TrG5h" value="ClearHistoryFiles" />
     <property role="2uzpH1" value="Clear History Files" />
@@ -582,37 +521,6 @@
       </node>
     </node>
   </node>
-  <node concept="tC5Ba" id="7QJnQguSC57">
-    <property role="TrG5h" value="Migrations32" />
-    <property role="2f7twF" value="Migration 3.2" />
-    <property role="3GE5qa" value="migration" />
-    <property role="3OnEW4" value="true" />
-    <property role="1XlLyE" value="true" />
-    <property role="2pbKbs" value="true" />
-    <node concept="ftmFs" id="7QJnQguTa6F" role="ftER_">
-      <node concept="tCFHf" id="7Zuuu0uD60d" role="ftvYc">
-        <ref role="tCJdB" node="6ST_gT5KOkh" resolve="MigrateSModelReference" />
-      </node>
-      <node concept="tCFHf" id="7Zuuu0uD60i" role="ftvYc">
-        <ref role="tCJdB" node="7vy2u1BNC$F" resolve="ClearHistoryFiles" />
-      </node>
-      <node concept="tCFHf" id="hzgGjPr9YG" role="ftvYc">
-        <ref role="tCJdB" node="6qheojHebev" resolve="MigrateIds" />
-      </node>
-      <node concept="tCFHf" id="1UVYfO1lE1s" role="ftvYc">
-        <ref role="tCJdB" node="1UVYfO0DGdY" resolve="MigrateFloatConstants" />
-      </node>
-      <node concept="tCFHf" id="4XbESZhHJJ" role="ftvYc">
-        <ref role="tCJdB" node="4XbESZhnqD" resolve="WrapNotExpressionInParens" />
-      </node>
-      <node concept="tCFHf" id="4XbESZhMyv" role="ftvYc">
-        <ref role="tCJdB" node="4XbESZhKqJ" resolve="UpdateDepecatedBlockDocTags" />
-      </node>
-    </node>
-    <node concept="tT9cl" id="7QJnQguTa6I" role="2f5YQi">
-      <ref role="tU$_T" to="tprs:hF$n$r$" resolve="IDEATools" />
-    </node>
-  </node>
   <node concept="sE7Ow" id="6qheojHebev">
     <property role="TrG5h" value="MigrateIds" />
     <property role="2uzpH1" value="Migrate from Names to Ids" />
@@ -879,6 +787,34 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="tC5Ba" id="7QJnQguSC57">
+    <property role="TrG5h" value="Migrations32" />
+    <property role="2f7twF" value="Migration 3.2" />
+    <property role="3GE5qa" value="migration" />
+    <property role="3OnEW4" value="true" />
+    <property role="1XlLyE" value="true" />
+    <property role="2pbKbs" value="true" />
+    <node concept="ftmFs" id="7QJnQguTa6F" role="ftER_">
+      <node concept="tCFHf" id="7Zuuu0uD60i" role="ftvYc">
+        <ref role="tCJdB" node="7vy2u1BNC$F" resolve="ClearHistoryFiles" />
+      </node>
+      <node concept="tCFHf" id="hzgGjPr9YG" role="ftvYc">
+        <ref role="tCJdB" node="6qheojHebev" resolve="MigrateIds" />
+      </node>
+      <node concept="tCFHf" id="1UVYfO1lE1s" role="ftvYc">
+        <ref role="tCJdB" node="1UVYfO0DGdY" resolve="MigrateFloatConstants" />
+      </node>
+      <node concept="tCFHf" id="4XbESZhHJJ" role="ftvYc">
+        <ref role="tCJdB" node="4XbESZhnqD" resolve="WrapNotExpressionInParens" />
+      </node>
+      <node concept="tCFHf" id="4XbESZhMyv" role="ftvYc">
+        <ref role="tCJdB" node="4XbESZhKqJ" resolve="UpdateDepecatedBlockDocTags" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="7QJnQguTa6I" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:hF$n$r$" resolve="IDEATools" />
     </node>
   </node>
 </model>

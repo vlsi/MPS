@@ -38,7 +38,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 @Immutable
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
 
-  public static boolean replaceModuleReferences = false;
   private static Logger LOG = Logger.getLogger(SModelReference.class);
 
   @NotNull
@@ -56,7 +55,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
         throw new IllegalArgumentException(String.format("Only globally unique model id could be used without module specification: %s", modelId));
       }
     }
-    myModuleReference = replaceModuleReferences ? calculateModuleReference() : module;
+    myModuleReference = module;
   }
 
   @NotNull
@@ -73,23 +72,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModuleReference getModuleReference() {
-    if (replaceModuleReferences) {
-      return calculateModuleReference();
-    }
     return myModuleReference;
-  }
-
-  //remove after MPS 3.2
-  private SModuleReference calculateModuleReference() {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelId);
-    if (modelDescriptor != null) {
-      return modelDescriptor.getModule().getModuleReference();
-    } else {
-      LOG.error("Could not resolve model `" + myModelName + "'. While migrating all models should be available.", new Throwable());
-      return null;
-      //can be for deleted models when references to them still exist
-      //throw new IllegalStateException("Could not replace module reference");
-    }
   }
 
   @Override
@@ -306,7 +289,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   public boolean differs(SModelReference that) {
-    if (replaceModuleReferences) return true;
     if (!this.equals(that)) return true;
     if (!myModelName.equals(that.myModelName)) return true;
     return false;
