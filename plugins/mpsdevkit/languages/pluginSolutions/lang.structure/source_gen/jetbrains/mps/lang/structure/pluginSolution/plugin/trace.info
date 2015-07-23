@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.lightweightdsl.structure.ClassLikeMethod" />
+  <concept fqn="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -3480,7 +3480,7 @@
       <unit id="8380389482648059809" at="138,84,142,9" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$5" />
       <unit id="7217668918200088437" at="145,109,149,9" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$5" />
       <unit id="4323017570218960214" at="160,117,164,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$6" />
-      <unit id="4323017570220468257" at="184,476,188,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$6" />
+      <unit id="4323017570220468257" at="184,467,188,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$6" />
       <unit id="7217668918199890554" at="196,224,200,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$5" />
       <unit id="7217668918202261701" at="210,235,214,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$6" />
       <unit id="7217668918202232541" at="217,235,221,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$6" />
