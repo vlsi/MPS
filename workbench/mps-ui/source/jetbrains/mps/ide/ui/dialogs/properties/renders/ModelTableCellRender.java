@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,33 +15,30 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
-import com.intellij.ui.ColoredTableCellRenderer;
-import jetbrains.mps.workbench.choose.models.ModelPresentation;
+import jetbrains.mps.ide.icons.IconManager;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import javax.swing.BorderFactory;
-import javax.swing.JTable;
+import javax.swing.Icon;
 
-// FIXME use StateTableCellRenderer for superclass
-public class ModelTableCellRender extends ColoredTableCellRenderer {
-  @Override
-  protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-    setPaintFocusBorder(false);
-    setFocusBorderAroundIcon(true);
-    setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    if (value != null) {
-      final SModelReference modelReference = (SModelReference) value;
-      ModelPresentation modelPresentation = new ModelPresentation(modelReference);
-      setIcon(modelPresentation.doGetIcon());
-      DependencyCellState cellState = getDependencyCellState(modelReference);
-      append(modelPresentation.doGetPresentableText(), cellState.getTextAttributes());
-      if (cellState.equals(DependencyCellState.NOT_IN_SCOPE)) {
-        append(" (out of scope)", cellState.getTextAttributes());
-      }
-    }
+public class ModelTableCellRender extends StateTableCellRenderer<SModelReference, SModel> {
+  public ModelTableCellRender(SRepository repository) {
+    super(repository);
   }
 
-  protected DependencyCellState getDependencyCellState(SModelReference modelReference) {
-    return DependencyCellState.NORMAL;
+  @Override
+  protected SModel getCellElement(SModelReference cellValue) {
+    return cellValue.resolve(myRepository);
+  }
+
+  @Override
+  protected Icon getIcon(SModelReference cellValue, SModel model) {
+    return IconManager.getIconFor(model);
+  }
+
+  @Override
+  protected String getText(SModelReference cellValue, SModel model) {
+    return cellValue.getModelName();
   }
 }

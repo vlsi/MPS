@@ -72,7 +72,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NotCondition;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -181,6 +180,17 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
+  /*package*/ Set<SModelReference> getActualCrossModelReferences() {
+    return new ModelAccessHelper(myProject.getRepository()).runReadAction(new Computable<Set<SModelReference>>() {
+      @Override
+      public Set<SModelReference> compute() {
+        final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
+        modelScanner.crossModelReferences(true).usedLanguages(false).usedConcepts(false).walk(myModelDescriptor);
+        return modelScanner.getCrossModelReferences();
+      }
+    });
+  }
+
   protected class ModelDependenciesComponent extends BaseTab {
     private ModelImportedModelsTableModel myImportedModels;
     private JPanel myImportedModelsComponent;
@@ -200,7 +210,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
-        if (!myModelProperties.getImportedModelsRemoveCondition().met(modelReference)) {
+        if (!getActualCrossModelReferences().contains(modelReference)) {
           ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
               ProjectHelper.toIdeaProject(myProject), "Delete imported model",
               "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
@@ -231,33 +241,27 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
       importedModelsTable.setModel(myImportedModels);
 
-      importedModelsTable.setDefaultRenderer(SModelReference.class,
-          new ModelTableCellRender() {
-            @Override
-            protected DependencyCellState getDependencyCellState(final org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              DependencyCellState res = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<DependencyCellState>() {
-                @Override
-                public DependencyCellState compute() {
-                  final SModel model = modelReference.resolve(myProject.getRepository());
-                  if (model == null) {
-                    return DependencyCellState.NOT_AVAILABLE;
-                  }
-                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), model)) {
-                    return DependencyCellState.NOT_IN_SCOPE;
-                  }
-                  if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
-                    return DependencyCellState.UNUSED;
-                  }
-
-                  return null;
-                }
-              });
-
-              if (res != null) return res;
-              return super.getDependencyCellState(modelReference);
-            }
-          }
-      );
+      ModelTableCellRender cellRender = new ModelTableCellRender(myProject.getRepository());
+      cellRender.addCellState(new Condition<SModel>() {
+        @Override
+        public boolean met(SModel m) {
+          return m == null;
+        }
+      }, DependencyCellState.NOT_AVAILABLE);
+      cellRender.addCellState(new Condition<SModel>() {
+        @Override
+        public boolean met(SModel m) {
+          return !VisibilityUtil.isVisible(myModelDescriptor.getModule(), m);
+        }
+      }, DependencyCellState.NOT_IN_SCOPE);
+      final Set<SModelReference> actualCrossModelRefs = getActualCrossModelReferences();
+      cellRender.addCellState(new Condition<SModel>() {
+        @Override
+        public boolean met(SModel m) {
+          return !actualCrossModelRefs.contains(m.getReference());
+        }
+      }, DependencyCellState.UNUSED);
+      importedModelsTable.setDefaultRenderer(SModelReference.class, cellRender);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(importedModelsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {

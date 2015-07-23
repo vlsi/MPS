@@ -192,7 +192,11 @@ public class SModelOperations {
     return Collections.unmodifiableList(references);
   }
 
-  //todo rewrite using iterators
+  /**
+   * @deprecated use {@link ModelDependencyScanner#getCrossModelReferences()} instead. This method is poorly named.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : SNodeUtil.getDescendants(sModel)) {

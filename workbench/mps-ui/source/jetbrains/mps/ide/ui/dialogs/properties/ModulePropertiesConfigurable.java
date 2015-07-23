@@ -621,7 +621,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myAccessoriesModelsTableModel = new AccessoriesModelsTableModel();
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
-      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender());
+      accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(myProject.getRepository()));
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {

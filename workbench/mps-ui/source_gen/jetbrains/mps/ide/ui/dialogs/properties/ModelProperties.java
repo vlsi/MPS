@@ -20,9 +20,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 
 public class ModelProperties {
   private final List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
@@ -170,26 +167,6 @@ public class ModelProperties {
     modelsInModel.removeAll(getImportedModels());
     for (SModelReference modelReference : modelsInModel) {
       ((SModelInternal) smodel).deleteModelImport(modelReference);
-    }
-  }
-  public Condition<SModelReference> getImportedModelsRemoveCondition() {
-    Set<SModelReference> models = new ModelAccessHelper(myModelDescriptor.getRepository()).runReadAction(new Computable<Set<SModelReference>>() {
-      public Set<SModelReference> compute() {
-        return SModelOperations.getUsedImportedModels(myModelDescriptor);
-      }
-    });
-    return new ModelProperties.ModelsCondition(models);
-  }
-
-
-  public class ModelsCondition implements Condition<SModelReference> {
-    private final Set<SModelReference> myModels;
-    public ModelsCondition(Set<SModelReference> models) {
-      myModels = models;
-    }
-    @Override
-    public boolean met(final SModelReference object) {
-      return !(myModels.contains(object));
     }
   }
 }

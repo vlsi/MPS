@@ -24,11 +24,11 @@ import java.awt.Color;
 public enum DependencyCellState {
   NORMAL(SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES),
   NOT_AVAILABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),
-  NOT_IN_SCOPE(SimpleTextAttributes.ERROR_ATTRIBUTES), //new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))
+  NOT_IN_SCOPE(SimpleTextAttributes.ERROR_ATTRIBUTES, "out of scope"), //new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))
   /**
    * Superfluous entries that can be removed
    */
-  UNUSED(SimpleTextAttributes.GRAYED_ATTRIBUTES),
+  UNUSED(SimpleTextAttributes.GRAYED_ATTRIBUTES, "not in use"),
   /**
    * Engaged generator entry that might need attention as the language is directly in use by the model
    */
