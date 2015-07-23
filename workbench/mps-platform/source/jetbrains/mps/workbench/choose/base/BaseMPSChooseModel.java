@@ -81,7 +81,6 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   private Map<String, List<NavigationItem>> getProjectNamesCache() {
     //to avoid things like MPS-17632: read and not dumb
-    ModelAccess.assertLegalRead();
     assert !DumbService.getInstance(getIdeaProject()).isDumb();
 
     if (myObjectsInProjectScope == null) {
@@ -100,7 +99,6 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   private Map<String, List<NavigationItem>> getGlobalNamesCache() {
     //to avoid things like MPS-17632: read and not dumb
-    ModelAccess.assertLegalRead();
     assert !DumbService.getInstance(getIdeaProject()).isDumb();
 
     if (myObjectsInGlobalScope == null) {

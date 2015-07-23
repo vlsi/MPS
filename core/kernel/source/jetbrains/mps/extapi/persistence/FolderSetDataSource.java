@@ -55,8 +55,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
   public void addPath(@NotNull String path, ModelRoot modelRoot) {
-    ModelAccess.assertLegalRead();
-
     myLock.writeLock().lock();
     try {
 

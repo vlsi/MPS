@@ -13,7 +13,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.util.SNodeOperations;
@@ -79,7 +78,6 @@ public class EditorComponentUtil {
   }
   @NotNull
   public static List<jetbrains.mps.nodeEditor.EditorComponent> findComponentForNode(SNode node, FileEditorManager fileEditorManager) {
-    ModelAccess.assertLegalRead();
     List<jetbrains.mps.nodeEditor.EditorComponent> result = new ArrayList<jetbrains.mps.nodeEditor.EditorComponent>();
     jetbrains.mps.nodeEditor.EditorComponent inspector = EditorComponentUtil.findInspector(fileEditorManager);
     if (inspector != null) {

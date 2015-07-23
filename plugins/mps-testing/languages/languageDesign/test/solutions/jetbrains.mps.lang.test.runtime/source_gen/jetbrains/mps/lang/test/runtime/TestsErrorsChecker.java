@@ -5,7 +5,6 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.MessageStatus;
 import java.util.Set;
@@ -35,12 +34,10 @@ public class TestsErrorsChecker {
   }
 
   public Iterable<IErrorReporter> getAllErrors() {
-    ModelAccess.assertLegalRead();
     return getRootErrors();
   }
 
   public Iterable<IErrorReporter> getErrors(@NotNull SNode node) {
-    ModelAccess.assertLegalRead();
     Iterable<IErrorReporter> result = getRootErrors();
     return filterReportersByNode(result, node);
   }

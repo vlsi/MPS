@@ -1872,9 +1872,6 @@
         <node concept="3clFbF" id="285c2S_WYWB" role="3cqZAp">
           <node concept="1rXfSq" id="285c2S_WYWC" role="3clFbG">
             <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
-            <node concept="37vLTw" id="5DhNxihmuwh" role="37wK5m">
-              <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-            </node>
             <node concept="2YIFZM" id="285c2S_WYWD" role="37wK5m">
               <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
@@ -1908,10 +1905,19 @@
             <property role="3SKdUp" value="this is because of validateLanguageVersions, to fail ASAP" />
           </node>
         </node>
-        <node concept="3clFbF" id="27ve8bWV0Uj" role="3cqZAp">
-          <node concept="2YIFZM" id="27ve8bWV0YD" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
-            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3clFbF" id="idBt59I$XO" role="3cqZAp">
+          <node concept="2OqwBi" id="idBt59IAoW" role="3clFbG">
+            <node concept="2OqwBi" id="idBt59I_nE" role="2Oq$k0">
+              <node concept="37vLTw" id="idBt59I$XM" role="2Oq$k0">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+              </node>
+              <node concept="liA8E" id="idBt59IAnU" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="idBt59IAAC" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkWriteAccess():void" resolve="checkWriteAccess" />
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="27ve8bWV0PU" role="3cqZAp" />
@@ -1951,8 +1957,8 @@
             <node concept="2YIFZM" id="5DhNxihmtWJ" role="3fr31v">
               <ref role="37wK5l" to="auc7:5DhNxihlzrg" resolve="isMigrationRequired" />
               <ref role="1Pybhc" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
-              <node concept="37vLTw" id="5DhNxihmuqj" role="37wK5m">
-                <ref role="3cqZAo" node="5DhNxihmrnO" resolve="p" />
+              <node concept="37vLTw" id="idBt59IC6t" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
               </node>
               <node concept="37vLTw" id="5DhNxihmtWK" role="37wK5m">
                 <ref role="3cqZAo" node="1AzqgyAg52o" resolve="modules2Check" />
@@ -1969,12 +1975,6 @@
       </node>
       <node concept="3Tm6S6" id="1AzqgyAffTC" role="1B3o_S" />
       <node concept="3cqZAl" id="1AzqgyAfo04" role="3clF45" />
-      <node concept="37vLTG" id="5DhNxihmrnO" role="3clF46">
-        <property role="TrG5h" value="p" />
-        <node concept="3uibUv" id="5DhNxihmt4b" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
       <node concept="37vLTG" id="1AzqgyAfcMX" role="3clF46">
         <property role="TrG5h" value="modules" />
         <node concept="A3Dl8" id="1AzqgyAff1r" role="1tU5fm">
@@ -2006,10 +2006,19 @@
             <property role="3SKdUp" value="this is because of validateLanguageVersions, to fail ASAP" />
           </node>
         </node>
-        <node concept="3clFbF" id="27ve8bWV1nn" role="3cqZAp">
-          <node concept="2YIFZM" id="27ve8bWV1no" role="3clFbG">
-            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            <ref role="37wK5l" to="w1kc:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+        <node concept="3clFbF" id="idBt59IF0e" role="3cqZAp">
+          <node concept="2OqwBi" id="idBt59IG6Z" role="3clFbG">
+            <node concept="2OqwBi" id="idBt59IF$u" role="2Oq$k0">
+              <node concept="37vLTw" id="idBt59IF0c" role="2Oq$k0">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+              </node>
+              <node concept="liA8E" id="idBt59IG5X" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="idBt59IGpY" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkWriteAccess():void" resolve="checkWriteAccess" />
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="27ve8bWV1aG" role="3cqZAp" />
@@ -2548,9 +2557,6 @@
           <node concept="3clFbF" id="1AzqgyAfrlK" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfrlJ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
-              <node concept="37vLTw" id="5DhNxihn3kP" role="37wK5m">
-                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-              </node>
               <node concept="2ShNRf" id="1AzqgyAfvVO" role="37wK5m">
                 <node concept="2HTt$P" id="1AzqgyAfxO3" role="2ShVmc">
                   <node concept="37vLTw" id="1AzqgyAfxO6" role="2HTEbv">
@@ -2635,9 +2641,6 @@
           <node concept="3clFbF" id="1AzqgyAfvjY" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfvjZ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
-              <node concept="37vLTw" id="5DhNxihn3vT" role="37wK5m">
-                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-              </node>
               <node concept="2ShNRf" id="1AzqgyAfvk0" role="37wK5m">
                 <node concept="2HTt$P" id="1AzqgyAfvk1" role="2ShVmc">
                   <node concept="37vLTw" id="1AzqgyAfvuG" role="2HTEbv">

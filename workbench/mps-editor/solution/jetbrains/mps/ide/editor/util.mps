@@ -790,12 +790,6 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="3TltS6fENvv" role="3clF47">
-        <node concept="3clFbF" id="3TltS6fENvw" role="3cqZAp">
-          <node concept="2YIFZM" id="3TltS6fENvx" role="3clFbG">
-            <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            <ref role="37wK5l" to="w1kc:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="3TltS6fENvy" role="3cqZAp">
           <node concept="3cpWsn" id="3TltS6fENvz" role="3cpWs9">
             <property role="TrG5h" value="result" />

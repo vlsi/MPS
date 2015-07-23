@@ -182,6 +182,8 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 
   /**
    * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkWriteAccess()} instead
+   *             There are uses in SModelRepository and ModelEventsCollector, both classes are scheduled
+   *             for removal as well. Few uses are in IDEA Plugin, pending clean-up.
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -191,6 +193,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 
   /**
    * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#checkReadAccess()} instead
+   *             There are no uses in MPS code now (few left in IDEA Plugin codebase).
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -233,7 +236,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   @Deprecated
   @ToRemove(version = 3.2)
   public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey) {
-    assertLegalRead();
+    checkReadAccess();
 //    NOTE: this change below made the caches invalid within write action
 //    if (canWrite()) {
 //      return null;
