@@ -928,7 +928,7 @@
                       </node>
                       <node concept="3clFbF" id="klpHT7rIdb" role="3cqZAp">
                         <node concept="1niqFM" id="klpHT7rId7" role="3clFbG">
-                          <property role="1npUBZ" value="jetbrains.mps.lang.classLike.editor.Placeholder2RealObject" />
+                          <property role="1npUBZ" value="jetbrains.mps.baseLanguage.lightweightdsl.editor.Placeholder2RealObject" />
                           <property role="1npL6y" value="setCellActions" />
                           <node concept="3uibUv" id="klpHT7rQhA" role="32Mpfj">
                             <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
