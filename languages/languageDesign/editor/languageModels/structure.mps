@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -4025,6 +4025,15 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="can execute block" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2RDuzOVyaJU">
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <property role="TrG5h" value="QueryFunction_ColorComposit" />
+    <property role="34LRSv" value="color for both Default/Dark themes" />
+    <ref role="1TJDcQ" node="h7ZlJ1A" resolve="QueryFunction_Color" />
+    <node concept="PrWs8" id="2RDuzOVyaJV" role="PzmwI">
+      <ref role="PrY4T" node="hPiS1BQ" resolve="IQueryFunction_Color" />
+    </node>
   </node>
 </model>
 
