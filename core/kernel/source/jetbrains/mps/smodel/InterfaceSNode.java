@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.model.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -42,24 +40,6 @@ public class InterfaceSNode extends SNode {
       enforceModelLoad();
     }
     return super.firstChild();
-  }
-
-  @Override
-  public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (skippedRoles != null || skippedRolesIds != null) {
-      enforceModelLoad();
-    }
-    super.insertChildBefore(role, child, anchor);
-  }
-
-
-  @Override
-  public void insertChildBefore(@NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
-      @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (skippedRoles != null || skippedRolesIds != null) {
-      enforceModelLoad();
-    }
-    super.insertChildBefore(role, child, anchor);
   }
 
   public void skipRole(SContainmentLink role) {
