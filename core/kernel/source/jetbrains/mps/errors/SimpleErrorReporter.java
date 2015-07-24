@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.errors;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class SimpleErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private String myErrorString;
@@ -31,9 +32,12 @@ public class SimpleErrorReporter extends AbstractErrorReporter implements IError
     mySNode = node;
   }
 
-  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, boolean isWarning) {
-    this(node, s, ruleModel, ruleId);
-    myMessageStatus = isWarning ? MessageStatus.WARNING : MessageStatus.ERROR;
+  public SimpleErrorReporter(SNode node, String error, SNodeReference ruleNode, MessageStatus messageStatus, MessageTarget errorTarget) {
+    super(ruleNode);
+    mySNode = node;
+    myErrorString = error;
+    myMessageStatus = messageStatus;
+    myErrorTarget = errorTarget;
   }
 
   public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, MessageStatus messageStatus, MessageTarget errorTarget) {

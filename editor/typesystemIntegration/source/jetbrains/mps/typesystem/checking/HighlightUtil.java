@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class HighlightUtil {
   private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, IErrorReporter errorReporter,
       BaseEditorChecker checker) {
     if (errorReporter == null) {
-      errorReporter = new SimpleErrorReporter(node, message, null, null, status, new NodeMessageTarget());
+      errorReporter = new SimpleErrorReporter(node, message, null, status, new NodeMessageTarget());
     }
     HighlighterMessage error = new HighlighterMessage(
         node,

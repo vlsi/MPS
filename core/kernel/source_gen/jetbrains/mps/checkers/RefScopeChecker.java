@@ -15,6 +15,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -55,9 +56,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
-        SNode ruleNode = null;
+        SNodeReference ruleNode = null;
         if (scopeProvider != null) {
-          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? scopeProvider.getSearchScopeValidatorNode().resolve(repository) : null);
+          ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
         component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }

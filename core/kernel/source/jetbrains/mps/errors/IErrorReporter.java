@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,33 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 
+// FIXME Bloody mess this interface is. Documented nicely for others to waste their time not. List<Pair<String,String>>, ORLY?!
 public interface IErrorReporter {
   public String reportError();
 
+  @Nullable
+  SNodeReference getRuleNode();
+
+  /**
+   * @deprecated use {@link #getRuleNode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public String getRuleId();
 
+  /**
+   * @deprecated use {@link #getRuleNode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public String getRuleModel();
 
   public void addAdditionalRuleId(String ruleModel, String ruleId);

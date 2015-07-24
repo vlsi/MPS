@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -36,7 +38,6 @@ import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
@@ -140,22 +141,20 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public void addError(SNode node, String errorString, SNode ruleNode) {
+  public void addError(SNode node, String errorString, @Nullable SNodeReference ruleNode) {
     for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false))) {
       addDependency(anc);
     }
     addError(node, errorString, ruleNode, new NodeMessageTarget());
   }
-  public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget) {
+  public void addError(SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget) {
     addError(errorNode, errorString, ruleNode, messageTarget, null);
   }
-  public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
+  public void addError(SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
     if (!(ErrorReportUtil.shouldReportError(errorNode))) {
       return;
     }
-    String id = (ruleNode == null ? null : ruleNode.getNodeId().toString());
-    String modelId = (ruleNode == null ? null : check_29uvfh_a0a0c0cb(ruleNode.getModel()) + "");
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, ruleNode, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
       reporter.setIntentionProvider(intentionProvider);
     }
@@ -327,11 +326,5 @@ public class LanguageErrorsComponent {
     public void modelRemoved(SModel descriptor) {
       SetSequence.fromSet(myListenedModels).removeElement(descriptor);
     }
-  }
-  private static SModelReference check_29uvfh_a0a0c0cb(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
   }
 }

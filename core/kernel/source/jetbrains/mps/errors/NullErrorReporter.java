@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 
@@ -38,6 +40,12 @@ public class NullErrorReporter implements IErrorReporter {
 
   @Override
   public String getRuleModel() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getRuleNode() {
     return null;
   }
 

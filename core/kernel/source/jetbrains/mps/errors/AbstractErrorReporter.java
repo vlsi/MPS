@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.errors;
 
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Cyril.Konopko, 10.02.2010
@@ -27,12 +30,19 @@ import java.util.Collections;
 public abstract class AbstractErrorReporter implements IErrorReporter {
   private List<Pair<String, String>> myAdditionalRuleIds = null;
   private List<QuickFixProvider> myIntentionProviders;
-  private String myRuleModel;
-  private String myRuleId;
+  private final SNodeReference myRuleNode;
 
+  public AbstractErrorReporter(@Nullable SNodeReference ruleNode) {
+    myRuleNode = ruleNode;
+  }
+
+  @Deprecated
   public AbstractErrorReporter(String model, String id) {
-    myRuleId = id;
-    myRuleModel = model;
+    if (model != null && id != null) {
+      myRuleNode = new SNodePointer(model, id);
+    } else {
+      myRuleNode = null;
+    }
   }
 
   @Override
@@ -96,15 +106,20 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     }
   }
 
+  @Nullable
+  @Override
+  public SNodeReference getRuleNode() {
+    return myRuleNode;
+  }
 
   @Override
   public String getRuleId() {
-    return myRuleId;
+    return myRuleNode == null ? null : myRuleNode.getNodeId().toString();
   }
 
   @Override
   public String getRuleModel() {
-    return myRuleModel;
+    return myRuleNode == null ? null : myRuleNode.getModelReference().toString();
   }
 
 }
