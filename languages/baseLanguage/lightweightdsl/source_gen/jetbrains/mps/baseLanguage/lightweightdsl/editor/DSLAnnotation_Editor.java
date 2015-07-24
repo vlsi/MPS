@@ -99,7 +99,7 @@ public class DSLAnnotation_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createConstant_7acym8_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dslclass");
     editorCell.setCellId("Constant_7acym8_c0a");
     editorCell.setDefaultText("");
     return editorCell;

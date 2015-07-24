@@ -37,7 +37,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " class");
+    event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " dslclass");
     event.getPresentation().setIcon(IconManager.getIcon(SNodeOperations.asSConcept(SLinkOperations.getTarget(NewClassLike_Action.this.descr, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")))));
   }
   @Override

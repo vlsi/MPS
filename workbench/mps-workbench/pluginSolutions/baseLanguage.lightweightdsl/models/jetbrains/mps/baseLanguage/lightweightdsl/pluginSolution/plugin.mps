@@ -680,7 +680,7 @@
               <ref role="37wK5l" to="qkt:~Presentation.setText(java.lang.String):void" resolve="setText" />
               <node concept="3cpWs3" id="2WSWNq1RODq" role="37wK5m">
                 <node concept="Xl_RD" id="2WSWNq1ROD_" role="3uHU7w">
-                  <property role="Xl_RC" value=" class" />
+                  <property role="Xl_RC" value=" dslclass" />
                 </node>
                 <node concept="2OqwBi" id="2WSWNq1RNK5" role="3uHU7B">
                   <node concept="2OqwBi" id="2WSWNq1RMUX" role="2Oq$k0">

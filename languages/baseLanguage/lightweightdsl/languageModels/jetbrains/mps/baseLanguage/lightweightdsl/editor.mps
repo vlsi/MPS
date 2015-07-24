@@ -484,7 +484,7 @@
     <ref role="1XX52x" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
     <node concept="3EZMnI" id="3geGFOI14uD" role="2wV5jI">
       <node concept="3F0ifn" id="3crTN2XYLYs" role="3EZMnx">
-        <property role="3F0ifm" value="class-like" />
+        <property role="3F0ifm" value="dslclass" />
       </node>
       <node concept="3F0A7n" id="3crTN2XYLYt" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -761,7 +761,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="2WSWNq1RWTO" role="3EZMnx">
-          <property role="3F0ifm" value="class" />
+          <property role="3F0ifm" value="dslclass" />
         </node>
       </node>
       <node concept="2SsqMj" id="36gOZBLN72$" role="3EZMnx" />
