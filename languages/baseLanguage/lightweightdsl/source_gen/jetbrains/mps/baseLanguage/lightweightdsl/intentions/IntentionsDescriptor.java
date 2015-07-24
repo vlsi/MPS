@@ -29,8 +29,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 0:
         // Concept: ClassConcept 
         if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
+          myIntentions0 = new IntentionFactory[2];
           myIntentions0[0] = new InitClassLike_Intention();
+          myIntentions0[1] = new AddClasslikeAnnotation_Intention();
         }
         return Arrays.asList(myIntentions0);
       case 1:
@@ -48,9 +49,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[2];
+    IntentionFactory[] rv = new IntentionFactory[3];
     rv[0] = new SwitchConditional_Intention();
     rv[1] = new InitClassLike_Intention();
+    rv[2] = new AddClasslikeAnnotation_Intention();
     return Arrays.asList(rv);
   }
 }
