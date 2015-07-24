@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,20 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.BaseScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.iterable.CollectManyIterator;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 
+/**
+ * Global in a sense 'global for a given repository'. Since we used to have single repository, deemed 'global'.
+ */
 public class GlobalScope extends BaseScope implements CoreComponent {
   private static GlobalScope INSTANCE;
 
@@ -33,12 +38,10 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return INSTANCE;
   }
 
-  protected final MPSModuleRepository myMPSModuleRepository;
-  protected final SModelRepository myModelRepository;
+  protected final SRepository myRepository;
 
-  public GlobalScope(MPSModuleRepository moduleRepository, SModelRepository repository) {
-    myMPSModuleRepository = moduleRepository;
-    myModelRepository = repository;
+  public GlobalScope(SRepository moduleRepository) {
+    myRepository = moduleRepository;
   }
 
   @Override
@@ -59,23 +62,36 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return "global scope";
   }
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
-    return myMPSModuleRepository.getModules();
+    return myRepository.getModules();
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> getModels() {
-    return new ArrayList<SModel>(myModelRepository.getModelDescriptors());
+    return new Iterable<SModel>() {
+      @Override
+      public Iterator<SModel> iterator() {
+        return new CollectManyIterator<SModule, SModel>(getModules()) {
+          @Nullable
+          @Override
+          protected Iterator<SModel> translate(SModule module) {
+            return module.getModels().iterator();
+          }
+        };
+      }
+    };
   }
 
   @Override
   public SModule resolve(SModuleReference reference) {
-    return myMPSModuleRepository.getModule(reference.getModuleId());
+    return myRepository.getModule(reference.getModuleId());
   }
 
   @Override
   public SModel resolve(SModelReference reference) {
-    return myModelRepository.getModelDescriptor(reference.getModelId());
+    return reference.resolve(myRepository);
   }
 }

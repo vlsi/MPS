@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseScope implements SearchScope {
+  @NotNull
   @Override
   public abstract Iterable<SModule> getModules();
 

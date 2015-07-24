@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -52,6 +53,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+// not deprecated yet, despite access and methods are, as it might be reasonable to
+// keep a facility that gives access to all models of an SRepository (alternative to SRepository.getAllModels method). Or do it with SearchScope?
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
@@ -143,11 +146,21 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  /**
+   * @deprecated this method makes sense for {@link SModelId#isGloballyUnique() globally unique} model id only, but doesn't manifest this contract.
+   *             Use {@link SModelReference#resolve(SRepository)} instead
+   */
+  @Deprecated
   @Nullable
   public SModel getModelDescriptor(@NotNull SModelReference modelReference) {
     return getModelDescriptor(modelReference.getModelId());
   }
 
+  /**
+   * @deprecated this method makes sense for {@link SModelId#isGloballyUnique() globally unique} model id only, but doesn't manifest this contract.
+   *             Use {@link SModelReference#resolve(SRepository)} instead
+   */
+  @Deprecated
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
     if (value == null && isVerboseJavaStubModelId(id) ) {

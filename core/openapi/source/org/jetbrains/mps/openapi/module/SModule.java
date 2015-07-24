@@ -85,7 +85,9 @@ public interface SModule {
    * FIXME decide whether we need resolveInDependencies(SModelReference), which might be handy to give module control over
    *   dependency resolution, or do the scope control (whether module of model requested belongs to imports of this module) externally.
    *   Perhaps, there's a case when one knows only SModelId (i.e. looks up smth like "java.io", and we'd need a method to return a collection
-   *   of models with this id visible from dependencies then)
+   *   of models with this id visible from dependencies then).
+   *   Another approach is to expose smth like getScope() (which is already in AbstractModule), to encapsulate scope control. It would be both separate and
+   *   controlled by module (consider TransientModelsModule which needs to resolve references between transient models that are not published in a repository)
    *
    * Find the specified model among the dependencies.
    * Models of this module ({@link #getModel(SModelId)}) are considered and take precedence over models from dependency modules

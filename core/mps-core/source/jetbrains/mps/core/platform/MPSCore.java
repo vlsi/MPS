@@ -37,11 +37,9 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
@@ -106,7 +104,7 @@ public final class MPSCore extends ComponentPluginBase {
     CleanupManager cleanupManager = init(new CleanupManager(myClassLoaderManager));
     init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
-    init(new GlobalScope(myModuleRepository, modelRepository));
+    init(new GlobalScope(myModuleRepository));
     init(new ImmatureReferences(myModuleRepository));
 
     init(new QueryMethodGenerated(myClassLoaderManager));
