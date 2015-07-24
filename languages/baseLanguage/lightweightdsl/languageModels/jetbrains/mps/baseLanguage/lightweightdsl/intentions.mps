@@ -335,7 +335,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="5KZRo2klptI" role="3uHU7B">
-              <property role="Xl_RC" value="Inilialize " />
+              <property role="Xl_RC" value="Iniltialize " />
             </node>
           </node>
         </node>
