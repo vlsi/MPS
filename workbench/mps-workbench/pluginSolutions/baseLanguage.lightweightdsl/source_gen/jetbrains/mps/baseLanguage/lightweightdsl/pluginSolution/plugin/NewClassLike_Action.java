@@ -16,11 +16,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.intentions.ClassLikeInitHelper;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NewClassLike_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -65,7 +72,16 @@ public class NewClassLike_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SNode newClass = SNodeOperations.cast(SNodeFactoryOperations.createNewRootNode(event.getData(MPSCommonDataKeys.MODEL), ((SConcept) SNodeOperations.asSConcept(DSLDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr))), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    SAbstractConcept c = SNodeOperations.asSConcept(DSLDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr));
+    SNode newClass;
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      newClass = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), null);
+      event.getData(MPSCommonDataKeys.MODEL).addRootNode(newClass);
+      AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation")), createDSLAnnotation_3skzbb_a0c0c0a(NewClassLike_Action.this.descr));
+      ClassLikeInitHelper.init(newClass, NewClassLike_Action.this.descr, event.getData(MPSCommonDataKeys.MODEL));
+    } else {
+      newClass = SNodeOperations.cast(SNodeFactoryOperations.createNewRootNode(event.getData(MPSCommonDataKeys.MODEL), ((SConcept) c), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    }
     if (!(NewRootNodeAction.trySelectInCurrentPane(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass))) {
       NavigationSupport.getInstance().selectInTree(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, false);
     }
@@ -82,5 +98,11 @@ public class NewClassLike_Action extends BaseAction {
   }
   public static String descr_State(SNode object) {
     return object.getNodeId().toString();
+  }
+  private static SNode createDSLAnnotation_3skzbb_a0c0c0a(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"), null, null, false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor"), (SNode) p0);
+    return n1;
   }
 }
