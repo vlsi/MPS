@@ -10,6 +10,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements DSLClassMember_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public CustomMemberDescriptor_BehaviorDescriptor() {
   }
+  public SNode virtual_createForClass_6478870542308635887(SNode thisNode, SNode cls) {
+    return DSLClassMember_Behavior.virtual_createForClass_6478870542308635887(thisNode, cls);
+  }
   public SNode virtual_create_8260330507834998478(SNode thisNode) {
     return CustomMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
   }
@@ -27,9 +30,6 @@ public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_Behav
   }
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CustomMemberDescriptor_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-  public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
-    DSLClassMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }
   @Override
   public String getConceptFqName() {

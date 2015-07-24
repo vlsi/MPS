@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class EmptyMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements DSLClassMember_BehaviorDescriptor {
   public EmptyMemberDescriptor_BehaviorDescriptor() {
   }
+  public SNode virtual_createForClass_6478870542308635887(SNode thisNode, SNode cls) {
+    return EmptyMemberDescriptor_Behavior.virtual_createForClass_6478870542308635887(thisNode, cls);
+  }
   public SNode virtual_create_8260330507834998478(SNode thisNode) {
     return EmptyMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
   }
@@ -19,9 +22,6 @@ public class EmptyMemberDescriptor_BehaviorDescriptor extends BaseConcept_Behavi
   }
   public String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
     return EmptyMemberDescriptor_Behavior.virtual_getMatchingText_2736582054146581585(thisNode);
-  }
-  public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
-    EmptyMemberDescriptor_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }
   @Override
   public String getConceptFqName() {

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface DSLClassMember_BehaviorDescriptor {
-  public void virtual_init_6478870542308635887(SNode thisNode, SNode cls);
+  public SNode virtual_createForClass_6478870542308635887(SNode thisNode, SNode cls);
   public Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls);
   public Iterable<SNode> virtual_findPlaceholders_6909536935410952255(SNode thisNode, SNode cls);
   public SNode virtual_create_8260330507834998478(SNode thisNode);
