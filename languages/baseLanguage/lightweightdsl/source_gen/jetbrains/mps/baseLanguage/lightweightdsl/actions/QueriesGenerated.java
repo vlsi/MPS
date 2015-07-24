@@ -151,4 +151,24 @@ public class QueriesGenerated {
       }
     }
   }
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MemberModifier_6305381134221450445(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    return result;
+  }
+  public static void removeActionsByCondition_6305381134221473965(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
+    Iterator<SubstituteAction> actions = _context.getSubstituteActions();
+    while (actions.hasNext()) {
+      SubstituteAction current = actions.next();
+      SNode outputConcept = (SNode) current.getOutputConcept();
+      SNode applicableConcept = MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x2f38f33681e6c5feL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberModifier").getDeclarationNode();
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode concept) {
+          return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember"), true, false), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), SNodeOperations.asSConcept(concept))).isNotEmpty();
+        }
+      };
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
+        actions.remove();
+      }
+    }
+  }
 }

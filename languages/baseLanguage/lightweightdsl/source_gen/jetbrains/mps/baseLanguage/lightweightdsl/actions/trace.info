@@ -16,11 +16,12 @@
       <unit at="36,42,40,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$1" />
       <unit at="70,42,74,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$3" />
       <unit at="104,42,108,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$5" />
+      <unit at="164,34,168,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$8" />
       <unit at="139,34,148,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$7" />
       <unit at="111,57,126,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$6" />
       <unit at="43,57,61,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$2" />
       <unit at="77,57,95,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$4" />
-      <unit at="29,0,155,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated" />
+      <unit at="29,0,175,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/1055884086724932453">
@@ -165,6 +166,12 @@
       <unit id="544737153667003944" at="79,393,83,17" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$5" />
       <unit id="544737153667087471" at="113,393,117,17" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$7" />
       <unit id="544737153667144511" at="142,474,146,11" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$8" />
+    </file>
+  </root>
+  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/6305381134221450438">
+    <file name="QueriesGenerated.java">
+      <node id="6305381134221450767" at="165,43,166,525" concept="5" />
+      <scope id="6305381134221473967" at="165,43,166,525" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/9097849371504700257">
