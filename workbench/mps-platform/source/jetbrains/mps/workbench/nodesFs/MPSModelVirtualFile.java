@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,12 @@ package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -47,28 +45,28 @@ public class MPSModelVirtualFile extends VirtualFile {
   public static final String MODEL_PREFIX = "model://";
 
   private final SModelReference myModelReference;
-
-  private final int myId = DummyFileIdGenerator.next();
+  private final MPSNodesVirtualFileSystem myFileSystem;
 
   private String myName;
   private String myPath;
 
-  MPSModelVirtualFile(SModelReference modelReference) {
+  MPSModelVirtualFile(@NotNull SModelReference modelReference, @NotNull MPSNodesVirtualFileSystem vfs) {
     myModelReference = modelReference;
+    myFileSystem = vfs;
     updateFields();
   }
 
   private void updateFields() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myFileSystem.getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
+        SModel model = myModelReference.resolve(myFileSystem.getRepository());
         if (model == null) {
           LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
           myName = "";
           myPath = "";
         } else {
-          myName = JavaNameUtil.shortName(String.valueOf(model.getModelName()));
+          myName = NameUtil.shortNameFromLongName(model.getModelName());
           myPath = MODEL_PREFIX + NiceReferenceSerializer.serializeModel(model);
         }
       }
@@ -88,7 +86,7 @@ public class MPSModelVirtualFile extends VirtualFile {
   @NotNull
   @Override
   public VirtualFileSystem getFileSystem() {
-    return MPSNodesVirtualFileSystem.getInstance();
+    return myFileSystem;
   }
 
   @Override
@@ -114,12 +112,13 @@ public class MPSModelVirtualFile extends VirtualFile {
   @Override
   public VirtualFile getParent() {
     // hack
-    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+    return new ModelAccessHelper(myFileSystem.getRepository()).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        if (myModelReference == null) return null;
-        SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
-        if (model == null) return null;
+        SModel model = myModelReference.resolve(myFileSystem.getRepository());
+        if (model == null) {
+          return null;
+        }
         DataSource ds = model.getSource();
         if (ds instanceof FileDataSource) {
           return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
@@ -161,7 +160,6 @@ public class MPSModelVirtualFile extends VirtualFile {
 
   @Override
   public void refresh(boolean asynchronous, boolean recursive, @Nullable Runnable postRunnable) {
-
   }
 
   @Override

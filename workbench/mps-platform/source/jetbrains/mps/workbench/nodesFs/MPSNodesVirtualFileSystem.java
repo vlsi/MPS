@@ -24,6 +24,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -41,7 +42,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
@@ -62,9 +62,11 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
   public MPSNodesVirtualFileSystem(MPSCoreComponents coreComponents) {
     // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
-    myRepositoryListener = new MyRepositoryListener(coreComponents.getModuleRepository());
+    myRepository = coreComponents.getModuleRepository();
+    myRepositoryListener = new MyRepositoryListener(myRepository);
   }
 
+  private final SRepository myRepository;
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private final SRepositoryContentAdapter myRepositoryListener;
@@ -87,9 +89,11 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   }
 
   public MPSModelVirtualFile getFileFor(@NotNull final SModelReference modelReference) {
-    if (myModelVirtualFiles.containsKey(modelReference)) return myModelVirtualFiles.get(modelReference);
+    if (myModelVirtualFiles.containsKey(modelReference)) {
+      return myModelVirtualFiles.get(modelReference);
+    }
 
-    final MPSModelVirtualFile vf = new MPSModelVirtualFile(modelReference);
+    final MPSModelVirtualFile vf = new MPSModelVirtualFile(modelReference, this);
     myModelVirtualFiles.put(modelReference, vf);
 
     return vf;
@@ -104,17 +108,19 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
   @Override
   public void initComponent() {
+    // can change to openapi.CommandListener once have visitor support for new model events
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
+    // can't change to repository listener as it doesn't react to model import changes
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
 
-    // FIXME use mpsProject.getRepository once it's capable to send events
-    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myRepositoryListener).attach();
+    // FIXME use mpsProject.getRepository or myRepository once it's capable to send module add/remove events
+    assert myRepository == MPSModuleRepository.getInstance();
+    new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
   }
 
   @Override
   public void disposeComponent() {
-    // FIXME use mpsProject.getRepository once it's capable to send events
-    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myRepositoryListener).detach();
+    new RepoListenerRegistrar(myRepository, myRepositoryListener).detach();
 
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
@@ -131,19 +137,19 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
-    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+    return new ModelAccessHelper(myRepository).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
         try {
           if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNode node = NiceReferenceSerializer.deserializeNode(MPSModuleRepository.getInstance(), path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
+            SNode node = NiceReferenceSerializer.deserializeNode(myRepository, path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
             if (node == null) {
               return null;
             }
             return getFileFor(node);
           } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
             SModel model =
-                NiceReferenceSerializer.deserializeModel(MPSModuleRepository.getInstance(), path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+                NiceReferenceSerializer.deserializeModel(myRepository, path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
             if (model == null) {
               return null;
             }
@@ -189,6 +195,10 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
   /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
     myVirtualFiles.remove(nodeRef);
+  }
+
+  /*package*/ SRepository getRepository() {
+    return myRepository;
   }
 
   @Override
@@ -273,8 +283,6 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
     @Override
     public void visitPropertyEvent(final SModelPropertyEvent event) {
-      if (!SNodeUtil.isAccessible(event.getNode(), MPSModuleRepository.getInstance())) return;
-
       MPSNodeVirtualFile vf = getVirtualFile(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
       if (!(event.getNode().getModel() != null && event.getNode().getParent() == null) || vf == null)
         return;
