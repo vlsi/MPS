@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -46,22 +47,28 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(AbstractEditorRegistry.class));
 
   private final EditorCellFactory myCellFactory;
-  private Comparator<BaseConceptEditor> myEditorComparator;
+  private static Comparator<BaseConceptEditor> myEditorComparator;
+  private static Comparator<BaseConceptEditor> myAncestorEditorComparator;
 
   protected AbstractEditorRegistry(EditorCellFactory cellFactory) {
     myCellFactory = cellFactory;
   }
-
   T getEditor(ConceptDescriptor conceptDescriptor) {
+    Iterator<T> iterator = getEditors(conceptDescriptor).iterator();
+    return iterator.hasNext() ? iterator.next() : null;
+  }
+
+  Iterable<T> getEditors(ConceptDescriptor conceptDescriptor) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);
     processedConcepts.add(conceptDescriptor.getId());
+    List<T> resultList = new ArrayList<T>();
     while (!queue.isEmpty()) {
       ConceptDescriptor nextConcept = queue.remove();
       T conceptEditor = getEditorForConcept(nextConcept);
       if (conceptEditor != null) {
-        return conceptEditor;
+        resultList.add(conceptEditor);
       }
       for (SConceptId ancestorId : nextConcept.getParentsIds()) {
         if (processedConcepts.contains(ancestorId)) {
@@ -71,7 +78,8 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
         queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorId));
       }
     }
-    return null;
+    Collections.sort(resultList, getAncestorEditorComparator());
+    return resultList;
   }
 
   private T getEditorForConcept(ConceptDescriptor conceptDescriptor) {
@@ -138,7 +146,7 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
         mainEditor.getClass() + ".";
   }
 
-  private Comparator<BaseConceptEditor> getEditorComparator() {
+  private static Comparator<BaseConceptEditor> getEditorComparator() {
     if (myEditorComparator == null) {
       myEditorComparator = new Comparator<BaseConceptEditor>() {
         @Override
@@ -151,6 +159,17 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
       };
     }
     return myEditorComparator;
+  }
+  private static Comparator<BaseConceptEditor> getAncestorEditorComparator() {
+    if (myAncestorEditorComparator == null) {
+      myAncestorEditorComparator = new Comparator<BaseConceptEditor>() {
+        @Override
+        public int compare(BaseConceptEditor editor1, BaseConceptEditor editor2) {
+          return editor2.getContextHints().size() - editor1.getContextHints().size();
+        }
+      };
+    }
+    return myAncestorEditorComparator;
   }
 
   protected abstract Collection<T> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor);

@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.update;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -78,6 +79,19 @@ public interface UpdateSession {
    * @param cell cell representing "big" cell in MPS editor
    */
   void registerAsBigCell(EditorCell cell);
+
+  /**
+   * Should be called as a part of incremental update of EditorCells tree represented
+   * inside associated EditorComponent only.
+   * <p/>
+   *
+   * Can be called to update editor cell for the current node. Excluded editor
+   * will not be considered as a candidate for current node editor
+   *
+   * @param node - node to create cell for
+   * @param excludedEditor = editor class which has to be excluded from
+   */
+  EditorCell redispatchNodeCell(SNode node, Class<? extends ConceptEditor> excludedEditor);
 
   /**
    * Should be called as a part of incremental update of EditorCells tree represented
