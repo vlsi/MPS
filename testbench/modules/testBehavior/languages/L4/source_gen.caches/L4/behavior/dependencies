@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="L4.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="L4.behavior.C1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="L4.behavior.C1_Behavior" file="C1_Behavior.java">
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="L4.behavior.C1_BehaviorDescriptor" file="C1_BehaviorDescriptor.java">
+    <classNode dependClassName="L4.behavior.C1_Behavior" />
+    <classNode dependClassName="L4.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="L4.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="L4.behavior.I1_Behavior" file="I1_Behavior.java">
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="L4.behavior.I1_BehaviorDescriptor" file="I1_BehaviorDescriptor.java">
+    <classNode dependClassName="L4.behavior.I_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="L4.behavior.I2_Behavior" file="I2_Behavior.java">
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="L4.behavior.I2_BehaviorDescriptor" file="I2_BehaviorDescriptor.java">
+    <classNode dependClassName="L4.behavior.I_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="L4.behavior.I_Behavior" file="I_Behavior.java">
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="L4.behavior.I_BehaviorDescriptor" file="I_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+</dependenciesRoot>
+

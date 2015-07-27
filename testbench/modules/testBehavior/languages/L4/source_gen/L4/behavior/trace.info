@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="L4.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="C1_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="L4.behavior.C1_BehaviorDescriptor" />
+    </file>
+    <file name="I1_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="L4.behavior.I1_BehaviorDescriptor" />
+    </file>
+    <file name="I2_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="L4.behavior.I2_BehaviorDescriptor" />
+    </file>
+    <file name="I_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="L4.behavior.I_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007471058">
+    <file name="I_Behavior.java">
+      <node id="7688460527007471076" at="11,72,12,33" concept="0" />
+      <node id="7688460527007471058" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7688460527007471058" at="11,0,14,0" concept="1" trace="virtual_foo_7688460527007471061#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <scope id="7688460527007471060" at="9,43,9,43" />
+      <scope id="7688460527007471064" at="11,72,12,33" />
+      <scope id="7688460527007471058" at="9,0,11,0">
+        <var name="thisNode" id="7688460527007471058" />
+      </scope>
+      <scope id="7688460527007471058" at="11,0,14,0">
+        <var name="thisNode" id="7688460527007471058" />
+      </scope>
+      <unit id="7688460527007471058" at="8,0,15,0" name="L4.behavior.I_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472020">
+    <file name="I1_Behavior.java">
+      <node id="7688460527007472035" at="11,72,12,34" concept="0" />
+      <node id="7688460527007472020" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7688460527007472020" at="11,0,14,0" concept="1" trace="virtual_foo_7688460527007471061#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <scope id="7688460527007472022" at="9,43,9,43" />
+      <scope id="7817628362470493460" at="11,72,12,34" />
+      <scope id="7688460527007472020" at="9,0,11,0">
+        <var name="thisNode" id="7688460527007472020" />
+      </scope>
+      <scope id="7688460527007472020" at="11,0,14,0">
+        <var name="thisNode" id="7688460527007472020" />
+      </scope>
+      <unit id="7688460527007472020" at="8,0,15,0" name="L4.behavior.I1_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472112">
+    <file name="I2_Behavior.java">
+      <node id="7688460527007472127" at="11,72,12,34" concept="0" />
+      <node id="7688460527007472112" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7688460527007472112" at="11,0,14,0" concept="1" trace="virtual_foo_7688460527007471061#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <scope id="7688460527007472114" at="9,43,9,43" />
+      <scope id="7817628362470494083" at="11,72,12,34" />
+      <scope id="7688460527007472112" at="9,0,11,0">
+        <var name="thisNode" id="7688460527007472112" />
+      </scope>
+      <scope id="7688460527007472112" at="11,0,14,0">
+        <var name="thisNode" id="7688460527007472112" />
+      </scope>
+      <unit id="7688460527007472112" at="8,0,15,0" name="L4.behavior.I2_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007475860">
+    <file name="C1_Behavior.java">
+      <node id="7817628362470494390" at="11,72,12,34" concept="0" />
+      <node id="7688460527007475860" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7688460527007475860" at="11,0,14,0" concept="1" trace="virtual_foo_7688460527007471061#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <scope id="7688460527007475862" at="9,43,9,43" />
+      <scope id="7817628362470494308" at="11,72,12,34" />
+      <scope id="7688460527007475860" at="9,0,11,0">
+        <var name="thisNode" id="7688460527007475860" />
+      </scope>
+      <scope id="7688460527007475860" at="11,0,14,0">
+        <var name="thisNode" id="7688460527007475860" />
+      </scope>
+      <unit id="7688460527007475860" at="8,0,15,0" name="L4.behavior.C1_Behavior" />
+    </file>
+  </root>
+</debug-info>
+
