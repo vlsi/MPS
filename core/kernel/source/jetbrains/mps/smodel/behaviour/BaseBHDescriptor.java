@@ -29,9 +29,7 @@ import org.jetbrains.mps.util.DepthFirstConceptIterator;
 import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -138,27 +136,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   @Override
   public final SAbstractConcept getConcept() {
     return myConcept;
-  }
-
-  static class BHVirtualMethodTable {
-    private final Map<SMethod, BaseBHDescriptor> myTable = new HashMap<SMethod, BaseBHDescriptor>();
-
-    public void put(@NotNull SMethod method, @NotNull BaseBHDescriptor descriptor) {
-      if (!method.getMethodModifiers().isVirtual()) {
-        throw new IllegalArgumentException("Method " + method + " must be virtual to be registered in the Virtual Table");
-      }
-      // only new virtual method implementations need to be recorded
-      for (SMethod methodSeen : myTable.keySet()) {
-        if (SMethod.overrides(methodSeen, method)) {
-          return;
-        }
-      }
-      myTable.put(method, descriptor);
-    }
-
-    @NotNull public BaseBHDescriptor get(@NotNull SMethod method) {
-      return myTable.get(method);
-    }
   }
 
   private class ConstructionHandler {
