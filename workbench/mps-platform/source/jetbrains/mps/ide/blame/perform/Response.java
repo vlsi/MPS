@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -59,10 +59,6 @@ public class Response {
   @Nullable
   public Element getResponseXml() {
     String responseString = getResponseString();
-    return responseAsElement(responseString);
-  }
-
-  public static Element responseAsElement(String responseString) {
     if (responseString == null || responseString.isEmpty()) {
       return null;
     }

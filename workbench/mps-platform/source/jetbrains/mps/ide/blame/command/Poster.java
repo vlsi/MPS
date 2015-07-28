@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,11 @@ import jetbrains.mps.ide.blame.perform.Executor;
 import jetbrains.mps.ide.blame.perform.Performable;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.params.HttpClientParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class Poster {
-  private static final int TIMEOUT = 5000;
+  /*package*/ static final int DEFAULT_TIMEOUT = 5000;
 
   private Executor myExecutor;
 
@@ -40,15 +38,15 @@ public class Poster {
       @Override
       @NotNull
       public Response perform() throws Exception {
-        HttpClient client = new HttpClient();
-        setTimeouts(client);
-        Response r = Command.login(client, query);
+        Command c = new Command();
+        c.setTimeouts(DEFAULT_TIMEOUT);
+        Response r = c.login(query);
         if (r.isSuccess()) {
-          r = Command.postIssue(client, query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
+          r = c.postIssue(query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
           String subsystem = query.getSubsystem();
           String id = r.getIssueId();
           if (r.isSuccess() && subsystem != null && id != null) {
-            Command.setIssueSubsystem(client, id, subsystem);
+            c.setIssueSubsystem(id, subsystem);
           }
         }
         return r;
@@ -62,18 +60,11 @@ public class Poster {
       @Override
       @NotNull
       public Response perform() throws Exception {
-        HttpClient client = new HttpClient();
-        setTimeouts(client);
-        return Command.login(client, query);
+        Command c = new Command();
+        c.setTimeouts(DEFAULT_TIMEOUT);;
+        return c.login(query);
       }
     };
     return myExecutor.execute(test);
-  }
-
-  public static void setTimeouts(HttpClient c) {
-    HttpClientParams params = c.getParams();
-    params.setConnectionManagerTimeout(TIMEOUT);
-    params.setSoTimeout(TIMEOUT);
-    c.setParams(params);
   }
 }

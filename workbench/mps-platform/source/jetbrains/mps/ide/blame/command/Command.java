@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,13 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.multipart.FilePart;
 import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
+import org.apache.commons.httpclient.params.HttpClientParams;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -35,13 +37,14 @@ import java.util.List;
 
 public class Command {
   public static final String YOUTRACK_BASE_URL = "https://youtrack.jetbrains.com";
-  public static final String LOGIN = "/rest/user/login";
-  public static final String POST_ISSUE = "/rest/issue/";
-  public static final String ISSUE_COMMAND_FORMAT = "/rest/issue/%s/execute";
   public static final String ISSUE_BASE_URL = YOUTRACK_BASE_URL + "/issue/";
+  private static final String LOGIN = "/rest/user/login";
+  private static final String POST_ISSUE = "/rest/issue/";
+  private static final String ISSUE_COMMAND_FORMAT = "/rest/issue/%s/execute";
+  private static final String LIST_VERSIONS = "/rest/admin/customfield/versionBundle/MPS%20Versions";
 
   private static final String PROJECT = "MPS";
-  private static final String EXCEPTION = "Exception";
+  private static final String EXCEPTION = "Auto-reported Exception";
 
   private static final String LOGIN_PARAM_NAME = "login";
   private static final String PASSWORD_PARAM_NAME = "password";
@@ -54,7 +57,21 @@ public class Command {
   private static final String COMMAND_PARAM_NAME = "command";
   private static final String SUBSYSTEM_COMMAND_FORMAT = "Subsystem %s";
 
-  public static Response login(final HttpClient c, Query query) throws IOException {
+  private final HttpClient c;
+
+  public Command() {
+    c = new HttpClient();
+  }
+
+  public void setTimeouts(int timeoutMillis) {
+    HttpClientParams params = c.getParams();
+    params.setConnectionManagerTimeout(timeoutMillis);
+    params.setSoTimeout(timeoutMillis);
+    c.setParams(params);
+  }
+
+
+  public Response login(Query query) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + LOGIN);
     p.addParameter(LOGIN_PARAM_NAME, query.getUser());
     p.addParameter(PASSWORD_PARAM_NAME, query.getPassword());
@@ -70,7 +87,7 @@ public class Command {
   }
 
   @NotNull
-  public static Response postIssue(HttpClient c, String summary, String description, boolean hidden, File... files) throws IOException {
+  public Response postIssue(String summary, String description, boolean hidden, File... files) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
     p.addParameter(PROJECT_PARAM_NAME, PROJECT);
     p.addParameter(SUMMARY_PARAM_NAME, summary);
@@ -101,7 +118,7 @@ public class Command {
   }
 
   @NotNull
-  public static Response setIssueSubsystem(HttpClient c, @NotNull String issueId, @NotNull String subsystem) throws IOException {
+  public Response setIssueSubsystem(@NotNull String issueId, @NotNull String subsystem) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + String.format(ISSUE_COMMAND_FORMAT, issueId));
     p.addParameter(COMMAND_PARAM_NAME, String.format(SUBSYSTEM_COMMAND_FORMAT, subsystem));
     c.executeMethod(p);
@@ -113,6 +130,16 @@ public class Command {
     } else {
       return new Response("Can't post issue", responseString, false, null);
     }
+  }
+
+  @NotNull
+  public Response listVersions() throws IOException {
+    GetMethod p = new GetMethod(YOUTRACK_BASE_URL + LIST_VERSIONS);
+    c.executeMethod(p);
+
+    int statusCode = p.getStatusCode();
+    String responseString = p.getResponseBodyAsString();
+    return new Response("List MPS versions", responseString, statusCode == 200, null);
   }
 
   public static String getVersion() {
