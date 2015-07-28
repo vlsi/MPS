@@ -241,6 +241,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     nodeToClick.autoscroll();
   }
 
+  // if we navigate to a node which is MPSTreeNode#isAutoExpandable() == true,
+  // it's automatically expanded, unless myAutoExpandEnabled == false
   public void runWithoutExpansion(Runnable r) {
     try {
       myAutoExpandEnabled = false;
