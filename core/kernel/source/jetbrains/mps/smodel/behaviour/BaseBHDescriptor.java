@@ -40,8 +40,8 @@ import java.util.Set;
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
+  protected final SAbstractConcept myConcept;
   private boolean myInitialized = false;
-  private final SAbstractConcept myConcept;
   private final BHVirtualMethodTable myVTable = new BHVirtualMethodTable();
   private final AncestorCache myAncestorCache;
   private final ConstructionHandler myConstructionHandler;

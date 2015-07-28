@@ -35,7 +35,7 @@ public interface BHDescriptor {
   SAbstractConcept getConcept(); // todo do we need that?
 
   class BHMethodNotFoundException extends RuntimeException {
-    public BHMethodNotFoundException(@NotNull SMethod method) {
+    public BHMethodNotFoundException(@NotNull SMethod<?> method) {
       super("The method " + method + " could not be found");
     }
   }

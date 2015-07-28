@@ -46,6 +46,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -2098,6 +2099,7 @@
       <node concept="3clFbS" id="47BD7OhLhii" role="3clF47" />
       <node concept="3Tm6S6" id="47BD7OhLi6N" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="1Am6JRr3AfC" role="jymVt" />
     <node concept="2YIFZL" id="47BD7OhLi6Q" role="jymVt">
       <property role="TrG5h" value="getDeclarationName" />
       <node concept="3clFbS" id="47BD7OhLi6T" role="3clF47">
@@ -2144,26 +2146,26 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4PdNqFi2dW4" role="3cqZAp">
-          <node concept="3cpWs3" id="4PdNqFi2enE" role="3clFbG">
-            <node concept="1rXfSq" id="4PdNqFi2ev1" role="3uHU7w">
+        <node concept="3cpWs6" id="1Am6JRr3AHA" role="3cqZAp">
+          <node concept="3cpWs3" id="1Am6JRr3AHB" role="3cqZAk">
+            <node concept="1rXfSq" id="1Am6JRr3AHC" role="3uHU7w">
               <ref role="37wK5l" node="47BD7OhMyYl" resolve="getMethodName" />
-              <node concept="3K4zz7" id="4PdNqFi2hdi" role="37wK5m">
-                <node concept="2OqwBi" id="4PdNqFi2eWH" role="3K4Cdx">
-                  <node concept="37vLTw" id="4PdNqFi2e_t" role="2Oq$k0">
+              <node concept="3K4zz7" id="1Am6JRr3AHD" role="37wK5m">
+                <node concept="2OqwBi" id="1Am6JRr3AHE" role="3K4Cdx">
+                  <node concept="37vLTw" id="1Am6JRr3AHF" role="2Oq$k0">
                     <ref role="3cqZAo" node="47BD7OhMBDY" resolve="baseMethod" />
                   </node>
-                  <node concept="3x8VRR" id="4PdNqFi2izQ" role="2OqNvi" />
+                  <node concept="3x8VRR" id="1Am6JRr3AHG" role="2OqNvi" />
                 </node>
-                <node concept="37vLTw" id="4PdNqFi2iPX" role="3K4GZi">
+                <node concept="37vLTw" id="1Am6JRr3AHH" role="3K4GZi">
                   <ref role="3cqZAo" node="47BD7OhLiLi" resolve="method" />
                 </node>
-                <node concept="37vLTw" id="4PdNqFi2iJQ" role="3K4E3e">
+                <node concept="37vLTw" id="1Am6JRr3AHI" role="3K4E3e">
                   <ref role="3cqZAo" node="47BD7OhMBDY" resolve="baseMethod" />
                 </node>
               </node>
             </node>
-            <node concept="37vLTw" id="4PdNqFi2jpq" role="3uHU7B">
+            <node concept="37vLTw" id="1Am6JRr3AHJ" role="3uHU7B">
               <ref role="3cqZAo" node="4PdNqFi2j6v" resolve="prefix" />
             </node>
           </node>
@@ -2178,6 +2180,7 @@
       </node>
       <node concept="17QB3L" id="47BD7OhLjkH" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="1Am6JRr3Aog" role="jymVt" />
     <node concept="2YIFZL" id="47BD7OhLka6" role="jymVt">
       <property role="TrG5h" value="getCallerMethodName" />
       <node concept="17QB3L" id="47BD7OhLnMD" role="3clF45" />
@@ -2207,6 +2210,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1Am6JRr3ApN" role="jymVt" />
     <node concept="2YIFZL" id="47BD7OhLl7D" role="jymVt">
       <property role="TrG5h" value="getSuperCallerMethodName" />
       <node concept="17QB3L" id="47BD7OhLmJr" role="3clF45" />
@@ -2236,6 +2240,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1Am6JRr3Arn" role="jymVt" />
     <node concept="2YIFZL" id="47BD7OhMyYl" role="jymVt">
       <property role="TrG5h" value="getMethodName" />
       <node concept="3clFbS" id="47BD7OhMyYo" role="3clF47">

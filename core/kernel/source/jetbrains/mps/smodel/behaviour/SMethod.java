@@ -25,7 +25,7 @@ import java.util.Arrays;
  */
 public final class SMethod<T> {
   private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
-  public static final SMethod INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.empty(), Void.class);
+  public static final SMethod<Void> INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.empty(), Void.class);
 
   private final String myName;
   private final Class<T> myReturnType;
@@ -91,6 +91,28 @@ public final class SMethod<T> {
     return String.format("%s:%s:%s:%s", myName, myMethodModifiers.toString(), myReturnType.toString(), Arrays.toString(myParameterTypes));
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof SMethod) {
+      SMethod another = (SMethod) o;
+      if (!this.getName().equals(another.getName())) return false;
+      if (!this.getReturnType().equals(another.getReturnType())) return false;
+      if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
+      if (!Arrays.equals(this.getParameterTypes(), another.getParameterTypes())) return false;
+      return true;
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int hashCode = myName.hashCode();
+    hashCode = 31 * hashCode + myReturnType.hashCode();
+    hashCode = 31 * hashCode + myMethodModifiers.hashCode();
+    hashCode = 31 * hashCode + Arrays.hashCode(myParameterTypes);
+    return hashCode;
+  }
+
   public static class BHMethodModifiers {
     private boolean myVirtual;
     private boolean myStatic;
@@ -122,6 +144,20 @@ public final class SMethod<T> {
 
     public void checkCorrectness() {
       // FIXME
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o instanceof BHMethodModifiers) {
+        BHMethodModifiers another = (BHMethodModifiers) o;
+        return this.isStatic() == another.isStatic() && this.isVirtual() == another.isVirtual();
+      }
+      return false;
+    }
+
+    @Override
+    public int hashCode() {
+      return 31 * Boolean.valueOf(myStatic).hashCode() + Boolean.valueOf(myVirtual).hashCode();
     }
 
     @Override
