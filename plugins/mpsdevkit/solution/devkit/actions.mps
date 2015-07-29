@@ -189,6 +189,7 @@
       </concept>
       <concept id="1213888653896" name="jetbrains.mps.lang.plugin.structure.InitBlock" flags="in" index="2xpIHi" />
       <concept id="1213888677711" name="jetbrains.mps.lang.plugin.structure.DisposeBlock" flags="in" index="2xpOpl" />
+      <concept id="1213888797251" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project" flags="nn" index="2xqhHp" />
       <concept id="3743831881070657672" name="jetbrains.mps.lang.plugin.structure.BaseNodeBlock" flags="in" index="2E2Kfa" />
       <concept id="3743831881070657680" name="jetbrains.mps.lang.plugin.structure.ListenBlock" flags="in" index="2E2Kfi" />
       <concept id="3743831881070611759" name="jetbrains.mps.lang.plugin.structure.EditorTab" flags="ng" index="2E2WTH">
@@ -4949,7 +4950,16 @@
             </node>
             <node concept="2ShNRf" id="6JP69lPx1ip" role="37vLTx">
               <node concept="1pGfFk" id="6JP69lPx1iq" role="2ShVmc">
-                <ref role="37wK5l" to="vfvt:~NodeExplorerComponent.&lt;init&gt;()" resolve="NodeExplorerComponent" />
+                <ref role="37wK5l" to="vfvt:~NodeExplorerComponent.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="NodeExplorerComponent" />
+                <node concept="2OqwBi" id="5dBDPMhH0HQ" role="37wK5m">
+                  <node concept="2xqhHp" id="5dBDPMhH0px" role="2Oq$k0" />
+                  <node concept="liA8E" id="5dBDPMhH0Qa" role="2OqNvi">
+                    <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="5dBDPMhH1ce" role="37wK5m">
+                      <ref role="3VsUkX" to="z1c5:~MPSProject" resolve="MPSProject" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

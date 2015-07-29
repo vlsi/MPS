@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,21 +18,22 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertyTreeNode extends TextTreeNode {
-  private String myProperty;
+  private final SProperty myProperty;
 
-  public PropertyTreeNode(SNode mainNode, String p) {
+  public PropertyTreeNode(SNode mainNode, SProperty p) {
     super(p + " = " + SNodeAccessUtil.getProperty(mainNode, p));
     myProperty = p;
     setIcon(Icons.DEFAULT_ICON);
-    setNodeIdentifier(myProperty);
+    setNodeIdentifier(myProperty.getName());
   }
 
   public String getProperty() {
-    return myProperty;
+    return myProperty.getName();
   }
 
   @Override

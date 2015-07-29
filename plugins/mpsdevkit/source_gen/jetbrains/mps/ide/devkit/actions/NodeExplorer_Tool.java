@@ -9,6 +9,7 @@ import jetbrains.mps.ide.devkit.components.NodeExplorerComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProject;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.tools.CloseAction;
@@ -27,7 +28,7 @@ public class NodeExplorer_Tool extends GeneratedTool {
   }
   public void init(Project project) {
     super.init(project);
-    NodeExplorer_Tool.this.myNodeExplorer = new NodeExplorerComponent();
+    NodeExplorer_Tool.this.myNodeExplorer = new NodeExplorerComponent(project.getComponent(MPSProject.class));
     NodeExplorer_Tool.this.myPanel = new JPanel(new BorderLayout());
     NodeExplorer_Tool.this.myPanel.add(NodeExplorer_Tool.this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();

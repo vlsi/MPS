@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,17 @@
 package jetbrains.mps.ide.devkit.components;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,10 +37,12 @@ import javax.swing.JScrollPane;
 
 public class NodeExplorerComponent {
   private final MyTree myTree = new MyTree();
+  private final MPSProject myProject;
   private SNodeReference myNode;
   private JScrollPane myScrollPane;
 
-  public NodeExplorerComponent() {
+  public NodeExplorerComponent(MPSProject mpsProject) {
+    myProject = mpsProject;
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myTree.setRootVisible(true);
   }
@@ -65,12 +68,17 @@ public class NodeExplorerComponent {
     }
 
     @Override
+    protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+      super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), nodeInitRunnable));
+    }
+
+    @Override
     protected MPSTreeNode rebuild() {
-      if (myNode == null || myNode.resolve(MPSModuleRepository.getInstance()) == null) {
+      if (myNode == null || myNode.resolve(myProject.getRepository()) == null) {
         return new TextTreeNode("no node");
       } else {
         TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(MPSModuleRepository.getInstance()));
+        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(myProject.getRepository()));
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
@@ -114,6 +122,7 @@ public class NodeExplorerComponent {
     }
   }
 
+  // FIXME see jetbrains.mps.ide.ui.smodel.ReferenceTreeNode
   private class MyReferentsNode extends TextTreeNode {
     private SNodeReference myNode;
     private boolean myIsInitialized = false;
@@ -130,10 +139,13 @@ public class NodeExplorerComponent {
 
     @Override
     protected void doInit() {
-      for (SReference reference : jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
-        SNode referent = reference.getTargetNode();
-        if (referent != null) {
-          add(new MySNodeTreeNode(referent, reference.getRole()));
+      SNode node = myNode.resolve(myProject.getRepository());
+      if (node != null) {
+        for (SReference reference : node.getReferences()) {
+          SNode referent = reference.getTargetNode();
+          if (referent != null) {
+            add(new MySNodeTreeNode(referent, reference.getRole()));
+          }
         }
       }
       myIsInitialized = true;
@@ -145,6 +157,7 @@ public class NodeExplorerComponent {
     }
   }
 
+  // FIXME there's PropertyTreeNode implementation, almost identical, re-use
   private class MyPropertiesNode extends TextTreeNode {
     private SNodeReference myNode;
     private boolean myIsInitialized = false;
@@ -161,11 +174,13 @@ public class NodeExplorerComponent {
 
     @Override
     protected void doInit() {
-      SNode node = myNode.resolve(MPSModuleRepository.getInstance());
-      for (String name : node.getPropertyNames()) {
-        TextTreeNode tn = new TextTreeNode(name + " : " + SNodeAccessUtil.getProperty(node, name));
-        tn.setIcon(Icons.DEFAULT_ICON);
-        add(tn);
+      SNode node = myNode.resolve(myProject.getRepository());
+      if (node != null) {
+        for (SProperty prop : node.getProperties()) {
+          TextTreeNode tn = new TextTreeNode(prop.getName() + " : " + SNodeAccessUtil.getProperty(node, prop));
+          tn.setIcon(Icons.DEFAULT_ICON);
+          add(tn);
+        }
       }
       myIsInitialized = true;
     }

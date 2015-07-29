@@ -19,22 +19,13 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
   private final Project myProject;
-  private SNode myNode;
-  private boolean myInitialized;
-
-  @Override
-  public boolean isLeaf() {
-    return true;
-  }
+  private final SNode myNode;
 
   public ConceptTreeNode(Project project, SNode node) {
     myProject = project;
@@ -48,23 +39,6 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   @Override
   public SNode getSNode() {
     return myNode;
-  }
-
-  @Override
-  public boolean isInitialized() {
-    return myInitialized;
-  }
-
-  @Override
-  protected void doInit() {
-    super.doInit();
-    myInitialized = true;
-  }
-
-  @Override
-  protected void doUpdate() {
-    super.doUpdate();
-    myInitialized = false;
   }
 
   @Override
