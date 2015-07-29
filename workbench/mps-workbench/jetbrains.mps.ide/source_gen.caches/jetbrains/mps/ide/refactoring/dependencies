@@ -2,11 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" file="ModelOrNodeChooser.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.MoveUpDialog" file="MoveUpDialog.java">

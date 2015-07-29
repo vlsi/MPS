@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,13 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import java.util.LinkedList;
 
-public abstract class ProjectTreeFindHelper {
+public final class ProjectTreeFindHelper {
+  private ProjectTree myProjectTree;
+
+  public ProjectTreeFindHelper(ProjectTree projectTree) {
+    myProjectTree = projectTree;
+  }
+
   public ProjectModuleTreeNode findMostSuitableModuleTreeNode(final @NotNull SModule module) {
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
@@ -302,7 +308,9 @@ public abstract class ProjectTreeFindHelper {
     return getTree().getProject();
   }
 
-  protected abstract ProjectTree getTree();
+  protected ProjectTree getTree() {
+    return myProjectTree;
+  }
 
   //-----------find module by model------------
 

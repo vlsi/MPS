@@ -243,6 +243,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   // if we navigate to a node which is MPSTreeNode#isAutoExpandable() == true,
   // it's automatically expanded, unless myAutoExpandEnabled == false
+  // XXX is there any case but select node in the runnable? Perhaps, could
+  // get better api (e.g. selectWithoutExpansion(MPSTreeNode)?)
   public void runWithoutExpansion(Runnable r) {
     try {
       myAutoExpandEnabled = false;

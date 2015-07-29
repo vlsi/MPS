@@ -103,12 +103,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       ProjectPane.this.updateFromRoot(true);
     }
   };
-  private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
-    @Override
-    protected ProjectTree getTree() {
-      return ProjectPane.this.getTree();
-    }
-  };
 
   private MyScrollPane myScrollPane;
   // FIXME there's update queue in MPSTree, do really we need both?
@@ -481,7 +475,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public void selectNextModel(SModel modelDescriptor) {
-    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
+    final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(modelDescriptor);
     // FIXME selectNextNode does the same, refactor. Check callers if need ThreadUtils at all
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
@@ -495,7 +489,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   public void selectNextNode(SNode node) {
-    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(node);
+    final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(node);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
@@ -507,7 +501,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   //----tree node selection queries---
 
   public MPSTreeNode findNextTreeNode(SNode node) {
-    return myFindHelper.findNextTreeNode(node);
+    return createFindHelper().findNextTreeNode(node);
   }
 
   private void fireComponentCreated() {
@@ -544,6 +538,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   public static boolean isShowGenStatus() {
     return ourShowGenStatus;
+  }
+
+  @NotNull
+  /*package*/ ProjectTreeFindHelper createFindHelper() {
+    return new ProjectTreeFindHelper(getTree());
   }
 
   //----UI----
@@ -644,7 +643,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
           // likely, by the time we got to this point (selection update), the reference is no longer valid, exit gracefully
           return;
         }
-        toSelect = myFindHelper.findMostSuitableModuleTreeNode(module);
+        toSelect = createFindHelper().findMostSuitableModuleTreeNode(module);
         if (toSelect == null) {
           LOG.warn("Couldn't select module \"" + myModule.getModuleName() + "\" : tree node not found.");
           return;
@@ -654,7 +653,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         if (model == null) {
           return;
         }
-        toSelect = myFindHelper.findMostSuitableModelTreeNode(model);
+        toSelect = createFindHelper().findMostSuitableModelTreeNode(model);
         if (toSelect == null) {
           LOG.warn("Couldn't select model \"" + myModel.getModelName() + "\" : tree node not found.");
           return;
@@ -664,7 +663,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         if (node == null) {
           return;
         }
-        toSelect = myFindHelper.findMostSuitableSNodeTreeNode(node);
+        toSelect = createFindHelper().findMostSuitableSNodeTreeNode(node);
         if (toSelect == null) {
           LOG.warn("Couldn't select node \"" + myNode.toString() + "\" : tree node not found.");
           return;

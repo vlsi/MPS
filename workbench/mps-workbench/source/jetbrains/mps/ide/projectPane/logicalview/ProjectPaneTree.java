@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -67,6 +67,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * GUESS: while {@link ProjectTree} is deemed for embedded UI components, e.g. in a dialog,
+ * this class is intended solely for ProjectPane, thus supports DnD, highlighting (although this might
+ * need move to ProjectPane, as it's project stuff and needs Idea's project Message bus), integration with
+ * editor (activation, auto-select/expand), etc.
+ */
 public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider, NodeNavigationProvider {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
@@ -168,7 +174,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+    return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<ActionGroup>() {
       @Override
       public ActionGroup compute() {
         return ProjectPaneActionGroups.getActionGroup(node);
