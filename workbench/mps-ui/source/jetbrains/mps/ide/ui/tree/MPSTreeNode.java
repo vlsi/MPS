@@ -147,7 +147,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   /**
    * Deemed for tree clients to ensure node is initialized (i.e. has its children).
    * If the node is already {@link #isInitialized() initialized}, does nothing.
-   * Otherwise, {@link jetbrains.mps.ide.ui.tree.MPSTree#doInit(MPSTreeNode)}  delegates} to owning tree, if any,
+   * Otherwise, {@link jetbrains.mps.ide.ui.tree.MPSTree#performInit(MPSTreeNode)}  delegates} to owning tree, if any,
    * to perform actual initialization, with respect to tree's considerations (e.g. might wrap with model read action or
    * "Loading..."  notification nodes).
    * Tree shall call {@link #doInit()} at some point where actual node initialization takes place.
@@ -159,7 +159,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }
     MPSTree tree = getTree();
     if (tree != null) {
-      tree.doInit(this);
+      tree.performInit(this);
     } else {
       doInit();
     }
