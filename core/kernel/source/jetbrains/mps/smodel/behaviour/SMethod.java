@@ -128,13 +128,13 @@ public final class SMethod<T> {
       return myVirtual;
     }
 
-    public BHMethodModifiers virtualOn() {
-      myVirtual = true;
+    public BHMethodModifiers virtualOn(boolean value) {
+      myVirtual = value;
       return this;
     }
 
-    public BHMethodModifiers staticOn() {
-      myStatic = true;
+    public BHMethodModifiers staticOn(boolean value) {
+      myStatic = value;
       return this;
     }
 

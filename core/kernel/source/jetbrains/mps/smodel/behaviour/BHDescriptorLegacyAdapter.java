@@ -75,10 +75,10 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
     BHMethodModifiers modifiers = BHMethodModifiers.empty();
     if (methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX)) {
-      modifiers = modifiers.virtualOn();
+      modifiers = modifiers.virtualOn(true);
     }
     if (method.getParameterTypes()[0].equals(SAbstractConcept.class)) {
-      modifiers = modifiers.staticOn();
+      modifiers = modifiers.staticOn(true);
     }
     return modifiers;
   }
