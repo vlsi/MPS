@@ -106,6 +106,9 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
+        <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
@@ -4441,12 +4444,11 @@
         </node>
         <node concept="3clFbF" id="2doG_VG59Lt" role="3cqZAp">
           <node concept="2OqwBi" id="2doG_VG59Lu" role="3clFbG">
-            <node concept="2YIFZM" id="2doG_VG59Lv" role="2Oq$k0">
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+            <node concept="1rXfSq" id="2q6iWMfPv7T" role="2Oq$k0">
+              <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
             </node>
             <node concept="liA8E" id="2doG_VG59Lw" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="2ShNRf" id="2doG_VG59Lx" role="37wK5m">
                 <node concept="YeOm9" id="2doG_VG59Ly" role="2ShVmc">
                   <node concept="1Y3b0j" id="2doG_VG59Lz" role="YeSDq">
@@ -4586,6 +4588,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcLFj" role="jymVt" />
       <node concept="3clFbW" id="2doG_VG59Mp" role="jymVt">
         <node concept="3cqZAl" id="2doG_VG59Mq" role="3clF45" />
         <node concept="3Tm1VV" id="2doG_VG59Mr" role="1B3o_S" />
@@ -4606,6 +4609,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcLlj" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59My" role="jymVt">
         <property role="TrG5h" value="load" />
         <node concept="37vLTG" id="2doG_VG59Mz" role="3clF46">
@@ -4625,6 +4629,40 @@
               <node concept="10Nm6u" id="2doG_VG59MG" role="3uHU7w" />
               <node concept="37vLTw" id="2BHiRxgm9S7" role="3uHU7B">
                 <ref role="3cqZAo" node="2doG_VG59Mz" resolve="project" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="5xd5qMUcK$G" role="3cqZAp">
+            <node concept="3clFbS" id="5xd5qMUcK$I" role="3clFbx">
+              <node concept="YS8fn" id="5xd5qMUcL3h" role="3cqZAp">
+                <node concept="2ShNRf" id="5xd5qMUcL3i" role="YScLw">
+                  <node concept="1pGfFk" id="5xd5qMUcL3j" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                    <node concept="3cpWs3" id="5xd5qMUcL3k" role="37wK5m">
+                      <node concept="Xl_RD" id="5xd5qMUcL3l" role="3uHU7w">
+                        <property role="Xl_RC" value="' does not exist" />
+                      </node>
+                      <node concept="3cpWs3" id="5xd5qMUcL3m" role="3uHU7B">
+                        <node concept="Xl_RD" id="5xd5qMUcL3n" role="3uHU7B">
+                          <property role="Xl_RC" value="The project file '" />
+                        </node>
+                        <node concept="37vLTw" id="5xd5qMUcLhl" role="3uHU7w">
+                          <ref role="3cqZAo" node="2doG_VG59Mz" resolve="project" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="5xd5qMUcL0V" role="3clFbw">
+              <node concept="2OqwBi" id="5xd5qMUcL0X" role="3fr31v">
+                <node concept="37vLTw" id="5xd5qMUcL0Y" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2doG_VG59Mz" resolve="project" />
+                </node>
+                <node concept="liA8E" id="5xd5qMUcL0Z" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                </node>
               </node>
             </node>
           </node>
@@ -4701,6 +4739,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcM1k" role="jymVt" />
       <node concept="3clFb_" id="6M6GmnHE0UE" role="jymVt">
         <property role="TrG5h" value="load" />
         <node concept="37vLTG" id="6M6GmnHE0UF" role="3clF46">
@@ -4726,6 +4765,40 @@
               <node concept="10Nm6u" id="6M6GmnHE0UO" role="3uHU7w" />
               <node concept="37vLTw" id="6M6GmnHEwzy" role="3uHU7B">
                 <ref role="3cqZAo" node="6M6GmnHE1_P" resolve="modulesFile" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="2q6iWMfPzLR" role="3cqZAp">
+            <node concept="3clFbS" id="2q6iWMfPzLT" role="3clFbx">
+              <node concept="YS8fn" id="2q6iWMfP$$F" role="3cqZAp">
+                <node concept="2ShNRf" id="2q6iWMfP$_c" role="YScLw">
+                  <node concept="1pGfFk" id="2q6iWMfPE2i" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                    <node concept="3cpWs3" id="2q6iWMfPEjT" role="37wK5m">
+                      <node concept="Xl_RD" id="2q6iWMfPEkh" role="3uHU7w">
+                        <property role="Xl_RC" value="' does not exist" />
+                      </node>
+                      <node concept="3cpWs3" id="2q6iWMfPEaU" role="3uHU7B">
+                        <node concept="Xl_RD" id="2q6iWMfPE3Q" role="3uHU7B">
+                          <property role="Xl_RC" value="The modules file '" />
+                        </node>
+                        <node concept="37vLTw" id="2q6iWMfPEcW" role="3uHU7w">
+                          <ref role="3cqZAo" node="6M6GmnHE1_P" resolve="modulesFile" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="2q6iWMfP$ta" role="3clFbw">
+              <node concept="2OqwBi" id="2q6iWMfP$tc" role="3fr31v">
+                <node concept="37vLTw" id="2q6iWMfP$td" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6M6GmnHE1_P" resolve="modulesFile" />
+                </node>
+                <node concept="liA8E" id="2q6iWMfP$te" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                </node>
               </node>
             </node>
           </node>
@@ -4929,6 +5002,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcMn2" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59O0" role="jymVt">
         <property role="TrG5h" value="load" />
         <node concept="37vLTG" id="6M6GmnHE2XC" role="3clF46">
@@ -5228,6 +5302,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcMGt" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59Rd" role="jymVt">
         <property role="TrG5h" value="setName" />
         <node concept="3cqZAl" id="2doG_VG59Re" role="3clF45" />
@@ -5252,6 +5327,7 @@
           <node concept="17QB3L" id="2doG_VG59Ro" role="1tU5fm" />
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcN1X" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59Rp" role="jymVt">
         <property role="TrG5h" value="getName" />
         <node concept="17QB3L" id="2doG_VG59Rq" role="3clF45" />
@@ -5264,6 +5340,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcNnI" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59Rv" role="jymVt">
         <property role="TrG5h" value="getModules" />
         <node concept="3uibUv" id="2doG_VG59Rw" role="3clF45">
@@ -5285,6 +5362,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5xd5qMUcNHO" role="jymVt" />
       <node concept="3clFb_" id="2doG_VG59RB" role="jymVt">
         <property role="TrG5h" value="addModule" />
         <node concept="37vLTG" id="2doG_VG59RC" role="3clF46">

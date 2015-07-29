@@ -55,6 +55,7 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -79,6 +80,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -112,6 +114,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -173,6 +176,15 @@
   </registry>
   <node concept="3s_ewN" id="6EMTxOPT2R6">
     <property role="3s_ewP" value="BHTest" />
+    <node concept="Wx3nA" id="74sHQpDbWx3" role="jymVt">
+      <property role="TrG5h" value="PROJECT_PATH" />
+      <property role="3TUv4t" value="true" />
+      <node concept="17QB3L" id="2q6iWMfPnJt" role="1tU5fm" />
+      <node concept="Xl_RD" id="74sHQpDbWx5" role="33vP2m">
+        <property role="Xl_RC" value="testbench/modules/testBehavior" />
+      </node>
+      <node concept="3Tm6S6" id="74sHQpDbWx6" role="1B3o_S" />
+    </node>
     <node concept="312cEg" id="4uPaNIY9iLm" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -978,8 +990,8 @@
                 <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
                   <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                    <node concept="Xl_RD" id="4uPaNIY9iFz" role="37wK5m">
-                      <property role="Xl_RC" value="/home/apyshkin/MPSProjects/BehaviorTest" />
+                    <node concept="37vLTw" id="2q6iWMfPjNq" role="37wK5m">
+                      <ref role="3cqZAo" node="74sHQpDbWx3" resolve="PROJECT_PATH" />
                     </node>
                   </node>
                 </node>
