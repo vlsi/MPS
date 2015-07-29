@@ -6,7 +6,8 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
@@ -72,12 +73,18 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       rebuildNow();
     }
   }
+
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable runnable) {
+    super.doInit(node, new ModelReadRunnable(myHierarchyView.getMPSProject().getModelAccess(), runnable));
+  }
+
   @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
       return new AbstractHierarchyTree.RootTextTreeNode(noNodeString());
     }
-    return ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
+    return new ModelAccessHelper(myHierarchyView.getMPSProject().getModelAccess()).runReadAction(new Computable<MPSTreeNode>() {
       @Override
       public MPSTreeNode compute() {
         return rebuildParentHierarchy();

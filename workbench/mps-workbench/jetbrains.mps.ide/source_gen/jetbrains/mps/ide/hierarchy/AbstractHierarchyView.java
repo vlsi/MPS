@@ -9,12 +9,12 @@ import com.intellij.ide.OccurenceNavigatorSupport;
 import com.intellij.openapi.project.Project;
 import javax.swing.Icon;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.pom.Navigatable;
 import javax.swing.tree.DefaultMutableTreeNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.usageView.UsageViewBundle;
 import java.awt.BorderLayout;
 import com.intellij.ui.ScrollPaneFactory;
@@ -50,6 +50,9 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
   }
+  public MPSProject getMPSProject() {
+    return getProject().getComponent(MPSProject.class);
+  }
   @Override
   public void disposeComponent() {
     if (myHierarchyTree == null) {
@@ -70,7 +73,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
         SNodeReference ptr = ((HierarchyTreeNode) node).getNodeReference();
 
-        Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr);
+        Navigatable n = new NodeNavigatable(getMPSProject(), ptr);
         return (n.canNavigate() ? n : null);
       }
       @Override
@@ -99,7 +102,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   }
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
   public void openNode(final SNodeReference nodeRef) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
     if (mpsProject == null) {
       return;
     }
@@ -176,10 +179,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   }
   public void showItemInHierarchy(SNode node) {
     myHierarchyTree.myHierarchyNode = node;
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-    if (mpsProject == null) {
-      return;
-    }
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {

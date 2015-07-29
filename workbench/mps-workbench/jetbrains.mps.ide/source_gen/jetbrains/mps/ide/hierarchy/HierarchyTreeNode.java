@@ -21,6 +21,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     myNodeRef = declaration.getReference();
     myHierarchyTree = tree;
     setNodeIdentifier(calculateNodeIdentifier());
+    setToggleClickCount(-1);
   }
   @Override
   protected void doUpdatePresentation() {
@@ -46,10 +47,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
     }
 
     return model.getReference().getModelName();
-  }
-  @Override
-  public int getToggleClickCount() {
-    return -1;
   }
   public SNode getNode() {
     return myNode;
