@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.ui.JBColor;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -39,9 +38,7 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -66,14 +63,14 @@ import java.util.Map;
 import java.util.Set;
 
 public class TypeSystemStateTree extends MPSTree implements DataProvider {
-  private IOperationContext myOperationContext;
+  private final Project myProject;
   private State myState;
   private EditorComponent myEditorComponent;
   private NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
 
-  public TypeSystemStateTree(IOperationContext operationContext, State state, EditorComponent editorComponent) {
-    myOperationContext = operationContext;
+  public TypeSystemStateTree(Project mpsProject, State state, EditorComponent editorComponent) {
+    myProject = mpsProject;
     myState = state;
     myEditorComponent = editorComponent;
     this.myHighlightManager = editorComponent.getHighlightManager();
@@ -224,7 +221,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   private void highlightNodesWithTypes(final Collection<? extends MPSTreeNode> treeNodes) {
     clearHighlighting();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
@@ -258,7 +255,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     final TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
     final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"),
         goToNode);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
@@ -273,14 +270,14 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
             group.add(new BaseAction("Go to node with type " + var) {
               @Override
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-                ModelAccess.instance().runWriteInEDT(new Runnable() {
+                myProject.getModelAccess().runWriteInEDT(new Runnable() {
                   @Override
                   public void run() {
-                    SNode node = pointer.resolve(MPSModuleRepository.getInstance());
+                    SNode node = pointer.resolve(myProject.getRepository());
                     if (node == null) {
                       return;
                     }
-                    NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
+                    NavigationSupport.getInstance().openNode(myProject, node, true, true);
                   }
                 });
               }
@@ -296,9 +293,6 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     TypeSystemStateTreeNode currentNode = (TypeSystemStateTreeNode) this.getCurrentNode();
-    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return myOperationContext;
-    }
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
       String ruleModel = currentNode.getRuleModel();
       String ruleId = currentNode.getRuleId();
