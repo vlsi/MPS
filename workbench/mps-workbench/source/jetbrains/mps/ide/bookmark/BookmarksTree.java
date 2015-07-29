@@ -25,7 +25,6 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,9 +34,8 @@ import java.util.List;
 import java.util.Map;
 
 public class BookmarksTree extends MPSTree {
-
-  private BookmarkManager myBookmarkManager;
-  private Project myProject;
+  private final BookmarkManager myBookmarkManager;
+  private final Project myProject;
 
   public BookmarksTree(Project project, BookmarkManager bookmarkManager) {
     myBookmarkManager = bookmarkManager;
@@ -53,17 +51,13 @@ public class BookmarksTree extends MPSTree {
       public void bookmarkRemoved(int number, SNode node) {
         rebuildBookmarksTree();
       }
-    });
-  }
 
-  private void rebuildBookmarksTree() {
-    myProject.getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        BookmarksTree.this.rebuildNow();
+      private void rebuildBookmarksTree() {
+        BookmarksTree.this.rebuildLater();
       }
     });
   }
+
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
@@ -95,7 +89,7 @@ public class BookmarksTree extends MPSTree {
     boolean hasBookmarks = false;
     for (int i = 0; i < nodePointers.size(); i++) {
       final SNodeReference nodePointer = nodePointers.get(i);
-      if (nodePointer != null && nodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      if (nodePointer != null && nodePointer.resolve(myProject.getRepository()) != null) {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
@@ -105,7 +99,7 @@ public class BookmarksTree extends MPSTree {
     }
     nodePointers = myBookmarkManager.getAllUnnumberedBookmarks();
     for (SNodeReference nodePointer : nodePointers) {
-      if (nodePointer != null && nodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      if (nodePointer != null && nodePointer.resolve(myProject.getRepository()) != null) {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
@@ -191,7 +185,7 @@ public class BookmarksTree extends MPSTree {
 
     @Override
     public void navigateToBookmark() {
-      SNode targetNode = myNodePointer.resolve(MPSModuleRepository.getInstance());
+      SNode targetNode = myNodePointer.resolve(myProject.getRepository());
       if (targetNode != null) {
         NavigationSupport.getInstance().openNode(myProject, targetNode, true, true);
       }
