@@ -22,4 +22,6 @@ public class TestResults {
   public static final String I3_DEFAULT_VALUE = "I am I3";
   public static final String C1_DEFAULT_VALUE = "I am C1";
   public static final String C3_DEFAULT_VALUE = "I am C3";
+
+  public static final int DEFAULT_RETURN_VALUE = 1;
 }

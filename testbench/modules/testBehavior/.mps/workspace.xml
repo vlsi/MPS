@@ -351,7 +351,7 @@
       <list>
         <TabState>
           <option name="title" value="Console" />
-          <option name="history" value="kaurqQAABAAHKKfH63NZJEkXrb/l9oTtzz4AABlUZW1wTW9kZWxfMzQ4MTY0NzQ0NjEwMzMyF0jElmf6zZxFBJFyYMGGyjt+AAAuVGVtcE1vZHVsZWM0OTY2N2ZhLWNkOWMtNDUwNC05MTcyLTYwYzE4NmNhM2I3Zf////+rq6urWlpaWgACzqtRlSXqTyKbkhA7lcqMDAAAF2pldGJyYWlucy5tcHMubGFuZy5jb3JlAAEAAAEQOW6qpAAADUlOYW1lZENvbmNlcHQAEgABAAABEDluwEEAAARuYW1lAAAAAN4a2G1uUEoCswbU0X9kw3UAABpqZXRicmFpbnMubXBzLmNvbnNvbGUuYmFzZQADFfs0BR9yWiwAAAtDb25zb2xlUm9vdAASAAAAAAACFfs0BR9yW68AAAdoaXN0b3J5ABX7NAUfcluxAAANY29tbWFuZEhvbGRlcgAE4nFgrLRISwAADUNvbW1hbmRIb2xkZXIAEgAAAAAAAAqDXyjBqgK+AAAHSGlzdG9yeQASAAAAAAAApaWlpQAFGoVUxOuEQ7qMNG8NkMbnWgAAH2pldGJyYWlucy5tcHMuY29uc29sZS5ibENvbW1hbmSl5N5TRqNE2qqzaP3xw07QAAAhamV0YnJhaW5zLm1wcy5jb25zb2xlLmlkZUNvbW1hbmRz8maR0g3vTAauxiy5DErwpAAAHWpldGJyYWlucy5tcHMuY29uc29sZS5zY3JpcHRzmVpzlH92S4upKcU0SHCBBgAAJmpldGJyYWlucy5tcHMuY29uc29sZS5pbnRlcm5hbENvbW1hbmRz3hrYbW5QSgKzBtTRf2TDdQEAAAAFAAAAARdI+8Jd0l2kSDqLGXCSjhti1wAAJGpldGJyYWlucy5tcHMuZGV2a2l0LmdlbmVyYWwtcHVycG9zZQAAAAUHKJNboO5ykUyqqAfXbo/Gk5EAAClqZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5kLnN0cnVjdHVyZXD/////BygTWmBvA3ZMXJq4QDDwUaBiAAAramV0YnJhaW5zLm1wcy5jb25zb2xlLmlkZUNvbW1hbmRzLnN0cnVjdHVyZXD/////ByjnEvNTXDxCiK3Oh8lWpS/7AAAnamV0YnJhaW5zLm1wcy5jb25zb2xlLnNjcmlwdHMuc3RydWN0dXJlcP////8HKJBEUgapc0wdt2Aw5cd7dJcAADBqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcy5zdHJ1Y3R1cmVw/////wcoNZsdK3fERt+b8rJcvqMiVAAAJGpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZXD/////urq6ugAAAAEAARhHtSs7viF2Bf//ewAAAAAAAAAAAAIAAxhHtSs7viF2BgAAewAAAAAAAAAAAAB9AAIYR7UrO74hdgcAAXsAAQAAAQAAAAkAAAAAAAAAAH19" />
+          <option name="history" value="kaurqQAABAAHKA891Ft0F0IIqNd7bXWJiosAAB1UZW1wTW9kZWxfMTQzODIwMzg1MDk1NTcyMjAwMBdIWoEbSeTnRR6ePfzCG3098QAALlRlbXBNb2R1bGU1YTgxMWI0OS1lNGU3LTQ1MWUtOWUzZC1mY2MyMWI3ZDNkZjH/////q6urq1paWloAAs6rUZUl6k8im5IQO5XKjAwAABdqZXRicmFpbnMubXBzLmxhbmcuY29yZQABAAABEDluqqQAAA1JTmFtZWRDb25jZXB0ABIAAQAAARA5bsBBAAAEbmFtZQAAAADeGthtblBKArMG1NF/ZMN1AAAaamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2UAAxX7NAUfclosAAALQ29uc29sZVJvb3QAEgAAAAAAAhX7NAUfcluvAAAHaGlzdG9yeQAV+zQFH3JbsQAADWNvbW1hbmRIb2xkZXIABOJxYKy0SEsAAA1Db21tYW5kSG9sZGVyABIAAAAAAAAKg18owaoCvgAAB0hpc3RvcnkAEgAAAAAAAKWlpaUABRqFVMTrhEO6jDRvDZDG51oAAB9qZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5kpeTeU0ajRNqqs2j98cNO0AAAIWpldGJyYWlucy5tcHMuY29uc29sZS5pZGVDb21tYW5kc/JmkdIN70wGrsYsuQxK8KQAAB1qZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0c5lac5R/dkuLqSnFNEhwgQYAACZqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kc94a2G1uUEoCswbU0X9kw3UBAAAABQAAAAEXSPvCXdJdpEg6ixlwko4bYtcAACRqZXRicmFpbnMubXBzLmRldmtpdC5nZW5lcmFsLXB1cnBvc2UAAAAFByiTW6DucpFMqqgH126PxpORAAApamV0YnJhaW5zLm1wcy5jb25zb2xlLmJsQ29tbWFuZC5zdHJ1Y3R1cmVw/////wcoE1pgbwN2TFyauEAw8FGgYgAAK2pldGJyYWlucy5tcHMuY29uc29sZS5pZGVDb21tYW5kcy5zdHJ1Y3R1cmVw/////wco5xLzU1w8QoitzofJVqUv+wAAJ2pldGJyYWlucy5tcHMuY29uc29sZS5zY3JpcHRzLnN0cnVjdHVyZXD/////ByiQRFIGqXNMHbdgMOXHe3SXAAAwamV0YnJhaW5zLm1wcy5jb25zb2xlLmludGVybmFsQ29tbWFuZHMuc3RydWN0dXJlcP////8HKDWbHSt3xEbfm/KyXL6jIlQAACRqZXRicmFpbnMubXBzLmNvbnNvbGUuYmFzZS5zdHJ1Y3R1cmVw/////7q6uroAAAABAAEYVZcp3sBEgeL//3sAAAAAAAAAAAACAAMYVZcp3sBEgeMAAHsAAAAAAAAAAAAAfQACGFWXKd7ARIHkAAF7AAEAAAEAAAAJAAAAAAAAAAB9fQ==" />
         </TabState>
       </list>
     </option>
@@ -380,18 +380,18 @@
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="221" />
+                    <property name="caretXRelative" value="12" />
+                    <property name="caretX" value="183" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_name_1" cellNumber="0" isInList="false">
-                      <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" />
+                    <cellInfo cellId="Constant_i0gfbw_a4a" cellNumber="0" isInList="false">
+                      <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
@@ -400,25 +400,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SNodeOperations" pinned="false" current-in-tab="false">
-        <entry file="mps://node://jetbrains.mps.runtime/jetbrains.mps.lang.smodel.generator.smodelAdapter/SNodeOperations">
+      <file leaf-file-name="ConceptBehavior" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/ConceptBehavior">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+              <memento viewPositionX="160" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="48" />
+                    <property name="caretX" value="191" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
+                      <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572923000" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorMarkers />
+                <folded />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorMarkers />
+                <folded />
+              </inspectorMemento>
+              <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572922999" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.util/Constants">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-              <memento viewPositionX="0" viewPositionY="8361">
+              <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
-                    <property name="caretXRelative" value="-51" />
-                    <property name="caretX" value="0" />
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="56" />
+                    <property name="caretX" value="440" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Collection_evgwyu_a" cellNumber="0" isInList="false">
-                      <node node_reference="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/8828148184965531007" />
+                    <cellInfo cellId="property_value" cellNumber="0" isInList="false">
+                      <node node_reference="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/2284925377907913536" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
@@ -427,183 +457,116 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InterpretedActionDescriptor" pinned="false" current-in-tab="false">
-        <entry file="mps://node://jetbrains.mps.actions.runtime/jetbrains.mps.actions.runtime.impl/InterpretedActionDescriptor">
+      <file leaf-file-name="mc_concept_method_call" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.smodel#1139186730696/jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator/mc_concept_method_call">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-              <memento viewPositionX="0" viewPositionY="21">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
-                    <property name="caretXRelative" value="-51" />
-                    <property name="caretX" value="0" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Collection_y9czm0_a" cellNumber="0" isInList="false">
-                      <node node_reference="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/494368390827850186" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorMarkers />
-                <folded />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-                <selectionStack />
-                <errorMarkers />
-                <folded />
-              </inspectorMemento>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SLanguageAdapterById.java" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/core/kernel/source/jetbrains/mps/smodel/adapter/structure/language/SLanguageAdapterById.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="C1" pinned="false" current-in-tab="false">
-        <entry file="mps://node://L5/L5.structure/C1">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
+              <memento viewPositionX="0" viewPositionY="140">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="63" />
-                    <property name="caretX" value="78" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753197511" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorMarkers />
-                <folded />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-                <selectionStack />
-                <errorMarkers />
-                <folded />
-              </inspectorMemento>
-              <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753197511" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="I1" pinned="false" current-in-tab="false">
-        <entry file="mps://node://L5/L5.structure/I1">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="22" />
-                    <property name="caretX" value="185" />
+                    <property name="caretXRelative" value="304" />
+                    <property name="caretX" value="649" />
                     <property name="sideSelectDirection" value="NONE" />
                     <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122020" />
+                      <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/6029283687668755817" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
               </inspectorMemento>
-              <node node_ref="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122020" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="C2" pinned="false" current-in-tab="false">
-        <entry file="mps://node://L5/L5.structure/C2">
+      <file leaf-file-name="Node_ConceptMethodCall" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.smodel/jetbrains.mps.lang.smodel.structure/Node_ConceptMethodCall">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="63" />
-                    <property name="caretX" value="78" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753244039" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorMarkers />
-                <folded />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-                <selectionStack />
-                <errorMarkers />
-                <folded />
-              </inspectorMemento>
-              <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753244039" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="C4" pinned="false" current-in-tab="false">
-        <entry file="mps://node://L5/L5.structure/C4">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="13" />
-                    <property name="caretX" value="219" />
+                    <property name="caretXRelative" value="196" />
+                    <property name="caretX" value="279" />
                     <property name="sideSelectDirection" value="NONE" />
                     <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753249926" />
+                      <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
               </inspectorMemento>
-              <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753249926" />
+              <node node_ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="C3" pinned="false" current-in-tab="false">
-        <entry file="mps://node://L5/L5.structure/C3">
+      <file leaf-file-name="mc_behaviour" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.main@generator/mc_behaviour">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+              <memento viewPositionX="0" viewPositionY="160">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="44" />
+                    <property name="caretX" value="453" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="templateName" cellNumber="0" isInList="false">
+                      <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370955" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorMarkers />
+                <folded />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorMarkers />
+                <folded />
+              </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalBehaviorMethodCall" pinned="false" current-in-tab="false">
+        <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/LocalBehaviorMethodCall">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="63" />
-                    <property name="caretX" value="78" />
+                    <property name="caretXRelative" value="188" />
+                    <property name="caretX" value="271" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753245743" />
+                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                      <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
                 <errorMarkers />
                 <folded />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+              <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorMarkers />
                 <folded />
               </inspectorMemento>
-              <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753245743" />
+              <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
             </state>
           </provider>
         </entry>
@@ -630,10 +593,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="-14" />
-    <option name="width" value="1940" />
-    <option name="height" value="1224" />
+    <option name="x" value="4" />
+    <option name="y" value="23" />
+    <option name="width" value="1276" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -695,11 +658,180 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="$PROJECT_DIR$/solutions/TestBehavior/TestBehavior.msd" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestBehavior" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.lang.behavior#1225195312923" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="43359135-f67c-4a3d-9fdd-a3d7dba50995(BHL1)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.lang.behavior#1225195312923" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="$PROJECT_DIR$/solutions/TestBehavior/TestBehavior.msd" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -716,7 +848,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests) in IdeaFile{file:///home/apyshkin/MPSProjects/BehaviorTest/solutions/TestBehavior/models/TestBehavior/test@tests.mps}" />
+              <option name="myItemId" value="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests) in IdeaFile{file:///Users/apyshkin/workspace/git/mps/testbench/modules/testBehavior/solutions/TestBehavior/models/TestBehavior/test@tests.mps}" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -738,45 +870,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="$PROJECT_DIR$/solutions/TestBehavior/TestBehavior.msd" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestBehavior" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="$PROJECT_DIR$/solutions/TestBehavior/TestBehavior.msd" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
+              <option name="myItemId" value="jetbrains.mps.lang.behavior#1225195312923" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -784,11 +882,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d9276ffc-8964-4ead-b55c-1f2409698238(jetbrains.mps.build.actions) in IdeaFile{file:///home/apyshkin/workspace/git/mps/plugins/mps-build/languages/build/languageModels/actions.mps}" />
+              <option name="myItemId" value="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator) in IdeaFile{file:///Users/apyshkin/workspace/git/mps/languages/languageDesign/behavior/languages/behavior/generator/template/main@generator.mps}" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -808,285 +902,44 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="$PROJECT_DIR$/solutions/UtilSolution/UtilSolution.msd" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UtilSolution" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d5b954f8-51a0-4e5e-8222-e5ceaabb7619(UtilSolution.util) in IdeaFile{file:///home/apyshkin/MPSProjects/BehaviorTest/solutions/UtilSolution/models/UtilSolution/util.mps}" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="$PROJECT_DIR$/solutions/UtilSolution/UtilSolution.msd" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UtilSolution" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="$PROJECT_DIR$/solutions/UtilSolution/UtilSolution.msd" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure) in IdeaFile{file:///home/apyshkin/workspace/git/mps/languages/languageDesign/smodel/languageModels/structure.mps}" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure) in IdeaFile{file:///home/apyshkin/workspace/git/mps/languages/languageDesign/actions/languageModels/structure.mps}" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodeFactories" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure) in IdeaFile{file:///home/apyshkin/workspace/git/mps/languages/languageDesign/smodel/languageModels/structure.mps}" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="type" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure) in IdeaFile{file:///home/apyshkin/workspace/git/mps/languages/languageDesign/actions/languageModels/structure.mps}" />
+              <option name="myItemId" value="b4fa1e36-714a-4c77-8e95-3eae9632decb(BHL5)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <SELECTED>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
+              <option name="myItemId" value="$PROJECT_DIR$/solutions/TestBehavior/TestBehavior.msd" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
+              <option name="myItemId" value="TestBehavior" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
+              <option name="myItemId" value="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests) in IdeaFile{file:///Users/apyshkin/workspace/git/mps/testbench/modules/testBehavior/solutions/TestBehavior/models/TestBehavior/test@tests.mps}" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure) in IdeaFile{file:///home/apyshkin/workspace/git/mps/languages/languageDesign/actions/languageModels/structure.mps}" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conceptFunctionParameters" />
+              <option name="myItemId" value="7688460527007444422" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
       <pane id="FileSystem" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1348,39 +1201,39 @@
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="-14" width="1940" height="1224" extended-state="6" />
-    <editor active="true" />
+    <frame x="4" y="23" width="1276" height="777" extended-state="6" />
+    <editor active="false" />
     <layout>
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5141066" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Typesystem Trace" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Supertypes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970026" sideWeight="0.501845" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.48589343" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Bookmarks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36742225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32515895" sideWeight="0.4939378" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970026" sideWeight="0.5060622" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Typesystem Trace" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970026" sideWeight="0.4903949" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependencies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36677116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Class Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32515895" sideWeight="0.4939378" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1404,227 +1257,939 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://node://L3/L3.structure/A">
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.util/Constants">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
+                <property name="caretXRelative" value="56" />
+                <property name="caretX" value="440" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_value" cellNumber="0" isInList="false">
+                  <node node_reference="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/2284925377907913536" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel#1139186730696/jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator/mc_concept_method_call">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="140">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="304" />
+                <property name="caretX" value="649" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462270" />
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/6029283687668755817" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474607" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462270" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L3/L3.structure/B">
+    <entry file="mps://node://jetbrains.mps.lang.smodel/jetbrains.mps.lang.smodel.structure/Node_ConceptMethodCall">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
+                <property name="caretXRelative" value="196" />
+                <property name="caretX" value="279" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462917" />
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474607" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462917" />
+          <node node_ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L2/L2.structure/B">
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.main@generator/mc_behaviour">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="160">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="453" />
                 <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(L2.structure)/7688460527007457381" />
+                <cellInfo cellId="templateName" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370955" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474607" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(L2.structure)/7688460527007457381" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L2/L2.structure/A">
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/LocalBehaviorMethodCall">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007456374" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474607" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007456374" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/L1/source_gen/L1/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/L1/source_gen/L1/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/L1/source_gen/L1/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/L1/source_gen/L1/behavior/BehaviorAspectDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23529412">
-          <caret line="14" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L1/L1.structure/A1">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
+                <property name="caretXRelative" value="188" />
+                <property name="caretX" value="271" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e76e445e-2173-496b-9059-50cca123009f(L1.behavior)/7688460527007446635" />
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461203" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:e76e445e-2173-496b-9059-50cca123009f(L1.behavior)/7688460527007446635" />
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L1/L1.structure/I1">
+    <entry file="mps://node://TestBehavior/TestBehavior.test@tests/BHTest_Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="12" />
+                <property name="caretX" value="183" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_i0gfbw_a4a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470501499" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470501499" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753240675" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753240675" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705808" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705808" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465723" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465723" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499860" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499860" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607707" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607707" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C4" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705132" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705132" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470497387" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470497387" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466595" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466595" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470477384" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470477384" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705136" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705136" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C3" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607967" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607967" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242451" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242451" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470504247" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470504247" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606490" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606490" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606496" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606496" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461150" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461150" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C2" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606694" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606694" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242445" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242445" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465472" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465472" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007472607" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007472607" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705811" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705811" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705815" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705815" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242039" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242039" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705129" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705129" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C0" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3885013146871858982" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3885013146871858982" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C1" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474505" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474505" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A1" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447320" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447320" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503001" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503001" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447228" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447228" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466597" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466597" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459134" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459134" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607701" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607701" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C2" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070616554" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070616554" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499439" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499439" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459516" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459516" />
+                </parent>
+              </errorMarker>
+            </errorMarkers>
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/ConceptBehavior">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="160" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="48" />
+                <property name="caretX" value="191" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572923000" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572922999" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.util/Constants">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="56" />
+                <property name="caretX" value="440" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_value" cellNumber="0" isInList="false">
+                  <node node_reference="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/2284925377907913536" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel#1139186730696/jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator/mc_concept_method_call">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="140">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="304" />
+                <property name="caretX" value="649" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/6029283687668755817" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel/jetbrains.mps.lang.smodel.structure/Node_ConceptMethodCall">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
+                <property name="caretXRelative" value="196" />
+                <property name="caretX" value="279" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e76e445e-2173-496b-9059-50cca123009f(L1.behavior)/9105163402711226680" />
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461203" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:e76e445e-2173-496b-9059-50cca123009f(L1.behavior)/9105163402711226680" />
+          <node node_ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/core/kernel/source/jetbrains/mps/smodel/constraints/ModelConstraints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.720339">
-          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.main@generator/mc_behaviour">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="160">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="453" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="templateName" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370955" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L2/L2.structure/A">
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/LocalBehaviorMethodCall">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
+                <property name="caretXRelative" value="188" />
+                <property name="caretX" value="271" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007456374" />
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461203" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
-          <node node_ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007456374" />
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://TestBehavior/TestBehavior.test@tests/BHTest_Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="12" />
+                <property name="caretX" value="183" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_i0gfbw_a4a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers>
+              <errorMarker text="B" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466595" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466595" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C1" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474505" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007474505" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A1" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447320" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447320" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242451" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242451" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470504247" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470504247" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447228" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447228" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C2" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070616554" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070616554" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606490" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606490" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705136" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705136" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499439" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499439" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705815" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705815" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461150" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007461150" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C4" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705132" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705132" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C3" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607967" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607967" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242445" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242445" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470497387" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470497387" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503001" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503001" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705129" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705129" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="a" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242039" />
+                <parent cellId="Collection_hntvsg_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242039" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607707" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607707" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705808" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705808" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470501499" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470501499" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007472607" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007472607" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465723" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465723" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753240675" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753240675" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606496" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606496" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C1" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705811" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/5167083683070705811" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C2" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606694" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470606694" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499860" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470499860" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="C0" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3885013146871858982" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3885013146871858982" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465472" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007465472" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="I" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607701" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470607701" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459516" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459516" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="foo" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470477384" />
+                <parent cellId="Collection_kosqrl_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470477384" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="B" propertyCell="false" cellNumber="0" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466597" />
+                <parent cellId="Collection_3jn7ig_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007466597" />
+                </parent>
+              </errorMarker>
+              <errorMarker text="A" propertyCell="false" cellNumber="2" isInList="false">
+                <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459134" />
+                <parent cellId="Collection_x5m1a6_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007459134" />
+                </parent>
+              </errorMarker>
+            </errorMarkers>
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/ConceptBehavior">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="160" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="48" />
+                <property name="caretX" value="191" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572923000" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572922999" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.util/Constants">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="56" />
+                <property name="caretX" value="440" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_value" cellNumber="0" isInList="false">
+                  <node node_reference="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/2284925377907913536" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel#1139186730696/jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator/mc_concept_method_call">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="140">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="304" />
+                <property name="caretX" value="649" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/6029283687668755817" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel/jetbrains.mps.lang.smodel.structure/Node_ConceptMethodCall">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="196" />
+                <property name="caretX" value="279" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.main@generator/mc_behaviour">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="160">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="453" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="templateName" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370955" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/LocalBehaviorMethodCall">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="188" />
+                <property name="caretX" value="271" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
         </state>
       </provider>
     </entry>
@@ -1792,195 +2357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://L2/L2.structure/B">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007457406" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007457406" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007457406" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L3/L3.structure/A">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="166" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462273" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462273" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462270" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L3/L3.structure/B">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462917" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:5b70af1a-32d2-494c-b96c-b52619ec490d(L2.behavior)/7688460527007457406" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(L3.behavior)/7688460527007462917" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/C1">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007475860" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007475860" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007475860" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/I">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="176" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007471058" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122793" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007471058" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/I1">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472020" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122793" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472020" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/I2">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472112" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122793" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(L4.behavior)/7688460527007472112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="mps://node://jetbrains.mps.core.tool.environment/jetbrains.mps.tool.environment/EnvironmentConfig">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
@@ -2003,275 +2379,6 @@
             <errorMarkers />
             <folded />
           </inspectorMemento>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/C2">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(L4.structure)/7817628362470606357" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242452" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(L4.structure)/7817628362470606357" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L4/L4.structure/C3">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(L4.structure)/7817628362470606890" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242452" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(L4.structure)/7817628362470606890" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/C0">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753232935" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242452" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753232935" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/I2">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753197508" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/3845307305753242452" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753197508" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://TestBehavior/TestBehavior.test@tests/BHTest_Test">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="221" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name_1" cellNumber="0" isInList="false">
-                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/C4">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="13" />
-                <property name="caretX" value="219" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753249926" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753249926" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/C2">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753244039" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753244039" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/C1">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753197511" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753197511" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/I1">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="22" />
-                <property name="caretX" value="185" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122020" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:fc74f586-39a4-4b76-8017-86fbfcf61a74(L5.behavior)/3845307305753122020" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://L5/L5.structure/C3">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="63" />
-                <property name="caretX" value="78" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753245743" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorMarkers />
-            <folded />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
-            <errorMarkers />
-            <folded />
-          </inspectorMemento>
-          <node node_ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(L5.structure)/3845307305753245743" />
         </state>
       </provider>
     </entry>
@@ -2563,11 +2670,11 @@
     <entry file="mps://node://jetbrains.mps.runtime/jetbrains.mps.lang.smodel.generator.smodelAdapter/SNodeOperations">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="8361">
+          <memento viewPositionX="0" viewPositionY="7314">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
                 <property name="caretXRelative" value="-51" />
-                <property name="caretX" value="0" />
+                <property name="caretX" value="-4" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="Collection_evgwyu_a" cellNumber="0" isInList="false">
                   <node node_reference="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/8828148184965531007" />
@@ -2577,8 +2684,18 @@
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
-            <selectionStack />
+          <inspectorMemento currentlyEditedNode="61902464-291a-4ac9-86c9-14f24373ce37/r:a296b7e8-5b5c-4176-bfd0-98524c73eda9(L5@transient16/L5.behavior@7_0)/6029283687668426459" viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellNumber="0" isInList="false">
+                  <node node_reference="61902464-291a-4ac9-86c9-14f24373ce37/r:a296b7e8-5b5c-4176-bfd0-98524c73eda9(L5@transient16/L5.behavior@7_0)/6029283687668426459" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
             <errorMarkers />
             <folded />
           </inspectorMemento>
@@ -2592,7 +2709,7 @@
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
                 <property name="caretXRelative" value="-51" />
-                <property name="caretX" value="0" />
+                <property name="caretX" value="-4" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="Collection_y9czm0_a" cellNumber="0" isInList="false">
                   <node node_reference="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/494368390827850186" />
@@ -2602,11 +2719,256 @@
             <errorMarkers />
             <folded />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7817628362470503281" viewPositionX="0" viewPositionY="-8">
+          <inspectorMemento currentlyEditedNode="61902464-291a-4ac9-86c9-14f24373ce37/r:37ac7007-b9f1-44fd-bb9a-11d467da53ce(L5@transient16/L5.behavior@10_0)/3845307305753197538" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorMarkers />
             <folded />
           </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/ThisNodeExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
+                <property name="caretXRelative" value="-350" />
+                <property name="caretX" value="0" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Collection_9o3sb9_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/6029283687668333824" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="61902464-291a-4ac9-86c9-14f24373ce37/r:37ac7007-b9f1-44fd-bb9a-11d467da53ce(L5@transient16/L5.behavior@10_0)/3845307305753197538" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370966" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/SuperNodeExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="64" />
+                <property name="caretX" value="443" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/6029283687668331242" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572923000" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370956" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solutions/TestBehavior/test_gen/TestBehavior/test/BHTest_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="78" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://TestBehavior/TestBehavior.test@tests/BHTest_Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="12" />
+                <property name="caretX" value="183" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_i0gfbw_a4a" cellNumber="0" isInList="false">
+                  <node node_reference="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/ConceptBehavior">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="160" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="48" />
+                <property name="caretX" value="191" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="ALIAS_EDITOR_COMPONENT" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572923000" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/7385785963572922999" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.util/Constants">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="56" />
+                <property name="caretX" value="440" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_value" cellNumber="0" isInList="false">
+                  <node node_reference="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/2284925377907913536" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel#1139186730696/jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator/mc_concept_method_call">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="140">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="304" />
+                <property name="caretX" value="649" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/6029283687668755817" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.smodel/jetbrains.mps.lang.smodel.structure/Node_ConceptMethodCall">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="196" />
+                <property name="caretX" value="279" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/2853323645193762342" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior#1225195312923/jetbrains.mps.lang.behavior.generator.template.main@generator/mc_behaviour">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="160">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="453" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="templateName" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/1225195370955" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://jetbrains.mps.lang.behavior/jetbrains.mps.lang.behavior.structure/LocalBehaviorMethodCall">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.tabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="188" />
+                <property name="caretX" value="271" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorMarkers />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)/7688460527007447232" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorMarkers />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/4731970554580093575" />
         </state>
       </provider>
     </entry>

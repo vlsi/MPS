@@ -1921,11 +1921,11 @@
       </node>
     </node>
     <node concept="13i0hz" id="4MNYYw$1vF5" role="13h7CS">
-      <property role="TrG5h" value="getSuperMethod" />
+      <property role="TrG5h" value="getEnclosingMethod" />
       <node concept="3Tqbb2" id="4MNYYw$1vZ7" role="3clF45">
         <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
       </node>
-      <node concept="3Tm1VV" id="4MNYYw$1vF6" role="1B3o_S" />
+      <node concept="3Tm6S6" id="1YPFSpKtgmJ" role="1B3o_S" />
       <node concept="3clFbS" id="4MNYYw$1vF8" role="3clF47">
         <node concept="3cpWs6" id="4MNYYw$1vZa" role="3cqZAp">
           <node concept="2OqwBi" id="4MNYYw$1w5U" role="3cqZAk">
@@ -1942,7 +1942,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="4xnLoJyFYX5" role="13h7CS">
-      <property role="TrG5h" value="isSuperMethodStatic" />
+      <property role="TrG5h" value="isEnclosingMethodStatic" />
       <node concept="10P_77" id="4xnLoJyFZhy" role="3clF45" />
       <node concept="3Tm1VV" id="4xnLoJyFYX6" role="1B3o_S" />
       <node concept="3clFbS" id="4xnLoJyFYX8" role="3clF47">
@@ -1950,7 +1950,7 @@
           <node concept="3cpWsn" id="4xnLoJyFZhD" role="3cpWs9">
             <property role="TrG5h" value="method" />
             <node concept="BsUDl" id="4xnLoJyFZlI" role="33vP2m">
-              <ref role="37wK5l" node="4MNYYw$1vF5" resolve="getSuperMethod" />
+              <ref role="37wK5l" node="4MNYYw$1vF5" resolve="getEnclosingMethod" />
             </node>
             <node concept="3Tqbb2" id="4xnLoJyFZh_" role="1tU5fm">
               <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />

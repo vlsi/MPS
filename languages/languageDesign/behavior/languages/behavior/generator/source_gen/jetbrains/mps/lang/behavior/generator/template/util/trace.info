@@ -5,7 +5,9 @@
     <file name="Constants.java">
       <node id="7385785963573351814" at="7,0,8,0" concept="0" trace="BEHAVIOR_DESCRIPTOR_SUFFIX" />
       <node id="2284925377906205048" at="8,0,9,0" concept="0" trace="THIS_NODE_VARIABLE_NAME" />
-      <unit id="7385785963573351755" at="6,0,10,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
+      <node id="2284925377907518140" at="9,0,10,0" concept="0" trace="INVOKE_METHOD_NAME" />
+      <node id="2284925377907913534" at="10,0,11,0" concept="0" trace="METHOD_FIELD_SUFFIX" />
+      <unit id="7385785963573351755" at="6,0,12,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
     </file>
   </root>
 </debug-info>

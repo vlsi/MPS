@@ -21,10 +21,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
   }
+
   public static boolean callShouldBeByReflection(SModel originalModel) {
     // should be by reflection in "compile in IDEA modules" 
     // method calls impossible in modules without kind == PLUGIN_* 
-    SModule module = check_bta47p_a0c0b(originalModel);
+    SModule module = check_bta47p_a0c0c(originalModel);
     if (module == null) {
       return false;
     }
@@ -45,16 +46,16 @@ public class ConceptMethodCallUtils {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_bta47p_a0a0b0d(nodeType);
+      return _quotation_createNode_bta47p_a0a0b0e(nodeType);
     }
   }
-  private static SModule check_bta47p_a0c0b(SModel checkedDotOperand) {
+  private static SModule check_bta47p_a0c0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SNode _quotation_createNode_bta47p_a0a0b0d(Object parameter_1) {
+  private static SNode _quotation_createNode_bta47p_a0a0b0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

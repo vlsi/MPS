@@ -71,8 +71,7 @@ public class BehaviorReflection {
     getConceptRegistry().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
-  // these methods for <T> generic parameter and null safety
-  // todo: move to SNodeOperation? this methods for null safety
+  // these methods are for <T> generic parameter and null safety
   public static <T> T invokeVirtual(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
     return node == null ? defaultValue(returnType) : (T) invokeVirtual(node, methodName, parameters);
   }

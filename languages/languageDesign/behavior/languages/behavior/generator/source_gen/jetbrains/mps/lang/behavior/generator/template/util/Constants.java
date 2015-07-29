@@ -6,4 +6,6 @@ package jetbrains.mps.lang.behavior.generator.template.util;
 public class Constants {
   public static String BEHAVIOR_DESCRIPTOR_SUFFIX = "_BehaviorDescriptor";
   public static String THIS_NODE_VARIABLE_NAME = "__thisNode__";
+  public static String INVOKE_METHOD_NAME = "invoke";
+  public static String METHOD_FIELD_SUFFIX = "_METHOD";
 }
