@@ -246,6 +246,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hP3h8Ng">
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
     <node concept="EnEH3" id="hP3h8Nh" role="1MhHOB">
       <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
@@ -342,6 +343,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hP3i12u">
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="1N5Pfh" id="hP3i12v" role="1Mr941">
       <ref role="1N5Vy1" to="1i04:hP3i0lZ" />
@@ -537,7 +539,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1LqCkvsbvlP">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:hP3iPJx" resolve="ThisNodeExpression" />
     <node concept="nKS2y" id="1LqCkvsbvmZ" role="1MLUbF">
       <node concept="3clFbS" id="1LqCkvsbvn0" role="2VODD2">
@@ -639,7 +641,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1LqCkvsbvrD">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:hP3iAlo" resolve="SuperNodeExpression" />
     <node concept="1N5Pfh" id="4Aab3e74E59" role="1Mr941">
       <ref role="1N5Vy1" to="1i04:4Aab3e74B10" />
@@ -872,7 +874,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5CBvrhXldTg">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="1i04:5CBvrhXldvx" resolve="LocalBehaviorMethodCall" />
     <node concept="1N5Pfh" id="5CBvrhXldTh" role="1Mr941">
       <ref role="1N5Vy1" to="1i04:5CBvrhXldvy" />

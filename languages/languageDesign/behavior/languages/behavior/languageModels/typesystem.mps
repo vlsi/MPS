@@ -214,6 +214,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
@@ -237,6 +238,7 @@
   </registry>
   <node concept="18kY7G" id="hP3kMF5">
     <property role="TrG5h" value="check_ConceptBehavior" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="hP3kMF6" role="18ibNy">
       <node concept="3cpWs8" id="hP3kMF7" role="3cqZAp">
         <node concept="3cpWsn" id="hP3kMF8" role="3cpWs9">
@@ -451,6 +453,7 @@
   </node>
   <node concept="1YbPZF" id="hP3kV_f">
     <property role="TrG5h" value="typeof_SuperNodeExpression" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="hP3kV_g" role="18ibNy">
       <node concept="3cpWs8" id="hP3kV_w" role="3cqZAp">
         <node concept="3cpWsn" id="hP3kV_x" role="3cpWs9">
@@ -537,6 +540,7 @@
   </node>
   <node concept="1YbPZF" id="hP3pWXY">
     <property role="TrG5h" value="typeof_ThisNodeExpression" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="hP3pWXZ" role="18ibNy">
       <node concept="3cpWs8" id="hP3pWY0" role="3cqZAp">
         <node concept="3cpWsn" id="hP3pWY1" role="3cpWs9">
@@ -658,6 +662,7 @@
   </node>
   <node concept="18kY7G" id="hQYzN6T">
     <property role="TrG5h" value="check_ConceptMethodDeclaration" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="hQYzN6U" role="18ibNy">
       <node concept="3clFbJ" id="hQYzTzl" role="3cqZAp">
         <node concept="3fqX7Q" id="hQYzTXZ" role="3clFbw">

@@ -311,7 +311,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="hP3h8jp">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
     <node concept="13hLZK" id="hP3h8jB" role="13h7CW">
       <node concept="3clFbS" id="hP3h8jC" role="2VODD2" />
@@ -1307,7 +1307,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="hP3pnNE">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="13i0hz" id="hP3pnNF" role="13h7CS">
       <property role="13i0is" value="false" />
@@ -1739,7 +1739,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6tsH5JaReJr">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="1i04:hP3iAlo" resolve="SuperNodeExpression" />
     <node concept="13i0hz" id="6tsH5JaReJu" role="13h7CS">
       <property role="TrG5h" value="getSuperConcept" />
@@ -1982,7 +1982,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6cNV$KGvDlT">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="1i04:5CBvrhXldvx" resolve="LocalBehaviorMethodCall" />
     <node concept="13i0hz" id="6cNV$KGvFLM" role="13h7CS">
       <property role="13i0is" value="false" />

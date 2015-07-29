@@ -212,6 +212,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hP3h7U4">
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
     <node concept="3EZMnI" id="hP3h7U5" role="2wV5jI">
       <property role="3EZMnw" value="true" />
@@ -277,7 +278,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP3hLXV">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3hLVH" resolve="ConceptConstructorDeclaration" />
     <node concept="3EZMnI" id="hP3hLXW" role="2wV5jI">
       <property role="3EZMnw" value="true" />
@@ -322,7 +323,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP3i0w$">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="3EZMnI" id="hP3i0w_" role="2wV5jI">
       <property role="3EZMnw" value="true" />
@@ -707,7 +708,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP3iAmb">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3iAlo" resolve="SuperNodeExpression" />
     <node concept="3EZMnI" id="hP3iAmc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
@@ -777,7 +778,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP3iPQV">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3iPJx" resolve="ThisNodeExpression" />
     <node concept="3EZMnI" id="hP3iPQW" role="2wV5jI">
       <property role="3EZMnw" value="false" />
@@ -793,7 +794,7 @@
   </node>
   <node concept="1Xs25n" id="hP3JgLq">
     <property role="TrG5h" value="ConceptMethodDeclaration_Menu" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="OXEIz" id="hP3JgLr" role="1XvlXI">
       <node concept="1ou48o" id="hP3JgLs" role="OY2wv">
@@ -886,7 +887,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5CBvrhXldT0">
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="1i04:5CBvrhXldvx" resolve="LocalBehaviorMethodCall" />
     <node concept="3EZMnI" id="5CBvrhXldT2" role="2wV5jI">
       <property role="3EZMnw" value="false" />

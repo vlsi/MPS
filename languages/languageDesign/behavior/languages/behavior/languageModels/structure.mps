@@ -61,7 +61,7 @@
     <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/behavior.png" />
     <property role="TrG5h" value="ConceptBehavior" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="Concept Behavior" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hP3h7Gr" role="PzmwI">
@@ -96,12 +96,12 @@
   <node concept="1TIwiD" id="hP3hLVH">
     <property role="TrG5h" value="ConceptConstructorDeclaration" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hP3i0lY">
     <property role="TrG5h" value="ConceptMethodDeclaration" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="1TJgyj" id="hP3i0lZ" role="1TKVEi">
       <property role="20kJfa" value="overriddenMethod" />
@@ -134,7 +134,7 @@
     <property role="R4oN_" value="super node" />
     <property role="TrG5h" value="SuperNodeExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="super" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4Aab3e74B10" role="1TKVEi">
@@ -149,7 +149,7 @@
     <property role="R4oN_" value="this node" />
     <property role="TrG5h" value="ThisNodeExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="this" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="hP3iPJ_" role="PzmwI">
@@ -159,7 +159,7 @@
   <node concept="1TIwiD" id="5CBvrhXldvx">
     <property role="TrG5h" value="LocalBehaviorMethodCall" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <ref role="1TJDcQ" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
     <node concept="1TJgyj" id="5CBvrhXldvy" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -202,6 +202,7 @@
     <node concept="PrWs8" id="1653mnvAlOe" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="1YPFSpKo_Vw" role="lGtFl" />
   </node>
 </model>
 
