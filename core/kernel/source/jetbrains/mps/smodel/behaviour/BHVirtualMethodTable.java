@@ -39,9 +39,11 @@ public class BHVirtualMethodTable {
     myTable.put(method, descriptor);
   }
 
-  public void putAll(Iterable<SMethod<?>> methods, @NotNull BaseBHDescriptor descriptor) {
+  public void putAllVirtual(Iterable<SMethod<?>> methods, @NotNull BaseBHDescriptor descriptor) {
     for (SMethod<?> method : methods) {
-      put(method, descriptor);
+      if (method.getMethodModifiers().isVirtual()) {
+        put(method, descriptor);
+      }
     }
   }
 

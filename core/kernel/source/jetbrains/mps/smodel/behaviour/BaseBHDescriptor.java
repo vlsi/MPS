@@ -53,7 +53,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   public void init() {
-    initVTable();
+    initVirtualTable();
     myInitialized = true;
   }
 
@@ -63,12 +63,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private void initVTable() {
+  private void initVirtualTable() {
     Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
     for (SAbstractConcept ancestor : ancestorIterator) {
       BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BaseBHDescriptor) {
-        ((BaseBHDescriptor) bhDescriptor).fillVTable(myVTable);
+        ((BaseBHDescriptor) bhDescriptor).fillVirtualTable(myVTable);
       }
     }
   }
@@ -115,9 +115,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   /**
-   * @generated : listing all the virtual methods; register each SMethod in the VTable (if not yet registered)
+   * @generated : listing all the virtual methods. NB: must be fast, all methods are better to be stored somewhere.
    **/
-  protected abstract void fillVTable(@NotNull BHVirtualMethodTable tableToFill);
+  protected abstract List<SMethod<?>> getOwnMethods();
 
   /**
    * invokes a method without dynamic resolution
@@ -127,10 +127,18 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   protected abstract <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   /**
-   * @generated : switch by the method
+   * listing all the virtual methods; register each SMethod in the VTable (if not yet registered)
+   **/
+  private void fillVirtualTable(@NotNull BHVirtualMethodTable tableToFill) {
+    tableToFill.putAllVirtual(getOwnMethods(), this);
+  }
+
+  /**
    * @return true iff the method exists
    **/
-  protected abstract <T> boolean hasOwnMethod(@NotNull SMethod<T> method);
+  private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
+    return getOwnMethods().contains(method);
+  }
 
   @NotNull
   @Override

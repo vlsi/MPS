@@ -26,7 +26,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -41,7 +43,8 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
 
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
-  private final Map<SMethod, Method> myInvocationMap = new HashMap<SMethod, Method>(); // gets filled during #init()
+  private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>(); // gets filled during #init()
+  private List<SMethod<?>> myMethods;
 
   /**
    * @param legacyDescriptor is a InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
@@ -55,7 +58,12 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
    * filling the virtual table and also the map SMethod->Method
    */
   @Override
-  protected void fillVTable(@NotNull BHVirtualMethodTable tableToFill) {
+  public void init() {
+    fillOwnMethods();
+    super.init();
+  }
+
+  private void fillOwnMethods() {
     for (Entry<String, Method> entry : myLegacyDescriptor.getMethods().entrySet()) {
       String name = entry.getKey();
       if (name.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
@@ -66,10 +74,8 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
       BHMethodModifiers modifiers = extractMethodModifiers(methodName, method);
       SMethod sMethod = SMethod.create(methodName, modifiers, method.getReturnType(), method.getParameterTypes());
       myInvocationMap.put(sMethod, method);
-      if (sMethod.getMethodModifiers().isVirtual()) {
-        tableToFill.put(sMethod, this);
-      }
     }
+    myMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
   }
 
   private BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
@@ -111,7 +117,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   @Override
-  protected boolean hasOwnMethod(@NotNull SMethod method) {
-    return myInvocationMap.containsKey(method);
+  protected List<SMethod<?>> getOwnMethods() {
+    return myMethods;
   }
 }

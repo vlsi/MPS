@@ -88,7 +88,6 @@
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -105,7 +104,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -4179,43 +4177,6 @@
     <node concept="3uibUv" id="6pZ_jf9SAvq" role="1zkMxy">
       <ref role="3uigEE" to="cm63:~BaseBHDescriptor" resolve="BaseBHDescriptor" />
     </node>
-    <node concept="3clFb_" id="6pZ_jf9SAvJ" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="fillVTable" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tmbuc" id="6pZ_jf9SAvK" role="1B3o_S" />
-      <node concept="3cqZAl" id="6pZ_jf9SAvM" role="3clF45" />
-      <node concept="37vLTG" id="6pZ_jf9SAvN" role="3clF46">
-        <property role="TrG5h" value="table" />
-        <node concept="3uibUv" id="1Am6JRr1G7E" role="1tU5fm">
-          <ref role="3uigEE" to="cm63:~BHVirtualMethodTable" resolve="BHVirtualMethodTable" />
-        </node>
-        <node concept="2AHcQZ" id="6pZ_jf9SAvP" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="6pZ_jf9SAvQ" role="3clF47">
-        <node concept="3clFbF" id="rmbZrddfPc" role="3cqZAp">
-          <node concept="2OqwBi" id="rmbZrddfPP" role="3clFbG">
-            <node concept="37vLTw" id="rmbZrddfPb" role="2Oq$k0">
-              <ref role="3cqZAo" node="6pZ_jf9SAvN" resolve="table" />
-            </node>
-            <node concept="liA8E" id="rmbZrddfTh" role="2OqNvi">
-              <ref role="37wK5l" to="cm63:~BHVirtualMethodTable.putAll(java.lang.Iterable,jetbrains.mps.smodel.behaviour.BaseBHDescriptor):void" resolve="putAll" />
-              <node concept="37vLTw" id="5eGkp75yWBq" role="37wK5m">
-                <ref role="3cqZAo" node="5eGkp75yUi_" resolve="BH_METHODS" />
-              </node>
-              <node concept="Xjq3P" id="4ASdkjuyKmr" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6pZ_jf9SAIM" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6pZ_jf9SABo" role="jymVt" />
     <node concept="3clFb_" id="6pZ_jf9SAye" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="invokeOwn" />
@@ -4434,44 +4395,27 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6pZ_jf9SAEz" role="jymVt" />
-    <node concept="3clFb_" id="6pZ_jf9SAyu" role="jymVt">
+    <node concept="3clFb_" id="5xd5qMUclQG" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="hasOwnMethod" />
+      <property role="TrG5h" value="getOwnMethods" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
-      <node concept="3Tmbuc" id="6pZ_jf9SAyv" role="1B3o_S" />
-      <node concept="16euLQ" id="6pZ_jf9SAyx" role="16eVyc">
-        <property role="TrG5h" value="T" />
-      </node>
-      <node concept="10P_77" id="6pZ_jf9SAyy" role="3clF45" />
-      <node concept="37vLTG" id="6pZ_jf9SAyz" role="3clF46">
-        <property role="TrG5h" value="method" />
-        <node concept="3uibUv" id="6pZ_jf9SAy$" role="1tU5fm">
+      <node concept="3Tmbuc" id="5xd5qMUclQH" role="1B3o_S" />
+      <node concept="3uibUv" id="5xd5qMUclQJ" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="5xd5qMUclQK" role="11_B2D">
           <ref role="3uigEE" to="cm63:~SMethod" resolve="SMethod" />
-          <node concept="16syzq" id="6pZ_jf9SAy_" role="11_B2D">
-            <ref role="16sUi3" node="6pZ_jf9SAyx" resolve="T" />
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="6pZ_jf9SAyA" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          <node concept="3qTvmN" id="5xd5qMUclQL" role="11_B2D" />
         </node>
       </node>
-      <node concept="3clFbS" id="6pZ_jf9SAyB" role="3clF47">
-        <node concept="3cpWs6" id="rmbZrd9YHu" role="3cqZAp">
-          <node concept="2OqwBi" id="rmbZrda1Jk" role="3cqZAk">
-            <node concept="37vLTw" id="5eGkp75yWLP" role="2Oq$k0">
-              <ref role="3cqZAo" node="5eGkp75yUi_" resolve="BH_METHODS" />
-            </node>
-            <node concept="liA8E" id="rmbZrda3Ot" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
-              <node concept="37vLTw" id="rmbZrda56T" role="37wK5m">
-                <ref role="3cqZAo" node="6pZ_jf9SAyz" resolve="method" />
-              </node>
-            </node>
+      <node concept="3clFbS" id="5xd5qMUclQM" role="3clF47">
+        <node concept="3cpWs6" id="5xd5qMUcoIO" role="3cqZAp">
+          <node concept="37vLTw" id="5xd5qMUcoJC" role="3cqZAk">
+            <ref role="3cqZAo" node="5eGkp75yUi_" resolve="BH_METHODS" />
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="6pZ_jf9SAIN" role="2AJF6D">
+      <node concept="2AHcQZ" id="5xd5qMUcqWB" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
