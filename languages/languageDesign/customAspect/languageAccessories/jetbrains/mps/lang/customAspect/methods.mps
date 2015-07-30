@@ -121,6 +121,14 @@
       </node>
     </node>
     <node concept="qMXn0" id="4r8JClTmU7T" role="QNr5C" />
+    <node concept="q3mfq" id="5LFbgO_xufI" role="QNr5C">
+      <property role="TrG5h" value="isGeneratable" />
+      <node concept="QcxE9" id="5LFbgO_xufJ" role="2IRzpu">
+        <property role="QcwnP" value="aspect not generated" />
+      </node>
+      <node concept="10P_77" id="5LFbgO_xuhr" role="q3mfk" />
+    </node>
+    <node concept="qMXn0" id="5LFbgO_xug$" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmU6H" role="QNr5C">
       <property role="TrG5h" value="getInterfaceClassDeclaration" />
       <node concept="QcxE9" id="5KGdJjE2Btn" role="2IRzpu">

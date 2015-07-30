@@ -1067,14 +1067,24 @@
                           <node concept="1bVj0M" id="4r8JClTlhVo" role="23t8la">
                             <node concept="3clFbS" id="4r8JClTlhVp" role="1bW5cS">
                               <node concept="3clFbF" id="4r8JClTlhVq" role="3cqZAp">
-                                <node concept="2OqwBi" id="4r8JClTlhVr" role="3clFbG">
-                                  <node concept="37vLTw" id="4r8JClTlhVs" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="4r8JClTlhV$" resolve="it" />
+                                <node concept="1Wc70l" id="5LFbgO_wORN" role="3clFbG">
+                                  <node concept="2OqwBi" id="5LFbgO_wQBa" role="3uHU7w">
+                                    <node concept="37vLTw" id="5LFbgO_wQn6" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4r8JClTlhV$" resolve="it" />
+                                    </node>
+                                    <node concept="liA8E" id="5LFbgO_x3lT" role="2OqNvi">
+                                      <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.isGeneratable():boolean" resolve="isGeneratable" />
+                                    </node>
                                   </node>
-                                  <node concept="liA8E" id="4r8JClTlhVt" role="2OqNvi">
-                                    <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.hasAspect(org.jetbrains.mps.openapi.module.SModule):boolean" resolve="hasAspect" />
-                                    <node concept="37vLTw" id="4r8JClTlmqm" role="37wK5m">
-                                      <ref role="3cqZAo" node="4r8JClTlid7" resolve="languageModule" />
+                                  <node concept="2OqwBi" id="4r8JClTlhVr" role="3uHU7B">
+                                    <node concept="37vLTw" id="4r8JClTlhVs" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4r8JClTlhV$" resolve="it" />
+                                    </node>
+                                    <node concept="liA8E" id="4r8JClTlhVt" role="2OqNvi">
+                                      <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.hasAspect(org.jetbrains.mps.openapi.module.SModule):boolean" resolve="hasAspect" />
+                                      <node concept="37vLTw" id="4r8JClTlmqm" role="37wK5m">
+                                        <ref role="3cqZAo" node="4r8JClTlid7" resolve="languageModule" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

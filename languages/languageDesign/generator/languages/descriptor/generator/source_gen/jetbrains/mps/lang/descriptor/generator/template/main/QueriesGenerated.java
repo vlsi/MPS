@@ -362,7 +362,7 @@ public class QueriesGenerated {
     final SModule languageModule = _context.getOriginalInputModel().getModule();
     return Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.customAspect.LanguageAspectsEP").getObjects()).where(new IWhereFilter<LanguageAspectDescriptor>() {
       public boolean accept(LanguageAspectDescriptor it) {
-        return it.hasAspect(languageModule);
+        return it.hasAspect(languageModule) && it.isGeneratable();
       }
     }).select(new ISelector<LanguageAspectDescriptor, SNode>() {
       public SNode select(LanguageAspectDescriptor it) {

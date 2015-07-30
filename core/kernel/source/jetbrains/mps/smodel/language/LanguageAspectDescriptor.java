@@ -52,6 +52,8 @@ public abstract class LanguageAspectDescriptor {
     return Collections.emptyList();
   }
 
+  public abstract boolean isGeneratable();
+
   @Nullable
   public SNode getInterfaceClassDeclaration(){
     return null;
