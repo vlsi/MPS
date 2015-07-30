@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.behaviour.BHDescriptor;
 import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
+import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -102,6 +103,9 @@ public class BehaviorRegistry implements CoreAspectRegistry {
           }
         } else {
           descriptor = fallbackToInterpretedLegacy(concept);
+        }
+        if (descriptor instanceof BaseBHDescriptor) {
+          ((BaseBHDescriptor) descriptor).init();
         }
       } catch (Throwable e) {
         LOG.error("Exception while behavior descriptor creating", e);

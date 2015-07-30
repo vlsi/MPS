@@ -40,19 +40,20 @@ import java.util.Set;
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
-  protected final SAbstractConcept myConcept;
+  private SAbstractConcept myConcept;
   private boolean myInitialized = false;
   private final BHVirtualMethodTable myVTable = new BHVirtualMethodTable();
-  private final AncestorCache myAncestorCache;
-  private final ConstructionHandler myConstructionHandler;
+  private AncestorCache myAncestorCache;
+  private ConstructionHandler myConstructionHandler;
 
-  public BaseBHDescriptor(@NotNull SAbstractConcept concept) {
-    myConcept = concept;
-    myAncestorCache = new AncestorCache(concept);
-    myConstructionHandler = new ConstructionHandler(concept, myAncestorCache);
-  }
-
+  /**
+   * Intended to be executed during concept behavior construction
+   * @see jetbrains.mps.smodel.language.BehaviorRegistry#getBHDescriptor
+   */
   public void init() {
+    myConcept = getConcept();
+    myAncestorCache = new AncestorCache(myConcept);
+    myConstructionHandler = new ConstructionHandler(myConcept, myAncestorCache);
     initVirtualTable();
     myInitialized = true;
   }
@@ -75,6 +76,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @NotNull
   private BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
+    if (concept == myConcept) {
+      return this;
+    }
     return ConceptRegistry.getInstance().getBHDescriptor(concept);
   }
 
@@ -84,6 +88,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     if ((node == null) && !method.getMethodModifiers().isStatic()) {
       throw new BHNullPointerException();
     }
+    // TODO check parameters properly
     if (method.getParameterCount() != parameters.length) {
       throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
     }
@@ -93,30 +98,39 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       myConstructionHandler.initNode(node);
       return null;
     } else if (method.getMethodModifiers().isVirtual()) {
+      if (!myVTable.contains(method)) {
+        throw new BHMethodNotFoundException(method);
+      }
       BaseBHDescriptor bhDescriptor = myVTable.get(method);
+      assert bhDescriptor != null;
       return bhDescriptor.invokeOwn(node, method, parameters);
     } else {
       if (hasOwnMethod(method)) {
         return invokeOwn(node, method, parameters);
       } else {
-        Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
-        for (SAbstractConcept ancestor : ancestorIterator) {
-          BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
-          if (bhDescriptor instanceof BaseBHDescriptor) {
-            BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
-            if (bhDescriptor1.hasOwnMethod(method)) {
-              return bhDescriptor1.invokeOwn(node, method, parameters);
-            }
-          }
-        }
-        throw new BHMethodNotFoundException(method);
+        return invokeViaAncestors(node, method, parameters);
       }
     }
+  }
+
+  private <T> T invokeViaAncestors(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) throws BHMethodNotFoundException {
+    Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
+    for (SAbstractConcept ancestor : ancestorIterator) {
+      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
+      if (bhDescriptor instanceof BaseBHDescriptor) {
+        BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
+        if (bhDescriptor1.hasOwnMethod(method)) {
+          return bhDescriptor1.invokeOwn(node, method, parameters);
+        }
+      }
+    }
+    throw new BHMethodNotFoundException(method);
   }
 
   /**
    * @generated : listing all the virtual methods. NB: must be fast, all methods are better to be stored somewhere.
    **/
+  @NotNull
   protected abstract List<SMethod<?>> getOwnMethods();
 
   /**
@@ -138,12 +152,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    **/
   private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
     return getOwnMethods().contains(method);
-  }
-
-  @NotNull
-  @Override
-  public final SAbstractConcept getConcept() {
-    return myConcept;
   }
 
   private class ConstructionHandler {

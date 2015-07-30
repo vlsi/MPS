@@ -32,11 +32,11 @@ public interface BHDescriptor {
   <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   @NotNull
-  SAbstractConcept getConcept(); // todo do we need that?
+  SAbstractConcept getConcept();
 
   class BHMethodNotFoundException extends RuntimeException {
     public BHMethodNotFoundException(@NotNull SMethod<?> method) {
-      super("The method " + method + " could not be found");
+      super("The method '" + method + "' could not be found");
     }
   }
 }

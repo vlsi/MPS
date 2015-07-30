@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.Arrays;
 
@@ -23,29 +27,48 @@ import java.util.Arrays;
  * SMethod is a behavior method handle abstraction.
  * @param <T> -- the method return type
  */
+@Immutable
 public final class SMethod<T> {
   private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
-  public static final SMethod<Void> INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.empty(), Void.class);
+  public static final SMethod<Void> INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.NON_VIRTUAL, Void.class, null);
 
   private final String myName;
   private final Class<T> myReturnType;
+  private final SConceptId myHostingConcept;
   private final Class<?>[] myParameterTypes;
   private final BHMethodModifiers myMethodModifiers;
 
-  private SMethod(@NotNull String name, @NotNull BHMethodModifiers modifiers, Class<T> returnType, Class<?>... paramTypes) {
+  private SMethod(@NotNull String name, @NotNull BHMethodModifiers modifiers, Class<T> returnType, @Nullable SConceptId hostingConceptId, Class<?>... paramTypes) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
+    myHostingConcept = hostingConceptId;
     myParameterTypes = paramTypes;
   }
 
-  public static <T> SMethod<T> create(String methodName, BHMethodModifiers modifiers, Class<T> returnType, Class<?>... paramTypes) {
+  /**
+   *
+   * @param methodName -- usual methodName
+   * @param modifiers -- could be virtual or (and) static. @see BHMethodModifiers
+   * @param returnType -- return type
+   * @param hostingConceptId -- the concept, which contains the method declaration.
+   *                           we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
+   * @param paramTypes -- the types of method's arguments
+   * @param <T> -- parametrized by return type
+   * @return new SMethod
+   */
+  public static <T> SMethod<T> create(@NotNull String methodName, BHMethodModifiers modifiers, Class<T> returnType, @Nullable SConceptId hostingConceptId, Class<?>... paramTypes) {
     modifiers.checkCorrectness();
-    return new SMethod<T>(methodName, modifiers, returnType, paramTypes);
+    return new SMethod<T>(methodName, modifiers, returnType, hostingConceptId, paramTypes);
   }
 
   public Class<T> getReturnType() {
     return myReturnType;
+  }
+
+  @Nullable
+  public SConceptId getHostingConcept() {
+    return myHostingConcept;
   }
 
   @NotNull
@@ -88,7 +111,7 @@ public final class SMethod<T> {
 
   @Override
   public String toString() {
-    return String.format("%s:%s:%s:%s", myName, myMethodModifiers.toString(), myReturnType.toString(), Arrays.toString(myParameterTypes));
+    return String.format("%s:%s(%s)%s", myReturnType.toString(), myName, Arrays.toString(myParameterTypes), myMethodModifiers.toString());
   }
 
   @Override
@@ -97,6 +120,7 @@ public final class SMethod<T> {
       SMethod another = (SMethod) o;
       if (!this.getName().equals(another.getName())) return false;
       if (!this.getReturnType().equals(another.getReturnType())) return false;
+      if (!EqualUtil.equals(getHostingConcept(), another.getHostingConcept())) return false;
       if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
       if (!Arrays.equals(this.getParameterTypes(), another.getParameterTypes())) return false;
       return true;
@@ -108,16 +132,25 @@ public final class SMethod<T> {
   public int hashCode() {
     int hashCode = myName.hashCode();
     hashCode = 31 * hashCode + myReturnType.hashCode();
+    hashCode = 31 * hashCode + (myHostingConcept != null ? myHostingConcept.hashCode() : 0);
     hashCode = 31 * hashCode + myMethodModifiers.hashCode();
     hashCode = 31 * hashCode + Arrays.hashCode(myParameterTypes);
     return hashCode;
   }
 
+  // FIXME make immutable
   public static class BHMethodModifiers {
-    private boolean myVirtual;
-    private boolean myStatic;
+    public static final BHMethodModifiers NON_VIRTUAL = BHMethodModifiers.create(false, false);
+    public static final BHMethodModifiers STATIC = BHMethodModifiers.create(false, true);
+    public static final BHMethodModifiers VIRTUAL = BHMethodModifiers.create(true, false);
+    public static final BHMethodModifiers STATIC_AND_VIRTUAL = BHMethodModifiers.create(true, true);
 
-    private BHMethodModifiers() {
+    private final boolean myVirtual;
+    private final boolean myStatic;
+
+    private BHMethodModifiers(boolean virtual, boolean aStatic) {
+      myVirtual = virtual;
+      myStatic = aStatic;
     }
 
     public boolean isStatic() {
@@ -128,18 +161,8 @@ public final class SMethod<T> {
       return myVirtual;
     }
 
-    public BHMethodModifiers virtualOn(boolean value) {
-      myVirtual = value;
-      return this;
-    }
-
-    public BHMethodModifiers staticOn(boolean value) {
-      myStatic = value;
-      return this;
-    }
-
-    public static BHMethodModifiers empty() {
-      return new BHMethodModifiers();
+    public static BHMethodModifiers create(boolean aVirtual, boolean aStatic) {
+      return new BHMethodModifiers(aVirtual, aStatic);
     }
 
     public void checkCorrectness() {

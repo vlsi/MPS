@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.behaviour.SMethod.BHMethodModifiers;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -43,15 +44,22 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
 
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
-  private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>(); // gets filled during #init()
+
+  // both get filled during #init()
+  private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>();
   private List<SMethod<?>> myMethods;
 
   /**
-   * @param legacyDescriptor is a InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
+   * @param legacyDescriptor is an InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
    */
   public BHDescriptorLegacyAdapter(@NotNull InterpretedBehaviorDescriptor legacyDescriptor) {
-    super(new SConceptAdapterByName(legacyDescriptor.getConceptFqName()));
     myLegacyDescriptor = legacyDescriptor;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getConcept() {
+    return new SConceptAdapterByName(myLegacyDescriptor.getConceptFqName());
   }
 
   /**
@@ -72,21 +80,16 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
       String methodName = extractNewMethodNameFromOld(name);
       Method method = entry.getValue();
       BHMethodModifiers modifiers = extractMethodModifiers(methodName, method);
-      SMethod sMethod = SMethod.create(methodName, modifiers, method.getReturnType(), method.getParameterTypes());
+      SMethod sMethod = SMethod.create(methodName, modifiers, method.getReturnType(), MetaIdHelper.getConcept(getConcept()), method.getParameterTypes());
       myInvocationMap.put(sMethod, method);
     }
     myMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
   }
 
   private BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
-    BHMethodModifiers modifiers = BHMethodModifiers.empty();
-    if (methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX)) {
-      modifiers = modifiers.virtualOn(true);
-    }
-    if (method.getParameterTypes()[0].equals(SAbstractConcept.class)) {
-      modifiers = modifiers.staticOn(true);
-    }
-    return modifiers;
+    boolean aVirtual = methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX);
+    boolean aStatic = method.getParameterTypes()[0].equals(SAbstractConcept.class);
+    return BHMethodModifiers.create(aVirtual, aStatic);
   }
 
   private static String extractNewMethodNameFromOld(@NotNull String methodName) {
@@ -116,6 +119,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
     }
   }
 
+  @NotNull
   @Override
   protected List<SMethod<?>> getOwnMethods() {
     return myMethods;

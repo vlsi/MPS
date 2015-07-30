@@ -16,22 +16,24 @@
 package jetbrains.mps.smodel.behaviour;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
-* Created by apyshkin on 28/07/15.
-*/
+ * Primitive representation of the virtual behavior methods table.
+ * Created by apyshkin on 28/07/15.
+ */
 public class BHVirtualMethodTable {
-  private final Map<SMethod, BaseBHDescriptor> myTable = new HashMap<SMethod, BaseBHDescriptor>();
+  private final Map<SMethod<?>, BaseBHDescriptor> myTable = new HashMap<SMethod<?>, BaseBHDescriptor>();
 
-  public void put(@NotNull SMethod method, @NotNull BaseBHDescriptor descriptor) {
+  public void put(@NotNull SMethod<?> method, @NotNull BaseBHDescriptor descriptor) {
     if (!method.getMethodModifiers().isVirtual()) {
       throw new IllegalArgumentException("Method " + method + " must be virtual to be registered in the Virtual Table");
     }
     // only new virtual method implementations need to be recorded
-    for (SMethod methodSeen : myTable.keySet()) {
+    for (SMethod<?> methodSeen : myTable.keySet()) {
       if (SMethod.overrides(methodSeen, method)) {
         return;
       }
@@ -39,7 +41,7 @@ public class BHVirtualMethodTable {
     myTable.put(method, descriptor);
   }
 
-  public void putAllVirtual(Iterable<SMethod<?>> methods, @NotNull BaseBHDescriptor descriptor) {
+  public void putAllVirtual(@NotNull Iterable<SMethod<?>> methods, @NotNull BaseBHDescriptor descriptor) {
     for (SMethod<?> method : methods) {
       if (method.getMethodModifiers().isVirtual()) {
         put(method, descriptor);
@@ -47,7 +49,16 @@ public class BHVirtualMethodTable {
     }
   }
 
-  @NotNull public BaseBHDescriptor get(@NotNull SMethod method) {
+  /**
+   * @param method -- method must be virtual
+   * @return corresponding BHDescriptor or null if the virtual table does not contain the method
+   */
+  @Nullable
+  public BaseBHDescriptor get(@NotNull SMethod<?> method) {
     return myTable.get(method);
+  }
+
+  public boolean contains(@NotNull SMethod<?> method) {
+    return myTable.containsKey(method);
   }
 }
