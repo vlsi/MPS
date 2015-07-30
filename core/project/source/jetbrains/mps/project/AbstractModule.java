@@ -653,7 +653,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (!m.getModelName().startsWith(oldName + ".")) continue;
       if (!(m instanceof EditableSModel)) continue;
 
-      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
+      ((EditableSModel) m).rename(newName + m.getModelName().substring(oldName.length()), true);
     }
   }
 
