@@ -17,12 +17,11 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeReference> {
   public BaseNodePointerModel(Project project) {
@@ -56,15 +55,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
     return new BaseNodePointerItem(node) {
       @Override
       public void navigate(boolean requestFocus) {
-        getProject().getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = getNode();
-            if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
-
-            NavigationSupport.getInstance().openNode(getProject(), node, true, !(node.getModel() != null && node.getParent() == null));
-          }
-        });
+        new EditorNavigator(getProject()).shallFocus(requestFocus).selectIfChild().open(getNodePointer());
       }
     };
   }

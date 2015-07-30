@@ -37,6 +37,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
@@ -270,16 +271,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
             group.add(new BaseAction("Go to node with type " + var) {
               @Override
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-                myProject.getModelAccess().runWriteInEDT(new Runnable() {
-                  @Override
-                  public void run() {
-                    SNode node = pointer.resolve(myProject.getRepository());
-                    if (node == null) {
-                      return;
-                    }
-                    NavigationSupport.getInstance().openNode(myProject, node, true, true);
-                  }
-                });
+                new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(pointer);
               }
             });
           }

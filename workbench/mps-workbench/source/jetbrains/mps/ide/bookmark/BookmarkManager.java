@@ -26,7 +26,7 @@ import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
@@ -251,10 +251,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     if (pointer == null || mpsProject == null) {
       return;
     }
-    SNode targetNode = pointer.resolve(mpsProject.getRepository());
-    if (targetNode != null) {
-      NavigationSupport.getInstance().openNode(mpsProject, targetNode, true, true);
-    }
+    new EditorNavigator(mpsProject).shallFocus(true).shallSelect(true).open(pointer);
   }
 
   public void addBookmarkListener(BookmarkListener listener) {

@@ -40,7 +40,7 @@ import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
@@ -156,15 +156,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     if (nodeToClick instanceof NodeTargetProvider) {
       final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
       if (navigationTarget != null) {
-        getProject().getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode target = navigationTarget.resolve(getProject().getRepository());
-            if (target != null) {
-              NavigationSupport.getInstance().openNode(getProject(), target, true, target.getParent() != null);
-            }
-          }
-        });
+        new EditorNavigator(getProject()).shallFocus(true).selectIfChild().open(navigationTarget);
         return;
       }
       // fall-through
@@ -177,15 +169,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     if (nodeToClick instanceof NodeTargetProvider) {
       final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
       if (navigationTarget != null) {
-        getProject().getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode target = navigationTarget.resolve(getProject().getRepository());
-            if (target != null) {
-              NavigationSupport.getInstance().openNode(getProject(), target, false, target.getParent() != null);
-            }
-          }
-        });
+        new EditorNavigator(getProject()).shallFocus(false).selectIfChild().open(navigationTarget);
         return;
       }
       // fall-through
@@ -195,16 +179,10 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-    getProject().getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = treeNode.getSNode();
-        if (node.getModel() == null) {
-          return;
-        }
-        myProjectPane.editNode(node, getProject(), wasClicked);
-      }
-    });
+    SNodeReference navigationTarget = treeNode.getNavigationTarget();
+    if (navigationTarget != null) {
+      new EditorNavigator(getProject()).shallFocus(wasClicked).selectIfChild().open(navigationTarget);
+    }
   }
 
   @Override

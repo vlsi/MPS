@@ -48,11 +48,11 @@ import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
-import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -187,13 +187,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       final SearchResult<?> searchResult = searchResults.getSearchResults().get(0);
       if (searchResult.getObject() instanceof SNode) {
         final SNode node = (SNode) searchResult.getObject();
-        // FIXME need a dedicated command (NavigateNodeCommand?) to execute, which hides required runWriteInEDT complexity
-        mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            NavigationSupport.getInstance().openNode(mpsProject, node, true, !(node.getModel() != null && node.getParent() == null));
-          }
-        });
+        new EditorNavigator(mpsProject).shallFocus(true).selectIfChild().open(node.getReference());
         return;
       }
       // FALL THROUGH (single result we can't navigate to)

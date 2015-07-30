@@ -25,18 +25,17 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.AbstractAction;
@@ -168,28 +167,11 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   }
 
-  private void openRule(String ruleModel, final String ruleID) {
+  private void openRule(String ruleModel, String ruleID) {
     if (ruleModel == null || ruleID == null) return;
     final SModelReference modelUID = PersistenceFacade.getInstance().createModelReference(ruleModel);
-    final SModel modelDescriptor = modelUID.resolve(myProject.getRepository());
-    if (modelDescriptor == null) {
-      LOG.error("can't find rule's model " + ruleModel);
-      return;
-    }
-
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
-        assert nodeId != null : "wrong node id string";
-        SNode rule = modelDescriptor.getNode(nodeId);
-        if (rule == null) {
-          LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
-          return;
-        }
-        NavigationSupport.getInstance().openNode(myProject, rule, true, !(rule.getModel() != null && rule.getParent() == null));
-      }
-    });
+    SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(ruleID);
+    new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(new SNodePointer(modelUID, nodeId));
   }
 
   public class SNodeTree extends MPSTree {

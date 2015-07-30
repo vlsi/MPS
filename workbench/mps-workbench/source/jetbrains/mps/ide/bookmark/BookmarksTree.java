@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -118,12 +119,7 @@ public class BookmarksTree extends MPSTree {
   public void gotoSelectedBookmark() {
     final BookmarkNode node = getSelectedBookmarkNode();
     if (node != null) {
-      myProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          node.navigateToBookmark();
-        }
-      });
+      node.navigateToBookmark();
     }
   }
 
@@ -147,19 +143,10 @@ public class BookmarksTree extends MPSTree {
 
   @Override
   protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
-    // FIXME this is copy of ProjectPaneTree#doubleClick, refactor to minimize duplication of code
     if (nodeToClick instanceof NodeTargetProvider) {
       final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
       if (navigationTarget != null) {
-        myProject.getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode target = navigationTarget.resolve(myProject.getRepository());
-            if (target != null) {
-              NavigationSupport.getInstance().openNode(myProject, target, true, target.getParent() != null);
-            }
-          }
-        });
+        new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(navigationTarget);
         return;
       }
       // fall-through
@@ -209,10 +196,7 @@ public class BookmarksTree extends MPSTree {
 
     @Override
     public void navigateToBookmark() {
-      SNode targetNode = myNodePointer.resolve(myProject.getRepository());
-      if (targetNode != null) {
-        NavigationSupport.getInstance().openNode(myProject, targetNode, true, true);
-      }
+      new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(myNodePointer);
     }
   }
 

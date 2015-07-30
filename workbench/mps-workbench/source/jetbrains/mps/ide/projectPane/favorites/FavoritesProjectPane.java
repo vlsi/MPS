@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,12 +40,10 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -226,19 +224,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
     @Override
     protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
-      // FIXME this is copy of ProjectPaneTree#doubleClick, refactor to minimize duplication of code
       if (nodeToClick instanceof NodeTargetProvider) {
         final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
         if (navigationTarget != null) {
-          myProject.getModelAccess().runWriteInEDT(new Runnable() {
-            @Override
-            public void run() {
-              SNode target = navigationTarget.resolve(myProject.getRepository());
-              if (target != null) {
-                NavigationSupport.getInstance().openNode(myProject, target, true, target.getParent() != null);
-              }
-            }
-          });
+          new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(navigationTarget);
           return;
         }
         // fall-through
@@ -252,15 +241,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       if (nodeToClick instanceof NodeTargetProvider) {
         final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
         if (navigationTarget != null) {
-          myProject.getModelAccess().runWriteInEDT(new Runnable() {
-            @Override
-            public void run() {
-              SNode target = navigationTarget.resolve(myProject.getRepository());
-              if (target != null) {
-                NavigationSupport.getInstance().openNode(myProject, target, false, target.getParent() != null);
-              }
-            }
-          });
+          new EditorNavigator(myProject).shallFocus(false).selectIfChild().open(navigationTarget);
           return;
         }
         // fall-through
@@ -290,16 +271,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
     @Override
     public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-      myProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SNode node = treeNode.getSNode();
-          if (!SNodeUtil.isAccessible(node, myProject.getRepository()) || node.getModel() == null) {
-            return;
-          }
-          FavoritesProjectPane.this.editNode(node, myProject, wasClicked);
-        }
-      });
+      SNodeReference navigationTarget = treeNode.getNavigationTarget();
+      if (navigationTarget != null) {
+        new EditorNavigator(myProject).shallFocus(wasClicked).selectIfChild().open(navigationTarget);
+      }
     }
   }
 }
