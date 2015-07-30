@@ -181,7 +181,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="2q6iWMfPnJt" role="1tU5fm" />
       <node concept="Xl_RD" id="74sHQpDbWx5" role="33vP2m">
-        <property role="Xl_RC" value="testbench/modules/testBehavior" />
+        <property role="Xl_RC" value="../testbench/modules/testBehavior" />
       </node>
       <node concept="3Tm6S6" id="74sHQpDbWx6" role="1B3o_S" />
     </node>

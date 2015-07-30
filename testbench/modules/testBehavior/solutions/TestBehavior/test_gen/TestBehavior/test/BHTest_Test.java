@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class BHTest_Test extends TestCase {
-  private static final String PROJECT_PATH = "testbench/modules/testBehavior";
+  private static final String PROJECT_PATH = "../testbench/modules/testBehavior";
   /*package*/ Project myProject;
   public void test_defaultMethodWorks() throws Exception {
     SNode nodeI1 = createA1_a2wy8c_a0a0a0();
