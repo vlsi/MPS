@@ -632,14 +632,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void rename(String newName) {
-    //if module name is a prefix of it's model's name - rename the model, too
-    for (SModel m : getModels()) {
-      if (m.isReadOnly()) continue;
-      if (!m.getModelName().startsWith(getModuleName() + ".")) continue;
-      if (!(m instanceof EditableSModel)) continue;
-
-      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
-    }
+    renameModels(getModuleName(), newName);
 
     //see MPS-18743, need to save before setting descriptor
     getRepository().saveAll();
@@ -651,6 +644,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     descriptor.setNamespace(newName);
     setModuleDescriptor(descriptor);
+  }
+
+  protected void renameModels(String oldName, String newName) {
+    //if module name is a prefix of it's model's name - rename the model, too
+    for (SModel m : getModels()) {
+      if (m.isReadOnly()) continue;
+      if (!m.getModelName().startsWith(oldName + ".")) continue;
+      if (!(m instanceof EditableSModel)) continue;
+
+      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
+    }
   }
 
   @NotNull
