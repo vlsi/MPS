@@ -23,7 +23,7 @@
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
     <dependency reexport="false">9ef82768-a1b1-451e-b136-5a86b2b5fdbb(jetbrains.mps.persistence)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
-    <dependency reexport="false">f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.aspectDescriptor)</dependency>
+    <dependency reexport="false">f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.customAspect)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>

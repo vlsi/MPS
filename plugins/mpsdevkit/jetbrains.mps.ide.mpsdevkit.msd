@@ -36,7 +36,7 @@
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
-    <dependency reexport="false">f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.aspectDescriptor)</dependency>
+    <dependency reexport="false">f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.customAspect)</dependency>
   </dependencies>
   <languageVersions>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="1" />

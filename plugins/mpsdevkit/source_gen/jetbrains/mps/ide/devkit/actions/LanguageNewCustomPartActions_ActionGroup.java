@@ -43,7 +43,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
         // [MM] this LanguageAspect usage is reviewed 
         LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), aspect);
       }
-      for (LanguageAspectDescriptor ad : new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP").getObjects()) {
+      for (LanguageAspectDescriptor ad : new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.customAspect.LanguageAspectsEP").getObjects()) {
         LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));
       }
     } catch (Throwable t) {

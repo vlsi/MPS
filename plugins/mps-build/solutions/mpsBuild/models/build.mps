@@ -2465,7 +2465,7 @@
             <ref role="L2wRA" node="6JpuGiQxyxK" resolve="jetbrains.mps.lang.migration.util" />
           </node>
           <node concept="L2wRC" id="6zkSwmUIo9y" role="39821P">
-            <ref role="L2wRA" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+            <ref role="L2wRA" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZG" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L8q" resolve="jetbrains.mps.lang.pattern" />
@@ -4295,7 +4295,7 @@
         <node concept="1SiIV0" id="6zkSwmUIn9M" role="3bR37C">
           <node concept="3bR9La" id="6zkSwmUIn9N" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
           </node>
         </node>
         <node concept="398BVA" id="6wK_PpNA8AP" role="3LF7KH">
@@ -8234,11 +8234,11 @@
       </node>
       <node concept="1E1JtD" id="6zkSwmUIjUi" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.aspectDescriptor" />
+        <property role="TrG5h" value="jetbrains.mps.lang.customAspect" />
         <property role="3LESm3" value="f159adf4-3c93-40f9-9c5a-1f245a8697af" />
         <property role="2GAjPV" value="false" />
         <node concept="1yeLz9" id="6zkSwmUIjUj" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.aspectDescriptor#3274906159125927726" />
+          <property role="TrG5h" value="jetbrains.mps.lang.customAspect#3274906159125927726" />
           <property role="3LESm3" value="e45a8b22-94f2-427f-b849-77f254c4eef5" />
           <property role="2GAjPV" value="false" />
           <node concept="1SiIV0" id="6zkSwmUIjUm" role="3bR37C">
@@ -8250,7 +8250,7 @@
           <node concept="1SiIV0" id="6zkSwmUImDc" role="3bR37C">
             <node concept="3bR9La" id="6zkSwmUImDd" role="1SiIV1">
               <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+              <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
             </node>
           </node>
           <node concept="1SiIV0" id="410MhscK8Sv" role="3bR37C">
@@ -8291,9 +8291,9 @@
             <node concept="2Ry0Ak" id="6zkSwmUIjUA" role="2Ry0An">
               <property role="2Ry0Am" value="languageDesign" />
               <node concept="2Ry0Ak" id="6zkSwmUIjUB" role="2Ry0An">
-                <property role="2Ry0Am" value="aspectDescriptor" />
-                <node concept="2Ry0Ak" id="6zkSwmUIlbc" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.aspectDescriptor.mpl" />
+                <property role="2Ry0Am" value="customAspect" />
+                <node concept="2Ry0Ak" id="6a4q0jFuN44" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.customAspect.mpl" />
                 </node>
               </node>
             </node>
@@ -8435,7 +8435,7 @@
           <node concept="1SiIV0" id="6zkSwmUIm96" role="3bR37C">
             <node concept="3bR9La" id="6zkSwmUIm97" role="1SiIV1">
               <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+              <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
             </node>
           </node>
         </node>
@@ -12836,7 +12836,7 @@
         <node concept="1SiIV0" id="7l_AIgXSHJL" role="3bR37C">
           <node concept="3bR9La" id="7l_AIgXSHJM" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
           </node>
         </node>
       </node>
@@ -25638,7 +25638,7 @@
       <node concept="1SiIV0" id="7l_AIgXSK9G" role="3bR37C">
         <node concept="3bR9La" id="7l_AIgXSK9H" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspectDescriptor" />
+          <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
         </node>
       </node>
     </node>
