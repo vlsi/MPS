@@ -9,7 +9,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -27,7 +26,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -67,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -85,7 +82,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -104,7 +100,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -120,7 +115,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -136,7 +130,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHVirtualMethodTable" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.behaviour.BHInvoker;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BHVirtualMethodTable;
 import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class E_BehaviorDescriptor extends BaseBHDescriptor {
@@ -33,11 +32,6 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void fillVTable(@NotNull BHVirtualMethodTable table) {
-    table.putAll(BH_METHODS, this);
-  }
-
-  @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
@@ -51,8 +45,9 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
+  @NotNull
   @Override
-  protected <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
-    return BH_METHODS.contains(method);
+  protected List<SMethod<?>> getOwnMethods() {
+    return BH_METHODS;
   }
 }

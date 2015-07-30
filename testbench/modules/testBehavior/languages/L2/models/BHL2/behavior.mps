@@ -71,7 +71,7 @@
         <node concept="3cpWs6" id="6EMTxOPT5OP" role="3cqZAp">
           <node concept="10M0yZ" id="6EMTxOPT62D" role="3cqZAk">
             <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
-            <ref role="3cqZAo" to="ynox:6EMTxOPT7fo" resolve="NON_VIRTUAL_PARENT" />
+            <ref role="3cqZAo" to="ynox:6EMTxOPT5P8" resolve="POLYMORPHIC_PARENT" />
           </node>
         </node>
       </node>
@@ -87,7 +87,7 @@
     </node>
     <node concept="13i0hz" id="6EMTxOPT63p" role="13h7CS">
       <property role="TrG5h" value="foo" />
-      <property role="13i0it" value="false" />
+      <property role="13i0it" value="true" />
       <property role="13i0iv" value="false" />
       <ref role="13i0hy" node="6EMTxOPT5LT" resolve="foo" />
       <node concept="3Tm1VV" id="6EMTxOPT63q" role="1B3o_S" />
