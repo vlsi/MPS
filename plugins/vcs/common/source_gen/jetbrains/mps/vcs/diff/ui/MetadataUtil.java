@@ -7,22 +7,22 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -38,7 +38,7 @@ public class MetadataUtil {
     EditableSModelBase metadataModel = new MergeTemporaryModel(model.getReference(), !(editable));
     metadataModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x6df0089f32884998L, 0x9d57e698e7c8e145L), "jetbrains.mps.ide.vcs.modelmetadata"));
     metadataModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project"));
-    SModelOperations.addRootNode(((SModel) metadataModel), createModelRoot(model));
+    createModelRoot(metadataModel, model);
     DiffModelUtil.renameModelAndRegister(metadataModel, version);
     metadataModel.setChanged(false);
     return metadataModel;
@@ -46,13 +46,14 @@ public class MetadataUtil {
   public static void dispose(SModel model) {
     DiffModelUtil.unregisterModel(model);
   }
-  private static SNode createModelRoot(SModel model) {
-    SModelBase modelBase = (SModelBase) model;
-    SNode root = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")));
-    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(model));
+  private static void createModelRoot(SModel target, SModel origin) {
+    SModelBase modelBase = (SModelBase) origin;
+    SNodeId nodeId = PersistenceFacade.getInstance().createNodeId("~root");
+    SNode root = SModelOperations.createNewNode(target, nodeId, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")));
+    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(origin));
     // <node> 
-    if (model instanceof GeneratableSModel) {
-      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0e0d(((GeneratableSModel) model))));
+    if (origin instanceof GeneratableSModel) {
+      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0f0d(((GeneratableSModel) origin))));
     }
     for (SModuleReference language : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getUsedLanguages(modelBase))) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).addElement(createModuleRefNode(language));
@@ -66,16 +67,15 @@ public class MetadataUtil {
     for (jetbrains.mps.smodel.SModel.ImportElement impmodel : ListSequence.fromList(modelBase.importedModels())) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863fL, "import"))).addElement(createModelRefNode(impmodel));
     }
-
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Model Properties");
-    ((jetbrains.mps.smodel.SNode) root).setId(SNodeId.fromString("~root"));
-    return root;
+    SModelOperations.addRootNode(target, root);
   }
   private static SNode createModuleRefNode(SModuleReference module) {
     SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference")));
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName"), module.getModuleName());
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"), module.getModuleId().toString());
-    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"))));
+    // FIXME what's the purpose of custom node id here? Do we use these? Why don't we rely on automatic node id? 
+    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"))));
     return node;
   }
   private static SModuleReference getModuleReference(SNode node) {
@@ -83,15 +83,16 @@ public class MetadataUtil {
   }
   private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
     SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, "jetbrains.mps.lang.project.structure.ModelReference")));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"), SModelStereotype.withoutStereotype(impModel.getModelReference().getModelName()));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"), impModel.getModelReference().getModelId().toString());
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), SModelStereotype.getStereotype(impModel.getModelReference().getModelName()));
-    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))));
+    SModelReference modelReference = impModel.getModelReference();
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"), SModelStereotype.withoutStereotype(modelReference.getModelName()));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"), PersistenceFacade.getInstance().asString(modelReference.getModelId()));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), SModelStereotype.getStereotype(modelReference.getModelName()));
+    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))));
     return node;
   }
   private static SModelReference getModelReference(SNode node) {
     String fullName = SModelStereotype.withStereotype(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")));
-    return new jetbrains.mps.smodel.SModelReference(null, SModelId.fromString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))), fullName);
+    return new jetbrains.mps.smodel.SModelReference(null, PersistenceFacade.getInstance().createModelId(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))), fullName);
   }
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
     if (!(((EditableSModel) metadataModel).isChanged())) {
@@ -178,7 +179,7 @@ public class MetadataUtil {
 
     ((EditableSModel) metadataModel).setChanged(false);
   }
-  private static boolean check_ca1g54_a0a0e0d(GeneratableSModel checkedDotOperand) {
+  private static boolean check_ca1g54_a0a0f0d(GeneratableSModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isDoNotGenerate();
     }

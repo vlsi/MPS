@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.UUID;
 
@@ -57,6 +58,12 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     return new ForeignSModelId(kind + "#" + moduleId + "#" + id);
   }
 
+  /**
+   * @deprecated this method doesn't support {@link org.jetbrains.mps.openapi.persistence.SModelIdFactory},
+   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelId(String)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SModelId fromString(String id) {
     if (id.startsWith(REGULAR_PREFIX)) {
       String suffix = id.substring(REGULAR_PREFIX.length());
