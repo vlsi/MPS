@@ -68,7 +68,7 @@ public class Generator extends ReloadableModuleBase {
   public void rename(String newName) {
     int sharp = newName.indexOf("#");
     newName = sharp < 0 ? newName : newName.substring(sharp);
-    renameModels(getSourceLanguage().getModuleName(), newName);
+    renameModels(getSourceLanguage().getModuleName(), newName, false);
 
     //see MPS-18743, need to save before setting descriptor
     getRepository().saveAll();
