@@ -17,19 +17,15 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
-  private final Project myProject;
   private SNode myNode;
 
   private boolean myInitialized;
 
-  public ReferencesTreeNode(Project project, SNode node) {
-    myProject = project;
+  public ReferencesTreeNode(SNode node) {
     myNode = node;
 
     setIcon(Icons.REFERENCE_ICON);
@@ -49,7 +45,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   @Override
   protected void doInit() {
     for (final SReference ref : myNode.getReferences()) {
-      add(new ReferenceTreeNode(myProject, ref));
+      add(new ReferenceTreeNode(ref));
     }
     myInitialized = true;
   }

@@ -64,6 +64,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.FileSystemModelHelper;
@@ -367,6 +368,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
+  /**
+   * @deprecated this method is in use for compatibility with {@link jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider}, which is deprecated
+   * and scheduled for removal. They will cease together, do not use
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void editNode(final SNode node, jetbrains.mps.project.Project mpsProject, final boolean focus) {
     mpsProject.getModelAccess().checkWriteAccess();
     NavigationSupport.getInstance().openNode(mpsProject, node, focus, !(node.getModel() != null && node.getParent() == null));

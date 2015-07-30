@@ -35,14 +35,17 @@ import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -149,6 +152,48 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   }
 
   @Override
+  protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+    if (nodeToClick instanceof NodeTargetProvider) {
+      final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
+      if (navigationTarget != null) {
+        getProject().getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            SNode target = navigationTarget.resolve(getProject().getRepository());
+            if (target != null) {
+              NavigationSupport.getInstance().openNode(getProject(), target, true, target.getParent() != null);
+            }
+          }
+        });
+        return;
+      }
+      // fall-through
+    }
+    super.doubleClick(nodeToClick);
+  }
+
+  @Override
+  protected void autoscroll(@NotNull MPSTreeNode nodeToClick) {
+    if (nodeToClick instanceof NodeTargetProvider) {
+      final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
+      if (navigationTarget != null) {
+        getProject().getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            SNode target = navigationTarget.resolve(getProject().getRepository());
+            if (target != null) {
+              NavigationSupport.getInstance().openNode(getProject(), target, false, target.getParent() != null);
+            }
+          }
+        });
+        return;
+      }
+      // fall-through
+    }
+    super.autoscroll(nodeToClick);
+  }
+
+  @Override
   public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
     getProject().getModelAccess().runWriteInEDT(new Runnable() {
       @Override
@@ -188,9 +233,9 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       SNode n = treeNode.getSNode();
       if (n == null || n.getModel() == null) return;
 
-      treeNode.add(new ConceptTreeNode(getProject(), n));
+      treeNode.add(new ConceptTreeNode(n));
       treeNode.add(new PropertiesTreeNode(n));
-      treeNode.add(new ReferencesTreeNode(getProject(), n));
+      treeNode.add(new ReferencesTreeNode(n));
     }
   }
 

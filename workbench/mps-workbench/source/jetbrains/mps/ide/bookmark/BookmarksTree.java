@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,13 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -141,6 +143,28 @@ public class BookmarksTree extends MPSTree {
       selectedNode = (MPSTreeNode) selectedNode.getParent();
     }
     return null;
+  }
+
+  @Override
+  protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+    // FIXME this is copy of ProjectPaneTree#doubleClick, refactor to minimize duplication of code
+    if (nodeToClick instanceof NodeTargetProvider) {
+      final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
+      if (navigationTarget != null) {
+        myProject.getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            SNode target = navigationTarget.resolve(myProject.getRepository());
+            if (target != null) {
+              NavigationSupport.getInstance().openNode(myProject, target, true, target.getParent() != null);
+            }
+          }
+        });
+        return;
+      }
+      // fall-through
+    }
+    super.doubleClick(nodeToClick);
   }
 
   private interface BookmarkNode {
