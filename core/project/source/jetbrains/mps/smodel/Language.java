@@ -269,10 +269,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public void rename(String newNamespace) {
-    super.rename(newNamespace);
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);
     }
+    super.rename(newNamespace);
   }
 
   public List<SNode> getConceptDeclarations() {
