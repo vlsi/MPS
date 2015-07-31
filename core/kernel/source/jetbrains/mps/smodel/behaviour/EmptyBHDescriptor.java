@@ -15,32 +15,42 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
- * Must be used instead of {@link BehaviorDescriptor}
- * @since 9.07.15
+ * Intended to supply a generated behavior code in the cases:
+ * 1. No behavior aspect at all;
+ * 2. There is a behavior aspect in the language, but it has not been generated.
+ *
+ * It acts exactly as if it has no methods.
  */
-public interface BHDescriptor {
-  /**
-   * invokes a method (trying to resolve the right method on runtime if it is virtual)
-   */
-  <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
+public final class EmptyBHDescriptor extends BaseBHDescriptor {
+  private final SAbstractConcept myConcept;
+
+  public EmptyBHDescriptor(@NotNull SAbstractConcept concept) {
+    myConcept = concept;
+  }
 
   @NotNull
-  SAbstractConcept getConcept();
+  @Override
+  protected List<SMethod<?>> getOwnMethods() {
+    return Collections.emptyList();
+  }
 
-  class BHMethodNotFoundException extends RuntimeException {
-    public BHMethodNotFoundException(@NotNull SMethod<?> method) {
-      super("The method '" + method + "' could not be found");
-    }
+  @Override
+  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    return null;
+  }
 
-    public BHMethodNotFoundException(String msg) {
-      super(msg);
-    }
+  @NotNull
+  @Override
+  public SAbstractConcept getConcept() {
+    return myConcept;
   }
 }

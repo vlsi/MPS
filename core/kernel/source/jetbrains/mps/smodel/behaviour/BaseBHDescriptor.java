@@ -24,8 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
-import org.jetbrains.mps.util.DepthFirstConceptIterator;
 import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.Collections;
@@ -98,19 +96,27 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       myConstructionHandler.initNode(node);
       return null;
     } else if (method.getMethodModifiers().isVirtual()) {
-      if (!myVTable.contains(method)) {
-        throw new BHMethodNotFoundException(method);
-      }
-      BaseBHDescriptor bhDescriptor = myVTable.get(method);
-      assert bhDescriptor != null;
-      return bhDescriptor.invokeOwn(node, method, parameters);
+      return invokeVirtual(node, method, parameters);
     } else {
-      if (hasOwnMethod(method)) {
-        return invokeOwn(node, method, parameters);
-      } else {
-        return invokeViaAncestors(node, method, parameters);
-      }
+      return invokeNonVirtual(node, method, parameters);
     }
+  }
+
+  private <T> T invokeNonVirtual(SNode node, SMethod<T> method, Object[] parameters) {
+    if (hasOwnMethod(method)) {
+      return invokeOwn(node, method, parameters);
+    } else {
+      return invokeViaAncestors(node, method, parameters);
+    }
+  }
+
+  private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
+    if (!myVTable.contains(method)) {
+      throw new BHMethodNotFoundException(method);
+    }
+    BaseBHDescriptor bhDescriptor = myVTable.get(method);
+    assert bhDescriptor != null;
+    return bhDescriptor.invokeOwn(node, method, parameters);
   }
 
   private <T> T invokeViaAncestors(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) throws BHMethodNotFoundException {
@@ -128,7 +134,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   /**
-   * @generated : listing all the virtual methods. NB: must be fast, all methods are better to be stored somewhere.
+   * @generated : listing all methods except the constructor. NB: must be fast, all methods are better to be stored somewhere.
    **/
   @NotNull
   protected abstract List<SMethod<?>> getOwnMethods();
@@ -148,7 +154,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   /**
-   * @return true iff the method exists
+   * @return true iff the method exists (method is not constructor)
    **/
   private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
     return getOwnMethods().contains(method);
@@ -196,7 +202,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
 
     private Iterable<SAbstractConcept> calcConstructorAncestors() {
-      Iterable<SAbstractConcept> ancestors = new UniqueIterator<SAbstractConcept>(new BreadthConceptHierarchyIterator(myConcept));
+      Iterable<SAbstractConcept> ancestors = new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept));
       List<SAbstractConcept> constructorAncestors = IterableUtil.asList(ancestors);
       Collections.reverse(constructorAncestors);
       return constructorAncestors;

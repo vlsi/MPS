@@ -16,11 +16,16 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.behaviour.BHDescriptor;
 import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
+import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
+import jetbrains.mps.smodel.behaviour.EmptyBHDescriptor;
 import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -57,7 +62,17 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   @ToRemove(version = 3.3)
   @Deprecated
   public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
-    return getLegacyBehaviorDescriptor(fqName);
+    BHDescriptor bhDescriptor = getBHDescriptor(new SConceptAdapterByName(fqName));
+    if (bhDescriptor instanceof BHDescriptorLegacyAdapter) {
+      // then fallback to interpreted is fine
+      return getLegacyBehaviorDescriptor(fqName);
+    } else {
+      if (bhDescriptor instanceof BaseBHDescriptor) {
+        return new BehaviorDescriptorAdapter((BaseBHDescriptor) bhDescriptor);
+      } else {
+        throw new IllegalStateException("Broken contract : unknown behavior descriptor is returned by #getBHDescriptor()");
+      }
+    }
   }
 
   @ToRemove(version = 3.3)
@@ -83,7 +98,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
 
     try {
       try {
-        if ((concept instanceof SAbstractConceptAdapterById)) {
+        if ((concept instanceof SAbstractConceptAdapter)) {
           LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
           BehaviorAspectDescriptor behaviorAspect = null;
           if (languageRuntime == null) {
@@ -91,12 +106,15 @@ public class BehaviorRegistry implements CoreAspectRegistry {
           } else {
             behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
           }
+          if (behaviorAspect == null) {
+            return new IllegalBHDescriptor(concept);
+          }
           if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
-            SConceptId conceptId = ((SAbstractConceptAdapterById) concept).getId();
+            SConceptId conceptId = ((SAbstractConceptAdapter) concept).getId();
             descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(conceptId);
             if (descriptor == null) {
-              LOG.warn("BaseBehaviorAspectDescriptor returned null : " + concept);
-              descriptor = new IllegalBHDescriptor(concept);
+              // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
+              descriptor = new EmptyBHDescriptor(concept);
             }
           } else {
             descriptor = fallbackToInterpretedLegacy(concept);

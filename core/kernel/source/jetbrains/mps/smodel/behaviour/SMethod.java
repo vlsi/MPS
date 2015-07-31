@@ -15,13 +15,18 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * SMethod is a behavior method handle abstraction.
@@ -33,10 +38,10 @@ public final class SMethod<T> {
   public static final SMethod<Void> INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.NON_VIRTUAL, Void.class, null);
 
   private final String myName;
+  private final BHMethodModifiers myMethodModifiers;
   private final Class<T> myReturnType;
   private final SConceptId myHostingConcept;
   private final Class<?>[] myParameterTypes;
-  private final BHMethodModifiers myMethodModifiers;
 
   private SMethod(@NotNull String name, @NotNull BHMethodModifiers modifiers, Class<T> returnType, @Nullable SConceptId hostingConceptId, Class<?>... paramTypes) {
     myName = name;
@@ -52,7 +57,7 @@ public final class SMethod<T> {
    * @param modifiers -- could be virtual or (and) static. @see BHMethodModifiers
    * @param returnType -- return type
    * @param hostingConceptId -- the concept, which contains the method declaration.
-   *                           we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
+   *                            we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
    * @param paramTypes -- the types of method's arguments
    * @param <T> -- parametrized by return type
    * @return new SMethod
@@ -119,9 +124,12 @@ public final class SMethod<T> {
     if (o instanceof SMethod) {
       SMethod another = (SMethod) o;
       if (!this.getName().equals(another.getName())) return false;
-      if (!this.getReturnType().equals(another.getReturnType())) return false;
-      if (!EqualUtil.equals(getHostingConcept(), another.getHostingConcept())) return false;
       if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
+      if (!this.getReturnType().equals(another.getReturnType())) return false;
+      if (!this.getMethodModifiers().isVirtual()) {
+        // the check is needed only if the method is non-virtual!
+        if (!EqualUtil.equals(getHostingConcept(), another.getHostingConcept())) return false;
+      }
       if (!Arrays.equals(this.getParameterTypes(), another.getParameterTypes())) return false;
       return true;
     }
@@ -131,61 +139,110 @@ public final class SMethod<T> {
   @Override
   public int hashCode() {
     int hashCode = myName.hashCode();
-    hashCode = 31 * hashCode + myReturnType.hashCode();
-    hashCode = 31 * hashCode + (myHostingConcept != null ? myHostingConcept.hashCode() : 0);
     hashCode = 31 * hashCode + myMethodModifiers.hashCode();
+    hashCode = 31 * hashCode + myReturnType.hashCode();
+    if (!getMethodModifiers().isVirtual()) {
+      hashCode = 31 * hashCode + (myHostingConcept != null ? myHostingConcept.hashCode() : 0);
+    }
     hashCode = 31 * hashCode + Arrays.hashCode(myParameterTypes);
     return hashCode;
   }
 
-  // FIXME make immutable
-  public static class BHMethodModifiers {
-    public static final BHMethodModifiers NON_VIRTUAL = BHMethodModifiers.create(false, false);
-    public static final BHMethodModifiers STATIC = BHMethodModifiers.create(false, true);
-    public static final BHMethodModifiers VIRTUAL = BHMethodModifiers.create(true, false);
-    public static final BHMethodModifiers STATIC_AND_VIRTUAL = BHMethodModifiers.create(true, true);
+  /**
+   * An adapter meant to construct SMethod having only legacy information, i.e. old-formatted method name and its arguments
+   */
+  static class SMethodLegacyAdapter {
+    private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
+    private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
-    private final boolean myVirtual;
-    private final boolean myStatic;
-
-    private BHMethodModifiers(boolean virtual, boolean aStatic) {
-      myVirtual = virtual;
-      myStatic = aStatic;
-    }
-
-    public boolean isStatic() {
-      return myStatic;
-    }
-
-    public boolean isVirtual() {
-      return myVirtual;
-    }
-
-    public static BHMethodModifiers create(boolean aVirtual, boolean aStatic) {
-      return new BHMethodModifiers(aVirtual, aStatic);
-    }
-
-    public void checkCorrectness() {
-      // FIXME
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (o instanceof BHMethodModifiers) {
-        BHMethodModifiers another = (BHMethodModifiers) o;
-        return this.isStatic() == another.isStatic() && this.isVirtual() == another.isVirtual();
+    @NotNull
+    static SMethod<?> createFromLegacy(String legacyMethodName, Method legacyBHMethod, SAbstractConcept abstractConcept) {
+      if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
+        return SMethod.INIT;
       }
-      return false;
+      String methodName = extractNewMethodNameFromOld(legacyMethodName);
+      BHMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
+      SConceptId concept = MetaIdHelper.getConcept(abstractConcept);
+      return SMethod.create(methodName, modifiers, legacyBHMethod.getReturnType(), concept, legacyBHMethod.getParameterTypes());
     }
 
-    @Override
-    public int hashCode() {
-      return 31 * Boolean.valueOf(myStatic).hashCode() + Boolean.valueOf(myVirtual).hashCode();
+    /**
+     * @return null if could not construct any method
+     */
+    @Nullable
+    static SMethod<?> createFromLegacy(@NotNull BaseBHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
+      if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
+        assert parameters.length == 0;
+        return SMethod.INIT;
+      }
+      String methodName = extractNewMethodNameFromOld(legacyMethodName);
+      BHMethodModifiers modifiers = BHMethodModifiers.create(isVirtual(methodName), isStatic);
+      SConceptId concept = MetaIdHelper.getConcept(newDescriptor.getConcept());
+      List<SMethod<?>> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
+      MethodMatcher methodMatcher = new MethodMatcher(methodName, modifiers, concept, parameters);
+      for (SMethod<?> possibleMethod : possibleMethods) {
+        if (methodMatcher.suits(possibleMethod)) {
+          return possibleMethod;
+        }
+      }
+      return null;
     }
 
-    @Override
-    public String toString() {
-      return (myVirtual ? "V" : "") + (myStatic ? "S" : "");
+    private static BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
+      boolean aVirtual = isVirtual(methodName);
+      boolean aStatic = method.getParameterTypes()[0].equals(SAbstractConcept.class);
+      return BHMethodModifiers.create(aVirtual, aStatic);
+    }
+
+    private static boolean isVirtual(String methodName) {
+      return methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX);
+    }
+
+    private static String extractNewMethodNameFromOld(@NotNull String methodName) {
+      int lastIndexBeforeMethodId = methodName.lastIndexOf("_");
+      for (String possibleMethodPrefix : POSSIBLE_LEGACY_METHOD_PREFIXES) {
+        if (methodName.startsWith(possibleMethodPrefix)) {
+          return methodName.substring(possibleMethodPrefix.length() + 1, lastIndexBeforeMethodId);
+        }
+      }
+      throw new IllegalArgumentException("Could not extract the original method name from " + methodName);
+    }
+
+    /**
+     * internal facility to choose a suitable SMethod having methodName, method modifiers, concept id and an array of parameters
+     */
+    private static final class MethodMatcher {
+      private final String myMethodName;
+      private final BHMethodModifiers myModifiers;
+      private final SConceptId myConceptId;
+      private final Object[] myParameters;
+
+      private MethodMatcher(String methodName, BHMethodModifiers modifiers, SConceptId conceptId, Object[] parameters) {
+        myMethodName = methodName;
+        myModifiers = modifiers;
+        myConceptId = conceptId;
+        myParameters = parameters;
+      }
+
+      public boolean suits(@NotNull SMethod<?> methodCandidate) {
+        if (!methodCandidate.getName().equals(myMethodName)) return false;
+        if (!methodCandidate.getMethodModifiers().equals(myModifiers)) return false;
+        if (myModifiers.isVirtual()) {
+          if (!EqualUtil.equals(methodCandidate.getHostingConcept(), myConceptId)) return false;
+        }
+        // only argument types are left to check
+        if (myParameters.length != methodCandidate.getParameterCount()) {
+          return false;
+        }
+        for (int i = 0; i < myParameters.length; ++i) {
+          Class<?> passedParameterType = myParameters[i].getClass();
+          Class<?> methodArgumentType = methodCandidate.getParameterTypes()[i];
+          if (!methodArgumentType.isAssignableFrom(passedParameterType)) {
+            return false;
+          }
+        }
+        return true;
+      }
     }
   }
 }

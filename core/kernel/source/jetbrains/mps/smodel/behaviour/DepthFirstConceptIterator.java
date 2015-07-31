@@ -13,54 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.util;
+package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Traverse hierarchy of {@link org.jetbrains.mps.openapi.language.SConcept SConcepts} for a given concept (inclusive), visiting super-concepts first
- * then super-interfaces in an order they were specified in super-concepts (breadth-like). FIXME make it truly breadth-first, for interface concepts as well.
+ * then super-interfaces in an order they were specified in super-concepts (depth-like).
  * Given ConceptA implements I1, I2 and ConceptB extends ConceptA implements I3, I4, interface I3 extends I5, interface I5 extends I1, and ConceptB as starting point,
- * the order would be ConceptB, ConceptA, I3, I4, I1, I2, I5, I1
- *
- * Note, same concept may appear few times in this iterator, no unique filtering is done. Use {@link org.jetbrains.mps.util.UniqueIterator} if necessary.
- *
- * FIXME functionality of this class shall get exposed from SConcept API
- * (likely, in addition to public iterator not to limit to single iteration approach, i.e. depth or breadth first).
- * @author Artem Tikhomirov
- *
- * XXX How come its name is DepthFirst when it is clearly breadth first (for interfaces at least)?
+ * the order would be ConceptB, ConceptA, I1, I2, I3, I5, I1, I4
+ * Note, same concept may appear few times in this iterator, no unique filtering is done.
+ * Use {@link org.jetbrains.mps.util.UniqueIterator} if necessary.
  */
-public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
+public final class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
   private final SAbstractConcept myStart;
   private SConcept myCurrent; // super-concepts hierarchy or null once all super-concepts are over
-  private final Queue<SInterfaceConcept> myInterfaceQueue = new LinkedList<SInterfaceConcept>();
+  private final Stack<SInterfaceConcept> myInterfaceStack = new Stack<SInterfaceConcept>();
 
   public DepthFirstConceptIterator(@NotNull SAbstractConcept start) {
     myStart = start;
-    reset(); // just in case we are instantiated as Iterator, not as Iterable
+    reset();
   }
   @Override
   public boolean hasNext() {
-    return myCurrent != null || !myInterfaceQueue.isEmpty();
+    return myCurrent != null || !myInterfaceStack.isEmpty();
   }
 
   @Override
   public SAbstractConcept next() {
     if (myCurrent == null) {
-      final SInterfaceConcept rv = myInterfaceQueue.poll();
-      queue(rv.getSuperInterfaces());
+      final SInterfaceConcept rv = myInterfaceStack.pop();
+      push(rv.getSuperInterfaces());
       return rv;
     } else {
       SConcept rv = myCurrent;
-      queue(myCurrent.getSuperInterfaces());
+      push(myCurrent.getSuperInterfaces());
       myCurrent = myCurrent.getSuperConcept();
       return rv;
     }
@@ -71,11 +68,13 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
     throw new UnsupportedOperationException();
   }
 
-  private void queue(Iterable<SInterfaceConcept> superInterfaces) {
+  private void push(Iterable<SInterfaceConcept> superInterfaces) {
+    // need to preserve the order within the given Iterable
+    List<SInterfaceConcept> toAdd = IterableUtil.asList(superInterfaces);
+    Collections.reverse(toAdd);
     if (superInterfaces != null) {
-      //myInterfaceQueue.addAll(IterableUtil.asList(superInterfaces));    IterableUtil shall move out from kernel module to some utility location
-      for (SInterfaceConcept ic : superInterfaces) {
-        myInterfaceQueue.add(ic);
+      for (SInterfaceConcept ic : toAdd) {
+        myInterfaceStack.push(ic);
       }
     }
   }
@@ -87,10 +86,10 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
   }
 
   private void reset() {
-    myInterfaceQueue.clear();
+    myInterfaceStack.clear();
     if (myStart instanceof SInterfaceConcept) {
       myCurrent = null;
-      myInterfaceQueue.add((SInterfaceConcept) myStart);
+      myInterfaceStack.add((SInterfaceConcept) myStart);
     } else {
       myCurrent = (SConcept) myStart;
     }

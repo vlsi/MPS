@@ -44,6 +44,7 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1219920932475" name="jetbrains.mps.baseLanguage.structure.VariableArityType" flags="in" index="8X2XB">
         <child id="1219921048460" name="componentType" index="8Xvag" />
       </concept>
@@ -3700,7 +3701,7 @@
       </node>
       <node concept="2YIFZM" id="5eGkp75yP$_" role="33vP2m">
         <ref role="1Pybhc" to="cm63:~SMethod" resolve="SMethod" />
-        <ref role="37wK5l" to="cm63:~SMethod.create(java.lang.String,jetbrains.mps.smodel.behaviour.SMethod$BHMethodModifiers,java.lang.Class,jetbrains.mps.smodel.adapter.ids.SConceptId,java.lang.Class...):jetbrains.mps.smodel.behaviour.SMethod" resolve="create" />
+        <ref role="37wK5l" to="cm63:~SMethod.create(java.lang.String,jetbrains.mps.smodel.behaviour.BHMethodModifiers,java.lang.Class,jetbrains.mps.smodel.adapter.ids.SConceptId,java.lang.Class...):jetbrains.mps.smodel.behaviour.SMethod" resolve="create" />
         <node concept="Xl_RD" id="5eGkp75yP$A" role="37wK5m">
           <property role="Xl_RC" value="methodName" />
           <node concept="17Uvod" id="5eGkp75yP$B" role="lGtFl">
@@ -3721,8 +3722,8 @@
           </node>
         </node>
         <node concept="2YIFZM" id="1zT99zApgKt" role="37wK5m">
-          <ref role="37wK5l" to="cm63:~SMethod$BHMethodModifiers.create(boolean,boolean):jetbrains.mps.smodel.behaviour.SMethod$BHMethodModifiers" resolve="create" />
-          <ref role="1Pybhc" to="cm63:~SMethod$BHMethodModifiers" resolve="SMethod.BHMethodModifiers" />
+          <ref role="1Pybhc" to="cm63:~BHMethodModifiers" resolve="BHMethodModifiers" />
+          <ref role="37wK5l" to="cm63:~BHMethodModifiers.create(boolean,boolean):jetbrains.mps.smodel.behaviour.BHMethodModifiers" resolve="create" />
           <node concept="3clFbT" id="1zT99zApkW_" role="37wK5m">
             <property role="3clFbU" value="true" />
             <node concept="17Uvod" id="1zT99zApve9" role="lGtFl">
@@ -3730,12 +3731,23 @@
               <property role="2qtEX9" value="value" />
               <node concept="3zFVjK" id="1zT99zApvec" role="3zH0cK">
                 <node concept="3clFbS" id="1zT99zApved" role="2VODD2">
-                  <node concept="3clFbF" id="1zT99zApvej" role="3cqZAp">
-                    <node concept="2OqwBi" id="1zT99zApvee" role="3clFbG">
-                      <node concept="3TrcHB" id="1zT99zApveh" role="2OqNvi">
-                        <ref role="3TsBF5" to="1i04:hP3i0m0" resolve="isVirtual" />
+                  <node concept="3cpWs6" id="4uXTPnjeInT" role="3cqZAp">
+                    <node concept="22lmx$" id="4uXTPnjeJ5S" role="3cqZAk">
+                      <node concept="3y3z36" id="4uXTPnjeLg3" role="3uHU7w">
+                        <node concept="10Nm6u" id="4uXTPnjeLkh" role="3uHU7w" />
+                        <node concept="2OqwBi" id="4uXTPnjeJll" role="3uHU7B">
+                          <node concept="30H73N" id="4uXTPnjeJ9z" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="4uXTPnjeKws" role="2OqNvi">
+                            <ref role="3Tt5mk" to="1i04:hP3i0lZ" />
+                          </node>
+                        </node>
                       </node>
-                      <node concept="30H73N" id="1zT99zApvei" role="2Oq$k0" />
+                      <node concept="2OqwBi" id="4uXTPnjeInU" role="3uHU7B">
+                        <node concept="3TrcHB" id="4uXTPnjeInV" role="2OqNvi">
+                          <ref role="3TsBF5" to="1i04:hP3i0m0" resolve="isVirtual" />
+                        </node>
+                        <node concept="30H73N" id="4uXTPnjeInW" role="2Oq$k0" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -3956,7 +3968,7 @@
     </node>
     <node concept="2tJIrI" id="1Am6JRr2QfC" role="jymVt" />
     <node concept="2YIFZL" id="1Am6JRr3bBb" role="jymVt">
-      <property role="TrG5h" value="init" />
+      <property role="TrG5h" value="__init__" />
       <node concept="3Tm1VV" id="1Am6JRr3bBc" role="1B3o_S" />
       <node concept="3uibUv" id="CVylynEUr5" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Void" resolve="Void" />
@@ -4305,6 +4317,32 @@
         </node>
       </node>
       <node concept="3clFbS" id="6pZ_jf9SAyt" role="3clF47">
+        <node concept="3clFbJ" id="2pGEV1Ny7xB" role="3cqZAp">
+          <node concept="3clFbS" id="2pGEV1Ny7xD" role="3clFbx">
+            <node concept="3cpWs6" id="52EdXzkBS5K" role="3cqZAp">
+              <node concept="10QFUN" id="52EdXzkBS9S" role="3cqZAk">
+                <node concept="1rXfSq" id="2pGEV1Nyf5s" role="10QFUP">
+                  <ref role="37wK5l" node="1Am6JRr3bBb" resolve="__init__" />
+                  <node concept="37vLTw" id="2pGEV1Nyf7V" role="37wK5m">
+                    <ref role="3cqZAo" node="6pZ_jf9SAyj" resolve="node" />
+                  </node>
+                </node>
+                <node concept="16syzq" id="52EdXzkBS9T" role="10QFUM">
+                  <ref role="16sUi3" node="6pZ_jf9SAyh" resolve="T" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2pGEV1Nycgs" role="3clFbw">
+            <node concept="10M0yZ" id="2pGEV1NyeAy" role="3uHU7w">
+              <ref role="1PxDUh" to="cm63:~SMethod" resolve="SMethod" />
+              <ref role="3cqZAo" to="cm63:~SMethod.INIT" resolve="INIT" />
+            </node>
+            <node concept="37vLTw" id="2pGEV1Nyazo" role="3uHU7B">
+              <ref role="3cqZAo" node="6pZ_jf9SAym" resolve="method" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="rmbZrdagHv" role="3cqZAp">
           <node concept="3cpWsn" id="rmbZrdagHy" role="3cpWs9">
             <property role="TrG5h" value="methodIndex" />

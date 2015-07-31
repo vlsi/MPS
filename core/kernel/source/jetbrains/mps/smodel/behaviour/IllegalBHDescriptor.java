@@ -28,7 +28,7 @@ public final class IllegalBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public Object invoke(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
+  public <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     throw new UnsupportedOperationException();
   }
 

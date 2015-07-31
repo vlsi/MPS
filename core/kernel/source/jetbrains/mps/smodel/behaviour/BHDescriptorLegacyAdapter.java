@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.behaviour.SMethod.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.SMethod.SMethodLegacyAdapter;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -36,13 +36,12 @@ import java.util.Map.Entry;
 /**
  * Created by apyshkin on 7/14/15.
  *
- * Intended to support the legacy behavior generated code. Will be dropped in the next release after every project is migrated
+ * Intended to support the legacy behavior generated code.
+ * @deprecated Will be dropped in the next release after every project is migrated
  */
 @ToRemove(version = 3.3)
+@Deprecated
 public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
-  private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
-  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
-
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
 
   // both get filled during #init()
@@ -73,33 +72,12 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   private void fillOwnMethods() {
     for (Entry<String, Method> entry : myLegacyDescriptor.getMethods().entrySet()) {
-      String name = entry.getKey();
-      if (name.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
-        continue;
+      SMethod<?> sMethod = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
+      if (sMethod != SMethod.INIT) {
+        myInvocationMap.put(sMethod, entry.getValue());
       }
-      String methodName = extractNewMethodNameFromOld(name);
-      Method method = entry.getValue();
-      BHMethodModifiers modifiers = extractMethodModifiers(methodName, method);
-      SMethod sMethod = SMethod.create(methodName, modifiers, method.getReturnType(), MetaIdHelper.getConcept(getConcept()), method.getParameterTypes());
-      myInvocationMap.put(sMethod, method);
     }
     myMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
-  }
-
-  private BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
-    boolean aVirtual = methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX);
-    boolean aStatic = method.getParameterTypes()[0].equals(SAbstractConcept.class);
-    return BHMethodModifiers.create(aVirtual, aStatic);
-  }
-
-  private static String extractNewMethodNameFromOld(@NotNull String methodName) {
-    int lastIndexBeforeMethodId = methodName.lastIndexOf("_");
-    for (String possibleMethodPrefix : POSSIBLE_LEGACY_METHOD_PREFIXES) {
-      if (methodName.startsWith(possibleMethodPrefix)) {
-        return methodName.substring(possibleMethodPrefix.length() + 1, lastIndexBeforeMethodId);
-      }
-    }
-    throw new IllegalArgumentException("Could not extract the original method name from " + methodName);
   }
 
   @Override
@@ -109,6 +87,10 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
         throw new IllegalArgumentException("Cannot pass null node to constructor");
       }
       myLegacyDescriptor.initNode(node);
+      return null;
+    }
+    if (!myInvocationMap.containsKey(method)) {
+      throw new BHMethodNotFoundException(method);
     }
     String methodName = myInvocationMap.get(method).getName();
     Class<T> returnType = method.getReturnType();
