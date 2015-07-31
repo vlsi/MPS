@@ -22,48 +22,48 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class SimpleGenerationDescriptor_Editor extends DefaultNodeEditor {
+public class GenerationDescriptor_PerConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_htyvsp_a(editorContext, node);
+    return this.createCollection_9tz4lw_a(editorContext, node);
   }
-  private EditorCell createCollection_htyvsp_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9tz4lw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_htyvsp_a");
+    editorCell.setCellId("Collection_9tz4lw_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    editorCell.addEditorCell(this.createConstant_htyvsp_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_htyvsp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9tz4lw_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_9tz4lw_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_htyvsp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple per-concept generator");
-    editorCell.setCellId("Constant_htyvsp_a0");
+  private EditorCell createConstant_9tz4lw_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate descriptor");
+    editorCell.setCellId("Constant_9tz4lw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_htyvsp_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9tz4lw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_htyvsp_b0");
+    editorCell.setCellId("Collection_9tz4lw_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_htyvsp_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_htyvsp_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_9tz4lw_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9tz4lw_b1a(editorContext, node));
     return editorCell;
   }
-  private EditorCell createIndentCell_htyvsp_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_9tz4lw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-  private EditorCell createRefNodeList_htyvsp_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new SimpleGenerationDescriptor_Editor.conceptsListHandler_htyvsp_b1a(node, "concepts", editorContext);
+  private EditorCell createRefNodeList_9tz4lw_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new GenerationDescriptor_PerConcept_Editor.conceptsListHandler_9tz4lw_b1a(node, "concepts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_concepts");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class conceptsListHandler_htyvsp_b1a extends RefNodeListHandler {
-    public conceptsListHandler_htyvsp_b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class conceptsListHandler_9tz4lw_b1a extends RefNodeListHandler {
+    public conceptsListHandler_9tz4lw_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

@@ -80,7 +80,7 @@
     <node concept="1TJgyj" id="5KGdJjE3kdu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="genDesc" />
-      <ref role="20lvS9" node="5LFbgO_x_nS" resolve="GeneratorDescriptor" />
+      <ref role="20lvS9" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     </node>
     <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
       <property role="TrG5h" value="helpUrl" />
@@ -97,8 +97,8 @@
   </node>
   <node concept="1TIwiD" id="5KGdJjE3jGJ">
     <property role="3GE5qa" value="simple.gen" />
-    <property role="TrG5h" value="CustomGeneratorDescriptor" />
-    <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GeneratorDescriptor" />
+    <property role="TrG5h" value="GenerationDescriptor_Class" />
+    <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="2Y$EcRKMr2t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="interfaceClass" />
@@ -114,7 +114,7 @@
   </node>
   <node concept="1TIwiD" id="5LFbgO_x_no">
     <property role="3GE5qa" value="simple.gen" />
-    <property role="TrG5h" value="SimpleGenerationDescriptor" />
+    <property role="TrG5h" value="GenerationDescriptor_PerConcept" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5LFbgO_x_nr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -142,7 +142,7 @@
   </node>
   <node concept="1TIwiD" id="5LFbgO_x_nS">
     <property role="3GE5qa" value="simple.gen" />
-    <property role="TrG5h" value="GeneratorDescriptor" />
+    <property role="TrG5h" value="GenerationDescriptor" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>

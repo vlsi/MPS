@@ -379,10 +379,14 @@
   </node>
   <node concept="24kQdi" id="5KGdJjE3jHN">
     <property role="3GE5qa" value="simple.gen" />
-    <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="CustomGeneratorDescriptor" />
+    <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor_Class" />
     <node concept="3EZMnI" id="5KGdJjE3jHP" role="2wV5jI">
       <node concept="3F0ifn" id="5$xTughlNYJ" role="3EZMnx">
-        <property role="3F0ifm" value="custom generator" />
+        <property role="3F0ifm" value="generate descriptor instantiation only" />
+      </node>
+      <node concept="3F0ifn" id="5$xTughlYSN" role="3EZMnx">
+        <property role="3F0ifm" value="// descriptor class will be generated manually" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
       </node>
       <node concept="3EZMnI" id="2Y$EcRKMt98" role="3EZMnx">
         <node concept="3XFhqQ" id="5$xTughlO0n" role="3EZMnx" />
@@ -427,10 +431,10 @@
   </node>
   <node concept="24kQdi" id="5LFbgO_x_nQ">
     <property role="3GE5qa" value="simple.gen" />
-    <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="SimpleGenerationDescriptor" />
+    <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
     <node concept="3EZMnI" id="5$xTughlNYc" role="2wV5jI">
-      <node concept="3F0ifn" id="5$xTughlNYo" role="3EZMnx">
-        <property role="3F0ifm" value="simple per-concept generator" />
+      <node concept="3F0ifn" id="5$xTughlZd_" role="3EZMnx">
+        <property role="3F0ifm" value="generate descriptor" />
       </node>
       <node concept="2iRkQZ" id="5$xTughlNYd" role="2iSdaV" />
       <node concept="3EZMnI" id="5KGdJjE3kje" role="3EZMnx">
