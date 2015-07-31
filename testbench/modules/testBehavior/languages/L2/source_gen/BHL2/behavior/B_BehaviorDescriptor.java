@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,7 +21,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd9c7536e76b5498fL, 0x80640955dd8aebcbL, 0x6ab2e61d35e46065L, "BHL2.structure.B");
   private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Object> foo_METHOD = SMethod.create("foo", SMethod.BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
+  public static final SMethod<Object> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD);
 
@@ -37,6 +38,9 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    if (method == SMethod.INIT) {
+      return (T) __init__(node);
+    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHDescriptor.BHMethodNotFoundException(method);

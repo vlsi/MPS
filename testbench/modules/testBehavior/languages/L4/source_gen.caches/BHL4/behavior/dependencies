@@ -28,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -46,6 +47,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -64,6 +66,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -82,6 +85,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

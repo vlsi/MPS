@@ -8,11 +8,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHInvoker;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BHDescriptor;
@@ -21,8 +22,8 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL, "BHL6.structure.B");
   private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> foo_METHOD = SMethod.create("foo", SMethod.BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Integer> bar_METHOD = SMethod.create("bar", SMethod.BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Integer> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Integer> bar_METHOD = SMethod.create("bar", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD, bar_METHOD);
 
@@ -31,7 +32,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return BehaviorReflection.invokeNonVirtual(Integer.TYPE, __thisNode__, "BHL6.structure.B", "call_bar_6167444251392479236", new Object[]{});
+    return BHInvoker.invoke(__thisNode__, B_BehaviorDescriptor.bar_METHOD);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -42,6 +43,9 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    if (method == SMethod.INIT) {
+      return (T) __init__(node);
+    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHDescriptor.BHMethodNotFoundException(method);

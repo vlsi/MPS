@@ -32,6 +32,9 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    if (method == SMethod.INIT) {
+      return (T) __init__(node);
+    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHDescriptor.BHMethodNotFoundException(method);

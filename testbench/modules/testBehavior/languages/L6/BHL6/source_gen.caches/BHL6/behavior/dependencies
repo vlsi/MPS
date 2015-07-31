@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -31,7 +32,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -67,12 +69,12 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -81,6 +83,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.D_BehaviorDescriptor" file="D_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -91,7 +94,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -100,18 +104,19 @@
     <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.E_BehaviorDescriptor" file="E_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHInvoker" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -130,6 +135,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -148,6 +154,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

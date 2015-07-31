@@ -461,8 +461,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV54Hs" role="3tpDZB">
-              <ref role="3cqZAo" to="ynox:6EMTxOPT9vr" resolve="DIAMOND_I1" />
               <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:6EMTxOPT9on" resolve="DIAMOND_I" />
             </node>
           </node>
         </node>
@@ -948,7 +948,7 @@
                 <ref role="3cqZAo" node="5mnatV0hBrO" resolve="nodeA" />
               </node>
               <node concept="Xl_RD" id="5mnatV0hGhj" role="37wK5m">
-                <property role="Xl_RC" value="virtual_VirtualMethod_12345678" />
+                <property role="Xl_RC" value="virtual_VirtualMethod_1234567890" />
               </node>
               <node concept="37vLTw" id="5mnatV0hGhk" role="37wK5m">
                 <ref role="3cqZAo" node="5mnatV0hC4$" resolve="params" />

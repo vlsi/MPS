@@ -57,7 +57,7 @@ public class BHTest_Test extends TestCase {
   }
   public void test_simpleDiamond3() throws Exception {
     SNode nodeI = createC3_a2wy8c_a0a0f0();
-    Assert.assertEquals(TestResults.DIAMOND_I1, BHInvoker.invoke(nodeI, I_BehaviorDescriptor.foo_METHOD));
+    Assert.assertEquals(TestResults.DIAMOND_I, BHInvoker.invoke(nodeI, I_BehaviorDescriptor.foo_METHOD));
   }
   public void test_constructorInvocation1() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
