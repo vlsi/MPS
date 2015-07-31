@@ -270,6 +270,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
@@ -312,12 +313,14 @@
   </registry>
   <node concept="bUwia" id="2PMNsNJs9sJ">
     <property role="TrG5h" value="main" />
+    <property role="3GE5qa" value="base" />
     <node concept="3lhOvk" id="2Sw9hCAHLuA" role="3lj3bC">
       <ref role="30HIoZ" to="hfbu:2PMNsNJsb26" resolve="LanguageAspectDescriptor" />
       <ref role="3lhOvi" node="2Sw9hCAHLNk" resolve="LanguageAspectsEP_extension" />
     </node>
   </node>
   <node concept="vrV6s" id="2Sw9hCAHLNk">
+    <property role="3GE5qa" value="base" />
     <ref role="vrV6t" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
     <node concept="lufDu" id="2Sw9hCAHLNl" role="luc8C">
       <node concept="3clFbS" id="2Sw9hCAHLNm" role="2VODD2">
@@ -917,6 +920,7 @@
   </node>
   <node concept="bUwia" id="2Y$EcRKO2HF">
     <property role="TrG5h" value="simple" />
+    <property role="3GE5qa" value="simple" />
     <node concept="3lhOvk" id="2Y$EcRKO2Jm" role="3lj3bC">
       <ref role="30HIoZ" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
       <ref role="3lhOvi" node="2Y$EcRKO3dK" resolve="GeneratedAspect" />
@@ -924,6 +928,7 @@
   </node>
   <node concept="320BPa" id="2Y$EcRKO3dK">
     <property role="TrG5h" value="GeneratedAspect" />
+    <property role="3GE5qa" value="simple" />
     <node concept="n94m4" id="2Y$EcRKO3rx" role="lGtFl">
       <ref role="n9lRv" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
     </node>
