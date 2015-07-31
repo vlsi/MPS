@@ -8,7 +8,9 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -78,7 +80,7 @@
     <node concept="1TJgyj" id="5KGdJjE3kdu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="genDesc" />
-      <ref role="20lvS9" node="5KGdJjE3jGJ" resolve="GenerationDescriptor" />
+      <ref role="20lvS9" node="5LFbgO_x_nS" resolve="GeneratorDescriptor" />
     </node>
     <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
       <property role="TrG5h" value="helpUrl" />
@@ -94,19 +96,54 @@
     <ref role="1TJDcQ" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
   </node>
   <node concept="1TIwiD" id="5KGdJjE3jGJ">
-    <property role="3GE5qa" value="simple" />
-    <property role="TrG5h" value="GenerationDescriptor" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <property role="3GE5qa" value="simple.gen" />
+    <property role="TrG5h" value="CustomGeneratorDescriptor" />
+    <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GeneratorDescriptor" />
     <node concept="1TJgyj" id="2Y$EcRKMr2t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="interfaceClass" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
     </node>
-    <node concept="1TJgyi" id="2Y$EcRKMswW" role="1TKVEl">
-      <property role="TrG5h" value="implClassShortName" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="5$xTughlvvt" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="implTemplate" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5LFbgO_x_no">
+    <property role="3GE5qa" value="simple.gen" />
+    <property role="TrG5h" value="SimpleGenerationDescriptor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5LFbgO_x_nr" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="concepts" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="5LFbgO_x_nt" resolve="ConceptInstancesPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5LFbgO_x_nt">
+    <property role="3GE5qa" value="simple.gen" />
+    <property role="TrG5h" value="ConceptInstancesPart" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5$xTughlNVs" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..1" />
+      <property role="20kJfa" value="mainConceptFunc" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+    </node>
+    <node concept="1TJgyj" id="5$xTughlNUD" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="cncpt" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5LFbgO_x_nS">
+    <property role="3GE5qa" value="simple.gen" />
+    <property role="TrG5h" value="GeneratorDescriptor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

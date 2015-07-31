@@ -112,8 +112,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rpszz1_d1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rpszz1_f1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rpszz1_g1b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_rpszz1_h1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rpszz1_g1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_rpszz1_a1b0(EditorContext editorContext, SNode node) {
@@ -371,32 +370,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_rpszz1_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Generation");
-    editorCell.setCellId("Constant_rpszz1_g1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_rpszz1_h1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rpszz1_h1b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_rpszz1_a7b1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_rpszz1_b7b1a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createIndentCell_rpszz1_a7b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    return editorCell;
-  }
-  private EditorCell createRefNode_rpszz1_b7b1a(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_Editor.genDescSingleRoleHandler_rpszz1_b7b1a(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc"), editorContext);
+  private EditorCell createRefNode_rpszz1_g1b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_Editor.genDescSingleRoleHandler_rpszz1_g1b0(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc"), editorContext);
     return provider.createCell();
   }
-  private class genDescSingleRoleHandler_rpszz1_b7b1a extends SingleRoleCellProvider {
-    public genDescSingleRoleHandler_rpszz1_b7b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class genDescSingleRoleHandler_rpszz1_g1b0 extends SingleRoleCellProvider {
+    public genDescSingleRoleHandler_rpszz1_g1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {
@@ -421,7 +400,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<aspect is not generated>";
+      return "<aspect has no generator>";
     }
 
   }
