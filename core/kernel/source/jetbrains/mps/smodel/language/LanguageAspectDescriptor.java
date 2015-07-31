@@ -52,6 +52,11 @@ public abstract class LanguageAspectDescriptor {
     return Collections.emptyList();
   }
 
+  @Nullable
+  public LanguageAspectGenerator getGenerator(){
+    return null;
+  }
+
   public abstract boolean isGeneratable();
 
   @Nullable
