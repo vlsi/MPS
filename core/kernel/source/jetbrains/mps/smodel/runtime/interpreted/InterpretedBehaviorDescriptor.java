@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.UniqueIterator;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,41 +37,23 @@ import java.util.Map;
 @ToRemove(version = 3.3)
 @Deprecated
 public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-  private final Map<String, Method> myMethods = new HashMap<String, Method>();
-  private volatile boolean myInitialized = false;
+  private static final Logger LOG = LogManager.getLogger(InterpretedBehaviorDescriptor.class);
 
-  public InterpretedBehaviorDescriptor(String fqName) {
-    super(fqName);
+  private final Map<String, Method> myMethods; // string key (methodName) contains method node id; so it is unique.
+
+  public InterpretedBehaviorDescriptor(String conceptFqName) {
+    super(conceptFqName);
+    myMethods = fillOwnMethods(conceptFqName);
   }
 
-  @Override
-  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-    return genericInvoke(node, methodName, parameters);
-  }
-
-  @Override
-  public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return genericInvoke(concept, methodName, parameters);
-  }
-
-  private void init() {
-    if (myInitialized) {
-      return;
-    }
-
-    fillMethods(getConceptFqName());
-    myInitialized = true;
-  }
-
-  private Object genericInvoke(@NotNull Object arg, String methodName, Object[] parameters) {
-    init();
+  public Object invokeOwn(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
     Method method = myMethods.get(methodName);
     if (method == null) {
-      throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
+      throwNoSuchMethod(methodName);
     }
 
     Object[] params = new Object[parameters.length + 1];
-    params[0] = arg;
+    params[0] = nodeOrConcept.getObject();
     System.arraycopy(parameters, 0, params, 1, parameters.length);
 
     try {
@@ -89,23 +71,45 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     }
   }
 
-  private synchronized void fillMethods(final String conceptFqName) {
-    SConcept startConcept = new SConceptAdapterByName(conceptFqName);
-    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthFirstConceptIterator(startConcept))) {
-      String fqName = concept.getQualifiedName();
-      Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
-      if (cls != null) {
-        Method[] methods = cls.getMethods();
-        for (Method method : methods) {
-          if (!myMethods.containsKey(method.getName())) {
-            myMethods.put(method.getName(), method);
+  public boolean hasOwnMethod(String methodName) {
+    return getOwnMethods().containsKey(methodName);
+  }
+
+  private Map<String, Method> fillOwnMethods(String fqName) {
+    Map<String, Method> methodMap = new HashMap<String, Method>();
+    Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
+    if (cls != null) {
+      Method[] methods = cls.getMethods();
+      for (Method method : methods) {
+        String methodName = method.getName();
+        if (methodName.startsWith(BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX) ||
+            methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX)) {
+          if (!methodMap.containsKey(methodName)) {
+            methodMap.put(methodName, method);
           }
         }
       }
     }
+    return Collections.unmodifiableMap(methodMap);
   }
 
-  public Map<String, Method> getMethods() {
-    return new HashMap<String, Method>(myMethods);
+  @Override
+  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    return genericInvoke(NodeOrConcept.create(node), methodName, parameters);
+  }
+
+  @Override
+  public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
+    return genericInvoke(NodeOrConcept.create(concept), methodName, parameters);
+  }
+
+  // return all methods including constructor
+  public Map<String, Method> getOwnMethods() {
+    return myMethods;
+  }
+
+  @Override
+  public String toString() {
+    return "InterpretedBehaviorDescriptor [" + getConceptFqName();
   }
 }

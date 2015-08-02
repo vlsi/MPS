@@ -36,7 +36,7 @@ import java.util.Map;
  * Currently the {@link jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter} is used to adapt the old behavior
  * implementations to the new behavior invocation system.
  *
- * This class as well as the adapter class will be dropped all together in the nearest release.
+ * This class as well as the adapter class will be dropped all together in the next release.
  */
 @ToRemove(version = 3.3)
 @Deprecated

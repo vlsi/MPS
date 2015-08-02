@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
@@ -43,6 +44,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * Registry for behavior descriptors. Currently contains {@link BHDescriptor} and old legacy {@link BehaviorDescriptor}.
+ *
  * Created by apyshkin on 7/15/15.
  */
 public class BehaviorRegistry implements CoreAspectRegistry {
@@ -62,9 +65,10 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   @ToRemove(version = 3.3)
   @Deprecated
   public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
-    BHDescriptor bhDescriptor = getBHDescriptor(new SConceptAdapterByName(fqName));
-    if (bhDescriptor instanceof BHDescriptorLegacyAdapter) {
-      // then fallback to interpreted is fine
+    SAbstractConcept concept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(fqName));
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    if (bhDescriptor instanceof BHDescriptorLegacyAdapter || bhDescriptor instanceof IllegalBHDescriptor) {
+      // then fallback to legacy is fine
       return getLegacyBehaviorDescriptor(fqName);
     } else {
       if (bhDescriptor instanceof BaseBHDescriptor) {

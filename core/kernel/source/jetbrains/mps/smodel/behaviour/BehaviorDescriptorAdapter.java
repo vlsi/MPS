@@ -16,15 +16,12 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.behaviour.SMethod.SMethodLegacyAdapter;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class is needed to support legacy behavior calls via {@link BehaviorReflection}
@@ -35,10 +32,11 @@ import java.util.List;
  */
 @Deprecated
 @ToRemove(version = 3.3)
-public class BehaviorDescriptorAdapter implements BehaviorDescriptor {
+public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
   private final BaseBHDescriptor myDescriptor;
 
   public BehaviorDescriptorAdapter(@NotNull BaseBHDescriptor descriptor) {
+    super(descriptor.getConcept());
     myDescriptor = descriptor;
   }
 
@@ -54,20 +52,30 @@ public class BehaviorDescriptorAdapter implements BehaviorDescriptor {
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-    return invoke0(node, methodName, parameters, false);
+    return genericInvoke(NodeOrConcept.create(node), methodName, parameters);
   }
 
   @Override
   public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return invoke0(null, methodName, parameters, true);
+    return genericInvoke(NodeOrConcept.create(concept), methodName, parameters);
   }
 
-  @Nullable
-  private Object invoke0(@Nullable SNode node, String methodName, Object[] parameters, boolean isStatic) {
+  public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
+    boolean isStatic = (node == null);
     @Nullable SMethod<?> method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
     if (method == null) {
-      throw new BHDescriptor.BHMethodNotFoundException("Could not find a suitable SMethod");
+      throwNoSuchMethod(methodName);
     }
-    return myDescriptor.invoke(node, method);
+    return myDescriptor.invoke(node, method, parameters);
+  }
+
+  public boolean hasOwnMethod(String methodName, Object[] parameters, boolean isStatic) {
+    @Nullable SMethod<?> method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+    return method != null;
+  }
+
+  @Override
+  protected void throwNoSuchMethod(String methodName) {
+    throw new BHDescriptor.BHMethodNotFoundException("Could not find a suitable SMethod with name: '" + methodName + "'");
   }
 }

@@ -12,9 +12,12 @@
     <classNode dependClassName="BHL6.behavior.E_BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.F_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.B_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.C_BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -30,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="junit.framework.TestCase" />

@@ -74,7 +74,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @NotNull
   private BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
-    if (concept == myConcept) {
+    if (concept.equals(myConcept)) {
       return this;
     }
     return ConceptRegistry.getInstance().getBHDescriptor(concept);
@@ -103,11 +103,19 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeNonVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    if (hasOwnMethod(method)) {
-      return invokeOwn(node, method, parameters);
-    } else {
-      return invokeViaAncestors(node, method, parameters);
+    Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
+    for (SAbstractConcept ancestor : ancestorIterator) {
+      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
+      if (bhDescriptor instanceof BaseBHDescriptor) {
+        BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
+        if (bhDescriptor1.hasOwnMethod(method)) {
+          return bhDescriptor1.invokeOwn(node, method, parameters);
+        }
+      } else {
+        throw new IllegalStateException("Unknown behavior descriptor in the '" + getConcept() + "' ancestor tree : '" + bhDescriptor + "'");
+      }
     }
+    throw new BHMethodNotFoundException(method);
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
@@ -119,22 +127,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
 
-  private <T> T invokeViaAncestors(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) throws BHMethodNotFoundException {
-    Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
-    for (SAbstractConcept ancestor : ancestorIterator) {
-      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
-      if (bhDescriptor instanceof BaseBHDescriptor) {
-        BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
-        if (bhDescriptor1.hasOwnMethod(method)) {
-          return bhDescriptor1.invokeOwn(node, method, parameters);
-        }
-      }
-    }
-    throw new BHMethodNotFoundException(method);
-  }
-
   /**
-   * @generated : listing all methods except the constructor. NB: must be fast, all methods are better to be stored somewhere.
+   * @generated : listing all methods except the constructor.
+   * NB: must be fast
    **/
   @NotNull
   protected abstract List<SMethod<?>> getOwnMethods();
@@ -154,10 +149,15 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   /**
-   * @return true iff the method exists (method is not constructor)
+   * @return true iff the method exists (constructor is not a method here)
    **/
   private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
     return getOwnMethods().contains(method);
+  }
+
+  @Override
+  public String toString() {
+    return getConcept() + " BHDescriptor";
   }
 
   private class ConstructionHandler {
@@ -170,7 +170,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       myAncestorCache = ancestorCache;
     }
 
-    public synchronized void initNode(@NotNull SNode node) {
+    public void initNode(@NotNull SNode node) {
       assert myConcept.equals(node.getConcept());
       if (myConstructed.contains(node)) {
         throw new AlreadyConstructedException();
@@ -179,8 +179,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
         if (ancestorDescriptor instanceof BaseBHDescriptor) {
           ((BaseBHDescriptor) ancestorDescriptor).invokeOwn(node, SMethod.INIT);
-        } else {
-          // todo
         }
       }
       myConstructed.add(node);
@@ -192,8 +190,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private static class AncestorCache {
     private final SAbstractConcept myConcept;
-    private final Iterable<SAbstractConcept> myConstructorAncestors;
-    private final Iterable<SAbstractConcept> myVirtualInvocationAncestors;
+    private final List<SAbstractConcept> myConstructorAncestors;
+    private final List<SAbstractConcept> myVirtualInvocationAncestors;
 
     public AncestorCache(SAbstractConcept concept) {
       myConcept = concept;
@@ -201,22 +199,22 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       myVirtualInvocationAncestors = calcVirtualInvocationAncestors();
     }
 
-    private Iterable<SAbstractConcept> calcConstructorAncestors() {
+    private List<SAbstractConcept> calcConstructorAncestors() {
       Iterable<SAbstractConcept> ancestors = new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept));
       List<SAbstractConcept> constructorAncestors = IterableUtil.asList(ancestors);
       Collections.reverse(constructorAncestors);
-      return constructorAncestors;
+      return Collections.unmodifiableList(constructorAncestors);
     }
 
-    private Iterable<SAbstractConcept> calcVirtualInvocationAncestors() {
-      return new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept));
+    private List<SAbstractConcept> calcVirtualInvocationAncestors() {
+      return Collections.unmodifiableList(IterableUtil.asList(new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept))));
     }
 
-    public Iterable<SAbstractConcept> getAncestorsConstructionOrder() {
+    public List<SAbstractConcept> getAncestorsConstructionOrder() {
       return myConstructorAncestors;
     }
 
-    public Iterable<SAbstractConcept> getAncestorsVirtualInvocationOrder() {
+    public List<SAbstractConcept> getAncestorsVirtualInvocationOrder() {
       return myVirtualInvocationAncestors;
     }
   }

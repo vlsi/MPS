@@ -44,6 +44,7 @@ public final class DepthFirstConceptIterator implements Iterable<SAbstractConcep
     myStart = start;
     reset();
   }
+
   @Override
   public boolean hasNext() {
     return myCurrent != null || !myInterfaceStack.isEmpty();

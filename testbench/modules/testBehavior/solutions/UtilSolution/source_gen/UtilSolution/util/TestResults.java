@@ -24,4 +24,8 @@ public class TestResults {
   public static final String C3_DEFAULT_VALUE = "I am C3";
 
   public static final int DEFAULT_RETURN_VALUE = 1;
+  public static final Void DEFAULT_VOID_VALUE = null;
+
+  public static final int SPECIFIED_RETURN_VALUE = 1;
+  public static final int NOT_SPECIFIED_RETURN_VALUE = 2;
 }

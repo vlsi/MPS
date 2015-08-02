@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.behaviour.SMethod.SMethodLegacyAdapter;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -34,10 +35,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * Created by apyshkin on 7/14/15.
- *
  * Intended to support the legacy behavior generated code.
  * @deprecated Will be dropped in the next release after every project is migrated
+ *
+ * Created by apyshkin on 7/14/15.
  */
 @ToRemove(version = 3.3)
 @Deprecated
@@ -46,7 +47,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   // both get filled during #init()
   private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>();
-  private List<SMethod<?>> myMethods;
+  private List<SMethod<?>> myOwnMethods;
 
   /**
    * @param legacyDescriptor is an InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
@@ -56,9 +57,20 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   @NotNull
+  public InterpretedBehaviorDescriptor getLegacyDescriptor() {
+    return myLegacyDescriptor;
+  }
+
+  @NotNull
   @Override
   public SAbstractConcept getConcept() {
-    return new SConceptAdapterByName(myLegacyDescriptor.getConceptFqName());
+    return getConcept(myLegacyDescriptor.getConceptFqName());
+  }
+
+  @NotNull
+  private SAbstractConcept getConcept(String conceptFqName) {
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName);
+    return MetaAdapterFactory.getAbstractConcept(conceptDescriptor);
   }
 
   /**
@@ -71,13 +83,13 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   private void fillOwnMethods() {
-    for (Entry<String, Method> entry : myLegacyDescriptor.getMethods().entrySet()) {
+    for (Entry<String, Method> entry : myLegacyDescriptor.getOwnMethods().entrySet()) {
       SMethod<?> sMethod = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
       if (sMethod != SMethod.INIT) {
         myInvocationMap.put(sMethod, entry.getValue());
       }
     }
-    myMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
+    myOwnMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
   }
 
   @Override
@@ -104,6 +116,6 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   @NotNull
   @Override
   protected List<SMethod<?>> getOwnMethods() {
-    return myMethods;
+    return myOwnMethods;
   }
 }

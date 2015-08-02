@@ -3,6 +3,7 @@
   <dependency className="UtilSolution.util.TestResults" file="TestResults.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Void" />
   </dependency>
 </dependenciesRoot>
 

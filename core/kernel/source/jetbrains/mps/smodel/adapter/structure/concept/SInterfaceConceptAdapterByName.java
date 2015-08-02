@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter implements SInterfaceConcept {
   public SInterfaceConceptAdapterByName(@NotNull String fqname) {
-    super( fqname);
+    super(fqname);
   }
 
   @Override

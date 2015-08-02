@@ -20,6 +20,7 @@ import BHL6.behavior.C_BehaviorDescriptor;
 import BHL6.behavior.E_BehaviorDescriptor;
 import BHL6.behavior.F_BehaviorDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -118,7 +119,32 @@ public class BHTest_Test extends TestCase {
   public void test_oldApiBehaviorCall() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0q0();
     Object[] params = {};
-    Assert.assertSame(BHInvoker.invoke(nodeA, BHL7.behavior.A_BehaviorDescriptor.virtualMethod_METHOD), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_VirtualMethod_12345678", params));
+    Assert.assertSame(BHInvoker.invoke(nodeA, BHL7.behavior.A_BehaviorDescriptor.virtualMethod_METHOD), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_1234567890", params));
+    Assert.assertSame(BHInvoker.invoke(SNodeOperations.getConcept(nodeA), BHL7.behavior.A_BehaviorDescriptor.staticVirtualMethod_METHOD), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_1234567890", params));
+  }
+  public void test_oldApiBehaviorCallNonVirtual() throws Exception {
+    SNode nodeA = createB_a2wy8c_a0a0r0();
+    Object[] params = {};
+    SAbstractConcept conceptA = SNodeOperations.getConcept(nodeA);
+    Assert.assertSame(BHInvoker.invoke(nodeA, BHL7.behavior.A_BehaviorDescriptor.nonVirtualMethod_METHOD), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_1234567890", params));
+    Assert.assertSame(BHInvoker.invoke(SNodeOperations.getConcept(nodeA), BHL7.behavior.A_BehaviorDescriptor.staticMethod_METHOD), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_1234567890", params));
+  }
+  public void test_primitiveMethodReturnType() throws Exception {
+    SNode nodeB = createB_a2wy8c_a0a0s0();
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHInvoker.invoke(nodeB, BHL7.behavior.B_BehaviorDescriptor.primitiveReturnValue_METHOD));
+  }
+  public void test_genericMethodReturnType() throws Exception {
+    SNode nodeB = createB_a2wy8c_a0a0t0();
+    Assert.assertSame(Integer.class, BHInvoker.invoke(nodeB, BHL7.behavior.B_BehaviorDescriptor.genericReturnValue_METHOD));
+  }
+  public void test_voidMethod() throws Exception {
+    SNode nodeB = createB_a2wy8c_a0a0u0();
+    Assert.assertSame(null, BHInvoker.invoke(nodeB, BHL7.behavior.A_BehaviorDescriptor.justVoidReturnTypeMethod_METHOD));
+  }
+  public void test_parameterTypes() throws Exception {
+    SNode nodeC = createC_a2wy8c_a0a0v0();
+    Assert.assertSame(TestResults.NOT_SPECIFIED_RETURN_VALUE, BHInvoker.invoke(nodeC, BHL7.behavior.C_BehaviorDescriptor.argTypeResolve_METHOD, new Integer(1)));
+    Assert.assertSame(TestResults.SPECIFIED_RETURN_VALUE, BHInvoker.invoke(nodeC, BHL7.behavior.C_BehaviorDescriptor.argTypeResolve_METHOD, new Integer(1)));
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -197,6 +223,31 @@ public class BHTest_Test extends TestCase {
   private static SNode createB_a2wy8c_a0a0q0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createB_a2wy8c_a0a0r0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createB_a2wy8c_a0a0s0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createB_a2wy8c_a0a0t0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createB_a2wy8c_a0a0u0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createC_a2wy8c_a0a0v0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L, "BHL7.structure.C"), null, null, false);
     return n1;
   }
 }

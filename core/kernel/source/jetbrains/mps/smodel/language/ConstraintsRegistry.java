@@ -32,9 +32,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Created by apyshkin on 7/15/15.
- */
 public class ConstraintsRegistry implements CoreAspectRegistry {
   private static final Logger LOG = LogManager.getLogger(ConstraintsRegistry.class);
   private final ConceptInLoadingStorage<SConceptId> myStorage = new ConceptInLoadingStorage<SConceptId>();

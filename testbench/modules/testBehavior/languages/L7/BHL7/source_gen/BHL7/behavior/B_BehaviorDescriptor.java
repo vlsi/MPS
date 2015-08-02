@@ -21,10 +21,12 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B");
   private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Object> virtualMethod_METHOD = SMethod.create("virtualMethod", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
-  public static final SMethod<Object> staticVirtualMethod_METHOD = SMethod.create("staticVirtualMethod", BHMethodModifiers.create(true, true), Object.class, CONCEPT_ID);
+  public static final SMethod<Object> virtualMethod_METHOD_6167444251392504504 = SMethod.create("virtualMethod", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
+  public static final SMethod<Object> staticVirtualMethod_METHOD_6167444251392504516 = SMethod.create("staticVirtualMethod", BHMethodModifiers.create(true, true), Object.class, CONCEPT_ID);
+  public static final SMethod<Integer> primitiveReturnValue_METHOD_5606797489885796553 = SMethod.create("primitiveReturnValue", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Class<Integer>> genericReturnValue_METHOD_5606797489885798976 = SMethod.create("genericReturnValue", BHMethodModifiers.create(false, false), (Class<Class<Integer>>) ((Class) Object.class), CONCEPT_ID);
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_METHOD, staticVirtualMethod_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_METHOD_6167444251392504504, staticVirtualMethod_METHOD_6167444251392504516, primitiveReturnValue_METHOD_5606797489885796553, genericReturnValue_METHOD_5606797489885798976);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
@@ -35,6 +37,12 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   }
   public static Object staticVirtualMethod(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
+  }
+  public static Integer primitiveReturnValue(@Nullable SNode __thisNode__) {
+    return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  public static Class<Integer> genericReturnValue(@Nullable SNode __thisNode__) {
+    return Integer.class;
   }
 
   /*package*/ B_BehaviorDescriptor() {
@@ -54,6 +62,10 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
         return (T) virtualMethod(node);
       case 1:
         return (T) staticVirtualMethod(node);
+      case 2:
+        return (T) primitiveReturnValue(node);
+      case 3:
+        return (T) genericReturnValue(node);
       default:
         throw new BHDescriptor.BHMethodNotFoundException(method);
     }

@@ -176,7 +176,7 @@ public final class SMethod<T> {
         return SMethod.INIT;
       }
       String methodName = extractNewMethodNameFromOld(legacyMethodName);
-      BHMethodModifiers modifiers = BHMethodModifiers.create(isVirtual(methodName), isStatic);
+      BHMethodModifiers modifiers = BHMethodModifiers.create(isVirtual(legacyMethodName), isStatic);
       SConceptId concept = MetaIdHelper.getConcept(newDescriptor.getConcept());
       List<SMethod<?>> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
       MethodMatcher methodMatcher = new MethodMatcher(methodName, modifiers, concept, parameters);

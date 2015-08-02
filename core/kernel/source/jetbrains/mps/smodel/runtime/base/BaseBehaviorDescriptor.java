@@ -17,23 +17,31 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BHDescriptor;
+import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
+import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
 import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
+import jetbrains.mps.smodel.behaviour.DepthFirstConceptIterator;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.UniqueIterator;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,20 +57,38 @@ import java.util.regex.Pattern;
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
-  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
+  private static final Pattern CONCEPT_FQ_NAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
   private static final String DEFAULT_INIT_METHOD_NAME = "init";
 
-  private final String conceptFqName;
-  private final List<Method> constructors;
+  private final SAbstractConcept myConcept;
+  private final List<Method> myConstructors;
+  private final List<SAbstractConcept> myAncestors; // including myself
+
+  public BaseBehaviorDescriptor(@NotNull SAbstractConcept concept) {
+    myConcept = concept;
+    myConstructors = calculateConstructors();
+    myAncestors = calculateAncestors(concept);
+  }
 
   public BaseBehaviorDescriptor(String conceptFqName) {
-    this.conceptFqName = conceptFqName;
-    this.constructors = calculateConstructors(getConceptFqName());
+    myConcept = getConcept(conceptFqName);
+    myConstructors = calculateConstructors();
+    myAncestors = calculateAncestors(myConcept);
+  }
+
+  private List<SAbstractConcept> calculateAncestors(SAbstractConcept concept) {
+    return Collections.unmodifiableList(IterableUtil.asList(new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(concept))));
+  }
+
+  @NotNull
+  private SAbstractConcept getConcept(String conceptFqName) {
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName);
+    return MetaAdapterFactory.getAbstractConcept(conceptDescriptor);
   }
 
   @Override
   public String getConceptFqName() {
-    return conceptFqName;
+    return myConcept.getQualifiedName();
   }
 
   @Override
@@ -71,9 +97,9 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       throw new IllegalArgumentException("initNode on null node");
     }
 
-    for (int i = constructors.size() - 1; i >= 0; i--) {
+    for (int i = myConstructors.size() - 1; i >= 0; i--) {
       try {
-        constructors.get(i).invoke(null, node);
+        myConstructors.get(i).invoke(null, node);
       } catch (IllegalAccessException e) {
         LOG.error(null, e);
       } catch (InvocationTargetException e) {
@@ -83,7 +109,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   }
 
   public static String behaviorClassByConceptFqName(@NotNull String fqName) {
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    Matcher m = CONCEPT_FQ_NAME.matcher(fqName);
     if (m.matches()) {
       return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
     } else {
@@ -91,9 +117,9 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     }
   }
 
-  private static List<Method> calculateConstructors(final String conceptFqName) {
+  private List<Method> calculateConstructors() {
     List<Method> methodsToCall = new ArrayList<Method>();
-    SConcept startConcept = new SConceptAdapterByName(conceptFqName);
+    SAbstractConcept startConcept = myConcept;
     for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthFirstConceptIterator(startConcept))) {
       String fqName = concept.getQualifiedName();
       Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
@@ -120,6 +146,75 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       return language.getOwnClass(className);
     } catch (ClassNotFoundException ignored) {
       return null;
+    }
+  }
+
+  /**
+   * adding this functionality in order to have {@link jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor}
+   * and {@link jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
+   */
+  protected Object genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
+    for (SAbstractConcept ancestor : myAncestors) {
+      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBHDescriptor(ancestor);
+      if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
+        InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
+        if (legacyDescriptor.hasOwnMethod(methodName)) {
+          return legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
+        }
+      } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
+        BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
+        if (!(behaviorDescriptor instanceof BehaviorDescriptorAdapter)) {
+          throw new IllegalStateException("Could not get legacy behavior descriptor + " + behaviorDescriptor +
+              "; unable to resolve the method '" + methodName + "'");
+        }
+        BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
+        boolean isStatic = (nodeOrConcept.getNode() == null);
+        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters, isStatic)) {
+          return behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
+        }
+      }
+    }
+    throwNoSuchMethod(methodName);
+    return null;
+  }
+
+  @NotNull
+  private BehaviorDescriptor getBehaviorDescriptor(@NotNull String conceptFqName) {
+    if (conceptFqName.equals(getConceptFqName())) {
+      return this;
+    }
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName);
+  }
+
+  protected void throwNoSuchMethod(String methodName) {
+    throw new RuntimeException(new NoSuchMethodException("No such method for '" + methodName + "' in the concept '" + getConceptFqName()) + "'");
+  }
+
+  public final static class NodeOrConcept {
+    private final SNode myNode;
+    private final SAbstractConcept myAbstractConcept;
+
+    private NodeOrConcept(SNode node, SAbstractConcept abstractConcept) {
+      myNode = node;
+      myAbstractConcept = abstractConcept;
+    }
+
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public static NodeOrConcept create(@NotNull SNode node) {
+      return new NodeOrConcept(node, null);
+    }
+
+    public static NodeOrConcept create(@NotNull SAbstractConcept concept) {
+      return new NodeOrConcept(null, concept);
+    }
+
+    @NotNull
+    public Object getObject() {
+      if (myNode != null) return myNode;
+      return myAbstractConcept;
     }
   }
 }

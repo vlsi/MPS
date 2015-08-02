@@ -17,6 +17,7 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -235,6 +236,40 @@
       <node concept="10Oyi0" id="5mnatV0hxlf" role="1tU5fm" />
       <node concept="3cmrfG" id="5mnatV0hxmE" role="33vP2m">
         <property role="3cmrfH" value="1" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="4Rfm9LCcxgK" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="DEFAULT_VOID_VALUE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4Rfm9LCcxgL" role="1B3o_S" />
+      <node concept="3uibUv" id="4Rfm9LCcxi4" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~Void" resolve="Void" />
+      </node>
+      <node concept="10Nm6u" id="4Rfm9LCcxAJ" role="33vP2m" />
+    </node>
+    <node concept="2tJIrI" id="1hQsMcvxKWi" role="jymVt" />
+    <node concept="Wx3nA" id="1hQsMcvxKTA" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="SPECIFIED_RETURN_VALUE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="1hQsMcvxKTB" role="1B3o_S" />
+      <node concept="10Oyi0" id="1hQsMcvxKTC" role="1tU5fm" />
+      <node concept="3cmrfG" id="1hQsMcvxKTD" role="33vP2m">
+        <property role="3cmrfH" value="1" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="1hQsMcvxL08" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="NOT_SPECIFIED_RETURN_VALUE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="1hQsMcvxL09" role="1B3o_S" />
+      <node concept="10Oyi0" id="1hQsMcvxL0a" role="1tU5fm" />
+      <node concept="3cmrfG" id="1hQsMcvxL0b" role="33vP2m">
+        <property role="3cmrfH" value="2" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6EMTxOPT4et" role="1B3o_S" />

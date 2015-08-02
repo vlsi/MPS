@@ -21,13 +21,13 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A");
   private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> nonVirtualMethod_METHOD = SMethod.create("nonVirtualMethod", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Object> virtualMethod_METHOD = SMethod.create("virtualMethod", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
-  public static final SMethod<Integer> staticMethod_METHOD = SMethod.create("staticMethod", BHMethodModifiers.create(false, true), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Object> staticVirtualMethod_METHOD = SMethod.create("staticVirtualMethod", BHMethodModifiers.create(true, true), Object.class, CONCEPT_ID);
-  public static final SMethod<Void> justVoidReturnTypeMethod_METHOD = SMethod.create("justVoidReturnTypeMethod", BHMethodModifiers.create(false, false), Void.class, CONCEPT_ID);
+  public static final SMethod<Integer> nonVirtualMethod_METHOD_6167444251392503129 = SMethod.create("nonVirtualMethod", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Object> virtualMethod_METHOD_6167444251392503144 = SMethod.create("virtualMethod", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
+  public static final SMethod<Integer> staticMethod_METHOD_6167444251392503213 = SMethod.create("staticMethod", BHMethodModifiers.create(false, true), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Object> staticVirtualMethod_METHOD_6167444251392503389 = SMethod.create("staticVirtualMethod", BHMethodModifiers.create(true, true), Object.class, CONCEPT_ID);
+  public static final SMethod<Void> justVoidReturnTypeMethod_METHOD_6167444251392504413 = SMethod.create("justVoidReturnTypeMethod", BHMethodModifiers.create(false, false), Void.class, CONCEPT_ID);
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_METHOD, virtualMethod_METHOD, staticMethod_METHOD, staticVirtualMethod_METHOD, justVoidReturnTypeMethod_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_METHOD_6167444251392503129, virtualMethod_METHOD_6167444251392503144, staticMethod_METHOD_6167444251392503213, staticVirtualMethod_METHOD_6167444251392503389, justVoidReturnTypeMethod_METHOD_6167444251392504413);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
