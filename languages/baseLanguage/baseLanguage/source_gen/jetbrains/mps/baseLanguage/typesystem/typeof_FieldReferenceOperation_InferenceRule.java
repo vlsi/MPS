@@ -9,12 +9,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -30,7 +29,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       return;
     }
 
-    final SNode operand = IOperation_Behavior.call_getOperand_1213877410070(fieldReference);
+    final SNode operand = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), fieldReference, "jetbrains.mps.baseLanguage.structure.IOperation", "call_getOperand_1213877410070", new Object[]{});
     if (operand == null) {
       return;
     }

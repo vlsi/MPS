@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -43,7 +43,7 @@ public class check_EnumConstantOverridingMethods_NonTypesystemRule extends Abstr
           SNode enumClass = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
           SNode dummy = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")));
           SLinkOperations.setTarget(dummy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier"), enumClass);
-          resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(dummy, returnType, ancestor, overridingMethod, overridenMethod);
+          resolvedReturnType = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), dummy, "jetbrains.mps.baseLanguage.structure.Classifier", "call_getWithResolvedTypevars_3305065273710852527", new Object[]{returnType, ancestor, overridingMethod, overridenMethod});
         } else {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

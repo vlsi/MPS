@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -48,7 +47,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
       }
       if (!(somethingReturned)) {
         Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
-        StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getBody_1239354440022", new Object[]{}), throwables, true);
+        BehaviorReflection.invokeNonVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getBody_1239354440022", new Object[]{}), "jetbrains.mps.baseLanguage.structure.StatementList", "call_collectUncaughtThrowables_5412515780383134474", new Object[]{throwables, true});
         if (SetSequence.fromSet(throwables).isEmpty()) {
           String whatExpected = ((expectedRetType == null) ? "some value" : "" + expectedRetType);
           {

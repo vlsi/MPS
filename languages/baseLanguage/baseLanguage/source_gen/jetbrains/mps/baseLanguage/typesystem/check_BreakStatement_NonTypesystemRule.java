@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_BreakStatement_NonTypesystemRule extends AbstractNonTypesyste
   public check_BreakStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((BreakStatement_Behavior.call_getLoopOrSwitch_1213877377041(nodeToCheck) != null))) {
+    if (!((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "jetbrains.mps.baseLanguage.structure.BreakStatement", "call_getLoopOrSwitch_1213877377041", new Object[]{}) != null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "No loop or switch", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2049165965124996272", null, errorTarget);
     }

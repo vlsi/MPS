@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -38,8 +38,8 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
     }
 
     List<SNode> mayInitialize = new ArrayList<SNode>();
-    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_instanceInitializers_7702003619977535145(classifier)));
-    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classifier)));
+    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_instanceInitializers_7702003619977535145", new Object[]{})));
+    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})));
     for (SNode member : mayInitialize) {
       if (member != null) {
         for (SNode reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {

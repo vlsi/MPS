@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +19,7 @@ public class check_IBLDeprecatable_NonTypesystemRule extends AbstractNonTypesyst
   public check_IBLDeprecatable_NonTypesystemRule() {
   }
   public void applyRule(final SNode iblDeprecatable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (IBLDeprecatable_Behavior.call_isInvisiblyDeprecated_9119725621034560002(iblDeprecatable)) {
+    if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, iblDeprecatable, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "call_isInvisiblyDeprecated_9119725621034560002", new Object[]{})) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iblDeprecatable, "The method is marked as deprecated, but the javadoc @deprecated tag is missing", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9119725621034724594", null, errorTarget);

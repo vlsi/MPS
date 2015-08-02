@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +18,7 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
   public check_ThisExpression_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(!(BehaviorReflection.invokeVirtual(Boolean.TYPE, ThisExpression_Behavior.call_getContextClassifierMember_6516287307421538194(thisExpression), "virtual_isStatic_8986964027630462944", new Object[]{})))) {
+    if (!(!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), thisExpression, "jetbrains.mps.baseLanguage.structure.ThisExpression", "call_getContextClassifierMember_6516287307421538194", new Object[]{}), "virtual_isStatic_8986964027630462944", new Object[]{})))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201700958007", null, errorTarget);
     }

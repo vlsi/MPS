@@ -10,11 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -24,7 +23,7 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
     SNode constructor = SNodeOperations.getNodeAncestor(constructorInvocation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     if (constructor != null) {
       SNode statementList = SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
-      SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(statementList);
+      SNode firstStatement = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), statementList, "jetbrains.mps.baseLanguage.structure.StatementList", "call_getFirstStatement_5420652334935371934", new Object[]{});
       if (firstStatement != constructorInvocation) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

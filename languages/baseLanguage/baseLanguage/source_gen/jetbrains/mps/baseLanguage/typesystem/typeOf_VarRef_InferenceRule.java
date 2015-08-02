@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -32,7 +31,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         return;
       }
 
-      SNode contextClassifier = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier").getDeclarationNode()), varRef);
+      SNode contextClassifier = BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier").getDeclarationNode()), "call_getContextClassifier_6172562527426750080", new Object[]{varRef});
       if (contextClassifier == null) {
         return;
       }

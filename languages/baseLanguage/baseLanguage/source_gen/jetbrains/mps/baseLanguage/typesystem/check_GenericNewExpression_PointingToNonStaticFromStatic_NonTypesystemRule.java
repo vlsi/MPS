@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -46,7 +45,7 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
       return;
     }
 
-    if (Classifier_Behavior.call_isInner_521412098689998677(target.value) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, target.value, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
+    if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, target.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_isInner_521412098689998677", new Object[]{}) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, target.value, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(genericNewExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), "No enclosing instance of type " + SNodeOperations.getParent(target.value) + " is accessible", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "966837649713150029", null, errorTarget);

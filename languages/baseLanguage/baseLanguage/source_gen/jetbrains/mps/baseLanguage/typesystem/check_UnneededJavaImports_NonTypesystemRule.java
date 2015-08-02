@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -50,7 +50,7 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        MapSequence.fromMap(importsByName).put(Tokens_Behavior.call_lastToken_1296023605440030462(it), it);
+        MapSequence.fromMap(importsByName).put(BehaviorReflection.invokeNonVirtual(String.class, it, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{}), it);
 
       }
     });
