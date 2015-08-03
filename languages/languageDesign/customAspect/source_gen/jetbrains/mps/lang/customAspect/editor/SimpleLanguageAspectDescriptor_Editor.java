@@ -301,7 +301,8 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_rpszz1_b3b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("helpUrl");
-    provider.setNoTargetText("<no helpUrl>");
+    provider.setNoTargetText("<no help URL>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_helpUrl");
