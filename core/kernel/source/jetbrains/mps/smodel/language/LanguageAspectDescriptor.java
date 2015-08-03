@@ -57,13 +57,18 @@ public abstract class LanguageAspectDescriptor {
     return null;
   }
 
-  public abstract boolean isGeneratable();
+  //remove
+  public boolean isGeneratable(){
+    return false;
+  }
 
+  //remove
   @Nullable
   public SNode getInterfaceClassDeclaration(){
     return null;
   }
 
+  //remove
   @Nullable
   public String getImplementationClassName(SModule language){
     return null;

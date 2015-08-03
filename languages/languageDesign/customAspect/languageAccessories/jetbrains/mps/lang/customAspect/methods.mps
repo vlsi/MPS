@@ -10,8 +10,8 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -44,9 +44,6 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
-        <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -121,40 +118,16 @@
       </node>
     </node>
     <node concept="qMXn0" id="4r8JClTmU7T" role="QNr5C" />
-    <node concept="q3mfq" id="5LFbgO_xufI" role="QNr5C">
-      <property role="TrG5h" value="isGeneratable" />
-      <node concept="QcxE9" id="5LFbgO_xufJ" role="2IRzpu">
-        <property role="QcwnP" value="aspect not generated" />
-      </node>
-      <node concept="10P_77" id="5LFbgO_xuhr" role="q3mfk" />
-    </node>
-    <node concept="qMXn0" id="5LFbgO_xug$" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmU6H" role="QNr5C">
-      <property role="TrG5h" value="getInterfaceClassDeclaration" />
+      <property role="TrG5h" value="getGenerator" />
       <node concept="QcxE9" id="5KGdJjE2Btn" role="2IRzpu">
         <property role="QcwnP" value="aspect not generated" />
       </node>
-      <node concept="3Tqbb2" id="4r8JClTmU7e" role="q3mfk">
-        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      <node concept="3uibUv" id="4YpmBa67cMA" role="q3mfk">
+        <ref role="3uigEE" to="vndm:~LanguageAspectGenerator" resolve="LanguageAspectGenerator" />
       </node>
     </node>
     <node concept="qMXn0" id="4r8JClTmU99" role="QNr5C" />
-    <node concept="q3mfq" id="4r8JClTmUai" role="QNr5C">
-      <property role="TrG5h" value="getImplementationClassName" />
-      <node concept="q3mfp" id="74Oxs8ALpTn" role="q3mfl">
-        <property role="TrG5h" value="language" />
-        <node concept="3uibUv" id="74Oxs8ALpTs" role="q3mfr">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="QcxE9" id="5KGdJjE2Btq" role="2IRzpu">
-        <property role="QcwnP" value="aspect not generated" />
-      </node>
-      <node concept="3uibUv" id="4r8JClTmUaS" role="q3mfk">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-    </node>
-    <node concept="qMXn0" id="ghIDlF6Hhv" role="QNr5C" />
     <node concept="q3mfq" id="ghIDlF6GE1" role="QNr5C">
       <property role="TrG5h" value="getIcon" />
       <node concept="3uibUv" id="ghIDlF6GEd" role="q3mfk">

@@ -115,7 +115,7 @@
   <node concept="1TIwiD" id="5LFbgO_x_no">
     <property role="3GE5qa" value="simple.gen" />
     <property role="TrG5h" value="GenerationDescriptor_PerConcept" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="5LFbgO_x_nr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="concepts" />
