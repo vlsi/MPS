@@ -387,9 +387,13 @@
       <node concept="3F0ifn" id="5$xTughlNYJ" role="3EZMnx">
         <property role="3F0ifm" value="generate descriptor instantiation only" />
       </node>
-      <node concept="3F0ifn" id="5$xTughlYSN" role="3EZMnx">
-        <property role="3F0ifm" value="// descriptor class will be generated manually" />
-        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+      <node concept="3EZMnI" id="4YpmBa6a3wD" role="3EZMnx">
+        <node concept="2iRfu4" id="4YpmBa6a3wE" role="2iSdaV" />
+        <node concept="3XFhqQ" id="4YpmBa6a3x3" role="3EZMnx" />
+        <node concept="3F0ifn" id="5$xTughlYSN" role="3EZMnx">
+          <property role="3F0ifm" value="// descriptor class will be generated manually" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        </node>
       </node>
       <node concept="3EZMnI" id="2Y$EcRKMt98" role="3EZMnx">
         <node concept="3XFhqQ" id="5$xTughlO0n" role="3EZMnx" />

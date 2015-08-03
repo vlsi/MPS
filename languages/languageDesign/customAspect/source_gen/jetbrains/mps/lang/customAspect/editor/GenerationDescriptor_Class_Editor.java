@@ -10,11 +10,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -31,7 +31,7 @@ public class GenerationDescriptor_Class_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ej2jja_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ej2jja_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ej2jja_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ej2jja_c0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ej2jja_d0(editorContext, node));
     return editorCell;
@@ -42,9 +42,20 @@ public class GenerationDescriptor_Class_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_ej2jja_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ej2jja_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_ej2jja_b0");
+    editorCell.addEditorCell(this.createIndentCell_ej2jja_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ej2jja_b1a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createIndentCell_ej2jja_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+  private EditorCell createConstant_ej2jja_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "// descriptor class will be generated manually");
-    editorCell.setCellId("Constant_ej2jja_b0");
+    editorCell.setCellId("Constant_ej2jja_b1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
