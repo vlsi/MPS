@@ -17,7 +17,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_Class_BehaviorDescriptor" />
     </file>
     <file name="GenerationDescriptor_PerConcept_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_PerConcept_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_PerConcept_BehaviorDescriptor" />
     </file>
     <file name="LanguageAspectDescriptor_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.customAspect.behavior.LanguageAspectDescriptor_BehaviorDescriptor" />

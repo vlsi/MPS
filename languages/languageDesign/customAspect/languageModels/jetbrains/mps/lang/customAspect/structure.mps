@@ -116,6 +116,12 @@
     <property role="3GE5qa" value="simple.gen" />
     <property role="TrG5h" value="GenerationDescriptor_PerConcept" />
     <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
+    <node concept="1TJgyj" id="4YpmBa69sLR" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="mainIntfcClass" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
     <node concept="1TJgyj" id="5LFbgO_x_nr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="concepts" />
@@ -138,6 +144,12 @@
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="cncpt" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="4YpmBa69sLN" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="cncptIntfcClass" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5LFbgO_x_nS">
