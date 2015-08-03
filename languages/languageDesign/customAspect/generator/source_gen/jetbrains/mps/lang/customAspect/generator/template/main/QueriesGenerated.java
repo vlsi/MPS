@@ -31,7 +31,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3433054418425198258(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl"));
   }
-  public static Object propertyMacro_GetPropertyValue_5735715048356377876(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5735715048356613621(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c2c36f4ea0d3b2fL, 0x2fa4a8cdf0c9b09dL, "interfaceClass")), "virtual_getFqName_1213877404258", new Object[]{});
   }
   public static Object propertyMacro_GetPropertyValue_5735715048356392037(final PropertyMacroContext _context) {
@@ -43,7 +43,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5735715048356411548(final PropertyMacroContext _context) {
     return NameUtil.capitalize(SPropertyOperations.getString(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "Descriptor";
   }
-  public static Object referenceMacro_GetReferent_5735715048356374936(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5735715048356611502(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c2c36f4ea0d3b2fL, 0x2fa4a8cdf0c9b09dL, "interfaceClass"));
   }
   public static Object referenceMacro_GetReferent_5735715048356392051(final ReferenceMacroContext _context) {

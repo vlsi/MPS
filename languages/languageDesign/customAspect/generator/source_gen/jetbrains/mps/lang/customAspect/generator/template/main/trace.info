@@ -81,10 +81,10 @@
   </root>
   <root nodeRef="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.customAspect.generator.template.main@generator)/5735715048356320485">
     <file name="QueriesGenerated.java">
-      <node id="5735715048356379713" at="34,112,35,295" concept="1" />
-      <node id="5735715048356375941" at="46,109,47,196" concept="1" />
-      <scope id="5735715048356377877" at="34,112,35,295" />
-      <scope id="5735715048356374937" at="46,109,47,196" />
+      <node id="5735715048356614471" at="34,112,35,295" concept="1" />
+      <node id="5735715048356611797" at="46,109,47,196" concept="1" />
+      <scope id="5735715048356613622" at="34,112,35,295" />
+      <scope id="5735715048356611503" at="46,109,47,196" />
     </file>
   </root>
   <root nodeRef="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.customAspect.generator.template.main@generator)/5735715048356320502">
