@@ -310,7 +310,6 @@
         <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
       </concept>
       <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
-      <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -328,9 +327,6 @@
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
-      </concept>
-      <concept id="1087833466690" name="jetbrains.mps.lang.generator.structure.NodeMacro" flags="lg" index="17VmuZ">
-        <reference id="1200912223215" name="mappingLabel" index="2rW$FS" />
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
@@ -397,6 +393,7 @@
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="1217026863835" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" flags="nn" index="1st3f0" />
+      <concept id="1217369610610" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode" flags="nn" index="1KSxxD" />
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="1173996401517" name="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" flags="nn" index="1nCR9W">
@@ -405,6 +402,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -416,6 +419,7 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
@@ -423,6 +427,9 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
+      </concept>
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
@@ -854,9 +861,9 @@
     </node>
     <node concept="3clFb_" id="NIUB61fbdT" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="createAspect" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
+      <property role="TrG5h" value="createAspect" />
       <node concept="3Tmbuc" id="NIUB61fbdU" role="1B3o_S" />
       <node concept="16euLQ" id="NIUB61fdaT" role="16eVyc">
         <property role="TrG5h" value="T" />
@@ -874,9 +881,6 @@
           <node concept="16syzq" id="NIUB61fiLc" role="11_B2D">
             <ref role="16sUi3" node="NIUB61fdaT" resolve="T" />
           </node>
-        </node>
-        <node concept="2ZBi8u" id="4YpmBa68yfe" role="lGtFl">
-          <ref role="2rW$FS" node="4YpmBa68ugx" resolve="aspect.param.decl" />
         </node>
       </node>
       <node concept="3clFbS" id="NIUB61fbe2" role="3clF47">
@@ -1055,12 +1059,26 @@
                               </node>
                               <node concept="liA8E" id="4YpmBa68lSJ" role="2OqNvi">
                                 <ref role="37wK5l" to="vndm:~LanguageAspectGenerator.generateInstantiation(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="generateInstantiation" />
-                                <node concept="2OqwBi" id="4YpmBa68o0X" role="37wK5m">
-                                  <node concept="1iwH7S" id="4YpmBa68nxh" role="2Oq$k0" />
-                                  <node concept="1iwH70" id="4YpmBa68wqP" role="2OqNvi">
-                                    <ref role="1iwH77" node="4YpmBa68ugx" resolve="aspect.param.decl" />
-                                    <node concept="30H73N" id="4YpmBa68wWs" role="1iwH7V" />
+                                <node concept="2OqwBi" id="4YpmBa6c$ve" role="37wK5m">
+                                  <node concept="2OqwBi" id="4YpmBa6cwod" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="4YpmBa6cvpm" role="2Oq$k0">
+                                      <node concept="2OqwBi" id="4YpmBa6bUe_" role="2Oq$k0">
+                                        <node concept="1iwH7S" id="4YpmBa6bU54" role="2Oq$k0" />
+                                        <node concept="1KSxxD" id="4YpmBa6bUsZ" role="2OqNvi" />
+                                      </node>
+                                      <node concept="2Xjw5R" id="4YpmBa6cvEF" role="2OqNvi">
+                                        <node concept="1xMEDy" id="4YpmBa6cvEH" role="1xVPHs">
+                                          <node concept="chp4Y" id="4YpmBa6cvW0" role="ri$Ld">
+                                            <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3Tsc0h" id="4YpmBa6cxX6" role="2OqNvi">
+                                      <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                                    </node>
                                   </node>
+                                  <node concept="1uHKPH" id="4YpmBa6cF46" role="2OqNvi" />
                                 </node>
                               </node>
                             </node>
@@ -1653,11 +1671,6 @@
       <property role="TrG5h" value="aspect.descriptor.field" />
       <ref role="2rTdP9" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-    </node>
-    <node concept="2rT7sh" id="4YpmBa68ugx" role="2rTMjI">
-      <property role="TrG5h" value="aspect.param.decl" />
-      <ref role="2rTdP9" to="yv2q:7OJukvJ5je_" resolve="LanguageDescriptor" />
-      <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
     <node concept="2VPoh5" id="7BqJJVi3vjH" role="2VS0gm">
       <ref role="2VPoh2" node="1uh_eNRSFyP" resolve="descriptor" />

@@ -359,7 +359,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<LanguageAspectDescriptor, SNode>() {
       public SNode select(LanguageAspectDescriptor it) {
-        return it.getGenerator().generateInstantiation(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "aspect.param.decl"));
+        return it.getGenerator().generateInstantiation(ListSequence.fromList(SLinkOperations.getChildren(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeAncestor(_context.getTemplateNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first());
       }
     });
   }
