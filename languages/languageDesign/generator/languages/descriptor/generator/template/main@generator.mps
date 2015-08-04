@@ -1058,7 +1058,7 @@
                                 </node>
                               </node>
                               <node concept="liA8E" id="4YpmBa68lSJ" role="2OqNvi">
-                                <ref role="37wK5l" to="vndm:~LanguageAspectGenerator.generateInstantiation(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="generateInstantiation" />
+                                <ref role="37wK5l" to="vndm:~LanguageAspectGenerator.generateInstantiation(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModel):org.jetbrains.mps.openapi.model.SNode" resolve="generateInstantiation" />
                                 <node concept="2OqwBi" id="4YpmBa6c$ve" role="37wK5m">
                                   <node concept="2OqwBi" id="4YpmBa6cwod" role="2Oq$k0">
                                     <node concept="2OqwBi" id="4YpmBa6cvpm" role="2Oq$k0">
@@ -1079,6 +1079,10 @@
                                     </node>
                                   </node>
                                   <node concept="1uHKPH" id="4YpmBa6cF46" role="2OqNvi" />
+                                </node>
+                                <node concept="2OqwBi" id="724FTCDTTqS" role="37wK5m">
+                                  <node concept="1iwH7S" id="724FTCDTTh5" role="2Oq$k0" />
+                                  <node concept="1st3f0" id="724FTCDTTId" role="2OqNvi" />
                                 </node>
                               </node>
                             </node>

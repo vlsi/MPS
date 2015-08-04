@@ -25,7 +25,7 @@ import java.util.Collection;
 
 public interface LanguageAspectGenerator {
   @NotNull
-  SNode generateInstantiation(SNode aspectClassParameter);
+  SNode generateInstantiation(SNode aspectClassParameter, SModel modelBeingGenerated);
 
   @Nullable
   SNode generateDescriptor(Collection<SModel> aspectModels);

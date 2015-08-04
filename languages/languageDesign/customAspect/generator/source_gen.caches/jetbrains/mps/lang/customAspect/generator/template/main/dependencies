@@ -12,8 +12,8 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.LanguageAspectDescriptor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.null" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.null" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

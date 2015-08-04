@@ -1585,6 +1585,12 @@
                         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                       </node>
                     </node>
+                    <node concept="37vLTG" id="724FTCDTN2I" role="3clF46">
+                      <property role="TrG5h" value="modelBeingGenerated" />
+                      <node concept="3uibUv" id="724FTCDTNow" role="1tU5fm">
+                        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                      </node>
+                    </node>
                     <node concept="2AHcQZ" id="4YpmBa692a6" role="2AJF6D">
                       <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
                     </node>
@@ -1788,23 +1794,33 @@
                               <ref role="3TsBF5" to="tp68:h5nD$Mh" resolve="fqClassName" />
                             </node>
                           </node>
-                          <node concept="Xl_RD" id="4YpmBa6a8Q4" role="37vLTx">
-                            <property role="Xl_RC" value="" />
-                            <node concept="17Uvod" id="4YpmBa6a8RO" role="lGtFl">
-                              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                              <property role="2qtEX9" value="value" />
-                              <node concept="3zFVjK" id="4YpmBa6a8RP" role="3zH0cK">
-                                <node concept="3clFbS" id="4YpmBa6a8RQ" role="2VODD2">
-                                  <node concept="3clFbF" id="4YpmBa6a957" role="3cqZAp">
-                                    <node concept="2OqwBi" id="4YpmBa6a5NO" role="3clFbG">
-                                      <node concept="2OqwBi" id="4YpmBa6a5NP" role="2Oq$k0">
-                                        <node concept="30H73N" id="4YpmBa6a5NQ" role="2Oq$k0" />
-                                        <node concept="3TrEf2" id="4YpmBa6a5NR" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="hfbu:2Y$EcRKMr2t" />
+                          <node concept="3cpWs3" id="724FTCDUgxj" role="37vLTx">
+                            <node concept="3cpWs3" id="724FTCDUheO" role="3uHU7B">
+                              <node concept="Xl_RD" id="724FTCDUhmp" role="3uHU7w">
+                                <property role="Xl_RC" value="." />
+                              </node>
+                              <node concept="37vLTw" id="724FTCDUgUV" role="3uHU7B">
+                                <ref role="3cqZAo" node="724FTCDTN2I" resolve="modelBeingGenerated" />
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="4YpmBa6a8Q4" role="3uHU7w">
+                              <property role="Xl_RC" value="" />
+                              <node concept="17Uvod" id="4YpmBa6a8RO" role="lGtFl">
+                                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                                <property role="2qtEX9" value="value" />
+                                <node concept="3zFVjK" id="4YpmBa6a8RP" role="3zH0cK">
+                                  <node concept="3clFbS" id="4YpmBa6a8RQ" role="2VODD2">
+                                    <node concept="3clFbF" id="4YpmBa6a957" role="3cqZAp">
+                                      <node concept="2OqwBi" id="4YpmBa6a5NO" role="3clFbG">
+                                        <node concept="2OqwBi" id="4YpmBa6a5NP" role="2Oq$k0">
+                                          <node concept="30H73N" id="4YpmBa6a5NQ" role="2Oq$k0" />
+                                          <node concept="3TrEf2" id="4YpmBa6a5NR" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="hfbu:2Y$EcRKMr2t" />
+                                          </node>
                                         </node>
-                                      </node>
-                                      <node concept="2qgKlT" id="4YpmBa6a5NS" role="2OqNvi">
-                                        <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                                        <node concept="3TrcHB" id="724FTCDUirE" role="2OqNvi">
+                                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
