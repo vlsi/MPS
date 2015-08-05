@@ -39,7 +39,7 @@ public abstract class LanguageAspectGenerator_PerConcept extends LanguageAspectG
     // todo concepts attached to "main" 
 
     final LanguageAspectGenerator_PerConcept.ConceptGeneratorDescriptor only = CollectionSequence.fromCollection(getDescriptors()).first();
-    SNode resltDecl = _quotation_createNode_mxlioj_a0e0f(only.getInterfaceClass());
+    SNode resultDecl = _quotation_createNode_mxlioj_a0e0f(only.getInterfaceClass());
 
     List<SNode> addStmts = new ArrayList<SNode>();
     for (SNode aspect : CollectionSequence.fromCollection(aspectModels).translate(new ITranslator2<SModel, SNode>() {
@@ -47,10 +47,10 @@ public abstract class LanguageAspectGenerator_PerConcept extends LanguageAspectG
         return SModelOperations.nodes(it, only.getApplicableConcept());
       }
     })) {
-      ListSequence.fromList(addStmts).addElement(_quotation_createNode_mxlioj_a0a0a7a5(resltDecl, only.getGeneratedClassFqName(aspect, aspect.getModel())));
+      ListSequence.fromList(addStmts).addElement(_quotation_createNode_mxlioj_a0a0a7a5(resultDecl, only.getGeneratedClassFqName(aspect, aspect.getModel())));
     }
 
-    SNode result = _quotation_createNode_mxlioj_a0j0f(resltDecl, addStmts, resltDecl, only.getInterfaceClass(), "getAll" + NameUtil.pluralize(only.getApplicableConcept().getName()), getInterfaceClass(), getGeneratedClassShortName());
+    SNode result = _quotation_createNode_mxlioj_a0j0f(resultDecl, addStmts, resultDecl, only.getInterfaceClass(), "getAll" + NameUtil.pluralize(only.getApplicableConcept().getName()), getInterfaceClass(), getGeneratedClassShortName());
 
     return result;
   }
@@ -93,6 +93,7 @@ public abstract class LanguageAspectGenerator_PerConcept extends LanguageAspectG
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     quotedNode_5 = (SNode) parameter_1;
@@ -101,9 +102,9 @@ public abstract class LanguageAspectGenerator_PerConcept extends LanguageAspectG
     }
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null, null, false);
     quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)"), facade.createNodeId("~ArrayList.add(java.lang.Object):boolean")));
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_7, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), (String) parameter_2);
-    quotedNode_6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), quotedNode_7);
+    quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_8, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), (String) parameter_2);
+    quotedNode_6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), quotedNode_8);
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_6);
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), quotedNode_4);
     return quotedNode_3;

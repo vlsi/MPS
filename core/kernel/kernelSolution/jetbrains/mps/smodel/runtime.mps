@@ -524,7 +524,7 @@
         </node>
         <node concept="3cpWs8" id="6jXjkltJIbS" role="3cqZAp">
           <node concept="3cpWsn" id="6jXjkltJIbT" role="3cpWs9">
-            <property role="TrG5h" value="resltDecl" />
+            <property role="TrG5h" value="resultDecl" />
             <node concept="3Tqbb2" id="6jXjkltJIbd" role="1tU5fm">
               <ref role="ehGHo" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
             </node>
@@ -589,11 +589,13 @@
                   <node concept="2c44tf" id="6jXjkltJQa8" role="25WWJ7">
                     <node concept="3clFbF" id="3b1thj6Cbxh" role="2c44tc">
                       <node concept="2OqwBi" id="3b1thj6Cbxi" role="3clFbG">
-                        <node concept="37vLTw" id="6jXjkltJK6z" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6jXjkltJIUC" resolve="i" />
-                          <node concept="2c44te" id="6jXjkltJKml" role="lGtFl">
-                            <node concept="37vLTw" id="6jXjkltJKz9" role="2c44t1">
-                              <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resltDecl" />
+                        <node concept="2ShNRf" id="6jXjkltKjvo" role="2Oq$k0">
+                          <node concept="1pGfFk" id="6jXjkltKkh_" role="2ShVmc">
+                            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                          </node>
+                          <node concept="2c44te" id="6jXjkltKkMV" role="lGtFl">
+                            <node concept="37vLTw" id="6jXjkltKmib" role="2c44t1">
+                              <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resultDecl" />
                             </node>
                           </node>
                         </node>
@@ -689,7 +691,7 @@
                         <node concept="10Oyi0" id="6jXjkltJYMu" role="1tU5fm" />
                         <node concept="2c44te" id="6jXjkltJYMv" role="lGtFl">
                           <node concept="37vLTw" id="6jXjkltJYMw" role="2c44t1">
-                            <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resltDecl" />
+                            <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resultDecl" />
                           </node>
                         </node>
                       </node>
@@ -709,7 +711,7 @@
                           <property role="2qtEX8" value="variableDeclaration" />
                           <property role="3hQQBS" value="VariableReference" />
                           <node concept="37vLTw" id="6jXjkltJYMB" role="2c44t1">
-                            <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resltDecl" />
+                            <ref role="3cqZAo" node="6jXjkltJIbT" resolve="resultDecl" />
                           </node>
                         </node>
                       </node>
