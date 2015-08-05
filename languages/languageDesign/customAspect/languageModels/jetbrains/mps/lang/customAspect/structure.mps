@@ -144,6 +144,12 @@
       <property role="20kJfa" value="mainConceptFunc" />
       <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     </node>
+    <node concept="1TJgyj" id="6jXjkltILEw" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="generatedClassFunc" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+    </node>
     <node concept="1TJgyj" id="5$xTughlNUD" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20lbJX" value="1" />
