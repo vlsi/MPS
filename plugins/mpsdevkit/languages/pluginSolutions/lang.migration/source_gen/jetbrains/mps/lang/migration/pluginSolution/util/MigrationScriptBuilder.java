@@ -9,11 +9,10 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 
@@ -35,12 +34,6 @@ public class MigrationScriptBuilder {
     return this;
   }
 
-  @Deprecated
-  public MigrationScriptBuilder setBody(SNode body) {
-    SLinkOperations.setTarget(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), body);
-    return this;
-  }
-
   public MigrationScriptBuilder setExecuteMethod(SNode method) {
     SNodeOperations.replaceWithAnother(getExecuteMethod(), method);
     return this;
@@ -52,12 +45,6 @@ public class MigrationScriptBuilder {
 
   public MigrationScriptBuilder appendExecuteStatements(Iterable<SNode> statements) {
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(getExecuteMethod(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addSequence(Sequence.fromIterable(statements));
-    return this;
-  }
-
-  @Deprecated
-  public MigrationScriptBuilder addMissingImports() {
-    SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(myScript), false, true);
     return this;
   }
 
