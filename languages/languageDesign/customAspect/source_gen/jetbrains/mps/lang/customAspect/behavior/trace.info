@@ -5,7 +5,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,34,0" name="jetbrains.mps.lang.customAspect.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,32,0" name="jetbrains.mps.lang.customAspect.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptInstancesPart_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.customAspect.behavior.ConceptInstancesPart_BehaviorDescriptor" />

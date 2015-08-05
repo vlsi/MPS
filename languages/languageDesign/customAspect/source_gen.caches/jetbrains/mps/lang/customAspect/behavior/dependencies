@@ -4,7 +4,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.ConceptInstancesPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_Class_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_PerConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.customAspect.behavior.LanguageAspectDescriptor_BehaviorDescriptor" />

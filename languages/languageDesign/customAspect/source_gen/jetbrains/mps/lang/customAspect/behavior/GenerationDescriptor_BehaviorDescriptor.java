@@ -4,7 +4,7 @@ package jetbrains.mps.lang.customAspect.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class GenerationDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class GenerationDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public GenerationDescriptor_BehaviorDescriptor() {
   }
   @Override
