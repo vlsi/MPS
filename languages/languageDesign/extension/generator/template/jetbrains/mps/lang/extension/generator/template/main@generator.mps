@@ -308,6 +308,9 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
+      </concept>
       <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
@@ -460,8 +463,10 @@
                       <node concept="1iwH7S" id="21KXiZCGOaN" role="2Oq$k0" />
                       <node concept="1r8y6K" id="21KXiZCGOaO" role="2OqNvi" />
                     </node>
-                    <node concept="2RRcyG" id="21KXiZCGOaP" role="2OqNvi">
-                      <ref role="2RRcyH" to="v54s:7335HkeYeM" resolve="Extension" />
+                    <node concept="2SmgA7" id="1yIP13OGgkg" role="2OqNvi">
+                      <node concept="chp4Y" id="1yIP13OGgsO" role="1dBWTz">
+                        <ref role="cht4Q" to="v54s:7335HkeYeM" resolve="Extension" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3GX2aA" id="21KXiZCGOaQ" role="2OqNvi" />
@@ -1015,8 +1020,10 @@
                           <node concept="1iwH7S" id="3zLwYDe7Of0" role="2Oq$k0" />
                           <node concept="1r8y6K" id="3zLwYDe7Of1" role="2OqNvi" />
                         </node>
-                        <node concept="2RRcyG" id="3zLwYDe7Of2" role="2OqNvi">
-                          <ref role="2RRcyH" to="v54s:7335HkeYeM" resolve="Extension" />
+                        <node concept="2SmgA7" id="1yIP13OGiku" role="2OqNvi">
+                          <node concept="chp4Y" id="1yIP13OGjmJ" role="1dBWTz">
+                            <ref role="cht4Q" to="v54s:7335HkeYeM" resolve="Extension" />
+                          </node>
                         </node>
                       </node>
                       <node concept="2S7cBI" id="3zLwYDe7Of3" role="2OqNvi">
