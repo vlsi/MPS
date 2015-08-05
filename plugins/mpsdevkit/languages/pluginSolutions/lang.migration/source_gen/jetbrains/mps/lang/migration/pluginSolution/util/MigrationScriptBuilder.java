@@ -6,15 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 
@@ -24,7 +23,7 @@ public class MigrationScriptBuilder {
 
   private MigrationScriptBuilder(Language language) {
     SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
-    myScript = SModelOperations.addRootNode(migrationModel, SNodeOperations.cast(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(DSLDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "2260648088429212842")))), null), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript")));
+    myScript = SNodeFactoryOperations.createNewRootNode(migrationModel, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript")), null);
   }
 
   public static MigrationScriptBuilder createMigrationScript(Language language) {
@@ -58,7 +57,7 @@ public class MigrationScriptBuilder {
 
   @Deprecated
   public MigrationScriptBuilder addMissingImports() {
-    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(myScript), false, true);
+    SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(myScript), false, true);
     return this;
   }
 
