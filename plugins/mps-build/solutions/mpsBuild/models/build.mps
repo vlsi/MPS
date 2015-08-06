@@ -17450,6 +17450,9 @@
           <ref role="1Busuk" node="7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
         </node>
       </node>
+      <node concept="1E0d5M" id="1rWLXuUj2ZP" role="1E1XAP">
+        <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
+      </node>
     </node>
     <node concept="1E1JtA" id="1whNchE_L1C" role="3989C9">
       <property role="BnDLt" value="true" />
