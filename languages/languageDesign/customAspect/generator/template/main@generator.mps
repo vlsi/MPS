@@ -1696,8 +1696,8 @@
                                           <node concept="30H73N" id="6jXjkltIbnM" role="2Oq$k0" />
                                           <node concept="2Xjw5R" id="6jXjkltIbM5" role="2OqNvi">
                                             <node concept="1xMEDy" id="6jXjkltIbM7" role="1xVPHs">
-                                              <node concept="chp4Y" id="6jXjkltIc0I" role="ri$Ld">
-                                                <ref role="cht4Q" to="hfbu:2PMNsNJsb26" resolve="LanguageAspectDescriptor" />
+                                              <node concept="chp4Y" id="23VF0tFukUm" role="ri$Ld">
+                                                <ref role="cht4Q" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
                                               </node>
                                             </node>
                                           </node>
