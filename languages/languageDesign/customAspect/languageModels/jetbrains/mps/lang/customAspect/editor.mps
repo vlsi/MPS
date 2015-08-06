@@ -28,7 +28,6 @@
         <child id="1198489993734" name="body" index="b$wch" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
@@ -329,7 +328,6 @@
             <property role="3F0ifm" value="additional languages:" />
           </node>
           <node concept="3F2HdR" id="2Y$EcRKMt47" role="3EZMnx">
-            <property role="2czwfO" value="," />
             <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2m" />
             <node concept="2iRkQZ" id="2Y$EcRKMt4d" role="2czzBx" />
             <node concept="3F0ifn" id="5KGdJjE3t_8" role="2czzBI">
