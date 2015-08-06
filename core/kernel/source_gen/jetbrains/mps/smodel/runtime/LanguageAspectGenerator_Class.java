@@ -5,6 +5,7 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
@@ -18,7 +19,7 @@ public abstract class LanguageAspectGenerator_Class implements LanguageAspectGen
   protected abstract SNode getInterfaceClass();
 
   protected String getGeneratedClassFqName(SModel modelBeingGenerated) {
-    return modelBeingGenerated.getModelName() + "." + getGeneratedClassShortName();
+    return SModelStereotype.withoutStereotype(modelBeingGenerated.getModelName()) + "." + getGeneratedClassShortName();
   }
 
   @NotNull

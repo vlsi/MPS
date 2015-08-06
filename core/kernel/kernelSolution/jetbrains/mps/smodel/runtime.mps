@@ -302,12 +302,16 @@
               <ref role="37wK5l" node="6jXjkltHGdo" resolve="getGeneratedClassShortName" />
             </node>
             <node concept="3cpWs3" id="6jXjkltJ9GS" role="3uHU7B">
-              <node concept="2OqwBi" id="6jXjkltJ9us" role="3uHU7B">
-                <node concept="37vLTw" id="6jXjkltJ9qh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6jXjkltJ9c$" resolve="modelBeingGenerated" />
-                </node>
-                <node concept="liA8E" id="6jXjkltJ9_C" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+              <node concept="2YIFZM" id="7bj0OGadyjo" role="3uHU7B">
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
+                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                <node concept="2OqwBi" id="6jXjkltJ9us" role="37wK5m">
+                  <node concept="37vLTw" id="6jXjkltJ9qh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6jXjkltJ9c$" resolve="modelBeingGenerated" />
+                  </node>
+                  <node concept="liA8E" id="6jXjkltJ9_C" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                  </node>
                 </node>
               </node>
               <node concept="Xl_RD" id="6jXjkltJ9Hc" role="3uHU7w">
