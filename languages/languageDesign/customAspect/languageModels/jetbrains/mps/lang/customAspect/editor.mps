@@ -489,10 +489,10 @@
         <node concept="3F0ifn" id="4YpmBa69sMI" role="3EZMnx">
           <property role="3F0ifm" value="interface class" />
         </node>
-        <node concept="1iCGBv" id="4YpmBa69sMY" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:5$xTughlNUD" />
-          <node concept="1sVBvm" id="4YpmBa69sN0" role="1sWHZn">
-            <node concept="3F0A7n" id="4YpmBa69sNd" role="2wV5jI">
+        <node concept="1iCGBv" id="7bj0OGad10$" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:4YpmBa69sLN" />
+          <node concept="1sVBvm" id="7bj0OGad10A" role="1sWHZn">
+            <node concept="3F0A7n" id="7bj0OGad10M" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             </node>

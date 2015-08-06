@@ -103,14 +103,14 @@ public class ConceptInstancesPart_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_g13bxt_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("cncpt");
-    provider.setNoTargetText("<no cncpt>");
+    provider.setRole("cncptIntfcClass");
+    provider.setNoTargetText("<no cncptIntfcClass>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ConceptInstancesPart_Editor._Inline_g13bxt_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("cncpt");
+      editorCell.setRole("cncptIntfcClass");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
