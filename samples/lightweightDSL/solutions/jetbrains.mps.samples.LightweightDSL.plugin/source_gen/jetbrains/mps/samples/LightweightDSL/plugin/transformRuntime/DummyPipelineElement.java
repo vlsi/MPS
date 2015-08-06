@@ -4,6 +4,7 @@ package jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime;
 
 
 public final class DummyPipelineElement extends PipelineElement {
+
   public int transformValue(int value) {
     throw new UnsupportedOperationException("This class should never be instantiated");
   }
