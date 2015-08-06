@@ -231,7 +231,7 @@
         <var name="project" id="1929018697514204777" />
       </scope>
       <unit id="1929018697515772734" at="66,66,70,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$2" />
-      <unit id="1929018697514300734" at="79,45,83,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$2" />
+      <unit id="1929018697514300734" at="79,63,83,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$2" />
       <unit id="7217668918200088437" at="106,125,110,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$5" />
       <unit id="8380389482646539311" at="113,103,117,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$6" />
       <unit id="8238758872513221390" at="129,168,133,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$5" />
@@ -239,7 +239,7 @@
       <unit id="1929018697514263007" at="84,117,89,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$3" />
       <unit id="1929018697515772699" at="60,45,72,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$1" />
       <unit id="7217668918199456563" at="111,65,123,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$5" />
-      <unit id="1929018697514751634" at="94,45,125,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$4" />
+      <unit id="1929018697514751634" at="94,63,125,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$4" />
       <unit id="1929018697514204727" at="37,0,164,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" />
     </file>
   </root>
