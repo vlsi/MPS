@@ -266,11 +266,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected String getConfigItemPath() {
-      if (myModule instanceof Generator)
+      if (myModule.getDescriptorFile() == null) {
         return "";
-      return FileUtil.getCanonicalPath(
-          myModule.getDescriptorFile().getPath()
-      );
+      } else {
+        return FileUtil.getCanonicalPath(myModule.getDescriptorFile().getPath());
+      }
     }
 
     @Override
