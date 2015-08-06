@@ -9,7 +9,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -89,7 +88,6 @@
   <node concept="312cEu" id="OfqpBCgW3n">
     <property role="TrG5h" value="DummyPipelineElement" />
     <property role="1EXbeo" value="true" />
-    <node concept="2tJIrI" id="6bi9GtPL_s6" role="jymVt" />
     <node concept="3clFb_" id="OfqpBCgW44" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="transformValue" />
