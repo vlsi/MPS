@@ -114,10 +114,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         }
         return Arrays.asList(myIntentions8);
       case 9:
-        // Concept: SConceptType 
+        // Concept: ConceptNodeType 
         if (myIntentions9 == null) {
           myIntentions9 = new IntentionFactory[1];
-          myIntentions9[0] = new SConceptType2Concept_Intention();
+          myIntentions9[0] = new ConceptNodeType2SConceptType_Intention();
         }
         return Arrays.asList(myIntentions9);
       case 10:
@@ -170,7 +170,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[10] = new LinkName2Link_Intention();
     rv[11] = new ConceptRef2Concept_Intention();
     rv[12] = new ConceptName2Concept_Intention();
-    rv[13] = new SConceptType2Concept_Intention();
+    rv[13] = new ConceptNodeType2SConceptType_Intention();
     return Arrays.asList(rv);
   }
 }

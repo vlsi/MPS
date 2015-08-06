@@ -54,7 +54,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
                 typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4772924222908029672", true), (SNode) _quotation_createNode_kyl6z5_a0a0a0a0d0a0b(), _info_12389875345);
               }
             } else
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(LeftType_typevar_1186060911559), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType"))) {
+            if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(LeftType_typevar_1186060911559), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = expr;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712110099", 0, null);
