@@ -15,6 +15,7 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       ModelRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameModel_Action");
+      ModelRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveModel_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

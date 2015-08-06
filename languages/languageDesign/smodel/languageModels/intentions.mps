@@ -1923,20 +1923,20 @@
     </node>
   </node>
   <node concept="2S6QgY" id="5bVvjfYAFx7">
-    <property role="TrG5h" value="SConceptType2Concept" />
-    <ref role="2ZfgGC" to="tp25:h3THzq0" resolve="SConceptType" />
+    <property role="TrG5h" value="ConceptNodeType2SConceptType" />
+    <ref role="2ZfgGC" to="tp25:h3THzq0" resolve="ConceptNodeType" />
     <node concept="2Sbjvc" id="5bVvjfYAFx8" role="2ZfgGD">
       <node concept="3clFbS" id="5bVvjfYAFx9" role="2VODD2">
         <node concept="3cpWs8" id="5bVvjfYAFxa" role="3cqZAp">
           <node concept="3cpWsn" id="5bVvjfYAFxb" role="3cpWs9">
             <property role="TrG5h" value="repl" />
             <node concept="3Tqbb2" id="5bVvjfYAFxc" role="1tU5fm">
-              <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+              <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
             </node>
             <node concept="2ShNRf" id="5bVvjfYAFxd" role="33vP2m">
               <node concept="3zrR0B" id="5bVvjfYAFxe" role="2ShVmc">
                 <node concept="3Tqbb2" id="5bVvjfYAFxf" role="3zrR0E">
-                  <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+                  <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                 </node>
               </node>
             </node>

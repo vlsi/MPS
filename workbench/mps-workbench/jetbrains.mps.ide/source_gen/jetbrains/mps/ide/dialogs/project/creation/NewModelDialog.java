@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -74,6 +74,7 @@ public class NewModelDialog extends DialogWrapper {
   private JComboBox myModelRoots = new JComboBox();
   private JComboBox myModelStorageFormat = new JComboBox();
   private SModel myClone;
+  private boolean myPreserveIds;
   private SModel myResult;
   private String myNamespace;
   public NewModelDialog(Project project, AbstractModule module, String namespace, String stereotype, boolean strict) throws HeadlessException {
@@ -96,16 +97,24 @@ public class NewModelDialog extends DialogWrapper {
     init();
   }
   public NewModelDialog(Project project, SModel cloneModel) {
-    this(project, (AbstractModule) cloneModel.getModule(), getNamespace(cloneModel), SModelStereotype.getStereotype(cloneModel), false);
+    this(project, (AbstractModule) cloneModel.getModule(), null, SModelStereotype.getStereotype(cloneModel), false);
     myClone = cloneModel;
-    setTitle("Clone Model " + SNodeOperations.getModelLongName(myClone));
+    myPreserveIds = false;
+    setTitle("Clone Model " + NameUtil.getModelLongName(myClone));
     myModelName.setText(myClone.getModelName() + "_clone");
+  }
+  public NewModelDialog(Project project, AbstractModule module, SModel cloneModel) {
+    this(project, module, null, SModelStereotype.getStereotype(cloneModel), false);
+    myClone = cloneModel;
+    myPreserveIds = true;
+    setTitle("Move Model " + NameUtil.getModelLongName(myClone));
+    myModelName.setText(myClone.getModelName());
   }
   public static String getNamespace(SModel model) {
     SModule module = model.getModule();
     if (module instanceof Generator) {
       Generator gen = (Generator) module;
-      String name = gen.getName();
+      String name = gen.getModuleName();
       String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
 
       if ((name == null || name.length() == 0)) {
@@ -311,7 +320,11 @@ public class NewModelDialog extends DialogWrapper {
         for (SModuleReference ref : ((SModelInternal) myClone).engagedOnGenerationLanguages()) {
           ((SModelInternal) result).addEngagedOnGenerationLanguage(ref);
         }
-        CopyUtil.copyModelContent(myClone, result);
+        if (myPreserveIds) {
+          CopyUtil.copyModelContentAndPreserveIds(myClone, result);
+        } else {
+          CopyUtil.copyModelContent(myClone, result);
+        }
         result.setChanged(true);
         result.save();
 
@@ -340,7 +353,7 @@ public class NewModelDialog extends DialogWrapper {
 
   private String getFqName() {
     String stereo = myModelStereotype.getSelectedItem().toString().trim();
-    return myModelName.getText() + ((stereo != null && stereo.length() > 0 ? "@" + stereo : ""));
+    return myModelName.getText() + ((stereo.length() > 0 ? "@" + stereo : ""));
 
   }
   private boolean check() {

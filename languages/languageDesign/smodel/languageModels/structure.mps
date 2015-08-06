@@ -763,7 +763,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="node&lt;AbstractConceptDeclaration&gt;" />
-    <property role="TrG5h" value="SConceptType" />
+    <property role="TrG5h" value="ConceptNodeType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
     <property role="34LRSv" value="conceptNode&lt; &gt;" />
@@ -2042,7 +2042,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="concept type" />
-    <property role="TrG5h" value="SConceptTypeSConcept" />
+    <property role="TrG5h" value="SConceptType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
     <property role="34LRSv" value="concept&lt; &gt;" />

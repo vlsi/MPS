@@ -19,8 +19,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule() {
+public class supertypesOf_ConceptNodeType_ConceptNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public supertypesOf_ConceptNodeType_ConceptNodeType_SubtypingRule() {
   }
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
@@ -28,14 +28,14 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(list).addElement(_quotation_createNode_keb29w_a0a0a1a2a1(superConcept));
+        ListSequence.fromList(list).addElement(_quotation_createNode_bxm9m1_a0a0a1a2a1(superConcept));
       }
-      ListSequence.fromList(list).addElement(_quotation_createNode_keb29w_a0a2a2a1());
+      ListSequence.fromList(list).addElement(_quotation_createNode_bxm9m1_a0a2a2a1());
     }
     return list;
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType");
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -43,17 +43,17 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   public boolean isWeak() {
     return false;
   }
-  private static SNode _quotation_createNode_keb29w_a0a0a1a2a1(Object parameter_1) {
+  private static SNode _quotation_createNode_bxm9m1_a0a0a1a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType"), null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, 0x112da284156L, "conceptDeclaraton"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_keb29w_a0a2a2a1() {
+  private static SNode _quotation_createNode_bxm9m1_a0a2a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType"), null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), null, null, false);
     return quotedNode_1;
   }
 }

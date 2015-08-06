@@ -517,6 +517,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_ConceptNodeType_ConceptNodeType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_ConceptNodeType_SNodeType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_ListType_elementSNode_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -525,19 +533,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SConcept_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SConceptType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SNodeType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
@@ -624,10 +624,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           if (isAggregation) {
             return false;
           }
-          if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType")))) {
+          if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")))) {
             return false;
           }
-          SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, 0x112da284156L, "conceptDeclaraton"));
+          SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, 0x112da284156L, "conceptDeclaraton"));
           return concept == variable;
         }
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
