@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel.language;
 
-/**
- * Created by apyshkin on 7/15/15.
- */
 public interface CoreAspectRegistry {
   void clear();
 }

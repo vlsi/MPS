@@ -32,6 +32,11 @@ public final class IllegalBHDescriptor implements BHDescriptor {
     throw new UnsupportedOperationException();
   }
 
+  @Override
+  public <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    throw new UnsupportedOperationException();
+  }
+
   @NotNull
   @Override
   public SAbstractConcept getConcept() {

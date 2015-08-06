@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

@@ -28,6 +28,7 @@ import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -39,7 +40,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
   private SAbstractConcept myConcept;
-  private boolean myInitialized = false;
+  private volatile boolean myInitialized = false;
   private final BHVirtualMethodTable myVTable = new BHVirtualMethodTable();
   private AncestorCache myAncestorCache;
   private ConstructionHandler myConstructionHandler;
@@ -48,7 +49,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * Intended to be executed during concept behavior construction
    * @see jetbrains.mps.smodel.language.BehaviorRegistry#getBHDescriptor
    */
-  public void init() {
+  public synchronized void init() {
+    if (myInitialized) return;
     myConcept = getConcept();
     myAncestorCache = new AncestorCache(myConcept);
     myConstructionHandler = new ConstructionHandler(myConcept, myAncestorCache);
@@ -83,26 +85,38 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   @Override
   public final <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
-    if ((node == null) && !method.getMethodModifiers().isStatic()) {
-      throw new BHNullPointerException();
-    }
-    // TODO check parameters properly
-    if (method.getParameterCount() != parameters.length) {
-      throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
-    }
+    checkForNPE(node, method);
+    checkParameters(method, parameters);
 
     if (method == SMethod.INIT) {
       assert node != null;
       myConstructionHandler.initNode(node);
       return null;
-    } else if (method.getMethodModifiers().isVirtual()) {
+    } else if (method.isVirtual()) {
       return invokeVirtual(node, method, parameters);
     } else {
-      return invokeNonVirtual(node, method, parameters);
+      if (method.getMethodModifiers().getAccessPrivileges() == AccessPrivileges.PRIVATE) {
+        return invokeOwn(node, method, parameters);
+      }
+      return invokeSpecial(node, method, parameters);
     }
   }
 
-  private <T> T invokeNonVirtual(SNode node, SMethod<T> method, Object[] parameters) {
+  private <T> void checkForNPE(SNode node, SMethod<T> method) {
+    if (node == null && !method.getMethodModifiers().isStatic()) {
+      throw new BHNullPointerException();
+    }
+  }
+
+  private <T> void checkParameters(SMethod<T> method, Object[] parameters) {
+    // TODO check parameters properly
+    if (method.getParameterCount() != parameters.length) {
+      throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
+    }
+  }
+
+  @Override
+  public <T> T invokeSpecial(SNode node, @NotNull SMethod<T> method, Object... parameters) {
     Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
     for (SAbstractConcept ancestor : ancestorIterator) {
       BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
@@ -119,11 +133,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    if (!myVTable.contains(method)) {
+    Entry<SMethod<?>, BaseBHDescriptor> methodDescriptor = myVTable.get(method);
+    if (methodDescriptor == null) {
       throw new BHMethodNotFoundException(method);
     }
-    BaseBHDescriptor bhDescriptor = myVTable.get(method);
-    assert bhDescriptor != null;
+    BaseBHDescriptor bhDescriptor = methodDescriptor.getValue();
+    method = (SMethod<T>) methodDescriptor.getKey();
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
 

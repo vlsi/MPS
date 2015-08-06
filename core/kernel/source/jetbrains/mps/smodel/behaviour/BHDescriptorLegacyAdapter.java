@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.behaviour.SMethod.SMethodLegacyAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;

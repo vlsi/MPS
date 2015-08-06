@@ -28,18 +28,24 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public final class BHInvoker {
   // null-safe public API
-  public static <T> T invoke(@Nullable SNode node, SMethod<T> method, Object... parameters) {
-    T defaultValue = DefaultValuesHolder.defaultValue(method.getReturnType());
+  public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    SAbstractConcept concept = method.getHostingConcept();
+    if (node != null && !node.getConcept().isSubConceptOf(concept)) {
+      return DefaultValuesHolder.defaultValue(method.getReturnType());
+    }
+    return BHInvoker.invokeSpecial0(node, method, parameters);
+  }
+
+  public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (node == null) {
-      return defaultValue;
+      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
     return BHInvoker.invoke0(node, method, parameters);
   }
 
-  public static <T> T invoke(@Nullable SAbstractConcept concept, SMethod<T> method, Object... parameters) {
-    T defaultValue = DefaultValuesHolder.defaultValue(method.getReturnType());
+  public static <T> T invoke(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     if (concept == null) {
-      return defaultValue;
+      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
     return BHInvoker.invoke0(concept, method, parameters);
   }
@@ -49,13 +55,20 @@ public final class BHInvoker {
     return ConceptRegistry.getInstance().getBHDescriptor(concept);
   }
 
-  private static <T> T invoke0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    BHDescriptor bhDescriptor = getBHDescriptor(node.getConcept());
+  private static <T> T invokeSpecial0(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    SAbstractConcept concept = method.getHostingConcept();
+    assert node == null || node.getConcept().isSubConceptOf(concept);
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
     return bhDescriptor.invoke(node, method, parameters);
   }
 
   private static <T> T invoke0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     return bhDescriptor.invoke(null, method, parameters);
+  }
+
+  private static <T> T invoke0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    BHDescriptor bhDescriptor = getBHDescriptor(node.getConcept());
+    return bhDescriptor.invoke(node, method, parameters);
   }
 }

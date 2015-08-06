@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-// FIXME make immutable
-// TODO check access privileges
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
+
+@Immutable
 public final class BHMethodModifiers {
-  public static final BHMethodModifiers NON_VIRTUAL = BHMethodModifiers.create(false, false);
-  public static final BHMethodModifiers STATIC = BHMethodModifiers.create(false, true);
-  public static final BHMethodModifiers VIRTUAL = BHMethodModifiers.create(true, false);
-  public static final BHMethodModifiers STATIC_AND_VIRTUAL = BHMethodModifiers.create(true, true);
+  public static final BHMethodModifiers DEFAULT = BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC);
 
   private final boolean myVirtual;
   private final boolean myStatic;
+  private final AccessPrivileges myAccessPrivileges;
 
-  private BHMethodModifiers(boolean virtual, boolean aStatic) {
+  private BHMethodModifiers(boolean virtual, boolean aStatic, @NotNull AccessPrivileges accessPrivileges) {
     myVirtual = virtual;
     myStatic = aStatic;
+    myAccessPrivileges = accessPrivileges;
   }
 
   public boolean isStatic() {
@@ -39,19 +40,21 @@ public final class BHMethodModifiers {
     return myVirtual;
   }
 
-  public static BHMethodModifiers create(boolean aVirtual, boolean aStatic) {
-    return new BHMethodModifiers(aVirtual, aStatic);
+  public static BHMethodModifiers create(boolean aVirtual, boolean aStatic, AccessPrivileges accessPrivileges) {
+    return new BHMethodModifiers(aVirtual, aStatic, accessPrivileges);
   }
 
-  public void checkCorrectness() {
-    // FIXME
+  public AccessPrivileges getAccessPrivileges() {
+    return myAccessPrivileges;
   }
 
   @Override
   public boolean equals(Object o) {
     if (o instanceof BHMethodModifiers) {
       BHMethodModifiers another = (BHMethodModifiers) o;
-      return this.isStatic() == another.isStatic() && this.isVirtual() == another.isVirtual();
+      return this.isStatic() == another.isStatic()
+          && this.isVirtual() == another.isVirtual();
+//          && this.getAccessPrivileges() == another.getAccessPrivileges();
     }
     return false;
   }
@@ -63,6 +66,6 @@ public final class BHMethodModifiers {
 
   @Override
   public String toString() {
-    return (myVirtual ? "V" : "") + (myStatic ? "S" : "");
+    return (myVirtual ? "V" : "") + (myStatic ? "S" : "") + "[" + myAccessPrivileges + "]";
   }
 }

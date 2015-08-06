@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/7082824793308696454">
+    <file name="MethodNameHelper.java">
+      <node id="66188535716407265" at="19,0,20,0" concept="3" trace="myBehavior" />
+      <node id="6123852159202281414" at="20,0,21,0" concept="3" trace="myMethodToId" />
+      <node id="66188535716408472" at="22,43,23,26" concept="2" />
+      <node id="6123852159202284036" at="23,26,24,26" concept="2" />
+      <node id="6123852159202273660" at="28,223,29,119" concept="12" />
+      <node id="6123852159202318129" at="30,5,31,0" concept="9" />
+      <node id="6123852159202304086" at="31,0,32,73" concept="7" />
+      <node id="6123852159202273673" at="32,73,33,0" concept="9" />
+      <node id="6123852159202273687" at="34,212,35,63" concept="7" />
+      <node id="6123852159202273697" at="36,59,37,71" concept="2" />
+      <node id="6123852159202273710" at="38,7,39,48" concept="2" />
+      <node id="6123852159202273717" at="40,5,41,22" concept="8" />
+      <node id="7082824793308696592" at="45,52,46,206" concept="8" />
+      <node id="6123852159202702319" at="49,40,50,47" concept="7" />
+      <node id="6123852159202714309" at="51,18,52,30" concept="2" />
+      <node id="6123852159202729462" at="53,5,54,19" concept="0" />
+      <node id="7082824793308696608" at="54,19,55,15" concept="8" />
+      <node id="7082824793308696623" at="58,39,59,17" concept="8" />
+      <node id="6123852159202273658" at="27,38,30,5" concept="5" />
+      <node id="6123852159202273695" at="35,63,38,7" concept="13" />
+      <node id="6123852159202707928" at="50,47,53,5" concept="5" />
+      <node id="7082824793308701001" at="58,0,61,0" concept="11" trace="maxMethodCount#()I" />
+      <node id="7082824793308708548" at="22,0,26,0" concept="1" trace="MethodNameHelper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7082824793308696498" at="44,0,48,0" concept="6" trace="getGeneratedName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6123852159202273684" at="33,0,40,5" concept="4" />
+      <node id="7082824793308696603" at="49,0,57,0" concept="6" trace="getTrimmedId#(Lorg/jetbrains/mps/openapi/model/SNodeId;)I" />
+      <node id="6123852159202263214" at="27,0,43,0" concept="6" trace="init#()Ljava/util/Map;" />
+      <scope id="6123852159202273659" at="28,223,29,119" />
+      <scope id="6123852159202273696" at="36,59,37,71" />
+      <scope id="7082824793308696506" at="45,52,46,206" />
+      <scope id="6123852159202707930" at="51,18,52,30" />
+      <scope id="7082824793308696622" at="58,39,59,17" />
+      <scope id="7082824793308708552" at="22,43,24,26" />
+      <scope id="7082824793308701001" at="58,0,61,0" />
+      <scope id="7082824793308708548" at="22,0,26,0">
+        <var name="behavior" id="7082824793308711735" />
+      </scope>
+      <scope id="7082824793308696498" at="44,0,48,0">
+        <var name="methodDecl" id="6123852159202353239" />
+      </scope>
+      <scope id="6123852159202273686" at="34,212,39,48">
+        <var name="methodGeneratedId" id="6123852159202273688" />
+      </scope>
+      <scope id="7082824793308696607" at="49,40,55,15">
+        <var name="res" id="6123852159202702320" />
+      </scope>
+      <scope id="6123852159202273684" at="33,0,40,5">
+        <var name="method" id="6123852159202273685" />
+      </scope>
+      <scope id="7082824793308696603" at="49,0,57,0">
+        <var name="id" id="7082824793308696615" />
+      </scope>
+      <scope id="6123852159202263217" at="27,38,41,22">
+        <var name="methodToId" id="6123852159202304089" />
+      </scope>
+      <scope id="6123852159202263214" at="27,0,43,0" />
+      <unit id="7082824793308696454" at="18,0,62,0" name="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper" />
+    </file>
+  </root>
   <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/7385785963573351755">
     <file name="Constants.java">
-      <node id="7385785963573351814" at="7,0,8,0" concept="0" trace="BEHAVIOR_DESCRIPTOR_SUFFIX" />
-      <node id="2284925377906205048" at="8,0,9,0" concept="0" trace="THIS_NODE_VARIABLE_NAME" />
-      <node id="2284925377907518140" at="9,0,10,0" concept="0" trace="INVOKE_METHOD_NAME" />
-      <node id="2284925377907913534" at="10,0,11,0" concept="0" trace="METHOD_FIELD_SUFFIX" />
-      <unit id="7385785963573351755" at="6,0,12,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
+      <node id="7385785963573351814" at="7,0,8,0" concept="10" trace="BEHAVIOR_DESCRIPTOR_SUFFIX" />
+      <node id="2284925377906205048" at="8,0,9,0" concept="10" trace="THIS_NODE_VARIABLE_NAME" />
+      <node id="2284925377907518140" at="9,0,10,0" concept="10" trace="INVOKE_METHOD_NAME" />
+      <node id="525520458130291250" at="10,0,11,0" concept="10" trace="INVOKE_SPECIAL_METHOD_NAME" />
+      <node id="2284925377907913534" at="11,0,12,0" concept="10" trace="METHOD_FIELD_SUFFIX" />
+      <unit id="7385785963573351755" at="6,0,13,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
     </file>
   </root>
 </debug-info>

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import jetbrains.mps.smodel.behaviour.SMethod.SMethodLegacyAdapter;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
