@@ -75,7 +75,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     ClassifierSuccessorsFinder.SearchScope unModifiedFilesSearchScope = new ClassifierSuccessorsFinder.SearchScope(unModifiedModelFiles);
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode nextClassifier = QueueSequence.fromQueue(queue).removeFirstElement();
-      FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new GlobalSNodeId(nextClassifier), null, valueProcessor, unModifiedFilesSearchScope);
+      FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, GlobalSNodeId.createSNodeId(nextClassifier), null, valueProcessor, unModifiedFilesSearchScope);
       modifiedSuccessorFinder.process(nextClassifier);
     }
     return result;
