@@ -632,6 +632,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/solutions/jetbrains.mps.samples.LightweightDSL.plugin/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/source_gen" isTestSource="false" />
@@ -758,6 +762,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/languagePatterns/languages/jetbrains.mps.samples.languagePatterns.Basic/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/solutions/jetbrains.mps.samples.LightweightDSL.plugin/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/classes_gen" />
