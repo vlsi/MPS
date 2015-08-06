@@ -8,12 +8,12 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -21,6 +21,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL7.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
@@ -29,12 +30,12 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -45,6 +46,14 @@
     <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.B_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.D_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.E_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.F_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.G_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.H_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I3_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -65,12 +74,172 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.D_BehaviorDescriptor" file="D_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL7.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.E_BehaviorDescriptor" file="E_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL7.behavior.I3_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.F_BehaviorDescriptor" file="F_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL7.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.G_BehaviorDescriptor" file="G_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL7.behavior.F_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.H_BehaviorDescriptor" file="H_BehaviorDescriptor.java">
+    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.I1_BehaviorDescriptor" file="I1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.I2_BehaviorDescriptor" file="I2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL7.behavior.I3_BehaviorDescriptor" file="I3_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.SMethodBuilder" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

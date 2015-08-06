@@ -5,10 +5,10 @@ package BHL7.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,12 +19,11 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L, "BHL7.structure.C");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> argTypeResolve_METHOD_1474492522700410264 = SMethod.create("argTypeResolve", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID, Integer.class);
-  public static final SMethod<Integer> argTypeResolve_METHOD_1474492522700410741 = SMethod.create("argTypeResolve", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID, Object.class);
+  public static final SMethod<Integer> argTypeResolve_id32443 = new SMethodBuilder(Integer.TYPE).name("argTypeResolve").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(Integer.class);
+  public static final SMethod<Integer> argTypeResolve_id31830 = new SMethodBuilder(Integer.TYPE).name("argTypeResolve___1").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(Object.class);
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_METHOD_1474492522700410264, argTypeResolve_METHOD_1474492522700410741);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id32443, argTypeResolve_id31830);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
@@ -33,7 +32,7 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   public static Integer argTypeResolve(@Nullable SNode __thisNode__, Integer a) {
     return TestResults.SPECIFIED_RETURN_VALUE;
   }
-  public static Integer argTypeResolve(@Nullable SNode __thisNode__, Object o) {
+  public static Integer argTypeResolve___1(@Nullable SNode __thisNode__, Object o) {
     return TestResults.NOT_SPECIFIED_RETURN_VALUE;
   }
 
@@ -53,7 +52,7 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) argTypeResolve(node, (Integer) parameters[0]);
       case 1:
-        return (T) argTypeResolve(node, (Object) parameters[0]);
+        return (T) argTypeResolve___1(node, (Object) parameters[0]);
       default:
         throw new BHDescriptor.BHMethodNotFoundException(method);
     }

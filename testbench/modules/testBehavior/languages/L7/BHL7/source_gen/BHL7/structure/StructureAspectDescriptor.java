@@ -15,25 +15,49 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptA = new ConceptDescriptorBuilder("BHL7.structure.A", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
   /*package*/ final ConceptDescriptor myConceptB = new ConceptDescriptorBuilder("BHL7.structure.B", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL)).super_("BHL7.structure.A").super_(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL)).parents("BHL7.structure.A").parentIds(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL)).create();
   /*package*/ final ConceptDescriptor myConceptC = new ConceptDescriptorBuilder("BHL7.structure.C", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L)).super_("BHL7.structure.B").super_(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL)).parents("BHL7.structure.B").parentIds(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL)).create();
+  /*package*/ final ConceptDescriptor myConceptD = new ConceptDescriptorBuilder("BHL7.structure.D", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af52b3L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL7.structure.I1", "BHL7.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af5261L), MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af528cL)).create();
+  /*package*/ final ConceptDescriptor myConceptE = new ConceptDescriptorBuilder("BHL7.structure.E", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd7137351L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL7.structure.I3").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd713731eL)).create();
+  /*package*/ final ConceptDescriptor myConceptF = new ConceptDescriptorBuilder("BHL7.structure.F", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x75783c3114f90130L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL7.structure.I1").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af5261L)).create();
+  /*package*/ final ConceptDescriptor myConceptG = new ConceptDescriptorBuilder("BHL7.structure.G", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x75783c3114f90190L)).super_("BHL7.structure.F").super_(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x75783c3114f90130L)).parents("BHL7.structure.F", "BHL7.structure.I2").parentIds(MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x75783c3114f90130L), MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af528cL)).create();
+  /*package*/ final ConceptDescriptor myConceptH = new ConceptDescriptorBuilder("BHL7.structure.H", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x3a674fdfabfcc7faL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
+  /*package*/ final ConceptDescriptor myConceptI1 = new ConceptDescriptorBuilder("BHL7.structure.I1", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af5261L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptI2 = new ConceptDescriptorBuilder("BHL7.structure.I2", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af528cL)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptI3 = new ConceptDescriptorBuilder("BHL7.structure.I3", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd713731eL)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptA, myConceptB, myConceptC);
+    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH, myConceptI1, myConceptI2, myConceptI3);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
       case 0:
         return myConceptA;
       case 1:
         return myConceptB;
       case 2:
         return myConceptC;
+      case 3:
+        return myConceptD;
+      case 4:
+        return myConceptE;
+      case 5:
+        return myConceptF;
+      case 6:
+        return myConceptG;
+      case 7:
+        return myConceptH;
+      case 8:
+        return myConceptI1;
+      case 9:
+        return myConceptI2;
+      case 10:
+        return myConceptI3;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"BHL7.structure.A", "BHL7.structure.B", "BHL7.structure.C"};
+  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"BHL7.structure.A", "BHL7.structure.B", "BHL7.structure.C", "BHL7.structure.D", "BHL7.structure.E", "BHL7.structure.F", "BHL7.structure.G", "BHL7.structure.H", "BHL7.structure.I1", "BHL7.structure.I2", "BHL7.structure.I3"};
 }

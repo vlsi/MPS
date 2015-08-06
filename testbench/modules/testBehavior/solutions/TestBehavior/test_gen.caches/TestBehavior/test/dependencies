@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="TestBehavior.test.BHTest_Test" file="BHTest_Test.java">
     <classNode dependClassName="BHL1.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="BHL1.behavior.I_BehaviorDescriptor" />
     <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL3.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL3.behavior.B_BehaviorDescriptor" />
@@ -14,6 +15,10 @@
     <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.B_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.H_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.I3_BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />

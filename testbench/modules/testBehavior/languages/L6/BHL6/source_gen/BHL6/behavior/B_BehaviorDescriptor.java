@@ -5,10 +5,10 @@ package BHL6.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,22 +20,33 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL, "BHL6.structure.B");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Integer> bar_METHOD = SMethod.create("bar", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Integer> foo_id9768 = new SMethodBuilder(Integer.TYPE).name("foo").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> bar_id14810 = new SMethodBuilder(Integer.TYPE).name("bar").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> bar1_id49425 = new SMethodBuilder(Integer.TYPE).name("bar1").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> foo1_id52919 = new SMethodBuilder(Integer.TYPE).name("foo1").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> foo2_id50168 = new SMethodBuilder(Integer.TYPE).name("foo2").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD, bar_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id9768, bar_id14810, bar1_id49425, foo1_id52919, foo2_id50168);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return BHInvoker.invoke(__thisNode__, B_BehaviorDescriptor.bar_METHOD);
+    return BHInvoker.invoke(__thisNode__, B_BehaviorDescriptor.bar_id14810);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  public static Integer bar1(@Nullable SNode __thisNode__) {
+    return TestResults.INCORRECT_RETURN_VALUE;
+  }
+  public static Integer foo1(@Nullable SNode __thisNode__) {
+    return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  public static Integer foo2(@Nullable SNode __thisNode__) {
+    return BHInvoker.invoke(__thisNode__, B_BehaviorDescriptor.bar1_id49425);
   }
 
   /*package*/ B_BehaviorDescriptor() {
@@ -55,6 +66,12 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
         return (T) foo(node);
       case 1:
         return (T) bar(node);
+      case 2:
+        return (T) bar1(node);
+      case 3:
+        return (T) foo1(node);
+      case 4:
+        return (T) foo2(node);
       default:
         throw new BHDescriptor.BHMethodNotFoundException(method);
     }

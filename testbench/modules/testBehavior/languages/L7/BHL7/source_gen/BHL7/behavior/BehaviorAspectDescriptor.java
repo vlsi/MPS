@@ -12,17 +12,33 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myI3_BehaviorDescriptor = new I3_BehaviorDescriptor();
+  private final BHDescriptor myE_BehaviorDescriptor = new E_BehaviorDescriptor();
+  private final BHDescriptor myH_BehaviorDescriptor = new H_BehaviorDescriptor();
   private final BHDescriptor myC_BehaviorDescriptor = new C_BehaviorDescriptor();
+  private final BHDescriptor myI1_BehaviorDescriptor = new I1_BehaviorDescriptor();
+  private final BHDescriptor myI2_BehaviorDescriptor = new I2_BehaviorDescriptor();
+  private final BHDescriptor myD_BehaviorDescriptor = new D_BehaviorDescriptor();
   private final BHDescriptor myA_BehaviorDescriptor = new A_BehaviorDescriptor();
   private final BHDescriptor myB_BehaviorDescriptor = new B_BehaviorDescriptor();
+  private final BHDescriptor myF_BehaviorDescriptor = new F_BehaviorDescriptor();
+  private final BHDescriptor myG_BehaviorDescriptor = new G_BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[3];
-    myConceptBehaviorIds[0] = 0x4dcf589c68321a72L;
-    myConceptBehaviorIds[1] = 0x559729dec0466d3cL;
-    myConceptBehaviorIds[2] = 0x559729dec0466d3dL;
+    myConceptBehaviorIds = new long[11];
+    myConceptBehaviorIds[0] = 0x10b2a2acd713731eL;
+    myConceptBehaviorIds[1] = 0x10b2a2acd7137351L;
+    myConceptBehaviorIds[2] = 0x3a674fdfabfcc7faL;
+    myConceptBehaviorIds[3] = 0x4dcf589c68321a72L;
+    myConceptBehaviorIds[4] = 0x549fa4aa12af5261L;
+    myConceptBehaviorIds[5] = 0x549fa4aa12af528cL;
+    myConceptBehaviorIds[6] = 0x549fa4aa12af52b3L;
+    myConceptBehaviorIds[7] = 0x559729dec0466d3cL;
+    myConceptBehaviorIds[8] = 0x559729dec0466d3dL;
+    myConceptBehaviorIds[9] = 0x75783c3114f90130L;
+    myConceptBehaviorIds[10] = 0x75783c3114f90190L;
   }
 
   @Deprecated
@@ -37,11 +53,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myC_BehaviorDescriptor;
+        return myI3_BehaviorDescriptor;
       case 1:
-        return myA_BehaviorDescriptor;
+        return myE_BehaviorDescriptor;
       case 2:
+        return myH_BehaviorDescriptor;
+      case 3:
+        return myC_BehaviorDescriptor;
+      case 4:
+        return myI1_BehaviorDescriptor;
+      case 5:
+        return myI2_BehaviorDescriptor;
+      case 6:
+        return myD_BehaviorDescriptor;
+      case 7:
+        return myA_BehaviorDescriptor;
+      case 8:
         return myB_BehaviorDescriptor;
+      case 9:
+        return myF_BehaviorDescriptor;
+      case 10:
+        return myG_BehaviorDescriptor;
       default:
         return null;
     }

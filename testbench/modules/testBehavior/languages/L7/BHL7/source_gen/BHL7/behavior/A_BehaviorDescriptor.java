@@ -5,10 +5,10 @@ package BHL7.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,15 +19,14 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> nonVirtualMethod_METHOD_6167444251392503129 = SMethod.create("nonVirtualMethod", BHMethodModifiers.create(false, false), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Object> virtualMethod_METHOD_6167444251392503144 = SMethod.create("virtualMethod", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
-  public static final SMethod<Integer> staticMethod_METHOD_6167444251392503213 = SMethod.create("staticMethod", BHMethodModifiers.create(false, true), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Object> staticVirtualMethod_METHOD_6167444251392503389 = SMethod.create("staticVirtualMethod", BHMethodModifiers.create(true, true), Object.class, CONCEPT_ID);
-  public static final SMethod<Void> justVoidReturnTypeMethod_METHOD_6167444251392504413 = SMethod.create("justVoidReturnTypeMethod", BHMethodModifiers.create(false, false), Void.class, CONCEPT_ID);
+  public static final SMethod<Integer> nonVirtualMethod_id17543 = new SMethodBuilder(Integer.TYPE).name("nonVirtualMethod").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Object> virtualMethod_id17590 = new SMethodBuilder(Object.class).name("virtualMethod").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> staticMethod_id17523 = new SMethodBuilder(Integer.TYPE).name("staticMethod").modifiers(BHMethodModifiers.create(false, true, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Object> staticVirtualMethod_id18307 = new SMethodBuilder(Object.class).name("staticVirtualMethod").modifiers(BHMethodModifiers.create(true, true, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Void> justVoidReturnTypeMethod_id23427 = new SMethodBuilder(Void.class).name("justVoidReturnTypeMethod").modifiers(BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_METHOD_6167444251392503129, virtualMethod_METHOD_6167444251392503144, staticMethod_METHOD_6167444251392503213, staticVirtualMethod_METHOD_6167444251392503389, justVoidReturnTypeMethod_METHOD_6167444251392504413);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_id17543, virtualMethod_id17590, staticMethod_id17523, staticVirtualMethod_id18307, justVoidReturnTypeMethod_id23427);
 
   public static Void __init__(SNode __thisNode__) {
     return null;

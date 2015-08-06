@@ -5,10 +5,10 @@ package BHL4.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,11 +19,10 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL, "BHL4.structure.I1");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Object> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
+  public static final SMethod<Object> foo_id18077 = new SMethodBuilder(Object.class).name("foo").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(I_BehaviorDescriptor.foo_id29640).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id18077);
 
   public static Void __init__(SNode __thisNode__) {
     return null;

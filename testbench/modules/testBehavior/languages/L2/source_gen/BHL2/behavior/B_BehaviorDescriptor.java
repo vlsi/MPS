@@ -5,10 +5,10 @@ package BHL2.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,17 +19,20 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd9c7536e76b5498fL, 0x80640955dd8aebcbL, 0x6ab2e61d35e46065L, "BHL2.structure.B");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Object> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(true, false), Object.class, CONCEPT_ID);
+  public static final SMethod<Object> foo_id34500 = new SMethodBuilder(Object.class).name("foo").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.foo_id47716).build();
+  public static final SMethod<Object> foo2_id22652 = new SMethodBuilder(Object.class).name("foo2").modifiers(BHMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.foo2_id23121).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id34500, foo2_id22652);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
   }
 
   public static Object foo(@Nullable SNode __thisNode__) {
+    return TestResults.POLYMORPHIC_CHILD;
+  }
+  public static Object foo2(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 
@@ -48,6 +51,8 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) foo(node);
+      case 1:
+        return (T) foo2(node);
       default:
         throw new BHDescriptor.BHMethodNotFoundException(method);
     }

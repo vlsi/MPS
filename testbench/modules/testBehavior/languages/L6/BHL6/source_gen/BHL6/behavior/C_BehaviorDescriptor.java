@@ -5,10 +5,10 @@ package BHL6.behavior;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.SMethod;
+import jetbrains.mps.smodel.behaviour.SMethodBuilder;
 import jetbrains.mps.smodel.behaviour.BHMethodModifiers;
+import jetbrains.mps.smodel.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,19 +20,18 @@ import jetbrains.mps.smodel.behaviour.BHDescriptor;
 
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
-  private static final SConceptId CONCEPT_ID = MetaIdHelper.getConcept(CONCEPT);
 
-  public static final SMethod<Integer> foo_METHOD = SMethod.create("foo", BHMethodModifiers.create(false, true), Integer.TYPE, CONCEPT_ID);
-  public static final SMethod<Integer> bar_METHOD = SMethod.create("bar", BHMethodModifiers.create(false, true), Integer.TYPE, CONCEPT_ID);
+  public static final SMethod<Integer> foo_id13713 = new SMethodBuilder(Integer.TYPE).name("foo").modifiers(BHMethodModifiers.create(false, true, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Integer> bar_id13748 = new SMethodBuilder(Integer.TYPE).name("bar").modifiers(BHMethodModifiers.create(false, true, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_METHOD, bar_METHOD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id13713, bar_id13748);
 
   public static Void __init__(SNode __thisNode__) {
     return null;
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return BHInvoker.invoke(MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), C_BehaviorDescriptor.bar_METHOD);
+    return BHInvoker.invoke(MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), C_BehaviorDescriptor.bar_id13748);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;

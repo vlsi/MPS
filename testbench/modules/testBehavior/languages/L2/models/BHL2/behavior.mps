@@ -51,6 +51,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -70,6 +71,22 @@
       <node concept="3clFbS" id="6EMTxOPT5LW" role="3clF47">
         <node concept="3cpWs6" id="6EMTxOPT5OP" role="3cqZAp">
           <node concept="10M0yZ" id="6EMTxOPT62D" role="3cqZAk">
+            <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+            <ref role="3cqZAo" to="ynox:6EMTxOPT5P8" resolve="POLYMORPHIC_PARENT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="4hDSxB1Zrx8" role="13h7CS">
+      <property role="TrG5h" value="foo2" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tmbuc" id="4hDSxB1Zrxm" role="1B3o_S" />
+      <node concept="3uibUv" id="4hDSxB1Zrxp" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="3clFbS" id="4hDSxB1Zrxb" role="3clF47">
+        <node concept="3cpWs6" id="4hDSxB1Zrxu" role="3cqZAp">
+          <node concept="10M0yZ" id="4hDSxB1Zrxv" role="3cqZAk">
             <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             <ref role="3cqZAo" to="ynox:6EMTxOPT5P8" resolve="POLYMORPHIC_PARENT" />
           </node>
@@ -100,6 +117,24 @@
         </node>
       </node>
       <node concept="3uibUv" id="6EMTxOPT63w" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="4hDSxB1ZrD_" role="13h7CS">
+      <property role="TrG5h" value="foo2" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="4hDSxB1Zrx8" resolve="foo2" />
+      <node concept="3Tm1VV" id="4hDSxB1ZrFH" role="1B3o_S" />
+      <node concept="3clFbS" id="4hDSxB1ZrDF" role="3clF47">
+        <node concept="3cpWs6" id="4hDSxB1ZrEZ" role="3cqZAp">
+          <node concept="10M0yZ" id="4hDSxB1ZrF0" role="3cqZAk">
+            <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+            <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="4hDSxB1ZrDG" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
