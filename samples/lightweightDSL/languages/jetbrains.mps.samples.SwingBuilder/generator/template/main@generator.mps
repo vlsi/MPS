@@ -12,8 +12,9 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="ttl1" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/f:descriptor#c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.baseLanguage.lightweightdsl/jetbrains.mps.baseLanguage.lightweightdsl@descriptor)" />
     <import index="202j" ref="r:b3a29194-ba8e-4a49-9d07-3de7435e51e1(jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime)" />
-    <import index="oubp" ref="r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
+    <import index="oubp" ref="r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="yo60" ref="r:f03fbd24-52ae-4ae3-8913-228f5120a390(jetbrains.mps.samples.SwingBuilder.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -1892,7 +1893,7 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="OfqpBCgG0M" role="1zkMxy">
+    <node concept="3uibUv" id="3JWcBXuHgBZ" role="1zkMxy">
       <ref role="3uigEE" to="202j:OfqpBCfa5b" resolve="PipelineElement" />
     </node>
   </node>
