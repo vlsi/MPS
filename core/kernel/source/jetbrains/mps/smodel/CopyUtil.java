@@ -38,19 +38,19 @@ public final class CopyUtil {
     }
   }
 
-  private static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 
-  private static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     from.copyPropertiesTo(to);
   }
 
   public static jetbrains.mps.smodel.SModel copyModel(jetbrains.mps.smodel.SModel model) {
     jetbrains.mps.smodel.SModel copy = model.createEmptyCopy();
-    copyModelContentAndPreserveIds(model, copy);
+    copyModelContentAndPreserveIds(model.getModelDescriptor(), copy.getModelDescriptor());
     copyModelProperties(model, copy);
     return copy;
   }
