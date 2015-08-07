@@ -35,7 +35,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
   }
   public SNode execute(SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -68,7 +68,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a1a1();
+      final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a0a1a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -106,10 +106,10 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, "jetbrains.mps.lang.traceable.operations"), 0);
   }
 
-  public static class Pattern_q6klpg_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_q6klpg_a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_operand;
     /*package*/ SNode patternVar_operation;
-    public Pattern_q6klpg_a0a0a0a1() {
+    public Pattern_q6klpg_a0a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression");
@@ -164,9 +164,9 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  public static class Pattern_q6klpg_a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_q6klpg_a0a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_args;
-    public Pattern_q6klpg_a0a0a1a1() {
+    public Pattern_q6klpg_a0a0a0a1a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation");

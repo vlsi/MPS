@@ -824,7 +824,7 @@ public class QueriesGenerated {
     return Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()) || (!(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"))));
   }
   public static boolean ifMacro_Condition_8317913688490056938(final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL, 0x527e98a73771f430L, "expression"))), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType"));
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL, 0x527e98a73771f430L, "expression"))), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"));
   }
   public static boolean ifMacro_Condition_2837022116960116097(final IfMacroContext _context) {
     return (((SNode) _context.getVariable("var:conceptArg")) != null);
