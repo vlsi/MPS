@@ -258,6 +258,18 @@
   <node concept="312cEu" id="6jXjkltHDjv">
     <property role="TrG5h" value="LanguageAspectGenerator_Class" />
     <property role="1sVAO0" value="true" />
+    <node concept="3clFb_" id="O7HwFiVPBk" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getDescriptorModelShortName" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="O7HwFiVPBl" role="3clF47" />
+      <node concept="3Tmbuc" id="O7HwFiVPBm" role="1B3o_S" />
+      <node concept="3uibUv" id="O7HwFiVPBn" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+    </node>
     <node concept="3clFb_" id="6jXjkltHGdo" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getGeneratedClassShortName" />
@@ -302,15 +314,25 @@
               <ref role="37wK5l" node="6jXjkltHGdo" resolve="getGeneratedClassShortName" />
             </node>
             <node concept="3cpWs3" id="6jXjkltJ9GS" role="3uHU7B">
-              <node concept="2YIFZM" id="7bj0OGadyjo" role="3uHU7B">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="2OqwBi" id="6jXjkltJ9us" role="37wK5m">
-                  <node concept="37vLTw" id="6jXjkltJ9qh" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6jXjkltJ9c$" resolve="modelBeingGenerated" />
+              <node concept="3cpWs3" id="O7HwFiVPaC" role="3uHU7B">
+                <node concept="1rXfSq" id="O7HwFiVRqS" role="3uHU7w">
+                  <ref role="37wK5l" node="O7HwFiVPBk" resolve="getDescriptorModelShortName" />
+                </node>
+                <node concept="3cpWs3" id="O7HwFiVObJ" role="3uHU7B">
+                  <node concept="2YIFZM" id="7bj0OGadyjo" role="3uHU7B">
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
+                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                    <node concept="2OqwBi" id="6jXjkltJ9us" role="37wK5m">
+                      <node concept="37vLTw" id="6jXjkltJ9qh" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6jXjkltJ9c$" resolve="modelBeingGenerated" />
+                      </node>
+                      <node concept="liA8E" id="6jXjkltJ9_C" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="liA8E" id="6jXjkltJ9_C" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                  <node concept="Xl_RD" id="O7HwFiVOSo" role="3uHU7w">
+                    <property role="Xl_RC" value="." />
                   </node>
                 </node>
               </node>

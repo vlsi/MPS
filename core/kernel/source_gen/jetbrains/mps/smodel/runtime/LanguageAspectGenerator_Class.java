@@ -15,23 +15,24 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public abstract class LanguageAspectGenerator_Class implements LanguageAspectGenerator {
+  protected abstract String getDescriptorModelShortName();
   protected abstract String getGeneratedClassShortName();
   protected abstract SNode getInterfaceClass();
 
   protected String getGeneratedClassFqName(SModel modelBeingGenerated) {
-    return SModelStereotype.withoutStereotype(modelBeingGenerated.getModelName()) + "." + getGeneratedClassShortName();
+    return SModelStereotype.withoutStereotype(modelBeingGenerated.getModelName()) + "." + getDescriptorModelShortName() + "." + getGeneratedClassShortName();
   }
 
   @NotNull
   public SNode generateInstantiation(SNode aspectClassParameter, SModel modelBeingGenerated) {
-    return _quotation_createNode_qks86m_a0a5(getGeneratedClassFqName(modelBeingGenerated), aspectClassParameter, getInterfaceClass());
+    return _quotation_createNode_qks86m_a0a6(getGeneratedClassFqName(modelBeingGenerated), aspectClassParameter, getInterfaceClass());
   }
 
   @Nullable
   public SNode generateDescriptor(Collection<SModel> collection) {
     return null;
   }
-  private static SNode _quotation_createNode_qks86m_a0a5(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_qks86m_a0a6(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

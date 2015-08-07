@@ -1554,6 +1554,50 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                   <ref role="1Y3XeK" to="e1tj:6jXjkltHDjv" resolve="LanguageAspectGenerator_Class" />
+                  <node concept="3clFb_" id="O7HwFiVXzP" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="getDescriptorModelShortName" />
+                    <property role="od$2w" value="false" />
+                    <property role="DiZV1" value="false" />
+                    <property role="2aFKle" value="false" />
+                    <node concept="3Tmbuc" id="O7HwFiVXzR" role="1B3o_S" />
+                    <node concept="3uibUv" id="O7HwFiVXzS" role="3clF45">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="3clFbS" id="O7HwFiVXzU" role="3clF47">
+                      <node concept="3clFbF" id="O7HwFiVYrA" role="3cqZAp">
+                        <node concept="Xl_RD" id="O7HwFiVYr_" role="3clFbG">
+                          <property role="Xl_RC" value="" />
+                          <node concept="17Uvod" id="O7HwFiVYuo" role="lGtFl">
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <property role="2qtEX9" value="value" />
+                            <node concept="3zFVjK" id="O7HwFiVYup" role="3zH0cK">
+                              <node concept="3clFbS" id="O7HwFiVYuq" role="2VODD2">
+                                <node concept="3clFbF" id="O7HwFiVZzr" role="3cqZAp">
+                                  <node concept="2OqwBi" id="O7HwFiW0o0" role="3clFbG">
+                                    <node concept="2OqwBi" id="O7HwFiVZLD" role="2Oq$k0">
+                                      <node concept="30H73N" id="O7HwFiVZzq" role="2Oq$k0" />
+                                      <node concept="2Xjw5R" id="O7HwFiVZY$" role="2OqNvi">
+                                        <node concept="1xMEDy" id="O7HwFiVZYA" role="1xVPHs">
+                                          <node concept="chp4Y" id="O7HwFiW09F" role="ri$Ld">
+                                            <ref role="cht4Q" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="O7HwFiW0Be" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2tJIrI" id="O7HwFiVXWm" role="jymVt" />
                   <node concept="3clFb_" id="6jXjkltHKdU" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="getGeneratedClassShortName" />
@@ -1664,6 +1708,49 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                   <ref role="1Y3XeK" to="e1tj:6jXjkltHLwP" resolve="LanguageAspectGenerator_PerConcept" />
+                  <node concept="3clFb_" id="O7HwFiW1pm" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="getDescriptorModelShortName" />
+                    <property role="od$2w" value="false" />
+                    <property role="DiZV1" value="false" />
+                    <property role="2aFKle" value="false" />
+                    <node concept="3Tmbuc" id="O7HwFiW1pn" role="1B3o_S" />
+                    <node concept="3uibUv" id="O7HwFiW1po" role="3clF45">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="3clFbS" id="O7HwFiW1pp" role="3clF47">
+                      <node concept="3clFbF" id="O7HwFiW1pq" role="3cqZAp">
+                        <node concept="Xl_RD" id="O7HwFiW1pr" role="3clFbG">
+                          <property role="Xl_RC" value="" />
+                          <node concept="17Uvod" id="O7HwFiW1ps" role="lGtFl">
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <property role="2qtEX9" value="value" />
+                            <node concept="3zFVjK" id="O7HwFiW1pt" role="3zH0cK">
+                              <node concept="3clFbS" id="O7HwFiW1pu" role="2VODD2">
+                                <node concept="3clFbF" id="O7HwFiW1pv" role="3cqZAp">
+                                  <node concept="2OqwBi" id="O7HwFiW1pw" role="3clFbG">
+                                    <node concept="2OqwBi" id="O7HwFiW1px" role="2Oq$k0">
+                                      <node concept="30H73N" id="O7HwFiW1py" role="2Oq$k0" />
+                                      <node concept="2Xjw5R" id="O7HwFiW1pz" role="2OqNvi">
+                                        <node concept="1xMEDy" id="O7HwFiW1p$" role="1xVPHs">
+                                          <node concept="chp4Y" id="O7HwFiW1p_" role="ri$Ld">
+                                            <ref role="cht4Q" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="O7HwFiW1pA" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFb_" id="6jXjkltI4nR" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="getGeneratedClassShortName" />
