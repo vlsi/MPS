@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/MultiTarget/MultiTarget.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/MultiTarget/sandbox/MultiTarget.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.TargetBL/jetbrains.mps.samples.TargetBL.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.TargetXML/jetbrains.mps.samples.TargetXML.mpl" folder="" />
+    </projectModules>
+  </component>
+</project>

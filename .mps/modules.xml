@@ -314,6 +314,10 @@
       <modulePath path="$PROJECT_DIR$/samples/money/jetbrains.mps.baseLanguage.money.mpl" folder="samples.money" />
       <modulePath path="$PROJECT_DIR$/samples/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" folder="samples.money" />
       <modulePath path="$PROJECT_DIR$/samples/money/solutions/jetbrains.mps.baseLanguage.money.sandbox/jetbrains.mps.baseLanguage.money.sandbox.msd" folder="samples.money" />
+      <modulePath path="$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/MultiTarget.mpl" folder="samples.multiTarget" />
+      <modulePath path="$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/sandbox/MultiTarget.sandbox.msd" folder="samples.multiTarget" />
+      <modulePath path="$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetBL/jetbrains.mps.samples.TargetBL.mpl" folder="samples.multiTarget" />
+      <modulePath path="$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetXML/jetbrains.mps.samples.TargetXML.mpl" folder="samples.multiTarget" />
       <modulePath path="$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.requestTracking/org.jetbrains.mps.requestTracking.mpl" folder="samples.multipleProjections" />
       <modulePath path="$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.stateMachine.tabular/org.jetbrains.mps.stateMachine.tabular.mpl" folder="samples.multipleProjections" />
       <modulePath path="$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/org.jetbrains.mps.stateMachine.mpl" folder="samples.multipleProjections" />
