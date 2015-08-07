@@ -28,46 +28,48 @@ public class TestMigration extends MigrationScriptBase {
     return "TestMigration";
   }
   public SNode execute(SModule m) {
-    final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a1();
-    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return pattern.match(it);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode n) {
-        return true;
-      }
-    }).sort(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
-      }
-    }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode nodeToMigrate) {
-        pattern.match(nodeToMigrate);
-        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
-          public SNode compute() {
-            return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-              public SNode invoke(SNode node) {
-                SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, 0x42068cb67bcac8fL, "newvalue"), "" + (SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, 0x42068cb67bc578eL, "value"))));
-                return node;
-              }
-            }.invoke(nodeToMigrate);
-          }
-        }, null);
-      }
-    });
+    {
+      final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a0a1();
+      Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode n) {
+          return true;
+        }
+      }).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
+        }
+      }, false).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode nodeToMigrate) {
+          pattern.match(nodeToMigrate);
+          applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+            public SNode compute() {
+              return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
+                public SNode invoke(SNode node) {
+                  SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, 0x42068cb67bcac8fL, "newvalue"), "" + (SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, 0x42068cb67bc578eL, "value"))));
+                  return node;
+                }
+              }.invoke(nodeToMigrate);
+            }
+          }, null);
+        }
+      });
+    }
     return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xa59395ba5d944758L, 0xa87cb11e086d5491L, "updatedLanguage"), 0);
   }
 
-  public static class Pattern_53jq1q_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_53jq1q_a0a0a1() {
+  public static class Pattern_53jq1q_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_53jq1q_a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept");
