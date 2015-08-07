@@ -14809,13 +14809,16 @@
       <node id="5039675756633082375" at="17,87,18,21" concept="13" />
       <node id="4595369208722974947" at="20,127,21,17" concept="13" />
       <node id="4595369208722955860" at="23,78,24,16" concept="13" />
+      <node id="3914786508986522158" at="26,78,27,16" concept="13" />
       <node id="5039675756633082348" at="13,0,15,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5039675756633082348" at="20,0,23,0" concept="17" trace="virtual_isVisible_6145907390641297352#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5039675756633082348" at="23,0,26,0" concept="17" trace="virtual_isStatic_7405920559687241224#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5039675756633082348" at="26,0,29,0" concept="17" trace="virtual_isStatic_8986964027630462944#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5039675756633082348" at="15,0,20,0" concept="17" trace="virtual_getMarkIcons_3923831204883340393#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="5039675756633082350" at="13,43,13,43" />
       <scope id="4595369208722897193" at="20,127,21,17" />
       <scope id="4595369208722897173" at="23,78,24,16" />
+      <scope id="3914786508986494975" at="26,78,27,16" />
       <scope id="5039675756633082348" at="13,0,15,0">
         <var name="thisNode" id="5039675756633082348" />
       </scope>
@@ -14830,10 +14833,13 @@
       <scope id="5039675756633082348" at="23,0,26,0">
         <var name="thisNode" id="5039675756633082348" />
       </scope>
+      <scope id="5039675756633082348" at="26,0,29,0">
+        <var name="thisNode" id="5039675756633082348" />
+      </scope>
       <scope id="5039675756633082348" at="15,0,20,0">
         <var name="thisNode" id="5039675756633082348" />
       </scope>
-      <unit id="5039675756633082348" at="12,0,27,0" name="jetbrains.mps.baseLanguage.behavior.StaticInitializer_Behavior" />
+      <unit id="5039675756633082348" at="12,0,30,0" name="jetbrains.mps.baseLanguage.behavior.StaticInitializer_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/5185847984243699191">
