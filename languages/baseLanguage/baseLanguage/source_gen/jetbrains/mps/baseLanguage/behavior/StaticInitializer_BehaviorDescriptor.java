@@ -29,7 +29,7 @@ public class StaticInitializer_BehaviorDescriptor extends BaseConcept_BehaviorDe
     return StaticInitializer_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+    return StaticInitializer_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
   public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
     return StaticInitializer_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
