@@ -69,6 +69,10 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
@@ -83,6 +87,7 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
+      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -364,6 +369,12 @@
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
+      <node concept="37vLTG" id="6j4BAERj8rZ" role="3clF46">
+        <property role="TrG5h" value="castTo" />
+        <node concept="3uibUv" id="6j4BAERj8PH" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
       <node concept="37vLTG" id="6jXjkltHGeK" role="3clF46">
         <property role="TrG5h" value="modelBeingGenerated" />
         <node concept="3uibUv" id="6jXjkltHGeL" role="1tU5fm">
@@ -379,15 +390,27 @@
             <node concept="3clFbJ" id="4YpmBa69iLw" role="2c44tc">
               <node concept="3clFbS" id="4YpmBa69iLx" role="3clFbx">
                 <node concept="3cpWs6" id="4YpmBa69iLy" role="3cqZAp">
-                  <node concept="1nCR9W" id="4YpmBa69iLz" role="3cqZAk">
-                    <property role="1nD$Q0" value="AspectImpl" />
-                    <node concept="2EMmih" id="6jXjkltHJm_" role="lGtFl">
-                      <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
-                      <property role="2qtEX9" value="fqClassName" />
-                      <node concept="1rXfSq" id="6jXjkltHJpU" role="2c44t1">
-                        <ref role="37wK5l" node="6jXjkltJ8II" resolve="getGeneratedClassFqName" />
-                        <node concept="37vLTw" id="6jXjkltJajU" role="37wK5m">
-                          <ref role="3cqZAo" node="6jXjkltHGeK" resolve="modelBeingGenerated" />
+                  <node concept="10QFUN" id="5NCX68p2iCW" role="3cqZAk">
+                    <node concept="1nCR9W" id="5NCX68p2iCR" role="10QFUP">
+                      <property role="1nD$Q0" value="AspectImpl" />
+                      <node concept="2EMmih" id="5NCX68p2iCS" role="lGtFl">
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                        <property role="2qtEX9" value="fqClassName" />
+                        <node concept="1rXfSq" id="5NCX68p2iCT" role="2c44t1">
+                          <ref role="37wK5l" node="6jXjkltJ8II" resolve="getGeneratedClassFqName" />
+                          <node concept="37vLTw" id="5NCX68p2iCU" role="37wK5m">
+                            <ref role="3cqZAo" node="6jXjkltHGeK" resolve="modelBeingGenerated" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="16syzq" id="8O9UB5OL2E" role="10QFUM">
+                      <node concept="2c44tb" id="8O9UB5OLa_" role="lGtFl">
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" />
+                        <property role="2qtEX8" value="typeVariableDeclaration" />
+                        <property role="3hQQBS" value="TypeVariableReference" />
+                        <node concept="37vLTw" id="8O9UB5OLi$" role="2c44t1">
+                          <ref role="3cqZAo" node="6j4BAERj8rZ" resolve="castTo" />
                         </node>
                       </node>
                     </node>

@@ -475,12 +475,27 @@
     <property role="3GE5qa" value="simple.gen" />
     <ref role="1XX52x" to="hfbu:5LFbgO_x_nt" resolve="ConceptInstancesPart" />
     <node concept="3EZMnI" id="5$xTughlO1J" role="2wV5jI">
-      <node concept="1iCGBv" id="5$xTughlNUL" role="3EZMnx">
-        <ref role="1NtTu8" to="hfbu:5$xTughlNUD" />
-        <node concept="1sVBvm" id="5$xTughlNUO" role="1sWHZn">
-          <node concept="3F0A7n" id="5$xTughlNUQ" role="2wV5jI">
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      <node concept="3EZMnI" id="6AFSqmI6zWX" role="3EZMnx">
+        <node concept="3F0ifn" id="6AFSqmI6zXt" role="3EZMnx">
+          <property role="3F0ifm" value="foreach root of concept" />
+        </node>
+        <node concept="2iRfu4" id="6AFSqmI6zWY" role="2iSdaV" />
+        <node concept="1iCGBv" id="5$xTughlNUL" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:5$xTughlNUD" />
+          <node concept="1sVBvm" id="5$xTughlNUO" role="1sWHZn">
+            <node concept="3F0A7n" id="5$xTughlNUQ" role="2wV5jI">
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
           </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="6jXjkltKeTu" role="3EZMnx">
+        <node concept="3XFhqQ" id="6jXjkltKeTv" role="3EZMnx" />
+        <node concept="2iRfu4" id="6jXjkltKeTw" role="2iSdaV" />
+        <node concept="3F0ifn" id="6jXjkltKeTx" role="3EZMnx" />
+        <node concept="3F1sOY" id="5$xTughlO2g" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;no &quot;main&quot; concept&gt;" />
+          <ref role="1NtTu8" to="hfbu:5$xTughlNVs" />
         </node>
       </node>
       <node concept="3EZMnI" id="6jXjkltKeRr" role="3EZMnx">
@@ -507,17 +522,6 @@
         </node>
         <node concept="3F1sOY" id="6jXjkltKeT9" role="3EZMnx">
           <ref role="1NtTu8" to="hfbu:6jXjkltILEw" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="6jXjkltKeTu" role="3EZMnx">
-        <node concept="3XFhqQ" id="6jXjkltKeTv" role="3EZMnx" />
-        <node concept="2iRfu4" id="6jXjkltKeTw" role="2iSdaV" />
-        <node concept="3F0ifn" id="6jXjkltKeTx" role="3EZMnx">
-          <property role="3F0ifm" value="aspect-&gt;concept" />
-        </node>
-        <node concept="3F1sOY" id="5$xTughlO2g" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;no &quot;main&quot; concept&gt;" />
-          <ref role="1NtTu8" to="hfbu:5$xTughlNVs" />
         </node>
       </node>
       <node concept="2iRkQZ" id="6jXjkltKeRp" role="2iSdaV" />
