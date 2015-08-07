@@ -90,6 +90,7 @@
       <concept id="3751132065236767068" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor" flags="ig" index="q3mfx">
         <child id="3751132065236767069" name="getter" index="q3mfw" />
       </concept>
+      <concept id="5820409521797720671" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor" flags="ng" index="qMXn0" />
       <concept id="3402736933911578134" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier" flags="ng" index="2IRzkw" />
       <concept id="8264762413010673052" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor" flags="ng" index="QcwwW">
         <reference id="8264762413010673055" name="cncpt" index="QcwwZ" />
@@ -385,6 +386,7 @@
       </node>
       <node concept="2IRzkw" id="OfqpBCexTD" role="2IRzpu" />
     </node>
+    <node concept="qMXn0" id="6TK9YNcRGYU" role="QNr5C" />
     <node concept="QcwwW" id="OfqpBCexTL" role="QNr5C">
       <ref role="QcwwZ" to="yo60:OfqpBCexTS" resolve="Transformers" />
       <node concept="2IRzkw" id="OfqpBCexXb" role="2IRzpu" />
