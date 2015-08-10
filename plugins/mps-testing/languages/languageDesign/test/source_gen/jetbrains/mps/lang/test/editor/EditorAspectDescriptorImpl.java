@@ -15,7 +15,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
+        return Arrays.asList(new ConceptEditor[]{new AnonymousCellAnnotation_Editor(), new AnonymousCellAnnotation_comment_Editor()});
       case 1:
         return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
       case 2:
