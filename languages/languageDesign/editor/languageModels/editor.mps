@@ -12676,16 +12676,6 @@
   <node concept="24kQdi" id="7hmFG5jMghC">
     <property role="3GE5qa" value="CellModel" />
     <ref role="1XX52x" to="tpc2:7hmFG5jLZmy" resolve="CellModel_Redispatch" />
-    <node concept="3F0ifn" id="7hmFG5jMghE" role="2wV5jI">
-      <property role="3F0ifm" value="redispatch()" />
-      <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
-      <node concept="Vb9p2" id="5fIuys06eTL" role="3F10Kt">
-        <property role="Vbekb" value="ITALIC" />
-      </node>
-      <node concept="VechU" id="5fIuys06eVu" role="3F10Kt">
-        <property role="Vb096" value="blue" />
-      </node>
-    </node>
     <node concept="3EZMnI" id="7hmFG5jQPPg" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7hmFG5jQPPh" role="3EZMnx">
@@ -12733,6 +12723,35 @@
         <property role="VOm3f" value="false" />
       </node>
       <node concept="2iRkQZ" id="7hmFG5jQPQ8" role="2iSdaV" />
+    </node>
+    <node concept="3EZMnI" id="2peXSsL72c0" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <ref role="1k5W1q" node="hX5ZSzR" resolve="borderedCollection" />
+      <node concept="3F0ifn" id="2peXSsL72c1" role="3EZMnx">
+        <property role="3F0ifm" value="[&gt;" />
+        <node concept="VPM3Z" id="2peXSsL72c2" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="VPXOz" id="2peXSsL72c3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="Vb9p2" id="2peXSsL72c4" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="2peXSsL72c5" role="3EZMnx">
+        <property role="3F0ifm" value="other appropriate editor" />
+        <ref role="1k5W1q" node="3OSQ5wtKyli" resolve="attributedCellLabel" />
+      </node>
+      <node concept="3F0ifn" id="2peXSsL72c6" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;]" />
+        <node concept="VPM3Z" id="2peXSsL72c7" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="VPXOz" id="2peXSsL72c8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="Vb9p2" id="2peXSsL72c9" role="3F10Kt" />
+      </node>
+      <node concept="2iRfu4" id="2peXSsL72ca" role="2iSdaV" />
     </node>
   </node>
 </model>

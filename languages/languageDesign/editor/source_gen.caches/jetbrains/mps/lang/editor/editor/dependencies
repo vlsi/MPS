@@ -1304,7 +1304,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.CellModel_RefNode_AddHint_Actions" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.CellModel_RefNode_RemoveHint_Actions" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1313,7 +1312,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
