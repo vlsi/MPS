@@ -147,7 +147,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeToEdit" + ">";
+      return "<no nodeToEdit>";
     }
 
   }
@@ -191,7 +191,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "result" + ">";
+      return "<no result>";
     }
 
   }
@@ -238,7 +238,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "code" + ">";
+      return "<no code>";
     }
 
   }

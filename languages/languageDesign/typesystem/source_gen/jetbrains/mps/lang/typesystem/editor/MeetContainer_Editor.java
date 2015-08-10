@@ -79,7 +79,7 @@ public class MeetContainer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "meetType" + ">";
+      return "<no meetType>";
     }
 
   }

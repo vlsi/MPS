@@ -130,7 +130,7 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "commandClosureLiteral" + ">";
+      return "<no commandClosureLiteral>";
     }
 
   }

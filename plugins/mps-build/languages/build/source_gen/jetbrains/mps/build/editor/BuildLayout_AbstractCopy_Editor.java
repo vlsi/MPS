@@ -57,7 +57,7 @@ public class BuildLayout_AbstractCopy_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileset" + ">";
+      return "<no fileset>";
     }
 
   }

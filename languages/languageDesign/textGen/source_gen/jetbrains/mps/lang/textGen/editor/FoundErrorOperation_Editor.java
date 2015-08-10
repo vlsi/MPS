@@ -75,7 +75,7 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "text" + ">";
+      return "<no text>";
     }
 
   }

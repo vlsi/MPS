@@ -96,7 +96,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "closure" + ">";
+      return "<no closure>";
     }
 
   }

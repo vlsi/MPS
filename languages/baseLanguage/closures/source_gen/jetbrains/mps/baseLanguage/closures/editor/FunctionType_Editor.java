@@ -178,7 +178,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resultType" + ">";
+      return "<no resultType>";
     }
 
   }

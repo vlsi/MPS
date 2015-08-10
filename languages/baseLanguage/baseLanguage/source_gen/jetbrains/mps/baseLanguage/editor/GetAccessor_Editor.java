@@ -86,7 +86,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statementList" + ">";
+      return "<no statementList>";
     }
 
   }

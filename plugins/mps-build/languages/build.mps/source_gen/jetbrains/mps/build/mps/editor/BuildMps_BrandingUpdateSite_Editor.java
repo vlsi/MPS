@@ -97,7 +97,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "checkUrl" + ">";
+      return "<no checkUrl>";
     }
 
   }
@@ -143,7 +143,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "updateUrl" + ">";
+      return "<no updateUrl>";
     }
 
   }
@@ -186,7 +186,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "updateChannel" + ">";
+      return "<no updateChannel>";
     }
 
   }

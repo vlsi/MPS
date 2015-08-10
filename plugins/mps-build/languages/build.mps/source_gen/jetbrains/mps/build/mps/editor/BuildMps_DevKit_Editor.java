@@ -196,7 +196,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }

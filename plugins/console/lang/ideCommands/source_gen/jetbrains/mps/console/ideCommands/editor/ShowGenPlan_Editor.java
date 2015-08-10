@@ -61,7 +61,7 @@ public class ShowGenPlan_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "targetModel" + ">";
+      return "<no targetModel>";
     }
 
   }

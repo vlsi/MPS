@@ -208,7 +208,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "presentation" + ">";
+      return "<no presentation>";
     }
 
   }

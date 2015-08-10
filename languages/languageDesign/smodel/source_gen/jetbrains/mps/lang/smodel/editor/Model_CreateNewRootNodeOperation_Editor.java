@@ -164,7 +164,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "prototypeNode" + ">";
+      return "<no prototypeNode>";
     }
 
   }

@@ -76,7 +76,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statement" + ">";
+      return "<no statement>";
     }
 
   }
@@ -119,7 +119,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "exceptionType" + ">";
+      return "<no exceptionType>";
     }
 
   }
@@ -153,7 +153,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "message" + ">";
+      return "<no message>";
     }
 
   }

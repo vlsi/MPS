@@ -76,7 +76,7 @@ public class WrapperType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "wrapped" + ">";
+      return "<no wrapped>";
     }
 
   }

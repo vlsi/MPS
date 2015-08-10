@@ -80,7 +80,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -130,7 +130,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "message" + ">";
+      return "<no message>";
     }
 
   }

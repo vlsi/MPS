@@ -61,7 +61,7 @@ public class OutputConsoleRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "history" + ">";
+      return "<no history>";
     }
 
   }

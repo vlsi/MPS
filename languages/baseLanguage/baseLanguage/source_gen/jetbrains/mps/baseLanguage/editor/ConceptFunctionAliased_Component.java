@@ -117,7 +117,7 @@ public class ConceptFunctionAliased_Component implements ConceptEditorComponent 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

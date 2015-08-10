@@ -104,7 +104,7 @@ public class Request_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "description" + ">";
+      return "<no description>";
     }
 
   }

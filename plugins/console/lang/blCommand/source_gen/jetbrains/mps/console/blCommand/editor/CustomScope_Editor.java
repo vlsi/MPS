@@ -57,7 +57,7 @@ public class CustomScope_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "scope" + ">";
+      return "<no scope>";
     }
 
   }

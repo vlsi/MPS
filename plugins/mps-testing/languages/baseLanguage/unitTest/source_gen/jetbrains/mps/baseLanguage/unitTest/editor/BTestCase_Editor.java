@@ -384,7 +384,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "testMethodList" + ">";
+      return "<no testMethodList>";
     }
 
   }

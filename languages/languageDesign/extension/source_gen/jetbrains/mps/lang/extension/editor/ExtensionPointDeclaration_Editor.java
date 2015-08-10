@@ -144,7 +144,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "objectType" + ">";
+      return "<no objectType>";
     }
 
   }

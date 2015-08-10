@@ -59,7 +59,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "domain" + ">";
+      return "<no domain>";
     }
 
   }
@@ -99,7 +99,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "range" + ">";
+      return "<no range>";
     }
 
   }

@@ -186,7 +186,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon" + ">";
+      return "<no icon>";
     }
 
   }
@@ -294,7 +294,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "order" + ">";
+      return "<no order>";
     }
 
   }

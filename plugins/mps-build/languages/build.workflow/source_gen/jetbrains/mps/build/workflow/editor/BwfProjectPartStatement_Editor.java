@@ -71,7 +71,7 @@ public class BwfProjectPartStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "part" + ">";
+      return "<no part>";
     }
 
   }

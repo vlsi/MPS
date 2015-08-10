@@ -81,7 +81,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "conditionFunction" + ">";
+      return "<no conditionFunction>";
     }
 
   }
@@ -134,7 +134,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "caseConsequence" + ">";
+      return "<no caseConsequence>";
     }
 
   }

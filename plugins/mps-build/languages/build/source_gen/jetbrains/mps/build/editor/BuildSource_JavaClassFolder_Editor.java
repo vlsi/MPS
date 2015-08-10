@@ -69,7 +69,7 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dir" + ">";
+      return "<no dir>";
     }
 
   }

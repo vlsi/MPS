@@ -82,7 +82,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variableReference" + ">";
+      return "<no variableReference>";
     }
 
   }

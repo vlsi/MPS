@@ -88,7 +88,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rows" + ">";
+      return "<no rows>";
     }
 
   }
@@ -138,7 +138,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "columns" + ">";
+      return "<no columns>";
     }
 
   }
@@ -222,7 +222,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rows" + ">";
+      return "<no rows>";
     }
 
   }
@@ -262,7 +262,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "columns" + ">";
+      return "<no columns>";
     }
 
   }

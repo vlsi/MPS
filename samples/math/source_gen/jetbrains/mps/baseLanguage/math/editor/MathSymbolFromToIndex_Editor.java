@@ -84,7 +84,7 @@ public class MathSymbolFromToIndex_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "from" + ">";
+      return "<no from>";
     }
 
   }

@@ -75,7 +75,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "function" + ">";
+      return "<no function>";
     }
 
   }

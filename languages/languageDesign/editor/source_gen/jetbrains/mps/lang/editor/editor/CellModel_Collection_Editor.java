@@ -648,7 +648,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "usesFoldingCondition" + ">";
+      return "<no usesFoldingCondition>";
     }
 
   }
@@ -703,7 +703,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "addHints" + ">";
+      return "<no addHints>";
     }
 
   }
@@ -758,7 +758,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "removeHints" + ">";
+      return "<no removeHints>";
     }
 
   }

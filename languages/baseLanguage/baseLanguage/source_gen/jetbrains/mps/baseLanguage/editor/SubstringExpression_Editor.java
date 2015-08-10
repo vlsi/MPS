@@ -64,7 +64,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operand" + ">";
+      return "<no operand>";
     }
 
   }

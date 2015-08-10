@@ -72,7 +72,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeToCheck" + ">";
+      return "<no nodeToCheck>";
     }
 
   }

@@ -67,7 +67,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "complexExpression" + ">";
+      return "<no complexExpression>";
     }
 
   }
@@ -113,7 +113,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "degree" + ">";
+      return "<no degree>";
     }
 
   }

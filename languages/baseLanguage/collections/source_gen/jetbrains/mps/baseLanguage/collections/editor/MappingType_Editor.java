@@ -85,7 +85,7 @@ public class MappingType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "keyType" + ">";
+      return "<no keyType>";
     }
 
   }
@@ -128,7 +128,7 @@ public class MappingType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valueType" + ">";
+      return "<no valueType>";
     }
 
   }

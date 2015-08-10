@@ -204,7 +204,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "wrapperFunction" + ">";
+      return "<no wrapperFunction>";
     }
 
   }

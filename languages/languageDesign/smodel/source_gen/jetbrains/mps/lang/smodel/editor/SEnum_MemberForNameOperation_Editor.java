@@ -84,7 +84,7 @@ public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nameExpression" + ">";
+      return "<no nameExpression>";
     }
 
   }

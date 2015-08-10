@@ -68,7 +68,7 @@ public class AddStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "item" + ">";
+      return "<no item>";
     }
 
   }

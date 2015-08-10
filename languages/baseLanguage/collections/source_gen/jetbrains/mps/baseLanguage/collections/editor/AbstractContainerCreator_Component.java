@@ -152,7 +152,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementType" + ">";
+      return "<no elementType>";
     }
 
   }
@@ -337,7 +337,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     }
 
     protected String getNoTargetText() {
-      return "<no " + "copyFrom" + ">";
+      return "<no copyFrom>";
     }
 
   }
@@ -403,7 +403,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initSize" + ">";
+      return "<no initSize>";
     }
 
   }

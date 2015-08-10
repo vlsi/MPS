@@ -88,7 +88,7 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "quotedNode" + ">";
+      return "<no quotedNode>";
     }
 
   }
@@ -155,7 +155,7 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "modelToCreate" + ">";
+      return "<no modelToCreate>";
     }
 
   }

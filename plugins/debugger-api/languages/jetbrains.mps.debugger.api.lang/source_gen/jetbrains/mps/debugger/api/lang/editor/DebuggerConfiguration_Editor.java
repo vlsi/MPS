@@ -83,7 +83,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debugger" + ">";
+      return "<no debugger>";
     }
 
   }
@@ -126,7 +126,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getSettings" + ">";
+      return "<no getSettings>";
     }
 
   }

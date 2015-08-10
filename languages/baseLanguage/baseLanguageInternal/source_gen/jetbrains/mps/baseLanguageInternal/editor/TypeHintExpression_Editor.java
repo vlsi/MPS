@@ -72,7 +72,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "typeHint" + ">";
+      return "<no typeHint>";
     }
 
   }
@@ -115,7 +115,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }

@@ -71,7 +71,7 @@ public class TextField_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "field" + ">";
+      return "<no field>";
     }
 
   }

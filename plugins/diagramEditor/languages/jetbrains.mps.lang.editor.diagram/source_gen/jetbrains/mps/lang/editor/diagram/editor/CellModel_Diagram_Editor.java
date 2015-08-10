@@ -182,7 +182,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "paletteDeclaration" + ">";
+      return "<no paletteDeclaration>";
     }
 
   }

@@ -192,7 +192,7 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicableNode" + ">";
+      return "<no applicableNode>";
     }
 
   }
@@ -246,7 +246,7 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "code" + ">";
+      return "<no code>";
     }
 
   }

@@ -188,7 +188,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "wrapperBlock" + ">";
+      return "<no wrapperBlock>";
     }
 
   }

@@ -71,7 +71,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicableBlock" + ">";
+      return "<no applicableBlock>";
     }
 
   }
@@ -120,7 +120,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "convertBlock" + ">";
+      return "<no convertBlock>";
     }
 
   }

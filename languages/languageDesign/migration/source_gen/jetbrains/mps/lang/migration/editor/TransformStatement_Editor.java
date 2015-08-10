@@ -69,7 +69,7 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pattern" + ">";
+      return "<no pattern>";
     }
 
   }
@@ -109,7 +109,7 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "consequence" + ">";
+      return "<no consequence>";
     }
 
   }
@@ -161,7 +161,7 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "precondition" + ">";
+      return "<no precondition>";
     }
 
   }
@@ -207,7 +207,7 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "postprocess" + ">";
+      return "<no postprocess>";
     }
 
   }

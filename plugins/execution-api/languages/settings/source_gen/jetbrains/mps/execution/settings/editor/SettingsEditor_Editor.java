@@ -119,7 +119,7 @@ public class SettingsEditor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "createEditor" + ">";
+      return "<no createEditor>";
     }
 
   }
@@ -153,7 +153,7 @@ public class SettingsEditor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resetFrom" + ">";
+      return "<no resetFrom>";
     }
 
   }
@@ -187,7 +187,7 @@ public class SettingsEditor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applyTo" + ">";
+      return "<no applyTo>";
     }
 
   }
@@ -221,7 +221,7 @@ public class SettingsEditor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dispose" + ">";
+      return "<no dispose>";
     }
 
   }

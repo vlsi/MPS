@@ -77,7 +77,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "relativeTo" + ">";
+      return "<no relativeTo>";
     }
 
   }

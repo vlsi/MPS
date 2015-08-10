@@ -92,7 +92,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     }
 
     protected String getNoTargetText() {
-      return "<no " + "userKey" + ">";
+      return "<no userKey>";
     }
 
   }

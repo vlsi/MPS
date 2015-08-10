@@ -112,7 +112,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "delimiter" + ">";
+      return "<no delimiter>";
     }
 
   }
@@ -170,7 +170,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "delimiter" + ">";
+      return "<no delimiter>";
     }
 
   }

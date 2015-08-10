@@ -81,7 +81,7 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "action" + ">";
+      return "<no action>";
     }
 
   }

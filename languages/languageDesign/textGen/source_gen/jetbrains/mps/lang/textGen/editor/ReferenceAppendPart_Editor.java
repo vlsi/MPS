@@ -79,7 +79,7 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "reference" + ">";
+      return "<no reference>";
     }
 
   }

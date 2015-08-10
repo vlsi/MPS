@@ -113,7 +113,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       }
 
       protected String getNoTargetText() {
-        return "<no " + "highType" + ">";
+        return "<no highType>";
       }
 
     }
@@ -221,7 +221,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       }
 
       protected String getNoTargetText() {
-        return "<no " + "lowType" + ">";
+        return "<no lowType>";
       }
 
     }

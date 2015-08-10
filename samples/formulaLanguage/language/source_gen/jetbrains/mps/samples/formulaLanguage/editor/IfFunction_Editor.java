@@ -72,7 +72,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "logicalTest" + ">";
+      return "<no logicalTest>";
     }
 
   }
@@ -115,7 +115,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valueIfTrue" + ">";
+      return "<no valueIfTrue>";
     }
 
   }
@@ -158,7 +158,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valueIfFalse" + ">";
+      return "<no valueIfFalse>";
     }
 
   }

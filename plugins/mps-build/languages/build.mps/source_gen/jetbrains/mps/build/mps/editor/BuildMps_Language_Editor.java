@@ -196,7 +196,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }
@@ -749,7 +749,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "generator" + ">";
+      return "<no generator>";
     }
 
   }

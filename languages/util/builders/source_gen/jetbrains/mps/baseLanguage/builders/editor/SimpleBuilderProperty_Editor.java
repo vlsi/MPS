@@ -102,7 +102,7 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -159,7 +159,7 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "set" + ">";
+      return "<no set>";
     }
 
   }

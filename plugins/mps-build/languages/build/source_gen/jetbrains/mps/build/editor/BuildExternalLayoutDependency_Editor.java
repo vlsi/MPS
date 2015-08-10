@@ -157,7 +157,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "artifacts" + ">";
+      return "<no artifacts>";
     }
 
   }

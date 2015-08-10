@@ -56,7 +56,7 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "annotationInstance" + ">";
+      return "<no annotationInstance>";
     }
 
   }

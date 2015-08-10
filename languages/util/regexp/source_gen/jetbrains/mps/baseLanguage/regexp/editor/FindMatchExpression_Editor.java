@@ -62,7 +62,7 @@ public class FindMatchExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inputExpression" + ">";
+      return "<no inputExpression>";
     }
 
   }
@@ -105,7 +105,7 @@ public class FindMatchExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "regexp" + ">";
+      return "<no regexp>";
     }
 
   }

@@ -92,7 +92,7 @@ public class Property_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -155,7 +155,7 @@ public class Property_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "propertyImplementation" + ">";
+      return "<no propertyImplementation>";
     }
 
   }
@@ -214,7 +214,7 @@ public class Property_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -281,7 +281,7 @@ public class Property_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "propertyImplementation" + ">";
+      return "<no propertyImplementation>";
     }
 
   }

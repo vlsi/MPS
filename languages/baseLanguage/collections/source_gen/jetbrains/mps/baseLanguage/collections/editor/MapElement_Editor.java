@@ -64,7 +64,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "map" + ">";
+      return "<no map>";
     }
 
   }
@@ -111,7 +111,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "key" + ">";
+      return "<no key>";
     }
 
   }

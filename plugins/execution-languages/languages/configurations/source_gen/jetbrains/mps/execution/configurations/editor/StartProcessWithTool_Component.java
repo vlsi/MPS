@@ -75,7 +75,7 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "tool" + ">";
+      return "<no tool>";
     }
 
   }

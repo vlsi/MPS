@@ -121,7 +121,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valuesFunction" + ">";
+      return "<no valuesFunction>";
     }
 
   }

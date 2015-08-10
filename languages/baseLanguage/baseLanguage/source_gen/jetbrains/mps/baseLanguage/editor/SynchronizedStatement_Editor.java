@@ -84,7 +84,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -141,7 +141,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "block" + ">";
+      return "<no block>";
     }
 
   }

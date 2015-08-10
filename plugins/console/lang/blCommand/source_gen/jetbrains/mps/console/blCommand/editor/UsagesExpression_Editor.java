@@ -76,7 +76,7 @@ public class UsagesExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "node" + ">";
+      return "<no node>";
     }
 
   }

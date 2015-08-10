@@ -88,7 +88,7 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementType" + ">";
+      return "<no elementType>";
     }
 
   }
@@ -141,7 +141,7 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "singletonValue" + ">";
+      return "<no singletonValue>";
     }
 
   }

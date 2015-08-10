@@ -96,7 +96,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toComparable" + ">";
+      return "<no toComparable>";
     }
 
   }
@@ -140,7 +140,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ascending" + ">";
+      return "<no ascending>";
     }
 
   }

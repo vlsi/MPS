@@ -83,7 +83,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "lValue" + ">";
+      return "<no lValue>";
     }
 
   }
@@ -177,7 +177,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rValue" + ">";
+      return "<no rValue>";
     }
 
   }

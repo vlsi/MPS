@@ -141,7 +141,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "returnType" + ">";
+      return "<no returnType>";
     }
 
   }
@@ -376,7 +376,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extendedType" + ">";
+      return "<no extendedType>";
     }
 
   }

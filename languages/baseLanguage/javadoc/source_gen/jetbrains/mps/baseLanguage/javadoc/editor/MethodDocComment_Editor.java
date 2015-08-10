@@ -589,7 +589,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "deprecated" + ">";
+      return "<no deprecated>";
     }
 
   }
@@ -631,7 +631,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "return" + ">";
+      return "<no return>";
     }
 
   }

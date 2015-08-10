@@ -79,7 +79,7 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "joinType" + ">";
+      return "<no joinType>";
     }
 
   }

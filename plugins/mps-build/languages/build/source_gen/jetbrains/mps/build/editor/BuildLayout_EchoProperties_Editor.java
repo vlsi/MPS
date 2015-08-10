@@ -81,7 +81,7 @@ public class BuildLayout_EchoProperties_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileName" + ">";
+      return "<no fileName>";
     }
 
   }

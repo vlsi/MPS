@@ -134,7 +134,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicableNode" + ">";
+      return "<no applicableNode>";
     }
 
   }
@@ -174,7 +174,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "supertypeNode" + ">";
+      return "<no supertypeNode>";
     }
 
   }
@@ -318,7 +318,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

@@ -75,7 +75,7 @@ public class MatrixUnit_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "size" + ">";
+      return "<no size>";
     }
 
   }

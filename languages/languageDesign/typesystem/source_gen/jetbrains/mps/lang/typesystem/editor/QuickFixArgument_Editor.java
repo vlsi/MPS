@@ -66,7 +66,7 @@ public class QuickFixArgument_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "argumentType" + ">";
+      return "<no argumentType>";
     }
 
   }

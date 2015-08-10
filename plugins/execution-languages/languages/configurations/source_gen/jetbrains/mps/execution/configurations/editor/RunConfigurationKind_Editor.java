@@ -93,7 +93,7 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon" + ">";
+      return "<no icon>";
     }
 
   }

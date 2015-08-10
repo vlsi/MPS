@@ -56,7 +56,7 @@ public class BuildSource_JavaFiles_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resset" + ">";
+      return "<no resset>";
     }
 
   }

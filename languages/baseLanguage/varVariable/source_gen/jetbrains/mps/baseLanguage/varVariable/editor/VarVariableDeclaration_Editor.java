@@ -97,7 +97,7 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializer" + ">";
+      return "<no initializer>";
     }
 
   }

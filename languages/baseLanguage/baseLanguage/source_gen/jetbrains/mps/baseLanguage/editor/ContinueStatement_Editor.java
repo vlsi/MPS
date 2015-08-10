@@ -202,7 +202,7 @@ __switch__:
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabelReference" + ">";
+      return "<no loopLabelReference>";
     }
 
   }

@@ -229,7 +229,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "descriptionBlock" + ">";
+      return "<no descriptionBlock>";
     }
 
   }
@@ -272,7 +272,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "executeBlock" + ">";
+      return "<no executeBlock>";
     }
 
   }

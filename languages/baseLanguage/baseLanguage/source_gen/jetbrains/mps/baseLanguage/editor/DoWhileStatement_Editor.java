@@ -144,7 +144,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }
@@ -245,7 +245,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -310,7 +310,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -393,7 +393,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }
