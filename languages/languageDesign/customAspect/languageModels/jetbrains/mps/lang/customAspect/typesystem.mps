@@ -120,7 +120,7 @@
   </registry>
   <node concept="1YbPZF" id="5$xTughlO2J">
     <property role="TrG5h" value="typeof_ConceptInstancesPart" />
-    <property role="3GE5qa" value="simple.gen" />
+    <property role="3GE5qa" value="simple.gen.perConcept" />
     <node concept="3clFbS" id="5$xTughlO2K" role="18ibNy">
       <node concept="1Z5TYs" id="5$xTughlOdE" role="3cqZAp">
         <node concept="mw_s8" id="5$xTughlOe2" role="1ZfhKB">

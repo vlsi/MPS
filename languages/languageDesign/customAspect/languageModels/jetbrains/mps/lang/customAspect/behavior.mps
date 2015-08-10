@@ -15,7 +15,9 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" />
     <import index="9n97" ref="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.customAspect.methods)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -26,6 +28,7 @@
       </concept>
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
+        <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -41,6 +44,7 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -62,6 +66,9 @@
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -189,6 +196,51 @@
     </node>
     <node concept="13hLZK" id="2Sw9hCAHV4L" role="13h7CW">
       <node concept="3clFbS" id="2Sw9hCAHV4M" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="7NyVmB7SZwx">
+    <ref role="13h7C2" to="hfbu:7NyVmB7SZw8" resolve="AspectConcept" />
+    <node concept="13hLZK" id="7NyVmB7SZwy" role="13h7CW">
+      <node concept="3clFbS" id="7NyVmB7SZwz" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="7NyVmB7SZw$" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="isAttachedToConcept" />
+      <node concept="3Tm1VV" id="7NyVmB7SZw_" role="1B3o_S" />
+      <node concept="10P_77" id="7NyVmB7T2Ow" role="3clF45" />
+      <node concept="3clFbS" id="7NyVmB7SZwB" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="7NyVmB7T2Oz" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getAttachedConcept" />
+      <node concept="3Tm1VV" id="7NyVmB7T2O$" role="1B3o_S" />
+      <node concept="3Tqbb2" id="7NyVmB7T2OJ" role="3clF45">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
+      <node concept="3clFbS" id="7NyVmB7T2OA" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="7NyVmB7T6Ci" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getGeneratedClassName" />
+      <node concept="3Tm1VV" id="7NyVmB7T6Cj" role="1B3o_S" />
+      <node concept="3uibUv" id="7NyVmB7T6XG" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="7NyVmB7T6Cl" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="7NyVmB7T5zz" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="2Ki8OM" value="true" />
+      <property role="TrG5h" value="getInterfaceClass" />
+      <node concept="3Tm1VV" id="7NyVmB7T5z$" role="1B3o_S" />
+      <node concept="3Tqbb2" id="7NyVmB7T5zN" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+      </node>
+      <node concept="3clFbS" id="7NyVmB7T5zA" role="3clF47" />
     </node>
   </node>
 </model>

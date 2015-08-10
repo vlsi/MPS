@@ -1691,7 +1691,7 @@
   </node>
   <node concept="13MO4I" id="4YpmBa691jQ">
     <property role="TrG5h" value="reduce_GenerationDescriptor_PerConcept" />
-    <property role="3GE5qa" value="simple" />
+    <property role="3GE5qa" value="simple.gen.perConcept" />
     <ref role="3gUMe" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
     <node concept="312cEu" id="4YpmBa69iLd" role="13RCb5">
       <property role="2bfB8j" value="true" />
