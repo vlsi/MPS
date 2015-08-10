@@ -267,30 +267,6 @@
       <unit id="6047905657530806733" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_TypeTest_Test" />
     </file>
   </root>
-  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6047905657530807031">
-    <file name="Comment_FirstAndSecondStatementTest_Test.java">
-      <node id="6047905657530807031" at="15,75,16,115" concept="1" />
-      <node id="6047905657530807031" at="16,115,17,130" concept="1" />
-      <node id="6047905657530807031" at="24,51,25,63" concept="1" />
-      <node id="6047905657530807033" at="25,63,26,75" concept="1" />
-      <node id="6047905657530808954" at="26,75,27,76" concept="1" />
-      <node id="6047905657530808448" at="27,76,28,75" concept="1" />
-      <node id="6047905657530807031" at="12,0,14,0" concept="0" trace="Comment_FirstAndSecondStatementTest_Test#()V" />
-      <node id="6047905657530807031" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6047905657530807031" at="14,0,19,0" concept="2" trace="test_Comment_FirstAndSecondStatementTest#()V" />
-      <node id="6047905657530807031" at="23,0,30,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6047905657530807031" at="12,53,12,53" />
-      <scope id="6047905657530807031" at="21,23,21,23" />
-      <scope id="6047905657530807031" at="12,0,14,0" />
-      <scope id="6047905657530807031" at="15,75,17,130" />
-      <scope id="6047905657530807031" at="21,0,23,0" />
-      <scope id="6047905657530807031" at="24,51,28,75" />
-      <scope id="6047905657530807031" at="14,0,19,0" />
-      <scope id="6047905657530807031" at="23,0,30,0" />
-      <unit id="6047905657530807031" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_FirstAndSecondStatementTest_Test$TestBody" />
-      <unit id="6047905657530807031" at="10,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_FirstAndSecondStatementTest_Test" />
-    </file>
-  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6047905657530809261">
     <file name="Comment_InsideComment_Test.java">
       <node id="6047905657530809261" at="15,61,16,115" concept="1" />
