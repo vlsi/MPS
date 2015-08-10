@@ -257,6 +257,17 @@
       <unit id="1883223317720973623" at="17,0,162,0" name="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
     </file>
   </root>
+  <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/2216760464199540788">
+    <file name="TypeSystemUtil.java">
+      <node id="5611594083653771322" at="10,64,11,215" concept="6" />
+      <node id="2216760464199564580" at="10,0,13,0" concept="7" trace="shouldApplyTypeSystemRules#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2216760464199564582" at="10,64,11,215" />
+      <scope id="2216760464199564580" at="10,0,13,0">
+        <var name="node" id="2216760464199564605" />
+      </scope>
+      <unit id="2216760464199540788" at="9,0,14,0" name="jetbrains.mps.typesystemEngine.util.TypeSystemUtil" />
+    </file>
+  </root>
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/6321644624958548836">
     <file name="CoerceUtil.java">
       <node id="3635379492312128764" at="15,32,16,18" concept="6" />

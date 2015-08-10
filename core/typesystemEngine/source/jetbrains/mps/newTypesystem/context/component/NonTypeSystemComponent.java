@@ -23,6 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
+import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -288,6 +289,9 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       while (!(frontier.isEmpty())) {
         if (c.isCancelled()) return;
         SNode sNode = frontier.remove();
+        if (!TypeSystemUtil.shouldApplyTypeSystemRules(sNode)) {
+          continue;
+        }
         applyNonTypesystemRulesToNode(sNode, typeCheckingContext);
         frontier.addAll(IterableUtil.asCollection(sNode.getChildren()));
       }

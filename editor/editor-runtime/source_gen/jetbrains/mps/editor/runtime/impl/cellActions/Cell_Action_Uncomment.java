@@ -7,6 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class Cell_Action_Uncomment extends AbstractCellAction {
   private final SNode myNode;
@@ -21,7 +26,30 @@ public class Cell_Action_Uncomment extends AbstractCellAction {
   }
 
   public void execute(EditorContext editorContext) {
-    CommentUtil.uncomment(myNode);
+    final String cellId = editorContext.getSelectedCell().getCellId();
+    SNode uncommentedNode = CommentUtil.uncomment(myNode);
+    editorContext.flushEvents();
+    boolean canRestore = false;
+    if (cellId != null) {
+      EditorCell newNodeCell = editorContext.getEditorComponent().findNodeCell(uncommentedNode);
+      if (newNodeCell != null) {
+        EditorCell cellToSelect = CellFinderUtil.findChildByCondition(newNodeCell, new Condition<EditorCell>() {
+          public boolean met(EditorCell cell) {
+            return eq_juwut9_a0a0a0a1a0a0b0e0g(cell.getCellId(), cellId);
+          }
+        }, true, true);
+        if (cellToSelect != null) {
+          editorContext.getSelectionManager().setSelection(cellToSelect);
+          canRestore = true;
+        }
+      }
+    }
+    if (!(canRestore)) {
+      SelectionUtil.selectCell(editorContext, uncommentedNode, SelectionManager.LAST_EDITABLE_CELL);
+    }
   }
 
+  private static boolean eq_juwut9_a0a0a0a1a0a0b0e0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }
