@@ -237,7 +237,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 110:
         return Collections.<ConceptEditor>singletonList(new SingleLineComment_Editor());
       case 111:
-        return Collections.<ConceptEditor>singletonList(new Statement_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Statement_Editor(), new Statement_comment_Editor()});
       case 112:
         return Collections.<ConceptEditor>singletonList(new StatementCommentPart_Editor());
       case 113:
