@@ -23,14 +23,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
       case 1:
         return Collections.<ConceptEditor>singletonList(new BaseCommentAttribute_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseConcept_comment_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
       case 6:
+        return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
+      case 7:
         return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
       default:
     }
@@ -60,7 +62,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
     return myHints;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.VirtualPackage", "jetbrains.mps.lang.core.editor.alias"};
   private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }

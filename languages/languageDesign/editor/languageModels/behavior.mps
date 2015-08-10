@@ -402,7 +402,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
       </concept>
@@ -450,7 +450,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
@@ -16359,6 +16359,28 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="tEDRXbRJ0Y" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4YHrdUcAhyx">
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="13h7C2" to="tpc2:7hmFG5jLZmy" resolve="CellModel_Redispatch" />
+    <node concept="13hLZK" id="4YHrdUcAhyy" role="13h7CW">
+      <node concept="3clFbS" id="4YHrdUcAhyz" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="4YHrdUcAhy$" role="13h7CS">
+      <property role="TrG5h" value="isCellIdInitialized" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="hTuDsSD" resolve="isCellIdInitialized" />
+      <node concept="3Tm1VV" id="4YHrdUcAhyC" role="1B3o_S" />
+      <node concept="3clFbS" id="4YHrdUcAhyE" role="3clF47">
+        <node concept="3clFbF" id="4YHrdUcAhCW" role="3cqZAp">
+          <node concept="3clFbT" id="4YHrdUcAhCV" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="4YHrdUcAhyF" role="3clF45" />
     </node>
   </node>
 </model>
