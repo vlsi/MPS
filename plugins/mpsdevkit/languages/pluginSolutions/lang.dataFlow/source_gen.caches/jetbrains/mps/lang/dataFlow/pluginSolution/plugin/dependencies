@@ -27,6 +27,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintDFAResult_Action" file="PrintDFAResult_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -42,6 +43,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintInitializationInformation_Action" file="PrintInitializationInformation_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -60,6 +62,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.PrintReachingDefinintionsInformation_Action" file="PrintReachingDefinintionsInformation_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -79,6 +82,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.ShowDFA_Action" file="ShowDFA_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

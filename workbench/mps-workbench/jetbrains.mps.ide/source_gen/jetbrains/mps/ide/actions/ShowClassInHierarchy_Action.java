@@ -34,7 +34,7 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     return (ShowClassInHierarchy_Action.this.getContextClassifier(_params) != null);
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -66,7 +66,7 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier(_params);
     BaseLanguageHierarchyViewTool tool = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getComponent(BaseLanguageHierarchyViewTool.class);
     tool.showItemInHierarchy(classNode);

@@ -34,7 +34,7 @@ public class CheckModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     List<SModel> modelsToCheck = new ArrayList<SModel>();
     if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
       modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
@@ -81,7 +81,7 @@ public class CheckModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     // check all models in model 
     List<SModel> modelsToCheck = new ArrayList<SModel>();
     if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {

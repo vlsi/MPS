@@ -51,7 +51,7 @@ public class NewRuntimeModule_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -97,7 +97,7 @@ public class NewRuntimeModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 

@@ -30,7 +30,7 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     Presentation presentation = event.getPresentation();
     presentation.setText(String.format("Ignore %s...", (event.getData(MPSCommonDataKeys.MODULES).size() == 1 ? "Module" : "Modules")));
     boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(event.getData(CommonDataKeys.PROJECT), event.getData(MPSCommonDataKeys.MODULES))).isNotEmpty();
@@ -57,7 +57,7 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(event.getData(CommonDataKeys.PROJECT), event.getData(MPSCommonDataKeys.MODULES));
     IgnoreUnversionedDialog.ignoreSelectedFiles(event.getData(CommonDataKeys.PROJECT), unversionedFiles);
   }

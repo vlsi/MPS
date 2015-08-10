@@ -27,7 +27,7 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
     event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
   }
@@ -46,7 +46,7 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
     if (breakpoint == null || !(breakpoint instanceof ILocationBreakpoint)) {
       return;

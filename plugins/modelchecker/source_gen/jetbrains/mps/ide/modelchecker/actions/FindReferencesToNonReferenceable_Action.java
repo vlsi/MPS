@@ -50,7 +50,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
     return false;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -75,7 +75,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel md) {
         return SModelStereotype.isUserModel(md);

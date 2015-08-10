@@ -50,7 +50,7 @@ public class DeleteModules_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -89,7 +89,7 @@ public class DeleteModules_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
     final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
     DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);

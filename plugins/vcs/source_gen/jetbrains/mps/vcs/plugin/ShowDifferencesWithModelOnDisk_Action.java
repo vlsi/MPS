@@ -35,7 +35,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -63,7 +63,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     DataSource datasource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
     assert datasource instanceof FileDataSource;
     final SModel diskModel = PersistenceUtil.loadModel(((FileDataSource) datasource).getFile());

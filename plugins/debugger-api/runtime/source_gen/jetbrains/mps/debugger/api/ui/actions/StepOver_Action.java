@@ -23,12 +23,12 @@ public class StepOver_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
     event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     DebugActionsUtil.getDebugSession(event).stepOver();
   }
 }

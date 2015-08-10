@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.GeneratePluginSolution_Action" file="GeneratePluginSolution_Action.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -54,6 +55,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" file="SortKeymapMembers_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

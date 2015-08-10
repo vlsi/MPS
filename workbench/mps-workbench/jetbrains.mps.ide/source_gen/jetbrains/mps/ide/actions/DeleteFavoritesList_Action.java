@@ -31,7 +31,7 @@ public class DeleteFavoritesList_Action extends BaseAction {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -49,7 +49,7 @@ public class DeleteFavoritesList_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
     FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
     MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);

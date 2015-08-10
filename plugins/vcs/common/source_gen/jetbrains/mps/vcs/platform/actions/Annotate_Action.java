@@ -27,7 +27,7 @@ public class Annotate_Action extends BaseAction {
     return AnnotationHelper.isAnnotateable(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -47,7 +47,7 @@ public class Annotate_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     AnnotationHelper.annotate(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
 }

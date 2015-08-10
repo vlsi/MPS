@@ -52,7 +52,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     })) && Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).isNotEmpty();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -77,7 +77,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     SNode classConcept = GenerateEqualsAndHashCode_Action.this.getClassConcept(_params);
     SNodeReference[] fields;
     fields = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {

@@ -32,7 +32,7 @@ public class Expand_Action extends BaseAction {
     return Expand_Action.this.getAction(_params) != null;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -67,7 +67,7 @@ public class Expand_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     Expand_Action.this.getAction(_params).execute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
   /*package*/ CellAction getAction(final Map<String, Object> _params) {

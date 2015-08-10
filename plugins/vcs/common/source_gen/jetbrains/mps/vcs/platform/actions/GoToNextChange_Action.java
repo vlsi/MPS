@@ -26,7 +26,7 @@ public class GoToNextChange_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true));
   }
   @Override
@@ -49,7 +49,7 @@ public class GoToNextChange_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ChangesStripActionsHelper.goToNeighbourGroup(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true);
   }
 }

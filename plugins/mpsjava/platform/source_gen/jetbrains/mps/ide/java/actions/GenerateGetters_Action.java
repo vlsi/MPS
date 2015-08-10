@@ -48,7 +48,7 @@ public class GenerateGetters_Action extends BaseAction {
     return classConcept != null && Sequence.fromIterable(GenerateGetters_Action.this.getFieldDeclarationsWithoutGetters(classConcept, _params)).isNotEmpty();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -73,7 +73,7 @@ public class GenerateGetters_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     SNodeReference[] fields;
     SNode classConcept = GenerateGetters_Action.this.getClassConcept(_params);
 

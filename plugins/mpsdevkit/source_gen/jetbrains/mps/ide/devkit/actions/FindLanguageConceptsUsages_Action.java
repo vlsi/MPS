@@ -51,7 +51,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -74,7 +74,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     SearchScope scope = GlobalScope.getInstance();
     final SearchQuery query = new SearchQuery(event.getData(MPSCommonDataKeys.MODULE), scope);
     final IResultProvider provider = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
