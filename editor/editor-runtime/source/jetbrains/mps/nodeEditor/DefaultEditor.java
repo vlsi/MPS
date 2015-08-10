@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -29,7 +28,6 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -63,7 +61,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 
 /**
  * Semen Alperovich
@@ -163,6 +160,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
         protected EditorCell createEmptyCell() {
           EditorCell emptyCell = super.createEmptyCell();
           emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, link, myEditorContext));
+          emptyCell.setRole(link.getRoleName());
+          emptyCell.setCellId("empty_" + link.getRoleName());
           return emptyCell;
         }
 
@@ -170,6 +169,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
         public EditorCell createChildCell(EditorContext editorContext, SNode child) {
           EditorCell cell = super.createChildCell(editorContext, child);
           cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, child, link, editorContext));
+          if (cell.getRole() == null) {
+            cell.setRole(link.getRoleName());
+          }
           return cell;
         }
       };
