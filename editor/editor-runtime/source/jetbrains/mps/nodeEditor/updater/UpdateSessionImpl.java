@@ -177,7 +177,10 @@ public class UpdateSessionImpl implements UpdateSession {
     EditorContext editorContext = getUpdater().getEditorContext();
     EditorCell editorCell =
         editorContext.getCellFactory().createEditorCell(node, true, set);
-    myUsedEditors.remove(node);
+    set.remove(excludedEditor);
+    if (set.isEmpty()) {
+      myUsedEditors.remove(node);
+    }
     return editorCell;
   }
 

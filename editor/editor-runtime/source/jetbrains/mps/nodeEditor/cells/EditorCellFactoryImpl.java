@@ -65,7 +65,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   @Override
-  public EditorCell createEditorCell(SNode node, boolean isInspector, Set<Class<? extends ConceptEditor>> excludedEditors) {
+  public EditorCell createEditorCell(SNode node, boolean isInspector, Collection<Class<? extends ConceptEditor>> excludedEditors) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
     ConceptEditor editor = null;
     Iterable<ConceptEditor> editors = myConceptEditorRegistry.getEditors(conceptDescriptor);
