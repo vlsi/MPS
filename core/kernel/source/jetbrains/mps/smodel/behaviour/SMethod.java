@@ -43,20 +43,20 @@ public final class SMethod<T> {
   private final String myName;
   private final BHMethodModifiers myMethodModifiers;
   private final Class<T> myReturnType;
-  private final SAbstractConcept myHostingConcept;
+  private final SAbstractConcept myConcept;
   @Deprecated private final SMethod<T> myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
   private final Class<?>[] myParameterTypes;
 
   private SMethod(@NotNull String name,
       @NotNull BHMethodModifiers modifiers,
       Class<T> returnType,
-      @NotNull SAbstractConcept hostingConceptId,
+      @NotNull SAbstractConcept concept,
       @Nullable SMethod<T> baseMethod,
       Class<?>... paramTypes) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
-    myHostingConcept = hostingConceptId;
+    myConcept = concept;
     myBaseMethod = baseMethod;
     myParameterTypes = paramTypes;
   }
@@ -68,9 +68,8 @@ public final class SMethod<T> {
    * @param methodName -- usual methodName
    * @param modifiers -- could be virtual or (and) static. @see BHMethodModifiers
    * @param returnType -- return type
-   * @param hostingConceptId -- the concept, which contains the method declaration.
+   * @param concept -- the concept, which contains the method declaration.
    *                            we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
-   *                            may be null in the case of constructor
    * @param baseMethod -- the topmost method in the hierarchy which is overridden by this method
    *                   can be null if there is no 'overrides' reference
    *                   or it is not virtual
@@ -78,9 +77,9 @@ public final class SMethod<T> {
    * @param paramTypes -- the types of method's arguments
    * @return new SMethod
    */
-  public static <T> SMethod<T> create(@NotNull String methodName, BHMethodModifiers modifiers, Class<T> returnType, @NotNull SAbstractConcept hostingConceptId,
+  public static <T> SMethod<T> create(@NotNull String methodName, BHMethodModifiers modifiers, Class<T> returnType, @NotNull SAbstractConcept concept,
       @Nullable SMethod<T> baseMethod, Class<?>... paramTypes) {
-    return new SMethod<T>(methodName, modifiers, returnType, hostingConceptId, baseMethod, paramTypes);
+    return new SMethod<T>(methodName, modifiers, returnType, concept, baseMethod, paramTypes);
   }
 
   public Class<T> getReturnType() {
@@ -88,8 +87,8 @@ public final class SMethod<T> {
   }
 
   @NotNull
-  public SAbstractConcept getHostingConcept() {
-    return myHostingConcept;
+  public SAbstractConcept getConcept() {
+    return myConcept;
   }
 
   @NotNull
@@ -152,7 +151,8 @@ public final class SMethod<T> {
       if (!this.getName().equals(another.getName())) return false;
       if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
       if (!this.getReturnType().equals(another.getReturnType())) return false;
-      if (!EqualUtil.equals(getHostingConcept(), another.getHostingConcept())) return false;
+      if (!EqualUtil.equals(getConcept(), another.getConcept())) return false;
+      if (!EqualUtil.equals(getBaseMethod(), another.getBaseMethod())) return false;
       if (!Arrays.equals(this.getParameterTypes(), another.getParameterTypes())) return false;
       return true;
     }
@@ -164,7 +164,7 @@ public final class SMethod<T> {
     int hashCode = myName.hashCode();
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myMethodModifiers.hashCode();
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myReturnType.hashCode();
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myHostingConcept.hashCode();
+    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myConcept.hashCode();
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + (myBaseMethod != null ? myBaseMethod.hashCode() : 0);
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + Arrays.hashCode(myParameterTypes);
     return hashCode;

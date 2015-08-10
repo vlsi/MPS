@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public final class BHInvoker {
   // null-safe public API
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    SAbstractConcept concept = method.getHostingConcept();
+    SAbstractConcept concept = method.getConcept();
     if (node != null && !node.getConcept().isSubConceptOf(concept)) {
       return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
@@ -56,7 +56,7 @@ public final class BHInvoker {
   }
 
   private static <T> T invokeSpecial0(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    SAbstractConcept concept = method.getHostingConcept();
+    SAbstractConcept concept = method.getConcept();
     assert node == null || node.getConcept().isSubConceptOf(concept);
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     return bhDescriptor.invoke(node, method, parameters);

@@ -103,7 +103,7 @@ class SMethodLegacyAdapter {
       if (!methodCandidate.getMethodModifiers().isVirtual() == myModifiers.isVirtual()) return false;
       if (!methodCandidate.getMethodModifiers().isStatic() == myModifiers.isStatic()) return false;
       if (!myModifiers.isVirtual()) {
-        if (!EqualUtil.equals(methodCandidate.getHostingConcept(), myConcept)) return false;
+        if (!EqualUtil.equals(methodCandidate.getConcept(), myConcept)) return false;
       }
       // only argument types are left to check
       if (myParameters.length != methodCandidate.getParameterCount()) {

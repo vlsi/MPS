@@ -102,8 +102,8 @@ public final class BHVirtualMethodTable {
     if (!getBaseMethod(methodOverrides).equals(getBaseMethod(methodOverridden))) {
       return false;
     }
-    SAbstractConcept conceptChild = methodOverrides.getHostingConcept();
-    SAbstractConcept conceptParent = methodOverridden.getHostingConcept();
+    SAbstractConcept conceptChild = methodOverrides.getConcept();
+    SAbstractConcept conceptParent = methodOverridden.getConcept();
     return conceptChild.isSubConceptOf(conceptParent);
   }
 
