@@ -85,14 +85,14 @@ public class GenerationDescriptor_Class_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_ej2jja_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("interfaceClass");
-    provider.setNoTargetText("<no interfaceClass>");
+    provider.setRole("mainIntfcClass");
+    provider.setNoTargetText("<no mainIntfcClass>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GenerationDescriptor_Class_Editor._Inline_ej2jja_a2c0());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("interfaceClass");
+      editorCell.setRole("mainIntfcClass");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
