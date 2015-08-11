@@ -239,7 +239,7 @@
       <property role="TrG5h" value="getInterfaceClass" />
       <node concept="3Tm1VV" id="7NyVmB7T5z$" role="1B3o_S" />
       <node concept="3Tqbb2" id="7NyVmB7T5zN" role="3clF45">
-        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
       <node concept="3clFbS" id="7NyVmB7T5zA" role="3clF47" />
     </node>
