@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Standard builder for SMethod
+ *
  * Created by apyshkin on 05/08/15.
  */
 public final class SMethodBuilder<T> {

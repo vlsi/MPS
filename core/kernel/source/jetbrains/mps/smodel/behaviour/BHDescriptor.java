@@ -32,7 +32,7 @@ public interface BHDescriptor {
   <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   /**
-   * invokes a method without dynamic binding(not trying to resolve the right method on runtime if it is virtual)
+   * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
    */
   <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 

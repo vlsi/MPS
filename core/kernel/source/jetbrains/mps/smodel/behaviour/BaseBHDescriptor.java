@@ -35,7 +35,12 @@ import java.util.Set;
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
  */
-// Todo check destruction ??
+/**
+ * Todo check destruction ??
+ * Multiple dispatch?
+ * Default parameter values?
+ */
+
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
@@ -50,17 +55,18 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * @see jetbrains.mps.smodel.language.BehaviorRegistry#getBHDescriptor
    */
   public synchronized void init() {
-    if (myInitialized) return;
-    myConcept = getConcept();
-    myAncestorCache = new AncestorCache(myConcept);
-    myConstructionHandler = new ConstructionHandler(myConcept, myAncestorCache);
-    initVirtualTable();
-    myInitialized = true;
+    if (!myInitialized) {
+      myConcept = getConcept();
+      myAncestorCache = new AncestorCache(myConcept);
+      myConstructionHandler = new ConstructionHandler(myConcept, myAncestorCache);
+      initVirtualTable();
+      myInitialized = true;
+    }
   }
 
   private void checkInitialized() {
     if (!myInitialized) {
-      throw new BHNotInitializedException();
+      throw new BHNotInitializedException(myConcept);
     }
   }
 
@@ -72,6 +78,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         ((BaseBHDescriptor) bhDescriptor).fillVirtualTable(myVTable);
       }
     }
+  }
+
+  /**
+   * register each SMethod in the VTable (if not yet registered)
+   **/
+  private void fillVirtualTable(@NotNull BHVirtualMethodTable tableToFill) {
+    tableToFill.putAllVirtual(getOwnMethods(), this);
   }
 
   @NotNull
@@ -110,8 +123,14 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private <T> void checkParameters(SMethod<T> method, Object[] parameters) {
     // TODO check parameters properly
-    if (method.getParameterCount() != parameters.length) {
+    if (method.getParameterTypes().length != parameters.length) {
       throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
+    }
+    Class<?>[] parameterTypes = method.getParameterTypes();
+    for (int i = 0; i < parameterTypes.length; ++i) {
+      if (!parameters[i].getClass().equals(parameterTypes[i])) {
+        throw new BHArgumentsDoNotMatch(parameters, parameterTypes, i);
+      }
     }
   }
 
@@ -157,13 +176,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   protected abstract <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   /**
-   * listing all the virtual methods; register each SMethod in the VTable (if not yet registered)
-   **/
-  private void fillVirtualTable(@NotNull BHVirtualMethodTable tableToFill) {
-    tableToFill.putAllVirtual(getOwnMethods(), this);
-  }
-
-  /**
    * @return true iff the method exists (constructor is not a method here)
    **/
   private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
@@ -203,6 +215,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
+  // TODO write some linearization here
   private static class AncestorCache {
     private final SAbstractConcept myConcept;
     private final List<SAbstractConcept> myConstructorAncestors;
@@ -237,13 +250,22 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private class BHNullPointerException extends NullPointerException {
   }
 
-  // TODO
   private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
-    public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
+    public BHMethodArgumentsCountDoNotMatch(SMethod<?> method, int length) {
+      super("Method " + method + " has " + method.getParameterTypes().length + " parameters in the declaration while " + length + " have been passed");
     }
   }
 
-  // todo
+  private class BHArgumentsDoNotMatch extends RuntimeException {
+    public BHArgumentsDoNotMatch(Object[] parameters, Class<?>[] parameterTypes, int i) {
+      super(parameters[i] + " does not match " + parameterTypes[i]);
+    }
+  }
+
   private class BHNotInitializedException extends RuntimeException {
+    public BHNotInitializedException(SAbstractConcept concept) {
+      super("Behavior descriptor has not been initialized; concept :  " + concept);
+    }
+
   }
 }

@@ -45,6 +45,7 @@ public abstract class SPropertyAdapter implements SProperty {
   @NotNull
   public abstract SPropertyId getId();
 
+  @NotNull
   @Override
   public SAbstractConcept getContainingConcept() {
     return getOwner();

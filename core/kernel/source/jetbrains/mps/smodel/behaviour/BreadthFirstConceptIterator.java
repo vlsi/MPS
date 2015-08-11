@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.Collections;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -34,7 +35,7 @@ import java.util.Queue;
  * Note, same concept may appear few times in this iterator, no unique filtering is done. Use {@link org.jetbrains.mps.util.UniqueIterator} if necessary.
  */
 public class BreadthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
-  private final Queue<SAbstractConcept> myConcepts = new LinkedList<SAbstractConcept>();
+  private final Deque<SAbstractConcept> myConcepts = new LinkedList<SAbstractConcept>();
   @NotNull
   private final SAbstractConcept myStart;
 

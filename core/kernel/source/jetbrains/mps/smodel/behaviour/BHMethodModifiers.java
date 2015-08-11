@@ -54,7 +54,6 @@ public final class BHMethodModifiers {
       BHMethodModifiers another = (BHMethodModifiers) o;
       return this.isStatic() == another.isStatic()
           && this.isVirtual() == another.isVirtual();
-//          && this.getAccessPrivileges() == another.getAccessPrivileges();
     }
     return false;
   }

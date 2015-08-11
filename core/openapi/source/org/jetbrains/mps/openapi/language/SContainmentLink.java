@@ -37,6 +37,7 @@ public interface SContainmentLink extends SAbstractLink {
    * exactly the concept from which you've obtained this property.
    * @deprecated use {@link #getOwner()}
    */
+  @NotNull
   @Deprecated
   // ToRemove(version = 3.3)
   SAbstractConcept getContainingConcept();

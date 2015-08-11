@@ -21,8 +21,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
@@ -38,7 +40,7 @@ import java.util.Stack;
 public final class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
   private final SAbstractConcept myStart;
   private SConcept myCurrent; // super-concepts hierarchy or null once all super-concepts are over
-  private final Stack<SInterfaceConcept> myInterfaceStack = new Stack<SInterfaceConcept>();
+  private final Deque<SInterfaceConcept> myInterfaceStack = new ArrayDeque<SInterfaceConcept>();
 
   public DepthFirstConceptIterator(@NotNull SAbstractConcept start) {
     myStart = start;

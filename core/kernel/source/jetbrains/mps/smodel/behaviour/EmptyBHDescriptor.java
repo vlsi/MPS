@@ -45,6 +45,7 @@ public final class EmptyBHDescriptor extends BaseBHDescriptor {
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    // TODO review contract; see MPS-22391
     return null;
   }
 

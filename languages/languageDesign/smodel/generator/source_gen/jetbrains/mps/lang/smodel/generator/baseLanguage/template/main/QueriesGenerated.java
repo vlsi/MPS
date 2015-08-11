@@ -240,7 +240,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_6960953357954106635(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation", "call_getLeftExpressionOperation_1213877508946", new Object[]{}), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess"));
   }
-  public static boolean baseMappingRule_Condition_6534031039611424052(final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_775596850784906841(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation", "call_getLeftExpression_1213877508894", new Object[]{}), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
   public static boolean baseMappingRule_Condition_525520458130851537(final BaseMappingRuleContext _context) {

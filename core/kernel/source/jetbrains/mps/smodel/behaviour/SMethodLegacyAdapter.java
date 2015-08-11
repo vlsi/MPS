@@ -106,7 +106,7 @@ class SMethodLegacyAdapter {
         if (!EqualUtil.equals(methodCandidate.getConcept(), myConcept)) return false;
       }
       // only argument types are left to check
-      if (myParameters.length != methodCandidate.getParameterCount()) {
+      if (myParameters.length != methodCandidate.getParameterTypes().length) {
         return false;
       }
       for (int i = 0; i < myParameters.length; ++i) {

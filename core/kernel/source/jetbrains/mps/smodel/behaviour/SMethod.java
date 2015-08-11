@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 
 import java.util.Arrays;
 
@@ -33,8 +34,33 @@ import java.util.Arrays;
  *           We need baseName___* format for the name field to support the identically named behavior methods.
  *
  */
+/**
+ * As for 3.2 -- we still have the behavior language which allows several methods with identical signature.
+ * Moreover it urges us to point to the overridden method explicitly.
+ *
+ * Pro & contra
+ * 1. The good part is a possibility to resolve a simple case:
+ * abstract I1#foo();
+ * abstract I2#foo();
+ * concept C extends I1, I2.
+ * We are able to deliver up two separate methods (with the same java signature) overriding each foo separately.
+ * 2. The bad part is that a user of the system can easily make a mess: methods are resolved by id.
+ * Also the generated code is forced to make the most of id, because string name resolving is simply not enough here.
+ * Besides it is not that easy to override method -- one needs to reference the method he wants to override.
+ *
+ * Plan for 3.3:
+ * 1. Make the 'overrides' reference optional:
+ * simply rename all the methods so that overridden_method.name.equals(this.name)
+ * 'overrides' is required only two virtual method hierarchies clash in the concept.
+ * 2. Grant the 'virtual' keyword new semantics: automatic method resolve
+ * must happen in the case of virtual methods with overridden method == null.
+ * 3. Give out an error about methods' name collision, forbid generation if that is the case.
+ *
+ * Only there is no conflict for virtual methods' names throughout in the concept hierarchy
+ * it might be possible to resolve two overriding methods by name.
+ */
 @Immutable
-public final class SMethod<T> {
+public final class SMethod<T> implements SConceptFeature {
   private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
   private static final String METHOD_NAME_ID_SEPARATOR ="___";
   private static final int DEFAULT_MOD_FOR_HASHCODE = 31;
@@ -100,24 +126,33 @@ public final class SMethod<T> {
     return myParameterTypes;
   }
 
-  public int getParameterCount() {
-    return getParameterTypes().length;
-  }
-
   public boolean isVirtual() {
     return myMethodModifiers.isVirtual();
   }
 
-  @ToRemove(version=3.3)
+  @ToRemove(version = 3.3)
   @Deprecated
   SMethod<T> getBaseMethod() {
     return myBaseMethod;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getContainingConcept() {
+    return getOwner();
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
+    return myConcept;
   }
 
   /**
    * baseName___*****
    */
   @NotNull
+  @Override
   public String getName() {
     return myName;
   }
