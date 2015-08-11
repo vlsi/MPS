@@ -438,10 +438,10 @@
     <property role="3GE5qa" value="simple.gen.perConcept" />
     <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
     <node concept="3EZMnI" id="5$xTughlNYc" role="2wV5jI">
-      <node concept="3F0ifn" id="5$xTughlZd_" role="3EZMnx">
-        <property role="3F0ifm" value="generate descriptor" />
-      </node>
       <node concept="2iRkQZ" id="5$xTughlNYd" role="2iSdaV" />
+      <node concept="3F0ifn" id="4Tj0Ksf50e8" role="3EZMnx">
+        <property role="3F0ifm" value="by-concept aspect generator" />
+      </node>
       <node concept="3EZMnI" id="4YpmBa69sM3" role="3EZMnx">
         <node concept="VPM3Z" id="4YpmBa69sM5" role="3F10Kt">
           <property role="VOm3f" value="false" />

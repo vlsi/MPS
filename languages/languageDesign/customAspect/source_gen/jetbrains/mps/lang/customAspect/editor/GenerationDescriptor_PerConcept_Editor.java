@@ -42,7 +42,7 @@ public class GenerationDescriptor_PerConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_9tz4lw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate descriptor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "by-concept aspect generator");
     editorCell.setCellId("Constant_9tz4lw_a0");
     editorCell.setDefaultText("");
     return editorCell;
