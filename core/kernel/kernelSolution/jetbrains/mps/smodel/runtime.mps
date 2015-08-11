@@ -1314,18 +1314,18 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2EMmih" id="6jXjkltJYMY" role="lGtFl">
-                  <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-                  <property role="2qtEX9" value="name" />
-                  <node concept="1rXfSq" id="6jXjkltJYMZ" role="2c44t1">
-                    <ref role="37wK5l" node="6jXjkltHGdo" resolve="getGeneratedClassShortName" />
-                  </node>
-                </node>
                 <node concept="2tJIrI" id="6jXjkltKvLa" role="jymVt">
                   <node concept="2c44t8" id="6jXjkltKS02" role="lGtFl">
                     <node concept="37vLTw" id="6jXjkltKS1N" role="2c44t1">
                       <ref role="3cqZAo" node="6jXjkltKDr7" resolve="methods" />
                     </node>
+                  </node>
+                </node>
+                <node concept="2EMmih" id="7NyVmB7Uk31" role="lGtFl">
+                  <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                  <property role="2qtEX9" value="name" />
+                  <node concept="1rXfSq" id="7NyVmB7UlhC" role="2c44t1">
+                    <ref role="37wK5l" node="6jXjkltHGdo" resolve="getGeneratedClassShortName" />
                   </node>
                 </node>
               </node>

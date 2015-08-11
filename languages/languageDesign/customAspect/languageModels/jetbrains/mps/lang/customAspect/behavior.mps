@@ -203,14 +203,6 @@
     <node concept="13hLZK" id="7NyVmB7SZwy" role="13h7CW">
       <node concept="3clFbS" id="7NyVmB7SZwz" role="2VODD2" />
     </node>
-    <node concept="13i0hz" id="7NyVmB7SZw$" role="13h7CS">
-      <property role="13i0iv" value="true" />
-      <property role="13i0it" value="true" />
-      <property role="TrG5h" value="isAttachedToConcept" />
-      <node concept="3Tm1VV" id="7NyVmB7SZw_" role="1B3o_S" />
-      <node concept="10P_77" id="7NyVmB7T2Ow" role="3clF45" />
-      <node concept="3clFbS" id="7NyVmB7SZwB" role="3clF47" />
-    </node>
     <node concept="13i0hz" id="7NyVmB7T2Oz" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
@@ -231,6 +223,15 @@
       </node>
       <node concept="3clFbS" id="7NyVmB7T6Cl" role="3clF47" />
     </node>
+    <node concept="13i0hz" id="7NyVmB7SZw$" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="isAttachedToConcept" />
+      <property role="2Ki8OM" value="true" />
+      <node concept="3Tm1VV" id="7NyVmB7SZw_" role="1B3o_S" />
+      <node concept="10P_77" id="7NyVmB7T2Ow" role="3clF45" />
+      <node concept="3clFbS" id="7NyVmB7SZwB" role="3clF47" />
+    </node>
     <node concept="13i0hz" id="7NyVmB7T5zz" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
@@ -241,6 +242,17 @@
         <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
       </node>
       <node concept="3clFbS" id="7NyVmB7T5zA" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="7NyVmB7TAET" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="2Ki8OM" value="true" />
+      <property role="TrG5h" value="getLanguageAspect" />
+      <node concept="3Tm1VV" id="7NyVmB7TAEU" role="1B3o_S" />
+      <node concept="3Tqbb2" id="7NyVmB7TAFi" role="3clF45">
+        <ref role="ehGHo" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+      </node>
+      <node concept="3clFbS" id="7NyVmB7TAEW" role="3clF47" />
     </node>
   </node>
 </model>

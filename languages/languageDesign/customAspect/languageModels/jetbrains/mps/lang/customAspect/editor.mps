@@ -402,7 +402,7 @@
           <property role="3F0ifm" value="interface class:" />
         </node>
         <node concept="1iCGBv" id="2Y$EcRKMtaz" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2t" />
+          <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
           <node concept="1sVBvm" id="2Y$EcRKMta_" role="1sWHZn">
             <node concept="3F0A7n" id="2Y$EcRKMtaH" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -448,7 +448,7 @@
         </node>
         <node concept="3XFhqQ" id="4YpmBa69sMk" role="3EZMnx" />
         <node concept="1iCGBv" id="4YpmBa69sMq" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:4YpmBa69sLR" />
+          <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
           <node concept="1sVBvm" id="4YpmBa69sMs" role="1sWHZn">
             <node concept="3F0A7n" id="4YpmBa69sM$" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -525,16 +525,6 @@
         </node>
       </node>
       <node concept="2iRkQZ" id="6jXjkltKeRp" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7NyVmB7T5y9">
-    <property role="3GE5qa" value="simple.gen" />
-    <ref role="1XX52x" to="hfbu:7NyVmB7T2OM" resolve="GenerationDescriptor_AspectConcept" />
-    <node concept="3EZMnI" id="7NyVmB7T5yb" role="2wV5jI">
-      <node concept="3F0ifn" id="7NyVmB7T5yc" role="3EZMnx">
-        <property role="3F0ifm" value="generate descriptor by AspectConcepts" />
-      </node>
-      <node concept="2iRkQZ" id="7NyVmB7T5yd" role="2iSdaV" />
     </node>
   </node>
 </model>
