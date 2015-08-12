@@ -4,13 +4,13 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:7f13aa3c-a995-44a2-bc12-5a4ae3765440(jetbrains.mps.lang.customAspect.generator.template.util)/8999016044020743942">
     <file name="NamingUtil.java">
-      <node id="8999016044020863395" at="16,56,17,184" concept="0" />
+      <node id="8999016044020863395" at="16,56,17,199" concept="0" />
       <node id="8999016044020765181" at="20,60,21,238" concept="0" />
       <node id="8999016044020839929" at="24,68,25,455" concept="0" />
       <node id="8999016044020744019" at="16,0,19,0" concept="1" trace="getDescriptorName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8999016044020765218" at="20,0,23,0" concept="1" trace="getAspectDescriptor#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8999016044020839455" at="24,0,27,0" concept="1" trace="getAspectDescriptor#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="8999016044020744025" at="16,56,17,184" />
+      <scope id="8999016044020744025" at="16,56,17,199" />
       <scope id="8999016044020765153" at="20,60,21,238" />
       <scope id="8999016044020839460" at="24,68,25,455" />
       <scope id="8999016044020744019" at="16,0,19,0">

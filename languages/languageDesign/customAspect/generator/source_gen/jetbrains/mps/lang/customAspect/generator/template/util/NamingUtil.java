@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class NamingUtil {
   public static String getDescriptorName(SNode aspect) {
-    return NameUtil.capitalize(SPropertyOperations.getString(aspect, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return NameUtil.capitalize(SPropertyOperations.getString(aspect, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "Descriptor";
   }
 
   public static SNode getAspectDescriptor(SNode generator) {

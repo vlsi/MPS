@@ -23,6 +23,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -46,6 +49,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -58,6 +62,10 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -110,15 +118,20 @@
       <node concept="3Tm1VV" id="7NyVmB7TrXo" role="1B3o_S" />
       <node concept="3clFbS" id="7NyVmB7TrXp" role="3clF47">
         <node concept="3clFbF" id="7NyVmB7TT6z" role="3cqZAp">
-          <node concept="2YIFZM" id="7NyVmB7TTll" role="3clFbG">
-            <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
-            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-            <node concept="2OqwBi" id="7NyVmB7TTsI" role="37wK5m">
-              <node concept="37vLTw" id="7NyVmB7TTpV" role="2Oq$k0">
-                <ref role="3cqZAo" node="7NyVmB7Tsik" resolve="aspect" />
-              </node>
-              <node concept="3TrcHB" id="7NyVmB7TTIJ" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+          <node concept="3cpWs3" id="3hJg5HW4yLY" role="3clFbG">
+            <node concept="Xl_RD" id="3hJg5HW4zpc" role="3uHU7w">
+              <property role="Xl_RC" value="Descriptor" />
+            </node>
+            <node concept="2YIFZM" id="7NyVmB7TTll" role="3uHU7B">
+              <ref role="37wK5l" to="18ew:~NameUtil.capitalize(java.lang.String):java.lang.String" resolve="capitalize" />
+              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+              <node concept="2OqwBi" id="7NyVmB7TTsI" role="37wK5m">
+                <node concept="37vLTw" id="7NyVmB7TTpV" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7NyVmB7Tsik" resolve="aspect" />
+                </node>
+                <node concept="3TrcHB" id="7NyVmB7TTIJ" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
               </node>
             </node>
           </node>
