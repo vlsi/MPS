@@ -25,6 +25,9 @@ public class GenerateTextDeclaration_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_7h7f64_a0a1();
   }
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return true;
+  }
   private static SNode _quotation_createNode_7h7f64_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
