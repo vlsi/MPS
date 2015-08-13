@@ -102,7 +102,9 @@ public abstract class LanguageAspectGenerator_PerConcept extends LanguageAspectG
   public static abstract class ConceptGeneratorDescriptor {
     public abstract SAbstractConcept getApplicableConcept();
     public abstract SNode getInterfaceClass();
-    public abstract SNode getAttachedConcept(SNode instance);
+    public SNode getAttachedConcept(SNode instance) {
+      return null;
+    }
     public abstract boolean isAttached();
     public abstract String getGeneratedClassShortName(SNode instance);
     public String getGeneratedClassFqName(SNode instance, SModel modelBeingGenerated) {
