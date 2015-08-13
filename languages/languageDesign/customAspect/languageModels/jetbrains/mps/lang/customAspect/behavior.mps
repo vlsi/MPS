@@ -255,5 +255,21 @@
       <node concept="3clFbS" id="7NyVmB7TAEW" role="3clF47" />
     </node>
   </node>
+  <node concept="13h7C7" id="7Jfx5bwQG3z">
+    <ref role="13h7C2" to="hfbu:7Jfx5bwQG39" resolve="IAspectConcept" />
+    <node concept="13i0hz" id="7Jfx5bwQG3A" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getGeneratedClassName" />
+      <node concept="3Tm1VV" id="7Jfx5bwQG3B" role="1B3o_S" />
+      <node concept="3uibUv" id="7Jfx5bwQG3C" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="7Jfx5bwQG3D" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="7Jfx5bwQG3$" role="13h7CW">
+      <node concept="3clFbS" id="7Jfx5bwQG3_" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

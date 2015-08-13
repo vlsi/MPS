@@ -207,5 +207,8 @@
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
   </node>
+  <node concept="PlHQZ" id="7Jfx5bwQG39">
+    <property role="TrG5h" value="IAspectConcept" />
+  </node>
 </model>
 
