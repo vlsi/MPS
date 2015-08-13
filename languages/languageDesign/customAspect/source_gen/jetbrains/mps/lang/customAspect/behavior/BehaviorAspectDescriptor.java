@@ -11,21 +11,25 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 3:
-        return new LanguageAspectDescriptor_BehaviorDescriptor();
       case 5:
+        return new LanguageAspectDescriptor_BehaviorDescriptor();
+      case 7:
         return new SimpleLanguageAspectDescriptor_BehaviorDescriptor();
-      case 4:
+      case 6:
         return new LanguageReference_BehaviorDescriptor();
-      case 1:
+      case 3:
         return new GenerationDescriptor_Class_BehaviorDescriptor();
-      case 2:
+      case 4:
         return new GenerationDescriptor_PerConcept_BehaviorDescriptor();
-      case 0:
+      case 1:
         return new ConceptInstancesPart_BehaviorDescriptor();
+      case 2:
+        return new GenerationDescriptor_ByInterface_BehaviorDescriptor();
+      case 0:
+        return new AspectMethodDescriptor_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.customAspect.structure.ConceptInstancesPart", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_Class", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_PerConcept", "jetbrains.mps.lang.customAspect.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.customAspect.structure.LanguageReference", "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.customAspect.structure.AspectMethodDescriptor", "jetbrains.mps.lang.customAspect.structure.ConceptInstancesPart", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_ByInterface", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_Class", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_PerConcept", "jetbrains.mps.lang.customAspect.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.customAspect.structure.LanguageReference", "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"};
 }

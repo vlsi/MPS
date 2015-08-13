@@ -382,8 +382,8 @@
     <property role="3GE5qa" value="simple.gen" />
     <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor_Class" />
     <node concept="3EZMnI" id="5KGdJjE3jHP" role="2wV5jI">
-      <node concept="3F0ifn" id="5$xTughlNYJ" role="3EZMnx">
-        <property role="3F0ifm" value="generate descriptor instantiation only" />
+      <node concept="3F0A7n" id="4F0TDiuCZPI" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
       </node>
       <node concept="3EZMnI" id="4YpmBa6a3wD" role="3EZMnx">
         <node concept="2iRfu4" id="4YpmBa6a3wE" role="2iSdaV" />
@@ -439,8 +439,8 @@
     <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
     <node concept="3EZMnI" id="5$xTughlNYc" role="2wV5jI">
       <node concept="2iRkQZ" id="5$xTughlNYd" role="2iSdaV" />
-      <node concept="3F0ifn" id="4Tj0Ksf50e8" role="3EZMnx">
-        <property role="3F0ifm" value="by-concept aspect generator" />
+      <node concept="3F0A7n" id="4F0TDiuCZQq" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
       </node>
       <node concept="3EZMnI" id="4YpmBa69sM3" role="3EZMnx">
         <node concept="VPM3Z" id="4YpmBa69sM5" role="3F10Kt">
@@ -525,6 +525,83 @@
         </node>
       </node>
       <node concept="2iRkQZ" id="6jXjkltKeRp" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4F0TDiuCZbo">
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <ref role="1XX52x" to="hfbu:4F0TDiuCZaK" resolve="AspectMethodDescriptor" />
+    <node concept="3EZMnI" id="4F0TDiuCZbI" role="2wV5jI">
+      <node concept="3F0ifn" id="4F0TDiuCZc9" role="3EZMnx">
+        <property role="3F0ifm" value="generate" />
+      </node>
+      <node concept="2iRfu4" id="4F0TDiuCZbJ" role="2iSdaV" />
+      <node concept="1iCGBv" id="4F0TDiuCZbq" role="3EZMnx">
+        <ref role="1NtTu8" to="hfbu:4F0TDiuCZaL" />
+        <node concept="1sVBvm" id="4F0TDiuCZbs" role="1sWHZn">
+          <node concept="3F0A7n" id="4F0TDiuCZbE" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4F0TDiuCZcu" role="3EZMnx">
+        <property role="3F0ifm" value="from" />
+      </node>
+      <node concept="1iCGBv" id="4F0TDiuCZcR" role="3EZMnx">
+        <ref role="1NtTu8" to="hfbu:4F0TDiuCZaT" />
+        <node concept="1sVBvm" id="4F0TDiuCZcT" role="1sWHZn">
+          <node concept="3F0A7n" id="4F0TDiuCZdd" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4F0TDiuCZed" role="3EZMnx">
+        <property role="3F0ifm" value="with attach to concept" />
+      </node>
+      <node concept="3F1sOY" id="4F0TDiuCZd$" role="3EZMnx">
+        <ref role="1NtTu8" to="hfbu:4F0TDiuCZaO" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4F0TDiuCZAY">
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <ref role="1XX52x" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
+    <node concept="3EZMnI" id="4F0TDiuCZB0" role="2wV5jI">
+      <node concept="3F0A7n" id="4F0TDiuCZQS" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+      </node>
+      <node concept="3EZMnI" id="4F0TDiuCZB6" role="3EZMnx">
+        <node concept="3XFhqQ" id="4F0TDiuCZB7" role="3EZMnx" />
+        <node concept="VPM3Z" id="4F0TDiuCZB8" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="4F0TDiuCZB9" role="3EZMnx">
+          <property role="3F0ifm" value="interface:" />
+        </node>
+        <node concept="1iCGBv" id="4F0TDiuCZBa" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
+          <node concept="1sVBvm" id="4F0TDiuCZBb" role="1sWHZn">
+            <node concept="3F0A7n" id="4F0TDiuCZBc" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="4F0TDiuCZBd" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="4F0TDiuCZBe" role="3EZMnx">
+        <node concept="3XFhqQ" id="4F0TDiuCZBf" role="3EZMnx" />
+        <node concept="VPM3Z" id="4F0TDiuCZBg" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F2HdR" id="4F0TDiuCZS6" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:4F0TDiuCZaH" />
+          <node concept="2iRkQZ" id="4F0TDiuCZSr" role="2czzBx" />
+        </node>
+        <node concept="2iRfu4" id="4F0TDiuCZBl" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="4F0TDiuCZBm" role="2iSdaV" />
     </node>
   </node>
 </model>

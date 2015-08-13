@@ -7,14 +7,20 @@
     <file name="AspectConcept_BehaviorDescriptor.java">
       <unit at="9,0,16,0" name="jetbrains.mps.lang.customAspect.behavior.AspectConcept_BehaviorDescriptor" />
     </file>
+    <file name="AspectMethodDescriptor_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.customAspect.behavior.AspectMethodDescriptor_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.lang.customAspect.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,36,0" name="jetbrains.mps.lang.customAspect.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptInstancesPart_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.customAspect.behavior.ConceptInstancesPart_BehaviorDescriptor" />
     </file>
     <file name="GenerationDescriptor_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="GenerationDescriptor_ByInterface_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_ByInterface_BehaviorDescriptor" />
     </file>
     <file name="GenerationDescriptor_Class_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.customAspect.behavior.GenerationDescriptor_Class_BehaviorDescriptor" />

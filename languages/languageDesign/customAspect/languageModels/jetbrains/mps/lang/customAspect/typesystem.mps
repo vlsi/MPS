@@ -251,5 +251,48 @@
       <ref role="1YaFvo" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor_Class" />
     </node>
   </node>
+  <node concept="1YbPZF" id="4F0TDiuCZeV">
+    <property role="TrG5h" value="typeof_AspectMethodDescriptor" />
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <node concept="3clFbS" id="4F0TDiuCZeW" role="18ibNy">
+      <node concept="1Z5TYs" id="4F0TDiuCZhp" role="3cqZAp">
+        <node concept="mw_s8" id="4F0TDiuCZhP" role="1ZfhKB">
+          <node concept="2c44tf" id="4F0TDiuCZhL" role="mwGJk">
+            <node concept="1ajhzC" id="4F0TDiuCZqO" role="2c44tc">
+              <node concept="3Tqbb2" id="4F0TDiuCZie" role="1ajw0F">
+                <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                <node concept="2c44tb" id="4F0TDiuCZs4" role="lGtFl">
+                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                  <property role="2qtEX8" value="concept" />
+                  <node concept="2OqwBi" id="4F0TDiuCZui" role="2c44t1">
+                    <node concept="1YBJjd" id="4F0TDiuCZsG" role="2Oq$k0">
+                      <ref role="1YBMHb" node="4F0TDiuCZeY" resolve="amd" />
+                    </node>
+                    <node concept="3TrEf2" id="4F0TDiuCZ$R" role="2OqNvi">
+                      <ref role="3Tt5mk" to="hfbu:4F0TDiuCZaT" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3Tqbb2" id="4F0TDiuCZ_O" role="1ajl9A">
+                <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4F0TDiuCZhs" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4F0TDiuCZf2" role="mwGJk">
+            <node concept="1YBJjd" id="4F0TDiuCZfH" role="1Z2MuG">
+              <ref role="1YBMHb" node="4F0TDiuCZeY" resolve="amd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4F0TDiuCZeY" role="1YuTPh">
+      <property role="TrG5h" value="amd" />
+      <ref role="1YaFvo" to="hfbu:4F0TDiuCZaK" resolve="AspectMethodDescriptor" />
+    </node>
+  </node>
 </model>
 

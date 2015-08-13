@@ -104,7 +104,7 @@
   <node concept="1TIwiD" id="5KGdJjE3jGJ">
     <property role="3GE5qa" value="simple.gen" />
     <property role="TrG5h" value="GenerationDescriptor_Class" />
-    <property role="34LRSv" value="custom generator" />
+    <property role="34LRSv" value="generate descriptor instantiation only" />
     <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="5$xTughlvvt" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -116,7 +116,7 @@
   <node concept="1TIwiD" id="5LFbgO_x_no">
     <property role="3GE5qa" value="simple.gen.perConcept" />
     <property role="TrG5h" value="GenerationDescriptor_PerConcept" />
-    <property role="34LRSv" value="by-concept aspect generator" />
+    <property role="34LRSv" value="generate descriptor from concepts" />
     <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="5LFbgO_x_nr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -171,6 +171,40 @@
     <property role="TrG5h" value="AspectConcept" />
     <node concept="PrWs8" id="7NyVmB7T5zr" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4F0TDiuCZaF">
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <property role="TrG5h" value="GenerationDescriptor_ByInterface" />
+    <property role="34LRSv" value="generate descriptor by interface" />
+    <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
+    <node concept="1TJgyj" id="4F0TDiuCZaH" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="methods" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="4F0TDiuCZaK" resolve="AspectMethodDescriptor" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4F0TDiuCZaK">
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <property role="TrG5h" value="AspectMethodDescriptor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4F0TDiuCZaO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="baseConceptFunc" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+    </node>
+    <node concept="1TJgyj" id="4F0TDiuCZaL" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="method" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="4F0TDiuCZaT" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="cncpt" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
   </node>
 </model>
