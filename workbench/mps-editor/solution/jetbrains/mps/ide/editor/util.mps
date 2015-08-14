@@ -291,9 +291,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
-        <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -1396,9 +1394,7 @@
       <node concept="37vLTG" id="2rUHgdX3ha5" role="3clF46">
         <property role="TrG5h" value="method" />
         <property role="3TUv4t" value="true" />
-        <node concept="3Tqbb2" id="2rUHgdX3ha6" role="1tU5fm">
-          <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-        </node>
+        <node concept="3Tqbb2" id="2rUHgdX3ha6" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="2rUHgdX3h9N" role="3clF45" />
       <node concept="3clFbS" id="2rUHgdX3h9P" role="3clF47">
