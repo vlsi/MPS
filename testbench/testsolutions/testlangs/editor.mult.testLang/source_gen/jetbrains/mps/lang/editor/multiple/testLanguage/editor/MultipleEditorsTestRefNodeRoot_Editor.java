@@ -138,7 +138,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "richChild" + ">";
+      return "<no richChild>";
     }
 
   }
@@ -230,7 +230,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "compactChild" + ">";
+      return "<no compactChild>";
     }
 
   }
@@ -320,7 +320,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "conditionallyProjectedChild" + ">";
+      return "<no conditionallyProjectedChild>";
     }
 
   }
@@ -446,7 +446,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "conditionallyRichOrCompactChild" + ">";
+      return "<no conditionallyRichOrCompactChild>";
     }
 
   }

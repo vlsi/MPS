@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.samples.SwingBuilder.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:7a1c88cb-66d9-4726-9b4a-d5dc6c544de7(jetbrains.mps.samples.SwingBuilder.constraints)/941086956890759281">
+    <file name="ElementReference_Constraints.java">
+      <node id="941086956890759281" at="29,41,30,97" concept="7" />
+      <node id="941086956890759281" at="33,98,34,135" concept="4" />
+      <node id="941086956890759281" at="37,44,38,20" concept="5" />
+      <node id="941086956890759281" at="45,63,46,58" concept="5" />
+      <node id="941086956890837165" at="51,50,52,345" concept="5" />
+      <node id="941086956890759281" at="58,7,59,22" concept="5" />
+      <node id="941086956890759281" at="61,0,62,0" concept="6" trace="breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a1" />
+      <node id="941086956890759281" at="29,0,32,0" concept="1" trace="ElementReference_Constraints#()V" />
+      <node id="941086956890833243" at="51,0,54,0" concept="3" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="941086956890759281" at="36,0,40,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="941086956890759281" at="44,0,48,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="941086956890759281" at="49,122,54,14" concept="0" />
+      <node id="941086956890827546" at="49,122,54,14" concept="5" />
+      <node id="941086956890759281" at="48,0,56,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="941086956890759281" at="42,56,56,10" concept="5" />
+      <node id="941086956890759281" at="40,0,58,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="941086956890759281" at="34,135,58,7" concept="2" />
+      <node id="941086956890759281" at="32,0,61,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <scope id="941086956890759281" at="29,41,30,97" />
+      <scope id="941086956890759281" at="37,44,38,20" />
+      <scope id="941086956890759281" at="45,63,46,58" />
+      <scope id="941086956890833249" at="51,50,52,345" />
+      <scope id="941086956890759281" at="29,0,32,0" />
+      <scope id="941086956890833243" at="51,0,54,0">
+        <var name="child" id="941086956890833247" />
+      </scope>
+      <scope id="941086956890759281" at="36,0,40,0" />
+      <scope id="941086956890759281" at="44,0,48,0" />
+      <scope id="941086956890759281" at="49,122,54,14" />
+      <scope id="941086956890759285" at="49,122,54,14" />
+      <scope id="941086956890759281" at="48,0,56,0">
+        <var name="_context" id="941086956890759281" />
+        <var name="operationContext" id="941086956890759281" />
+      </scope>
+      <scope id="941086956890759281" at="42,56,56,10" />
+      <scope id="941086956890759281" at="40,0,58,0" />
+      <scope id="941086956890759281" at="33,98,59,22">
+        <var name="references" id="941086956890759281" />
+      </scope>
+      <scope id="941086956890759281" at="32,0,61,0" />
+      <unit id="941086956890833231" at="50,23,54,13" name="jetbrains.mps.samples.SwingBuilder.constraints.ElementReference_Constraints$3" />
+      <unit id="941086956890759281" at="43,19,56,9" name="jetbrains.mps.samples.SwingBuilder.constraints.ElementReference_Constraints$2" />
+      <unit id="941086956890759281" at="35,126,58,5" name="jetbrains.mps.samples.SwingBuilder.constraints.ElementReference_Constraints$1" />
+      <unit id="941086956890759281" at="28,0,63,0" name="jetbrains.mps.samples.SwingBuilder.constraints.ElementReference_Constraints" />
+    </file>
+  </root>
+</debug-info>
+

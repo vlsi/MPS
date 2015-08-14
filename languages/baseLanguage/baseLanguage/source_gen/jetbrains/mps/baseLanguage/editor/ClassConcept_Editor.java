@@ -580,7 +580,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "staticInitializer" + ">";
+      return "<no staticInitializer>";
     }
 
   }

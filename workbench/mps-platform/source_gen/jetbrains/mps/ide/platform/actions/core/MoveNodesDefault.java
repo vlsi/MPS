@@ -76,7 +76,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   public void apply(final MPSProject project, final List<SNode> nodesToMove) {
 
     final Wrappers._T<SModel> currentModel = new Wrappers._T<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         currentModel.value = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
       }
@@ -91,7 +91,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       return;
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SNode node : ListSequence.fromList(nodesToMove)) {
           if (!(SNodeUtil.isAccessible(node, project.getRepository()))) {

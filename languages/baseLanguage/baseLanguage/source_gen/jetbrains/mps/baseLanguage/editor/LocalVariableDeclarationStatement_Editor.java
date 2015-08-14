@@ -60,7 +60,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "localVariableDeclaration" + ">";
+      return "<no localVariableDeclaration>";
     }
 
   }

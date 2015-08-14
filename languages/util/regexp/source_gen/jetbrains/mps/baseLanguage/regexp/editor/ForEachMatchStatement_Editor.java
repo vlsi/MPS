@@ -87,7 +87,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expr" + ">";
+      return "<no expr>";
     }
 
   }
@@ -130,7 +130,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "regexp" + ">";
+      return "<no regexp>";
     }
 
   }
@@ -187,7 +187,7 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

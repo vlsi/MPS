@@ -328,7 +328,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -386,7 +386,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "creator" + ">";
+      return "<no creator>";
     }
 
   }

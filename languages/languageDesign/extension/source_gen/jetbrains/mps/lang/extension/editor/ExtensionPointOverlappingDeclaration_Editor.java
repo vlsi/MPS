@@ -137,7 +137,7 @@ public class ExtensionPointOverlappingDeclaration_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "argumentType" + ">";
+      return "<no argumentType>";
     }
 
   }
@@ -177,7 +177,7 @@ public class ExtensionPointOverlappingDeclaration_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resultType" + ">";
+      return "<no resultType>";
     }
 
   }

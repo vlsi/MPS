@@ -419,7 +419,7 @@ public class Common_Component implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "focusPolicyApplicable" + ">";
+      return "<no focusPolicyApplicable>";
     }
 
   }

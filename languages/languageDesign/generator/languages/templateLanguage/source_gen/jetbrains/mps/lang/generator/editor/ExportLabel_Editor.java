@@ -333,7 +333,7 @@ public class ExportLabel_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "marshal" + ">";
+      return "<no marshal>";
     }
 
   }
@@ -395,7 +395,7 @@ public class ExportLabel_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "unmarshal" + ">";
+      return "<no unmarshal>";
     }
 
   }

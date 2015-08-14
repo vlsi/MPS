@@ -79,7 +79,7 @@ public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "process" + ">";
+      return "<no process>";
     }
 
   }

@@ -93,7 +93,7 @@ public class BuildSource_JavaContentRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "basePath" + ">";
+      return "<no basePath>";
     }
 
   }

@@ -81,7 +81,7 @@ public class NodeConstraintsWarningCheckOperation_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "warningRef" + ">";
+      return "<no warningRef>";
     }
 
   }

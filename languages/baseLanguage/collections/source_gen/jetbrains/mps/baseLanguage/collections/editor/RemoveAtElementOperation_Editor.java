@@ -93,7 +93,7 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "index" + ">";
+      return "<no index>";
     }
 
   }

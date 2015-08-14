@@ -142,7 +142,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultConsequence" + ">";
+      return "<no defaultConsequence>";
     }
 
   }

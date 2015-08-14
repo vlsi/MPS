@@ -97,7 +97,7 @@ public class BuildMps_BrandingCompany_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "name" + ">";
+      return "<no name>";
     }
 
   }
@@ -143,7 +143,7 @@ public class BuildMps_BrandingCompany_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "url" + ">";
+      return "<no url>";
     }
 
   }

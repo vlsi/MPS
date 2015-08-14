@@ -165,7 +165,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "terminateType" + ">";
+      return "<no terminateType>";
     }
 
   }
@@ -301,7 +301,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resultType" + ">";
+      return "<no resultType>";
     }
 
   }

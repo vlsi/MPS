@@ -75,7 +75,7 @@ public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }
@@ -131,7 +131,7 @@ public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "customLocation" + ">";
+      return "<no customLocation>";
     }
 
   }

@@ -71,7 +71,7 @@ public class DiagramElementCreationHandlers_EditoComponent implements ConceptEdi
     }
 
     protected String getNoTargetText() {
-      return "<no " + "handler" + ">";
+      return "<no handler>";
     }
 
   }

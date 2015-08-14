@@ -86,7 +86,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "group" + ">";
+      return "<no group>";
     }
 
   }

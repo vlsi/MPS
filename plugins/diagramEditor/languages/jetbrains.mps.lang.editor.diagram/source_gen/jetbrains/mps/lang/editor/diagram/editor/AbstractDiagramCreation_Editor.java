@@ -105,7 +105,7 @@ public class AbstractDiagramCreation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "query" + ">";
+      return "<no query>";
     }
 
   }

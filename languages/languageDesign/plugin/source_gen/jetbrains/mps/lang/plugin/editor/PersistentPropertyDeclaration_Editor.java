@@ -67,7 +67,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -131,7 +131,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializer" + ">";
+      return "<no initializer>";
     }
 
   }

@@ -85,7 +85,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expr" + ">";
+      return "<no expr>";
     }
 
   }

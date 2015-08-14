@@ -182,7 +182,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ruleConsequence" + ">";
+      return "<no ruleConsequence>";
     }
 
   }

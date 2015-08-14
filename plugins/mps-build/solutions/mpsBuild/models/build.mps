@@ -17450,6 +17450,9 @@
           <ref role="1Busuk" node="7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
         </node>
       </node>
+      <node concept="1E0d5M" id="1rWLXuUj2ZP" role="1E1XAP">
+        <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
+      </node>
     </node>
     <node concept="1E1JtA" id="1whNchE_L1C" role="3989C9">
       <property role="BnDLt" value="true" />
@@ -25178,7 +25181,7 @@
         </node>
         <node concept="1SiIV0" id="2a9bszgrw54" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrw53" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
           </node>
         </node>
@@ -25262,6 +25265,7 @@
         </node>
         <node concept="1SiIV0" id="5w$a8dVgS8D" role="3bR37C">
           <node concept="3bR9La" id="5w$a8dVgSbt" role="1SiIV1">
+            <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
           </node>
         </node>

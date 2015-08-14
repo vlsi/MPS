@@ -84,7 +84,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "shortName" + ">";
+      return "<no shortName>";
     }
 
   }
@@ -182,7 +182,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "codename" + ">";
+      return "<no codename>";
     }
 
   }
@@ -225,7 +225,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "company" + ">";
+      return "<no company>";
     }
 
   }
@@ -386,7 +386,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fullName" + ">";
+      return "<no fullName>";
     }
 
   }
@@ -429,7 +429,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "buildNumber" + ">";
+      return "<no buildNumber>";
     }
 
   }
@@ -484,7 +484,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "buildDate" + ">";
+      return "<no buildDate>";
     }
 
   }
@@ -562,7 +562,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon16" + ">";
+      return "<no icon16>";
     }
 
   }
@@ -608,7 +608,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon32" + ">";
+      return "<no icon32>";
     }
 
   }
@@ -654,7 +654,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon32opaque" + ">";
+      return "<no icon32opaque>";
     }
 
   }
@@ -694,7 +694,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon128" + ">";
+      return "<no icon128>";
     }
 
   }
@@ -738,7 +738,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon" + ">";
+      return "<no icon>";
     }
 
   }
@@ -782,7 +782,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "iconToolWindow" + ">";
+      return "<no iconToolWindow>";
     }
 
   }
@@ -828,7 +828,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "splashScreen" + ">";
+      return "<no splashScreen>";
     }
 
   }
@@ -890,7 +890,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "textColor" + ">";
+      return "<no textColor>";
     }
 
   }
@@ -933,7 +933,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "progressColor" + ">";
+      return "<no progressColor>";
     }
 
   }
@@ -980,7 +980,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "progressY" + ">";
+      return "<no progressY>";
     }
 
   }
@@ -1026,7 +1026,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "aboutScreen" + ">";
+      return "<no aboutScreen>";
     }
 
   }
@@ -1072,7 +1072,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dialogImage" + ">";
+      return "<no dialogImage>";
     }
 
   }
@@ -1144,7 +1144,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "welcomeCaption" + ">";
+      return "<no welcomeCaption>";
     }
 
   }
@@ -1190,7 +1190,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "welcomeSlogan" + ">";
+      return "<no welcomeSlogan>";
     }
 
   }
@@ -1233,7 +1233,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "welcomeLogo" + ">";
+      return "<no welcomeLogo>";
     }
 
   }
@@ -1270,7 +1270,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "updateWebsite" + ">";
+      return "<no updateWebsite>";
     }
 
   }
@@ -1313,7 +1313,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "plugins" + ">";
+      return "<no plugins>";
     }
 
   }
@@ -1356,7 +1356,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "whatsnew" + ">";
+      return "<no whatsnew>";
     }
 
   }
@@ -1393,7 +1393,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "stats" + ">";
+      return "<no stats>";
     }
 
   }
@@ -1430,7 +1430,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "help" + ">";
+      return "<no help>";
     }
 
   }
@@ -1476,7 +1476,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "feedbackUrl" + ">";
+      return "<no feedbackUrl>";
     }
 
   }

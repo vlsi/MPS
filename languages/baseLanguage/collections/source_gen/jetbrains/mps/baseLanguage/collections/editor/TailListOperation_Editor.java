@@ -91,7 +91,7 @@ public class TailListOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromIndex" + ">";
+      return "<no fromIndex>";
     }
 
   }

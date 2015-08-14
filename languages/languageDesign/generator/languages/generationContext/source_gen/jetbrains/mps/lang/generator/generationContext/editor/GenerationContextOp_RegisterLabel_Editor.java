@@ -79,7 +79,7 @@ public class GenerationContextOp_RegisterLabel_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inputNode" + ">";
+      return "<no inputNode>";
     }
 
   }
@@ -123,7 +123,7 @@ public class GenerationContextOp_RegisterLabel_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "outputNode" + ">";
+      return "<no outputNode>";
     }
 
   }

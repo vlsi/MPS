@@ -335,7 +335,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "creator" + ">";
+      return "<no creator>";
     }
 
   }
@@ -555,7 +555,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultChild" + ">";
+      return "<no defaultChild>";
     }
 
   }
@@ -609,7 +609,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "text" + ">";
+      return "<no text>";
     }
 
   }
@@ -663,7 +663,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "validator" + ">";
+      return "<no validator>";
     }
 
   }

@@ -74,7 +74,7 @@ public class BuildLayout_FileStub_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileName" + ">";
+      return "<no fileName>";
     }
 
   }

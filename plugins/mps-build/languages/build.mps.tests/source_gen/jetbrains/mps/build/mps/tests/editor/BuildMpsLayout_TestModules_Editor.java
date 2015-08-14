@@ -191,7 +191,7 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "haltonfailure" + ">";
+      return "<no haltonfailure>";
     }
 
   }

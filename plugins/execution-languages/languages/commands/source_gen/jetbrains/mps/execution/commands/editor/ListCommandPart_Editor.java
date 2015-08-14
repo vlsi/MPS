@@ -216,7 +216,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "separator" + ">";
+      return "<no separator>";
     }
 
   }
@@ -292,7 +292,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "separator" + ">";
+      return "<no separator>";
     }
 
   }
@@ -342,7 +342,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list" + ">";
+      return "<no list>";
     }
 
   }

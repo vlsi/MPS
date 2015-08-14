@@ -76,7 +76,7 @@ public class ModuleProperties_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "targetModule" + ">";
+      return "<no targetModule>";
     }
 
   }

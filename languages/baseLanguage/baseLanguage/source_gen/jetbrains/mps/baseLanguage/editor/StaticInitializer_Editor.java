@@ -87,7 +87,7 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statementList" + ">";
+      return "<no statementList>";
     }
 
   }

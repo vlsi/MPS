@@ -63,7 +63,7 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "properties" + ">";
+      return "<no properties>";
     }
 
   }
@@ -108,7 +108,7 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resource" + ">";
+      return "<no resource>";
     }
 
   }

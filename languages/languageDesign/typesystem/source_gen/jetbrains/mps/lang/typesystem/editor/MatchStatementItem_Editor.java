@@ -75,7 +75,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -138,7 +138,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ifTrue" + ">";
+      return "<no ifTrue>";
     }
 
   }

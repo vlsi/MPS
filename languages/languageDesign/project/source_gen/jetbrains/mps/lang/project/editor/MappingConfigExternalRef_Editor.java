@@ -87,7 +87,7 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "generator" + ">";
+      return "<no generator>";
     }
 
   }
@@ -139,7 +139,7 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "innerRef" + ">";
+      return "<no innerRef>";
     }
 
   }

@@ -97,7 +97,7 @@ public class BuildMps_BrandingStats_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "service" + ">";
+      return "<no service>";
     }
 
   }
@@ -143,7 +143,7 @@ public class BuildMps_BrandingStats_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "settings" + ">";
+      return "<no settings>";
     }
 
   }

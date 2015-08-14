@@ -145,7 +145,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "childIndex" + ">";
+      return "<no childIndex>";
     }
 
   }
@@ -194,7 +194,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "targetNode" + ">";
+      return "<no targetNode>";
     }
 
   }

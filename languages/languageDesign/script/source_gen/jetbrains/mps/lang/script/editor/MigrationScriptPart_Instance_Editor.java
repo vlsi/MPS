@@ -356,7 +356,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "affectedInstanceUpdater" + ">";
+      return "<no affectedInstanceUpdater>";
     }
 
   }

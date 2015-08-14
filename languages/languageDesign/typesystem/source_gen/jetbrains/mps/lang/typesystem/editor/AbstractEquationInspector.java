@@ -137,7 +137,7 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "errorString" + ">";
+      return "<no errorString>";
     }
 
   }

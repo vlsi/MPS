@@ -227,7 +227,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializer" + ">";
+      return "<no initializer>";
     }
 
   }
@@ -287,7 +287,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initSize" + ">";
+      return "<no initSize>";
     }
 
   }

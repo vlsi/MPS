@@ -91,7 +91,7 @@ public class HeadSetOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toElement" + ">";
+      return "<no toElement>";
     }
 
   }

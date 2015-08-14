@@ -65,7 +65,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list" + ">";
+      return "<no list>";
     }
 
   }
@@ -113,7 +113,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "index" + ">";
+      return "<no index>";
     }
 
   }

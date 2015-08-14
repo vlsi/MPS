@@ -15,7 +15,7 @@
       <unit at="9,0,29,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
     </file>
     <file name="BaseCommentAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
     </file>
     <file name="BaseConcept_BehaviorDescriptor.java">
       <unit at="11,0,37,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -50,6 +50,9 @@
     <file name="IDeprecatable_BehaviorDescriptor.java">
       <unit at="7,0,11,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
     </file>
+    <file name="IDontApplyTypesystemRules_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
+    </file>
     <file name="IDontSubstituteByDefault_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     </file>
@@ -61,6 +64,9 @@
     </file>
     <file name="IResolveInfo_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
+    </file>
+    <file name="ISkipConstraintsChecking_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
     </file>
     <file name="IStubForAnotherConcept_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" />
@@ -612,6 +618,26 @@
         <var name="thisNode" id="709746936026609868" />
       </scope>
       <unit id="709746936026609868" at="14,0,31,0" name="jetbrains.mps.lang.core.behavior.ChildAttribute_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/8383079901754093194">
+    <file name="BaseCommentAttribute_Behavior.java">
+      <node id="8383079901754096195" at="13,195,14,18" concept="6" />
+      <node id="8383079901754096430" at="15,5,16,17" concept="6" />
+      <node id="8383079901754093194" at="10,0,12,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8383079901754094904" at="12,91,15,5" concept="3" />
+      <node id="8383079901754093194" at="12,0,18,0" concept="9" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="8383079901754093196" at="10,43,10,43" />
+      <scope id="8383079901754094905" at="13,195,14,18" />
+      <scope id="8383079901754093194" at="10,0,12,0">
+        <var name="thisNode" id="8383079901754093194" />
+      </scope>
+      <scope id="8383079901754093205" at="12,91,16,17" />
+      <scope id="8383079901754093194" at="12,0,18,0">
+        <var name="child" id="8383079901754093206" />
+        <var name="thisNode" id="8383079901754093194" />
+      </scope>
+      <unit id="8383079901754093194" at="9,0,19,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
     </file>
   </root>
 </debug-info>

@@ -1055,7 +1055,7 @@
       <node id="5898776707557478830" at="61,54,62,42" concept="2" />
       <node id="5898776707557478830" at="62,42,63,40" concept="2" />
       <node id="5898776707557478830" at="63,40,64,24" concept="7" />
-      <node id="5898776707557478830" at="67,40,68,36" concept="7" />
+      <node id="5898776707557478830" at="67,40,68,26" concept="7" />
       <node id="5898776707557478830" at="19,0,22,0" concept="5" trace="getContextHints#()Ljava/util/Collection;" />
       <node id="5898776707557478830" at="22,0,25,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5898776707557478830" at="43,0,46,0" concept="1" trace="colorSingleRoleHandler_mblc8h_b0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -1073,7 +1073,7 @@
       <scope id="5898776707557478830" at="28,81,29,80" />
       <scope id="5898776707557478830" at="43,119,44,49" />
       <scope id="5898776707557478830" at="53,41,54,36" />
-      <scope id="5898776707557478830" at="67,40,68,36" />
+      <scope id="5898776707557478830" at="67,40,68,26" />
       <scope id="5898776707557478830" at="38,87,40,33">
         <var name="provider" id="5898776707557478830" />
       </scope>

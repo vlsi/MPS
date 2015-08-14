@@ -59,7 +59,7 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "processHandler" + ">";
+      return "<no processHandler>";
     }
 
   }
@@ -100,7 +100,7 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "listener" + ">";
+      return "<no listener>";
     }
 
   }

@@ -61,7 +61,7 @@ public class ShowExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "object" + ">";
+      return "<no object>";
     }
 
   }

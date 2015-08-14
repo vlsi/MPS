@@ -59,6 +59,9 @@
     <file name="ConceptIdRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptIdRefExpression_BehaviorDescriptor" />
     </file>
+    <file name="ConceptNodeType_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.smodel.behavior.ConceptNodeType_BehaviorDescriptor" />
+    </file>
     <file name="ConceptRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptRefExpression_BehaviorDescriptor" />
     </file>
@@ -398,9 +401,6 @@
     <file name="SConceptOperation_BehaviorDescriptor.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.smodel.behavior.SConceptOperation_BehaviorDescriptor" />
     </file>
-    <file name="SConceptTypeSConcept_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeSConcept_BehaviorDescriptor" />
-    </file>
     <file name="SConceptType_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.smodel.behavior.SConceptType_BehaviorDescriptor" />
     </file>
@@ -658,7 +658,7 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1213877300697">
-    <file name="SConceptType_Behavior.java">
+    <file name="ConceptNodeType_Behavior.java">
       <node id="1213877300700" at="17,78,18,188" concept="6" />
       <node id="1213877300711" at="19,26,20,30" concept="7" />
       <node id="1213877300715" at="21,12,22,189" concept="7" />
@@ -698,7 +698,7 @@
       <scope id="1213877300697" at="25,0,35,0">
         <var name="thisNode" id="1213877300697" />
       </scope>
-      <unit id="1213877300697" at="14,0,36,0" name="jetbrains.mps.lang.smodel.behavior.SConceptType_Behavior" />
+      <unit id="1213877300697" at="14,0,36,0" name="jetbrains.mps.lang.smodel.behavior.ConceptNodeType_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1213877317114">
@@ -1223,10 +1223,10 @@
       <node id="892216143274323021" at="26,113,27,177" concept="2" />
       <node id="1238691457639" at="29,63,30,63" concept="6" />
       <node id="1238691457639" at="30,63,31,30" concept="6" />
-      <node id="1238691457639" at="31,30,32,224" concept="0" />
-      <node id="1238691457639" at="31,30,32,224" concept="0" />
-      <node id="1238691457639" at="31,30,32,224" concept="2" />
-      <node id="1238691457639" at="32,224,33,24" concept="7" />
+      <node id="1238691457639" at="31,30,32,227" concept="0" />
+      <node id="1238691457639" at="31,30,32,227" concept="0" />
+      <node id="1238691457639" at="31,30,32,227" concept="2" />
+      <node id="1238691457639" at="32,227,33,24" concept="7" />
       <node id="1238686292741" at="14,0,16,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1238686292741" at="20,0,23,0" concept="8" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1238686292741" at="23,0,26,0" concept="8" trace="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -1237,7 +1237,7 @@
       <scope id="2749027262099690843" at="20,78,21,183" />
       <scope id="892216143274323012" at="23,102,24,178" />
       <scope id="892216143274323020" at="26,113,27,177" />
-      <scope id="1238691457639" at="31,30,32,224" />
+      <scope id="1238691457639" at="31,30,32,227" />
       <scope id="1238686292741" at="14,0,16,0">
         <var name="thisNode" id="1238686292741" />
       </scope>
@@ -3107,7 +3107,7 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/6677504323281693693">
-    <file name="SConceptTypeSConcept_Behavior.java">
+    <file name="SConceptType_Behavior.java">
       <node id="6677504323281693696" at="17,78,18,198" concept="6" />
       <node id="6677504323281693707" at="19,26,20,26" concept="7" />
       <node id="6677504323281693711" at="21,12,22,185" concept="7" />
@@ -3147,7 +3147,7 @@
       <scope id="6677504323281693693" at="25,0,35,0">
         <var name="thisNode" id="6677504323281693693" />
       </scope>
-      <unit id="6677504323281693693" at="14,0,36,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeSConcept_Behavior" />
+      <unit id="6677504323281693693" at="14,0,36,0" name="jetbrains.mps.lang.smodel.behavior.SConceptType_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/7453996997717782415">

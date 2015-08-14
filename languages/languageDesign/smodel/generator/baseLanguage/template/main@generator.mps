@@ -402,7 +402,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -460,7 +460,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="5MFgGQnlXt5" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+      <ref role="30HIoZ" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
       <node concept="gft3U" id="5MFgGQnlXt6" role="1lVwrX">
         <node concept="3uibUv" id="Det6sR8xS_" role="gfFT$">
           <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
@@ -468,7 +468,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="h3TO0vv" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:h3THzq0" resolve="SConceptType" />
+      <ref role="30HIoZ" to="tp25:h3THzq0" resolve="ConceptNodeType" />
       <node concept="gft3U" id="h8hnZzF" role="1lVwrX">
         <node concept="3Tqbb2" id="i2ZU0wD" role="gfFT$">
           <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
@@ -10542,6 +10542,50 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="25fuTwvSkd2" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:BpxLfMiwTr" resolve="ChildAttributeQualifier" />
+      <node concept="gft3U" id="25fuTwvSkd3" role="1lVwrX">
+        <node concept="2ShNRf" id="25fuTwvSkd4" role="gfFT$">
+          <node concept="1pGfFk" id="25fuTwvSkd5" role="2ShVmc">
+            <ref role="37wK5l" to="i8bi:25fuTwvS_BI" resolve="IAttributeDescriptor.ChildAttribute" />
+            <node concept="10Nm6u" id="25fuTwvSkd6" role="37wK5m">
+              <node concept="xERo3" id="25fuTwvSkd7" role="lGtFl">
+                <ref role="xH3mL" node="5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
+                <node concept="3NFfHV" id="25fuTwvSkd8" role="xEYEz">
+                  <node concept="3clFbS" id="25fuTwvSkd9" role="2VODD2">
+                    <node concept="3clFbF" id="25fuTwvSkda" role="3cqZAp">
+                      <node concept="2OqwBi" id="25fuTwvSkdb" role="3clFbG">
+                        <node concept="30H73N" id="25fuTwvSkdc" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="25fuTwvSzZw" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp25:BpxLfMiwTt" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="10Nm6u" id="25fuTwvSkde" role="37wK5m">
+              <node concept="1sPUBX" id="25fuTwvSkdf" role="lGtFl">
+                <ref role="v9R2y" node="2uwpctXnRP8" resolve="switch_ILinkQualifier_toSLink" />
+                <node concept="3NFfHV" id="25fuTwvSkdg" role="1sPUBK">
+                  <node concept="3clFbS" id="25fuTwvSkdh" role="2VODD2">
+                    <node concept="3clFbF" id="25fuTwvSkdi" role="3cqZAp">
+                      <node concept="2OqwBi" id="25fuTwvSkdj" role="3clFbG">
+                        <node concept="30H73N" id="25fuTwvSkdk" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="25fuTwvS$Qw" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp25:BpxLfMiwTs" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="1MSuRQeYF__" role="3acgRq">
       <ref role="30HIoZ" to="tp25:5zEkxuKhsAT" resolve="PropertyAttributeQualifier" />
       <node concept="gft3U" id="1x$A_M25nRm" role="1lVwrX">
@@ -11619,7 +11663,7 @@
                         </node>
                         <node concept="1mIQ4w" id="7dJaARMNLNN" role="2OqNvi">
                           <node concept="chp4Y" id="7dJaARMNLNO" role="cj9EA">
-                            <ref role="cht4Q" to="tp25:h3THzq0" resolve="SConceptType" />
+                            <ref role="cht4Q" to="tp25:h3THzq0" resolve="ConceptNodeType" />
                           </node>
                         </node>
                       </node>

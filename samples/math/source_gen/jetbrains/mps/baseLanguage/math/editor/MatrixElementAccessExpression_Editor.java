@@ -93,7 +93,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -151,7 +151,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rowIndex" + ">";
+      return "<no rowIndex>";
     }
 
   }
@@ -198,7 +198,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "colIndex" + ">";
+      return "<no colIndex>";
     }
 
   }

@@ -141,7 +141,7 @@ public class CellModel_Table_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "tableModel" + ">";
+      return "<no tableModel>";
     }
 
   }

@@ -76,7 +76,7 @@ public class InstancesExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "conceptArg" + ">";
+      return "<no conceptArg>";
     }
 
   }

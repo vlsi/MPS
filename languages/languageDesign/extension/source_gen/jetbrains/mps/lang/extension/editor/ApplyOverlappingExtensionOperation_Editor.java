@@ -76,7 +76,7 @@ public class ApplyOverlappingExtensionOperation_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "argument" + ">";
+      return "<no argument>";
     }
 
   }

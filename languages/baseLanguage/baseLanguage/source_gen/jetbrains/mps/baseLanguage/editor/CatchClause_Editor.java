@@ -84,7 +84,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "throwable" + ">";
+      return "<no throwable>";
     }
 
   }
@@ -142,7 +142,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "catchBody" + ">";
+      return "<no catchBody>";
     }
 
   }

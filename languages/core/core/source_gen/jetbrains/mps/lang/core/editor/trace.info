@@ -477,7 +477,7 @@
       <node id="3078666699043620377" at="65,54,66,50" concept="2" />
       <node id="3078666699043620377" at="66,50,67,40" concept="2" />
       <node id="3078666699043620377" at="67,40,68,24" concept="7" />
-      <node id="3078666699043620377" at="71,40,72,44" concept="7" />
+      <node id="3078666699043620377" at="71,40,72,34" concept="7" />
       <node id="3078666699043620377" at="18,0,21,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3078666699043620377" at="34,0,37,0" concept="1" trace="commentedNodeSingleRoleHandler_si1ien_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3078666699043620377" at="43,137,46,7" concept="4" />
@@ -494,7 +494,7 @@
       <scope id="3078666699043620377" at="34,127,35,49" />
       <scope id="3078666699043620377" at="44,41,45,44" />
       <scope id="3078666699043620377" at="57,17,58,58" />
-      <scope id="3078666699043620377" at="71,40,72,44" />
+      <scope id="3078666699043620377" at="71,40,72,34" />
       <scope id="3078666699043620377" at="29,87,31,33">
         <var name="provider" id="3078666699043620377" />
       </scope>

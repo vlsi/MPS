@@ -167,7 +167,7 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "target" + ">";
+      return "<no target>";
     }
 
   }
@@ -207,7 +207,7 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "project" + ">";
+      return "<no project>";
     }
 
   }

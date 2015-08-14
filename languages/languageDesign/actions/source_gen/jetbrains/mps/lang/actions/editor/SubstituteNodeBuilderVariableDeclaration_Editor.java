@@ -68,7 +68,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -134,7 +134,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializerBlock" + ">";
+      return "<no initializerBlock>";
     }
 
   }

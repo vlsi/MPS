@@ -138,7 +138,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "builderBlock" + ">";
+      return "<no builderBlock>";
     }
 
   }

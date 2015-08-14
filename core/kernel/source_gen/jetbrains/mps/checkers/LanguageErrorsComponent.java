@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -196,6 +197,9 @@ public class LanguageErrorsComponent {
     QueueSequence.fromQueue(nodesToCheck).addLastElement(root);
     while (QueueSequence.fromQueue(nodesToCheck).isNotEmpty()) {
       SNode node = QueueSequence.fromQueue(nodesToCheck).removeFirstElement();
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"))) {
+        continue;
+      }
       if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
         try {
           myCurrentNode = node;

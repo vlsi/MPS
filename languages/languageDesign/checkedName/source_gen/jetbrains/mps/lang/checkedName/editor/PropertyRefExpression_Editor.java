@@ -95,7 +95,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeExpr" + ">";
+      return "<no nodeExpr>";
     }
 
   }

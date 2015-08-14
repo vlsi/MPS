@@ -110,7 +110,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "parameter" + ">";
+      return "<no parameter>";
     }
 
   }

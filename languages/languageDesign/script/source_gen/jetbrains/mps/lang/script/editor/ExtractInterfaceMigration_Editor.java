@@ -90,7 +90,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "oldClassifier" + ">";
+      return "<no oldClassifier>";
     }
 
   }

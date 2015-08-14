@@ -70,7 +70,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -139,7 +139,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toStringFunction" + ">";
+      return "<no toStringFunction>";
     }
 
   }

@@ -81,7 +81,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromKey" + ">";
+      return "<no fromKey>";
     }
 
   }
@@ -124,7 +124,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toKey" + ">";
+      return "<no toKey>";
     }
 
   }

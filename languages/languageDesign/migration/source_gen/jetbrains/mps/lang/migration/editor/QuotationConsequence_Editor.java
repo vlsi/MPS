@@ -56,7 +56,7 @@ public class QuotationConsequence_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "quotation" + ">";
+      return "<no quotation>";
     }
 
   }

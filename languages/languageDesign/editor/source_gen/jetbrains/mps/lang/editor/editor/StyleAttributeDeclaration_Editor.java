@@ -125,7 +125,7 @@ public class StyleAttributeDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valueType" + ">";
+      return "<no valueType>";
     }
 
   }
@@ -172,7 +172,7 @@ public class StyleAttributeDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultValue" + ">";
+      return "<no defaultValue>";
     }
 
   }

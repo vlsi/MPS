@@ -108,7 +108,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "stmts" + ">";
+      return "<no stmts>";
     }
 
   }
@@ -152,7 +152,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "innerExpr" + ">";
+      return "<no innerExpr>";
     }
 
   }

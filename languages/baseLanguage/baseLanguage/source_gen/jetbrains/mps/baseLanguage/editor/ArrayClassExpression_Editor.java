@@ -63,7 +63,7 @@ public class ArrayClassExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "arrayType" + ">";
+      return "<no arrayType>";
     }
 
   }

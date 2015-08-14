@@ -82,7 +82,7 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "left" + ">";
+      return "<no left>";
     }
 
   }
@@ -125,7 +125,7 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "right" + ">";
+      return "<no right>";
     }
 
   }

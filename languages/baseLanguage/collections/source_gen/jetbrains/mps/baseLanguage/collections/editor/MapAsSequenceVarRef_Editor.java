@@ -71,7 +71,7 @@ public class MapAsSequenceVarRef_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "original" + ">";
+      return "<no original>";
     }
 
   }

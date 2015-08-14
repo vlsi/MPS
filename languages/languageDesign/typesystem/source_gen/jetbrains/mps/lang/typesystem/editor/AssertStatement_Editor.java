@@ -88,7 +88,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -252,7 +252,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "messageTarget" + ">";
+      return "<no messageTarget>";
     }
 
   }
@@ -369,7 +369,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "foreignMessageSource" + ">";
+      return "<no foreignMessageSource>";
     }
 
   }

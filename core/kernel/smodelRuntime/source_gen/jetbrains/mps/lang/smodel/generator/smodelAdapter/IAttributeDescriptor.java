@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public interface IAttributeDescriptor {
@@ -81,6 +82,25 @@ public interface IAttributeDescriptor {
         myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getName());
       }
       AttributeOperations.setLink(attribute, myLink);
+    }
+  }
+  public static class ChildAttribute extends IAttributeDescriptor.AttributeDescriptor {
+    private SContainmentLink myLink;
+    public ChildAttribute(@NotNull SConcept attributeDeclaration, SContainmentLink link) {
+      super(attributeDeclaration);
+      myLink = link;
+    }
+    @Override
+    public boolean match(@NotNull SNode attribute) {
+      return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getChildLink(attribute)));
+    }
+    @Override
+    public void update(@NotNull SNode attribute) {
+      // todo: remove this hack 
+      if (myLink.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
+        myLink = MetaAdapterFactoryByName.getContainmentLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getName());
+      }
+      AttributeOperations.setChildLink(attribute, myLink);
     }
   }
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
