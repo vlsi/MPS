@@ -171,7 +171,8 @@ public class TabbedEditor extends BaseNodeEditor {
         });
       }
     };
-    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback, ProjectHelper.toIdeaProject(myProject));
+    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback,
+        ProjectHelper.toIdeaProject(myProject));
 
     myRepoChangeListener.setTabController(myTabsComponent);
     myFileStatusListener.setTabController(myTabsComponent, myBaseNode);
@@ -363,6 +364,7 @@ public class TabbedEditor extends BaseNodeEditor {
     /*package*/ void setNode(@Nullable SNodeReference ref) {
       myCurrentNode = ref;
     }
+
     @Nullable
     /*package*/ SNodeReference getNode() {
       return myCurrentNode;
@@ -372,7 +374,9 @@ public class TabbedEditor extends BaseNodeEditor {
     public void save(Element e) {
       super.save(e);
       Element node = new Element(NODE);
-      node.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myCurrentNode));
+      if (myCurrentNode != null) {
+        node.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myCurrentNode));
+      }
       e.addContent(node);
     }
 
