@@ -22,6 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.customAspect.behavior.LanguageAspectDescriptor_Behavior;
+import jetbrains.mps.lang.customAspect.behavior.SimpleLanguageAspectDescriptor_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -144,8 +145,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_3433054418425143759(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b096L, "additionalLanguages"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_5735715048356045387(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc")) == null);
+  public static boolean ifMacro_Condition_7905571935049023155(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc")) == null) && SimpleLanguageAspectDescriptor_Behavior.call_getGenerator_7905571935049090392(_context.getNode()) == null;
+  }
+  public static boolean ifMacro_Condition_7905571935049016154(final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc")) != null;
+  }
+  public static boolean ifMacro_Condition_7905571935049051289(final IfMacroContext _context) {
+    return SimpleLanguageAspectDescriptor_Behavior.call_getGenerator_7905571935049090392(_context.getNode()) != null;
   }
   public static boolean ifMacro_Condition_8157291893995163294(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")) != null;
@@ -186,8 +193,11 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3323697319248466482(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(LanguageAspectDescriptor_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.customAspect.methods)", "293220601665606461")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
   }
-  public static SNode sourceNodeQuery_5735715048356308070(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7905571935049013845(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc"));
+  }
+  public static SNode sourceNodeQuery_7905571935049051282(final SourceSubstituteMacroNodeContext _context) {
+    return SimpleLanguageAspectDescriptor_Behavior.call_getGenerator_7905571935049090392(_context.getNode());
   }
   public static SNode sourceNodeQuery_8157291893995163318(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x60d1cf8c81faea09L, "iconExpression"));

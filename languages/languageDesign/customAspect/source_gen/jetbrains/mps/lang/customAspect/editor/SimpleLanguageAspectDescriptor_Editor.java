@@ -30,6 +30,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -112,6 +114,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rpszz1_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rpszz1_f1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rpszz1_g1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_rpszz1_h1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_rpszz1_a1b0(EditorContext editorContext, SNode node) {
@@ -390,6 +393,54 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
       return "<aspect has no generator>";
     }
 
+  }
+  private EditorCell createRefCell_rpszz1_h1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("gener");
+    provider.setNoTargetText("<no ref gen>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new SimpleLanguageAspectDescriptor_Editor._Inline_rpszz1_a7b1a());
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("gener");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  public static class _Inline_rpszz1_a7b1a extends InlineCellProvider {
+    public _Inline_rpszz1_a7b1a() {
+      super();
+    }
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_rpszz1_a0h1b0(editorContext, node);
+    }
+    private EditorCell createProperty_rpszz1_a0h1b0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name_1");
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
   private EditorCell createConstant_rpszz1_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
