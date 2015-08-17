@@ -42,11 +42,6 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
-      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
-        <child id="1238852204892" name="componentType" index="1Lm7xW" />
-      </concept>
-    </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
@@ -269,10 +264,6 @@
     <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
       <concept id="3729007189729192406" name="jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration" flags="ng" index="vrV6u">
         <child id="8029776554053057803" name="objectType" index="luc8K" />
-      </concept>
-      <concept id="3364452211985679813" name="jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration" flags="ng" index="xBYEN">
-        <child id="195736285282456458" name="resultType" index="1bnjqn" />
-        <child id="195736285282384856" name="argumentType" index="1bn_V5" />
       </concept>
       <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
         <reference id="6626851894249712469" name="extensionPoint" index="2O5UnU" />
@@ -1233,18 +1224,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="xBYEN" id="14xGDffemN1">
-    <property role="TrG5h" value="MoveNodesAction_Old" />
-    <node concept="3uibUv" id="14xGDffeQPS" role="1bnjqn">
-      <ref role="3uigEE" to="wyt6:~Void" resolve="Void" />
-    </node>
-    <node concept="1LlUBW" id="14xGDffemXJ" role="1bn_V5">
-      <node concept="2I9FWS" id="14xGDffen42" role="1Lm7xW" />
-      <node concept="3uibUv" id="14xGDffenhU" role="1Lm7xW">
-        <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
   </node>
