@@ -15,14 +15,23 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
@@ -35,7 +44,9 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_x9dtrm_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_x9dtrm_b0(editorContext, node));
+    if (renderingCondition_x9dtrm_a1a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_x9dtrm_b0(editorContext, node));
+    }
     return editorCell;
   }
   private EditorCell createCollection_x9dtrm_a0(EditorContext editorContext, SNode node) {
@@ -45,6 +56,9 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_x9dtrm_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x9dtrm_c0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_x9dtrm_d0a(editorContext, node));
+    if (renderingCondition_x9dtrm_a4a0(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_x9dtrm_e0a(editorContext, node));
+    }
     return editorCell;
   }
   private EditorCell createConstant_x9dtrm_a0a(EditorContext editorContext, SNode node) {
@@ -155,6 +169,70 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
+  private EditorCell createRefNode_x9dtrm_e0a(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new AspectMethodDescriptor_Editor.baseConceptFuncSingleRoleHandler_x9dtrm_e0a(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc"), editorContext);
+    return provider.createCell();
+  }
+  private class baseConceptFuncSingleRoleHandler_x9dtrm_e0a extends SingleRoleCellProvider {
+    public baseConceptFuncSingleRoleHandler_x9dtrm_e0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(myEditorContext, new AggregationCellContext(myOwnerNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new AspectMethodDescriptor_Editor.AspectMethodDescriptor_generic_cellMenu_x9dtrm_a0e0a()}));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("baseConceptFunc");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_baseConceptFunc");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<returns all aspects>";
+    }
+
+  }
+  private static boolean renderingCondition_x9dtrm_a4a0(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc")) == null);
+  }
+  public static class AspectMethodDescriptor_generic_cellMenu_x9dtrm_a0e0a extends AbstractCellMenuPart_Generic_Item {
+    public AspectMethodDescriptor_generic_cellMenu_x9dtrm_a0e0a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc"), _quotation_createNode_x9dtrm_a0a0a0a4a0(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b9L, "cncpt"))));
+    }
+    public String getMatchingText() {
+      return "per-concept method";
+    }
+    private static SNode _quotation_createNode_x9dtrm_a0a0a0a4a0(Object parameter_1) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), null, null, false);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), null, null, false);
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"), quotedNode_3);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), null, null, false);
+      SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "aspect");
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_5, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), (SNode) parameter_1);
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), quotedNode_5);
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"), quotedNode_4);
+      return quotedNode_2;
+    }
+  }
   private EditorCell createCollection_x9dtrm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_x9dtrm_b0");
@@ -162,11 +240,12 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_x9dtrm_a1a(editorContext, node));
-    if (renderingCondition_x9dtrm_a1b0(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_x9dtrm_b1a(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createConstant_x9dtrm_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x9dtrm_c1a(editorContext, node));
     return editorCell;
+  }
+  private static boolean renderingCondition_x9dtrm_a1a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc")) != null);
   }
   private EditorCell createIndentCell_x9dtrm_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
@@ -177,9 +256,6 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_x9dtrm_b1a");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_x9dtrm_a1b0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc")) != null);
   }
   private EditorCell createRefNode_x9dtrm_c1a(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new AspectMethodDescriptor_Editor.baseConceptFuncSingleRoleHandler_x9dtrm_c1a(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc"), editorContext);
@@ -211,7 +287,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<not attached to concept>";
+      return "<no " + "baseConceptFunc" + ">";
     }
 
   }
