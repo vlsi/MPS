@@ -16,6 +16,8 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
+    <import index="n1o" ref="r:74b3d011-b0fb-4dc0-ae17-fdfbde0e6086(jetbrains.mps.baseLanguage.lightweightdsl.util)" />
+    <import index="rduf" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -304,12 +306,6 @@
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
-      <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
-        <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
-      </concept>
-      <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
-        <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -1095,14 +1091,11 @@
         </node>
         <node concept="3clFbC" id="1QReUKIG1kj" role="3clFbw">
           <node concept="10Nm6u" id="1QReUKIG1kw" role="3uHU7w" />
-          <node concept="2OqwBi" id="1QReUKIG0Da" role="3uHU7B">
-            <node concept="1YBJjd" id="1QReUKIG0we" role="2Oq$k0">
+          <node concept="2YIFZM" id="4oVmO$DpxrD" role="3uHU7B">
+            <ref role="37wK5l" to="n1o:4oVmO$Dp24i" resolve="getDescriptor" />
+            <ref role="1Pybhc" to="n1o:4oVmO$Dp23N" resolve="DSLDescriptorUtil" />
+            <node concept="1YBJjd" id="4oVmO$Dpx$d" role="37wK5m">
               <ref role="1YBMHb" node="1QReUKIFTg1" resolve="classLike" />
-            </node>
-            <node concept="3CFZ6_" id="1QReUKIG1dT" role="2OqNvi">
-              <node concept="3CFYIy" id="1QReUKIG1gc" role="3CFYIz">
-                <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
-              </node>
             </node>
           </node>
         </node>
@@ -1188,23 +1181,15 @@
           </node>
         </node>
         <node concept="2OqwBi" id="2gzehMflVDA" role="2GsD0m">
-          <node concept="2OqwBi" id="2gzehMflVDB" role="2Oq$k0">
-            <node concept="2OqwBi" id="2gzehMflVDC" role="2Oq$k0">
-              <node concept="1YBJjd" id="2gzehMflVDD" role="2Oq$k0">
-                <ref role="1YBMHb" node="1QReUKIFTg1" resolve="classLike" />
-              </node>
-              <node concept="3CFZ6_" id="2gzehMflVDE" role="2OqNvi">
-                <node concept="3CFYIy" id="2gzehMflVDF" role="3CFYIz">
-                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
-                </node>
-              </node>
-            </node>
-            <node concept="3TrEf2" id="2gzehMflVDG" role="2OqNvi">
-              <ref role="3Tt5mk" to="oubp:36gOZBLMG9R" />
-            </node>
-          </node>
           <node concept="3Tsc0h" id="2gzehMflVDH" role="2OqNvi">
             <ref role="3TtcxE" to="oubp:7aMlq14vYj8" />
+          </node>
+          <node concept="2YIFZM" id="4oVmO$DpvYQ" role="2Oq$k0">
+            <ref role="37wK5l" to="n1o:4oVmO$Dp24i" resolve="getDescriptor" />
+            <ref role="1Pybhc" to="n1o:4oVmO$Dp23N" resolve="DSLDescriptorUtil" />
+            <node concept="1YBJjd" id="4oVmO$Dpw7d" role="37wK5m">
+              <ref role="1YBMHb" node="1QReUKIFTg1" resolve="classLike" />
+            </node>
           </node>
         </node>
       </node>
@@ -1224,14 +1209,11 @@
         </node>
         <node concept="3clFbC" id="2gzehMfi12Q" role="3clFbw">
           <node concept="10Nm6u" id="2gzehMfi12R" role="3uHU7w" />
-          <node concept="2OqwBi" id="2gzehMfi12S" role="3uHU7B">
-            <node concept="1YBJjd" id="2gzehMfi12T" role="2Oq$k0">
+          <node concept="2YIFZM" id="4oVmO$Dp9JX" role="3uHU7B">
+            <ref role="37wK5l" to="n1o:4oVmO$Dp24i" resolve="getDescriptor" />
+            <ref role="1Pybhc" to="n1o:4oVmO$Dp23N" resolve="DSLDescriptorUtil" />
+            <node concept="1YBJjd" id="4oVmO$Dpv_z" role="37wK5m">
               <ref role="1YBMHb" node="2gzehMfi13O" resolve="classLike" />
-            </node>
-            <node concept="3CFZ6_" id="2gzehMfi12U" role="2OqNvi">
-              <node concept="3CFYIy" id="2gzehMfi12V" role="3CFYIz">
-                <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
-              </node>
             </node>
           </node>
         </node>
@@ -1288,23 +1270,15 @@
           </node>
         </node>
         <node concept="2OqwBi" id="2gzehMflNjp" role="2GsD0m">
-          <node concept="2OqwBi" id="2gzehMflMHO" role="2Oq$k0">
-            <node concept="2OqwBi" id="2gzehMflLFv" role="2Oq$k0">
-              <node concept="1YBJjd" id="2gzehMflLym" role="2Oq$k0">
-                <ref role="1YBMHb" node="2gzehMfi13O" resolve="classLike" />
-              </node>
-              <node concept="3CFZ6_" id="2gzehMflMmz" role="2OqNvi">
-                <node concept="3CFYIy" id="2gzehMflM_p" role="3CFYIz">
-                  <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="DSLAnnotation" />
-                </node>
-              </node>
-            </node>
-            <node concept="3TrEf2" id="2gzehMflN0R" role="2OqNvi">
-              <ref role="3Tt5mk" to="oubp:36gOZBLMG9R" />
-            </node>
-          </node>
           <node concept="3Tsc0h" id="2gzehMflO1Q" role="2OqNvi">
             <ref role="3TtcxE" to="oubp:7aMlq14vYj8" />
+          </node>
+          <node concept="2YIFZM" id="4oVmO$DpvA1" role="2Oq$k0">
+            <ref role="37wK5l" to="n1o:4oVmO$Dp24i" resolve="getDescriptor" />
+            <ref role="1Pybhc" to="n1o:4oVmO$Dp23N" resolve="DSLDescriptorUtil" />
+            <node concept="1YBJjd" id="4oVmO$DpvGG" role="37wK5m">
+              <ref role="1YBMHb" node="2gzehMfi13O" resolve="classLike" />
+            </node>
           </node>
         </node>
       </node>
