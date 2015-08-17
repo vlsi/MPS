@@ -566,7 +566,7 @@
       <node concept="2iRkQZ" id="7Jfx5bwRf66" role="2iSdaV" />
       <node concept="3EZMnI" id="4F0TDiuCZbI" role="3EZMnx">
         <node concept="3F0ifn" id="4F0TDiuCZc9" role="3EZMnx">
-          <property role="3F0ifm" value="generate" />
+          <property role="3F0ifm" value="method" />
         </node>
         <node concept="2iRfu4" id="4F0TDiuCZbJ" role="2iSdaV" />
         <node concept="1iCGBv" id="4F0TDiuCZbq" role="3EZMnx">
@@ -579,7 +579,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="4F0TDiuCZcu" role="3EZMnx">
-          <property role="3F0ifm" value="from" />
+          <property role="3F0ifm" value="returns aspects" />
         </node>
         <node concept="1iCGBv" id="4F0TDiuCZcR" role="3EZMnx">
           <ref role="1NtTu8" to="hfbu:4F0TDiuCZaT" />
@@ -591,7 +591,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6QQeWCmSzeM" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;returns all aspects&gt;" />
+          <property role="1$x2rV" value="&lt;all aspect classes&gt;" />
           <ref role="1NtTu8" to="hfbu:4F0TDiuCZaO" />
           <node concept="pkWqt" id="6QQeWCmSzeX" role="pqm2j">
             <node concept="3clFbS" id="6QQeWCmSzeY" role="2VODD2">
@@ -656,7 +656,7 @@
         </node>
         <node concept="3XFhqQ" id="7Jfx5bwRf79" role="3EZMnx" />
         <node concept="3F0ifn" id="4F0TDiuCZed" role="3EZMnx">
-          <property role="3F0ifm" value="with attach to concept" />
+          <property role="3F0ifm" value="by concept" />
         </node>
         <node concept="3F1sOY" id="4F0TDiuCZd$" role="3EZMnx">
           <ref role="1NtTu8" to="hfbu:4F0TDiuCZaO" />
@@ -685,28 +685,10 @@
     <ref role="1XX52x" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
     <node concept="3EZMnI" id="4F0TDiuCZB0" role="2wV5jI">
       <node concept="3EZMnI" id="1_lQ6trUnWI" role="3EZMnx">
-        <node concept="1iCGBv" id="1_lQ6trUC9I" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:1_lQ6trUC9s" />
-          <node concept="1sVBvm" id="1_lQ6trUC9K" role="1sWHZn">
-            <node concept="3F0A7n" id="1_lQ6trUC9V" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
+        <node concept="3F0ifn" id="6QQeWCmSLQP" role="3EZMnx">
+          <property role="3F0ifm" value="generate interface" />
         </node>
         <node concept="2iRfu4" id="1_lQ6trUnWJ" role="2iSdaV" />
-        <node concept="PMmxH" id="4F0TDiuDE_X" role="3EZMnx">
-          <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="4F0TDiuCZB6" role="3EZMnx">
-        <node concept="3XFhqQ" id="4F0TDiuCZB7" role="3EZMnx" />
-        <node concept="VPM3Z" id="4F0TDiuCZB8" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="4F0TDiuCZB9" role="3EZMnx">
-          <property role="3F0ifm" value="interface:" />
-        </node>
         <node concept="1iCGBv" id="4F0TDiuCZBa" role="3EZMnx">
           <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
           <node concept="1sVBvm" id="4F0TDiuCZBb" role="1sWHZn">
@@ -716,7 +698,18 @@
             </node>
           </node>
         </node>
-        <node concept="2iRfu4" id="4F0TDiuCZBd" role="2iSdaV" />
+        <node concept="3F0ifn" id="6QQeWCmSNWI" role="3EZMnx">
+          <property role="3F0ifm" value="for aspect" />
+        </node>
+        <node concept="1iCGBv" id="1_lQ6trUC9I" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:1_lQ6trUC9s" />
+          <node concept="1sVBvm" id="1_lQ6trUC9K" role="1sWHZn">
+            <node concept="3F0A7n" id="1_lQ6trUC9V" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="4F0TDiuCZBe" role="3EZMnx">
         <node concept="3XFhqQ" id="4F0TDiuCZBf" role="3EZMnx" />
@@ -726,6 +719,10 @@
         <node concept="3F2HdR" id="4F0TDiuCZS6" role="3EZMnx">
           <ref role="1NtTu8" to="hfbu:4F0TDiuCZaH" />
           <node concept="2iRkQZ" id="4F0TDiuCZSr" role="2czzBx" />
+          <node concept="3F0ifn" id="6QQeWCmSHE0" role="2czzBI">
+            <property role="3F0ifm" value="&lt;methods generators&gt;" />
+            <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+          </node>
         </node>
         <node concept="2iRfu4" id="4F0TDiuCZBl" role="2iSdaV" />
       </node>

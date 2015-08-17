@@ -62,7 +62,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_x9dtrm_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "method");
     editorCell.setCellId("Constant_x9dtrm_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -116,7 +116,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createConstant_x9dtrm_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "returns aspects");
     editorCell.setCellId("Constant_x9dtrm_c0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -199,7 +199,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<returns all aspects>";
+      return "<all aspect classes>";
     }
 
   }
@@ -252,7 +252,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_x9dtrm_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with attach to concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "by concept");
     editorCell.setCellId("Constant_x9dtrm_b1a");
     editorCell.setDefaultText("");
     return editorCell;
