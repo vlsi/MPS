@@ -412,6 +412,7 @@
       </node>
       <node concept="3F0ifn" id="536fTXa3qKp" role="3EZMnx">
         <property role="3F0ifm" value="of" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="1iCGBv" id="7335HkeZ06" role="3EZMnx">
         <ref role="1NtTu8" to="v54s:7335HkeYl_" />
