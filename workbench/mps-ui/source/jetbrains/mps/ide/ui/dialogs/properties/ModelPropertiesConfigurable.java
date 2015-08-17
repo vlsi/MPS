@@ -210,7 +210,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
-        if (!getActualCrossModelReferences().contains(modelReference)) {
+        if (getActualCrossModelReferences().contains(modelReference)) {
           ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
               ProjectHelper.toIdeaProject(myProject), "Delete imported model",
               "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
