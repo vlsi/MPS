@@ -221,11 +221,13 @@
       </concept>
       <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
       <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
+      <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1200917515464" name="labelDeclaration" index="2sgKRv" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
+        <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
@@ -315,9 +317,11 @@
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
@@ -502,6 +506,19 @@
       <ref role="30HIoZ" to="v54s:7335HkeYeM" resolve="Extension" />
       <ref role="3lhOvi" node="3zLwYDe6oI_" resolve="map_Extension" />
       <ref role="2sgKRv" node="3zLwYDe7GWG" resolve="extensionClass" />
+      <node concept="30G5F_" id="5RxcuCvuLME" role="30HLyM">
+        <node concept="3clFbS" id="5RxcuCvuLMF" role="2VODD2">
+          <node concept="3clFbF" id="5RxcuCvuLRI" role="3cqZAp">
+            <node concept="2OqwBi" id="5RxcuCvuNyl" role="3clFbG">
+              <node concept="2OqwBi" id="5RxcuCvuM71" role="2Oq$k0">
+                <node concept="30H73N" id="5RxcuCvuLRH" role="2Oq$k0" />
+                <node concept="1mfA1w" id="5RxcuCvuMNY" role="2OqNvi" />
+              </node>
+              <node concept="3w_OXm" id="5RxcuCvuNGt" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3aamgX" id="3EPv0tDtzD8" role="3acgRq">
       <ref role="30HIoZ" to="v54s:5JRjEZJSe_0" resolve="ExtensionPointExpression" />
@@ -652,8 +669,22 @@
     </node>
     <node concept="3aamgX" id="1yIP13OF5sA" role="3acgRq">
       <ref role="30HIoZ" to="v54s:7335HkeYeM" resolve="Extension" />
+      <ref role="2sgKRv" node="3zLwYDe7GWG" resolve="extensionClass" />
       <node concept="j$656" id="1yIP13OF5_n" role="1lVwrX">
         <ref role="v9R2y" node="1yIP13OF5_l" resolve="reduce_Extension" />
+      </node>
+      <node concept="30G5F_" id="5RxcuCvuNR4" role="30HLyM">
+        <node concept="3clFbS" id="5RxcuCvuNR5" role="2VODD2">
+          <node concept="3clFbF" id="5RxcuCvuNTG" role="3cqZAp">
+            <node concept="2OqwBi" id="5RxcuCvuNTI" role="3clFbG">
+              <node concept="2OqwBi" id="5RxcuCvuNTJ" role="2Oq$k0">
+                <node concept="30H73N" id="5RxcuCvuNTK" role="2Oq$k0" />
+                <node concept="1mfA1w" id="5RxcuCvuNTL" role="2OqNvi" />
+              </node>
+              <node concept="3x8VRR" id="5RxcuCvuO8p" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

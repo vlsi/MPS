@@ -37,10 +37,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Extension_NodeRenamer7972144475523791621_" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_extension" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp_extension" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp_extension" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp_extension" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
@@ -175,12 +175,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_extension" file="MoveConcepts_extension.java">
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp" file="MoveContainmentLinkUp.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -208,12 +202,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp_extension" file="MoveContainmentLinkUp_extension.java">
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp" file="MoveFeatureUp.java">
     <classNode dependClassName="java.lang.Object" />
@@ -295,12 +283,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp_extension" file="MovePropertyUp_extension.java">
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp" file="MoveReferenceLinkUp.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -328,12 +310,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp_extension" file="MoveReferenceLinkUp_extension.java">
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
