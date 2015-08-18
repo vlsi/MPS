@@ -275,26 +275,6 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
-    <node concept="13i0hz" id="aRphP9WWrW" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getExtensionType" />
-      <ref role="13i0hy" node="aRphP9WWgF" resolve="getExtensionType" />
-      <node concept="3Tm1VV" id="aRphP9WWrX" role="1B3o_S" />
-      <node concept="3clFbS" id="aRphP9WWs0" role="3clF47">
-        <node concept="3cpWs6" id="aRphP9WWJd" role="3cqZAp">
-          <node concept="2OqwBi" id="aRphP9WWJe" role="3cqZAk">
-            <node concept="13iPFW" id="aRphP9WWJf" role="2Oq$k0" />
-            <node concept="3TrEf2" id="aRphP9WWJg" role="2OqNvi">
-              <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="aRphP9WWs1" role="3clF45">
-        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
-    </node>
     <node concept="13hLZK" id="3vRuGRRXlh" role="13h7CW">
       <node concept="3clFbS" id="3vRuGRRXli" role="2VODD2" />
     </node>
@@ -664,22 +644,6 @@
     </node>
     <node concept="13hLZK" id="aRphP9VDR6" role="13h7CW">
       <node concept="3clFbS" id="aRphP9VDR7" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="aRphP9WWge">
-    <ref role="13h7C2" to="v54s:aRphP9WC_H" resolve="IExtensionPoint" />
-    <node concept="13i0hz" id="aRphP9WWgF" role="13h7CS">
-      <property role="13i0iv" value="true" />
-      <property role="13i0it" value="true" />
-      <property role="TrG5h" value="getExtensionType" />
-      <node concept="3Tm1VV" id="aRphP9WWgG" role="1B3o_S" />
-      <node concept="3Tqbb2" id="aRphP9WWgN" role="3clF45">
-        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
-      <node concept="3clFbS" id="aRphP9WWgI" role="3clF47" />
-    </node>
-    <node concept="13hLZK" id="aRphP9WWgf" role="13h7CW">
-      <node concept="3clFbS" id="aRphP9WWgg" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="UBgfI9ge6e">
