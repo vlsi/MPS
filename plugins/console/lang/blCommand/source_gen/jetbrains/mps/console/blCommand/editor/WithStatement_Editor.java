@@ -96,7 +96,7 @@ public class WithStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "scope" + ">";
+      return "<no scope>";
     }
 
   }
@@ -164,7 +164,7 @@ public class WithStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "stmts" + ">";
+      return "<no stmts>";
     }
 
   }
