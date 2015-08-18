@@ -355,18 +355,7 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.console.blCommand.runtime.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.console.blCommand.runtime.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.console.blCommand.runtime" type="solution" uuid="7726760c-95f5-4242-b36a-e069417e9d94">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
-          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
-          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)" />
-          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
-          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
-        </dependencies>
+        <dependencies />
         <sources jar="jetbrains.mps.console.blCommand.runtime-src.jar" descriptor="jetbrains.mps.console.blCommand.runtime.msd" />
       </module>
     </echoxml>
@@ -669,17 +658,15 @@
       <chunk>
         <module file="${mps_home}/plugins/console/jetbrains.mps.console.msd" />
         <module file="${mps_home}/plugins/console/lang/base/jetbrains.mps.console.base.mpl" />
-        <module file="${mps_home}/plugins/console/lang/ideCommandsRuntime/jetbrains.mps.console.ideCommands.runtime.msd" />
-        <module file="${mps_home}/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" />
-        <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
-      </chunk>
-      <chunk>
         <module file="${mps_home}/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" />
         <module file="${mps_home}/plugins/console/lang/blCommandRuntime/jetbrains.mps.console.blCommand.runtime.msd" />
         <module file="${mps_home}/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" />
+        <module file="${mps_home}/plugins/console/lang/ideCommandsRuntime/jetbrains.mps.console.ideCommands.runtime.msd" />
         <module file="${mps_home}/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" />
+        <module file="${mps_home}/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" />
         <module file="${mps_home}/plugins/console/lang/scripts/jetbrains.mps.console.scripts.mpl" />
         <module file="${mps_home}/plugins/console/lang/scriptsRuntime/jetbrains.mps.console.scripts.runtime.msd" />
+        <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
       </chunk>
       <chunk>
         <module file="${mps_home}/plugins/console/jetbrains.mps.console.actions.msd" />
@@ -954,9 +941,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
@@ -1010,9 +997,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
@@ -1896,17 +1883,17 @@
     <delete dir="${mps_home}/plugins/console/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/base/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/base/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/console/lang/ideCommandsRuntime/source_gen" />
-    <delete dir="${mps_home}/plugins/console/lang/internalCommandsRuntime/source_gen" />
-    <delete dir="${mps_home}/plugins/mpsjava/workbench/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/blCommand/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/blCommandRuntime/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/ideCommands/source_gen" />
+    <delete dir="${mps_home}/plugins/console/lang/ideCommandsRuntime/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/internalCommands/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/console/lang/internalCommandsRuntime/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/scripts/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/scripts/generator/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/scriptsRuntime/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/workbench/source_gen" />
     <delete dir="${mps_home}/plugins/console/actions/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/blCommand/generator/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/ideCommands/generator/source_gen" />

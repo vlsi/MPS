@@ -17085,6 +17085,12 @@
           <ref role="3bR37D" node="7Kfy9QB6L8K" resolve="jetbrains.mps.lang.plugin" />
         </node>
       </node>
+      <node concept="1SiIV0" id="2__YwwoiqHd" role="3bR37C">
+        <node concept="3bR9La" id="2__YwwoiqHe" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtD" id="7gQEwkA7rZZ" role="3989C9">
       <property role="BnDLt" value="true" />
