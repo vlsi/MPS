@@ -23,6 +23,23 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacro" file="AddNodeMacro.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.intentions.newIntentions.Intention" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.helper.EditingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.newIntentions.IntentionFactory" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" file="AddNodeMacroParam_copySrcMacro_Intention.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -408,7 +425,9 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
+    <classNode dependClassName="jetbrains.mps.intentions.newIntentions.NewIntentionFactoryToIntentionFactoryAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddContext_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacro" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention" />

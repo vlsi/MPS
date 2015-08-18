@@ -68,7 +68,7 @@ public class ConvertIntention implements IntentionFactory {
 
     SNode child = editorContext.getSelectedNode();
     if (child != node) {
-      if (!(filterChild(node, child, editorContext))) {
+      if (filterChild(node, child, editorContext) == false) {
         return false;
       }
     }

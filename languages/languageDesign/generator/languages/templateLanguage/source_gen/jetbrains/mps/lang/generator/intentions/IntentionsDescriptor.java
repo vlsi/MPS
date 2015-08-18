@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.intentions.newIntentions.NewIntentionFactoryToIntentionFactoryAdapter;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -53,39 +54,53 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @Nullable
   public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
+
     switch (index) {
       case 0:
         // Concept: ClassConcept 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
+          // base intentions 
           myIntentions0[0] = new ConvertClassConceptToExtract_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions0);
       case 1:
         // Concept: TemplateSwitch 
         if (myIntentions1 == null) {
           myIntentions1 = new IntentionFactory[1];
+          // base intentions 
           myIntentions1[0] = new NewTemplateInSwitchDefault_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions1);
       case 2:
         // Concept: SwitchMacro 
         if (myIntentions2 == null) {
           myIntentions2 = new IntentionFactory[1];
+          // base intentions 
           myIntentions2[0] = new ConvertSwitchToParameterized_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions2);
       case 3:
         // Concept: LoopMacro 
         if (myIntentions3 == null) {
           myIntentions3 = new IntentionFactory[1];
+          // base intentions 
           myIntentions3[0] = new ConvertLoopWithCopySrc_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions3);
       case 4:
         // Concept: BaseConcept 
         if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[12];
+          myIntentions4 = new IntentionFactory[13];
+          // base intentions 
           myIntentions4[0] = new AddNodeMacro_Intention();
           myIntentions4[1] = new AddPropertyMacro_Intention();
           myIntentions4[2] = new AddReferenceMacro_Intention();
@@ -98,87 +113,123 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions4[9] = new NewTemplateFragment_Intention();
           myIntentions4[10] = new AddNodeMacroParam_switch_Intention();
           myIntentions4[11] = new ReplaceWithConcreteSubconcept_Intention();
+          // classlike intentions 
+          myIntentions4[12] = new NewIntentionFactoryToIntentionFactoryAdapter(new AddNodeMacro());
         }
+
         return Arrays.asList(myIntentions4);
       case 5:
         // Concept: CreateRootRule 
         if (myIntentions5 == null) {
           myIntentions5 = new IntentionFactory[1];
+          // base intentions 
           myIntentions5[0] = new NewTemplateInCreateRootRule_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions5);
       case 6:
         // Concept: Weaving_MappingRule 
         if (myIntentions6 == null) {
           myIntentions6 = new IntentionFactory[1];
+          // base intentions 
           myIntentions6[0] = new NewTemplateInWeavingRule_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions6);
       case 7:
         // Concept: Reduction_MappingRule 
         if (myIntentions7 == null) {
           myIntentions7 = new IntentionFactory[2];
+          // base intentions 
           myIntentions7[0] = new NewTemplateInReductionRule_Intention();
           myIntentions7[1] = new NewTemplateInSwitchCase_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions7);
       case 8:
         // Concept: Root_MappingRule 
         if (myIntentions8 == null) {
           myIntentions8 = new IntentionFactory[1];
+          // base intentions 
           myIntentions8[0] = new NewTemplateInRootMappingRule_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions8);
       case 9:
         // Concept: TemplateDeclarationReference 
         if (myIntentions9 == null) {
           myIntentions9 = new IntentionFactory[1];
+          // base intentions 
           myIntentions9[0] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions9);
       case 10:
         // Concept: INamedConcept 
         if (myIntentions10 == null) {
           myIntentions10 = new IntentionFactory[2];
+          // base intentions 
           myIntentions10[0] = new NewCreateRootRule_Intention();
           myIntentions10[1] = new NewRootMappingRule_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions10);
       case 11:
         // Concept: WeaveEach_RuleConsequence 
         if (myIntentions11 == null) {
           myIntentions11 = new IntentionFactory[1];
+          // base intentions 
           myIntentions11[0] = new NewTemplateInWeaveEach_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions11);
       case 12:
         // Concept: InlineTemplate_RuleConsequence 
         if (myIntentions12 == null) {
           myIntentions12 = new IntentionFactory[2];
+          // base intentions 
           myIntentions12[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
           myIntentions12[1] = new AddContext_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions12);
       case 13:
         // Concept: InlineSwitch_RuleConsequence 
         if (myIntentions13 == null) {
           myIntentions13 = new IntentionFactory[1];
+          // base intentions 
           myIntentions13[0] = new NewTemplateInInlineSwitchDefault_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions13);
       case 14:
         // Concept: InlineSwitch_Case 
         if (myIntentions14 == null) {
           myIntentions14 = new IntentionFactory[1];
+          // base intentions 
           myIntentions14[0] = new NewTemplateInInlineSwitchCase_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions14);
       case 15:
         // Concept: MappingScriptReference 
         if (myIntentions15 == null) {
           myIntentions15 = new IntentionFactory[1];
+          // base intentions 
           myIntentions15[0] = new CreateScript_Intention();
+          // classlike intentions 
         }
+
         return Arrays.asList(myIntentions15);
       default:
         return null;
@@ -188,7 +239,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[30];
+    IntentionFactory[] rv = new IntentionFactory[31];
     rv[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
     rv[1] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
     rv[2] = new AddNodeMacro_Intention();
@@ -219,6 +270,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[27] = new AddContext_Intention();
     rv[28] = new ConvertLoopWithCopySrc_Intention();
     rv[29] = new ConvertSwitchToParameterized_Intention();
+    // classlike intentions 
+    rv[30] = new NewIntentionFactoryToIntentionFactoryAdapter(new AddNodeMacro());
     return Arrays.asList(rv);
   }
 }
