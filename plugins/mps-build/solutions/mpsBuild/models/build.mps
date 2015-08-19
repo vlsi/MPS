@@ -23034,12 +23034,6 @@
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6H$fNdM1W0B" role="3bR37C">
-          <node concept="3bR9La" id="6H$fNdM1W0C" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2eDSGe9d1q1" resolve="MPS.Workbench" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="6H$fNdM1W0D" role="3bR37C">
           <node concept="3bR9La" id="6H$fNdM1W0E" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -23058,12 +23052,6 @@
             <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2LKZD1vujd_" role="3bR37C">
-          <node concept="3bR9La" id="2LKZD1vujdA" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7gQEwkA7nSV" resolve="jetbrains.mps.console" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="6zVPjtHjiFr" role="3bR37C">
           <node concept="3bR9La" id="6zVPjtHjiFs" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -23074,18 +23062,6 @@
           <node concept="3bR9La" id="6zVPjtHjiFu" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5sf_VS_raxe" role="3bR37C">
-          <node concept="3bR9La" id="5sf_VS_raxf" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7gQEwkA7rZZ" resolve="jetbrains.mps.console.base" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5sf_VS_raxg" role="3bR37C">
-          <node concept="3bR9La" id="5sf_VS_raxh" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2eDSGe9d1qi" resolve="jetbrains.mps.ide" />
           </node>
         </node>
         <node concept="1SiIV0" id="5sf_VS_raxi" role="3bR37C">
