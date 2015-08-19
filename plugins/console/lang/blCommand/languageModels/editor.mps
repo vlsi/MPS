@@ -68,10 +68,6 @@
       <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
         <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
       </concept>
-      <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
-        <property id="1186403713874" name="color" index="Vb096" />
-      </concept>
-      <concept id="1186404574412" name="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" flags="ln" index="Veino" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
         <child id="1223387335081" name="query" index="3n$kyP" />
@@ -378,22 +374,6 @@
         <ref role="1NtTu8" to="3xdn:7gnNafF7Ztx" />
       </node>
       <node concept="l2Vlx" id="3J6h25Qz6bJ" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="5G2W3aWCXqw">
-    <property role="3GE5qa" value="response" />
-    <ref role="1XX52x" to="3xdn:5G2W3aW$Vsk" resolve="ExceptionHolder" />
-    <node concept="3EZMnI" id="5G2W3aWD0CO" role="2wV5jI">
-      <node concept="3F0ifn" id="5G2W3aWD0CV" role="3EZMnx">
-        <property role="3F0ifm" value="Exception:" />
-      </node>
-      <node concept="PMmxH" id="5G2W3aWD11C" role="3EZMnx">
-        <ref role="PMmxG" to="4l22:5G2W3aWCZ08" resolve="ClickableEditorComponent" />
-      </node>
-      <node concept="2iRfu4" id="5G2W3aWD0CR" role="2iSdaV" />
-      <node concept="Veino" id="5G2W3aWDrTB" role="3F10Kt">
-        <property role="Vb096" value="pink" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25Q6Dvx">
@@ -1221,7 +1201,7 @@
   </node>
   <node concept="24kQdi" id="3F2FyKbNNqA">
     <property role="3GE5qa" value="expression.query" />
-    <ref role="1XX52x" to="3xdn:3F2FyKbNNqb" resolve="ScopeProvider" />
+    <ref role="1XX52x" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
     <node concept="b$f91" id="3F2FyKbNNqC" role="2wV5jI">
       <node concept="3F1sOY" id="3F2FyKbNNr8" role="b$wch">
         <ref role="1NtTu8" to="3xdn:3F2FyKbNNqc" />

@@ -18,7 +18,6 @@
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
-        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
         <child id="1169127546356" name="extends" index="PrDN$" />
@@ -29,9 +28,6 @@
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
-      </concept>
-      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
-        <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -177,18 +173,6 @@
     <property role="34LRSv" value="#modules" />
     <property role="R4oN_" value="all modules in scope" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
-  </node>
-  <node concept="1TIwiD" id="5G2W3aW$Vsk">
-    <property role="3GE5qa" value="response" />
-    <property role="TrG5h" value="ExceptionHolder" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5G2W3aWBbyD" role="1TKVEl">
-      <property role="TrG5h" value="stackTrace" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="PrWs8" id="3ob4OZ0kHtj" role="PzmwI">
-      <ref role="PrY4T" to="eynw:22lVekVIvmK" resolve="IClickable" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3J6h25Q2UNX">
     <property role="3GE5qa" value="expression.query" />

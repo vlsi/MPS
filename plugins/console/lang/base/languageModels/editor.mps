@@ -596,5 +596,21 @@
       <node concept="2lhJJ2" id="2airAaT5Mod" role="14Sbyx" />
     </node>
   </node>
+  <node concept="24kQdi" id="5G2W3aWCXqw">
+    <property role="3GE5qa" value="response" />
+    <ref role="1XX52x" to="eynw:5G2W3aW$Vsk" resolve="ExceptionHolder" />
+    <node concept="3EZMnI" id="5G2W3aWD0CO" role="2wV5jI">
+      <node concept="3F0ifn" id="5G2W3aWD0CV" role="3EZMnx">
+        <property role="3F0ifm" value="Exception:" />
+      </node>
+      <node concept="PMmxH" id="5G2W3aWD11C" role="3EZMnx">
+        <ref role="PMmxG" node="5G2W3aWCZ08" resolve="ClickableEditorComponent" />
+      </node>
+      <node concept="2iRfu4" id="5G2W3aWD0CR" role="2iSdaV" />
+      <node concept="Veino" id="5G2W3aWDrTB" role="3F10Kt">
+        <property role="Vb096" value="pink" />
+      </node>
+    </node>
+  </node>
 </model>
 

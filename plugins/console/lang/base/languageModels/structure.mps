@@ -292,5 +292,17 @@
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" node="1nVd0kvs_CG" resolve="ConsoleRoot" />
   </node>
+  <node concept="1TIwiD" id="5G2W3aW$Vsk">
+    <property role="3GE5qa" value="response" />
+    <property role="TrG5h" value="ExceptionHolder" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5G2W3aWBbyD" role="1TKVEl">
+      <property role="TrG5h" value="stackTrace" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="3ob4OZ0kHtj" role="PzmwI">
+      <ref role="PrY4T" node="22lVekVIvmK" resolve="IClickable" />
+    </node>
+  </node>
 </model>
 
