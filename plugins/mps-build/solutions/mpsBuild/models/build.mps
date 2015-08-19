@@ -20377,6 +20377,49 @@
     </node>
     <node concept="2G$12M" id="7gdoTYdo$ej" role="3989C9">
       <property role="TrG5h" value="mps-debugger-java" />
+      <node concept="1E1JtA" id="3405ypXZilV" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="JDK-tools" />
+        <property role="3LESm3" value="b387285c-3448-452c-b3bb-a3f8de8eaf08" />
+        <property role="2GAjPV" value="true" />
+        <node concept="398BVA" id="3405ypXZiuZ" role="3LF7KH">
+          <ref role="398BVh" node="5xa9wY2uOS9" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="3405ypXZiv7" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="3405ypXZivh" role="2Ry0An">
+              <property role="2Ry0Am" value="core" />
+              <node concept="2Ry0Ak" id="3405ypXZivm" role="2Ry0An">
+                <property role="2Ry0Am" value="stub" />
+                <node concept="2Ry0Ak" id="3405ypXZivu" role="2Ry0An">
+                  <property role="2Ry0Am" value="JDK-tools" />
+                  <node concept="2Ry0Ak" id="3405ypXZivz" role="2Ry0An">
+                    <property role="2Ry0Am" value="JDK-tools.msd" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3405ypXZiCj" role="3bR37C">
+          <node concept="3bR9La" id="3405ypXZiCk" role="1SiIV1">
+            <property role="3bR36h" value="true" />
+            <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3405ypXZiCr" role="3bR37C">
+          <node concept="1BurEX" id="3405ypXZiCs" role="1SiIV1">
+            <node concept="398BVA" id="3405ypXZiCl" role="1BurEY">
+              <ref role="398BVh" node="5xa9wY2uOS9" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="3405ypXZiCm" role="iGT6I">
+                <property role="2Ry0Am" value="lib" />
+                <node concept="2Ry0Ak" id="3405ypXZiCn" role="2Ry0An">
+                  <property role="2Ry0Am" value="tools.jar" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1E1JtA" id="4LDuh$Ud1Lx" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.debugger.java.api" />
@@ -20459,6 +20502,12 @@
           <node concept="3bR9La" id="6IZ_b08qDDR" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3405ypXZiI$" role="3bR37C">
+          <node concept="3bR9La" id="3405ypXZiI_" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="3405ypXZilV" resolve="JDK-tools" />
           </node>
         </node>
       </node>
@@ -20635,6 +20684,12 @@
             <ref role="3bR37D" node="1ZViq9oppal" resolve="jetbrains.mps.make.facets" />
           </node>
         </node>
+        <node concept="1SiIV0" id="3405ypXZiM7" role="3bR37C">
+          <node concept="3bR9La" id="3405ypXZiM8" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="3405ypXZilV" resolve="JDK-tools" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4LDuh$Ud1N2" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -20732,6 +20787,12 @@
             <node concept="3bR9La" id="7YI57w6KcIY" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="4LDuh$Ud1MP" resolve="jetbrains.mps.debugger.java.evaluation" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="3405ypXZiQ8" role="3bR37C">
+            <node concept="3bR9La" id="3405ypXZiQ9" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="3405ypXZilV" resolve="JDK-tools" />
             </node>
           </node>
         </node>
@@ -21304,6 +21365,24 @@
             <node concept="3_J27D" id="5mc7nVumr1t" role="Nbhlr">
               <node concept="3Mxwew" id="5mc7nVumr1u" role="3MwsjC">
                 <property role="3MwjfP" value="debugger-java.jar" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="398223" id="3405ypY0fm3" role="39821P">
+        <node concept="3_J27D" id="3405ypY0fm5" role="Nbhlr">
+          <node concept="3Mxwew" id="3405ypY0fpK" role="3MwsjC">
+            <property role="3MwjfP" value="lib" />
+          </node>
+        </node>
+        <node concept="28jJK3" id="3405ypY0fyQ" role="39821P">
+          <node concept="398BVA" id="3405ypY0fyR" role="28jJRO">
+            <ref role="398BVh" node="5xa9wY2uOS9" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="3405ypY0fyS" role="iGT6I">
+              <property role="2Ry0Am" value="lib" />
+              <node concept="2Ry0Ak" id="3405ypY0fyT" role="2Ry0An">
+                <property role="2Ry0Am" value="tools.jar" />
               </node>
             </node>
           </node>
