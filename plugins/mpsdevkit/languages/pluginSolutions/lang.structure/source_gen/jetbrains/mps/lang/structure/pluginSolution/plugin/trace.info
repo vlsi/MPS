@@ -1937,17 +1937,6 @@
       <unit id="1929018697513058936" at="55,15,70,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp$2" />
       <unit id="7217668918195356455" at="27,0,154,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp" />
     </file>
-    <file name="MoveContainmentLinkUp_extension.java">
-      <node id="7217668918195939675" at="9,44,10,50" concept="16" />
-      <node id="7217668918196089845" at="12,37,13,39" concept="11" />
-      <node id="7217668918195939675" at="9,0,12,0" concept="3" trace="MoveContainmentLinkUp_extension#()V" />
-      <node id="7217668918195939682" at="12,0,15,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveNodesRefactoring;" />
-      <scope id="7217668918195939675" at="9,44,10,50" />
-      <scope id="7217668918195939686" at="12,37,13,39" />
-      <scope id="7217668918195939675" at="9,0,12,0" />
-      <scope id="7217668918195939682" at="12,0,15,0" />
-      <unit id="7217668918195939675" at="8,0,16,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkUp_extension" />
-    </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7217668918195602508">
     <file name="MoveReferenceLinkUp.java">
@@ -2188,17 +2177,6 @@
       <unit id="1929018697513750458" at="55,15,70,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp$2" />
       <unit id="7217668918195602508" at="27,0,154,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp" />
     </file>
-    <file name="MoveReferenceLinkUp_extension.java">
-      <node id="7217668918196130298" at="9,42,10,50" concept="16" />
-      <node id="7217668918196130304" at="12,37,13,37" concept="11" />
-      <node id="7217668918196130298" at="9,0,12,0" concept="3" trace="MoveReferenceLinkUp_extension#()V" />
-      <node id="7217668918196130301" at="12,0,15,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveNodesRefactoring;" />
-      <scope id="7217668918196130298" at="9,42,10,50" />
-      <scope id="7217668918196130303" at="12,37,13,37" />
-      <scope id="7217668918196130298" at="9,0,12,0" />
-      <scope id="7217668918196130301" at="12,0,15,0" />
-      <unit id="7217668918196130298" at="8,0,16,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkUp_extension" />
-    </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7217668918195625031">
     <file name="MovePropertyUp.java">
@@ -2435,17 +2413,6 @@
       <unit id="7217668918196130217" at="28,0,36,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp$MovePropertyUp_extension" />
       <unit id="1929018697513832364" at="54,15,69,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp$2" />
       <unit id="7217668918195625031" at="26,0,150,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp" />
-    </file>
-    <file name="MovePropertyUp_extension.java">
-      <node id="7217668918196130217" at="9,37,10,50" concept="16" />
-      <node id="7217668918196130223" at="12,37,13,32" concept="11" />
-      <node id="7217668918196130217" at="9,0,12,0" concept="3" trace="MovePropertyUp_extension#()V" />
-      <node id="7217668918196130220" at="12,0,15,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveNodesRefactoring;" />
-      <scope id="7217668918196130217" at="9,37,10,50" />
-      <scope id="7217668918196130222" at="12,37,13,32" />
-      <scope id="7217668918196130217" at="9,0,12,0" />
-      <scope id="7217668918196130220" at="12,0,15,0" />
-      <unit id="7217668918196130217" at="8,0,16,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertyUp_extension" />
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7217668918195649466">
@@ -3550,17 +3517,6 @@
       <unit id="4323017570218549795" at="224,55,311,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$5" />
       <unit id="4323017570219250163" at="131,63,314,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts$4" />
       <unit id="7217668918197762330" at="61,0,358,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts" />
-    </file>
-    <file name="MoveConcepts_extension.java">
-      <node id="7217668918198676891" at="9,35,10,50" concept="16" />
-      <node id="7217668918198676897" at="12,37,13,30" concept="11" />
-      <node id="7217668918198676891" at="9,0,12,0" concept="3" trace="MoveConcepts_extension#()V" />
-      <node id="7217668918198676894" at="12,0,15,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveNodesRefactoring;" />
-      <scope id="7217668918198676891" at="9,35,10,50" />
-      <scope id="7217668918198676896" at="12,37,13,30" />
-      <scope id="7217668918198676891" at="9,0,12,0" />
-      <scope id="7217668918198676894" at="12,0,15,0" />
-      <unit id="7217668918198676891" at="8,0,16,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_extension" />
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7972144475523791621">

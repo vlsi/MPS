@@ -23,6 +23,10 @@
       <concept id="1402906326896143883" name="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" flags="nn" index="0GJ7k" />
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1198489924438" name="jetbrains.mps.lang.editor.structure.CellModel_Block" flags="sg" stub="8104358048506730066" index="b$f91">
+        <child id="1198489985045" name="header" index="b$u42" />
+        <child id="1198489993734" name="body" index="b$wch" />
+      </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <property id="1160590307797" name="usesFolding" index="S$F3r" />
@@ -1211,6 +1215,27 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3F2FyKbNNqA">
+    <property role="3GE5qa" value="expression.query" />
+    <ref role="1XX52x" to="3xdn:3F2FyKbNNqb" resolve="ScopeProvider" />
+    <node concept="b$f91" id="3F2FyKbNNqC" role="2wV5jI">
+      <node concept="3F1sOY" id="3F2FyKbNNr8" role="b$wch">
+        <ref role="1NtTu8" to="3xdn:3F2FyKbNNqc" />
+      </node>
+      <node concept="3EZMnI" id="3F2FyKbNNqI" role="b$u42">
+        <node concept="2iRfu4" id="3F2FyKbNNqJ" role="2iSdaV" />
+        <node concept="3F0ifn" id="3F2FyKbNNqM" role="3EZMnx">
+          <property role="3F0ifm" value="with" />
+        </node>
+        <node concept="3F1sOY" id="3F2FyKbNNqV" role="3EZMnx">
+          <ref role="1NtTu8" to="3xdn:3F2FyKbNNqR" />
+        </node>
+        <node concept="3F0ifn" id="3F2FyKbNNr3" role="3EZMnx">
+          <property role="3F0ifm" value="do" />
         </node>
       </node>
     </node>
