@@ -143,8 +143,8 @@
     <property role="TrG5h" value="main" />
     <node concept="3aamgX" id="1H31ARNQ$RD" role="3acgRq">
       <ref role="30HIoZ" to="jyxa:3F2FyKbNNqb" resolve="WithStatement" />
-      <node concept="j$656" id="1H31ARNQ$RE" role="1lVwrX">
-        <ref role="v9R2y" to="74y1:1H31ARNQ$RB" resolve="reduce_WithStatement" />
+      <node concept="j$656" id="3ZgZ1njLDe2" role="1lVwrX">
+        <ref role="v9R2y" node="1H31ARNQ$RB" resolve="reduce_WithStatement" />
       </node>
     </node>
   </node>
@@ -219,8 +219,8 @@
                   <node concept="3clFb_" id="6ysF3v1j_nh" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="getConsoleTab" />
-                    <node concept="3uibUv" id="4gO8GruTyO8" role="3clF45">
-                      <ref role="3uigEE" to="qgo0:4gO8Gruz$1J" resolve="BaseConsoleTab" />
+                    <node concept="3uibUv" id="3ZgZ1njLDul" role="3clF45">
+                      <ref role="3uigEE" to="dnf9:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
                     </node>
                     <node concept="3Tm1VV" id="6ysF3v1j_nj" role="1B3o_S" />
                     <node concept="3clFbS" id="6ysF3v1j_nk" role="3clF47">

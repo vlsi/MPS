@@ -20,7 +20,7 @@
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
-    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" implicit="true" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
@@ -841,9 +841,7 @@
                   <ref role="3uigEE" to="33ny:~List" resolve="List" />
                   <node concept="3uibUv" id="3ob4OZ0hw3p" role="11_B2D">
                     <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                    <node concept="3uibUv" id="3ob4OZ0hxKj" role="11_B2D">
-                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                    </node>
+                    <node concept="17QB3L" id="3ZgZ1njMHC5" role="11_B2D" />
                     <node concept="3uibUv" id="3ob4OZ0hxsL" role="11_B2D">
                       <ref role="3uigEE" to="r99j:~TemplateMappingConfiguration" resolve="TemplateMappingConfiguration" />
                     </node>
@@ -867,9 +865,7 @@
                 <property role="TrG5h" value="string" />
                 <node concept="3uibUv" id="3ob4OZ0hz_R" role="1tU5fm">
                   <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                  <node concept="3uibUv" id="3ob4OZ0nb9y" role="11_B2D">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
+                  <node concept="17QB3L" id="3ZgZ1njMHC6" role="11_B2D" />
                   <node concept="3uibUv" id="3ob4OZ0ncst" role="11_B2D">
                     <ref role="3uigEE" to="r99j:~TemplateMappingConfiguration" resolve="TemplateMappingConfiguration" />
                   </node>

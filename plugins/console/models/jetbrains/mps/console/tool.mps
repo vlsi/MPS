@@ -831,9 +831,7 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3NTPlNtrgVH" role="1B3o_S" />
-      <node concept="3uibUv" id="3NTPlNtrgVJ" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="3ZgZ1njMHRh" role="3clF45" />
       <node concept="2AHcQZ" id="3NTPlNtrgVK" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
       </node>
@@ -2227,18 +2225,6 @@
             <node concept="3uibUv" id="1eZSuKdWEqU" role="1tU5fm">
               <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
-            <node concept="2OqwBi" id="1eZSuKdWEK5" role="33vP2m">
-              <node concept="2YIFZM" id="1eZSuKdWEAA" role="2Oq$k0">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="1rXfSq" id="1eZSuKdWEDJ" role="37wK5m">
-                  <ref role="37wK5l" node="6ysF3v1ncGk" resolve="getProject" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1eZSuKdWF8a" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-              </node>
-            </node>
           </node>
         </node>
         <node concept="1QHqEK" id="7M1Gaz34PM3" role="3cqZAp">
@@ -3167,9 +3153,7 @@
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6ysF3v1j_mo" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6ysF3v1j_mp" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRj" role="11_B2D" />
             <node concept="3uibUv" id="6ysF3v1j_mq" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
@@ -3314,9 +3298,7 @@
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6ysF3v1j_rD" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6ysF3v1j_rE" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRi" role="11_B2D" />
             <node concept="3uibUv" id="6ysF3v1j_rF" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
@@ -3399,9 +3381,7 @@
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6ysF3v1j_sc" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6ysF3v1j_sd" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRl" role="11_B2D" />
             <node concept="3uibUv" id="6ysF3v1j_se" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
@@ -3689,9 +3669,7 @@
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6ysF3v1j_u8" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6ysF3v1j_u9" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRm" role="11_B2D" />
             <node concept="3uibUv" id="6ysF3v1j_ua" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
@@ -4131,9 +4109,7 @@
       </node>
       <node concept="37vLTG" id="22CzinasFdE" role="3clF46">
         <property role="TrG5h" value="id" />
-        <node concept="3uibUv" id="22CzinasFdF" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="3ZgZ1njMHRk" role="1tU5fm" />
         <node concept="2AHcQZ" id="22CzinasFdG" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
         </node>
@@ -4794,9 +4770,7 @@
                     </node>
                     <node concept="37vLTG" id="6ysF3v1j_cK" role="3clF46">
                       <property role="TrG5h" value="key" />
-                      <node concept="3uibUv" id="6ysF3v1j_cL" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
+                      <node concept="17QB3L" id="3ZgZ1njMHRo" role="1tU5fm" />
                       <node concept="2AHcQZ" id="6ysF3v1j_cM" role="2AJF6D">
                         <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
                       </node>
@@ -5129,9 +5103,7 @@
           <property role="TrG5h" value="map" />
           <node concept="3uibUv" id="6ysF3v1j_vP" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6ysF3v1j_vQ" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRn" role="11_B2D" />
             <node concept="3uibUv" id="6ysF3v1j_vR" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
@@ -7862,9 +7834,7 @@
           <property role="TrG5h" value="arg" />
           <node concept="3uibUv" id="6u3s5B1ld91" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-            <node concept="3uibUv" id="6u3s5B1ld92" role="11_B2D">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="3ZgZ1njMHRp" role="11_B2D" />
             <node concept="3uibUv" id="6u3s5B1ld93" role="11_B2D">
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
