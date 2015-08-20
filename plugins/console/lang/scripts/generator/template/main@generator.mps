@@ -13,6 +13,7 @@
     <import index="8wae" ref="r:e3aa7efa-3cb3-44f7-8e8b-0643a8a5ad38(jetbrains.mps.console.scripts.runtime.util)" />
     <import index="74y1" ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)" />
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -181,13 +182,13 @@
         <node concept="37vLTG" id="1whNchEKZ9q" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="1whNchEKZ9r" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="1whNchEKZ9s" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="1whNchEKZ9t" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3cqZAl" id="1whNchEKZ9u" role="3clF45" />
@@ -238,13 +239,13 @@
         <node concept="37vLTG" id="23X86fnVai2" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="23X86fnVai3" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="23X86fnVai4" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="23X86fnVai5" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="23X86fnVai6" role="1B3o_S" />

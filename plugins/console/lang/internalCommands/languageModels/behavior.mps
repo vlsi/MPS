@@ -15,6 +15,7 @@
     <import index="fq2o" ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" />
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
     <import index="67ek" ref="r:a0598308-9fae-494c-abe2-56fbebc91b43(jetbrains.mps.command.base.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -138,7 +139,7 @@
               <ref role="3cqZAo" node="2SpVAIqtRRj" resolve="console" />
             </node>
             <node concept="liA8E" id="jysm2GD0lE" role="2OqNvi">
-              <ref role="37wK5l" to="qgo0:5WpmwkrQPWC" resolve="addText" />
+              <ref role="37wK5l" to="dnf9:5WpmwkrQPWC" resolve="addText" />
               <node concept="Xl_RD" id="jysm2GD0nJ" role="37wK5m">
                 <property role="Xl_RC" value="Classes reloaded" />
               </node>
@@ -149,13 +150,13 @@
       <node concept="37vLTG" id="2SpVAIqtRRh" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRRi" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRRj" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRRk" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRRl" role="3clF45" />
@@ -192,13 +193,13 @@
       <node concept="37vLTG" id="2SpVAIqtRXo" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRXp" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRXq" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRXr" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRXs" role="3clF45" />

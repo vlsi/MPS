@@ -19,6 +19,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -156,15 +157,15 @@
         <node concept="3cpWs8" id="1H31ARNQ$U8" role="3cqZAp">
           <node concept="3cpWsn" id="1H31ARNQ$U9" role="3cpWs9">
             <property role="TrG5h" value="context" />
-            <node concept="3uibUv" id="1H31ARNQ$Ua" role="1tU5fm">
-              <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <node concept="3uibUv" id="3ZgZ1njKmCY" role="1tU5fm">
+              <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
             </node>
             <node concept="2ShNRf" id="6ysF3v1j_n4" role="33vP2m">
               <node concept="YeOm9" id="6ysF3v1j_n5" role="2ShVmc">
                 <node concept="1Y3b0j" id="6ysF3v1j_n6" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+                  <ref role="1Y3XeK" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
                   <node concept="3Tm1VV" id="6ysF3v1j_n7" role="1B3o_S" />
                   <node concept="3clFb_" id="6ysF3v1j_n8" role="jymVt">
                     <property role="1EzhhJ" value="false" />

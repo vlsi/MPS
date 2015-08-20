@@ -29,6 +29,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -325,13 +326,13 @@
         <node concept="37vLTG" id="4PRmqZe_Ryk" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="4PRmqZe_Ryl" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="4PRmqZe_Rym" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="4PRmqZe_Ryn" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3cqZAl" id="4PRmqZe_Ryo" role="3clF45" />
@@ -615,13 +616,13 @@
         <node concept="37vLTG" id="4PRmqZeK04S" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="4PRmqZeK04T" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="4PRmqZeK04U" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="4PRmqZeK04V" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="4PRmqZeK04W" role="1B3o_S" />
@@ -635,7 +636,7 @@
                   <ref role="3cqZAo" node="4PRmqZeK04S" resolve="context" />
                 </node>
                 <node concept="liA8E" id="4PRmqZeK05e" role="2OqNvi">
-                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  <ref role="37wK5l" to="dnf9:3MPHfSuPT3Y" resolve="getProject" />
                 </node>
               </node>
               <node concept="10Nm6u" id="40bPOmRLxuQ" role="37wK5m">
@@ -769,13 +770,13 @@
         <node concept="37vLTG" id="2tFdLTOYl5m" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="2tFdLTOYl5n" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="2tFdLTOYl5o" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="2tFdLTOYl5p" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="2tFdLTOYl5q" role="1B3o_S" />
@@ -789,7 +790,7 @@
                   <ref role="3cqZAo" node="2tFdLTOYl5m" resolve="context" />
                 </node>
                 <node concept="liA8E" id="4AHaCIocV_W" role="2OqNvi">
-                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  <ref role="37wK5l" to="dnf9:3MPHfSuPT3Y" resolve="getProject" />
                 </node>
               </node>
               <node concept="10Nm6u" id="40bPOmRM4wo" role="37wK5m">
@@ -887,13 +888,13 @@
         <node concept="37vLTG" id="2tFdLTRKhj1" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="2tFdLTRKhj2" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="2tFdLTRKhj3" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="2tFdLTRKhj4" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="2tFdLTRKhj5" role="1B3o_S" />
@@ -907,7 +908,7 @@
                   <ref role="3cqZAo" node="2tFdLTRKhj1" resolve="context" />
                 </node>
                 <node concept="liA8E" id="4AHaCIocX7F" role="2OqNvi">
-                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  <ref role="37wK5l" to="dnf9:3MPHfSuPT3Y" resolve="getProject" />
                 </node>
               </node>
               <node concept="10Nm6u" id="40bPOmRM57C" role="37wK5m">
@@ -1232,13 +1233,13 @@
         <node concept="37vLTG" id="23X86fnVai2" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="23X86fnVai3" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="23X86fnVai4" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="23X86fnVai5" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="23X86fnVai6" role="1B3o_S" />

@@ -67,6 +67,7 @@
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes()" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -310,7 +311,6 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -517,63 +517,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="3HP615" id="5WpmwkrQPPk">
-    <property role="TrG5h" value="ConsoleStream" />
-    <node concept="3clFb_" id="5WpmwkrQPWC" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="addText" />
-      <node concept="3cqZAl" id="5WpmwkrQPWE" role="3clF45" />
-      <node concept="3Tm1VV" id="5WpmwkrQPWF" role="1B3o_S" />
-      <node concept="3clFbS" id="5WpmwkrQPWG" role="3clF47" />
-      <node concept="37vLTG" id="5WpmwkrRhDz" role="3clF46">
-        <property role="TrG5h" value="text" />
-        <node concept="17QB3L" id="3qGrMAJgU4I" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="7Jzw3XJWFQB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="addNode" />
-      <node concept="3cqZAl" id="7Jzw3XJWFQC" role="3clF45" />
-      <node concept="3Tm1VV" id="7Jzw3XJWFQD" role="1B3o_S" />
-      <node concept="3clFbS" id="7Jzw3XJWFQE" role="3clF47" />
-      <node concept="37vLTG" id="7Jzw3XJWFQF" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="3qGrMAJgjsB" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="5WpmwkrQPPl" role="1B3o_S" />
-  </node>
-  <node concept="3HP615" id="jysm2GDsTL">
-    <property role="TrG5h" value="ConsoleContext" />
-    <node concept="3clFb_" id="3MPHfSuPT3Y" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getProject" />
-      <node concept="3uibUv" id="3MPHfSuPT4d" role="3clF45">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-      </node>
-      <node concept="3Tm1VV" id="3MPHfSuPT41" role="1B3o_S" />
-      <node concept="3clFbS" id="3MPHfSuPT42" role="3clF47" />
-    </node>
-    <node concept="3clFb_" id="3lidccNHjWv" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getDefaultSearchscope" />
-      <node concept="3uibUv" id="3lidccNI3yb" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-      </node>
-      <node concept="3Tm1VV" id="3lidccNHjWy" role="1B3o_S" />
-      <node concept="3clFbS" id="3lidccNHjWz" role="3clF47" />
-    </node>
-    <node concept="3clFb_" id="7L2VFB5mjvh" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getConsoleTab" />
-      <node concept="3uibUv" id="4gO8GruTI6Q" role="3clF45">
-        <ref role="3uigEE" node="4gO8Gruz$1J" resolve="BaseConsoleTab" />
-      </node>
-      <node concept="3Tm1VV" id="7L2VFB5mjvj" role="1B3o_S" />
-      <node concept="3clFbS" id="7L2VFB5mjvk" role="3clF47" />
-    </node>
-    <node concept="3Tm1VV" id="jysm2GDsTM" role="1B3o_S" />
-  </node>
   <node concept="312cEu" id="3NTPlNtr9LB">
     <property role="TrG5h" value="ConsoleFileEditor" />
     <node concept="312cEg" id="2Y6GhaXyDRD" role="jymVt">
@@ -5803,7 +5746,7 @@
               <node concept="1Y3b0j" id="6ysF3v1j_n6" role="YeSDq">
                 <property role="2bfB8j" value="true" />
                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" node="jysm2GDsTL" resolve="ConsoleContext" />
+                <ref role="1Y3XeK" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
                 <node concept="3Tm1VV" id="6ysF3v1j_n7" role="1B3o_S" />
                 <node concept="3clFb_" id="6ysF3v1j_n8" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -5871,7 +5814,7 @@
       </node>
       <node concept="3Tmbuc" id="4gO8GruSYnj" role="1B3o_S" />
       <node concept="3uibUv" id="4gO8GruT1VD" role="3clF45">
-        <ref role="3uigEE" node="jysm2GDsTL" resolve="ConsoleContext" />
+        <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
       </node>
     </node>
     <node concept="2tJIrI" id="2wDkRIggIz7" role="jymVt" />
@@ -6226,7 +6169,7 @@
               <node concept="1Y3b0j" id="6ysF3v1j_np" role="YeSDq">
                 <property role="2bfB8j" value="true" />
                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" node="5WpmwkrQPPk" resolve="ConsoleStream" />
+                <ref role="1Y3XeK" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
                 <node concept="3Tm1VV" id="6ysF3v1j_nq" role="1B3o_S" />
                 <node concept="3clFb_" id="6ysF3v1j_nr" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -6424,7 +6367,7 @@
       </node>
       <node concept="3Tm1VV" id="59iQg8rFKVz" role="1B3o_S" />
       <node concept="3uibUv" id="4gO8GruUt3c" role="3clF45">
-        <ref role="3uigEE" node="5WpmwkrQPPk" resolve="ConsoleStream" />
+        <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
       </node>
     </node>
     <node concept="2tJIrI" id="4gO8GruUdVI" role="jymVt" />
@@ -7555,6 +7498,9 @@
     <node concept="3uibUv" id="4DLumAf7Gpc" role="EKbjA">
       <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />
     </node>
+    <node concept="3uibUv" id="3ZgZ1njKsLP" role="EKbjA">
+      <ref role="3uigEE" to="dnf9:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
+    </node>
   </node>
   <node concept="312cEu" id="2wDkRIgdolx">
     <property role="TrG5h" value="HistoryConsoleTab" />
@@ -7971,7 +7917,7 @@
                       <ref role="3cqZAo" node="7zdHeh8aha3" resolve="context" />
                     </node>
                     <node concept="liA8E" id="7zdHeh8aind" role="2OqNvi">
-                      <ref role="37wK5l" node="7L2VFB5mjvh" resolve="getConsoleTab" />
+                      <ref role="37wK5l" to="dnf9:7L2VFB5mjvh" resolve="getConsoleTab" />
                     </node>
                   </node>
                   <node concept="liA8E" id="7zdHeh8aEtu" role="2OqNvi">
@@ -7986,7 +7932,7 @@
       <node concept="37vLTG" id="7zdHeh8aha3" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="7zdHeh8aha2" role="1tU5fm">
-          <ref role="3uigEE" node="jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="17QB3L" id="7zdHeh8agw4" role="3clF45" />

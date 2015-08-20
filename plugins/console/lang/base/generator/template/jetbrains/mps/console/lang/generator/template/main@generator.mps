@@ -11,6 +11,7 @@
     <import index="qgo0" ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -198,7 +199,7 @@
       <node concept="37vLTG" id="1nVd0kvJIij" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="1nVd0kvJIik" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
     </node>
@@ -221,14 +222,14 @@
           <property role="TrG5h" value="context" />
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="4m1XtPGA4y6" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="4Cd_ANvqxyC" role="3clF46">
           <property role="TrG5h" value="console" />
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="5WpmwkrRlD5" role="1tU5fm">
-            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3Tm1VV" id="4Cd_ANvqxyG" role="1B3o_S" />
