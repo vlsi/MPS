@@ -201,10 +201,6 @@
       <ref role="20lvS9" node="60B$832WV89" resolve="HelpConceptReference" />
     </node>
   </node>
-  <node concept="PlHQZ" id="qgIopN3HO7">
-    <property role="TrG5h" value="ConsoleHelpProvider" />
-    <property role="3GE5qa" value="help" />
-  </node>
   <node concept="1TIwiD" id="1nVd0kvs_CG">
     <property role="TrG5h" value="ConsoleRoot" />
     <property role="19KtqR" value="true" />
@@ -336,6 +332,10 @@
     <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
       <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="qgIopN3HO7">
+    <property role="TrG5h" value="ConsoleHelpProvider" />
+    <property role="3GE5qa" value="help" />
   </node>
 </model>
 
