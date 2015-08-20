@@ -146,9 +146,12 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -171,9 +174,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -716,8 +716,8 @@
         <node concept="3cpWsn" id="3J6h25QRmGo" role="3cpWs9">
           <property role="TrG5h" value="parameterConcepts" />
           <node concept="A3Dl8" id="3J6h25QRmGi" role="1tU5fm">
-            <node concept="3THzug" id="3J6h25QRmGS" role="A3Ik2">
-              <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+            <node concept="3bZ5Sz" id="5wSyoDt1W6P" role="A3Ik2">
+              <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
             </node>
           </node>
           <node concept="2OqwBi" id="3J6h25QRoCs" role="33vP2m">
@@ -733,7 +733,7 @@
                         <node concept="37vLTw" id="3J6h25QRjAQ" role="2Oq$k0">
                           <ref role="3cqZAo" node="3J6h25QRjrI" resolve="it" />
                         </node>
-                        <node concept="3NT_Vc" id="3J6h25QRm2B" role="2OqNvi" />
+                        <node concept="2yIwOk" id="5wSyoDt1WI6" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -779,7 +779,7 @@
                                   <node concept="37vLTw" id="3J6h25QTeKf" role="2Oq$k0">
                                     <ref role="3cqZAo" node="3J6h25QTeKk" resolve="p" />
                                   </node>
-                                  <node concept="3NT_Vc" id="3J6h25QTeKg" role="2OqNvi" />
+                                  <node concept="2yIwOk" id="5wSyoDt1ViQ" role="2OqNvi" />
                                 </node>
                                 <node concept="3O6GUB" id="3J6h25QTeKh" role="2OqNvi">
                                   <node concept="25Kdxt" id="3J6h25QTeKi" role="3QVz_e">
@@ -1241,7 +1241,7 @@
     </node>
     <node concept="1YaCAy" id="3F2FyKbNNPq" role="1YuTPh">
       <property role="TrG5h" value="scopeProvider" />
-      <ref role="1YaFvo" to="3xdn:3F2FyKbNNqb" resolve="ScopeProvider" />
+      <ref role="1YaFvo" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
     </node>
   </node>
 </model>
