@@ -2235,6 +2235,18 @@
             <node concept="3uibUv" id="1eZSuKdWEqU" role="1tU5fm">
               <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
+            <node concept="2OqwBi" id="2mWP9pMvBD0" role="33vP2m">
+              <node concept="2YIFZM" id="2mWP9pMvBjE" role="2Oq$k0">
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <node concept="1rXfSq" id="2mWP9pMvBy$" role="37wK5m">
+                  <ref role="37wK5l" node="6ysF3v1ncGk" resolve="getProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2mWP9pMvBXU" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="1QHqEK" id="7M1Gaz34PM3" role="3cqZAp">
