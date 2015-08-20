@@ -127,7 +127,7 @@ public class QueriesGenerated {
     }
     return null;
   }
-  public static SNode sourceNodeQuery_6273399648879447287(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4598452390226163566(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"));
   }
   public static SNode sourceNodeQuery_3501374812264728764(final SourceSubstituteMacroNodeContext _context) {

@@ -310,8 +310,8 @@
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/4417779018064685310">
     <file name="QueriesGenerated.java">
-      <node id="6273399648879447294" at="130,108,131,190" concept="5" />
-      <scope id="6273399648879447288" at="130,108,131,190" />
+      <node id="4598452390226163568" at="130,108,131,190" concept="5" />
+      <scope id="4598452390226163567" at="130,108,131,190" />
     </file>
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/4593895459761048274">

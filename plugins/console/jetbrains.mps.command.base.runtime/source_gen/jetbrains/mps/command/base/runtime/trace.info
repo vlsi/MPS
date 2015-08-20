@@ -21,15 +21,28 @@
   </root>
   <root nodeRef="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)/6852607286009617748">
     <file name="ConsoleStream.java">
-      <node id="6852607286009618216" at="8,0,9,0" concept="0" trace="addText#(Ljava/lang/String;)V" />
-      <node id="8927119896327929255" at="9,0,10,0" concept="0" trace="addNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6852607286009618216" at="8,0,9,0">
+      <node id="6852607286009618216" at="9,0,10,0" concept="0" trace="addText#(Ljava/lang/String;)V" />
+      <node id="8927119896327929255" at="10,0,11,0" concept="0" trace="addNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4598452390225737169" at="11,0,12,0" concept="0" trace="addNodeRef#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4598452390225734979" at="12,0,13,0" concept="0" trace="addException#(Ljava/lang/Throwable;)V" />
+      <node id="4598452390225735166" at="13,0,14,0" concept="0" trace="addClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljava/lang/String;)V" />
+      <scope id="6852607286009618216" at="9,0,10,0">
         <var name="text" id="6852607286009731683" />
       </scope>
-      <scope id="8927119896327929255" at="9,0,10,0">
+      <scope id="8927119896327929255" at="10,0,11,0">
         <var name="node" id="8927119896327929259" />
       </scope>
-      <unit id="6852607286009617748" at="7,0,11,0" name="jetbrains.mps.command.base.runtime.ConsoleStream" />
+      <scope id="4598452390225737169" at="11,0,12,0">
+        <var name="node" id="4598452390225737173" />
+      </scope>
+      <scope id="4598452390225734979" at="12,0,13,0">
+        <var name="t" id="4598452390225734983" />
+      </scope>
+      <scope id="4598452390225735166" at="13,0,14,0">
+        <var name="closure" id="7600370246426637725" />
+        <var name="text" id="7600370246426662642" />
+      </scope>
+      <unit id="6852607286009617748" at="8,0,15,0" name="jetbrains.mps.command.base.runtime.ConsoleStream" />
     </file>
   </root>
 </debug-info>

@@ -23,10 +23,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Level;
 import jetbrains.mps.command.base.runtime.ConsoleStream;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -34,11 +30,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.command.base.runtime.ConsoleContext;
-import java.io.StringWriter;
-import java.io.PrintWriter;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.command.base.runtime.ConsoleContext;
 import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
@@ -49,7 +42,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class CommandUtil {
-
   public static Iterable<SNode> nodes(SearchScope scope) {
     return Sequence.fromIterable(models(scope)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
@@ -84,7 +76,7 @@ public class CommandUtil {
 
   public static void show(Project p, _FunctionTypes._return_P0_E0<? extends SearchResults> results) {
     try {
-      check_1pinza_a0a0a0n(ProjectHelper.toIdeaProject(p)).show(results.invoke(), "No results to show");
+      check_1pinza_a0a0a0m(ProjectHelper.toIdeaProject(p)).show(results.invoke(), "No results to show");
     } catch (Exception e) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Exception in showing custom console result", e);
@@ -92,18 +84,11 @@ public class CommandUtil {
     }
   }
 
-  public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
-    SNode nodeWithClosure = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure")));
-    SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
-    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
-    console.addNode(nodeWithClosure);
-  }
-
   public static void printSequence(ConsoleStream console, final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
     if (resultsCount == 0) {
       console.addText("empty sequence");
     } else {
-      CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
+      console.addClosure(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           CommandUtil.show(project, results);
         }
@@ -117,11 +102,11 @@ public class CommandUtil {
         final SearchResults<SNode> res = new SearchResults<SNode>();
         Sequence.fromIterable(nodes).where(new IWhereFilter<SNodeReference>() {
           public boolean accept(SNodeReference it) {
-            return check_1pinza_a0a0a0a0b0a0a91(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a61(it, repository) != null;
           }
         }).visitAll(new IVisitor<SNodeReference>() {
           public void visit(SNodeReference it) {
-            res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0a0a91(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0a0a61(it, repository), "usage"));
           }
         });
         return res;
@@ -135,11 +120,11 @@ public class CommandUtil {
         final SearchResults<SModel> res = new SearchResults<SModel>();
         Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
           public boolean accept(SModelReference it) {
-            return check_1pinza_a0a0a0a0b0a0a12(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a81(it, repository) != null;
           }
         }).visitAll(new IVisitor<SModelReference>() {
           public void visit(SModelReference it) {
-            res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0a0a12(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0a0a81(it, repository), "usage"));
           }
         });
         return res;
@@ -153,11 +138,11 @@ public class CommandUtil {
         final SearchResults<SModule> res = new SearchResults<SModule>();
         Sequence.fromIterable(modules).where(new IWhereFilter<SModuleReference>() {
           public boolean accept(SModuleReference it) {
-            return check_1pinza_a0a0a0a0b0a0a32(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a02(it, repository) != null;
           }
         }).visitAll(new IVisitor<SModuleReference>() {
           public void visit(SModuleReference it) {
-            res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0a0a32(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0a0a02(it, repository), "usage"));
           }
         });
         return res;
@@ -167,32 +152,16 @@ public class CommandUtil {
   }
 
   public static SNodeReference getNodeReference(SNode aNode) {
-    return check_1pinza_a0a52(aNode);
+    return check_1pinza_a0a22(aNode);
   }
   public static SNodeReference getReferenceReference(SReference aReference) {
-    return check_1pinza_a0a62(check_1pinza_a0a0ab(aReference));
+    return check_1pinza_a0a32(check_1pinza_a0a0x(aReference));
   }
   public static SModelReference getModelReference(SModel aModel) {
-    return check_1pinza_a0a72(aModel);
+    return check_1pinza_a0a42(aModel);
   }
   public static SModuleReference getModuleReference(SModule aModule) {
-    return check_1pinza_a0a82(aModule);
-  }
-
-  public static void addNodeReference(ConsoleStream console, SNode target) {
-    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation")));
-    SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), target);
-    console.addNode(node);
-  }
-
-  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Throwable exception) {
-    StringWriter writer = new StringWriter();
-    exception.printStackTrace(new PrintWriter(writer));
-
-    SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder")));
-    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"), writer.toString());
-    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), exception.getClass().getName());
-    console.addNode(exceptionHolder);
+    return check_1pinza_a0a52(aModule);
   }
 
   public static SearchScope createConsoleScope(@Nullable final SearchScope baseScope, final boolean includeReadOnly, final ConsoleContext context) {
@@ -218,73 +187,73 @@ public class CommandUtil {
   }
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
-  private static UsagesViewTool check_1pinza_a0a0a0n(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static UsagesViewTool check_1pinza_a0a0a0m(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(UsagesViewTool.class);
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0a0a0b0a0a91(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0b0a0a61(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0a0a0a0b0a0a91(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0a0b0a0a61(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0b0a0a12(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0b0a0a81(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0a0b0a0a12(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0a0b0a0a81(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0b0a0a32(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0b0a0a02(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0a0b0a0a32(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0a0b0a0a02(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SNodeReference check_1pinza_a0a52(SNode checkedDotOperand) {
+  private static SNodeReference check_1pinza_a0a22(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNodeReference check_1pinza_a0a62(SNode checkedDotOperand) {
+  private static SNodeReference check_1pinza_a0a32(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0ab(SReference checkedDotOperand) {
+  private static SNode check_1pinza_a0a0x(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSourceNode();
     }
     return null;
   }
-  private static SModelReference check_1pinza_a0a72(SModel checkedDotOperand) {
+  private static SModelReference check_1pinza_a0a42(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SModuleReference check_1pinza_a0a82(SModule checkedDotOperand) {
+  private static SModuleReference check_1pinza_a0a52(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
