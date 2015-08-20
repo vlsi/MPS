@@ -88,6 +88,9 @@ public class Solution extends ReloadableModuleBase {
       jdkPackages.includeWithPrefix("com.");
       jdkPackages.includeWithPrefix("com.sun.");
       jdkPackages.includeWithPrefix("com.sun.jdi.");
+      // sun.awt used in mbeddr
+      jdkPackages.includeWithPrefix("sun.");
+      jdkPackages.includeWithPrefix("sun.awt.");
       psc = jdkPackages;
     } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
       PackageScopeControl platformPackages = new PackageScopeControl();
