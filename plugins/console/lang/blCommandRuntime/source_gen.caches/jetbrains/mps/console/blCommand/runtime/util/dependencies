@@ -14,9 +14,9 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.command.base.runtime.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.command.base.runtime.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />

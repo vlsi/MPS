@@ -55,7 +55,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.InternalSequenceOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_Behavior" />
+    <classNode dependClassName="jetbrains.mps.command.base.behavior.ConsoleHelpProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />

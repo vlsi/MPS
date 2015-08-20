@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Level;
-import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.command.base.runtime.ConsoleStream;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -35,7 +35,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.command.base.runtime.ConsoleContext;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import org.jetbrains.annotations.Nullable;
@@ -189,8 +189,8 @@ public class CommandUtil {
     StringWriter writer = new StringWriter();
     exception.printStackTrace(new PrintWriter(writer));
 
-    SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L, "jetbrains.mps.console.blCommand.structure.ExceptionHolder")));
-    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"), writer.toString());
+    SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder")));
+    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"), writer.toString());
     SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), exception.getClass().getName());
     console.addNode(exceptionHolder);
   }

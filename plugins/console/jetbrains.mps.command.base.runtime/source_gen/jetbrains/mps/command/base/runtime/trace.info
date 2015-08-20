@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)/351968380915666545">
+    <file name="ConsoleContext.java">
+      <node id="4374601616592441598" at="9,0,10,0" concept="0" trace="getProject#()Ljetbrains/mps/project/Project;" />
+      <node id="3842191445091237663" at="10,0,11,0" concept="0" trace="getDefaultSearchscope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="8953981490813286353" at="11,0,12,0" concept="0" trace="getOutputWindow#()Ljetbrains/mps/command/base/runtime/CommandOutputWindow;" />
+      <scope id="4374601616592441598" at="9,0,10,0" />
+      <scope id="3842191445091237663" at="10,0,11,0" />
+      <scope id="8953981490813286353" at="11,0,12,0" />
+      <unit id="351968380915666545" at="8,0,13,0" name="jetbrains.mps.command.base.runtime.ConsoleContext" />
+    </file>
+  </root>
+  <root nodeRef="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)/4598452390222467791">
+    <file name="CommandOutputWindow.java">
+      <node id="4598452390224153555" at="7,0,8,0" concept="0" trace="activate#()V" />
+      <scope id="4598452390224153555" at="7,0,8,0" />
+      <unit id="4598452390222467791" at="6,0,9,0" name="jetbrains.mps.command.base.runtime.CommandOutputWindow" />
+    </file>
+  </root>
+  <root nodeRef="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)/6852607286009617748">
+    <file name="ConsoleStream.java">
+      <node id="6852607286009618216" at="8,0,9,0" concept="0" trace="addText#(Ljava/lang/String;)V" />
+      <node id="8927119896327929255" at="9,0,10,0" concept="0" trace="addNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6852607286009618216" at="8,0,9,0">
+        <var name="text" id="6852607286009731683" />
+      </scope>
+      <scope id="8927119896327929255" at="9,0,10,0">
+        <var name="node" id="8927119896327929259" />
+      </scope>
+      <unit id="6852607286009617748" at="7,0,11,0" name="jetbrains.mps.command.base.runtime.ConsoleStream" />
+    </file>
+  </root>
+</debug-info>
+

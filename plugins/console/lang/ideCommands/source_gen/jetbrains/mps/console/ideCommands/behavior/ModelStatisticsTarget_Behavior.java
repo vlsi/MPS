@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.command.base.runtime.ConsoleContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;

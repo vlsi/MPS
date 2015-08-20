@@ -10,14 +10,8 @@
     <file name="AbstractPrintExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.AbstractPrintExpression_BehaviorDescriptor" />
     </file>
-    <file name="BLCommand_BehaviorDescriptor.java">
-      <unit at="14,0,55,0" name="jetbrains.mps.console.blCommand.behavior.BLCommand_BehaviorDescriptor" />
-    </file>
-    <file name="BLExpression_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.console.blCommand.behavior.BLExpression_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,70,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,62,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleExpression_BehaviorDescriptor.java">
       <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
@@ -27,9 +21,6 @@
     </file>
     <file name="CustomScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
-    </file>
-    <file name="ExceptionHolder_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_BehaviorDescriptor" />
     </file>
     <file name="GlobalScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.GlobalScope_BehaviorDescriptor" />
@@ -99,80 +90,6 @@
     </file>
     <file name="UsagesExpression_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.console.blCommand.behavior.UsagesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="WithStatement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.WithStatement_BehaviorDescriptor" />
-    </file>
-  </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2699636778858778743">
-    <file name="BLCommand_Behavior.java">
-      <node id="2699636778858790466" at="19,80,20,47" concept="4" />
-      <node id="2699636778858790750" at="22,69,23,178" concept="4" />
-      <node id="2699636778858876361" at="25,91,26,48" concept="3" />
-      <node id="2699636778858878821" at="26,48,27,84" concept="1" />
-      <node id="2699636778858801153" at="27,84,28,18" concept="4" />
-      <node id="7006261637493130861" at="30,94,31,38" concept="4" />
-      <node id="7006261637493131792" at="33,104,34,30" concept="4" />
-      <node id="2699636778858790492" at="36,60,37,63" concept="3" />
-      <node id="2699636778858790492" at="37,63,38,30" concept="3" />
-      <node id="2699636778858790492" at="38,30,39,220" concept="0" />
-      <node id="2699636778858790492" at="38,30,39,220" concept="0" />
-      <node id="2699636778858790492" at="38,30,39,220" concept="1" />
-      <node id="2699636778858790492" at="39,220,40,24" concept="4" />
-      <node id="2699636778858912197" at="42,62,43,63" concept="3" />
-      <node id="2699636778858912197" at="43,63,44,30" concept="3" />
-      <node id="2699636778858912197" at="44,30,45,227" concept="1" />
-      <node id="2699636778858912197" at="45,227,46,438" concept="1" />
-      <node id="2699636778858912197" at="46,438,47,24" concept="4" />
-      <node id="2699636778858778743" at="17,0,19,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2699636778858912197" at="44,30,46,438" concept="0" />
-      <node id="2699636778858912197" at="44,30,46,438" concept="0" />
-      <node id="2699636778858778743" at="19,0,22,0" concept="5" trace="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858778743" at="22,0,25,0" concept="5" trace="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858778743" at="30,0,33,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="2699636778858778743" at="33,0,36,0" concept="5" trace="virtual_getShortDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="2699636778858778743" at="25,0,30,0" concept="5" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="2699636778858790492" at="36,0,42,0" concept="5" trace="_quotation_createNode_1tnz54_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858912197" at="42,0,49,0" concept="5" trace="_quotation_createNode_1tnz54_a0a1a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2699636778858778896" at="17,43,17,43" />
-      <scope id="2699636778858779397" at="19,80,20,47" />
-      <scope id="2699636778858779403" at="22,69,23,178" />
-      <scope id="7006261637493130711" at="30,94,31,38" />
-      <scope id="7006261637493131068" at="33,104,34,30" />
-      <scope id="2699636778858790492" at="38,30,39,220" />
-      <scope id="2699636778858778743" at="17,0,19,0">
-        <var name="thisNode" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858912197" at="44,30,46,438" />
-      <scope id="2699636778858778743" at="19,0,22,0">
-        <var name="thisNode" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858778743" at="22,0,25,0">
-        <var name="thisNode" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858779409" at="25,91,28,18">
-        <var name="result" id="2699636778858876364" />
-      </scope>
-      <scope id="2699636778858778743" at="30,0,33,0">
-        <var name="thisConcept" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858778743" at="33,0,36,0">
-        <var name="thisConcept" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858790492" at="36,60,40,24">
-        <var name="facade" id="2699636778858790492" />
-        <var name="quotedNode_1" id="2699636778858790492" />
-      </scope>
-      <scope id="2699636778858778743" at="25,0,30,0">
-        <var name="thisNode" id="2699636778858778743" />
-      </scope>
-      <scope id="2699636778858912197" at="42,62,47,24">
-        <var name="facade" id="2699636778858912197" />
-        <var name="quotedNode_1" id="2699636778858912197" />
-      </scope>
-      <scope id="2699636778858790492" at="36,0,42,0" />
-      <scope id="2699636778858912197" at="42,0,49,0" />
-      <unit id="2699636778858778743" at="16,0,50,0" name="jetbrains.mps.console.blCommand.behavior.BLCommand_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4225915845891288151">
@@ -395,57 +312,6 @@
         <var name="thisConcept" id="5932042262275648698" />
       </scope>
       <unit id="5932042262275648698" at="8,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/6558068108108193352">
-    <file name="ExceptionHolder_Behavior.java">
-      <node id="4221956679900513485" at="16,91,17,222" concept="3" />
-      <node id="4221956679900513493" at="17,222,18,61" concept="1" />
-      <node id="4221956679900513501" at="18,61,19,80" concept="3" />
-      <node id="4221956679900513512" at="19,80,20,18" concept="1" />
-      <node id="6558068108108282033" at="22,80,23,189" concept="4" />
-      <node id="6558068108108193352" at="14,0,16,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6558068108108193352" at="22,0,25,0" concept="5" trace="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6558068108108193352" at="16,0,22,0" concept="5" trace="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="6558068108108193505" at="14,43,14,43" />
-      <scope id="6558068108108193832" at="22,80,23,189" />
-      <scope id="6558068108108193352" at="14,0,16,0">
-        <var name="thisNode" id="6558068108108193352" />
-      </scope>
-      <scope id="6558068108108193352" at="22,0,25,0">
-        <var name="thisNode" id="6558068108108193352" />
-      </scope>
-      <scope id="6558068108108193824" at="16,91,20,18">
-        <var name="contents" id="4221956679900513486" />
-        <var name="dialog" id="4221956679900513502" />
-      </scope>
-      <scope id="6558068108108193352" at="16,0,22,0">
-        <var name="project" id="6558068108108193825" />
-        <var name="thisNode" id="6558068108108193352" />
-      </scope>
-      <unit id="6558068108108193352" at="13,0,26,0" name="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637493132074">
-    <file name="BLExpression_Behavior.java">
-      <node id="7006261637493132088" at="11,94,12,57" concept="4" />
-      <node id="7006261637493135794" at="14,104,15,26" concept="4" />
-      <node id="7006261637493132074" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7006261637493132074" at="11,0,14,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="7006261637493132074" at="14,0,17,0" concept="5" trace="virtual_getShortDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="7006261637493132076" at="9,43,9,43" />
-      <scope id="7006261637493132081" at="11,94,12,57" />
-      <scope id="7006261637493135778" at="14,104,15,26" />
-      <scope id="7006261637493132074" at="9,0,11,0">
-        <var name="thisNode" id="7006261637493132074" />
-      </scope>
-      <scope id="7006261637493132074" at="11,0,14,0">
-        <var name="thisConcept" id="7006261637493132074" />
-      </scope>
-      <scope id="7006261637493132074" at="14,0,17,0">
-        <var name="thisConcept" id="7006261637493132074" />
-      </scope>
-      <unit id="7006261637493132074" at="8,0,18,0" name="jetbrains.mps.console.blCommand.behavior.BLExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637496548522">

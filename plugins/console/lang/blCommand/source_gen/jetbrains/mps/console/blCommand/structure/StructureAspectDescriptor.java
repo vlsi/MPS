@@ -13,12 +13,9 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAbstractPrintExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(8365379837260461921L, "object", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"object"}, new boolean[]{false}).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptBLCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L)).super_("jetbrains.mps.console.base.structure.GeneratedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L)).parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L)).childDescriptors(new ConceptDescriptorBuilder.Link(1769790395579689573L, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false)).children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage statements").create();
-  /*package*/ final ConceptDescriptor myConceptBLExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L)).super_("jetbrains.mps.console.base.structure.GeneratedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L)).parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11c6fd75034L)).childDescriptors(new ConceptDescriptorBuilder.Link(7656298970878093890L, "expression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("", "baseLanguage expression").create();
-  /*package*/ final ConceptDescriptor myConceptConsoleExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L)).interface_().parents("jetbrains.mps.console.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L)).create();
-  /*package*/ final ConceptDescriptor myConceptConsoleOperation = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleOperation", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5252d9021b8b6c03L)).interface_().parents("jetbrains.mps.console.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L)).create();
+  /*package*/ final ConceptDescriptor myConceptConsoleExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L)).interface_().parents("jetbrains.mps.command.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xcb3c6536cd624d95L, 0x85294a37cbf14855L, 0x690b986730edd07L)).create();
+  /*package*/ final ConceptDescriptor myConceptConsoleOperation = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleOperation", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5252d9021b8b6c03L)).interface_().parents("jetbrains.mps.command.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xcb3c6536cd624d95L, 0x85294a37cbf14855L, 0x690b986730edd07L)).create();
   /*package*/ final ConceptDescriptor myConceptCustomScope = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.CustomScope", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f98575c9L)).super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).childDescriptors(new ConceptDescriptorBuilder.Link(3492877759611770126L, "scope", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"scope"}, new boolean[]{false}).alias("custom", "? extends SearchScope").create();
-  /*package*/ final ConceptDescriptor myConceptExceptionHolder = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ExceptionHolder", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6558068108108282025L, "stackTrace")).properties("stackTrace").create();
   /*package*/ final ConceptDescriptor myConceptGlobalScope = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.GlobalScope", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L)).super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).alias("global", "").create();
   /*package*/ final ConceptDescriptor myConceptInstancesExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL)).super_("jetbrains.mps.console.blCommand.structure.QueryExpression").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).parents("jetbrains.mps.console.blCommand.structure.QueryExpression").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).childDescriptors(new ConceptDescriptorBuilder.Link(7738379549910147342L, "conceptArg", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L), false, false, false)).children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "instances of a concept in scope").create();
   /*package*/ final ConceptDescriptor myConceptModelScope = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelScope", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f952484eL)).super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).childDescriptors(new ConceptDescriptorBuilder.Link(3492877759608408143L, "model", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, true, false)).children(new String[]{"model"}, new boolean[]{true}).alias("models", "").create();
@@ -42,82 +39,73 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptScopeParameter = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ScopeParameter", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptShowExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ShowExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L)).childDescriptors(new ConceptDescriptorBuilder.Link(7600370246423275637L, "object", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"object"}, new boolean[]{false}).alias("#show", "show in usage view").create();
   /*package*/ final ConceptDescriptor myConceptUsagesExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d6ebL)).super_("jetbrains.mps.console.blCommand.structure.QueryExpression").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).parents("jetbrains.mps.console.blCommand.structure.QueryExpression").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).childDescriptors(new ConceptDescriptorBuilder.Link(8483375838963816172L, "node", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"node"}, new boolean[]{false}).alias("#usages", "direct references to a node in scope").create();
-  /*package*/ final ConceptDescriptor myConceptWithStatement = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.WithStatement", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3ac2ae2c0bcf368bL)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(4234138103881610892L, "stmts", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false), new ConceptDescriptorBuilder.Link(4234138103881610935L, "scope", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"stmts", "scope"}, new boolean[]{false, false}).alias("with", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptConsoleExpression, myConceptConsoleOperation, myConceptCustomScope, myConceptExceptionHolder, myConceptGlobalScope, myConceptInstancesExpression, myConceptModelScope, myConceptModelsExpression, myConceptModulesExpression, myConceptModulesScope, myConceptNodesExpression, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptQueryExpression, myConceptQueryParameter, myConceptQueryParameterIncludeReadOnly, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptReferencesExpression, myConceptScopeParameter, myConceptShowExpression, myConceptUsagesExpression, myConceptWithStatement);
+    return Arrays.asList(myConceptAbstractPrintExpression, myConceptConsoleExpression, myConceptConsoleOperation, myConceptCustomScope, myConceptGlobalScope, myConceptInstancesExpression, myConceptModelScope, myConceptModelsExpression, myConceptModulesExpression, myConceptModulesScope, myConceptNodesExpression, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptQueryExpression, myConceptQueryParameter, myConceptQueryParameterIncludeReadOnly, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptReferencesExpression, myConceptScopeParameter, myConceptShowExpression, myConceptUsagesExpression);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fb, conceptFqName)) {
       case 0:
         return myConceptAbstractPrintExpression;
       case 1:
-        return myConceptBLCommand;
-      case 2:
-        return myConceptBLExpression;
-      case 3:
         return myConceptConsoleExpression;
-      case 4:
+      case 2:
         return myConceptConsoleOperation;
-      case 5:
+      case 3:
         return myConceptCustomScope;
-      case 6:
-        return myConceptExceptionHolder;
-      case 7:
+      case 4:
         return myConceptGlobalScope;
-      case 8:
+      case 5:
         return myConceptInstancesExpression;
-      case 9:
+      case 6:
         return myConceptModelScope;
-      case 10:
+      case 7:
         return myConceptModelsExpression;
-      case 11:
+      case 8:
         return myConceptModulesExpression;
-      case 12:
+      case 9:
         return myConceptModulesScope;
-      case 13:
+      case 10:
         return myConceptNodesExpression;
-      case 14:
+      case 11:
         return myConceptPrintExpression;
-      case 15:
+      case 12:
         return myConceptPrintNodeExpression;
-      case 16:
+      case 13:
         return myConceptPrintNodeReferenceExpression;
-      case 17:
+      case 14:
         return myConceptPrintSequenceExpression;
-      case 18:
+      case 15:
         return myConceptPrintTextExpression;
-      case 19:
+      case 16:
         return myConceptProjectExpression;
-      case 20:
+      case 17:
         return myConceptProjectScope;
-      case 21:
+      case 18:
         return myConceptQueryExpression;
-      case 22:
+      case 19:
         return myConceptQueryParameter;
-      case 23:
+      case 20:
         return myConceptQueryParameterIncludeReadOnly;
-      case 24:
+      case 21:
         return myConceptQueryParameterList;
-      case 25:
+      case 22:
         return myConceptQueryParameterScope;
-      case 26:
+      case 23:
         return myConceptReferencesExpression;
-      case 27:
+      case 24:
         return myConceptScopeParameter;
-      case 28:
+      case 25:
         return myConceptShowExpression;
-      case 29:
+      case 26:
         return myConceptUsagesExpression;
-      case 30:
-        return myConceptWithStatement;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression", "jetbrains.mps.console.blCommand.structure.ConsoleOperation", "jetbrains.mps.console.blCommand.structure.CustomScope", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.GlobalScope", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelScope", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesScope", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.PrintExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.blCommand.structure.PrintSequenceExpression", "jetbrains.mps.console.blCommand.structure.PrintTextExpression", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ProjectScope", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ReferencesExpression", "jetbrains.mps.console.blCommand.structure.ScopeParameter", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression", "jetbrains.mps.console.blCommand.structure.WithStatement"};
+  private static String[] stringSwitchCases_1htk8d_a0a0fb = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression", "jetbrains.mps.console.blCommand.structure.ConsoleOperation", "jetbrains.mps.console.blCommand.structure.CustomScope", "jetbrains.mps.console.blCommand.structure.GlobalScope", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelScope", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesScope", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.PrintExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.blCommand.structure.PrintSequenceExpression", "jetbrains.mps.console.blCommand.structure.PrintTextExpression", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ProjectScope", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ReferencesExpression", "jetbrains.mps.console.blCommand.structure.ScopeParameter", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

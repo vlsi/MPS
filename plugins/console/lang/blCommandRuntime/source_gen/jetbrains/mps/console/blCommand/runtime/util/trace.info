@@ -49,8 +49,8 @@
       <node id="6558068108107683969" at="188,129,189,45" concept="4" />
       <node id="6558068108107683974" at="189,45,190,55" concept="1" />
       <node id="6558068108107682276" at="190,55,191,0" concept="6" />
-      <node id="6558068108108370769" at="191,0,192,251" concept="4" />
-      <node id="6558068108108373959" at="192,251,193,194" concept="1" />
+      <node id="6558068108108370769" at="191,0,192,246" concept="4" />
+      <node id="6558068108108373959" at="192,246,193,194" concept="1" />
       <node id="6558068108108580762" at="193,194,194,201" concept="1" />
       <node id="6558068108108409359" at="194,201,195,37" concept="1" />
       <node id="5348835480204234277" at="198,148,199,90" concept="4" />
@@ -121,12 +121,12 @@
       <node id="8433118097516021444" at="275,74,278,5" concept="2" />
       <node id="8433118097516021734" at="281,79,284,5" concept="2" />
       <node id="8433118097516022984" at="287,81,290,5" concept="2" />
-      <node id="4307205004142786686" at="198,0,202,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/tool/ConsoleContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="4307205004142786686" at="198,0,202,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/command/base/runtime/ConsoleContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="3820104862372919953" at="53,58,58,7" concept="5" />
       <node id="6864030874026229328" at="61,68,66,7" concept="5" />
       <node id="8627797991303084740" at="105,12,110,49" concept="1" />
-      <node id="2348043250037244792" at="182,0,187,0" concept="8" trace="addNodeReference#(Ljetbrains/mps/console/tool/ConsoleStream;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7600370246426607093" at="95,0,101,0" concept="8" trace="printClosure#(Ljetbrains/mps/console/tool/ConsoleStream;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljava/lang/String;)V" />
+      <node id="2348043250037244792" at="182,0,187,0" concept="8" trace="addNodeReference#(Ljetbrains/mps/command/base/runtime/ConsoleStream;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7600370246426607093" at="95,0,101,0" concept="8" trace="printClosure#(Ljetbrains/mps/command/base/runtime/ConsoleStream;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljava/lang/String;)V" />
       <node id="8627797991303082080" at="105,10,111,5" concept="0" />
       <node id="8655184070256908283" at="221,0,227,0" concept="8" trace="check_1pinza_a0a0a0n#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
       <node id="8433118097516181695" at="227,0,233,0" concept="8" trace="check_1pinza_a0a0a0a0b0a0a91#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -149,8 +149,8 @@
       <node id="1125969196844645054" at="117,68,126,11" concept="1" />
       <node id="1125969196844733225" at="135,70,144,11" concept="1" />
       <node id="1125969196844733365" at="153,72,162,11" concept="1" />
-      <node id="2699636778862353917" at="188,0,197,0" concept="8" trace="registerAnalyzeStacktraceDialogClosure#(Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Throwable;)V" />
-      <node id="9010839353952056869" at="102,0,113,0" concept="8" trace="printSequence#(Ljetbrains/mps/console/tool/ConsoleStream;Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;ILjava/lang/String;)V" />
+      <node id="2699636778862353917" at="188,0,197,0" concept="8" trace="registerAnalyzeStacktraceDialogClosure#(Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;Ljava/lang/Throwable;)V" />
+      <node id="9010839353952056869" at="102,0,113,0" concept="8" trace="printSequence#(Ljetbrains/mps/command/base/runtime/ConsoleStream;Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;ILjava/lang/String;)V" />
       <node id="1597470200014229947" at="116,0,129,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="1597470200014090902" at="134,0,147,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="1597470200014094812" at="152,0,165,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />

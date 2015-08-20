@@ -58,15 +58,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5582028874769201340(final ReferenceMacroContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_5582028874769074473", new Object[]{});
   }
-  public static Object referenceMacro_GetReferent_5582028874771857731(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.console.blCommand.structure.BLCommand"), false, false), "contextParameter");
-  }
-  public static Object referenceMacro_GetReferent_5308946314782030193(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.console.blCommand.structure.BLCommand"), false, false), "contextParameter");
-  }
-  public static Object referenceMacro_GetReferent_5308946314782036448(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.console.blCommand.structure.BLCommand"), false, false), "contextParameter");
-  }
   public static Object referenceMacro_GetReferent_5932042262276049107(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L, "requestedAspect"));
   }

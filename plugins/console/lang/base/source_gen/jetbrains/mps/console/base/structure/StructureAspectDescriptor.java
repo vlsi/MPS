@@ -12,12 +12,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L)).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptBLCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.BLCommand", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L)).super_("jetbrains.mps.console.base.structure.GeneratedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L)).parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L)).childDescriptors(new ConceptDescriptorBuilder.Link(1769790395579689573L, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false)).children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage statements").create();
+  /*package*/ final ConceptDescriptor myConceptBLExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.BLExpression", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L)).super_("jetbrains.mps.console.base.structure.GeneratedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L)).parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11c6fd75034L)).childDescriptors(new ConceptDescriptorBuilder.Link(7656298970878093890L, "expression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("", "baseLanguage expression").create();
+  /*package*/ final ConceptDescriptor myConceptCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.command.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xcb3c6536cd624d95L, 0x85294a37cbf14855L, 0x690b986730edd07L)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptCommandHolder = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(351968380916615460L, "command", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL), true, false, false)).children(new String[]{"command"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptConsoleHelpProvider = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ConsoleHelpProvider", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptConsoleRoot = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ConsoleRoot", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(1583916890557930415L, "history", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL), false, false, false), new ConceptDescriptorBuilder.Link(1583916890557930417L, "commandHolder", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL), false, false, false)).children(new String[]{"history", "commandHolder"}, new boolean[]{false, false}).create();
+  /*package*/ final ConceptDescriptor myConceptExceptionHolder = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ExceptionHolder", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6558068108108282025L, "stackTrace")).properties("stackTrace").create();
   /*package*/ final ConceptDescriptor myConceptGeneratedCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.GeneratedCommand", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L)).super_("jetbrains.mps.console.base.structure.Command").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL)).parents("jetbrains.mps.console.base.structure.Command").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL)).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptHelpCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.HelpCommand", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L)).super_("jetbrains.mps.console.base.structure.InterpretedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L)).parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L)).childDescriptors(new ConceptDescriptorBuilder.Link(6928665434433788203L, "target", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L), true, false, false)).children(new String[]{"target"}, new boolean[]{false}).alias("?", "help").create();
+  /*package*/ final ConceptDescriptor myConceptHelpCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.HelpCommand", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L)).super_("jetbrains.mps.console.base.structure.InterpretedCommand").super_(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L)).parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.command.base.structure.ConsoleHelpProvider").parentIds(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L), MetaIdFactory.conceptId(0xcb3c6536cd624d95L, 0x85294a37cbf14855L, 0x690b986730edd07L)).childDescriptors(new ConceptDescriptorBuilder.Link(6928665434433788203L, "target", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L), true, false, false)).children(new String[]{"target"}, new boolean[]{false}).alias("?", "help").create();
   /*package*/ final ConceptDescriptor myConceptHelpConceptReference = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.HelpConceptReference", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(6928665434433779926L, "command", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), false)).references("command").create();
   /*package*/ final ConceptDescriptor myConceptHistory = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.History", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(7195119950189425818L, "item", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL), true, true, false)).children(new String[]{"item"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptHistoryItem = new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.HistoryItem", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL)).interface_().create();
@@ -39,64 +41,68 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCommand, myConceptCommandHolder, myConceptConsoleHelpProvider, myConceptConsoleRoot, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
+    return Arrays.asList(myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0eb, conceptFqName)) {
       case 0:
-        return myConceptCommand;
+        return myConceptBLCommand;
       case 1:
-        return myConceptCommandHolder;
+        return myConceptBLExpression;
       case 2:
-        return myConceptConsoleHelpProvider;
+        return myConceptCommand;
       case 3:
-        return myConceptConsoleRoot;
+        return myConceptCommandHolder;
       case 4:
-        return myConceptGeneratedCommand;
+        return myConceptConsoleRoot;
       case 5:
-        return myConceptHelpCommand;
+        return myConceptExceptionHolder;
       case 6:
-        return myConceptHelpConceptReference;
+        return myConceptGeneratedCommand;
       case 7:
-        return myConceptHistory;
+        return myConceptHelpCommand;
       case 8:
-        return myConceptHistoryItem;
+        return myConceptHelpConceptReference;
       case 9:
-        return myConceptIActionHolder;
+        return myConceptHistory;
       case 10:
-        return myConceptIClickable;
+        return myConceptHistoryItem;
       case 11:
-        return myConceptINodeWithReference;
+        return myConceptIActionHolder;
       case 12:
-        return myConceptInterpretedCommand;
+        return myConceptIClickable;
       case 13:
-        return myConceptModifiedCommandHistoryItem;
+        return myConceptINodeWithReference;
       case 14:
-        return myConceptNewLineResponseItem;
+        return myConceptInterpretedCommand;
       case 15:
-        return myConceptNodeReferencePresentation;
+        return myConceptModifiedCommandHistoryItem;
       case 16:
-        return myConceptNodeReferenceString;
+        return myConceptNewLineResponseItem;
       case 17:
-        return myConceptNodeResponseItem;
+        return myConceptNodeReferencePresentation;
       case 18:
-        return myConceptNodeWithClosure;
+        return myConceptNodeReferenceString;
       case 19:
-        return myConceptOutputConsoleRoot;
+        return myConceptNodeResponseItem;
       case 20:
-        return myConceptPastedNodeReference;
+        return myConceptNodeWithClosure;
       case 21:
-        return myConceptResponse;
+        return myConceptOutputConsoleRoot;
       case 22:
-        return myConceptResponseItem;
+        return myConceptPastedNodeReference;
       case 23:
+        return myConceptResponse;
+      case 24:
+        return myConceptResponseItem;
+      case 25:
         return myConceptTextResponseItem;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleHelpProvider", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.IActionHolder", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.ResponseItem", "jetbrains.mps.console.base.structure.TextResponseItem"};
+  private static String[] stringSwitchCases_1htk8d_a0a0eb = new String[]{"jetbrains.mps.console.base.structure.BLCommand", "jetbrains.mps.console.base.structure.BLExpression", "jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.ExceptionHolder", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.IActionHolder", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.ResponseItem", "jetbrains.mps.console.base.structure.TextResponseItem"};
 }

@@ -5,7 +5,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.console.base.behavior.ConsoleHelpProvider_Behavior;
+import jetbrains.mps.command.base.behavior.ConsoleHelpProvider_Behavior;
 import jetbrains.mps.console.blCommand.behavior.ConsoleExpression_Behavior;
 
 public class CallActionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ConsoleExpression_BehaviorDescriptor {
