@@ -81,13 +81,13 @@ public class Solution extends ReloadableModuleBase {
     if (classType == ClassType.JDK) {
       PackageScopeControl jdkPackages = new PackageScopeControl();
       jdkPackages.setSkipPrivate(true);
-//      jdkPackages.includeWithPrefix("java.");
-//      jdkPackages.includeWithPrefix("javax.");
-//      jdkPackages.includeWithPrefix("org.");
-//      // com.sun.jdi is in use by debugger
-//      jdkPackages.includeWithPrefix("com.");
-//      jdkPackages.includeWithPrefix("com.sun.");
-//      jdkPackages.includeWithPrefix("com.sun.jdi.");
+      jdkPackages.includeWithPrefix("java.");
+      jdkPackages.includeWithPrefix("javax.");
+      jdkPackages.includeWithPrefix("org.");
+      // com.sun.jdi is in use by debugger
+      jdkPackages.includeWithPrefix("com.");
+      jdkPackages.includeWithPrefix("com.sun.");
+      jdkPackages.includeWithPrefix("com.sun.jdi.");
       psc = jdkPackages;
     } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
       PackageScopeControl platformPackages = new PackageScopeControl();
