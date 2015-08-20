@@ -8,6 +8,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -302,6 +303,38 @@
     </node>
     <node concept="PrWs8" id="3ob4OZ0kHtj" role="PzmwI">
       <ref role="PrY4T" node="22lVekVIvmK" resolve="IClickable" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Jke6BA4ffD">
+    <property role="TrG5h" value="BLCommand" />
+    <property role="R4oN_" value="baseLanguage statements" />
+    <property role="34LRSv" value="{" />
+    <ref role="1TJDcQ" node="1yfzJNJq9LL" resolve="GeneratedCommand" />
+    <node concept="1TJgyj" id="1yfzJNJreD_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="2lR2lzqth0Q" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
+    <node concept="PrWs8" id="2lR2lzquo81" role="PzmwI">
+      <ref role="PrY4T" to="tpee:htgVS9_" resolve="IStatementListContainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6D0CP__oaBp">
+    <property role="TrG5h" value="BLExpression" />
+    <property role="R4oN_" value="baseLanguage expression" />
+    <ref role="1TJDcQ" node="1yfzJNJq9LL" resolve="GeneratedCommand" />
+    <node concept="1TJgyj" id="6D0CP__oaD2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
   </node>
 </model>

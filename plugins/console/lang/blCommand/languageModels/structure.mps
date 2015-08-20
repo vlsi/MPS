@@ -45,24 +45,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="4Jke6BA4ffD">
-    <property role="TrG5h" value="BLCommand" />
-    <property role="R4oN_" value="baseLanguage statements" />
-    <property role="34LRSv" value="{" />
-    <ref role="1TJDcQ" to="eynw:1yfzJNJq9LL" resolve="GeneratedCommand" />
-    <node concept="1TJgyj" id="1yfzJNJreD_" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="body" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
-    <node concept="PrWs8" id="2lR2lzqth0Q" role="PzmwI">
-      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
-    </node>
-    <node concept="PrWs8" id="2lR2lzquo81" role="PzmwI">
-      <ref role="PrY4T" to="tpee:htgVS9_" resolve="IStatementListContainer" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="5WpmwkrQrRs">
     <property role="3GE5qa" value="expression.print" />
     <property role="TrG5h" value="PrintNodeReferenceExpression" />
@@ -247,20 +229,6 @@
     <property role="TrG5h" value="ProjectScope" />
     <property role="34LRSv" value="project" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
-  </node>
-  <node concept="1TIwiD" id="6D0CP__oaBp">
-    <property role="TrG5h" value="BLExpression" />
-    <property role="R4oN_" value="baseLanguage expression" />
-    <ref role="1TJDcQ" to="eynw:1yfzJNJq9LL" resolve="GeneratedCommand" />
-    <node concept="1TJgyj" id="6D0CP__oaD2" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
-      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
-    </node>
   </node>
   <node concept="1TIwiD" id="6_TW7xVaDdR">
     <property role="3GE5qa" value="expression.print" />

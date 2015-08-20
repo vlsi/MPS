@@ -106,26 +106,12 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
-      <concept id="1216860049627" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" flags="nn" index="1iwH70">
-        <reference id="1216860049628" name="label" index="1iwH77" />
-        <child id="1216860049632" name="inputNode" index="1iwH7V" />
-      </concept>
-      <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
-        <child id="1144104376918" name="parameter" index="1xVPHs" />
-      </concept>
-      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
-        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
@@ -269,32 +255,6 @@
               <ref role="37wK5l" to="8wae:23X86fnS_$6" resolve="refactor" />
               <node concept="37vLTw" id="23X86fnVb5G" role="37wK5m">
                 <ref role="3cqZAo" node="23X86fnVai2" resolve="context" />
-                <node concept="1ZhdrF" id="23X86fnXRei" role="lGtFl">
-                  <property role="2qtEX8" value="variableDeclaration" />
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                  <node concept="3$xsQk" id="23X86fnXRej" role="3$ytzL">
-                    <node concept="3clFbS" id="23X86fnXRek" role="2VODD2">
-                      <node concept="3clFbF" id="23X86fnXRva" role="3cqZAp">
-                        <node concept="2OqwBi" id="23X86fnXRAy" role="3clFbG">
-                          <node concept="1iwH7S" id="23X86fnXRv9" role="2Oq$k0" />
-                          <node concept="1iwH70" id="23X86fnXRWD" role="2OqNvi">
-                            <ref role="1iwH77" to="74y1:1El5OLsAWHX" resolve="contextParameter" />
-                            <node concept="2OqwBi" id="23X86fnXSaN" role="1iwH7V">
-                              <node concept="30H73N" id="23X86fnXS3F" role="2Oq$k0" />
-                              <node concept="2Xjw5R" id="23X86fnXUby" role="2OqNvi">
-                                <node concept="1xMEDy" id="23X86fnXUb$" role="1xVPHs">
-                                  <node concept="chp4Y" id="1sQ3YjaUPU9" role="ri$Ld">
-                                    <ref role="cht4Q" to="3xdn:4Jke6BA4ffD" resolve="BLCommand" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="10Nm6u" id="23X86fnVCLP" role="37wK5m">
                 <node concept="29HgVG" id="23X86fnVCQt" role="lGtFl">

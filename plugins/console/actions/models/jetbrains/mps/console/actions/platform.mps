@@ -12,6 +12,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
   </languages>
   <imports>
     <import index="afa5" ref="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)" />
@@ -209,9 +210,6 @@
       <concept id="8483375838963816351" name="jetbrains.mps.console.blCommand.structure.ShowExpression" flags="ng" index="24aHrZ">
         <child id="7600370246423275637" name="object" index="iY1wd" />
       </concept>
-      <concept id="7656298970878093785" name="jetbrains.mps.console.blCommand.structure.BLExpression" flags="ng" index="f80E0">
-        <child id="7656298970878093890" name="expression" index="f80$r" />
-      </concept>
       <concept id="7738379549910147341" name="jetbrains.mps.console.blCommand.structure.InstancesExpression" flags="ng" index="qVDSY">
         <child id="7738379549910147342" name="conceptArg" index="qVDSX" />
       </concept>
@@ -237,6 +235,11 @@
         <child id="1225711191269" name="index" index="1y58nS" />
       </concept>
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
+    </language>
+    <language id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base">
+      <concept id="7656298970878093785" name="" flags="ng" index="f80E0">
+        <child id="7656298970878093890" name="" index="f80$r" />
+      </concept>
     </language>
   </registry>
   <node concept="sE7Ow" id="2UTM4$6j1gf">
