@@ -9,6 +9,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="jyxa" ref="r:9ec1d3e7-df4d-441e-8024-73530d64d324(jetbrains.mps.command.base.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -145,7 +146,7 @@
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="64VftqEcjuW" role="PzmwI">
-      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="22lVekVE19_">
@@ -193,7 +194,7 @@
     <property role="R4oN_" value="help" />
     <ref role="1TJDcQ" node="1yfzJNJq9L_" resolve="InterpretedCommand" />
     <node concept="PrWs8" id="qgIopNcGQC" role="PzmwI">
-      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
     </node>
     <node concept="1TJgyj" id="60B$832X1$F" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -332,10 +333,6 @@
     <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
       <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
-  </node>
-  <node concept="PlHQZ" id="qgIopN3HO7">
-    <property role="TrG5h" value="ConsoleHelpProvider" />
-    <property role="3GE5qa" value="help" />
   </node>
 </model>
 

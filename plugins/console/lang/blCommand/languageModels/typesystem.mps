@@ -1196,53 +1196,5 @@
       <ref role="1YaFvo" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     </node>
   </node>
-  <node concept="1YbPZF" id="3F2FyKbNNPn">
-    <property role="TrG5h" value="typeof_ScopeProvider" />
-    <property role="3GE5qa" value="expression.query" />
-    <node concept="3clFbS" id="3F2FyKbNNPo" role="18ibNy">
-      <node concept="2NvLDW" id="3F2FyKbNVdL" role="3cqZAp">
-        <node concept="mw_s8" id="3F2FyKbNVdO" role="1ZfhK$">
-          <node concept="1Z2H0r" id="3F2FyKbNOjl" role="mwGJk">
-            <node concept="2OqwBi" id="3F2FyKbNOmx" role="1Z2MuG">
-              <node concept="1YBJjd" id="3F2FyKbNOjL" role="2Oq$k0">
-                <ref role="1YBMHb" node="3F2FyKbNNPq" resolve="scopeProvider" />
-              </node>
-              <node concept="3TrEf2" id="3F2FyKbNVb4" role="2OqNvi">
-                <ref role="3Tt5mk" to="3xdn:3F2FyKbNNqR" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="3F2FyKbNVkL" role="1ZfhKB">
-          <node concept="2c44tf" id="3F2FyKbNVkM" role="mwGJk">
-            <node concept="2usRSg" id="3F2FyKbNVkN" role="2c44tc">
-              <node concept="A3Dl8" id="3F2FyKbNVkO" role="2usUpS">
-                <node concept="3Tqbb2" id="3F2FyKbNVkP" role="A3Ik2" />
-              </node>
-              <node concept="H_c77" id="3F2FyKbNVnk" role="2usUpS" />
-              <node concept="A3Dl8" id="3F2FyKbNVkS" role="2usUpS">
-                <node concept="H_c77" id="3F2FyKbNVkT" role="A3Ik2" />
-              </node>
-              <node concept="3uibUv" id="3F2FyKbNXXO" role="2usUpS">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-              <node concept="A3Dl8" id="3F2FyKbNVkU" role="2usUpS">
-                <node concept="3uibUv" id="3F2FyKbNVkV" role="A3Ik2">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-              </node>
-              <node concept="3uibUv" id="3F2FyKbNY6e" role="2usUpS">
-                <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="3F2FyKbNNPq" role="1YuTPh">
-      <property role="TrG5h" value="scopeProvider" />
-      <ref role="1YaFvo" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
-    </node>
-  </node>
 </model>
 

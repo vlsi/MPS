@@ -37,6 +37,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="fq2o" ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" />
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
+    <import index="67ek" ref="r:a0598308-9fae-494c-abe2-56fbebc91b43(jetbrains.mps.command.base.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -2453,7 +2454,7 @@
     <node concept="13i0hz" id="yhQm9_Wh7o" role="13h7CS">
       <property role="TrG5h" value="getHelpPage" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="zyb2:64VftqEen2L" resolve="getHelpPage" />
+      <ref role="13i0hy" to="67ek:64VftqEen2L" resolve="getHelpPage" />
       <node concept="3clFbS" id="yhQm9_WjKE" role="3clF47">
         <node concept="3clFbF" id="yhQm9_WzpE" role="3cqZAp">
           <node concept="Xl_RD" id="yhQm9_WzpD" role="3clFbG">
@@ -2498,14 +2499,14 @@
       <property role="13i0it" value="false" />
       <property role="2Ki8OM" value="true" />
       <property role="TrG5h" value="getDisplayString" />
-      <ref role="13i0hy" to="zyb2:5YxQmqOFZEf" resolve="getDisplayString" />
+      <ref role="13i0hy" to="67ek:5YxQmqOFZEf" resolve="getDisplayString" />
       <node concept="3Tm1VV" id="25MaZwhhNmp" role="1B3o_S" />
       <node concept="3clFbS" id="25MaZwhhNmL" role="3clF47">
         <node concept="3clFbF" id="25MaZwhi1kV" role="3cqZAp">
           <node concept="2OqwBi" id="25MaZwhi1pN" role="3clFbG">
             <node concept="13iPFW" id="25MaZwhi1kS" role="2Oq$k0" />
             <node concept="2qgKlT" id="25MaZwhi1I2" role="2OqNvi">
-              <ref role="37wK5l" to="zyb2:64VftqEenfn" resolve="getShortDisplayString" />
+              <ref role="37wK5l" to="67ek:64VftqEenfn" resolve="getShortDisplayString" />
             </node>
           </node>
         </node>
@@ -2527,7 +2528,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
+      <ref role="13i0hy" to="67ek:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="2tFdLTRKcTN" role="1B3o_S" />
       <node concept="3clFbS" id="2tFdLTRKcTQ" role="3clF47">
         <node concept="3clFbF" id="2tFdLTRKcWU" role="3cqZAp">
