@@ -30,6 +30,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -70,7 +73,7 @@
     </node>
     <node concept="3clFb_" id="7L2VFB5mjvh" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getConsoleTab" />
+      <property role="TrG5h" value="getOutputWindow" />
       <node concept="3uibUv" id="3ZgZ1njKpbJ" role="3clF45">
         <ref role="3uigEE" node="3ZgZ1njKpbf" resolve="CommandOutputWindow" />
       </node>
@@ -107,6 +110,14 @@
   </node>
   <node concept="3HP615" id="3ZgZ1njKpbf">
     <property role="TrG5h" value="CommandOutputWindow" />
+    <node concept="3clFb_" id="3ZgZ1njQOJj" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="activate" />
+      <node concept="3clFbS" id="3ZgZ1njQOJm" role="3clF47" />
+      <node concept="3Tm1VV" id="3ZgZ1njQOJn" role="1B3o_S" />
+      <node concept="3cqZAl" id="3ZgZ1njQOJh" role="3clF45" />
+    </node>
     <node concept="3Tm1VV" id="3ZgZ1njKpbg" role="1B3o_S" />
   </node>
 </model>

@@ -216,14 +216,14 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFb_" id="6ysF3v1j_nh" role="jymVt">
+                  <node concept="3clFb_" id="3ZgZ1njS99F" role="jymVt">
                     <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="getConsoleTab" />
-                    <node concept="3uibUv" id="3ZgZ1njLDul" role="3clF45">
+                    <property role="TrG5h" value="getOutputWindow" />
+                    <node concept="3uibUv" id="3ZgZ1njS99G" role="3clF45">
                       <ref role="3uigEE" to="dnf9:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
                     </node>
-                    <node concept="3Tm1VV" id="6ysF3v1j_nj" role="1B3o_S" />
-                    <node concept="3clFbS" id="6ysF3v1j_nk" role="3clF47">
+                    <node concept="3Tm1VV" id="3ZgZ1njS99H" role="1B3o_S" />
+                    <node concept="3clFbS" id="3ZgZ1njS99K" role="3clF47">
                       <node concept="YS8fn" id="1H31ARNQZqB" role="3cqZAp">
                         <node concept="2ShNRf" id="1H31ARNQZqC" role="YScLw">
                           <node concept="1pGfFk" id="1H31ARNQZqD" role="2ShVmc">

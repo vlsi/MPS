@@ -18,7 +18,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="jfzm" ref="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)" />
-    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" implicit="true" />
+    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -33,6 +33,10 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -57,6 +61,9 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -213,12 +220,19 @@
         <node concept="3clFbS" id="4PRmqZeEGa6" role="3clF47">
           <node concept="3clFbF" id="4PRmqZeEGa7" role="3cqZAp">
             <node concept="2OqwBi" id="7M1Gaz37Rge" role="3clFbG">
-              <node concept="2OqwBi" id="4PRmqZeEGa8" role="2Oq$k0">
-                <node concept="37vLTw" id="4PRmqZeEGa9" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4PRmqZeEGa0" resolve="context" />
-                </node>
-                <node concept="liA8E" id="4PRmqZeEGam" role="2OqNvi">
-                  <ref role="37wK5l" to="dnf9:7L2VFB5mjvh" resolve="getConsoleTab" />
+              <node concept="1eOMI4" id="3ZgZ1njTt2X" role="2Oq$k0">
+                <node concept="10QFUN" id="3ZgZ1njTt2Y" role="1eOMHV">
+                  <node concept="2OqwBi" id="3ZgZ1njTt2U" role="10QFUP">
+                    <node concept="37vLTw" id="3ZgZ1njTt2V" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4PRmqZeEGa0" resolve="context" />
+                    </node>
+                    <node concept="liA8E" id="3ZgZ1njTt2W" role="2OqNvi">
+                      <ref role="37wK5l" to="dnf9:7L2VFB5mjvh" resolve="getOutputWindow" />
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="3ZgZ1njTt3x" role="10QFUM">
+                    <ref role="3uigEE" to="qgo0:4gO8Gruz$1J" resolve="BaseConsoleTab" />
+                  </node>
                 </node>
               </node>
               <node concept="liA8E" id="7M1Gaz37VIH" role="2OqNvi">
