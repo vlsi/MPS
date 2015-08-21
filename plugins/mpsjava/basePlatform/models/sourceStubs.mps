@@ -1201,8 +1201,8 @@
       <property role="TrG5h" value="createModel" />
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="4wjoHLPMkF" role="1B3o_S" />
-      <node concept="3uibUv" id="5aPnSohJGy$" role="3clF45">
-        <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+      <node concept="3uibUv" id="686$TZgr$D4" role="3clF45">
+        <ref role="3uigEE" to="w1kc:~ModelLoadResult" resolve="ModelLoadResult" />
       </node>
       <node concept="3clFbS" id="3PyP5yK7RCO" role="3clF47">
         <node concept="3cpWs8" id="lHAw_F0KDo" role="3cqZAp">
@@ -1260,9 +1260,18 @@
             <ref role="37wK5l" node="1Z$xEXrVFm0" resolve="importedLanguageIds" />
           </node>
         </node>
-        <node concept="3clFbF" id="lHAw_F1HP8" role="3cqZAp">
-          <node concept="37vLTw" id="lHAw_F1HP7" role="3clFbG">
-            <ref role="3cqZAo" node="lHAw_F0KDp" resolve="model" />
+        <node concept="3cpWs6" id="686$TZgrAqG" role="3cqZAp">
+          <node concept="2ShNRf" id="686$TZgrACF" role="3cqZAk">
+            <node concept="1pGfFk" id="686$TZgrI0l" role="2ShVmc">
+              <ref role="37wK5l" to="w1kc:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
+              <node concept="37vLTw" id="686$TZgrJY1" role="37wK5m">
+                <ref role="3cqZAo" node="lHAw_F0KDp" resolve="model" />
+              </node>
+              <node concept="Rm8GO" id="686$TZgrOrt" role="37wK5m">
+                <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -1439,22 +1448,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4P9E75_mn38" role="3cqZAp">
+          <node concept="1rXfSq" id="4P9E75_mn36" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.unload():void" resolve="unload" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="4wjoHLQlnX" role="3cqZAp">
           <node concept="3cpWsn" id="4wjoHLQlnY" role="3cpWs9">
             <property role="TrG5h" value="newModel" />
             <node concept="3uibUv" id="4wjoHLQlnZ" role="1tU5fm">
               <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
             </node>
-            <node concept="1rXfSq" id="4wjoHLQlxy" role="33vP2m">
-              <ref role="37wK5l" node="3PyP5yK7RCK" resolve="createModel" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4wjoHLQkOb" role="3cqZAp">
-          <node concept="1rXfSq" id="4wjoHLQkO9" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.setCurrentModelInternal(jetbrains.mps.smodel.SModel):void" resolve="setCurrentModelInternal" />
-            <node concept="37vLTw" id="4wjoHLQlKj" role="37wK5m">
-              <ref role="3cqZAo" node="4wjoHLQlnY" resolve="newModel" />
+            <node concept="1rXfSq" id="4P9E75_mnxS" role="33vP2m">
+              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
             </node>
           </node>
         </node>

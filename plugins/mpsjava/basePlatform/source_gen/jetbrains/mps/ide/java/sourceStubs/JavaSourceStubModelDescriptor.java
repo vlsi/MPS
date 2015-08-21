@@ -14,9 +14,11 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -53,13 +55,13 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
   }
 
   @Override
-  protected SModel createModel() {
+  protected ModelLoadResult createModel() {
     SModel model = new SModel(getReference());
     processStreams(getSource().getAvailableStreams(), model);
     for (SLanguage l : CollectionSequence.fromCollection(importedLanguageIds())) {
       model.addLanguage(l);
     }
-    return model;
+    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
@@ -93,8 +95,8 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
     }
     MapSequence.fromMap(myRootsPerFile).clear();
     MapSequence.fromMap(myRootsById).clear();
-    SModel newModel = createModel();
-    setCurrentModelInternal(newModel);
+    unload();
+    SModel newModel = getSModelInternal();
     replaceModelAndFireEvent(oldModel, newModel);
   }
 

@@ -24,6 +24,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.JDOMUtil;
@@ -133,7 +135,7 @@ public class TestModule extends AbstractModule {
     }
 
     @Override
-    public jetbrains.mps.smodel.SModel createModel() {
+    public ModelLoadResult createModel() {
       if (!myToCopy.isLoaded()) {
         // we are going to access internal/implementation model which might be in a partially-loaded
         // state (only public API guarantees proper loading). With partial model, we could face odd
@@ -145,9 +147,9 @@ public class TestModule extends AbstractModule {
       rootElement.setAttribute(ModelPersistence.REF, getReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
-        return ModelPersistence.readModel(modelContent, false);
+        return new ModelLoadResult(ModelPersistence.readModel(modelContent, false), ModelLoadingState.FULLY_LOADED);
       } catch (ModelReadException e) {
-        return new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e);
+        return new ModelLoadResult(new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e), ModelLoadingState.FULLY_LOADED);
       }
     }
   }

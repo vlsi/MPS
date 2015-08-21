@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.RegularModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
+import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -46,6 +47,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.BaseFastNodeFinder;
@@ -229,7 +231,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       myModule = module;
     }
     @Override
-    protected ProjectStructureModule.ProjectStructureSModel createModel() {
+    protected ModelLoadResult createModel() {
       final ProjectStructureModule.ProjectStructureSModel model = new ProjectStructureModule.ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
@@ -260,9 +262,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         });
       }
-      return model;
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
     private void dropModel() {
+      // FIXME why not unload()? Does anyone relies on replace event in this case? 
       if (mySModel == null) {
         return;
       }

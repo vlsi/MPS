@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * for subclasses to override.
  */
 public abstract class RegularModelDescriptor extends SModelBase {
+  // FIXME shall become private once its only external (questionable) use in ProjectStructureModel is gone
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
   /**
@@ -54,12 +55,14 @@ public abstract class RegularModelDescriptor extends SModelBase {
     synchronized (myLoadLock) {
       oldState = getLoadingState();
       if (mySModel == null) {
-        mySModel = createModel();
+        ModelLoadResult loadResult = createModel();
+        // FIXME once we drop direct dependency on smodel.SModel, there'd be no cast
+        mySModel = (SModel) loadResult.getModelData();
         mySModel.setModelDescriptor(this);
-        setLoadingState(ModelLoadingState.FULLY_LOADED);
+        setLoadingState(loadResult.getState());
       }
     }
-    fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
+    fireModelStateChanged(oldState, getLoadingState());
     return mySModel;
   }
 
@@ -80,7 +83,7 @@ public abstract class RegularModelDescriptor extends SModelBase {
     }
   }
 
-  protected abstract jetbrains.mps.smodel.SModel createModel();
+  protected abstract ModelLoadResult createModel();
 
   @Override
   public void unload() {
@@ -89,15 +92,16 @@ public abstract class RegularModelDescriptor extends SModelBase {
     if (mySModel == null) {
       return;
     }
+    final ModelLoadingState oldState;
     synchronized (myLoadLock) {
       if (mySModel == null) {
         return;
       }
-      final ModelLoadingState oldState = getLoadingState();
+      oldState = getLoadingState();
       mySModel.setModelDescriptor(null);
       mySModel = null;
       setLoadingState(ModelLoadingState.NOT_LOADED);
-      fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
     }
+    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
   }
 }

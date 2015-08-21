@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -270,7 +272,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     @Override
-    protected jetbrains.mps.smodel.SModel createModel() {
+    protected ModelLoadResult createModel() {
       jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {
         @Override
         public boolean canFireEvent() {
@@ -278,7 +280,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         }
       };
       model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
-      return model;
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

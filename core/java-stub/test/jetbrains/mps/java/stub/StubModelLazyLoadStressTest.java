@@ -90,14 +90,14 @@ public class StubModelLazyLoadStressTest {
     }
     JavaClassStubModelDescriptor model = new JavaClassStubModelDescriptor(modelRef, dataSource) {
       @Override
-      protected void fireModelStateChanged(ModelLoadingState newState) {
+      protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
         Thread.yield();
         try {
           Thread.sleep(10);
         } catch (InterruptedException ex) {
           // ignore
         }
-        super.fireModelStateChanged(newState);
+        super.fireModelStateChanged(oldState, newState);
         trace("JCSMD.marked as " + newState + " from " + Thread.currentThread().getName());
       }
     };
