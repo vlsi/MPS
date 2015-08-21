@@ -32,7 +32,7 @@ public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
 
   @Override
   public boolean reuseTypecheckingContext() {
-    return false;
+    return true;
   }
 
   @Override

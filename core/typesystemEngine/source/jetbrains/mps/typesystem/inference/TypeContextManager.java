@@ -62,7 +62,12 @@ public class TypeContextManager implements CoreComponent {
   private ThreadLocal<ITypeContextOwner> myTypecheckingContextOwner = new ThreadLocal<ITypeContextOwner>() {
     @Override
     protected ITypeContextOwner initialValue() {
-      return new DefaultTypecheckingContextOwner();
+      return new DefaultTypecheckingContextOwner() {
+        @Override
+        public boolean reuseTypecheckingContext() {
+          return false;
+        }
+      };
     }
   };
   private ThreadLocal<SubtypingCache> mySubtypingCache = new ThreadLocal<SubtypingCache>();
