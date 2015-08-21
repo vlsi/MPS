@@ -15,12 +15,7 @@
  */
 package jetbrains.mps.java.stub;
 
-import jetbrains.mps.core.platform.Platform;
-import jetbrains.mps.core.platform.PlatformFactory;
-import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
-import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
-import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
@@ -29,18 +24,21 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
@@ -56,17 +54,19 @@ import java.util.concurrent.TimeUnit;
  * @author Artem Tikhomirov
  */
 public class StubModelLazyLoadStressTest {
-  private static Platform ourPlatform;
+  private static Environment ourPlatform;
   private static final boolean DEBUG = Boolean.FALSE.booleanValue();
+  private static SRepository ourModuleRepository;
 
   @BeforeClass
   public static void setUp() {
-    ourPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.PERSISTENCE);
-    ourPlatform.getCore().getLibraryInitializer().load(Collections.<LibraryContributor>singletonList(new BootstrapLibraryContributor()));
+    ourPlatform = MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries());
+    ourModuleRepository = ourPlatform.getPlatform().getCore().getModuleRepository();
   }
 
   @AfterClass
   public static void tearDown() {
+    ourModuleRepository = null;
     ourPlatform.dispose();
     ourPlatform = null;
   }
@@ -107,7 +107,7 @@ public class StubModelLazyLoadStressTest {
       }
     });
     SNodeId nodeId = new Foreign("~Pattern.compile(java.lang.String):java.util.regex.Pattern");
-    ModelAccess modelAccess = ourPlatform.getCore().getModuleRepository().getModelAccess();
+    ModelAccess modelAccess = ourModuleRepository.getModelAccess();
     FindNodeRunnable[] runners = new FindNodeRunnable[10];
     LatchCountAction latch = new LatchCountAction(new CountDownLatch(2));
     CyclicBarrier barrier = new CyclicBarrier(runners.length, latch);

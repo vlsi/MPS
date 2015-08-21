@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.core.platform.Platform;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -219,6 +220,12 @@ public class IdeaEnvironment extends EnvironmentBase {
         return;
       }
     });
+  }
+
+
+  @Override
+  public Platform getPlatform() {
+    return getMPSCoreComponents().getPlatform();
   }
 
   @Nullable

@@ -22,5 +22,6 @@
     <orderEntry type="module" module-name="platform" scope="TEST" />
     <orderEntry type="module" module-name="mps-platform" scope="TEST" />
     <orderEntry type="module" module-name="mps-core" scope="TEST" />
+    <orderEntry type="module" module-name="environment" scope="TEST" />
   </component>
 </module>

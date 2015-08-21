@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.core.platform.Platform;
 
 /**
  * Intended to be used in headless runs, represents working MPS environment.
@@ -51,4 +52,10 @@ public interface Environment {
    * flushes all #invokeAndLater calls and all ModelAccess event queue if needed
    */
   public void flushAllEvents();
+
+  /**
+   * 
+   * @return MPS (its platform aspect) of this tooling environment, not null when initialized.
+   */
+  public Platform getPlatform();
 }
