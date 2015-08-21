@@ -20,6 +20,9 @@
     <content url="file://$MODULE_DIR$/tests">
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/console/jetbrains.mps.command.base.runtime">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/jetbrains.mps.command.base.runtime/source_gen" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="openapi" exported="" />
