@@ -216,6 +216,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         descriptor = behaviorAspect.getDescriptor(fqName);
       } catch (Throwable e) {
         LOG.warn("Exception while behavior descriptor creating", e);
+        descriptor = NullSafeIllegalBehaviorDescriptor.INSTANCE;
       }
 
       // Shall not happen, provided we use BehaviorAspectInterpreted for missing aspects,
