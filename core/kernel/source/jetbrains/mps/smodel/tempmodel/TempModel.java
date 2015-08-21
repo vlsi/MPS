@@ -45,7 +45,10 @@ class TempModel extends EditableSModelBase {
     if (mySModel != null) {
       return mySModel;
     }
+    // FIXME code identical to BaseSpecialModelDescriptor
+    final ModelLoadingState oldState;
     synchronized (this) {
+      oldState = getLoadingState();
       if (mySModel == null) {
         mySModel = new jetbrains.mps.smodel.SModel(getReference()) {
           @Override
@@ -56,15 +59,11 @@ class TempModel extends EditableSModelBase {
           }
         };
         mySModel.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+        setLoadingState(ModelLoadingState.FULLY_LOADED);
       }
     }
+    fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
     return mySModel;
-  }
-
-  @Override
-  public boolean isLoaded() {
-    return mySModel != null;
   }
 
   @Override
@@ -79,6 +78,8 @@ class TempModel extends EditableSModelBase {
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
       mySModel = null;
+      setLoadingState(ModelLoadingState.NOT_LOADED);
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
     }
   }
 

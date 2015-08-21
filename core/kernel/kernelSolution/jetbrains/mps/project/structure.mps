@@ -1720,8 +1720,8 @@
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="false" />
       <node concept="3Tm1VV" id="4fSpAVAUjrx" role="1B3o_S" />
-      <node concept="3uibUv" id="4fSpAVAUjry" role="1zkMxy">
-        <ref role="3uigEE" to="w1kc:~BaseSpecialModelDescriptor" resolve="BaseSpecialModelDescriptor" />
+      <node concept="3uibUv" id="3ukDR1cJxu5" role="1zkMxy">
+        <ref role="3uigEE" to="w1kc:~RegularModelDescriptor" resolve="RegularModelDescriptor" />
       </node>
       <node concept="312cEg" id="4fSpAVAUjrz" role="jymVt">
         <property role="34CwA1" value="false" />
@@ -1753,9 +1753,14 @@
         </node>
         <node concept="3clFbS" id="4fSpAVAUjrH" role="3clF47">
           <node concept="XkiVB" id="4fSpAVAUjDA" role="3cqZAp">
-            <ref role="37wK5l" to="w1kc:~BaseSpecialModelDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="BaseSpecialModelDescriptor" />
+            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.persistence.DataSource)" resolve="RegularModelDescriptor" />
             <node concept="37vLTw" id="4fSpAVAUjrN" role="37wK5m">
               <ref role="3cqZAo" node="4fSpAVAUjrD" resolve="ref" />
+            </node>
+            <node concept="2ShNRf" id="3ukDR1cJyMP" role="37wK5m">
+              <node concept="1pGfFk" id="3ukDR1cJ$2Z" role="2ShVmc">
+                <ref role="37wK5l" to="dush:~NullDataSource.&lt;init&gt;()" resolve="NullDataSource" />
+              </node>
             </node>
           </node>
           <node concept="3clFbF" id="4fSpAVAUjrI" role="3cqZAp">
@@ -2144,7 +2149,7 @@
           <node concept="3clFbJ" id="4fSpAVAUjtS" role="3cqZAp">
             <node concept="3clFbC" id="4fSpAVAUjtT" role="3clFbw">
               <node concept="37vLTw" id="4fSpAVAUjtU" role="3uHU7B">
-                <ref role="3cqZAo" to="w1kc:~BaseSpecialModelDescriptor.mySModel" resolve="mySModel" />
+                <ref role="3cqZAo" to="w1kc:~RegularModelDescriptor.mySModel" resolve="mySModel" />
               </node>
               <node concept="10Nm6u" id="4fSpAVAUjtV" role="3uHU7w" />
             </node>
@@ -2160,14 +2165,14 @@
                 <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
               </node>
               <node concept="37vLTw" id="4fSpAVAUju2" role="33vP2m">
-                <ref role="3cqZAo" to="w1kc:~BaseSpecialModelDescriptor.mySModel" resolve="mySModel" />
+                <ref role="3cqZAo" to="w1kc:~RegularModelDescriptor.mySModel" resolve="mySModel" />
               </node>
             </node>
           </node>
           <node concept="3clFbF" id="4fSpAVAUju3" role="3cqZAp">
             <node concept="37vLTI" id="4fSpAVAUju4" role="3clFbG">
               <node concept="37vLTw" id="4fSpAVAUju5" role="37vLTJ">
-                <ref role="3cqZAo" to="w1kc:~BaseSpecialModelDescriptor.mySModel" resolve="mySModel" />
+                <ref role="3cqZAo" to="w1kc:~RegularModelDescriptor.mySModel" resolve="mySModel" />
               </node>
               <node concept="10Nm6u" id="4fSpAVAUju6" role="37vLTx" />
             </node>

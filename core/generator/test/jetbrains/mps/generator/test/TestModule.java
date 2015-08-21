@@ -21,7 +21,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -42,6 +42,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collections;
@@ -121,12 +122,12 @@ public class TestModule extends AbstractModule {
     return myPeer.getUsedLanguages();
   }
 
-  class TestSModelDescriptor extends BaseSpecialModelDescriptor {
+  class TestSModelDescriptor extends RegularModelDescriptor {
     private final String myLongName;
     private final SModel myToCopy;
 
     private TestSModelDescriptor(String modelName, SModel toCopy) {
-      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName), new NullDataSource());
       myLongName = SModelStereotype.withoutStereotype(modelName);
       myToCopy = toCopy;
     }

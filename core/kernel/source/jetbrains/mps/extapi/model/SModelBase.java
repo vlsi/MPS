@@ -52,7 +52,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Base implementation of {@link org.jetbrains.mps.openapi.model.SModel}, with actual
  * {@link jetbrains.mps.extapi.model.SModelData model data} kept separately, ready for e.g. re-load.
  *
+ * This implementation tracks load state of the model data ({@link #getLoadingState()}) and expects
+ * subclasses to {@link #setLoadingState(ModelLoadingState) update} this state appropriately.
+ *
  * {@link #getModelData()} provides access to actual node storage.
+ *
+ * TODO relocate to [smodel]
  */
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
   private static Logger LOG = LogManager.getLogger(SModelBase.class);
@@ -69,6 +74,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   private SModule myModule;
   private volatile SRepository myRepository = null;
+
+  /**
+   * model is treated {@link #isLoaded() loaded} when the state == FULLY_LOADED.
+   * There are model implementations with simple NOT_LOADED -- FULLY_LOADED cycle,
+   * and more complext with NOT_LOADED -- INTERFACE_LOADED -- FULLY_LOADED.
+   */
+  private ModelLoadingState myModelLoadState = ModelLoadingState.NOT_LOADED;
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
@@ -240,7 +252,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void load() {
+    // perhaps, both load() and unload() shall be left to implementors?
     getSModelInternal();
+  }
+
+  @Override
+  public boolean isLoaded() {
+    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
   @Override
@@ -335,8 +353,29 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  /**
+   * @deprecated this method used to change state AND to send notifications, now we split these into
+   * independent operations, {@link #setLoadingState(ModelLoadingState)} and {@link #fireModelStateChanged(ModelLoadingState, ModelLoadingState)}
+   */
   @Override
+  @Deprecated
   protected void fireModelStateChanged(ModelLoadingState newState) {
+    ModelLoadingState oldState = getLoadingState();
+    if (oldState != newState) {
+      // mimic pre-MPS 3.3 behavior, change state on fire
+      setLoadingState(newState);
+    }
+    fireModelStateChanged(oldState, newState);
+  }
+
+  /**
+   * This method sends out proper notifications unless old and new state values are the same.
+   * Note, it's not this method's responsibility to do actual change of the state, do it with {@link #setLoadingState(ModelLoadingState)}
+   */
+  protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
+    if (oldState == newState) {
+      return;
+    }
     super.fireModelStateChanged(newState);
     for (SModelListener l : myModelListeners) {
       try {
@@ -435,6 +474,17 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
   }
+
+  // FIXME likely, shall become final. It's LazyEditableSModelBase which prevents me from doing that now.
+  @NotNull
+  protected ModelLoadingState getLoadingState() {
+    return myModelLoadState;
+  }
+
+  protected final void setLoadingState(@NotNull ModelLoadingState modelLoadState) {
+    myModelLoadState = modelLoadState;
+  }
+
 
   /**
    * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries.

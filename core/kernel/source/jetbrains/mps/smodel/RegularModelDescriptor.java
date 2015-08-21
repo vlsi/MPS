@@ -20,17 +20,28 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 /**
- * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase} or TempModuleBuilder if you need a temporary model
+ * General [openapi]SModel implementation, with proper synchronization and loading notifications, with factory method {@link #createModel()}
+ * for subclasses to override.
  */
-@Deprecated
-public abstract class BaseSpecialModelDescriptor extends SModelBase {
+public abstract class RegularModelDescriptor extends SModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
-  protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
-    super(modelReference, new NullDataSource());
+  /**
+   * left protected for subclasses that need extended control over loading process (i.e. partial/sequential model loading)
+   */
+  protected final Object myLoadLock = new Object();
+
+  @Deprecated
+  protected RegularModelDescriptor(@NotNull SModelReference modelReference) {
+    this(modelReference, new NullDataSource());
+  }
+
+  protected RegularModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource dataSource) {
+    super(modelReference, dataSource);
   }
 
   @Override
@@ -39,13 +50,16 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
     if (copy != null) {
       return copy;
     }
-    synchronized (this) {
+    final ModelLoadingState oldState;
+    synchronized (myLoadLock) {
+      oldState = getLoadingState();
       if (mySModel == null) {
         mySModel = createModel();
         mySModel.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+        setLoadingState(ModelLoadingState.FULLY_LOADED);
       }
     }
+    fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
     return mySModel;
   }
 
@@ -55,22 +69,24 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
     return mySModel;
   }
 
-  @Override
-  public boolean isLoaded() {
-    return mySModel != null;
-  }
-
   protected abstract jetbrains.mps.smodel.SModel createModel();
 
   @Override
-  public synchronized void unload() {
+  public void unload() {
     assertCanChange();
 
-    jetbrains.mps.smodel.SModel oldModel = mySModel;
-    if (oldModel != null) {
-      oldModel.setModelDescriptor(null);
+    if (mySModel == null) {
+      return;
+    }
+    synchronized (myLoadLock) {
+      if (mySModel == null) {
+        return;
+      }
+      final ModelLoadingState oldState = getLoadingState();
+      mySModel.setModelDescriptor(null);
       mySModel = null;
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+      setLoadingState(ModelLoadingState.NOT_LOADED);
+      fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
     }
   }
 }

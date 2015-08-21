@@ -117,8 +117,11 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     }
     if (getCurrentModelInternal() == null) return;
 
+    // FIXME move next code to SModelBase?
+    final ModelLoadingState oldState = getLoadingState();
     doUnload();
-    fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    setLoadingState(ModelLoadingState.NOT_LOADED);
+    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
   }
 
   protected abstract void doUnload();

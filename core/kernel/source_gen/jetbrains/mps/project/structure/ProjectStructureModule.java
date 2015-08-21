@@ -35,7 +35,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.RegularModelDescriptor;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -221,10 +222,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return myModels.get(ref);
   }
 
-  public class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
+  public class ProjectStructureSModelDescriptor extends RegularModelDescriptor {
     private final SModule myModule;
     private ProjectStructureSModelDescriptor(SModelReference ref, SModule module) {
-      super(ref);
+      super(ref, new NullDataSource());
       myModule = module;
     }
     @Override
