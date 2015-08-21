@@ -63,6 +63,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
     jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.repo.RepoListenerTest.class,
+    jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class
 })
 public class GlobalTestSuite {
