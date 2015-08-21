@@ -20,7 +20,6 @@
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" file="JavaSourceStubModelDescriptor.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -48,7 +47,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
@@ -59,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
-    <classNode extendsClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
+    <classNode extendsClassName="jetbrains.mps.smodel.RegularModelDescriptor" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" file="JavaSourceStubModelRoot.java">

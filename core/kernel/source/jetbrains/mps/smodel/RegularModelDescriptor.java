@@ -65,8 +65,19 @@ public abstract class RegularModelDescriptor extends SModelBase {
 
   @Nullable
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected final SModel getCurrentModelInternal() {
     return mySModel;
+  }
+
+  /**
+   * CAUTION: Intended for subclasses that truly understand implications of the method. No notifications are send,
+   * loading state is assumed either not changed or managed by subclass. This method merely updates field with proper synchronization lock.
+   * Generally, subclasses shall dispatch <code>replaceModelAndFireEvent(getCurrentModelInternal(), model)</code> after this method.
+   */
+  protected final void setCurrentModelInternal(SModel model) {
+    synchronized (myLoadLock) {
+      mySModel = model;
+    }
   }
 
   protected abstract jetbrains.mps.smodel.SModel createModel();
