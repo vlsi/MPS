@@ -107,7 +107,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
   private void collectPackagesInDir(PsiDirectory sourceRoot, PsiDirectory dir, Map<SModelReference, List<PsiDirectory>> result) {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
-      jetbrains.mps.smodel.SModelReference modelRef = makeModelReference(sourceRoot, dir);
+      SModelReference modelRef = makeModelReference(sourceRoot, dir);
       if (modelRef != null) {
         List<PsiDirectory> dirs = MapSequence.fromMap(result).get(modelRef);
         if (dirs == null) {
@@ -128,7 +128,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     md.setModelRoot(this);
     return md;
   }
-  private jetbrains.mps.smodel.SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
+  private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
@@ -141,7 +141,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
       packageName = packageName.substring(1);
     }
 
-    return (jetbrains.mps.smodel.SModelReference) new JavaPackageNameStub(packageName).asModelReference(getModule().getModuleReference());
+    return new JavaPackageNameStub(packageName).asModelReference(getModule().getModuleReference());
   }
   public boolean isReadOnly() {
     return true;
