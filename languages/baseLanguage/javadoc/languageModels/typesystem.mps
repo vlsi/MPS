@@ -11,22 +11,16 @@
   </languages>
   <imports>
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -38,16 +32,13 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
-        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
-        <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -107,6 +98,7 @@
   <node concept="18kY7G" id="9ETj$bmYhl">
     <property role="TrG5h" value="check_BaseDocCommentDuplication" />
     <node concept="3clFbS" id="9ETj$bmYhm" role="18ibNy">
+      <node concept="3clFbH" id="9ETj$bp0kJ" role="3cqZAp" />
       <node concept="3clFbJ" id="9ETj$bn1Ea" role="3cqZAp">
         <node concept="3clFbS" id="9ETj$bn1EK" role="3clFbx">
           <node concept="2MkqsV" id="9ETj$bn1IA" role="3cqZAp">
@@ -163,29 +155,6 @@
     <node concept="1YaCAy" id="9ETj$bmYho" role="1YuTPh">
       <property role="TrG5h" value="baseDocComment" />
       <ref role="1YaFvo" to="m373:4CW56HZFB3j" resolve="BaseDocComment" />
-    </node>
-  </node>
-  <node concept="18kY7G" id="9ETj$boaOY">
-    <property role="TrG5h" value="check_MethodDocComment" />
-    <node concept="3clFbS" id="9ETj$boaOZ" role="18ibNy">
-      <node concept="3clFbF" id="9ETj$boaPq" role="3cqZAp">
-        <node concept="2OqwBi" id="9ETj$boaPn" role="3clFbG">
-          <node concept="10M0yZ" id="9ETj$boaPo" role="2Oq$k0">
-            <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-            <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-          </node>
-          <node concept="liA8E" id="9ETj$boaPp" role="2OqNvi">
-            <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-            <node concept="Xl_RD" id="9ETj$boaPO" role="37wK5m">
-              <property role="Xl_RC" value="AAAAAAAAAA" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="9ETj$boaP1" role="1YuTPh">
-      <property role="TrG5h" value="methodDocComment" />
-      <ref role="1YaFvo" to="m373:4CW56HZFIGO" resolve="MethodDocComment" />
     </node>
   </node>
 </model>
