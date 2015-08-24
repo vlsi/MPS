@@ -57,6 +57,6 @@ public class ModuleIdSynchronizer implements ProjectComponent {
   @NotNull
   @Override
   public String getComponentName() {
-    return "zzz";
+    return "Module id synchronizer";
   }
 }
