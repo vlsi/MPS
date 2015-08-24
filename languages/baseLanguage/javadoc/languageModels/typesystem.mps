@@ -32,7 +32,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -98,7 +97,6 @@
   <node concept="18kY7G" id="9ETj$bmYhl">
     <property role="TrG5h" value="check_BaseDocCommentDuplication" />
     <node concept="3clFbS" id="9ETj$bmYhm" role="18ibNy">
-      <node concept="3clFbH" id="9ETj$bp0kJ" role="3cqZAp" />
       <node concept="3clFbJ" id="9ETj$bn1Ea" role="3cqZAp">
         <node concept="3clFbS" id="9ETj$bn1EK" role="3clFbx">
           <node concept="2MkqsV" id="9ETj$bn1IA" role="3cqZAp">

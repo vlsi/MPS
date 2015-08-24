@@ -20,10 +20,9 @@ public class check_BaseDocCommentDuplication_NonTypesystemRule extends AbstractN
   public check_BaseDocCommentDuplication_NonTypesystemRule() {
   }
   public void applyRule(final SNode baseDocComment, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-
     if (ListSequence.fromList(SNodeOperations.getAllSiblings(baseDocComment, false)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return neq_9lxafd_a0a0a0a0a0a1a1(it, baseDocComment) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
+        return neq_9lxafd_a0a0a0a0a0a0a1(it, baseDocComment) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
       }
     })) {
       {
@@ -41,7 +40,7 @@ public class check_BaseDocCommentDuplication_NonTypesystemRule extends AbstractN
   public boolean overrides() {
     return false;
   }
-  private static boolean neq_9lxafd_a0a0a0a0a0a1a1(Object a, Object b) {
+  private static boolean neq_9lxafd_a0a0a0a0a0a0a1(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

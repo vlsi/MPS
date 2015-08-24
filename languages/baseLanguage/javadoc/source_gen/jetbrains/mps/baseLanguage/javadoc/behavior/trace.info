@@ -287,37 +287,36 @@
       <node id="439148907936414565" at="17,1050,18,417" concept="4" />
       <node id="8277869836209773347" at="18,417,19,192" concept="4" />
       <node id="439148907936414587" at="19,192,20,422" concept="4" />
-      <node id="5521685164201995938" at="20,422,21,0" concept="7" />
-      <node id="439148907936414609" at="21,0,22,732" concept="4" />
-      <node id="439148907936414686" at="22,732,23,170" concept="1" />
-      <node id="439148907936414703" at="23,170,24,44" concept="1" />
-      <node id="439148907936414722" at="24,44,25,49" concept="5" />
-      <node id="439148907936414718" at="26,5,27,16" concept="5" />
-      <node id="439148907936414634" at="29,52,30,44" concept="5" />
+      <node id="439148907936414609" at="20,422,21,732" concept="4" />
+      <node id="439148907936414686" at="21,732,22,170" concept="1" />
+      <node id="439148907936414703" at="22,170,23,44" concept="1" />
+      <node id="439148907936414722" at="23,44,24,49" concept="5" />
+      <node id="439148907936414718" at="25,5,26,16" concept="5" />
+      <node id="439148907936414634" at="28,52,29,44" concept="5" />
       <node id="6962838954693316943" at="14,0,16,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="439148907936414634" at="29,0,32,0" concept="8" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="439148907936414410" at="16,98,26,5" concept="3" />
-      <node id="6962838954693316943" at="16,0,29,0" concept="8" trace="call_tryMergeToRight_439148907936414403#(Lorg/jetbrains/mps/openapi/model/SNode;I)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
+      <node id="439148907936414634" at="28,0,31,0" concept="8" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="439148907936414410" at="16,98,25,5" concept="3" />
+      <node id="6962838954693316943" at="16,0,28,0" concept="8" trace="call_tryMergeToRight_439148907936414403#(Lorg/jetbrains/mps/openapi/model/SNode;I)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
       <scope id="6962838954693316945" at="14,43,14,43" />
-      <scope id="439148907936414634" at="29,52,30,44" />
+      <scope id="439148907936414634" at="28,52,29,44" />
       <scope id="6962838954693316943" at="14,0,16,0">
         <var name="thisNode" id="6962838954693316943" />
       </scope>
-      <scope id="439148907936414634" at="29,0,32,0">
+      <scope id="439148907936414634" at="28,0,31,0">
         <var name="str" id="439148907936414634" />
       </scope>
-      <scope id="439148907936414452" at="17,1050,25,49">
+      <scope id="439148907936414452" at="17,1050,24,49">
         <var name="leftPart" id="439148907936414566" />
         <var name="offset" id="8277869836209773348" />
         <var name="rightPart" id="439148907936414588" />
         <var name="text" id="439148907936414610" />
       </scope>
-      <scope id="439148907936414406" at="16,98,27,16" />
-      <scope id="6962838954693316943" at="16,0,29,0">
+      <scope id="439148907936414406" at="16,98,26,16" />
+      <scope id="6962838954693316943" at="16,0,28,0">
         <var name="index" id="439148907936414408" />
         <var name="thisNode" id="6962838954693316943" />
       </scope>
-      <unit id="6962838954693316943" at="13,0,33,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
+      <unit id="6962838954693316943" at="13,0,32,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8465538089690623792">
