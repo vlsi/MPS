@@ -26,34 +26,43 @@ public class MergeTemporaryModel extends EditableSModelBase implements Persisten
     this(model.getReference(), readonly);
     mySModel = model;
     model.setModelDescriptor(this);
+    setLoadingState(ModelLoadingState.FULLY_LOADED);
   }
   @Override
   public final SModel getSModelInternal() {
     if (mySModel != null) {
       return mySModel;
     }
+    // XXX load state management code is similar to one in RegularModelDescriptor 
+    // and would be nice to re-use it, once I know if it's essential to extend EditableSModelBase here 
     synchronized (this) {
-      if (mySModel == null) {
-        mySModel = new SModel(getReference());
-        mySModel.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      if (mySModel != null) {
+        return mySModel;
       }
+      mySModel = new SModel(getReference());
+      mySModel.setModelDescriptor(this);
+      setLoadingState(ModelLoadingState.FULLY_LOADED);
     }
+    fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     return mySModel;
   }
   /*package*/ void setSModelInternal(SModel model) {
     assert model == null || getReference().equals(model.getReference());
+    final ModelLoadingState oldState;
     synchronized (this) {
       final SModel oldModel = mySModel;
+      oldState = getLoadingState();
       if (oldModel != null) {
-        fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+        oldModel.setModelDescriptor(null);
+        setLoadingState(ModelLoadingState.NOT_LOADED);
       }
       mySModel = model;
       if (model != null) {
         model.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+        setLoadingState(ModelLoadingState.FULLY_LOADED);
       }
     }
+    fireModelStateChanged(oldState, getLoadingState());
   }
   @Override
   public boolean isLoaded() {

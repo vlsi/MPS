@@ -6948,6 +6948,15 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3E5eRrQKw2g" role="3cqZAp">
+          <node concept="1rXfSq" id="3E5eRrQKw2e" role="3clFbG">
+            <ref role="37wK5l" to="g3l6:~SModelBase.setLoadingState(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="setLoadingState" />
+            <node concept="Rm8GO" id="3E5eRrQKweZ" role="37wK5m">
+              <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+              <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="377Orl25xfj" role="3clF46">
         <property role="TrG5h" value="model" />
@@ -6983,53 +6992,81 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3E5eRrQKrXG" role="3cqZAp">
+          <node concept="3SKdUq" id="3E5eRrQKsfS" role="3SKWNk">
+            <property role="3SKdUp" value="XXX load state management code is similar to one in RegularModelDescriptor" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3E5eRrQKsuh" role="3cqZAp">
+          <node concept="3SKdUq" id="3E5eRrQKsuV" role="3SKWNk">
+            <property role="3SKdUp" value="and would be nice to re-use it, once I know if it's essential to extend EditableSModelBase here" />
+          </node>
+        </node>
         <node concept="1HWtB8" id="1m2uLwrRTXm" role="3cqZAp">
           <node concept="Xjq3P" id="1m2uLwrRTXH" role="1HWFw0" />
           <node concept="3clFbS" id="1m2uLwrRTXo" role="1HWHxc">
-            <node concept="3clFbJ" id="1m2uLwrRTXp" role="3cqZAp">
-              <node concept="3clFbC" id="1m2uLwrRTXq" role="3clFbw">
-                <node concept="37vLTw" id="1m2uLwrRTXr" role="3uHU7B">
+            <node concept="3clFbJ" id="3E5eRrQKq4u" role="3cqZAp">
+              <node concept="3clFbS" id="3E5eRrQKq4w" role="3clFbx">
+                <node concept="3cpWs6" id="3E5eRrQKqsP" role="3cqZAp">
+                  <node concept="37vLTw" id="3E5eRrQKqMu" role="3cqZAk">
+                    <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="3E5eRrQKqib" role="3clFbw">
+                <node concept="10Nm6u" id="3E5eRrQKqky" role="3uHU7w" />
+                <node concept="37vLTw" id="3E5eRrQKq9w" role="3uHU7B">
                   <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
                 </node>
-                <node concept="10Nm6u" id="1m2uLwrRTXs" role="3uHU7w" />
               </node>
-              <node concept="3clFbS" id="1m2uLwrRTXu" role="3clFbx">
-                <node concept="3clFbF" id="1m2uLwrRTXv" role="3cqZAp">
-                  <node concept="37vLTI" id="1m2uLwrRTXw" role="3clFbG">
-                    <node concept="37vLTw" id="1m2uLwrRTXx" role="37vLTJ">
-                      <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
-                    </node>
-                    <node concept="2ShNRf" id="1m2uLwrRU6v" role="37vLTx">
-                      <node concept="1pGfFk" id="1m2uLwrRU6w" role="2ShVmc">
-                        <ref role="37wK5l" to="w1kc:~SModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel" />
-                        <node concept="1rXfSq" id="1m2uLwrRTXz" role="37wK5m">
-                          <ref role="37wK5l" to="g3l6:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+            </node>
+            <node concept="3clFbF" id="1m2uLwrRTXv" role="3cqZAp">
+              <node concept="37vLTI" id="1m2uLwrRTXw" role="3clFbG">
+                <node concept="37vLTw" id="1m2uLwrRTXx" role="37vLTJ">
+                  <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
                 </node>
-                <node concept="3clFbF" id="1m2uLwrRTX$" role="3cqZAp">
-                  <node concept="2OqwBi" id="1m2uLwrRU6z" role="3clFbG">
-                    <node concept="37vLTw" id="1m2uLwrRU6y" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
-                    </node>
-                    <node concept="liA8E" id="1m2uLwrRU6$" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModel.setModelDescriptor(org.jetbrains.mps.openapi.model.SModel):void" resolve="setModelDescriptor" />
-                      <node concept="Xjq3P" id="1m2uLwrRTXB" role="37wK5m" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="1m2uLwrRTXC" role="3cqZAp">
-                  <node concept="1rXfSq" id="1m2uLwrRTXD" role="3clFbG">
-                    <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
-                    <node concept="Rm8GO" id="1m2uLwrS9QD" role="37wK5m">
-                      <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
-                      <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                <node concept="2ShNRf" id="1m2uLwrRU6v" role="37vLTx">
+                  <node concept="1pGfFk" id="1m2uLwrRU6w" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~SModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel" />
+                    <node concept="1rXfSq" id="1m2uLwrRTXz" role="37wK5m">
+                      <ref role="37wK5l" to="g3l6:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3clFbF" id="1m2uLwrRTX$" role="3cqZAp">
+              <node concept="2OqwBi" id="1m2uLwrRU6z" role="3clFbG">
+                <node concept="37vLTw" id="1m2uLwrRU6y" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1m2uLwrRTWK" resolve="mySModel" />
+                </node>
+                <node concept="liA8E" id="1m2uLwrRU6$" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~SModel.setModelDescriptor(org.jetbrains.mps.openapi.model.SModel):void" resolve="setModelDescriptor" />
+                  <node concept="Xjq3P" id="1m2uLwrRTXB" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3E5eRrQKp71" role="3cqZAp">
+              <node concept="1rXfSq" id="3E5eRrQKp6Z" role="3clFbG">
+                <ref role="37wK5l" to="g3l6:~SModelBase.setLoadingState(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="setLoadingState" />
+                <node concept="Rm8GO" id="3E5eRrQKpkm" role="37wK5m">
+                  <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                  <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1m2uLwrRTXC" role="3cqZAp">
+          <node concept="1rXfSq" id="1m2uLwrRTXD" role="3clFbG">
+            <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState,jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+            <node concept="Rm8GO" id="3E5eRrQKpyJ" role="37wK5m">
+              <ref role="Rm8GQ" to="4it6:~ModelLoadingState.NOT_LOADED" resolve="NOT_LOADED" />
+              <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+            </node>
+            <node concept="Rm8GO" id="1m2uLwrS9QD" role="37wK5m">
+              <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+              <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
             </node>
           </node>
         </node>
@@ -7074,6 +7111,15 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3E5eRrQKtme" role="3cqZAp">
+          <node concept="3cpWsn" id="3E5eRrQKtmf" role="3cpWs9">
+            <property role="TrG5h" value="oldState" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="3E5eRrQKtmg" role="1tU5fm">
+              <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+            </node>
+          </node>
+        </node>
         <node concept="1HWtB8" id="35oJ7ckDn$c" role="3cqZAp">
           <node concept="3clFbS" id="35oJ7ckDn$d" role="1HWHxc">
             <node concept="3cpWs8" id="35oJ7ckFTo1" role="3cqZAp">
@@ -7088,12 +7134,33 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="3E5eRrQKty_" role="3cqZAp">
+              <node concept="37vLTI" id="3E5eRrQKtGv" role="3clFbG">
+                <node concept="1rXfSq" id="3E5eRrQKtNb" role="37vLTx">
+                  <ref role="37wK5l" to="g3l6:~SModelBase.getLoadingState():jetbrains.mps.smodel.loading.ModelLoadingState" resolve="getLoadingState" />
+                </node>
+                <node concept="37vLTw" id="3E5eRrQKtyz" role="37vLTJ">
+                  <ref role="3cqZAo" node="3E5eRrQKtmf" resolve="oldState" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="35oJ7ckFSyU" role="3cqZAp">
               <node concept="3clFbS" id="35oJ7ckFSyX" role="3clFbx">
-                <node concept="3clFbF" id="35oJ7ckFU2x" role="3cqZAp">
-                  <node concept="1rXfSq" id="35oJ7ckFU2w" role="3clFbG">
-                    <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
-                    <node concept="Rm8GO" id="35oJ7ckFUAu" role="37wK5m">
+                <node concept="3clFbF" id="3E5eRrQKsQa" role="3cqZAp">
+                  <node concept="2OqwBi" id="3E5eRrQKsTU" role="3clFbG">
+                    <node concept="37vLTw" id="3E5eRrQKsQ8" role="2Oq$k0">
+                      <ref role="3cqZAo" node="35oJ7ckFTnZ" resolve="oldModel" />
+                    </node>
+                    <node concept="liA8E" id="3E5eRrQKt66" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~SModel.setModelDescriptor(org.jetbrains.mps.openapi.model.SModel):void" resolve="setModelDescriptor" />
+                      <node concept="10Nm6u" id="3E5eRrQKt8j" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="3E5eRrQKv7G" role="3cqZAp">
+                  <node concept="1rXfSq" id="3E5eRrQKv7E" role="3clFbG">
+                    <ref role="37wK5l" to="g3l6:~SModelBase.setLoadingState(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="setLoadingState" />
+                    <node concept="Rm8GO" id="3E5eRrQKvOi" role="37wK5m">
                       <ref role="Rm8GQ" to="4it6:~ModelLoadingState.NOT_LOADED" resolve="NOT_LOADED" />
                       <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
                     </node>
@@ -7130,9 +7197,9 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="35oJ7ckFSY0" role="3cqZAp">
-                  <node concept="1rXfSq" id="35oJ7ckFSXZ" role="3clFbG">
-                    <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+                <node concept="3clFbF" id="3E5eRrQKuKt" role="3cqZAp">
+                  <node concept="1rXfSq" id="3E5eRrQKuKr" role="3clFbG">
+                    <ref role="37wK5l" to="g3l6:~SModelBase.setLoadingState(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="setLoadingState" />
                     <node concept="Rm8GO" id="35oJ7ckFTcy" role="37wK5m">
                       <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
                       <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
@@ -7149,6 +7216,17 @@
             </node>
           </node>
           <node concept="Xjq3P" id="35oJ7ckDn$A" role="1HWFw0" />
+        </node>
+        <node concept="3clFbF" id="3E5eRrQKu2z" role="3cqZAp">
+          <node concept="1rXfSq" id="3E5eRrQKu2x" role="3clFbG">
+            <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState,jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+            <node concept="37vLTw" id="3E5eRrQKuez" role="37wK5m">
+              <ref role="3cqZAo" node="3E5eRrQKtmf" resolve="oldState" />
+            </node>
+            <node concept="1rXfSq" id="3E5eRrQKu_C" role="37wK5m">
+              <ref role="37wK5l" to="g3l6:~SModelBase.getLoadingState():jetbrains.mps.smodel.loading.ModelLoadingState" resolve="getLoadingState" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="35oJ7ckDmSO" role="3clF46">

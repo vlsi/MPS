@@ -359,6 +359,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    */
   @Override
   @Deprecated
+  @ToRemove(version = 3.3)
   protected void fireModelStateChanged(ModelLoadingState newState) {
     ModelLoadingState oldState = getLoadingState();
     if (oldState != newState) {
