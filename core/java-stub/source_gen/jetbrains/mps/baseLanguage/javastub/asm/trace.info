@@ -288,17 +288,18 @@
       <node id="7241381882860006522" at="164,31,165,57" concept="9" />
       <node id="7241381882860006537" at="167,29,168,55" concept="9" />
       <node id="1116675434314455517" at="170,32,171,58" concept="9" />
-      <node id="7241381882860006552" at="173,34,174,42" concept="9" />
-      <node id="7241381882860006565" at="176,40,177,172" concept="9" />
-      <node id="7241381882860006588" at="179,52,180,27" concept="9" />
-      <node id="7241381882860006596" at="182,34,183,24" concept="9" />
-      <node id="7241381882860006604" at="185,41,186,31" concept="9" />
-      <node id="7241381882860006613" at="188,47,189,140" concept="9" />
-      <node id="7241381882860006630" at="191,44,192,58" concept="9" />
-      <node id="7241381882860006640" at="194,51,195,65" concept="9" />
-      <node id="7241381882860006650" at="197,43,198,141" concept="9" />
-      <node id="7241381882860006668" at="200,62,201,64" concept="9" />
-      <node id="7241381882860006678" at="203,44,204,54" concept="9" />
+      <node id="6685532457577045059" at="173,35,174,61" concept="9" />
+      <node id="7241381882860006552" at="176,34,177,42" concept="9" />
+      <node id="7241381882860006565" at="179,40,180,172" concept="9" />
+      <node id="7241381882860006588" at="182,52,183,27" concept="9" />
+      <node id="7241381882860006596" at="185,34,186,24" concept="9" />
+      <node id="7241381882860006604" at="188,41,189,31" concept="9" />
+      <node id="7241381882860006613" at="191,47,192,140" concept="9" />
+      <node id="7241381882860006630" at="194,44,195,58" concept="9" />
+      <node id="7241381882860006640" at="197,51,198,65" concept="9" />
+      <node id="7241381882860006650" at="200,43,201,141" concept="9" />
+      <node id="7241381882860006668" at="203,62,204,64" concept="9" />
+      <node id="7241381882860006678" at="206,44,207,54" concept="9" />
       <node id="7241381882860005760" at="31,10,33,5" concept="0" />
       <node id="7241381882860005785" at="36,10,38,5" concept="0" />
       <node id="7241381882860005850" at="46,10,48,5" concept="0" />
@@ -325,17 +326,18 @@
       <node id="7241381882860006518" at="164,0,167,0" concept="7" trace="isAbstract#()Z" />
       <node id="7241381882860006533" at="167,0,170,0" concept="7" trace="isBridge#()Z" />
       <node id="1116675434314450459" at="170,0,173,0" concept="7" trace="isSynthetic#()Z" />
-      <node id="7241381882860006548" at="173,0,176,0" concept="7" trace="isConstructor#()Z" />
-      <node id="7241381882860006561" at="176,0,179,0" concept="7" trace="isCompilerGenerated#()Z" />
-      <node id="7241381882860006583" at="179,0,182,0" concept="7" trace="getTypeParameters#()Ljava/util/List;" />
-      <node id="7241381882860006592" at="182,0,185,0" concept="7" trace="getReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
-      <node id="7241381882860006600" at="185,0,188,0" concept="7" trace="getGenericReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
-      <node id="7241381882860006608" at="188,0,191,0" concept="7" trace="getAnnotations#()Ljava/util/List;" />
-      <node id="7241381882860006625" at="191,0,194,0" concept="7" trace="getParameterTypes#()Ljava/util/List;" />
-      <node id="7241381882860006635" at="194,0,197,0" concept="7" trace="getGenericParameterTypes#()Ljava/util/List;" />
-      <node id="7241381882860006645" at="197,0,200,0" concept="7" trace="getParameterNames#()Ljava/util/List;" />
-      <node id="7241381882860006662" at="200,0,203,0" concept="7" trace="getParameterAnnotations#()Ljava/util/List;" />
-      <node id="7241381882860006673" at="203,0,206,0" concept="7" trace="getExceptionTypes#()Ljava/util/List;" />
+      <node id="6685532457576977821" at="173,0,176,0" concept="7" trace="isSynchronized#()Z" />
+      <node id="7241381882860006548" at="176,0,179,0" concept="7" trace="isConstructor#()Z" />
+      <node id="7241381882860006561" at="179,0,182,0" concept="7" trace="isCompilerGenerated#()Z" />
+      <node id="7241381882860006583" at="182,0,185,0" concept="7" trace="getTypeParameters#()Ljava/util/List;" />
+      <node id="7241381882860006592" at="185,0,188,0" concept="7" trace="getReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+      <node id="7241381882860006600" at="188,0,191,0" concept="7" trace="getGenericReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+      <node id="7241381882860006608" at="191,0,194,0" concept="7" trace="getAnnotations#()Ljava/util/List;" />
+      <node id="7241381882860006625" at="194,0,197,0" concept="7" trace="getParameterTypes#()Ljava/util/List;" />
+      <node id="7241381882860006635" at="197,0,200,0" concept="7" trace="getGenericParameterTypes#()Ljava/util/List;" />
+      <node id="7241381882860006645" at="200,0,203,0" concept="7" trace="getParameterNames#()Ljava/util/List;" />
+      <node id="7241381882860006662" at="203,0,206,0" concept="7" trace="getParameterAnnotations#()Ljava/util/List;" />
+      <node id="7241381882860006673" at="206,0,209,0" concept="7" trace="getExceptionTypes#()Ljava/util/List;" />
       <node id="7241381882860006258" at="101,48,105,9" concept="5" />
       <node id="7241381882860006292" at="107,50,111,9" concept="5" />
       <node id="7241381882860005754" at="28,70,33,5" concept="6" />
@@ -387,17 +389,18 @@
       <scope id="7241381882860006521" at="164,31,165,57" />
       <scope id="7241381882860006536" at="167,29,168,55" />
       <scope id="1116675434314450462" at="170,32,171,58" />
-      <scope id="7241381882860006551" at="173,34,174,42" />
-      <scope id="7241381882860006564" at="176,40,177,172" />
-      <scope id="7241381882860006587" at="179,52,180,27" />
-      <scope id="7241381882860006595" at="182,34,183,24" />
-      <scope id="7241381882860006603" at="185,41,186,31" />
-      <scope id="7241381882860006612" at="188,47,189,140" />
-      <scope id="7241381882860006629" at="191,44,192,58" />
-      <scope id="7241381882860006639" at="194,51,195,65" />
-      <scope id="7241381882860006649" at="197,43,198,141" />
-      <scope id="7241381882860006667" at="200,62,201,64" />
-      <scope id="7241381882860006677" at="203,44,204,54" />
+      <scope id="6685532457576977825" at="173,35,174,61" />
+      <scope id="7241381882860006551" at="176,34,177,42" />
+      <scope id="7241381882860006564" at="179,40,180,172" />
+      <scope id="7241381882860006587" at="182,52,183,27" />
+      <scope id="7241381882860006595" at="185,34,186,24" />
+      <scope id="7241381882860006603" at="188,41,189,31" />
+      <scope id="7241381882860006612" at="191,47,192,140" />
+      <scope id="7241381882860006629" at="194,44,195,58" />
+      <scope id="7241381882860006639" at="197,51,198,65" />
+      <scope id="7241381882860006649" at="200,43,201,141" />
+      <scope id="7241381882860006667" at="203,62,204,64" />
+      <scope id="7241381882860006677" at="206,44,207,54" />
       <scope id="7241381882860006269" at="102,86,104,32">
         <var name="aa" id="7241381882860006271" />
       </scope>
@@ -426,17 +429,18 @@
       <scope id="7241381882860006518" at="164,0,167,0" />
       <scope id="7241381882860006533" at="167,0,170,0" />
       <scope id="1116675434314450459" at="170,0,173,0" />
-      <scope id="7241381882860006548" at="173,0,176,0" />
-      <scope id="7241381882860006561" at="176,0,179,0" />
-      <scope id="7241381882860006583" at="179,0,182,0" />
-      <scope id="7241381882860006592" at="182,0,185,0" />
-      <scope id="7241381882860006600" at="185,0,188,0" />
-      <scope id="7241381882860006608" at="188,0,191,0" />
-      <scope id="7241381882860006625" at="191,0,194,0" />
-      <scope id="7241381882860006635" at="194,0,197,0" />
-      <scope id="7241381882860006645" at="197,0,200,0" />
-      <scope id="7241381882860006662" at="200,0,203,0" />
-      <scope id="7241381882860006673" at="203,0,206,0" />
+      <scope id="6685532457576977821" at="173,0,176,0" />
+      <scope id="7241381882860006548" at="176,0,179,0" />
+      <scope id="7241381882860006561" at="179,0,182,0" />
+      <scope id="7241381882860006583" at="182,0,185,0" />
+      <scope id="7241381882860006592" at="185,0,188,0" />
+      <scope id="7241381882860006600" at="188,0,191,0" />
+      <scope id="7241381882860006608" at="191,0,194,0" />
+      <scope id="7241381882860006625" at="194,0,197,0" />
+      <scope id="7241381882860006635" at="197,0,200,0" />
+      <scope id="7241381882860006645" at="200,0,203,0" />
+      <scope id="7241381882860006662" at="203,0,206,0" />
+      <scope id="7241381882860006673" at="206,0,209,0" />
       <scope id="7241381882860006022" at="69,98,73,49" />
       <scope id="7241381882860006073" at="77,100,81,49" />
       <scope id="7241381882860006137" at="92,12,96,7" />
@@ -488,7 +492,7 @@
       <scope id="7241381882860005734" at="26,0,134,0">
         <var name="method" id="7241381882860005735" />
       </scope>
-      <unit id="7241381882860005690" at="14,0,207,0" name="jetbrains.mps.baseLanguage.javastub.asm.ASMMethod" />
+      <unit id="7241381882860005690" at="14,0,210,0" name="jetbrains.mps.baseLanguage.javastub.asm.ASMMethod" />
     </file>
   </root>
   <root nodeRef="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)/7241381882860006706">
