@@ -439,6 +439,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myModelReference = newModelReference;
   }
 
+  /**
+   * This method does nothing about model load state, it updates model descriptor of the models passed and dispatches a notification.
+   * Seems reasonable to dispatch proper modelUnloaded/modelLoaded events in addition to modelReplaced as there are listeners that
+   * expect either, not both. Especially, in case if load level is changed due to replacement (i.e. was FULL, became INTERFACE)
+   * FIXME it's synchronized, do we still need that (with RegularModelDescriptor using distinct lock object)
+   */
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
       oldModel.setModelDescriptor(null);

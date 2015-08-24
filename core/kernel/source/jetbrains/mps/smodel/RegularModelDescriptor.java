@@ -28,8 +28,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * for subclasses to override.
  */
 public abstract class RegularModelDescriptor extends SModelBase {
-  // FIXME shall become private once its only external (questionable) use in ProjectStructureModel is gone
-  protected volatile jetbrains.mps.smodel.SModel mySModel;
+  private volatile jetbrains.mps.smodel.SModel mySModel;
 
   /**
    * left protected for subclasses that need extended control over loading process (i.e. partial/sequential model loading)
@@ -73,16 +72,9 @@ public abstract class RegularModelDescriptor extends SModelBase {
   }
 
   /**
-   * CAUTION: Intended for subclasses that truly understand implications of the method. No notifications are send,
-   * loading state is assumed either not changed or managed by subclass. This method merely updates field with proper synchronization lock.
-   * Generally, subclasses shall dispatch <code>replaceModelAndFireEvent(getCurrentModelInternal(), model)</code> after this method.
+   * @return new model data and level it was loaded to
    */
-  protected final void setCurrentModelInternal(SModel model) {
-    synchronized (myLoadLock) {
-      mySModel = model;
-    }
-  }
-
+  @NotNull
   protected abstract ModelLoadResult createModel();
 
   @Override

@@ -134,6 +134,7 @@ public class TestModule extends AbstractModule {
       myToCopy = toCopy;
     }
 
+    @NotNull
     @Override
     public ModelLoadResult createModel() {
       if (!myToCopy.isLoaded()) {

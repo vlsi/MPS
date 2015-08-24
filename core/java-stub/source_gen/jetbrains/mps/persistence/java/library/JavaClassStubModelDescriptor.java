@@ -98,6 +98,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
   }
 
   @Override
+  @NotNull
   protected ModelLoadResult createModel() {
     SModel model = new SModel(getReference(), new ForeignNodeIdMap());
     for (SLanguage l : getLanguagesToImport()) {

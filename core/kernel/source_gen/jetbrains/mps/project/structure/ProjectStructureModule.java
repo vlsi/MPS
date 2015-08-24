@@ -117,7 +117,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     } else
     if (myModels.containsKey(ref.getModelId())) {
       ProjectStructureModule.ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
-      descriptor.dropModel();
+      descriptor.originalModuleChanged();
     } else {
       createModel(module);
     }
@@ -190,10 +190,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference().getModelId()) != null) {
+      md.unload();
       unregisterModel((SModelBase) md);
-      if (md instanceof ProjectStructureModule.ProjectStructureSModelDescriptor) {
-        ((ProjectStructureModule.ProjectStructureSModelDescriptor) md).dropModel();
-      }
     }
   }
 
@@ -231,6 +229,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       myModule = module;
     }
     @Override
+    @NotNull
     protected ModelLoadResult createModel() {
       final ProjectStructureModule.ProjectStructureSModel model = new ProjectStructureModule.ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
@@ -246,7 +245,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
                 if (module == null) {
                   return Collections.emptyList();
                 }
-                return Sequence.<SModel>fromIterable(module.getModels()).where(new IWhereFilter<SModel>() {
+                return Sequence.fromIterable(module.getModels()).where(new IWhereFilter<SModel>() {
                   @Override
                   public boolean accept(SModel o) {
                     return SModelStereotype.isUserModel(o);
@@ -264,13 +263,15 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
-    private void dropModel() {
-      // FIXME why not unload()? Does anyone relies on replace event in this case? 
-      if (mySModel == null) {
+    /*package*/ void originalModuleChanged() {
+      jetbrains.mps.smodel.SModel oldModel = getCurrentModelInternal();
+      if (oldModel == null) {
         return;
       }
-      final jetbrains.mps.smodel.SModel oldModel = mySModel;
-      mySModel = null;
+      unload();
+      // since we know the module is still there (just has been changed), tell those not caring about unload 
+      // that the content of the model is new (instead of a null, could pass getSModelInternal(), but see no reason 
+      // to read module file unless needed) 
       replaceModelAndFireEvent(oldModel, null);
     }
   }

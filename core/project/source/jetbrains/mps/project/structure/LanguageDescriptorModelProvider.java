@@ -271,6 +271,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       myHash = null;
     }
 
+    @NotNull
     @Override
     protected ModelLoadResult createModel() {
       jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {

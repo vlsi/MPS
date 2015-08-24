@@ -14,13 +14,13 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.ide.java.newparser.JavaParser;
@@ -55,6 +55,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
   }
 
   @Override
+  @NotNull
   protected ModelLoadResult createModel() {
     SModel model = new SModel(getReference());
     processStreams(getSource().getAvailableStreams(), model);
