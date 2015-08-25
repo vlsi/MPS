@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.command.base.runtime.ConsoleContext;
+import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
 
 public class IStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {

@@ -17,8 +17,8 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
-    <import index="67ek" ref="r:a0598308-9fae-494c-abe2-56fbebc91b43(jetbrains.mps.command.base.behavior)" implicit="true" />
-    <import index="jyxa" ref="r:9ec1d3e7-df4d-441e-8024-73530d64d324(jetbrains.mps.command.base.structure)" implicit="true" />
+    <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" implicit="true" />
+    <import index="fq2o" ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -257,12 +257,12 @@
                 <node concept="10QFUN" id="3ZgZ1njP4Ee" role="1eOMHV">
                   <node concept="Bn53e" id="3ZgZ1njP4Ec" role="10QFUP" />
                   <node concept="3THzug" id="3ZgZ1njP4M5" role="10QFUM">
-                    <ref role="3qa414" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+                    <ref role="3qa414" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
                   </node>
                 </node>
               </node>
               <node concept="2qgKlT" id="60B$832WVcc" role="2OqNvi">
-                <ref role="37wK5l" to="67ek:64VftqEenfn" resolve="getShortDisplayString" />
+                <ref role="37wK5l" to="fq2o:64VftqEenfn" resolve="getShortDisplayString" />
               </node>
             </node>
           </node>
@@ -300,7 +300,7 @@
                                 <node concept="1eOMI4" id="60B$8333R$Z" role="2Oq$k0">
                                   <node concept="10QFUN" id="60B$8333R_0" role="1eOMHV">
                                     <node concept="3THzug" id="60B$8333R_1" role="10QFUM">
-                                      <ref role="3qa414" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+                                      <ref role="3qa414" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
                                     </node>
                                     <node concept="37vLTw" id="60B$8333RF$" role="10QFUP">
                                       <ref role="3cqZAo" node="60B$8333Rq9" resolve="child" />
@@ -308,14 +308,14 @@
                                   </node>
                                 </node>
                                 <node concept="2qgKlT" id="60B$8333R_3" role="2OqNvi">
-                                  <ref role="37wK5l" to="67ek:64VftqEenfn" resolve="getShortDisplayString" />
+                                  <ref role="37wK5l" to="fq2o:64VftqEenfn" resolve="getShortDisplayString" />
                                 </node>
                               </node>
                             </node>
                           </node>
                         </node>
                         <node concept="3TUQnm" id="60B$8334gyC" role="37wK5m">
-                          <ref role="3TV0OU" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+                          <ref role="3TV0OU" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
                         </node>
                         <node concept="1Q6Npb" id="60B$8334hD3" role="37wK5m" />
                       </node>

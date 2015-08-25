@@ -19,6 +19,7 @@
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="jfzm" ref="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)" />
     <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
+    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -206,13 +207,13 @@
         <node concept="37vLTG" id="4PRmqZeEGa0" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="4PRmqZeEGa1" role="1tU5fm">
-            <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="4PRmqZeEGa2" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="4PRmqZeEGa3" role="1tU5fm">
-            <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3cqZAl" id="4PRmqZeEGa4" role="3clF45" />
@@ -227,7 +228,7 @@
                       <ref role="3cqZAo" node="4PRmqZeEGa0" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3ZgZ1njTt2W" role="2OqNvi">
-                      <ref role="37wK5l" to="dnf9:7L2VFB5mjvh" resolve="getOutputWindow" />
+                      <ref role="37wK5l" to="irki:7L2VFB5mjvh" resolve="getOutputWindow" />
                     </node>
                   </node>
                   <node concept="3uibUv" id="3ZgZ1njTt3x" role="10QFUM">

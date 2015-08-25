@@ -67,9 +67,9 @@
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes()" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
-    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
-    <import index="sge9" ref="r:834d62e5-8e63-445b-ae58-4c325432808d(jetbrains.mps.console.base.generator.template.main@generator)" />
+    <import index="qgo0" ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
+    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -5777,7 +5777,7 @@
               <node concept="1Y3b0j" id="6ysF3v1j_n6" role="YeSDq">
                 <property role="2bfB8j" value="true" />
                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+                <ref role="1Y3XeK" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
                 <node concept="3Tm1VV" id="6ysF3v1j_n7" role="1B3o_S" />
                 <node concept="3clFb_" id="6ysF3v1j_n8" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -5827,7 +5827,7 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getOutputWindow" />
                   <node concept="3uibUv" id="3ZgZ1njS8jb" role="3clF45">
-                    <ref role="3uigEE" to="dnf9:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
+                    <ref role="3uigEE" to="irki:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
                   </node>
                   <node concept="3Tm1VV" id="3ZgZ1njS8jc" role="1B3o_S" />
                   <node concept="3clFbS" id="3ZgZ1njS8jf" role="3clF47">
@@ -5845,7 +5845,7 @@
       </node>
       <node concept="3Tmbuc" id="4gO8GruSYnj" role="1B3o_S" />
       <node concept="3uibUv" id="4gO8GruT1VD" role="3clF45">
-        <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+        <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
       </node>
     </node>
     <node concept="2tJIrI" id="2wDkRIggIz7" role="jymVt" />
@@ -6200,7 +6200,7 @@
               <node concept="1Y3b0j" id="6ysF3v1j_np" role="YeSDq">
                 <property role="2bfB8j" value="true" />
                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                <ref role="1Y3XeK" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+                <ref role="1Y3XeK" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
                 <node concept="3Tm1VV" id="6ysF3v1j_nq" role="1B3o_S" />
                 <node concept="3clFb_" id="6ysF3v1j_nr" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -6641,7 +6641,7 @@
       </node>
       <node concept="3Tm1VV" id="59iQg8rFKVz" role="1B3o_S" />
       <node concept="3uibUv" id="4gO8GruUt3c" role="3clF45">
-        <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+        <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
       </node>
     </node>
     <node concept="2tJIrI" id="4gO8GruUdVI" role="jymVt" />
@@ -7773,7 +7773,7 @@
       <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />
     </node>
     <node concept="3uibUv" id="3ZgZ1njKsLP" role="EKbjA">
-      <ref role="3uigEE" to="dnf9:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
+      <ref role="3uigEE" to="irki:3ZgZ1njKpbf" resolve="CommandOutputWindow" />
     </node>
   </node>
   <node concept="312cEu" id="2wDkRIgdolx">

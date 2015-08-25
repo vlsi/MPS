@@ -5,7 +5,7 @@ package jetbrains.mps.console.scripts.behavior;
 import jetbrains.mps.baseLanguage.collections.behavior.InternalSequenceOperation_BehaviorDescriptor;
 import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.command.base.behavior.ConsoleHelpProvider_Behavior;
+import jetbrains.mps.console.blCommand.behavior.ConsoleHelpProvider_Behavior;
 import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior;
 
 public class RefactorOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements ConsoleOperation_BehaviorDescriptor {

@@ -41,16 +41,16 @@
       <node id="3267115895197545353" at="71,13,76,13" concept="2" />
       <node id="7349810439589440452" at="86,67,91,7" concept="1" />
       <node id="8472149284302059950" at="44,0,51,0" concept="4" trace="run#()V" />
-      <node id="2197843344735277510" at="30,0,38,0" concept="7" trace="executeScript#(Ljetbrains/mps/command/base/runtime/ConsoleContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2197843344735277510" at="30,0,38,0" concept="7" trace="executeScript#(Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8472149284302059948" at="42,5,51,7" concept="1" />
       <node id="7349810439588579493" at="85,0,94,0" concept="7" trace="nodesToRefactoringResult#(Ljava/lang/Iterable;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="6636597128305957335" at="61,42,71,13" concept="3" />
-      <node id="422748824978979008" at="39,0,53,0" concept="7" trace="executeCommands#(Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljava/util/List;I)V" />
+      <node id="422748824978979008" at="39,0,53,0" concept="7" trace="executeCommands#(Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljava/util/List;I)V" />
       <node id="2799321329874979146" at="60,0,78,0" concept="4" trace="run#()V" />
       <node id="2799321329874979144" at="58,80,78,11" concept="1" />
       <node id="7349810439587240215" at="58,0,82,0" concept="4" trace="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
       <node id="7349810439587220704" at="56,55,82,30" concept="1" />
-      <node id="2377091791517276422" at="54,0,84,0" concept="7" trace="refactor#(Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="2377091791517276422" at="54,0,84,0" concept="7" trace="refactor#(Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
       <scope id="5222183305496184700" at="33,25,34,86" />
       <scope id="422748824979040443" at="40,63,41,13" />
       <scope id="422748824979023027" at="46,29,47,62" />

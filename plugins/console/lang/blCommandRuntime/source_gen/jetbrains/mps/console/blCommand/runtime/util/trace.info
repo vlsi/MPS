@@ -107,7 +107,7 @@
       <node id="8433118097516021444" at="244,73,247,5" concept="2" />
       <node id="8433118097516021734" at="250,79,253,5" concept="2" />
       <node id="8433118097516022984" at="256,81,259,5" concept="2" />
-      <node id="4307205004142786686" at="167,0,171,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/command/base/runtime/ConsoleContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="4307205004142786686" at="167,0,171,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/blCommand/runtime/ConsoleContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="3820104862372919953" at="45,58,50,7" concept="5" />
       <node id="6864030874026229328" at="53,68,58,7" concept="5" />
       <node id="4598452390225841750" at="90,12,95,49" concept="1" />
@@ -133,7 +133,7 @@
       <node id="1125969196844645054" at="102,68,111,11" concept="1" />
       <node id="1125969196844733225" at="120,70,129,11" concept="1" />
       <node id="1125969196844733365" at="138,72,147,11" concept="1" />
-      <node id="9010839353952056869" at="87,0,98,0" concept="8" trace="printSequence#(Ljetbrains/mps/command/base/runtime/ConsoleStream;Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;ILjava/lang/String;)V" />
+      <node id="9010839353952056869" at="87,0,98,0" concept="8" trace="printSequence#(Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;ILjava/lang/String;)V" />
       <node id="1597470200014229947" at="101,0,114,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="1597470200014090902" at="119,0,132,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="1597470200014094812" at="137,0,150,0" concept="3" trace="invoke#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />

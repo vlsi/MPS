@@ -117,7 +117,7 @@
       <node id="5191068651950664624" at="28,0,31,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
       <node id="2087237500458009250" at="22,123,31,7" concept="9" />
       <node id="2087237500458009260" at="31,7,44,5" concept="6" />
-      <node id="2087237500458009230" at="22,0,46,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;)V" />
+      <node id="2087237500458009230" at="22,0,46,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
       <scope id="2087237500458009232" at="20,43,20,43" />
       <scope id="5191068651950664616" at="24,55,25,49" />
       <scope id="5191068651950664625" at="28,44,29,84" />
@@ -166,9 +166,9 @@
       <node id="2087237500458509092" at="35,0,36,18" concept="10" />
       <node id="5207260697411842270" at="38,110,39,255" concept="10" />
       <node id="2087237500458473183" at="20,0,22,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2087237500458473183" at="38,0,41,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="2087237500458473183" at="38,0,41,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <node id="2087237500458509022" at="26,23,30,5" concept="6" />
-      <node id="2087237500458473183" at="22,0,38,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="2087237500458473183" at="22,0,38,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="2087237500458473348" at="20,43,20,43" />
       <scope id="5207260697411840016" at="38,110,39,255" />
       <scope id="2087237500458473183" at="20,0,22,0">
@@ -369,7 +369,7 @@
     <file name="INodeSetReference_Behavior.java">
       <node id="9053534423437703278" at="11,110,12,16" concept="10" />
       <node id="5207260697411458160" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5207260697411458160" at="11,0,14,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="5207260697411458160" at="11,0,14,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="5207260697411458162" at="9,43,9,43" />
       <scope id="5207260697411458166" at="11,110,12,16" />
       <scope id="5207260697411458160" at="9,0,11,0">
@@ -507,7 +507,7 @@
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">
     <file name="RebuildProjectCommand_Behavior.java">
       <node id="6224631407134025442" at="10,0,12,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6224631407134025442" at="12,0,14,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;)V" />
+      <node id="6224631407134025442" at="12,0,14,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
       <scope id="6224631407134025444" at="10,43,10,43" />
       <scope id="6224631407134025623" at="12,123,12,123" />
       <scope id="6224631407134025442" at="10,0,12,0">
@@ -524,7 +524,7 @@
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134040959">
     <file name="UnloadModelsCommand_Behavior.java">
       <node id="6224631407134040959" at="10,0,12,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6224631407134040959" at="12,0,14,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;)V" />
+      <node id="6224631407134040959" at="12,0,14,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
       <scope id="6224631407134040961" at="10,43,10,43" />
       <scope id="6224631407134040970" at="12,123,12,123" />
       <scope id="6224631407134040959" at="10,0,12,0">
@@ -545,7 +545,7 @@
       <node id="7057947030098365030" at="22,5,23,182" concept="4" />
       <node id="7057947030097947524" at="16,0,18,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="9053534423437794128" at="19,290,22,5" concept="7" />
-      <node id="7057947030097947524" at="18,0,25,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;)V" />
+      <node id="7057947030097947524" at="18,0,25,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
       <scope id="7057947030097947677" at="16,43,16,43" />
       <scope id="9053534423437794131" at="20,24,21,13" />
       <scope id="7057947030097947524" at="16,0,18,0">
@@ -583,7 +583,7 @@
     <file name="StatCommand_Behavior.java">
       <node id="7490254719527688600" at="17,123,18,371" concept="4" />
       <node id="7490254719522983804" at="15,0,17,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7490254719522983804" at="17,0,20,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;Ljetbrains/mps/command/base/runtime/ConsoleStream;)V" />
+      <node id="7490254719522983804" at="17,0,20,0" concept="12" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
       <scope id="7490254719522983969" at="15,43,15,43" />
       <scope id="7490254719522984153" at="17,123,18,371" />
       <scope id="7490254719522983804" at="15,0,17,0">
@@ -601,7 +601,7 @@
     <file name="IStatisticsTarget_Behavior.java">
       <node id="6766461360452196449" at="12,130,13,16" concept="10" />
       <node id="7490254719527247598" at="10,0,12,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7490254719527247598" at="12,0,15,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719527247598" at="12,0,15,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="7490254719527247600" at="10,43,10,43" />
       <scope id="7490254719527247612" at="12,130,13,16" />
       <scope id="7490254719527247598" at="10,0,12,0">
@@ -628,9 +628,9 @@
       <node id="7490254719527728257" at="22,0,24,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1915462833240130965" at="35,0,38,0" concept="8" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
       <node id="1915462833240130974" at="39,0,42,0" concept="8" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-      <node id="7490254719527728257" at="24,0,32,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719527728257" at="24,0,32,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <node id="1915462833240130959" at="33,79,42,7" concept="10" />
-      <node id="7490254719527728257" at="32,0,44,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719527728257" at="32,0,44,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="7490254719527728259" at="22,43,22,43" />
       <scope id="1915462833240130966" at="35,53,36,30" />
       <scope id="1915462833240130975" at="39,51,40,44" />
@@ -678,9 +678,9 @@
       <node id="7490254719528266990" at="36,0,37,18" concept="10" />
       <node id="5207260697412007816" at="39,110,40,307" concept="10" />
       <node id="7490254719527787127" at="21,0,23,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7490254719527787127" at="39,0,42,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719527787127" at="39,0,42,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <node id="7490254719528626545" at="25,23,29,5" concept="6" />
-      <node id="7490254719527787127" at="23,0,39,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719527787127" at="23,0,39,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="7490254719527787129" at="21,43,21,43" />
       <scope id="5207260697411872915" at="39,110,40,307" />
       <scope id="7490254719527787127" at="21,0,23,0">
@@ -733,8 +733,8 @@
       <node id="1415040652429589692" at="32,129,37,17" concept="4" />
       <node id="1415040652431403694" at="38,127,43,17" concept="4" />
       <node id="1915462833240241414" at="48,76,57,24" concept="10" />
-      <node id="7490254719530699505" at="47,0,59,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
-      <node id="7490254719530699505" at="22,0,47,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/command/base/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719530699505" at="47,0,59,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
+      <node id="7490254719530699505" at="22,0,47,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="7490254719530699507" at="20,43,20,43" />
       <scope id="6864030874033274752" at="27,53,28,30" />
       <scope id="1415040652430952822" at="34,41,35,31" />

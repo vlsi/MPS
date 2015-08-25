@@ -5,7 +5,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 import jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor;
 import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.command.base.behavior.ConsoleHelpProvider_Behavior;
+import jetbrains.mps.console.blCommand.behavior.ConsoleHelpProvider_Behavior;
 import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior;
 
 public class OfAspectOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements ConsoleOperation_BehaviorDescriptor {

@@ -24,7 +24,7 @@
     <import index="ngmm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view()" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations()" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes()" />
-    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
+    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -570,7 +570,7 @@
                   <ref role="3cqZAo" node="7OcVEq$sjIV" resolve="console" />
                 </node>
                 <node concept="liA8E" id="7uW68YxsIOi" role="2OqNvi">
-                  <ref role="37wK5l" to="dnf9:5WpmwkrQPWC" resolve="addText" />
+                  <ref role="37wK5l" to="irki:5WpmwkrQPWC" resolve="addText" />
                   <node concept="Xl_RD" id="7uW68YxsIPy" role="37wK5m">
                     <property role="Xl_RC" value="empty sequence" />
                   </node>
@@ -594,7 +594,7 @@
                     <ref role="3cqZAo" node="7OcVEq$sjIV" resolve="console" />
                   </node>
                   <node concept="liA8E" id="3ZgZ1njXhiJ" role="2OqNvi">
-                    <ref role="37wK5l" to="dnf9:3ZgZ1njWQRY" resolve="addClosure" />
+                    <ref role="37wK5l" to="irki:3ZgZ1njWQRY" resolve="addClosure" />
                     <node concept="1bVj0M" id="igjXyur9Iz" role="37wK5m">
                       <node concept="3clFbS" id="igjXyur9I_" role="1bW5cS">
                         <node concept="3clFbF" id="6_TW7xVIkl9" role="3cqZAp">
@@ -636,7 +636,7 @@
       <node concept="37vLTG" id="7OcVEq$sjIV" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="7OcVEq$sjIU" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="37vLTG" id="7OcVEq$so7u" role="3clF46">
@@ -1206,7 +1206,7 @@
                   <ref role="3cqZAo" node="3J6h25QLs6x" resolve="context" />
                 </node>
                 <node concept="liA8E" id="3lidccNIocU" role="2OqNvi">
-                  <ref role="37wK5l" to="dnf9:3lidccNHjWv" resolve="getDefaultSearchscope" />
+                  <ref role="37wK5l" to="irki:3lidccNHjWv" resolve="getDefaultSearchscope" />
                 </node>
               </node>
               <node concept="37vLTw" id="3J6h25QMGug" role="3K4GZi">
@@ -1259,7 +1259,7 @@
         <property role="TrG5h" value="context" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="3J6h25QLsiX" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="3uibUv" id="4CUSouB_4b5" role="3clF45">

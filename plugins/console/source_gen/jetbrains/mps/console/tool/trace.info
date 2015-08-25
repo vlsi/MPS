@@ -688,7 +688,7 @@
       <node id="7538089231784120906" at="278,31,281,11" concept="8" />
       <node id="7538089231777682888" at="290,0,293,0" concept="9" trace="getProject#()Ljetbrains/mps/project/Project;" />
       <node id="1471632565003333804" at="293,0,296,0" concept="9" trace="getDefaultSearchscope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
-      <node id="4598452390224495818" at="296,0,299,0" concept="9" trace="getOutputWindow#()Ljetbrains/mps/command/base/runtime/CommandOutputWindow;" />
+      <node id="4598452390224495818" at="296,0,299,0" concept="9" trace="getOutputWindow#()Ljetbrains/mps/console/blCommand/runtime/CommandOutputWindow;" />
       <node id="2893936025728641235" at="303,537,306,5" concept="8" />
       <node id="7538089231777682993" at="315,66,318,7" concept="8" />
       <node id="7538089231777682927" at="334,43,337,11" concept="8" />
@@ -768,7 +768,7 @@
       <node id="7538089231777682221" at="168,0,180,0" concept="9" trace="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="7538089231777682907" at="331,0,343,0" concept="9" trace="addText#(Ljava/lang/String;)V" />
       <node id="7538089231777683537" at="244,94,257,11" concept="8" />
-      <node id="4914591330906414829" at="288,0,301,0" concept="9" trace="getConsoleContext#()Ljetbrains/mps/command/base/runtime/ConsoleContext;" />
+      <node id="4914591330906414829" at="288,0,301,0" concept="9" trace="getConsoleContext#()Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;" />
       <node id="7538089231777682973" at="313,88,326,5" concept="7" />
       <node id="4176612323166022616" at="475,0,488,0" concept="9" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7538089231777682112" at="142,0,156,0" concept="9" trace="validateImports#()V" />
@@ -789,7 +789,7 @@
       <node id="2893936025730044886" at="416,0,450,0" concept="9" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Runnable;Ljava/lang/Runnable;)V" />
       <node id="4176612323165356804" at="466,0,502,0" concept="9" trace="loadHistoryModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="4914591330906818579" at="329,43,366,6" concept="11" />
-      <node id="4914591330906788048" at="329,0,368,0" concept="9" trace="getConsoleStream#()Ljetbrains/mps/command/base/runtime/ConsoleStream;" />
+      <node id="4914591330906788048" at="329,0,368,0" concept="9" trace="getConsoleStream#()Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;" />
       <scope id="7538089231777683516" at="239,0,239,56">
         <var name="ignored" id="7538089231777683517" />
       </scope>

@@ -16,7 +16,7 @@
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
-    <import index="67ek" ref="r:a0598308-9fae-494c-abe2-56fbebc91b43(jetbrains.mps.command.base.behavior)" implicit="true" />
+    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -139,7 +139,7 @@
               <ref role="3cqZAo" node="2SpVAIqtRRj" resolve="console" />
             </node>
             <node concept="liA8E" id="jysm2GD0lE" role="2OqNvi">
-              <ref role="37wK5l" to="dnf9:5WpmwkrQPWC" resolve="addText" />
+              <ref role="37wK5l" to="irki:5WpmwkrQPWC" resolve="addText" />
               <node concept="Xl_RD" id="jysm2GD0nJ" role="37wK5m">
                 <property role="Xl_RC" value="Classes reloaded" />
               </node>
@@ -150,13 +150,13 @@
       <node concept="37vLTG" id="2SpVAIqtRRh" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRRi" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRRj" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRRk" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRRl" role="3clF45" />
@@ -166,7 +166,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="67ek:qgIopNa9Hb" resolve="getShortHelp" />
+      <ref role="13i0hy" to="fq2o:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="DySRn8ZxA6" role="1B3o_S" />
       <node concept="3clFbS" id="DySRn8ZxA9" role="3clF47">
         <node concept="3clFbF" id="DySRn90daw" role="3cqZAp">
@@ -193,13 +193,13 @@
       <node concept="37vLTG" id="2SpVAIqtRXo" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRXp" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRXq" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRXr" role="1tU5fm">
-          <ref role="3uigEE" to="dnf9:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRXs" role="3clF45" />
@@ -241,7 +241,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="67ek:qgIopNa9Hb" resolve="getShortHelp" />
+      <ref role="13i0hy" to="fq2o:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="DySRn8ZxJj" role="1B3o_S" />
       <node concept="3clFbS" id="DySRn8ZxJm" role="3clF47">
         <node concept="3clFbF" id="DySRn8ZxJD" role="3cqZAp">
@@ -281,7 +281,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="67ek:qgIopNa9Hb" resolve="getShortHelp" />
+      <ref role="13i0hy" to="fq2o:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="6eQQAdlPDu7" role="1B3o_S" />
       <node concept="3clFbS" id="6eQQAdlPDua" role="3clF47">
         <node concept="3clFbF" id="6eQQAdlPDvD" role="3cqZAp">

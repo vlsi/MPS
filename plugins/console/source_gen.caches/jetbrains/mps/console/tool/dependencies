@@ -43,9 +43,9 @@
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.command.base.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.command.base.runtime.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleFileEditor" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTool" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.command.base.runtime.CommandOutputWindow" />
+    <classNode extendsClassName="jetbrains.mps.console.blCommand.runtime.CommandOutputWindow" />
   </dependency>
   <dependency className="jetbrains.mps.console.tool.ConsoleFileEditor" file="ConsoleFileEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />

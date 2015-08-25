@@ -8,7 +8,6 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="jyxa" ref="r:9ec1d3e7-df4d-441e-8024-73530d64d324(jetbrains.mps.command.base.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -288,14 +287,36 @@
     <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="ConsoleExpression" />
     <node concept="PrWs8" id="64VftqErqMh" role="PrDN$">
-      <ref role="PrY4T" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
     </node>
   </node>
   <node concept="PlHQZ" id="59iQg8ryQK3">
     <property role="TrG5h" value="ConsoleOperation" />
     <property role="3GE5qa" value="expression" />
     <node concept="PrWs8" id="59iQg8ryQMx" role="PrDN$">
-      <ref role="PrY4T" to="jyxa:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="qgIopN3HO7">
+    <property role="TrG5h" value="ConsoleHelpProvider" />
+    <property role="3GE5qa" value="" />
+  </node>
+  <node concept="1TIwiD" id="3F2FyKbNNqb">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="WithStatement" />
+    <property role="34LRSv" value="with" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="1TJgyj" id="3F2FyKbNNqc" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="stmts" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="1TJgyj" id="3F2FyKbNNqR" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="scope" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

@@ -11,13 +11,16 @@
       <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.AbstractPrintExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,62,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,64,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleExpression_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ConsoleHelpProvider_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
     </file>
     <file name="ConsoleOperation_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
     </file>
     <file name="CustomScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
@@ -44,7 +47,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.NodesExpression_BehaviorDescriptor" />
     </file>
     <file name="PrintExpression_BehaviorDescriptor.java">
-      <unit at="8,0,34,0" name="jetbrains.mps.console.blCommand.behavior.PrintExpression_BehaviorDescriptor" />
+      <unit at="7,0,33,0" name="jetbrains.mps.console.blCommand.behavior.PrintExpression_BehaviorDescriptor" />
     </file>
     <file name="PrintNodeExpression_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintNodeExpression_BehaviorDescriptor" />
@@ -65,7 +68,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.ProjectScope_BehaviorDescriptor" />
     </file>
     <file name="QueryExpression_BehaviorDescriptor.java">
-      <unit at="10,0,40,0" name="jetbrains.mps.console.blCommand.behavior.QueryExpression_BehaviorDescriptor" />
+      <unit at="9,0,39,0" name="jetbrains.mps.console.blCommand.behavior.QueryExpression_BehaviorDescriptor" />
     </file>
     <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterIncludeReadOnly_BehaviorDescriptor" />
@@ -86,10 +89,13 @@
       <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ScopeParameter_BehaviorDescriptor" />
     </file>
     <file name="ShowExpression_BehaviorDescriptor.java">
-      <unit at="9,0,38,0" name="jetbrains.mps.console.blCommand.behavior.ShowExpression_BehaviorDescriptor" />
+      <unit at="8,0,37,0" name="jetbrains.mps.console.blCommand.behavior.ShowExpression_BehaviorDescriptor" />
     </file>
     <file name="UsagesExpression_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.console.blCommand.behavior.UsagesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="WithStatement_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.WithStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4225915845891288151">
@@ -296,6 +302,54 @@
         <var name="thisConcept" id="4307205004146976962" />
       </scope>
       <unit id="4307205004146976962" at="11,0,18,0" name="jetbrains.mps.console.blCommand.behavior.ReferencesExpression_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/473081947982699336">
+    <file name="ConsoleHelpProvider_Behavior.java">
+      <node id="1433263869219891526" at="16,94,17,278" concept="4" />
+      <node id="7006261637493128366" at="19,94,20,16" concept="4" />
+      <node id="6928665434441165614" at="22,91,23,163" concept="4" />
+      <node id="6928665434437563301" at="25,104,26,275" concept="3" />
+      <node id="6928665434437576073" at="27,48,28,19" concept="4" />
+      <node id="6928665434437576528" at="29,12,30,256" concept="4" />
+      <node id="6891027939994894629" at="33,99,34,236" concept="4" />
+      <node id="473081947982699336" at="14,0,16,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6928665434437576376" at="29,10,31,5" concept="0" />
+      <node id="473081947982699336" at="16,0,19,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="473081947982699336" at="19,0,22,0" concept="5" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="473081947982699336" at="22,0,25,0" concept="5" trace="virtual_getGroup_6928665434441162387#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="473081947982699336" at="33,0,36,0" concept="5" trace="virtual_getDisplayString_6891027939994892943#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="6928665434437564316" at="26,275,31,5" concept="2" />
+      <node id="473081947982699336" at="25,0,33,0" concept="5" trace="virtual_getShortDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="473081947982699338" at="14,43,14,43" />
+      <scope id="473081947982699342" at="16,94,17,278" />
+      <scope id="7006261637493125454" at="19,94,20,16" />
+      <scope id="6928665434441162390" at="22,91,23,163" />
+      <scope id="6928665434437564319" at="27,48,28,19" />
+      <scope id="6928665434437576377" at="29,12,30,256" />
+      <scope id="6891027939994892946" at="33,99,34,236" />
+      <scope id="473081947982699336" at="14,0,16,0">
+        <var name="thisNode" id="473081947982699336" />
+      </scope>
+      <scope id="473081947982699336" at="16,0,19,0">
+        <var name="thisConcept" id="473081947982699336" />
+      </scope>
+      <scope id="473081947982699336" at="19,0,22,0">
+        <var name="thisConcept" id="473081947982699336" />
+      </scope>
+      <scope id="473081947982699336" at="22,0,25,0">
+        <var name="thisConcept" id="473081947982699336" />
+      </scope>
+      <scope id="473081947982699336" at="33,0,36,0">
+        <var name="thisConcept" id="473081947982699336" />
+      </scope>
+      <scope id="7006261637493126106" at="25,104,31,5">
+        <var name="alias" id="6928665434437563304" />
+      </scope>
+      <scope id="473081947982699336" at="25,0,33,0">
+        <var name="thisConcept" id="473081947982699336" />
+      </scope>
+      <unit id="473081947982699336" at="13,0,37,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleHelpProvider_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/5932042262275648698">
