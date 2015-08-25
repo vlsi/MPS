@@ -44,15 +44,8 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="5WpmwkrQrRs">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="PrintNodeReferenceExpression" />
-    <property role="34LRSv" value="#printNodeRef" />
-    <property role="R4oN_" value="print reference to the node" />
-    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-  </node>
   <node concept="1TIwiD" id="7mV0m3L$trF">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="UsagesExpression" />
     <property role="34LRSv" value="#usages" />
     <property role="R4oN_" value="direct references to a node in scope" />
@@ -65,13 +58,13 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tuv">
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ShowExpression" />
     <property role="34LRSv" value="#show" />
     <property role="R4oN_" value="show in usage view" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="64VftqErvIP" role="PzmwI">
-      <ref role="PrY4T" node="64VftqErqMg" resolve="ConsoleExpression" />
+      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
     </node>
     <node concept="1TJgyj" id="6_TW7xVwuxP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -81,7 +74,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6H$fNdLyE4d">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="InstancesExpression" />
     <property role="34LRSv" value="#instances" />
     <property role="R4oN_" value="instances of a concept in scope" />
@@ -96,73 +89,46 @@
   <node concept="1TIwiD" id="DM6_$iqV$8">
     <property role="TrG5h" value="ProjectExpression" />
     <property role="34LRSv" value="#project" />
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="R4oN_" value="the current project" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
-  <node concept="1TIwiD" id="7gnNafF7YMD">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="PrintTextExpression" />
-    <property role="34LRSv" value="#printText" />
-    <property role="R4oN_" value="print as string" />
-    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-  </node>
-  <node concept="1TIwiD" id="4LU9FcrO3Hp">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="PrintNodeExpression" />
-    <property role="34LRSv" value="#printNode" />
-    <property role="R4oN_" value="print node copy" />
-    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-  </node>
-  <node concept="1TIwiD" id="6M9lfhDDWgw">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="AbstractPrintExpression" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="7gnNafF7Ztx" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="object" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="2sF4xi8qX2e">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="NodesExpression" />
     <property role="34LRSv" value="#nodes" />
     <property role="R4oN_" value="all nodes in scope" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5uXC5_72l2X">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="ReferencesExpression" />
     <property role="34LRSv" value="#references" />
     <property role="R4oN_" value="all references in scope" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5X1VVpPJEGH">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="ModelsExpression" />
     <property role="34LRSv" value="#models" />
     <property role="R4oN_" value="all models in scope" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5X1VVpPN29y">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="ModulesExpression" />
     <property role="34LRSv" value="#modules" />
     <property role="R4oN_" value="all modules in scope" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q2UNX">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="QueryExpression" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="64VftqErCnv" role="PzmwI">
-      <ref role="PrY4T" node="64VftqErqMg" resolve="ConsoleExpression" />
+      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
     </node>
     <node concept="1TJgyj" id="3J6h25Q5Il8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -172,14 +138,14 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25Q2URP">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameter" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q5HRT">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameterList" />
     <property role="34LRSv" value="&lt; .. &gt;" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -191,14 +157,14 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eM6">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameterIncludeReadOnly" />
     <property role="34LRSv" value="r/o+" />
     <property role="R4oN_" value="include read only" />
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eOJ">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameterScope" />
     <property role="34LRSv" value="scope" />
     <property role="R4oN_" value="used search scope" />
@@ -211,43 +177,26 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="GlobalScope" />
     <property role="34LRSv" value="global" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25QeHPb">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ScopeParameter" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3J6h25QeHQy">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ProjectScope" />
     <property role="34LRSv" value="project" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
   </node>
-  <node concept="1TIwiD" id="6_TW7xVaDdR">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="PrintExpression" />
-    <property role="34LRSv" value="#print" />
-    <property role="R4oN_" value="smart print depending on content" />
-    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-    <node concept="PrWs8" id="64VftqEsbD$" role="PzmwI">
-      <ref role="PrY4T" node="64VftqErqMg" resolve="ConsoleExpression" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="6_TW7xVvrpf">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="PrintSequenceExpression" />
-    <property role="34LRSv" value="#printSequence" />
-    <property role="R4oN_" value="print size with link to usages view" />
-    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-  </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ModulesScope" />
     <property role="34LRSv" value="modules" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
@@ -259,7 +208,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Tk$xe">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ModelScope" />
     <property role="34LRSv" value="models" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
@@ -271,7 +220,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Txnn9">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="CustomScope" />
     <property role="34LRSv" value="custom" />
     <property role="R4oN_" value="? extends SearchScope" />
@@ -284,22 +233,22 @@
     </node>
   </node>
   <node concept="PlHQZ" id="64VftqErqMg">
-    <property role="3GE5qa" value="expression" />
-    <property role="TrG5h" value="ConsoleExpression" />
+    <property role="3GE5qa" value="help" />
+    <property role="TrG5h" value="ExpressionHelpProvider" />
     <node concept="PrWs8" id="64VftqErqMh" role="PrDN$">
-      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" node="qgIopN3HO7" resolve="HelpProvider" />
     </node>
   </node>
   <node concept="PlHQZ" id="59iQg8ryQK3">
-    <property role="TrG5h" value="ConsoleOperation" />
-    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="OperationHelpProvider" />
+    <property role="3GE5qa" value="help" />
     <node concept="PrWs8" id="59iQg8ryQMx" role="PrDN$">
-      <ref role="PrY4T" node="qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" node="qgIopN3HO7" resolve="HelpProvider" />
     </node>
   </node>
   <node concept="PlHQZ" id="qgIopN3HO7">
-    <property role="TrG5h" value="ConsoleHelpProvider" />
-    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="HelpProvider" />
+    <property role="3GE5qa" value="help" />
   </node>
   <node concept="1TIwiD" id="3F2FyKbNNqb">
     <property role="3GE5qa" value="" />

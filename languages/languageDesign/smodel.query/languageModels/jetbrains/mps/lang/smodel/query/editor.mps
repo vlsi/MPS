@@ -225,9 +225,6 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
-        <child id="1140131861877" name="replacementNode" index="1P9ThW" />
-      </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -260,7 +257,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="YwfKjlWn7V">
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression" />
     <node concept="3EZMnI" id="YwfKjlWo_n" role="2wV5jI">
       <node concept="PMmxH" id="YwfKjlWo_l" role="3EZMnx">
@@ -273,7 +270,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6H$fNdLg_8M">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="1XX52x" to="3xdn:7mV0m3L$trF" resolve="UsagesExpression" />
     <node concept="3EZMnI" id="6H$fNdLgGvx" role="2wV5jI">
       <node concept="PMmxH" id="3J6h25Qh$80" role="3EZMnx">
@@ -293,27 +290,8 @@
       <node concept="l2Vlx" id="3J6h25Qhypd" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="6M9lfhDDWh5">
-    <property role="3GE5qa" value="expression.print" />
-    <ref role="1XX52x" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-    <node concept="3EZMnI" id="7gnNafF7Ztz" role="2wV5jI">
-      <node concept="PMmxH" id="7gnNafF7ZtD" role="3EZMnx">
-        <ref role="1ERwB7" node="6D0CP__cz92" resolve="AbstractPrintExpression_Actions" />
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <node concept="OXEIz" id="6kp4dbAhdvj" role="P5bDN">
-          <node concept="UkePV" id="6kp4dbAhdy$" role="OY2wv">
-            <ref role="Ul1FP" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F1sOY" id="7gnNafF7ZtI" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:7gnNafF7Ztx" />
-      </node>
-      <node concept="l2Vlx" id="3J6h25Qz6bJ" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="3J6h25Q6Dvx">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
     <node concept="3EZMnI" id="3J6h25Q6Dw$" role="2wV5jI">
       <node concept="l2Vlx" id="3J6h25Q6Dw_" role="2iSdaV" />
@@ -339,7 +317,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25Qa5Pj">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="PMmxH" id="6kp4dbAr3XM" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -371,7 +349,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25QeHPz">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="1QoScp" id="1N$kF6pZlFc" role="2wV5jI">
       <property role="1QpmdY" value="true" />
@@ -404,7 +382,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6H$fNdLyE65">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="1XX52x" to="3xdn:6H$fNdLyE4d" resolve="InstancesExpression" />
     <node concept="3EZMnI" id="3J6h25QZKvq" role="2wV5jI">
       <node concept="PMmxH" id="3J6h25QZKvr" role="3EZMnx">
@@ -425,7 +403,7 @@
     </node>
   </node>
   <node concept="PKFIW" id="3J6h25Qh1DR">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="QueryExpression_EditorComponent" />
     <ref role="1XX52x" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="3EZMnI" id="3J6h25Q6Zvb" role="2wV5jI">
@@ -598,7 +576,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25Q5HSh">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:3J6h25Q5HRT" resolve="QueryParameterList" />
     <node concept="3F2HdR" id="3J6h25QCBQN" role="2wV5jI">
       <property role="2czwfO" value="," />
@@ -607,33 +585,8 @@
       <node concept="l2Vlx" id="3J6h25QCBQO" role="2czzBx" />
     </node>
   </node>
-  <node concept="1h_SRR" id="6D0CP__cz92">
-    <property role="3GE5qa" value="expression.print" />
-    <property role="TrG5h" value="AbstractPrintExpression_Actions" />
-    <ref role="1h_SK9" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-    <node concept="1hA7zw" id="6D0CP__czcO" role="1h_SK8">
-      <property role="1hAc7j" value="delete_action_id" />
-      <node concept="1hAIg9" id="6D0CP__czcP" role="1hA7z_">
-        <node concept="3clFbS" id="6D0CP__czcQ" role="2VODD2">
-          <node concept="3clFbF" id="6D0CP__cTUX" role="3cqZAp">
-            <node concept="2OqwBi" id="6D0CP__cU1f" role="3clFbG">
-              <node concept="0IXxy" id="6D0CP__cTUW" role="2Oq$k0" />
-              <node concept="1P9Npp" id="6D0CP__cVAK" role="2OqNvi">
-                <node concept="2OqwBi" id="6D0CP__cVJQ" role="1P9ThW">
-                  <node concept="0IXxy" id="6D0CP__cVD$" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="6D0CP__cXm7" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3xdn:7gnNafF7Ztx" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="31Tct3TxpkB">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="3F1sOY" id="31Tct3Txpmx" role="2wV5jI">
       <ref role="1NtTu8" to="3xdn:31Tct3Txpke" />
@@ -641,7 +594,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3Tk$xC">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
     <node concept="3EZMnI" id="31Tct3TvHU9" role="2wV5jI">
       <node concept="l2Vlx" id="31Tct3TvHUa" role="2iSdaV" />
@@ -677,7 +630,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3TiJu1">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
     <node concept="3EZMnI" id="31Tct3TohN2" role="2wV5jI">
       <node concept="l2Vlx" id="31Tct3TohN3" role="2iSdaV" />
@@ -713,7 +666,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="3_Z1D7Uv0CK">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameter_Actions" />
     <ref role="1h_SK9" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="1hA7zw" id="3_Z1D7Uv3OH" role="1h_SK8">
@@ -867,7 +820,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="qdYczXcLw1">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameterScopeValue_Actions" />
     <ref role="1h_SK9" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
     <node concept="1hA7zw" id="qdYczXcLw2" role="1h_SK8">
@@ -987,7 +940,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="1N$kF6q0sBF">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="CustomScope_Actions" />
     <ref role="1h_SK9" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="1hA7zw" id="1N$kF6q0sIh" role="1h_SK8">

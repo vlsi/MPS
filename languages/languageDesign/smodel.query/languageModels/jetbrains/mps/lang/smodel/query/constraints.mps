@@ -97,7 +97,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="30Cvt28Y34P">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="1M2myG" to="3xdn:6H$fNdLyE4d" resolve="InstancesExpression" />
     <node concept="Um2eU" id="30Cvt28Y35m" role="1kkKnR">
       <node concept="3clFbS" id="30Cvt28Y35n" role="2VODD2">
@@ -117,7 +117,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="30Cvt28Y6EN">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="1M2myG" to="3xdn:7mV0m3L$trF" resolve="UsagesExpression" />
     <node concept="Um2eU" id="30Cvt28Y6EO" role="1kkKnR">
       <node concept="3clFbS" id="30Cvt28Y6EP" role="2VODD2">
@@ -137,7 +137,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5YxQmqOA_1t">
-    <property role="3GE5qa" value="expression.query.parameter" />
+    <property role="3GE5qa" value="query.parameter" />
     <ref role="1M2myG" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="nKS2y" id="5YxQmqOA_1u" role="1MLUbF">
       <node concept="3clFbS" id="5YxQmqOA_1v" role="2VODD2">

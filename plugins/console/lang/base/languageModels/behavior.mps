@@ -2718,5 +2718,49 @@
       <node concept="3Tm1VV" id="64VftqEepAI" role="1B3o_S" />
     </node>
   </node>
+  <node concept="13h7C7" id="3E_u19H2SYz">
+    <property role="3GE5qa" value="expression.print" />
+    <ref role="13h7C2" to="eynw:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+    <node concept="13i0hz" id="3E_u19H2SYA" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="TrG5h" value="legalAsStatement" />
+      <ref role="13i0hy" to="tpek:1653mnvAgqK" resolve="legalAsStatement" />
+      <node concept="3clFbS" id="3E_u19H2SYD" role="3clF47">
+        <node concept="3clFbF" id="3E_u19H2SYN" role="3cqZAp">
+          <node concept="3clFbT" id="3E_u19H2SYM" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="3E_u19H2SYI" role="3clF45" />
+      <node concept="3Tm1VV" id="3E_u19H2SYJ" role="1B3o_S" />
+    </node>
+    <node concept="13hLZK" id="3E_u19H2SY$" role="13h7CW">
+      <node concept="3clFbS" id="3E_u19H2SY_" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="64VftqEr$5E">
+    <property role="3GE5qa" value="expression.print" />
+    <ref role="13h7C2" to="eynw:6_TW7xVaDdR" resolve="PrintExpression" />
+    <node concept="13hLZK" id="64VftqEr$5F" role="13h7CW">
+      <node concept="3clFbS" id="64VftqEr$5G" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="64VftqEr$5H" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getShortHelp" />
+      <property role="2Ki8OM" value="true" />
+      <ref role="13i0hy" to="fq2o:qgIopNa9Hb" resolve="getShortHelp" />
+      <node concept="3Tm1VV" id="64VftqEr$5I" role="1B3o_S" />
+      <node concept="3clFbS" id="64VftqEr$5L" role="3clF47">
+        <node concept="3clFbF" id="64VftqErBiU" role="3cqZAp">
+          <node concept="Xl_RD" id="64VftqErBiT" role="3clFbG">
+            <property role="Xl_RC" value="print into the console window" />
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="64VftqEr$5M" role="3clF45" />
+    </node>
+  </node>
 </model>
 

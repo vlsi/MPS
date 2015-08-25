@@ -334,5 +334,56 @@
       <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6M9lfhDDWgw">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="AbstractPrintExpression" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7gnNafF7Ztx" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="object" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVaDdR">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="PrintExpression" />
+    <property role="34LRSv" value="#print" />
+    <property role="R4oN_" value="smart print depending on content" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+    <node concept="PrWs8" id="64VftqEsbD$" role="PzmwI">
+      <ref role="PrY4T" to="3xdn:64VftqErqMg" resolve="ConsoleExpression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4LU9FcrO3Hp">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="PrintNodeExpression" />
+    <property role="34LRSv" value="#printNode" />
+    <property role="R4oN_" value="print node copy" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="5WpmwkrQrRs">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="PrintNodeReferenceExpression" />
+    <property role="34LRSv" value="#printNodeRef" />
+    <property role="R4oN_" value="print reference to the node" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVvrpf">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="PrintSequenceExpression" />
+    <property role="34LRSv" value="#printSequence" />
+    <property role="R4oN_" value="print size with link to usages view" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="7gnNafF7YMD">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="PrintTextExpression" />
+    <property role="34LRSv" value="#printText" />
+    <property role="R4oN_" value="print as string" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
 </model>
 

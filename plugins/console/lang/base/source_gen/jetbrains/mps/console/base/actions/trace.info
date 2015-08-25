@@ -8,6 +8,9 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,27,0" name="jetbrains.mps.console.base.actions.ActionAspectDescriptorImpl" />
+    </file>
     <file name="PasteWrappers.java">
       <unit at="21,49,31,5" name="jetbrains.mps.console.base.actions.PasteWrappers$1" />
       <unit at="32,49,42,5" name="jetbrains.mps.console.base.actions.PasteWrappers$2" />
@@ -121,6 +124,23 @@
       <scope id="1433263869220697092" at="64,0,72,0">
         <var name="p0" id="1433263869220697092" />
       </scope>
+    </file>
+  </root>
+  <root nodeRef="r:e2e0d663-5267-4842-83ca-f12fcca33264(jetbrains.mps.console.base.actions)/7284872370241013666">
+    <file name="printStatement_NodeFactories.java">
+      <node id="7284872370241018755" at="15,211,16,528" concept="1" />
+      <node id="7284872370241013751" at="14,91,17,7" concept="2" />
+      <node id="7284872370241013667" at="14,0,19,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="7284872370241013752" at="15,211,16,528" />
+      <scope id="7284872370241013667" at="14,91,17,7" />
+      <scope id="7284872370241013667" at="14,0,19,0">
+        <var name="enclosingNode" id="7284872370241013667" />
+        <var name="model" id="7284872370241013667" />
+        <var name="newNode" id="7284872370241013667" />
+        <var name="sampleNode" id="7284872370241013667" />
+      </scope>
+      <unit id="7284872370241013667" at="13,0,20,0" name="jetbrains.mps.console.base.actions.printStatement_NodeFactories$NodeFactory_7284872370241013667" />
+      <unit id="7284872370241013666" at="12,0,21,0" name="jetbrains.mps.console.base.actions.printStatement_NodeFactories" />
     </file>
   </root>
 </debug-info>

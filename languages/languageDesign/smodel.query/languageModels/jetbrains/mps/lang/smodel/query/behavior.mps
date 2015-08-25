@@ -148,7 +148,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="3J6h25QXCBO">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:7mV0m3L$trF" resolve="UsagesExpression" />
     <node concept="13i0hz" id="3J6h25QXOd7" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -233,7 +233,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXEXM">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="13i0hz" id="3J6h25QXCDW" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -372,7 +372,7 @@
                 <ref role="37wK5l" node="64VftqEenfn" resolve="getShortDisplayString" />
               </node>
               <node concept="13iAh5" id="5YxQmqOFz5x" role="2Oq$k0">
-                <ref role="3eA5LN" to="3xdn:64VftqErqMg" resolve="ConsoleExpression" />
+                <ref role="3eA5LN" to="3xdn:64VftqErqMg" resolve="ExpressionHelpProvider" />
               </node>
             </node>
           </node>
@@ -417,7 +417,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXEYw">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:2sF4xi8qX2e" resolve="NodesExpression" />
     <node concept="13hLZK" id="3J6h25QXEYx" role="13h7CW">
       <node concept="3clFbS" id="3J6h25QXEYy" role="2VODD2" />
@@ -454,7 +454,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXHz5">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:5X1VVpPN29y" resolve="ModulesExpression" />
     <node concept="13i0hz" id="3J6h25QXHzP" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -491,7 +491,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXJct">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:5X1VVpPJEGH" resolve="ModelsExpression" />
     <node concept="13i0hz" id="3J6h25QXJdd" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -528,7 +528,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXKQk">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:6H$fNdLyE4d" resolve="InstancesExpression" />
     <node concept="13i0hz" id="3J6h25QXKR4" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -613,7 +613,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3J6h25QXMz2">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:5uXC5_72l2X" resolve="ReferencesExpression" />
     <node concept="13i0hz" id="3J6h25QXMzM" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -650,7 +650,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6kp4dbAb8Gj">
-    <property role="3GE5qa" value="expression.query" />
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression" />
     <node concept="13hLZK" id="6kp4dbAb8Gk" role="13h7CW">
       <node concept="3clFbS" id="6kp4dbAb8Gl" role="2VODD2" />
@@ -675,7 +675,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="3E_u19H2QLn">
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression" />
     <node concept="13i0hz" id="3E_u19H2QLq" role="13h7CS">
       <property role="2Ki8OM" value="true" />
@@ -711,53 +711,9 @@
       <node concept="3clFbS" id="3E_u19H2QLp" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="3E_u19H2SYz">
-    <property role="3GE5qa" value="expression.print" />
-    <ref role="13h7C2" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
-    <node concept="13i0hz" id="3E_u19H2SYA" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="TrG5h" value="legalAsStatement" />
-      <ref role="13i0hy" to="tpek:1653mnvAgqK" resolve="legalAsStatement" />
-      <node concept="3clFbS" id="3E_u19H2SYD" role="3clF47">
-        <node concept="3clFbF" id="3E_u19H2SYN" role="3cqZAp">
-          <node concept="3clFbT" id="3E_u19H2SYM" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="3E_u19H2SYI" role="3clF45" />
-      <node concept="3Tm1VV" id="3E_u19H2SYJ" role="1B3o_S" />
-    </node>
-    <node concept="13hLZK" id="3E_u19H2SY$" role="13h7CW">
-      <node concept="3clFbS" id="3E_u19H2SY_" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="64VftqEr$5E">
-    <property role="3GE5qa" value="expression.print" />
-    <ref role="13h7C2" to="3xdn:6_TW7xVaDdR" resolve="PrintExpression" />
-    <node concept="13hLZK" id="64VftqEr$5F" role="13h7CW">
-      <node concept="3clFbS" id="64VftqEr$5G" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="64VftqEr$5H" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getShortHelp" />
-      <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" node="qgIopNa9Hb" resolve="getShortHelp" />
-      <node concept="3Tm1VV" id="64VftqEr$5I" role="1B3o_S" />
-      <node concept="3clFbS" id="64VftqEr$5L" role="3clF47">
-        <node concept="3clFbF" id="64VftqErBiU" role="3cqZAp">
-          <node concept="Xl_RD" id="64VftqErBiT" role="3clFbG">
-            <property role="Xl_RC" value="print into the console window" />
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="64VftqEr$5M" role="3clF45" />
-    </node>
-  </node>
   <node concept="13h7C7" id="64VftqErqME">
-    <property role="3GE5qa" value="expression" />
-    <ref role="13h7C2" to="3xdn:64VftqErqMg" resolve="ConsoleExpression" />
+    <property role="3GE5qa" value="help" />
+    <ref role="13h7C2" to="3xdn:64VftqErqMg" resolve="ExpressionHelpProvider" />
     <node concept="13hLZK" id="64VftqErqMF" role="13h7CW">
       <node concept="3clFbS" id="64VftqErqMG" role="2VODD2" />
     </node>
@@ -779,8 +735,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="59iQg8ryQMU">
-    <property role="3GE5qa" value="expression" />
-    <ref role="13h7C2" to="3xdn:59iQg8ryQK3" resolve="ConsoleOperation" />
+    <property role="3GE5qa" value="help" />
+    <ref role="13h7C2" to="3xdn:59iQg8ryQK3" resolve="OperationHelpProvider" />
     <node concept="13hLZK" id="59iQg8ryQMV" role="13h7CW">
       <node concept="3clFbS" id="59iQg8ryQMW" role="2VODD2" />
     </node>
@@ -802,8 +758,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="qgIopNa9H8">
-    <property role="3GE5qa" value="" />
-    <ref role="13h7C2" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+    <property role="3GE5qa" value="help" />
+    <ref role="13h7C2" to="3xdn:qgIopN3HO7" resolve="HelpProvider" />
     <node concept="13i0hz" id="qgIopNa9Hb" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="true" />

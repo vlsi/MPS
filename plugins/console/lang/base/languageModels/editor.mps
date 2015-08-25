@@ -34,9 +34,15 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
+      <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz">
+        <child id="1164824815888" name="cellMenuPart" index="OY2wv" />
+      </concept>
       <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
+      </concept>
+      <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
+        <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
       </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
@@ -91,6 +97,7 @@
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
+        <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -854,6 +861,50 @@
             <node concept="2OqwBi" id="5YxQmqOF2Xs" role="3clFbG">
               <node concept="0IXxy" id="5YxQmqOF2UU" role="2Oq$k0" />
               <node concept="1PgB_6" id="5YxQmqOF3dx" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6M9lfhDDWh5">
+    <property role="3GE5qa" value="expression.print" />
+    <ref role="1XX52x" to="eynw:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+    <node concept="3EZMnI" id="7gnNafF7Ztz" role="2wV5jI">
+      <node concept="PMmxH" id="7gnNafF7ZtD" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1ERwB7" node="6D0CP__cz92" resolve="AbstractPrintExpression_Actions" />
+        <node concept="OXEIz" id="6kp4dbAhdvj" role="P5bDN">
+          <node concept="UkePV" id="6kp4dbAhdy$" role="OY2wv">
+            <ref role="Ul1FP" to="eynw:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F1sOY" id="7gnNafF7ZtI" role="3EZMnx">
+        <ref role="1NtTu8" to="eynw:7gnNafF7Ztx" />
+      </node>
+      <node concept="l2Vlx" id="3J6h25Qz6bJ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="6D0CP__cz92">
+    <property role="3GE5qa" value="expression.print" />
+    <property role="TrG5h" value="AbstractPrintExpression_Actions" />
+    <ref role="1h_SK9" to="eynw:6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+    <node concept="1hA7zw" id="6D0CP__czcO" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="6D0CP__czcP" role="1hA7z_">
+        <node concept="3clFbS" id="6D0CP__czcQ" role="2VODD2">
+          <node concept="3clFbF" id="6D0CP__cTUX" role="3cqZAp">
+            <node concept="2OqwBi" id="6D0CP__cU1f" role="3clFbG">
+              <node concept="0IXxy" id="6D0CP__cTUW" role="2Oq$k0" />
+              <node concept="1P9Npp" id="6D0CP__cVAK" role="2OqNvi">
+                <node concept="2OqwBi" id="6D0CP__cVJQ" role="1P9ThW">
+                  <node concept="0IXxy" id="6D0CP__cVD$" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="6D0CP__cXm7" role="2OqNvi">
+                    <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
