@@ -197,8 +197,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommand/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommand/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommands/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommands/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommandsRuntime/source_gen" includeSubdirectories="true" />

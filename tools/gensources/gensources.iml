@@ -326,7 +326,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommandRuntime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommandsRuntime/source_gen" isTestSource="false" />
@@ -340,7 +339,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommandRuntime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommandsRuntime/classes_gen" />
@@ -1113,4 +1111,3 @@
     <orderEntry type="module" module-name="dataflow-rt" />
   </component>
 </module>
-
