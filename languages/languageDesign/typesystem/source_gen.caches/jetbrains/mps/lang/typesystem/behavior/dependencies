@@ -640,19 +640,10 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_Behavior" file="LinkPatternVariableReference_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_BehaviorDescriptor" file="LinkPatternVariableReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MatchStatementItem_BehaviorDescriptor" file="MatchStatementItem_BehaviorDescriptor.java">
@@ -951,9 +942,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_Behavior" file="PatternVariableReference_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_BehaviorDescriptor" file="PatternVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -986,9 +974,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.MessageTarget_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_Behavior" file="PropertyPatternVariableReference_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_BehaviorDescriptor" file="PropertyPatternVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

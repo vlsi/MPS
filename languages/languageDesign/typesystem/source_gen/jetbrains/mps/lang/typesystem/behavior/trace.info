@@ -166,7 +166,7 @@
       <unit at="9,0,20,0" name="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter_BehaviorDescriptor" />
     </file>
     <file name="LinkPatternVariableReference_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
     </file>
     <file name="MatchStatementItem_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.MatchStatementItem_BehaviorDescriptor" />
@@ -379,22 +379,6 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_BehaviorDescriptor" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877218089">
-    <file name="LinkPatternVariableReference_Behavior.java">
-      <node id="1213877218089" at="8,0,10,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877218089" at="10,0,12,0" concept="10" trace="virtual_abxcdef_1225210740874#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
-      <scope id="1213877218091" at="8,43,8,43" />
-      <scope id="1225210740877" at="10,90,10,90" />
-      <scope id="1213877218089" at="8,0,10,0">
-        <var name="thisNode" id="1213877218089" />
-      </scope>
-      <scope id="1213877218089" at="10,0,12,0">
-        <var name="o" id="1225210752644" />
-        <var name="thisNode" id="1213877218089" />
-      </scope>
-      <unit id="1213877218089" at="7,0,13,0" name="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877258153">
     <file name="ApplicableNodeReference_Behavior.java">
       <node id="1213877258153" at="8,0,10,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -445,16 +429,6 @@
         <var name="thisNode" id="1213877316631" />
       </scope>
       <unit id="1213877316631" at="10,0,17,0" name="jetbrains.mps.lang.typesystem.behavior.PatternCondition_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877357223">
-    <file name="PropertyPatternVariableReference_Behavior.java">
-      <node id="1213877357223" at="8,0,10,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877357225" at="8,43,8,43" />
-      <scope id="1213877357223" at="8,0,10,0">
-        <var name="thisNode" id="1213877357223" />
-      </scope>
-      <unit id="1213877357223" at="7,0,11,0" name="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877387420">
@@ -513,16 +487,6 @@
         <var name="thisNode" id="1213877428165" />
       </scope>
       <unit id="1213877428165" at="13,0,38,0" name="jetbrains.mps.lang.typesystem.behavior.MeetType_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877480052">
-    <file name="PatternVariableReference_Behavior.java">
-      <node id="1213877480052" at="8,0,10,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877480054" at="8,43,8,43" />
-      <scope id="1213877480052" at="8,0,10,0">
-        <var name="thisNode" id="1213877480052" />
-      </scope>
-      <unit id="1213877480052" at="7,0,11,0" name="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877482046">
