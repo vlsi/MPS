@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)">
+<model ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.console.blCommand" version="0" />
+    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
@@ -12,8 +12,8 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
-    <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)" />
+    <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
+    <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.lang.smodel.query.runtime.util)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -275,19 +275,19 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.console.blCommand">
-      <concept id="7820875636626932768" name="jetbrains.mps.console.blCommand.structure.AbstractPrintExpression" flags="ng" index="5bD3k">
+    <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
+      <concept id="7820875636626932768" name="jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression" flags="ng" index="5bD3k">
         <child id="8365379837260461921" name="object" index="2v23J2" />
       </concept>
-      <concept id="7600370246423000655" name="jetbrains.mps.console.blCommand.structure.PrintSequenceExpression" flags="ng" index="i14oR" />
-      <concept id="8365379837260459177" name="jetbrains.mps.console.blCommand.structure.PrintTextExpression" flags="ng" index="2v220a" />
-      <concept id="2822369470875160718" name="jetbrains.mps.console.blCommand.structure.NodesExpression" flags="ng" index="2Jgcaq" />
-      <concept id="6852607286009511388" name="jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression" flags="ng" index="14Kevp" />
-      <concept id="4307205004131544317" name="jetbrains.mps.console.blCommand.structure.QueryExpression" flags="ng" index="1dNuzs">
+      <concept id="7600370246423000655" name="jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression" flags="ng" index="i14oR" />
+      <concept id="8365379837260459177" name="jetbrains.mps.lang.smodel.query.structure.PrintTextExpression" flags="ng" index="2v220a" />
+      <concept id="2822369470875160718" name="jetbrains.mps.lang.smodel.query.structure.NodesExpression" flags="ng" index="2Jgcaq" />
+      <concept id="6852607286009511388" name="jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression" flags="ng" index="14Kevp" />
+      <concept id="4307205004131544317" name="jetbrains.mps.lang.smodel.query.structure.QueryExpression" flags="ng" index="1dNuzs">
         <child id="4307205004132279624" name="parameter" index="1dOa5D" />
       </concept>
-      <concept id="4307205004132277753" name="jetbrains.mps.console.blCommand.structure.QueryParameterList" flags="ng" index="1dO9Bo" />
-      <concept id="5510759644748856153" name="jetbrains.mps.console.blCommand.structure.PrintNodeExpression" flags="ng" index="1nExRE" />
+      <concept id="4307205004132277753" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterList" flags="ng" index="1dO9Bo" />
+      <concept id="5510759644748856153" name="jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression" flags="ng" index="1nExRE" />
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
