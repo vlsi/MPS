@@ -34,8 +34,7 @@
     <import index="4olo" ref="r:b856319b-d8da-48ce-9e51-862a82504ef3(jetbrains.mps.console.ideCommands.runtime.util)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
-    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.lang.smodel.query.runtime)" />
-    <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.lang.smodel.query.runtime.util)" />
+    <import index="kxzb" ref="r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -1384,8 +1383,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="WMsS6mDK3u" role="37wK5m">
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
-                <ref role="37wK5l" to="8w31:YwfKjlXcuc" resolve="nodesToResults" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:YwfKjlXcuc" resolve="nodesToResults" />
                 <node concept="2OqwBi" id="WMsS6mDK3v" role="37wK5m">
                   <node concept="2Jgcaq" id="WMsS6mDK3w" role="2Oq$k0">
                     <node concept="1dO9Bo" id="WMsS6mDK3x" role="1dOa5D" />
@@ -1409,8 +1408,8 @@
                       <node concept="3clFbS" id="WMsS6mDK3F" role="1bW5cS">
                         <node concept="3clFbF" id="WMsS6mDK3G" role="3cqZAp">
                           <node concept="2YIFZM" id="WMsS6mDK3H" role="3clFbG">
-                            <ref role="37wK5l" to="8w31:32notsQsTE3" resolve="getNodeReference" />
-                            <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                            <ref role="37wK5l" to="kxzb:32notsQsTE3" resolve="getNodeReference" />
+                            <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                             <node concept="37vLTw" id="WMsS6mDK3I" role="37wK5m">
                               <ref role="3cqZAo" node="WMsS6mDK4$" resolve="it" />
                             </node>
@@ -1438,9 +1437,9 @@
                                     <node concept="3clFbS" id="WMsS6mDK3V" role="3clFbx">
                                       <node concept="3cpWs6" id="WMsS6mDK3W" role="3cqZAp">
                                         <node concept="3fl2lp" id="WMsS6mDK3X" role="3cqZAk">
-                                          <ref role="3fl3PK" to="8w31:32notsQsTE3" resolve="getNodeReference" />
+                                          <ref role="3fl3PK" to="kxzb:32notsQsTE3" resolve="getNodeReference" />
                                           <node concept="3B5_sB" id="WMsS6mDK3Y" role="3fl3PI">
-                                            <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                            <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                                           </node>
                                         </node>
                                       </node>
@@ -1460,9 +1459,9 @@
                                     <node concept="3clFbS" id="WMsS6mDK45" role="3clFbx">
                                       <node concept="3cpWs6" id="WMsS6mDK46" role="3cqZAp">
                                         <node concept="3fl2lp" id="WMsS6mDK47" role="3cqZAk">
-                                          <ref role="3fl3PK" to="8w31:32notsQsUA1" resolve="getReferenceReference" />
+                                          <ref role="3fl3PK" to="kxzb:32notsQsUA1" resolve="getReferenceReference" />
                                           <node concept="3B5_sB" id="WMsS6mDK48" role="3fl3PI">
-                                            <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                            <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                                           </node>
                                         </node>
                                       </node>
@@ -1482,9 +1481,9 @@
                                     <node concept="3clFbS" id="WMsS6mDK4f" role="3clFbx">
                                       <node concept="3cpWs6" id="WMsS6mDK4g" role="3cqZAp">
                                         <node concept="3fl2lp" id="WMsS6mDK4h" role="3cqZAk">
-                                          <ref role="3fl3PK" to="8w31:32notsQsVkE" resolve="getModelReference" />
+                                          <ref role="3fl3PK" to="kxzb:32notsQsVkE" resolve="getModelReference" />
                                           <node concept="3B5_sB" id="WMsS6mDK4i" role="3fl3PI">
-                                            <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                            <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                                           </node>
                                         </node>
                                       </node>
@@ -1504,9 +1503,9 @@
                                     <node concept="3clFbS" id="WMsS6mDK4p" role="3clFbx">
                                       <node concept="3cpWs6" id="WMsS6mDK4q" role="3cqZAp">
                                         <node concept="3fl2lp" id="WMsS6mDK4r" role="3cqZAk">
-                                          <ref role="3fl3PK" to="8w31:32notsQsW4c" resolve="getModuleReference" />
+                                          <ref role="3fl3PK" to="kxzb:32notsQsW4c" resolve="getModuleReference" />
                                           <node concept="3B5_sB" id="WMsS6mDK4s" role="3fl3PI">
-                                            <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                            <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                                           </node>
                                         </node>
                                       </node>
@@ -1577,9 +1576,9 @@
                         <node concept="3clFbS" id="WMsS6mDK4R" role="3clFbx">
                           <node concept="3cpWs6" id="WMsS6mDK4S" role="3cqZAp">
                             <node concept="3fl2lp" id="WMsS6mDK4T" role="3cqZAk">
-                              <ref role="3fl3PK" to="8w31:YwfKjlXcuc" resolve="nodesToResults" />
+                              <ref role="3fl3PK" to="kxzb:YwfKjlXcuc" resolve="nodesToResults" />
                               <node concept="3B5_sB" id="WMsS6mDK4U" role="3fl3PI">
-                                <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                               </node>
                             </node>
                           </node>
@@ -1599,9 +1598,9 @@
                         <node concept="3clFbS" id="WMsS6mDK51" role="3clFbx">
                           <node concept="3cpWs6" id="WMsS6mDK52" role="3cqZAp">
                             <node concept="3fl2lp" id="WMsS6mDK53" role="3cqZAk">
-                              <ref role="3fl3PK" to="8w31:YwfKjlXcuc" resolve="nodesToResults" />
+                              <ref role="3fl3PK" to="kxzb:YwfKjlXcuc" resolve="nodesToResults" />
                               <node concept="3B5_sB" id="WMsS6mDK54" role="3fl3PI">
-                                <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                               </node>
                             </node>
                           </node>
@@ -1621,9 +1620,9 @@
                         <node concept="3clFbS" id="WMsS6mDK5b" role="3clFbx">
                           <node concept="3cpWs6" id="WMsS6mDK5c" role="3cqZAp">
                             <node concept="3fl2lp" id="WMsS6mDK5d" role="3cqZAk">
-                              <ref role="3fl3PK" to="8w31:YwfKjlXcx9" resolve="modelsToResults" />
+                              <ref role="3fl3PK" to="kxzb:YwfKjlXcx9" resolve="modelsToResults" />
                               <node concept="3B5_sB" id="WMsS6mDK5e" role="3fl3PI">
-                                <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                               </node>
                             </node>
                           </node>
@@ -1643,9 +1642,9 @@
                         <node concept="3clFbS" id="WMsS6mDK5l" role="3clFbx">
                           <node concept="3cpWs6" id="WMsS6mDK5m" role="3cqZAp">
                             <node concept="3fl2lp" id="WMsS6mDK5n" role="3cqZAk">
-                              <ref role="3fl3PK" to="8w31:YwfKjlXcyY" resolve="modulesToResults" />
+                              <ref role="3fl3PK" to="kxzb:YwfKjlXcyY" resolve="modulesToResults" />
                               <node concept="3B5_sB" id="WMsS6mDK5o" role="3fl3PI">
-                                <ref role="3B5MYn" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                                <ref role="3B5MYn" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                               </node>
                             </node>
                           </node>

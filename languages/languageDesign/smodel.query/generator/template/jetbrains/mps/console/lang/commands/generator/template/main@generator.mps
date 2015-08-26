@@ -7,26 +7,19 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
-    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
-    <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.lang.smodel.query.runtime.util)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.lang.smodel.query.runtime)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="qgo0" ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
+    <import index="kxzb" ref="r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -293,18 +286,18 @@
         <node concept="37vLTG" id="6H$fNdLgKWZ" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEZmE" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="6H$fNdLgKX3" role="1B3o_S" />
         <node concept="3clFbS" id="6H$fNdLgKX4" role="3clF47">
           <node concept="3clFbF" id="6H$fNdLgMMv" role="3cqZAp">
             <node concept="2YIFZM" id="6H$fNdLgNbW" role="3clFbG">
-              <ref role="37wK5l" to="8w31:6H$fNdLgK3S" resolve="usages" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:6H$fNdLgK3S" resolve="usages" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
               <node concept="2YIFZM" id="3J6h25QQ7MU" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
                 <node concept="10Nm6u" id="3J6h25QQ7MV" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QQ7MW" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QQ7MX" role="lGtFl">
@@ -359,18 +352,18 @@
         <node concept="37vLTG" id="6H$fNdLyFoa" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEYP1" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="6H$fNdLyFoe" role="1B3o_S" />
         <node concept="3clFbS" id="6H$fNdLyFof" role="3clF47">
           <node concept="3clFbF" id="6H$fNdLyFog" role="3cqZAp">
             <node concept="2YIFZM" id="6H$fNdLyMmh" role="3clFbG">
-              <ref role="37wK5l" to="8w31:6H$fNdLyI$k" resolve="instances" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:6H$fNdLyI$k" resolve="instances" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
               <node concept="2YIFZM" id="3J6h25QQ6RU" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
                 <node concept="10Nm6u" id="3J6h25QQ6RV" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QQ6RW" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QQ6RX" role="lGtFl">
@@ -426,19 +419,19 @@
         <node concept="37vLTG" id="3Z0MTj6l_4i" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEZ8i" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3Z0MTj6l_4m" role="1B3o_S" />
         <node concept="3clFbS" id="3Z0MTj6l_4n" role="3clF47">
           <node concept="3clFbF" id="3Z0MTj6l_4o" role="3cqZAp">
             <node concept="2YIFZM" id="3Z0MTj6lAI4" role="3clFbG">
-              <ref role="37wK5l" to="8w31:hpHLh7Fj2X" resolve="nodes" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:hpHLh7Fj2X" resolve="nodes" />
               <node concept="raruj" id="3Z0MTj6lAIs" role="lGtFl" />
               <node concept="2YIFZM" id="3J6h25QJne$" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
                 <node concept="10Nm6u" id="3J6h25QJnhU" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QJnp5" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QJnsR" role="lGtFl">
@@ -476,18 +469,18 @@
         <node concept="37vLTG" id="5uXC5_7dkZY" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEZfI" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="5uXC5_7dl02" role="1B3o_S" />
         <node concept="3clFbS" id="5uXC5_7dl03" role="3clF47">
           <node concept="3clFbF" id="5uXC5_7dl04" role="3cqZAp">
             <node concept="2YIFZM" id="5uXC5_7dlxS" role="3clFbG">
-              <ref role="37wK5l" to="8w31:1El5OLsHe1P" resolve="references" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:1El5OLsHe1P" resolve="references" />
               <node concept="2YIFZM" id="3J6h25QQ7a$" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
                 <node concept="10Nm6u" id="3J6h25QQ7a_" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QQ7aA" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QQ7aB" role="lGtFl">
@@ -526,18 +519,18 @@
         <node concept="37vLTG" id="5X1VVpPJFme" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEYVQ" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="5X1VVpPJFmi" role="1B3o_S" />
         <node concept="3clFbS" id="5X1VVpPJFmj" role="3clF47">
           <node concept="3clFbF" id="5X1VVpPJFmk" role="3cqZAp">
             <node concept="2YIFZM" id="5X1VVpPN21_" role="3clFbG">
-              <ref role="37wK5l" to="8w31:DM6_$imnYd" resolve="models" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:DM6_$imnYd" resolve="models" />
               <node concept="2YIFZM" id="3J6h25QQ6A3" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
                 <node concept="10Nm6u" id="3J6h25QQ6A4" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QQ6A5" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QQ6A6" role="lGtFl">
@@ -576,18 +569,18 @@
         <node concept="37vLTG" id="5X1VVpPS2Q$" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEZ24" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="5X1VVpPS2QC" role="1B3o_S" />
         <node concept="3clFbS" id="5X1VVpPS2QD" role="3clF47">
           <node concept="3clFbF" id="5X1VVpPS2QE" role="3cqZAp">
             <node concept="2YIFZM" id="5X1VVpPS2XS" role="3clFbG">
-              <ref role="37wK5l" to="8w31:DM6_$ineY0" resolve="modules" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:DM6_$ineY0" resolve="modules" />
               <node concept="2YIFZM" id="3J6h25QQ6np" role="37wK5m">
-                <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-                <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
                 <node concept="10Nm6u" id="3J6h25QQ6nq" role="37wK5m" />
                 <node concept="10Nm6u" id="3J6h25QQ6nr" role="37wK5m" />
                 <node concept="29HgVG" id="3J6h25QQ6ns" role="lGtFl">
@@ -626,15 +619,15 @@
         <node concept="37vLTG" id="3J6h25QGPG9" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEXnd" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3J6h25QGPGd" role="1B3o_S" />
         <node concept="3clFbS" id="3J6h25QGPGe" role="3clF47">
           <node concept="3clFbF" id="3J6h25QHLRA" role="3cqZAp">
             <node concept="2YIFZM" id="3J6h25QHNTv" role="3clFbG">
-              <ref role="37wK5l" to="8w31:3J6h25QHNxY" resolve="createConsoleScope" />
-              <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:3J6h25QHNxY" resolve="createConsoleScope" />
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
               <node concept="10Nm6u" id="3J6h25QHP70" role="37wK5m">
                 <node concept="29HgVG" id="3J6h25QHPEH" role="lGtFl">
                   <node concept="3NFfHV" id="3J6h25QHPEJ" role="3NFExx">
@@ -819,7 +812,7 @@
         <node concept="37vLTG" id="3J6h25QO0gp" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEWGy" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3J6h25QO0gt" role="1B3o_S" />
@@ -849,7 +842,7 @@
         <node concept="37vLTG" id="31Tct3TvJKX" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEWRA" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="31Tct3TvJL1" role="1B3o_S" />
@@ -902,8 +895,8 @@
         <node concept="3cqZAl" id="31Tct3TziB2" role="3clF45" />
         <node concept="37vLTG" id="31Tct3TziB3" role="3clF46">
           <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="3mC5XuEEWEk" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+          <node concept="3uibUv" id="4Lv24c$Am79" role="1tU5fm">
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="31Tct3TziB7" role="1B3o_S" />
@@ -945,7 +938,7 @@
         <node concept="37vLTG" id="31Tct3TnZLA" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="3mC5XuEEX0v" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+            <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
           </node>
         </node>
         <node concept="3Tm1VV" id="31Tct3TnZLE" role="1B3o_S" />
@@ -996,14 +989,14 @@
           <node concept="3cpWsn" id="1H31ARNQ$U9" role="3cpWs9">
             <property role="TrG5h" value="context" />
             <node concept="3uibUv" id="1ycrhFMMW0Y" role="1tU5fm">
-              <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+              <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
             </node>
             <node concept="2ShNRf" id="6ysF3v1j_n4" role="33vP2m">
               <node concept="YeOm9" id="6ysF3v1j_n5" role="2ShVmc">
                 <node concept="1Y3b0j" id="6ysF3v1j_n6" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+                  <ref role="1Y3XeK" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
                   <node concept="3Tm1VV" id="6ysF3v1j_n7" role="1B3o_S" />
                   <node concept="3clFb_" id="1hGiwlkUV2G" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -1015,8 +1008,8 @@
                     <node concept="3clFbS" id="1hGiwlkUV2L" role="3clF47">
                       <node concept="3cpWs6" id="1hGiwlkVSwr" role="3cqZAp">
                         <node concept="2YIFZM" id="1H31ARNRdyq" role="3cqZAk">
-                          <ref role="37wK5l" to="8w31:1H31ARNR264" resolve="createScope" />
-                          <ref role="1Pybhc" to="8w31:hpHLh7Fj1$" resolve="CommandUtil" />
+                          <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+                          <ref role="37wK5l" to="kxzb:1H31ARNR264" resolve="createScope" />
                           <node concept="10Nm6u" id="1H31ARNRd_x" role="37wK5m">
                             <node concept="29HgVG" id="1H31ARNRdP3" role="lGtFl">
                               <node concept="3NFfHV" id="1H31ARNRdSb" role="3NFExx">
