@@ -156,6 +156,7 @@ public class TestCollector {
         return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       }
     });
+
     return Sequence.fromIterable(result).toListSequence();
   }
   protected List<SNode> allAnnotations(SNode maybetest) {
@@ -164,6 +165,7 @@ public class TestCollector {
         return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"));
       }
     });
+
     return Sequence.fromIterable(result).toListSequence();
   }
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a31() {
