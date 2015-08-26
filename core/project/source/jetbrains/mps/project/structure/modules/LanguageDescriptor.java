@@ -34,8 +34,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private Set<SModuleReference> myExtendedLanguages;
   private Set<SModuleReference> myRuntimeModules;
 
-  private int myVersion;
-
   public LanguageDescriptor() {
     super();
     myAccessoryModels = new LinkedHashSet<SModelReference>();
@@ -98,7 +96,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   @Override
   public void save(ModelOutputStream stream) throws IOException {
     super.save(stream);
-    stream.writeInt(myVersion);
     stream.writeString(myGenPath);
 
     stream.writeInt(myAccessoryModels.size());
@@ -127,7 +124,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   @Override
   public void load(ModelInputStream stream) throws IOException {
     super.load(stream);
-    myVersion = stream.readInt();
     myGenPath = stream.readString();
 
     myAccessoryModels.clear();
@@ -153,14 +149,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
     }
 
     if (stream.readByte() != 0x1e) throw new IOException("bad stream");
-  }
-
-  public int getVersion() {
-    return myVersion;
-  }
-
-  public void setVersion(int version) {
-    myVersion = version;
   }
 
 }
