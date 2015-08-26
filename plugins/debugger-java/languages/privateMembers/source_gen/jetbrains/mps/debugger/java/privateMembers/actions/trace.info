@@ -18,7 +18,7 @@
       <node id="6113527081580345350" at="29,209,30,93" concept="5" />
       <node id="6113527081580345350" at="31,5,32,226" concept="5" />
       <node id="6113527081580345350" at="32,226,33,62" concept="5" />
-      <node id="1381111177093726991" at="39,53,40,283" concept="6" />
+      <node id="1381111177093726991" at="39,53,40,276" concept="6" />
       <node id="1381111177097950066" at="42,14,43,92" concept="5" />
       <node id="1381111177098009841" at="45,45,46,188" concept="6" />
       <node id="1381111177093789440" at="48,15,49,23" concept="6" />
@@ -46,7 +46,7 @@
       <node id="6113527081580345350" at="30,93,73,5" concept="0" />
       <node id="6113527081580345350" at="30,93,73,5" concept="0" />
       <node id="6113527081580345350" at="29,0,76,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_6113527081580345350#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="1381111177093726990" at="39,53,40,283" />
+      <scope id="1381111177093726990" at="39,53,40,276" />
       <scope id="1381111177098009840" at="45,45,46,188" />
       <scope id="6113527081580345416" at="60,61,61,181" />
       <scope id="6113527081580345350" at="63,68,64,48" />

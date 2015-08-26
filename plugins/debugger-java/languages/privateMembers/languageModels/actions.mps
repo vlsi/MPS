@@ -141,7 +141,6 @@
       <concept id="1177409831820" name="jetbrains.mps.lang.actions.structure.RemovePart" flags="ng" index="z64au">
         <reference id="1177409838946" name="conceptToRemove" index="z65TK" />
       </concept>
-      <concept id="1177568407352" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" flags="nn" index="GyYSE" />
       <concept id="5480835971642155304" name="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation" flags="nn" index="15TzpJ" />
       <concept id="1154465273778" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" flags="nn" index="3bvxqY" />
       <concept id="1112056943463" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" flags="ng" index="3FK_9_">
@@ -251,7 +250,7 @@
                                   <node concept="2YIFZM" id="1cEGkLhZ$ci" role="3fr31v">
                                     <ref role="37wK5l" to="5h2r:2Jvt1sWfuvb" resolve="isVisible" />
                                     <ref role="1Pybhc" to="5h2r:2Jvt1sWfuv6" resolve="VisibilityUtil" />
-                                    <node concept="GyYSE" id="1cEGkLhZ$cj" role="37wK5m" />
+                                    <node concept="3bvxqY" id="1cEGkLiABKx" role="37wK5m" />
                                     <node concept="1PxgMI" id="1cEGkLhZ$ck" role="37wK5m">
                                       <property role="1BlNFB" value="true" />
                                       <ref role="1PxNhF" to="tpee:h9B3isZ" resolve="IVisible" />
