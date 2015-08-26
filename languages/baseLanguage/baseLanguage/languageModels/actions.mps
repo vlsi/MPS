@@ -19093,9 +19093,7 @@
                             <node concept="35c_gC" id="1cEGkLifV2G" role="37wK5m">
                               <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
                             </node>
-                            <node concept="3clFbT" id="1cEGkLiuA9g" role="37wK5m">
-                              <property role="3clFbU" value="true" />
-                            </node>
+                            <node concept="3clFbT" id="1cEGkLiuA9g" role="37wK5m" />
                           </node>
                         </node>
                         <node concept="3clFb_" id="1cEGkLhZ$c9" role="jymVt">
