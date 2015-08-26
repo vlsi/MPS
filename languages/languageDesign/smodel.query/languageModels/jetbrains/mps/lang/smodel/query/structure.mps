@@ -57,22 +57,6 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7mV0m3L$tuv">
-    <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="ShowExpression" />
-    <property role="34LRSv" value="#show" />
-    <property role="R4oN_" value="show in usage view" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="PrWs8" id="64VftqErvIP" role="PzmwI">
-      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
-    </node>
-    <node concept="1TJgyj" id="6_TW7xVwuxP" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="object" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6H$fNdLyE4d">
     <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="InstancesExpression" />

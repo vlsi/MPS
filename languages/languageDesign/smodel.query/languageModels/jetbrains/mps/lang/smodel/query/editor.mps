@@ -256,19 +256,6 @@
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
-  <node concept="24kQdi" id="YwfKjlWn7V">
-    <property role="3GE5qa" value="" />
-    <ref role="1XX52x" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression" />
-    <node concept="3EZMnI" id="YwfKjlWo_n" role="2wV5jI">
-      <node concept="PMmxH" id="YwfKjlWo_l" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F1sOY" id="YwfKjlWo_w" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:6_TW7xVwuxP" />
-      </node>
-      <node concept="l2Vlx" id="3J6h25QyTg8" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="6H$fNdLg_8M">
     <property role="3GE5qa" value="query" />
     <ref role="1XX52x" to="3xdn:7mV0m3L$trF" resolve="UsagesExpression" />

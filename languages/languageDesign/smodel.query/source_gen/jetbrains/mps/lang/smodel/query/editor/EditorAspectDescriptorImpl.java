@@ -33,10 +33,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 8:
         return Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new ShowExpression_Editor());
-      case 10:
         return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
-      case 11:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new WithStatement_Editor());
       default:
     }
@@ -55,6 +53,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.QueryExpression", "jetbrains.mps.lang.smodel.query.structure.QueryParameter", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ScopeParameter", "jetbrains.mps.lang.smodel.query.structure.ShowExpression", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.QueryExpression", "jetbrains.mps.lang.smodel.query.structure.QueryParameter", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ScopeParameter", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.smodel.query.structure.QueryExpression"};
 }

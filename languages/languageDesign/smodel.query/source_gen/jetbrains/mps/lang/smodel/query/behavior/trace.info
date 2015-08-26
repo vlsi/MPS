@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,54,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,52,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CustomScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.CustomScope_BehaviorDescriptor" />
@@ -70,36 +70,11 @@
     <file name="ScopeParameter_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.query.behavior.ScopeParameter_BehaviorDescriptor" />
     </file>
-    <file name="ShowExpression_BehaviorDescriptor.java">
-      <unit at="8,0,37,0" name="jetbrains.mps.lang.smodel.query.behavior.ShowExpression_BehaviorDescriptor" />
-    </file>
     <file name="UsagesExpression_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.lang.smodel.query.behavior.UsagesExpression_BehaviorDescriptor" />
     </file>
     <file name="WithStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.query.behavior.WithStatement_BehaviorDescriptor" />
-    </file>
-  </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4225915845891288151">
-    <file name="ShowExpression_Behavior.java">
-      <node id="4225915845891288167" at="11,100,12,16" concept="4" />
-      <node id="7006261637496577698" at="14,94,15,87" concept="4" />
-      <node id="4225915845891288151" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4225915845891288151" at="11,0,14,0" concept="5" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="4225915845891288151" at="14,0,17,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="4225915845891288153" at="9,43,9,43" />
-      <scope id="4225915845891288157" at="11,100,12,16" />
-      <scope id="7006261637496568945" at="14,94,15,87" />
-      <scope id="4225915845891288151" at="9,0,11,0">
-        <var name="thisNode" id="4225915845891288151" />
-      </scope>
-      <scope id="4225915845891288151" at="11,0,14,0">
-        <var name="thisConcept" id="4225915845891288151" />
-      </scope>
-      <scope id="4225915845891288151" at="14,0,17,0">
-        <var name="thisConcept" id="4225915845891288151" />
-      </scope>
-      <unit id="4225915845891288151" at="8,0,18,0" name="jetbrains.mps.lang.smodel.query.behavior.ShowExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146936308">

@@ -674,43 +674,6 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="3E_u19H2QLn">
-    <property role="3GE5qa" value="" />
-    <ref role="13h7C2" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression" />
-    <node concept="13i0hz" id="3E_u19H2QLq" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="TrG5h" value="legalAsStatement" />
-      <ref role="13i0hy" to="tpek:1653mnvAgqK" resolve="legalAsStatement" />
-      <node concept="3clFbS" id="3E_u19H2QLt" role="3clF47">
-        <node concept="3clFbF" id="3E_u19H2QLB" role="3cqZAp">
-          <node concept="3clFbT" id="3E_u19H2QLA" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="3E_u19H2QLy" role="3clF45" />
-      <node concept="3Tm1VV" id="3E_u19H2QLz" role="1B3o_S" />
-    </node>
-    <node concept="13i0hz" id="64VftqErvLH" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getShortHelp" />
-      <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" node="qgIopNa9Hb" resolve="getShortHelp" />
-      <node concept="3Tm1VV" id="64VftqErvLI" role="1B3o_S" />
-      <node concept="3clFbS" id="64VftqErvLL" role="3clF47">
-        <node concept="3clFbF" id="64VftqErxUy" role="3cqZAp">
-          <node concept="Xl_RD" id="64VftqErxUx" role="3clFbG">
-            <property role="Xl_RC" value="show sequence of nodes/references/models/modules in the Usages View panel" />
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="64VftqErvLM" role="3clF45" />
-    </node>
-    <node concept="13hLZK" id="3E_u19H2QLo" role="13h7CW">
-      <node concept="3clFbS" id="3E_u19H2QLp" role="2VODD2" />
-    </node>
-  </node>
   <node concept="13h7C7" id="64VftqErqME">
     <property role="3GE5qa" value="help" />
     <ref role="13h7C2" to="3xdn:64VftqErqMg" resolve="ExpressionHelpProvider" />

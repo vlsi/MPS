@@ -11,10 +11,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 15:
-        return new UsagesExpression_BehaviorDescriptor();
       case 14:
-        return new ShowExpression_BehaviorDescriptor();
+        return new UsagesExpression_BehaviorDescriptor();
       case 2:
         return new InstancesExpression_BehaviorDescriptor();
       case 8:
@@ -43,11 +41,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ModelScope_BehaviorDescriptor();
       case 0:
         return new CustomScope_BehaviorDescriptor();
-      case 16:
+      case 15:
         return new WithStatement_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.GlobalScope", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModelsExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.NodesExpression", "jetbrains.mps.lang.smodel.query.structure.ProjectExpression", "jetbrains.mps.lang.smodel.query.structure.ProjectScope", "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ReferencesExpression", "jetbrains.mps.lang.smodel.query.structure.ShowExpression", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.GlobalScope", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModelsExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.NodesExpression", "jetbrains.mps.lang.smodel.query.structure.ProjectExpression", "jetbrains.mps.lang.smodel.query.structure.ProjectScope", "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ReferencesExpression", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
 }
