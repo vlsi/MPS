@@ -13,27 +13,30 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptMigrationScriptReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f83bcaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7417095922908725794L, "fromVersion"), new ConceptDescriptorBuilder.Prop(7417095922909370996L, "module")).properties("fromVersion", "module").create();
+  /*package*/ final ConceptDescriptor myConceptNodeReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.NodeReference", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(2864063292004103247L, "nodeId"), new ConceptDescriptorBuilder.Prop(2864063292004102809L, "nodeName"), new ConceptDescriptorBuilder.Prop(2864063292004103235L, "modelRef")).properties("nodeId", "nodeName", "modelRef").create();
   /*package*/ final ConceptDescriptor myConceptStepData = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.StepData", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1973338949477451252L, "script")).properties("script").childDescriptors(new ConceptDescriptorBuilder.Link(7417095922908725798L, "data", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false)).children(new String[]{"data"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptStringData = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.StringData", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2c90e78b233c3efeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3211321119092784906L, "data")).properties("data").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMigrationScriptReference, myConceptStepData, myConceptStringData);
+    return Arrays.asList(myConceptMigrationScriptReference, myConceptNodeReference, myConceptStepData, myConceptStringData);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptMigrationScriptReference;
       case 1:
-        return myConceptStepData;
+        return myConceptNodeReference;
       case 2:
+        return myConceptStepData;
+      case 3:
         return myConceptStringData;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.util.structure.StepData", "jetbrains.mps.lang.migration.util.structure.StringData"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.util.structure.NodeReference", "jetbrains.mps.lang.migration.util.structure.StepData", "jetbrains.mps.lang.migration.util.structure.StringData"};
 }
