@@ -104,7 +104,7 @@
       <node id="8433118097516021444" at="232,73,235,5" concept="2" />
       <node id="8433118097516021734" at="238,79,241,5" concept="2" />
       <node id="8433118097516022984" at="244,81,247,5" concept="2" />
-      <node id="4307205004142786686" at="155,0,159,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/blCommand/runtime/QueryExecutionContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="4307205004142786686" at="155,0,159,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/lang/smodel/query/runtime/QueryExecutionContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="3820104862372919953" at="44,58,49,7" concept="5" />
       <node id="6864030874026229328" at="52,68,57,7" concept="5" />
       <node id="8655184070256908283" at="178,0,184,0" concept="8" trace="check_1pinza_a0a0a0m#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />

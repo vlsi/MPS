@@ -30,7 +30,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.console.blCommand.runtime.QueryExecutionContext;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
