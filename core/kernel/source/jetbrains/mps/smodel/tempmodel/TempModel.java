@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.tempmodel;
 
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.RegularModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -26,6 +25,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -72,10 +72,20 @@ class TempModel extends RegularModelDescriptor implements EditableSModel {
     // no-op, legacy listeners shall be removed in next release
   }
 
+  @Override
+  public void addChangeListener(SNodeChangeListener l) {
+    getEventDispatch().addChangeListener(l);
+  }
+
+  @Override
+  public void removeChangeListener(SNodeChangeListener l) {
+    getEventDispatch().removeChangeListener(l);
+  }
+
   @NotNull
   @Override
   protected ModelLoadResult createModel() {
-    SModel smodel = new SModel(getReference()) {
+    jetbrains.mps.smodel.SModel smodel = new jetbrains.mps.smodel.SModel(getReference()) {
       @Override
       protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
         if (myTrackUndo) {
