@@ -71,7 +71,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.lang.smodel.query.runtime.util.CommandUtil;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.MouseShortcut;
 import java.awt.event.MouseEvent;
@@ -368,7 +367,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         } else {
           addClosure(new _FunctionTypes._void_P0_E0() {
             public void invoke() {
-              CommandUtil.show(project, results);
+              ConsoleUtil.show(project, results);
             }
           }, resultsCount + " " + resultDescription);
         }
