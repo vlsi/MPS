@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class ModelStatisticsTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor, INodeSetReference_BehaviorDescriptor {

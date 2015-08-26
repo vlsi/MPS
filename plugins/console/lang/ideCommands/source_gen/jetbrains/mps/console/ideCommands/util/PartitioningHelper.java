@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.util;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.console.blCommand.runtime.ConsoleStream;
+import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import java.util.Map;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;

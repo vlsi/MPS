@@ -113,8 +113,8 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Command_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor" />
@@ -161,9 +161,9 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -179,8 +179,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.GeneratedCommand_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -196,9 +196,9 @@
     <classNode dependClassName="java.util.Deque" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IRightCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -224,8 +224,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -279,8 +279,8 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -290,8 +290,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

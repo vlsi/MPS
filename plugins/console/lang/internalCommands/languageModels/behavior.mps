@@ -139,7 +139,7 @@
               <ref role="3cqZAo" node="2SpVAIqtRRj" resolve="console" />
             </node>
             <node concept="liA8E" id="jysm2GD0lE" role="2OqNvi">
-              <ref role="37wK5l" to="irki:5WpmwkrQPWC" resolve="addText" />
+              <ref role="37wK5l" to="qgo0:5WpmwkrQPWC" resolve="addText" />
               <node concept="Xl_RD" id="jysm2GD0nJ" role="37wK5m">
                 <property role="Xl_RC" value="Classes reloaded" />
               </node>
@@ -150,13 +150,13 @@
       <node concept="37vLTG" id="2SpVAIqtRRh" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRRi" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRRj" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRRk" role="1tU5fm">
-          <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRRl" role="3clF45" />
@@ -193,13 +193,13 @@
       <node concept="37vLTG" id="2SpVAIqtRXo" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRXp" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRXq" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRXr" role="1tU5fm">
-          <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRXs" role="3clF45" />

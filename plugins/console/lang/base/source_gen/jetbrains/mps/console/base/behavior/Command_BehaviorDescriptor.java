@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
-import jetbrains.mps.console.blCommand.runtime.ConsoleStream;
+import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleStream;
 
 public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HelpProvider_BehaviorDescriptor {
   public Command_BehaviorDescriptor() {

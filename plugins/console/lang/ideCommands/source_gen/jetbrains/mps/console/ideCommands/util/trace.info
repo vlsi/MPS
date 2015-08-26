@@ -101,7 +101,7 @@
       <node id="4855956281632897007" at="66,96,69,5" concept="6" />
       <node id="7057947030097950172" at="69,5,72,5" concept="6" />
       <node id="7057947030097950324" at="101,24,104,7" concept="5" />
-      <node id="4855956281632570942" at="35,0,40,0" concept="0" trace="PartitioningHelper#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/ide/messages/MessagesViewTool;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
+      <node id="4855956281632570942" at="35,0,40,0" concept="0" trace="PartitioningHelper#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/ide/messages/MessagesViewTool;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <node id="4855956281632645403" at="59,7,64,7" concept="5" />
       <node id="7057947030097950317" at="99,47,105,5" concept="5" />
       <node id="4855956281632589636" at="135,28,141,5" concept="5" />
@@ -110,7 +110,7 @@
       <node id="4855956281632645383" at="54,96,65,5" concept="5" />
       <node id="7057947030097950236" at="74,109,88,5" concept="4" />
       <node id="4855956281632587417" at="132,0,147,0" concept="7" trace="printPlanConflicts#(Ljava/util/List;Ljava/lang/String;)V" />
-      <node id="7057947030097950042" at="91,0,132,0" concept="11" trace="showMappingPartitioning#(Lcom/intellij/openapi/project/Project;Ljava/util/List;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
+      <node id="7057947030097950042" at="91,0,132,0" concept="11" trace="showMappingPartitioning#(Lcom/intellij/openapi/project/Project;Ljava/util/List;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <node id="4855956281632641328" at="40,0,91,0" concept="7" trace="show#()V" />
       <scope id="4855956281632645349" at="46,31,47,17" />
       <scope id="4855956281632645355" at="49,59,50,46" />
@@ -204,7 +204,7 @@
       <node id="7490254719527463564" at="11,73,12,56" concept="2" />
       <node id="7490254719527667791" at="12,56,13,28" concept="2" />
       <node id="7490254719527317396" at="10,99,14,5" concept="5" />
-      <node id="7490254719530912496" at="10,0,16,0" concept="11" trace="printStat#(Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;Ljava/lang/Iterable;)V" />
+      <node id="7490254719530912496" at="10,0,16,0" concept="11" trace="printStat#(Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Iterable;)V" />
       <scope id="7490254719527317402" at="11,73,13,28" />
       <scope id="7490254719527317396" at="10,99,14,5">
         <var name="row" id="7490254719527317398" />

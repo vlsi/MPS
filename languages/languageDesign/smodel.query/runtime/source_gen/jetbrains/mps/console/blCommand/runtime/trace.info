@@ -8,47 +8,5 @@
       <unit id="1768908716159461735" at="7,0,10,0" name="jetbrains.mps.console.blCommand.runtime.QueryExecutionContext" />
     </file>
   </root>
-  <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/351968380915666545">
-    <file name="ConsoleContext.java">
-      <node id="4374601616592441598" at="8,0,9,0" concept="0" trace="getProject#()Ljetbrains/mps/project/Project;" />
-      <node id="8953981490813286353" at="9,0,10,0" concept="0" trace="getOutputWindow#()Ljetbrains/mps/console/blCommand/runtime/CommandOutputWindow;" />
-      <scope id="4374601616592441598" at="8,0,9,0" />
-      <scope id="8953981490813286353" at="9,0,10,0" />
-      <unit id="351968380915666545" at="7,0,11,0" name="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
-    </file>
-  </root>
-  <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/4598452390222467791">
-    <file name="CommandOutputWindow.java">
-      <node id="4598452390224153555" at="7,0,8,0" concept="0" trace="activate#()V" />
-      <scope id="4598452390224153555" at="7,0,8,0" />
-      <unit id="4598452390222467791" at="6,0,9,0" name="jetbrains.mps.console.blCommand.runtime.CommandOutputWindow" />
-    </file>
-  </root>
-  <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/6852607286009617748">
-    <file name="ConsoleStream.java">
-      <node id="6852607286009618216" at="9,0,10,0" concept="0" trace="addText#(Ljava/lang/String;)V" />
-      <node id="8927119896327929255" at="10,0,11,0" concept="0" trace="addNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4598452390225737169" at="11,0,12,0" concept="0" trace="addNodeRef#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4598452390225734979" at="12,0,13,0" concept="0" trace="addException#(Ljava/lang/Throwable;)V" />
-      <node id="4598452390225735166" at="13,0,14,0" concept="0" trace="addClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljava/lang/String;)V" />
-      <scope id="6852607286009618216" at="9,0,10,0">
-        <var name="text" id="6852607286009731683" />
-      </scope>
-      <scope id="8927119896327929255" at="10,0,11,0">
-        <var name="node" id="8927119896327929259" />
-      </scope>
-      <scope id="4598452390225737169" at="11,0,12,0">
-        <var name="node" id="4598452390225737173" />
-      </scope>
-      <scope id="4598452390225734979" at="12,0,13,0">
-        <var name="t" id="4598452390225734983" />
-      </scope>
-      <scope id="4598452390225735166" at="13,0,14,0">
-        <var name="closure" id="7600370246426637725" />
-        <var name="text" id="7600370246426662642" />
-      </scope>
-      <unit id="6852607286009617748" at="8,0,15,0" name="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
-    </file>
-  </root>
 </debug-info>
 

@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

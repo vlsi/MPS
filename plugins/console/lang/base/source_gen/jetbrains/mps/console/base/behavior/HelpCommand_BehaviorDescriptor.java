@@ -4,8 +4,8 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
-import jetbrains.mps.console.blCommand.runtime.ConsoleStream;
+import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleStream;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior;
 

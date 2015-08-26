@@ -4,8 +4,8 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
-import jetbrains.mps.console.blCommand.runtime.ConsoleStream;
+import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleStream;
 
 public class ShowBrokenReferences_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
   public ShowBrokenReferences_BehaviorDescriptor() {

@@ -24,7 +24,6 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
-    <import index="dnf9" ref="r:c51f26da-d1ec-4385-9c6f-4c7001d1fcfa(jetbrains.mps.command.base.runtime)" />
     <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" />
     <import index="ngmm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view(MPS.Platform/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
@@ -279,7 +278,7 @@
       <node concept="37vLTG" id="1U0jI2qTMkX" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="1U0jI2qTMlu" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="1U0jI2qTLCF" role="3clF46">
@@ -323,7 +322,7 @@
                           <ref role="3cqZAo" node="ntTX465wNx" resolve="context" />
                         </node>
                         <node concept="liA8E" id="3ZgZ1njTsbS" role="2OqNvi">
-                          <ref role="37wK5l" to="irki:7L2VFB5mjvh" resolve="getOutputWindow" />
+                          <ref role="37wK5l" to="qgo0:7L2VFB5mjvh" resolve="getOutputWindow" />
                         </node>
                       </node>
                       <node concept="3uibUv" id="3ZgZ1njTsfW" role="10QFUM">
@@ -377,7 +376,7 @@
       <node concept="37vLTG" id="ntTX465wNx" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="7M1Gaz382rX" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="ntTX465w7O" role="3clF46">
@@ -413,7 +412,7 @@
                   <ref role="3cqZAo" node="2UF8zdu0mcN" resolve="context" />
                 </node>
                 <node concept="liA8E" id="2UF8zdu0oID" role="2OqNvi">
-                  <ref role="37wK5l" to="irki:3MPHfSuPT3Y" resolve="getProject" />
+                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
                 </node>
               </node>
             </node>
@@ -616,11 +615,11 @@
                                 <ref role="3cqZAo" node="2UF8zdu0mcN" resolve="context" />
                               </node>
                               <node concept="liA8E" id="GwaEdBDLZM" role="2OqNvi">
-                                <ref role="37wK5l" to="irki:7L2VFB5mjvh" resolve="getOutputWindow" />
+                                <ref role="37wK5l" to="qgo0:7L2VFB5mjvh" resolve="getOutputWindow" />
                               </node>
                             </node>
                             <node concept="liA8E" id="3ZgZ1njR5Pm" role="2OqNvi">
-                              <ref role="37wK5l" to="irki:3ZgZ1njQOJj" resolve="activate" />
+                              <ref role="37wK5l" to="qgo0:3ZgZ1njQR0n" resolve="activate" />
                             </node>
                           </node>
                         </node>
@@ -648,7 +647,7 @@
         <property role="TrG5h" value="context" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="2UF8zdu0mqi" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="23X86fnSBCt" role="3clF46">

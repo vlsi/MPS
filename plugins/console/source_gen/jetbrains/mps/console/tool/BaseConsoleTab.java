@@ -4,7 +4,6 @@ package jetbrains.mps.console.tool;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
-import jetbrains.mps.console.blCommand.runtime.CommandOutputWindow;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -59,20 +58,20 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.console.blCommand.runtime.ConsoleStream;
 import java.util.Scanner;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.lang.smodel.query.runtime.util.CommandUtil;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.MouseShortcut;
 import java.awt.event.MouseEvent;
@@ -89,7 +88,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public abstract class BaseConsoleTab extends JPanel implements Disposable, CommandOutputWindow {
+public abstract class BaseConsoleTab extends JPanel implements Disposable {
   protected ConsoleTool myTool;
   protected SModel myModel;
   protected SNode myRoot;
@@ -290,10 +289,10 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable, Comma
       public Project getProject() {
         return ProjectHelper.toMPSProject(myTool.getProject());
       }
-      public SearchScope getDefaultSearchscope() {
+      public SearchScope getDefaultSearchScope() {
         return new ProjectScope(getProject());
       }
-      public CommandOutputWindow getOutputWindow() {
+      public BaseConsoleTab getOutputWindow() {
         return BaseConsoleTab.this;
       }
     };
@@ -362,6 +361,17 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable, Comma
         SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
         ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
         addNode(nodeWithClosure);
+      }
+      public void addSequence(final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
+        if (resultsCount == 0) {
+          addText("empty sequence");
+        } else {
+          addClosure(new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              CommandUtil.show(project, results);
+            }
+          }, resultsCount + " " + resultDescription);
+        }
       }
     };
   }

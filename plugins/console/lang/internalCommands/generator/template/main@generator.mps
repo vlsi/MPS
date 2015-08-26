@@ -204,13 +204,13 @@
         <node concept="37vLTG" id="4PRmqZeEGa0" role="3clF46">
           <property role="TrG5h" value="context" />
           <node concept="3uibUv" id="4PRmqZeEGa1" role="1tU5fm">
-            <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
           </node>
         </node>
         <node concept="37vLTG" id="4PRmqZeEGa2" role="3clF46">
           <property role="TrG5h" value="console" />
           <node concept="3uibUv" id="4PRmqZeEGa3" role="1tU5fm">
-            <ref role="3uigEE" to="irki:5WpmwkrQPPk" resolve="ConsoleStream" />
+            <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
           </node>
         </node>
         <node concept="3cqZAl" id="4PRmqZeEGa4" role="3clF45" />
@@ -225,7 +225,7 @@
                       <ref role="3cqZAo" node="4PRmqZeEGa0" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3ZgZ1njTt2W" role="2OqNvi">
-                      <ref role="37wK5l" to="irki:7L2VFB5mjvh" resolve="getOutputWindow" />
+                      <ref role="37wK5l" to="qgo0:7L2VFB5mjvh" resolve="getOutputWindow" />
                     </node>
                   </node>
                   <node concept="3uibUv" id="3ZgZ1njTt3x" role="10QFUM">

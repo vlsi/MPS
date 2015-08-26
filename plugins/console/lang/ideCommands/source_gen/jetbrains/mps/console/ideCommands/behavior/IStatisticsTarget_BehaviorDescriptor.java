@@ -4,7 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleContext;
 
 public interface IStatisticsTarget_BehaviorDescriptor {
   public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context);

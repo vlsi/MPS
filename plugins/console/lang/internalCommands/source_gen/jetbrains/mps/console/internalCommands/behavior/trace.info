@@ -49,7 +49,7 @@
       <node id="748410583119876768" at="19,94,20,43" concept="1" />
       <node id="6224631407134007787" at="13,0,15,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6224631407134007787" at="19,0,22,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="6224631407134007787" at="15,0,19,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
+      <node id="6224631407134007787" at="15,0,19,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <scope id="6224631407134007949" at="13,43,13,43" />
       <scope id="748410583119698313" at="19,94,20,43" />
       <scope id="6224631407134007787" at="13,0,15,0">
@@ -70,7 +70,7 @@
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134025051">
     <file name="ShowRepositoryCommand_Behavior.java">
       <node id="6224631407134025051" at="10,0,12,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6224631407134025051" at="12,0,14,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/blCommand/runtime/ConsoleContext;Ljetbrains/mps/console/blCommand/runtime/ConsoleStream;)V" />
+      <node id="6224631407134025051" at="12,0,14,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <scope id="6224631407134025053" at="10,43,10,43" />
       <scope id="6224631407134025062" at="12,123,12,123" />
       <scope id="6224631407134025051" at="10,0,12,0">
