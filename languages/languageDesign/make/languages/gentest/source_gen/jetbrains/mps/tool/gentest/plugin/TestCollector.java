@@ -158,7 +158,6 @@ public class TestCollector {
       }
     });
     return Sequence.fromIterable(result).toListSequence();
-
   }
   protected List<SNode> allAnnotations(SModel context, SNode maybetest) {
     Iterable<SNode> availableElements = new ClassifiersScope(context, maybetest, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), true).getAvailableElements("");
@@ -168,7 +167,6 @@ public class TestCollector {
       }
     });
     return Sequence.fromIterable(result).toListSequence();
-
   }
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
