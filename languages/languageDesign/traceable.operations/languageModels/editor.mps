@@ -16,9 +16,13 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
+        <property id="1186414551515" name="flag" index="VOm3f" />
+      </concept>
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3$6MrZ">
         <property id="1215007802031" name="value" index="3$6WeP" />
       </concept>
@@ -57,6 +61,9 @@
       <node concept="3$7jql" id="hFJloTl" role="3F10Kt">
         <property role="3$6WeP" value="0.0" />
       </node>
+      <node concept="3nxI2P" id="5Ex$JzqgUiT" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="2gx$rhdCaWd">
@@ -64,6 +71,9 @@
     <node concept="3EZMnI" id="2gx$rhdCaWf" role="2wV5jI">
       <node concept="3F0ifn" id="2gx$rhdCaWi" role="3EZMnx">
         <property role="3F0ifm" value="copy with trace" />
+        <node concept="3nxI2P" id="5Ex$JzqgUh6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3F0ifn" id="2gx$rhdCaWk" role="3EZMnx">
         <property role="3F0ifm" value="(" />
