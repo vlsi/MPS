@@ -31,7 +31,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.console.blCommand.runtime.ConsoleContext;
+import jetbrains.mps.console.blCommand.runtime.QueryExecutionContext;
 import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
@@ -164,8 +164,8 @@ public class CommandUtil {
     return check_1pinza_a0a52(aModule);
   }
 
-  public static SearchScope createConsoleScope(@Nullable final SearchScope baseScope, final boolean includeReadOnly, final ConsoleContext context) {
-    SearchScope scope = (baseScope == null ? context.getDefaultSearchscope() : baseScope);
+  public static SearchScope createConsoleScope(@Nullable final SearchScope baseScope, final boolean includeReadOnly, QueryExecutionContext context) {
+    SearchScope scope = (baseScope == null ? context.getDefaultSearchScope() : baseScope);
     return (includeReadOnly ? scope : new EditableFilteringScope(scope));
   }
 

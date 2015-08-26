@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)">
   <persistence version="9" />
-  <languages />
+  <languages>
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+  </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -36,7 +40,9 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
+      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
+        <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -76,15 +82,6 @@
       <node concept="3Tm1VV" id="3MPHfSuPT41" role="1B3o_S" />
       <node concept="3clFbS" id="3MPHfSuPT42" role="3clF47" />
     </node>
-    <node concept="3clFb_" id="3lidccNHjWv" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getDefaultSearchscope" />
-      <node concept="3uibUv" id="3lidccNI3yb" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-      </node>
-      <node concept="3Tm1VV" id="3lidccNHjWy" role="1B3o_S" />
-      <node concept="3clFbS" id="3lidccNHjWz" role="3clF47" />
-    </node>
     <node concept="3clFb_" id="7L2VFB5mjvh" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getOutputWindow" />
@@ -95,6 +92,9 @@
       <node concept="3clFbS" id="7L2VFB5mjvk" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="jysm2GDsTM" role="1B3o_S" />
+    <node concept="3uibUv" id="1ycrhFMLIH9" role="3HQHJm">
+      <ref role="3uigEE" node="1ycrhFMLI_B" resolve="QueryExecutionContext" />
+    </node>
   </node>
   <node concept="3HP615" id="5WpmwkrQPPk">
     <property role="TrG5h" value="ConsoleStream" />
@@ -162,6 +162,19 @@
       <node concept="3clFbS" id="3ZgZ1njWQS1" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="5WpmwkrQPPl" role="1B3o_S" />
+  </node>
+  <node concept="3HP615" id="1ycrhFMLI_B">
+    <property role="TrG5h" value="QueryExecutionContext" />
+    <node concept="3clFb_" id="3lidccNHjWv" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getDefaultSearchScope" />
+      <node concept="3uibUv" id="3lidccNI3yb" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+      </node>
+      <node concept="3Tm1VV" id="3lidccNHjWy" role="1B3o_S" />
+      <node concept="3clFbS" id="3lidccNHjWz" role="3clF47" />
+    </node>
+    <node concept="3Tm1VV" id="1ycrhFMLI_C" role="1B3o_S" />
   </node>
 </model>
 

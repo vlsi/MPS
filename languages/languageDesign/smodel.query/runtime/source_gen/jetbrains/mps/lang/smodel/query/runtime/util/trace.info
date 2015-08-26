@@ -39,7 +39,7 @@
       <node id="3501374812264201946" at="157,77,158,62" concept="5" />
       <node id="3501374812263054977" at="160,66,161,38" concept="5" />
       <node id="3501374812263057320" at="163,70,164,39" concept="5" />
-      <node id="5348835480204234277" at="167,148,168,90" concept="4" />
+      <node id="5348835480204234277" at="167,149,168,90" concept="4" />
       <node id="5348835480204239188" at="168,90,169,73" concept="5" />
       <node id="1964420931776163294" at="172,55,173,34" concept="5" />
       <node id="1964420931776193452" at="175,57,176,36" concept="5" />
@@ -107,7 +107,7 @@
       <node id="8433118097516021444" at="244,73,247,5" concept="2" />
       <node id="8433118097516021734" at="250,79,253,5" concept="2" />
       <node id="8433118097516022984" at="256,81,259,5" concept="2" />
-      <node id="4307205004142786686" at="167,0,171,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/blCommand/runtime/ConsoleContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="4307205004142786686" at="167,0,171,0" concept="8" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/blCommand/runtime/QueryExecutionContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="3820104862372919953" at="45,58,50,7" concept="5" />
       <node id="6864030874026229328" at="53,68,58,7" concept="5" />
       <node id="4598452390225841750" at="90,12,95,49" concept="1" />
@@ -179,7 +179,7 @@
       <scope id="8433118097516021444" at="245,36,246,47" />
       <scope id="8433118097516021734" at="251,36,252,46" />
       <scope id="8433118097516022984" at="257,36,258,52" />
-      <scope id="4307205004142746594" at="167,148,169,73">
+      <scope id="4307205004142746594" at="167,149,169,73">
         <var name="scope" id="5348835480204234278" />
       </scope>
       <scope id="6322385757206087376" at="47,0,50,0">
@@ -249,7 +249,7 @@
       </scope>
       <scope id="4307205004142786686" at="167,0,171,0">
         <var name="baseScope" id="4307205004142749181" />
-        <var name="context" id="4307205004143739297" />
+        <var name="context" id="1768908716159471077" />
         <var name="includeReadOnly" id="4307205004142749928" />
       </scope>
       <scope id="8655184070256908283" at="190,110,194,16" />

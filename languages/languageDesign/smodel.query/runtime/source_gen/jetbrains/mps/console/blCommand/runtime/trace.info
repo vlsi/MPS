@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/1768908716159461735">
+    <file name="QueryExecutionContext.java">
+      <node id="3842191445091237663" at="8,0,9,0" concept="0" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <scope id="3842191445091237663" at="8,0,9,0" />
+      <unit id="1768908716159461735" at="7,0,10,0" name="jetbrains.mps.console.blCommand.runtime.QueryExecutionContext" />
+    </file>
+  </root>
   <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/351968380915666545">
     <file name="ConsoleContext.java">
-      <node id="4374601616592441598" at="9,0,10,0" concept="0" trace="getProject#()Ljetbrains/mps/project/Project;" />
-      <node id="3842191445091237663" at="10,0,11,0" concept="0" trace="getDefaultSearchscope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
-      <node id="8953981490813286353" at="11,0,12,0" concept="0" trace="getOutputWindow#()Ljetbrains/mps/console/blCommand/runtime/CommandOutputWindow;" />
-      <scope id="4374601616592441598" at="9,0,10,0" />
-      <scope id="3842191445091237663" at="10,0,11,0" />
-      <scope id="8953981490813286353" at="11,0,12,0" />
-      <unit id="351968380915666545" at="8,0,13,0" name="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
+      <node id="4374601616592441598" at="8,0,9,0" concept="0" trace="getProject#()Ljetbrains/mps/project/Project;" />
+      <node id="8953981490813286353" at="9,0,10,0" concept="0" trace="getOutputWindow#()Ljetbrains/mps/console/blCommand/runtime/CommandOutputWindow;" />
+      <scope id="4374601616592441598" at="8,0,9,0" />
+      <scope id="8953981490813286353" at="9,0,10,0" />
+      <unit id="351968380915666545" at="7,0,11,0" name="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
     </file>
   </root>
   <root nodeRef="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)/4598452390222467791">

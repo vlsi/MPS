@@ -24,7 +24,7 @@
     <import index="ngmm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view()" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations()" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes()" />
-    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" implicit="true" />
+    <import index="irki" ref="r:c850086f-d3f3-45ec-9f36-eb1065226b81(jetbrains.mps.console.blCommand.runtime)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1202,11 +1202,11 @@
             </node>
             <node concept="3K4zz7" id="3J6h25QKZn9" role="33vP2m">
               <node concept="2OqwBi" id="3lidccNIo1X" role="3K4E3e">
-                <node concept="37vLTw" id="3lidccNIlf2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3J6h25QLs6x" resolve="context" />
+                <node concept="37vLTw" id="1ycrhFMLLdg" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1ycrhFMLKR_" resolve="context" />
                 </node>
                 <node concept="liA8E" id="3lidccNIocU" role="2OqNvi">
-                  <ref role="37wK5l" to="irki:3lidccNHjWv" resolve="getDefaultSearchscope" />
+                  <ref role="37wK5l" to="irki:3lidccNHjWv" resolve="getDefaultSearchScope" />
                 </node>
               </node>
               <node concept="37vLTw" id="3J6h25QMGug" role="3K4GZi">
@@ -1255,11 +1255,10 @@
         <property role="3TUv4t" value="true" />
         <node concept="10P_77" id="3J6h25QPqmQ" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="3J6h25QLs6x" role="3clF46">
+      <node concept="37vLTG" id="1ycrhFMLKR_" role="3clF46">
         <property role="TrG5h" value="context" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="3J6h25QLsiX" role="1tU5fm">
-          <ref role="3uigEE" to="irki:jysm2GDsTL" resolve="ConsoleContext" />
+        <node concept="3uibUv" id="1ycrhFMLKTx" role="1tU5fm">
+          <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
         </node>
       </node>
       <node concept="3uibUv" id="4CUSouB_4b5" role="3clF45">

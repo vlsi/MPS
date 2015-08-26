@@ -11,8 +11,8 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
