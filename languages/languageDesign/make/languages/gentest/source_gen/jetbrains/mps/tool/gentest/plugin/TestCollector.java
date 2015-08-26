@@ -151,7 +151,7 @@ public class TestCollector {
     return node;
   }
   protected List<SNode> allClassifiers(SModel context, SNode maybetest) {
-    Iterable<SNode> availableElements = new ClassifiersScope(context, maybetest, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")).getAvailableElements("");
+    Iterable<SNode> availableElements = new ClassifiersScope(context, maybetest, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true).getAvailableElements("");
     Iterable<SNode> result = Sequence.fromIterable(availableElements).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
@@ -161,7 +161,7 @@ public class TestCollector {
 
   }
   protected List<SNode> allAnnotations(SModel context, SNode maybetest) {
-    Iterable<SNode> availableElements = new ClassifiersScope(context, maybetest, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation")).getAvailableElements("");
+    Iterable<SNode> availableElements = new ClassifiersScope(context, maybetest, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), true).getAvailableElements("");
     Iterable<SNode> result = Sequence.fromIterable(availableElements).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"));
