@@ -70,13 +70,6 @@
       <ref role="20lvS9" to="tp25:hzMxujR" resolve="IRefConceptArg" />
     </node>
   </node>
-  <node concept="1TIwiD" id="DM6_$iqV$8">
-    <property role="TrG5h" value="ProjectExpression" />
-    <property role="34LRSv" value="#project" />
-    <property role="3GE5qa" value="query" />
-    <property role="R4oN_" value="the current project" />
-    <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
-  </node>
   <node concept="1TIwiD" id="2sF4xi8qX2e">
     <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="NodesExpression" />
@@ -172,12 +165,6 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="3J6h25QeHQy">
-    <property role="3GE5qa" value="query.parameter" />
-    <property role="TrG5h" value="ProjectScope" />
-    <property role="34LRSv" value="project" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
   </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
     <property role="3GE5qa" value="query.parameter" />

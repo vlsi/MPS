@@ -146,7 +146,7 @@
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="64VftqEcjuW" role="PzmwI">
-      <ref role="PrY4T" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" to="3xdn:qgIopN3HO7" resolve="HelpProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="22lVekVE19_">
@@ -194,7 +194,7 @@
     <property role="R4oN_" value="help" />
     <ref role="1TJDcQ" node="1yfzJNJq9L_" resolve="InterpretedCommand" />
     <node concept="PrWs8" id="qgIopNcGQC" role="PzmwI">
-      <ref role="PrY4T" to="3xdn:qgIopN3HO7" resolve="ConsoleHelpProvider" />
+      <ref role="PrY4T" to="3xdn:qgIopN3HO7" resolve="HelpProvider" />
     </node>
     <node concept="1TJgyj" id="60B$832X1$F" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -354,7 +354,7 @@
     <property role="R4oN_" value="smart print depending on content" />
     <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
     <node concept="PrWs8" id="64VftqEsbD$" role="PzmwI">
-      <ref role="PrY4T" to="3xdn:64VftqErqMg" resolve="ConsoleExpression" />
+      <ref role="PrY4T" to="3xdn:64VftqErqMg" resolve="ExpressionHelpProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="4LU9FcrO3Hp">
@@ -384,6 +384,19 @@
     <property role="34LRSv" value="#printText" />
     <property role="R4oN_" value="print as string" />
     <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="3J6h25QeHQy">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="ProjectScope" />
+    <property role="34LRSv" value="project" />
+    <ref role="1TJDcQ" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter" />
+  </node>
+  <node concept="1TIwiD" id="DM6_$iqV$8">
+    <property role="TrG5h" value="ProjectExpression" />
+    <property role="34LRSv" value="#project" />
+    <property role="3GE5qa" value="query" />
+    <property role="R4oN_" value="the current project" />
+    <ref role="1TJDcQ" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
 </model>
 

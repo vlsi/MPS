@@ -34,7 +34,6 @@
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -214,12 +213,6 @@
         <ref role="v9R2y" node="1H31ARNQ$RB" resolve="reduce_WithStatement" />
       </node>
     </node>
-    <node concept="3aamgX" id="DM6_$iqXIs" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression" />
-      <node concept="j$656" id="DM6_$iqXIt" role="1lVwrX">
-        <ref role="v9R2y" node="DM6_$iqXIq" resolve="reduce_ProjectExpression" />
-      </node>
-    </node>
     <node concept="3aamgX" id="6H$fNdLgGxM" role="3acgRq">
       <ref role="30HIoZ" to="3xdn:7mV0m3L$trF" resolve="UsagesExpression" />
       <node concept="j$656" id="6H$fNdLgGxN" role="1lVwrX">
@@ -266,12 +259,6 @@
       <ref role="30HIoZ" to="3xdn:3J6h25QeHP2" resolve="GlobalScope" />
       <node concept="j$656" id="3J6h25QO0bw" role="1lVwrX">
         <ref role="v9R2y" node="3J6h25QO0bt" resolve="reduce_GlobalScopeLiteral" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="3J6h25QOL64" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:3J6h25QeHQy" resolve="ProjectScope" />
-      <node concept="j$656" id="3J6h25QOL65" role="1lVwrX">
-        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral" />
       </node>
     </node>
     <node concept="3aamgX" id="31Tct3TnZp6" role="3acgRq">
@@ -424,40 +411,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="6H$fNdLyFou" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="13MO4I" id="DM6_$iqXIq">
-    <property role="TrG5h" value="reduce_ProjectExpression" />
-    <property role="3GE5qa" value="expression.query" />
-    <ref role="3gUMe" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression" />
-    <node concept="312cEu" id="DM6_$iqYkT" role="13RCb5">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="Main" />
-      <node concept="2YIFZL" id="DM6_$iqYkU" role="jymVt">
-        <property role="TrG5h" value="execute" />
-        <node concept="3cqZAl" id="DM6_$iqYkV" role="3clF45" />
-        <node concept="37vLTG" id="DM6_$iqYkW" role="3clF46">
-          <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="3mC5XuEEZbT" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="DM6_$iqYl0" role="1B3o_S" />
-        <node concept="3clFbS" id="DM6_$iqYl1" role="3clF47">
-          <node concept="3clFbF" id="DM6_$ir01X" role="3cqZAp">
-            <node concept="2OqwBi" id="DM6_$ir060" role="3clFbG">
-              <node concept="37vLTw" id="DM6_$ir01W" role="2Oq$k0">
-                <ref role="3cqZAo" node="DM6_$iqYkW" resolve="context" />
-              </node>
-              <node concept="liA8E" id="DM6_$ir0s1" role="2OqNvi">
-                <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
-              </node>
-              <node concept="raruj" id="DM6_$isJh2" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="DM6_$iqYli" role="1B3o_S" />
     </node>
   </node>
   <node concept="13MO4I" id="3Z0MTj6l$Fi">
@@ -881,45 +834,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3J6h25QO0hE" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="13MO4I" id="3J6h25QOL62">
-    <property role="TrG5h" value="reduce_ProjectScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
-    <ref role="3gUMe" to="3xdn:3J6h25QeHQy" resolve="ProjectScope" />
-    <node concept="312cEu" id="3J6h25QOMzM" role="13RCb5">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="Main" />
-      <node concept="2YIFZL" id="3J6h25QOMzN" role="jymVt">
-        <property role="TrG5h" value="execute" />
-        <node concept="3cqZAl" id="3J6h25QOMzO" role="3clF45" />
-        <node concept="37vLTG" id="3J6h25QOMzP" role="3clF46">
-          <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="3mC5XuEEX7C" role="1tU5fm">
-            <ref role="3uigEE" to="irki:1ycrhFMLI_B" resolve="QueryExecutionContext" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="3J6h25QOMzT" role="1B3o_S" />
-        <node concept="3clFbS" id="3J6h25QOMzU" role="3clF47">
-          <node concept="3clFbF" id="3J6h25QOMzV" role="3cqZAp">
-            <node concept="2ShNRf" id="3TUIR3TH$mK" role="3clFbG">
-              <node concept="1pGfFk" id="3TUIR3TIfUB" role="2ShVmc">
-                <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
-                <node concept="2OqwBi" id="3J6h25QP07d" role="37wK5m">
-                  <node concept="37vLTw" id="3J6h25QP00V" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3J6h25QOMzP" resolve="context" />
-                  </node>
-                  <node concept="liA8E" id="3J6h25QP0N3" role="2OqNvi">
-                    <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
-                  </node>
-                </node>
-              </node>
-              <node concept="raruj" id="3J6h25QP0PQ" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3J6h25QOMzY" role="1B3o_S" />
     </node>
   </node>
   <node concept="13MO4I" id="31Tct3TvJ$l">

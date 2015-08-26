@@ -33,6 +33,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -50,6 +51,9 @@
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
         <child id="1164903359218" name="catchBody" index="TDEfX" />
@@ -117,6 +121,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -320,6 +325,18 @@
       <ref role="30HIoZ" to="eynw:4Jke6BA4ffD" resolve="BLCommand" />
       <node concept="j$656" id="4Cd_ANvqxxX" role="1lVwrX">
         <ref role="v9R2y" node="4Cd_ANvqxx0" resolve="reduce_BLCommand" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="DM6_$iqXIs" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:DM6_$iqV$8" resolve="ProjectExpression" />
+      <node concept="j$656" id="DM6_$iqXIt" role="1lVwrX">
+        <ref role="v9R2y" node="DM6_$iqXIq" resolve="reduce_ProjectExpression" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="3J6h25QOL64" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
+      <node concept="j$656" id="3J6h25QOL65" role="1lVwrX">
+        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral" />
       </node>
     </node>
     <node concept="3lhOvk" id="4Cd_ANvqgEi" role="3lj3bC">
@@ -1632,6 +1649,79 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7gnNafF7ZLe" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="3J6h25QOL62">
+    <property role="TrG5h" value="reduce_ProjectScopeLiteral" />
+    <property role="3GE5qa" value="expression.parameter" />
+    <ref role="3gUMe" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
+    <node concept="312cEu" id="3J6h25QOMzM" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Main2" />
+      <node concept="2YIFZL" id="3J6h25QOMzN" role="jymVt">
+        <property role="TrG5h" value="execute" />
+        <node concept="3cqZAl" id="3J6h25QOMzO" role="3clF45" />
+        <node concept="37vLTG" id="3J6h25QOMzP" role="3clF46">
+          <property role="TrG5h" value="context" />
+          <node concept="3uibUv" id="WMsS6mCWgy" role="1tU5fm">
+            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3J6h25QOMzT" role="1B3o_S" />
+        <node concept="3clFbS" id="3J6h25QOMzU" role="3clF47">
+          <node concept="3clFbF" id="3J6h25QOMzV" role="3cqZAp">
+            <node concept="2ShNRf" id="3TUIR3TH$mK" role="3clFbG">
+              <node concept="1pGfFk" id="3TUIR3TIfUB" role="2ShVmc">
+                <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                <node concept="2OqwBi" id="3J6h25QP07d" role="37wK5m">
+                  <node concept="37vLTw" id="3J6h25QP00V" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3J6h25QOMzP" resolve="context" />
+                  </node>
+                  <node concept="liA8E" id="3J6h25QP0N3" role="2OqNvi">
+                    <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  </node>
+                </node>
+              </node>
+              <node concept="raruj" id="3J6h25QP0PQ" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3J6h25QOMzY" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="DM6_$iqXIq">
+    <property role="TrG5h" value="reduce_ProjectExpression" />
+    <property role="3GE5qa" value="expression.query" />
+    <ref role="3gUMe" to="eynw:DM6_$iqV$8" resolve="ProjectExpression" />
+    <node concept="312cEu" id="DM6_$iqYkT" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Main3" />
+      <node concept="2YIFZL" id="DM6_$iqYkU" role="jymVt">
+        <property role="TrG5h" value="execute" />
+        <node concept="3cqZAl" id="DM6_$iqYkV" role="3clF45" />
+        <node concept="37vLTG" id="DM6_$iqYkW" role="3clF46">
+          <property role="TrG5h" value="context" />
+          <node concept="3uibUv" id="WMsS6mCWip" role="1tU5fm">
+            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="DM6_$iqYl0" role="1B3o_S" />
+        <node concept="3clFbS" id="DM6_$iqYl1" role="3clF47">
+          <node concept="3clFbF" id="DM6_$ir01X" role="3cqZAp">
+            <node concept="2OqwBi" id="DM6_$ir060" role="3clFbG">
+              <node concept="37vLTw" id="DM6_$ir01W" role="2Oq$k0">
+                <ref role="3cqZAo" node="DM6_$iqYkW" resolve="context" />
+              </node>
+              <node concept="liA8E" id="DM6_$ir0s1" role="2OqNvi">
+                <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+              </node>
+              <node concept="raruj" id="DM6_$isJh2" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="DM6_$iqYli" role="1B3o_S" />
     </node>
   </node>
 </model>

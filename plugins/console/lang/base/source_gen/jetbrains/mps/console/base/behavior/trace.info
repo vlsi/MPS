@@ -24,7 +24,7 @@
       <unit at="8,0,22,0" name="jetbrains.mps.console.base.behavior.BLExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,66,0" name="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,70,0" name="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CommandHolder_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
@@ -103,6 +103,12 @@
     </file>
     <file name="PrintTextExpression_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.base.behavior.PrintTextExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectExpression_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.console.base.behavior.ProjectExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectScope_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.ProjectScope_BehaviorDescriptor" />
     </file>
     <file name="ResponseItem_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
@@ -798,6 +804,22 @@
         <var name="thisConcept" id="7006261637496586602" />
       </scope>
       <unit id="7006261637496586602" at="8,0,15,0" name="jetbrains.mps.console.base.behavior.PrintExpression_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/7284872370239343379">
+    <file name="ProjectExpression_Behavior.java">
+      <node id="4225915845891119382" at="11,114,12,16" concept="7" />
+      <node id="7284872370239343379" at="9,0,11,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7284872370239343379" at="11,0,14,0" concept="10" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
+      <scope id="7284872370239343381" at="9,43,9,43" />
+      <scope id="7284872370239343433" at="11,114,12,16" />
+      <scope id="7284872370239343379" at="9,0,11,0">
+        <var name="thisNode" id="7284872370239343379" />
+      </scope>
+      <scope id="7284872370239343379" at="11,0,14,0">
+        <var name="thisConcept" id="7284872370239343379" />
+      </scope>
+      <unit id="7284872370239343379" at="8,0,15,0" name="jetbrains.mps.console.base.behavior.ProjectExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/8517397753921951854">

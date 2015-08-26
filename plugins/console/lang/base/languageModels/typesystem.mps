@@ -5,6 +5,7 @@
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -271,6 +272,32 @@
     <node concept="1YaCAy" id="6_TW7xVvrr8" role="1YuTPh">
       <property role="TrG5h" value="printSequenceExpression" />
       <ref role="1YaFvo" to="eynw:6_TW7xVvrpf" resolve="PrintSequenceExpression" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="DM6_$iqVAS">
+    <property role="TrG5h" value="typeof_ProjectExpression" />
+    <property role="3GE5qa" value="query" />
+    <node concept="3clFbS" id="DM6_$iqVEX" role="18ibNy">
+      <node concept="1Z5TYs" id="DM6_$iqXCh" role="3cqZAp">
+        <node concept="mw_s8" id="DM6_$iqXDG" role="1ZfhKB">
+          <node concept="2c44tf" id="DM6_$iqXEj" role="mwGJk">
+            <node concept="3uibUv" id="DM6_$iqXGy" role="2c44tc">
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="DM6_$iqXCk" role="1ZfhK$">
+          <node concept="1Z2H0r" id="DM6_$iqXoj" role="mwGJk">
+            <node concept="1YBJjd" id="DM6_$iqXoG" role="1Z2MuG">
+              <ref role="1YBMHb" node="DM6_$iqVEZ" resolve="projectExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="DM6_$iqVEZ" role="1YuTPh">
+      <property role="TrG5h" value="projectExpression" />
+      <ref role="1YaFvo" to="eynw:DM6_$iqV$8" resolve="ProjectExpression" />
     </node>
   </node>
 </model>

@@ -79,6 +79,8 @@
     <classNode dependClassName="jetbrains.mps.console.base.behavior.PrintNodeReferenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.PrintSequenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.PrintTextExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ProjectExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ProjectScope_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
@@ -444,6 +446,27 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.AbstractPrintExpression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.behavior.ProjectExpression_Behavior" file="ProjectExpression_Behavior.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.behavior.ProjectExpression_BehaviorDescriptor" file="ProjectExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ProjectExpression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.behavior.ProjectScope_BehaviorDescriptor" file="ProjectScope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.ScopeParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" file="ResponseItem_BehaviorDescriptor.java" />

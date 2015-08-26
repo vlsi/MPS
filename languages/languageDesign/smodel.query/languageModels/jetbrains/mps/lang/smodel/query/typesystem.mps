@@ -496,32 +496,6 @@
       <ref role="1YaFvo" to="3xdn:6H$fNdLyE4d" resolve="InstancesExpression" />
     </node>
   </node>
-  <node concept="1YbPZF" id="DM6_$iqVAS">
-    <property role="TrG5h" value="typeof_ProjectExpression" />
-    <property role="3GE5qa" value="query" />
-    <node concept="3clFbS" id="DM6_$iqVEX" role="18ibNy">
-      <node concept="1Z5TYs" id="DM6_$iqXCh" role="3cqZAp">
-        <node concept="mw_s8" id="DM6_$iqXDG" role="1ZfhKB">
-          <node concept="2c44tf" id="DM6_$iqXEj" role="mwGJk">
-            <node concept="3uibUv" id="DM6_$iqXGy" role="2c44tc">
-              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="DM6_$iqXCk" role="1ZfhK$">
-          <node concept="1Z2H0r" id="DM6_$iqXoj" role="mwGJk">
-            <node concept="1YBJjd" id="DM6_$iqXoG" role="1Z2MuG">
-              <ref role="1YBMHb" node="DM6_$iqVEZ" resolve="projectExpression" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="DM6_$iqVEZ" role="1YuTPh">
-      <property role="TrG5h" value="projectExpression" />
-      <ref role="1YaFvo" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="3Z0MTj6lTFC">
     <property role="TrG5h" value="typeof_NodesExpresiion" />
     <property role="3GE5qa" value="query" />

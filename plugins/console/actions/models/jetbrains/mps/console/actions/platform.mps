@@ -153,8 +153,8 @@
       </concept>
     </language>
     <language id="a5e4de53-46a3-44da-aab3-68fdf1c34ed0" name="jetbrains.mps.console.ideCommands">
-      <concept id="8483375838963816351" name="" flags="ng" index="24aHrZ">
-        <child id="7600370246423275637" name="" index="iY1wd" />
+      <concept id="8483375838963816351" name="jetbrains.mps.console.ideCommands.structure.ShowExpression" flags="ng" index="24aHrZ">
+        <child id="7600370246423275637" name="object" index="iY1wd" />
       </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
@@ -225,7 +225,6 @@
       <concept id="4307205004132412719" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterScope" flags="ng" index="1dRE$e">
         <child id="4307205004134707081" name="value" index="1dZqIC" />
       </concept>
-      <concept id="4307205004134636962" name="jetbrains.mps.lang.smodel.query.structure.ProjectScope" flags="ng" index="1dZ9A3" />
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -243,6 +242,7 @@
       <concept id="7656298970878093785" name="jetbrains.mps.console.base.structure.BLExpression" flags="ng" index="f80E0">
         <child id="7656298970878093890" name="expression" index="f80$r" />
       </concept>
+      <concept id="4307205004134636962" name="" flags="ng" index="1dZ9A3" />
     </language>
   </registry>
   <node concept="sE7Ow" id="2UTM4$6j1gf">
