@@ -4,10 +4,10 @@
   <languages>
     <use id="b4dbff0c-8c31-4a79-a45a-98e5fd0530e7" name="jetbrains.mps.samples.SwingBuilder" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
   </languages>
   <imports>
     <import index="x6sq" ref="r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)" />
@@ -358,9 +358,6 @@
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="BigValues" />
     <node concept="3Tm1VV" id="OfqpBCfBfJ" role="1B3o_S" />
-    <node concept="30mAcN" id="OfqpBCfBfK" role="lGtFl">
-      <ref role="30mx6e" to="x6sq:OfqpBCexnp" resolve="FilterElement" />
-    </node>
     <node concept="q3mfD" id="OfqpBCfBfL" role="jymVt">
       <property role="TrG5h" value="accept" />
       <ref role="2VtyIY" to="x6sq:OfqpBCexnP" resolve="accept" />
@@ -389,9 +386,6 @@
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="Duplicate" />
     <node concept="3Tm1VV" id="OfqpBCfGpG" role="1B3o_S" />
-    <node concept="30mAcN" id="OfqpBCfGpH" role="lGtFl">
-      <ref role="30mx6e" to="x6sq:OfqpBCexPD" resolve="MapElement" />
-    </node>
     <node concept="q3mfD" id="OfqpBCfGpI" role="jymVt">
       <property role="TrG5h" value="map" />
       <ref role="2VtyIY" to="x6sq:OfqpBCexPE" resolve="map" />
@@ -420,9 +414,6 @@
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="Square" />
     <node concept="3Tm1VV" id="OfqpBCfGUY" role="1B3o_S" />
-    <node concept="30mAcN" id="OfqpBCfGUZ" role="lGtFl">
-      <ref role="30mx6e" to="x6sq:OfqpBCexPD" resolve="MapElement" />
-    </node>
     <node concept="q3mfD" id="OfqpBCfGV0" role="jymVt">
       <property role="TrG5h" value="map" />
       <ref role="2VtyIY" to="x6sq:OfqpBCexPE" resolve="map" />
@@ -451,9 +442,6 @@
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="Demo" />
     <node concept="3Tm1VV" id="OfqpBCge_m" role="1B3o_S" />
-    <node concept="30mAcN" id="OfqpBCge_n" role="lGtFl">
-      <ref role="30mx6e" to="x6sq:OfqpBCexTs" resolve="DataSource" />
-    </node>
     <node concept="q3mfD" id="OfqpBCge_o" role="jymVt">
       <property role="TrG5h" value="getData" />
       <ref role="2VtyIY" to="x6sq:OfqpBCexTv" resolve="getData" />
@@ -524,9 +512,6 @@
     <property role="3GE5qa" value="dependentDataType" />
     <property role="TrG5h" value="MyConverter" />
     <node concept="3Tm1VV" id="4PvwzwVapSf" role="1B3o_S" />
-    <node concept="30mAcN" id="4PvwzwVapSg" role="lGtFl">
-      <ref role="30mx6e" to="x6sq:4PvwzwV9QDq" resolve="Translator" />
-    </node>
     <node concept="1QueTy" id="4PvwzwVapSh" role="jymVt">
       <node concept="10P_77" id="4PvwzwVapWn" role="1QueTz" />
     </node>

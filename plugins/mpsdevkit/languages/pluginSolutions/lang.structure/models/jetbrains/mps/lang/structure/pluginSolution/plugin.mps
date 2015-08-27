@@ -15,8 +15,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -410,9 +410,6 @@
       </concept>
       <concept id="3751132065236767060" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" flags="ig" index="q3mfD">
         <reference id="19209059688387895" name="decl" index="2VtyIY" />
-      </concept>
-      <concept id="3571587574961713354" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation" flags="ng" index="30mAcN">
-        <reference id="3571587574961717879" name="descriptor" index="30mx6e" />
       </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
@@ -4291,9 +4288,6 @@
       <property role="TrG5h" value="MoveConcepts_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBB2Qs" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBB2Qt" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBB2Qu" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -8407,9 +8401,6 @@
       <property role="TrG5h" value="MovePropertyUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBtl6E" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBtl6F" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBtl6G" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -9362,9 +9353,6 @@
       <property role="TrG5h" value="MoveContainmentLinkUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBsA_s" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBsA_t" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBsA_y" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -9926,9 +9914,6 @@
       <property role="TrG5h" value="MoveReferenceLinkUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBtl7V" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBtl7W" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBtl7X" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
