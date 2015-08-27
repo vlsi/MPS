@@ -7,9 +7,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SReference;
 
-public class NodeReference_Behavior {
+public class ReflectionNodeReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNodeReference call_getNodeReference_2864063292004109237(SNode thisNode) {
@@ -23,15 +24,19 @@ public class NodeReference_Behavior {
     }
     return result;
   }
-  public static SNode call_resolve_2864063292004136476(SNode thisNode) {
-    return check_iii1qs_a0a1(NodeReference_Behavior.call_getNodeReference_2864063292004109237(thisNode));
+  public static SNode virtual_tryToFindNode_7431903976166009863(SNode thisNode, SRepository repository) {
+    return check_gp0spl_a0a1(ReflectionNodeReference_Behavior.call_getNodeReference_2864063292004109237(thisNode), repository);
+  }
+  public static boolean virtual_isSameTarget_7431903976166009839(SNode thisNode, SReference reference) {
+    SNodeReference myReference = ReflectionNodeReference_Behavior.call_getNodeReference_2864063292004109237(thisNode);
+    return myReference != null && myReference.equals(reference.getTargetNodeReference());
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode check_iii1qs_a0a1(SNodeReference checkedDotOperand) {
+  private static SNode check_gp0spl_a0a1(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.resolve(repository);
     }
     return null;
   }

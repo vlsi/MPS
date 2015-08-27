@@ -22,5 +22,5 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"NodeReference"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ReflectionNodeReference"};
 }

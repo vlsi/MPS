@@ -148,8 +148,12 @@
             <node concept="1YBJjd" id="2uZcAeY9STK" role="2Oq$k0">
               <ref role="1YBMHb" node="2uZcAeY9SPR" resolve="nodeReference" />
             </node>
-            <node concept="2qgKlT" id="2uZcAeY99gZ" role="2OqNvi">
-              <ref role="37wK5l" to="nbs9:2uZcAeY97os" resolve="resolve" />
+            <node concept="2qgKlT" id="6szrkDodQYh" role="2OqNvi">
+              <ref role="37wK5l" to="nbs9:6szrkDoc2K7" resolve="tryToFindNode" />
+              <node concept="2YIFZM" id="6szrkDodR3W" role="37wK5m">
+                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+              </node>
             </node>
           </node>
         </node>
@@ -233,7 +237,7 @@
     </node>
     <node concept="1YaCAy" id="2uZcAeY9SPR" role="1YuTPh">
       <property role="TrG5h" value="nodeReference" />
-      <ref role="1YaFvo" to="gqi5:2uZcAeY8Z3v" resolve="NodeReference" />
+      <ref role="1YaFvo" to="gqi5:2uZcAeY8Z3v" resolve="ReflectionNodeReference" />
     </node>
   </node>
 </model>
