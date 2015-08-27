@@ -144,7 +144,7 @@ public class ResolveUtil {
         SNode typeVariableDeclaration = SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
         if (SNodeOperations.getParent(typeVariableDeclaration) != result) {
           int index = SNodeOperations.getIndexInParent(typeVariableDeclaration);
-          if (ListSequence.fromList(params).count() > index) {
+          if (0 <= index && index < ListSequence.fromList(params).count()) {
             SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
           } else {
             SNodeOperations.replaceWithAnother(varRef, _quotation_createNode_txu8l3_a0a0a0b0c0a0k0e());
