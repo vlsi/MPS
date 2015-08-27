@@ -9159,13 +9159,8 @@
             <node concept="2YIFZM" id="6gEjUfBrB9H" role="3clFbG">
               <ref role="37wK5l" to="o2jy:4rbk1n1vfZJ" resolve="getConcept" />
               <ref role="1Pybhc" to="o2jy:4rbk1n1vf4H" resolve="MoveUpDialog" />
-              <node concept="2OqwBi" id="6gEjUfBrB9I" role="37wK5m">
-                <node concept="37vLTw" id="6gEjUfBrB9J" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6gEjUfBvqyO" resolve="project" />
-                </node>
-                <node concept="liA8E" id="6gEjUfBrB9K" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="6gEjUfBrB9J" role="37wK5m">
+                <ref role="3cqZAo" node="6gEjUfBvqyO" resolve="project" />
               </node>
               <node concept="37vLTw" id="6gEjUfBvrM9" role="37wK5m">
                 <ref role="3cqZAo" node="6gEjUfBvqyQ" resolve="conceptFeature" />
