@@ -46,6 +46,7 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
     result.addEditorCell(createCommentConstantCell(editorContext, node, true));
     result.addEditorCell(mainCell);
     result.addEditorCell(createCommentConstantCell(editorContext, node, false));
+    result.setCellId("main_comment_collection");
     return result;
   }
 
@@ -54,6 +55,7 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
     StyleImpl style = new StyleImpl();
     style.set(left ? StyleAttributes.PUNCTUATION_RIGHT : StyleAttributes.PUNCTUATION_LEFT, 0, true);
     cell.getStyle().putAll(style, 0);
+    cell.setCellId(left ? "left_comment_constant" : "right_comment_constant");
     return cell;
   }
 

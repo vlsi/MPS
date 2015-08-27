@@ -1402,11 +1402,11 @@
                 <node concept="10M0yZ" id="5fIuys0cJJc" role="8Wnug">
                   <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
                   <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                  <node concept="LIFWc" id="5fIuys0cK3J" role="lGtFl">
-                    <property role="LIFWa" value="2" />
+                  <node concept="LIFWc" id="4ALf1wALx58" role="lGtFl">
+                    <property role="ZRATv" value="true" />
                     <property role="OXtK3" value="true" />
-                    <property role="p6zMq" value="2" />
-                    <property role="p6zMs" value="2" />
+                    <property role="p6zMq" value="0" />
+                    <property role="p6zMs" value="3" />
                     <property role="LIFWd" value="property_name_1" />
                   </node>
                 </node>
@@ -1653,16 +1653,16 @@
         <node concept="3clFbS" id="5fIuys0cPlf" role="3clF47">
           <node concept="3clFbF" id="5fIuys0cPlg" role="3cqZAp">
             <node concept="2OqwBi" id="5fIuys0cPlh" role="3clFbG">
+              <node concept="LIFWc" id="5fIuys0cQ6c" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="LIFWd" value="Collection_t2jtrp_a" />
+              </node>
               <node concept="10M0yZ" id="5fIuys0cPli" role="2Oq$k0">
                 <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
                 <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
               </node>
               <node concept="liA8E" id="5fIuys0cPlj" role="2OqNvi">
                 <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
-              </node>
-              <node concept="LIFWc" id="5fIuys0cQ6c" role="lGtFl">
-                <property role="LIFWa" value="0" />
-                <property role="LIFWd" value="Collection_t2jtrp_a" />
               </node>
             </node>
           </node>
