@@ -15,24 +15,24 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.io.IOException;
-
-class TempModel extends EditableSModelBase {
-  protected volatile jetbrains.mps.smodel.SModel mySModel;
-  private boolean myReadOnly;
-  private boolean myTrackUndo;
+class TempModel extends RegularModelDescriptor implements EditableSModel {
+  private final boolean myReadOnly;
+  private final boolean myTrackUndo;
 
   protected TempModel(boolean readOnly, boolean trackUndo, SModuleReference moduleReference) {
     super(createModelRef("TempModel_" + System.nanoTime(), moduleReference), new NullDataSource());
@@ -41,48 +41,60 @@ class TempModel extends EditableSModelBase {
   }
 
   @Override
-  public final jetbrains.mps.smodel.SModel getSModelInternal() {
-    if (mySModel != null) {
-      return mySModel;
-    }
-    // FIXME code identical to BaseSpecialModelDescriptor
-    final ModelLoadingState oldState;
-    synchronized (this) {
-      oldState = getLoadingState();
-      if (mySModel == null) {
-        mySModel = new jetbrains.mps.smodel.SModel(getReference()) {
-          @Override
-          protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
-            if (myTrackUndo) {
-              super.performUndoableAction(action);
-            }
-          }
-        };
-        mySModel.setModelDescriptor(this);
-        setLoadingState(ModelLoadingState.FULLY_LOADED);
+  public void updateTimestamp() {
+    // no-op
+  }
+
+  @Override
+  public boolean needsReloading() {
+    return false;
+  }
+
+  @Override
+  public void addRootNode(@NotNull SNode node) {
+    assertCanChange();
+    getModelData().addRootNode(node);
+  }
+
+  @Override
+  public void removeRootNode(@NotNull SNode node) {
+    assertCanChange();
+    getModelData().removeRootNode(node);
+  }
+
+  @Override
+  public void addChangeListener(SModelChangeListener l) {
+    // no-op, legacy listeners shall be removed in next release
+  }
+
+  @Override
+  public void removeChangeListener(SModelChangeListener l) {
+    // no-op, legacy listeners shall be removed in next release
+  }
+
+  @Override
+  public void addChangeListener(SNodeChangeListener l) {
+    getEventDispatch().addChangeListener(l);
+  }
+
+  @Override
+  public void removeChangeListener(SNodeChangeListener l) {
+    getEventDispatch().removeChangeListener(l);
+  }
+
+  @NotNull
+  @Override
+  protected ModelLoadResult createModel() {
+    jetbrains.mps.smodel.SModel smodel = new jetbrains.mps.smodel.SModel(getReference()) {
+      @Override
+      protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
+        if (myTrackUndo) {
+          super.performUndoableAction(action);
+        }
       }
-    }
-    fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
-    return mySModel;
+    };
+    return new ModelLoadResult(smodel, ModelLoadingState.FULLY_LOADED);
   }
-
-  @Override
-  protected SModel getCurrentModelInternal() {
-    return mySModel;
-  }
-
-  @Override
-  protected void doUnload() {
-    final jetbrains.mps.smodel.SModel oldSModel = mySModel;
-
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-      mySModel = null;
-      setLoadingState(ModelLoadingState.NOT_LOADED);
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
-    }
-  }
-
 
   @Override
   public boolean isChanged() {
@@ -91,8 +103,14 @@ class TempModel extends EditableSModelBase {
   }
 
   @Override
-  protected boolean saveModel() throws IOException, ModelSaveException {
-    throw new UnsupportedOperationException();
+  public void setChanged(boolean changed) {
+    // no-op, see #isChanged() which is always const.
+    // It's bad to avoid change tracking, why not no-op save() sufficient?
+  }
+
+  @Override
+  public void save() {
+    // no-op, this is in-memory model
   }
 
   @Override
@@ -106,7 +124,7 @@ class TempModel extends EditableSModelBase {
   }
 
   @Override
-  protected void reloadContents() {
+  public void reloadFromSource() {
     throw new UnsupportedOperationException();
   }
 
