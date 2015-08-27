@@ -15,32 +15,40 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new History_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new History_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new Response_Editor());
+        return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
       case 13:
+        return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new Response_Editor());
+      case 17:
         return Collections.<ConceptEditor>singletonList(new TextResponseItem_Editor());
       default:
     }
@@ -64,6 +72,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponseItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.AbstractPrintExpression", "jetbrains.mps.console.base.structure.BLCommand", "jetbrains.mps.console.base.structure.BLExpression", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.ExceptionHolder", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponseItem"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference"};
 }
