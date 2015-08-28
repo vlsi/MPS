@@ -68,14 +68,4 @@ public class HierarchyTreeNode extends MPSTreeNode {
     }
     return (name == null ? "no name" : name);
   }
-  @Override
-  public void doubleClick() {
-    if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
-      return;
-    }
-    AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView != null) {
-      hierarchyView.openNode(myNodeRef);
-    }
-  }
 }
