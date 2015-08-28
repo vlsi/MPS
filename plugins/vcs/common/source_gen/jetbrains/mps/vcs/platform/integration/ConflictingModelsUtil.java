@@ -36,6 +36,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.persistence.PersistenceVersionAware;
@@ -155,17 +156,27 @@ public class ConflictingModelsUtil {
         for (final VirtualFile file : ListSequence.fromList(myConflictedModelFiles)) {
           monitor.step(file.getCanonicalPath());
 
-          MergeData mergeData = loadRevisions(myProvider, file);
-
           final IFile iFile = FileSystem.getInstance().getFileByPath(file.getPath());
           final Wrappers._T<String> ext = new Wrappers._T<String>(file.getExtension());
           if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
             ext.value = MPSExtentions.MODEL;
           }
-          final SModel baseModel = loadModel(mergeData.ORIGINAL, ext.value);
-          final SModel mineModel = loadModel(mergeData.CURRENT, ext.value);
-          final SModel repoModel = loadModel(mergeData.LAST, ext.value);
-          if (baseModel == null || mineModel == null || repoModel == null) {
+          final Wrappers._T<SModel> baseModel = new Wrappers._T<SModel>(null);
+          final Wrappers._T<SModel> mineModel = new Wrappers._T<SModel>(null);
+          final Wrappers._T<SModel> repoModel = new Wrappers._T<SModel>(null);
+          if (PersistenceFacade.getInstance().getModelFactory(ext.value) != null) {
+            MergeData mergeData = loadRevisions(myProvider, file);
+            if (mergeData != null) {
+              baseModel.value = loadModel(mergeData.ORIGINAL, ext.value);
+              mineModel.value = loadModel(mergeData.CURRENT, ext.value);
+              repoModel.value = loadModel(mergeData.LAST, ext.value);
+            }
+          }
+          if (baseModel.value == null || mineModel.value == null || repoModel.value == null) {
+            monitor.advance(1);
+            if (monitor.isCanceled()) {
+              return;
+            }
             continue;
           }
 
@@ -173,7 +184,7 @@ public class ConflictingModelsUtil {
           // read action: 
           ma.runReadAction(new Runnable() {
             public void run() {
-              mergeSession.value = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
+              mergeSession.value = MergeSession.createMergeSession(baseModel.value, mineModel.value, repoModel.value);
             }
           });
           int conflictingChangesCount = Sequence.fromIterable(mergeSession.value.getAllChanges()).where(new IWhereFilter<ModelChange>() {
@@ -183,7 +194,7 @@ public class ConflictingModelsUtil {
           }).count();
           if (conflictingChangesCount != 0) {
             if (LOG.isInfoEnabled()) {
-              LOG.info("there are still conflicted changes in " + SModelOperations.getModelName(baseModel));
+              LOG.info("there are still conflicted changes in " + SModelOperations.getModelName(baseModel.value));
             }
             monitor.advance(1);
             if (monitor.isCanceled()) {
@@ -192,7 +203,7 @@ public class ConflictingModelsUtil {
             continue;
           }
           if (LOG.isInfoEnabled()) {
-            LOG.info("no conflicting changes in " + SModelOperations.getModelName(baseModel));
+            LOG.info("no conflicting changes in " + SModelOperations.getModelName(baseModel.value));
           }
           final Wrappers._T<String> resultContent = new Wrappers._T<String>(null);
           ma.runReadAction(new Runnable() {
@@ -202,7 +213,7 @@ public class ConflictingModelsUtil {
               if (resultModel == null) {
               } else if (mergeSession.value.hasIdsToRestore()) {
                 if (LOG.isInfoEnabled()) {
-                  LOG.info(String.format("%s: node id duplication detected, should merge in UI.", SModelOperations.getModelName(baseModel)));
+                  LOG.info(String.format("%s: node id duplication detected, should merge in UI.", SModelOperations.getModelName(baseModel.value)));
                 }
               } else {
                 try {
@@ -213,7 +224,7 @@ public class ConflictingModelsUtil {
                   }
                 } catch (Throwable error) {
                   // this can be when saving in 9 persistence after merge with 8 persistence => leave it for UI merge 
-                  if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
+                  if (baseModel.value instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel.value).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
                     ListSequence.fromList(myUnresolvedModelFiles).addElement(file);
                   } else {
                     if (LOG.isEnabledFor(Level.ERROR)) {
@@ -233,7 +244,7 @@ public class ConflictingModelsUtil {
                   public void run() {
                     try {
                       file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
-                      check_2bxr1q_a1a0a0a0a0a0a0v0a0d0m6(mySession, file);
+                      check_2bxr1q_a1a0a0a0a0a0a0u0a0d0m6(mySession, file);
                       VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
                       ListSequence.fromList(myResolvedModelFiles).addElement(file);
                     } catch (IOException e) {
@@ -257,7 +268,7 @@ public class ConflictingModelsUtil {
         monitor.done();
       }
     }
-    private static void check_2bxr1q_a1a0a0a0a0a0a0v0a0d0m6(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
+    private static void check_2bxr1q_a1a0a0a0a0a0a0u0a0d0m6(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
       if (null != checkedDotOperand) {
         checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
       }
