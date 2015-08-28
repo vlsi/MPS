@@ -16,30 +16,73 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-
+/**
+ * todo getPersistentStateKey - move to transformer.getId
+ * todo getTreeTransformers should accept child node as a parameter
+ *
+ * This factory produces a set of transformers and defines applicability rules for them depending on current context.
+ * The current context consists of node we try to apply transforms to, currently selected node and editor context.
+ * Note that node to apply transforms to (N) can differ from currently selected node (CN) if isAvailableInChildren()==true.
+ * CN can be a child of N.
+ *
+ * Algorithm for checking factory applicability in current context.
+ * 1. if !N.concept.isSubConcept(getApplicableConcept)     => factory not applicable
+ * 2. if CN!=N && !isAvailableInChildren                   => factory not applicable
+ * 3. if !isApplicable(N, editorContext)                   => factory not applicable
+ * 4. if CN!=N && !isAvailableInChild(N,CN,editorContext)  => factory not applicable
+ * 5. If all previous checks passed, invoke getTreeTransformers(N, CN, editorContext)
+ */
 public interface TreeTransformerFactory {
-
+  /**
+   * For a context in which factory is applicable, returns tree transformers to show to the user
+   */
   Iterable<TreeTransformer> getTreeTransformers(SNode node, EditorContext editorContext);
 
+  /**
+   * This factory is only applicable to instances of this concept
+   * See also applicability algorithm in class documentation
+   */
   SConcept getApplicableConcept();
 
+  /**
+   * Additional check for whether this factory can be applied to the given node
+   * See also applicability algorithm in class documentation
+   */
   boolean isApplicable(SNode node, EditorContext editorContext);
 
+  /**
+   * If it returns true, the factory will also be checked for applicability in children of the node is tends to be applied to
+   * See also applicability algorithm in class documentation
+   */
   boolean isAvailableInChildren();
 
+  /**
+   * If isAvailableInChildren==true, this additional check allows to define, in which exact children the transformers from
+   * this factory should be shown to user.
+   * See also applicability algorithm in class documentation
+   */
   boolean isAvailableInChild(SNode node, SNode childNode, EditorContext editorContext);
 
   /**
-   * defines order of transformers in UI menu
+   * todo move to transformer, rename to kind
+   * The kind is used to sort transformers in UI.
    */
   Priority getPriority();
 
+  /**
+   * Used to show the user the code of this factory in MPS.
+   */
+  @Nullable
   SNodeReference getDeclarationNode();
 
+  /**
+   * todo move to transformer
+   */
   String getPersistentStateKey();
 
   enum Priority {

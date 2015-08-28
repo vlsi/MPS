@@ -21,16 +21,25 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 
 /**
- * Represents an operation on some node in AST.
+ * TODO: rename to AST transformer, add "pre-execute" check method, "disable"->getId
+ * This interface represents user-invoked transformations on AST like intentions, surround-with actions, quickfixes, etc.
  */
 
 public interface TreeTransformer {
-
+  /**
+   * Invokes the associated transformation
+   */
   void execute();
 
+  /**
+   * Returns user-readable description of this transformation
+   */
   String getDescription();
 
   void disable();
 
+  /**
+   * Associated icon to show in menus
+   */
   Icon getIcon();
 }
