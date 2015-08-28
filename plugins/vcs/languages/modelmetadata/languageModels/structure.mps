@@ -5,7 +5,6 @@
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
-    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -46,25 +45,25 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
+      <ref role="20lvS9" node="3B8MzHTEEZx" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="languageEngagedOnGeneration" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
+      <ref role="20lvS9" node="3B8MzHTEEZx" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="devkit" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
+      <ref role="20lvS9" node="3B8MzHTEEZx" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="import" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
+      <ref role="20lvS9" node="3B8MzHTEEZu" resolve="ModelReference" />
     </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7A" role="1TKVEl">
       <property role="TrG5h" value="longname" />
@@ -80,6 +79,22 @@
     </node>
     <node concept="PrWs8" id="7gTJ_yqjx6J" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3B8MzHTEEZu">
+    <property role="TrG5h" value="ModelReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3B8MzHTEEZv" role="1TKVEl">
+      <property role="TrG5h" value="stringValue" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3B8MzHTEEZx">
+    <property role="TrG5h" value="ModuleReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3B8MzHTEEZy" role="1TKVEl">
+      <property role="TrG5h" value="stringValue" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

@@ -12,22 +12,28 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptModel = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8374934269827355110L, "longname"), new ConceptDescriptorBuilder.Prop(8374934269827355112L, "uuid"), new ConceptDescriptorBuilder.Prop(8374934269827355124L, "donotgenerate")).properties("longname", "uuid", "donotgenerate").childDescriptors(new ConceptDescriptorBuilder.Link(4685150495576720950L, "language", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720952L, "languageEngagedOnGeneration", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720955L, "devkit", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720959L, "import", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L), true, true, false)).children(new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}).create();
+  /*package*/ final ConceptDescriptor myConceptModel = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8374934269827355110L, "longname"), new ConceptDescriptorBuilder.Prop(8374934269827355112L, "uuid"), new ConceptDescriptorBuilder.Prop(8374934269827355124L, "donotgenerate")).properties("longname", "uuid", "donotgenerate").childDescriptors(new ConceptDescriptorBuilder.Link(4685150495576720950L, "language", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720952L, "languageEngagedOnGeneration", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720955L, "devkit", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720959L, "import", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL), true, true, false)).children(new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}).create();
+  /*package*/ final ConceptDescriptor myConceptModelReference = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4163800212297134047L, "stringValue")).properties("stringValue").create();
+  /*package*/ final ConceptDescriptor myConceptModuleReference = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference", MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4163800212297134050L, "stringValue")).properties("stringValue").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptModel);
+    return Arrays.asList(myConceptModel, myConceptModelReference, myConceptModuleReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptModel;
+      case 1:
+        return myConceptModelReference;
+      case 2:
+        return myConceptModuleReference;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model", "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference", "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"};
 }

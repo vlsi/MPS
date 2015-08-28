@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -71,28 +70,24 @@ public class MetadataUtil {
     SModelOperations.addRootNode(target, root);
   }
   private static SNode createModuleRefNode(SModuleReference module) {
-    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference")));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName"), module.getModuleName());
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"), module.getModuleId().toString());
-    // FIXME what's the purpose of custom node id here? Do we use these? Why don't we rely on automatic node id? 
-    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"))));
+    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference")));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue"), module.toString());
+    // FIXME what's the purpose of custom node id here? Do we use these? Why don't we rely on automatic node id? - to have identical IDs for the same imports in different models  
+    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue"))));
     return node;
   }
   private static SModuleReference getModuleReference(SNode node) {
-    return new ModuleReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid")));
+    return ModuleReference.parseReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue")));
   }
   private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
-    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, "jetbrains.mps.lang.project.structure.ModelReference")));
+    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference")));
     SModelReference modelReference = impModel.getModelReference();
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"), SModelStereotype.withoutStereotype(modelReference.getModelName()));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"), PersistenceFacade.getInstance().asString(modelReference.getModelId()));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), SModelStereotype.getStereotype(modelReference.getModelName()));
-    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"), PersistenceFacade.getInstance().asString(modelReference));
+    ((jetbrains.mps.smodel.SNode) node).setId(jetbrains.mps.smodel.SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"))));
     return node;
   }
   private static SModelReference getModelReference(SNode node) {
-    String fullName = SModelStereotype.withStereotype(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")));
-    return new jetbrains.mps.smodel.SModelReference(null, PersistenceFacade.getInstance().createModelId(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))), fullName);
+    return PersistenceFacade.getInstance().createModelReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue")));
   }
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
     if (!(((EditableSModel) metadataModel).isChanged())) {
