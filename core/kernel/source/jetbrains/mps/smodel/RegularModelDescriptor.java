@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * for subclasses to override.
  */
 public abstract class RegularModelDescriptor extends SModelBase {
+  // FIXME SModelBase/SModelDefscriptorStub with gtSModelInternal demand we keep SModel, not SModelData
   private volatile jetbrains.mps.smodel.SModel mySModel;
 
   /**
@@ -54,9 +55,8 @@ public abstract class RegularModelDescriptor extends SModelBase {
     synchronized (myLoadLock) {
       oldState = getLoadingState();
       if (mySModel == null) {
-        ModelLoadResult loadResult = createModel();
-        // FIXME once we drop direct dependency on smodel.SModel, there'd be no cast
-        mySModel = (SModel) loadResult.getModelData();
+        ModelLoadResult<jetbrains.mps.smodel.SModel> loadResult = createModel();
+        mySModel = loadResult.getModelData();
         mySModel.setModelDescriptor(this);
         setLoadingState(loadResult.getState());
       }
@@ -67,7 +67,7 @@ public abstract class RegularModelDescriptor extends SModelBase {
 
   @Nullable
   @Override
-  protected final SModel getCurrentModelInternal() {
+  protected final jetbrains.mps.smodel.SModel getCurrentModelInternal() {
     return mySModel;
   }
 
@@ -75,7 +75,7 @@ public abstract class RegularModelDescriptor extends SModelBase {
    * @return new model data and level it was loaded to
    */
   @NotNull
-  protected abstract ModelLoadResult createModel();
+  protected abstract ModelLoadResult<jetbrains.mps.smodel.SModel> createModel();
 
   @Override
   public void unload() {
@@ -91,9 +91,32 @@ public abstract class RegularModelDescriptor extends SModelBase {
       }
       oldState = getLoadingState();
       mySModel.setModelDescriptor(null);
+      mySModel.dispose();
       mySModel = null;
       setLoadingState(ModelLoadingState.NOT_LOADED);
     }
     fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
+  }
+
+  /**
+   * Handy utility when the new model data is known/obtained beforehand, not through #createModel() factory
+   */
+  protected void replace(@NotNull ModelLoadResult<jetbrains.mps.smodel.SModel> newModel) {
+    final ModelLoadingState oldState;
+    synchronized (myLoadLock) {
+      oldState = getLoadingState();
+      if (mySModel != null) {
+        mySModel.setModelDescriptor(null);
+        mySModel.dispose();
+        mySModel = null;
+      }
+      mySModel = newModel.getModelData();
+      if (mySModel != null) {
+        mySModel.setModelDescriptor(this);
+      }
+      setLoadingState(newModel.getState());
+    }
+    fireModelStateChanged(oldState, getLoadingState());
+    fireModelReplaced();
   }
 }

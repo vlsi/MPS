@@ -1087,8 +1087,8 @@
         <node concept="3cpWs8" id="1B5M0L_gLnr" role="3cqZAp">
           <node concept="3cpWsn" id="1B5M0L_gLns" role="3cpWs9">
             <property role="TrG5h" value="metadataModel" />
-            <node concept="3uibUv" id="7rUTzxrnmap" role="1tU5fm">
-              <ref role="3uigEE" to="g3l6:~EditableSModelBase" resolve="EditableSModelBase" />
+            <node concept="3uibUv" id="jzhoHG1fhM" role="1tU5fm">
+              <ref role="3uigEE" to="bmv6:1m2uLwrRQWq" resolve="MergeTemporaryModel" />
             </node>
             <node concept="2ShNRf" id="2yL_twwKkc6" role="33vP2m">
               <node concept="1pGfFk" id="2yL_twwKkc7" role="2ShVmc">
@@ -1167,13 +1167,23 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="jzhoHG1Gy8" role="3cqZAp">
+          <node concept="3SKdUq" id="jzhoHG1GAa" role="3SKWNk">
+            <property role="3SKdUp" value="XXX it looks isChanged used as indication whether there's anything in the model to apply." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="jzhoHG1GQv" role="3cqZAp">
+          <node concept="3SKdUq" id="jzhoHG1GUx" role="3SKWNk">
+            <property role="3SKdUp" value="If yes, why not use dedicated flag in MergeTemporaryModel, and cease being EditableSModel?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7rUTzxrnmL0" role="3cqZAp">
           <node concept="2OqwBi" id="7rUTzxrnnm2" role="3clFbG">
             <node concept="37vLTw" id="7rUTzxrnmKZ" role="2Oq$k0">
               <ref role="3cqZAo" node="1B5M0L_gLns" resolve="metadataModel" />
             </node>
             <node concept="liA8E" id="7rUTzxrnrfh" role="2OqNvi">
-              <ref role="37wK5l" to="g3l6:~EditableSModelBase.setChanged(boolean):void" resolve="setChanged" />
+              <ref role="37wK5l" to="bmv6:jzhoHG2SzY" resolve="setChanged" />
               <node concept="3clFbT" id="7rUTzxrnrhD" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>

@@ -273,7 +273,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @NotNull
     @Override
-    protected ModelLoadResult createModel() {
+    protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
       jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {
         @Override
         public boolean canFireEvent() {
@@ -281,7 +281,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         }
       };
       model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

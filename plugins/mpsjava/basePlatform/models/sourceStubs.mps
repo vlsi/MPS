@@ -181,7 +181,9 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -1203,6 +1205,9 @@
       <node concept="3Tmbuc" id="4wjoHLPMkF" role="1B3o_S" />
       <node concept="3uibUv" id="686$TZgr$D4" role="3clF45">
         <ref role="3uigEE" to="w1kc:~ModelLoadResult" resolve="ModelLoadResult" />
+        <node concept="3uibUv" id="jzhoHG2AlV" role="11_B2D">
+          <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+        </node>
       </node>
       <node concept="3clFbS" id="3PyP5yK7RCO" role="3clF47">
         <node concept="3cpWs8" id="lHAw_F0KDo" role="3cqZAp">
@@ -1270,6 +1275,9 @@
               <node concept="Rm8GO" id="686$TZgrOrt" role="37wK5m">
                 <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
                 <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+              </node>
+              <node concept="3uibUv" id="jzhoHG2$jW" role="1pMfVU">
+                <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
               </node>
             </node>
           </node>

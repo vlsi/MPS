@@ -84,7 +84,7 @@ class TempModel extends RegularModelDescriptor implements EditableSModel {
 
   @NotNull
   @Override
-  protected ModelLoadResult createModel() {
+  protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
     jetbrains.mps.smodel.SModel smodel = new jetbrains.mps.smodel.SModel(getReference()) {
       @Override
       protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
@@ -93,7 +93,7 @@ class TempModel extends RegularModelDescriptor implements EditableSModel {
         }
       }
     };
-    return new ModelLoadResult(smodel, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult<jetbrains.mps.smodel.SModel>(smodel, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override

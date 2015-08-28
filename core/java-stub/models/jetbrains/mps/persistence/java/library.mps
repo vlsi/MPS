@@ -850,6 +850,9 @@
       <property role="TrG5h" value="createModel" />
       <node concept="3uibUv" id="686$TZgrWoh" role="3clF45">
         <ref role="3uigEE" to="w1kc:~ModelLoadResult" resolve="ModelLoadResult" />
+        <node concept="3uibUv" id="jzhoHG2p5M" role="11_B2D">
+          <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+        </node>
       </node>
       <node concept="3Tmbuc" id="4wjoHLR2EL" role="1B3o_S" />
       <node concept="3clFbS" id="5JsnGMj1qek" role="3clF47">
@@ -962,6 +965,9 @@
               <node concept="Rm8GO" id="686$TZgrZ_j" role="37wK5m">
                 <ref role="Rm8GQ" to="4it6:~ModelLoadingState.INTERFACE_LOADED" resolve="INTERFACE_LOADED" />
                 <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+              </node>
+              <node concept="3uibUv" id="jzhoHG2q1Z" role="1pMfVU">
+                <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
               </node>
             </node>
           </node>

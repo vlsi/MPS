@@ -99,7 +99,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
 
   @Override
   @NotNull
-  protected ModelLoadResult createModel() {
+  protected ModelLoadResult<SModel> createModel() {
     SModel model = new SModel(getReference(), new ForeignNodeIdMap());
     for (SLanguage l : getLanguagesToImport()) {
       model.addLanguage(l);
@@ -107,7 +107,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
     ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
     loader.skipPrivateMembers(mySkipPrivate);
     loader.populateRoots(model);
-    return new ModelLoadResult(model, ModelLoadingState.INTERFACE_LOADED);
+    return new ModelLoadResult<SModel>(model, ModelLoadingState.INTERFACE_LOADED);
   }
 
   private Set<SLanguage> getLanguagesToImport() {
