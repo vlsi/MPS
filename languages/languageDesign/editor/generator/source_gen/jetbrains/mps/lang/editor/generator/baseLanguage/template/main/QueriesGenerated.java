@@ -1378,7 +1378,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).count() == 1;
   }
   public static boolean ifMacro_Condition_5677357823729762547(final IfMacroContext _context) {
-    return eq_x583g4_a0a0rn(SModelOperations.getModuleStub(_context.getInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(_context.getNode())));
+    return neq_x583g4_a0a0rn(SModelOperations.getModuleStub(_context.getOriginalInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(_context.getNode())));
   }
   public static boolean ifMacro_Condition_5677357823729861741(final IfMacroContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).count() == 1;
@@ -2521,7 +2521,7 @@ public class QueriesGenerated {
   private static boolean eq_x583g4_a0a0a0a0a0b0xj(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0rn(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+  private static boolean neq_x583g4_a0a0rn(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

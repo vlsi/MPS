@@ -29,6 +29,7 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
+import jetbrains.mps.nodeEditor.EditorLoadedLanguagesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -121,6 +122,7 @@ public final class MPSCore extends ComponentPluginBase {
     init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
     init(new DataFlowManager(myModuleRepository, myClassLoaderManager));
+    init(new EditorLoadedLanguagesCache());
 
     init(new ResolverComponent());
     init(new ValidationSettings());

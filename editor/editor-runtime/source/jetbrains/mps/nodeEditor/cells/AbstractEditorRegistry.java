@@ -54,11 +54,15 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     myCellFactory = cellFactory;
   }
   T getEditor(ConceptDescriptor conceptDescriptor) {
-    Iterator<T> iterator = getEditors(conceptDescriptor).iterator();
+    Iterator<T> iterator = getEditors(conceptDescriptor, true).iterator();
     return iterator.hasNext() ? iterator.next() : null;
   }
 
   Iterable<T> getEditors(ConceptDescriptor conceptDescriptor) {
+    return getEditors(conceptDescriptor, false);
+  }
+
+  private Iterable<T> getEditors(ConceptDescriptor conceptDescriptor, boolean stopAtFirstAppropriate) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);
@@ -68,7 +72,12 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
       ConceptDescriptor nextConcept = queue.remove();
       T conceptEditor = getEditorForConcept(nextConcept);
       if (conceptEditor != null) {
-        resultList.add(conceptEditor);
+        if (stopAtFirstAppropriate && isEnoughForCurrentContext(conceptEditor)) {
+          resultList.add(0, conceptEditor);
+          return resultList;
+        } else {
+          resultList.add(conceptEditor);
+        }
       }
       for (SConceptId ancestorId : nextConcept.getParentsIds()) {
         if (processedConcepts.contains(ancestorId)) {
@@ -116,6 +125,15 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
       }
     }
     return result;
+  }
+
+  private boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
+    for (String hint : myCellFactory.getCellContext().getHints()) {
+      if (!editor.getContextHints().contains(hint)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private boolean isApplicableInCurrentContext(BaseConceptEditor editor) {

@@ -26,8 +26,8 @@ import java.util.Set;
 /**
  * @author simon
  */
-public class EditorInvalidator implements CoreComponent {
-  private static EditorInvalidator INSTANCE;
+public class EditorLoadedLanguagesCache implements CoreComponent {
+  private static EditorLoadedLanguagesCache INSTANCE;
 
   private Set<LanguageRuntime> myCachedLanguages = new HashSet<LanguageRuntime>();
 
@@ -44,11 +44,11 @@ public class EditorInvalidator implements CoreComponent {
     }
   };
 
-  public static EditorInvalidator getInstance() {
+  public static EditorLoadedLanguagesCache getInstance() {
     return INSTANCE;
   }
 
-  protected void cleanCaches(Iterable<LanguageRuntime> languages) {
+  private synchronized void cleanCaches(Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
       myCachedLanguages.remove(language);
       for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {
@@ -58,11 +58,11 @@ public class EditorInvalidator implements CoreComponent {
   }
 
 
-  public boolean areEditorsInvalidated(LanguageRuntime language) {
-    return myCachedLanguages.contains(language);
+  public synchronized boolean isLanguageInvalidated(LanguageRuntime language) {
+    return !myCachedLanguages.contains(language);
   }
 
-  public void cacheLanguage(LanguageRuntime languageRuntime) {
+  public synchronized void cacheLanguage(LanguageRuntime languageRuntime) {
     myCachedLanguages.add(languageRuntime);
   }
 
