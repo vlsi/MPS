@@ -23,8 +23,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * todo getPersistentStateKey - move to transformer.getId
- * todo getTreeTransformers should accept child node as a parameter
- *
+
  * This factory produces a set of transformers and defines applicability rules for them depending on current context.
  * The current context consists of node we try to apply transforms to, currently selected node and editor context.
  * Note that node to apply transforms to (N) can differ from currently selected node (CN) if isAvailableInChildren()==true.
@@ -41,7 +40,7 @@ public interface TreeTransformerFactory {
   /**
    * For a context in which factory is applicable, returns tree transformers to show to the user
    */
-  Iterable<TreeTransformer> getTreeTransformers(SNode node, EditorContext editorContext);
+  Iterable<TreeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext);
 
   /**
    * This factory is only applicable to instances of this concept

@@ -38,7 +38,7 @@ public class TreeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext) {
-    final Iterable<TreeTransformer> transformers = myFactory.getTreeTransformers(node, editorContext);
+    final Iterable<TreeTransformer> transformers = myFactory.getTreeTransformers(node, editorContext.getSelectedNode(), editorContext);
 
     return new ArrayList<IntentionExecutable>() {{
       for (final TreeTransformer transformer : transformers) {
