@@ -107,20 +107,13 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private List<T> collectApplicableEditors(ConceptDescriptor conceptDescriptor) {
     List<T> result = new ArrayList<T>();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
-    for (Iterator<LanguageRuntime> extendingLanguagesIterator = null; languageRuntime != null; ) {
-      EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
-      if (aspectDescriptor != null) {
-        for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
-          if (isApplicableInCurrentContext(conceptEditor)) {
-            result.add(conceptEditor);
-          }
+    EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
+    if (aspectDescriptor != null) {
+      for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
+        if (isApplicableInCurrentContext(conceptEditor)) {
+          result.add(conceptEditor);
         }
       }
-      if (extendingLanguagesIterator == null) {
-        // initializing iterator for first language only
-        extendingLanguagesIterator = languageRuntime.getExtendingLanguages().iterator();
-      }
-      languageRuntime = extendingLanguagesIterator.hasNext() ? extendingLanguagesIterator.next() : null;
     }
     return result;
   }
