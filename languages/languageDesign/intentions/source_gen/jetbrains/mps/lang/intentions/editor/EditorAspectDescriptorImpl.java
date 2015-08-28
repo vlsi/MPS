@@ -19,27 +19,27 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ChildFilter_Editor());
-      case 3:
         return Collections.<ConceptEditor>singletonList(new DependentParameterDeclaration_Editor());
-      case 4:
-        return Collections.<ConceptEditor>singletonList(new FilterFunctionStrategy_Editor());
-      case 5:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new Intention_Editor());
-      case 6:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new IntentionParameter_Editor());
-      case 7:
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new IsNotError_Editor());
+      case 6:
         return Collections.<ConceptEditor>singletonList(new Normal_Editor());
-      case 8:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new Parameter_Editor());
-      case 9:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new ParameterizedIntentionDeclaration_Editor());
-      case 10:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new Parametrized_Editor());
-      case 11:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new QueryBlock_Editor());
-      case 12:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new SurroundWith_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new isError_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -49,5 +49,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilter", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsNotError", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith", "jetbrains.mps.lang.intentions.structure.isError"};
 }

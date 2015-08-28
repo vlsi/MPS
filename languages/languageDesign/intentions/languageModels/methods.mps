@@ -142,12 +142,6 @@
         <property role="QcwnP" value="&lt;isApplicable = true&gt;" />
       </node>
     </node>
-    <node concept="QcwwW" id="4nRSVgZChkF" role="QNr5C">
-      <ref role="QcwwZ" to="tp3j:4nRSVgZCeVi" resolve="ChildFilter" />
-      <node concept="QcxE9" id="4nRSVgZChm5" role="2IRzpu">
-        <property role="QcwnP" value="&lt;never available in child nodes&gt;" />
-      </node>
-    </node>
     <node concept="q3mfq" id="6yt8uwrpTIM" role="QNr5C">
       <property role="TrG5h" value="description" />
       <node concept="17QB3L" id="6yt8uwrpTJ3" role="q3mfk" />
@@ -220,12 +214,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="QcwwW" id="2lJOBsqvJqh" role="QNr5C">
-      <ref role="QcwwZ" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
-      <node concept="QcxE9" id="2lJOBsqvJuQ" role="2IRzpu">
-        <property role="QcwnP" value="&lt;no parameter&gt;" />
       </node>
     </node>
     <node concept="q3mfq" id="6yt8uwrpTsz" role="QNr5C">
@@ -302,45 +290,11 @@
       <node concept="2IRzkw" id="6yt8uwrpTIw" role="2IRzpu" />
       <node concept="3cqZAl" id="1AttYWGd79L" role="q3mfk" />
     </node>
-  </node>
-  <node concept="q3mft" id="6rleQs35avH">
-    <property role="TrG5h" value="FilterFunctionStrategyDeclaration" />
-    <node concept="q3mfq" id="6rleQs35btw" role="QNr5C">
-      <property role="TrG5h" value="availableInChildNode" />
-      <node concept="q3mfp" id="6rleQs35btO" role="q3mfl">
-        <property role="TrG5h" value="node" />
-        <node concept="q3mfx" id="6rleQs35btP" role="q3mfr">
-          <node concept="1bVj0M" id="6rleQs35btQ" role="q3mfw">
-            <node concept="37vLTG" id="6rleQs35btR" role="1bW2Oz">
-              <property role="TrG5h" value="point" />
-              <node concept="3Tqbb2" id="6rleQs35btS" role="1tU5fm" />
-            </node>
-            <node concept="3clFbS" id="6rleQs35btT" role="1bW5cS">
-              <node concept="3clFbF" id="6rleQs35btU" role="3cqZAp">
-                <node concept="2YIFZM" id="6rleQs35btV" role="3clFbG">
-                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
-                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                  <node concept="37vLTw" id="6rleQs35btW" role="37wK5m">
-                    <ref role="3cqZAo" node="6rleQs35btR" resolve="point" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+    <node concept="QcwwW" id="2lJOBsqvJqh" role="QNr5C">
+      <ref role="QcwwZ" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
+      <node concept="QcxE9" id="2lJOBsqvJuQ" role="2IRzpu">
+        <property role="QcwnP" value="&lt;no parameter&gt;" />
       </node>
-      <node concept="q3mfp" id="6rleQs35bvb" role="q3mfl">
-        <property role="TrG5h" value="childNode" />
-        <node concept="3Tqbb2" id="6rleQs35bvV" role="q3mfr" />
-      </node>
-      <node concept="q3mfp" id="6rleQs35bwA" role="q3mfl">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="6rleQs35bxc" role="q3mfr">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="10P_77" id="6rleQs35byR" role="q3mfk" />
-      <node concept="2IRzkw" id="63iz5ddjOJC" role="2IRzpu" />
     </node>
   </node>
   <node concept="q3mft" id="2Hif5ue1I1A">

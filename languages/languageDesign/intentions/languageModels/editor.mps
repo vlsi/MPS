@@ -52,7 +52,6 @@
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
-      <concept id="1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" flags="ln" index="pVoyu" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -817,24 +816,18 @@
       </node>
       <node concept="l2Vlx" id="536fTXa3qK5" role="2iSdaV" />
       <node concept="3EZMnI" id="3_zGkPoFdOB" role="3EZMnx">
-        <node concept="3EZMnI" id="5ChbRjKHCDo" role="3EZMnx">
-          <node concept="VPM3Z" id="5ChbRjKHCDq" role="3F10Kt">
-            <property role="VOm3f" value="false" />
+        <node concept="3EZMnI" id="1U1cBuQACi3" role="3EZMnx">
+          <node concept="3XFhqQ" id="1U1cBuQACpM" role="3EZMnx" />
+          <node concept="2iRfu4" id="1U1cBuQACi4" role="2iSdaV" />
+          <node concept="3F1sOY" id="5_2vHPPt56y" role="3EZMnx">
+            <ref role="1NtTu8" to="tp3j:5_2vHPPt4pL" />
           </node>
-          <node concept="3XFhqQ" id="4nRSVgZC58T" role="3EZMnx" />
-          <node concept="3F0ifn" id="5ChbRjKHCDs" role="3EZMnx">
-            <property role="3F0ifm" value="is error intention: " />
-          </node>
-          <node concept="3F0A7n" id="5ChbRjKHCDI" role="3EZMnx">
-            <ref role="1NtTu8" to="tp3j:63iz5ddj4mY" resolve="isError" />
-          </node>
-          <node concept="2iRfu4" id="5ChbRjKHCDt" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="5ChbRjKHCCV" role="3EZMnx">
           <node concept="2iRfu4" id="5ChbRjKHCCW" role="2iSdaV" />
           <node concept="3XFhqQ" id="4nRSVgZC592" role="3EZMnx" />
           <node concept="3F1sOY" id="5ChbRjKHCD9" role="3EZMnx">
-            <property role="1$x2rV" value="availability in child nodes: not available" />
+            <property role="1$x2rV" value="not available in children" />
             <ref role="1NtTu8" to="tp3j:63iz5ddjJ_C" />
           </node>
         </node>
@@ -842,20 +835,6 @@
           <ref role="PMmxG" to="tpen:3Z61ZaMckgv" resolve="ClassifierMembers_Component" />
         </node>
         <node concept="2iRkQZ" id="3_zGkPoFdOE" role="2iSdaV" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="2n1DO7Egr5P">
-    <property role="3GE5qa" value="childFilterStrategy" />
-    <ref role="1XX52x" to="tp3j:6rleQs35avS" resolve="FilterFunctionStrategy" />
-    <node concept="3EZMnI" id="3gag2zuUz4w" role="2wV5jI">
-      <property role="1cu_pB" value="2" />
-      <node concept="l2Vlx" id="3gag2zuUz4B" role="2iSdaV" />
-      <node concept="PMmxH" id="3gag2zuUz4E" role="3EZMnx">
-        <ref role="PMmxG" to="tpen:3Z61ZaMckgv" resolve="ClassifierMembers_Component" />
-        <node concept="pVoyu" id="11ZB_RZhlhi" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
       </node>
     </node>
   </node>
@@ -1057,10 +1036,16 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="66E4aLseGHb">
-    <ref role="1XX52x" to="tp3j:4nRSVgZCeVi" resolve="ChildFilter" />
-    <node concept="3F1sOY" id="66E4aLseGHd" role="2wV5jI">
-      <ref role="1NtTu8" to="tp3j:4nRSVgZCh$3" />
+  <node concept="24kQdi" id="5_2vHPPt4oM">
+    <ref role="1XX52x" to="tp3j:5_2vHPPt4ol" resolve="isError" />
+    <node concept="3F0ifn" id="5_2vHPPt4oO" role="2wV5jI">
+      <property role="3F0ifm" value="error intention" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5_2vHPPt4pE">
+    <ref role="1XX52x" to="tp3j:5_2vHPPt4oR" resolve="IsNotError" />
+    <node concept="3F0ifn" id="5_2vHPPt4pG" role="2wV5jI">
+      <property role="3F0ifm" value="not error intention" />
     </node>
   </node>
 </model>

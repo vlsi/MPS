@@ -134,39 +134,47 @@ public class Intention_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dnq3sg_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dnq3sg_a4a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_dnq3sg_a0e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dnq3sg_b0e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_dnq3sg_c0e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dnq3sg_b0e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_dnq3sg_a0e0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-  private EditorCell createConstant_dnq3sg_b0e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is error intention: ");
-    editorCell.setCellId("Constant_dnq3sg_b0e0");
-    editorCell.setDefaultText("");
-    return editorCell;
+  private EditorCell createRefNode_dnq3sg_b0e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new Intention_Editor.errorSingleRoleHandler_dnq3sg_b0e0(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "error"), editorContext);
+    return provider.createCell();
   }
-  private EditorCell createProperty_dnq3sg_c0e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("isError");
-    provider.setNoTargetText("<no isError>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_isError");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
+  private class errorSingleRoleHandler_dnq3sg_b0e0 extends SingleRoleCellProvider {
+    public errorSingleRoleHandler_dnq3sg_b0e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("error");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_error");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no " + "error" + ">";
+    }
+
   }
   private EditorCell createCollection_dnq3sg_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -209,7 +217,7 @@ public class Intention_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "availability in child nodes: not available";
+      return "not available in children";
     }
 
   }

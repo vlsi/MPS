@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.intentions.methods.FilterFunctionStrategyDeclaration_Queries" file="FilterFunctionStrategyDeclaration_Queries.java">
-    <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.intentions.methods.IntentionDeclaration_Queries" file="IntentionDeclaration_Queries.java">
     <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

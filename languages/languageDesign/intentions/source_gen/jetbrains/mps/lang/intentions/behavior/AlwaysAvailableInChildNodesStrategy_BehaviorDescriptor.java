@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 
-public class AlwaysAvailableInChildNodesStrategy_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements ChildFilterStrategy_BehaviorDescriptor {
+public class AlwaysAvailableInChildNodesStrategy_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor {
   public AlwaysAvailableInChildNodesStrategy_BehaviorDescriptor() {
   }
   @Override
