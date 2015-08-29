@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,7 +47,7 @@ import java.util.Set;
 abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(AbstractEditorRegistry.class));
 
-  private final EditorCellFactory myCellFactory;
+  protected final EditorCellFactory myCellFactory;
   private static Comparator<BaseConceptEditor> myEditorComparator;
   private static Comparator<BaseConceptEditor> myAncestorEditorComparator;
 
@@ -54,15 +55,9 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     myCellFactory = cellFactory;
   }
   T getEditor(ConceptDescriptor conceptDescriptor) {
-    Iterator<T> iterator = getEditors(conceptDescriptor, true).iterator();
-    return iterator.hasNext() ? iterator.next() : null;
+    return getEditor(conceptDescriptor, new ArrayList<Class<? extends BaseConceptEditor>>());
   }
-
-  Iterable<T> getEditors(ConceptDescriptor conceptDescriptor) {
-    return getEditors(conceptDescriptor, false);
-  }
-
-  private Iterable<T> getEditors(ConceptDescriptor conceptDescriptor, boolean stopAtFirstAppropriate) {
+  T getEditor(ConceptDescriptor conceptDescriptor, Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);
@@ -70,11 +65,10 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     List<T> resultList = new ArrayList<T>();
     while (!queue.isEmpty()) {
       ConceptDescriptor nextConcept = queue.remove();
-      T conceptEditor = getEditorForConcept(nextConcept);
+      T conceptEditor = getEditorForConcept(nextConcept, excludedEditors);
       if (conceptEditor != null) {
-        if (stopAtFirstAppropriate && isEnoughForCurrentContext(conceptEditor)) {
-          resultList.add(0, conceptEditor);
-          return resultList;
+        if (isEnoughForCurrentContext(conceptEditor)) {
+          return conceptEditor;
         } else {
           resultList.add(conceptEditor);
         }
@@ -87,23 +81,26 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
         queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorId));
       }
     }
+    if (resultList.isEmpty()) {
+      return null;
+    }
     Collections.sort(resultList, getAncestorEditorComparator());
-    return resultList;
+    return resultList.get(0);
   }
 
-  private T getEditorForConcept(ConceptDescriptor conceptDescriptor) {
+
+  private T getEditorForConcept(ConceptDescriptor conceptDescriptor, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
     List<T> conceptEditors = collectApplicableEditors(conceptDescriptor);
     if (conceptEditors.isEmpty()) {
       return null;
-    }
-    if (conceptEditors.size() == 1) {
-      return conceptEditors.get(0);
     }
     Collections.sort(conceptEditors, getEditorComparator());
     T result = null;
     for (T conceptEditor : conceptEditors) {
       if (result == null) {
-        result = conceptEditor;
+        if (!excludedEditors.contains(conceptEditor.getClass())) {
+          result = conceptEditor;
+        }
       } else if (conceptEditor.getContextHints().size() == result.getContextHints().size()) {
         LOG.error(getErrorMessage(conceptEditor, result));
       } else {
@@ -127,14 +124,7 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     return result;
   }
 
-  private boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
-    for (String hint : myCellFactory.getCellContext().getHints()) {
-      if (!editor.getContextHints().contains(hint)) {
-        return false;
-      }
-    }
-    return true;
-  }
+  protected abstract boolean isEnoughForCurrentContext(BaseConceptEditor editor);
 
   private boolean isApplicableInCurrentContext(BaseConceptEditor editor) {
     for (String hint : editor.getContextHints()) {

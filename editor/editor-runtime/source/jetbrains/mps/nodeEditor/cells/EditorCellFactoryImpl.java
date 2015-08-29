@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -28,8 +29,10 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
@@ -65,26 +68,15 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   @Override
-  public EditorCell createEditorCell(SNode node, boolean isInspector, Collection<Class<? extends ConceptEditor>> excludedEditors) {
+  public EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Collection<Class<? extends ConceptEditor>> excludedEditors) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = null;
-    Iterable<ConceptEditor> editors = myConceptEditorRegistry.getEditors(conceptDescriptor);
-    if (editors.iterator().hasNext()) {
-      for (ConceptEditor candidate : editors) {
-        if (!excludedEditors.contains(candidate.getClass())) {
-          editor = candidate;
-          break;
-        }
-      }
-    }
+    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor, Collections.<Class<? extends BaseConceptEditor>>unmodifiableCollection(excludedEditors));
     return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
   }
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
-    return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
+    return createEditorCell(node, isInspector, new ArrayList<Class<? extends ConceptEditor>>());
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, ConceptDescriptor conceptDescriptor, ConceptEditor editor) {
@@ -190,6 +182,16 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
       return aspectDescriptor.getEditors(conceptDescriptor);
     }
+
+    @Override
+    protected boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
+      for (String hint : myCellFactory.getCellContext().getHints()) {
+        if (!editor.getContextHints().contains(hint)) {
+          return false;
+        }
+      }
+      return true;
+    }
   }
 
   private class ConceptEditorComponentRegistry extends AbstractEditorRegistry<ConceptEditorComponent> {
@@ -203,6 +205,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     @Override
     protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
       return aspectDescriptor.getEditorComponents(conceptDescriptor, myEditorComponentId);
+    }
+
+    @Override
+    protected boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
+      return true;
     }
   }
 
