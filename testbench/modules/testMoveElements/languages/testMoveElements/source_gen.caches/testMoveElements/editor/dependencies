@@ -19,7 +19,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="testMoveElements.editor.DummyBlock_Editor" />
     <classNode dependClassName="testMoveElements.editor.ManyStatements_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="testMoveElements.editor.ManyStatements_Editor" file="ManyStatements_Editor.java">
     <classNode dependClassName="java.lang.Override" />

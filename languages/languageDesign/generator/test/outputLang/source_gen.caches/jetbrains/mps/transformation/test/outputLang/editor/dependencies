@@ -66,7 +66,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.OutputNode_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.OutputRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.TwoVarStatement_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.outputLang.editor.OutputNode_Editor" file="OutputNode_Editor.java">
     <classNode dependClassName="java.lang.Class" />

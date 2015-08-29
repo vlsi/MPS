@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor" file="NonThreadSafeClass_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

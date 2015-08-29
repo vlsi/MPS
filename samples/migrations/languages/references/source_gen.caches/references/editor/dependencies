@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="references.editor.NewComponentRef_Editor" />
     <classNode dependClassName="references.editor.OldComponentRef_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="references.editor.NewComponentRef_Editor" file="NewComponentRef_Editor.java">
     <classNode dependClassName="java.lang.Class" />

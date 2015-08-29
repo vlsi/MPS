@@ -106,7 +106,7 @@
     <classNode dependClassName="testSpaceCompletion.editor.ABC_Editor" />
     <classNode dependClassName="testSpaceCompletion.editor.BAC_Editor" />
     <classNode dependClassName="testSpaceCompletion.editor.BCA_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
 </dependenciesRoot>
 

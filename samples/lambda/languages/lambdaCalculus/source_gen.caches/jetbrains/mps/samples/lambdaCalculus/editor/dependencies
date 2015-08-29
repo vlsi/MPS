@@ -69,7 +69,7 @@
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.Variable_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" file="FunctionType_Editor.java">
     <classNode dependClassName="java.lang.Override" />

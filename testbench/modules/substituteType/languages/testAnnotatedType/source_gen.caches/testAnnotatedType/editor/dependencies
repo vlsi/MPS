@@ -12,7 +12,7 @@
     <classNode dependClassName="testAnnotatedType.editor.PrimNumConstant_Editor" />
     <classNode dependClassName="testAnnotatedType.editor.PrimType_Editor" />
     <classNode dependClassName="testAnnotatedType.editor.SubstituteAnnotation_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="testAnnotatedType.editor.PresenceCondition_Editor" file="PresenceCondition_Editor.java">
     <classNode dependClassName="java.lang.Class" />

@@ -41,7 +41,7 @@
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.TextField_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.Transformers_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_Editor" file="ElementReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />

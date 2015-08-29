@@ -47,7 +47,7 @@
     <classNode dependClassName="testDefaultEditor.editor.DefaultNodeAttribute_Editor" />
     <classNode dependClassName="testDefaultEditor.editor.DefaultPropertyAttribute_Editor" />
     <classNode dependClassName="testDefaultEditor.editor.DefaultReferenceAttribute_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
 </dependenciesRoot>
 

@@ -136,7 +136,7 @@
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.Slot_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.SpecificDay_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor" file="HeatingPlan_Editor.java">
     <classNode dependClassName="java.lang.Class" />

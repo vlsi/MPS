@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="testWrappedType.editor.TypeWithUnits_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="testWrappedType.editor.TypeWithUnits_Editor" file="TypeWithUnits_Editor.java">
     <classNode dependClassName="java.lang.Class" />

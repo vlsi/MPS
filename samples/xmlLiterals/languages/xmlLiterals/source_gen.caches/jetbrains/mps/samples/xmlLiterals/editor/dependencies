@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.editor.TextMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.editor.XmlLiteral_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.xmlLiterals.editor.ElementMacro_Editor" file="ElementMacro_Editor.java">
     <classNode dependClassName="java.lang.Override" />
