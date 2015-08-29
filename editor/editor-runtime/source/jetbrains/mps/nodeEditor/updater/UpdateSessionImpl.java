@@ -64,7 +64,6 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
-  private Map<SNode, Set<Class<? extends ConceptEditor>>> myUsedEditors = new HashMap<SNode, Set<Class<? extends ConceptEditor>>>();
 
   private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
 
@@ -162,26 +161,6 @@ public class UpdateSessionImpl implements UpdateSession {
     }
     HintsState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
     return state.getEnabledHints().toArray(EMPTY_HINTS_ARRAY);
-  }
-
-  @Override
-  public EditorCell redispatchNodeCell(SNode node, Class<? extends ConceptEditor> excludedEditor) {
-    Set<Class<? extends ConceptEditor>> set;
-    if (myUsedEditors.containsKey(node)) {
-      set = myUsedEditors.get(node);
-    } else {
-      set = new HashSet<Class<? extends ConceptEditor>>();
-      myUsedEditors.put(node, set);
-    }
-    set.add(excludedEditor);
-    EditorContext editorContext = getUpdater().getEditorContext();
-    EditorCell editorCell =
-        editorContext.getCellFactory().createEditorCell(node, false, set);
-    set.remove(excludedEditor);
-    if (set.isEmpty()) {
-      myUsedEditors.remove(node);
-    }
-    return editorCell;
   }
 
   @Override

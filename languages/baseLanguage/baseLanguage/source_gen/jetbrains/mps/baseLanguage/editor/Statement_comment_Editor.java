@@ -35,7 +35,7 @@ public class Statement_comment_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ffwlke_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRedispatch_ffwlke_b0(editorContext, node));
+    editorCell.addEditorCell(this.createNextEditor_ffwlke_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_ffwlke_a0(EditorContext editorContext, SNode node) {
@@ -47,13 +47,13 @@ public class Statement_comment_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRedispatch_ffwlke_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createNextEditor_ffwlke_b0(EditorContext editorContext, SNode node) {
     try {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().addCellContextHints();
       editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
       {
-        EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().redispatchNodeCell(node, Statement_comment_Editor.class);
+        EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, Statement_comment_Editor.class);
         return editorCell;
       }
     } finally {

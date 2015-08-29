@@ -84,19 +84,6 @@ public interface UpdateSession {
    * Should be called as a part of incremental update of EditorCells tree represented
    * inside associated EditorComponent only.
    * <p/>
-   *
-   * Can be called to update editor cell for the current node. Excluded editor
-   * will not be considered as a candidate for current node editor
-   *
-   * @param node - node to create cell for
-   * @param excludedEditor = editor class which has to be excluded from
-   */
-  EditorCell redispatchNodeCell(SNode node, Class<? extends ConceptEditor> excludedEditor);
-
-  /**
-   * Should be called as a part of incremental update of EditorCells tree represented
-   * inside associated EditorComponent only.
-   * <p/>
    * Can be called to update editor cell for the child node to insert it into
    * constructing cell tree as a child cell.
    *

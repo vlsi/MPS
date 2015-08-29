@@ -36,9 +36,7 @@
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
-      <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_Redispatch" flags="ng" index="B$lHz">
-        <child id="8383079901754291620" name="removeHints" index="B$lH_" />
-      </concept>
+      <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_Redispatch" flags="ng" index="B$lHz" />
       <concept id="4151393920374910634" name="jetbrains.mps.lang.editor.structure.StyleKey" flags="ng" index="2NdhxG" />
       <concept id="4151393920374910722" name="jetbrains.mps.lang.editor.structure.StyleKeyPack" flags="ng" index="2NdhB4">
         <child id="4151393920375014512" name="styleKey" index="2NdZaQ" />
@@ -505,14 +503,8 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="B$lHz" id="7hmFG5jQPBD" role="3EZMnx">
-        <node concept="2w$q5c" id="7hmFG5jRNAM" role="B$lH_">
-          <node concept="2aJ2om" id="7hmFG5jRNAN" role="2w$qW5">
-            <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
-          </node>
-        </node>
-      </node>
       <node concept="l2Vlx" id="7hmFG5jQPBv" role="2iSdaV" />
+      <node concept="B$lHz" id="5DmTQrINSQQ" role="3EZMnx" />
       <node concept="3F0ifn" id="3VARyd8X5Rv" role="3EZMnx">
         <property role="3F0ifm" value="*/" />
         <node concept="11L4FC" id="3VARyd8Xg26" role="3F10Kt">

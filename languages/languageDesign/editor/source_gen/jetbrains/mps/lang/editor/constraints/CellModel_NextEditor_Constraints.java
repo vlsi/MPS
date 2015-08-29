@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class CellModel_Redispatch_Constraints extends BaseConstraintsDescriptor {
-  public CellModel_Redispatch_Constraints() {
+public class CellModel_NextEditor_Constraints extends BaseConstraintsDescriptor {
+  public CellModel_NextEditor_Constraints() {
     super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L));
   }
   @Override

@@ -4038,9 +4038,9 @@
   <node concept="1TIwiD" id="7hmFG5jLZmy">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="CellModel_Redispatch" />
+    <property role="TrG5h" value="CellModel_NextEditor" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="other appropriate editor" />
+    <property role="34LRSv" value="next appropriate editor" />
     <ref role="1TJDcQ" node="fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="7hmFG5jLZmz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

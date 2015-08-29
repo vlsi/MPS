@@ -12675,7 +12675,7 @@
   </node>
   <node concept="24kQdi" id="7hmFG5jMghC">
     <property role="3GE5qa" value="CellModel" />
-    <ref role="1XX52x" to="tpc2:7hmFG5jLZmy" resolve="CellModel_Redispatch" />
+    <ref role="1XX52x" to="tpc2:7hmFG5jLZmy" resolve="CellModel_NextEditor" />
     <node concept="3EZMnI" id="7hmFG5jQPPg" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7hmFG5jQPPh" role="3EZMnx">
@@ -12738,7 +12738,7 @@
         <node concept="Vb9p2" id="2peXSsL72c4" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="2peXSsL72c5" role="3EZMnx">
-        <property role="3F0ifm" value="other appropriate editor" />
+        <property role="3F0ifm" value="next appropriate editor" />
         <ref role="1k5W1q" node="3OSQ5wtKyli" resolve="attributedCellLabel" />
       </node>
       <node concept="3F0ifn" id="2peXSsL72c6" role="3EZMnx">

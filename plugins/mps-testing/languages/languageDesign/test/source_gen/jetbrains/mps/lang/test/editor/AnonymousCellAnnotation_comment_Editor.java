@@ -16,15 +16,15 @@ public class AnonymousCellAnnotation_comment_Editor extends DefaultNodeEditor {
     return myContextHints;
   }
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createRedispatch_7nllh3_a(editorContext, node);
+    return this.createNextEditor_7nllh3_a(editorContext, node);
   }
-  private EditorCell createRedispatch_7nllh3_a(EditorContext editorContext, SNode node) {
+  private EditorCell createNextEditor_7nllh3_a(EditorContext editorContext, SNode node) {
     try {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().addCellContextHints();
       editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
       {
-        EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().redispatchNodeCell(node, AnonymousCellAnnotation_comment_Editor.class);
+        EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, AnonymousCellAnnotation_comment_Editor.class);
         editorCell.setBig(true);
         return editorCell;
       }

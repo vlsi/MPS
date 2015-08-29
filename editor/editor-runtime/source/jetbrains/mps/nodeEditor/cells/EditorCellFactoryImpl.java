@@ -36,7 +36,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -57,26 +60,43 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       return false;
     }
   };
-  public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
   private ConceptEditorRegistry myConceptEditorRegistry = new ConceptEditorRegistry();
+  private Map<SNode, Set<Class<? extends ConceptEditor>>> myUsedEditors = new HashMap<SNode, Set<Class<? extends ConceptEditor>>>();
 
   public EditorCellFactoryImpl(EditorContext editorContext) {
     myEditorContext = editorContext;
   }
 
   @Override
-  public EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Collection<Class<? extends ConceptEditor>> excludedEditors) {
+  public EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Class<? extends ConceptEditor> excludedEditor) {
+    Set<Class<? extends ConceptEditor>> set;
+    if (myUsedEditors.containsKey(node)) {
+      set = myUsedEditors.get(node);
+    } else {
+      set = new HashSet<Class<? extends ConceptEditor>>();
+      myUsedEditors.put(node, set);
+    }
+    set.add(excludedEditor);
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor, Collections.<Class<? extends BaseConceptEditor>>unmodifiableCollection(excludedEditors));
-    return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
+    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor, Collections.<Class<? extends  BaseConceptEditor>>unmodifiableSet(set));
+    EditorCell editorCell = createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
+    set.remove(excludedEditor);
+    if (set.isEmpty()) {
+      myUsedEditors.remove(node);
+    }
+    return editorCell;
+
+
   }
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    return createEditorCell(node, isInspector, new ArrayList<Class<? extends ConceptEditor>>());
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
+    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
+    return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, ConceptDescriptor conceptDescriptor, ConceptEditor editor) {

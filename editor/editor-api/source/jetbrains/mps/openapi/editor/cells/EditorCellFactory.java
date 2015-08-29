@@ -29,7 +29,7 @@ import java.util.Set;
 public interface EditorCellFactory {
   EditorCell createEditorCell(SNode node, boolean isInspector);
 
-  EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Collection<Class<? extends ConceptEditor>> excludedEditors);
+  EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Class<? extends ConceptEditor> excludedEditor);
 
   EditorCell createEditorComponentCell(SNode node, String editorComponentId);
 

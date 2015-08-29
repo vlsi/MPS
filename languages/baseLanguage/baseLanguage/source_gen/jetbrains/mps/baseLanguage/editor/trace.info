@@ -40570,8 +40570,8 @@
       <node id="4532554318124231044" at="51,9,52,55" concept="5" />
       <node id="4532554318124231044" at="52,55,53,59" concept="5" />
       <node id="4532554318124231044" at="53,59,54,139" concept="5" />
-      <node id="4532554318124231044" at="55,7,56,163" concept="11" />
-      <node id="4532554318124231044" at="56,163,57,26" concept="12" />
+      <node id="4532554318124231044" at="55,7,56,125" concept="11" />
+      <node id="4532554318124231044" at="56,125,57,26" concept="12" />
       <node id="4532554318124231044" at="59,15,60,54" concept="5" />
       <node id="4532554318124231024" at="26,0,29,0" concept="10" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4532554318124231024" at="22,0,26,0" concept="10" trace="getContextHints#()Ljava/util/Collection;" />
@@ -40579,7 +40579,7 @@
       <node id="4532554318124231038" at="41,0,50,0" concept="10" trace="createConstant_ffwlke_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4532554318124231044" at="50,90,61,5" concept="19" />
       <node id="4532554318124231024" at="29,0,41,0" concept="10" trace="createCollection_ffwlke_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4532554318124231044" at="50,0,63,0" concept="10" trace="createRedispatch_ffwlke_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4532554318124231044" at="50,0,63,0" concept="10" trace="createNextEditor_ffwlke_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4532554318124231024" at="23,47,24,26" />
       <scope id="4532554318124231024" at="26,79,27,63" />
       <scope id="4532554318124231024" at="36,79,37,81" />
