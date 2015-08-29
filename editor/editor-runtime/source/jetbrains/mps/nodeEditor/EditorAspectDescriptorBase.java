@@ -35,15 +35,15 @@ public abstract class EditorAspectDescriptorBase implements EditorAspectDescript
   private Map<ConceptDescriptor, Collection<ConceptEditor>> myEditorsCache = new HashMap<ConceptDescriptor, Collection<ConceptEditor>>();
 
   protected synchronized Collection<ConceptEditor> collectEditors(ConceptDescriptor descriptor, List<ConceptEditor> initialEditors) {
-    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(descriptor.getConceptFqName()));
 
-    if (EditorLoadedLanguagesCache.getInstance().isLanguageInvalidated(language)) {
+    if (ValidEditorDescriptorsCache.getInstance().isDescriptorValid(this)) {
       myEditorsCache.clear();
     } else {
       if (myEditorsCache.containsKey(descriptor)) {
         return myEditorsCache.get(descriptor);
       }
     }
+    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(descriptor.getConceptFqName()));
     List<ConceptEditor> result = new ArrayList<ConceptEditor>();
     result.addAll(initialEditors);
     for(LanguageRuntime extendingLanguage : language.getExtendingLanguages()) {
@@ -53,7 +53,7 @@ public abstract class EditorAspectDescriptorBase implements EditorAspectDescript
       result.addAll(editors);
     }
     myEditorsCache.put(descriptor, result);
-    EditorLoadedLanguagesCache.getInstance().cacheLanguage(language);
+    ValidEditorDescriptorsCache.getInstance().cacheDescriptor(this);
     return result;
   }
 }

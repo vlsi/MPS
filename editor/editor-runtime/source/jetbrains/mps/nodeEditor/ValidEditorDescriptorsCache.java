@@ -16,9 +16,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,10 +28,10 @@ import java.util.Set;
 /**
  * @author simon
  */
-public class EditorLoadedLanguagesCache implements CoreComponent {
-  private static EditorLoadedLanguagesCache INSTANCE;
+public class ValidEditorDescriptorsCache implements CoreComponent {
+  private static ValidEditorDescriptorsCache INSTANCE;
 
-  private Set<LanguageRuntime> myCachedLanguages = new HashSet<LanguageRuntime>();
+  private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<EditorAspectDescriptor>();
 
 
   private LanguageRegistryListener myListener = new LanguageRegistryListener() {
@@ -44,26 +46,33 @@ public class EditorLoadedLanguagesCache implements CoreComponent {
     }
   };
 
-  public static EditorLoadedLanguagesCache getInstance() {
+  public static ValidEditorDescriptorsCache getInstance() {
     return INSTANCE;
   }
 
   private synchronized void cleanCaches(Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
-      myCachedLanguages.remove(language);
+      removeDescriptor(language);
       for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {
-        myCachedLanguages.remove(extendedLanguage);
+       removeDescriptor(extendedLanguage);
       }
     }
   }
 
-
-  public synchronized boolean isLanguageInvalidated(LanguageRuntime language) {
-    return !myCachedLanguages.contains(language);
+  private void removeDescriptor(LanguageRuntime language) {
+    EditorAspectDescriptor descriptor = language.getAspect(EditorAspectDescriptor.class);
+    if (descriptor != null) {
+      myCachedEditorDescriptors.remove(descriptor);
+    }
   }
 
-  public synchronized void cacheLanguage(LanguageRuntime languageRuntime) {
-    myCachedLanguages.add(languageRuntime);
+
+  public synchronized boolean isDescriptorValid(EditorAspectDescriptor descriptor) {
+    return !myCachedEditorDescriptors.contains(descriptor);
+  }
+
+  public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {
+    myCachedEditorDescriptors.add(descriptor);
   }
 
   @Override
