@@ -12826,14 +12826,44 @@
     <node concept="2ScWuX" id="3fhZBTge84v" role="tmbBb">
       <node concept="3clFbS" id="3fhZBTge84w" role="2VODD2">
         <node concept="3clFbF" id="3fhZBTgeaEz" role="3cqZAp">
-          <node concept="2ZW3vV" id="3fhZBTgeaEB" role="3clFbG">
-            <node concept="3uibUv" id="7msLDqMFEUL" role="2ZW6by">
-              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+          <node concept="1Wc70l" id="70LWmLwfMpX" role="3clFbG">
+            <node concept="3fqX7Q" id="70LWmLwfNSW" role="3uHU7w">
+              <node concept="2OqwBi" id="70LWmLwfNSY" role="3fr31v">
+                <node concept="2OqwBi" id="70LWmLwfNSZ" role="2Oq$k0">
+                  <node concept="2WthIp" id="70LWmLwfNT0" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="70LWmLwfNT1" role="2OqNvi">
+                    <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="70LWmLwfNT2" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SModule.isReadOnly():boolean" resolve="isReadOnly" />
+                </node>
+              </node>
             </node>
-            <node concept="2OqwBi" id="3fhZBTgeaE$" role="2ZW6bz">
-              <node concept="2WthIp" id="3fhZBTgeaE_" role="2Oq$k0" />
-              <node concept="1DTwFV" id="3fhZBTgeaEA" role="2OqNvi">
-                <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+            <node concept="1Wc70l" id="70LWmLwfKQ2" role="3uHU7B">
+              <node concept="2ZW3vV" id="3fhZBTgeaEB" role="3uHU7B">
+                <node concept="3uibUv" id="7msLDqMFEUL" role="2ZW6by">
+                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                </node>
+                <node concept="2OqwBi" id="3fhZBTgeaE$" role="2ZW6bz">
+                  <node concept="2WthIp" id="3fhZBTgeaE_" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3fhZBTgeaEA" role="2OqNvi">
+                    <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="70LWmLwfMaM" role="3uHU7w">
+                <node concept="2OqwBi" id="70LWmLwfMaO" role="3fr31v">
+                  <node concept="2OqwBi" id="70LWmLwfMaP" role="2Oq$k0">
+                    <node concept="2WthIp" id="70LWmLwfMaQ" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="70LWmLwfMaR" role="2OqNvi">
+                      <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="70LWmLwfMaS" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
