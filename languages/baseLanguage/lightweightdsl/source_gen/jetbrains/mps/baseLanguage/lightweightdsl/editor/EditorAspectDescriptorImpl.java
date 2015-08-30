@@ -58,7 +58,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeProperty_Name_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ClassLikeProperty_Name_EditorComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ClassLikeProperty_Name_EditorComponent()));
         }
         break;
       default:

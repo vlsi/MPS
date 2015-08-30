@@ -54,7 +54,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget()));
         }
         break;
       default:

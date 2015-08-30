@@ -82,17 +82,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CarProperties());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CarProperties()));
         }
         break;
       case 1:
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CommonFruitProperties".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties()));
         }
         break;
       case 2:
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TruckProperties());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new TruckProperties()));
         }
         break;
       default:

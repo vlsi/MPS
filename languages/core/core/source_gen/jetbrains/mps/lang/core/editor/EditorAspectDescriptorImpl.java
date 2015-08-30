@@ -43,13 +43,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent()));
           case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new VirtualPackage());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new VirtualPackage()));
           case 3:
-            return Collections.<ConceptEditorComponent>singletonList(new alias());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new alias()));
           default:
         }
         break;

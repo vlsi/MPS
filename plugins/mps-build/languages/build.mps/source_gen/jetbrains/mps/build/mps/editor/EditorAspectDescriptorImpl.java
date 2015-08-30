@@ -122,7 +122,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.build.mps.editor.SourcesKindComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent()));
         }
         break;
       default:

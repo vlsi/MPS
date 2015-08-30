@@ -60,22 +60,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new HandlersComponent()));
         }
         break;
       case 1:
         if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent()));
         }
         break;
       case 2:
         if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent()));
         }
         break;
       case 3:
         if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent()));
         }
         break;
       default:

@@ -84,12 +84,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component()));
         }
         break;
       case 1:
         if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart()));
         }
         break;
       default:

@@ -254,36 +254,36 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent()));
         }
         break;
       case 1:
         if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent()));
         }
         break;
       case 2:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new Common_Component()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new Style_Component()));
           case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component()));
           case 3:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common()));
           case 4:
-            return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _CloseTag()));
           case 5:
-            return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable()));
           case 6:
-            return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _OpenTag()));
           default:
         }
         break;
       case 3:
         if ("jetbrains.mps.lang.editor.editor.CellStyle_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component()));
         }
         break;
       default:

@@ -34,7 +34,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ShapeColor()));
         }
         break;
       default:

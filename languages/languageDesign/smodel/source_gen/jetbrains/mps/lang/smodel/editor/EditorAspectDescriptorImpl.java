@@ -280,25 +280,25 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.smodel.editor.AliasComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AliasComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new AliasComponent()));
         }
         break;
       case 1:
         if ("jetbrains.mps.lang.smodel.editor.LanguageIdInspector".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new LanguageIdInspector());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new LanguageIdInspector()));
         }
         break;
       case 2:
         if ("jetbrains.mps.lang.smodel.editor.ModelReferenceFQName".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ModelReferenceFQName());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ModelReferenceFQName()));
         }
         break;
       case 3:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp()));
           default:
         }
         break;

@@ -150,15 +150,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.plugin.editor.ModificationsEditor".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ModificationsEditor());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ModificationsEditor()));
         }
         break;
       case 1:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ActionParameter_Hint());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ActionParameter_Hint()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ActionParameter_NameCellComponent());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ActionParameter_NameCellComponent()));
           default:
         }
         break;

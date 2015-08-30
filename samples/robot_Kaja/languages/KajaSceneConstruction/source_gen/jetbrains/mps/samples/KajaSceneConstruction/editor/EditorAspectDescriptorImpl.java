@@ -30,7 +30,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.samples.KajaSceneConstruction.editor.Position".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new Position());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new Position()));
         }
         break;
       default:

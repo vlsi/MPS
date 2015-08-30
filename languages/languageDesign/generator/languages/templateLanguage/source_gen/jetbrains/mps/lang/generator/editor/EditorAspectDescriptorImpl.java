@@ -128,34 +128,34 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.generator.editor.AbstractMacro_comment_inspector".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AbstractMacro_comment_inspector());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new AbstractMacro_comment_inspector()));
         }
         break;
       case 1:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new BaseMappingRule_premise());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new BaseMappingRule_premise()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new MappingRuleCommonFields());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new MappingRuleCommonFields()));
           default:
         }
         break;
       case 2:
         if ("jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ITemplateCall_actualArguments());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ITemplateCall_actualArguments()));
         }
         break;
       case 3:
         if ("jetbrains.mps.lang.generator.editor.ExtensionsPlaceholder".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ExtensionsPlaceholder());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ExtensionsPlaceholder()));
         }
         break;
       case 4:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new NodeMacro_label_inspector());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new NodeMacro_label_inspector()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new NodeMacro_postfix());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new NodeMacro_postfix()));
           default:
         }
         break;

@@ -43,20 +43,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new StyleTestElement_EditorComponent());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new StyleTestElement_EditorComponent()));
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new StyleTest_EditorComponent());
+            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new StyleTest_EditorComponent()));
           default:
         }
         break;
       case 1:
         if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TestInheritedAttibute_EditorComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new TestInheritedAttibute_EditorComponent()));
         }
         break;
       case 2:
         if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TestISimpleAttribute_EditorComponent());
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new TestISimpleAttribute_EditorComponent()));
         }
         break;
       default:
