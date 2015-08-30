@@ -68,7 +68,7 @@ public class ValidEditorDescriptorsCache implements CoreComponent {
 
 
   public synchronized boolean isDescriptorValid(EditorAspectDescriptor descriptor) {
-    return !myCachedEditorDescriptors.contains(descriptor);
+    return myCachedEditorDescriptors.contains(descriptor);
   }
 
   public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {

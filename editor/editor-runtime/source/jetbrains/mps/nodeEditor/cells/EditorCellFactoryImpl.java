@@ -202,16 +202,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
       return aspectDescriptor.getEditors(conceptDescriptor);
     }
-
-    @Override
-    protected boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
-      for (String hint : myCellFactory.getCellContext().getHints()) {
-        if (!editor.getContextHints().contains(hint)) {
-          return false;
-        }
-      }
-      return true;
-    }
   }
 
   private class ConceptEditorComponentRegistry extends AbstractEditorRegistry<ConceptEditorComponent> {
@@ -225,11 +215,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     @Override
     protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
       return aspectDescriptor.getEditorComponents(conceptDescriptor, myEditorComponentId);
-    }
-
-    @Override
-    protected boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
-      return true;
     }
   }
 

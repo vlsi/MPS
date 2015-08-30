@@ -123,8 +123,15 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     }
     return result;
   }
-
-  protected abstract boolean isEnoughForCurrentContext(BaseConceptEditor editor);
+  
+  private boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
+    for (String hint : myCellFactory.getCellContext().getHints()) {
+      if (!editor.getContextHints().contains(hint)) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   private boolean isApplicableInCurrentContext(BaseConceptEditor editor) {
     for (String hint : editor.getContextHints()) {
