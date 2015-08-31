@@ -491,7 +491,7 @@
     <node concept="3lhOvk" id="1s38x1iFYQc" role="3lj3bC">
       <property role="13Pg2o" value="true" />
       <ref role="30HIoZ" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
-      <ref role="3lhOvi" node="6wolOhZxLiI" resolve="IntentionFactory" />
+      <ref role="3lhOvi" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
     </node>
     <node concept="2VPoh5" id="3jb7BNzCVp9" role="2VS0gm">
       <ref role="2VPoh2" node="6h71hRDS6Lm" resolve="IntentionsDescriptor" />
@@ -2942,7 +2942,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6wolOhZxLiI">
-    <property role="TrG5h" value="IntentionFactory" />
+    <property role="TrG5h" value="NewIntentionFactory" />
     <property role="1EXbeo" value="false" />
     <property role="3GE5qa" value="" />
     <node concept="3uibUv" id="6lT7H5fxCAV" role="1zkMxy">
@@ -3771,6 +3771,12 @@
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
+      <node concept="37vLTG" id="46nxkdGBKJn" role="3clF46">
+        <property role="TrG5h" value="child" />
+        <node concept="3uibUv" id="46nxkdGBMWU" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
       <node concept="37vLTG" id="5ttX5GUkSsZ" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="5ttX5GUkSt0" role="1tU5fm">
@@ -3836,7 +3842,7 @@
                                 <property role="1Dpdpm" value="execute" />
                                 <node concept="3cqZAl" id="3_zGkPoEjiG" role="1Ez5kq" />
                                 <node concept="Xjq3P" id="2Hif5ue4FKK" role="1EMhIo">
-                                  <ref role="1HBi2w" node="6wolOhZxLiI" resolve="IntentionFactory" />
+                                  <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
                                 </node>
                                 <node concept="37vLTw" id="3_zGkPoEivm" role="1EOqxR">
                                   <ref role="3cqZAo" node="5ttX5GUlLwq" resolve="node" />
@@ -3876,7 +3882,7 @@
                                 <property role="1Dpdpm" value="description" />
                                 <node concept="17QB3L" id="3_zGkPoEAPF" role="1Ez5kq" />
                                 <node concept="Xjq3P" id="3_zGkPoE_Bi" role="1EMhIo">
-                                  <ref role="1HBi2w" node="6wolOhZxLiI" resolve="IntentionFactory" />
+                                  <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
                                 </node>
                                 <node concept="37vLTw" id="3_zGkPoE_Ip" role="1EOqxR">
                                   <ref role="3cqZAo" node="5ttX5GUlLw$" resolve="node" />
@@ -4016,7 +4022,7 @@
                                   <property role="1Dpdpm" value="execute" />
                                   <node concept="3cqZAl" id="3_zGkPoEA5M" role="1Ez5kq" />
                                   <node concept="Xjq3P" id="3_zGkPoEA5N" role="1EMhIo">
-                                    <ref role="1HBi2w" node="6wolOhZxLiI" resolve="IntentionFactory" />
+                                    <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
                                   </node>
                                   <node concept="37vLTw" id="3_zGkPoEA5O" role="1EOqxR">
                                     <ref role="3cqZAo" node="5ttX5GUmZA3" resolve="node" />
@@ -4053,7 +4059,7 @@
                                   <property role="1Dpdpm" value="description" />
                                   <node concept="17QB3L" id="3_zGkPoEATS" role="1Ez5kq" />
                                   <node concept="Xjq3P" id="3_zGkPoEArh" role="1EMhIo">
-                                    <ref role="1HBi2w" node="6wolOhZxLiI" resolve="IntentionFactory" />
+                                    <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
                                   </node>
                                   <node concept="37vLTw" id="3_zGkPoEAri" role="1EOqxR">
                                     <ref role="3cqZAo" node="5ttX5GUmZAd" resolve="node" />
