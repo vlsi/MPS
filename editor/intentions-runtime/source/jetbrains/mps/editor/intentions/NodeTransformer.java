@@ -23,11 +23,16 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 
 /**
- * TODO: add "pre-execute" check method
  * This interface represents user-invoked transformations on AST like intentions, surround-with actions, quickfixes, etc.
  */
-
 public interface NodeTransformer {
+  /**
+   * After this transformer was created and before it is executed, models can change.
+   * This method is guaranteed to be invoked before execute() method.
+   * If it returns false, transformer is not executed.
+   */
+  boolean isExpired();
+
   /**
    * Invokes the associated transformation
    */
@@ -38,6 +43,10 @@ public interface NodeTransformer {
    */
   String getDescription();
 
+  /**
+   * This id can be used e.g. for disabling transformers from UI.
+   * Id can be not unique (e.g. all transformers from same factory can have same id)
+   */
   String getId();
 
   /**

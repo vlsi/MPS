@@ -105,6 +105,9 @@ public class NodeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
+    if (isAvailableInChildNodes() && node!=editorContext.getSelectedNode()){
+      return myFactory.isAvailableInChild(node,editorContext.getSelectedNode(),editorContext);
+    }
     return myFactory.isApplicable(node, editorContext);
   }
 

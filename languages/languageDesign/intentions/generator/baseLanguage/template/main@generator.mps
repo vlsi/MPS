@@ -3831,7 +3831,7 @@
                       <node concept="1Y3b0j" id="5ttX5GUlLcu" role="YeSDq">
                         <property role="2bfB8j" value="true" />
                         <ref role="1Y3XeK" to="uxaq:~BaseNodeTransformer" resolve="BaseNodeTransformer" />
-                        <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
+                        <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
                         <node concept="3Tm1VV" id="5ttX5GUlLcv" role="1B3o_S" />
                         <node concept="3clFb_" id="5ttX5GUlLwm" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -3913,6 +3913,7 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="Xjq3P" id="46nxkdGDQF$" role="37wK5m" />
                         <node concept="37vLTw" id="7wba5m6tD7A" role="37wK5m">
                           <ref role="3cqZAo" node="5ttX5GUkSsX" resolve="node" />
                         </node>
@@ -4040,7 +4041,7 @@
                         <node concept="1Y3b0j" id="5ttX5GUmZ_X" role="YeSDq">
                           <property role="2bfB8j" value="true" />
                           <ref role="1Y3XeK" to="uxaq:~BaseNodeTransformer" resolve="BaseNodeTransformer" />
-                          <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
+                          <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
                           <node concept="3Tm1VV" id="5ttX5GUmZ_Y" role="1B3o_S" />
                           <node concept="3clFb_" id="5ttX5GUmZ_Z" role="jymVt">
                             <property role="1EzhhJ" value="false" />
@@ -4116,6 +4117,7 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="Xjq3P" id="46nxkdGDQw8" role="37wK5m" />
                           <node concept="37vLTw" id="7wba5m6tE7q" role="37wK5m">
                             <ref role="3cqZAo" node="5ttX5GUmXH9" resolve="node" />
                           </node>

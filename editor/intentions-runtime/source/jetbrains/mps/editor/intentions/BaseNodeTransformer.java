@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 
 public abstract class BaseNodeTransformer implements NodeTransformer {
+  private NodeTransformerFactory myFactory;
   private SNode myNode;
   private EditorContext myEditorContext;
   private final Kind myKind;
@@ -32,12 +33,19 @@ public abstract class BaseNodeTransformer implements NodeTransformer {
   @Nullable
   private SNodeReference myDeclNode;
 
-  public BaseNodeTransformer(SNode node, EditorContext editorContext, Kind kind, String id, @Nullable SNodeReference declNode) {
+  public BaseNodeTransformer(NodeTransformerFactory factory, SNode node, EditorContext editorContext, Kind kind, String id, @Nullable SNodeReference declNode) {
+    myFactory = factory;
     myNode = node;
     myEditorContext = editorContext;
     myKind = kind;
     myId = id;
     myDeclNode = declNode;
+  }
+
+  @Override
+  public boolean isExpired() {
+    //todo check availability using factory
+    return false;
   }
 
   @Nullable
@@ -72,6 +80,7 @@ public abstract class BaseNodeTransformer implements NodeTransformer {
 
   @Override
   public void execute() {
+    if(isExpired()) return;
     execute(myNode, myEditorContext);
   }
 
