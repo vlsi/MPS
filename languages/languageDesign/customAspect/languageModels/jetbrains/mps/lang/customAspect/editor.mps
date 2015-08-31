@@ -16,6 +16,7 @@
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -382,8 +383,8 @@
     <property role="3GE5qa" value="simple.gen" />
     <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor_Class" />
     <node concept="3EZMnI" id="5KGdJjE3jHP" role="2wV5jI">
-      <node concept="3F0A7n" id="4F0TDiuCZPI" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+      <node concept="PMmxH" id="4F0TDiuDFzK" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3EZMnI" id="4YpmBa6a3wD" role="3EZMnx">
         <node concept="2iRfu4" id="4YpmBa6a3wE" role="2iSdaV" />
@@ -439,8 +440,8 @@
     <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
     <node concept="3EZMnI" id="5$xTughlNYc" role="2wV5jI">
       <node concept="2iRkQZ" id="5$xTughlNYd" role="2iSdaV" />
-      <node concept="3F0A7n" id="4F0TDiuCZQq" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+      <node concept="PMmxH" id="4F0TDiuDFzh" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3EZMnI" id="4YpmBa69sM3" role="3EZMnx">
         <node concept="VPM3Z" id="4YpmBa69sM5" role="3F10Kt">
@@ -568,8 +569,8 @@
     <property role="3GE5qa" value="simple.gen.byInterface" />
     <ref role="1XX52x" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
     <node concept="3EZMnI" id="4F0TDiuCZB0" role="2wV5jI">
-      <node concept="3F0A7n" id="4F0TDiuCZQS" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+      <node concept="PMmxH" id="4F0TDiuDE_X" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3EZMnI" id="4F0TDiuCZB6" role="3EZMnx">
         <node concept="3XFhqQ" id="4F0TDiuCZB7" role="3EZMnx" />
