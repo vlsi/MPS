@@ -24,8 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
- * todo getPersistentStateKey - move to transformer.getId
-
  * This factory produces a set of transformers and defines applicability rules for them depending on current context.
  * The current context consists of node we try to apply transforms to, currently selected node and editor context.
  * Note that node to apply transforms to (N) can differ from currently selected node (CN) if isAvailableInChildren()==true.

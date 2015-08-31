@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.editor.intentions;
 
+import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * Factory of surround-with intentions, which are invoked by pressing ctrl-alt-T
  * All SurroundWithFactory's must extend this class
@@ -23,6 +26,11 @@ package jetbrains.mps.editor.intentions;
 public abstract class SurroundWithFactory implements NodeTransformerFactory {
   @Override
   public boolean isAvailableInChildren() {
+    return false;
+  }
+
+  @Override
+  public boolean isAvailableInChild(SNode node, SNode childNode, EditorContext editorContext) {
     return false;
   }
 }
