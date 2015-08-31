@@ -5516,11 +5516,20 @@
       </node>
       <node concept="3clFbS" id="7WvVJ3rO1IW" role="3clF47">
         <node concept="3cpWs6" id="4W4PrCD6A$6" role="3cqZAp">
-          <node concept="2YIFZM" id="4W4PrCD6B_x" role="3cqZAk">
-            <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-            <node concept="37vLTw" id="4W4PrCD6BVE" role="37wK5m">
-              <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+          <node concept="3K4zz7" id="5iC9mDBZf1E" role="3cqZAk">
+            <node concept="10Nm6u" id="5iC9mDBZf3k" role="3K4GZi" />
+            <node concept="3y3z36" id="5iC9mDBZeVP" role="3K4Cdx">
+              <node concept="10Nm6u" id="5iC9mDBZeYJ" role="3uHU7w" />
+              <node concept="37vLTw" id="5iC9mDBZeUO" role="3uHU7B">
+                <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="4W4PrCD6B_x" role="3K4E3e">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
+              <node concept="37vLTw" id="4W4PrCD6BVE" role="37wK5m">
+                <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+              </node>
             </node>
           </node>
         </node>
