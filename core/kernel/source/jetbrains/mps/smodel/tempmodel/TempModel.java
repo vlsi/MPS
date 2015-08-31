@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
+import jetbrains.mps.smodel.EditableModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.SModelId;
@@ -30,7 +31,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-class TempModel extends RegularModelDescriptor implements EditableSModel {
+class TempModel extends EditableModelDescriptor implements EditableSModel {
   private final boolean myReadOnly;
   private final boolean myTrackUndo;
 
@@ -50,38 +51,6 @@ class TempModel extends RegularModelDescriptor implements EditableSModel {
     return false;
   }
 
-  @Override
-  public void addRootNode(@NotNull SNode node) {
-    assertCanChange();
-    getModelData().addRootNode(node);
-  }
-
-  @Override
-  public void removeRootNode(@NotNull SNode node) {
-    assertCanChange();
-    getModelData().removeRootNode(node);
-  }
-
-  @Override
-  public void addChangeListener(SModelChangeListener l) {
-    // no-op, legacy listeners shall be removed in next release
-  }
-
-  @Override
-  public void removeChangeListener(SModelChangeListener l) {
-    // no-op, legacy listeners shall be removed in next release
-  }
-
-  @Override
-  public void addChangeListener(SNodeChangeListener l) {
-    getEventDispatch().addChangeListener(l);
-  }
-
-  @Override
-  public void removeChangeListener(SNodeChangeListener l) {
-    getEventDispatch().removeChangeListener(l);
-  }
-
   @NotNull
   @Override
   protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
@@ -99,13 +68,8 @@ class TempModel extends RegularModelDescriptor implements EditableSModel {
   @Override
   public boolean isChanged() {
     // TODO move TempModels outside of the default repository; false here prevents model from saving
+    // FIXME save() is no-op here now, do we still need isChanged() == false?
     return false;
-  }
-
-  @Override
-  public void setChanged(boolean changed) {
-    // no-op, see #isChanged() which is always const.
-    // It's bad to avoid change tracking, why not no-op save() sufficient?
   }
 
   @Override

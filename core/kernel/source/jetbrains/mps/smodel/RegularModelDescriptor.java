@@ -26,6 +26,13 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 /**
  * General [openapi]SModel implementation, with proper synchronization and loading notifications, with factory method {@link #createModel()}
  * for subclasses to override.
+ *
+ * IMPLEMENTATION NOTES:
+ * Bears 'ModelDescriptor' name to keep it consistent, where model data is smodel.SModel, and openapi.SModel implementation is
+ * merely a proxy to model data. Once I can do similar implementation using API classes only, shall switch to use 'Model' for
+ * these proxies (openapi.SModel) and stick to various XXXModelData for smodel.SModel.
+ *
+ * Lives in j.m.smodel, not j.m.extapi.model as it depends from smodel.SModel now, and I want API to use API classes only.
  */
 public abstract class RegularModelDescriptor extends SModelBase {
   // FIXME SModelBase/SModelDefscriptorStub with gtSModelInternal demand we keep SModel, not SModelData
@@ -35,11 +42,6 @@ public abstract class RegularModelDescriptor extends SModelBase {
    * left protected for subclasses that need extended control over loading process (i.e. partial/sequential model loading)
    */
   protected final Object myLoadLock = new Object();
-
-  @Deprecated
-  protected RegularModelDescriptor(@NotNull SModelReference modelReference) {
-    this(modelReference, new NullDataSource());
-  }
 
   protected RegularModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource dataSource) {
     super(modelReference, dataSource);

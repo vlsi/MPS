@@ -6879,21 +6879,13 @@
       <node concept="10P_77" id="1m2uLwrRTWQ" role="1tU5fm" />
       <node concept="3Tm6S6" id="1m2uLwrRTWR" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="jzhoHG2TFI" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myIsChanged" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="jzhoHG2Th5" role="1B3o_S" />
-      <node concept="10P_77" id="jzhoHG2T$f" role="1tU5fm" />
-    </node>
     <node concept="2tJIrI" id="jzhoHG2MtC" role="jymVt" />
     <node concept="3clFbW" id="1m2uLwrS0vs" role="jymVt">
       <node concept="3cqZAl" id="1m2uLwrS0vu" role="3clF45" />
       <node concept="3Tm1VV" id="1m2uLwrS0vv" role="1B3o_S" />
       <node concept="3clFbS" id="1m2uLwrS0vw" role="3clF47">
         <node concept="XkiVB" id="1m2uLwrS707" role="3cqZAp">
-          <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.persistence.DataSource)" resolve="RegularModelDescriptor" />
+          <ref role="37wK5l" to="w1kc:~EditableModelDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.persistence.DataSource)" resolve="EditableModelDescriptor" />
           <node concept="37vLTw" id="1m2uLwrSuQ7" role="37wK5m">
             <ref role="3cqZAo" node="1m2uLwrSsVi" resolve="modelRef" />
           </node>
@@ -7109,6 +7101,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1rZUQEPs4eF" role="jymVt" />
     <node concept="3clFb_" id="1m2uLwrRTYi" role="jymVt">
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="rename" />
@@ -7180,55 +7173,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="jzhoHG2Snx" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG2SzP" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="isChanged" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG2SzQ" role="1B3o_S" />
-      <node concept="10P_77" id="jzhoHG2SzS" role="3clF45" />
-      <node concept="3clFbS" id="jzhoHG2SzV" role="3clF47">
-        <node concept="3cpWs6" id="jzhoHG2U0A" role="3cqZAp">
-          <node concept="37vLTw" id="jzhoHG2Ucu" role="3cqZAk">
-            <ref role="3cqZAo" node="jzhoHG2TFI" resolve="myIsChanged" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG2ZCv" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG2VeJ" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG2SzY" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="setChanged" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG2SzZ" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG2S$1" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG2S$2" role="3clF46">
-        <property role="TrG5h" value="b" />
-        <node concept="10P_77" id="jzhoHG2S$3" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="jzhoHG2S$6" role="3clF47">
-        <node concept="3clFbF" id="jzhoHG2Uw0" role="3cqZAp">
-          <node concept="37vLTI" id="jzhoHG2UBj" role="3clFbG">
-            <node concept="37vLTw" id="jzhoHG2UNf" role="37vLTx">
-              <ref role="3cqZAo" node="jzhoHG2S$2" resolve="b" />
-            </node>
-            <node concept="37vLTw" id="jzhoHG2UvZ" role="37vLTJ">
-              <ref role="3cqZAo" node="jzhoHG2TFI" resolve="myIsChanged" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG2ZSX" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="jzhoHG2UVg" role="jymVt" />
     <node concept="3clFb_" id="jzhoHG2S$7" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -7263,199 +7207,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="jzhoHG30pL" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG2Wup" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG2S$n" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addChangeListener" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG2S$o" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG2S$q" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG2S$r" role="3clF46">
-        <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="jzhoHG2S$s" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModelChangeListener" resolve="SModelChangeListener" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG2S$w" role="3clF47">
-        <node concept="3SKdUt" id="jzhoHG2VCs" role="3cqZAp">
-          <node concept="3SKdUq" id="jzhoHG2VCu" role="3SKWNk">
-            <property role="3SKdUp" value="no-op, no reason to handle legacy listeners that are scheduled for removal" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG30EY" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG2XBQ" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG2S$x" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="removeChangeListener" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG2S$y" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG2S$$" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG2S$_" role="3clF46">
-        <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="jzhoHG2S$A" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModelChangeListener" resolve="SModelChangeListener" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG2S$E" role="3clF47">
-        <node concept="3SKdUt" id="jzhoHG2Y2K" role="3cqZAp">
-          <node concept="3SKdUq" id="jzhoHG2Y2L" role="3SKWNk">
-            <property role="3SKdUp" value="no-op, no reason to handle legacy listeners that are scheduled for removal" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG30W6" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG348w" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG34vo" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addChangeListener" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG34vp" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG34vr" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG34vs" role="3clF46">
-        <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="jzhoHG34vt" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeChangeListener" resolve="SNodeChangeListener" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG34vx" role="3clF47">
-        <node concept="3clFbF" id="jzhoHG35e6" role="3cqZAp">
-          <node concept="2OqwBi" id="jzhoHG35eH" role="3clFbG">
-            <node concept="1rXfSq" id="jzhoHG35e4" role="2Oq$k0">
-              <ref role="37wK5l" to="g3l6:~SModelBase.getEventDispatch():jetbrains.mps.smodel.event.ModelEventDispatch" resolve="getEventDispatch" />
-            </node>
-            <node concept="liA8E" id="jzhoHG35wM" role="2OqNvi">
-              <ref role="37wK5l" to="j9co:~ModelEventDispatch.addChangeListener(org.jetbrains.mps.openapi.model.SNodeChangeListener):void" resolve="addChangeListener" />
-              <node concept="37vLTw" id="jzhoHG35$f" role="37wK5m">
-                <ref role="3cqZAo" node="jzhoHG34vs" resolve="listener" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG34vy" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="jzhoHG34vA" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="removeChangeListener" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG34vB" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG34vD" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG34vE" role="3clF46">
-        <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="jzhoHG34vF" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeChangeListener" resolve="SNodeChangeListener" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG34vJ" role="3clF47">
-        <node concept="3clFbF" id="jzhoHG35Z8" role="3cqZAp">
-          <node concept="2OqwBi" id="jzhoHG35ZJ" role="3clFbG">
-            <node concept="1rXfSq" id="jzhoHG35Z6" role="2Oq$k0">
-              <ref role="37wK5l" to="g3l6:~SModelBase.getEventDispatch():jetbrains.mps.smodel.event.ModelEventDispatch" resolve="getEventDispatch" />
-            </node>
-            <node concept="liA8E" id="jzhoHG36hO" role="2OqNvi">
-              <ref role="37wK5l" to="j9co:~ModelEventDispatch.removeChangeListener(org.jetbrains.mps.openapi.model.SNodeChangeListener):void" resolve="removeChangeListener" />
-              <node concept="37vLTw" id="jzhoHG36lh" role="37wK5m">
-                <ref role="3cqZAo" node="jzhoHG34vE" resolve="listener" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG34vK" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG31fL" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG31zz" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addRootNode" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG31z$" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG31zA" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG31zB" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="jzhoHG31zC" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-        <node concept="2AHcQZ" id="jzhoHG31zD" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG31zH" role="3clF47">
-        <node concept="3clFbF" id="jzhoHG328N" role="3cqZAp">
-          <node concept="2OqwBi" id="jzhoHG329q" role="3clFbG">
-            <node concept="1rXfSq" id="jzhoHG328L" role="2Oq$k0">
-              <ref role="37wK5l" to="g3l6:~SModelBase.getModelData():jetbrains.mps.extapi.model.SModelData" resolve="getModelData" />
-            </node>
-            <node concept="liA8E" id="jzhoHG32gY" role="2OqNvi">
-              <ref role="37wK5l" to="g3l6:~SModelData.addRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="addRootNode" />
-              <node concept="37vLTw" id="jzhoHG32iW" role="37wK5m">
-                <ref role="3cqZAo" node="jzhoHG31zB" resolve="node" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG31zI" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="jzhoHG32rQ" role="jymVt" />
-    <node concept="3clFb_" id="jzhoHG32OT" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="removeRootNode" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="jzhoHG32OU" role="1B3o_S" />
-      <node concept="3cqZAl" id="jzhoHG32OW" role="3clF45" />
-      <node concept="37vLTG" id="jzhoHG32OX" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="jzhoHG32OY" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-        <node concept="2AHcQZ" id="jzhoHG32OZ" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="jzhoHG32P3" role="3clF47">
-        <node concept="3clFbF" id="jzhoHG33js" role="3cqZAp">
-          <node concept="2OqwBi" id="jzhoHG33k3" role="3clFbG">
-            <node concept="1rXfSq" id="jzhoHG33jq" role="2Oq$k0">
-              <ref role="37wK5l" to="g3l6:~SModelBase.getModelData():jetbrains.mps.extapi.model.SModelData" resolve="getModelData" />
-            </node>
-            <node concept="liA8E" id="jzhoHG33$G" role="2OqNvi">
-              <ref role="37wK5l" to="g3l6:~SModelData.removeRootNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="removeRootNode" />
-              <node concept="37vLTw" id="jzhoHG33Cb" role="37wK5m">
-                <ref role="3cqZAo" node="jzhoHG32OX" resolve="node" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="jzhoHG32P4" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
@@ -7593,8 +7344,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="1m2uLwrRQWr" role="1B3o_S" />
-    <node concept="3uibUv" id="jzhoHG2GFN" role="1zkMxy">
-      <ref role="3uigEE" to="w1kc:~RegularModelDescriptor" resolve="RegularModelDescriptor" />
+    <node concept="3uibUv" id="1rZUQEPs3cj" role="1zkMxy">
+      <ref role="3uigEE" to="w1kc:~EditableModelDescriptor" resolve="EditableModelDescriptor" />
     </node>
     <node concept="3UR2Jj" id="jzhoHG4sqV" role="lGtFl">
       <node concept="TZ5HA" id="jzhoHG4sqW" role="TZ5H$">
