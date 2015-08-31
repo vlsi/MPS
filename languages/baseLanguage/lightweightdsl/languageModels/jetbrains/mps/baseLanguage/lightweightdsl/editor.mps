@@ -408,7 +408,7 @@
         </node>
       </node>
       <node concept="Vb9p2" id="7T23sO8_NMO" role="3F10Kt">
-        <property role="Vbekb" value="BOLD" />
+        <property role="Vbekb" value="PLAIN" />
       </node>
     </node>
   </node>

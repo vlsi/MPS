@@ -128,7 +128,8 @@ public class Intention_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_dnq3sg_e0");
     editorCell.addEditorCell(this.createCollection_dnq3sg_a4a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dnq3sg_b4a(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_dnq3sg_c4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dnq3sg_c4a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_dnq3sg_d4a(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_dnq3sg_a4a(EditorContext editorContext, SNode node) {
@@ -221,7 +222,16 @@ public class Intention_Editor extends DefaultNodeEditor {
     }
 
   }
-  private EditorCell createComponent_dnq3sg_c4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dnq3sg_c4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_dnq3sg_c4a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createComponent_dnq3sg_d4a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component");
     return editorCell;
   }

@@ -50,7 +50,7 @@ public class DependentParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_k0v5am_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

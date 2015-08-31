@@ -73,7 +73,7 @@ public interface NodeTransformerFactory {
   @ToRemove(version = 3.3)
   /**
    * required for compatibility purposes
-   * use TreeTransformer.getKind()
+   * use NodeTransformer.getKind()
    */
   Kind getKind();
 
@@ -81,7 +81,7 @@ public interface NodeTransformerFactory {
   @ToRemove(version = 3.3)
   /**
    * required for compatibility purposes
-   * use TreeTransformer.getDeclarationNode()
+   * use NodeTransformer.getDeclarationNode()
    */
   @Nullable
   SNodeReference getDeclarationNode();
@@ -90,7 +90,7 @@ public interface NodeTransformerFactory {
   @ToRemove(version = 3.3)
   /**
    * required for compatibility purposes
-   * use TreeTransformer.getId()
+   * use NodeTransformer.getId()
    */
   String getPersistentStateKey();
 }

@@ -146,6 +146,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -428,6 +429,24 @@
                         <ref role="2pJxaS" to="tpee:f_0P_4Y" resolve="BooleanType" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4F1$mtFxnwJ" role="3cqZAp">
+            <node concept="2OqwBi" id="4F1$mtFxqeS" role="3clFbG">
+              <node concept="2OqwBi" id="4F1$mtFxnSQ" role="2Oq$k0">
+                <node concept="1r4Lsj" id="4F1$mtFxnwH" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="4F1$mtFxo_f" role="2OqNvi">
+                  <ref role="3TtcxE" to="tp2c:htbW2KO" />
+                </node>
+              </node>
+              <node concept="TSZUe" id="4F1$mtFxwGQ" role="2OqNvi">
+                <node concept="2c44tf" id="4F1$mtFxwSS" role="25WWJ7">
+                  <node concept="37vLTG" id="4F1$mtFxx43" role="2c44tc">
+                    <property role="TrG5h" value="child" />
+                    <node concept="3Tqbb2" id="4F1$mtFxxf4" role="1tU5fm" />
                   </node>
                 </node>
               </node>

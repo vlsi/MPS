@@ -65,6 +65,7 @@
       <concept id="3751132065236767068" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor" flags="ig" index="q3mfx">
         <child id="3751132065236767069" name="getter" index="q3mfw" />
       </concept>
+      <concept id="5820409521797720671" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor" flags="ng" index="qMXn0" />
       <concept id="3402736933911578134" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier" flags="ng" index="2IRzkw" />
       <concept id="8264762413010673052" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor" flags="ng" index="QcwwW">
         <reference id="8264762413010673055" name="cncpt" index="QcwwZ" />
@@ -142,6 +143,7 @@
         <property role="QcwnP" value="&lt;isApplicable = true&gt;" />
       </node>
     </node>
+    <node concept="qMXn0" id="4F1$mtFyUKl" role="QNr5C" />
     <node concept="q3mfq" id="6yt8uwrpTIM" role="QNr5C">
       <property role="TrG5h" value="description" />
       <node concept="17QB3L" id="6yt8uwrpTJ3" role="q3mfk" />
@@ -216,6 +218,7 @@
         </node>
       </node>
     </node>
+    <node concept="qMXn0" id="4F1$mtFyULX" role="QNr5C" />
     <node concept="q3mfq" id="6yt8uwrpTsz" role="QNr5C">
       <property role="TrG5h" value="execute" />
       <node concept="q3mfp" id="6yt8uwrpTIs" role="q3mfl">
@@ -290,6 +293,7 @@
       <node concept="2IRzkw" id="6yt8uwrpTIw" role="2IRzpu" />
       <node concept="3cqZAl" id="1AttYWGd79L" role="q3mfk" />
     </node>
+    <node concept="qMXn0" id="4F1$mtFyUN_" role="QNr5C" />
     <node concept="QcwwW" id="2lJOBsqvJqh" role="QNr5C">
       <ref role="QcwwZ" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
       <node concept="QcxE9" id="2lJOBsqvJuQ" role="2IRzpu">
