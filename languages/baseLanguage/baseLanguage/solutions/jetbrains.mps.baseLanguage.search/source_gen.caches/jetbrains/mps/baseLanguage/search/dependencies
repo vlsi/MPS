@@ -227,32 +227,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.LocalVariablesScope" file="LocalVariablesScope.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" file="MPSBaseLanguage.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />

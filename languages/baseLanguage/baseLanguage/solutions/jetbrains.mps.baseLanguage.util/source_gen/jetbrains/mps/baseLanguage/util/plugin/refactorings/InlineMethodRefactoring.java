@@ -24,8 +24,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
-import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.scope.FilteringScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -56,6 +58,7 @@ public class InlineMethodRefactoring {
   }
   public void doRefactor() {
     SNode body = SNodeOperations.copyNode(SLinkOperations.getTarget(this.myMethodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")));
+    System.out.println("BBBBBBBB");
     Map<SNode, SNode> paramsMap = this.compareParameters();
     SNode callStatement = SNodeOperations.getNodeAncestor(this.myMethodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
     SNode returnVar = null;
@@ -274,17 +277,29 @@ public class InlineMethodRefactoring {
         }
       }
     }
-    LocalVariablesScope scope = new LocalVariablesScope(statement);
-    List<SNode> nodes = scope.getNodes((new Condition<SNode>() {
-      @Override
-      public boolean met(SNode obj) {
-        return name.equals(SPropertyOperations.getString(SNodeOperations.cast(obj, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+
+    Scope scope = Scope.getScope(statement, "", SNodeOperations.getIndexInParent(statement), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode());
+    if (scope != null) {
+      FilteringScope variables = new FilteringScope(scope) {
+        @Override
+        public boolean isExcluded(SNode node) {
+          return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
+        }
+      };
+      Iterable<SNode> localVariables = Sequence.fromIterable(variables.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+        }
+      });
+      if (Sequence.fromIterable(localVariables).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_49noxv_a0a0a0a0a0c0f0x(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+        }
+      })) {
+        return false;
       }
-    }));
-    boolean vars = ListSequence.fromList(nodes).isNotEmpty();
-    if (vars) {
-      return false;
     }
+
     SNode declaration = SNodeOperations.getNodeAncestor(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
     for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(declaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")))) {
       if (name.equals(SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
@@ -326,6 +341,9 @@ public class InlineMethodRefactoring {
     return quotedNode_2;
   }
   private static boolean eq_49noxv_a0a0a0a0a0a0a3a0a1a0a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_49noxv_a0a0a0a0a0c0f0x(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
