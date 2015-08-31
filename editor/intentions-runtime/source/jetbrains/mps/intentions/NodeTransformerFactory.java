@@ -36,11 +36,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * 4. if CN!=N && !isAvailableInChild(N,CN,editorContext)  => factory not applicable
  * 5. If all previous checks passed, invoke getTreeTransformers(N, CN, editorContext)
  */
-public interface TreeTransformerFactory {
+public interface NodeTransformerFactory {
   /**
    * For a context in which factory is applicable, returns tree transformers to show to the user
    */
-  Iterable<TreeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext);
+  Iterable<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext);
 
   /**
    * This factory is only applicable to instances of this concept

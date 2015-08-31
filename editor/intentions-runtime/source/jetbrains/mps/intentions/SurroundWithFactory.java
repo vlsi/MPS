@@ -15,5 +15,19 @@
  */
 package jetbrains.mps.intentions;
 
-public interface SurroundWithFactory extends TreeTransformerFactory {
+/**
+ * Factory of surround-with intentions, which are invoked by pressing ctrl-alt-T
+ * All SurroundWithFactory's must extend this class
+ */
+
+public abstract class SurroundWithFactory implements NodeTransformerFactory {
+  @Override
+  public boolean isAvailableInChildren() {
+    return false;
+  }
+
+  @Override
+  public Kind getKind() {
+    return Kind.INTENTION;
+  }
 }

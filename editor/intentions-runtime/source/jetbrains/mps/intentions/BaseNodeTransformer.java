@@ -21,13 +21,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 
-public abstract class BaseTreeTransformer implements TreeTransformer {
-
-  private TreeTransformerFactory myFactory;
+public abstract class BaseNodeTransformer implements NodeTransformer {
+  private NodeTransformerFactory myFactory;
   private SNode myNode;
   private EditorContext myEditorContext;
 
-  public BaseTreeTransformer(TreeTransformerFactory factory, SNode node, EditorContext editorContext) {
+  public BaseNodeTransformer(NodeTransformerFactory factory, SNode node, EditorContext editorContext) {
     myFactory = factory;
     myNode = node;
     myEditorContext = editorContext;

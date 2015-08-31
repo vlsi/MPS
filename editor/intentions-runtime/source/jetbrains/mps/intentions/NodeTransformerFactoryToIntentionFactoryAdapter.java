@@ -23,11 +23,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class TreeTransformerFactoryToIntentionFactoryAdapter implements IntentionFactory {
+public class NodeTransformerFactoryToIntentionFactoryAdapter implements IntentionFactory {
 
-  private TreeTransformerFactory myFactory;
+  private NodeTransformerFactory myFactory;
 
-  public TreeTransformerFactoryToIntentionFactoryAdapter(TreeTransformerFactory factory) {
+  public NodeTransformerFactoryToIntentionFactoryAdapter(NodeTransformerFactory factory) {
     myFactory = factory;
   }
 
@@ -38,10 +38,10 @@ public class TreeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext) {
-    final Iterable<TreeTransformer> transformers = myFactory.getTreeTransformers(node, editorContext.getSelectedNode(), editorContext);
+    final Iterable<NodeTransformer> transformers = myFactory.getTreeTransformers(node, editorContext.getSelectedNode(), editorContext);
 
     return new ArrayList<IntentionExecutable>() {{
-      for (final TreeTransformer transformer : transformers) {
+      for (final NodeTransformer transformer : transformers) {
         add(new IntentionExecutable() {
           @Override
           public String getDescription(SNode node, EditorContext editorContext) {
@@ -55,7 +55,7 @@ public class TreeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
           @Override
           public IntentionDescriptor getDescriptor() {
-            return TreeTransformerFactoryToIntentionFactoryAdapter.this;
+            return NodeTransformerFactoryToIntentionFactoryAdapter.this;
           }
         });
       }

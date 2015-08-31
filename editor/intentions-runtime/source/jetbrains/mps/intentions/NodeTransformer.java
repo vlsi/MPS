@@ -15,12 +15,31 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.intentions.TreeTransformerFactory;
+import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import javax.swing.Icon;
 
 /**
- * Factory of intentions, which are invoked by pressing alt-enter
- * All IntentionFactory's must extend this class
+ * TODO: add "pre-execute" check method, "disable"->getId
+ * This interface represents user-invoked transformations on AST like intentions, surround-with actions, quickfixes, etc.
  */
-public abstract class BaseIntentionFactory implements TreeTransformerFactory {
 
+public interface NodeTransformer {
+  /**
+   * Invokes the associated transformation
+   */
+  void execute();
+
+  /**
+   * Returns user-readable description of this transformation
+   */
+  String getDescription();
+
+  void disable();
+
+  /**
+   * Associated icon to show in menus
+   */
+  Icon getIcon();
 }
