@@ -31,7 +31,9 @@ public class SupertypesViewTool extends AbstractHierarchyView {
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    return new SupertypesTree(ProjectHelper.toMPSProject(getProject()), this);
+    SupertypesTree rv = new SupertypesTree(ProjectHelper.toMPSProject(getProject()));
+    rv.setHierarchyView(this);
+    return rv;
   }
 
   protected DefaultActionGroup createButtonsGroup() {

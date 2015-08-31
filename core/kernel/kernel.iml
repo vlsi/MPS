@@ -39,5 +39,6 @@
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="project" exported="" />
     <orderEntry type="module" module-name="components" exported="" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>

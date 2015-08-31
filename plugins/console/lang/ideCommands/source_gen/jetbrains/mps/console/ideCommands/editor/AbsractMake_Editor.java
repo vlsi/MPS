@@ -33,7 +33,7 @@ public class AbsractMake_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_uaz3qu_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.query.editor.QueryExpression_EditorComponent");
     return editorCell;
   }
   private EditorCell createCollection_uaz3qu_b0(EditorContext editorContext, SNode node) {

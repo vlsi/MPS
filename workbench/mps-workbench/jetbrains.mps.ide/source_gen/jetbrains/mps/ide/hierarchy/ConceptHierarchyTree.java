@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -34,8 +35,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class ConceptHierarchyTree extends AbstractHierarchyTree {
   private Map<SNode, Set<SNode>> myDescendantsCache = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
 
-  public ConceptHierarchyTree(AbstractHierarchyView abstractHierarchyView, boolean isParentHierarchy) {
-    super(abstractHierarchyView, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", isParentHierarchy);
+  public ConceptHierarchyTree(SRepository repo, boolean isParentHierarchy) {
+    super(repo);
+    setParentHierarchy(isParentHierarchy);
   }
   @Override
   protected Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException {

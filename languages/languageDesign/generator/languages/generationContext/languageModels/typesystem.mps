@@ -128,6 +128,9 @@
         <child id="1175147624276" name="body" index="2sgrp5" />
       </concept>
       <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
+      <concept id="1179479408386" name="jetbrains.mps.lang.typesystem.structure.JoinType" flags="ng" index="2usRSg">
+        <child id="1179479418730" name="argument" index="2usUpS" />
+      </concept>
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
@@ -1583,6 +1586,38 @@
     <node concept="1YaCAy" id="4RJ0ilaVVrl" role="1YuTPh">
       <property role="TrG5h" value="op" />
       <ref role="1YaFvo" to="tpf3:4RJ0ilaVNjd" resolve="GenerationContextOp_RegisterLabel" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5Ex$JzqgZwP">
+    <property role="TrG5h" value="typeof_GenerationContextOp_CopyWithTrace" />
+    <node concept="3clFbS" id="5Ex$JzqgZwQ" role="18ibNy">
+      <node concept="1ZobV4" id="5Ex$Jzqh0bj" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="5Ex$Jzqh0fO" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5Ex$Jzqh0fP" role="mwGJk">
+            <node concept="2OqwBi" id="5Ex$Jzqh0fQ" role="1Z2MuG">
+              <node concept="1YBJjd" id="5Ex$Jzqh0fR" role="2Oq$k0">
+                <ref role="1YBMHb" node="5Ex$JzqgZwS" resolve="op" />
+              </node>
+              <node concept="3TrEf2" id="5Ex$Jzqh0fS" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf3:2cPzl2lSLsJ" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5Ex$Jzqh0gT" role="1ZfhKB">
+          <node concept="2c44tf" id="5Ex$Jzqh0gU" role="mwGJk">
+            <node concept="2usRSg" id="5Ex$Jzqh0gV" role="2c44tc">
+              <node concept="3Tqbb2" id="5Ex$Jzqh0iQ" role="2usUpS" />
+              <node concept="2I9FWS" id="5Ex$Jzqh0jt" role="2usUpS" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5Ex$JzqgZwS" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tpf3:2cPzl2lSH22" resolve="GenerationContextOp_CopyWithTrace" />
     </node>
   </node>
 </model>

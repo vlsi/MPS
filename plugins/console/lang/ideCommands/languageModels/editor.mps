@@ -13,7 +13,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
-    <import index="n8mm" ref="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.console.blCommand.editor)" />
+    <import index="n8mm" ref="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)" />
     <import index="tpep" ref="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -443,6 +443,19 @@
         <ref role="1k5W1q" to="tp2u:hGdWaJB" resolve="RightAngleBracket" />
       </node>
       <node concept="2iRfu4" id="3ZZC$G5C4ux" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="YwfKjlWn7V">
+    <property role="3GE5qa" value="" />
+    <ref role="1XX52x" to="caxt:7mV0m3L$tuv" resolve="ShowExpression" />
+    <node concept="3EZMnI" id="YwfKjlWo_n" role="2wV5jI">
+      <node concept="PMmxH" id="YwfKjlWo_l" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="YwfKjlWo_w" role="3EZMnx">
+        <ref role="1NtTu8" to="caxt:6_TW7xVwuxP" />
+      </node>
+      <node concept="l2Vlx" id="3J6h25QyTg8" role="2iSdaV" />
     </node>
   </node>
 </model>
