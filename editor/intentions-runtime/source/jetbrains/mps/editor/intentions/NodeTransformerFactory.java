@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.editor.intentions;
 
+import jetbrains.mps.editor.intentions.NodeTransformer.Kind;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -67,24 +69,30 @@ public interface NodeTransformerFactory {
    */
   boolean isAvailableInChild(SNode node, SNode childNode, EditorContext editorContext);
 
+  //---------deprecated, needed for compatibility. remove after 3.3----------
+
+  @Deprecated
+  @ToRemove(version = 3.3)
   /**
-   * The kind is used to sort transformers in UI.
+   * required for compatibility purposes
+   * use TreeTransformer.getKind()
    */
   Kind getKind();
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   /**
-   * Used to show the user the code of this factory in MPS.
+   * required for compatibility purposes
+   * use TreeTransformer.getDeclarationNode()
    */
   @Nullable
   SNodeReference getDeclarationNode();
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   /**
-   * todo move to transformer
+   * required for compatibility purposes
+   * use TreeTransformer.getId()
    */
   String getPersistentStateKey();
-
-  enum Kind {
-    INTENTION,
-    ERROR_FIX
-  }
 }

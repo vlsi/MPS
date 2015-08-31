@@ -13,33 +13,52 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.editor.intentions;
 
+import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 
 public abstract class BaseNodeTransformer implements NodeTransformer {
-  private NodeTransformerFactory myFactory;
   private SNode myNode;
   private EditorContext myEditorContext;
+  private final Kind myKind;
+  private final String myId;
+  @Nullable
+  private SNodeReference myDeclNode;
 
-  public BaseNodeTransformer(NodeTransformerFactory factory, SNode node, EditorContext editorContext) {
-    myFactory = factory;
+  public BaseNodeTransformer(SNode node, EditorContext editorContext, Kind kind, String id, @Nullable SNodeReference declNode) {
     myNode = node;
     myEditorContext = editorContext;
+    myKind = kind;
+    myId = id;
+    myDeclNode = declNode;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return myDeclNode;
   }
 
   @Override
-  public void disable() {
-    IntentionsManager.getInstance().disableIntention(myFactory.getPersistentStateKey());
+  public Kind getKind() {
+    return myKind;
+  }
+
+  @Override
+  public String getId() {
+    return myId;
   }
 
   @Override
   public Icon getIcon() {
-    switch (myFactory.getKind()) {
+    switch (myKind) {
       case ERROR_FIX:
         return Icons.ERROR_INTENTION;
 

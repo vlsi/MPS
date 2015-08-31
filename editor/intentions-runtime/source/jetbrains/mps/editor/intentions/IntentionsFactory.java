@@ -13,21 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.editor.intentions;
 
 /**
- * Factory of surround-with intentions, which are invoked by pressing ctrl-alt-T
- * All SurroundWithFactory's must extend this class
+ * Factory of intentions, which are invoked by pressing alt-enter
+ * All IntentionFactory's must extend this class
  */
+public abstract class IntentionsFactory implements NodeTransformerFactory {
 
-public abstract class SurroundWithFactory implements NodeTransformerFactory {
-  @Override
-  public boolean isAvailableInChildren() {
-    return false;
-  }
-
-  @Override
-  public Kind getKind() {
-    return Kind.INTENTION;
-  }
 }

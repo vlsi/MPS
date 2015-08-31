@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.editor.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 
 /**
- * TODO: add "pre-execute" check method, "disable"->getId
+ * TODO: add "pre-execute" check method
  * This interface represents user-invoked transformations on AST like intentions, surround-with actions, quickfixes, etc.
  */
 
@@ -36,10 +38,26 @@ public interface NodeTransformer {
    */
   String getDescription();
 
-  void disable();
+  String getId();
 
   /**
    * Associated icon to show in menus
    */
   Icon getIcon();
+
+  /**
+   * Used to show the user the code of this factory in MPS.
+   */
+  @Nullable
+  SNodeReference getDeclarationNode();
+
+  /**
+   * The kind is used to sort transformers in UI.
+   */
+  Kind getKind();
+
+  enum Kind {
+    INTENTION,
+    ERROR_FIX
+  }
 }

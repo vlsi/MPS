@@ -13,8 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.editor.intentions;
 
+import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.intentions.IntentionFactory;
+import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,9 +28,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class NodeTransformerFactoryToIntentionFactoryAdapter implements IntentionFactory {
-
   private NodeTransformerFactory myFactory;
-
   public NodeTransformerFactoryToIntentionFactoryAdapter(NodeTransformerFactory factory) {
     myFactory = factory;
   }
