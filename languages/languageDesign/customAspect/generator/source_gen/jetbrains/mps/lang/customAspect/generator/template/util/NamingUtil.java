@@ -7,10 +7,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class NamingUtil {
   public static String getDescriptorName(SNode aspect) {
@@ -19,9 +15,5 @@ public class NamingUtil {
 
   public static SNode getAspectDescriptor(SNode generator) {
     return SNodeOperations.getNodeAncestor(generator, MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"), false, false);
-  }
-
-  public static SNode getAspectDescriptor(TemplateQueryContext gc) {
-    return BehaviorReflection.invokeVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConcept(ListSequence.fromList(SModelOperations.roots(gc.getOriginalInputModel(), MetaAdapterFactory.getInterfaceConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x7ce2ed69c7e3f808L, "jetbrains.mps.lang.customAspect.structure.AspectConcept"))).first())), "virtual_getLanguageAspect_8999016044020787897", new Object[]{});
   }
 }

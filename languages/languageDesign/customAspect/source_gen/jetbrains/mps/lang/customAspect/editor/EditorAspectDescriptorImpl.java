@@ -17,18 +17,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ConceptInstancesPart_Editor());
-      case 2:
         return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
-      case 3:
+      case 2:
         return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
-      case 4:
-        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_PerConcept_Editor());
-      case 5:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
-      case 6:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
-      case 7:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
       default:
     }
@@ -39,5 +35,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.customAspect.structure.AspectMethodDescriptor", "jetbrains.mps.lang.customAspect.structure.ConceptInstancesPart", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_ByInterface", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_Class", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_PerConcept", "jetbrains.mps.lang.customAspect.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.customAspect.structure.LanguageReference", "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.customAspect.structure.AspectMethodDescriptor", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_ByInterface", "jetbrains.mps.lang.customAspect.structure.GenerationDescriptor_Class", "jetbrains.mps.lang.customAspect.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.customAspect.structure.LanguageReference", "jetbrains.mps.lang.customAspect.structure.SimpleLanguageAspectDescriptor"};
 }

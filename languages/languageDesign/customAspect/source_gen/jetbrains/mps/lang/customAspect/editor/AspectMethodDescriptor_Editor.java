@@ -287,7 +287,7 @@ public class AspectMethodDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "baseConceptFunc" + ">";
+      return "<no baseConceptFunc>";
     }
 
   }

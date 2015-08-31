@@ -400,16 +400,6 @@
           <property role="1$x2rV" value="&lt;aspect has no generator&gt;" />
           <ref role="1NtTu8" to="hfbu:5KGdJjE3kdu" />
         </node>
-        <node concept="1iCGBv" id="6QQeWCmTiRp" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;no ref gen&gt;" />
-          <ref role="1NtTu8" to="hfbu:6QQeWCmTiPN" />
-          <node concept="1sVBvm" id="6QQeWCmTiRr" role="1sWHZn">
-            <node concept="3F0A7n" id="6QQeWCmTjjL" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
         <node concept="2iRkQZ" id="5KGdJjE3g6T" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="5KGdJjE3gcC" role="b$u42">
@@ -421,7 +411,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5KGdJjE3jHN">
-    <property role="3GE5qa" value="simple.gen" />
+    <property role="3GE5qa" value="simple.gen.trivial" />
     <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor_Class" />
     <node concept="3EZMnI" id="5KGdJjE3jHP" role="2wV5jI">
       <node concept="PMmxH" id="4F0TDiuDFzK" role="3EZMnx">
@@ -474,99 +464,6 @@
         <node concept="2iRfu4" id="2Y$EcRKMtaO" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="5KGdJjE3jHS" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="5LFbgO_x_nQ">
-    <property role="3GE5qa" value="simple.gen.perConcept" />
-    <ref role="1XX52x" to="hfbu:5LFbgO_x_no" resolve="GenerationDescriptor_PerConcept" />
-    <node concept="3EZMnI" id="5$xTughlNYc" role="2wV5jI">
-      <node concept="2iRkQZ" id="5$xTughlNYd" role="2iSdaV" />
-      <node concept="PMmxH" id="4F0TDiuDFzh" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3EZMnI" id="4YpmBa69sM3" role="3EZMnx">
-        <node concept="VPM3Z" id="4YpmBa69sM5" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3XFhqQ" id="4YpmBa69sMk" role="3EZMnx" />
-        <node concept="1iCGBv" id="4YpmBa69sMq" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
-          <node concept="1sVBvm" id="4YpmBa69sMs" role="1sWHZn">
-            <node concept="3F0A7n" id="4YpmBa69sM$" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
-        <node concept="2iRfu4" id="4YpmBa69sM8" role="2iSdaV" />
-      </node>
-      <node concept="3EZMnI" id="5KGdJjE3kje" role="3EZMnx">
-        <node concept="VPM3Z" id="5KGdJjE3kjg" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3XFhqQ" id="5KGdJjE3kjX" role="3EZMnx" />
-        <node concept="3F2HdR" id="5$xTughlO0R" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:5LFbgO_x_nr" />
-          <node concept="2iRkQZ" id="5$xTughlO0X" role="2czzBx" />
-        </node>
-        <node concept="2iRfu4" id="5KGdJjE3kjj" role="2iSdaV" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="5$xTughlNUF">
-    <property role="3GE5qa" value="simple.gen.perConcept" />
-    <ref role="1XX52x" to="hfbu:5LFbgO_x_nt" resolve="ConceptInstancesPart" />
-    <node concept="3EZMnI" id="5$xTughlO1J" role="2wV5jI">
-      <node concept="3EZMnI" id="6AFSqmI6zWX" role="3EZMnx">
-        <node concept="3F0ifn" id="6AFSqmI6zXt" role="3EZMnx">
-          <property role="3F0ifm" value="foreach root of concept" />
-        </node>
-        <node concept="2iRfu4" id="6AFSqmI6zWY" role="2iSdaV" />
-        <node concept="1iCGBv" id="5$xTughlNUL" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:5$xTughlNUD" />
-          <node concept="1sVBvm" id="5$xTughlNUO" role="1sWHZn">
-            <node concept="3F0A7n" id="5$xTughlNUQ" role="2wV5jI">
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3EZMnI" id="6jXjkltKeTu" role="3EZMnx">
-        <node concept="3XFhqQ" id="6jXjkltKeTv" role="3EZMnx" />
-        <node concept="2iRfu4" id="6jXjkltKeTw" role="2iSdaV" />
-        <node concept="3F0ifn" id="6jXjkltKeTx" role="3EZMnx" />
-        <node concept="3F1sOY" id="5$xTughlO2g" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;no &quot;main&quot; concept&gt;" />
-          <ref role="1NtTu8" to="hfbu:5$xTughlNVs" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="6jXjkltKeRr" role="3EZMnx">
-        <node concept="3XFhqQ" id="6jXjkltKeS4" role="3EZMnx" />
-        <node concept="2iRfu4" id="6jXjkltKeRs" role="2iSdaV" />
-        <node concept="3F0ifn" id="4YpmBa69sMI" role="3EZMnx">
-          <property role="3F0ifm" value="interface class" />
-        </node>
-        <node concept="1iCGBv" id="7bj0OGad10$" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:4YpmBa69sLN" />
-          <node concept="1sVBvm" id="7bj0OGad10A" role="1sWHZn">
-            <node concept="3F0A7n" id="7bj0OGad10M" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3EZMnI" id="6jXjkltKeSC" role="3EZMnx">
-        <node concept="3XFhqQ" id="6jXjkltKeSD" role="3EZMnx" />
-        <node concept="2iRfu4" id="6jXjkltKeSE" role="2iSdaV" />
-        <node concept="3F0ifn" id="6jXjkltKeSF" role="3EZMnx">
-          <property role="3F0ifm" value="aspect-&gt;genClass" />
-        </node>
-        <node concept="3F1sOY" id="6jXjkltKeT9" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:6jXjkltILEw" />
-        </node>
-      </node>
-      <node concept="2iRkQZ" id="6jXjkltKeRp" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="4F0TDiuCZbo">
@@ -703,18 +600,6 @@
           <ref role="1NtTu8" to="hfbu:7NyVmB7TXSN" />
           <node concept="1sVBvm" id="4F0TDiuCZBb" role="1sWHZn">
             <node concept="3F0A7n" id="4F0TDiuCZBc" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
-        <node concept="3F0ifn" id="6QQeWCmSNWI" role="3EZMnx">
-          <property role="3F0ifm" value="for aspect" />
-        </node>
-        <node concept="1iCGBv" id="1_lQ6trUC9I" role="3EZMnx">
-          <ref role="1NtTu8" to="hfbu:1_lQ6trUC9s" />
-          <node concept="1sVBvm" id="1_lQ6trUC9K" role="1sWHZn">
-            <node concept="3F0A7n" id="1_lQ6trUC9V" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             </node>

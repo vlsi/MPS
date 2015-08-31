@@ -13,7 +13,6 @@
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="b2yo" ref="r:34cf15ec-363f-428e-ba3e-57bc25764d1e(jetbrains.mps.lang.customAspect.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -72,21 +71,12 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
-    <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
-      <concept id="1216860049633" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" flags="in" index="1iwH7U" />
-      <concept id="1217026863835" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" flags="nn" index="1st3f0" />
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
-      </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
-        <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -103,9 +93,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-    </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
     </language>
   </registry>
   <node concept="312cEu" id="7NyVmB7TrW6">
@@ -169,44 +156,6 @@
                   <ref role="cht4Q" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7NyVmB7TNiN" role="jymVt" />
-    <node concept="2YIFZL" id="7NyVmB7TNgv" role="jymVt">
-      <property role="TrG5h" value="getAspectDescriptor" />
-      <node concept="3Tm1VV" id="7NyVmB7TNgw" role="1B3o_S" />
-      <node concept="3Tqbb2" id="7NyVmB7TNgx" role="3clF45">
-        <ref role="ehGHo" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
-      </node>
-      <node concept="37vLTG" id="7NyVmB7TNgy" role="3clF46">
-        <property role="TrG5h" value="gc" />
-        <node concept="1iwH7U" id="7NyVmB7TNlI" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="7NyVmB7TNg$" role="3clF47">
-        <node concept="3clFbF" id="7NyVmB7TNnT" role="3cqZAp">
-          <node concept="2OqwBi" id="7NyVmB7TSSf" role="3clFbG">
-            <node concept="2OqwBi" id="7NyVmB7TRYN" role="2Oq$k0">
-              <node concept="2OqwBi" id="7NyVmB7TOiU" role="2Oq$k0">
-                <node concept="2OqwBi" id="7NyVmB7TNwP" role="2Oq$k0">
-                  <node concept="2OqwBi" id="7NyVmB7TNoI" role="2Oq$k0">
-                    <node concept="37vLTw" id="7NyVmB7TNnS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7NyVmB7TNgy" resolve="gc" />
-                    </node>
-                    <node concept="1st3f0" id="7NyVmB7TNtS" role="2OqNvi" />
-                  </node>
-                  <node concept="2RRcyG" id="7NyVmB7TNAi" role="2OqNvi">
-                    <ref role="2RRcyH" to="hfbu:7NyVmB7SZw8" resolve="AspectConcept" />
-                  </node>
-                </node>
-                <node concept="1uHKPH" id="7NyVmB7TQIR" role="2OqNvi" />
-              </node>
-              <node concept="2yIwOk" id="7NyVmB7TSK4" role="2OqNvi" />
-            </node>
-            <node concept="2qgKlT" id="7NyVmB7TT0d" role="2OqNvi">
-              <ref role="37wK5l" to="b2yo:7NyVmB7TAET" resolve="getLanguageAspect" />
             </node>
           </node>
         </node>

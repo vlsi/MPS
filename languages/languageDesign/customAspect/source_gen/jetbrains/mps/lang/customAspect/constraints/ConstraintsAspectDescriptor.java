@@ -14,9 +14,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x4ac0e6949ea3f2b0L) {
       return new AspectMethodDescriptor_Constraints();
     }
-    if (id == 0x4ac0e6949ea3f2abL) {
-      return new GenerationDescriptor_ByInterface_Constraints();
-    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

@@ -46,8 +46,6 @@ public class GenerationDescriptor_ByInterface_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_laxs8h_a0");
     editorCell.addEditorCell(this.createConstant_laxs8h_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_laxs8h_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_laxs8h_c0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_laxs8h_d0a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_laxs8h_a0a(EditorContext editorContext, SNode node) {
@@ -94,60 +92,6 @@ public class GenerationDescriptor_ByInterface_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
-  }
-  private EditorCell createConstant_laxs8h_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for aspect");
-    editorCell.setCellId("Constant_laxs8h_c0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_laxs8h_d0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("asp");
-    provider.setNoTargetText("<no asp>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationDescriptor_ByInterface_Editor._Inline_laxs8h_a3a0());
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("asp");
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  public static class _Inline_laxs8h_a3a0 extends InlineCellProvider {
-    public _Inline_laxs8h_a3a0() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_laxs8h_a0d0a(editorContext, node);
-    }
-    private EditorCell createProperty_laxs8h_a0d0a(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_1");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

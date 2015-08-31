@@ -13,10 +13,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ConceptInstancesPart_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_GenerationDescriptor_Class_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
