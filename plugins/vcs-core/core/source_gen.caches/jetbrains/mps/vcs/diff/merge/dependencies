@@ -119,10 +119,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeAddEvent" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SNodeRemoveEvent" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SPropertyChangeEvent" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.event.SReferenceChangeEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelChangeListener" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

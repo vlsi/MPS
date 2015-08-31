@@ -7,16 +7,12 @@ import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
-import org.jetbrains.mps.openapi.model.SNodeChangeListener;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
-import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
-import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.annotations.Nullable;
@@ -34,20 +30,6 @@ public class MergeTemporaryModel extends RegularModelDescriptor implements Persi
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
-    getEventDispatch().addChangeListener(new SNodeChangeListener() {
-      public void propertyChanged(@NotNull SPropertyChangeEvent p0) {
-        setChanged(true);
-      }
-      public void referenceChanged(@NotNull SReferenceChangeEvent p0) {
-        setChanged(true);
-      }
-      public void nodeAdded(@NotNull SNodeAddEvent p0) {
-        setChanged(true);
-      }
-      public void nodeRemoved(@NotNull SNodeRemoveEvent p0) {
-        setChanged(true);
-      }
-    });
   }
 
   public MergeTemporaryModel(SModel model, boolean readonly) {
