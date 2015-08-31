@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.intentions.TreeTransformerFactory.Priority;
 import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,11 +40,11 @@ public abstract class BaseTreeTransformer implements TreeTransformer {
 
   @Override
   public Icon getIcon() {
-    switch (myFactory.getPriority()) {
-      case ERROR:
+    switch (myFactory.getKind()) {
+      case ERROR_FIX:
         return Icons.ERROR_INTENTION;
 
-      case NORMAL:
+      case INTENTION:
         return Icons.REAL_INTENTION;
 
       default:

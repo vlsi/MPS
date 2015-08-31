@@ -27,7 +27,7 @@ public abstract class BaseSurroundWithFactory implements TreeTransformerFactory 
   }
 
   @Override
-  public Priority getPriority() {
-    return Priority.NORMAL;
+  public Kind getKind() {
+    return Kind.INTENTION;
   }
 }

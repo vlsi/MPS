@@ -2945,9 +2945,6 @@
     <property role="TrG5h" value="NewIntentionFactory" />
     <property role="1EXbeo" value="false" />
     <property role="3GE5qa" value="" />
-    <node concept="3uibUv" id="6lT7H5fxCAV" role="1zkMxy">
-      <ref role="3uigEE" to="91lp:~BaseIntentionFactory" resolve="BaseIntentionFactory" />
-    </node>
     <node concept="3Tm1VV" id="6wolOhZxLiJ" role="1B3o_S" />
     <node concept="n94m4" id="6wolOhZxLiK" role="lGtFl">
       <ref role="n9lRv" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
@@ -3035,18 +3032,18 @@
     <node concept="2tJIrI" id="6Y8LBKccsCw" role="jymVt" />
     <node concept="3clFb_" id="1wwM2ppGdPz" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getPriority" />
+      <property role="TrG5h" value="getKind" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
-      <node concept="3uibUv" id="6lT7H5fxVzv" role="3clF45">
-        <ref role="3uigEE" to="91lp:~TreeTransformerFactory$Priority" resolve="TreeTransformerFactory.Priority" />
+      <node concept="3uibUv" id="46nxkdGBXlk" role="3clF45">
+        <ref role="3uigEE" to="91lp:~TreeTransformerFactory$Kind" resolve="TreeTransformerFactory.Kind" />
       </node>
       <node concept="3Tm1VV" id="1wwM2ppGdP$" role="1B3o_S" />
       <node concept="3clFbS" id="1wwM2ppGdPB" role="3clF47">
         <node concept="3cpWs6" id="4r1sDPiSv42" role="3cqZAp">
-          <node concept="Rm8GO" id="6lT7H5fy89t" role="3cqZAk">
-            <ref role="Rm8GQ" to="91lp:~TreeTransformerFactory$Priority.ERROR" resolve="ERROR" />
-            <ref role="1Px2BO" to="91lp:~TreeTransformerFactory$Priority" resolve="TreeTransformerFactory.Priority" />
+          <node concept="Rm8GO" id="46nxkdGBZVz" role="3cqZAk">
+            <ref role="Rm8GQ" to="91lp:~TreeTransformerFactory$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+            <ref role="1Px2BO" to="91lp:~TreeTransformerFactory$Kind" resolve="TreeTransformerFactory.Kind" />
           </node>
           <node concept="2jeGV$" id="6wEWLXPIfgi" role="lGtFl">
             <property role="TrG5h" value="isError" />
@@ -3079,9 +3076,9 @@
             </node>
             <node concept="gft3U" id="6wEWLXPIHIF" role="UU_$l">
               <node concept="3cpWs6" id="6wEWLXPIIt1" role="gfFT$">
-                <node concept="Rm8GO" id="6lT7H5fycuL" role="3cqZAk">
-                  <ref role="Rm8GQ" to="91lp:~TreeTransformerFactory$Priority.NORMAL" resolve="NORMAL" />
-                  <ref role="1Px2BO" to="91lp:~TreeTransformerFactory$Priority" resolve="TreeTransformerFactory.Priority" />
+                <node concept="Rm8GO" id="46nxkdGC2y1" role="3cqZAk">
+                  <ref role="Rm8GQ" to="91lp:~TreeTransformerFactory$Kind.INTENTION" resolve="INTENTION" />
+                  <ref role="1Px2BO" to="91lp:~TreeTransformerFactory$Kind" resolve="TreeTransformerFactory.Kind" />
                 </node>
               </node>
             </node>
@@ -3366,7 +3363,6 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <node concept="3Tm1VV" id="6lT7H5fz0xu" role="1B3o_S" />
       <node concept="3clFbS" id="1FdraouYtGH" role="3clF47">
         <node concept="1W57fq" id="1FdraouYyP9" role="lGtFl">
           <node concept="3IZrLx" id="1FdraouYyPb" role="3IZSJc">
@@ -3409,6 +3405,7 @@
           </node>
         </node>
       </node>
+      <node concept="3Tm1VV" id="6lT7H5fz0xu" role="1B3o_S" />
       <node concept="10P_77" id="1FdraouYtHe" role="3clF45" />
       <node concept="37vLTG" id="1FdraouYtHf" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -4112,6 +4109,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="6lT7H5fxCAV" role="1zkMxy">
+      <ref role="3uigEE" to="91lp:~BaseIntentionFactory" resolve="BaseIntentionFactory" />
     </node>
   </node>
   <node concept="312cEu" id="1VQ0jyzrGtC">

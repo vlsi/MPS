@@ -68,10 +68,9 @@ public interface TreeTransformerFactory {
   boolean isAvailableInChild(SNode node, SNode childNode, EditorContext editorContext);
 
   /**
-   * todo move to transformer, rename to kind
    * The kind is used to sort transformers in UI.
    */
-  Priority getPriority();
+  Kind getKind();
 
   /**
    * Used to show the user the code of this factory in MPS.
@@ -84,8 +83,8 @@ public interface TreeTransformerFactory {
    */
   String getPersistentStateKey();
 
-  enum Priority {
-    NORMAL,
-    ERROR,
+  enum Kind {
+    INTENTION,
+    ERROR_FIX
   }
 }

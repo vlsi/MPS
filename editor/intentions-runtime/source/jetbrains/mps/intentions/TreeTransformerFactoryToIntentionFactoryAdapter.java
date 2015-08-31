@@ -84,11 +84,11 @@ public class TreeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public IntentionType getType() {
-    switch (myFactory.getPriority()) {
-      case ERROR:
+    switch (myFactory.getKind()) {
+      case ERROR_FIX:
         return IntentionType.ERROR;
 
-      case NORMAL:
+      case INTENTION:
         return IntentionType.NORMAL;
 
       default:
