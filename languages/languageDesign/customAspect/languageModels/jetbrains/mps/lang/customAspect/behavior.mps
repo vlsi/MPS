@@ -106,6 +106,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -269,6 +272,13 @@
     </node>
     <node concept="13hLZK" id="7Jfx5bwQG3$" role="13h7CW">
       <node concept="3clFbS" id="7Jfx5bwQG3_" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1_lQ6trUoey">
+    <property role="3GE5qa" value="simple.gen.byInterface" />
+    <ref role="13h7C2" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
+    <node concept="13hLZK" id="1_lQ6trUoez" role="13h7CW">
+      <node concept="3clFbS" id="1_lQ6trUoe$" role="2VODD2" />
     </node>
   </node>
 </model>
