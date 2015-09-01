@@ -34,9 +34,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.editor.QueriesUtil;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 
 public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
@@ -190,12 +192,12 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     public PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_parameterObjects(new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), node, IClassifiersSearchScope.STATIC_MEMBER) {
-        @Override
-        protected boolean isVisible(SNode member) {
-          return true;
+      Iterable<SNode> staticMembers = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
         }
-      }, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")));
+      });
+      return QueriesUtil.replaceNodeMenu_parameterObjects(staticMembers, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")));
     }
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
