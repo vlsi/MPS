@@ -12738,7 +12738,7 @@
         <node concept="Vb9p2" id="2peXSsL72c4" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="2peXSsL72c5" role="3EZMnx">
-        <property role="3F0ifm" value="next appropriate editor" />
+        <property role="3F0ifm" value="next applicable editor" />
         <ref role="1k5W1q" node="3OSQ5wtKyli" resolve="attributedCellLabel" />
       </node>
       <node concept="3F0ifn" id="2peXSsL72c6" role="3EZMnx">

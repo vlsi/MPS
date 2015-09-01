@@ -51,7 +51,7 @@ public class CellModel_NextEditor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_80k6zu_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "next appropriate editor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "next applicable editor");
     editorCell.setCellId("Constant_80k6zu_b0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_attributedCellLabel(style, editorCell);

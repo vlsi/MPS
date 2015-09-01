@@ -1581,6 +1581,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_2579705680363563842(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")) != null;
   }
+  public static boolean ifMacro_Condition_6554993386091862716(final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, 0x7456aec153c7f5a3L, "addHints")) != null;
+  }
+  public static boolean ifMacro_Condition_6554993386091865209(final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, 0x7456aec153c7f5a4L, "removeHints")) != null;
+  }
   public static boolean ifMacro_Condition_6047905657529332647(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, 0x7456aec153c7f5a3L, "addHints")) != null || SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, 0x7456aec153c7f5a4L, "removeHints")) != null;
   }
@@ -2068,7 +2074,7 @@ public class QueriesGenerated {
     if (conceptDeclaration == null) {
       return false;
     }
-    return neq_x583g4_a0d0xv(SModelOperations.getModuleStub(_context.getOriginalInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(conceptDeclaration)));
+    return neq_x583g4_a0d0zv(SModelOperations.getModuleStub(_context.getOriginalInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(conceptDeclaration)));
   }
   public static Object templateArgumentQuery_2467262375112930429(final TemplateQueryContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
@@ -2085,7 +2091,7 @@ public class QueriesGenerated {
     if (conceptDeclaration == null) {
       return false;
     }
-    return neq_x583g4_a0d0zv(SModelOperations.getModuleStub(_context.getOriginalInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(conceptDeclaration)));
+    return neq_x583g4_a0d0bw(SModelOperations.getModuleStub(_context.getOriginalInputModel()), SModelOperations.getModuleStub(SNodeOperations.getModel(conceptDeclaration)));
   }
   public static Iterable<SNode> sourceNodesQuery_7517620136073798900(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, 0x240ba2de0c6c0b6eL, "contextHints"));
@@ -2563,10 +2569,10 @@ public class QueriesGenerated {
   private static boolean neq_x583g4_a0a0un(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_x583g4_a0d0xv(Object a, Object b) {
+  private static boolean neq_x583g4_a0d0zv(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_x583g4_a0d0zv(Object a, Object b) {
+  private static boolean neq_x583g4_a0d0bw(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
