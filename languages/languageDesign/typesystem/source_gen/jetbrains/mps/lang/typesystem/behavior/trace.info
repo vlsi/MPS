@@ -49,7 +49,7 @@
       <unit at="8,0,16,0" name="jetbrains.mps.lang.typesystem.behavior.AttributedNodeExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,238,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,240,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CaretPositionOperation_BehaviorDescriptor.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
@@ -323,6 +323,9 @@
     </file>
     <file name="SubtypingRule_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_BehaviorDescriptor" />
+    </file>
+    <file name="SupersedeConceptFunction_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.SupersedeConceptFunction_BehaviorDescriptor" />
     </file>
     <file name="TypeCheckerAccessExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.TypeCheckerAccessExpression_BehaviorDescriptor" />
@@ -1612,20 +1615,29 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/590757823759239746">
     <file name="InferenceRule_Behavior.java">
-      <node id="590757823759239755" at="13,100,14,194" concept="2" />
-      <node id="590757823759247505" at="14,194,15,322" concept="2" />
-      <node id="590757823759239746" at="11,0,13,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="590757823759239746" at="13,0,17,0" concept="10" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="590757823759239748" at="11,43,11,43" />
-      <scope id="590757823759239746" at="11,0,13,0">
+      <node id="7307171874933706820" at="14,82,15,168" concept="7" />
+      <node id="7307171874933701183" at="15,168,16,266" concept="8" />
+      <node id="590757823759239755" at="18,100,19,194" concept="2" />
+      <node id="590757823759247505" at="19,194,20,322" concept="2" />
+      <node id="590757823759239746" at="12,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="590757823759239746" at="14,0,18,0" concept="10" trace="call_isAttributeRule_7307171874933700673#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="590757823759239746" at="18,0,22,0" concept="10" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="590757823759239748" at="12,43,12,43" />
+      <scope id="590757823759239746" at="12,0,14,0">
         <var name="thisNode" id="590757823759239746" />
       </scope>
-      <scope id="590757823759239751" at="13,100,15,322" />
-      <scope id="590757823759239746" at="13,0,17,0">
+      <scope id="7307171874933700675" at="14,82,16,266">
+        <var name="baseConcept" id="7307171874933706821" />
+      </scope>
+      <scope id="590757823759239751" at="18,100,20,322" />
+      <scope id="590757823759239746" at="14,0,18,0">
+        <var name="thisNode" id="590757823759239746" />
+      </scope>
+      <scope id="590757823759239746" at="18,0,22,0">
         <var name="baseConcept" id="590757823759239752" />
         <var name="thisNode" id="590757823759239746" />
       </scope>
-      <unit id="590757823759239746" at="10,0,18,0" name="jetbrains.mps.lang.typesystem.behavior.InferenceRule_Behavior" />
+      <unit id="590757823759239746" at="11,0,23,0" name="jetbrains.mps.lang.typesystem.behavior.InferenceRule_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/590757823759247528">

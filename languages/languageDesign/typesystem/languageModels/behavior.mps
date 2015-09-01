@@ -28,6 +28,7 @@
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
@@ -286,6 +287,9 @@
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
+      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
+        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1247,6 +1251,37 @@
     <ref role="13h7C2" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="13hLZK" id="wMMLLpsWD3" role="13h7CW">
       <node concept="3clFbS" id="wMMLLpsWD4" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6lCixFI9vx1" role="13h7CS">
+      <property role="TrG5h" value="isAttributeRule" />
+      <node concept="3Tm1VV" id="6lCixFI9vx2" role="1B3o_S" />
+      <node concept="3clFbS" id="6lCixFI9vx3" role="3clF47">
+        <node concept="3cpWs8" id="6lCixFI9x14" role="3cqZAp">
+          <node concept="3cpWsn" id="6lCixFI9x15" role="3cpWs9">
+            <property role="TrG5h" value="baseConcept" />
+            <node concept="3Tqbb2" id="6lCixFI9x13" role="1tU5fm">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
+            <node concept="BsUDl" id="6lCixFI9x16" role="33vP2m">
+              <ref role="37wK5l" to="tpcn:2hxg_BDjKM8" resolve="getBaseConcept" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6lCixFI9vCZ" role="3cqZAp">
+          <node concept="2OqwBi" id="6lCixFI9x4C" role="3clFbG">
+            <node concept="37vLTw" id="6lCixFI9x17" role="2Oq$k0">
+              <ref role="3cqZAo" node="6lCixFI9x15" resolve="baseConcept" />
+            </node>
+            <node concept="2qgKlT" id="6lCixFI9KqH" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+              <node concept="3TUQnm" id="6lCixFI9KsV" role="37wK5m">
+                <ref role="3TV0OU" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6lCixFI9vCV" role="3clF45" />
     </node>
     <node concept="13i0hz" id="wMMLLpsWD5" role="13h7CS">
       <property role="TrG5h" value="setBaseConcept" />

@@ -4703,43 +4703,26 @@
           </node>
         </node>
       </node>
-      <node concept="3cpWs8" id="25idkGdmHo_" role="3cqZAp">
-        <node concept="3cpWsn" id="25idkGdmHoA" role="3cpWs9">
-          <property role="TrG5h" value="applicableConcept" />
-          <node concept="3Tqbb2" id="25idkGdmHoB" role="1tU5fm">
-            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-          </node>
-          <node concept="2OqwBi" id="25idkGdmHoC" role="33vP2m">
-            <node concept="2OqwBi" id="25idkGdmHoD" role="2Oq$k0">
-              <node concept="37vLTw" id="25idkGdmHoE" role="2Oq$k0">
-                <ref role="3cqZAo" node="25idkGdmHou" resolve="infRule" />
-              </node>
-              <node concept="3TrEf2" id="25idkGdmHoF" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
-              </node>
-            </node>
-            <node concept="2qgKlT" id="25idkGdmHoG" role="2OqNvi">
-              <ref role="37wK5l" to="tpdd:hEwIszL" resolve="getApplicableConcept" />
-            </node>
-          </node>
+      <node concept="2Mj0R9" id="6lCixFIaU32" role="3cqZAp">
+        <node concept="Xl_RD" id="6lCixFIaU33" role="2MkJ7o">
+          <property role="Xl_RC" value="attributedNode is not available in this context" />
         </node>
-      </node>
-      <node concept="3clFbH" id="25idkGdmHsp" role="3cqZAp" />
-      <node concept="2Mj0R9" id="25idkGdmHuB" role="3cqZAp">
-        <node concept="Xl_RD" id="25idkGdmIn2" role="2MkJ7o">
-          <property role="Xl_RC" value="attributedNode is not available" />
-        </node>
-        <node concept="1YBJjd" id="25idkGdmIoT" role="2OEOjV">
+        <node concept="1YBJjd" id="6lCixFIaU34" role="2OEOjV">
           <ref role="1YBMHb" node="25idkGdmGDT" resolve="ane" />
         </node>
-        <node concept="2OqwBi" id="25idkGdmIl6" role="2MkoU_">
-          <node concept="37vLTw" id="25idkGdmIl7" role="2Oq$k0">
-            <ref role="3cqZAo" node="25idkGdmHoA" resolve="applicableConcept" />
+        <node concept="1Wc70l" id="6lCixFIaUCt" role="2MkoU_">
+          <node concept="2OqwBi" id="6lCixFIaUKl" role="3uHU7B">
+            <node concept="37vLTw" id="6lCixFIaUFz" role="2Oq$k0">
+              <ref role="3cqZAo" node="25idkGdmHou" resolve="infRule" />
+            </node>
+            <node concept="3x8VRR" id="6lCixFIaVhV" role="2OqNvi" />
           </node>
-          <node concept="2qgKlT" id="25idkGdmIl8" role="2OqNvi">
-            <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
-            <node concept="3TUQnm" id="25idkGdmIl9" role="37wK5m">
-              <ref role="3TV0OU" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+          <node concept="2OqwBi" id="6lCixFIaU35" role="3uHU7w">
+            <node concept="37vLTw" id="6lCixFIaU36" role="2Oq$k0">
+              <ref role="3cqZAo" node="25idkGdmHou" resolve="infRule" />
+            </node>
+            <node concept="2qgKlT" id="6lCixFIaU37" role="2OqNvi">
+              <ref role="37wK5l" to="tpdd:6lCixFI9vx1" resolve="isAttributeRule" />
             </node>
           </node>
         </node>
@@ -4748,6 +4731,60 @@
     <node concept="1YaCAy" id="25idkGdmGDT" role="1YuTPh">
       <property role="TrG5h" value="ane" />
       <ref role="1YaFvo" to="tpd4:25idkGdk026" resolve="AttributedNodeExpression" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6lCixFIb3ot">
+    <property role="TrG5h" value="check_SupersedeConceptFunction" />
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <node concept="3clFbS" id="6lCixFIb3ou" role="18ibNy">
+      <node concept="3cpWs8" id="6lCixFIb3sj" role="3cqZAp">
+        <node concept="3cpWsn" id="6lCixFIb3sk" role="3cpWs9">
+          <property role="TrG5h" value="infRule" />
+          <node concept="3Tqbb2" id="6lCixFIb3sl" role="1tU5fm">
+            <ref role="ehGHo" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+          </node>
+          <node concept="2OqwBi" id="6lCixFIb3sm" role="33vP2m">
+            <node concept="1YBJjd" id="6lCixFIb3wC" role="2Oq$k0">
+              <ref role="1YBMHb" node="6lCixFIb3ow" resolve="sce" />
+            </node>
+            <node concept="2Xjw5R" id="6lCixFIb3so" role="2OqNvi">
+              <node concept="1xMEDy" id="6lCixFIb3sp" role="1xVPHs">
+                <node concept="chp4Y" id="6lCixFIb3sq" role="ri$Ld">
+                  <ref role="cht4Q" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Mj0R9" id="6lCixFIb3sr" role="3cqZAp">
+        <node concept="Xl_RD" id="6lCixFIb3ss" role="2MkJ7o">
+          <property role="Xl_RC" value="not applicable in this context" />
+        </node>
+        <node concept="1YBJjd" id="6lCixFIb3zQ" role="2OEOjV">
+          <ref role="1YBMHb" node="6lCixFIb3ow" resolve="sce" />
+        </node>
+        <node concept="1Wc70l" id="6lCixFIb3su" role="2MkoU_">
+          <node concept="2OqwBi" id="6lCixFIb3sv" role="3uHU7B">
+            <node concept="37vLTw" id="6lCixFIb3sw" role="2Oq$k0">
+              <ref role="3cqZAo" node="6lCixFIb3sk" resolve="infRule" />
+            </node>
+            <node concept="3x8VRR" id="6lCixFIb3sx" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="6lCixFIb3sy" role="3uHU7w">
+            <node concept="37vLTw" id="6lCixFIb3sz" role="2Oq$k0">
+              <ref role="3cqZAo" node="6lCixFIb3sk" resolve="infRule" />
+            </node>
+            <node concept="2qgKlT" id="6lCixFIb3s$" role="2OqNvi">
+              <ref role="37wK5l" to="tpdd:6lCixFI9vx1" resolve="isAttributeRule" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6lCixFIb3ow" role="1YuTPh">
+      <property role="TrG5h" value="sce" />
+      <ref role="1YaFvo" to="tpd4:6lCixFI9ig3" resolve="SupersedeConceptFunction" />
     </node>
   </node>
 </model>
