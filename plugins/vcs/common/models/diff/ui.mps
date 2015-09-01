@@ -1086,8 +1086,8 @@
         <node concept="3cpWs8" id="1B5M0L_gLnr" role="3cqZAp">
           <node concept="3cpWsn" id="1B5M0L_gLns" role="3cpWs9">
             <property role="TrG5h" value="metadataModel" />
-            <node concept="3uibUv" id="7rUTzxrnmap" role="1tU5fm">
-              <ref role="3uigEE" to="g3l6:~EditableSModelBase" resolve="EditableSModelBase" />
+            <node concept="3uibUv" id="jzhoHG1fhM" role="1tU5fm">
+              <ref role="3uigEE" to="bmv6:1m2uLwrRQWq" resolve="MergeTemporaryModel" />
             </node>
             <node concept="2ShNRf" id="2yL_twwKkc6" role="33vP2m">
               <node concept="1pGfFk" id="2yL_twwKkc7" role="2ShVmc">
@@ -1166,13 +1166,23 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="jzhoHG1Gy8" role="3cqZAp">
+          <node concept="3SKdUq" id="jzhoHG1GAa" role="3SKWNk">
+            <property role="3SKdUp" value="XXX it looks isChanged used as indication whether there's anything in the model to apply." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="jzhoHG1GQv" role="3cqZAp">
+          <node concept="3SKdUq" id="jzhoHG1GUx" role="3SKWNk">
+            <property role="3SKdUp" value="If yes, why not use dedicated flag in MergeTemporaryModel, and cease being EditableSModel?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7rUTzxrnmL0" role="3cqZAp">
           <node concept="2OqwBi" id="7rUTzxrnnm2" role="3clFbG">
             <node concept="37vLTw" id="7rUTzxrnmKZ" role="2Oq$k0">
               <ref role="3cqZAo" node="1B5M0L_gLns" resolve="metadataModel" />
             </node>
             <node concept="liA8E" id="7rUTzxrnrfh" role="2OqNvi">
-              <ref role="37wK5l" to="g3l6:~EditableSModelBase.setChanged(boolean):void" resolve="setChanged" />
+              <ref role="37wK5l" to="w1kc:~EditableModelDescriptor.setChanged(boolean):void" resolve="setChanged" />
               <node concept="3clFbT" id="7rUTzxrnrhD" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
@@ -1572,14 +1582,6 @@
         </node>
         <node concept="3clFbF" id="3B8MzHTEImf" role="3cqZAp">
           <node concept="37vLTI" id="3B8MzHTEISm" role="3clFbG">
-            <node concept="2OqwBi" id="3B8MzHTEJgX" role="37vLTx">
-              <node concept="37vLTw" id="3B8MzHTEJar" role="2Oq$k0">
-                <ref role="3cqZAo" node="1DUTkFD8LTF" resolve="module" />
-              </node>
-              <node concept="liA8E" id="3B8MzHTEJnM" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="3B8MzHTEIsa" role="37vLTJ">
               <node concept="37vLTw" id="3B8MzHTEImd" role="2Oq$k0">
                 <ref role="3cqZAo" node="1DUTkFD8MZN" resolve="node" />
@@ -1588,11 +1590,33 @@
                 <ref role="3TsBF5" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
               </node>
             </node>
+            <node concept="2OqwBi" id="2ldpjzY1$So" role="37vLTx">
+              <node concept="2YIFZM" id="2ldpjzY1$NW" role="2Oq$k0">
+                <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="2ldpjzY1_3S" role="2OqNvi">
+                <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.module.SModuleReference):java.lang.String" resolve="asString" />
+                <node concept="37vLTw" id="2ldpjzY1_eB" role="37wK5m">
+                  <ref role="3cqZAo" node="1DUTkFD8LTF" resolve="module" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3SKdUt" id="5BO8Kc5oj7i" role="3cqZAp">
           <node concept="3SKdUq" id="5BO8Kc5ojcT" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME what's the purpose of custom node id here? Do we use these? Why don't we rely on automatic node id? - to have identical IDs for the same imports in different models " />
+            <property role="3SKdUp" value="The purpose of custom node id here is to have identical IDs for the same imports in different models " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2ldpjzY0YEj" role="3cqZAp">
+          <node concept="3SKdUq" id="2ldpjzY0YKZ" role="3SKWNk">
+            <property role="3SKdUp" value="That's why don't we rely on automatic node id." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2ldpjzY1$g9" role="3cqZAp">
+          <node concept="3SKdUq" id="2ldpjzY1$gJ" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME keep model as instance field and use model.new node smodel clause, with id set at construction time, without cast to SNode impl" />
           </node>
         </node>
         <node concept="3clFbF" id="1DUTkFD8Oqp" role="3cqZAp">
@@ -1611,20 +1635,22 @@
             </node>
             <node concept="liA8E" id="1DUTkFD8Pl8" role="2OqNvi">
               <ref role="37wK5l" to="w1kc:~SNode.setId(org.jetbrains.mps.openapi.model.SNodeId):void" resolve="setId" />
-              <node concept="2YIFZM" id="1DUTkFD8PJA" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
-                <ref role="1Pybhc" to="w1kc:~SNodeId" resolve="SNodeId" />
-                <node concept="3cpWs3" id="1DUTkFD9OVp" role="37wK5m">
-                  <node concept="2OqwBi" id="1DUTkFD9Q16" role="3uHU7w">
-                    <node concept="3TrcHB" id="3B8MzHTEJu$" role="2OqNvi">
-                      <ref role="3TsBF5" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
+              <node concept="2ShNRf" id="2ldpjzY0Zj2" role="37wK5m">
+                <node concept="1pGfFk" id="2ldpjzY1xZS" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~SNodeId$Foreign.&lt;init&gt;(java.lang.String)" resolve="SNodeId.Foreign" />
+                  <node concept="3cpWs3" id="2ldpjzY1zoe" role="37wK5m">
+                    <node concept="10M0yZ" id="2ldpjzY1ysZ" role="3uHU7B">
+                      <ref role="1PxDUh" to="w1kc:~SNodeId$Foreign" resolve="SNodeId.Foreign" />
+                      <ref role="3cqZAo" to="w1kc:~SNodeId$Foreign.ID_PREFIX" resolve="ID_PREFIX" />
                     </node>
-                    <node concept="37vLTw" id="1DUTkFD9PUR" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1DUTkFD8MZN" resolve="node" />
+                    <node concept="2OqwBi" id="2ldpjzY1zxN" role="3uHU7w">
+                      <node concept="3TrcHB" id="2ldpjzY1zxO" role="2OqNvi">
+                        <ref role="3TsBF5" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
+                      </node>
+                      <node concept="37vLTw" id="2ldpjzY1zxP" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1DUTkFD8MZN" resolve="node" />
+                      </node>
                     </node>
-                  </node>
-                  <node concept="Xl_RD" id="1DUTkFD8PYs" role="3uHU7B">
-                    <property role="Xl_RC" value="~" />
                   </node>
                 </node>
               </node>
@@ -1649,16 +1675,21 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="1B5M0L_oIMD" role="3clF47">
-        <node concept="3clFbF" id="3B8MzHTEKlt" role="3cqZAp">
-          <node concept="2YIFZM" id="3B8MzHTEKlY" role="3clFbG">
-            <ref role="37wK5l" to="w0gx:~ModuleReference.parseReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference" resolve="parseReference" />
-            <ref role="1Pybhc" to="w0gx:~ModuleReference" resolve="ModuleReference" />
-            <node concept="2OqwBi" id="3B8MzHTEKt0" role="37wK5m">
-              <node concept="37vLTw" id="3B8MzHTEKrs" role="2Oq$k0">
-                <ref role="3cqZAo" node="1B5M0L_oIYj" resolve="node" />
-              </node>
-              <node concept="3TrcHB" id="3B8MzHTEKzj" role="2OqNvi">
-                <ref role="3TsBF5" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
+        <node concept="3cpWs6" id="2ldpjzY1_H_" role="3cqZAp">
+          <node concept="2OqwBi" id="2ldpjzY1Bb9" role="3cqZAk">
+            <node concept="2YIFZM" id="2ldpjzY1AJ6" role="2Oq$k0">
+              <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+              <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+            </node>
+            <node concept="liA8E" id="2ldpjzY1BEm" role="2OqNvi">
+              <ref role="37wK5l" to="dush:~PersistenceFacade.createModuleReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference" resolve="createModuleReference" />
+              <node concept="2OqwBi" id="2ldpjzY1C$R" role="37wK5m">
+                <node concept="37vLTw" id="2ldpjzY1Cbs" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1B5M0L_oIYj" resolve="node" />
+                </node>
+                <node concept="3TrcHB" id="2ldpjzY1Dco" role="2OqNvi">
+                  <ref role="3TsBF5" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
+                </node>
               </node>
             </node>
           </node>
@@ -1759,20 +1790,22 @@
             </node>
             <node concept="liA8E" id="1DUTkFD908i" role="2OqNvi">
               <ref role="37wK5l" to="w1kc:~SNode.setId(org.jetbrains.mps.openapi.model.SNodeId):void" resolve="setId" />
-              <node concept="2YIFZM" id="1DUTkFD90cU" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
-                <ref role="1Pybhc" to="w1kc:~SNodeId" resolve="SNodeId" />
-                <node concept="3cpWs3" id="1DUTkFD9RSr" role="37wK5m">
-                  <node concept="2OqwBi" id="1DUTkFD9SrX" role="3uHU7w">
-                    <node concept="3TrcHB" id="3B8MzHTEN6a" role="2OqNvi">
-                      <ref role="3TsBF5" to="e4tq:3B8MzHTEEZv" resolve="stringValue" />
+              <node concept="2ShNRf" id="2ldpjzY1ExE" role="37wK5m">
+                <node concept="1pGfFk" id="2ldpjzY1ExF" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~SNodeId$Foreign.&lt;init&gt;(java.lang.String)" resolve="SNodeId.Foreign" />
+                  <node concept="3cpWs3" id="2ldpjzY1ExG" role="37wK5m">
+                    <node concept="10M0yZ" id="2ldpjzY1ExH" role="3uHU7B">
+                      <ref role="1PxDUh" to="w1kc:~SNodeId$Foreign" resolve="SNodeId.Foreign" />
+                      <ref role="3cqZAo" to="w1kc:~SNodeId$Foreign.ID_PREFIX" resolve="ID_PREFIX" />
                     </node>
-                    <node concept="37vLTw" id="1DUTkFD9SlI" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1DUTkFD8ZKJ" resolve="node" />
+                    <node concept="2OqwBi" id="2ldpjzY1ExI" role="3uHU7w">
+                      <node concept="3TrcHB" id="2ldpjzY1EGH" role="2OqNvi">
+                        <ref role="3TsBF5" to="e4tq:3B8MzHTEEZv" resolve="stringValue" />
+                      </node>
+                      <node concept="37vLTw" id="2ldpjzY1ExK" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1DUTkFD8ZKJ" resolve="node" />
+                      </node>
                     </node>
-                  </node>
-                  <node concept="Xl_RD" id="1DUTkFD90gP" role="3uHU7B">
-                    <property role="Xl_RC" value="~" />
                   </node>
                 </node>
               </node>
@@ -1900,7 +1933,7 @@
           </node>
           <node concept="3clFbS" id="4Nxj0gBEO8v" role="3clFbx">
             <node concept="3clFbF" id="6fx930y8so$" role="3cqZAp">
-              <node concept="2EnYce" id="6fx930y8soA" role="3clFbG">
+              <node concept="2OqwBi" id="2ldpjzY1EPz" role="3clFbG">
                 <node concept="1eOMI4" id="6fx930y8soE" role="2Oq$k0">
                   <node concept="10QFUN" id="6fx930y8soF" role="1eOMHV">
                     <node concept="3uibUv" id="1B5M0L_mqxq" role="10QFUM">

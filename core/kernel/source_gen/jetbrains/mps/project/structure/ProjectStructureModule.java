@@ -230,7 +230,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
     @Override
     @NotNull
-    protected ModelLoadResult createModel() {
+    protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
       final ProjectStructureModule.ProjectStructureSModel model = new ProjectStructureModule.ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
@@ -261,7 +261,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         });
       }
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
     }
     /*package*/ void originalModuleChanged() {
       jetbrains.mps.smodel.SModel oldModel = getCurrentModelInternal();

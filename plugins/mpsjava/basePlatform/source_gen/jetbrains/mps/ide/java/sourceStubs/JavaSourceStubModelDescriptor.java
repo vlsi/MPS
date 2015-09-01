@@ -56,13 +56,13 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
 
   @Override
   @NotNull
-  protected ModelLoadResult createModel() {
+  protected ModelLoadResult<SModel> createModel() {
     SModel model = new SModel(getReference());
     processStreams(getSource().getAvailableStreams(), model);
     for (SLanguage l : CollectionSequence.fromCollection(importedLanguageIds())) {
       model.addLanguage(l);
     }
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult<SModel>(model, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override

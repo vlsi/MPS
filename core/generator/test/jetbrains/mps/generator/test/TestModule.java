@@ -136,7 +136,7 @@ public class TestModule extends AbstractModule {
 
     @NotNull
     @Override
-    public ModelLoadResult createModel() {
+    public ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
       if (!myToCopy.isLoaded()) {
         // we are going to access internal/implementation model which might be in a partially-loaded
         // state (only public API guarantees proper loading). With partial model, we could face odd
@@ -148,9 +148,9 @@ public class TestModule extends AbstractModule {
       rootElement.setAttribute(ModelPersistence.REF, getReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
-        return new ModelLoadResult(ModelPersistence.readModel(modelContent, false), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult<jetbrains.mps.smodel.SModel>(ModelPersistence.readModel(modelContent, false), ModelLoadingState.FULLY_LOADED);
       } catch (ModelReadException e) {
-        return new ModelLoadResult(new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult<jetbrains.mps.smodel.SModel>(new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e), ModelLoadingState.FULLY_LOADED);
       }
     }
   }

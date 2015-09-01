@@ -7570,35 +7570,60 @@
             </node>
           </node>
           <node concept="3clFbS" id="36tV70ZqjaM" role="2LFqv$">
+            <node concept="3SKdUt" id="2Z1ZyhduISY" role="3cqZAp">
+              <node concept="3SKdUq" id="2Z1ZyhduJfv" role="3SKWNk">
+                <property role="3SKdUp" value="Better not allow to delete mixed selection than filter it automatically to confuse user" />
+              </node>
+            </node>
             <node concept="3clFbJ" id="36tV70ZqjaS" role="3cqZAp">
-              <node concept="3fqX7Q" id="36tV70ZqjaV" role="3clFbw">
-                <node concept="1eOMI4" id="3$myXoLqlgX" role="3fr31v">
-                  <node concept="22lmx$" id="36tV70Zqjb4" role="1eOMHV">
-                    <node concept="22lmx$" id="36tV70ZqjaY" role="3uHU7B">
-                      <node concept="2ZW3vV" id="36tV70ZqjaZ" role="3uHU7B">
-                        <node concept="3uibUv" id="36tV70Zqjb0" role="2ZW6by">
-                          <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
+              <node concept="22lmx$" id="2Z1ZyhduH6q" role="3clFbw">
+                <node concept="2OqwBi" id="2Z1ZyhduHIy" role="3uHU7w">
+                  <node concept="2GrUjf" id="2Z1ZyhduHtB" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                  </node>
+                  <node concept="liA8E" id="2Z1ZyhduI81" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.isReadOnly():boolean" resolve="isReadOnly" />
+                  </node>
+                </node>
+                <node concept="22lmx$" id="2Z1Zyhdu$ob" role="3uHU7B">
+                  <node concept="3fqX7Q" id="36tV70ZqjaV" role="3uHU7B">
+                    <node concept="1eOMI4" id="3$myXoLqlgX" role="3fr31v">
+                      <node concept="22lmx$" id="36tV70Zqjb4" role="1eOMHV">
+                        <node concept="22lmx$" id="36tV70ZqjaY" role="3uHU7B">
+                          <node concept="2ZW3vV" id="36tV70ZqjaZ" role="3uHU7B">
+                            <node concept="3uibUv" id="36tV70Zqjb0" role="2ZW6by">
+                              <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
+                            </node>
+                            <node concept="2GrUjf" id="36tV70ZqjfF" role="2ZW6bz">
+                              <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                            </node>
+                          </node>
+                          <node concept="2ZW3vV" id="36tV70Zqjb5" role="3uHU7w">
+                            <node concept="3uibUv" id="36tV70Zqjb6" role="2ZW6by">
+                              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                            </node>
+                            <node concept="2GrUjf" id="36tV70ZqjbG" role="2ZW6bz">
+                              <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                            </node>
+                          </node>
                         </node>
-                        <node concept="2GrUjf" id="36tV70ZqjfF" role="2ZW6bz">
-                          <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
-                        </node>
-                      </node>
-                      <node concept="2ZW3vV" id="36tV70Zqjb5" role="3uHU7w">
-                        <node concept="3uibUv" id="36tV70Zqjb6" role="2ZW6by">
-                          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                        </node>
-                        <node concept="2GrUjf" id="36tV70ZqjbG" role="2ZW6bz">
-                          <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                        <node concept="2ZW3vV" id="36tV70Zqjba" role="3uHU7w">
+                          <node concept="3uibUv" id="36tV70Zqjbb" role="2ZW6by">
+                            <ref role="3uigEE" to="z1c3:~DevKit" resolve="DevKit" />
+                          </node>
+                          <node concept="2GrUjf" id="36tV70ZqjfB" role="2ZW6bz">
+                            <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                          </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="2ZW3vV" id="36tV70Zqjba" role="3uHU7w">
-                      <node concept="3uibUv" id="36tV70Zqjbb" role="2ZW6by">
-                        <ref role="3uigEE" to="z1c3:~DevKit" resolve="DevKit" />
-                      </node>
-                      <node concept="2GrUjf" id="36tV70ZqjfB" role="2ZW6bz">
-                        <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
-                      </node>
+                  </node>
+                  <node concept="2OqwBi" id="2Z1Zyhdu_7g" role="3uHU7w">
+                    <node concept="2GrUjf" id="2Z1Zyhdu$QG" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="36tV70ZqjaK" resolve="module" />
+                    </node>
+                    <node concept="liA8E" id="2Z1Zyhdu_wo" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
                     </node>
                   </node>
                 </node>
@@ -12826,14 +12851,44 @@
     <node concept="2ScWuX" id="3fhZBTge84v" role="tmbBb">
       <node concept="3clFbS" id="3fhZBTge84w" role="2VODD2">
         <node concept="3clFbF" id="3fhZBTgeaEz" role="3cqZAp">
-          <node concept="2ZW3vV" id="3fhZBTgeaEB" role="3clFbG">
-            <node concept="3uibUv" id="7msLDqMFEUL" role="2ZW6by">
-              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+          <node concept="1Wc70l" id="70LWmLwfMpX" role="3clFbG">
+            <node concept="3fqX7Q" id="70LWmLwfNSW" role="3uHU7w">
+              <node concept="2OqwBi" id="70LWmLwfNSY" role="3fr31v">
+                <node concept="2OqwBi" id="70LWmLwfNSZ" role="2Oq$k0">
+                  <node concept="2WthIp" id="70LWmLwfNT0" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="70LWmLwfNT1" role="2OqNvi">
+                    <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="70LWmLwfNT2" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SModule.isReadOnly():boolean" resolve="isReadOnly" />
+                </node>
+              </node>
             </node>
-            <node concept="2OqwBi" id="3fhZBTgeaE$" role="2ZW6bz">
-              <node concept="2WthIp" id="3fhZBTgeaE_" role="2Oq$k0" />
-              <node concept="1DTwFV" id="3fhZBTgeaEA" role="2OqNvi">
-                <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+            <node concept="1Wc70l" id="70LWmLwfKQ2" role="3uHU7B">
+              <node concept="2ZW3vV" id="3fhZBTgeaEB" role="3uHU7B">
+                <node concept="3uibUv" id="7msLDqMFEUL" role="2ZW6by">
+                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                </node>
+                <node concept="2OqwBi" id="3fhZBTgeaE$" role="2ZW6bz">
+                  <node concept="2WthIp" id="3fhZBTgeaE_" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3fhZBTgeaEA" role="2OqNvi">
+                    <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="70LWmLwfMaM" role="3uHU7w">
+                <node concept="2OqwBi" id="70LWmLwfMaO" role="3fr31v">
+                  <node concept="2OqwBi" id="70LWmLwfMaP" role="2Oq$k0">
+                    <node concept="2WthIp" id="70LWmLwfMaQ" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="70LWmLwfMaR" role="2OqNvi">
+                      <ref role="2WH_rO" node="3fhZBTge84u" resolve="module" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="70LWmLwfMaS" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

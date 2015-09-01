@@ -17,6 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
@@ -24,19 +26,21 @@ import org.jetbrains.mps.annotations.Immutable;
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class ModelLoadResult {
-  private final SModelData myModelData;
+public final class ModelLoadResult<T extends SModelData> {
+  private final T myModelData;
   private final ModelLoadingState myState;
 
-  public ModelLoadResult(SModelData modelData, ModelLoadingState state) {
+  public ModelLoadResult(@Nullable T modelData, @NotNull ModelLoadingState state) {
     myModelData = modelData;
     myState = state;
   }
 
-  public SModelData getModelData() {
+  @Nullable
+  public T getModelData() {
     return myModelData;
   }
 
+  @NotNull
   public ModelLoadingState getState() {
     return myState;
   }

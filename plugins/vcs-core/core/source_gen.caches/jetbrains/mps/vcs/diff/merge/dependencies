@@ -110,21 +110,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" file="MergeTemporaryModel.java">
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NullDataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.extapi.model.EditableSModelBase" />
     <classNode extendsClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
+    <classNode extendsClassName="jetbrains.mps.smodel.EditableModelDescriptor" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
   </dependency>
 </dependenciesRoot>
 

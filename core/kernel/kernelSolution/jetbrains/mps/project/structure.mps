@@ -2123,6 +2123,9 @@
                   <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
                   <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
                 </node>
+                <node concept="3uibUv" id="jzhoHG2iQz" role="1pMfVU">
+                  <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+                </node>
               </node>
             </node>
           </node>
@@ -2130,6 +2133,9 @@
         <node concept="3Tmbuc" id="4fSpAVAUjtO" role="1B3o_S" />
         <node concept="3uibUv" id="3kZp2d0T3kH" role="3clF45">
           <ref role="3uigEE" to="w1kc:~ModelLoadResult" resolve="ModelLoadResult" />
+          <node concept="3uibUv" id="jzhoHG2fOA" role="11_B2D">
+            <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+          </node>
         </node>
         <node concept="2AHcQZ" id="kXbpb0jC_c" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
