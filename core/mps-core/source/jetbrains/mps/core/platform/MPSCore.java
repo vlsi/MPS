@@ -122,7 +122,6 @@ public final class MPSCore extends ComponentPluginBase {
     init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
     init(new DataFlowManager(myModuleRepository, myClassLoaderManager));
-    init(new ValidEditorDescriptorsCache());
 
     init(new ResolverComponent());
     init(new ValidationSettings());

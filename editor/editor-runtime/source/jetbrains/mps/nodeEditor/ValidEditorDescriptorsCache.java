@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -28,8 +30,7 @@ import java.util.Set;
 /**
  * @author simon
  */
-public class ValidEditorDescriptorsCache implements CoreComponent {
-  private static ValidEditorDescriptorsCache INSTANCE;
+public class ValidEditorDescriptorsCache implements ApplicationComponent {
 
   private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<EditorAspectDescriptor>();
 
@@ -47,14 +48,14 @@ public class ValidEditorDescriptorsCache implements CoreComponent {
   };
 
   public static ValidEditorDescriptorsCache getInstance() {
-    return INSTANCE;
+    return ApplicationManager.getApplication().getComponent(ValidEditorDescriptorsCache.class);
   }
 
   private synchronized void cleanCaches(Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
       removeDescriptor(language);
       for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {
-       removeDescriptor(extendedLanguage);
+        removeDescriptor(extendedLanguage);
       }
     }
   }
@@ -76,17 +77,18 @@ public class ValidEditorDescriptorsCache implements CoreComponent {
   }
 
   @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-    INSTANCE = this;
+  public void initComponent() {
     LanguageRegistry.getInstance().addRegistryListener(myListener);
   }
 
   @Override
-  public void dispose() {
+  public void disposeComponent() {
     LanguageRegistry.getInstance().removeRegistryListener(myListener);
-    INSTANCE = null;
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Valid Editor Descriptor Cache";
   }
 }
