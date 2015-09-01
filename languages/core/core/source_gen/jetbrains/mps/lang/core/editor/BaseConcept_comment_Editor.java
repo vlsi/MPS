@@ -48,9 +48,16 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createNextEditor_vav8l6_b0(EditorContext editorContext, SNode node) {
-    {
-      EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, BaseConcept_comment_Editor.class);
-      return editorCell;
+    try {
+      editorContext.getCellFactory().pushCellContext();
+      editorContext.getCellFactory().addCellContextHints();
+      editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
+      {
+        EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, BaseConcept_comment_Editor.class);
+        return editorCell;
+      }
+    } finally {
+      editorContext.getCellFactory().popCellContext();
     }
   }
   private EditorCell createConstant_vav8l6_c0(EditorContext editorContext, SNode node) {
