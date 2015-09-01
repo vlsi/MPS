@@ -29,7 +29,6 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
-import jetbrains.mps.nodeEditor.ValidEditorDescriptorsCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;

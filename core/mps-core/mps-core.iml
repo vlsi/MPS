@@ -27,6 +27,5 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
