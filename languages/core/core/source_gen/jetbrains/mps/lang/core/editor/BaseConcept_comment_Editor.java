@@ -50,7 +50,6 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
   private EditorCell createNextEditor_vav8l6_b0(EditorContext editorContext, SNode node) {
     try {
       editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints();
       editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, BaseConcept_comment_Editor.class);

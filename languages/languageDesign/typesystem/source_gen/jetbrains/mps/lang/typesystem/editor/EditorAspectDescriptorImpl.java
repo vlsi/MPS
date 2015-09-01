@@ -189,7 +189,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         break;
       case 0:
         if ("jetbrains.mps.lang.typesystem.editor._NotInRules_Component".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new _NotInRules_Component()));
+          return Collections.<ConceptEditorComponent>singletonList(new _NotInRules_Component());
         }
         break;
       default:

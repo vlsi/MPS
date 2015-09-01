@@ -15,6 +15,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Model_Editor()));
+      case 1:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelReference_Editor()));
+      case 2:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModuleReference_Editor()));
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -25,5 +29,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model", "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference", "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"};
 }
