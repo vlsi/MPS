@@ -28189,7 +28189,7 @@
   <node concept="13MO4I" id="2fcXanZ8aBN">
     <property role="TrG5h" value="template_cellSetupCellModelRefNode" />
     <property role="3GE5qa" value="cellModel" />
-    <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <ref role="3gUMe" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
     <node concept="312cEu" id="2fcXanZ8aBO" role="13RCb5">
       <property role="TrG5h" value="_context_class_" />
       <node concept="Wx3nA" id="2fcXanZ8aBP" role="jymVt">
@@ -28285,32 +28285,13 @@
                                 <node concept="3Tqbb2" id="2fcXanZ8aCY" role="1tU5fm">
                                   <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                                 </node>
-                                <node concept="3K4zz7" id="2fcXanZ8aCZ" role="33vP2m">
-                                  <node concept="2OqwBi" id="2fcXanZ8aD0" role="3K4Cdx">
-                                    <node concept="30H73N" id="2fcXanZ8aD1" role="2Oq$k0" />
-                                    <node concept="1mIQ4w" id="2fcXanZ8aD2" role="2OqNvi">
-                                      <node concept="chp4Y" id="2fcXanZ8aD3" role="cj9EA">
-                                        <ref role="cht4Q" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
-                                      </node>
-                                    </node>
+                                <node concept="2OqwBi" id="2fcXanZ8aD4" role="33vP2m">
+                                  <node concept="3TrEf2" id="2fcXanZ8aD5" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="tpc2:fBF1sR8" />
                                   </node>
-                                  <node concept="2OqwBi" id="2fcXanZ8aD4" role="3K4E3e">
-                                    <node concept="3TrEf2" id="2fcXanZ8aD5" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="tpc2:fBF1sR8" />
-                                    </node>
-                                    <node concept="1PxgMI" id="2fcXanZ8aD6" role="2Oq$k0">
-                                      <ref role="1PxNhF" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
-                                      <node concept="30H73N" id="2fcXanZ8aD7" role="1PxMeX" />
-                                    </node>
-                                  </node>
-                                  <node concept="2OqwBi" id="2fcXanZ8aD8" role="3K4GZi">
-                                    <node concept="3TrEf2" id="2fcXanZ8aD9" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="tpc2:fPiD8ey" />
-                                    </node>
-                                    <node concept="1PxgMI" id="2fcXanZ8aDa" role="2Oq$k0">
-                                      <ref role="1PxNhF" to="tpc2:fPiCG$y" resolve="CellModel_RefCell" />
-                                      <node concept="30H73N" id="2fcXanZ8aDb" role="1PxMeX" />
-                                    </node>
+                                  <node concept="1PxgMI" id="2fcXanZ8aD6" role="2Oq$k0">
+                                    <ref role="1PxNhF" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
+                                    <node concept="30H73N" id="2fcXanZ8aD7" role="1PxMeX" />
                                   </node>
                                 </node>
                               </node>
@@ -29283,7 +29264,7 @@
               </node>
               <node concept="3cpWs8" id="7hmFG5jOtxs" role="3cqZAp">
                 <node concept="xERo3" id="7hmFG5jOtxt" role="lGtFl">
-                  <ref role="xH3mL" node="2fcXanZ8aBN" resolve="template_cellSetupCellModelRefNode" />
+                  <ref role="xH3mL" node="4v1iCryNDHi" resolve="template_cellSetupBlock" />
                 </node>
                 <node concept="3cpWsn" id="7hmFG5jOtxu" role="3cpWs9">
                   <property role="TrG5h" value="i" />

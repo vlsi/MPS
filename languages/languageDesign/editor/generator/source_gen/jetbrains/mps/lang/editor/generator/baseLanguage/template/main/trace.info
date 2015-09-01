@@ -1960,8 +1960,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/2579705680363563507">
     <file name="QueriesGenerated.java">
-      <node id="2579705680363563580" at="843,112,844,922" concept="5" />
-      <node id="2579705680363563596" at="844,922,845,58" concept="6" />
+      <node id="2579705680363563580" at="843,112,844,375" concept="5" />
+      <node id="2579705680363563596" at="844,375,845,58" concept="6" />
       <node id="2579705680363563643" at="847,112,848,314" concept="6" />
       <node id="2579705680363563654" at="850,112,851,270" concept="6" />
       <node id="2579705680363563809" at="853,112,854,279" concept="6" />
