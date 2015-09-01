@@ -23,6 +23,7 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_si1ien_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+    BaseCommentAttribute_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createRefNode_si1ien_a0(editorContext, node));
     return editorCell;
   }

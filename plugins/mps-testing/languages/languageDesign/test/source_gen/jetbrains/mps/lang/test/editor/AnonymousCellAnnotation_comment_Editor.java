@@ -8,6 +8,8 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class AnonymousCellAnnotation_comment_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
@@ -25,6 +27,7 @@ public class AnonymousCellAnnotation_comment_Editor extends DefaultNodeEditor {
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, AnonymousCellAnnotation_comment_Editor.class);
         editorCell.setBig(true);
+        editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
         return editorCell;
       }
     } finally {

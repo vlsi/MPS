@@ -434,12 +434,16 @@
   <node concept="24kQdi" id="2ETBKOyksop">
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
-    <node concept="3F1sOY" id="4NfTi62PfCN" role="2wV5jI">
-      <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+    <node concept="3EZMnI" id="43t9AOLcZPi" role="2wV5jI">
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
-      <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
-        <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
-          <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+      <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
+      <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
+        <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
+          <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
+            <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+          </node>
         </node>
       </node>
     </node>
