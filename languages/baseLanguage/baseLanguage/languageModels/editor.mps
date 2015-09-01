@@ -8778,8 +8778,8 @@
                                 <ref role="3cqZAo" node="4RXh7QRr0H7" resolve="it" />
                               </node>
                               <node concept="1mIQ4w" id="4RXh7QRr0HJ" role="2OqNvi">
-                                <node concept="chp4Y" id="5z_5WH45qpO" role="cj9EA">
-                                  <ref role="cht4Q" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                                <node concept="chp4Y" id="tkzpTrHlgC" role="cj9EA">
+                                  <ref role="cht4Q" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
                                 </node>
                               </node>
                             </node>
