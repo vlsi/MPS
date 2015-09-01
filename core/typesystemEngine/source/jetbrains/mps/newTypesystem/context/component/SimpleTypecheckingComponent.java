@@ -159,20 +159,8 @@ import java.util.Set;
    */
   protected boolean applyRulesToNode(SNode node) {
     final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
-    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
-      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
-      if (rules != null && !rules.isEmpty()) {
-        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
 
-        // check if the last rule applicable to an attribute overrides other rules (last one wins)
-        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
-        if (lastPair.o1.overrides(nodeOrAttr, lastPair.o2)) {
-          break;
-        }
-      }
-    }
-
-    if (nodesAndRules.isEmpty()) return false;
+    if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
     for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
       applyRulesToNode(pair.o1, pair.o2);
@@ -181,19 +169,35 @@ import java.util.Set;
     return true;
   }
 
-  /**
-   * Returns the list of all node attributes and the node itself as the last element.
-   * Earlier attributes have precedence over the ones added later.
-   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
-   *
-   * @param origNode
-   * @return
-   */
-  protected List<SNode> nodesToApplyRulesTo(SNode origNode) {
-    if (origNode == null) return Collections.emptyList();
+  protected boolean collectNodesAndRules(SNode node, List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules) {
+    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
+      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
+      if (rules != null && !rules.isEmpty()) {
+        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
 
-    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(origNode));
-    nodesToTest.add(origNode);
+        // check if the last rule applicable to an attribute supercedes the rules that may follow (last one wins)
+        // this has no effect if we're looking at the attributed node
+        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
+        if (lastPair.o1.supercedesAttributed(nodeOrAttr, lastPair.o2)) {
+          break;
+        }
+      }
+    }
+
+    return !nodesAndRules.isEmpty();
+  }
+
+  /**
+   * Returns the list of all node attributes with the attributedNode added as the last.
+   * The rules applicable to earlier attributes can be amended by the rules applicable to attributes added later.
+   * At some point a rule may declare to "supercede" the rules that follow, which then become obsolete.
+   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
+   */
+  protected List<SNode> nodesToApplyRulesTo(SNode attributedNode) {
+    if (attributedNode == null) return Collections.emptyList();
+
+    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(attributedNode));
+    nodesToTest.add(attributedNode);
 
     return nodesToTest;
   }
