@@ -86,7 +86,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fieldType" + ">";
+      return "<no fieldType>";
     }
 
   }
@@ -161,7 +161,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "instanceType" + ">";
+      return "<no instanceType>";
     }
 
   }

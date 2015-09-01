@@ -72,7 +72,7 @@ public class Not_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "original" + ">";
+      return "<no original>";
     }
 
   }

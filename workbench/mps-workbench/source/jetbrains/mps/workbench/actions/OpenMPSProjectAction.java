@@ -50,7 +50,7 @@ public class OpenMPSProjectAction extends BaseAction {
 
 
   @Override
-  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) throws Exception {
     super.doUpdate(e, _params);
 
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {

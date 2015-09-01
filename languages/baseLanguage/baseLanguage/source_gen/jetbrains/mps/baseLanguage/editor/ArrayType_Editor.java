@@ -62,7 +62,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "componentType" + ">";
+      return "<no componentType>";
     }
 
   }

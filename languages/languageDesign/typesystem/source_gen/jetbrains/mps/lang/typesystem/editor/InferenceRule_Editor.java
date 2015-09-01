@@ -204,7 +204,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicableNode" + ">";
+      return "<no applicableNode>";
     }
 
   }
@@ -268,7 +268,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "overridesFun" + ">";
+      return "<no overridesFun>";
     }
 
   }
@@ -370,7 +370,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

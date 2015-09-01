@@ -76,7 +76,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftExpression" + ">";
+      return "<no leftExpression>";
     }
 
   }
@@ -204,7 +204,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rightExpression" + ">";
+      return "<no rightExpression>";
     }
 
   }

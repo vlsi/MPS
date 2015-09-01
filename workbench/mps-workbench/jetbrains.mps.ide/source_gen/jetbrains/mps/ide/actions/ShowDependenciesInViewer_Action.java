@@ -33,7 +33,7 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
     return ((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof ModuleDependencyNode;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -65,7 +65,7 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ModuleDependencyNode treeNode = (ModuleDependencyNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
     SModule top = ((DependencyTree) treeNode.getTree()).getModule();
     SModule to = treeNode.getModule().resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());

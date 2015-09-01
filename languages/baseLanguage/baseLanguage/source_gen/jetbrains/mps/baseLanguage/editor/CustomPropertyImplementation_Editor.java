@@ -67,7 +67,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getAccessor" + ">";
+      return "<no getAccessor>";
     }
 
   }
@@ -104,7 +104,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "setAccessor" + ">";
+      return "<no setAccessor>";
     }
 
   }

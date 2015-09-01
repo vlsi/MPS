@@ -93,7 +93,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementsToTake" + ">";
+      return "<no elementsToTake>";
     }
 
   }

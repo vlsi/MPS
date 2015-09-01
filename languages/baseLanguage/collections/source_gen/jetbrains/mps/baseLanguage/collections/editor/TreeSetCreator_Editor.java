@@ -92,7 +92,7 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "comparator" + ">";
+      return "<no comparator>";
     }
 
   }

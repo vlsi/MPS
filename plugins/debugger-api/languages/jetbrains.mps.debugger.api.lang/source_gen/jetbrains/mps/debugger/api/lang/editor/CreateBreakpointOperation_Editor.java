@@ -166,7 +166,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeExpression" + ">";
+      return "<no nodeExpression>";
     }
 
   }
@@ -209,7 +209,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "projectExpression" + ">";
+      return "<no projectExpression>";
     }
 
   }

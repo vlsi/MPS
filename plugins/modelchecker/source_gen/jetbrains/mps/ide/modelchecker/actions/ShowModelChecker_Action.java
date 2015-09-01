@@ -27,7 +27,7 @@ public class ShowModelChecker_Action extends BaseAction {
     return ModelCheckerTool.getInstance(event.getData(CommonDataKeys.PROJECT)).isAvailable();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -44,7 +44,7 @@ public class ShowModelChecker_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ModelCheckerTool tool = ModelCheckerTool.getInstance(event.getData(CommonDataKeys.PROJECT));
     if (!(tool.isAvailable()) || !(tool.toolIsOpened())) {
       // Not visible: open 

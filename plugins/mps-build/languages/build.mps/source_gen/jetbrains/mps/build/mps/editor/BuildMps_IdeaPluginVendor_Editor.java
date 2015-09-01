@@ -136,7 +136,7 @@ public class BuildMps_IdeaPluginVendor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon16" + ">";
+      return "<no icon16>";
     }
 
   }

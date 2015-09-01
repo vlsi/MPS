@@ -224,7 +224,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "execute" + ">";
+      return "<no execute>";
     }
 
   }

@@ -2413,6 +2413,36 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="5N7M5_4e5mt" role="jymVt">
+      <property role="TrG5h" value="isSynchronized" />
+      <node concept="10P_77" id="5N7M5_4e7GP" role="3clF45" />
+      <node concept="3Tm1VV" id="5N7M5_4e5mw" role="1B3o_S" />
+      <node concept="3clFbS" id="5N7M5_4e5mx" role="3clF47">
+        <node concept="3cpWs6" id="5N7M5_4elL3" role="3cqZAp">
+          <node concept="3y3z36" id="5N7M5_4enHk" role="3cqZAk">
+            <node concept="1eOMI4" id="5N7M5_4enHl" role="3uHU7B">
+              <node concept="pVHWs" id="5N7M5_4enHm" role="1eOMHV">
+                <node concept="10M0yZ" id="5N7M5_4enHn" role="3uHU7B">
+                  <ref role="1PxDUh" to="k8ye:~Opcodes" resolve="Opcodes" />
+                  <ref role="3cqZAo" to="k8ye:~Opcodes.ACC_SYNCHRONIZED" resolve="ACC_SYNCHRONIZED" />
+                </node>
+                <node concept="2OqwBi" id="5N7M5_4enHo" role="3uHU7w">
+                  <node concept="2OwXpG" id="5N7M5_4enHp" role="2OqNvi">
+                    <ref role="2Oxat5" to="dd86:~MethodNode.access" resolve="access" />
+                  </node>
+                  <node concept="37vLTw" id="5N7M5_4enHq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6hYzBiUOu_0" resolve="myMethod" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cmrfG" id="5N7M5_4enHr" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="6hYzBiUOuMk" role="jymVt">
       <property role="TrG5h" value="isConstructor" />
       <node concept="3Tm1VV" id="6hYzBiUOuMl" role="1B3o_S" />

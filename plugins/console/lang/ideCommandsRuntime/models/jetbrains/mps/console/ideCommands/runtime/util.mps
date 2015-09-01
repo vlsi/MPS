@@ -1797,9 +1797,7 @@
                       </node>
                       <node concept="37vLTG" id="7VSQgz8PAR2" role="3clF46">
                         <property role="TrG5h" value="key" />
-                        <node concept="3uibUv" id="7VSQgz8PAR3" role="1tU5fm">
-                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                        </node>
+                        <node concept="17QB3L" id="3ZgZ1njMHRg" role="1tU5fm" />
                         <node concept="2AHcQZ" id="7VSQgz8PAR4" role="2AJF6D">
                           <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
                         </node>

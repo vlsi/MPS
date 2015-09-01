@@ -127,7 +127,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -184,7 +184,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statementList" + ">";
+      return "<no statementList>";
     }
 
   }

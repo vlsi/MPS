@@ -79,7 +79,7 @@ public class TailMapOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromKey" + ">";
+      return "<no fromKey>";
     }
 
   }

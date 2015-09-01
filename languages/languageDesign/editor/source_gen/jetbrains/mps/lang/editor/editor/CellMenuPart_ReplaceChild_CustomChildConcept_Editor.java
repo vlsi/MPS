@@ -121,7 +121,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     }
 
     protected String getNoTargetText() {
-      return "<no " + "childConceptFunction" + ">";
+      return "<no childConceptFunction>";
     }
 
   }

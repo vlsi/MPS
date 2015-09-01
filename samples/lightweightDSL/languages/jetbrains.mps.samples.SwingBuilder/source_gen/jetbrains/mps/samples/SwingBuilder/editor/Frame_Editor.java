@@ -77,7 +77,7 @@ public class Frame_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "title" + ">";
+      return "<no title>";
     }
 
   }

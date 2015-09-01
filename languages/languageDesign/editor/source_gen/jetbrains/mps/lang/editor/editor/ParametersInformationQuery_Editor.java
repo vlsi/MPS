@@ -148,7 +148,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -272,7 +272,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "methods" + ">";
+      return "<no methods>";
     }
 
   }
@@ -327,7 +327,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "presentation" + ">";
+      return "<no presentation>";
     }
 
   }
@@ -382,7 +382,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isMethodCurrent" + ">";
+      return "<no isMethodCurrent>";
     }
 
   }

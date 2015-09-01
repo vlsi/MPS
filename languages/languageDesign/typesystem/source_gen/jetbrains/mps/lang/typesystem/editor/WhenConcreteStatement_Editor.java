@@ -95,7 +95,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "argument" + ">";
+      return "<no argument>";
     }
 
   }
@@ -196,7 +196,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

@@ -110,7 +110,7 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "input" + ">";
+      return "<no input>";
     }
 
   }
@@ -150,7 +150,7 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "output" + ">";
+      return "<no output>";
     }
 
   }

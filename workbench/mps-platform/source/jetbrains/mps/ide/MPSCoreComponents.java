@@ -62,6 +62,11 @@ public class MPSCoreComponents implements ApplicationComponent {
   }
 
   @NotNull
+  public Platform getPlatform() {
+    return myPlatform;
+  }
+
+  @NotNull
   public MPSCore getMPSCore() {
     return myPlatform.getCore();
   }

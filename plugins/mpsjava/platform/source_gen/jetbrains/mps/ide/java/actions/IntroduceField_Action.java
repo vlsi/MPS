@@ -54,7 +54,7 @@ public class IntroduceField_Action extends BaseAction {
     return IntroduceFieldRefactoring.isApplicable(nodeToRefactor);
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -96,7 +96,7 @@ public class IntroduceField_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceField");
     final Wrappers._boolean mustBeStatic = new Wrappers._boolean();
 

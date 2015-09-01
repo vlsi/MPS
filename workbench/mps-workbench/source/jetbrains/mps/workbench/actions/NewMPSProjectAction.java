@@ -38,7 +38,7 @@ public class NewMPSProjectAction extends BaseAction implements DumbAware {
   }
 
   @Override
-  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) throws Exception {
     super.doUpdate(e, _params);
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
       e.getPresentation().setIcon(NEW_ICON_WELCOME_SCREEN);

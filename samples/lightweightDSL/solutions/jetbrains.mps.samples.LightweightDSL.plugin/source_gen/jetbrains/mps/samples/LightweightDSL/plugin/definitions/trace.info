@@ -30,34 +30,34 @@
   </root>
   <root nodeRef="r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)/8724345312461265566">
     <file name="SwingBuilder_Queries.java">
-      <node id="8445921194412748958" at="18,53,19,391" concept="2" />
-      <node id="8445921194412717448" at="19,391,20,380" concept="0" />
-      <node id="8445921194412759815" at="20,380,21,171" concept="0" />
-      <node id="8445921194412793958" at="21,171,22,382" concept="0" />
-      <node id="8445921194412909934" at="24,39,25,604" concept="3" />
-      <node id="8445921194412920393" at="29,73,30,46" concept="3" />
-      <node id="8445921194412909196" at="24,0,27,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8445921194412920393" at="29,0,32,0" concept="4" trace="eq_uptsdu_a0a0a0a0a0a2a4a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="8445921194412768317" at="22,382,27,177" concept="0" />
-      <node id="8724345312461265566" at="18,0,29,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="8445921194412909197" at="24,39,25,604" />
-      <scope id="8445921194412920393" at="29,73,30,46" />
-      <scope id="8445921194412909196" at="24,0,27,0">
+      <node id="8445921194412748958" at="17,53,18,391" concept="2" />
+      <node id="8445921194412717448" at="18,391,19,380" concept="0" />
+      <node id="8445921194412759815" at="19,380,20,171" concept="0" />
+      <node id="8445921194412793958" at="20,171,21,382" concept="0" />
+      <node id="8445921194412909934" at="23,39,24,604" concept="3" />
+      <node id="8445921194412920393" at="28,73,29,46" concept="3" />
+      <node id="8445921194412909196" at="23,0,26,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8445921194412920393" at="28,0,31,0" concept="4" trace="eq_uptsdu_a0a0a0a0a0a2a4a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="8445921194412768317" at="21,382,26,177" concept="0" />
+      <node id="8724345312461265566" at="17,0,28,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="8445921194412909197" at="23,39,24,604" />
+      <scope id="8445921194412920393" at="28,73,29,46" />
+      <scope id="8445921194412909196" at="23,0,26,0">
         <var name="it" id="8445921194412909196" />
       </scope>
-      <scope id="8445921194412920393" at="29,0,32,0">
+      <scope id="8445921194412920393" at="28,0,31,0">
         <var name="a" id="8445921194412920393" />
         <var name="b" id="8445921194412920393" />
       </scope>
-      <scope id="8445921194412288426" at="18,53,27,177">
+      <scope id="8445921194412288426" at="17,53,26,177">
         <var name="property" id="8445921194412748959" />
       </scope>
-      <scope id="8724345312461265566" at="18,0,29,0">
+      <scope id="8724345312461265566" at="17,0,28,0">
         <var name="model" id="8724345312461265566" />
         <var name="node" id="8724345312461265566" />
       </scope>
-      <unit id="8445921194412909196" at="23,800,27,5" name="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries$1" />
-      <unit id="8724345312461265566" at="17,0,33,0" name="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries" />
+      <unit id="8445921194412909196" at="22,434,26,5" name="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries$1" />
+      <unit id="8724345312461265566" at="16,0,32,0" name="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries" />
     </file>
   </root>
   <root nodeRef="r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)/941086956890756569">

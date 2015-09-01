@@ -11,11 +11,12 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   private MPSCoreComponents myCoreComponents;
   public HierarchyViewTool(Project project, MPSCoreComponents coreComponents) {
     super(project, "Hierarchy", 8, AllIcons.Toolwindows.ToolWindowHierarchy);
-    this.myCoreComponents = coreComponents;
+    myCoreComponents = coreComponents;
   }
   @Override
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    ConceptHierarchyTree tree = new ConceptHierarchyTree(this, isParentHierarchy);
+    ConceptHierarchyTree tree = new ConceptHierarchyTree(getMPSProject().getRepository(), isParentHierarchy);
+    tree.setHierarchyView(this);
     TreeHighlighterExtension.attachHighlighters(tree, getProject());
     return tree;
   }

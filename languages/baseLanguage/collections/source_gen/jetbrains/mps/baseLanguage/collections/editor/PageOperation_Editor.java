@@ -95,7 +95,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromElement" + ">";
+      return "<no fromElement>";
     }
 
   }
@@ -135,7 +135,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toElement" + ">";
+      return "<no toElement>";
     }
 
   }

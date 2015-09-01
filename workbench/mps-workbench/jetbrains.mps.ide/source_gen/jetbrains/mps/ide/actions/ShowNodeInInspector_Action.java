@@ -29,7 +29,7 @@ public class ShowNodeInInspector_Action extends BaseAction {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editor")) instanceof InspectorEditorComponent;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -57,7 +57,7 @@ public class ShowNodeInInspector_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"))).editNode(((SNode) MapSequence.fromMap(_params).get("node")));
   }
 }

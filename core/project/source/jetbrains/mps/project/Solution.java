@@ -84,14 +84,15 @@ public class Solution extends ReloadableModuleBase {
       jdkPackages.includeWithPrefix("java.");
       jdkPackages.includeWithPrefix("javax.");
       jdkPackages.includeWithPrefix("org.");
-      // com.sun.jdi is in use by debugger
-      jdkPackages.includeWithPrefix("com.");
-      jdkPackages.includeWithPrefix("com.sun.");
-      jdkPackages.includeWithPrefix("com.sun.jdi.");
+      // sun.awt used in mbeddr
+      jdkPackages.includeWithPrefix("sun.");
+      jdkPackages.includeWithPrefix("sun.awt.");
       psc = jdkPackages;
     } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
       PackageScopeControl platformPackages = new PackageScopeControl();
-      platformPackages.setSkipPrivate(true);
+      // mbeddr uses reflection (though custom dsl) to access MPS internals
+      // hence we need to expose private methods unless this reflection language and its uses are removed
+//      platformPackages.setSkipPrivate(true);
       psc = platformPackages;
     }
     if (psc != null) {

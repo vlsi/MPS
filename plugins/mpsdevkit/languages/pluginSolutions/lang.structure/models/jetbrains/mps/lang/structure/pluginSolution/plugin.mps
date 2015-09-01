@@ -15,7 +15,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="0" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
@@ -55,7 +55,6 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
-    <import index="8w31" ref="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
@@ -412,9 +411,6 @@
       <concept id="3751132065236767060" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" flags="ig" index="q3mfD">
         <reference id="19209059688387895" name="decl" index="2VtyIY" />
       </concept>
-      <concept id="3571587574961713354" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation" flags="ng" index="30mAcN">
-        <reference id="3571587574961717879" name="descriptor" index="30mx6e" />
-      </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
@@ -489,7 +485,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
         <reference id="6973815483243565416" name="member" index="3f7u_j" />
         <reference id="6973815483243564601" name="enum" index="3f7vo2" />
@@ -4292,9 +4288,6 @@
       <property role="TrG5h" value="MoveConcepts_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBB2Qs" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBB2Qt" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBB2Qu" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -8408,9 +8401,6 @@
       <property role="TrG5h" value="MovePropertyUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBtl6E" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBtl6F" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBtl6G" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -9159,13 +9149,8 @@
             <node concept="2YIFZM" id="6gEjUfBrB9H" role="3clFbG">
               <ref role="37wK5l" to="o2jy:4rbk1n1vfZJ" resolve="getConcept" />
               <ref role="1Pybhc" to="o2jy:4rbk1n1vf4H" resolve="MoveUpDialog" />
-              <node concept="2OqwBi" id="6gEjUfBrB9I" role="37wK5m">
-                <node concept="37vLTw" id="6gEjUfBrB9J" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6gEjUfBvqyO" resolve="project" />
-                </node>
-                <node concept="liA8E" id="6gEjUfBrB9K" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="6gEjUfBrB9J" role="37wK5m">
+                <ref role="3cqZAo" node="6gEjUfBvqyO" resolve="project" />
               </node>
               <node concept="37vLTw" id="6gEjUfBvrM9" role="37wK5m">
                 <ref role="3cqZAo" node="6gEjUfBvqyQ" resolve="conceptFeature" />
@@ -9363,9 +9348,6 @@
       <property role="TrG5h" value="MoveContainmentLinkUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBsA_s" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBsA_t" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBsA_y" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -9927,9 +9909,6 @@
       <property role="TrG5h" value="MoveReferenceLinkUp_extension" />
       <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodes" />
       <node concept="3Tm1VV" id="6gEjUfBtl7V" role="1B3o_S" />
-      <node concept="30mAcN" id="6gEjUfBtl7W" role="lGtFl">
-        <ref role="30mx6e" to="90d:3zLwYDe0svo" resolve="Extension" />
-      </node>
       <node concept="q3mfD" id="6gEjUfBtl7X" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />

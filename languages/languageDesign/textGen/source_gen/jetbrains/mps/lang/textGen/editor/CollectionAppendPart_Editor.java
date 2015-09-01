@@ -84,7 +84,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list" + ">";
+      return "<no list>";
     }
 
   }

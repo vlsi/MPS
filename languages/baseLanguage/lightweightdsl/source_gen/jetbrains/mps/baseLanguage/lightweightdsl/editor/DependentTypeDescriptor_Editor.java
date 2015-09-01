@@ -75,7 +75,7 @@ public class DependentTypeDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getter" + ">";
+      return "<no getter>";
     }
 
   }

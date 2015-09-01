@@ -71,7 +71,7 @@ public class TargetReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "facetRef" + ">";
+      return "<no facetRef>";
     }
 
   }

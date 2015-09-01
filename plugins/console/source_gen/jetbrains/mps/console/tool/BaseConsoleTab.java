@@ -65,6 +65,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Scanner;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.MouseShortcut;
 import java.awt.event.MouseEvent;
@@ -110,6 +116,11 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     return myTool;
   }
 
+  public void activate() {
+    getConsoleTool().getToolWindow().activate(null);
+    getConsoleTool().selectTab(this);
+  }
+
   protected void addBuiltInImports() {
     SLanguage base = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L), "jetbrains.mps.console.base");
     Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(Collections.singleton(base)).getExtending();
@@ -151,7 +162,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected void createEditor() {
-    this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a62(ProjectHelper.toMPSProject(myTool.getProject())), null) {
+    this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a82(ProjectHelper.toMPSProject(myTool.getProject())), null) {
       @Nullable
       @Override
       public Object getData(@NonNls String key) {
@@ -159,7 +170,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           return myFileEditor;
         }
         if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
-          PasteProvider parentPasteProvider = as_6q36mf_a0a0a1a0a0a0a0ab(super.getData(key), PasteProvider.class);
+          PasteProvider parentPasteProvider = as_6q36mf_a0a0a1a0a0a0a0cb(super.getData(key), PasteProvider.class);
           return (myTool.getPasteAsRef() ? new BaseConsoleTab.MyPasteProvider(parentPasteProvider) : parentPasteProvider);
         }
         return super.getData(key);
@@ -228,8 +239,8 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
           EditorCell currentCell = myEditor.getSelectedCell();
           SRepository repository = getProject().getRepository();
-          SNode referenceTarget = check_6q36mf_a0e0a0a0a5lb(pastingNodeReference, repository);
-          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a5a0a0a0f73(check_6q36mf_a0a0f0a0a0a5lb(pastingNodeReference), myModel))) {
+          SNode referenceTarget = check_6q36mf_a0e0a0a0a5nb(pastingNodeReference, repository);
+          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a5a0a0a0f93(check_6q36mf_a0a0f0a0a0a5nb(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")));
             SLinkOperations.setTarget(refContainer, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), referenceTarget);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
@@ -240,7 +251,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
             }
             TemporaryModels.getInstance().addMissingImports(myModel);
           } else {
-            check_6q36mf_a0a0f0a0a0a5lb_0(myDefaultPasteProvider, context);
+            check_6q36mf_a0a0f0a0a0a5nb_0(myDefaultPasteProvider, context);
           }
         }
       });
@@ -277,10 +288,10 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       public Project getProject() {
         return ProjectHelper.toMPSProject(myTool.getProject());
       }
-      public SearchScope getDefaultSearchscope() {
+      public SearchScope getDefaultSearchScope() {
         return new ProjectScope(getProject());
       }
-      public BaseConsoleTab getConsoleTab() {
+      public BaseConsoleTab getOutputWindow() {
         return BaseConsoleTab.this;
       }
     };
@@ -320,7 +331,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         while (scanner.hasNextLine()) {
           String line = scanner.nextLine();
           if ((line != null && line.length() > 0)) {
-            ListSequence.fromList(SLinkOperations.getChildren(getLastReponse(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, 0x4e3b035171b356edL, "item"))).addElement(createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a94(line));
+            ListSequence.fromList(SLinkOperations.getChildren(getLastReponse(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, 0x4e3b035171b356edL, "item"))).addElement(createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a15(line));
           }
           if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
             SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, 0x4e3b035171b356edL, "item"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35d30L, "jetbrains.mps.console.base.structure.NewLineResponseItem")));
@@ -330,6 +341,36 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       public void addNode(SNode node) {
         addNodeImports(node);
         SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, 0x4e3b035171b356edL, "item"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, "jetbrains.mps.console.base.structure.NodeResponseItem"))), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, 0x4e3b035171b35c15L, "node"), node);
+      }
+      public void addNodeRef(SNode target) {
+        SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation")));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), target);
+        addNode(node);
+      }
+      public void addException(Throwable t) {
+        StringWriter writer = new StringWriter();
+        t.printStackTrace(new PrintWriter(writer));
+        SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder")));
+        SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"), writer.toString());
+        SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), t.getClass().getName());
+        addNode(exceptionHolder);
+      }
+      public void addClosure(_FunctionTypes._void_P0_E0 closure, String text) {
+        SNode nodeWithClosure = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure")));
+        SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
+        ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
+        addNode(nodeWithClosure);
+      }
+      public void addSequence(final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
+        if (resultsCount == 0) {
+          addText("empty sequence");
+        } else {
+          addClosure(new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              ConsoleUtil.show(project, results);
+            }
+          }, resultsCount + " " + resultDescription);
+        }
       }
     };
   }
@@ -377,7 +418,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     this.add(toolbarComponent, BorderLayout.WEST);
     this.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
 
-    myHighlighter = check_6q36mf_a0o0gc(myTool.getProject());
+    myHighlighter = check_6q36mf_a0o0ic(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -400,7 +441,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           public void run() {
             ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, 0x63da33792b5df49aL, "item"))).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"))));
             SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-            check_6q36mf_a2a0a0a0a0a2a0d0ic(executeBefore);
+            check_6q36mf_a2a0a0a0a0a2a0d0kc(executeBefore);
           }
         });
       }
@@ -409,7 +450,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         getProject().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SLinkOperations.getTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-            check_6q36mf_a1a0a0a0a0a3a0d0ic(executeAfter);
+            check_6q36mf_a1a0a0a0a0a3a0d0kc(executeAfter);
           }
         });
       }
@@ -469,61 +510,61 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
-  private static SRepository check_6q36mf_a0a0a0a62(Project checkedDotOperand) {
+  private static SRepository check_6q36mf_a0a0a0a82(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRepository();
     }
     return null;
   }
-  private static SNode check_6q36mf_a0e0a0a0a5lb(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_6q36mf_a0e0a0a0a5nb(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static boolean check_6q36mf_a0a5a0a0a0f73(SModelReference checkedDotOperand, SModel myModel) {
+  private static boolean check_6q36mf_a0a5a0a0a0f93(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myModel.getReference());
     }
     return false;
   }
-  private static SModelReference check_6q36mf_a0a0f0a0a0a5lb(SNodeReference checkedDotOperand) {
+  private static SModelReference check_6q36mf_a0a0f0a0a0a5nb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelReference();
     }
     return null;
   }
-  private static void check_6q36mf_a0a0f0a0a0a5lb_0(PasteProvider checkedDotOperand, DataContext context) {
+  private static void check_6q36mf_a0a0f0a0a0a5nb_0(PasteProvider checkedDotOperand, DataContext context) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performPaste(context);
     }
 
   }
-  private static SNode createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a94(Object p0) {
+  private static SNode createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a15(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), p0 + "");
     return n1;
   }
-  private static Highlighter check_6q36mf_a0o0gc(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0o0ic(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
     return null;
   }
-  private static void check_6q36mf_a2a0a0a0a0a2a0d0ic(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a2a0a0a0a0a2a0d0kc(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-  private static void check_6q36mf_a1a0a0a0a0a3a0d0ic(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0a0a0a3a0d0kc(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-  private static <T> T as_6q36mf_a0a0a1a0a0a0a0ab(Object o, Class<T> type) {
+  private static <T> T as_6q36mf_a0a0a1a0a0a0a0cb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -82,7 +82,7 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "stroke" + ">";
+      return "<no stroke>";
     }
 
   }

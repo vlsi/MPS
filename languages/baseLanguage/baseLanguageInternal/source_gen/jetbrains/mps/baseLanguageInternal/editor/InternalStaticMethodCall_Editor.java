@@ -93,7 +93,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "returnType" + ">";
+      return "<no returnType>";
     }
 
   }

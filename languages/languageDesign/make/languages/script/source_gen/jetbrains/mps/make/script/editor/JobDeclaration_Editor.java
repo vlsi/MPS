@@ -233,7 +233,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "config" + ">";
+      return "<no config>";
     }
 
   }
@@ -280,7 +280,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "job" + ">";
+      return "<no job>";
     }
 
   }

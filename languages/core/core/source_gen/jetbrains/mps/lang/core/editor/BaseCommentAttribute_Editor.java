@@ -69,7 +69,7 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "commentedNode" + ">";
+      return "<no commentedNode>";
     }
 
   }

@@ -31,7 +31,7 @@ public class ExecuteCalculator_Action extends BaseAction {
     return ExecuteCalculator_Action.this.getMainMethod(event) != null;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -51,7 +51,7 @@ public class ExecuteCalculator_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     try {
       final Method method = ExecuteCalculator_Action.this.getMainMethod(event);
       Thread thread = new Thread(new Runnable() {

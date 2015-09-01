@@ -35,7 +35,7 @@ public class FixModuleImports_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     new MissingDependenciesFixer(event.getData(MPSCommonDataKeys.MODEL)).fixModuleDependencies();
   }
 }

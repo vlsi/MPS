@@ -7,8 +7,12 @@ import jetbrains.mps.project.AbstractModule;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.Renamer;
+import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 
 public class RenameModuleDialog extends RenameDialog {
   private AbstractModule myModule;
@@ -22,14 +26,31 @@ public class RenameModuleDialog extends RenameDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         final String fqName = getCurrentValue();
-        if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
-          setErrorText("Duplicate module name");
-          return;
+
+        final SRepository projectRepository = ProjectHelper.getProjectRepository(getProject());
+        for (final SModule module : projectRepository.getModules()) {
+          if (module.getModuleName().equals(fqName)) {
+            setErrorText("Duplicate module name");
+            return;
+          }
         }
+
         if (!((fqName.equals(myModule.getModuleName())))) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
+              // save old module path for project descriptor change 
+              final String oldModuleName = myModule.getDescriptorFile().getPath();
+
               Renamer.renameModule(myModule, fqName);
+
+              // TODO: add moduleRenamed to SRepositoryListener? 
+              // update module path in project descriptor 
+              final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+              if (mpsProject instanceof StandaloneMPSProject) {
+                final ProjectDescriptor projectDescriptor = ((StandaloneMPSProject) mpsProject).getProjectDescriptor();
+                projectDescriptor.removeModule(oldModuleName);
+                projectDescriptor.addModule(myModule.getDescriptorFile().getPath());
+              }
             }
           });
         }

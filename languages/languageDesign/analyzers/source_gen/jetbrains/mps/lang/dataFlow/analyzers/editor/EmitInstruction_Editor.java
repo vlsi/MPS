@@ -71,7 +71,7 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "instructionRef" + ">";
+      return "<no instructionRef>";
     }
 
   }
@@ -118,7 +118,7 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "position" + ">";
+      return "<no position>";
     }
 
   }
@@ -152,7 +152,7 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "target" + ">";
+      return "<no target>";
     }
 
   }

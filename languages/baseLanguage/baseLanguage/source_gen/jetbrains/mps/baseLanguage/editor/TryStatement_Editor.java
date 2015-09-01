@@ -102,7 +102,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -227,7 +227,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "finallyBody" + ">";
+      return "<no finallyBody>";
     }
 
   }

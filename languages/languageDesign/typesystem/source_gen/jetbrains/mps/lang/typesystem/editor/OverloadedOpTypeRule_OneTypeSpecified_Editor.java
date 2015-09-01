@@ -170,7 +170,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operandType" + ">";
+      return "<no operandType>";
     }
 
   }
@@ -276,7 +276,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isApplicable" + ">";
+      return "<no isApplicable>";
     }
 
   }
@@ -316,7 +316,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     }
 
     protected String getNoTargetText() {
-      return "<no " + "function" + ">";
+      return "<no function>";
     }
 
   }

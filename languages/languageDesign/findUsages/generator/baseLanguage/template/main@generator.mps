@@ -928,8 +928,8 @@
       <node concept="2AHcQZ" id="7kBaCiqUfE7" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
-      <node concept="3uibUv" id="7JBhbjisGFE" role="3clF45">
-        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      <node concept="3uibUv" id="4Kvy4UW$JuJ" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
       </node>
       <node concept="3Tm1VV" id="hqZ7lJN" role="1B3o_S" />
       <node concept="3clFbS" id="hqZ7lJO" role="3clF47">

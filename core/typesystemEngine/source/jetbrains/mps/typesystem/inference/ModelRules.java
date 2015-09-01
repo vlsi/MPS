@@ -21,6 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -45,8 +46,7 @@ public class ModelRules {
 
   public ModelRules(SModel model, LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
-    Collection<SLanguage> languages = SModelOperations.getAllLanguageImports(model);
-    loadLanguages(languages);
+    loadLanguages(model);
   }
 
   public void clear() {
@@ -55,7 +55,10 @@ public class ModelRules {
   }
 
   //todo: we should not change language models while loading language
-  private void loadLanguages(Collection<SLanguage> languages) {
+  private void loadLanguages(SModel model) {
+    Collection<SLanguage> initial = SModelOperations.getAllLanguageImports(model);
+    Set<SLanguage> languages = new SLanguageHierarchy(initial).getExtended();
+
     for (SLanguage l : languages) {
       final String languageNamespace = l.getQualifiedName();
       if (myLoadedLanguages.contains(languageNamespace)) {

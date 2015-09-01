@@ -66,7 +66,7 @@ public class QuickFixField_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fieldType" + ">";
+      return "<no fieldType>";
     }
 
   }

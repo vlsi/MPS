@@ -35,7 +35,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
@@ -59,27 +58,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    getEventDispatch().addChangeListener(new SModelChangeListener() {
-      @Override
-      public void nodeAdded(SModel model, org.jetbrains.mps.openapi.model.SNode parent, String role, org.jetbrains.mps.openapi.model.SNode child) {
-        setChanged(true);
-      }
-
-      @Override
-      public void nodeRemoved(SModel model, org.jetbrains.mps.openapi.model.SNode parent, String role, org.jetbrains.mps.openapi.model.SNode child) {
-        setChanged(true);
-      }
-
-      @Override
-      public void propertyChanged(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String oldValue, String newValue) {
-        setChanged(true);
-      }
-
-      @Override
-      public void referenceChanged(org.jetbrains.mps.openapi.model.SNode node, String role, SReference oldRef, SReference newRef) {
-        setChanged(true);
-      }
-    });
   }
 
   @Override
@@ -117,8 +95,11 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     }
     if (getCurrentModelInternal() == null) return;
 
+    // FIXME move next code to SModelBase?
+    final ModelLoadingState oldState = getLoadingState();
     doUnload();
-    fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    setLoadingState(ModelLoadingState.NOT_LOADED);
+    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
   }
 
   protected abstract void doUnload();

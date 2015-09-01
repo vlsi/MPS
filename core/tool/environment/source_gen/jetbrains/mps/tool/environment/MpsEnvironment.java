@@ -138,6 +138,11 @@ public class MpsEnvironment extends EnvironmentBase {
     checkInitialized();
   }
 
+  @Override
+  public Platform getPlatform() {
+    return myPlatform;
+  }
+
   @Nullable
   protected ClassLoader rootClassLoader() {
     return null;

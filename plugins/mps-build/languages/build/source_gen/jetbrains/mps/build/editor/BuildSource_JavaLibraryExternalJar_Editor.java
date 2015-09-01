@@ -69,7 +69,7 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extJar" + ">";
+      return "<no extJar>";
     }
 
   }

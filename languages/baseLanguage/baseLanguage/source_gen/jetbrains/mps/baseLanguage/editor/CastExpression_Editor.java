@@ -80,7 +80,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -123,7 +123,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }

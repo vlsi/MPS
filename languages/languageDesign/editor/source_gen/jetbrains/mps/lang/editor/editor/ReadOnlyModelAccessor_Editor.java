@@ -56,7 +56,7 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getter" + ">";
+      return "<no getter>";
     }
 
   }

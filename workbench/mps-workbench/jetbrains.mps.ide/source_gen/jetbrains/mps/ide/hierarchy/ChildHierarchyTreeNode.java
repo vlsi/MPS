@@ -76,11 +76,9 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   }
   public String calculateText() {
     String name = super.toString();
-    AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView != null) {
-      if (this == hierarchyView.myTreeNode) {
-        name = StringUtil.escapeXml(name);
-      }
+    HierarchyTreeNode hierarchyNode = myHierarchyTree.getActiveTreeNode();
+    if (hierarchyNode == this) {
+      name = StringUtil.escapeXml(name);
     }
     return name;
   }

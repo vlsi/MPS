@@ -76,7 +76,7 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "linkTarget" + ">";
+      return "<no linkTarget>";
     }
 
   }

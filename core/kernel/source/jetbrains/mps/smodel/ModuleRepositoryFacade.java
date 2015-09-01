@@ -177,6 +177,9 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   //intended to use only when module is removed physically
   public void removeModuleForced(SModule module) {
+    if(module.isPackaged() || module.isReadOnly()) {
+      throw new UnsupportedOperationException("Readonly/packaged module can't be deleted physically");
+    }
     Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(REPO.getOwners(module));
     for (MPSModuleOwner owner : owners) {
       REPO.unregisterModule(module, owner);

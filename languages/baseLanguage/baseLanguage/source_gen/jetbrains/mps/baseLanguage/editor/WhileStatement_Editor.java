@@ -140,7 +140,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }
@@ -235,7 +235,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -294,7 +294,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -367,7 +367,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }

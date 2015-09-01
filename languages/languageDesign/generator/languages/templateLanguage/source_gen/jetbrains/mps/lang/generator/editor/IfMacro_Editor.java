@@ -152,7 +152,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "alternativeConsequence" + ">";
+      return "<no alternativeConsequence>";
     }
 
   }

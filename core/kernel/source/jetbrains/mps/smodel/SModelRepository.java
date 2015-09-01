@@ -19,7 +19,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -69,10 +68,18 @@ public class SModelRepository implements CoreComponent {
 
   private final MultiMap<SModel, jetbrains.mps.smodel.SModel> myReloadingDescriptorMap = new MultiMap<SModel, jetbrains.mps.smodel.SModel>();
 
+  /*
+   * SModelRepository used to be global repo listener. With ProjectRepository exposing all modules visible from a project?
+   * however, closing a project (and repository disposal) lead to all models from all modules visible in other projects
+   * to be unregistered from this SModelRepository, and subsequent resolve() of uuid model references (that end up here)
+   * fail, leading to unresolved references. For now, as we still keep single MPSModuleRepository instance, just listen to it
+   * and ignore project repositories, and once we switch to multiple repositories, there would be no SModelRepository.
+   */
   private final GlobalRepositoriesListener myRepositoriesListener = new GlobalRepositoriesListener();
   private final SModelListener myModelsListener = new ModelChangeListener();
 
   private static SModelRepository INSTANCE;
+  private final MPSModuleRepository myRepository;
 
   /**
    * @deprecated global collection of SModels doesn't allow us to move forward. Do not use.
@@ -84,6 +91,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   public SModelRepository(@NotNull MPSModuleRepository moduleRepository) {
+    myRepository = moduleRepository;
   }
 
   @Override
@@ -93,12 +101,12 @@ public class SModelRepository implements CoreComponent {
     }
 
     INSTANCE = this;
-    SRepositoryRegistry.getInstance().addGlobalListener(myRepositoriesListener);
+    myRepository.addRepositoryListener(myRepositoriesListener);
   }
 
   @Override
   public void dispose() {
-    SRepositoryRegistry.getInstance().removeGlobalListener(myRepositoriesListener);
+    myRepository.removeRepositoryListener(myRepositoriesListener);
     INSTANCE = null;
   }
 

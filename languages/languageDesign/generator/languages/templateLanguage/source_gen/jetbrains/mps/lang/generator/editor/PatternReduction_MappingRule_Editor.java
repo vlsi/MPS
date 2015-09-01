@@ -106,7 +106,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pattern" + ">";
+      return "<no pattern>";
     }
 
   }
@@ -286,7 +286,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ruleConsequence" + ">";
+      return "<no ruleConsequence>";
     }
 
   }

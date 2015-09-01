@@ -28,7 +28,7 @@ public class CopyOldNodes_Action extends BaseAction {
     return ChangesStripActionsHelper.areOldNodesAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -45,7 +45,7 @@ public class CopyOldNodes_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ChangesStripActionsHelper.copyOldNodes(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
 }

@@ -69,7 +69,7 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "jar" + ">";
+      return "<no jar>";
     }
 
   }

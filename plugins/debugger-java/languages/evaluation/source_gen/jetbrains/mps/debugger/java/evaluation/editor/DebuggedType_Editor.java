@@ -66,7 +66,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "highType" + ">";
+      return "<no highType>";
     }
 
   }
@@ -123,7 +123,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "lowType" + ">";
+      return "<no lowType>";
     }
 
   }

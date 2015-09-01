@@ -91,20 +91,13 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
         return null; // this is when we are in recursion
       }
     }
-    if (oldState != myModel.getState()) {
-      fireModelStateChanged(myModel.getState());
-    }
+    fireModelStateChanged(oldState, myModel.getState());
     return myModel.getModel(null);
   }
 
   @Override
   public final void load() {
     myModel.getModel(ModelLoadingState.FULLY_LOADED);
-  }
-
-  @Override
-  public final boolean isLoaded() {
-    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
   @Override

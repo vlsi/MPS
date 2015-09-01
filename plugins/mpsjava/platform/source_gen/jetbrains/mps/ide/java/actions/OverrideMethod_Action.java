@@ -46,7 +46,7 @@ public class OverrideMethod_Action extends BaseAction {
     return (classConcept != null) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classConcept, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{})).isNotEmpty();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -78,7 +78,7 @@ public class OverrideMethod_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
     final boolean isInEnumConstant = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {

@@ -35,7 +35,7 @@ public class MoveNodes_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")))) {
       MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
       event.getPresentation().setText(refactoring.getName());
@@ -71,7 +71,7 @@ public class MoveNodes_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     MoveNodes_Action.this.getRefactoring(_params).apply(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
   }
   private MoveNodesRefactoring getRefactoring(final Map<String, Object> _params) {

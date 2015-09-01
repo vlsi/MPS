@@ -22,6 +22,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" file="ShowNodeType_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

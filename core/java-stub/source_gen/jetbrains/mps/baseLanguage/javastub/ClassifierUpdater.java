@@ -360,6 +360,7 @@ public class ClassifierUpdater {
     SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), _quotation_createNode_ol94f8_a0b0bb());
     SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (m.isFinal()));
     SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "" + (m.isDeprecated()));
+    SPropertyOperations.set(md, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"), "" + (m.isSynchronized()));
     updateTypeVariables(m, md, cls);
     SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), getTypeByASMType(m.getGenericReturnType(), md, cls));
     {
@@ -383,7 +384,7 @@ public class ClassifierUpdater {
         pn = pn_iterator.next();
         pa = pa_iterator.next();
         {
-          SNode pd = _quotation_createNode_ol94f8_a0a0g0g0g0bb(getTypeByASMType(pt, md, cls), pn);
+          SNode pd = _quotation_createNode_ol94f8_a0a0g0g0h0bb(getTypeByASMType(pt, md, cls), pn);
           addAnnotationsToParameter(pd, pa);
           ListSequence.fromList(SLinkOperations.getChildren(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(pd);
         }
@@ -808,7 +809,7 @@ public class ClassifierUpdater {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ol94f8_a0a0g0g0g0bb(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ol94f8_a0a0g0g0h0bb(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

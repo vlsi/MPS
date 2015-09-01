@@ -132,6 +132,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/source_gen" isTestSource="false" />
@@ -289,6 +291,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/classes_gen" />
@@ -324,9 +328,6 @@
     <content url="file://$MODULE_DIR$/../../plugins/console/lang">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommandRuntime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommandsRuntime/source_gen" isTestSource="false" />
@@ -338,9 +339,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/console/lang/scriptsRuntime/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommand/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/blCommandRuntime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommandsRuntime/classes_gen" />

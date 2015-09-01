@@ -16,6 +16,9 @@ public class EncodingDeclaration_BehaviorDescriptor extends ConceptFunction_Beha
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return EncodingDeclaration_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return EncodingDeclaration_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.EncodingDeclaration";

@@ -56,13 +56,16 @@ import org.junit.runners.Suite;
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
+    jetbrains.mps.smodel.ModelImplementationTest.class,
     jetbrains.mps.smodel.ModelListenerTest.class,
+    jetbrains.mps.smodel.ModelChangeListenerTest.class,
     jetbrains.mps.smodel.ModelUndoTest.class,
     jetbrains.mps.text.TextAreaTest.class,
     jetbrains.mps.text.TextBufferTest.class,
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
     jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.repo.RepoListenerTest.class,
+    jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class
 })
 public class GlobalTestSuite {

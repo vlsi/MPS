@@ -344,7 +344,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static String getModelStereotype(SModel model) {
-    return SModelStereotype.getStereotype(model);
+    return (model != null ? SModelStereotype.getStereotype(model) : null);
   }
   /**
    * 

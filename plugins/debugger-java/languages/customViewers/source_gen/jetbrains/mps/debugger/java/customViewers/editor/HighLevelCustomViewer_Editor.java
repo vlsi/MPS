@@ -159,7 +159,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "valueType" + ">";
+      return "<no valueType>";
     }
 
   }
@@ -205,7 +205,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "canWrap" + ">";
+      return "<no canWrap>";
     }
 
   }
@@ -251,7 +251,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getPresentation" + ">";
+      return "<no getPresentation>";
     }
 
   }
@@ -297,7 +297,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getWatchables" + ">";
+      return "<no getWatchables>";
     }
 
   }

@@ -213,7 +213,7 @@ public abstract class BaseAction extends AnAction {
     return true;
   }
 
-  protected void doUpdate(AnActionEvent e, Map<String, Object> params) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> params) throws Exception {
     e.getPresentation().setVisible(true);
     e.getPresentation().setEnabled(true);
   }
@@ -222,7 +222,7 @@ public abstract class BaseAction extends AnAction {
     return getClass().getName();
   }
 
-  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params);
+  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) throws Exception;
 
   /**
    * Produce initialized map with action parameters, or null if any required parameter is missing

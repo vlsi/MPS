@@ -184,7 +184,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "modelAcessor" + ">";
+      return "<no modelAcessor>";
     }
 
   }

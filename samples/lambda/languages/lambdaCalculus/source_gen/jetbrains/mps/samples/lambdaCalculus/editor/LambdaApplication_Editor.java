@@ -72,7 +72,7 @@ public class LambdaApplication_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "function" + ">";
+      return "<no function>";
     }
 
   }

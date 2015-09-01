@@ -142,7 +142,7 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debuggerConfiguration" + ">";
+      return "<no debuggerConfiguration>";
     }
 
   }
@@ -315,7 +315,7 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debuggerParameter" + ">";
+      return "<no debuggerParameter>";
     }
 
   }

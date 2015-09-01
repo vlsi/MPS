@@ -90,7 +90,7 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "source" + ">";
+      return "<no source>";
     }
 
   }
@@ -135,7 +135,7 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "create" + ">";
+      return "<no create>";
     }
 
   }

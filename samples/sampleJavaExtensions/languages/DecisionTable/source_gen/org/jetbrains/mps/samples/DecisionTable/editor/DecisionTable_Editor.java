@@ -65,7 +65,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expectedType" + ">";
+      return "<no expectedType>";
     }
 
   }
@@ -105,7 +105,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultValue" + ">";
+      return "<no defaultValue>";
     }
 
   }

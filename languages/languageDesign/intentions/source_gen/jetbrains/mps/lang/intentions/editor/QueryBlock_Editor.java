@@ -114,7 +114,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "paramType" + ">";
+      return "<no paramType>";
     }
 
   }

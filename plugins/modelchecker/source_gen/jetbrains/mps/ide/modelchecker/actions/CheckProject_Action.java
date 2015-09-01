@@ -40,7 +40,7 @@ public class CheckProject_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkProjectAndShowResults();
   }
 }

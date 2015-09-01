@@ -167,7 +167,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -210,7 +210,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "actions" + ">";
+      return "<no actions>";
     }
 
   }

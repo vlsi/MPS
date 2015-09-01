@@ -369,7 +369,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "addHints" + ">";
+      return "<no addHints>";
     }
 
   }
@@ -424,7 +424,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "removeHints" + ">";
+      return "<no removeHints>";
     }
 
   }

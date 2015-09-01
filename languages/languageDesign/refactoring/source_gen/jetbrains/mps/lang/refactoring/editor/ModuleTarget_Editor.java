@@ -94,7 +94,7 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "moduleType" + ">";
+      return "<no moduleType>";
     }
 
   }

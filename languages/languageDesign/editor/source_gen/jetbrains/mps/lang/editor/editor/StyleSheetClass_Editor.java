@@ -126,7 +126,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extendedClass" + ">";
+      return "<no extendedClass>";
     }
 
   }

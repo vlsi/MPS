@@ -93,7 +93,7 @@ public class RaceParticipant_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "car" + ">";
+      return "<no car>";
     }
 
   }

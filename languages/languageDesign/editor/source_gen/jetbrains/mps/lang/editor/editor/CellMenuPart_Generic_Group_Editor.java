@@ -211,7 +211,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "parametersFunction" + ">";
+      return "<no parametersFunction>";
     }
 
   }

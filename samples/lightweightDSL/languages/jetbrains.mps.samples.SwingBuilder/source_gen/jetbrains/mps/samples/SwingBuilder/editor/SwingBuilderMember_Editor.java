@@ -73,7 +73,7 @@ public class SwingBuilderMember_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "frame" + ">";
+      return "<no frame>";
     }
 
   }

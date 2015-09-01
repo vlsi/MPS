@@ -206,7 +206,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debuggerConfiguration" + ">";
+      return "<no debuggerConfiguration>";
     }
 
   }

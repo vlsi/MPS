@@ -86,7 +86,7 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "result" + ">";
+      return "<no result>";
     }
 
   }

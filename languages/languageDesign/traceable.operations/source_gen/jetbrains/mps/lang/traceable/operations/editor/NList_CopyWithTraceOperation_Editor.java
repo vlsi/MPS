@@ -12,6 +12,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -36,6 +37,9 @@ public class NList_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mxb426_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy with trace");
     editorCell.setCellId("Constant_mxb426_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +82,7 @@ public class NList_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "argument" + ">";
+      return "<no argument>";
     }
 
   }

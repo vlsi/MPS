@@ -36,10 +36,10 @@
     <import index="ixe9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.concurrency(MPS.IDEA/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="frkw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:com.sun.jdi(JDK/)" />
-    <import index="rpq9" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:com.sun.jdi.request(JDK/)" />
-    <import index="tz6k" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:com.sun.jdi.connect(JDK/)" />
-    <import index="5qx8" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:com.sun.jdi.event(JDK/)" />
+    <import index="frkw" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi(JDK-tools/)" />
+    <import index="rpq9" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi.request(JDK-tools/)" />
+    <import index="tz6k" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi.connect(JDK-tools/)" />
+    <import index="5qx8" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi.event(JDK-tools/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
   </imports>
   <registry>

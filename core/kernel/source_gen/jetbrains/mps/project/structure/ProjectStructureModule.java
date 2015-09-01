@@ -35,7 +35,9 @@ import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.RegularModelDescriptor;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
+import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -45,6 +47,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.BaseFastNodeFinder;
@@ -114,7 +117,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     } else
     if (myModels.containsKey(ref.getModelId())) {
       ProjectStructureModule.ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
-      descriptor.dropModel();
+      descriptor.originalModuleChanged();
     } else {
       createModel(module);
     }
@@ -187,10 +190,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference().getModelId()) != null) {
+      md.unload();
       unregisterModel((SModelBase) md);
-      if (md instanceof ProjectStructureModule.ProjectStructureSModelDescriptor) {
-        ((ProjectStructureModule.ProjectStructureSModelDescriptor) md).dropModel();
-      }
     }
   }
 
@@ -221,14 +222,15 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return myModels.get(ref);
   }
 
-  public class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
+  public class ProjectStructureSModelDescriptor extends RegularModelDescriptor {
     private final SModule myModule;
     private ProjectStructureSModelDescriptor(SModelReference ref, SModule module) {
-      super(ref);
+      super(ref, new NullDataSource());
       myModule = module;
     }
     @Override
-    protected ProjectStructureModule.ProjectStructureSModel createModel() {
+    @NotNull
+    protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
       final ProjectStructureModule.ProjectStructureSModel model = new ProjectStructureModule.ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
@@ -243,7 +245,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
                 if (module == null) {
                   return Collections.emptyList();
                 }
-                return Sequence.<SModel>fromIterable(module.getModels()).where(new IWhereFilter<SModel>() {
+                return Sequence.fromIterable(module.getModels()).where(new IWhereFilter<SModel>() {
                   @Override
                   public boolean accept(SModel o) {
                     return SModelStereotype.isUserModel(o);
@@ -259,14 +261,17 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         });
       }
-      return model;
+      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
     }
-    private void dropModel() {
-      if (mySModel == null) {
+    /*package*/ void originalModuleChanged() {
+      jetbrains.mps.smodel.SModel oldModel = getCurrentModelInternal();
+      if (oldModel == null) {
         return;
       }
-      final jetbrains.mps.smodel.SModel oldModel = mySModel;
-      mySModel = null;
+      unload();
+      // since we know the module is still there (just has been changed), tell those not caring about unload 
+      // that the content of the model is new (instead of a null, could pass getSModelInternal(), but see no reason 
+      // to read module file unless needed) 
       replaceModelAndFireEvent(oldModel, null);
     }
   }

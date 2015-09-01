@@ -101,7 +101,7 @@ public class InsertElementOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "index" + ">";
+      return "<no index>";
     }
 
   }
@@ -144,7 +144,7 @@ public class InsertElementOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "element" + ">";
+      return "<no element>";
     }
 
   }

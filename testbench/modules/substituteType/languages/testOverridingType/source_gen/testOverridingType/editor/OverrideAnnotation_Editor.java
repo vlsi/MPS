@@ -82,7 +82,7 @@ public class OverrideAnnotation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -126,7 +126,7 @@ public class OverrideAnnotation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "substitute" + ">";
+      return "<no substitute>";
     }
 
   }

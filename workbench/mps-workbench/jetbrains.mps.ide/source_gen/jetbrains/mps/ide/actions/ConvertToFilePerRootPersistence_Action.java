@@ -62,7 +62,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     });
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -94,7 +94,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     final Iterable<SModel> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

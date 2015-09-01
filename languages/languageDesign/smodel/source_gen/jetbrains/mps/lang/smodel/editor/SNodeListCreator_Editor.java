@@ -56,7 +56,7 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "createdType" + ">";
+      return "<no createdType>";
     }
 
   }

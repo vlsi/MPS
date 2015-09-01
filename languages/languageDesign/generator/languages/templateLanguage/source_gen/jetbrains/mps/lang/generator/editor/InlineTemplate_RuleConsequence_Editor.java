@@ -74,7 +74,7 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "templateNode" + ">";
+      return "<no templateNode>";
     }
 
   }

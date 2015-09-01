@@ -65,7 +65,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftExpression" + ">";
+      return "<no leftExpression>";
     }
 
   }
@@ -111,7 +111,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "classType" + ">";
+      return "<no classType>";
     }
 
   }

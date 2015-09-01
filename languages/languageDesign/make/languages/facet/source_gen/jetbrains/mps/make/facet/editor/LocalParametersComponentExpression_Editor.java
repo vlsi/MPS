@@ -65,7 +65,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }
@@ -123,7 +123,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resource" + ">";
+      return "<no resource>";
     }
 
   }

@@ -37,7 +37,7 @@ public class ModuleProperties_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule && ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor() != null;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -69,7 +69,7 @@ public class ModuleProperties_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     // save all is sort of hack - changes to a module might lead to module re-load 
     // (happens for Generator) and close of all respective modified editors (and changes lost) 
     // The best way to fix would be Generator module not changing its language (which in turn triggers  

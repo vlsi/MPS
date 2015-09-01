@@ -91,7 +91,7 @@ public class PerformanceWithTitle_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "singer" + ">";
+      return "<no singer>";
     }
 
   }

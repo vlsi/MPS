@@ -21,12 +21,13 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +43,7 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
@@ -259,18 +261,19 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public static final class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModel {
+  public static final class LanguageModelDescriptor extends RegularModelDescriptor implements GeneratableSModel {
     private final Language myModule;
     private String myHash;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
-      super(ref);
+      super(ref, new NullDataSource());
       myModule = module;
       myHash = null;
     }
 
+    @NotNull
     @Override
-    protected jetbrains.mps.smodel.SModel createModel() {
+    protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
       jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {
         @Override
         public boolean canFireEvent() {
@@ -278,7 +281,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         }
       };
       model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
-      return model;
+      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

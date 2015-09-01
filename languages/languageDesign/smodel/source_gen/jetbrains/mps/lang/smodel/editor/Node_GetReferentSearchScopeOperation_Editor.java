@@ -141,7 +141,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operationContext" + ">";
+      return "<no operationContext>";
     }
 
   }

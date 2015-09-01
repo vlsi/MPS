@@ -69,7 +69,7 @@ public class AttractsFocusBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "child" + ">";
+      return "<no child>";
     }
 
   }

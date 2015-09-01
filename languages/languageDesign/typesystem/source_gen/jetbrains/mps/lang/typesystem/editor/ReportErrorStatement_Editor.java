@@ -212,7 +212,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "messageTarget" + ">";
+      return "<no messageTarget>";
     }
 
   }
@@ -329,7 +329,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "foreignMessageSource" + ">";
+      return "<no foreignMessageSource>";
     }
 
   }

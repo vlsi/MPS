@@ -91,7 +91,7 @@ public class HeadListOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "upToIndex" + ">";
+      return "<no upToIndex>";
     }
 
   }

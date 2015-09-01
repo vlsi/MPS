@@ -28,7 +28,7 @@ public class ShowHelpForNode_Action extends BaseAction {
     return HelpHelper.helpForNodeIsAvailable(event.getData(MPSCommonDataKeys.NODE)) && HelpHelper.getDefaultHelpFor(event.getData(MPSCommonDataKeys.CONTEXT_MODULE), event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE)) != HelpHelper.HelpType.NODE;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -51,7 +51,7 @@ public class ShowHelpForNode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
     HelpHelper.showHelpForNode(event.getData(MPSCommonDataKeys.NODE));
   }
 }

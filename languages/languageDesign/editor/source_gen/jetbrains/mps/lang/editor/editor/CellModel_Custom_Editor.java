@@ -145,7 +145,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "cellProvider" + ">";
+      return "<no cellProvider>";
     }
 
   }

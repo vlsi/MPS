@@ -60,7 +60,7 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "instance" + ">";
+      return "<no instance>";
     }
 
   }

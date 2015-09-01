@@ -99,7 +99,7 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileName" + ">";
+      return "<no fileName>";
     }
 
   }

@@ -57,7 +57,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_9wc3oy_a0a0f(pattern.getFieldValue("patternVar_deps"), pattern.getFieldValue("patternVar_name"));
+              return _quotation_createNode_9wc3oy_a0a0f(((SNode) pattern.getFieldValue("patternVar_deps")), ((String) pattern.getFieldValue("patternVar_name")));
             }
           }, null);
         }

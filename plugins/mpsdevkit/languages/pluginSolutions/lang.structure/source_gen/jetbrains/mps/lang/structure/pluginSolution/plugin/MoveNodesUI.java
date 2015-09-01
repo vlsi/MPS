@@ -39,7 +39,7 @@ public interface MoveNodesUI {
       Messages.showWarningDialog(project.getProject(), text, header);
     }
     public SNode askTargetConcept(MPSProject project, SNode conceptFeature, String featureKind) {
-      return MoveUpDialog.getConcept(project.getProject(), conceptFeature, featureKind);
+      return MoveUpDialog.getConcept(project, conceptFeature, featureKind);
     }
     public MoveNodesUI.WhetherWriteMigration askAboutMigration(MPSProject project) {
       int result = Messages.showYesNoCancelDialog(project.getProject(), "Do you want to run the refactoring locally?", "Execute Refactoring", "Run locally", "Write migration", "Cancel", null);

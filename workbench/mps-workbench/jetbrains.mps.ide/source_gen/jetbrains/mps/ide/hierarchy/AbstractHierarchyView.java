@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.ide.OccurenceNavigator;
@@ -43,7 +44,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
-  protected HierarchyTreeNode myTreeNode;
   protected JPanel myComponent;
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
@@ -178,7 +178,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
   public void showItemInHierarchy(SNode node) {
-    myHierarchyTree.myHierarchyNode = node;
+    myHierarchyTree.setHierarchyNode(node);
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
@@ -188,8 +188,9 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
           return;
         }
         myHierarchyTree.rebuildNow();
-        if (myTreeNode != null) {
-          myHierarchyTree.selectNode(myTreeNode);
+        if (myHierarchyTree.getActiveTreeNode() != null) {
+          myHierarchyTree.setRootNodeText("<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyTree.getActiveTreeNode().calculateNodeIdentifier()) + "</b></font>", getIcon());
+          myHierarchyTree.selectNode(myHierarchyTree.getActiveTreeNode());
         }
         if (!(isTreeInfinite())) {
           myHierarchyTree.expandAll();

@@ -62,7 +62,7 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -105,7 +105,7 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "mapOperation" + ">";
+      return "<no mapOperation>";
     }
 
   }
