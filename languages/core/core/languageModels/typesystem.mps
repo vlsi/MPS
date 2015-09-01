@@ -262,7 +262,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz">
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
         <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -2752,8 +2752,8 @@
               <node concept="1YBJjd" id="BpxLfMiuH0" role="2OEOjV">
                 <ref role="1YBMHb" node="BpxLfMirQs" resolve="childAttribute" />
               </node>
-              <node concept="3Cnw8n" id="BpxLfMirRM" role="2OEOjU">
-                <ref role="QpYPw" node="7yp37p9$qEx" resolve="add_LinkAttribute_id" />
+              <node concept="3Cnw8n" id="43t9AOL1FcE" role="2OEOjU">
+                <ref role="QpYPw" node="43t9AOL1_Sn" resolve="add_ChildAttribute_id" />
               </node>
             </node>
           </node>
@@ -2769,6 +2769,54 @@
     <node concept="1YaCAy" id="BpxLfMirQs" role="1YuTPh">
       <property role="TrG5h" value="childAttribute" />
       <ref role="1YaFvo" to="tpck:BpxLfMhSxq" resolve="ChildAttribute" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="43t9AOL1_Sn">
+    <property role="TrG5h" value="add_ChildAttribute_id" />
+    <property role="3GE5qa" value="attributes" />
+    <node concept="Q5ZZ6" id="43t9AOL1_So" role="Q6x$H">
+      <node concept="3clFbS" id="43t9AOL1_Sp" role="2VODD2">
+        <node concept="3cpWs8" id="43t9AOL1_Sq" role="3cqZAp">
+          <node concept="3cpWsn" id="43t9AOL1_Sr" role="3cpWs9">
+            <property role="TrG5h" value="childAttribute" />
+            <node concept="1PxgMI" id="43t9AOL1_Ss" role="33vP2m">
+              <property role="1BlNFB" value="true" />
+              <ref role="1PxNhF" to="tpck:BpxLfMhSxq" resolve="ChildAttribute" />
+              <node concept="Q6c8r" id="43t9AOL1_St" role="1PxMeX" />
+            </node>
+            <node concept="3Tqbb2" id="43t9AOL1_Su" role="1tU5fm">
+              <ref role="ehGHo" to="tpck:BpxLfMhSxq" resolve="ChildAttribute" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="43t9AOL1_Sv" role="3cqZAp">
+          <node concept="2OqwBi" id="43t9AOL1_Sw" role="3clFbG">
+            <node concept="37vLTw" id="43t9AOL1_Sx" role="2Oq$k0">
+              <ref role="3cqZAo" node="43t9AOL1_Sr" resolve="childAttribute" />
+            </node>
+            <node concept="2qgKlT" id="43t9AOL1_Sy" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:BpxLfMirzM" resolve="setLink" />
+              <node concept="2OqwBi" id="43t9AOL1_Sz" role="37wK5m">
+                <node concept="37vLTw" id="43t9AOL1Aq4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="43t9AOL1_Sr" resolve="childAttribute" />
+                </node>
+                <node concept="2qgKlT" id="43t9AOL1AyE" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:BpxLfMirzf" resolve="getLink" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="43t9AOL1_SA" role="QzAvj">
+      <node concept="3clFbS" id="43t9AOL1_SB" role="2VODD2">
+        <node concept="3clFbF" id="43t9AOL1_SC" role="3cqZAp">
+          <node concept="Xl_RD" id="43t9AOL1_SD" role="3clFbG">
+            <property role="Xl_RC" value="Add id to child attribute" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

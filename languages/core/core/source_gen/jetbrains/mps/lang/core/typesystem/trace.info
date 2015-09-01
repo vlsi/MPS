@@ -377,6 +377,30 @@
       <unit id="376024488709664742" at="24,0,65,0" name="jetbrains.mps.lang.core.typesystem.check_Export_NonTypesystemRule" />
     </file>
   </root>
+  <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/4673934238696234519">
+    <file name="add_ChildAttribute_id_QuickFix.java">
+      <node id="4673934238696234519" at="13,43,14,129" concept="13" />
+      <node id="4673934238696234536" at="16,44,17,39" concept="9" />
+      <node id="4673934238696234522" at="19,35,20,197" concept="8" />
+      <node id="4673934238696234527" at="20,197,21,149" concept="3" />
+      <node id="4673934238696234519" at="13,0,16,0" concept="1" trace="add_ChildAttribute_id_QuickFix#()V" />
+      <node id="4673934238696234519" at="16,0,19,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4673934238696234519" at="19,0,23,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4673934238696234519" at="13,43,14,129" />
+      <scope id="4673934238696234535" at="16,44,17,39" />
+      <scope id="4673934238696234521" at="19,35,21,149">
+        <var name="childAttribute" id="4673934238696234523" />
+      </scope>
+      <scope id="4673934238696234519" at="13,0,16,0" />
+      <scope id="4673934238696234519" at="16,0,19,0">
+        <var name="node" id="4673934238696234519" />
+      </scope>
+      <scope id="4673934238696234519" at="19,0,23,0">
+        <var name="node" id="4673934238696234519" />
+      </scope>
+      <unit id="4673934238696234519" at="12,0,24,0" name="jetbrains.mps.lang.core.typesystem.add_ChildAttribute_id_QuickFix" />
+    </file>
+  </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/5394253938403289886">
     <file name="check_PropertyAttribute_NonTypesystemRule.java">
       <node id="5394253938404357466" at="26,130,27,126" concept="8" />
@@ -803,8 +827,8 @@
       <node id="709746936026611161" at="47,153,48,71" concept="3" />
       <node id="709746936026611183" at="52,7,53,60" concept="8" />
       <node id="709746936026611183" at="53,60,54,254" concept="8" />
-      <node id="709746936026611183" at="55,9,56,151" concept="8" />
-      <node id="709746936026611183" at="56,151,57,71" concept="3" />
+      <node id="709746936026611183" at="55,9,56,152" concept="8" />
+      <node id="709746936026611183" at="56,152,57,71" concept="3" />
       <node id="709746936026611097" at="62,50,63,155" concept="9" />
       <node id="709746936026611097" at="65,68,66,102" concept="0" />
       <node id="709746936026611097" at="65,68,66,102" concept="9" />
