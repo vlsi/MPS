@@ -17,7 +17,7 @@ public class Comment_Action extends BaseAction {
   public Comment_Action() {
     super("Comment Out", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
   @Override
   public boolean isDumbAware() {

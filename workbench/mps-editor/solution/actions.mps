@@ -10739,7 +10739,6 @@
     <property role="3GE5qa" value="EditorActions" />
     <property role="TrG5h" value="Comment" />
     <property role="2uzpH1" value="Comment Out" />
-    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="4yOeMfyPfEI" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
