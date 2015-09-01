@@ -15,5 +15,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_OverridingPrimNumConstant_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_UnconditionalOverrideAnnotation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }
