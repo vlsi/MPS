@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class IsNotError_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IIsError_BehaviorDescriptor {
+public class IsNotError_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public IsNotError_BehaviorDescriptor() {
   }
   @Override

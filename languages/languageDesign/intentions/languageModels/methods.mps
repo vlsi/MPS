@@ -144,6 +144,46 @@
       </node>
     </node>
     <node concept="qMXn0" id="4F1$mtFyUKl" role="QNr5C" />
+    <node concept="q3mfq" id="6jDmPiUSJ$K" role="QNr5C">
+      <property role="TrG5h" value="isApplicableInChild" />
+      <node concept="q3mfp" id="6jDmPiUSJD_" role="q3mfl">
+        <property role="TrG5h" value="node" />
+        <node concept="q3mfx" id="6jDmPiUSJDA" role="q3mfr">
+          <node concept="1bVj0M" id="6jDmPiUSJDB" role="q3mfw">
+            <node concept="37vLTG" id="6jDmPiUSJDC" role="1bW2Oz">
+              <property role="TrG5h" value="point" />
+              <node concept="3Tqbb2" id="6jDmPiUSJDD" role="1tU5fm" />
+            </node>
+            <node concept="3clFbS" id="6jDmPiUSJDE" role="1bW5cS">
+              <node concept="3clFbF" id="6jDmPiUSJDF" role="3cqZAp">
+                <node concept="2YIFZM" id="6jDmPiUSJDG" role="3clFbG">
+                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
+                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
+                  <node concept="37vLTw" id="6jDmPiUSJDH" role="37wK5m">
+                    <ref role="3cqZAo" node="6jDmPiUSJDC" resolve="point" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="q3mfp" id="6jDmPiUZgUF" role="q3mfl">
+        <property role="TrG5h" value="child" />
+        <node concept="3Tqbb2" id="6jDmPiUZgVq" role="q3mfr" />
+      </node>
+      <node concept="q3mfp" id="6jDmPiUSJF0" role="q3mfl">
+        <property role="TrG5h" value="editorContext" />
+        <node concept="3uibUv" id="6jDmPiUSJFs" role="q3mfr">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6jDmPiUSJH1" role="q3mfk" />
+      <node concept="QcxE9" id="6jDmPiUSLku" role="2IRzpu">
+        <property role="QcwnP" value="&lt;not applicable in children&gt;" />
+      </node>
+    </node>
+    <node concept="qMXn0" id="6jDmPiUSJBY" role="QNr5C" />
     <node concept="q3mfq" id="6yt8uwrpTIM" role="QNr5C">
       <property role="TrG5h" value="description" />
       <node concept="17QB3L" id="6yt8uwrpTJ3" role="q3mfk" />

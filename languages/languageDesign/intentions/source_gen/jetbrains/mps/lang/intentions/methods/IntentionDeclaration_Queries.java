@@ -9,6 +9,9 @@ public class IntentionDeclaration_Queries {
   public static SNode isApplicable_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
   }
+  public static SNode isApplicableInChild_node_type(SNode point) {
+    return TypeCalculator.calculateType(point);
+  }
   public static SNode description_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
   }

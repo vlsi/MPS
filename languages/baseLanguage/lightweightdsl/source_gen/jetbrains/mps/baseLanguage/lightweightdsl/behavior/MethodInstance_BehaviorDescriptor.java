@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.openapi.actionSystem.AnAction;
 
-public class MethodInstance_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class MethodInstance_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor, Uneditable_BehaviorDescriptor {
   public MethodInstance_BehaviorDescriptor() {
   }
   public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
@@ -14,6 +15,12 @@ public class MethodInstance_BehaviorDescriptor extends InstanceMethodDeclaration
   }
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return MethodInstance_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
+  }
+  public AnAction virtual_getGoToDeclarationAction_6830275548773022915(SNode thisNode) {
+    return MethodInstance_Behavior.virtual_getGoToDeclarationAction_6830275548773022915(thisNode);
+  }
+  public SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
+    return MethodInstance_Behavior.virtual_getHeader_3721059191406386584(thisNode);
   }
   @Override
   public String getConceptFqName() {

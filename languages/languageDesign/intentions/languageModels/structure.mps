@@ -275,6 +275,9 @@
     <node concept="PrWs8" id="63iz5ddjPo8" role="PzmwI">
       <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
     </node>
+    <node concept="PrWs8" id="5Va0QLqEVw6" role="PzmwI">
+      <ref role="PrY4T" to="oubp:3ezQTUrYHPc" resolve="Uneditable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="77ZFhhOGiCb">
     <property role="TrG5h" value="Intention" />
@@ -293,17 +296,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
-    <node concept="1TJgyj" id="63iz5ddjJ_C" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="childFilter" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
-    </node>
     <node concept="1TJgyj" id="5_2vHPPt4pL" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="error" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5_2vHPPt4on" resolve="IIsError" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="5_2vHPPt4ol" resolve="IsError" />
     </node>
   </node>
   <node concept="PlHQZ" id="63iz5ddjJkS">
@@ -321,6 +318,9 @@
     <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="PrWs8" id="6q8H2OTpOHV" role="PzmwI">
       <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+    <node concept="PrWs8" id="3ezQTUrZk0n" role="PzmwI">
+      <ref role="PrY4T" to="oubp:3ezQTUrYHPc" resolve="Uneditable" />
     </node>
     <node concept="1TJgyj" id="6q8H2OTpOYg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -340,7 +340,7 @@
     <ref role="1TJDcQ" node="5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
   </node>
   <node concept="1TIwiD" id="5_2vHPPt4ol">
-    <property role="TrG5h" value="isError" />
+    <property role="TrG5h" value="IsError" />
     <property role="34LRSv" value="error" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5_2vHPPt4oo" role="PzmwI">
@@ -354,9 +354,6 @@
     <property role="TrG5h" value="IsNotError" />
     <property role="34LRSv" value="not error" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="5_2vHPPt4oS" role="PzmwI">
-      <ref role="PrY4T" node="5_2vHPPt4on" resolve="IIsError" />
-    </node>
   </node>
 </model>
 

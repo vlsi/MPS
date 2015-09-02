@@ -19,6 +19,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new GoToMemberDeclaration_Action());
     // groups 
     addGroup(new ClassLikes_ActionGroup());
   }

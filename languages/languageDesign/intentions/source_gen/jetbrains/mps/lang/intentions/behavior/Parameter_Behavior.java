@@ -6,6 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -18,6 +21,12 @@ public class Parameter_Behavior {
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return _quotation_createNode_5ob2us_a0a1(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x6688b42d39674b7aL, 0x6688b42d39674f90L, "parameterType")));
+  }
+  public static SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x6688b42d39674b7aL, 0x6688b42d39674f90L, "parameterType"));
+  }
+  public static AnAction virtual_getGoToDeclarationAction_6830275548773022915(SNode thisNode) {
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.GoToMemberDeclaration_Action"));
   }
   private static SNode _quotation_createNode_5ob2us_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

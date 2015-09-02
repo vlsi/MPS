@@ -5,6 +5,8 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,9 +22,16 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="6j0q" ref="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
+    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
+      <concept id="3205675194086589964" name="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" flags="nn" index="3$FdUm">
+        <reference id="3205675194086671728" name="action" index="3$FpRE" />
+      </concept>
+    </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
@@ -2284,6 +2293,41 @@
         <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="DSLClassMember" />
       </node>
     </node>
+    <node concept="13i0hz" id="3ezQTUrYNHa" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getHeader" />
+      <ref role="13i0hy" node="3ezQTUrYHQo" resolve="getHeader" />
+      <node concept="3Tm1VV" id="3ezQTUrYNHb" role="1B3o_S" />
+      <node concept="3clFbS" id="3ezQTUrYNHe" role="3clF47">
+        <node concept="3cpWs6" id="3ezQTUrYNTH" role="3cqZAp">
+          <node concept="2OqwBi" id="3ezQTUrYO5v" role="3cqZAk">
+            <node concept="13iPFW" id="3ezQTUrYNTU" role="2Oq$k0" />
+            <node concept="3TrEf2" id="3ezQTUrYORy" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:fzclF7X" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="3ezQTUrYNHf" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="5Va0QLqDQz$" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getGoToDeclarationAction" />
+      <ref role="13i0hy" node="5Va0QLqDJN3" resolve="getGoToDeclarationAction" />
+      <node concept="3Tm1VV" id="5Va0QLqDQz_" role="1B3o_S" />
+      <node concept="3clFbS" id="5Va0QLqDQzC" role="3clF47">
+        <node concept="3clFbF" id="1aVHDCk5gkA" role="3cqZAp">
+          <node concept="3$FdUm" id="6pKGoub9$qz" role="3clFbG">
+            <ref role="3$FpRE" to="6j0q:6pKGoub8wBU" resolve="GoToMemberDeclaration" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5Va0QLqDQzD" role="3clF45">
+        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="7T23sO8vZuO">
     <property role="3GE5qa" value="instances" />
@@ -2957,6 +3001,30 @@
     </node>
     <node concept="13hLZK" id="7GXvAHO1he6" role="13h7CW">
       <node concept="3clFbS" id="7GXvAHO1he7" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3ezQTUrYHP_">
+    <ref role="13h7C2" to="oubp:3ezQTUrYHPc" resolve="Uneditable" />
+    <node concept="13hLZK" id="3ezQTUrYHPA" role="13h7CW">
+      <node concept="3clFbS" id="3ezQTUrYHPB" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3ezQTUrYHQo" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getHeader" />
+      <node concept="3Tm1VV" id="3ezQTUrYHQp" role="1B3o_S" />
+      <node concept="3Tqbb2" id="3ezQTUrYItp" role="3clF45" />
+      <node concept="3clFbS" id="3ezQTUrYHQr" role="3clF47" />
+    </node>
+    <node concept="13i0hz" id="5Va0QLqDJN3" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getGoToDeclarationAction" />
+      <node concept="3Tm1VV" id="5Va0QLqDJN4" role="1B3o_S" />
+      <node concept="3uibUv" id="5Va0QLqDKyb" role="3clF45">
+        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
+      </node>
+      <node concept="3clFbS" id="5Va0QLqDJN6" role="3clF47" />
     </node>
   </node>
 </model>
