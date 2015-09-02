@@ -170,6 +170,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -913,25 +914,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="51NkKCgB3e6" role="3cqZAp">
-          <node concept="3cpWsn" id="51NkKCgB3e7" role="3cpWs9">
-            <property role="TrG5h" value="panel" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="51NkKCgB3e8" role="1tU5fm">
-              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="51NkKCgB3e9" role="33vP2m">
-              <node concept="1pGfFk" id="51NkKCgB3ea" role="2ShVmc">
-                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
-                <node concept="2ShNRf" id="51NkKCgB3eb" role="37wK5m">
-                  <node concept="1pGfFk" id="51NkKCgB3ec" role="2ShVmc">
-                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="YlfeaJOSh$" role="3cqZAp">
           <node concept="37vLTI" id="YlfeaJOSil" role="3clFbG">
             <node concept="2ShNRf" id="YlfeaJOSio" role="37vLTx">
@@ -943,23 +925,6 @@
               <node concept="Xjq3P" id="YlfeaJOSh_" role="2Oq$k0" />
               <node concept="2OwXpG" id="YlfeaJOShZ" role="2OqNvi">
                 <ref role="2Oxat5" node="51NkKCgB3dh" resolve="myComponent" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="51NkKCgB3ed" role="3cqZAp">
-          <node concept="2OqwBi" id="51NkKCgB3ee" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeu_F5" role="2Oq$k0">
-              <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="51NkKCgB3eg" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="3GM_nagTuWg" role="37wK5m">
-                <ref role="3cqZAo" node="51NkKCgB3e7" resolve="panel" />
-              </node>
-              <node concept="10M0yZ" id="51NkKCgB3ei" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.NORTH" resolve="NORTH" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
               </node>
             </node>
           </node>
@@ -1001,78 +966,9 @@
             <node concept="10Nm6u" id="51NkKCgB3ex" role="37wK5m" />
           </node>
         </node>
-        <node concept="3clFbF" id="51NkKCgB3ez" role="3cqZAp">
-          <node concept="2YIFZM" id="51NkKCgB3e$" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="2ShNRf" id="51NkKCgB3e_" role="37wK5m">
-              <node concept="YeOm9" id="51NkKCgB3eA" role="2ShVmc">
-                <node concept="1Y3b0j" id="51NkKCgB3eB" role="YeSDq">
-                  <property role="TrG5h" value="" />
-                  <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <node concept="3clFb_" id="51NkKCgB3eC" role="jymVt">
-                    <property role="TrG5h" value="run" />
-                    <node concept="3Tm1VV" id="51NkKCgB3eD" role="1B3o_S" />
-                    <node concept="3cqZAl" id="51NkKCgB3eE" role="3clF45" />
-                    <node concept="3clFbS" id="51NkKCgB3iD" role="3clF47">
-                      <node concept="3cpWs8" id="51NkKCgB3iE" role="3cqZAp">
-                        <node concept="3cpWsn" id="51NkKCgB3iF" role="3cpWs9">
-                          <property role="TrG5h" value="buttonsPanel" />
-                          <node concept="3uibUv" id="51NkKCgB3iG" role="1tU5fm">
-                            <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-                          </node>
-                          <node concept="2OqwBi" id="51NkKCgB3iH" role="33vP2m">
-                            <node concept="2OqwBi" id="51NkKCgB3iI" role="2Oq$k0">
-                              <node concept="2YIFZM" id="51NkKCgB3iJ" role="2Oq$k0">
-                                <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
-                                <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
-                              </node>
-                              <node concept="liA8E" id="51NkKCgB3iK" role="2OqNvi">
-                                <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
-                                <node concept="10M0yZ" id="51NkKCgB3iL" role="37wK5m">
-                                  <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                                  <ref role="3cqZAo" to="qkt:~ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR" resolve="TYPE_HIERARCHY_VIEW_TOOLBAR" />
-                                </node>
-                                <node concept="1rXfSq" id="4hiugqyz8fT" role="37wK5m">
-                                  <ref role="37wK5l" node="51NkKCgB3f5" resolve="createButtonsGroup" />
-                                </node>
-                                <node concept="3clFbT" id="51NkKCgB3iN" role="37wK5m">
-                                  <property role="3clFbU" value="true" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="51NkKCgB3iO" role="2OqNvi">
-                              <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="51NkKCgB3iP" role="3cqZAp">
-                        <node concept="2OqwBi" id="51NkKCgB3iQ" role="3clFbG">
-                          <node concept="37vLTw" id="3GM_nagT_li" role="2Oq$k0">
-                            <ref role="3cqZAo" node="51NkKCgB3e7" resolve="panel" />
-                          </node>
-                          <node concept="liA8E" id="51NkKCgB3iS" role="2OqNvi">
-                            <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-                            <node concept="37vLTw" id="3GM_nagT_Md" role="37wK5m">
-                              <ref role="3cqZAo" node="51NkKCgB3iF" resolve="buttonsPanel" />
-                            </node>
-                            <node concept="10M0yZ" id="51NkKCgB3iU" role="37wK5m">
-                              <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-                              <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="3tYsUK_RVQG" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbF" id="5CK42mQovOU" role="3cqZAp">
+          <node concept="1rXfSq" id="5CK42mQovOV" role="3clFbG">
+            <ref role="37wK5l" node="5CK42mQosJt" resolve="createControlPanel" />
           </node>
         </node>
       </node>
@@ -1080,6 +976,133 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5CK42mQopxS" role="jymVt" />
+    <node concept="3clFb_" id="5CK42mQosJt" role="jymVt">
+      <property role="TrG5h" value="createControlPanel" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="5CK42mQosJu" role="3clF47">
+        <node concept="3cpWs8" id="5CK42mQosJw" role="3cqZAp">
+          <node concept="3cpWsn" id="5CK42mQosJv" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="panel" />
+            <node concept="3uibUv" id="5CK42mQosJx" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+            </node>
+            <node concept="2ShNRf" id="5CK42mQosK4" role="33vP2m">
+              <node concept="1pGfFk" id="5CK42mQosKh" role="2ShVmc">
+                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
+                <node concept="2ShNRf" id="5CK42mQosKi" role="37wK5m">
+                  <node concept="1pGfFk" id="5CK42mQosKj" role="2ShVmc">
+                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5CK42mQosJ$" role="3cqZAp">
+          <node concept="2OqwBi" id="5CK42mQosKo" role="3clFbG">
+            <node concept="37vLTw" id="5CK42mQosKn" role="2Oq$k0">
+              <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
+            </node>
+            <node concept="liA8E" id="5CK42mQosKp" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="37vLTw" id="5CK42mQosJA" role="37wK5m">
+                <ref role="3cqZAo" node="5CK42mQosJv" resolve="panel" />
+              </node>
+              <node concept="10M0yZ" id="5CK42mQosRX" role="37wK5m">
+                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                <ref role="3cqZAo" to="z60i:~BorderLayout.NORTH" resolve="NORTH" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5CK42mQosJC" role="3cqZAp">
+          <node concept="2YIFZM" id="5CK42mQosKx" role="3clFbG">
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+            <node concept="2ShNRf" id="5CK42mQosJE" role="37wK5m">
+              <node concept="YeOm9" id="5CK42mQosJF" role="2ShVmc">
+                <node concept="1Y3b0j" id="5CK42mQosJG" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <property role="1sVAO0" value="false" />
+                  <property role="1EXbeo" value="false" />
+                  <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="5CK42mQosJH" role="1B3o_S" />
+                  <node concept="3clFb_" id="5CK42mQosJI" role="jymVt">
+                    <property role="TrG5h" value="run" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="2AHcQZ" id="5CK42mQosJJ" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                    <node concept="3clFbS" id="5CK42mQosJK" role="3clF47">
+                      <node concept="3cpWs8" id="5CK42mQosJM" role="3cqZAp">
+                        <node concept="3cpWsn" id="5CK42mQosJL" role="3cpWs9">
+                          <property role="3TUv4t" value="false" />
+                          <property role="TrG5h" value="buttonsPanel" />
+                          <node concept="3uibUv" id="5CK42mQosJN" role="1tU5fm">
+                            <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+                          </node>
+                          <node concept="2OqwBi" id="5CK42mQosJO" role="33vP2m">
+                            <node concept="2OqwBi" id="5CK42mQosJP" role="2Oq$k0">
+                              <node concept="2YIFZM" id="5CK42mQosKC" role="2Oq$k0">
+                                <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                                <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                              </node>
+                              <node concept="liA8E" id="5CK42mQosJR" role="2OqNvi">
+                                <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
+                                <node concept="10M0yZ" id="5CK42mQosRY" role="37wK5m">
+                                  <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+                                  <ref role="3cqZAo" to="qkt:~ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR" resolve="TYPE_HIERARCHY_VIEW_TOOLBAR" />
+                                </node>
+                                <node concept="1rXfSq" id="5CK42mQosJT" role="37wK5m">
+                                  <ref role="37wK5l" node="51NkKCgB3f5" resolve="createButtonsGroup" />
+                                </node>
+                                <node concept="3clFbT" id="5CK42mQosJU" role="37wK5m">
+                                  <property role="3clFbU" value="true" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="5CK42mQosJV" role="2OqNvi">
+                              <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="5CK42mQosJW" role="3cqZAp">
+                        <node concept="2OqwBi" id="5CK42mQosKR" role="3clFbG">
+                          <node concept="37vLTw" id="5CK42mQosKQ" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5CK42mQosJv" resolve="panel" />
+                          </node>
+                          <node concept="liA8E" id="5CK42mQosKS" role="2OqNvi">
+                            <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+                            <node concept="37vLTw" id="5CK42mQosJY" role="37wK5m">
+                              <ref role="3cqZAo" node="5CK42mQosJL" resolve="buttonsPanel" />
+                            </node>
+                            <node concept="10M0yZ" id="5CK42mQosRZ" role="37wK5m">
+                              <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                              <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3Tm1VV" id="5CK42mQosK0" role="1B3o_S" />
+                    <node concept="3cqZAl" id="5CK42mQosK1" role="3clF45" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="5CK42mQosK2" role="1B3o_S" />
+      <node concept="3cqZAl" id="5CK42mQosK3" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="5CK42mQorFh" role="jymVt" />
     <node concept="3clFb_" id="51NkKCgB3eF" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createHierarchyTree" />
