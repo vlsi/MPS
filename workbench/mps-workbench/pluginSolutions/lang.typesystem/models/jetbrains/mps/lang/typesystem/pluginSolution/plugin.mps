@@ -37,6 +37,9 @@
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="6qgz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.model(MPS.Core/)" />
     <import index="ghoz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.newTypesystem(MPS.Core/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -144,6 +147,10 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -530,18 +537,47 @@
         <node concept="3clFbH" id="5stwRNvKiRH" role="3cqZAp" />
         <node concept="3clFbJ" id="5stwRNvKktX" role="3cqZAp">
           <node concept="3clFbS" id="5stwRNvKktY" role="3clFbx">
-            <node concept="3clFbF" id="5stwRNvKktZ" role="3cqZAp">
-              <node concept="2YIFZM" id="5stwRNvKku0" role="3clFbG">
-                <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
-                <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                <node concept="2OqwBi" id="5stwRNvKku1" role="37wK5m">
-                  <node concept="2WthIp" id="5stwRNvKku2" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5stwRNvKku3" role="2OqNvi">
-                    <ref role="2WH_rO" node="4KDfkUwMaBN" resolve="frame" />
+            <node concept="3cpWs8" id="6DDbhE4oVjm" role="3cqZAp">
+              <node concept="3cpWsn" id="6DDbhE4oVjl" role="3cpWs9">
+                <property role="3TUv4t" value="false" />
+                <property role="TrG5h" value="manager" />
+                <node concept="3uibUv" id="6DDbhE4pg3h" role="1tU5fm">
+                  <ref role="3uigEE" to="jkny:~ToolWindowManager" resolve="ToolWindowManager" />
+                </node>
+                <node concept="2YIFZM" id="6DDbhE4pidE" role="33vP2m">
+                  <ref role="1Pybhc" to="jkny:~ToolWindowManager" resolve="ToolWindowManager" />
+                  <ref role="37wK5l" to="jkny:~ToolWindowManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.wm.ToolWindowManager" resolve="getInstance" />
+                  <node concept="2OqwBi" id="6DDbhE4piAh" role="37wK5m">
+                    <node concept="2OqwBi" id="6DDbhE4pigu" role="2Oq$k0">
+                      <node concept="2WthIp" id="6DDbhE4pigx" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="6DDbhE4pigz" role="2OqNvi">
+                        <ref role="2WH_rO" node="C9PExlMzf5" resolve="project" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6DDbhE4piUo" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                    </node>
                   </node>
                 </node>
-                <node concept="Xl_RD" id="5stwRNvKku4" role="37wK5m">
-                  <property role="Xl_RC" value="no type" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="6DDbhE4pj3r" role="3cqZAp">
+              <node concept="2OqwBi" id="6DDbhE4pj6F" role="3clFbG">
+                <node concept="37vLTw" id="6DDbhE4pj3p" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6DDbhE4oVjl" resolve="manager" />
+                </node>
+                <node concept="liA8E" id="6DDbhE4pjem" role="2OqNvi">
+                  <ref role="37wK5l" to="jkny:~ToolWindowManager.notifyByBalloon(java.lang.String,com.intellij.openapi.ui.MessageType,java.lang.String):void" resolve="notifyByBalloon" />
+                  <node concept="Xl_RD" id="6DDbhE4pjf3" role="37wK5m">
+                    <property role="Xl_RC" value="Messages" />
+                  </node>
+                  <node concept="10M0yZ" id="6DDbhE4pk_0" role="37wK5m">
+                    <ref role="1PxDUh" to="jkm4:~MessageType" resolve="MessageType" />
+                    <ref role="3cqZAo" to="jkm4:~MessageType.INFO" resolve="INFO" />
+                  </node>
+                  <node concept="Xl_RD" id="6DDbhE4pkEs" role="37wK5m">
+                    <property role="Xl_RC" value="Selected node has no type" />
+                  </node>
                 </node>
               </node>
             </node>

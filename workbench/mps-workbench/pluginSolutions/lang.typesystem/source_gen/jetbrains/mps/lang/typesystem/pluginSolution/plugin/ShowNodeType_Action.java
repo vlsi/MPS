@@ -22,7 +22,8 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.errors.NullErrorReporter;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.ui.MessageType;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -116,7 +117,8 @@ public class ShowNodeType_Action extends BaseAction {
     });
 
     if (type.value == null) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+      ToolWindowManager manager = ToolWindowManager.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
+      manager.notifyByBalloon("Messages", MessageType.INFO, "Selected node has no type");
       return;
     }
 
