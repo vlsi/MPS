@@ -43,23 +43,23 @@
       <node id="5735715048356392031" at="56,166,57,164" concept="1" />
       <node id="5735715048356392031" at="57,164,58,161" concept="1" />
       <node id="5735715048356392031" at="58,161,59,228" concept="1" />
-      <node id="5735715048356392031" at="59,228,60,229" concept="1" />
-      <node id="5735715048356392031" at="60,229,61,206" concept="1" />
-      <node id="5735715048356392031" at="61,206,62,169" concept="1" />
-      <node id="5735715048356392031" at="62,169,63,239" concept="1" />
-      <node id="5735715048356392031" at="63,239,64,200" concept="1" />
-      <node id="5735715048356392031" at="64,200,65,171" concept="1" />
-      <node id="5735715048356392031" at="65,171,66,164" concept="1" />
+      <node id="5735715048356392031" at="59,228,60,238" concept="1" />
+      <node id="5735715048356392031" at="60,238,61,199" concept="1" />
+      <node id="5735715048356392031" at="61,199,62,170" concept="1" />
+      <node id="5735715048356392031" at="62,170,63,230" concept="1" />
+      <node id="5735715048356392031" at="63,230,64,207" concept="1" />
+      <node id="5735715048356392031" at="64,207,65,170" concept="1" />
+      <node id="5735715048356392031" at="65,170,66,164" concept="1" />
       <node id="5735715048356392031" at="66,164,67,24" concept="7" />
       <node id="7277057533221309358" at="22,0,25,0" concept="5" trace="getGeneratedClassFqName#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
       <node id="5735715048356392031" at="49,227,52,167" concept="0" />
       <node id="5735715048356392031" at="49,227,52,167" concept="0" />
       <node id="5735715048356392031" at="52,167,55,161" concept="0" />
       <node id="5735715048356392031" at="52,167,55,161" concept="0" />
-      <node id="5735715048356392031" at="59,228,62,169" concept="0" />
-      <node id="5735715048356392031" at="59,228,62,169" concept="0" />
-      <node id="5735715048356392031" at="62,169,65,171" concept="0" />
-      <node id="5735715048356392031" at="62,169,65,171" concept="0" />
+      <node id="5735715048356392031" at="59,228,62,170" concept="0" />
+      <node id="5735715048356392031" at="59,228,62,170" concept="0" />
+      <node id="5735715048356392031" at="62,170,65,170" concept="0" />
+      <node id="5735715048356392031" at="62,170,65,170" concept="0" />
       <node id="7277057533220930474" at="26,0,30,0" concept="5" trace="generateInstantiation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7277057533220930486" at="31,0,35,0" concept="5" trace="generateDescriptor#(Ljava/util/Collection;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5735715048356392031" at="48,227,56,166" concept="0" />
@@ -84,8 +84,8 @@
       </scope>
       <scope id="5735715048356392031" at="49,227,52,167" />
       <scope id="5735715048356392031" at="52,167,55,161" />
-      <scope id="5735715048356392031" at="59,228,62,169" />
-      <scope id="5735715048356392031" at="62,169,65,171" />
+      <scope id="5735715048356392031" at="59,228,62,170" />
+      <scope id="5735715048356392031" at="62,170,65,170" />
       <scope id="7277057533220930474" at="26,0,30,0">
         <var name="aspectClassParameter" id="7277057533220930478" />
         <var name="castTo" id="7261102680407049983" />

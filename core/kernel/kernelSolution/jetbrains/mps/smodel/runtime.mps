@@ -213,7 +213,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -418,17 +418,6 @@
                 </node>
               </node>
               <node concept="3clFbC" id="4YpmBa69iLH" role="3clFbw">
-                <node concept="37vLTw" id="4YpmBa69iLI" role="3uHU7B">
-                  <ref role="3cqZAo" to="ba7m:4YpmBa69iM4" resolve="context" />
-                  <node concept="2c44tb" id="4YpmBa69iLJ" role="lGtFl">
-                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                    <property role="2qtEX8" value="variableDeclaration" />
-                    <property role="3hQQBS" value="VariableReference" />
-                    <node concept="37vLTw" id="6jXjkltHIC6" role="2c44t1">
-                      <ref role="3cqZAo" node="6jXjkltHGeI" resolve="aspectClassParameter" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3VsKOn" id="4YpmBa69iLL" role="3uHU7w">
                   <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                   <node concept="2c44tb" id="6jXjkltHIsT" role="lGtFl">
@@ -436,6 +425,17 @@
                     <property role="2qtEX8" value="classifier" />
                     <node concept="1rXfSq" id="6jXjkltHIup" role="2c44t1">
                       <ref role="37wK5l" node="6jXjkltHGdN" resolve="getInterfaceClass" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6GXM2Y1Tn7$" role="3uHU7B">
+                  <ref role="3cqZAo" node="6jXjkltHGeI" resolve="aspectClassParameter" />
+                  <node concept="2c44tb" id="6GXM2Y1Tnaw" role="lGtFl">
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                    <property role="2qtEX8" value="variableDeclaration" />
+                    <property role="3hQQBS" value="VariableReference" />
+                    <node concept="37vLTw" id="6GXM2Y1TnbH" role="2c44t1">
+                      <ref role="3cqZAo" node="6jXjkltHGeI" resolve="aspectClassParameter" />
                     </node>
                   </node>
                 </node>
