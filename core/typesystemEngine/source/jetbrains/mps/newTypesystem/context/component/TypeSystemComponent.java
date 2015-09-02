@@ -213,11 +213,6 @@ import java.util.*;
 
   @Override
   protected boolean applyRulesToNode(final SNode node) {
-    if (node.getConcept().isSubConceptOf(getNodeAttributeConcept())) {
-      // attributes are processed together with the attributed nodes
-      return false;
-    }
-
     final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
 
     if (!collectNodesAndRules(node, nodesAndRules)) return false;

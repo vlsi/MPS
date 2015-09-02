@@ -30,6 +30,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -163,11 +164,6 @@ import java.util.Set;
    * @return
    */
   protected boolean applyRulesToNode(SNode node) {
-    if (node.getConcept().isSubConceptOf(getNodeAttributeConcept())) {
-      // attributes are processed together with the attributed nodes
-      return false;
-    }
-
     final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
 
     if (!collectNodesAndRules(node, nodesAndRules)) return false;
@@ -182,6 +178,16 @@ import java.util.Set;
   @NotNull
   protected SConcept getNodeAttributeConcept() {
     return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute");
+  }
+
+  @NotNull
+  protected SContainmentLink getSmodelAttributeRole() {
+    return MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+  }
+
+  private boolean isNodeAttribute(SNode sNode) {
+    boolean conceptMatches = sNode.getConcept().isSubConceptOf(getNodeAttributeConcept());
+    return conceptMatches && getSmodelAttributeRole().equals(sNode.getContainmentLink());
   }
 
   protected boolean collectNodesAndRules(SNode node, List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules) {
@@ -244,21 +250,29 @@ import java.util.Set;
         if (candidate == null || myFullyCheckedNodes.contains(candidate)) continue;
         myQueue.add(candidate);
       }
-      if (!myPartlyCheckedNodes.contains(sNode)) {
-        accessTracking.installReadListeners();
-        boolean typeAffected = false;
-        try {
-          myNodes.add(sNode);
-          typeAffected = applyRulesToNode(sNode);
-        } finally {
-          accessTracking.removeReadListeners();
-        }
-        accessTracking.postProcess(sNode, typeAffected);
+      if (isNodeAttribute(sNode)) {
+        // attributes are processed together with the attributed nodes
+        myQueue.add(sNode.getParent());
+
+      } else if (!myPartlyCheckedNodes.contains(sNode)) {
+        applyRulesAndTrackAccess(accessTracking, sNode);
         myPartlyCheckedNodes.add(sNode);
       }
       myFullyCheckedNodes.add(sNode);
       if (typeCalculated(targetNode) != null) return;
     }
+  }
+
+  private void applyRulesAndTrackAccess(AccessTracking accessTracking, SNode sNode) {
+    accessTracking.installReadListeners();
+    boolean typeAffected = false;
+    try {
+      myNodes.add(sNode);
+      typeAffected = applyRulesToNode(sNode);
+    } finally {
+      accessTracking.removeReadListeners();
+    }
+    accessTracking.postProcess(sNode, typeAffected);
   }
 
   protected SNode typeCalculated(SNode initialNode) {
