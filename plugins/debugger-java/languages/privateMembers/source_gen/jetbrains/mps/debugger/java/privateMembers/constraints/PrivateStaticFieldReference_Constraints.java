@@ -11,15 +11,21 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDescriptor {
@@ -37,24 +43,32 @@ public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDesc
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
-          @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), ((_context.getEnclosingNode() == null) ? _context.getReferenceNode() : _context.getEnclosingNode()), IClassifiersSearchScope.STATIC_FIELD) {
-              @Override
-              protected boolean isVisible(SNode member) {
-                return true;
-              }
-            };
-          }
+        return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_em3o18_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_em3o18_a0a0a0a0a1a0b0a1a1;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference")))) {
+                return new EmptyScope();
+              }
+              SNode instance = SNodeOperations.as(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference"));
+
+              Iterable<SNode> staticMembers = (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(instance, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
+                }
+              });
+              return new NamedElementsScope(staticMembers);
+
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_em3o18_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "4107550939057703013");
+  private static SNodePointer breakingNode_em3o18_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206789983193");
 }

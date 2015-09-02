@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,12 +20,12 @@ public class QueriesUtil {
   public QueriesUtil() {
   }
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
-    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(classifier, contextNode, IClassifiersSearchScope.STATIC_MEMBER);
-    return QueriesUtil.replaceNodeMenu_parameterObjects(searchScope, classifier);
+    Iterable<SNode> visibleStatics = Sequence.fromIterable(Members.visibleStaticFields(classifier, contextNode)).union(Sequence.fromIterable(Members.visibleStaticMethods(classifier, contextNode))).union(Sequence.fromIterable(Members.visibleEnumConstants(classifier)));
+
+    return QueriesUtil.replaceNodeMenu_parameterObjects(visibleStatics, classifier);
   }
-  public static List<SNode> replaceNodeMenu_parameterObjects(ISearchScope searchScope, SNode classifier) {
-    List<SNode> members = (List<SNode>) searchScope.getNodes();
-    List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
+  public static List<SNode> replaceNodeMenu_parameterObjects(Iterable<SNode> members, SNode classifier) {
+    List<SNode> result = Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
       }
