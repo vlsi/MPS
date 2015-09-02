@@ -3768,5 +3768,28 @@
       <node concept="3Tqbb2" id="1y5tROjsfww" role="3clF45" />
     </node>
   </node>
+  <node concept="13h7C7" id="2$fGC5QgjPu">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <ref role="13h7C2" to="tpd4:6lCixFI9ig3" resolve="SupersedeConceptFunction" />
+    <node concept="13i0hz" id="2$fGC5QgjPx" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="2$fGC5QgjPy" role="1B3o_S" />
+      <node concept="3clFbS" id="2$fGC5QgjPz" role="3clF47">
+        <node concept="3cpWs6" id="2$fGC5QgjP$" role="3cqZAp">
+          <node concept="2c44tf" id="2$fGC5QgjP_" role="3cqZAk">
+            <node concept="10P_77" id="2$fGC5QgjPA" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2$fGC5QgjPB" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="2$fGC5QgjPv" role="13h7CW">
+      <node concept="3clFbS" id="2$fGC5QgjPw" role="2VODD2" />
+    </node>
+  </node>
 </model>
 
