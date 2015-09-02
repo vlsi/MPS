@@ -1506,13 +1506,8 @@
                   <node concept="Xl_RD" id="6lCixFIeRmg" role="37wK5m">
                     <property role="Xl_RC" value="false" />
                   </node>
-                  <node concept="2OqwBi" id="6lCixFIeTZg" role="37wK5m">
-                    <node concept="3TUQnm" id="6lCixFIeSmF" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpd4:1y5tROjsd_V" resolve="OverridesConceptFunction" />
-                    </node>
-                    <node concept="3TrcHB" id="6lCixFIeUhX" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
+                  <node concept="Xl_RD" id="2A3RdBxp061" role="37wK5m">
+                    <property role="Xl_RC" value="{" />
                   </node>
                 </node>
               </node>
@@ -1660,13 +1655,8 @@
                 </node>
                 <node concept="3fqX7Q" id="6lCixFIeY95" role="3clFbw">
                   <node concept="2OqwBi" id="6lCixFIeY97" role="3fr31v">
-                    <node concept="2OqwBi" id="6lCixFIeY98" role="2Oq$k0">
-                      <node concept="3TUQnm" id="6lCixFIeY99" role="2Oq$k0">
-                        <ref role="3TV0OU" to="tpd4:1y5tROjsd_V" resolve="OverridesConceptFunction" />
-                      </node>
-                      <node concept="3TrcHB" id="6lCixFIeY9a" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                      </node>
+                    <node concept="Xl_RD" id="2A3RdBxp0hL" role="2Oq$k0">
+                      <property role="Xl_RC" value="{" />
                     </node>
                     <node concept="liA8E" id="6lCixFIeY9b" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
