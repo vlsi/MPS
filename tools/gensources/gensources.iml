@@ -291,6 +291,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/samples/classes_gen" />
