@@ -147,7 +147,7 @@
       <node concept="3Tm6S6" id="2uZcAeY9Bzg" role="1B3o_S" />
       <node concept="1oajcY" id="2uZcAeY9Bzh" role="1oa70y" />
       <node concept="3Tqbb2" id="2uZcAeY9Bxg" role="1tU5fm">
-        <ref role="ehGHo" to="gqi5:6szrkDoc2jc" resolve="INodeReference" />
+        <ref role="ehGHo" to="gqi5:2GZlO$G5$zc" resolve="AbstractNodeReference" />
       </node>
     </node>
     <node concept="tnohg" id="2Nd7jcMoufQ" role="tncku">

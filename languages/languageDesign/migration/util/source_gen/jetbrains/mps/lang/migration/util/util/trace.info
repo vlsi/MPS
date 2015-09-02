@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:f956f050-2ea3-4251-b572-5ef140eac8df(jetbrains.mps.lang.migration.util.util)/3116305438947602294">
+    <file name="NodeReferenceUtil.java">
+      <node id="7431903976166426721" at="16,56,17,252" concept="1" />
+      <node id="7431903976166426727" at="17,252,18,197" concept="0" />
+      <node id="7431903976166426738" at="18,197,19,259" concept="0" />
+      <node id="7431903976166426752" at="19,259,20,281" concept="0" />
+      <node id="7431903976166426760" at="20,281,21,18" concept="2" />
+      <node id="7431903976166429826" at="23,52,24,248" concept="1" />
+      <node id="7431903976166430670" at="24,248,25,181" concept="0" />
+      <node id="7431903976166430153" at="25,181,26,18" concept="2" />
+      <node id="7431903976166425967" at="23,0,28,0" concept="3" trace="makeDirect#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7431903976166426719" at="16,0,23,0" concept="3" trace="makeReflection#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7431903976166398872" at="23,52,26,18">
+        <var name="result" id="7431903976166429829" />
+      </scope>
+      <scope id="7431903976166426720" at="16,56,21,18">
+        <var name="result" id="7431903976166426722" />
+      </scope>
+      <scope id="7431903976166425967" at="23,0,28,0">
+        <var name="targetNode" id="7431903976166398868" />
+      </scope>
+      <scope id="7431903976166426719" at="16,0,23,0">
+        <var name="targetNode" id="7431903976166426762" />
+      </scope>
+      <unit id="3116305438947602294" at="14,0,30,0" name="jetbrains.mps.lang.migration.util.util.NodeReferenceUtil" />
+    </file>
+  </root>
+</debug-info>
+

@@ -7,10 +7,10 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.migration.util.behavior.NodeReference_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -29,7 +29,7 @@ public class GoToTarget_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode targetNode = NodeReference_Behavior.call_resolve_2864063292004136476(((SNode) MapSequence.fromMap(_params).get("node")));
+    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("node")), "virtual_tryToFindNode_7431903976166009863", new Object[]{((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()});
     return targetNode != null;
   }
   @Override
@@ -50,7 +50,7 @@ public class GoToTarget_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.util.structure.NodeReference")))) {
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")))) {
         node = null;
       }
       MapSequence.fromMap(_params).put("node", node);
@@ -62,7 +62,7 @@ public class GoToTarget_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
-    SNode targetNode = NodeReference_Behavior.call_resolve_2864063292004136476(((SNode) MapSequence.fromMap(_params).get("node")));
+    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("node")), "virtual_tryToFindNode_7431903976166009863", new Object[]{((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()});
     NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), targetNode, true, SNodeOperations.getParent(targetNode) != null);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.migration.util.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class INodeReference_Behavior {
+public class AbstractNodeReference_Behavior {
   public static void init(SNode thisNode) {
   }
 }

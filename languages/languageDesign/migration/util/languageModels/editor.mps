@@ -18,8 +18,13 @@
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
       </concept>
+      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <child id="1140524464360" name="cellLayout" index="2czzBx" />
+      </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
+      <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
+      <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
@@ -57,6 +62,7 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
@@ -114,7 +120,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2uZcAeY8ZhT">
-    <property role="3GE5qa" value="persistence" />
+    <property role="3GE5qa" value="refactoring" />
     <ref role="1XX52x" to="gqi5:2uZcAeY8Z3v" resolve="ReflectionNodeReference" />
     <node concept="3EZMnI" id="2uZcAeY8ZS6" role="2wV5jI">
       <node concept="3F0ifn" id="2uZcAeY8ZS8" role="3EZMnx">
@@ -222,7 +228,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6szrkDocqD8">
-    <property role="3GE5qa" value="persistence" />
+    <property role="3GE5qa" value="refactoring" />
     <ref role="1XX52x" to="gqi5:6szrkDoc3tL" resolve="DirectNodeReference" />
     <node concept="3EZMnI" id="6szrkDocqDk" role="2wV5jI">
       <node concept="3F0ifn" id="6szrkDocqDl" role="3EZMnx">
@@ -246,6 +252,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6szrkDod3OM">
+    <property role="3GE5qa" value="refactoring" />
     <ref role="1XX52x" to="gqi5:6szrkDoc28u" resolve="MoveNode" />
     <node concept="3EZMnI" id="6szrkDod3OO" role="2wV5jI">
       <node concept="3F0ifn" id="6szrkDod3OV" role="3EZMnx">
@@ -267,6 +274,16 @@
       <node concept="3F0ifn" id="6szrkDod3P9" role="3EZMnx">
         <property role="3F0ifm" value=")" />
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+        <node concept="ljvvj" id="2GZlO$G5_Mg" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="2GZlO$G5_LS" role="3EZMnx">
+        <ref role="1NtTu8" to="gqi5:2GZlO$G5_Lp" />
+        <node concept="l2Vlx" id="2GZlO$G5_LU" role="2czzBx" />
+        <node concept="lj46D" id="2GZlO$G5_Mi" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="l2Vlx" id="6szrkDod3OR" role="2iSdaV" />
     </node>

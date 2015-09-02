@@ -108,7 +108,7 @@
   </registry>
   <node concept="18kY7G" id="2uZcAeY9SPO">
     <property role="TrG5h" value="check_NodeReference" />
-    <property role="3GE5qa" value="persistence" />
+    <property role="3GE5qa" value="refactoring" />
     <node concept="3clFbS" id="2uZcAeY9SPP" role="18ibNy">
       <node concept="3cpWs8" id="6fethIfQ1C" role="3cqZAp">
         <node concept="3cpWsn" id="6fethIfQ1I" role="3cpWs9">

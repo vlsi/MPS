@@ -7,29 +7,47 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
+    <file name="AbstractNodeReference_BehaviorDescriptor.java">
+      <unit at="10,0,20,0" name="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,34,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DirectNodeReference_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_BehaviorDescriptor" />
-    </file>
-    <file name="INodeReference_BehaviorDescriptor.java">
-      <unit at="9,0,13,0" name="jetbrains.mps.lang.migration.util.behavior.INodeReference_BehaviorDescriptor" />
-    </file>
-    <file name="IRefactoringStepItem_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.migration.util.behavior.IRefactoringStepItem_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_BehaviorDescriptor" />
     </file>
     <file name="MigrationScriptReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MigrationScriptReference_BehaviorDescriptor" />
     </file>
+    <file name="MoveConceptMemberUp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" />
+    </file>
+    <file name="MoveConcept_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveConcept_BehaviorDescriptor" />
+    </file>
+    <file name="MoveContainmentLinkUp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLinkUp_BehaviorDescriptor" />
+    </file>
+    <file name="MoveNodeSpecialization_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
+    </file>
     <file name="MoveNode_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MoveNode_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveNode_BehaviorDescriptor" />
+    </file>
+    <file name="MovePropertyUp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MovePropertyUp_BehaviorDescriptor" />
+    </file>
+    <file name="MoveReferenceLinkUp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveReferenceLinkUp_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringStepItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStepItem_BehaviorDescriptor" />
     </file>
     <file name="RefactoringStep_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_BehaviorDescriptor" />
     </file>
     <file name="ReflectionNodeReference_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_BehaviorDescriptor" />
     </file>
     <file name="StepData_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.StepData_BehaviorDescriptor" />
@@ -101,13 +119,13 @@
     </file>
   </root>
   <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/7431903976166009836">
-    <file name="INodeReference_Behavior.java">
+    <file name="AbstractNodeReference_Behavior.java">
       <node id="7431903976166009836" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="7431903976166009838" at="8,43,8,43" />
       <scope id="7431903976166009836" at="8,0,10,0">
         <var name="thisNode" id="7431903976166009836" />
       </scope>
-      <unit id="7431903976166009836" at="7,0,11,0" name="jetbrains.mps.lang.migration.util.behavior.INodeReference_Behavior" />
+      <unit id="7431903976166009836" at="7,0,11,0" name="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_Behavior" />
     </file>
   </root>
   <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/7431903976166012812">

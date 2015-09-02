@@ -135,7 +135,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="2uZcAeY90IM">
-    <property role="3GE5qa" value="persistence" />
+    <property role="3GE5qa" value="refactoring" />
     <ref role="13h7C2" to="gqi5:2uZcAeY8Z3v" resolve="ReflectionNodeReference" />
     <node concept="13i0hz" id="2uZcAeY90IP" role="13h7CS">
       <property role="TrG5h" value="getNodeReference" />
@@ -311,8 +311,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="6szrkDoc2JG">
-    <property role="3GE5qa" value="persistence" />
-    <ref role="13h7C2" to="gqi5:6szrkDoc2jc" resolve="INodeReference" />
+    <property role="3GE5qa" value="refactoring" />
+    <ref role="13h7C2" to="gqi5:2GZlO$G5$zc" resolve="AbstractNodeReference" />
     <node concept="13i0hz" id="6szrkDoc2JJ" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
@@ -346,7 +346,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6szrkDoc3uc">
-    <property role="3GE5qa" value="persistence" />
+    <property role="3GE5qa" value="refactoring" />
     <ref role="13h7C2" to="gqi5:6szrkDoc3tL" resolve="DirectNodeReference" />
     <node concept="13hLZK" id="6szrkDoc3ud" role="13h7CW">
       <node concept="3clFbS" id="6szrkDoc3ue" role="2VODD2" />
