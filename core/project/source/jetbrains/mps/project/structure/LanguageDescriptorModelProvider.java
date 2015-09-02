@@ -15,16 +15,23 @@
  */
 package jetbrains.mps.project.structure;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -34,6 +41,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -48,14 +56,17 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class LanguageDescriptorModelProvider implements CoreComponent {
   private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
   private final SRepository myRepository;
+  private ClassLoaderManager myClassLoaderManager;
   private final SRepositoryListener myListener = new SRepositoryContentAdapter() {
 
     @Override
@@ -155,10 +166,35 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       refreshModule(language);
     }
   };
+  private final MPSClassesListener myAspectReloadListener = new MPSClassesListenerAdapter() {
+    @Override
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
+      for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
+        aspects: for (SModel aspect : LanguageAspectSupport.getAspectModels(l)) {
+          ArrayList<SLanguage> mainLanguages = new ArrayList<SLanguage>(LanguageAspectSupport.getMainLanguages(aspect));
+          for (SModule loadedModule : loadedModules) {
+            if (! (loadedModule instanceof Language)) continue;
+            if (!mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) continue;
 
-  public LanguageDescriptorModelProvider(SRepository repository) {
+            myRepository.getModelAccess().checkWriteAccess();
+
+            SModelReference ref = getSModelReference(l);
+            LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
+            if (languageModelDescriptor != null) {
+              languageModelDescriptor.updateGenerationLanguages(languageModelDescriptor.getSModel());
+            }
+
+            break aspects;
+          }
+        }
+      }
+    }
+  };
+
+  public LanguageDescriptorModelProvider(SRepository repository, ClassLoaderManager classLoaderManager) {
     // TODO [multiple repositories] shall deal with Project SRepository (with workspace, editable modules only)
     myRepository = repository;
+    myClassLoaderManager = classLoaderManager;
   }
 
   @Override
@@ -166,6 +202,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     myRepository.addRepositoryListener(myListener);
 
     myRepository.getModelAccess().checkWriteAccess();
+
+    myClassLoaderManager.addClassesHandler(myAspectReloadListener);
 
     for (SModule module : myRepository.getModules()) {
       if (!isWorkspaceLanguageModule(module)) {
@@ -179,6 +217,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   @Override
   public void dispose() {
+    myClassLoaderManager.removeClassesHandler(myAspectReloadListener);
     myRepository.removeRepositoryListener(myListener);
     clearAll();
   }
@@ -280,8 +319,17 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           return false;
         }
       };
-      model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
+      updateGenerationLanguages(model);
       return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
+    }
+
+    public void updateGenerationLanguages(jetbrains.mps.smodel.SModel model) {
+      model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
+      for (SModel aspect : LanguageAspectSupport.getAspectModels(myModule)) {
+        for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
+          model.addEngagedOnGenerationLanguage(aspectLanguage);
+        }
+      }
     }
 
     @Override

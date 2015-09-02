@@ -115,7 +115,7 @@ public final class MPSCore extends ComponentPluginBase {
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, modelRepository));
-    init(new LanguageDescriptorModelProvider(myModuleRepository));
+    init(new LanguageDescriptorModelProvider(myModuleRepository, myClassLoaderManager));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
     init(new CopyPasteManager(myClassLoaderManager));
     init(new PasteWrappersManager(myClassLoaderManager));
