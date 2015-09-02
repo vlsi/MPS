@@ -325,7 +325,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_BehaviorDescriptor" />
     </file>
     <file name="SupersedeConceptFunction_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.SupersedeConceptFunction_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.SupersedeConceptFunction_BehaviorDescriptor" />
     </file>
     <file name="TypeCheckerAccessExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.TypeCheckerAccessExpression_BehaviorDescriptor" />
