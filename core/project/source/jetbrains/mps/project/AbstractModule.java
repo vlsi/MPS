@@ -249,8 +249,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //todo move to EditableModule class
   @Nullable
   public ModuleDescriptor getModuleDescriptor() {
-    assertCanRead();
-
     return null;
   }
 

@@ -2025,34 +2025,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="38_6U8fKvyB" role="jymVt">
-      <property role="TrG5h" value="getInstance" />
-      <node concept="3Tm1VV" id="38_6U8fKvyC" role="1B3o_S" />
-      <node concept="3uibUv" id="38_6U8fKvyD" role="3clF45">
-        <ref role="3uigEE" node="38_6U8fKvwW" resolve="MPSVcsProjectConfiguration" />
-      </node>
-      <node concept="37vLTG" id="38_6U8fKvyE" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="38_6U8fKvyF" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="38_6U8fKvyG" role="3clF47">
-        <node concept="3cpWs6" id="38_6U8fKvyH" role="3cqZAp">
-          <node concept="2OqwBi" id="38_6U8fKvyI" role="3cqZAk">
-            <node concept="37vLTw" id="2BHiRxgmal4" role="2Oq$k0">
-              <ref role="3cqZAo" node="38_6U8fKvyE" resolve="project" />
-            </node>
-            <node concept="liA8E" id="38_6U8fKvyK" role="2OqNvi">
-              <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-              <node concept="3VsKOn" id="38_6U8fKvyL" role="37wK5m">
-                <ref role="3VsUkX" node="38_6U8fKvwW" resolve="MPSVcsProjectConfiguration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="312cEu" id="38_6U8fKvx1" role="jymVt">
       <property role="TrG5h" value="MyState" />
       <node concept="3Tm1VV" id="38_6U8fKvx2" role="1B3o_S" />

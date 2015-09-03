@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -40,6 +41,8 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -66,6 +69,33 @@ public class SModuleOperations {
     } else {
       return ((AbstractModule) module).getOutputPath();
     }
+  }
+
+  /**
+   * @return all locations where generated files (including auxiliary model streams, files with hashes and dependencies) of the module could be found.
+   */
+  public static Collection<IFile> getOutputRoots(@NotNull SModule module) {
+    // XXX there's jetbrains.mps.tool.builder.paths.ModuleOutputPaths which looks quite similar, shall refactor. It's definitely not tooling-specific code.
+    ArrayList<IFile> rv = new ArrayList<IFile>();
+    if (module instanceof AbstractModule) {
+      IFile path = ((AbstractModule) module).getOutputPath();
+      if (path != null) {
+        rv.add(path);
+        rv.add(FileGenerationUtil.getCachesDir(path));
+      }
+    }
+    TestsFacet testFacet = module.getFacet(TestsFacet.class);
+    if (testFacet != null) {
+      IFile path = testFacet.getTestsOutputPath();
+      if (path != null) {
+        rv.add(path);
+      }
+    }
+    // XXX see DefaultStreamManager#getOverridenOutputDir(SModel)
+    // we shall iterate over all models of the module, check instanceof GeneratableSModel && isGenerateIntoModelFolder(), and
+    // then (md.getSource() as FileDataSource).getParent(), but GeneratedFilesExcludePolicy which I write the method for, used
+    // to be satisfied with #getOutputRoot(), which didn't check for overridden output root either.
+    return rv;
   }
 
   @NotNull

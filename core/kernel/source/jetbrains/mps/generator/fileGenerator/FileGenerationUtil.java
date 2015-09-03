@@ -26,12 +26,12 @@ import java.io.File;
 public class FileGenerationUtil {
   private static final String CACHES_SUFFIX = ".caches";
 
-  public static String getCachesPath(String outputDir) {
-    return outputDir + CACHES_SUFFIX;
+  public static String getCachesPath(String outputRoot) {
+    return outputRoot + CACHES_SUFFIX;
   }
 
-  public static IFile getCachesDir(IFile outputDir) {
-    return FileSystem.getInstance().getFileByPath(outputDir.getPath() + CACHES_SUFFIX);
+  public static IFile getCachesDir(IFile outputRoot) {
+    return FileSystem.getInstance().getFileByPath(outputRoot.getPath() + CACHES_SUFFIX);
   }
 
   public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel model, @NotNull IFile outputRootDir) {
