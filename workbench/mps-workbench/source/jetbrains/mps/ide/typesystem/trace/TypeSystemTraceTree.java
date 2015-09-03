@@ -348,8 +348,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
-    return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"),
-        ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
+    return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"));
   }
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
@@ -582,7 +581,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
     @Override
     protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
-      return TypeSystemTraceTree.this.createPopupActionGroup(node);
+      return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"),
+          ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
     }
 
     @Override

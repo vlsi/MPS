@@ -252,10 +252,8 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
-    BaseAction goToNode = null;
     final TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
-    final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"),
-        goToNode);
+    final DefaultActionGroup group = ActionUtils.groupFromActions();
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {

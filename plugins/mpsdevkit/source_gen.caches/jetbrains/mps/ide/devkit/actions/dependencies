@@ -1399,6 +1399,7 @@
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="com.intellij.openapi.wm.ex.ToolWindowEx" />
     <classNode dependClassName="com.intellij.openapi.wm.impl.ToolWindowImpl" />
+    <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.beans.PropertyChangeEvent" />
     <classNode dependClassName="java.beans.PropertyChangeListener" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -1408,7 +1409,9 @@
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
   </dependency>
