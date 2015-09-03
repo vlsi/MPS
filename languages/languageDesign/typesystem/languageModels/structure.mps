@@ -137,6 +137,11 @@
         <property role="YLPcu" value="3.3" />
       </node>
     </node>
+    <node concept="1TJgyj" id="6lCixFI9LG8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="supercedesFun" />
+      <ref role="20lvS9" node="6lCixFI9ig3" resolve="SupersedeConceptFunction" />
+    </node>
     <node concept="PrWs8" id="3SW4jvYrbIJ" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
@@ -1940,6 +1945,11 @@
     <node concept="PrWs8" id="25idkGdk027" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6lCixFI9ig3">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SupersedeConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

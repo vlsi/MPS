@@ -14,9 +14,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OverrideAnnotation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ErrorType_Editor()));
       case 1:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OverrideAnnotation_Editor()));
+      case 2:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OverridingPrimNumConstant_Editor()));
+      case 3:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnconditionalOverrideAnnotation_Editor()));
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -27,5 +31,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimNumConstant"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testOverridingType.structure.ErrorType", "testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimNumConstant", "testOverridingType.structure.UnconditionalOverrideAnnotation"};
 }

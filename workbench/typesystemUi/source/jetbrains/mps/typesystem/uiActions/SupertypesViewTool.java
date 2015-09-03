@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -25,6 +27,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
+
 public class SupertypesViewTool extends AbstractHierarchyView {
   public SupertypesViewTool(Project project) {
     super(project, "Supertypes", -1, Icons.DEFAULT_ICON);
@@ -34,6 +41,26 @@ public class SupertypesViewTool extends AbstractHierarchyView {
     SupertypesTree rv = new SupertypesTree(ProjectHelper.toMPSProject(getProject()));
     rv.setHierarchyView(this);
     return rv;
+  }
+
+  @Override
+  protected void createTool() {
+    super.createTool();
+    myHierarchyTree.setRootVisible(false);
+  }
+
+  @Override
+  protected void createControlPanel() {
+    final JPanel panel = new JPanel(new BorderLayout());
+    myComponent.add(panel, BorderLayout.EAST);
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        JComponent buttonsPanel =
+            ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), false).getComponent();
+        panel.add(buttonsPanel, BorderLayout.EAST);
+      }
+    });
   }
 
   protected DefaultActionGroup createButtonsGroup() {
@@ -50,7 +77,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
       }
     };
 
-    return ActionUtils.groupFromActions(action, createCloseAction());
+    return ActionUtils.groupFromActions(action);
   }
 
   protected boolean isTreeInfinite() {

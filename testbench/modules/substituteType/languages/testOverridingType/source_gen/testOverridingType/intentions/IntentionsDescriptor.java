@@ -27,8 +27,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 0:
         // Concept: PrimNumConstant 
         if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
+          myIntentions0 = new IntentionFactory[2];
           myIntentions0[0] = new AddRemovePresenceAnnotation_Intention();
+          myIntentions0[1] = new AddRemoveUnconditionalPresenceAnnotation_Intention();
         }
         return Arrays.asList(myIntentions0);
       default:
@@ -39,8 +40,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[1];
+    IntentionFactory[] rv = new IntentionFactory[2];
     rv[0] = new AddRemovePresenceAnnotation_Intention();
+    rv[1] = new AddRemoveUnconditionalPresenceAnnotation_Intention();
     return Arrays.asList(rv);
   }
 }

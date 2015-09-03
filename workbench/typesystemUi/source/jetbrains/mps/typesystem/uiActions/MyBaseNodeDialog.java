@@ -15,19 +15,25 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Splitter;
+import com.intellij.openapi.ui.TitlePanel;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.NullErrorReporter;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JComponent;
+import javax.swing.border.Border;
 import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
@@ -50,7 +56,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     mySupertypesViewComponent = supertypesView.getComponent();
     myMainComponent = new Splitter(false);
     myMainComponent.setFirstComponent(super.getMainComponent());
-    myMainComponent.setSecondComponent(mySupertypesViewComponent);
+    myMainComponent.setSecondComponent(LabeledComponent.create(mySupertypesViewComponent, "Supertypes"));
 
     myType = type;
     myModel = myType.getModel();
@@ -63,7 +69,6 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
 
     init();
   }
-
 
   @Override
   protected JComponent createCenterPanel() {
@@ -78,17 +83,19 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
           return myError.reportError();
         }
       });
-      setErrorText("Type error! Message: " + s);
-      return new Action[]{getOKAction(), new AbstractAction("Go To Rule Which Caused Error") {
-        public void actionPerformed(ActionEvent e) {
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            @Override
-            public void run() {
-              GoToTypeErrorRuleUtil.goToTypeErrorRule(getProject(), myError);
-            }
-          });
-        }
-      }};
+      setErrorText(s);
+      if (myError.getRuleNode() != null) {
+        return new Action[]{getOKAction(), new AbstractAction("Go To Rule") {
+          public void actionPerformed(ActionEvent e) {
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              @Override
+              public void run() {
+                GoToTypeErrorRuleUtil.goToTypeErrorRule(getProject(), myError);
+              }
+            });
+          }
+        }};
+      }
     }
     return new Action[]{getOKAction()};
   }
@@ -117,7 +124,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private static String getTitle(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return "Type For Node " + node;
+        return "Type Explorer [" + node + "]";
       }
     });
   }

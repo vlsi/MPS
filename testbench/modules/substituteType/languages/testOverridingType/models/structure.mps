@@ -86,5 +86,20 @@
       </node>
     </node>
   </node>
+  <node concept="1TIwiD" id="1BNF4XJawka">
+    <property role="TrG5h" value="UnconditionalOverrideAnnotation" />
+    <ref role="1TJDcQ" node="3$lifF380rk" resolve="OverrideAnnotation" />
+    <node concept="M6xJ_" id="1BNF4XJawkb" role="lGtFl">
+      <property role="Hh88m" value="unconditionalOverride" />
+      <node concept="trNpa" id="1BNF4XJawkd" role="EQaZv">
+        <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1BNF4XJaBX0">
+    <property role="TrG5h" value="ErrorType" />
+    <property role="34LRSv" value="error" />
+    <ref role="1TJDcQ" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
+  </node>
 </model>
 

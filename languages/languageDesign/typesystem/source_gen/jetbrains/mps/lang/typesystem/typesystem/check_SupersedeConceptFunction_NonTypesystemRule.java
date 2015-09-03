@@ -15,18 +15,18 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class check_AttributedNodeExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_AttributedNodeExpression_NonTypesystemRule() {
+public class check_SupersedeConceptFunction_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_SupersedeConceptFunction_NonTypesystemRule() {
   }
-  public void applyRule(final SNode ane, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode infRule = SNodeOperations.getNodeAncestor(ane, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), false, false);
+  public void applyRule(final SNode sce, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode infRule = SNodeOperations.getNodeAncestor(sce, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), false, false);
     if (!((infRule != null) && InferenceRule_Behavior.call_isAttributeRule_7307171874933700673(infRule))) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ane, "attributedNode is not available in this context", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "7307171874934071490", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(sce, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "7307171874934109979", null, errorTarget);
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2152354b0d500086L, "jetbrains.mps.lang.typesystem.structure.AttributedNodeExpression");
+    return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x65684a1aee252403L, "jetbrains.mps.lang.typesystem.structure.SupersedeConceptFunction");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
