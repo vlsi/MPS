@@ -109,6 +109,7 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -200,6 +201,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -326,11 +328,22 @@
           </node>
         </node>
         <node concept="3cpWs6" id="hpoQVcq" role="3cqZAp">
-          <node concept="2OqwBi" id="h_yjD8Y" role="3cqZAk">
-            <node concept="37vLTw" id="3GM_nagTxRL" role="2Oq$k0">
-              <ref role="3cqZAo" node="hpoQFWP" resolve="descendants" />
+          <node concept="1Wc70l" id="3pEbTEPOrZs" role="3cqZAk">
+            <node concept="2OqwBi" id="3pEbTEPOtfz" role="3uHU7w">
+              <node concept="2OqwBi" id="3pEbTEPOsgF" role="2Oq$k0">
+                <node concept="2Sf5sV" id="3pEbTEPOs9e" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3pEbTEPOsRA" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpd4:1y5tROjsjnW" />
+                </node>
+              </node>
+              <node concept="3w_OXm" id="3pEbTEPOtBm" role="2OqNvi" />
             </node>
-            <node concept="1v1jN8" id="hpoR34X" role="2OqNvi" />
+            <node concept="2OqwBi" id="h_yjD8Y" role="3uHU7B">
+              <node concept="37vLTw" id="3GM_nagTxRL" role="2Oq$k0">
+                <ref role="3cqZAo" node="hpoQFWP" resolve="descendants" />
+              </node>
+              <node concept="1v1jN8" id="hpoR34X" role="2OqNvi" />
+            </node>
           </node>
         </node>
       </node>
