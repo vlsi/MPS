@@ -81,10 +81,6 @@ public class SupertypesTree extends AbstractHierarchyTree {
     }
   }
 
-  public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    return true;
-  }
-
   public boolean overridesNodeIdentifierCalculation() {
     return true;
   }
@@ -97,7 +93,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
     private final SNodeReference myNodeReference;
 
     public MyBaseNodeDialog(Project mpsProject, SNodeReference nodeReference) {
-      super(mpsProject, "");
+      super(mpsProject, "Type Explorer");
       myNodeReference = nodeReference;
 
       setHorizontalStretch(2f);

@@ -16,6 +16,7 @@
 package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -41,8 +42,9 @@ public abstract class BaseNodeDialog extends DialogWrapper {
     myEditorComponent = new UIEditorComponent(myProject.getRepository(), inspector);
 
     mySplitter = new Splitter(true, 0.6f);
-    mySplitter.setFirstComponent(myEditorComponent.getExternalComponent());
-    mySplitter.setSecondComponent(inspector.getExternalComponent());
+
+    mySplitter.setFirstComponent(LabeledComponent.create(myEditorComponent.getExternalComponent(), "Editor"));
+    mySplitter.setSecondComponent(LabeledComponent.create(inspector.getExternalComponent(), "Inspector"));
   }
 
   protected abstract SNode getNode();
@@ -61,6 +63,8 @@ public abstract class BaseNodeDialog extends DialogWrapper {
       @Override
       public void run() {
         myEditorComponent.editNode(getNode());
+        myEditorComponent.selectNode(getNode());
+        myEditorComponent.changeSelectionWRTFocusPolicy(myEditorComponent.getSelectedCell());
       }
     });
     super.show();
