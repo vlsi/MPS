@@ -214,20 +214,8 @@ import java.util.*;
   @Override
   protected boolean applyRulesToNode(final SNode node) {
     final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
-    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
-      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
-      if (rules != null && !rules.isEmpty()) {
-        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
 
-        // check if the last rule applicable to an attribute overrides other rules (last one wins)
-        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
-        if (lastPair.o1.overrides(nodeOrAttr, lastPair.o2)) {
-          break;
-        }
-      }
-    }
-
-    if (nodesAndRules.isEmpty()) return false;
+    if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
     return getTypechecking().runApplyRulesTo(node, new Runnable() {
       @Override

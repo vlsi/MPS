@@ -5,20 +5,17 @@ package testOverridingType.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import testAnnotatedType.behavior.PresenceCondition_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_OverrideAnnotation_InferenceRule() {
-  }
-  public boolean overrides(final SNode overrideAnnotation, IsApplicableStatus status) {
-    return PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
   }
   public void applyRule(final SNode overrideAnnotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")))) {
@@ -34,5 +31,11 @@ public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRu
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
+  }
+  public boolean overrides() {
+    return false;
+  }
+  public boolean supercedesAttributed(final SNode overrideAnnotation, IsApplicableStatus status) {
+    return PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
   }
 }

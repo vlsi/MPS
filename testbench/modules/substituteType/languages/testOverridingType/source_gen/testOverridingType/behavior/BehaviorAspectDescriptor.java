@@ -11,17 +11,21 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 3:
+      case 4:
         return new OverridingPrimNumConstant_BehaviorDescriptor();
-      case 2:
+      case 3:
         return new OverridingPrimIntType_BehaviorDescriptor();
-      case 1:
+      case 2:
         return new OverridingPrimFloatType_BehaviorDescriptor();
-      case 0:
+      case 1:
         return new OverrideAnnotation_BehaviorDescriptor();
+      case 5:
+        return new UnconditionalOverrideAnnotation_BehaviorDescriptor();
+      case 0:
+        return new ErrorType_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimFloatType", "testOverridingType.structure.OverridingPrimIntType", "testOverridingType.structure.OverridingPrimNumConstant"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testOverridingType.structure.ErrorType", "testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimFloatType", "testOverridingType.structure.OverridingPrimIntType", "testOverridingType.structure.OverridingPrimNumConstant", "testOverridingType.structure.UnconditionalOverrideAnnotation"};
 }

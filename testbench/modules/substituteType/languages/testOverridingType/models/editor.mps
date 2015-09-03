@@ -6,9 +6,10 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="mdms" ref="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
     <import index="tp5x" ref="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)" implicit="true" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
-    <import index="mdms" ref="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -18,7 +19,13 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
+        <reference id="1078939183255" name="editorComponent" index="PMmxG" />
+      </concept>
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
+        <property id="1186403771423" name="style" index="Vbekb" />
+      </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -145,6 +152,51 @@
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
       </node>
       <node concept="l2Vlx" id="5zzawu2JF6u" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1BNF4XJazUC">
+    <ref role="1XX52x" to="mdms:1BNF4XJawka" resolve="UnconditionalOverrideAnnotation" />
+    <node concept="3EZMnI" id="1BNF4XJazUE" role="2wV5jI">
+      <node concept="2SsqMj" id="1BNF4XJazUF" role="3EZMnx" />
+      <node concept="3F0ifn" id="1BNF4XJazVa" role="3EZMnx">
+        <property role="3F0ifm" value="!!" />
+        <node concept="Vb9p2" id="1BNF4XJazXL" role="3F10Kt">
+          <property role="Vbekb" value="BOLD" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1BNF4XJazUG" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="1BNF4XJazUH" role="3EZMnx">
+        <ref role="1NtTu8" to="mdms:5zzawu2JF74" />
+      </node>
+      <node concept="3F0ifn" id="1BNF4XJazUI" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="1BNF4XJazUJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="1BNF4XJazUK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="1BNF4XJazUL" role="3EZMnx">
+        <ref role="1NtTu8" to="mdms:5zzawu2JF6U" />
+      </node>
+      <node concept="3F0ifn" id="1BNF4XJazUM" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="1BNF4XJazUN" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1BNF4XJaBX6">
+    <ref role="1XX52x" to="mdms:1BNF4XJaBX0" resolve="ErrorType" />
+    <node concept="3EZMnI" id="1BNF4XJaBX8" role="2wV5jI">
+      <node concept="PMmxH" id="1BNF4XJaBXi" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="1BNF4XJaBXb" role="2iSdaV" />
     </node>
   </node>
 </model>

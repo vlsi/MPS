@@ -5,11 +5,19 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="testOverridingType.behavior.ErrorType_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimFloatType_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimIntType_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimNumConstant_BehaviorDescriptor" />
+    <classNode dependClassName="testOverridingType.behavior.UnconditionalOverrideAnnotation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="testOverridingType.behavior.ErrorType_BehaviorDescriptor" file="ErrorType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" file="OverrideAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -33,6 +41,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="testAnnotatedType.behavior.PrimNumConstant_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testOverridingType.behavior.UnconditionalOverrideAnnotation_BehaviorDescriptor" file="UnconditionalOverrideAnnotation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>
