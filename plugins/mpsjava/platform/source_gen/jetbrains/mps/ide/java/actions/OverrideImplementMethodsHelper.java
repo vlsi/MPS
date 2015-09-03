@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -63,7 +64,13 @@ public class OverrideImplementMethodsHelper {
   }
   /*package*/ void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
-      setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
+      // we only need to find good names for parameters, if they are cryptic e.g. java_sourcestubs deliver proper names 
+      final SNode startNode = (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).matches("p[0-9]+");
+        }
+      }) ? method : SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")));
+      setVariableNames(startNode, MapSequence.fromMap(new HashMap<String, Integer>()));
     }
     if (myRemoveAttributes) {
       for (SNode child : SNodeOperations.getChildren(method)) {
