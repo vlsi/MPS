@@ -34,9 +34,11 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -215,7 +217,12 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
         new BaseAction("Refresh", "Refresh", Actions.Refresh) {
           @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-            refresh();
+            myProject.getModelAccess().runReadInEDT(new Runnable() {
+              @Override
+              public void run() {
+                refresh();
+              }
+            });
           }
         },
         new BaseAction("Next error", "Navigate to next error in trace", AllIcons.General.Error) {
