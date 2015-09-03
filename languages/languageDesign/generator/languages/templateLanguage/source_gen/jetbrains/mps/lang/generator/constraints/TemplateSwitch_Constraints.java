@@ -16,15 +16,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
@@ -49,32 +42,7 @@ public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
-              @Override
-              public boolean isExcluded(SNode node) {
-                if (node == _context.getContextNode()) {
-                  return true;
-                }
-                // allow to modify/extend switches that accept exactly same parameters only, not superset therof. 
-                // the reason is sub-switch may be invoked directly, while the rules of its parent would expect more parameters than there're actually 
-                SNode contributor = SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
-                SNode originCandidate = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
-                if (ListSequence.fromList(SLinkOperations.getChildren(originCandidate, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(contributor, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count()) {
-                  return true;
-                }
-                for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(contributor, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count(); i++) {
-                  SNode p1 = ListSequence.fromList(SLinkOperations.getChildren(contributor, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).getElement(i);
-                  SNode p2 = ListSequence.fromList(SLinkOperations.getChildren(originCandidate, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).getElement(i);
-                  if (!(SPropertyOperations.getString(p1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(SPropertyOperations.getString(p2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
-                    return true;
-                  }
-                  // contributor's parameter types shall be same or narrow (sic!) than that of modified switch 
-                  // so that contributed rules can't expect too much from actual arguments 
-                  return !((TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p2, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")), SLinkOperations.getTarget(p1, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type"))) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p1, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")), SLinkOperations.getTarget(p2, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")))));
-                }
-                return false;
-              }
-            };
+            return new ModelPlusImportedScope(_context.getModel(), true, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
           }
         };
       }

@@ -154,7 +154,9 @@
       <concept id="1168559512253" name="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" flags="lg" index="j$LIH">
         <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
       </concept>
-      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub" />
+      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+      </concept>
       <concept id="1170725621272" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" flags="in" index="2kFOW8" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
@@ -1260,6 +1262,31 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="rez4bFHyvK">
+    <property role="TrG5h" value="SwitchWithParametes" />
+    <node concept="1N15co" id="rez4bFHyvL" role="1s_3oS">
+      <property role="TrG5h" value="first" />
+      <node concept="3Tqbb2" id="rez4bFIkYO" role="1N15GL">
+        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+      </node>
+    </node>
+    <node concept="1N15co" id="rez4bFHyNT" role="1s_3oS">
+      <property role="TrG5h" value="second" />
+      <node concept="10Oyi0" id="rez4bFIkYU" role="1N15GL" />
+    </node>
+  </node>
+  <node concept="jVnub" id="rez4bFHyO8">
+    <property role="TrG5h" value="ExtendWithParams" />
+    <ref role="phYkn" node="rez4bFHyvK" resolve="SwitchWithParametes" />
+    <node concept="1N15co" id="rez4bFIvVO" role="1s_3oS">
+      <property role="TrG5h" value="first" />
+      <node concept="3Tqbb2" id="rez4bFIvVP" role="1N15GL" />
+    </node>
+    <node concept="1N15co" id="rez4bFIvVQ" role="1s_3oS">
+      <property role="TrG5h" value="second" />
+      <node concept="10Oyi0" id="rez4bFIvVR" role="1N15GL" />
     </node>
   </node>
 </model>
