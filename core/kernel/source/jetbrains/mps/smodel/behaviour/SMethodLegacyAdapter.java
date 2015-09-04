@@ -28,7 +28,7 @@ import java.util.List;
  * An adapter meant to construct SMethod having only legacy information, i.e. old-formatted method name and its arguments
  */
 class SMethodLegacyAdapter {
-  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
+  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = BehaviorDescriptor.CONSTUCTOR_METHOD;
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
   @NotNull

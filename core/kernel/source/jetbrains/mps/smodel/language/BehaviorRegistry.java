@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
+import jetbrains.mps.smodel.behaviour.C3StarLinearization;
 import jetbrains.mps.smodel.behaviour.EmptyBHDescriptor;
 import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -130,7 +131,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
           ((BaseBHDescriptor) descriptor).init();
         }
       } catch (Throwable e) {
-        LOG.error("Exception while behavior descriptor creating", e);
+        LOG.error("Exception while behavior descriptor creating " + concept, e);
       }
       assert descriptor != null;
       myBHDescriptors.put(concept, descriptor);
@@ -176,5 +177,6 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   public void clear() {
     myBHDescriptors.clear();
     myLegacyBehaviorDescriptors.clear();
+    C3StarLinearization.clear();
   }
 }

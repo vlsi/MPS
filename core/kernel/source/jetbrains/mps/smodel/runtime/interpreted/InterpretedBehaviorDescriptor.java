@@ -83,7 +83,9 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
       for (Method method : methods) {
         String methodName = method.getName();
         if (methodName.startsWith(BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX) ||
-            methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX)) {
+            methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX) ||
+            methodName.startsWith(BehaviorDescriptor.CONSTUCTOR_METHOD))
+        {
           if (!methodMap.containsKey(methodName)) {
             methodMap.put(methodName, method);
           }

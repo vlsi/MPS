@@ -65,7 +65,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
     if (method == null) {
       throwNoSuchMethod(methodName);
     }
-    return myDescriptor.invoke(node, method, parameters);
+    return myDescriptor.invokeOwn(node, method, parameters);
   }
 
   public boolean hasOwnMethod(String methodName, Object[] parameters, boolean isStatic) {

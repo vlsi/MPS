@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -24,8 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.UniqueIterator;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
@@ -37,6 +36,8 @@ import java.util.Set;
  */
 /**
  * Todo check destruction ??
+ *
+ * Features:
  * Multiple dispatch?
  * Default parameter values?
  */
@@ -128,7 +129,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
     Class<?>[] parameterTypes = method.getParameterTypes();
     for (int i = 0; i < parameterTypes.length; ++i) {
-      if (!parameters[i].getClass().equals(parameterTypes[i])) {
+      if (!parameterTypes[i].isAssignableFrom(parameters[i].getClass())) {
         throw new BHArgumentsDoNotMatch(parameters, parameterTypes, i);
       }
     }
@@ -215,27 +216,22 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  // TODO write some linearization here
   private static class AncestorCache {
     private final SAbstractConcept myConcept;
-    private final List<SAbstractConcept> myConstructorAncestors;
-    private final List<SAbstractConcept> myVirtualInvocationAncestors;
 
-    public AncestorCache(SAbstractConcept concept) {
+    private final List<SAbstractConcept> myLinearization;
+    private final List<SAbstractConcept> myConstructorAncestors;
+
+    public AncestorCache(@NotNull SAbstractConcept concept) {
       myConcept = concept;
+      myLinearization = new C3StarLinearization(myConcept).count();
       myConstructorAncestors = calcConstructorAncestors();
-      myVirtualInvocationAncestors = calcVirtualInvocationAncestors();
     }
 
     private List<SAbstractConcept> calcConstructorAncestors() {
-      Iterable<SAbstractConcept> ancestors = new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept));
-      List<SAbstractConcept> constructorAncestors = IterableUtil.asList(ancestors);
+      List<SAbstractConcept> constructorAncestors = new ArrayList<SAbstractConcept>(myLinearization);
       Collections.reverse(constructorAncestors);
       return Collections.unmodifiableList(constructorAncestors);
-    }
-
-    private List<SAbstractConcept> calcVirtualInvocationAncestors() {
-      return Collections.unmodifiableList(IterableUtil.asList(new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(myConcept))));
     }
 
     public List<SAbstractConcept> getAncestorsConstructionOrder() {
@@ -243,7 +239,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
 
     public List<SAbstractConcept> getAncestorsVirtualInvocationOrder() {
-      return myVirtualInvocationAncestors;
+      return Collections.unmodifiableList(myLinearization);
     }
   }
 

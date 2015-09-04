@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface BehaviorDescriptor {
   String VIRTUAL_METHOD_PREFIX = "virtual";
   String NON_VIRTUAL_METHOD_PREFIX = "call";
+  String CONSTUCTOR_METHOD = "init";
 
   /**
    * use instead {@link BHDescriptor#getConcept()}

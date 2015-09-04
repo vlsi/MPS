@@ -23,12 +23,11 @@ import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
 import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
-import jetbrains.mps.smodel.behaviour.DepthFirstConceptIterator;
+import jetbrains.mps.smodel.behaviour.C3StarLinearization;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -61,23 +60,22 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   private static final String DEFAULT_INIT_METHOD_NAME = "init";
 
   private final SAbstractConcept myConcept;
-  private final List<Method> myConstructors;
-  private final List<SAbstractConcept> myAncestors; // including myself
+  private final List<SAbstractConcept> myAncestors; // including me
 
   public BaseBehaviorDescriptor(@NotNull SAbstractConcept concept) {
     myConcept = concept;
-    myConstructors = calculateConstructors();
-    myAncestors = calculateAncestors(concept);
+    myAncestors = new C3StarLinearization(myConcept).count();
   }
 
   public BaseBehaviorDescriptor(String conceptFqName) {
     myConcept = getConcept(conceptFqName);
-    myConstructors = calculateConstructors();
-    myAncestors = calculateAncestors(myConcept);
+    myAncestors = new C3StarLinearization(myConcept).count();
   }
 
-  private List<SAbstractConcept> calculateAncestors(SAbstractConcept concept) {
-    return Collections.unmodifiableList(IterableUtil.asList(new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(concept))));
+  private List<SAbstractConcept> getConstructionOrder() {
+    List<SAbstractConcept> reversedAncestors = new ArrayList<SAbstractConcept>(myAncestors);
+    Collections.reverse(reversedAncestors);
+    return Collections.unmodifiableList(reversedAncestors);
   }
 
   @NotNull
@@ -97,15 +95,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       throw new IllegalArgumentException("initNode on null node");
     }
 
-    for (int i = myConstructors.size() - 1; i >= 0; i--) {
-      try {
-        myConstructors.get(i).invoke(null, node);
-      } catch (IllegalAccessException e) {
-        LOG.error(null, e);
-      } catch (InvocationTargetException e) {
-        e.printStackTrace();
-      }
-    }
+    genericInvoke(NodeOrConcept.create(node), BehaviorDescriptor.CONSTUCTOR_METHOD, new Object[0]);
   }
 
   public static String behaviorClassByConceptFqName(@NotNull String fqName) {
@@ -115,25 +105,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     } else {
       throw new RuntimeException();
     }
-  }
-
-  private List<Method> calculateConstructors() {
-    List<Method> methodsToCall = new ArrayList<Method>();
-    SAbstractConcept startConcept = myConcept;
-    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthFirstConceptIterator(startConcept))) {
-      String fqName = concept.getQualifiedName();
-      Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
-      if (cls != null) {
-        try {
-          Method method = cls.getMethod(DEFAULT_INIT_METHOD_NAME, SNode.class);
-          method.setAccessible(true);
-          methodsToCall.add(method);
-        } catch (NoSuchMethodException e) {
-          //ignore
-        }
-      }
-    }
-    return methodsToCall;
   }
 
   protected static Class<?> getGeneratedClass(String conceptFqName, String className) {
