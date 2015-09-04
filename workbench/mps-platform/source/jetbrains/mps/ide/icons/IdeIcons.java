@@ -24,6 +24,7 @@ import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.ToolWindows;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.Icon;
 
@@ -61,6 +62,12 @@ public class IdeIcons {
   public static final Icon LANGUAGE_ICON = Nodes.Language;
   public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
   public static final Icon GENERATOR_ICON = Nodes.Generator;
+
+  /**
+   * @deprecated duplicates {@link #LANGUAGE_ICON}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
 
   public static final Icon PROJECT_MODELS_ICON = MPSIcons.Nodes.ProjectModels;

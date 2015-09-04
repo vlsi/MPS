@@ -197,7 +197,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
           append(" (" + moduleName + ")", SimpleTextAttributes.GRAY_ATTRIBUTES);
         }
       } else if (value instanceof SLanguage) {
-        setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
+        setIcon(IdeIcons.LANGUAGE_ICON);
         append(((SLanguage) value).getQualifiedName(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
       } else {
         setIcon(IdeIcons.DEFAULT_ICON);

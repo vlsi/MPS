@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public final class PathItemRole {
   public static final PathItemRole ROLE_ROOT = new PathItemRole("root");
   public static final PathItemRole ROLE_MODEL = new PathItemRole("model");
   public static final PathItemRole ROLE_MODULE = new PathItemRole("module");
+  public static final PathItemRole ROLE_LANGUAGE = new PathItemRole("language");
   @Deprecated
   public static final PathItemRole ROLE_CATEGORY = new PathItemRole("category");
 
@@ -46,6 +47,7 @@ public final class PathItemRole {
     ROLE_ROOT,
     ROLE_MODEL,
     ROLE_MODULE,
+    ROLE_LANGUAGE,
     ROLE_CATEGORY,
     ROLE_MAIN_SEARCHED_NODES,
     ROLE_MAIN_RESULTS,

@@ -197,7 +197,7 @@ public class ModuleUsagesFinder implements IFinder {
       }
       // FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports, 
       // perhaps, shall revert to SModel.getUsedLanguages() here as well? 
-      if (SModelOperations.getAllImportedLanguageIds(model).contains(searchedLanguage)) {
+      if (SModelOperations.getAllLanguageImports(model).contains(searchedLanguage)) {
         searchResults.add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }
     }

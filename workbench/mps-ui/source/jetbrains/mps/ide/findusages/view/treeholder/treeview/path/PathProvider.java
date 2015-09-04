@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -78,6 +79,10 @@ public class PathProvider {
 
     if (o instanceof SModuleReference) {
       res.add(new PathItem(PathItemRole.ROLE_MODULE, o));
+    }
+
+    if (o instanceof SLanguage) {
+      res.add(new PathItem(PathItemRole.ROLE_LANGUAGE, o));
     }
 
     List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<Pair<CategoryKind, String>>(result.getCategories());

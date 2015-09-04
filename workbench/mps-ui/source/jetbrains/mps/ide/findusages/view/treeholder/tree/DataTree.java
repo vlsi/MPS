@@ -21,6 +21,7 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.AbstractResultNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.MainNodeData;
@@ -33,11 +34,13 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,6 +48,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -243,6 +247,19 @@ public class DataTree implements IExternalizeable, IChangeListener {
           data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isResult, results);
         } else if (currentIdObject instanceof SNode) {
           data = new NodeNodeData(creator, caption, (SNode) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof SLanguage) {
+          final SLanguage l = (SLanguage) currentIdObject;
+          data = new AbstractResultNodeData(creator, caption == null ? l.getQualifiedName() : caption, "", false, isResult, results) {
+            @Override
+            protected String createIdObject() {
+              return l.toString();
+            }
+
+            @Override
+            public Icon getIcon() {
+              return IdeIcons.LANGUAGE_ICON;
+            }
+          };
         } else if (currentIdObject instanceof Pair) {
           Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
           data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);

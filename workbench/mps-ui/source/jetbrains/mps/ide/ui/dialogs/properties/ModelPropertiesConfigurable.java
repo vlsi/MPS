@@ -50,7 +50,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelImportedModelsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel.Import;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -92,7 +91,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -194,7 +192,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   protected class ModelDependenciesComponent extends BaseTab {
     private ModelImportedModelsTableModel myImportedModels;
     private JPanel myImportedModelsComponent;
-    private FindAnActionButton myFindAnActionButton;
+    private FindActionButton myFindActionButton;
 
     public JPanel getImportedModelsComponent() {
       return myImportedModelsComponent;
@@ -216,7 +214,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
             @Override
             public void doViewAction() {
-              myFindAnActionButton.actionPerformed(null);
+              myFindActionButton.actionPerformed(null);
             }
           };
           viewUsagesDeleteDialog.show();
@@ -279,7 +277,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         protected boolean confirmRemove(int row) {
           return ModelDependenciesComponent.this.confirmRemove(importedModelsTable.getValueAt(row, 0));
         }
-      }).addExtraAction(myFindAnActionButton = new FindAnActionButton(importedModelsTable) {
+      }).addExtraAction(myFindActionButton = new FindActionButton(importedModelsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
@@ -396,33 +394,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         }
       });
 
-      decorator.addExtraAction(new FindAnActionButton(usedLangsTable) {
+      decorator.addExtraAction(new FindActionButton(usedLangsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
-          final List<SLanguage> languages = new LinkedList<SLanguage>();
-          myProject.getModelAccess().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              for (int i : myTable.getSelectedRows()) {
-                Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
-                if (value instanceof UsedLangsTableModel.Import) {
-                  final Import entry = (Import) value;
-                  if (entry.myLanguage != null) {
-                    languages.add(entry.myLanguage);
-                  } else {
-                    final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
-                    if (devkit instanceof DevKit) {
-                      // FIXME update DevKit to use SLanguage
-                      for (Language l : ((DevKit) devkit).getAllExportedLanguages()) {
-                        languages.add(MetaAdapterByDeclaration.getLanguage(l));
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          });
+          final List<SLanguage> languages = getSelectedLanguages();
           final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
           showUsageImpl(query, provider);
