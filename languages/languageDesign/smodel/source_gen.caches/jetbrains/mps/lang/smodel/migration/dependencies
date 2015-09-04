@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateConceptSwitchToSConcept" file="MigrateConceptSwitchToSConcept.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.query.CommandUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.query.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept" file="Migrate_ModelNodesOperation_concept.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -38,6 +60,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.migration.MigrateConceptSwitchToSConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
   </dependency>
