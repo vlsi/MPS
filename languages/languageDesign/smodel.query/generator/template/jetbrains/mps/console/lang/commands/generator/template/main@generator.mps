@@ -47,6 +47,7 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -985,6 +986,35 @@
     <ref role="3gUMe" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
     <node concept="9aQIb" id="1H31ARNQ$Sk" role="13RCb5">
       <node concept="3clFbS" id="1H31ARNQ$Sm" role="9aQI4">
+        <node concept="3cpWs8" id="5fE6DchSRq6" role="3cqZAp">
+          <node concept="3cpWsn" id="5fE6DchSRq7" role="3cpWs9">
+            <property role="TrG5h" value="scope" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="5fE6DchSRq8" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+            </node>
+            <node concept="2YIFZM" id="1H31ARNRdyq" role="33vP2m">
+              <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
+              <ref role="37wK5l" to="kxzb:1H31ARNR264" resolve="createScope" />
+              <node concept="10Nm6u" id="1H31ARNRd_x" role="37wK5m">
+                <node concept="29HgVG" id="1H31ARNRdP3" role="lGtFl">
+                  <node concept="3NFfHV" id="1H31ARNRdSb" role="3NFExx">
+                    <node concept="3clFbS" id="1H31ARNRdSc" role="2VODD2">
+                      <node concept="3clFbF" id="1H31ARNRdV6" role="3cqZAp">
+                        <node concept="2OqwBi" id="1H31ARNRdY7" role="3clFbG">
+                          <node concept="30H73N" id="1H31ARNRdV5" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="1H31ARNReaT" role="2OqNvi">
+                            <ref role="3Tt5mk" to="3xdn:3F2FyKbNNqR" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1H31ARNQ$U8" role="3cqZAp">
           <node concept="3cpWsn" id="1H31ARNQ$U9" role="3cpWs9">
             <property role="TrG5h" value="context" />
@@ -1007,25 +1037,8 @@
                     <node concept="3Tm1VV" id="1hGiwlkUV2I" role="1B3o_S" />
                     <node concept="3clFbS" id="1hGiwlkUV2L" role="3clF47">
                       <node concept="3cpWs6" id="1hGiwlkVSwr" role="3cqZAp">
-                        <node concept="2YIFZM" id="1H31ARNRdyq" role="3cqZAk">
-                          <ref role="1Pybhc" to="kxzb:hpHLh7Fj1$" resolve="CommandUtil" />
-                          <ref role="37wK5l" to="kxzb:1H31ARNR264" resolve="createScope" />
-                          <node concept="10Nm6u" id="1H31ARNRd_x" role="37wK5m">
-                            <node concept="29HgVG" id="1H31ARNRdP3" role="lGtFl">
-                              <node concept="3NFfHV" id="1H31ARNRdSb" role="3NFExx">
-                                <node concept="3clFbS" id="1H31ARNRdSc" role="2VODD2">
-                                  <node concept="3clFbF" id="1H31ARNRdV6" role="3cqZAp">
-                                    <node concept="2OqwBi" id="1H31ARNRdY7" role="3clFbG">
-                                      <node concept="30H73N" id="1H31ARNRdV5" role="2Oq$k0" />
-                                      <node concept="3TrEf2" id="1H31ARNReaT" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="3xdn:3F2FyKbNNqR" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="5fE6DchSRGh" role="3cqZAk">
+                          <ref role="3cqZAo" node="5fE6DchSRq7" resolve="scope" />
                         </node>
                       </node>
                     </node>
