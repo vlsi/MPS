@@ -17,11 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
@@ -73,29 +71,6 @@ public class GoToRulesHelper {
         return isApplicable(node, concept, exactConcept);
       }
     }).toListSequence();
-
-    final List<SNode> overriding = ListSequence.fromList(rules).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"));
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, 0x116484991d1L, "overrides"));
-      }
-    }).toListSequence();
-
-    for (SNode overridingRule : overriding) {
-      final SNode subConcept = getApplicableConcept(SLinkOperations.getTarget(overridingRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode")));
-      ListSequence.fromList(rules).removeWhere(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return getApplicableConcept(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode"))) == subConcept && !(ListSequence.fromList(overriding).contains(it));
-        }
-      });
-    }
 
     return rules;
   }
