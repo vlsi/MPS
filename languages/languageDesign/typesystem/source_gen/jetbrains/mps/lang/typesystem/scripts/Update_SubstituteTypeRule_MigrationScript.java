@@ -13,8 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public final class EAP3_update_SubstituteTypeRule_MigrationScript extends BaseMigrationScript {
-  public EAP3_update_SubstituteTypeRule_MigrationScript() {
+public final class Update_SubstituteTypeRule_MigrationScript extends BaseMigrationScript {
+  public Update_SubstituteTypeRule_MigrationScript() {
     super("Update SubstituteTypeRule to the new structure");
     this.addRefactoring(new AbstractMigrationRefactoring() {
       @Override
@@ -36,6 +36,7 @@ public final class EAP3_update_SubstituteTypeRule_MigrationScript extends BaseMi
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, 0x65a1a729b445aec0L, "body"), SNodeOperations.detachNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, 0x2ab4db15af26dfe4L, "code")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))));
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, 0x2ab4db15af26dfe4L, "code")));
       }
       @Override
       public boolean isShowAsIntention() {

@@ -1917,7 +1917,7 @@
     <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="2EOQLmJ9gll" resolve="SubstituteTypeRuleFunction" />
       <node concept="asaX9" id="4x8Jh$mQC7I" role="lGtFl" />
     </node>

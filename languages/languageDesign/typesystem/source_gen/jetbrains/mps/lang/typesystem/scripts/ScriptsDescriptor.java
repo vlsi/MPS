@@ -13,7 +13,7 @@ public final class ScriptsDescriptor extends ScriptAspectBase {
 
   public ScriptsDescriptor() {
     myRefactoringScripts = new RefactoringScript[1];
-    myRefactoringScripts[0] = new EAP3_update_SubstituteTypeRule_MigrationScript();
+    myRefactoringScripts[0] = new Update_SubstituteTypeRule_MigrationScript();
   }
 
   @Override

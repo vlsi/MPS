@@ -28,6 +28,8 @@
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
+        <property id="5299416737274925395" name="type" index="2BwPSy" />
+        <property id="5299416737274925397" name="toBuild" index="2BwPS$" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
       <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="lg" index="_XfAh">
@@ -46,6 +48,7 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -59,7 +62,9 @@
   </registry>
   <node concept="_UgoZ" id="4x8Jh$mQCbc">
     <property role="_Wzho" value="Update SubstituteTypeRule to the new structure" />
-    <property role="TrG5h" value="EAP3_update_SubstituteTypeRule" />
+    <property role="TrG5h" value="Update_SubstituteTypeRule" />
+    <property role="2BwPSy" value="migration" />
+    <property role="2BwPS$" value="EAP3" />
     <node concept="_XfAh" id="4x8Jh$mQCbf" role="_YvDr">
       <property role="_XH9r" value="Update SubstituteTypeRule" />
       <property role="1iWc8x" value="true" />
@@ -90,6 +95,17 @@
                   <node concept="3YRAZt" id="4x8Jh$mQJti" role="2OqNvi" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2xeVATMMyI9" role="3cqZAp">
+            <node concept="2OqwBi" id="2xeVATMMzr$" role="3clFbG">
+              <node concept="2OqwBi" id="2xeVATMMyNz" role="2Oq$k0">
+                <node concept="_YI3z" id="2xeVATMMyI7" role="2Oq$k0" />
+                <node concept="3TrEf2" id="2xeVATMMz63" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpd4:2EOQLmJ9HZ$" />
+                </node>
+              </node>
+              <node concept="1PgB_6" id="2xeVATMMzIS" role="2OqNvi" />
             </node>
           </node>
         </node>

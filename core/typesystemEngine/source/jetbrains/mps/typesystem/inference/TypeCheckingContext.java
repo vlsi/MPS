@@ -201,6 +201,8 @@ public abstract class TypeCheckingContext {
 
   public abstract void checkRootInTraceMode(boolean refreshTypes);
 
+  public abstract TypeSubstitution getSubstitution(SNode origNode);
+
   public static class NodeInfo {
     SNode myNode;
     SNode myType;

@@ -16,6 +16,8 @@
 package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -23,12 +25,11 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class SubstituteTypeOperation extends AbstractOperation {
 
-  private SNode myOriginal;
-  private SNode myReplacement;
+  private TypeSubstitution myTypeSubstitution;
 
-  public SubstituteTypeOperation(SNode original, SNode replacement) {
-    myOriginal = original;
-    myReplacement = replacement;
+  public SubstituteTypeOperation(TypeSubstitution typeSubstitution) {
+    myTypeSubstitution = typeSubstitution;
+    myRule = new Pair<String, String>(typeSubstitution.getRuleModel(), typeSubstitution.getRuleId());
   }
 
   @Override
@@ -43,7 +44,7 @@ public class SubstituteTypeOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Type " + myOriginal + " substituted with " + myReplacement;
+    return "Type " + myTypeSubstitution.getOrigNode() + " substituted with " + myTypeSubstitution.getNewNode();
   }
 
   @Override
