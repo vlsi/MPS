@@ -24,4 +24,9 @@ public class ModuleDependencyUtils {
       model.addLanguage(javadocLang);
     }
   }
+  public static void addDependencyOnCoreIfMissing(SModule currentModule) {
+    if (currentModule instanceof AbstractModule) {
+      ((AbstractModule) currentModule).addDependency(PersistenceFacade.getInstance().createModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)"), false);
+    }
+  }
 }

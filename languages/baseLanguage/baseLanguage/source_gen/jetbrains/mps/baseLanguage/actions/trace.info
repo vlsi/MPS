@@ -7203,13 +7203,18 @@
       <node id="4214225063067035532" at="20,75,21,57" concept="13" />
       <node id="4214225063067034873" at="21,57,22,161" concept="13" />
       <node id="4214225063067034887" at="23,63,24,37" concept="7" />
+      <node id="5849110260867315902" at="28,50,29,180" concept="7" />
       <node id="558454895477892754" at="15,78,18,5" concept="11" />
       <node id="4214225063067034878" at="22,161,25,5" concept="11" />
+      <node id="5849110260867315900" at="27,74,30,5" concept="11" />
       <node id="558454895479019226" at="15,0,20,0" concept="18" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="5849110260867315898" at="27,0,32,0" concept="18" trace="addDependencyOnCoreIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="7625832129925586765" at="20,0,27,0" concept="18" trace="addDependencyOnJavaDocIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="558454895477892757" at="16,50,17,160" />
       <scope id="4214225063067034886" at="23,63,24,37" />
+      <scope id="5849110260867315901" at="28,50,29,180" />
       <scope id="558454895479002783" at="15,78,18,5" />
+      <scope id="5849110260867315899" at="27,74,30,5" />
       <scope id="558454895479019226" at="15,0,20,0">
         <var name="currentModule" id="558454895479006190" />
       </scope>
@@ -7217,10 +7222,13 @@
         <var name="javadocLang" id="4214225063067034874" />
         <var name="model" id="4214225063067035533" />
       </scope>
+      <scope id="5849110260867315898" at="27,0,32,0">
+        <var name="currentModule" id="5849110260867315914" />
+      </scope>
       <scope id="7625832129925586765" at="20,0,27,0">
         <var name="currentModel" id="7625832129926553386" />
       </scope>
-      <unit id="558454895479002756" at="14,0,28,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
+      <unit id="558454895479002756" at="14,0,33,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/5606590085431552230">

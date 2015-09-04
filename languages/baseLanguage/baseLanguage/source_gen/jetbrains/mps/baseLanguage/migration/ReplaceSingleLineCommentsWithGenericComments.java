@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -16,6 +17,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
+import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScriptBase {
@@ -23,6 +25,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
     return "Replace all non-textual nodes of SingleLineComment with the new generic way of commenting out code";
   }
   public SNode execute(SModule m) {
+    final Wrappers._boolean moduleModified = new Wrappers._boolean(false);
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return !(LanguageAspect.MIGRATION.is(it));
@@ -38,10 +41,12 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
           public void visit(SNode oldComment) {
             SNode stmt = SNodeOperations.replaceWithAnother(oldComment, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(oldComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, 0x57d533a7af16ff68L, "commentedStatement")));
             CommentUtil.commentOut(stmt);
+            moduleModified.value = true;
           }
         });
       }
     });
+    ModuleDependencyUtils.addDependencyOnCoreIfMissing(m);
     return null;
   }
   public MigrationScriptReference getDescriptor() {
