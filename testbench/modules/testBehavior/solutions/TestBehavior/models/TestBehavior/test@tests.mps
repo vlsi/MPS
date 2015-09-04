@@ -607,7 +607,7 @@
             </node>
             <node concept="10M0yZ" id="6LXMTdV54Hs" role="3tpDZB">
               <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
-              <ref role="3cqZAo" to="ynox:6EMTxOPT9on" resolve="DIAMOND_I" />
+              <ref role="3cqZAo" to="ynox:6EMTxOPT9vr" resolve="DIAMOND_I1" />
             </node>
           </node>
         </node>

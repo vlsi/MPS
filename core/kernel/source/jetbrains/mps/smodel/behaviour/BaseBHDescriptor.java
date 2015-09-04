@@ -123,7 +123,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> void checkParameters(SMethod<T> method, Object[] parameters) {
-    // TODO check parameters properly
     if (method.getParameterTypes().length != parameters.length) {
       throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
     }
