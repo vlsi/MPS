@@ -1,5 +1,8 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.java.actions.CommentLine_Action" class="jetbrains.mps.ide.java.actions.CommentLine_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt SLASH" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.java.actions.CommentStatements_Action" class="jetbrains.mps.ide.java.actions.CommentStatements_Action">
       <keyboard-shortcut first-keystroke="ctrl shift SLASH" keymap="$default" />
     </action>
@@ -140,6 +143,7 @@
     <group id="jetbrains.mps.ide.java.actions.CodeCommentMenu_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.CommentStatements_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.UncommentStatements_Action" />
+      <reference ref="jetbrains.mps.ide.java.actions.CommentLine_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.Comment_Action" />
       <add-to-group group-id="Code_ActionGroupcomments" anchor="last" />
     </group>
