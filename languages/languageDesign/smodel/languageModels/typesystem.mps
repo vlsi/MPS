@@ -364,7 +364,7 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumMemberType" flags="in" index="2ZThk1" />
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1221161909218" name="jetbrains.mps.lang.smodel.structure.SearchScopeType" flags="in" index="1iUZFY" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -409,7 +409,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
@@ -8786,11 +8786,53 @@
           </node>
         </node>
       </node>
+      <node concept="3clFbH" id="5ffMBkazPum" role="3cqZAp" />
+      <node concept="3SKdUt" id="5ffMBkazP7h" role="3cqZAp">
+        <node concept="3SKdUq" id="5ffMBkazP7Q" role="3SKWNk">
+          <property role="3SKdUp" value="todo remove after 3.3" />
+        </node>
+      </node>
+      <node concept="3clFbJ" id="5ffMBkazPtD" role="3cqZAp">
+        <node concept="3clFbS" id="5ffMBkazPtF" role="3clFbx">
+          <node concept="2MkqsV" id="5ffMBkazPLw" role="3cqZAp">
+            <node concept="Xl_RD" id="5ffMBkazPLy" role="2MkJ7o">
+              <property role="Xl_RC" value="Do not use with arguments of type conceptNode&lt;&gt; and node&lt;&gt;. Use .asConcept operation to cast to concept&lt;&gt;" />
+            </node>
+            <node concept="37vLTw" id="5ffMBkazPLz" role="2OEOjV">
+              <ref role="3cqZAo" node="2R$wlLKBoO1" resolve="arg" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5ffMBkazPPC" role="3cqZAp" />
+        </node>
+        <node concept="22lmx$" id="7dJaARMNC75" role="3clFbw">
+          <node concept="2OqwBi" id="7dJaARMNC7p" role="3uHU7w">
+            <node concept="37vLTw" id="3GM_nagTznD" role="2Oq$k0">
+              <ref role="3cqZAo" node="2R$wlLKBx2S" resolve="argType" />
+            </node>
+            <node concept="1mIQ4w" id="7dJaARMNC7u" role="2OqNvi">
+              <node concept="chp4Y" id="7dJaARMNC7w" role="cj9EA">
+                <ref role="cht4Q" to="tp25:gzTqbfa" resolve="SNodeType" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="59YAasRt5Q0" role="3uHU7B">
+            <node concept="37vLTw" id="3GM_nagTuPo" role="2Oq$k0">
+              <ref role="3cqZAo" node="2R$wlLKBx2S" resolve="argType" />
+            </node>
+            <node concept="1mIQ4w" id="59YAasRt5Q2" role="2OqNvi">
+              <node concept="chp4Y" id="59YAasRt5Q3" role="cj9EA">
+                <ref role="cht4Q" to="tp25:h3THzq0" resolve="ConceptNodeType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="5ffMBkazPuU" role="3cqZAp" />
       <node concept="3clFbJ" id="2R$wlLKBx2j" role="3cqZAp">
         <node concept="3clFbS" id="2R$wlLKBx2k" role="3clFbx">
           <node concept="2MkqsV" id="59YAasRt5Q5" role="3cqZAp">
             <node concept="Xl_RD" id="59YAasRt5Q8" role="2MkJ7o">
-              <property role="Xl_RC" value="Argument of concept switch should be concept&lt;&gt; or node&lt;&gt;" />
+              <property role="Xl_RC" value="Argument of concept switch should be of type concept&lt;&gt;" />
             </node>
             <node concept="37vLTw" id="3GM_nagTyBc" role="2OEOjV">
               <ref role="3cqZAo" node="2R$wlLKBoO1" resolve="arg" />
@@ -8799,25 +8841,13 @@
         </node>
         <node concept="3fqX7Q" id="59YAasRt5PZ" role="3clFbw">
           <node concept="1eOMI4" id="3$myXoLqmQz" role="3fr31v">
-            <node concept="22lmx$" id="7dJaARMNC75" role="1eOMHV">
-              <node concept="2OqwBi" id="7dJaARMNC7p" role="3uHU7w">
-                <node concept="37vLTw" id="3GM_nagTznD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2R$wlLKBx2S" resolve="argType" />
-                </node>
-                <node concept="1mIQ4w" id="7dJaARMNC7u" role="2OqNvi">
-                  <node concept="chp4Y" id="7dJaARMNC7w" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:gzTqbfa" resolve="SNodeType" />
-                  </node>
-                </node>
+            <node concept="2OqwBi" id="5ffMBkazPLR" role="1eOMHV">
+              <node concept="37vLTw" id="5ffMBkazPLS" role="2Oq$k0">
+                <ref role="3cqZAo" node="2R$wlLKBx2S" resolve="argType" />
               </node>
-              <node concept="2OqwBi" id="59YAasRt5Q0" role="3uHU7B">
-                <node concept="37vLTw" id="3GM_nagTuPo" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2R$wlLKBx2S" resolve="argType" />
-                </node>
-                <node concept="1mIQ4w" id="59YAasRt5Q2" role="2OqNvi">
-                  <node concept="chp4Y" id="59YAasRt5Q3" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:h3THzq0" resolve="ConceptNodeType" />
-                  </node>
+              <node concept="1mIQ4w" id="5ffMBkazPLT" role="2OqNvi">
+                <node concept="chp4Y" id="5ffMBkazPPI" role="cj9EA">
+                  <ref role="cht4Q" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                 </node>
               </node>
             </node>
