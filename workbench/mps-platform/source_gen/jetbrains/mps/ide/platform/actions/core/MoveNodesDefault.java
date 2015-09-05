@@ -5,9 +5,9 @@ package jetbrains.mps.ide.platform.actions.core;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -49,15 +49,15 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   }
 
   public boolean isApplicable(MPSProject project, List<SNode> nodesToMove) {
-    return canBeMoved(nodesToMove);
+    return canBeMoved(nodesToMove, project.getRepository());
   }
 
-  public static boolean canBeMoved(final List<SNode> nodesToMove) {
+  public static boolean canBeMoved(final List<SNode> nodesToMove, SRepository repository) {
     if (ListSequence.fromList(nodesToMove).isEmpty()) {
       return false;
     }
     final Wrappers._boolean result = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SNode firstNode = ListSequence.fromList(nodesToMove).first();
         final SContainmentLink containmentLink = firstNode.getContainmentLink();

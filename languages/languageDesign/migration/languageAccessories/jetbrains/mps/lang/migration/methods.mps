@@ -165,6 +165,7 @@
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -498,6 +499,14 @@
                   <node concept="BaHAS" id="3qjQ36DB_fR" role="2JrQYb">
                     <property role="BaHAW" value="org.jetbrains.mps.openapi.language" />
                     <property role="BaGAP" value="java_stub" />
+                    <node concept="2OqwBi" id="1qV8UZyrUkl" role="up2gk">
+                      <node concept="37vLTw" id="1qV8UZyrU6Z" role="2Oq$k0">
+                        <ref role="3cqZAo" node="IkVTleEjRc" resolve="module" />
+                      </node>
+                      <node concept="liA8E" id="1qV8UZyrUAO" role="2OqNvi">
+                        <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="3qjQ36DB_fS" role="2OqNvi">
@@ -522,6 +531,14 @@
                   <node concept="BaHAS" id="18Ph66Bc_Kx" role="2JrQYb">
                     <property role="BaHAW" value="org.jetbrains.mps.openapi.module" />
                     <property role="BaGAP" value="java_stub" />
+                    <node concept="2OqwBi" id="1qV8UZyrUQ5" role="up2gk">
+                      <node concept="37vLTw" id="1qV8UZyrUQ6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="IkVTleEjRc" resolve="module" />
+                      </node>
+                      <node concept="liA8E" id="1qV8UZyrUQ7" role="2OqNvi">
+                        <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="18Ph66Bc_Ky" role="2OqNvi">
