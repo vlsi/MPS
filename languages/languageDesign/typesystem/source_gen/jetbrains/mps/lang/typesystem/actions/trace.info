@@ -358,11 +358,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ac(jetbrains.mps.lang.typesystem.actions)/2401040147804061846">
     <file name="QueriesGenerated.java">
-      <node id="2401040147804097678" at="124,190,125,238" concept="5" />
-      <node id="2401040147804062168" at="125,238,126,555" concept="6" />
+      <node id="2401040147804097678" at="124,190,125,237" concept="5" />
+      <node id="2401040147804062168" at="125,237,126,555" concept="6" />
       <node id="2401040147804061848" at="124,0,128,0" concept="8" trace="nodeSubstituteActionsBuilder_Precondition_Expression_2401040147804061848#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="2401040147804061849" at="124,190,126,555">
-        <var name="infRule" id="2401040147804097679" />
+        <var name="absRule" id="2401040147804097679" />
       </scope>
       <scope id="2401040147804061848" at="124,0,128,0">
         <var name="_context" id="2401040147804061848" />

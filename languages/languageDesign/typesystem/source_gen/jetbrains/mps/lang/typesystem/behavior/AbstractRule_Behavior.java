@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class AbstractRule_Behavior {
   public static void init(SNode thisNode) {
@@ -21,5 +23,9 @@ public class AbstractRule_Behavior {
     SNode conceptReference = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference")));
     SLinkOperations.setTarget(conceptReference, MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, 0x1117e2ab6c9L, "concept"), baseConcept);
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode"), conceptReference);
+  }
+  public static boolean call_isAttributeRule_7307171874933700673(SNode thisNode) {
+    SNode baseConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    return AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(baseConcept, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getDeclarationNode());
   }
 }

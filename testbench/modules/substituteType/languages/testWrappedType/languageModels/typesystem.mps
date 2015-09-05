@@ -16,9 +16,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
-        <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -27,9 +24,8 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="3077325331580126549" name="jetbrains.mps.lang.typesystem.structure.SubstituteTypeRuleFunction" flags="ig" index="25$tT0" />
       <concept id="6405009306797516074" name="jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule" flags="ig" index="3qnSWH">
-        <child id="3077325331580248036" name="code" index="25$wjL" />
+        <child id="7323318266641100480" name="body" index="3hT0BD" />
       </concept>
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
         <reference id="1174642800329" name="concept" index="1YaFvo" />
@@ -54,23 +50,21 @@
   </registry>
   <node concept="3qnSWH" id="15xlXKdz73d">
     <property role="TrG5h" value="substitute_WrapperType" />
-    <node concept="25$tT0" id="15xlXKdz73e" role="25$wjL">
-      <node concept="3clFbS" id="15xlXKdz73f" role="2VODD2">
-        <node concept="3clFbF" id="15xlXKdz75g" role="3cqZAp">
-          <node concept="2OqwBi" id="15xlXKdz78g" role="3clFbG">
-            <node concept="1YBJjd" id="15xlXKdz75f" role="2Oq$k0">
-              <ref role="1YBMHb" node="15xlXKdz74A" resolve="wrapperType" />
-            </node>
-            <node concept="3TrEf2" id="15xlXKdz7k0" role="2OqNvi">
-              <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="1YaCAy" id="15xlXKdz74A" role="1YuTPh">
       <property role="TrG5h" value="wrapperType" />
       <ref role="1YaFvo" to="jwoj:15xlXKdz5aW" resolve="WrapperType" />
+    </node>
+    <node concept="3clFbS" id="6mxDMAOkCn_" role="3hT0BD">
+      <node concept="3clFbF" id="15xlXKdz75g" role="3cqZAp">
+        <node concept="2OqwBi" id="15xlXKdz78g" role="3clFbG">
+          <node concept="1YBJjd" id="15xlXKdz75f" role="2Oq$k0">
+            <ref role="1YBMHb" node="15xlXKdz74A" resolve="wrapperType" />
+          </node>
+          <node concept="3TrEf2" id="15xlXKdz7k0" role="2OqNvi">
+            <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

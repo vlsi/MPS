@@ -20,7 +20,7 @@
       <node id="1252378774017437901" at="20,0,23,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1252378774017437901" at="23,0,26,0" concept="2" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <scope id="1252378774017437901" at="15,54,15,54" />
-      <scope id="1252378774017437903" at="17,136,18,184" />
+      <scope id="7323318266641941989" at="17,136,18,184" />
       <scope id="1252378774017437901" at="20,50,21,145" />
       <scope id="1252378774017437901" at="23,68,24,102" />
       <scope id="1252378774017437901" at="15,0,17,0" />

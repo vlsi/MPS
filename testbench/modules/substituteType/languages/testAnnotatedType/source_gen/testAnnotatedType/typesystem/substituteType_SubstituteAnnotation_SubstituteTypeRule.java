@@ -19,7 +19,7 @@ public class substituteType_SubstituteAnnotation_SubstituteTypeRule extends Abst
   }
   public SNode substitution(SNode substituteAnnotation, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1c4L, "condition")))) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(originalType, MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType")), "virtual_substituteWith_1470921783545443949", new Object[]{SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1baL, "substitute"))});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(substituteAnnotation), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType")), "virtual_substituteWith_1470921783545443949", new Object[]{SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1baL, "substitute"))});
     }
     return null;
   }

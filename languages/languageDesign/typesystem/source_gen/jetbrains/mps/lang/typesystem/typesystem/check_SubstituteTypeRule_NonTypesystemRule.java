@@ -15,8 +15,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class check_SubstituteTypeRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SubstituteTypeRule_NonTypesystemRule() {
   }
-  public void applyRule(final SNode substituteTypeRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(SLinkOperations.getTarget(substituteTypeRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, 0x2ab4db15af26dfe4L, "code")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")));
+  public void applyRule(final SNode subsRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(subsRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, 0x65a1a729b445aec0L, "body")));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule");

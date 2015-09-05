@@ -90,7 +90,7 @@
   </root>
   <root nodeRef="r:d9c7d7eb-2b42-4829-a0ae-81b54923bc48(testAnnotatedType.typesystem)/6405009306797672392">
     <file name="substituteType_SubstituteAnnotation_SubstituteTypeRule.java">
-      <node id="6405009306797677123" at="21,259,22,501" concept="6" />
+      <node id="6405009306797677123" at="21,259,22,536" concept="6" />
       <node id="6405009306797677894" at="23,5,24,16" concept="6" />
       <node id="6405009306797672392" at="26,50,27,156" concept="6" />
       <node id="6405009306797672392" at="29,68,30,102" concept="0" />
@@ -101,7 +101,7 @@
       <node id="6405009306797672392" at="29,0,32,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="6405009306797672392" at="20,0,26,0" concept="4" trace="substitution#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="6405009306797672392" at="18,67,18,67" />
-      <scope id="6405009306797672397" at="21,259,22,501" />
+      <scope id="6405009306797672397" at="21,259,22,536" />
       <scope id="6405009306797672392" at="26,50,27,156" />
       <scope id="6405009306797672392" at="29,68,30,102" />
       <scope id="6405009306797672392" at="18,0,20,0" />
@@ -109,7 +109,7 @@
       <scope id="6405009306797672392" at="29,0,32,0">
         <var name="argument" id="6405009306797672392" />
       </scope>
-      <scope id="3077325331580618280" at="20,145,24,16" />
+      <scope id="7323318266641350941" at="20,145,24,16" />
       <scope id="6405009306797672392" at="20,0,26,0">
         <var name="originalType" id="6405009306797672392" />
         <var name="status" id="6405009306797672392" />

@@ -28,8 +28,8 @@ public class typeof_AttributedNodeExpression_InferenceRule extends AbstractInfer
   public typeof_AttributedNodeExpression_InferenceRule() {
   }
   public void applyRule(final SNode ane, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode infRule = SNodeOperations.getNodeAncestor(ane, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), false, false);
-    SNode applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(infRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode")), "virtual_getApplicableConcept_1213877307633", new Object[]{});
+    SNode absRule = SNodeOperations.getNodeAncestor(ane, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), false, false);
+    SNode applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(absRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode")), "virtual_getApplicableConcept_1213877307633", new Object[]{});
 
     if (AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(applicableConcept, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getDeclarationNode())) {
 

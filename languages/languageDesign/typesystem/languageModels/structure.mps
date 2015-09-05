@@ -1908,29 +1908,28 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${module}/icons/substitute.png" />
     <ref role="1TJDcQ" node="h5YuPLN" resolve="AbstractRule" />
+    <node concept="1TJgyj" id="6mxDMAOhqV0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
     <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="2EOQLmJ9gll" resolve="SubstituteTypeRuleFunction" />
+      <node concept="asaX9" id="4x8Jh$mQC7I" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="5zzawu2JakF" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
+    <node concept="PrWs8" id="6mxDMAOk6bE" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
     <node concept="PrWs8" id="5zzawu2JS8A" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="2EOQLmJ9gll">
-    <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="2EOQLmJ9owp">
-    <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
-    <property role="34LRSv" value="originalNode" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="1y5tROjsd_V">
     <property role="3GE5qa" value="definition.conceptFunction" />
@@ -1950,6 +1949,19 @@
     <property role="3GE5qa" value="definition.conceptFunction" />
     <property role="TrG5h" value="SupersedeConceptFunction" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9gll">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="4x8Jh$mQ$5M" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9owp">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
+    <property role="34LRSv" value="originalNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="4x8Jh$mQ$5O" role="lGtFl" />
   </node>
 </model>
 

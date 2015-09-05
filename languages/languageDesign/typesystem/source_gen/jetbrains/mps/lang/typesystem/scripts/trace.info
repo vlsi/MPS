@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ScriptsDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.typesystem.scripts.ScriptsDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:a78db62f-7458-47d7-a27a-091e4112ca2b(jetbrains.mps.lang.typesystem.scripts)/5208620884509229772">
+    <file name="EAP3_update_SubstituteTypeRule_MigrationScript.java">
+      <node id="5208620884509229772" at="17,59,18,60" concept="5" />
+      <node id="5208620884509229775" at="21,31,22,43" concept="4" />
+      <node id="5208620884509229775" at="25,41,26,43" concept="4" />
+      <node id="5208620884509229775" at="29,54,30,170" concept="4" />
+      <node id="5208620884509230101" at="33,59,34,188" concept="4" />
+      <node id="5208620884509246392" at="37,52,38,511" concept="2" />
+      <node id="5208620884509229775" at="41,42,42,20" concept="4" />
+      <node id="5208620884509229772" at="49,41,50,164" concept="4" />
+      <node id="5208620884509229775" at="20,0,24,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="5208620884509229775" at="24,0,28,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="5208620884509229775" at="28,0,32,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5208620884509229775" at="32,0,36,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5208620884509229775" at="36,0,40,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5208620884509229775" at="40,0,44,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="5208620884509229772" at="47,0,52,0" concept="3" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5208620884509229772" at="18,60,44,7" concept="0" />
+      <node id="5208620884509229775" at="18,60,44,7" concept="2" />
+      <node id="5208620884509229772" at="17,0,46,0" concept="1" trace="EAP3_update_SubstituteTypeRule_MigrationScript#()V" />
+      <scope id="5208620884509229775" at="21,31,22,43" />
+      <scope id="5208620884509229775" at="25,41,26,43" />
+      <scope id="5208620884509229775" at="29,54,30,170" />
+      <scope id="5208620884509229782" at="33,59,34,188" />
+      <scope id="5208620884509229777" at="37,52,38,511" />
+      <scope id="5208620884509229775" at="41,42,42,20" />
+      <scope id="5208620884509229772" at="49,41,50,164" />
+      <scope id="5208620884509229775" at="20,0,24,0" />
+      <scope id="5208620884509229775" at="24,0,28,0" />
+      <scope id="5208620884509229775" at="28,0,32,0" />
+      <scope id="5208620884509229775" at="32,0,36,0">
+        <var name="node" id="5208620884509229775" />
+      </scope>
+      <scope id="5208620884509229775" at="36,0,40,0">
+        <var name="node" id="5208620884509229775" />
+      </scope>
+      <scope id="5208620884509229775" at="40,0,44,0" />
+      <scope id="5208620884509229772" at="47,0,52,0" />
+      <scope id="5208620884509229775" at="18,60,44,7" />
+      <scope id="5208620884509229772" at="17,59,44,7" />
+      <scope id="5208620884509229772" at="17,0,46,0" />
+      <unit id="5208620884509229775" at="19,28,44,5" name="jetbrains.mps.lang.typesystem.scripts.EAP3_update_SubstituteTypeRule_MigrationScript$1" />
+      <unit id="5208620884509229772" at="16,0,53,0" name="jetbrains.mps.lang.typesystem.scripts.EAP3_update_SubstituteTypeRule_MigrationScript" />
+    </file>
+  </root>
+</debug-info>
+
