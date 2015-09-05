@@ -692,12 +692,11 @@
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/6268689888338066042">
     <file name="check_AllUsedLanguagesAreImported_NonTypesystemRule.java">
-      <node id="6268689888338114628" at="30,58,31,13" concept="9" />
-      <node id="6399148743916629763" at="33,49,34,13" concept="9" />
-      <node id="6268689888338233304" at="35,5,36,70" concept="8" />
-      <node id="4391055162404185309" at="36,70,37,113" concept="10" />
-      <node id="4681074014967032001" at="37,113,38,105" concept="3" />
-      <node id="4681074014967043968" at="38,105,39,0" concept="11" />
+      <node id="6268689888338114628" at="31,58,32,13" concept="9" />
+      <node id="6399148743916629763" at="34,49,35,13" concept="9" />
+      <node id="6268689888338233304" at="36,5,37,70" concept="8" />
+      <node id="4681074014967032001" at="37,70,38,139" concept="3" />
+      <node id="4681074014967043968" at="38,139,39,0" concept="11" />
       <node id="8941604747783494436" at="39,0,40,143" concept="10" />
       <node id="8941604747783499317" at="40,143,41,162" concept="10" />
       <node id="8941604747783119514" at="43,0,44,0" concept="4" trace="C" />
@@ -721,9 +720,9 @@
       <node id="6268689888338066042" at="79,68,80,102" concept="0" />
       <node id="6268689888338066042" at="79,68,80,102" concept="9" />
       <node id="6268689888338066042" at="82,30,83,17" concept="9" />
-      <node id="6268689888338066042" at="27,0,29,0" concept="1" trace="check_AllUsedLanguagesAreImported_NonTypesystemRule#()V" />
-      <node id="6268689888338069369" at="29,117,32,5" concept="6" />
-      <node id="6399148743916623078" at="32,5,35,5" concept="6" />
+      <node id="6268689888338066042" at="28,0,30,0" concept="1" trace="check_AllUsedLanguagesAreImported_NonTypesystemRule#()V" />
+      <node id="6268689888338069369" at="30,117,33,5" concept="6" />
+      <node id="6399148743916623078" at="33,5,36,5" concept="6" />
       <node id="8941604747782182057" at="53,47,56,11" concept="6" />
       <node id="6268689888338066042" at="76,0,79,0" concept="7" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6268689888338066042" at="79,0,82,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -735,15 +734,15 @@
       <node id="8941604747782182047" at="50,49,72,9" concept="5" />
       <node id="8941604747782180590" at="49,0,74,0" concept="7" trace="findMissing#(Ljava/lang/Iterable;Ljava/util/Set;)V" />
       <node id="8941604747782176400" at="41,162,74,12" concept="3" />
-      <node id="6268689888338066042" at="29,0,76,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="6268689888338066042" at="27,64,27,64" />
-      <scope id="6268689888338069370" at="30,58,31,13" />
-      <scope id="6399148743916623081" at="33,49,34,13" />
+      <node id="6268689888338066042" at="30,0,76,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="6268689888338066042" at="28,64,28,64" />
+      <scope id="6268689888338069370" at="31,58,32,13" />
+      <scope id="6399148743916623081" at="34,49,35,13" />
       <scope id="8941604747782182058" at="54,73,55,21" />
       <scope id="6268689888338066042" at="76,50,77,148" />
       <scope id="6268689888338066042" at="79,68,80,102" />
       <scope id="6268689888338066042" at="82,30,83,17" />
-      <scope id="6268689888338066042" at="27,0,29,0" />
+      <scope id="6268689888338066042" at="28,0,30,0" />
       <scope id="8941604747782180479" at="45,25,47,59">
         <var name="emptySet" id="8941604747783454009" />
       </scope>
@@ -777,16 +776,16 @@
         <var name="level" id="8941604747782181552" />
         <var name="parentReported" id="8941604747783181212" />
       </scope>
-      <scope id="6268689888338066501" at="29,117,74,12">
+      <scope id="6268689888338066501" at="30,117,74,12">
         <var name="importedLanguages" id="6268689888338233305" />
       </scope>
-      <scope id="6268689888338066042" at="29,0,76,0">
+      <scope id="6268689888338066042" at="30,0,76,0">
         <var name="root" id="6268689888338066042" />
         <var name="status" id="6268689888338066042" />
         <var name="typeCheckingContext" id="6268689888338066042" />
       </scope>
       <unit id="8941604747782180473" at="42,8,74,5" name="jetbrains.mps.lang.core.typesystem.check_AllUsedLanguagesAreImported_NonTypesystemRule$1" />
-      <unit id="6268689888338066042" at="26,0,86,0" name="jetbrains.mps.lang.core.typesystem.check_AllUsedLanguagesAreImported_NonTypesystemRule" />
+      <unit id="6268689888338066042" at="27,0,86,0" name="jetbrains.mps.lang.core.typesystem.check_AllUsedLanguagesAreImported_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/6268689888341989285">

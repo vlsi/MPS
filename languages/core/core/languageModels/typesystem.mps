@@ -1226,11 +1226,6 @@
           </node>
         </node>
       </node>
-      <node concept="3SKdUt" id="3NKamv8fMjt" role="3cqZAp">
-        <node concept="3SKdUq" id="3NKamv8fMvW" role="3SKWNk">
-          <property role="3SKdUp" value="XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here?" />
-        </node>
-      </node>
       <node concept="3clFbF" id="43Qx0f_qYz1" role="3cqZAp">
         <node concept="2OqwBi" id="43Qx0f_r0ji" role="3clFbG">
           <node concept="37vLTw" id="43Qx0f_qYyZ" role="2Oq$k0">
@@ -1238,14 +1233,24 @@
           </node>
           <node concept="liA8E" id="43Qx0f_r0YW" role="2OqNvi">
             <ref role="37wK5l" to="33ny:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
-            <node concept="2YIFZM" id="43Qx0f_qRS3" role="37wK5m">
-              <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-              <ref role="37wK5l" to="w1kc:~SModelOperations.getAllImportedLanguageIds(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllImportedLanguageIds" />
-              <node concept="2OqwBi" id="43Qx0f_qV$k" role="37wK5m">
-                <node concept="1YBJjd" id="43Qx0f_qV$l" role="2Oq$k0">
-                  <ref role="1YBMHb" node="5rYR3Qhukgo" resolve="root" />
+            <node concept="2OqwBi" id="7a98lPEYvk9" role="37wK5m">
+              <node concept="2ShNRf" id="7a98lPEYvka" role="2Oq$k0">
+                <node concept="1pGfFk" id="7a98lPEYvkb" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~SLanguageHierarchy.&lt;init&gt;(java.util.Collection)" resolve="SLanguageHierarchy" />
+                  <node concept="2YIFZM" id="7a98lPEYCpD" role="37wK5m">
+                    <ref role="37wK5l" to="w1kc:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
+                    <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
+                    <node concept="2OqwBi" id="7a98lPEYCpE" role="37wK5m">
+                      <node concept="1YBJjd" id="7a98lPEYCpF" role="2Oq$k0">
+                        <ref role="1YBMHb" node="5rYR3Qhukgo" resolve="root" />
+                      </node>
+                      <node concept="I4A8Y" id="7a98lPEYCpG" role="2OqNvi" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="I4A8Y" id="43Qx0f_qV$m" role="2OqNvi" />
+              </node>
+              <node concept="liA8E" id="7a98lPEYvkg" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~SLanguageHierarchy.getExtended():java.util.Set" resolve="getExtended" />
               </node>
             </node>
           </node>
