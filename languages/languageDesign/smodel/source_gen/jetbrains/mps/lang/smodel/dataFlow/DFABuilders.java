@@ -9,9 +9,9 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.smodel.structure.AttributeAccess", new AttributeAccess_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", new ConceptSwitchStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", new ConceptSwitchStatementCase_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", new Concept_IsSubConceptOfOperation_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", new Concept_IsSuperConceptOfOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.smodel.structure.ExactConceptCase", new ExactConceptCase_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", new IfInstanceOfStatement_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", new IfInstanceOfVarReference_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", new LinkAttributeQualifier_DataFlow());
@@ -21,5 +21,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.smodel.structure.SNodeOperation", new SNodeOperation_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", new SNodeTypeCastExpression_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", new SemanticDowncastExpression_DataFlow());
+    manager.register("jetbrains.mps.lang.smodel.structure.SubconceptCase", new SubconceptCase_DataFlow());
   }
 }

@@ -33,7 +33,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,294,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,296,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
@@ -70,9 +70,6 @@
     </file>
     <file name="ConceptShortDescriptionOperation_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.smodel.behavior.ConceptShortDescriptionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptSwitchStatementCase_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptSwitchStatementCase_BehaviorDescriptor" />
     </file>
     <file name="ConceptSwitchStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ConceptSwitchStatement_BehaviorDescriptor" />
@@ -115,6 +112,12 @@
     </file>
     <file name="EqualsStructurallyExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.EqualsStructurallyExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ExactConceptCase_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ExactConceptCase_BehaviorDescriptor" />
+    </file>
+    <file name="IConceptSwitchCase_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.IConceptSwitchCase_BehaviorDescriptor" />
     </file>
     <file name="ILinkAccessQualifierContainer_BehaviorDescriptor.java">
       <unit at="7,0,10,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_BehaviorDescriptor" />
@@ -472,6 +475,9 @@
     </file>
     <file name="SemanticDowncastExpression_BehaviorDescriptor.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.smodel.behavior.SemanticDowncastExpression_BehaviorDescriptor" />
+    </file>
+    <file name="SubconceptCase_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.SubconceptCase_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1213877264086">

@@ -346,6 +346,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="59YAasRtoHF">
+    <property role="3GE5qa" value="conceptSwitch" />
     <ref role="3_znuS" to="tp25:59YAasRsvgH" resolve="ConceptSwitchStatement" />
     <node concept="3__wT9" id="59YAasRtoHG" role="3_A6iZ">
       <node concept="3clFbS" id="59YAasRtoHH" role="2VODD2">
@@ -382,7 +383,7 @@
           <node concept="3cpWsn" id="h$C6YFX" role="1Duv9x">
             <property role="TrG5h" value="switchCase" />
             <node concept="3Tqbb2" id="h$C6YRe" role="1tU5fm">
-              <ref role="ehGHo" to="tp25:59YAasRsvgM" resolve="ConceptSwitchStatementCase" />
+              <ref role="ehGHo" to="tp25:5ffMBka$9Mm" resolve="IConceptSwitchCase" />
             </node>
           </node>
         </node>
@@ -390,7 +391,8 @@
     </node>
   </node>
   <node concept="3_zdsH" id="1vlniYCgjeA">
-    <ref role="3_znuS" to="tp25:59YAasRsvgM" resolve="ConceptSwitchStatementCase" />
+    <property role="3GE5qa" value="conceptSwitch" />
+    <ref role="3_znuS" to="tp25:59YAasRsvgM" resolve="SubconceptCase" />
     <node concept="3__wT9" id="1vlniYCgjeB" role="3_A6iZ">
       <node concept="3clFbS" id="1vlniYCgjeC" role="2VODD2">
         <node concept="3AgYrR" id="h$C8KXJ" role="3cqZAp">
@@ -398,6 +400,22 @@
             <node concept="3__QtB" id="h$C8LsM" role="2Oq$k0" />
             <node concept="3TrEf2" id="1vlniYCgjeF" role="2OqNvi">
               <ref role="3Tt5mk" to="tp25:gVKbo18" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3_zdsH" id="5ffMBka$9Pf">
+    <property role="3GE5qa" value="conceptSwitch" />
+    <ref role="3_znuS" to="tp25:5ffMBka$9L$" resolve="ExactConceptCase" />
+    <node concept="3__wT9" id="5ffMBka$9Pg" role="3_A6iZ">
+      <node concept="3clFbS" id="5ffMBka$9Ph" role="2VODD2">
+        <node concept="3AgYrR" id="5ffMBka$9Pi" role="3cqZAp">
+          <node concept="2OqwBi" id="5ffMBka$9Pj" role="3Ah4Yx">
+            <node concept="3__QtB" id="5ffMBka$9Pk" role="2Oq$k0" />
+            <node concept="3TrEf2" id="5ffMBka$a0F" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp25:5ffMBka$9NO" />
             </node>
           </node>
         </node>
