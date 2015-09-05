@@ -56,21 +56,21 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
 
   protected abstract void doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext, SNode rootNode,
-      Set<EditorMessage> messages, Cancellable cancellable);
+      Set<EditorMessage> messages, Cancellable cancellable, boolean applyQuickFixes);
 
   @Override
   protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    return createMessages(rootNode, events, wasCheckedOnce, editorContext, Cancellable.NEVER);
+    throw new UnsupportedOperationException("old API call not supported");
   }
 
   @Override
-  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable) {
+  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable, final boolean applyQuickFixes) {
     myMessagesChanged = false;
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(final TypeCheckingContext context) {
         final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages, cancellable);
+        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages, cancellable, applyQuickFixes);
         return messages;
       }
     });
@@ -100,7 +100,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   }
 
   protected void collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext, Set<EditorMessage> messages,
-      boolean typesystemErrors) {
+      boolean typesystemErrors, boolean applyQuickFixes) {
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
       List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
       Collections.sort(errors, new Comparator<IErrorReporter>() {
@@ -122,13 +122,19 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
         );
         List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
         final SNode quickFixNode = errorNode.o1;
-        if (intentionProviders.size() == 1 && intentionProviders.get(0) != null && intentionProviders.get(0).isExecutedImmediately() && !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED) {
-          QuickFixProvider intentionProvider = intentionProviders.get(0);
-          if (!instantIntentionApplied) {
-            instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, intentionProvider);
+        if (applyQuickFixes){
+           if (intentionProviders.size() == 1 &&
+              intentionProviders.get(0) != null &&
+              intentionProviders.get(0).isExecutedImmediately() &&
+              !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED)
+          {
+            QuickFixProvider intentionProvider = intentionProviders.get(0);
+            if (!instantIntentionApplied) {
+              instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, intentionProvider);
+            }
+          } else {
+            messages.add(message);
           }
-        } else {
-          messages.add(message);
         }
       }
     }

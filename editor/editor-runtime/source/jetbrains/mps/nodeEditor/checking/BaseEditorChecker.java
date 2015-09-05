@@ -30,12 +30,13 @@ import java.util.Set;
 public abstract class BaseEditorChecker implements EditorMessageOwner {
   //--------accessible stuff--------
 
-  public final Set<EditorMessage> createMessagesProtected(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable){
+  public final Set<EditorMessage> createMessagesProtected(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce,
+      final EditorContext editorContext, final Cancellable cancellable, final boolean applyQuickFixes){
     final Set<EditorMessage> result = new HashSet<EditorMessage>();
     performUninterruptableAction(new Runnable() {
       @Override
       public void run() {
-        result.addAll(createMessages(rootNode, events, wasCheckedOnce, editorContext, cancellable));
+        result.addAll(createMessages(rootNode, events, wasCheckedOnce, editorContext, cancellable, applyQuickFixes));
       }
     });
     return result;
@@ -107,7 +108,9 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   protected abstract Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
-  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext, Cancellable c) {
+  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext,
+      Cancellable cancellable, boolean applyQuickFixes)
+  {
     return createMessages(rootNode, events, wasCheckedOnce, editorContext);
   }
 
