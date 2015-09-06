@@ -6,7 +6,6 @@
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -4653,12 +4652,43 @@
               <property role="VOm3f" value="false" />
             </node>
           </node>
-          <node concept="3EZMnI" id="2EOQLmJ9HZD" role="3EZMnx">
-            <node concept="3XFhqQ" id="2EOQLmJ9HZE" role="3EZMnx" />
-            <node concept="3F1sOY" id="2EOQLmJ9I0f" role="3EZMnx">
-              <ref role="1NtTu8" to="tpd4:2EOQLmJ9HZ$" />
+          <node concept="3EZMnI" id="6mxDMAOhrg5" role="3EZMnx">
+            <property role="3EZMnw" value="false" />
+            <node concept="3F0ifn" id="6mxDMAOhrg6" role="3EZMnx">
+              <property role="3F0ifm" value="substitute" />
+              <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+              <node concept="3$7jql" id="6mxDMAOhrg7" role="3F10Kt">
+                <property role="3$6WeP" value="0.0" />
+              </node>
             </node>
-            <node concept="2iRfu4" id="2EOQLmJ9HZG" role="2iSdaV" />
+            <node concept="3F0ifn" id="6mxDMAOhrg8" role="3EZMnx">
+              <property role="3F0ifm" value="{" />
+              <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+              <node concept="3mYdg7" id="6mxDMAOhrg9" role="3F10Kt">
+                <property role="1413C4" value="rule-block" />
+              </node>
+            </node>
+            <node concept="VPM3Z" id="6mxDMAOhrga" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="2iRfu4" id="6mxDMAOhrgb" role="2iSdaV" />
+          </node>
+          <node concept="3EZMnI" id="6mxDMAOhrgc" role="3EZMnx">
+            <node concept="3XFhqQ" id="6mxDMAOhrgd" role="3EZMnx" />
+            <node concept="3F1sOY" id="6mxDMAOhrge" role="3EZMnx">
+              <ref role="1NtTu8" to="tpd4:6mxDMAOhqV0" />
+            </node>
+            <node concept="VPM3Z" id="6mxDMAOhrgf" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="2iRfu4" id="6mxDMAOhrgg" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="6mxDMAOhrgh" role="3EZMnx">
+            <property role="3F0ifm" value="}" />
+            <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+            <node concept="3mYdg7" id="6mxDMAOhrgi" role="3F10Kt">
+              <property role="1413C4" value="rule-block" />
+            </node>
           </node>
           <node concept="VPM3Z" id="5zzawu2Jam$" role="3F10Kt">
             <property role="VOm3f" value="false" />

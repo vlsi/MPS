@@ -4,6 +4,7 @@ package testWrappedType.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractSubstituteType_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -14,7 +15,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class substitute_WrapperType_SubstituteTypeRule extends AbstractSubstituteType_Runtime implements SubstituteType_Runtime {
   public substitute_WrapperType_SubstituteTypeRule() {
   }
-  public SNode substitution(SNode wrapperType, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public TypeSubstitution substitution(SNode wrapperType, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new TypeSubstitution(originalType, newNode(wrapperType, originalType, typeCheckingContext, status), "r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)", "7323318266641941989");
+  }
+  public SNode newNode(SNode wrapperType, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(wrapperType, MetaAdapterFactory.getContainmentLink(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, 0x116157dc0d8c52bdL, "wrapped"));
   }
   public SAbstractConcept getApplicableConcept() {

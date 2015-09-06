@@ -2927,8 +2927,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/2401040147804308811">
     <file name="typeof_AttributedNodeExpression_InferenceRule.java">
-      <node id="2401040147804097678" at="30,116,31,217" concept="7" />
-      <node id="2401040147804331208" at="31,217,32,331" concept="7" />
+      <node id="2401040147804097678" at="30,116,31,216" concept="7" />
+      <node id="2401040147804331208" at="31,216,32,331" concept="7" />
       <node id="2401040147804334171" at="32,331,33,0" concept="9" />
       <node id="2401040147804334158" at="34,271,35,0" concept="9" />
       <node id="2401040147804337658" at="35,0,36,618" concept="7" />
@@ -3052,8 +3052,8 @@
         <var name="attributedConcepts" id="2401040147804337659" />
       </scope>
       <scope id="2401040147804308812" at="30,116,59,5">
+        <var name="absRule" id="2401040147804097679" />
         <var name="applicableConcept" id="2401040147804331209" />
-        <var name="infRule" id="2401040147804097679" />
       </scope>
       <scope id="2401040147804308811" at="30,0,61,0">
         <var name="ane" id="2401040147804308811" />
@@ -3065,8 +3065,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/2401040147804768886">
     <file name="check_AttributedNodeExpression_NonTypesystemRule.java">
-      <node id="2401040147804771869" at="21,116,22,217" concept="7" />
-      <node id="7307171874934071490" at="23,107,24,58" concept="7" />
+      <node id="2401040147804771869" at="21,116,22,216" concept="7" />
+      <node id="7307171874934071490" at="23,106,24,58" concept="7" />
       <node id="7307171874934071490" at="24,58,25,262" concept="7" />
       <node id="2401040147804768886" at="28,50,29,172" concept="8" />
       <node id="2401040147804768886" at="31,68,32,102" concept="0" />
@@ -3076,14 +3076,14 @@
       <node id="2401040147804768886" at="28,0,31,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="2401040147804768886" at="31,0,34,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="2401040147804768886" at="34,0,37,0" concept="6" trace="overrides#()Z" />
-      <node id="7307171874934071490" at="22,217,26,5" concept="5" />
+      <node id="7307171874934071490" at="22,216,26,5" concept="5" />
       <node id="2401040147804768886" at="21,0,28,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2401040147804768886" at="19,61,19,61" />
       <scope id="2401040147804768886" at="28,50,29,172" />
       <scope id="2401040147804768886" at="31,68,32,102" />
       <scope id="2401040147804768886" at="34,30,35,17" />
       <scope id="2401040147804768886" at="19,0,21,0" />
-      <scope id="7307171874934071490" at="23,107,25,262">
+      <scope id="7307171874934071490" at="23,106,25,262">
         <var name="_reporter_2309309498" id="7307171874934071490" />
         <var name="errorTarget" id="7307171874934071490" />
       </scope>
@@ -3093,7 +3093,7 @@
       </scope>
       <scope id="2401040147804768886" at="34,0,37,0" />
       <scope id="2401040147804768887" at="21,116,26,5">
-        <var name="infRule" id="2401040147804771870" />
+        <var name="absRule" id="2401040147804771870" />
       </scope>
       <scope id="2401040147804768886" at="21,0,28,0">
         <var name="ane" id="2401040147804768886" />
@@ -3414,7 +3414,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/6405009306797517608">
     <file name="check_SubstituteTypeRule_NonTypesystemRule.java">
-      <node id="6405009306797525357" at="18,131,19,378" concept="3" />
+      <node id="6405009306797525357" at="18,121,19,219" concept="3" />
       <node id="6405009306797517608" at="21,50,22,166" concept="8" />
       <node id="6405009306797517608" at="24,68,25,102" concept="0" />
       <node id="6405009306797517608" at="24,68,25,102" concept="8" />
@@ -3425,14 +3425,14 @@
       <node id="6405009306797517608" at="24,0,27,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="6405009306797517608" at="27,0,30,0" concept="6" trace="overrides#()Z" />
       <scope id="6405009306797517608" at="16,55,16,55" />
-      <scope id="6405009306797517609" at="18,131,19,378" />
+      <scope id="6405009306797517609" at="18,121,19,219" />
       <scope id="6405009306797517608" at="21,50,22,166" />
       <scope id="6405009306797517608" at="24,68,25,102" />
       <scope id="6405009306797517608" at="27,30,28,17" />
       <scope id="6405009306797517608" at="16,0,18,0" />
       <scope id="6405009306797517608" at="18,0,21,0">
         <var name="status" id="6405009306797517608" />
-        <var name="substituteTypeRule" id="6405009306797517608" />
+        <var name="subsRule" id="6405009306797517608" />
         <var name="typeCheckingContext" id="6405009306797517608" />
       </scope>
       <scope id="6405009306797517608" at="21,0,24,0" />
@@ -3548,7 +3548,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/7307171874934109725">
     <file name="check_SupersedeConceptFunction_NonTypesystemRule.java">
       <node id="7307171874934109971" at="21,116,22,217" concept="7" />
-      <node id="7307171874934109979" at="23,107,24,58" concept="7" />
+      <node id="7307171874934109979" at="23,106,24,58" concept="7" />
       <node id="7307171874934109979" at="24,58,25,245" concept="7" />
       <node id="7307171874934109725" at="28,50,29,172" concept="8" />
       <node id="7307171874934109725" at="31,68,32,102" concept="0" />
@@ -3565,7 +3565,7 @@
       <scope id="7307171874934109725" at="31,68,32,102" />
       <scope id="7307171874934109725" at="34,30,35,17" />
       <scope id="7307171874934109725" at="19,0,21,0" />
-      <scope id="7307171874934109979" at="23,107,25,245">
+      <scope id="7307171874934109979" at="23,106,25,245">
         <var name="_reporter_2309309498" id="7307171874934109979" />
         <var name="errorTarget" id="7307171874934109979" />
       </scope>

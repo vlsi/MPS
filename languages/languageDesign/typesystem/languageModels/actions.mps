@@ -1431,23 +1431,23 @@
   </node>
   <node concept="3FK_9_" id="25idkGdk02m">
     <property role="3GE5qa" value="definition.expression" />
-    <property role="TrG5h" value="SubstituteAttributedNode" />
+    <property role="TrG5h" value="subs_AttributedNodeExpression" />
     <node concept="3FOIzC" id="25idkGdk02n" role="3FOPby">
       <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="3buRE8" id="25idkGdk02o" role="3bvWUf">
         <node concept="3clFbS" id="25idkGdk02p" role="2VODD2">
           <node concept="3cpWs8" id="25idkGdk8Me" role="3cqZAp">
             <node concept="3cpWsn" id="25idkGdk8Mf" role="3cpWs9">
-              <property role="TrG5h" value="infRule" />
+              <property role="TrG5h" value="absRule" />
               <node concept="3Tqbb2" id="25idkGdk8Mc" role="1tU5fm">
-                <ref role="ehGHo" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+                <ref role="ehGHo" to="tpd4:h5YuPLN" resolve="AbstractRule" />
               </node>
               <node concept="2OqwBi" id="25idkGdk8Mg" role="33vP2m">
                 <node concept="3bvxqY" id="25idkGdk8Mh" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="25idkGdk8Mi" role="2OqNvi">
                   <node concept="1xMEDy" id="25idkGdk8Mj" role="1xVPHs">
-                    <node concept="chp4Y" id="25idkGdk8Mk" role="ri$Ld">
-                      <ref role="cht4Q" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+                    <node concept="chp4Y" id="6mxDMAOiNwT" role="ri$Ld">
+                      <ref role="cht4Q" to="tpd4:h5YuPLN" resolve="AbstractRule" />
                     </node>
                   </node>
                 </node>
@@ -1459,7 +1459,7 @@
               <node concept="2OqwBi" id="25idkGdk9R9" role="2Oq$k0">
                 <node concept="2OqwBi" id="25idkGdk98f" role="2Oq$k0">
                   <node concept="37vLTw" id="25idkGdk8Ml" role="2Oq$k0">
-                    <ref role="3cqZAo" node="25idkGdk8Mf" resolve="infRule" />
+                    <ref role="3cqZAo" node="25idkGdk8Mf" resolve="absRule" />
                   </node>
                   <node concept="3TrEf2" id="25idkGdk9tX" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpd4:h5YuTL0" />

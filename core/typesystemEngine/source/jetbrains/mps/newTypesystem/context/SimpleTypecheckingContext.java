@@ -17,6 +17,9 @@ package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
@@ -292,6 +295,17 @@ public abstract class SimpleTypecheckingContext<
       }
     });
     return messages.get(0);
+  }
+
+
+  @Override
+  public TypeSubstitution getSubstitution(final SNode origNode) {
+    return LanguageScopeExecutor.execWithLanguageScope(null, new Computable<TypeSubstitution>() {
+      @Override
+      public TypeSubstitution compute() {
+        return myTypechecking.getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this);
+      }
+    });
   }
 
   protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {

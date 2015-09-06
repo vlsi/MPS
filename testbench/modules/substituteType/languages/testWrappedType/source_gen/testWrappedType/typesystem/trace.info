@@ -11,30 +11,39 @@
   </root>
   <root nodeRef="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)/1252378774017437901">
     <file name="substitute_WrapperType_SubstituteTypeRule.java">
-      <node id="1252378774017438032" at="17,136,18,184" concept="3" />
-      <node id="1252378774017437901" at="20,50,21,145" concept="3" />
-      <node id="1252378774017437901" at="23,68,24,102" concept="0" />
-      <node id="1252378774017437901" at="23,68,24,102" concept="3" />
-      <node id="1252378774017437901" at="15,0,17,0" concept="1" trace="substitute_WrapperType_SubstituteTypeRule#()V" />
-      <node id="1252378774017437901" at="17,0,20,0" concept="2" trace="substitution#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1252378774017437901" at="20,0,23,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1252378774017437901" at="23,0,26,0" concept="2" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <scope id="1252378774017437901" at="15,54,15,54" />
-      <scope id="1252378774017437903" at="17,136,18,184" />
-      <scope id="1252378774017437901" at="20,50,21,145" />
-      <scope id="1252378774017437901" at="23,68,24,102" />
-      <scope id="1252378774017437901" at="15,0,17,0" />
-      <scope id="1252378774017437901" at="17,0,20,0">
+      <node id="1252378774017437901" at="18,147,19,204" concept="3" />
+      <node id="1252378774017438032" at="21,131,22,184" concept="3" />
+      <node id="1252378774017437901" at="24,50,25,145" concept="3" />
+      <node id="1252378774017437901" at="27,68,28,102" concept="0" />
+      <node id="1252378774017437901" at="27,68,28,102" concept="3" />
+      <node id="1252378774017437901" at="16,0,18,0" concept="1" trace="substitute_WrapperType_SubstituteTypeRule#()V" />
+      <node id="1252378774017437901" at="18,0,21,0" concept="2" trace="substitution#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/typesystem/inference/TypeSubstitution;" />
+      <node id="1252378774017437901" at="21,0,24,0" concept="2" trace="newNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1252378774017437901" at="24,0,27,0" concept="2" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1252378774017437901" at="27,0,30,0" concept="2" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <scope id="1252378774017437901" at="16,54,16,54" />
+      <scope id="1252378774017437901" at="18,147,19,204" />
+      <scope id="7323318266641941989" at="21,131,22,184" />
+      <scope id="1252378774017437901" at="24,50,25,145" />
+      <scope id="1252378774017437901" at="27,68,28,102" />
+      <scope id="1252378774017437901" at="16,0,18,0" />
+      <scope id="1252378774017437901" at="18,0,21,0">
         <var name="originalType" id="1252378774017437901" />
         <var name="status" id="1252378774017437901" />
         <var name="typeCheckingContext" id="1252378774017437901" />
         <var name="wrapperType" id="1252378774017437901" />
       </scope>
-      <scope id="1252378774017437901" at="20,0,23,0" />
-      <scope id="1252378774017437901" at="23,0,26,0">
+      <scope id="1252378774017437901" at="21,0,24,0">
+        <var name="originalType" id="1252378774017437901" />
+        <var name="status" id="1252378774017437901" />
+        <var name="typeCheckingContext" id="1252378774017437901" />
+        <var name="wrapperType" id="1252378774017437901" />
+      </scope>
+      <scope id="1252378774017437901" at="24,0,27,0" />
+      <scope id="1252378774017437901" at="27,0,30,0">
         <var name="argument" id="1252378774017437901" />
       </scope>
-      <unit id="1252378774017437901" at="14,0,27,0" name="testWrappedType.typesystem.substitute_WrapperType_SubstituteTypeRule" />
+      <unit id="1252378774017437901" at="15,0,31,0" name="testWrappedType.typesystem.substitute_WrapperType_SubstituteTypeRule" />
     </file>
   </root>
 </debug-info>

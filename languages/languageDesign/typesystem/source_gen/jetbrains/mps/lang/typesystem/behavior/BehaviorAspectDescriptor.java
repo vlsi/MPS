@@ -221,16 +221,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new WarningStatementAnnotation_BehaviorDescriptor();
       case 88:
         return new SubstituteTypeRule_BehaviorDescriptor();
-      case 89:
-        return new SubstituteTypeRuleFunction_BehaviorDescriptor();
-      case 90:
-        return new SubstituteTypeRuleFunction_OriginalNode_BehaviorDescriptor();
       case 62:
         return new OverridesConceptFunction_BehaviorDescriptor();
       case 5:
         return new AttributedNodeExpression_BehaviorDescriptor();
       case 92:
         return new SupersedeConceptFunction_BehaviorDescriptor();
+      case 89:
+        return new SubstituteTypeRuleFunction_BehaviorDescriptor();
+      case 90:
+        return new SubstituteTypeRuleFunction_OriginalNode_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

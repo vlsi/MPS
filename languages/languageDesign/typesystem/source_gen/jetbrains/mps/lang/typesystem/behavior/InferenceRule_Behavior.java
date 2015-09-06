@@ -4,16 +4,11 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class InferenceRule_Behavior {
   public static void init(SNode thisNode) {
-  }
-  public static boolean call_isAttributeRule_7307171874933700673(SNode thisNode) {
-    SNode baseConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-    return AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(baseConcept, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getDeclarationNode());
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});

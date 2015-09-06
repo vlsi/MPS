@@ -17,9 +17,13 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -62,7 +66,7 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
     return myRootNode;
   }
 
-  protected COMP getTypecheckingComponent() {
+  public COMP getTypecheckingComponent() {
     return myTypecheckingComponent;
   }
 
@@ -143,5 +147,22 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
   public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     // do nothing
   }
+
+  /**
+   * Returns the list of all node attributes with the attributedNode added as the last.
+   * The rules applicable to earlier attributes can be amended by the rules applicable to attributes added later.
+   * At some point a rule may declare to "supercede" the rules that follow, which then become obsolete.
+   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
+   * @param attributedNode
+   */
+  public List<SNode> nodesToApplyRulesTo(SNode attributedNode) {
+    if (attributedNode == null) return Collections.emptyList();
+
+    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(attributedNode));
+    nodesToTest.add(attributedNode);
+
+    return nodesToTest;
+  }
+
 
 }

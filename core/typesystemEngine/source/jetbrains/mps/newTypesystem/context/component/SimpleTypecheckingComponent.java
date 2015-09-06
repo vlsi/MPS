@@ -17,14 +17,14 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor.NodeAttribute;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -54,7 +54,7 @@ import java.util.Set;
   private final STATE myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
-  protected BaseTypechecking myTypechecking;
+  protected BaseTypechecking<?, ?> myTypechecking;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
@@ -191,7 +191,7 @@ import java.util.Set;
   }
 
   protected boolean collectNodesAndRules(SNode node, List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules) {
-    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
+    for (SNode nodeOrAttr : myTypechecking.nodesToApplyRulesTo(node)) {
       List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
       if (rules != null && !rules.isEmpty()) {
         nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
@@ -206,21 +206,6 @@ import java.util.Set;
     }
 
     return !nodesAndRules.isEmpty();
-  }
-
-  /**
-   * Returns the list of all node attributes with the attributedNode added as the last.
-   * The rules applicable to earlier attributes can be amended by the rules applicable to attributes added later.
-   * At some point a rule may declare to "supercede" the rules that follow, which then become obsolete.
-   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
-   */
-  protected List<SNode> nodesToApplyRulesTo(SNode attributedNode) {
-    if (attributedNode == null) return Collections.emptyList();
-
-    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(attributedNode));
-    nodesToTest.add(attributedNode);
-
-    return nodesToTest;
   }
 
   public SNode getType(SNode node) {
@@ -338,4 +323,24 @@ import java.util.Set;
 
     protected void postProcess(SNode sNode, boolean typeAffected){}
   }
+
+  public TypeSubstitution lookupSubstitution(SNode origNode, TypeCheckingContext typeCheckingContext) {
+    for (SNode ruleNode : myTypechecking.nodesToApplyRulesTo(origNode)) {
+      for (Pair<SubstituteType_Runtime, IsApplicableStatus> rule_status : substituteTypeRules(ruleNode)) {
+        if(rule_status.o2.isApplicable()) {
+          TypeSubstitution subs = rule_status.o1.substitution(ruleNode, origNode, typeCheckingContext, rule_status.o2);
+
+          if (subs != null && subs.isValid()) {
+            return subs;
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  private List<Pair<SubstituteType_Runtime, IsApplicableStatus>> substituteTypeRules(SNode test) {
+    return TypeChecker.getInstance().getRulesManager().getSubstituteTypeRules(test);
+  }
+
 }
