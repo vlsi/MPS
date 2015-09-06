@@ -65,6 +65,10 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -334,15 +338,6 @@
       <ref role="2VtyIY" to="slm6:4ubqdNOF9cA" resolve="execute" />
       <node concept="3Tm1VV" id="7YwKlJL2hdA" role="1B3o_S" />
       <node concept="3clFbS" id="7YwKlJL2hdC" role="3clF47">
-        <node concept="3cpWs8" id="54GdGFn5HSe" role="3cqZAp">
-          <node concept="3cpWsn" id="54GdGFn5HSh" role="3cpWs9">
-            <property role="TrG5h" value="moduleModified" />
-            <node concept="10P_77" id="54GdGFn5HSc" role="1tU5fm" />
-            <node concept="3clFbT" id="54GdGFn5I6w" role="33vP2m">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1Ij79tqteYv" role="3cqZAp">
           <node concept="3cpWsn" id="1Ij79tqteYw" role="3cpWs9">
             <property role="TrG5h" value="models" />
@@ -402,6 +397,15 @@
             <node concept="2es0OD" id="7YwKlJL2jMv" role="2OqNvi">
               <node concept="1bVj0M" id="7YwKlJL2jMx" role="23t8la">
                 <node concept="3clFbS" id="7YwKlJL2jMy" role="1bW5cS">
+                  <node concept="3cpWs8" id="54GdGFn5HSe" role="3cqZAp">
+                    <node concept="3cpWsn" id="54GdGFn5HSh" role="3cpWs9">
+                      <property role="TrG5h" value="moduleModified" />
+                      <node concept="10P_77" id="54GdGFn5HSc" role="1tU5fm" />
+                      <node concept="3clFbT" id="54GdGFn5I6w" role="33vP2m">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="7YwKlJL2jV$" role="3cqZAp">
                     <node concept="2OqwBi" id="7YwKlJL2l3i" role="3clFbG">
                       <node concept="2OqwBi" id="7YwKlJL2_Yi" role="2Oq$k0">
@@ -529,21 +533,28 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbJ" id="1OSFyd0xQfG" role="3cqZAp">
+                    <node concept="3clFbS" id="1OSFyd0xQfH" role="3clFbx">
+                      <node concept="3clFbF" id="54GdGFn5Fkp" role="3cqZAp">
+                        <node concept="2YIFZM" id="54GdGFn5Hdo" role="3clFbG">
+                          <ref role="37wK5l" to="tpcz:54GdGFn5FyU" resolve="addDependencyOnCoreIfMissing" />
+                          <ref role="1Pybhc" to="tpcz:v01Wj46Dq4" resolve="ModuleDependencyUtils" />
+                          <node concept="37vLTw" id="1OSFyd0xOwp" role="37wK5m">
+                            <ref role="3cqZAo" node="7YwKlJL2jMz" resolve="model" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="1OSFyd0xQtD" role="3clFbw">
+                      <ref role="3cqZAo" node="54GdGFn5HSh" resolve="moduleModified" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="Rh6nW" id="7YwKlJL2jMz" role="1bW2Oz">
                   <property role="TrG5h" value="model" />
                   <node concept="2jxLKc" id="7YwKlJL2jM$" role="1tU5fm" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="54GdGFn5Fkp" role="3cqZAp">
-          <node concept="2YIFZM" id="54GdGFn5Hdo" role="3clFbG">
-            <ref role="37wK5l" to="tpcz:54GdGFn5FyU" resolve="addDependencyOnCoreIfMissing" />
-            <ref role="1Pybhc" to="tpcz:v01Wj46Dq4" resolve="ModuleDependencyUtils" />
-            <node concept="37vLTw" id="54GdGFn5Hpq" role="37wK5m">
-              <ref role="3cqZAo" node="7YwKlJL2hdE" resolve="m" />
             </node>
           </node>
         </node>
