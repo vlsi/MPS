@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,7 +25,6 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
     return "Replace all non-textual nodes of SingleLineComment with the new generic way of commenting out code";
   }
   public SNode execute(SModule m) {
-    final Wrappers._boolean moduleModified = new Wrappers._boolean(false);
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return !(LanguageAspect.MIGRATION.is(it));
@@ -33,6 +32,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
     });
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel model) {
+        final Wrappers._boolean moduleModified = new Wrappers._boolean(false);
         ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"));
@@ -44,9 +44,11 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
             moduleModified.value = true;
           }
         });
+        if (moduleModified.value) {
+          ModuleDependencyUtils.addDependencyOnCoreIfMissing(model);
+        }
       }
     });
-    ModuleDependencyUtils.addDependencyOnCoreIfMissing(m);
     return null;
   }
   public MigrationScriptReference getDescriptor() {

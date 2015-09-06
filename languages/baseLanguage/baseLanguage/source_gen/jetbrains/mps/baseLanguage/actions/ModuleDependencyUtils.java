@@ -24,9 +24,14 @@ public class ModuleDependencyUtils {
       model.addLanguage(javadocLang);
     }
   }
-  public static void addDependencyOnCoreIfMissing(SModule currentModule) {
-    if (currentModule instanceof AbstractModule) {
-      ((AbstractModule) currentModule).addDependency(PersistenceFacade.getInstance().createModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)"), false);
+  public static void addDependencyOnCoreIfMissing(SModel currentModel) {
+    if (!(currentModel instanceof SModelInternal)) {
+      return;
+    }
+    SModelInternal model = (SModelInternal) currentModel;
+    SLanguage langCoreLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
+    if (!(model.importedLanguageIds().contains(langCoreLang))) {
+      model.addLanguage(langCoreLang);
     }
   }
 }
