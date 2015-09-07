@@ -1871,6 +1871,11 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5ffMBka$9Mm" resolve="IConceptSwitchCase" />
     </node>
+    <node concept="1TJgyj" id="5ffMBkaCcrg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="defaultBlock" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1_vO5tEMrH9">
     <property role="R5$K7" value="false" />
@@ -2178,20 +2183,6 @@
   <node concept="PlHQZ" id="5ffMBka$9Mm">
     <property role="3GE5qa" value="conceptSwitch" />
     <property role="TrG5h" value="IConceptSwitchCase" />
-  </node>
-  <node concept="1TIwiD" id="5ffMBkaB3jX">
-    <property role="3GE5qa" value="conceptSwitch" />
-    <property role="TrG5h" value="DefaultCase" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5ffMBkaB4rf" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="body" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
-    <node concept="PrWs8" id="5ffMBkaB4q0" role="PzmwI">
-      <ref role="PrY4T" node="5ffMBka$9Mm" resolve="IConceptSwitchCase" />
-    </node>
   </node>
 </model>
 
