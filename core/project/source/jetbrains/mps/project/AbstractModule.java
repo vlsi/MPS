@@ -628,6 +628,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myDescriptorFile;
   }
 
+  public void setModuleVersion(int version) {
+    getModuleDescriptor().setVersion(version);
+    fireChanged();
+    setChanged();
+  }
+
+  public int getModuleVersion() {
+    return getModuleDescriptor().getVersion();
+  }
+
   public void rename(String newName) {
     renameModels(getModuleName(), newName, true);
 

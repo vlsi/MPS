@@ -299,8 +299,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     //null=not supported
     @Nullable
     protected Integer getVersion() {
-      if (!(myModule instanceof Language)) return null;
-      return ((Language) myModule).getLanguageVersion();
+      return myModule.getModuleVersion();
     }
 
     @Override
@@ -396,7 +395,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (myVersion != null) {
           try {
             int newVersion = ((Integer) myVersion.getValue());
-            ((Language) myModule).setLanguageVersion(newVersion);
+            myModule.setModuleVersion(newVersion);
           } catch (NumberFormatException e) {
             //just continue omitting this field
           }
