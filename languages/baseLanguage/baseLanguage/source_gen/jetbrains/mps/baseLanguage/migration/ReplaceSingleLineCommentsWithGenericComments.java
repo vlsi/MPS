@@ -7,12 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -26,11 +25,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
     return "Replace all non-textual nodes of SingleLineComment with the new generic way of commenting out code";
   }
   public SNode execute(SModule m) {
-    Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return !(LanguageAspect.MIGRATION.is(it));
-      }
-    });
+    Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel model) {
 

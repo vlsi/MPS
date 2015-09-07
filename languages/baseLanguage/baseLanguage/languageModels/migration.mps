@@ -17,7 +17,6 @@
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -31,10 +30,6 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -360,46 +355,18 @@
             <node concept="A3Dl8" id="1Ij79tqtjMk" role="1tU5fm">
               <node concept="H_c77" id="1Ij79tqtjSd" role="A3Ik2" />
             </node>
-            <node concept="2OqwBi" id="4Bpw$w4mP6Z" role="33vP2m">
-              <node concept="1eOMI4" id="4Bpw$w4mOBW" role="2Oq$k0">
-                <node concept="10QFUN" id="1Ij79tqtkmU" role="1eOMHV">
-                  <node concept="2OqwBi" id="1Ij79tqteYx" role="10QFUP">
-                    <node concept="37vLTw" id="1Ij79tqteYy" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7YwKlJL2hdE" resolve="m" />
-                    </node>
-                    <node concept="liA8E" id="1Ij79tqteYz" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
-                    </node>
+            <node concept="1eOMI4" id="4Bpw$w4mOBW" role="33vP2m">
+              <node concept="10QFUN" id="1Ij79tqtkmU" role="1eOMHV">
+                <node concept="2OqwBi" id="1Ij79tqteYx" role="10QFUP">
+                  <node concept="37vLTw" id="1Ij79tqteYy" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7YwKlJL2hdE" resolve="m" />
                   </node>
-                  <node concept="A3Dl8" id="1Ij79tqtkmV" role="10QFUM">
-                    <node concept="H_c77" id="1Ij79tqtkmW" role="A3Ik2" />
+                  <node concept="liA8E" id="1Ij79tqteYz" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
                   </node>
                 </node>
-              </node>
-              <node concept="3zZkjj" id="4Bpw$w4mQL_" role="2OqNvi">
-                <node concept="1bVj0M" id="4Bpw$w4mQLB" role="23t8la">
-                  <node concept="3clFbS" id="4Bpw$w4mQLC" role="1bW5cS">
-                    <node concept="3clFbF" id="4Bpw$w4mRd1" role="3cqZAp">
-                      <node concept="3fqX7Q" id="4Bpw$w4mVZb" role="3clFbG">
-                        <node concept="2OqwBi" id="4Bpw$w4mVZd" role="3fr31v">
-                          <node concept="Rm8GO" id="4Bpw$w4mVZe" role="2Oq$k0">
-                            <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                            <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
-                          </node>
-                          <node concept="liA8E" id="4Bpw$w4mVZf" role="2OqNvi">
-                            <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                            <node concept="37vLTw" id="4Bpw$w4mVZg" role="37wK5m">
-                              <ref role="3cqZAo" node="4Bpw$w4mQLD" resolve="it" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="4Bpw$w4mQLD" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="4Bpw$w4mQLE" role="1tU5fm" />
-                  </node>
+                <node concept="A3Dl8" id="1Ij79tqtkmV" role="10QFUM">
+                  <node concept="H_c77" id="1Ij79tqtkmW" role="A3Ik2" />
                 </node>
               </node>
             </node>
