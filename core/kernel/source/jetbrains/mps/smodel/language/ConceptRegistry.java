@@ -52,6 +52,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return INSTANCE;
   }
 
+  public BehaviorRegistry getBehaviorRegistry() {
+    return myBehaviorRegistry;
+  }
+
   @Override
   public void init() {
     if (INSTANCE != null) {

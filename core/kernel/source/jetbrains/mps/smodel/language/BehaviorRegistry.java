@@ -17,10 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.behaviour.BHDescriptor;
 import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
@@ -52,6 +49,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BehaviorRegistry implements CoreAspectRegistry {
   private static final Logger LOG = LogManager.getLogger(BehaviorRegistry.class);
 
+  private final C3StarLinearization myLinearization = new C3StarLinearization();
   private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
   private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
@@ -60,6 +58,10 @@ public class BehaviorRegistry implements CoreAspectRegistry {
 
   public BehaviorRegistry(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
+  }
+
+  public C3StarLinearization getLinearization() {
+    return myLinearization;
   }
 
   @NotNull
@@ -177,6 +179,6 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   public void clear() {
     myBHDescriptors.clear();
     myLegacyBehaviorDescriptors.clear();
-    C3StarLinearization.clear();
+    myLinearization.clear();
   }
 }

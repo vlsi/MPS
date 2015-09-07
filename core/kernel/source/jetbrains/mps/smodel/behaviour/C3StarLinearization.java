@@ -28,29 +28,27 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * fixme
+ * This class counts the linearization for a concept (method resolution order).
+ * It is almost C3, though it is fail-safe for the hierarchy like A impl B,C, C impl B.
+ * When the usual C3 algorithm fails our algorithm try to abandon the local order and preserve only super linearization.
+ * If that is not possible we pick up the first concept from the first super linearization.
  */
 public final class C3StarLinearization {
-  private final SAbstractConcept myStart;
-  private static ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> ourCache = new ConcurrentHashMap<SAbstractConcept, List<SAbstractConcept>>();
+  private ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> myCache = new ConcurrentHashMap<SAbstractConcept, List<SAbstractConcept>>();
 
-  public C3StarLinearization(@NotNull SAbstractConcept start) {
-    myStart = start;
-  }
-
-  public List<SAbstractConcept> count() {
-    if (ourCache.containsKey(myStart)) {
-      return new ArrayList<SAbstractConcept>(ourCache.get(myStart));
+  public List<SAbstractConcept> count(@NotNull SAbstractConcept concept) {
+    if (myCache.containsKey(concept)) {
+      return new ArrayList<SAbstractConcept>(myCache.get(concept));
     }
     List<List<SAbstractConcept>> superLinearizations = new ArrayList<List<SAbstractConcept>>();
-    List<SAbstractConcept> immediateParents = getImmediateParents();
+    List<SAbstractConcept> immediateParents = getImmediateParents(concept);
     for (SAbstractConcept parent : immediateParents) {
-      superLinearizations.add(new C3StarLinearization(parent).count());
+      superLinearizations.add(new C3StarLinearization().count(parent));
     }
     List<SAbstractConcept> linearization = new ArrayList<SAbstractConcept>();
-    linearization.add(myStart);
+    linearization.add(concept);
     linearization.addAll(merge(new MergingHelper<SAbstractConcept>(immediateParents, superLinearizations)));
-    ourCache.putIfAbsent(myStart, linearization);
+    myCache.putIfAbsent(concept, linearization);
     return new ArrayList<SAbstractConcept>(linearization);
   }
 
@@ -68,8 +66,8 @@ public final class C3StarLinearization {
     return result;
   }
 
-  public static void clear() {
-    ourCache.clear();
+  public void clear() {
+    myCache.clear();
   }
 
   private static class MergingHelper<T> implements Iterable<List<T>> {
@@ -176,19 +174,19 @@ public final class C3StarLinearization {
   }
 
   @NotNull
-  private List<SAbstractConcept> getImmediateParents() {
+  private List<SAbstractConcept> getImmediateParents(SAbstractConcept concept) {
     List<SAbstractConcept> immediateParents = new ArrayList<SAbstractConcept>();
-    if (myStart instanceof SInterfaceConcept) {
-      for (SAbstractConcept concept : ((SInterfaceConcept) myStart).getSuperInterfaces()) {
-        immediateParents.add(concept);
+    if (concept instanceof SInterfaceConcept) {
+      for (SAbstractConcept superInt : ((SInterfaceConcept) concept).getSuperInterfaces()) {
+        immediateParents.add(superInt);
       }
-    } else if (myStart instanceof SConcept) {
-      SConcept superConcept = ((SConcept) myStart).getSuperConcept();
+    } else if (concept instanceof SConcept) {
+      SConcept superConcept = ((SConcept) concept).getSuperConcept();
       if (superConcept != null) {
         immediateParents.add(superConcept);
       }
-      for (SAbstractConcept concept : ((SConcept) myStart).getSuperInterfaces()) {
-        immediateParents.add(concept);
+      for (SAbstractConcept superInt : ((SConcept) concept).getSuperInterfaces()) {
+        immediateParents.add(superInt);
       }
     }
     return immediateParents;

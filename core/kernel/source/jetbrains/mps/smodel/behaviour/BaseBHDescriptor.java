@@ -223,7 +223,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
     public AncestorCache(@NotNull SAbstractConcept concept) {
       myConcept = concept;
-      myLinearization = new C3StarLinearization(myConcept).count();
+      myLinearization = ConceptRegistry.getInstance().getBehaviorRegistry().getLinearization().count(concept);
       myConstructorAncestors = calcConstructorAncestors();
     }
 

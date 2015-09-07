@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
 import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
 import jetbrains.mps.smodel.behaviour.C3StarLinearization;
+import jetbrains.mps.smodel.language.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -64,12 +65,16 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 
   public BaseBehaviorDescriptor(@NotNull SAbstractConcept concept) {
     myConcept = concept;
-    myAncestors = new C3StarLinearization(myConcept).count();
+    myAncestors = getBehaviorRegistry().getLinearization().count(concept);
   }
 
   public BaseBehaviorDescriptor(String conceptFqName) {
     myConcept = getConcept(conceptFqName);
-    myAncestors = new C3StarLinearization(myConcept).count();
+    myAncestors = getBehaviorRegistry().getLinearization().count(myConcept);
+  }
+
+  private BehaviorRegistry getBehaviorRegistry() {
+    return ConceptRegistry.getInstance().getBehaviorRegistry();
   }
 
   private List<SAbstractConcept> getConstructionOrder() {
