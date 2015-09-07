@@ -28,7 +28,7 @@ public class MoveReferenceLinkUp extends MoveFeatureUp {
 
   public static class MoveReferenceLinkUp_extension extends Extension.Default<MoveNodesRefactoring> {
     public MoveReferenceLinkUp_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodes");
+      super("jetbrains.mps.ide.platform.MoveNodesAction");
     }
     public MoveNodesRefactoring get() {
       return new MoveReferenceLinkUp();

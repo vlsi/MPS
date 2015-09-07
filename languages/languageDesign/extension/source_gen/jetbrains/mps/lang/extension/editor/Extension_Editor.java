@@ -9,13 +9,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -29,7 +29,7 @@ public class Extension_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_s04tli_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    editorCell.addEditorCell(this.createConstant_s04tli_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_s04tli_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_s04tli_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s04tli_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_s04tli_d0(editorContext, node));
@@ -38,13 +38,11 @@ public class Extension_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_s04tli_g0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_s04tli_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension");
-    editorCell.setCellId("Constant_s04tli_a0");
+  private EditorCell createComponent_s04tli_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createProperty_s04tli_b0(EditorContext editorContext, SNode node) {

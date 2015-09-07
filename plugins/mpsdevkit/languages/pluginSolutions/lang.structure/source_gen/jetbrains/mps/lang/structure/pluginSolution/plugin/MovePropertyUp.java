@@ -27,7 +27,7 @@ public class MovePropertyUp extends MoveFeatureUp {
 
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesRefactoring> {
     public MovePropertyUp_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodes");
+      super("jetbrains.mps.ide.platform.MoveNodesAction");
     }
     public MoveNodesRefactoring get() {
       return new MovePropertyUp();

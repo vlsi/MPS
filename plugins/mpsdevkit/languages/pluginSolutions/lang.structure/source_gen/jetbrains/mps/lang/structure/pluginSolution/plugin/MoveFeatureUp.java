@@ -18,7 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
+import jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;

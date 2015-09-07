@@ -391,8 +391,8 @@
   <node concept="24kQdi" id="7335HkeY$G">
     <ref role="1XX52x" to="v54s:7335HkeYeM" resolve="Extension" />
     <node concept="3EZMnI" id="536fTXa3qK2" role="2wV5jI">
-      <node concept="3F0ifn" id="536fTXa3qK9" role="3EZMnx">
-        <property role="3F0ifm" value="extension" />
+      <node concept="PMmxH" id="55uxGWy6HAu" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0A7n" id="3zLwYDe0Esz" role="3EZMnx">

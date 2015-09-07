@@ -35,7 +35,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
+import jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -62,7 +62,7 @@ public class MoveConcepts extends MoveNodesDefault {
 
   public static class MoveConcepts_extension extends Extension.Default<MoveNodesRefactoring> {
     public MoveConcepts_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodes");
+      super("jetbrains.mps.ide.platform.MoveNodesAction");
     }
     public MoveNodesRefactoring get() {
       return new MoveConcepts();
