@@ -270,7 +270,6 @@ public class QueriesGenerated {
       ListSequence.fromList(methods).removeSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
     }
 
-    // <node> 
 
     for (SNode method : methods) {
       if (!(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).containsKey(BehaviorMethodNames.getDeclarationName(method)))) {
@@ -289,7 +288,6 @@ public class QueriesGenerated {
       }
     }
 
-    // <node> 
 
     return Sequence.fromIterable(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).values()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

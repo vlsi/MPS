@@ -48,8 +48,6 @@ public class ConceptBehavior_Behavior {
       }
       @Override
       public SNode createNewMethod() {
-        // <node> 
-        // <node> 
         SNode method = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
         SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"), "" + (isStatic));
         return method;

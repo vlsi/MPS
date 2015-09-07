@@ -3,7 +3,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)/4795297196607456968">
     <file name="RoundTrip_Test.java">
@@ -141,7 +140,7 @@
       <node id="4795297196607521181" at="63,46,64,46" concept="0" />
       <node id="4795297196607521181" at="64,46,65,46" concept="0" />
       <node id="7030568040400118037" at="65,46,66,300" concept="0" />
-      <node id="1305226844299320516" at="66,300,67,0" concept="4" />
+      <node id="1305226844299320516" at="66,300,67,0" concept="3" />
       <node id="1218582063869484771" at="69,61,70,46" concept="0" />
       <node id="1218582063869484771" at="70,46,71,46" concept="0" />
       <node id="1218582063869484771" at="71,46,72,46" concept="0" />
@@ -165,11 +164,10 @@
       <node id="887121589775270929" at="99,52,100,46" concept="0" />
       <node id="887121589775270929" at="100,46,101,46" concept="0" />
       <node id="887121589775270929" at="101,46,102,46" concept="0" />
-      <node id="9114761665055225570" at="102,46,103,16" concept="3" />
-      <node id="8051061021619748495" at="105,54,106,46" concept="0" />
+      <node id="8051061021619748495" at="104,54,105,46" concept="0" />
+      <node id="8051061021619748495" at="105,46,106,46" concept="0" />
       <node id="8051061021619748495" at="106,46,107,46" concept="0" />
-      <node id="8051061021619748495" at="107,46,108,46" concept="0" />
-      <node id="8051061021619748498" at="108,46,109,208" concept="0" />
+      <node id="8051061021619748498" at="107,46,108,208" concept="0" />
       <node id="4795297196607520928" at="20,0,25,0" concept="1" trace="test_SelfRef#()V" />
       <node id="4795297196607520928" at="25,0,30,0" concept="1" trace="test_ClassWInnerInterace#()V" />
       <node id="4795297196607520928" at="30,0,35,0" concept="1" trace="test_Imports1#()V" />
@@ -178,13 +176,13 @@
       <node id="4795297196607520928" at="45,0,50,0" concept="1" trace="test_ClassNesting#()V" />
       <node id="4795297196607520928" at="50,0,55,0" concept="1" trace="test_FullSource#()V" />
       <node id="4795297196607520928" at="55,0,60,0" concept="1" trace="test_LittleSource#()V" />
+      <node id="887121589775270929" at="99,0,104,0" concept="1" trace="test_FullSource#()V" />
       <node id="1218582063869484771" at="69,0,75,0" concept="1" trace="test_ClassWInnerInterace#()V" />
       <node id="7902967214465805211" at="75,0,81,0" concept="1" trace="test_Imports1#()V" />
       <node id="8083368042256417953" at="81,0,87,0" concept="1" trace="test_Imports2#()V" />
       <node id="8083368042256418397" at="87,0,93,0" concept="1" trace="test_Imports3#()V" />
       <node id="7030568040400313711" at="93,0,99,0" concept="1" trace="test_ClassNesting#()V" />
-      <node id="887121589775270929" at="99,0,105,0" concept="1" trace="test_FullSource#()V" />
-      <node id="8051061021619748495" at="105,0,111,0" concept="1" trace="test_LittleSource#()V" />
+      <node id="8051061021619748495" at="104,0,110,0" concept="1" trace="test_LittleSource#()V" />
       <node id="4795297196607521181" at="62,0,69,0" concept="1" trace="test_SelfRef#()V" />
       <scope id="4795297196607520928" at="21,47,23,107" />
       <scope id="4795297196607520928" at="26,59,28,119" />
@@ -194,13 +192,13 @@
       <scope id="4795297196607520928" at="46,52,48,112" />
       <scope id="4795297196607520928" at="51,50,53,110" />
       <scope id="4795297196607520928" at="56,52,58,112" />
+      <scope id="887121589775270929" at="99,52,102,46" />
       <scope id="1218582063869484771" at="69,61,73,304" />
       <scope id="7902967214465805211" at="75,50,79,353" />
       <scope id="8083368042256417953" at="81,50,85,353" />
       <scope id="8083368042256418397" at="87,50,91,353" />
       <scope id="7030568040400313711" at="93,54,97,306" />
-      <scope id="887121589775270929" at="99,52,103,16" />
-      <scope id="8051061021619748495" at="105,54,109,208" />
+      <scope id="8051061021619748495" at="104,54,108,208" />
       <scope id="4795297196607520928" at="20,0,25,0" />
       <scope id="4795297196607520928" at="25,0,30,0" />
       <scope id="4795297196607520928" at="30,0,35,0" />
@@ -210,16 +208,16 @@
       <scope id="4795297196607520928" at="50,0,55,0" />
       <scope id="4795297196607520928" at="55,0,60,0" />
       <scope id="4795297196607521181" at="62,49,67,0" />
+      <scope id="887121589775270929" at="99,0,104,0" />
       <scope id="1218582063869484771" at="69,0,75,0" />
       <scope id="7902967214465805211" at="75,0,81,0" />
       <scope id="8083368042256417953" at="81,0,87,0" />
       <scope id="8083368042256418397" at="87,0,93,0" />
       <scope id="7030568040400313711" at="93,0,99,0" />
-      <scope id="887121589775270929" at="99,0,105,0" />
-      <scope id="8051061021619748495" at="105,0,111,0" />
+      <scope id="8051061021619748495" at="104,0,110,0" />
       <scope id="4795297196607521181" at="62,0,69,0" />
-      <unit id="4795297196607520928" at="60,0,112,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody" />
-      <unit id="4795297196607520928" at="18,0,113,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test" />
+      <unit id="4795297196607520928" at="60,0,111,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody" />
+      <unit id="4795297196607520928" at="18,0,112,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test" />
     </file>
   </root>
 </debug-info>

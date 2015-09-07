@@ -50,9 +50,8 @@ public class MetadataUtil {
     SNodeId nodeId = PersistenceFacade.getInstance().createNodeId("~root");
     SNode root = SModelOperations.createNewNode(target, nodeId, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")));
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(origin));
-    // <node> 
     if (origin instanceof GeneratableSModel) {
-      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0f0d(((GeneratableSModel) origin))));
+      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0e0d(((GeneratableSModel) origin))));
     }
     for (SModuleReference language : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getUsedLanguages(modelBase))) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).addElement(createModuleRefNode(language));
@@ -176,7 +175,7 @@ public class MetadataUtil {
 
     ((EditableSModel) metadataModel).setChanged(false);
   }
-  private static boolean check_ca1g54_a0a0f0d(GeneratableSModel checkedDotOperand) {
+  private static boolean check_ca1g54_a0a0e0d(GeneratableSModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isDoNotGenerate();
     }

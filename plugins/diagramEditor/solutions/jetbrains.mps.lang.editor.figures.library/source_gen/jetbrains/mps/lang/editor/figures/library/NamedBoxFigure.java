@@ -24,7 +24,6 @@ public class NamedBoxFigure extends BoxFigure {
   }
   public NamedBoxFigure(NamedBoxFigure.NamedBoxFigureMapperFactory factory) {
     CellView cellView = new CellView();
-    // <node> 
     myCell.textColor().set(Color.GRAY);
     myCell.text().set("<<No text>>");
     cellView.cell.set(myCell);

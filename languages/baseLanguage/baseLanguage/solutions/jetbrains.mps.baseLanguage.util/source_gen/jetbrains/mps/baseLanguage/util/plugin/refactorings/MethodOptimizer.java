@@ -25,7 +25,6 @@ public class MethodOptimizer {
         optimizeVariableFollowedByReturn(body, lastReturn, SNodeOperations.cast(SLinkOperations.getTarget(lastReturn, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")));
       }
     }
-    // <node> 
   }
   public static void removeUnusedDeclarations(SNode body) {
     List<SNode> references = ListSequence.fromList(SNodeOperations.getNodeDescendants(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {

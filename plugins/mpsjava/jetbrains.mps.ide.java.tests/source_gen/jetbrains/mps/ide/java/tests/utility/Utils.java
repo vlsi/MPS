@@ -128,8 +128,6 @@ public class Utils {
     NodePatcher.fixNonStatic(expected);
     NodePatcher.fixNonStatic(result);
     NodePatcher.copyImportAttrs(result, expected);
-    // <node> 
-    // <node> 
 
     mr.dispose();
 
@@ -249,7 +247,6 @@ public class Utils {
     srcModels = src2.loadModels();
 
     for (SModel m : Sequence.fromIterable(srcModels)) {
-      // <node> 
 
       SModel zzz = m;
       ListSequence.fromList(srcModelsX).addElement(zzz);
@@ -263,7 +260,6 @@ public class Utils {
     }
 
     compare(binModels, srcModelsX);
-    // <node> 
   }
   public static void compare(Iterable<SModel> leftModels, Iterable<SModel> rightModels) {
 
@@ -288,7 +284,6 @@ public class Utils {
       buildModelNodeMap(binModel, srcModel, classMap);
     }
 
-    // <node> 
 
     boolean errors = false;
 
@@ -317,7 +312,6 @@ public class Utils {
       }
     }, true).toListSequence();
 
-    // <node> 
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
@@ -337,7 +331,6 @@ public class Utils {
         NodePatcher.copyImportAttrs(leftRoot, rightBrother);
       }
       buildClassifierNodeMap(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SNodeOperations.cast(rightBrother, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), nodeMap);
-      // <node> 
     }
   }
   public static void buildClassifierNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
@@ -350,7 +343,6 @@ public class Utils {
     for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SAbstractConcept[]{}))) {
       SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
-      // <node> 
 
       Assert.assertNull(MapSequence.fromMap(nodeMap).get(cl));
       MapSequence.fromMap(nodeMap).put(cl, rightBrother);
@@ -386,7 +378,6 @@ public class Utils {
     for (SNode leftMthd : ListSequence.fromList(leftMethods)) {
       MapSequence.fromMap(nodeMap).put(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
       buildMethodBodyNodeMap(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), nodeMap);
-      // <node> 
     }
   }
   public static void buildMethodBodyNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
@@ -416,7 +407,6 @@ public class Utils {
     }
 
     for (SNode leftNode : ListSequence.fromList(left)) {
-      // <node> 
       MapSequence.fromMap(nodeMap).put(leftNode, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     }
   }

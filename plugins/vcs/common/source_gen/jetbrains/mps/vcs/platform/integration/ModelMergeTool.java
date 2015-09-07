@@ -135,7 +135,6 @@ public class ModelMergeTool extends MergeTool {
   private static SModel loadModel(byte[] bytes, String ext) {
     if (bytes.length == 0) {
       return null;
-      // <node> 
     }
     return VCSPersistenceUtil.loadModel(bytes, ext);
   }

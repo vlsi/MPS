@@ -107,7 +107,6 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     dependencies.removeAll(badDeps);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        // <node> 
         from.save();
       }
     });

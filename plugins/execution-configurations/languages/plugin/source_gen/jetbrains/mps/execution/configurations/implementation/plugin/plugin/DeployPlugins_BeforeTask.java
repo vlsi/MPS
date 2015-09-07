@@ -125,7 +125,6 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           group.add(ActionManager.getInstance().getAction("Stop"));
           group.addSeparator();
           // pin behaves kinda weird, so disable 
-          // <node> 
           group.add(new CloseAction(executor, descriptor, projectFinal));
 
           ExecutionManager.getInstance(projectFinal).getContentManager().showRunContent(executor, descriptor);

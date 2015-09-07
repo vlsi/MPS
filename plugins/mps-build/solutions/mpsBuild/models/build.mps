@@ -5692,6 +5692,24 @@
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
+        <node concept="1SiIV0" id="3$ZLRFq4nJu" role="3bR37C">
+          <node concept="3bR9La" id="3$ZLRFq4nJv" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.customAspect" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3$ZLRFq4nJw" role="3bR37C">
+          <node concept="3bR9La" id="3$ZLRFq4nJx" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3$ZLRFq4nJy" role="3bR37C">
+          <node concept="3bR9La" id="3$ZLRFq4nJz" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6KZG" role="2G$12L">
         <property role="BnDLt" value="true" />

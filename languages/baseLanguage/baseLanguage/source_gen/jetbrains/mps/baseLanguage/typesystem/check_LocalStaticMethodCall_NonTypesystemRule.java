@@ -34,7 +34,6 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     }
     if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")))))) {
       // todo: should be disabled? 
-      // <node> 
     }
   }
   public SAbstractConcept getApplicableConcept() {

@@ -102,7 +102,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
     Pair<Integer, String> pp = p;
-    // <node> 
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }

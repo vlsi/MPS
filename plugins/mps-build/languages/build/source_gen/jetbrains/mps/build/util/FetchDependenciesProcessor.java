@@ -94,7 +94,6 @@ public class FetchDependenciesProcessor {
     }
     private boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
-        // <node> 
         genContext.showWarningMessage(dep, "FIXME registering artifact from transient model");
         return false;
       }

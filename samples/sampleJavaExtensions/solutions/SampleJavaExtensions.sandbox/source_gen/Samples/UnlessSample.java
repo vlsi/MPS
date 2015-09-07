@@ -31,7 +31,6 @@ public class UnlessSample {
     // Unreachable code detection 
     if (!(false)) {
       System.out.println("So far so good");
-      // <node> 
     }
     System.out.println("We can become unreachable by uncommenting the return expression above.");
   }

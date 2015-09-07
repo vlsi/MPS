@@ -167,7 +167,7 @@ public class JavaPaster {
   }
   @Deprecated
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
-    // Now it's just a stub. The client wants the nodes to be in a model,      
+    // Now it's just a stub. The client wants the nodes to be in a model, 
     // it means we would have to create some fake model... 
     // It all is needed when pasting text into model and converting it to nodes on the fly. 
     // We have turned off this functionality 

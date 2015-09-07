@@ -155,7 +155,6 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertNull(t._1());
   }
   public void test_mps11114() throws Exception {
-    // <node> 
     for (Tuples._2<Integer, String> tt : MPS11114.returnTuples()) {
       Assert.assertNotNull(tt);
     }

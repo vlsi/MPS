@@ -19,7 +19,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
     MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(this.myContainer, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), newDeclaration);
-    // <node> 
     replaceNode(getExpression(), newDeclaration);
     if (this.myIsReplacingAll) {
       for (SNode duplicate : ListSequence.fromList(this.myDuplicates)) {
@@ -70,7 +69,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
     return quotedNode_5;
   }
-  private static SNode _quotation_createNode_2jj2z2_a0a0a2a1(Object parameter_1) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), null, null, false);

@@ -107,9 +107,6 @@ public class Classifier_Behavior {
   }
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(final SNode thisNode) {
     // todo: maybe use typesystem instead of this method??? 
-    // <node> 
-    // <node> 
-    // <node> 
 
     return new ArrayList<SNode>();
   }

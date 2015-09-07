@@ -17,7 +17,6 @@ public class NamedElementsScope extends SimpleScope {
   @Override
   public String getReferenceText(@NotNull SNode target) {
     // todo: is it right? 
-    // <node> 
     return target.getName();
   }
 }

@@ -319,7 +319,6 @@ public class QueriesGenerated {
       expression = _quotation_createNode_x583g4_a0e0b0dd(expression, ref, name);
     }
     // todo resolve a problem the other way 
-    // <node> 
     return expression;
   }
   public static SNode mapSrcMacro_mapper_8980950851470008605(final MapSrcMacroContext _context) {
@@ -458,7 +457,7 @@ public class QueriesGenerated {
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_6);
     return quotedNode_4;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a2a0a3a18(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_x583g4_a0a0a2a0a0dd(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -470,7 +469,7 @@ public class QueriesGenerated {
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x111c2c992c2L, "returnType"), quotedNode_4);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_x583g4_a0a2a0c0a0d0dd(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_x583g4_a0a2a0c0a0a18(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;

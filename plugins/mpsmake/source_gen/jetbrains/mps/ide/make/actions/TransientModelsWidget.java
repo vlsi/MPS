@@ -85,7 +85,6 @@ import java.beans.PropertyChangeEvent;
       return myIcon;
     }
     // TODO: Use only one Icon. This hack helps to avoid tests fails 
-    // <node> 
     return myIconDisable;
   }
   @NotNull

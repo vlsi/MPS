@@ -33,7 +33,6 @@ public class ClassifierScopes {
       public boolean isExcluded(final SNode node) {
         if ((node == null)) {
           // todo: ? 
-          // <node> 
           return true;
         }
         if (!(VisibilityUtil.isVisible(contextNode, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible"))))) {

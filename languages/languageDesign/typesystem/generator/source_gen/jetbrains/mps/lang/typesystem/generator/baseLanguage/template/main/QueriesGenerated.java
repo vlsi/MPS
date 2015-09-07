@@ -2031,7 +2031,6 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1224062580253(final MappingScriptContext _context) {
     // this code change add for all quotations method with TypeCheckingContext. For now MPS works without this script 
     // btw generator for quotations is changed so if we need this script it should be rewritten 
-    // <node> 
   }
   public static void mappingScript_CodeBlock_1224237349196(final MappingScriptContext _context) {
     final SNode getRTSupportExpression = _quotation_createNode_x583g4_a0a0ms();
@@ -2290,14 +2289,14 @@ parametersLoop:
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a1a0a7a5a0a2a974() {
+  private static SNode _quotation_createNode_x583g4_a0a0a1a0a7a5a0a0ls() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)"), facade.createNodeId("~TypeCheckingContext")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a2a0a7a5a0a2a974() {
+  private static SNode _quotation_createNode_x583g4_a0a0a2a0a7a5a0a0ls() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2308,7 +2307,7 @@ parametersLoop:
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, 0x111fb5c4f4cL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a2a2a0a7a5a0a2a974() {
+  private static SNode _quotation_createNode_x583g4_a0a2a2a0a7a5a0a0ls() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2320,7 +2319,7 @@ parametersLoop:
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0d0c0a0h0f0a0c0ls() {
+  private static SNode _quotation_createNode_x583g4_a0d0c0a0h0f0a0a974() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2331,7 +2330,7 @@ parametersLoop:
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a1a0a4a2a0a7a5a0a2a974() {
+  private static SNode _quotation_createNode_x583g4_a0a0a1a0a4a2a0a7a5a0a0ls() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2342,7 +2341,7 @@ parametersLoop:
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, 0x111fb5c4f4cL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a0h0f0a0c0ls() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0h0f0a0a974() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);

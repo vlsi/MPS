@@ -146,7 +146,7 @@ public class JavaToMpsConverter {
 
     int rootCount = 0;
 
-    // now we attach the models and try to resolve      
+    // now we attach the models and try to resolve 
 
     runCommand("roots creation pass", new Runnable() {
       public void run() {

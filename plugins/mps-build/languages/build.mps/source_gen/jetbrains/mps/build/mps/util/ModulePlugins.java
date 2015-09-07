@@ -66,12 +66,10 @@ public class ModulePlugins {
       public String select(SNode it) {
         SNode layoutNode = helper.artifacts().get(it);
         if ((layoutNode == null)) {
-          // <node> 
           return null;
         }
         String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, it});
         if (val == null) {
-          // <node> 
           return null;
         }
         return val;

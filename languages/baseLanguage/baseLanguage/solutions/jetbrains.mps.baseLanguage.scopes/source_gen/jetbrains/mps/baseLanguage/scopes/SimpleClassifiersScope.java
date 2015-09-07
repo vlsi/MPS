@@ -59,7 +59,6 @@ public class SimpleClassifiersScope extends Scope {
     // (not base classes themselves, but only their immediate nested classes) 
     if (myGoUpHieracrhy) {
       for (SNode ancestor : Sequence.fromIterable(ClassifierResolveUtils.getAncestors(myClassifier))) {
-        // <node> 
         for (SNode nested : Sequence.fromIterable(ClassifierResolveUtils.getImmediateNestedClassifiers(ancestor))) {
           if (firstComponent.equals(SPropertyOperations.getString(nested, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
             return ClassifierResolveUtils.construct(nested, tokenizer);
