@@ -7,9 +7,10 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="p37l" ref="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" />
@@ -339,9 +340,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -388,9 +386,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -3497,28 +3503,28 @@
             <node concept="3cpWs6" id="7lfItRMKbv3" role="3cqZAp">
               <node concept="10Nm6u" id="7lfItRMKbv4" role="3cqZAk" />
             </node>
-            <node concept="3SKdUt" id="7_tA5xlt1WL" role="3cqZAp">
-              <node concept="3SKWN0" id="7_tA5xlt1WM" role="3SKWNk">
-                <node concept="3cpWs6" id="7lfItRMKbv7" role="3SKWNf">
-                  <node concept="2ShNRf" id="7lfItRMKbv8" role="3cqZAk">
-                    <node concept="1pGfFk" id="7lfItRMKbv9" role="2ShVmc">
-                      <ref role="37wK5l" to="bmv6:1m2uLwrS0vs" resolve="MergeTemporaryModel" />
-                      <node concept="2ShNRf" id="7lfItRMKbva" role="37wK5m">
-                        <node concept="1pGfFk" id="7lfItRMKbvb" role="2ShVmc">
-                          <ref role="37wK5l" to="w1kc:~SModelReference.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference,org.jetbrains.mps.openapi.model.SModelId,java.lang.String)" resolve="SModelReference" />
-                          <node concept="10Nm6u" id="7lfItRMKbvc" role="37wK5m" />
-                          <node concept="2YIFZM" id="7lfItRMKbvd" role="37wK5m">
-                            <ref role="37wK5l" to="w1kc:~SModelId.generate():jetbrains.mps.smodel.SModelId" resolve="generate" />
-                            <ref role="1Pybhc" to="w1kc:~SModelId" resolve="SModelId" />
-                          </node>
-                          <node concept="Xl_RD" id="7lfItRMKbve" role="37wK5m">
-                            <property role="Xl_RC" value="&lt;empty merge model&gt;" />
-                          </node>
+            <node concept="1X3_iC" id="3$ZLRFpTwsK" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs6" id="7lfItRMKbv7" role="8Wnug">
+                <node concept="2ShNRf" id="7lfItRMKbv8" role="3cqZAk">
+                  <node concept="1pGfFk" id="7lfItRMKbv9" role="2ShVmc">
+                    <ref role="37wK5l" to="bmv6:1m2uLwrS0vs" resolve="MergeTemporaryModel" />
+                    <node concept="2ShNRf" id="7lfItRMKbva" role="37wK5m">
+                      <node concept="1pGfFk" id="7lfItRMKbvb" role="2ShVmc">
+                        <ref role="37wK5l" to="w1kc:~SModelReference.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference,org.jetbrains.mps.openapi.model.SModelId,java.lang.String)" resolve="SModelReference" />
+                        <node concept="10Nm6u" id="7lfItRMKbvc" role="37wK5m" />
+                        <node concept="2YIFZM" id="7lfItRMKbvd" role="37wK5m">
+                          <ref role="37wK5l" to="w1kc:~SModelId.generate():jetbrains.mps.smodel.SModelId" resolve="generate" />
+                          <ref role="1Pybhc" to="w1kc:~SModelId" resolve="SModelId" />
+                        </node>
+                        <node concept="Xl_RD" id="7lfItRMKbve" role="37wK5m">
+                          <property role="Xl_RC" value="&lt;empty merge model&gt;" />
                         </node>
                       </node>
-                      <node concept="3clFbT" id="7lfItRMKbvf" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
+                    </node>
+                    <node concept="3clFbT" id="7lfItRMKbvf" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
@@ -6042,55 +6048,55 @@
       <property role="TrG5h" value="showDeletedFromDiskQuestion" />
       <node concept="3Tm6S6" id="6KmbN9hT1aB" role="1B3o_S" />
       <node concept="3clFbS" id="6KmbN9hT1aH" role="3clF47">
-        <node concept="3SKdUt" id="40wet5FhG$c" role="3cqZAp">
-          <node concept="3SKWN0" id="40wet5FhG$d" role="3SKWNk">
-            <node concept="3cpWs8" id="6KmbN9hT1aI" role="3SKWNf">
-              <node concept="3cpWsn" id="6KmbN9hT1aJ" role="3cpWs9">
-                <property role="TrG5h" value="result" />
-                <node concept="10Oyi0" id="6KmbN9hT1aK" role="1tU5fm" />
-                <node concept="2YIFZM" id="6KmbN9hT1aL" role="33vP2m">
-                  <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
+        <node concept="1X3_iC" id="3$ZLRFpTwsL" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="6KmbN9hT1aI" role="8Wnug">
+            <node concept="3cpWsn" id="6KmbN9hT1aJ" role="3cpWs9">
+              <property role="TrG5h" value="result" />
+              <node concept="10Oyi0" id="6KmbN9hT1aK" role="1tU5fm" />
+              <node concept="2YIFZM" id="6KmbN9hT1aL" role="33vP2m">
+                <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
+                <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                <node concept="3cpWs3" id="6KmbN9hT1aM" role="37wK5m">
+                  <node concept="3cpWs3" id="6KmbN9hT1aN" role="3uHU7B">
+                    <node concept="3cpWs3" id="6KmbN9hT1aO" role="3uHU7B">
+                      <node concept="3cpWs3" id="6KmbN9hT1aP" role="3uHU7B">
+                        <node concept="3cpWs3" id="6KmbN9hT1aQ" role="3uHU7B">
+                          <node concept="Xl_RD" id="6KmbN9hT1aR" role="3uHU7B">
+                            <property role="Xl_RC" value="Model file for model " />
+                          </node>
+                          <node concept="37vLTw" id="2BHiRxglEa1" role="3uHU7w">
+                            <ref role="3cqZAo" node="6KmbN9hT1aD" resolve="inMemory" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6KmbN9hT1aT" role="3uHU7w">
+                          <property role="Xl_RC" value=" was externally deleted from disk.\n" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6KmbN9hT1aU" role="3uHU7w">
+                        <property role="Xl_RC" value="Backup of it was saved to \&quot;" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="6KmbN9hT1aV" role="3uHU7w">
+                      <node concept="37vLTw" id="2BHiRxgmLqb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6KmbN9hT1aF" resolve="backupFile" />
+                      </node>
+                      <node concept="liA8E" id="6KmbN9hT1aX" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="6KmbN9hT1aY" role="3uHU7w">
+                    <property role="Xl_RC" value="\&quot;\nDo you wish to restore it?" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="6KmbN9hT1aZ" role="37wK5m">
+                  <property role="Xl_RC" value="Model Deleted Externally" />
+                </node>
+                <node concept="2YIFZM" id="6KmbN9hT1b0" role="37wK5m">
+                  <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
                   <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                  <node concept="3cpWs3" id="6KmbN9hT1aM" role="37wK5m">
-                    <node concept="3cpWs3" id="6KmbN9hT1aN" role="3uHU7B">
-                      <node concept="3cpWs3" id="6KmbN9hT1aO" role="3uHU7B">
-                        <node concept="3cpWs3" id="6KmbN9hT1aP" role="3uHU7B">
-                          <node concept="3cpWs3" id="6KmbN9hT1aQ" role="3uHU7B">
-                            <node concept="Xl_RD" id="6KmbN9hT1aR" role="3uHU7B">
-                              <property role="Xl_RC" value="Model file for model " />
-                            </node>
-                            <node concept="37vLTw" id="2BHiRxglEa1" role="3uHU7w">
-                              <ref role="3cqZAo" node="6KmbN9hT1aD" resolve="inMemory" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="6KmbN9hT1aT" role="3uHU7w">
-                            <property role="Xl_RC" value=" was externally deleted from disk.\n" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="6KmbN9hT1aU" role="3uHU7w">
-                          <property role="Xl_RC" value="Backup of it was saved to \&quot;" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6KmbN9hT1aV" role="3uHU7w">
-                        <node concept="37vLTw" id="2BHiRxgmLqb" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6KmbN9hT1aF" resolve="backupFile" />
-                        </node>
-                        <node concept="liA8E" id="6KmbN9hT1aX" role="2OqNvi">
-                          <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="6KmbN9hT1aY" role="3uHU7w">
-                      <property role="Xl_RC" value="\&quot;\nDo you wish to restore it?" />
-                    </node>
-                  </node>
-                  <node concept="Xl_RD" id="6KmbN9hT1aZ" role="37wK5m">
-                    <property role="Xl_RC" value="Model Deleted Externally" />
-                  </node>
-                  <node concept="2YIFZM" id="6KmbN9hT1b0" role="37wK5m">
-                    <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
-                    <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -6297,31 +6303,31 @@
         </node>
         <node concept="2$JKZl" id="3Eq_$LDoyog" role="3cqZAp">
           <node concept="3clFbS" id="3Eq_$LDoyoi" role="2LFqv$">
-            <node concept="3SKdUt" id="1fgYyXl_ZIK" role="3cqZAp">
-              <node concept="3SKWN0" id="1fgYyXl_ZIL" role="3SKWNk">
-                <node concept="3cpWs8" id="6KmbN9hT1bT" role="3SKWNf">
-                  <node concept="3cpWsn" id="6KmbN9hT1bU" role="3cpWs9">
-                    <property role="TrG5h" value="result" />
-                    <node concept="10Oyi0" id="6KmbN9hT1bV" role="1tU5fm" />
-                    <node concept="2YIFZM" id="6KmbN9hT1bW" role="33vP2m">
-                      <ref role="37wK5l" to="jkm4:~Messages.showDialog(java.lang.String,java.lang.String,java.lang.String[],int,javax.swing.Icon):int" resolve="showDialog" />
+            <node concept="1X3_iC" id="3$ZLRFpTwsM" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="6KmbN9hT1bT" role="8Wnug">
+                <node concept="3cpWsn" id="6KmbN9hT1bU" role="3cpWs9">
+                  <property role="TrG5h" value="result" />
+                  <node concept="10Oyi0" id="6KmbN9hT1bV" role="1tU5fm" />
+                  <node concept="2YIFZM" id="6KmbN9hT1bW" role="33vP2m">
+                    <ref role="37wK5l" to="jkm4:~Messages.showDialog(java.lang.String,java.lang.String,java.lang.String[],int,javax.swing.Icon):int" resolve="showDialog" />
+                    <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                    <node concept="37vLTw" id="3GM_nagTBAF" role="37wK5m">
+                      <ref role="3cqZAo" node="6KmbN9hT1bg" resolve="message" />
+                    </node>
+                    <node concept="37vLTw" id="3GM_nagTBCP" role="37wK5m">
+                      <ref role="3cqZAo" node="6KmbN9hT1by" resolve="title" />
+                    </node>
+                    <node concept="37vLTw" id="3GM_nagTAr$" role="37wK5m">
+                      <ref role="3cqZAo" node="6KmbN9hT1bM" resolve="options" />
+                    </node>
+                    <node concept="3cmrfG" id="6KmbN9hT1c0" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="2YIFZM" id="6KmbN9hT1c1" role="37wK5m">
+                      <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
                       <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                      <node concept="37vLTw" id="3GM_nagTBAF" role="37wK5m">
-                        <ref role="3cqZAo" node="6KmbN9hT1bg" resolve="message" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTBCP" role="37wK5m">
-                        <ref role="3cqZAo" node="6KmbN9hT1by" resolve="title" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTAr$" role="37wK5m">
-                        <ref role="3cqZAo" node="6KmbN9hT1bM" resolve="options" />
-                      </node>
-                      <node concept="3cmrfG" id="6KmbN9hT1c0" role="37wK5m">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="2YIFZM" id="6KmbN9hT1c1" role="37wK5m">
-                        <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
-                        <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                      </node>
                     </node>
                   </node>
                 </node>

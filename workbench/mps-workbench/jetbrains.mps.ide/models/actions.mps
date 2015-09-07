@@ -15,8 +15,9 @@
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -810,6 +811,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages">
@@ -15034,15 +15042,15 @@
                                   <node concept="3cpWs6" id="7W9SvMW3meN" role="3cqZAp" />
                                 </node>
                               </node>
-                              <node concept="3SKdUt" id="7W9SvMW3meO" role="3cqZAp">
-                                <node concept="3SKWN0" id="7W9SvMW3meP" role="3SKWNk">
-                                  <node concept="1gVbGN" id="1JAxb5h3NbL" role="3SKWNf">
-                                    <node concept="3y3z36" id="1JAxb5h3NbM" role="1gVkn0">
-                                      <node concept="37vLTw" id="3GM_nagTwY$" role="3uHU7B">
-                                        <ref role="3cqZAo" node="1JAxb5h3NbF" resolve="newRef" />
-                                      </node>
-                                      <node concept="10Nm6u" id="1JAxb5h3NbN" role="3uHU7w" />
+                              <node concept="1X3_iC" id="3$ZLRFpTBK2" role="lGtFl">
+                                <property role="3V$3am" value="statement" />
+                                <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                                <node concept="1gVbGN" id="1JAxb5h3NbL" role="8Wnug">
+                                  <node concept="3y3z36" id="1JAxb5h3NbM" role="1gVkn0">
+                                    <node concept="37vLTw" id="3GM_nagTwY$" role="3uHU7B">
+                                      <ref role="3cqZAo" node="1JAxb5h3NbF" resolve="newRef" />
                                     </node>
+                                    <node concept="10Nm6u" id="1JAxb5h3NbN" role="3uHU7w" />
                                   </node>
                                 </node>
                               </node>
@@ -24418,21 +24426,21 @@
               <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="1KUoCiqb5BL" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCiqb5BM" role="1bW5cS">
-                  <node concept="3SKdUt" id="1KUoCiqb5BN" role="3cqZAp">
-                    <node concept="3SKWN0" id="1KUoCiqb5BO" role="3SKWNk">
-                      <node concept="3clFbF" id="1KUoCiqb5BP" role="3SKWNf">
-                        <node concept="2OqwBi" id="1KUoCiqb5BQ" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxgm$UF" role="2Oq$k0">
-                            <ref role="3cqZAo" node="44sVLhmXevn" resolve="from" />
+                  <node concept="1X3_iC" id="3$ZLRFpTBK3" role="lGtFl">
+                    <property role="3V$3am" value="statement" />
+                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                    <node concept="3clFbF" id="1KUoCiqb5BP" role="8Wnug">
+                      <node concept="2OqwBi" id="1KUoCiqb5BQ" role="3clFbG">
+                        <node concept="37vLTw" id="2BHiRxgm$UF" role="2Oq$k0">
+                          <ref role="3cqZAo" node="44sVLhmXevn" resolve="from" />
+                        </node>
+                        <node concept="liA8E" id="1KUoCiqb5BS" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
+                          <node concept="37vLTw" id="3GM_nagT$oa" role="37wK5m">
+                            <ref role="3cqZAo" node="yXzhPPCJb0" resolve="descriptor" />
                           </node>
-                          <node concept="liA8E" id="1KUoCiqb5BS" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
-                            <node concept="37vLTw" id="3GM_nagT$oa" role="37wK5m">
-                              <ref role="3cqZAo" node="yXzhPPCJb0" resolve="descriptor" />
-                            </node>
-                            <node concept="3clFbT" id="1KUoCiqb5BU" role="37wK5m">
-                              <property role="3clFbU" value="false" />
-                            </node>
+                          <node concept="3clFbT" id="1KUoCiqb5BU" role="37wK5m">
+                            <property role="3clFbU" value="false" />
                           </node>
                         </node>
                       </node>

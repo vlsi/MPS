@@ -4,7 +4,8 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="644x" ref="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
@@ -209,12 +210,6 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -246,8 +241,18 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -1674,27 +1679,27 @@
             </node>
             <node concept="3clFbJ" id="5Npqc2YgaGg" role="3cqZAp">
               <node concept="3clFbS" id="5Npqc2YgaGh" role="3clFbx">
-                <node concept="3SKdUt" id="tKbzP52kH1" role="3cqZAp">
-                  <node concept="3SKWN0" id="tKbzP52kH2" role="3SKWNk">
-                    <node concept="3clFbF" id="5Npqc2YgaGi" role="3SKWNf">
-                      <node concept="2OqwBi" id="5Npqc2YgaGj" role="3clFbG">
-                        <node concept="10M0yZ" id="5Npqc2YgaGk" role="2Oq$k0">
-                          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                          <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                        </node>
-                        <node concept="liA8E" id="5Npqc2YgaGl" role="2OqNvi">
-                          <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                          <node concept="3cpWs3" id="5Npqc2YgaGm" role="37wK5m">
-                            <node concept="Xl_RD" id="5Npqc2YgaGn" role="3uHU7w">
-                              <property role="Xl_RC" value=" was not found in repository" />
+                <node concept="1X3_iC" id="3$ZLRFpSTc$" role="lGtFl">
+                  <property role="3V$3am" value="statement" />
+                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                  <node concept="3clFbF" id="5Npqc2YgaGi" role="8Wnug">
+                    <node concept="2OqwBi" id="5Npqc2YgaGj" role="3clFbG">
+                      <node concept="10M0yZ" id="5Npqc2YgaGk" role="2Oq$k0">
+                        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                      </node>
+                      <node concept="liA8E" id="5Npqc2YgaGl" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
+                        <node concept="3cpWs3" id="5Npqc2YgaGm" role="37wK5m">
+                          <node concept="Xl_RD" id="5Npqc2YgaGn" role="3uHU7w">
+                            <property role="Xl_RC" value=" was not found in repository" />
+                          </node>
+                          <node concept="3cpWs3" id="5Npqc2YgaGo" role="3uHU7B">
+                            <node concept="Xl_RD" id="5Npqc2YgaGp" role="3uHU7B">
+                              <property role="Xl_RC" value="module " />
                             </node>
-                            <node concept="3cpWs3" id="5Npqc2YgaGo" role="3uHU7B">
-                              <node concept="Xl_RD" id="5Npqc2YgaGp" role="3uHU7B">
-                                <property role="Xl_RC" value="module " />
-                              </node>
-                              <node concept="37vLTw" id="2BHiRxgmGVm" role="3uHU7w">
-                                <ref role="3cqZAo" node="5Npqc2YgaHI" resolve="moduleRef" />
-                              </node>
+                            <node concept="37vLTw" id="2BHiRxgmGVm" role="3uHU7w">
+                              <ref role="3cqZAo" node="5Npqc2YgaHI" resolve="moduleRef" />
                             </node>
                           </node>
                         </node>

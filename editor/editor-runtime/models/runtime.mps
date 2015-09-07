@@ -6,9 +6,10 @@
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -207,9 +208,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -314,6 +312,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -2653,23 +2658,23 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3SKdUt" id="7vSAaEKYOCs" role="3cqZAp">
-                                        <node concept="3SKWN0" id="7vSAaEKYOCt" role="3SKWNk">
-                                          <node concept="3cpWs8" id="7Mb2akaest8" role="3SKWNf">
-                                            <node concept="3cpWsn" id="7Mb2akaest9" role="3cpWs9">
-                                              <property role="TrG5h" value="output" />
-                                              <node concept="3uibUv" id="7Mb2akaesta" role="1tU5fm">
-                                                <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                                      <node concept="1X3_iC" id="3$ZLRFpPVMl" role="lGtFl">
+                                        <property role="3V$3am" value="statement" />
+                                        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                                        <node concept="3cpWs8" id="7Mb2akaest8" role="8Wnug">
+                                          <node concept="3cpWsn" id="7Mb2akaest9" role="3cpWs9">
+                                            <property role="TrG5h" value="output" />
+                                            <node concept="3uibUv" id="7Mb2akaesta" role="1tU5fm">
+                                              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                                            </node>
+                                            <node concept="2YIFZM" id="7Mb2akaestb" role="33vP2m">
+                                              <ref role="1Pybhc" to="t552:~FileGenerationUtil" resolve="FileGenerationUtil" />
+                                              <ref role="37wK5l" to="t552:~FileGenerationUtil.getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.vfs.IFile):jetbrains.mps.vfs.IFile" resolve="getDefaultOutputDir" />
+                                              <node concept="37vLTw" id="3GM_nagTBnb" role="37wK5m">
+                                                <ref role="3cqZAo" node="7Mb2akaessK" resolve="model" />
                                               </node>
-                                              <node concept="2YIFZM" id="7Mb2akaestb" role="33vP2m">
-                                                <ref role="1Pybhc" to="t552:~FileGenerationUtil" resolve="FileGenerationUtil" />
-                                                <ref role="37wK5l" to="t552:~FileGenerationUtil.getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.vfs.IFile):jetbrains.mps.vfs.IFile" resolve="getDefaultOutputDir" />
-                                                <node concept="37vLTw" id="3GM_nagTBnb" role="37wK5m">
-                                                  <ref role="3cqZAo" node="7Mb2akaessK" resolve="model" />
-                                                </node>
-                                                <node concept="37vLTw" id="3GM_nagTtRZ" role="37wK5m">
-                                                  <ref role="3cqZAo" node="7Mb2akaest2" resolve="outputRootFile" />
-                                                </node>
+                                              <node concept="37vLTw" id="3GM_nagTtRZ" role="37wK5m">
+                                                <ref role="3cqZAo" node="7Mb2akaest2" resolve="outputRootFile" />
                                               </node>
                                             </node>
                                           </node>

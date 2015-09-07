@@ -3,10 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" name="jetbrains.mps.baseLanguage.builders" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
@@ -255,9 +256,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -315,6 +313,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -4662,24 +4667,24 @@
             </node>
             <node concept="9aQIb" id="6M6GmnHEV1H" role="9aQIa">
               <node concept="3clFbS" id="6M6GmnHEV1I" role="9aQI4">
-                <node concept="3SKdUt" id="6M6GmnHH2Ew" role="3cqZAp">
-                  <node concept="3SKWN0" id="6M6GmnHH2Ex" role="3SKWNk">
-                    <node concept="3clFbF" id="6M6GmnHH27I" role="3SKWNf">
-                      <node concept="2OqwBi" id="6M6GmnHH0$c" role="3clFbG">
-                        <node concept="2OqwBi" id="6M6GmnHGYoy" role="2Oq$k0">
-                          <node concept="37vLTw" id="6M6GmnHGY1V" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2doG_VG59Mz" resolve="project" />
-                          </node>
-                          <node concept="liA8E" id="6M6GmnHH0oA" role="2OqNvi">
-                            <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
-                          </node>
+                <node concept="1X3_iC" id="3$ZLRFpPVLr" role="lGtFl">
+                  <property role="3V$3am" value="statement" />
+                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                  <node concept="3clFbF" id="6M6GmnHH27I" role="8Wnug">
+                    <node concept="2OqwBi" id="6M6GmnHH0$c" role="3clFbG">
+                      <node concept="2OqwBi" id="6M6GmnHGYoy" role="2Oq$k0">
+                        <node concept="37vLTw" id="6M6GmnHGY1V" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2doG_VG59Mz" resolve="project" />
                         </node>
-                        <node concept="liA8E" id="6M6GmnHH1Ct" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                          <node concept="10M0yZ" id="KL8Aqll4rt" role="37wK5m">
-                            <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_MPS_PROJECT" resolve="DOT_MPS_PROJECT" />
-                            <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
-                          </node>
+                        <node concept="liA8E" id="6M6GmnHH0oA" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6M6GmnHH1Ct" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                        <node concept="10M0yZ" id="KL8Aqll4rt" role="37wK5m">
+                          <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_MPS_PROJECT" resolve="DOT_MPS_PROJECT" />
+                          <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
                         </node>
                       </node>
                     </node>
