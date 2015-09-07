@@ -149,41 +149,16 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2GZlO$G5O6Q">
+  <node concept="1TIwiD" id="2GZlO$G5z5o">
     <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="MoveConcept" />
-    <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
-  </node>
-  <node concept="1TIwiD" id="2GZlO$G5O6R">
-    <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="MoveReferenceLinkUp" />
-    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMemberUp" />
-  </node>
-  <node concept="1TIwiD" id="2GZlO$G5O6U">
-    <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="MoveContainmentLinkUp" />
-    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMemberUp" />
-  </node>
-  <node concept="1TIwiD" id="2GZlO$G5O6S">
-    <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="MoveConceptMemberUp" />
-    <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
-  </node>
-  <node concept="1TIwiD" id="2GZlO$G5$zc">
-    <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="AbstractNodeReference" />
+    <property role="TrG5h" value="RefactoringStepItem" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
-  <node concept="1TIwiD" id="2GZlO$G5O6T">
+  <node concept="1TIwiD" id="2GZlO$G5$zc">
     <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="MovePropertyUp" />
-    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMemberUp" />
-  </node>
-  <node concept="1TIwiD" id="2GZlO$G5z5o">
-    <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="RefactoringStepItem" />
+    <property role="TrG5h" value="AbstractNodeReference" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -194,6 +169,31 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoveNodeSpecialization" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2GZlO$G5O6Q">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="MoveConcept" />
+    <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
+  </node>
+  <node concept="1TIwiD" id="2GZlO$G5O6R">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="MoveReferenceLink" />
+    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+  </node>
+  <node concept="1TIwiD" id="2GZlO$G5O6S">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="MoveConceptMember" />
+    <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
+  </node>
+  <node concept="1TIwiD" id="2GZlO$G5O6T">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="MoveProperty" />
+    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+  </node>
+  <node concept="1TIwiD" id="2GZlO$G5O6U">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="MoveContainmentLink" />
+    <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
   </node>
 </model>
 

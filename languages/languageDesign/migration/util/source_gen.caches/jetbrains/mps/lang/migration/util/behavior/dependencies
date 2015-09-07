@@ -4,12 +4,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" file="AbstractNodeReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
@@ -23,13 +23,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveReferenceLinkUp_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_BehaviorDescriptor" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.StepData_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLinkUp_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLinkUp_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.StepData_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveReferenceLink_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MigrationScriptReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MovePropertyUp_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveProperty_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLink_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_Behavior" file="DirectNodeReference_Behavior.java">
@@ -43,8 +47,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.INodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.INodeReference_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_Behavior" />
@@ -69,14 +73,20 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" file="MoveConceptMemberUp_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" file="MoveConceptMember_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveConcept_BehaviorDescriptor" file="MoveConcept_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLinkUp_BehaviorDescriptor" file="MoveContainmentLinkUp_BehaviorDescriptor.java">
@@ -85,10 +95,16 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" file="MoveNodeSpecialization_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveContainmentLink_BehaviorDescriptor" file="MoveContainmentLink_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" file="MoveNodeSpecialization_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveNode_BehaviorDescriptor" file="MoveNode_BehaviorDescriptor.java">
@@ -106,10 +122,22 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveProperty_BehaviorDescriptor" file="MoveProperty_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveReferenceLinkUp_BehaviorDescriptor" file="MoveReferenceLinkUp_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMemberUp_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.util.behavior.MoveReferenceLink_BehaviorDescriptor" file="MoveReferenceLink_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.NodeReference_Behavior" file="NodeReference_Behavior.java">
@@ -129,9 +157,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.RefactoringStepItem_BehaviorDescriptor" file="RefactoringStepItem_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_BehaviorDescriptor" file="RefactoringStep_BehaviorDescriptor.java">
@@ -155,8 +183,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.INodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.INodeReference_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="java.lang.String" />

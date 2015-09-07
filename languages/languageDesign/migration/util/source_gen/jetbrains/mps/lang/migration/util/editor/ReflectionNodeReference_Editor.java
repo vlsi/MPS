@@ -77,7 +77,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
   }
   private static Color _StyleParameter_QueryFunction_ktoyyv_a0c0(EditorContext editorContext, SNode node) {
     if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_tryToFindNode_7431903976166009863", new Object[]{editorContext.getRepository()}) == null) {
-      return MPSColors.blue;
+      return MPSColors.YELLOW;
     } else {
       return null;
     }
