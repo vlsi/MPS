@@ -3,7 +3,10 @@
   <root>
     <file name="Language.java">
       <unit at="54,21,54,56" name="jetbrains.mps.baseLanguage.javadoc.Language$1" />
-      <unit at="26,0,85,0" name="jetbrains.mps.baseLanguage.javadoc.Language" />
+      <unit at="26,0,83,0" name="jetbrains.mps.baseLanguage.javadoc.Language" />
+    </file>
+    <file name="MigrationDescriptorImpl.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.MigrationDescriptorImpl" />
     </file>
   </root>
 </debug-info>

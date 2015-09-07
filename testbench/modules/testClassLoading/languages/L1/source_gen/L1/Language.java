@@ -41,8 +41,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new L1.structure.StructureAspectDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

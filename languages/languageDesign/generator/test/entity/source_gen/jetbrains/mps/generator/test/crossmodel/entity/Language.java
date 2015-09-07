@@ -41,8 +41,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

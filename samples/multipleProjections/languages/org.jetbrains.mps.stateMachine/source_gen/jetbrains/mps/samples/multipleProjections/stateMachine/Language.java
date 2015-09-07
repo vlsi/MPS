@@ -54,8 +54,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.multipleProjections.stateMachine.structure.StructureAspectDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

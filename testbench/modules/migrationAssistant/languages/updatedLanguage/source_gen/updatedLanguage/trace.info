@@ -2,7 +2,10 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="13,0,48,0" name="updatedLanguage.Language" />
+      <unit at="13,0,46,0" name="updatedLanguage.Language" />
+    </file>
+    <file name="MigrationDescriptorImpl.java">
+      <unit at="11,0,17,0" name="updatedLanguage.MigrationDescriptorImpl" />
     </file>
   </root>
 </debug-info>
