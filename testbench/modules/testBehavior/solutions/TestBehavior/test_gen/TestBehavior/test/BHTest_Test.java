@@ -160,7 +160,6 @@ public class BHTest_Test extends TestCase {
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0y0();
     Object[] params = {};
-    SAbstractConcept conceptA = SNodeOperations.getConcept(nodeA);
     Assert.assertSame(BHInvoker.invoke(SNodeOperations.getConcept(nodeA), BHL7.behavior.A_BehaviorDescriptor.staticMethod_id17523), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_1234567890", params));
   }
   public void test_primitiveMethodReturnType() throws Exception {
