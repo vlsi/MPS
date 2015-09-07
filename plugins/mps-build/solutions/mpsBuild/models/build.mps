@@ -10417,6 +10417,12 @@
               <ref role="3bR37D" node="7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
             </node>
           </node>
+          <node concept="1SiIV0" id="7FHWC6bTVs4" role="3bR37C">
+            <node concept="3bR9La" id="7FHWC6bTVs5" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="fA2nR_yV4L" role="1E1XAP">
           <ref role="1E0d5P" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
