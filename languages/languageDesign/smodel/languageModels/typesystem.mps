@@ -8797,7 +8797,7 @@
         <node concept="3clFbS" id="5ffMBkazPtF" role="3clFbx">
           <node concept="2MkqsV" id="5ffMBkazPLw" role="3cqZAp">
             <node concept="Xl_RD" id="5ffMBkazPLy" role="2MkJ7o">
-              <property role="Xl_RC" value="Do not use with arguments of type conceptNode&lt;&gt; and node&lt;&gt;. Use .asConcept operation to cast to concept&lt;&gt;" />
+              <property role="Xl_RC" value="Do not use with arguments of type conceptNode&lt;&gt; and node&lt;&gt;. Use .asConcept and .concept operations to cast to concept&lt;&gt;" />
             </node>
             <node concept="37vLTw" id="5ffMBkazPLz" role="2OEOjV">
               <ref role="3cqZAo" node="2R$wlLKBoO1" resolve="arg" />

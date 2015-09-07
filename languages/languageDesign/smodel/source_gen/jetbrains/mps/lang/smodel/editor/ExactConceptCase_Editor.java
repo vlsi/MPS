@@ -45,7 +45,7 @@ public class ExactConceptCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNode_uvvmah_b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new ExactConceptCase_Editor.conceptSingleRoleHandler_uvvmah_b0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L, 0x10ef02d67cfL, "concept"), editorContext);
+    SingleRoleCellProvider provider = new ExactConceptCase_Editor.conceptSingleRoleHandler_uvvmah_b0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c64L, 0x53cfca750a909cf3L, "concept"), editorContext);
     return provider.createCell();
   }
   private class conceptSingleRoleHandler_uvvmah_b0 extends SingleRoleCellProvider {
@@ -88,7 +88,7 @@ public class ExactConceptCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNode_uvvmah_d0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new ExactConceptCase_Editor.bodySingleRoleHandler_uvvmah_d0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L, 0x10ef02d8048L, "body"), editorContext);
+    SingleRoleCellProvider provider = new ExactConceptCase_Editor.bodySingleRoleHandler_uvvmah_d0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c64L, 0x53cfca750a909cf4L, "body"), editorContext);
     return provider.createCell();
   }
   private class bodySingleRoleHandler_uvvmah_d0 extends SingleRoleCellProvider {

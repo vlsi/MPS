@@ -30,7 +30,7 @@ public class check_ConceptSwitch_NonTypesystemRule extends AbstractNonTypesystem
     if (SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")) || SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Do not use with arguments of type conceptNode<> and node<>. Use .asConcept operation to cast to concept<>", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "6039268229364276320", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Do not use with arguments of type conceptNode<> and node<>. Use .asConcept and .concept operations to cast to concept<>", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "6039268229364276320", null, errorTarget);
       }
       return;
     }
