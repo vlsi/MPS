@@ -270,14 +270,14 @@
       <node id="5863271989071075881" at="68,24,69,24" concept="8" />
       <node id="5863271989071075881" at="71,31,72,24" concept="8" />
       <node id="5863271989071075881" at="75,94,76,69" concept="8" />
-      <node id="5863271989071460872" at="80,96,81,122" concept="7" />
-      <node id="5863271989071461960" at="81,122,82,118" concept="7" />
-      <node id="5863271989071477727" at="82,118,83,137" concept="7" />
-      <node id="5863271989071171313" at="84,140,85,43" concept="13" />
+      <node id="5863271989071460872" at="80,96,81,50" concept="7" />
+      <node id="5863271989071461960" at="81,50,82,46" concept="7" />
+      <node id="5863271989071477727" at="82,46,83,65" concept="7" />
+      <node id="5863271989071171313" at="84,68,85,43" concept="13" />
       <node id="1637942127804622900" at="86,5,87,493" concept="7" />
       <node id="1637942127804622443" at="89,50,90,57" concept="3" />
       <node id="7826362513431633219" at="92,7,93,219" concept="3" />
-      <node id="5863271989071080484" at="96,124,97,201" concept="8" />
+      <node id="5863271989071080484" at="96,52,97,129" concept="8" />
       <node id="7826362513431632428" at="99,63,100,63" concept="7" />
       <node id="7826362513431632428" at="100,63,101,236" concept="7" />
       <node id="7826362513431632428" at="101,236,102,14" concept="8" />
@@ -295,7 +295,7 @@
       <node id="5863271989071075881" at="65,0,68,0" concept="6" trace="repo#(Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/module/SRepository;" />
       <node id="5863271989071075881" at="68,0,71,0" concept="6" trace="ref#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5863271989071075881" at="71,0,74,0" concept="6" trace="repo#()Lorg/jetbrains/mps/openapi/module/SRepository;" />
-      <node id="5863271989071165114" at="83,137,86,5" concept="5" />
+      <node id="5863271989071165114" at="83,65,86,5" concept="5" />
       <node id="1637942127804622137" at="89,0,92,0" concept="6" trace="visit#(Ljetbrains/mps/lang/migration/pluginSolution/plugin/MoveNodesContributor;)V" />
       <node id="5863271989071056075" at="96,0,99,0" concept="6" trace="createReference#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="1637942127804622902" at="106,229,109,5" concept="5" />
@@ -323,9 +323,9 @@
       <scope id="5863271989071075881" at="68,24,69,24" />
       <scope id="5863271989071075881" at="71,31,72,24" />
       <scope id="5863271989071075881" at="75,94,76,69" />
-      <scope id="5863271989071165116" at="84,140,85,43" />
+      <scope id="5863271989071165116" at="84,68,85,43" />
       <scope id="1637942127804622138" at="89,50,90,57" />
-      <scope id="5863271989071056082" at="96,124,97,201" />
+      <scope id="5863271989071056082" at="96,52,97,129" />
       <scope id="1637942127804622902" at="107,21,108,165" />
       <scope id="1637942127804622902" at="110,21,111,163" />
       <scope id="5863271989071169357" at="115,63,116,51" />

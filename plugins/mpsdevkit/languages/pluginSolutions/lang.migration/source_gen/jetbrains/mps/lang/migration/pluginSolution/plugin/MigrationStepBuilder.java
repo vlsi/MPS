@@ -78,10 +78,10 @@ public class MigrationStepBuilder implements MoveNodesBuilder {
   }
 
   public void moveNode(MoveNodesBuilder.NodeReference from, MoveNodesBuilder.NodeReference to) {
-    SNode fromNode = ((jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference) from).ref();
-    SNode toNode = ((jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference) to).ref();
-    final SRepository repository = ((jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference) from).repo();
-    if (neq_x8stao_a0d0k(repository, ((jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference) to).repo())) {
+    SNode fromNode = ((NodeReference) from).ref();
+    SNode toNode = ((NodeReference) to).ref();
+    final SRepository repository = ((NodeReference) from).repo();
+    if (neq_x8stao_a0d0k(repository, ((NodeReference) to).repo())) {
       throw new IllegalArgumentException();
     }
     final SNode moveNodeItem = createMoveNode_x8stao_a0e0k(SNodeOperations.cast(HUtil.copyIfNecessary(fromNode), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(toNode), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")));
@@ -93,8 +93,8 @@ public class MigrationStepBuilder implements MoveNodesBuilder {
     ListSequence.fromList(SLinkOperations.getChildren(myStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "item"))).addElement(moveNodeItem);
   }
 
-  public jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference createReference(SNode node) {
-    return new jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationStepBuilder.NodeReference(NodeReferenceUtil.makeReflection(node), SNodeOperations.getModel(node).getModule().getRepository());
+  public NodeReference createReference(SNode node) {
+    return new NodeReference(NodeReferenceUtil.makeReflection(node), SNodeOperations.getModel(node).getModule().getRepository());
   }
   private static SNode createRefactoringStep_x8stao_a0a0b0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

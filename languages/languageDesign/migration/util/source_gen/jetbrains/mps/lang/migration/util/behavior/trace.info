@@ -11,10 +11,13 @@
       <unit at="10,0,20,0" name="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,42,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DirectNodeReference_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MigrationScriptReference_BehaviorDescriptor" />
     </file>
     <file name="MoveConceptMember_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.migration.util.behavior.MoveConceptMember_BehaviorDescriptor" />
