@@ -1834,6 +1834,7 @@
   <node concept="1TIwiD" id="59YAasRsvgM">
     <property role="TrG5h" value="SubconceptCase" />
     <property role="3GE5qa" value="conceptSwitch" />
+    <property role="34LRSv" value="subconcept of" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gVKbmvf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2163,6 +2164,7 @@
   <node concept="1TIwiD" id="5ffMBka$9L$">
     <property role="3GE5qa" value="conceptSwitch" />
     <property role="TrG5h" value="ExactConceptCase" />
+    <property role="34LRSv" value="exact concept" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5ffMBka$9NN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
