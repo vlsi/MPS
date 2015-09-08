@@ -193,6 +193,9 @@
         <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
+      <concept id="1168559512253" name="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" flags="lg" index="j$LIH">
+        <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
+      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -207,9 +210,11 @@
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
       </concept>
+      <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
+        <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
@@ -223,6 +228,10 @@
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
+      </concept>
+      <concept id="1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" flags="lg" index="1lLz0L">
+        <property id="1169670173015" name="messageText" index="1lLB17" />
+        <property id="1169670356567" name="messageType" index="1lMjX7" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -265,12 +274,6 @@
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
-      </concept>
-    </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -420,6 +423,39 @@
     <node concept="3lhOvk" id="3QgUde4xCnL" role="3lj3bC">
       <ref role="3lhOvi" node="3fmQZrgbxak" resolve="MigrationScriptImpl" />
       <ref role="30HIoZ" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
+      <node concept="30G5F_" id="4uVwhQy$duH" role="30HLyM">
+        <node concept="3clFbS" id="4uVwhQy$duI" role="2VODD2">
+          <node concept="3clFbF" id="4uVwhQy$dLZ" role="3cqZAp">
+            <node concept="3fqX7Q" id="4uVwhQy$dUc" role="3clFbG">
+              <node concept="2YIFZM" id="4uVwhQy$dUe" role="3fr31v">
+                <ref role="37wK5l" to="5jto:Czdt9t3YHI" resolve="hasCycles" />
+                <ref role="1Pybhc" to="5jto:3WpkgLwxyX3" resolve="MigrationsCheckUtil" />
+                <node concept="30H73N" id="4uVwhQy$fhg" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="4uVwhQy$eqX" role="3acgRq">
+      <ref role="30HIoZ" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
+      <node concept="j$LIH" id="4uVwhQy$eGQ" role="1lVwrX">
+        <node concept="1lLz0L" id="4uVwhQy$eJn" role="1lHHLF">
+          <property role="1lMjX7" value="error" />
+          <property role="1lLB17" value="Cyclic migration script dependency detected. It will cause problem during migration." />
+        </node>
+      </node>
+      <node concept="30G5F_" id="4uVwhQy$eBR" role="30HLyM">
+        <node concept="3clFbS" id="4uVwhQy$eBS" role="2VODD2">
+          <node concept="3clFbF" id="4uVwhQy$fnp" role="3cqZAp">
+            <node concept="2YIFZM" id="4uVwhQy$fnr" role="3clFbG">
+              <ref role="1Pybhc" to="5jto:3WpkgLwxyX3" resolve="MigrationsCheckUtil" />
+              <ref role="37wK5l" to="5jto:Czdt9t3YHI" resolve="hasCycles" />
+              <node concept="30H73N" id="4uVwhQy$fns" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3aamgX" id="6d7r2FpJB_n" role="3acgRq">
       <ref role="30HIoZ" to="53vh:6d7r2FpJdsQ" resolve="DataDependencyReference" />
@@ -557,6 +593,7 @@
       <property role="TrG5h" value="execute" />
       <node concept="37vLTG" id="5Fumpqe3tuO" role="3clF46">
         <property role="TrG5h" value="module" />
+        <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="3QgUde4vUB4" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
@@ -989,29 +1026,6 @@
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
       <node concept="3zFVjK" id="3QgUde4xk_I" role="3zH0cK">
         <node concept="3clFbS" id="3QgUde4xk_J" role="2VODD2">
-          <node concept="3clFbJ" id="Czdt9t4mRf" role="3cqZAp">
-            <node concept="3clFbS" id="Czdt9t4mRi" role="3clFbx">
-              <node concept="34ab3g" id="Czdt9t4DZP" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <node concept="Xl_RD" id="Czdt9t4DZR" role="34bqiv">
-                  <property role="Xl_RC" value="Cyclic migration script dependency detected. It will cause problem during migration." />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="Czdt9t4r9h" role="3clFbw">
-              <ref role="37wK5l" to="5jto:Czdt9t3YHI" resolve="hasCycles" />
-              <ref role="1Pybhc" to="5jto:3WpkgLwxyX3" resolve="MigrationsCheckUtil" />
-              <node concept="1PxgMI" id="Czdt9t4rEc" role="37wK5m">
-                <ref role="1PxNhF" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
-                <node concept="2OqwBi" id="Czdt9t4pOZ" role="1PxMeX">
-                  <node concept="1iwH7S" id="Czdt9t4p_f" role="2Oq$k0" />
-                  <node concept="12$id9" id="Czdt9t4qbv" role="2OqNvi">
-                    <node concept="30H73N" id="Czdt9t4qrl" role="12$y8L" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="3QgUde4xl35" role="3cqZAp">
             <node concept="2OqwBi" id="3QgUde4xl7n" role="3clFbG">
               <node concept="30H73N" id="3QgUde4xl34" role="2Oq$k0" />
