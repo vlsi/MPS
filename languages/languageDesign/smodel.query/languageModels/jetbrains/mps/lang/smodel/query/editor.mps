@@ -20,17 +20,14 @@
       <concept id="1402906326896143883" name="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" flags="nn" index="0GJ7k" />
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
-      <concept id="1198489924438" name="jetbrains.mps.lang.editor.structure.CellModel_Block" flags="sg" stub="8104358048506730066" index="b$f91">
-        <child id="1198489985045" name="header" index="b$u42" />
-        <child id="1198489993734" name="body" index="b$wch" />
-      </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <property id="1160590307797" name="usesFolding" index="S$F3r" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
-      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
+      <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
+      <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
@@ -949,22 +946,39 @@
   <node concept="24kQdi" id="3F2FyKbNNqA">
     <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
-    <node concept="b$f91" id="3F2FyKbNNqC" role="2wV5jI">
-      <node concept="3F1sOY" id="3F2FyKbNNr8" role="b$wch">
+    <node concept="3EZMnI" id="3F2FyKbNNqI" role="2wV5jI">
+      <node concept="3F0ifn" id="3F2FyKbNNqM" role="3EZMnx">
+        <property role="3F0ifm" value="with" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F1sOY" id="3F2FyKbNNqV" role="3EZMnx">
+        <ref role="1NtTu8" to="3xdn:3F2FyKbNNqR" />
+      </node>
+      <node concept="3F0ifn" id="3F2FyKbNNr3" role="3EZMnx">
+        <property role="3F0ifm" value="do" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="4uVwhQyzpG1" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
+        <node concept="ljvvj" id="4uVwhQyzpG_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="3F2FyKbNNr8" role="3EZMnx">
         <ref role="1NtTu8" to="3xdn:3F2FyKbNNqc" />
-      </node>
-      <node concept="3EZMnI" id="3F2FyKbNNqI" role="b$u42">
-        <node concept="2iRfu4" id="3F2FyKbNNqJ" role="2iSdaV" />
-        <node concept="3F0ifn" id="3F2FyKbNNqM" role="3EZMnx">
-          <property role="3F0ifm" value="with" />
+        <node concept="lj46D" id="4uVwhQyzpGM" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
-        <node concept="3F1sOY" id="3F2FyKbNNqV" role="3EZMnx">
-          <ref role="1NtTu8" to="3xdn:3F2FyKbNNqR" />
-        </node>
-        <node concept="3F0ifn" id="3F2FyKbNNr3" role="3EZMnx">
-          <property role="3F0ifm" value="do" />
+        <node concept="ljvvj" id="4uVwhQyzpGP" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F0ifn" id="4uVwhQyzpGp" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
+      </node>
+      <node concept="l2Vlx" id="4uVwhQyzpgj" role="2iSdaV" />
     </node>
   </node>
 </model>
