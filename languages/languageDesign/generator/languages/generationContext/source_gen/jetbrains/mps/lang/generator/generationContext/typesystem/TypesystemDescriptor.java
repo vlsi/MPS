@@ -114,6 +114,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_VarMacro_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_GenerationContextOp_Base_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
