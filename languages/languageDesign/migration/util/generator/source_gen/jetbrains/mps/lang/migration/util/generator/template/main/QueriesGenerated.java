@@ -10,6 +10,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -27,6 +28,51 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_5168866961619091738(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619857442(final ReferenceMacroContext _context) {
+    return PropertyDeclaration_Behavior.call_getConceptDeclaration_3254710223377139385(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619857459(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619857475(final ReferenceMacroContext _context) {
+    return PropertyDeclaration_Behavior.call_getConceptDeclaration_3254710223377139385(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("to")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619857492(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("to")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619857512(final ReferenceMacroContext _context) {
+    return PropertyDeclaration_Behavior.call_getConceptDeclaration_3254710223377139385(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619897751(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619897769(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619897785(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619897803(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619826206(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619903925(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619903943(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619903959(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619903977(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+  }
+  public static Object referenceMacro_GetReferent_5168866961619900328(final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) _context.getVariable("from")), "virtual_tryToFindNode_7431903976166009863", new Object[]{_context.getInvocationContext().getProject().getRepository()}), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   public static Object templateArgumentQuery_5168866961619192504(final TemplateQueryContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"));
