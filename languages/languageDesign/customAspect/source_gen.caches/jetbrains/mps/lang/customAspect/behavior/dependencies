@@ -76,8 +76,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.customAspect.behavior.SimpleLanguageAspectDescriptor_Behavior" file="SimpleLanguageAspectDescriptor_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.customAspect.behavior.SimpleLanguageAspectDescriptor_BehaviorDescriptor" file="SimpleLanguageAspectDescriptor_BehaviorDescriptor.java">

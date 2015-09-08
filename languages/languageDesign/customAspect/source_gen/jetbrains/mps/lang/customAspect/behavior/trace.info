@@ -74,18 +74,18 @@
   </root>
   <root nodeRef="r:34cf15ec-363f-428e-ba3e-57bc25764d1e(jetbrains.mps.lang.customAspect.behavior)/7905571935049090389">
     <file name="SimpleLanguageAspectDescriptor_Behavior.java">
-      <node id="4458663165063856098" at="12,77,13,181" concept="1" />
-      <node id="7905571935049090389" at="10,0,12,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7905571935049090389" at="12,0,15,0" concept="2" trace="call_getGenerator_7905571935049090392#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7905571935049090391" at="10,43,10,43" />
-      <scope id="7905571935049090395" at="12,77,13,181" />
-      <scope id="7905571935049090389" at="10,0,12,0">
+      <node id="4458663165063856098" at="10,77,11,16" concept="1" />
+      <node id="7905571935049090389" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7905571935049090389" at="10,0,13,0" concept="2" trace="call_getGenerator_7905571935049090392#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7905571935049090391" at="8,43,8,43" />
+      <scope id="7905571935049090395" at="10,77,11,16" />
+      <scope id="7905571935049090389" at="8,0,10,0">
         <var name="thisNode" id="7905571935049090389" />
       </scope>
-      <scope id="7905571935049090389" at="12,0,15,0">
+      <scope id="7905571935049090389" at="10,0,13,0">
         <var name="thisNode" id="7905571935049090389" />
       </scope>
-      <unit id="7905571935049090389" at="9,0,16,0" name="jetbrains.mps.lang.customAspect.behavior.SimpleLanguageAspectDescriptor_Behavior" />
+      <unit id="7905571935049090389" at="7,0,14,0" name="jetbrains.mps.lang.customAspect.behavior.SimpleLanguageAspectDescriptor_Behavior" />
     </file>
   </root>
   <root nodeRef="r:34cf15ec-363f-428e-ba3e-57bc25764d1e(jetbrains.mps.lang.customAspect.behavior)/8921494878338859235">

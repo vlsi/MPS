@@ -110,8 +110,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rpszz1_c1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_d1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_e1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rpszz1_f1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_rpszz1_g1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_rpszz1_a1b0(EditorContext editorContext, SNode node) {
@@ -348,46 +346,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
 
     protected String getNoTargetText() {
       return "<no icon>";
-    }
-
-  }
-  private EditorCell createConstant_rpszz1_f1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_rpszz1_f1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_rpszz1_g1b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_Editor.genDescSingleRoleHandler_rpszz1_g1b0(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x5c2c36f4ea0d435eL, "genDesc"), editorContext);
-    return provider.createCell();
-  }
-  private class genDescSingleRoleHandler_rpszz1_g1b0 extends SingleRoleCellProvider {
-    public genDescSingleRoleHandler_rpszz1_g1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("genDesc");
-      }
-    }
-
-
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_genDesc");
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-
-    protected String getNoTargetText() {
-      return "<aspect has no generator>";
     }
 
   }

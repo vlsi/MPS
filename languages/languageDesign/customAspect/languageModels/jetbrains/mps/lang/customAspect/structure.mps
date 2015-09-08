@@ -81,11 +81,6 @@
       <property role="20kJfa" value="icon" />
       <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
     </node>
-    <node concept="1TJgyj" id="5KGdJjE3kdu" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="genDesc" />
-      <ref role="20lvS9" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
-    </node>
     <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
       <property role="TrG5h" value="helpUrl" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
