@@ -18,9 +18,13 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
         <reference id="1082985295845" name="dataType" index="AX2Wp" />
@@ -66,20 +70,6 @@
       <property role="20kJfa" value="data" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="6rIOn75Y3Ja">
-    <property role="3GE5qa" value="persistence" />
-    <property role="TrG5h" value="MigrationScriptReference" />
-    <property role="1pbfSe" value="753339707" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="6rIOn75Yg8y" role="1TKVEl">
-      <property role="TrG5h" value="fromVersion" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="6rIOn760HDO" role="1TKVEl">
-      <property role="TrG5h" value="module" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="2uZcAeY8Z3v">
@@ -138,6 +128,9 @@
     <property role="TrG5h" value="RefactoringStep" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4uVwhQy_XuE" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
     <node concept="1TJgyj" id="6szrkDodHvN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="item" />
@@ -183,6 +176,8 @@
   <node concept="1TIwiD" id="2GZlO$G5O6S">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="MoveConceptMember" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6T">
@@ -194,6 +189,20 @@
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="MoveContainmentLink" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+  </node>
+  <node concept="1TIwiD" id="6rIOn75Y3Ja">
+    <property role="3GE5qa" value="persistence" />
+    <property role="TrG5h" value="MigrationScriptReference" />
+    <property role="1pbfSe" value="753339707" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6rIOn75Yg8y" role="1TKVEl">
+      <property role="TrG5h" value="fromVersion" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6rIOn760HDO" role="1TKVEl">
+      <property role="TrG5h" value="module" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
 </model>
 

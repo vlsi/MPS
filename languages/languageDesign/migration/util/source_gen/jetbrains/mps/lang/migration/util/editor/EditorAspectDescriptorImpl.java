@@ -19,6 +19,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new MoveNode_Editor());
       case 2:
+        return Collections.<ConceptEditor>singletonList(new RefactoringStep_Editor());
+      case 3:
         return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
       default:
     }
@@ -29,5 +31,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.RefactoringStep", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
 }

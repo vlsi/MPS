@@ -24,14 +24,14 @@ public class Migration_Queries {
     SModule module = futureModel.getModule();
     if (LanguageAspect.MIGRATION.is(futureModel)) {
       Language lang = (Language) module;
-      int currentVersion = (lang).getLanguageVersion();
+      int currentVersion = lang.getLanguageVersion();
       SPropertyOperations.set(c, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"), "" + (currentVersion));
 
-      lang.setLanguageVersion(lang.getLanguageVersion() + 1);
+      lang.setLanguageVersion(currentVersion + 1);
     }
 
-    SModelInternal m = ((SModelInternal) (SModel) futureModel);
-    AbstractModule mod = ((AbstractModule) module);
+    SModelInternal m = (SModelInternal) (SModel) futureModel;
+    AbstractModule mod = (AbstractModule) module;
 
     m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"));
     m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern"));
