@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.build.mps.testManifest.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="TestModuleManifestRef_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifestRef_BehaviorDescriptor" />
+    </file>
+    <file name="TestModuleManifest_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_BehaviorDescriptor" />
+    </file>
+    <file name="TestProjectConfiguration_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestProjectConfiguration_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:83437316-51a8-44ee-b386-4989e30943c4(jetbrains.mps.build.mps.testManifest.behavior)/3298469228705200587">
+    <file name="TestModuleManifest_Behavior.java">
+      <node id="3298469228705330359" at="27,134,28,134" concept="3" />
+      <node id="3298469228705336130" at="28,134,29,0" concept="5" />
+      <node id="3298469228705335496" at="29,0,30,127" concept="3" />
+      <node id="563004820749623213" at="31,195,32,408" concept="3" />
+      <node id="563004820749618354" at="32,408,33,0" concept="5" />
+      <node id="3298469228705350699" at="33,0,34,52" concept="3" />
+      <node id="3298469228705356905" at="35,101,36,79" concept="3" />
+      <node id="3298469228705339406" at="36,79,37,199" concept="0" />
+      <node id="3298469228705338952" at="39,5,40,0" concept="5" />
+      <node id="3298469228705336497" at="40,0,41,18" concept="4" />
+      <node id="8645252814069066682" at="43,136,44,0" concept="5" />
+      <node id="8645252814069066683" at="44,0,45,127" concept="3" />
+      <node id="8645252814069094187" at="45,127,46,69" concept="3" />
+      <node id="8645252814069066704" at="47,99,48,77" concept="3" />
+      <node id="8645252814069066713" at="48,77,49,193" concept="0" />
+      <node id="8645252814069099862" at="50,5,51,0" concept="5" />
+      <node id="8645252814069066742" at="51,0,52,18" concept="4" />
+      <node id="3298469228705200587" at="25,0,27,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3298469228705352026" at="34,52,38,7" concept="2" />
+      <node id="8645252814069066702" at="46,69,50,5" concept="2" />
+      <node id="563004820749589036" at="30,127,39,5" concept="1" />
+      <node id="3298469228705200587" at="43,0,54,0" concept="6" trace="call_testModulesToInclude_8645252814069066668#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;)Ljava/util/List;" />
+      <node id="3298469228705200587" at="27,0,43,0" concept="6" trace="call_languagesToInclude_3298469228705308574#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;)Ljava/util/List;" />
+      <scope id="3298469228705200589" at="25,43,25,43" />
+      <scope id="3298469228705200587" at="25,0,27,0">
+        <var name="thisNode" id="3298469228705200587" />
+      </scope>
+      <scope id="3298469228705352028" at="35,101,37,199">
+        <var name="descriptorIFile" id="3298469228705356906" />
+      </scope>
+      <scope id="8645252814069066703" at="47,99,49,193">
+        <var name="descriptorIFile" id="8645252814069066705" />
+      </scope>
+      <scope id="563004820749589038" at="31,195,38,7">
+        <var name="sLanguage" id="563004820749623214" />
+        <var name="sModule" id="3298469228705350700" />
+      </scope>
+      <scope id="563004820749589036" at="30,127,39,5">
+        <var name="ref" id="563004820749589040" />
+      </scope>
+      <scope id="8645252814069066672" at="43,136,52,18">
+        <var name="result" id="8645252814069066684" />
+        <var name="sModule" id="8645252814069094188" />
+      </scope>
+      <scope id="3298469228705200587" at="43,0,54,0">
+        <var name="project" id="8645252814069066669" />
+        <var name="thisNode" id="3298469228705200587" />
+      </scope>
+      <scope id="3298469228705308576" at="27,134,41,18">
+        <var name="hierarchy" id="3298469228705330360" />
+        <var name="result" id="3298469228705335499" />
+      </scope>
+      <scope id="3298469228705200587" at="27,0,43,0">
+        <var name="project" id="3298469228705367219" />
+        <var name="thisNode" id="3298469228705200587" />
+      </scope>
+      <unit id="3298469228705200587" at="24,0,55,0" name="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_Behavior" />
+    </file>
+  </root>
+</debug-info>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.build.mps.testManifest.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:31b9ca31-eb5d-471f-91ea-30fbf9c39fae(jetbrains.mps.build.mps.testManifest.constraints)/3298469228705255568">
+    <file name="TestModuleManifest_Constraints.java">
+      <node id="3298469228705255568" at="9,43,10,98" concept="1" />
+      <node id="3298469228705255568" at="9,0,12,0" concept="0" trace="TestModuleManifest_Constraints#()V" />
+      <scope id="3298469228705255568" at="9,43,10,98" />
+      <scope id="3298469228705255568" at="9,0,12,0" />
+      <unit id="3298469228705255568" at="8,0,13,0" name="jetbrains.mps.build.mps.testManifest.constraints.TestModuleManifest_Constraints" />
+    </file>
+  </root>
+</debug-info>
+
