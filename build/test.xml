@@ -57,6 +57,11 @@
   </target>
 
   <target name="module-tests" depends="unpack">
+    <ant antfile="build/testModules/AllModules.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
     <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
       <target name="build"/>
       <target name="check"/>

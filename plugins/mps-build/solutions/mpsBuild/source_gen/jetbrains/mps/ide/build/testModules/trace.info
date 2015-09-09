@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root nodeRef="r:93f6998e-872f-4c5a-afba-4615bb90f424(jetbrains.mps.ide.build.testModules)/7673173258528433953">
+    <file name="AllModules.xml">
+      <unit id="7673173258528433953" at="1,0,772,10" name="jetbrains.mps.ide.build.testModules.AllModules" />
+    </file>
+  </root>
+</debug-info>
+

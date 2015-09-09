@@ -12,6 +12,7 @@
   <languageVersions>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" fqName="jetbrains.mps.build" version="0" />
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" fqName="jetbrains.mps.build.mps" version="1" />
+    <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" fqName="jetbrains.mps.build.mps.testManifest" version="0" />
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" fqName="jetbrains.mps.build.mps.tests" version="0" />
     <language id="d5033cee-f632-44b6-b308-89d4fbde34ff" fqName="jetbrains.mps.build.startup" version="0" />
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" fqName="jetbrains.mps.build.workflow" version="0" />
