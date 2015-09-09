@@ -22,9 +22,8 @@ public class RemoveOddAnnotations extends MigrationScriptBase {
     return "Remove @dslclass annotations from instances of AutoInitDSLClass";
   }
   public SNode execute(SModule m) {
-    final SModule finalM = m;
     {
-      final SearchScope scope = CommandUtil.createScope(finalM);
+      final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
