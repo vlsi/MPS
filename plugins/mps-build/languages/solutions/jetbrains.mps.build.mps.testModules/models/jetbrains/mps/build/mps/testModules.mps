@@ -8,6 +8,7 @@
   <imports>
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="hwit" ref="r:93f6998e-872f-4c5a-afba-4615bb90f424(jetbrains.mps.ide.build.testModules)" />
+    <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
   </imports>
   <registry>
     <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
@@ -35,6 +36,9 @@
     <property role="TrG5h" value="AllTestModules" />
     <node concept="2Uj$md" id="2R6x4AnyeQE" role="2Uj_Yd">
       <ref role="2Uj$mc" to="qffu:2R6x4AnxVdQ" resolve="SubstituteType" />
+    </node>
+    <node concept="2Uj$md" id="6DW_AMABl3e" role="2Uj_Yd">
+      <ref role="2Uj$mc" to="tw7x:6DW_AMABjI_" resolve="Subtyping" />
     </node>
     <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
       <property role="BaHAW" value="jetbrains.mps.ide.build.testModules" />

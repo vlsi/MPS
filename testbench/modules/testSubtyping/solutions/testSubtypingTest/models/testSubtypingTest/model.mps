@@ -6,6 +6,7 @@
     <use id="36a4d1c5-6ec1-426f-8192-1875a7cc48de" name="testSubtypingA" version="0" />
     <use id="65611934-24fb-470c-813e-a9df6058b93a" name="testSubtypingB" version="0" />
     <use id="8a53c705-15e4-4f87-8796-457845605512" name="testPrimitiveType" version="-1" />
+    <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -94,12 +95,23 @@
     <language id="65611934-24fb-470c-813e-a9df6058b93a" name="testSubtypingB">
       <concept id="2078093584693310115" name="testSubtypingB.structure.CustomType" flags="ig" index="3TvQQT" />
     </language>
+    <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
+      <concept id="3298469228705179778" name="jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest" flags="ng" index="2UguNb">
+        <child id="563004820749542528" name="language" index="3ciXlA" />
+      </concept>
+    </language>
     <language id="8a53c705-15e4-4f87-8796-457845605512" name="testPrimitiveType">
       <concept id="706089536801033580" name="testPrimitiveType.structure.TypeWithProperties" flags="ig" index="1tqsnt">
         <property id="706089536801035938" name="str" index="1tqtSj" />
         <property id="706089536801035944" name="num" index="1tqtSp" />
         <property id="706089536801035947" name="bool" index="1tqtSq" />
       </concept>
+    </language>
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
+        <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
+      </concept>
+      <concept id="4040588429969069898" name="jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression" flags="nn" index="3rNLEe" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -408,6 +420,18 @@
           <node concept="7OXhh" id="Bcyb5kJ5fT" role="7EUXB" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="2UguNb" id="6DW_AMABjI_">
+    <property role="TrG5h" value="Subtyping" />
+    <node concept="3rNLEe" id="6DW_AMABjIA" role="3ciXlA">
+      <property role="3rM5sR" value="8a53c705-15e4-4f87-8796-457845605512" />
+    </node>
+    <node concept="3rNLEe" id="6DW_AMABjII" role="3ciXlA">
+      <property role="3rM5sR" value="36a4d1c5-6ec1-426f-8192-1875a7cc48de" />
+    </node>
+    <node concept="3rNLEe" id="6DW_AMABjIR" role="3ciXlA">
+      <property role="3rM5sR" value="65611934-24fb-470c-813e-a9df6058b93a" />
     </node>
   </node>
 </model>
