@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="13,0,30,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.editor.EditorAspectDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:933d1e22-ea0a-4371-bd15-b8b35cbed7bd(jetbrains.mps.samples.customAspect.sampleLanguage.editor)/2897519568668509970">
+    <file name="DocumentedConcept_Editor.java">
+      <node id="2897519568668509970" at="14,79,15,61" concept="3" />
+      <node id="2897519568668509972" at="17,87,18,161" concept="2" />
+      <node id="2897519568668509972" at="18,161,19,46" concept="0" />
+      <node id="2897519568668509972" at="19,46,20,28" concept="0" />
+      <node id="2897519568668509972" at="20,28,21,79" concept="0" />
+      <node id="2897519568668509972" at="21,79,22,34" concept="0" />
+      <node id="2897519568668509972" at="22,34,23,22" concept="3" />
+      <node id="2897519568668509970" at="14,0,17,0" concept="1" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2897519568668509972" at="17,0,25,0" concept="1" trace="createConstant_lnbvr3_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="2897519568668509970" at="14,79,15,61" />
+      <scope id="2897519568668509970" at="14,0,17,0">
+        <var name="editorContext" id="2897519568668509970" />
+        <var name="node" id="2897519568668509970" />
+      </scope>
+      <scope id="2897519568668509972" at="17,87,23,22">
+        <var name="editorCell" id="2897519568668509972" />
+      </scope>
+      <scope id="2897519568668509972" at="17,0,25,0">
+        <var name="editorContext" id="2897519568668509972" />
+        <var name="node" id="2897519568668509972" />
+      </scope>
+      <unit id="2897519568668509970" at="13,0,26,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.editor.DocumentedConcept_Editor" />
+    </file>
+  </root>
+</debug-info>
 
