@@ -124,7 +124,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2uZcAeY8ZhT">
-    <property role="3GE5qa" value="refactoring" />
+    <property role="3GE5qa" value="refactoring.reference" />
     <ref role="1XX52x" to="gqi5:2uZcAeY8Z3v" resolve="ReflectionNodeReference" />
     <node concept="3EZMnI" id="2uZcAeY8ZS6" role="2wV5jI">
       <node concept="3F0ifn" id="2uZcAeY8ZS8" role="3EZMnx">
@@ -232,7 +232,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6szrkDocqD8">
-    <property role="3GE5qa" value="refactoring" />
+    <property role="3GE5qa" value="refactoring.reference" />
     <ref role="1XX52x" to="gqi5:6szrkDoc3tL" resolve="DirectNodeReference" />
     <node concept="3EZMnI" id="6szrkDocqDk" role="2wV5jI">
       <node concept="3F0ifn" id="6szrkDocqDl" role="3EZMnx">

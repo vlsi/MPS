@@ -11,10 +11,13 @@
       <unit at="10,0,20,0" name="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,44,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,42,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DirectNodeReference_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.DirectNodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="IMigrationUnit_BehaviorDescriptor.java">
+      <unit at="7,0,11,0" name="jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor" />
     </file>
     <file name="MigrationScriptReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MigrationScriptReference_BehaviorDescriptor" />
@@ -44,7 +47,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStepItem_BehaviorDescriptor" />
     </file>
     <file name="RefactoringStep_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_BehaviorDescriptor" />
     </file>
     <file name="ReflectionNodeReference_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_BehaviorDescriptor" />
@@ -116,6 +119,38 @@
         <var name="thisNode" id="2864063292004109234" />
       </scope>
       <unit id="2864063292004109234" at="13,0,44,0" name="jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/5168866961621042642">
+    <file name="IMigrationUnit_Behavior.java">
+      <node id="5168866961621042642" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5168866961621042644" at="8,43,8,43" />
+      <scope id="5168866961621042642" at="8,0,10,0">
+        <var name="thisNode" id="5168866961621042642" />
+      </scope>
+      <unit id="5168866961621042642" at="7,0,11,0" name="jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/5168866961621055280">
+    <file name="RefactoringStep_Behavior.java">
+      <node id="5168866961621055294" at="12,77,13,183" concept="3" />
+      <node id="5168866961621098047" at="15,82,16,171" concept="3" />
+      <node id="5168866961621055280" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5168866961621055280" at="12,0,15,0" concept="4" trace="virtual_fromVersion_5168866961621042645#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <node id="5168866961621055280" at="15,0,18,0" concept="4" trace="virtual_isVersionSet_5168866961621097742#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="5168866961621055282" at="10,43,10,43" />
+      <scope id="5168866961621055287" at="12,77,13,183" />
+      <scope id="5168866961621097815" at="15,82,16,171" />
+      <scope id="5168866961621055280" at="10,0,12,0">
+        <var name="thisNode" id="5168866961621055280" />
+      </scope>
+      <scope id="5168866961621055280" at="12,0,15,0">
+        <var name="thisNode" id="5168866961621055280" />
+      </scope>
+      <scope id="5168866961621055280" at="15,0,18,0">
+        <var name="thisNode" id="5168866961621055280" />
+      </scope>
+      <unit id="5168866961621055280" at="9,0,19,0" name="jetbrains.mps.lang.migration.util.behavior.RefactoringStep_Behavior" />
     </file>
   </root>
   <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/7431903976166009836">

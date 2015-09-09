@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -66,18 +67,19 @@ public class MigrationsCheckUtil {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script"));
       }
     }));
-    return result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))).where(new IWhereFilter<SNode>() {
+    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) < SPropertyOperations.getInteger(script, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
       }
     }));
+    return result;
   }
   public static Map<SNode, Collection<String>> checkMigrationsVersions(SModule module) {
     // check whether scripts are really migrations for some language 
     if (!(module instanceof Language)) {
       return Collections.emptyMap();
     }
-    SModel migModel = LanguageAspect.MIGRATION.get(((Language) module));
+    SModel migModel = LanguageAspect.MIGRATION.get((Language) module);
     if (migModel == null) {
       return Collections.emptyMap();
     }
@@ -85,13 +87,13 @@ public class MigrationsCheckUtil {
       return Collections.emptyMap();
     }
 
-    List<SNode> allScripts = SModelOperations.roots(migModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+    List<SNode> allScripts = SModelOperations.roots(migModel, MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
 
     // scripts with no versions set 
     final Map<SNode, Collection<String>> result = MapSequence.fromMap(new HashMap<SNode, Collection<String>>());
     Iterable<SNode> noVersionScripts = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(MigrationsCheckUtil.isVersionSet(it));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVersionSet_5168866961621097742", new Object[]{}));
       }
     });
     Sequence.fromIterable(noVersionScripts).visitAll(new IVisitor<SNode>() {
@@ -108,17 +110,17 @@ public class MigrationsCheckUtil {
 
     Iterable<SNode> scriptsWithVersions = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return MigrationsCheckUtil.isVersionSet(it);
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVersionSet_5168866961621097742", new Object[]{});
       }
     });
 
     final Map<Integer, Integer> versions = MapSequence.fromMap(new HashMap<Integer, Integer>());
     Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        if (MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) == null) {
-          MapSequence.fromMap(versions).put(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")), 0);
+        if (MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) == null) {
+          MapSequence.fromMap(versions).put(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}), 0);
         }
-        MapSequence.fromMap(versions).put(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")), MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) + 1);
+        MapSequence.fromMap(versions).put(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}), MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) + 1);
       }
     });
 
@@ -138,7 +140,7 @@ public class MigrationsCheckUtil {
     if (maxVersion != langVersion - 1) {
       Sequence.fromIterable(scriptsWithVersions).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) == maxVersion;
+          return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) == maxVersion;
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -151,15 +153,15 @@ public class MigrationsCheckUtil {
     Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         // multiple scripts for one version? 
-        if (MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) > 1) {
+        if (MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) > 1) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Multiple scripts for version " + SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) + " found");
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Multiple scripts for version " + BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) + " found");
         }
 
         // version with no scripts for it? 
-        if (SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) != minVersion && MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) - 1) == null) {
+        if (BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) != minVersion && MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) - 1) == null) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Missing script for version " + (SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) - 1));
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Missing script for version " + (BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) - 1));
         }
       }
     });
@@ -172,7 +174,4 @@ public class MigrationsCheckUtil {
     }
   }
 
-  private static boolean isVersionSet(SNode it) {
-    return it.getProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) != null;
-  }
 }

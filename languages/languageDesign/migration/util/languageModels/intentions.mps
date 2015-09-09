@@ -72,7 +72,7 @@
     </language>
   </registry>
   <node concept="2S6QgY" id="2GZlO$G5L8U">
-    <property role="3GE5qa" value="refactoring" />
+    <property role="3GE5qa" value="refactoring.reference" />
     <property role="TrG5h" value="MakeDirect" />
     <ref role="2ZfgGC" to="gqi5:2uZcAeY8Z3v" resolve="ReflectionNodeReference" />
     <node concept="2S6ZIM" id="2GZlO$G5L8V" role="2ZfVej">
@@ -134,7 +134,7 @@
     </node>
   </node>
   <node concept="2S6QgY" id="2GZlO$G5JhZ">
-    <property role="3GE5qa" value="refactoring" />
+    <property role="3GE5qa" value="refactoring.reference" />
     <property role="TrG5h" value="MakeUndirect" />
     <ref role="2ZfgGC" to="gqi5:6szrkDoc3tL" resolve="DirectNodeReference" />
     <node concept="2S6ZIM" id="2GZlO$G5Ji0" role="2ZfVej">
