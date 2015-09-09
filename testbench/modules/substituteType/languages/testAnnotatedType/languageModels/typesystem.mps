@@ -8,7 +8,6 @@
   </languages>
   <imports>
     <import index="tp5x" ref="r:c0db73ed-f604-44cb-9fd9-3e3424a144b7(testAnnotatedType.structure)" />
-    <import index="xj3y" ref="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)" />
     <import index="5myg" ref="r:7e57b061-76da-4008-a734-67f3e97231e2(testAnnotatedType.behavior)" implicit="true" />
   </imports>
   <registry>
