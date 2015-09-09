@@ -799,6 +799,17 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="ppUOJqaQ7D" role="3cqZAp">
+            <node concept="3cpWsn" id="ppUOJqaQ7E" role="3cpWs9">
+              <property role="TrG5h" value="source" />
+              <node concept="3uibUv" id="ppUOJqaR0a" role="1tU5fm">
+                <ref role="3uigEE" node="7CaZq42X0Ik" resolve="BoxFigure" />
+              </node>
+              <node concept="1rXfSq" id="ppUOJqaQ7F" role="33vP2m">
+                <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1ZQTqiP34h5" role="3cqZAp">
             <node concept="2OqwBi" id="1ZQTqiP34h6" role="3clFbG">
               <node concept="37vLTw" id="1ZQTqiP34h7" role="2Oq$k0">
@@ -810,8 +821,8 @@
                   <ref role="1Pybhc" to="sm7x:~Synchronizers" resolve="Synchronizers" />
                   <ref role="37wK5l" to="sm7x:~Synchronizers.forProperty(jetbrains.jetpad.model.property.ReadableProperty,java.lang.Runnable):jetbrains.jetpad.mapper.Synchronizer" resolve="forProperty" />
                   <node concept="2OqwBi" id="1ZQTqiPjFC9" role="37wK5m">
-                    <node concept="1rXfSq" id="1ZQTqiPjFWV" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7G" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                     <node concept="2OwXpG" id="1ZQTqiPjFCc" role="2OqNvi">
                       <ref role="2Oxat5" node="1ZQTqiP9XUz" resolve="figureWidth" />
@@ -824,8 +835,8 @@
                           <node concept="liA8E" id="1ZQTqiPjJaB" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjJvA" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7H" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -849,8 +860,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjGxW" role="2OqNvi">
                       <ref role="2Oxat5" node="1ZQTqiP9XUH" resolve="figureHeight" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjGQf" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7I" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="1bVj0M" id="1ZQTqiP34hN" role="37wK5m">
@@ -860,8 +871,8 @@
                           <node concept="liA8E" id="1ZQTqiPjK7$" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjKsz" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7J" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -885,8 +896,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjHre" role="2OqNvi">
                       <ref role="2Oxat5" node="7CaZq43bXmc" resolve="lineWidth" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjHyn" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7K" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="1bVj0M" id="1ZQTqiP34il" role="37wK5m">
@@ -896,8 +907,8 @@
                           <node concept="liA8E" id="1ZQTqiPjL4x" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjLpw" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7L" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -921,8 +932,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjI8W" role="2OqNvi">
                       <ref role="2Oxat5" node="7CaZq43bXmc" resolve="lineWidth" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjIlG" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7M" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="1ZQTqiP34iv" role="37wK5m">
@@ -930,8 +941,8 @@
                       <node concept="2OwXpG" id="1ZQTqiPjM1o" role="2OqNvi">
                         <ref role="2Oxat5" node="7CaZq432giM" resolve="myPolyLine" />
                       </node>
-                      <node concept="1rXfSq" id="1ZQTqiPjMlN" role="2Oq$k0">
-                        <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                      <node concept="37vLTw" id="ppUOJqaQ7N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                       </node>
                     </node>
                     <node concept="liA8E" id="1ZQTqiP34ix" role="2OqNvi">
@@ -1339,6 +1350,17 @@
                           <node concept="3clFbS" id="1ZQTqiPoK5p" role="3clF47">
                             <node concept="3clFbJ" id="1ZQTqiPoOlE" role="3cqZAp">
                               <node concept="3clFbS" id="1ZQTqiPoOlF" role="3clFbx">
+                                <node concept="3cpWs8" id="ppUOJqaS7h" role="3cqZAp">
+                                  <node concept="3cpWsn" id="ppUOJqaS7i" role="3cpWs9">
+                                    <property role="TrG5h" value="source" />
+                                    <node concept="3uibUv" id="ppUOJqaSgr" role="1tU5fm">
+                                      <ref role="3uigEE" node="HEilRNynZA" resolve="NamedBoxFigure" />
+                                    </node>
+                                    <node concept="1rXfSq" id="ppUOJqaS7j" role="33vP2m">
+                                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3clFbF" id="1ZQTqiPoQJf" role="3cqZAp">
                                   <node concept="37vLTI" id="1ZQTqiPoQRm" role="3clFbG">
                                     <node concept="37vLTw" id="1ZQTqiPoQJe" role="37vLTJ">
@@ -1346,8 +1368,8 @@
                                     </node>
                                     <node concept="2OqwBi" id="1ZQTqiPoRdu" role="37vLTx">
                                       <node concept="2OqwBi" id="1ZQTqiPoRdv" role="2Oq$k0">
-                                        <node concept="1rXfSq" id="1ZQTqiPoRdw" role="2Oq$k0">
-                                          <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                                        <node concept="37vLTw" id="ppUOJqaS7k" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="ppUOJqaS7i" resolve="source" />
                                         </node>
                                         <node concept="2OwXpG" id="1ZQTqiPoRdx" role="2OqNvi">
                                           <ref role="2Oxat5" node="4UC9Eb7y_Ae" resolve="myCell" />
