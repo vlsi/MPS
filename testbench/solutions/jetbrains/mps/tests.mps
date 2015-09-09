@@ -3949,30 +3949,6 @@
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
     </node>
   </node>
-  <node concept="lpD6F" id="1V0dlEgZt9s">
-    <node concept="2R4zua" id="1V0dlEgZt9t" role="2R4z3u">
-      <property role="2R4zub" value="testSubtypingTest" />
-      <property role="2R4zu8" value="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c" />
-    </node>
-    <node concept="lpD6D" id="1V0dlEgZt9u" role="lpD6w">
-      <ref role="lpD7u" to="tw7x:1NmRLF_DeDu" resolve="Subtyping" />
-    </node>
-    <node concept="lpD6D" id="1V0dlEgZt9x" role="lpD6w">
-      <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="5GF7bt500qz">
-    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
-      <property role="2R4zub" value="testSubstituteType" />
-      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
-    </node>
-    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
-      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
-    </node>
-    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
-      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
-    </node>
-  </node>
   <node concept="lpD6F" id="1lM6JtOM9Yh">
     <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
       <property role="2R4zub" value="tests.testDepViewer" />

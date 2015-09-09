@@ -59,8 +59,6 @@ import org.junit.runners.Suite;
     TestModule_jetbrains_mps_traceInfo_test.class,
     TestModule_jetbrains_mps_traceInfo_testWeaving.class,
     TestModule_jetbrains_mps_transformation_test_inputModels.class,
-    TestModule_testSubtypingTest.class,
-    TestModule_testSubstituteType.class
 })
 public class ModuleTestSuite extends TestSuite {
 }
