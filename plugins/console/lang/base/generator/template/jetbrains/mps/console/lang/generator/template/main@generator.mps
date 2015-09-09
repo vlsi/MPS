@@ -322,18 +322,6 @@
         <ref role="v9R2y" node="4Cd_ANvqxx0" resolve="reduce_BLCommand" />
       </node>
     </node>
-    <node concept="3aamgX" id="DM6_$iqXIs" role="3acgRq">
-      <ref role="30HIoZ" to="eynw:DM6_$iqV$8" resolve="ProjectExpression" />
-      <node concept="j$656" id="DM6_$iqXIt" role="1lVwrX">
-        <ref role="v9R2y" node="DM6_$iqXIq" resolve="reduce_ProjectExpression" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="3J6h25QOL64" role="3acgRq">
-      <ref role="30HIoZ" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
-      <node concept="j$656" id="3J6h25QOL65" role="1lVwrX">
-        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral" />
-      </node>
-    </node>
     <node concept="3lhOvk" id="4Cd_ANvqgEi" role="3lj3bC">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="eynw:1nVd0kvs_CG" resolve="ConsoleRoot" />
@@ -1717,6 +1705,21 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="DM6_$iqYli" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="bUwia" id="7J8iNvrrvn9">
+    <property role="TrG5h" value="project" />
+    <node concept="3aamgX" id="DM6_$iqXIs" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:DM6_$iqV$8" resolve="ProjectExpression" />
+      <node concept="j$656" id="DM6_$iqXIt" role="1lVwrX">
+        <ref role="v9R2y" node="DM6_$iqXIq" resolve="reduce_ProjectExpression" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="3J6h25QOL64" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
+      <node concept="j$656" id="3J6h25QOL65" role="1lVwrX">
+        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral" />
+      </node>
     </node>
   </node>
 </model>

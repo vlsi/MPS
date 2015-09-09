@@ -83,7 +83,7 @@
     <file name="ClassLikeMemberPlaceholderMenu.java">
       <node id="2736582054146226618" at="20,118,21,227" concept="7" />
       <node id="2736582054146578275" at="24,51,25,139" concept="7" />
-      <node id="2736582054146118137" at="27,146,28,43" concept="2" />
+      <node id="2736582054146118137" at="27,146,28,53" concept="2" />
       <node id="2736582054146118144" at="30,43,31,17" concept="7" />
       <node id="2736582054146118070" at="18,0,20,0" concept="1" trace="ClassLikeMemberPlaceholderMenu#()V" />
       <node id="2736582054146118074" at="20,0,23,0" concept="5" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
@@ -93,7 +93,7 @@
       <scope id="2736582054146118072" at="18,43,18,43" />
       <scope id="2736582054146118081" at="20,118,21,227" />
       <scope id="2736582054146578271" at="24,51,25,139" />
-      <scope id="2736582054146118111" at="27,146,28,43" />
+      <scope id="2736582054146118111" at="27,146,28,53" />
       <scope id="2736582054146118143" at="30,43,31,17" />
       <scope id="2736582054146118070" at="18,0,20,0" />
       <scope id="2736582054146118074" at="20,0,23,0">

@@ -24,8 +24,8 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
     <import index="n1o" ref="r:74b3d011-b0fb-4dc0-ae17-fdfbde0e6086(jetbrains.mps.baseLanguage.lightweightdsl.util)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -1720,8 +1720,15 @@
           <node concept="2YIFZM" id="2nUiI4k5D8o" role="3clFbG">
             <ref role="37wK5l" node="7ay_HjIOS_B" resolve="substitutePlaceholder" />
             <ref role="1Pybhc" node="7ay_HjIOS_a" resolve="EditorUtil" />
-            <node concept="37vLTw" id="2nUiI4k5D7V" role="37wK5m">
-              <ref role="3cqZAo" node="2nUiI4k5D7n" resolve="node" />
+            <node concept="1eOMI4" id="2PfKZjjQYFR" role="37wK5m">
+              <node concept="10QFUN" id="2PfKZjjQYFS" role="1eOMHV">
+                <node concept="37vLTw" id="2PfKZjjQYFQ" role="10QFUP">
+                  <ref role="3cqZAo" node="2nUiI4k5D7n" resolve="node" />
+                </node>
+                <node concept="3Tqbb2" id="2PfKZjjQYFP" role="10QFUM">
+                  <ref role="ehGHo" to="oubp:5BD$AU43nQM" resolve="MemberPlaceholder" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

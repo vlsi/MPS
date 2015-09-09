@@ -4,6 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -162,6 +163,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -473,7 +475,10 @@
                 </node>
                 <node concept="v3k3i" id="2WSWNq1TKXZ" role="2OqNvi">
                   <node concept="25Kdxt" id="5u1dFJQHQ48" role="v3oSu">
-                    <node concept="otxO1" id="5u1dFJQHQeb" role="25KhWn" />
+                    <node concept="2OqwBi" id="2PfKZjjQYbL" role="25KhWn">
+                      <node concept="otxO1" id="5u1dFJQHQeb" role="2Oq$k0" />
+                      <node concept="1rGIog" id="2PfKZjjQYpm" role="2OqNvi" />
+                    </node>
                   </node>
                 </node>
               </node>
