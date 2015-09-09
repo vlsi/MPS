@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 
 public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
@@ -44,5 +47,23 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
   @Override
   public String toString(Object object) {
     return object.toString();
+  }
+
+  @Nullable
+  @Override
+  public Object getDefaultValue() {
+    switch (type) {
+      case SPrimitiveDataType.INT:
+        return 0;
+      case SPrimitiveDataType.BOOL:
+        return false;
+      default:
+        return "";
+    }
+  }
+
+  @Override
+  public boolean isAssignableFrom(@NotNull SAbstractType another) {
+    return false;
   }
 }

@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour.api;
 
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Must be used instead of {@link BehaviorDescriptor}
+ * Must be used instead of {@link jetbrains.mps.smodel.runtime.BehaviorDescriptor}
  * @since 9.07.15
  */
 public interface BHDescriptor {
@@ -39,7 +39,7 @@ public interface BHDescriptor {
   @NotNull SAbstractConcept getConcept();
 
   class BHMethodNotFoundException extends RuntimeException {
-    public BHMethodNotFoundException(@NotNull SMethod<?> method) {
+    public BHMethodNotFoundException(@NotNull SMethod method) {
       super("The method '" + method + "' could not be found");
     }
 

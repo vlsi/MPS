@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,23 +33,29 @@ import java.util.concurrent.ConcurrentMap;
  * When the usual C3 algorithm fails our algorithm try to abandon the local order and preserve only super linearization.
  * If that is not possible we pick up the first concept from the first super linearization.
  */
-public final class C3StarLinearization {
+public final class C3StarMethodResolutionOrder implements CachingMethodResolutionOrder {
   private ConcurrentMap<SAbstractConcept, List<SAbstractConcept>> myCache = new ConcurrentHashMap<SAbstractConcept, List<SAbstractConcept>>();
 
-  public List<SAbstractConcept> count(@NotNull SAbstractConcept concept) {
+  @Override
+  public List<SAbstractConcept> linearize(@NotNull SAbstractConcept concept) {
     if (myCache.containsKey(concept)) {
       return new ArrayList<SAbstractConcept>(myCache.get(concept));
     }
     List<List<SAbstractConcept>> superLinearizations = new ArrayList<List<SAbstractConcept>>();
     List<SAbstractConcept> immediateParents = getImmediateParents(concept);
     for (SAbstractConcept parent : immediateParents) {
-      superLinearizations.add(new C3StarLinearization().count(parent));
+      superLinearizations.add(new C3StarMethodResolutionOrder().linearize(parent));
     }
     List<SAbstractConcept> linearization = new ArrayList<SAbstractConcept>();
     linearization.add(concept);
     linearization.addAll(merge(new MergingHelper<SAbstractConcept>(immediateParents, superLinearizations)));
     myCache.putIfAbsent(concept, linearization);
     return new ArrayList<SAbstractConcept>(linearization);
+  }
+
+  @Override
+  public void reset() {
+    myCache.clear();
   }
 
   private List<SAbstractConcept> merge(MergingHelper<SAbstractConcept> helper) {
@@ -64,10 +70,6 @@ public final class C3StarLinearization {
       }
     }
     return result;
-  }
-
-  public void clear() {
-    myCache.clear();
   }
 
   private static class MergingHelper<T> implements Iterable<List<T>> {
@@ -164,15 +166,6 @@ public final class C3StarLinearization {
 
   }
 
-  private static enum KeepingLocalOrder {
-    KEEPING_LOCAL_ORDER,
-    NOT_KEEPING_LOCAL_ORDER;
-
-    public boolean preserveOrder() {
-      return this == KEEPING_LOCAL_ORDER;
-    }
-  }
-
   @NotNull
   private List<SAbstractConcept> getImmediateParents(SAbstractConcept concept) {
     List<SAbstractConcept> immediateParents = new ArrayList<SAbstractConcept>();
@@ -190,5 +183,14 @@ public final class C3StarLinearization {
       }
     }
     return immediateParents;
+  }
+
+  private static enum KeepingLocalOrder {
+    KEEPING_LOCAL_ORDER,
+    NOT_KEEPING_LOCAL_ORDER;
+    public boolean preserveOrder() {
+      return this == KEEPING_LOCAL_ORDER;
+    }
+
   }
 }

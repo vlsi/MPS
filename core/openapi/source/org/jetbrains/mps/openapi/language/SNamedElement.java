@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,10 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * Represents a simple data type: can be either a {@link org.jetbrains.mps.openapi.language.SPrimitiveDataType}
- * or a {@link org.jetbrains.mps.openapi.language.SEnumeration}
- * Data types need to be able to save to and load from strings.
+ * A named meta-object
+ *
+ * Created by apyshkin on 07/09/15.
  */
-public interface SDataType extends SAbstractType {
-  Object fromString(String value);
-
-  String toString(Object value);
+public interface SNamedElement {
+  String getName();
 }

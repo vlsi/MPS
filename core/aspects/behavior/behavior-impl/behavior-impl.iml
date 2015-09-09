@@ -12,5 +12,8 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="smodel" />
+    <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="behavior-runtime" />
+    <orderEntry type="module" module-name="kernel" />
   </component>
 </module>

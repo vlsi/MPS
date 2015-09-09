@@ -13,38 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter.structure.concept;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SParameter;
 
-/**
- * Fixme implementation of SAbstractType methods
- */
-public class SDataTypeAdapter implements SDataType {
-  public SDataTypeAdapter() {
+public class SParameterImpl implements SParameter {
+  private final String myName;
+  private final SAbstractType myParamType;
+
+  public SParameterImpl(String name, @NotNull SAbstractType paramType) {
+    myName = name;
+    myParamType = paramType;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractType getType() {
+    return myParamType;
   }
 
   @Override
-  public Object fromString(String string) {
-    return string;
-  }
-
-  @Override
-  public String toString(Object object) {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public Object getDefaultValue() {
-    return null;
-  }
-
-  @Override
-  public boolean isAssignableFrom(@NotNull SAbstractType another) {
-    return false;
+  public String getName() {
+    return myName;
   }
 }

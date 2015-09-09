@@ -13,46 +13,52 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * API for the generated behavior code. Intended to replace {@link BehaviorReflection} calls
+ * Behavior Facade.
+ * API for the generated behavior code. Intended to replace {@link jetbrains.mps.smodel.behaviour.BehaviorReflection} calls
  *
  * Created by apyshkin on 7/15/15.
  */
-public final class BHInvoker {
+public final class BHFacade {
   // null-safe public API
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     SAbstractConcept concept = method.getConcept();
     if (node != null && !node.getConcept().isSubConceptOf(concept)) {
-      return DefaultValuesHolder.defaultValue(method.getReturnType());
+      return (T) method.getReturnType().getDefaultValue();
+//      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
-    return BHInvoker.invokeSpecial0(node, method, parameters);
+    return BHFacade.invokeSpecial0(node, method, parameters);
   }
 
   public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (node == null) {
-      return DefaultValuesHolder.defaultValue(method.getReturnType());
+//      return DefaultValuesHolder.defaultValue(method.getReturnType());
+      return (T) method.getReturnType().getDefaultValue();
     }
-    return BHInvoker.invoke0(node, method, parameters);
+    return BHFacade.invoke0(node, method, parameters);
   }
 
-  public static <T> T invoke(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  public static <T> T invokeStatic(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     if (concept == null) {
-      return DefaultValuesHolder.defaultValue(method.getReturnType());
+      return (T) method.getReturnType().getDefaultValue();
+//      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
-    return BHInvoker.invoke0(concept, method, parameters);
+    return BHFacade.invoke0(concept, method, parameters);
   }
 
   @NotNull
   private static BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
-    return ConceptRegistry.getInstance().getBHDescriptor(concept);
+    return ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(concept);
   }
 
   private static <T> T invokeSpecial0(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {

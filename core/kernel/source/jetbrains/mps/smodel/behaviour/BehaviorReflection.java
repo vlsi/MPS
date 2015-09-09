@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.DefaultValuesHolder;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Obsolete API for the generated behavior calls
  * @deprecated
- * @see BHInvoker
+ * @see BHFacade
  */
 @ToRemove(version = 3.3)
 @Deprecated

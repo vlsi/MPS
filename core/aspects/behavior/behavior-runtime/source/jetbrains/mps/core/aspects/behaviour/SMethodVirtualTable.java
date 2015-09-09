@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SMethod;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +29,8 @@ import java.util.Map.Entry;
  *
  * Created by apyshkin on 28/07/15.
  */
-public final class BHVirtualMethodTable {
-  private final Map<SMethod<?>, BaseBHDescriptor> myTable = new HashMap<SMethod<?>, BaseBHDescriptor>();
+public final class SMethodVirtualTable {
+  private final Map<SMethod, BaseBHDescriptor> myTable = new HashMap<SMethod, BaseBHDescriptor>();
 
   public void put(@NotNull SMethod<?> method, @NotNull BaseBHDescriptor descriptor) {
     if (!method.isVirtual()) {
@@ -41,21 +42,13 @@ public final class BHVirtualMethodTable {
     }
   }
 
-  public void putAllVirtual(@NotNull Iterable<SMethod<?>> methods, @NotNull BaseBHDescriptor descriptor) {
-    for (SMethod<?> method : methods) {
-      if (method.isVirtual()) {
-        put(method, descriptor);
-      }
-    }
-  }
-
   /**
    * @param method -- method must be virtual;
    * @return corresponding BHDescriptor or null if the virtual table does not contain the method
    */
   @Nullable
-  public Entry<SMethod<?>, BaseBHDescriptor> get(@NotNull SMethod<?> method) {
-    for (Entry<SMethod<?>, BaseBHDescriptor> methodEntry : myTable.entrySet()) {
+  public Entry<SMethod, BaseBHDescriptor> get(@NotNull SMethod method) {
+    for (Entry<SMethod, BaseBHDescriptor> methodEntry : myTable.entrySet()) {
       if (sameVirtualMethods(methodEntry.getKey(), method)) {
         return methodEntry;
       }
@@ -63,13 +56,8 @@ public final class BHVirtualMethodTable {
     return null;
   }
 
-  private static <T1, T2> boolean sameVirtualMethods(SMethod<T1> method1, SMethod<T2> method2) {
-    return getBaseMethod(method1).equals(getBaseMethod(method2));
+  private static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {
+    return method1.isOverrideOf(method2) || method2.isOverrideOf(method1);
   }
 
-  @NotNull
-  private static <T> SMethod<T> getBaseMethod(@NotNull SMethod<T> method) {
-    SMethod<T> baseMethod = method.getBaseMethod();
-    return baseMethod == null ? method : baseMethod;
-  }
 }

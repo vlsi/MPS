@@ -27,12 +27,7 @@ import java.util.Collection;
  * SConcept (and SAbstractConcept) can be obtained by their ids from SConceptRepository.
  * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
-public interface SAbstractConcept {
-  /**
-   * The user visible name of the concept
-   */
-  String getName();
-
+public interface SAbstractConcept extends SNamedElement {
   /**
    * The language that defines the concept
    */

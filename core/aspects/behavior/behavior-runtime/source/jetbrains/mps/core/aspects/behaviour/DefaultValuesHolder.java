@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -21,9 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Default value mapper for java return type
+ *
  * Created by apyshkin on 7/15/15.
  */
-final class DefaultValuesHolder {
+public final class DefaultValuesHolder {
   private static final Map<Class, Object> DEFAULT_VALUE = new HashMap<Class, Object>();
 
   static {

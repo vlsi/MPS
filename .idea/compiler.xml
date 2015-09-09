@@ -640,6 +640,22 @@
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/lightweightdsl/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/customAspect/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/customAspect/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/languages/jetbrains.mps.samples.SwingBuilder/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/solutions/jetbrains.mps.samples.LightweightDSL.plugin/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/lightweightDSL/solutions/jetbrains.mps.samples.LightweightDSL.plugin/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/MultiTarget/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetBL/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetBL/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetXML/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/multiTarget/languages/jetbrains.mps.samples.TargetXML/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

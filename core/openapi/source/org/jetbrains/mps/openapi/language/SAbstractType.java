@@ -13,33 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package org.jetbrains.mps.openapi.language;
 
-import java.lang.reflect.Modifier;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Access privileges in the behavior language.
+ * Represents a type abstraction in MPS
  */
-public enum AccessPrivileges {
-  PRIVATE,
-  PACKAGE,
-  PROTECTED,
-  PUBLIC;
+public interface SAbstractType {
 
-  public static AccessPrivileges fromModifiers(Integer modifier) {
-    if (Modifier.isPrivate(modifier)) {
-      return PRIVATE;
-    } else if (Modifier.isProtected(modifier)) {
-      return PROTECTED;
-    } else if (Modifier.isPublic(modifier)) {
-      return PUBLIC;
-    } else {
-      return PACKAGE;
-    }
-  }
+  /**
+   * every type must define its own default value
+   * @return the default value
+   */
+  @Nullable Object getDefaultValue();
 
-  @Override
-  public String toString() {
-    return super.toString().substring(0, 3);
-  }
+  /**
+   * @param another -- another type
+   * @return true iff objects of the type could be assigned to object of this type
+   *
+   * @see java.lang.Class#isAssignableFrom(Class)
+   */
+  boolean isAssignableFrom(@NotNull SAbstractType another);
 }

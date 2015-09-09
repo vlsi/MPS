@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.core.aspects.behaviour.BHDescriptorLegacyAdapter;
+import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter;
+import jetbrains.mps.core.aspects.behaviour.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BHDescriptor;
-import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
-import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
-import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
-import jetbrains.mps.smodel.behaviour.C3StarLinearization;
-import jetbrains.mps.smodel.language.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -36,10 +34,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.UniqueIterator;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -65,12 +60,12 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 
   public BaseBehaviorDescriptor(@NotNull SAbstractConcept concept) {
     myConcept = concept;
-    myAncestors = getBehaviorRegistry().getLinearization().count(concept);
+    myAncestors = getBehaviorRegistry().getMRO().linearize(concept);
   }
 
   public BaseBehaviorDescriptor(String conceptFqName) {
     myConcept = getConcept(conceptFqName);
-    myAncestors = getBehaviorRegistry().getLinearization().count(myConcept);
+    myAncestors = getBehaviorRegistry().getMRO().linearize(myConcept);
   }
 
   private BehaviorRegistry getBehaviorRegistry() {
@@ -100,7 +95,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       throw new IllegalArgumentException("initNode on null node");
     }
 
-    genericInvoke(NodeOrConcept.create(node), BehaviorDescriptor.CONSTUCTOR_METHOD, new Object[0]);
+    genericInvoke(NodeOrConcept.create(node), BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME, new Object[0]);
   }
 
   public static String behaviorClassByConceptFqName(@NotNull String fqName) {
@@ -127,15 +122,15 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 
   /**
    * adding this functionality in order to have {@link jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor}
-   * and {@link jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
+   * and {@link jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
    */
-  protected Object genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
+  protected <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
     for (SAbstractConcept ancestor : myAncestors) {
-      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBHDescriptor(ancestor);
+      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
         InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
         if (legacyDescriptor.hasOwnMethod(methodName)) {
-          return legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
+          return (T) legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
         }
       } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
         BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
@@ -146,7 +141,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
         boolean isStatic = (nodeOrConcept.getNode() == null);
         if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters, isStatic)) {
-          return behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
+          return (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
         }
       }
     }

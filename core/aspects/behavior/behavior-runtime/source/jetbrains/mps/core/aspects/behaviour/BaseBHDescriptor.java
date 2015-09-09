@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -47,19 +47,24 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private SAbstractConcept myConcept;
   private volatile boolean myInitialized = false;
-  private final BHVirtualMethodTable myVTable = new BHVirtualMethodTable();
+  private final SMethodVirtualTable myVTable = new SMethodVirtualTable();
+  private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
   private ConstructionHandler myConstructionHandler;
 
+  protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
+    myBehaviorRegistry = behaviorRegistry;
+  }
+
   /**
    * Intended to be executed during concept behavior construction
-   * @see jetbrains.mps.smodel.language.BehaviorRegistry#getBHDescriptor
+   * @see BehaviorRegistry#getBHDescriptor
    */
   public synchronized void init() {
     if (!myInitialized) {
       myConcept = getConcept();
-      myAncestorCache = new AncestorCache(myConcept);
-      myConstructionHandler = new ConstructionHandler(myConcept, myAncestorCache);
+      myAncestorCache = new AncestorCache(myConcept, myBehaviorRegistry);
+      myConstructionHandler = new ConstructionHandler(myAncestorCache, myConcept);
       initVirtualTable();
       myInitialized = true;
     }
@@ -84,8 +89,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   /**
    * register each SMethod in the VTable (if not yet registered)
    **/
-  private void fillVirtualTable(@NotNull BHVirtualMethodTable tableToFill) {
-    tableToFill.putAllVirtual(getOwnMethods(), this);
+  private void fillVirtualTable(@NotNull SMethodVirtualTable tableToFill) {
+    for (SMethod method : getOwnMethods()) {
+      if (method.isVirtual()) {
+        tableToFill.put(method, this);
+      }
+    }
   }
 
   @NotNull
@@ -93,7 +102,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     if (concept.equals(myConcept)) {
       return this;
     }
-    return ConceptRegistry.getInstance().getBHDescriptor(concept);
+    return myBehaviorRegistry.getBHDescriptor(concept);
   }
 
   @Override
@@ -102,14 +111,14 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     checkForNPE(node, method);
     checkParameters(method, parameters);
 
-    if (method == SMethod.INIT) {
+    if (method == SMethodImpl.INIT) {
       assert node != null;
       myConstructionHandler.initNode(node);
       return null;
     } else if (method.isVirtual()) {
       return invokeVirtual(node, method, parameters);
     } else {
-      if (method.getMethodModifiers().getAccessPrivileges() == AccessPrivileges.PRIVATE) {
+      if (((SMethodImpl) method).getMethodModifiers().getAccessPrivileges() == AccessPrivileges.PRIVATE) {
         return invokeOwn(node, method, parameters);
       }
       return invokeSpecial(node, method, parameters);
@@ -117,19 +126,19 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> void checkForNPE(SNode node, SMethod<T> method) {
-    if (node == null && !method.getMethodModifiers().isStatic()) {
+    if (node == null && !method.isStatic()) {
       throw new BHNullPointerException();
     }
   }
 
   private <T> void checkParameters(SMethod<T> method, Object[] parameters) {
-    if (method.getParameterTypes().length != parameters.length) {
+    if (method.getParameters().size() != parameters.length) {
       throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
     }
-    Class<?>[] parameterTypes = method.getParameterTypes();
-    for (int i = 0; i < parameterTypes.length; ++i) {
-      if (!parameterTypes[i].isAssignableFrom(parameters[i].getClass())) {
-        throw new BHArgumentsDoNotMatch(parameters, parameterTypes, i);
+    List<SParameter> sParameters = method.getParameters();
+    for (int i = 0; i < sParameters.size(); ++i) {
+      if (!sParameters.get(i).getType().isAssignableFrom(new SJavaCompoundTypeImpl(parameters[i].getClass()))) {
+        throw new BHArgumentsDoNotMatch(parameters, sParameters, i);
       }
     }
   }
@@ -152,12 +161,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    Entry<SMethod<?>, BaseBHDescriptor> methodDescriptor = myVTable.get(method);
+    Entry<SMethod, BaseBHDescriptor> methodDescriptor = myVTable.get(method);
     if (methodDescriptor == null) {
       throw new BHMethodNotFoundException(method);
     }
     BaseBHDescriptor bhDescriptor = methodDescriptor.getValue();
-    method = (SMethod<T>) methodDescriptor.getKey();
+    method = methodDescriptor.getKey();
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
 
@@ -166,7 +175,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * NB: must be fast
    **/
   @NotNull
-  protected abstract List<SMethod<?>> getOwnMethods();
+  protected abstract List<SMethod> getOwnMethods();
 
   /**
    * invokes a method without dynamic resolution
@@ -187,58 +196,34 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return getConcept() + " BHDescriptor";
   }
 
-  private class ConstructionHandler {
+  public class ConstructionHandler {
     private final Set<SNode> myConstructed = new WeakSet<SNode>();
-    private final SAbstractConcept myConcept;
     private final AncestorCache myAncestorCache;
+    private final SAbstractConcept myConcept;
 
-    public ConstructionHandler(SAbstractConcept concept, AncestorCache ancestorCache) {
-      myConcept = concept;
+    public ConstructionHandler(AncestorCache ancestorCache, SAbstractConcept concept) {
       myAncestorCache = ancestorCache;
+      myConcept = concept;
     }
 
     public void initNode(@NotNull SNode node) {
       assert myConcept.equals(node.getConcept());
       if (myConstructed.contains(node)) {
-        throw new AlreadyConstructedException();
+        throw new AlreadyConstructedException(node);
       }
       for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
         BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
         if (ancestorDescriptor instanceof BaseBHDescriptor) {
-          ((BaseBHDescriptor) ancestorDescriptor).invokeOwn(node, SMethod.INIT);
+          ((BaseBHDescriptor) ancestorDescriptor).invokeOwn(node, SMethodImpl.INIT);
         }
       }
       myConstructed.add(node);
     }
 
     private class AlreadyConstructedException extends RuntimeException {
-    }
-  }
-
-  private static class AncestorCache {
-    private final SAbstractConcept myConcept;
-
-    private final List<SAbstractConcept> myLinearization;
-    private final List<SAbstractConcept> myConstructorAncestors;
-
-    public AncestorCache(@NotNull SAbstractConcept concept) {
-      myConcept = concept;
-      myLinearization = ConceptRegistry.getInstance().getBehaviorRegistry().getLinearization().count(concept);
-      myConstructorAncestors = calcConstructorAncestors();
-    }
-
-    private List<SAbstractConcept> calcConstructorAncestors() {
-      List<SAbstractConcept> constructorAncestors = new ArrayList<SAbstractConcept>(myLinearization);
-      Collections.reverse(constructorAncestors);
-      return Collections.unmodifiableList(constructorAncestors);
-    }
-
-    public List<SAbstractConcept> getAncestorsConstructionOrder() {
-      return myConstructorAncestors;
-    }
-
-    public List<SAbstractConcept> getAncestorsVirtualInvocationOrder() {
-      return Collections.unmodifiableList(myLinearization);
+      public AlreadyConstructedException(SNode node) {
+        super("Node has been constructed more than once : " + node.getPresentation());
+      }
     }
   }
 
@@ -246,14 +231,14 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
-    public BHMethodArgumentsCountDoNotMatch(SMethod<?> method, int length) {
-      super("Method " + method + " has " + method.getParameterTypes().length + " parameters in the declaration while " + length + " have been passed");
+    public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
+      super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
     }
   }
 
   private class BHArgumentsDoNotMatch extends RuntimeException {
-    public BHArgumentsDoNotMatch(Object[] parameters, Class<?>[] parameterTypes, int i) {
-      super(parameters[i] + " does not match " + parameterTypes[i]);
+    public BHArgumentsDoNotMatch(Object[] parameters, List<SParameter> sParameters, int i) {
+      super(parameters[i] + " does not match " + sParameters.get(i));
     }
   }
 
@@ -261,6 +246,5 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     public BHNotInitializedException(SAbstractConcept concept) {
       super("Behavior descriptor has not been initialized; concept :  " + concept);
     }
-
   }
 }

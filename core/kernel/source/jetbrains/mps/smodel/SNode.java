@@ -66,6 +66,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SConcept myConcept; //todo make final after 3.2
   private SNode parent;
   /**
+   * true iff a constructor was called for this node
+   */
+  private boolean myConstructed = false;
+  /**
    * access only in firstChild()/firstChildInRole(role)
    */
   private SNode first;
@@ -79,6 +83,18 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
     myConcept = concept;
     myId = id;
+  }
+
+  /**
+   * called from behavior
+   */
+  void onConstructed() {
+    if (myConstructed) {
+
+    }
+  }
+
+  private class AlreadyConstructedException extends RuntimeException {
   }
 
   @NotNull

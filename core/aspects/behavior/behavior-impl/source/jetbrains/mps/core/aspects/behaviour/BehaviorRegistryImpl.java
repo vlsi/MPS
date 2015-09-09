@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.language;
+package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.behaviour.BHDescriptor;
-import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
-import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
+import jetbrains.mps.smodel.language.ConceptInLoadingStorage;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorDescriptorAdapter;
-import jetbrains.mps.smodel.behaviour.C3StarLinearization;
-import jetbrains.mps.smodel.behaviour.EmptyBHDescriptor;
-import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
@@ -46,22 +45,24 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * Created by apyshkin on 7/15/15.
  */
-public class BehaviorRegistry implements CoreAspectRegistry {
-  private static final Logger LOG = LogManager.getLogger(BehaviorRegistry.class);
+public class BehaviorRegistryImpl implements BehaviorRegistry {
+  private static final Logger LOG = LogManager.getLogger(BehaviorRegistryImpl.class);
 
-  private final C3StarLinearization myLinearization = new C3StarLinearization();
+  private final CachingMethodResolutionOrder myMRO = new C3StarMethodResolutionOrder();
   private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
   private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
-  public BehaviorRegistry(LanguageRegistry languageRegistry) {
+  public BehaviorRegistryImpl(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
   }
 
-  public C3StarLinearization getLinearization() {
-    return myLinearization;
+  @Override
+  @NotNull
+  public MethodResolutionOrder getMRO() {
+    return myMRO;
   }
 
   @NotNull
@@ -92,6 +93,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
     }
   }
 
+  @Override
   @NotNull
   public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
     BHDescriptor descriptor = myBHDescriptors.get(concept);
@@ -121,7 +123,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
             descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(conceptId);
             if (descriptor == null) {
               // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
-              descriptor = new EmptyBHDescriptor(concept);
+              descriptor = new EmptyBHDescriptor(this, concept);
             }
           } else {
             descriptor = fallbackToInterpretedLegacy(concept);
@@ -169,7 +171,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   private BHDescriptor fallbackToInterpretedLegacy(@NotNull SAbstractConcept concept) {
     BehaviorDescriptor legacyBehaviorDescriptor = getLegacyBehaviorDescriptor(concept.getQualifiedName());
     if (legacyBehaviorDescriptor instanceof InterpretedBehaviorDescriptor) {
-      return new BHDescriptorLegacyAdapter((InterpretedBehaviorDescriptor) legacyBehaviorDescriptor);
+      return new BHDescriptorLegacyAdapter(this, (InterpretedBehaviorDescriptor) legacyBehaviorDescriptor);
     } else {
       return new IllegalBHDescriptor(concept);
     }
@@ -179,6 +181,6 @@ public class BehaviorRegistry implements CoreAspectRegistry {
   public void clear() {
     myBHDescriptors.clear();
     myLegacyBehaviorDescriptors.clear();
-    myLinearization.clear();
+    myMRO.reset();
   }
 }

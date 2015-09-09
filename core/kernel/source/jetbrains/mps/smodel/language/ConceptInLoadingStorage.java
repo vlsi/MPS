@@ -36,7 +36,7 @@ import java.util.concurrent.ConcurrentMap;
  *
  * Created by apyshkin on 7/15/15.
  */
-final class ConceptInLoadingStorage<T> {
+public final class ConceptInLoadingStorage<T> {
   private final ThreadLocal<Set<T>> mySet = new ThreadLocal<Set<T>>() {
     @Override
     protected Set<T> initialValue() {

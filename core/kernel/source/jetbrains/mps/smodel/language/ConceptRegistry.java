@@ -16,8 +16,9 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.core.aspects.behaviour.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.BehaviorRegistryImpl;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.behaviour.BHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -42,7 +43,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   public ConceptRegistry(@NotNull LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
     myStructureRegistry = new StructureRegistry(languageRegistry);
-    myBehaviorRegistry = new BehaviorRegistry(languageRegistry);
+    myBehaviorRegistry = new BehaviorRegistryImpl(languageRegistry);
     myConstraintsRegistry = new ConstraintsRegistry(languageRegistry);
   }
 
@@ -52,6 +53,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return INSTANCE;
   }
 
+  /**
+   * @deprecated use
+   */
   public BehaviorRegistry getBehaviorRegistry() {
     return myBehaviorRegistry;
   }
@@ -92,18 +96,13 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @ToRemove(version = 3.3)
   @Deprecated
   public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
-    return myBehaviorRegistry.getBehaviorDescriptor(fqName);
+    return ((BehaviorRegistryImpl) myBehaviorRegistry).getBehaviorDescriptor(fqName);
   }
 
   @ToRemove(version = 3.3)
   @Deprecated
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
-    return myBehaviorRegistry.getBehaviorDescriptorForInstanceNode(node);
-  }
-
-  @NotNull
-  public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
-    return myBehaviorRegistry.getBHDescriptor(concept);
+    return ((BehaviorRegistryImpl) myBehaviorRegistry).getBehaviorDescriptorForInstanceNode(node);
   }
 
   @NotNull

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Member of a concept, named.
  */
-public interface SConceptFeature {
+public interface SConceptFeature extends SNamedElement {
   /**
    * Return the concept that contains the declaration of this concept feature.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
@@ -44,5 +44,6 @@ public interface SConceptFeature {
    * @return name of the member
    */
   @NotNull
+  @Override
   String getName();
 }

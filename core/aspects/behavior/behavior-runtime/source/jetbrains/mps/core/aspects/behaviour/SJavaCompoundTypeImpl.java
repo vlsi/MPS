@@ -13,38 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter.structure.concept;
+package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.smodel.impl.SConceptType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Fixme implementation of SAbstractType methods
+ * A type backed by java class.
+ *
  */
-public class SDataTypeAdapter implements SDataType {
-  public SDataTypeAdapter() {
-  }
+class SJavaCompoundTypeImpl implements SJavaCompoundType {
+  private final Class<?> myType;
 
-  @Override
-  public Object fromString(String string) {
-    return string;
-  }
-
-  @Override
-  public String toString(Object object) {
-    return null;
+  public SJavaCompoundTypeImpl(Class<?> type) {
+    myType = type;
   }
 
   @Nullable
   @Override
   public Object getDefaultValue() {
-    return null;
+    return DefaultValuesHolder.defaultValue(myType);
   }
 
   @Override
   public boolean isAssignableFrom(@NotNull SAbstractType another) {
+    if (another instanceof SJavaCompoundType) {
+      return myType.isAssignableFrom(((SJavaCompoundType) another).getJavaType());
+    } else if (another instanceof SConceptType) {
+      return myType.isAssignableFrom(SNode.class);
+    }
     return false;
+  }
+
+  @NotNull
+  @Override
+  public Class<?> getJavaType() {
+    return myType;
   }
 }

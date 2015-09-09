@@ -13,22 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.impl.SVoidType;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SParameter;
+import org.jetbrains.mps.openapi.language.SThrowable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * SMethod is a behavior method handle abstraction.
- * @param <T> -- the method return type
  *
  *           NOTES:
  *           We need baseName___* format for the name field to support the identically named behavior methods.
@@ -60,39 +65,40 @@ import java.util.Arrays;
  * it might be possible to resolve two overriding methods by name.
  */
 @Immutable
-public final class SMethod<T> implements SConceptFeature {
+public final class SMethodImpl<T> implements SMethod<T> {
   private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
+  public static final SMethod<Void> INIT = SMethodImpl.create(DEFAULT_CONSTRUCTOR_NAME, SMethodModifiers.DEFAULT, new SVoidType(),
+      SNodeUtil.concept_BaseConcept, null, new ArrayList<SParameter>());
   private static final String METHOD_NAME_ID_SEPARATOR ="___";
   private static final int DEFAULT_MOD_FOR_HASHCODE = 31;
-  public static final SMethod<Void> INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.DEFAULT, Void.class, SNodeUtil.concept_BaseConcept, null);
 
   private final String myName;
-  private final BHMethodModifiers myMethodModifiers;
-  private final Class<T> myReturnType;
+  private final SMethodModifiers myMethodModifiers;
+  private final SAbstractType myReturnType;
   private final SAbstractConcept myConcept;
-  @Deprecated private final SMethod<T> myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
-  private final Class<?>[] myParameterTypes;
+  @Deprecated private final SMethod myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
+  private final List<SParameter> myParameters;
 
-  private SMethod(@NotNull String name,
-      @NotNull BHMethodModifiers modifiers,
-      Class<T> returnType,
+  private SMethodImpl(@NotNull String name,
+      @NotNull SMethodModifiers modifiers,
+      SAbstractType returnType,
       @NotNull SAbstractConcept concept,
-      @Nullable SMethod<T> baseMethod,
-      Class<?>... paramTypes) {
+      @Nullable SMethod baseMethod,
+      List<SParameter> parameters) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
     myConcept = concept;
     myBaseMethod = baseMethod;
-    myParameterTypes = paramTypes;
+    myParameters = parameters;
   }
 
   /**
-   * NB: there is a cozy {@link jetbrains.mps.smodel.behaviour.SMethodBuilder} to create SMethod
+   * NB: there is a cozy {@link SMethodBuilder} to create SMethod
    *
    * @param <T> -- parametrized by return type
    * @param methodName -- usual methodName
-   * @param modifiers -- could be virtual or (and) static. @see BHMethodModifiers
+   * @param modifiers -- could be virtual or (and) static. @see SMethodModifiers
    * @param returnType -- return type
    * @param concept -- the concept, which contains the method declaration.
    *                            we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
@@ -100,51 +106,68 @@ public final class SMethod<T> implements SConceptFeature {
    *                   can be null if there is no 'overrides' reference
    *                   or it is not virtual
    *                   or it is the topmost method
-   * @param paramTypes -- the types of method's arguments
+   * @param parameters -- the types of method's arguments
    * @return new SMethod
    */
-  public static <T> SMethod<T> create(@NotNull String methodName, BHMethodModifiers modifiers, Class<T> returnType, @NotNull SAbstractConcept concept,
-      @Nullable SMethod<T> baseMethod, Class<?>... paramTypes) {
-    return new SMethod<T>(methodName, modifiers, returnType, concept, baseMethod, paramTypes);
+  public static <T> SMethod<T> create(@NotNull String methodName,
+      SMethodModifiers modifiers,
+      @NotNull SAbstractType returnType,
+      @NotNull SAbstractConcept concept,
+      @Nullable SMethod baseMethod,
+      List<SParameter> parameters) {
+    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters);
   }
 
-  public Class<T> getReturnType() {
+  @NotNull
+  @Override
+  public SAbstractType getReturnType() {
     return myReturnType;
   }
 
-  @NotNull
-  public SAbstractConcept getConcept() {
-    return myConcept;
+  @Override
+  public List<SParameter> getParameters() {
+    return myParameters;
+  }
+
+  @Override
+  public List<SThrowable> getExceptions() {
+    return null; // fixme
   }
 
   @NotNull
-  public BHMethodModifiers getMethodModifiers() {
+  public SMethodModifiers getMethodModifiers() {
     return myMethodModifiers;
-  }
-
-  public Class<?>[] getParameterTypes() {
-    return myParameterTypes;
   }
 
   public boolean isVirtual() {
     return myMethodModifiers.isVirtual();
   }
 
+  @Override
+  public boolean isStatic() {
+    return myMethodModifiers.isStatic();
+  }
+
+  @Override
+  public boolean isFinal() {
+    // fixme
+    return false;
+  }
+
+  @Override
+  public boolean isOverrideOf(@NotNull SMethod another) {
+    return getBaseMethod().equals(((SMethodImpl) another).getBaseMethod());
+  }
+
   @ToRemove(version = 3.3)
   @Deprecated
-  SMethod<T> getBaseMethod() {
+  SMethod getBaseMethod() {
     return myBaseMethod;
   }
 
   @NotNull
   @Override
-  public SAbstractConcept getContainingConcept() {
-    return getOwner();
-  }
-
-  @NotNull
-  @Override
-  public SAbstractConcept getOwner() {
+  public SAbstractConcept getConcept() {
     return myConcept;
   }
 
@@ -159,9 +182,10 @@ public final class SMethod<T> implements SConceptFeature {
 
   /**
    * baseName only
+   * not in api until 'overrides' references migration
    */
   @NotNull
-  public String getBaseName() {
+  String getBaseName() {
     String name = myName;
     if (myBaseMethod != null) {
       name = myBaseMethod.getName();
@@ -176,19 +200,19 @@ public final class SMethod<T> implements SConceptFeature {
 
   @Override
   public String toString() {
-    return String.format("%s:%s(%s)%s", myReturnType.toString(), myName, Arrays.toString(myParameterTypes), myMethodModifiers.toString());
+    return String.format("%s:%s(%s)%s", myReturnType.toString(), myName, myParameters, myMethodModifiers.toString());
   }
 
   @Override
   public boolean equals(Object o) {
-    if (o instanceof SMethod) {
-      SMethod another = (SMethod) o;
+    if (o instanceof SMethodImpl) {
+      SMethodImpl another = (SMethodImpl) o;
       if (!this.getName().equals(another.getName())) return false;
       if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
       if (!this.getReturnType().equals(another.getReturnType())) return false;
       if (!EqualUtil.equals(getConcept(), another.getConcept())) return false;
       if (!EqualUtil.equals(getBaseMethod(), another.getBaseMethod())) return false;
-      if (!Arrays.equals(this.getParameterTypes(), another.getParameterTypes())) return false;
+      if (!getParameters().equals(another.getParameters())) return false;
       return true;
     }
     return false;
@@ -201,7 +225,8 @@ public final class SMethod<T> implements SConceptFeature {
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myReturnType.hashCode();
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myConcept.hashCode();
     hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + (myBaseMethod != null ? myBaseMethod.hashCode() : 0);
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + Arrays.hashCode(myParameterTypes);
+    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myParameters.hashCode();
     return hashCode;
   }
+
 }

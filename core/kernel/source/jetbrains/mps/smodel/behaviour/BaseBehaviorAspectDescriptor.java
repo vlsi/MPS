@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;

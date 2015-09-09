@@ -13,45 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.smodel.impl;
 
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
-import java.util.List;
-
-/**
- * Intended to supply a generated behavior code in the cases:
- * 1. No behavior aspect at all;
- * 2. There is a behavior aspect in the language, but it has not been generated.
- *
- * It acts exactly as if it has no methods.
- */
-public final class EmptyBHDescriptor extends BaseBHDescriptor {
+public class SConceptType implements SAbstractType {
   private final SAbstractConcept myConcept;
 
-  public EmptyBHDescriptor(@NotNull SAbstractConcept concept) {
+  public SConceptType(@NotNull SAbstractConcept concept) {
     myConcept = concept;
   }
 
-  @NotNull
+  @Nullable
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    // TODO review contract; see MPS-22391
+  public Object getDefaultValue() {
     return null;
   }
 
-  @NotNull
   @Override
-  public SAbstractConcept getConcept() {
-    return myConcept;
+  public boolean isAssignableFrom(@NotNull SAbstractType another) {
+    if (another instanceof SConceptType) {
+      return (((SConceptType) another).myConcept.isSubConceptOf(myConcept));
+    } else if (another instanceof SJavaCompoundType) {
+      return ((SJavaCompoundType) another).getJavaType().isAssignableFrom(SNode.class);
+    }
+    return false;
   }
 }

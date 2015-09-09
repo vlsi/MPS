@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-/**
- * Represents a simple data type: can be either a {@link org.jetbrains.mps.openapi.language.SPrimitiveDataType}
- * or a {@link org.jetbrains.mps.openapi.language.SEnumeration}
- * Data types need to be able to save to and load from strings.
- */
-public interface SDataType extends SAbstractType {
-  Object fromString(String value);
+import org.jetbrains.annotations.NotNull;
 
-  String toString(Object value);
+/**
+ * Represents a parameter of {@link SMethod}
+ *
+ * Created by apyshkin on 07/09/15.
+ */
+public interface SParameter extends SNamedElement {
+  @NotNull SAbstractType getType();
 }

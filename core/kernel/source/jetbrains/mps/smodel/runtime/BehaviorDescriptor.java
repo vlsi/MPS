@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.behaviour.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -26,10 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface BehaviorDescriptor {
   String VIRTUAL_METHOD_PREFIX = "virtual";
   String NON_VIRTUAL_METHOD_PREFIX = "call";
-  String CONSTUCTOR_METHOD = "init";
+  String CONSTRUCTOR_METHOD_NAME = "init";
 
   /**
-   * use instead {@link BHDescriptor#getConcept()}
+   * use instead {@link BHDescriptor#getConcept}
    */
   @Deprecated
   String getConceptFqName();

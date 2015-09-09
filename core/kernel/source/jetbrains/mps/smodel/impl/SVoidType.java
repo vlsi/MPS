@@ -13,33 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.smodel.impl;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractType;
 
-public final class IllegalBHDescriptor implements BHDescriptor {
-  private final SAbstractConcept myConcept;
-
-  public IllegalBHDescriptor(@NotNull SAbstractConcept concept) {
-    myConcept = concept;
-  }
-
+public class SVoidType implements SAbstractType {
+  @Nullable
   @Override
-  public <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public Object getDefaultValue() {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  @Override
-  public SAbstractConcept getConcept() {
-    return myConcept;
+  public boolean isAssignableFrom(@NotNull SAbstractType another) {
+    return false;
   }
 }

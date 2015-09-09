@@ -13,20 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * This class is needed to support legacy behavior calls via {@link BehaviorReflection}
+ * This class is needed to support legacy behavior calls via {@link jetbrains.mps.smodel.behaviour.BehaviorReflection}
  * It wraps newly generated BHDescriptors and acts like a BehaviorDescriptor
  *
- * @see jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter, the second adapter
+ * @see BHDescriptorLegacyAdapter , the second adapter
  * @deprecated we need it only to migrate, will be gone after 3.3
  */
 @Deprecated
@@ -46,7 +48,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
 
   @Override
   public void initNode(SNode node) {
-    myDescriptor.invoke(node, SMethod.INIT);
+    myDescriptor.invoke(node, SMethodImpl.INIT);
   }
 
   @Override
@@ -61,7 +63,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
 
   public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
     boolean isStatic = (node == null);
-    @Nullable SMethod<?> method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+    @Nullable SMethod method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
     if (method == null) {
       throwNoSuchMethod(methodName);
     }
@@ -69,7 +71,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
   }
 
   public boolean hasOwnMethod(String methodName, Object[] parameters, boolean isStatic) {
-    @Nullable SMethod<?> method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+    @Nullable SMethod method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
     return method != null;
   }
 

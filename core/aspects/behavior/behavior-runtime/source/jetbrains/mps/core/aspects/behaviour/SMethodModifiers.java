@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
 @Immutable
-public final class BHMethodModifiers {
-  public static final BHMethodModifiers DEFAULT = BHMethodModifiers.create(false, false, AccessPrivileges.PUBLIC);
+public final class SMethodModifiers {
+  public static final SMethodModifiers DEFAULT = SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC);
 
   private final boolean myVirtual;
   private final boolean myStatic;
   private final AccessPrivileges myAccessPrivileges;
 
-  private BHMethodModifiers(boolean virtual, boolean aStatic, @NotNull AccessPrivileges accessPrivileges) {
+  private SMethodModifiers(boolean virtual, boolean aStatic, @NotNull AccessPrivileges accessPrivileges) {
     myVirtual = virtual;
     myStatic = aStatic;
     myAccessPrivileges = accessPrivileges;
@@ -40,8 +40,8 @@ public final class BHMethodModifiers {
     return myVirtual;
   }
 
-  public static BHMethodModifiers create(boolean aVirtual, boolean aStatic, AccessPrivileges accessPrivileges) {
-    return new BHMethodModifiers(aVirtual, aStatic, accessPrivileges);
+  public static SMethodModifiers create(boolean aVirtual, boolean aStatic, AccessPrivileges accessPrivileges) {
+    return new SMethodModifiers(aVirtual, aStatic, accessPrivileges);
   }
 
   public AccessPrivileges getAccessPrivileges() {
@@ -50,8 +50,8 @@ public final class BHMethodModifiers {
 
   @Override
   public boolean equals(Object o) {
-    if (o instanceof BHMethodModifiers) {
-      BHMethodModifiers another = (BHMethodModifiers) o;
+    if (o instanceof SMethodModifiers) {
+      SMethodModifiers another = (SMethodModifiers) o;
       return this.isStatic() == another.isStatic()
           && this.isVirtual() == another.isVirtual();
     }

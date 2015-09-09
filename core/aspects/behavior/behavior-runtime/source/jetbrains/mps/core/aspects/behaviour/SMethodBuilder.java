@@ -13,11 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SParameter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Standard builder for SMethod
@@ -26,35 +32,35 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  */
 public final class SMethodBuilder<T> {
   private String myName;
-  private BHMethodModifiers myModifiers;
-  private final Class<T> myReturnType;
+  private SMethodModifiers myModifiers;
+  private final SAbstractType myReturnType;
   private SAbstractConcept myConcept;
   private SMethod<T> myBaseMethod;
 
-  public SMethodBuilder(Class<T> returnType) {
+  public SMethodBuilder(SAbstractType returnType) {
     myReturnType = returnType;
   }
 
-  public SMethod<T> build(Class<?>... paramTypes) {
-    return SMethod.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes);
+  public SMethod<T> build(SParameter... paramTypes) {
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, Arrays.asList(paramTypes));
   }
 
-  public SMethodBuilder name(@NotNull String name) {
+  public SMethodBuilder<T> name(@NotNull String name) {
     myName = name;
     return this;
   }
 
-  public SMethodBuilder modifiers(@NotNull BHMethodModifiers modifiers) {
+  public SMethodBuilder<T> modifiers(@NotNull SMethodModifiers modifiers) {
     myModifiers = modifiers;
     return this;
   }
 
-  public SMethodBuilder concept(@NotNull SAbstractConcept concept) {
+  public SMethodBuilder<T> concept(@NotNull SAbstractConcept concept) {
     myConcept = concept;
     return this;
   }
 
-  public SMethodBuilder baseMethod(@Nullable SMethod<T> baseMethod) {
+  public SMethodBuilder<T> baseMethod(@Nullable SMethod<T> baseMethod) {
     myBaseMethod = baseMethod;
     return this;
   }

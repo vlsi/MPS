@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -23,6 +23,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Method;
@@ -44,13 +45,14 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
 
   // both get filled during #init()
-  private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>();
-  private List<SMethod<?>> myOwnMethods;
+  private final Map<SMethod, Method> myInvocationMap = new HashMap<SMethod, Method>();
+  private List<SMethod> myOwnMethods;
 
   /**
    * @param legacyDescriptor is an InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
    */
-  public BHDescriptorLegacyAdapter(@NotNull InterpretedBehaviorDescriptor legacyDescriptor) {
+  public BHDescriptorLegacyAdapter(BehaviorRegistry behaviorRegistry, @NotNull InterpretedBehaviorDescriptor legacyDescriptor) {
+    super(behaviorRegistry);
     myLegacyDescriptor = legacyDescriptor;
   }
 
@@ -82,17 +84,17 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   private void fillOwnMethods() {
     for (Entry<String, Method> entry : myLegacyDescriptor.getOwnMethods().entrySet()) {
-      SMethod<?> sMethod = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
-      if (sMethod != SMethod.INIT) {
+      SMethod sMethod = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
+      if (sMethod != SMethodImpl.INIT) {
         myInvocationMap.put(sMethod, entry.getValue());
       }
     }
-    myOwnMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
+    myOwnMethods = new ArrayList<SMethod>(myInvocationMap.keySet());
   }
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (method == SMethod.INIT) {
+    if (method == SMethodImpl.INIT) {
       if (node == null) {
         throw new IllegalArgumentException("Cannot pass null node to constructor");
       }
@@ -103,17 +105,16 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(method);
     }
     String methodName = myInvocationMap.get(method).getName();
-    Class<T> returnType = method.getReturnType();
     if (node == null) {
-      return returnType.cast(myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters));
+      return (T) myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters);
     } else {
-      return returnType.cast(myLegacyDescriptor.invoke(node, methodName, parameters));
+      return (T) myLegacyDescriptor.invoke(node, methodName, parameters);
     }
   }
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  protected List<SMethod> getOwnMethods() {
     return myOwnMethods;
   }
 }

@@ -18,7 +18,6 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /**
  * Represents reference between nodes. Nodes are organized in AST with references going across the tree hierarchy

@@ -13,48 +13,57 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.behaviour;
+package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SParameter;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * An adapter meant to construct SMethod having only legacy information, i.e. old-formatted method name and its arguments
  */
 class SMethodLegacyAdapter {
-  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = BehaviorDescriptor.CONSTUCTOR_METHOD;
+  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME;
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
   @NotNull
   static SMethod<?> createFromLegacy(String legacyMethodName, Method legacyBHMethod, SAbstractConcept abstractConcept) {
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
-      return SMethod.INIT;
+      return SMethodImpl.INIT;
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
-    BHMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
-    return SMethod.create(methodName, modifiers, legacyBHMethod.getReturnType(), abstractConcept, null, legacyBHMethod.getParameterTypes());
+    SMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
+    List<SParameter> parameters = new ArrayList<SParameter>();
+    for (Class<?> param : legacyBHMethod.getParameterTypes()) {
+      parameters.add(new SParameterImpl(null, new SJavaCompoundTypeImpl(param)));
+    }
+    return SMethodImpl.create(methodName, modifiers, new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
+        abstractConcept, null, parameters);
   }
 
   /**
    * @return null if could not construct any method
    */
   @Nullable
-  static SMethod<?> createFromLegacy(@NotNull BaseBHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
+  static SMethod createFromLegacy(@NotNull BaseBHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
       assert parameters.length == 0;
-      return SMethod.INIT;
+      return SMethodImpl.INIT;
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
-    BHMethodModifiers modifiers = BHMethodModifiers.create(isVirtual(legacyMethodName), isStatic, AccessPrivileges.PUBLIC);
-    List<SMethod<?>> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
+    SMethodModifiers modifiers = SMethodModifiers.create(isVirtual(legacyMethodName), isStatic, AccessPrivileges.PUBLIC);
+    List<SMethod> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
     MethodMatcher methodMatcher = new MethodMatcher(methodName, modifiers, newDescriptor.getConcept(), parameters);
-    for (SMethod<?> possibleMethod : possibleMethods) {
+    for (SMethod possibleMethod : possibleMethods) {
       if (methodMatcher.suits(possibleMethod)) {
         return possibleMethod;
       }
@@ -62,10 +71,10 @@ class SMethodLegacyAdapter {
     return null;
   }
 
-  private static BHMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
+  private static SMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
     boolean aVirtual = isVirtual(methodName);
     boolean aStatic = method.getParameterTypes()[0].equals(SAbstractConcept.class);
-    return BHMethodModifiers.create(aVirtual, aStatic, AccessPrivileges.fromModifiers(method.getModifiers()));
+    return SMethodModifiers.create(aVirtual, aStatic, AccessPrivileges.fromModifiers(method.getModifiers()));
   }
 
   private static boolean isVirtual(String methodName) {
@@ -87,32 +96,33 @@ class SMethodLegacyAdapter {
    */
   private static final class MethodMatcher {
     private final String myMethodBaseName;
-    private final BHMethodModifiers myModifiers;
+    private final SMethodModifiers myModifiers;
     private final SAbstractConcept myConcept;
     private final Object[] myParameters;
 
-    private MethodMatcher(String methodBaseName, BHMethodModifiers modifiers, SAbstractConcept concept, Object[] parameters) {
+    private MethodMatcher(String methodBaseName, SMethodModifiers modifiers, SAbstractConcept concept, Object[] parameters) {
       myMethodBaseName = methodBaseName;
       myModifiers = modifiers;
       myConcept = concept;
       myParameters = parameters;
     }
 
-    public boolean suits(@NotNull SMethod<?> methodCandidate) {
-      if (!methodCandidate.getBaseName().equals(myMethodBaseName)) return false;
-      if (!methodCandidate.getMethodModifiers().isVirtual() == myModifiers.isVirtual()) return false;
-      if (!methodCandidate.getMethodModifiers().isStatic() == myModifiers.isStatic()) return false;
+    public <T> boolean suits(@NotNull SMethod<T> methodCandidate) {
+      if (!((SMethodImpl) methodCandidate).getBaseName().equals(myMethodBaseName)) return false;
+      if (!((SMethodImpl) methodCandidate).getMethodModifiers().isVirtual() == myModifiers.isVirtual()) return false;
+      if (!methodCandidate.isStatic() == myModifiers.isStatic()) return false;
       if (!myModifiers.isVirtual()) {
         if (!EqualUtil.equals(methodCandidate.getConcept(), myConcept)) return false;
       }
       // only argument types are left to check
-      if (myParameters.length != methodCandidate.getParameterTypes().length) {
+      if (myParameters.length != methodCandidate.getParameters().size()) {
         return false;
       }
       for (int i = 0; i < myParameters.length; ++i) {
         Class<?> passedParameterType = myParameters[i].getClass();
-        Class<?> methodArgumentType = methodCandidate.getParameterTypes()[i];
-        if (!methodArgumentType.isAssignableFrom(passedParameterType)) {
+        SParameter sParameter = methodCandidate.getParameters().get(i);
+        SAbstractType methodArgumentType = sParameter.getType();
+        if (!methodArgumentType.isAssignableFrom(new SJavaCompoundTypeImpl(passedParameterType))) {
           return false;
         }
       }
