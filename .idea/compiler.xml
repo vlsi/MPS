@@ -672,6 +672,14 @@
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/test_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
