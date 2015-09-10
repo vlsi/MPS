@@ -44,7 +44,7 @@ class SMethodLegacyAdapter {
     SMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
     List<SParameter> parameters = new ArrayList<SParameter>();
     for (Class<?> param : legacyBHMethod.getParameterTypes()) {
-      parameters.add(new SParameterImpl(null, new SJavaCompoundTypeImpl(param)));
+      parameters.add(new SParameterImpl("", new SJavaCompoundTypeImpl(param)));
     }
     return SMethodImpl.create(methodName, modifiers, new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
         abstractConcept, null, parameters);
@@ -61,7 +61,7 @@ class SMethodLegacyAdapter {
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
     SMethodModifiers modifiers = SMethodModifiers.create(isVirtual(legacyMethodName), isStatic, AccessPrivileges.PUBLIC);
-    List<SMethod> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
+    List<SMethod<?>> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
     MethodMatcher methodMatcher = new MethodMatcher(methodName, modifiers, newDescriptor.getConcept(), parameters);
     for (SMethod possibleMethod : possibleMethods) {
       if (methodMatcher.suits(possibleMethod)) {

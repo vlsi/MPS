@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import jetbrains.mps.core.aspects.behaviour.DefaultValuesHolder;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Obsolete API for the generated behavior calls
+ *
  * @deprecated
  * @see BHFacade
  */
@@ -94,7 +94,7 @@ public class BehaviorReflection {
     return node == null ? defaultValue(returnType) : (T) invokeSuper(node, targetSuperFqName, methodName, parameters);
   }
 
-  public static <T> T defaultValue(Class<T> returnValueClass) {
+  private static <T> T defaultValue(Class<T> returnValueClass) {
     return DefaultValuesHolder.defaultValue(returnValueClass);
   }
 }

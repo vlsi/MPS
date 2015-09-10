@@ -36,15 +36,9 @@ public interface BHDescriptor {
    */
   <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
+  /**
+   * @return owning concept
+   */
   @NotNull SAbstractConcept getConcept();
 
-  class BHMethodNotFoundException extends RuntimeException {
-    public BHMethodNotFoundException(@NotNull SMethod method) {
-      super("The method '" + method + "' could not be found");
-    }
-
-    public BHMethodNotFoundException(String msg) {
-      super(msg);
-    }
-  }
 }

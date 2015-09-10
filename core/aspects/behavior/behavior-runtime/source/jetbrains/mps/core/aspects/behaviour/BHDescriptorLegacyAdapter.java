@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -45,8 +47,8 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
 
   // both get filled during #init()
-  private final Map<SMethod, Method> myInvocationMap = new HashMap<SMethod, Method>();
-  private List<SMethod> myOwnMethods;
+  private final Map<SMethod<?>, Method> myInvocationMap = new HashMap<SMethod<?>, Method>();
+  private List<SMethod<?>> myOwnMethods;
 
   /**
    * @param legacyDescriptor is an InterpretedBehaviorDescriptor (the common ancestor for all generated and interpreted behavior descriptors)
@@ -89,7 +91,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
         myInvocationMap.put(sMethod, entry.getValue());
       }
     }
-    myOwnMethods = new ArrayList<SMethod>(myInvocationMap.keySet());
+    myOwnMethods = new ArrayList<SMethod<?>>(myInvocationMap.keySet());
   }
 
   @Override
@@ -114,7 +116,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod> getOwnMethods() {
+  protected List<SMethod<?>> getOwnMethods() {
     return myOwnMethods;
   }
 }

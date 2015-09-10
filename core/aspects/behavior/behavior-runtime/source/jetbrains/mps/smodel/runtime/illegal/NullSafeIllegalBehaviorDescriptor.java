@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+@Deprecated
 public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
 

@@ -20,12 +20,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SConceptType;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SConceptType implements SAbstractType {
+public class SConceptTypeImpl implements SConceptType {
   private final SAbstractConcept myConcept;
 
-  public SConceptType(@NotNull SAbstractConcept concept) {
+  public SConceptTypeImpl(@NotNull SAbstractConcept concept) {
     myConcept = concept;
   }
 
@@ -37,11 +38,17 @@ public class SConceptType implements SAbstractType {
 
   @Override
   public boolean isAssignableFrom(@NotNull SAbstractType another) {
-    if (another instanceof SConceptType) {
-      return (((SConceptType) another).myConcept.isSubConceptOf(myConcept));
+    if (another instanceof SConceptTypeImpl) {
+      return (((SConceptTypeImpl) another).myConcept.isSubConceptOf(myConcept));
     } else if (another instanceof SJavaCompoundType) {
       return ((SJavaCompoundType) another).getJavaType().isAssignableFrom(SNode.class);
     }
     return false;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getConcept() {
+    return myConcept;
   }
 }

@@ -16,6 +16,8 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -161,11 +163,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    Entry<SMethod, BaseBHDescriptor> methodDescriptor = myVTable.get(method);
+    Entry<SMethod, BHDescriptor> methodDescriptor = myVTable.get(method);
     if (methodDescriptor == null) {
       throw new BHMethodNotFoundException(method);
     }
-    BaseBHDescriptor bhDescriptor = methodDescriptor.getValue();
+    assert methodDescriptor.getValue() instanceof BaseBHDescriptor;
+    BaseBHDescriptor bhDescriptor = (BaseBHDescriptor) methodDescriptor.getValue();
     method = methodDescriptor.getKey();
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
@@ -175,7 +178,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * NB: must be fast
    **/
   @NotNull
-  protected abstract List<SMethod> getOwnMethods();
+  protected abstract List<SMethod<?>> getOwnMethods();
 
   /**
    * invokes a method without dynamic resolution

@@ -19,11 +19,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SParameter;
 
+import java.util.List;
+
 public class SParameterImpl implements SParameter {
   private final String myName;
   private final SAbstractType myParamType;
 
-  public SParameterImpl(String name, @NotNull SAbstractType paramType) {
+  public SParameterImpl(@NotNull String name, @NotNull SAbstractType paramType) {
     myName = name;
     myParamType = paramType;
   }
@@ -34,8 +36,27 @@ public class SParameterImpl implements SParameter {
     return myParamType;
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myName;
+  }
+
+  @Override
+  public String toString() {
+    return "SParameterImpl:" + getName() + ":" + getType();
+  }
+
+  @Override
+  public int hashCode() {
+    return myParamType.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof SParameterImpl) {
+      return myParamType.equals(((SParameterImpl) o).myParamType);
+    }
+    return false;
   }
 }

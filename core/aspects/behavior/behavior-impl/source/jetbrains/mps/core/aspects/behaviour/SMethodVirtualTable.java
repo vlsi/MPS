@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SMethod;
@@ -30,9 +31,9 @@ import java.util.Map.Entry;
  * Created by apyshkin on 28/07/15.
  */
 public final class SMethodVirtualTable {
-  private final Map<SMethod, BaseBHDescriptor> myTable = new HashMap<SMethod, BaseBHDescriptor>();
+  private final Map<SMethod, BHDescriptor> myTable = new HashMap<SMethod, BHDescriptor>();
 
-  public void put(@NotNull SMethod<?> method, @NotNull BaseBHDescriptor descriptor) {
+  public void put(@NotNull SMethod<?> method, @NotNull BHDescriptor descriptor) {
     if (!method.isVirtual()) {
       throw new IllegalArgumentException("Method " + method + " must be virtual to be registered in the Virtual Table");
     }
@@ -47,17 +48,12 @@ public final class SMethodVirtualTable {
    * @return corresponding BHDescriptor or null if the virtual table does not contain the method
    */
   @Nullable
-  public Entry<SMethod, BaseBHDescriptor> get(@NotNull SMethod method) {
-    for (Entry<SMethod, BaseBHDescriptor> methodEntry : myTable.entrySet()) {
-      if (sameVirtualMethods(methodEntry.getKey(), method)) {
+  public Entry<SMethod, BHDescriptor> get(@NotNull SMethod method) {
+    for (Entry<SMethod, BHDescriptor> methodEntry : myTable.entrySet()) {
+      if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
         return methodEntry;
       }
     }
     return null;
   }
-
-  private static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {
-    return method1.isOverrideOf(method2) || method2.isOverrideOf(method1);
-  }
-
 }

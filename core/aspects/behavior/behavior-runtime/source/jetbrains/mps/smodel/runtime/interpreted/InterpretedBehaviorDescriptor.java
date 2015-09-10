@@ -77,7 +77,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
 
   private Map<String, Method> fillOwnMethods(String fqName) {
     Map<String, Method> methodMap = new HashMap<String, Method>();
-    Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
+    Class<?> cls = BaseBehaviorDescriptor.getGeneratedClass(fqName, BaseBehaviorDescriptor.behaviorClassByConceptFqName(fqName));
     if (cls != null) {
       Method[] methods = cls.getMethods();
       for (Method method : methods) {

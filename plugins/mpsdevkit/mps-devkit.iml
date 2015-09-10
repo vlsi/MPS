@@ -42,5 +42,6 @@
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="behavior-api" />
   </component>
 </module>

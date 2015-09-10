@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.core.aspects.behaviour;
+package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -53,7 +53,7 @@ public final class BHFacade {
       return (T) method.getReturnType().getDefaultValue();
 //      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
-    return BHFacade.invoke0(concept, method, parameters);
+    return BHFacade.invokeStatic0(concept, method, parameters);
   }
 
   @NotNull
@@ -68,7 +68,7 @@ public final class BHFacade {
     return bhDescriptor.invoke(node, method, parameters);
   }
 
-  private static <T> T invoke0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  private static <T> T invokeStatic0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     return bhDescriptor.invoke(null, method, parameters);
   }

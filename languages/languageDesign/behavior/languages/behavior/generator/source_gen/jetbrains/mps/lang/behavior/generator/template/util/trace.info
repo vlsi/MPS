@@ -80,8 +80,8 @@
       <node id="7385785963573351814" at="7,0,8,0" concept="10" trace="BEHAVIOR_DESCRIPTOR_SUFFIX" />
       <node id="2284925377906205048" at="8,0,9,0" concept="10" trace="THIS_NODE_VARIABLE_NAME" />
       <node id="2284925377907518140" at="9,0,10,0" concept="10" trace="INVOKE_METHOD_NAME" />
-      <node id="525520458130291250" at="10,0,11,0" concept="10" trace="INVOKE_SPECIAL_METHOD_NAME" />
-      <node id="2284925377907913534" at="11,0,12,0" concept="10" trace="METHOD_FIELD_SUFFIX" />
+      <node id="1051020934711802270" at="10,0,11,0" concept="10" trace="INVOKE_STATIC_METHOD_NAME" />
+      <node id="525520458130291250" at="11,0,12,0" concept="10" trace="INVOKE_SPECIAL_METHOD_NAME" />
       <unit id="7385785963573351755" at="6,0,13,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
     </file>
   </root>

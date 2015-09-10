@@ -38,5 +38,6 @@
     <orderEntry type="library" name="JMock" level="project" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="behavior-api" />
   </component>
 </module>

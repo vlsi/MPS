@@ -118,6 +118,11 @@ public final class SMethodImpl<T> implements SMethod<T> {
     return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters);
   }
 
+  static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {
+    assert method1 instanceof SMethodImpl && method2 instanceof SMethodImpl;
+    return ((SMethodImpl) method1).getBaseMethod().equals(((SMethodImpl) method2).getBaseMethod());
+  }
+
   @NotNull
   @Override
   public SAbstractType getReturnType() {
@@ -156,13 +161,15 @@ public final class SMethodImpl<T> implements SMethod<T> {
 
   @Override
   public boolean isOverrideOf(@NotNull SMethod another) {
-    return getBaseMethod().equals(((SMethodImpl) another).getBaseMethod());
+    SMethod anotherBaseMethod = ((SMethodImpl) another).getBaseMethod();
+    return getBaseMethod().equals(anotherBaseMethod) && getConcept().isSubConceptOf(another.getConcept());
   }
 
   @ToRemove(version = 3.3)
   @Deprecated
+  @NotNull
   SMethod getBaseMethod() {
-    return myBaseMethod;
+    return myBaseMethod != null ? myBaseMethod : this;
   }
 
   @NotNull
@@ -211,7 +218,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
       if (!this.getReturnType().equals(another.getReturnType())) return false;
       if (!EqualUtil.equals(getConcept(), another.getConcept())) return false;
-      if (!EqualUtil.equals(getBaseMethod(), another.getBaseMethod())) return false;
+      if (!EqualUtil.equals(myBaseMethod, another.myBaseMethod)) return false;
       if (!getParameters().equals(another.getParameters())) return false;
       return true;
     }

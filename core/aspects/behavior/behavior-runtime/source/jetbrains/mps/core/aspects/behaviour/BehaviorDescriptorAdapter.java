@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -77,6 +77,6 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
 
   @Override
   protected void throwNoSuchMethod(String methodName) {
-    throw new BHDescriptor.BHMethodNotFoundException("Could not find a suitable SMethod with name: '" + methodName + "'");
+    throw new BHMethodNotFoundException("Could not find a suitable SMethod with name: '" + methodName + "'");
   }
 }

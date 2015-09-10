@@ -18,8 +18,11 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 
+@ToRemove(version = 3.3)
+@Deprecated
 public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
   private static BehaviorAspectInterpreted INSTANCE = new BehaviorAspectInterpreted();
 

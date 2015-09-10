@@ -13,21 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.core.aspects.behaviour;
+package org.jetbrains.mps.openapi.language;
 
-import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
-import jetbrains.mps.smodel.language.CoreAspectRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * Created by apyshkin on 09/09/15.
+ * Represents a concept type abstraction in MPS (node<>).
+ * Contains a reference to a {@link SAbstractConcept}
  */
-public interface BehaviorRegistry extends CoreAspectRegistry {
+public interface SConceptType extends SAbstractType {
   @NotNull
-  MethodResolutionOrder getMRO();
-
-  @NotNull
-  BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept);
+  SAbstractConcept getConcept();
 }

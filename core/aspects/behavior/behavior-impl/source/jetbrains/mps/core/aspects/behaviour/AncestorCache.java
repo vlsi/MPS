@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -25,7 +26,7 @@ import java.util.List;
 /**
 * Created by apyshkin on 09/09/15.
 */
-public class AncestorCache {
+class AncestorCache {
   private final List<SAbstractConcept> myLinearization;
   private final List<SAbstractConcept> myConstructorAncestors;
 

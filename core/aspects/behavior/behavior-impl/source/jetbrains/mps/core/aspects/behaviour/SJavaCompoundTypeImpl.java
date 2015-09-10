@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.smodel.impl.SConceptType;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
+import jetbrains.mps.smodel.impl.SConceptTypeImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractType;
@@ -25,10 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
  * A type backed by java class.
  *
  */
-class SJavaCompoundTypeImpl implements SJavaCompoundType {
+public class SJavaCompoundTypeImpl implements SJavaCompoundType {
   private final Class<?> myType;
 
-  public SJavaCompoundTypeImpl(Class<?> type) {
+  public SJavaCompoundTypeImpl(@NotNull Class<?> type) {
     myType = type;
   }
 
@@ -42,7 +43,7 @@ class SJavaCompoundTypeImpl implements SJavaCompoundType {
   public boolean isAssignableFrom(@NotNull SAbstractType another) {
     if (another instanceof SJavaCompoundType) {
       return myType.isAssignableFrom(((SJavaCompoundType) another).getJavaType());
-    } else if (another instanceof SConceptType) {
+    } else if (another instanceof SConceptTypeImpl) {
       return myType.isAssignableFrom(SNode.class);
     }
     return false;
@@ -52,5 +53,23 @@ class SJavaCompoundTypeImpl implements SJavaCompoundType {
   @Override
   public Class<?> getJavaType() {
     return myType;
+  }
+
+  @Override
+  public String toString() {
+    return "JavaCompoundType:" + myType;
+  }
+
+  @Override
+  public int hashCode() {
+    return myType.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof SJavaCompoundType) {
+      return myType.equals(((SJavaCompoundType) o).getJavaType());
+    }
+    return false;
   }
 }

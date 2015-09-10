@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -42,12 +42,12 @@ public final class EmptyBHDescriptor extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod> getOwnMethods() {
+  protected List<SMethod<?>> getOwnMethods() {
     return Collections.emptyList();
   }
 
   @Override
-  protected Object invokeOwn(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
+  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     // TODO review contract; see MPS-22391
     return null;
   }
