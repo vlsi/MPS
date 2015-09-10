@@ -41,6 +41,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static jetbrains.mps.util.SNodeOperations.getDebugText;
 
@@ -66,9 +67,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SConcept myConcept; //todo make final after 3.2
   private SNode parent;
   /**
-   * true iff a constructor was called for this node
+   * true iff a bh constructor was called for this node
    */
-  private boolean myConstructed = false;
+  private AtomicBoolean myConstructed = new AtomicBoolean(false);
   /**
    * access only in firstChild()/firstChildInRole(role)
    */
@@ -83,18 +84,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId id) {
     myConcept = concept;
     myId = id;
-  }
-
-  /**
-   * called from behavior
-   */
-  void onConstructed() {
-    if (myConstructed) {
-
-    }
-  }
-
-  private class AlreadyConstructedException extends RuntimeException {
   }
 
   @NotNull
@@ -971,6 +960,21 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   private SProperty convertToProp(String name) {
     return ((ConceptMetaInfoConverter) myConcept).convertProperty(name);
+  }
+
+  /**
+   * called from behavior
+   */
+  public void onConstructed() {
+    if (!myConstructed.compareAndSet(false, true)) {
+      throw new AlreadyConstructedException(this);
+    }
+  }
+
+  private static final class AlreadyConstructedException extends RuntimeException {
+    public AlreadyConstructedException(@NotNull SNode node) {
+      super("The node " + node + " has already been constructed.");
+    }
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {

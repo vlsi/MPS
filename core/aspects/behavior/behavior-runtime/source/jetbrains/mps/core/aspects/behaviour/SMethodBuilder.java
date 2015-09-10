@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SParameter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Standard builder for SMethod
@@ -42,7 +43,11 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethod<T> build(SParameter... paramTypes) {
-    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, Arrays.asList(paramTypes));
+    return build(Arrays.asList(paramTypes));
+  }
+
+  public SMethod<T> build(List<SParameter> paramTypes) {
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes);
   }
 
   public SMethodBuilder<T> name(@NotNull String name) {

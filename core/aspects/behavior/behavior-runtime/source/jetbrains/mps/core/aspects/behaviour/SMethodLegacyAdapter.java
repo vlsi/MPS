@@ -44,7 +44,7 @@ class SMethodLegacyAdapter {
     SMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
     List<SParameter> parameters = new ArrayList<SParameter>();
     for (Class<?> param : legacyBHMethod.getParameterTypes()) {
-      parameters.add(new SParameterImpl("", new SJavaCompoundTypeImpl(param)));
+      parameters.add(new SParameterImpl(new SJavaCompoundTypeImpl(param), ""));
     }
     return SMethodImpl.create(methodName, modifiers, new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
         abstractConcept, null, parameters);

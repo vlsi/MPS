@@ -18,6 +18,7 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.smodel.NodeNotifier;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -30,7 +31,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * Common ancestor for all the generated behavior aspects (per concept).
@@ -48,8 +48,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
   private SAbstractConcept myConcept;
-  private volatile boolean myInitialized = false;
-  private final SMethodVirtualTable myVTable = new SMethodVirtualTable();
+  private boolean myInitialized = false;
+  private SMethodVirtualTable myVTable;
   private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
   private ConstructionHandler myConstructionHandler;
@@ -79,22 +79,15 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private void initVirtualTable() {
-    Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
-    for (SAbstractConcept ancestor : ancestorIterator) {
-      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
-      if (bhDescriptor instanceof BaseBHDescriptor) {
-        ((BaseBHDescriptor) bhDescriptor).fillVirtualTable(myVTable);
-      }
-    }
-  }
-
-  /**
-   * register each SMethod in the VTable (if not yet registered)
-   **/
-  private void fillVirtualTable(@NotNull SMethodVirtualTable tableToFill) {
-    for (SMethod method : getOwnMethods()) {
-      if (method.isVirtual()) {
-        tableToFill.put(method, this);
+    myVTable = new SMethodVirtualTable(this, getOwnMethods());
+    List<SAbstractConcept> ancestors = myAncestorCache.getAncestorsVirtualInvocationOrder();
+    for (SAbstractConcept ancestor : ancestors) {
+      if (ancestor != myConcept) {
+        BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
+        // now its vtable is initialized
+        if (bhDescriptor instanceof BaseBHDescriptor) {
+          myVTable.merge(((BaseBHDescriptor) bhDescriptor).myVTable);
+        }
       }
     }
   }
@@ -147,8 +140,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @Override
   public <T> T invokeSpecial(SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    Iterable<SAbstractConcept> ancestorIterator = myAncestorCache.getAncestorsVirtualInvocationOrder();
-    for (SAbstractConcept ancestor : ancestorIterator) {
+    Iterable<SAbstractConcept> ancestors = myAncestorCache.getAncestorsVirtualInvocationOrder();
+    for (SAbstractConcept ancestor : ancestors) {
       BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BaseBHDescriptor) {
         BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
@@ -163,13 +156,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    Entry<SMethod, BHDescriptor> methodDescriptor = myVTable.get(method);
+    Entry<SMethod<?>, BHDescriptor> methodDescriptor = myVTable.get(method);
     if (methodDescriptor == null) {
       throw new BHMethodNotFoundException(method);
     }
     assert methodDescriptor.getValue() instanceof BaseBHDescriptor;
     BaseBHDescriptor bhDescriptor = (BaseBHDescriptor) methodDescriptor.getValue();
-    method = methodDescriptor.getKey();
+    method = (SMethod<T>) methodDescriptor.getKey();
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
 
@@ -200,7 +193,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   public class ConstructionHandler {
-    private final Set<SNode> myConstructed = new WeakSet<SNode>();
     private final AncestorCache myAncestorCache;
     private final SAbstractConcept myConcept;
 
@@ -211,22 +203,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
     public void initNode(@NotNull SNode node) {
       assert myConcept.equals(node.getConcept());
-      if (myConstructed.contains(node)) {
-        throw new AlreadyConstructedException(node);
-      }
       for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
         BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
         if (ancestorDescriptor instanceof BaseBHDescriptor) {
           ((BaseBHDescriptor) ancestorDescriptor).invokeOwn(node, SMethodImpl.INIT);
         }
       }
-      myConstructed.add(node);
-    }
-
-    private class AlreadyConstructedException extends RuntimeException {
-      public AlreadyConstructedException(SNode node) {
-        super("Node has been constructed more than once : " + node.getPresentation());
-      }
+      NodeNotifier.notify(node);
     }
   }
 

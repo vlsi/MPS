@@ -22,6 +22,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A type backed by java class.
  *
@@ -57,7 +60,7 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
 
   @Override
   public String toString() {
-    return "JavaCompoundType:" + myType;
+    return "J(" + myType +"):";
   }
 
   @Override
@@ -71,5 +74,13 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
       return myType.equals(((SJavaCompoundType) o).getJavaType());
     }
     return false;
+  }
+
+  public static List<SJavaCompoundType> fromClasses(Class<?>... types) {
+    List<SJavaCompoundType> result = new ArrayList<SJavaCompoundType>();
+    for (Class<?> type : types) {
+      result.add(new SJavaCompoundTypeImpl(type));
+    }
+    return result;
   }
 }

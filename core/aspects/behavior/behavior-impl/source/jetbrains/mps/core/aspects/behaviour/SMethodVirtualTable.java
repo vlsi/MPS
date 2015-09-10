@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SMethod;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -31,15 +32,13 @@ import java.util.Map.Entry;
  * Created by apyshkin on 28/07/15.
  */
 public final class SMethodVirtualTable {
-  private final Map<SMethod, BHDescriptor> myTable = new HashMap<SMethod, BHDescriptor>();
+  private final Map<SMethod<?>, BHDescriptor> myTable = new HashMap<SMethod<?>, BHDescriptor>();
 
-  public void put(@NotNull SMethod<?> method, @NotNull BHDescriptor descriptor) {
-    if (!method.isVirtual()) {
-      throw new IllegalArgumentException("Method " + method + " must be virtual to be registered in the Virtual Table");
-    }
-    // only new virtual method implementations need to be recorded
-    if (get(method) == null) {
-      myTable.put(method, descriptor);
+  public SMethodVirtualTable(@NotNull BHDescriptor startingDescriptor, List<SMethod<?>> methods) {
+    for (SMethod<?> method : methods) {
+      if (method.isVirtual()) {
+        myTable.put(method, startingDescriptor);
+      }
     }
   }
 
@@ -48,12 +47,26 @@ public final class SMethodVirtualTable {
    * @return corresponding BHDescriptor or null if the virtual table does not contain the method
    */
   @Nullable
-  public Entry<SMethod, BHDescriptor> get(@NotNull SMethod method) {
-    for (Entry<SMethod, BHDescriptor> methodEntry : myTable.entrySet()) {
+  public Entry<SMethod<?>, BHDescriptor> get(@NotNull SMethod<?> method) {
+    for (Entry<SMethod<?>, BHDescriptor> methodEntry : myTable.entrySet()) {
       if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
         return methodEntry;
       }
     }
     return null;
+  }
+
+  /**
+   * merges two vTables, stores the results in this.
+   */
+  public void merge(@NotNull final SMethodVirtualTable another) {
+    Map<SMethod<?>, BHDescriptor> anotherTable = another.myTable;
+    for (Entry<SMethod<?>, BHDescriptor> pair : anotherTable.entrySet()) {
+      SMethod method = pair.getKey();
+      BHDescriptor descriptor = pair.getValue();
+      if (get(method) == null) {
+        myTable.put(method, descriptor);
+      }
+    }
   }
 }
