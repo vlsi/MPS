@@ -91,6 +91,7 @@ public class MPSModulesPartitioner {
     }
   }
   public void buildExternalDependencies() {
+    // XXX why runtimeClosure? why do we care about RT of the module? 
     this.external = Sequence.fromIterable(new MPSModulesClosure(modules).trackDevkits().generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(MPSModulesPartitioner.this.project);
