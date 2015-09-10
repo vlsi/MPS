@@ -10,6 +10,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SMethodModifiers;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "BHL1.structure.I1");
 
-  public static final SMethod<Object> foo_id20708 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
+  public static final SMethod<Object> foo_id20708 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id20708);
 

@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SParameterImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
@@ -53,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SParameterImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
@@ -76,6 +78,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SParameterImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
@@ -98,6 +101,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodModifiers" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SParameterImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />

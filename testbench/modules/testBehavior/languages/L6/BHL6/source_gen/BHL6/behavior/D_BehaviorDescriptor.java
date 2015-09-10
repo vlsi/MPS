@@ -10,6 +10,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SMethodModifiers;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,10 +25,10 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L, "BHL6.structure.D");
 
-  public static final SMethod<Integer> foo_id3546 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build();
-  public static final SMethod<Integer> foo1_id52493 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.foo1_id52919).build();
-  public static final SMethod<Integer> foo2_id56096 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.foo2_id50168).build();
-  public static final SMethod<Integer> bar1_id55675 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.bar1_id49425).build();
+  public static final SMethod<Integer> foo_id3546 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo1_id52493 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.foo1_id52919).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo2_id56096 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.foo2_id50168).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> bar1_id55675 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(B_BehaviorDescriptor.bar1_id49425).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id3546, foo1_id52493, foo2_id56096, bar1_id55675);
 

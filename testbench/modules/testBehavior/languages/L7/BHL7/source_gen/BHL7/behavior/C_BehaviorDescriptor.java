@@ -24,8 +24,8 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L, "BHL7.structure.C");
 
-  public static final SMethod<Integer> argTypeResolve_id32443 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(new SParameterImpl("a", new SJavaCompoundTypeImpl(Integer.class)));
-  public static final SMethod<Integer> argTypeResolve_id31830 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve___1").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(new SParameterImpl("o", new SJavaCompoundTypeImpl(Object.class)));
+  public static final SMethod<Integer> argTypeResolve_id32443 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.class)));
+  public static final SMethod<Integer> argTypeResolve_id31830 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve___1").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id32443, argTypeResolve_id31830);
 
