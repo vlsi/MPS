@@ -26,7 +26,7 @@ public enum FileType {
   SOLUTION(MPSExtentions.SOLUTION, "solution"),
   DEVKIT(MPSExtentions.DEVKIT, "dev-kit"),
   PROJECT(MPSExtentions.IDEA_PROJECT, "project"),
-  TRACE_CACHE("trace.info", "debugInfo"),
+  TRACE_CACHE("trace.info", "debug-info"),
   GENERATOR_DEPENDENCIES("generated", "dependencies"),
   JAVA_DEPENDENCIES("dependencies", "dependenciesRoot");
 
