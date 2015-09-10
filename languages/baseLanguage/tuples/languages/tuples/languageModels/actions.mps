@@ -139,7 +139,6 @@
         <child id="1178870894644" name="pattern" index="1Ub_4A" />
         <child id="1178870894645" name="nodeToCoerce" index="1Ub_4B" />
       </concept>
-      <concept id="1178871491133" name="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" flags="nn" index="1UdQGJ" />
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
         <reference id="1174642800329" name="concept" index="1YaFvo" />
       </concept>
@@ -281,19 +280,19 @@
       <ref role="3UNGvu" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="3kRJcU" id="i1Ni9pJ" role="3kShCk">
         <node concept="3clFbS" id="i1Ni9pK" role="2VODD2">
-          <node concept="3clFbF" id="i1NicAb" role="3cqZAp">
-            <node concept="2OqwBi" id="i1Nik5f" role="3clFbG">
-              <node concept="1UdQGJ" id="i2_pZB5" role="2Oq$k0">
-                <node concept="2OqwBi" id="i2_pZB6" role="1Ub_4B">
-                  <node concept="Cj7Ep" id="i2_pZB7" role="2Oq$k0" />
-                  <node concept="3JvlWi" id="i2_pZB8" role="2OqNvi" />
+          <node concept="3clFbF" id="$LpWehWsN4" role="3cqZAp">
+            <node concept="2OqwBi" id="$LpWehWtoR" role="3clFbG">
+              <node concept="1UaxmW" id="$LpWehWsMY" role="2Oq$k0">
+                <node concept="2OqwBi" id="$LpWehWsTI" role="1Ub_4B">
+                  <node concept="Cj7Ep" id="$LpWehWsPW" role="2Oq$k0" />
+                  <node concept="3JvlWi" id="$LpWehWt2m" role="2OqNvi" />
                 </node>
-                <node concept="1YaCAy" id="i2_pZB9" role="1Ub_4A">
-                  <property role="TrG5h" value="indexedTupleType" />
+                <node concept="1YaCAy" id="$LpWehWt8r" role="1Ub_4A">
+                  <property role="TrG5h" value="_" />
                   <ref role="1YaFvo" to="cx9y:i1LlUzs" resolve="IndexedTupleType" />
                 </node>
               </node>
-              <node concept="3x8VRR" id="i1NikLK" role="2OqNvi" />
+              <node concept="3x8VRR" id="$LpWehWtNO" role="2OqNvi" />
             </node>
           </node>
         </node>
