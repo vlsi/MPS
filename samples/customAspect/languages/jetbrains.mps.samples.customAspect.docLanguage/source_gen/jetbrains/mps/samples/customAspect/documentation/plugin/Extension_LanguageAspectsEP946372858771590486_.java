@@ -25,8 +25,8 @@ import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.IconUtil;
 
-public class Extension_LanguageAspectsEP2897519568668729271_ extends Extension.Default<LanguageAspectDescriptor> {
-  public Extension_LanguageAspectsEP2897519568668729271_() {
+public class Extension_LanguageAspectsEP946372858771590486_ extends Extension.Default<LanguageAspectDescriptor> {
+  public Extension_LanguageAspectsEP946372858771590486_() {
     super("jetbrains.mps.lang.customAspect.LanguageAspectsEP");
   }
   public LanguageAspectDescriptor get() {
@@ -40,7 +40,7 @@ public class Extension_LanguageAspectsEP2897519568668729271_ extends Extension.D
         return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             String fullName = it.getModelName();
-            return eq_fizplu_a0b0a0a0a0a0b0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
+            return eq_tpzd6p_a0b0a0a0a0a0b0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
           }
         }).ofType(SModel.class).toListSequence();
       }
@@ -83,7 +83,7 @@ public class Extension_LanguageAspectsEP2897519568668729271_ extends Extension.D
 
     };
   }
-  private static boolean eq_fizplu_a0b0a0a0a0a0b0b0a0a0b(Object a, Object b) {
+  private static boolean eq_tpzd6p_a0b0a0a0a0a0b0b0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
