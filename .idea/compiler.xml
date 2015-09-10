@@ -656,6 +656,22 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/pluginSolutions/build.mps.testManifest.pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/pluginSolutions/build.mps.testManifest.pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubstituteType/solutions/testSubstituteType/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
