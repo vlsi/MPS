@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new Extension_LanguageAspectsEP2897519568668558900_()};
+  private Extension[] extensions = new Extension[]{new Extension_LanguageAspectsEP2897519568668729271_()};
   public ExtensionDescriptor() {
   }
   @Override

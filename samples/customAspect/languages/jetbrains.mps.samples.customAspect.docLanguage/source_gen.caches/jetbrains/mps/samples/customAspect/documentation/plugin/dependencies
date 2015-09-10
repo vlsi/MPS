@@ -4,11 +4,11 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.plugin.Extension_LanguageAspectsEP2897519568668558900_" />
+    <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.plugin.Extension_LanguageAspectsEP2897519568668729271_" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.customAspect.documentation.plugin.Extension_LanguageAspectsEP2897519568668558900_" file="Extension_LanguageAspectsEP2897519568668558900_.java">
+  <dependency className="jetbrains.mps.samples.customAspect.documentation.plugin.Extension_LanguageAspectsEP2897519568668729271_" file="Extension_LanguageAspectsEP2897519568668729271_.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
