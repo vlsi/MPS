@@ -12,8 +12,8 @@
   <root nodeRef="r:933d1e22-ea0a-4371-bd15-b8b35cbed7bd(jetbrains.mps.samples.customAspect.sampleLanguage.editor)/2897519568668509970">
     <file name="DocumentedConcept_Editor.java">
       <node id="2897519568668509970" at="14,79,15,61" concept="3" />
-      <node id="2897519568668509972" at="17,87,18,161" concept="2" />
-      <node id="2897519568668509972" at="18,161,19,46" concept="0" />
+      <node id="2897519568668509972" at="17,87,18,176" concept="2" />
+      <node id="2897519568668509972" at="18,176,19,46" concept="0" />
       <node id="2897519568668509972" at="19,46,20,28" concept="0" />
       <node id="2897519568668509972" at="20,28,21,79" concept="0" />
       <node id="2897519568668509972" at="21,79,22,34" concept="0" />

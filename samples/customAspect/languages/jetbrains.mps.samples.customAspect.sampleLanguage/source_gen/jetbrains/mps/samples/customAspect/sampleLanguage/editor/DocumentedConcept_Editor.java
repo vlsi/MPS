@@ -15,7 +15,7 @@ public class DocumentedConcept_Editor extends DefaultNodeEditor {
     return this.createConstant_lnbvr3_a(editorContext, node);
   }
   private EditorCell createConstant_lnbvr3_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "This is an instance of documented concept. Press ctrl+alt+H to see the doc.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "This is an instance of documented concept. Select MainMenu->Code->Show Doc to see the doc.");
     editorCell.setCellId("Constant_lnbvr3_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
