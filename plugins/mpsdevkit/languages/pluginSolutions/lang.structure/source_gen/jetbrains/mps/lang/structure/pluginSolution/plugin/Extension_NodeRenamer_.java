@@ -7,8 +7,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class Extension_NodeRenamer7972144475523791621_ extends Extension.Default<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>> {
-  public Extension_NodeRenamer7972144475523791621_() {
+public class Extension_NodeRenamer_ extends Extension.Default<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>> {
+  public Extension_NodeRenamer_() {
     super("jetbrains.mps.lang.structure.NodeRenamer");
   }
   public _FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> get() {

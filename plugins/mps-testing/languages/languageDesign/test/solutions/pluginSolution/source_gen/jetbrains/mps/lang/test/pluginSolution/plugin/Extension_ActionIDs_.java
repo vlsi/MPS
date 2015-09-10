@@ -8,8 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.ActionManager;
 
-public class Extension_ActionIDs136702651994179408_ extends Extension.Default<List<String>> {
-  public Extension_ActionIDs136702651994179408_() {
+public class Extension_ActionIDs_ extends Extension.Default<List<String>> {
+  public Extension_ActionIDs_() {
     super("jetbrains.mps.lang.test.ActionIDs");
   }
   public List<String> get() {

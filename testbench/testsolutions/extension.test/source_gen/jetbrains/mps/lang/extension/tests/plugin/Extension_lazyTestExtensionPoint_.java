@@ -4,8 +4,8 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 
-public class Extension_lazyTestExtensionPoint2622946712629256054_ extends Extension.Default<LazyTestObject> {
-  public Extension_lazyTestExtensionPoint2622946712629256054_() {
+public class Extension_lazyTestExtensionPoint_ extends Extension.Default<LazyTestObject> {
+  public Extension_lazyTestExtensionPoint_() {
     super("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint");
   }
   public LazyTestObject get() {
