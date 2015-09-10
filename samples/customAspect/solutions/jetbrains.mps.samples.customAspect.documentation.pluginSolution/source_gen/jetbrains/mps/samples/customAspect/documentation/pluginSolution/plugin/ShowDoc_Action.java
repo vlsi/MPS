@@ -6,14 +6,14 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
 
 public class ShowDoc_Action extends BaseAction {
@@ -26,6 +26,17 @@ public class ShowDoc_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
+  }
+  @Override
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    SAbstractConcept concept = event.getData(MPSCommonDataKeys.NODE).getConcept();
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT)).getLanguage(concept.getLanguage());
+    DocumentationAspectDescriptor docDescriptor = languageRuntime.getAspect(DocumentationAspectDescriptor.class);
+    return docDescriptor != null;
+  }
+  @Override
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
