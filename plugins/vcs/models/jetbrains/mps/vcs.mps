@@ -2502,6 +2502,21 @@
               <node concept="Xl_RD" id="n3g0Q5nSc4" role="37wK5m">
                 <property role="Xl_RC" value="persistence" />
               </node>
+              <node concept="Xl_RD" id="55$LBuYmqPo" role="37wK5m">
+                <property role="Xl_RC" value="platform" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmrSI" role="37wK5m">
+                <property role="Xl_RC" value="components" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmx$K" role="37wK5m">
+                <property role="Xl_RC" value="migration-runtime" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmAyA" role="37wK5m">
+                <property role="Xl_RC" value="textgen" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
+                <property role="Xl_RC" value="java-stub" />
+              </node>
             </node>
           </node>
         </node>
