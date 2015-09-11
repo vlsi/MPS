@@ -3,6 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" version="0" />
+    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -11,6 +16,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -160,7 +166,7 @@
   <node concept="1TIwiD" id="2c3oNEsfcpP">
     <property role="TrG5h" value="BaseIntentionDeclaration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1LJzqOWhXNd" role="PzmwI">
+    <node concept="PrWs8" id="74KP_fVapze" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="2c3oNEsfcpR" role="PzmwI">
@@ -229,6 +235,80 @@
     <property role="3GE5qa" value="parameterized" />
     <property role="34LRSv" value="execute" />
     <ref role="1TJDcQ" node="hmSbjrp" resolve="ExecuteBlock" />
+  </node>
+  <node concept="1TIwiD" id="whfZfEu5_z">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="Parametrized" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="PrWs8" id="2Hif5ue1IL8" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+    </node>
+    <node concept="PrWs8" id="3_zGkPoHFxR" role="PzmwI">
+      <ref role="PrY4T" node="3_zGkPoFdO4" resolve="IIntentionType" />
+    </node>
+    <node concept="1TJgyj" id="whfZfEugC3" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3_zGkPoFdMj">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="Normal" />
+    <node concept="PrWs8" id="3_zGkPoFdO5" role="PzmwI">
+      <ref role="PrY4T" node="3_zGkPoFdO4" resolve="IIntentionType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3_zGkPoFdMk">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="SurroundWith" />
+    <node concept="PrWs8" id="3_zGkPoFdO7" role="PzmwI">
+      <ref role="PrY4T" node="3_zGkPoFdO4" resolve="IIntentionType" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3_zGkPoFdO4">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="IIntentionType" />
+  </node>
+  <node concept="1TIwiD" id="6rleQs35avS">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="ChildFilter" />
+    <property role="34LRSv" value="child filter" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="PrWs8" id="6rleQs35ax3" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+    </node>
+    <node concept="PrWs8" id="6rleQs35ax8" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="2n1DO7EfM7R" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="77ZFhhOGiCb">
+    <property role="TrG5h" value="Intention" />
+    <property role="3GE5qa" value="" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="PrWs8" id="6yt8uwrpgn_" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+    </node>
+    <node concept="PrWs8" id="74KP_fVapyQ" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1TJgyj" id="4d05DgImtx" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="forConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="3_zGkPoFdO9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3_zGkPoFdO4" resolve="IIntentionType" />
+    </node>
   </node>
 </model>
 
