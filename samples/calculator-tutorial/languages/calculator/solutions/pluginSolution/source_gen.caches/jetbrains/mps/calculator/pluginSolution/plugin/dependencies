@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action" file="ExecuteCalculator_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

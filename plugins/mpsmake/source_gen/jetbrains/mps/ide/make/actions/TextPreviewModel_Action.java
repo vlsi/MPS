@@ -38,7 +38,7 @@ public class TextPreviewModel_Action extends BaseAction {
     return md != null && SNodeOperations.isGeneratable(md);
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -67,7 +67,7 @@ public class TextPreviewModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     MakeSession session = new MakeSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), new DefaultMakeMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT)), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(event), event.getData(MPSCommonDataKeys.NODE));

@@ -40,7 +40,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     return SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).isValid();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -79,7 +79,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.editorDeclaration");
 
     SAbstractConcept concept = SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node")));

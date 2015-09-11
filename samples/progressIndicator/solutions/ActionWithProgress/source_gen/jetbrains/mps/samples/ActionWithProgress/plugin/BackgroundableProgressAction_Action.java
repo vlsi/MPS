@@ -50,7 +50,7 @@ public class BackgroundableProgressAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     // Indicates whether the progress dialog has the'Cancel' option 
     boolean canBeCanceled = true;
 

@@ -45,7 +45,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
     final Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
     final Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());

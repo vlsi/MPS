@@ -26,7 +26,7 @@ public class EditWatchAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setVisible(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null && EvaluationUi.DEBUG_SESSION.getData(event.getDataContext()) != null);
   }
   @Override
@@ -44,7 +44,7 @@ public class EditWatchAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IEvaluationContainer container = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
     DebugSession session = EvaluationUi.DEBUG_SESSION.getData(event.getDataContext());
     if (container == null || session == null) {

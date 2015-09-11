@@ -32,7 +32,7 @@ public class MakeModule_Action extends BaseAction {
     return SModuleOperations.isCompileInMps(event.getData(MPSCommonDataKeys.MODULE));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -55,7 +55,7 @@ public class MakeModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     Set<SModule> modules = Collections.<SModule>singleton(event.getData(MPSCommonDataKeys.MODULE));
     ProgressManager.getInstance().run(new DefaultMakeTask(event.getData(CommonDataKeys.PROJECT), "Compiling", modules, false));
   }

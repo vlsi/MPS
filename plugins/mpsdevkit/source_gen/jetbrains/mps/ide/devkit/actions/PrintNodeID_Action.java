@@ -35,7 +35,7 @@ public class PrintNodeID_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     System.out.println("ID = " + event.getData(MPSCommonDataKeys.NODE).getNodeId().toString());
   }
 }

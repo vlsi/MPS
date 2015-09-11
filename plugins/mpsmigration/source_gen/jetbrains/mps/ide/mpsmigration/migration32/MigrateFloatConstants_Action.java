@@ -40,7 +40,7 @@ public class MigrateFloatConstants_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "2214637407304092437");
 
     MigrationScriptExecutor executor = new MigrationScriptExecutor(script, MigrateFloatConstants_Action.this.getTemplatePresentation().getText(), event.getData(MPSCommonDataKeys.MPS_PROJECT));

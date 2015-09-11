@@ -41,7 +41,7 @@ public class EvaluateExpression_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
     event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
   }
@@ -67,7 +67,7 @@ public class EvaluateExpression_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
     if (evaluationProvider != null) {
       final List<SNodeReference> nodePointers = ListSequence.fromList(new ArrayList<SNodeReference>());

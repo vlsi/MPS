@@ -50,7 +50,7 @@ public class ShowMetaLevel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, event.getData(MPSCommonDataKeys.NODE), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
     JOptionPane.showMessageDialog(event.getData(PlatformDataKeys.CONTEXT_COMPONENT), metaLevel);
   }

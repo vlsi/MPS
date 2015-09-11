@@ -36,7 +36,7 @@ public class ModelProperties_Action extends BaseAction {
     return ((Integer) MapSequence.fromMap(_params).get("size")) == 1;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -82,7 +82,7 @@ public class ModelProperties_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     // see ModuleProperties_Action for reason to save all models prior to property change 
     new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()).execute();
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));

@@ -28,7 +28,7 @@ public class ShowOriginNode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     if ((((SNode) MapSequence.fromMap(_params).get("node")) != null) && SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))) instanceof TransientSModel) {
       SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
       // I'd like to have the action visible (although not necessarily enabled) for any transient node, hence can't use enable()/disable() 
@@ -60,7 +60,7 @@ public class ShowOriginNode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());

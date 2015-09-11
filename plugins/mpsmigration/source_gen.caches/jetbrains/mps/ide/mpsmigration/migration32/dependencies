@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action" file="ClearHistoryFiles_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -31,7 +30,6 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.MigrateFloatConstants_Action" file="MigrateFloatConstants_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -48,7 +46,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action" file="MigrateIds_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -64,7 +61,6 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.UpdateDepecatedBlockDocTags_Action" file="UpdateDepecatedBlockDocTags_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -82,7 +78,6 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.migration32.WrapNotExpressionInParens_Action" file="WrapNotExpressionInParens_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

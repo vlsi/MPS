@@ -31,7 +31,7 @@ public class GoToConceptDeclaration_Action extends BaseAction {
     return SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getDeclarationNode() != null;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -54,7 +54,7 @@ public class GoToConceptDeclaration_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
     SNode concept = ((SNode) SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getDeclarationNode());
     NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), concept, true, true);

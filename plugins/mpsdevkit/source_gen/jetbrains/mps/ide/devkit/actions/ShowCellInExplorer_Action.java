@@ -45,7 +45,7 @@ public class ShowCellInExplorer_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSCommonDataKeys.OPERATION_CONTEXT).getComponent(CellExplorerView.class).showCell(event.getData(MPSEditorDataKeys.EDITOR_CELL));
   }
 }

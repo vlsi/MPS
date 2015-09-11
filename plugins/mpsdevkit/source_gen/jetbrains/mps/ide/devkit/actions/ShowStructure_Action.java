@@ -53,7 +53,7 @@ public class ShowStructure_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final StructureViewBuilder structureViewBuilder = event.getData(PlatformDataKeys.FILE_EDITOR).getStructureViewBuilder();
     if (structureViewBuilder == null) {
       return;

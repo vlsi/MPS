@@ -24,7 +24,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
     if (optionEnabled) {
       event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
@@ -33,7 +33,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
     }
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IModifiableGenerationSettings settings = GenerationSettings.getInstance();
     settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
   }

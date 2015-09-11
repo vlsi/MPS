@@ -63,7 +63,7 @@ public class GoToRules_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     GoToRulesHelper.go(event.getData(MPSCommonDataKeys.FRAME), event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(MPSCommonDataKeys.NODE));
   }
 }

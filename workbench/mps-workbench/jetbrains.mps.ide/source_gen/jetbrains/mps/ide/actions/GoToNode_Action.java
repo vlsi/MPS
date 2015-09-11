@@ -47,7 +47,7 @@ public class GoToNode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((SNode) MapSequence.fromMap(_params).get("source")), false, true);
   }
 }

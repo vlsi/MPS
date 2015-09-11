@@ -37,7 +37,7 @@ public class FindLanguageUsages_Action extends BaseAction {
     return event.getData(MPSCommonDataKeys.MODULE) instanceof Language;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -60,7 +60,7 @@ public class FindLanguageUsages_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModule module = event.getData(MPSCommonDataKeys.MODULE);
     final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
     final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());

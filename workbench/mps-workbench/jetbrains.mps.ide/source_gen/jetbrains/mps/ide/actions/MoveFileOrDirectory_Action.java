@@ -71,7 +71,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
     MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
     dialog.show();

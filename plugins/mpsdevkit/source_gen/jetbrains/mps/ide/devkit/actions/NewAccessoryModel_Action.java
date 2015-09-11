@@ -33,7 +33,7 @@ public class NewAccessoryModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText(((event.getData(MPSCommonDataKeys.TREE_NODE) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
   }
   @Override
@@ -62,7 +62,7 @@ public class NewAccessoryModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof AbstractModule)) {
       return;
     }

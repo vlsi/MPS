@@ -26,11 +26,11 @@ public class RemoveWatchAction_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setEnabled(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null);
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IEvaluationContainer model = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
     IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
     if (evaluationProvider != null) {

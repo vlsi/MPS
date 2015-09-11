@@ -27,7 +27,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
     return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -48,7 +48,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
   }
 }

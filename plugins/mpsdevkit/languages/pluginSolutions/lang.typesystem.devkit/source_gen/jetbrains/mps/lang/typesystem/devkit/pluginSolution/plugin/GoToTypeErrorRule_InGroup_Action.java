@@ -29,7 +29,7 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2);
     event.getPresentation().setText(text);
   }
@@ -48,7 +48,7 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     GoToTypeErrorRuleUtil.goToRuleById(((MPSProject) MapSequence.fromMap(_params).get("project")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
   }
   @NotNull

@@ -78,7 +78,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     return lang.getLanguageVersion() != maxFrom + 1;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -103,7 +103,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));

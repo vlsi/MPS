@@ -22,7 +22,7 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
     after();
   }
   @Override
-  protected void doUpdate(AnActionEvent event, Map<String, Object> map) throws Exception {
+  protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
     super.doUpdate(event, map);
     boolean enabled = Sequence.fromIterable(getChanges()).isNotEmpty();
     event.getPresentation().setEnabled(enabled);

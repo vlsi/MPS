@@ -123,7 +123,7 @@ public abstract class BaseAction extends AnAction {
         }
         try {
           doUpdate(e, params);
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
           final Logger log = LogManager.getLogger(getClass());
           if (log.isEnabledFor(Level.ERROR)) {
             log.error(String.format("User's action doUpdate method failed. Action: %s. Class: %s", getTemplatePresentation().getText(), BaseAction.this.getClass().getName()), ex);
@@ -143,7 +143,7 @@ public abstract class BaseAction extends AnAction {
       public void run() {
         try {
           doExecute(event, params);
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
           final Logger log = LogManager.getLogger(getClass());
           if (log.isEnabledFor(Level.ERROR)) {
             log.error(String.format("User's action execute method failed. Action: %s. Class: %s", getName(), BaseAction.this.getClass().getName()), ex);
@@ -213,7 +213,7 @@ public abstract class BaseAction extends AnAction {
     return true;
   }
 
-  protected void doUpdate(AnActionEvent e, Map<String, Object> params) throws Exception {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> params) {
     e.getPresentation().setVisible(true);
     e.getPresentation().setEnabled(true);
   }
@@ -222,7 +222,7 @@ public abstract class BaseAction extends AnAction {
     return getClass().getName();
   }
 
-  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) throws Exception;
+  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params);
 
   /**
    * Produce initialized map with action parameters, or null if any required parameter is missing

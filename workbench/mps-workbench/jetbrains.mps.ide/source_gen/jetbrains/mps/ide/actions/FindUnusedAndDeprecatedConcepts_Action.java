@@ -62,7 +62,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
     InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("ideaProject")), new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {

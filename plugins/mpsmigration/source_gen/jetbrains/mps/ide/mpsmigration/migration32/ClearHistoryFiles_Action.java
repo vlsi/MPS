@@ -48,7 +48,7 @@ public class ClearHistoryFiles_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     Iterable<? extends SModule> modulesWithGenerators = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators();
     Sequence.fromIterable(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {

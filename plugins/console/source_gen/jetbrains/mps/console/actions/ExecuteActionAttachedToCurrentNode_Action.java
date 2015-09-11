@@ -31,7 +31,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) event.getData(MPSCommonDataKeys.NODE)), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -54,7 +54,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"))), "virtual_execute_8517397753922085153", new Object[]{event.getData(CommonDataKeys.PROJECT)});
   }
 }

@@ -39,7 +39,7 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
     return ConflictingModelsUtil.hasResolvableConflicts(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject(), provider, conflictedModelFiles);
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -56,7 +56,7 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<VirtualFile> conflictedModelFiles = ConflictingModelsUtil.getConflictingModelFiles(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject());
     // merge with git provider 
     MergeProvider provider = GitVcs.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).getMergeProvider();

@@ -35,7 +35,7 @@ public class ExportThreads_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
     event.getPresentation().setEnabled(debugSession != null);
     event.getPresentation().setVisible(true);
@@ -62,7 +62,7 @@ public class ExportThreads_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
     AbstractUiState uiState = ((AbstractUiState) debugSession.getUiState());
     StringBuffer sb = new StringBuffer();

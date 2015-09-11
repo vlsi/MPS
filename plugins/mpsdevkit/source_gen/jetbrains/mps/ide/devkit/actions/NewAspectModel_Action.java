@@ -34,7 +34,7 @@ public class NewAspectModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
     event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
     if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
@@ -65,7 +65,7 @@ public class NewAspectModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
 
     // we need it since tree is updated later 

@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.v33.Migration33Actions" file="Migration33Actions.xml" />
   <dependency className="jetbrains.mps.ide.mpsmigration.v33.ModuleUsedLang_Action" file="ModuleUsedLang_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

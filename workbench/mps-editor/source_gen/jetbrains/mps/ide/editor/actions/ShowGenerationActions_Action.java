@@ -38,7 +38,7 @@ public class ShowGenerationActions_Action extends BaseAction {
     return group.getChildren(event).length != 0;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -63,7 +63,7 @@ public class ShowGenerationActions_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     int x = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getX();
     int y = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getHeight();
     final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);

@@ -49,7 +49,7 @@ public class NewSubModel_Action extends BaseAction {
     return correctStereotype;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -88,7 +88,7 @@ public class NewSubModel_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
     final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
 

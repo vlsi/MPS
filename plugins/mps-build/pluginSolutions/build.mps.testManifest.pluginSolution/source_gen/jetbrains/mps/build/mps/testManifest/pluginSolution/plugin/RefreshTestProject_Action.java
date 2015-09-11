@@ -54,7 +54,7 @@ public class RefreshTestProject_Action extends BaseAction {
     return SNodeOperations.isInstanceOf(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, "jetbrains.mps.build.mps.testManifest.structure.TestProjectConfiguration"));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -86,7 +86,7 @@ public class RefreshTestProject_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     String action = "Refresh Test Project";
     final Wrappers._boolean done = new Wrappers._boolean(false);
     IdeEventQueue.getInstance().flushQueue();

@@ -37,7 +37,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SRepository projectRepository = ProjectHelper.toMPSProject(event.getProject()).getRepository();
     for (SModule module : projectRepository.getModules()) {
       if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {

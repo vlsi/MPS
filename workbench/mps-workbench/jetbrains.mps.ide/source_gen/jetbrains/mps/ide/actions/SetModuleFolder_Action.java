@@ -33,7 +33,7 @@ public class SetModuleFolder_Action extends BaseAction {
     return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((SModule) MapSequence.fromMap(_params).get("module")));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -72,7 +72,7 @@ public class SetModuleFolder_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
     String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((SModule) MapSequence.fromMap(_params).get("module")));
     String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder);

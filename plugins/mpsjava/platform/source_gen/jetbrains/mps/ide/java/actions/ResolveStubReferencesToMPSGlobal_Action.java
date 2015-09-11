@@ -48,7 +48,7 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     new StubResolver().resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }

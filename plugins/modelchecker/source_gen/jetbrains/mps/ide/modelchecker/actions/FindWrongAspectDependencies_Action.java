@@ -48,7 +48,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules())).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return FindWrongAspectDependencies_Action.this.needsProcessing(it, event);

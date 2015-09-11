@@ -43,7 +43,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(module);
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -75,7 +75,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
     DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {

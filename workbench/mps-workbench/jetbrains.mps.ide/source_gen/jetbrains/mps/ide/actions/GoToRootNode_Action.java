@@ -30,7 +30,7 @@ public class GoToRootNode_Action extends BaseAction {
     return false;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 
     MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);

@@ -46,7 +46,7 @@ public class CopyNodeReference_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
     for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
       builder.append(NameUtil.nodeFQName(node)).append("\n");

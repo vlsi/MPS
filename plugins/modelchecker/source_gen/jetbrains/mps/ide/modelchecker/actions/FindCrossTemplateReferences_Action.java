@@ -53,7 +53,7 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel md) {
         return SModelStereotype.isGeneratorModel(md) && GenerationFacade.canGenerate(md);

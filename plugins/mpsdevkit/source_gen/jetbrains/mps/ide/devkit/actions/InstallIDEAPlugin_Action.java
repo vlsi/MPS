@@ -51,7 +51,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
     File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(event);
     if (targetDir == null) {

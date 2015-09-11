@@ -58,7 +58,7 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
     RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), oldName, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
     dialog.show();

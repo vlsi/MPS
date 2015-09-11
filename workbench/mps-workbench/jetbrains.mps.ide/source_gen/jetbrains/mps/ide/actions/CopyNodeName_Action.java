@@ -28,7 +28,7 @@ public class CopyNodeName_Action extends BaseAction {
     return SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node")));
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -46,7 +46,7 @@ public class CopyNodeName_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     CopyPasteUtil.copyTextToClipboard(SNodeOperations.getModelLongName(((SNode) MapSequence.fromMap(_params).get("node")).getModel()) + "." + ((SNode) MapSequence.fromMap(_params).get("node")).getName());
   }
 }

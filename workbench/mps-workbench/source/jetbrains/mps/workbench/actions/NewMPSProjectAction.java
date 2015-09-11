@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class NewMPSProjectAction extends BaseAction implements DumbAware {
   }
 
   @Override
-  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) throws Exception {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     super.doUpdate(e, _params);
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
       e.getPresentation().setIcon(NEW_ICON_WELCOME_SCREEN);

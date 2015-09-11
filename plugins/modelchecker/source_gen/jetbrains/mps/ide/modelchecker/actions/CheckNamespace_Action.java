@@ -36,7 +36,7 @@ public class CheckNamespace_Action extends BaseAction {
     return ListSequence.fromList(CheckNamespace_Action.this.modules2check(_params)).isNotEmpty();
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -61,7 +61,7 @@ public class CheckNamespace_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModule> modules = CheckNamespace_Action.this.modules2check(_params);
     ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModulesAndShowResult(modules);
   }

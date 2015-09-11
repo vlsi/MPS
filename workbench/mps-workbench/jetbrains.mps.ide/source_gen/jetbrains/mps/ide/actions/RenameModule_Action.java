@@ -30,7 +30,7 @@ public class RenameModule_Action extends BaseAction {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule && !(((SModule) MapSequence.fromMap(_params).get("module")).isPackaged()) && !(((SModule) MapSequence.fromMap(_params).get("module")).isReadOnly());
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -62,7 +62,7 @@ public class RenameModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     new RenameModuleDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
   }
 }

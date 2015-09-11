@@ -40,7 +40,7 @@ public class GoToModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Project project = event.getData(PlatformDataKeys.PROJECT);
     assert project != null;
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");

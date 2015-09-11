@@ -50,7 +50,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -79,7 +79,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     MappingConfigFinder finder = new MappingConfigFinder(((Generator) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)));
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(true).forceNewTab(false);
     UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), FindUtils.makeProvider(finder), new SearchQuery(null), opt);

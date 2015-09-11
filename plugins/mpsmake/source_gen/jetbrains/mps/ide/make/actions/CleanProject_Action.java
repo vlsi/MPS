@@ -61,7 +61,7 @@ public class CleanProject_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
     SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules(SModule.class)));
     ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Cleaning", true) {

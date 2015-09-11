@@ -40,7 +40,7 @@ public class UpdateDepecatedBlockDocTags_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)", "992603585967257187");
     MigrationScriptExecutor executor = new MigrationScriptExecutor(script, UpdateDepecatedBlockDocTags_Action.this.getTemplatePresentation().getText(), event.getData(MPSCommonDataKeys.MPS_PROJECT));
     executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
