@@ -5355,7 +5355,10 @@
         <node concept="TZ5HI" id="2DYuqezx02C" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx02D" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx05v" role="1dT_Ay">
-              <property role="1dT_AB" value="just inline" />
+              <property role="1dT_AB" value="use SNodeReference.getModelReference().resolve() instead." />
+            </node>
+            <node concept="1dT_AC" id="1_xVpohZcFs" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
             </node>
           </node>
         </node>

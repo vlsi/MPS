@@ -312,7 +312,7 @@ public class SNodeOperations {
   }
   /**
    * 
-   * @deprecated just inline
+   * @deprecated use SNodeReference.getModelReference().resolve() instead.
    */
   @Deprecated
   public static SModel getModelFromNodeReference(SNodeReference ref) {

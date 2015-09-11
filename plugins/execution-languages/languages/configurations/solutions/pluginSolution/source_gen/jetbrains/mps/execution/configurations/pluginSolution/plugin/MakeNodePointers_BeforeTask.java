@@ -8,15 +8,14 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.runners.ExecutionEnvironment;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
@@ -47,13 +46,15 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       return true;
     }
     public boolean execute(Project project, ExecutionEnvironment environment) {
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
       Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
         public boolean accept(SNodeReference it) {
           return it != null;
         }
       }).select(new ISelector<SNodeReference, SModel>() {
         public SModel select(SNodeReference it) {
-          return (SModel) SNodeOperations.getModelFromNodeReference(((SNodePointer) it));
+          SNode n = it.resolve(mpsProject.getRepository());
+          return (n == null ? null : n.getModel());
         }
       }).distinct().where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
@@ -64,7 +65,6 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
         return true;
       }
 
-      jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
       MakeSession session = new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
         Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(models).resources(false));
