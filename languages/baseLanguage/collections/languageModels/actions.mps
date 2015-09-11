@@ -275,9 +275,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
@@ -2914,15 +2912,11 @@
             <node concept="3cpWsn" id="i46UKK7" role="3cpWs9">
               <property role="TrG5h" value="accepted" />
               <node concept="A3Dl8" id="i46UKK8" role="1tU5fm">
-                <node concept="3THzug" id="i46UM5X" role="A3Ik2">
-                  <ref role="3qa414" to="tpee:fz3vP1H" resolve="Type" />
-                </node>
+                <node concept="3THzug" id="i46UM5X" role="A3Ik2" />
               </node>
               <node concept="2ShNRf" id="i46US9V" role="33vP2m">
                 <node concept="Tc6Ow" id="i46UTgv" role="2ShVmc">
-                  <node concept="3THzug" id="i46UUM$" role="HW$YZ">
-                    <ref role="3qa414" to="tpee:fz3vP1H" resolve="Type" />
-                  </node>
+                  <node concept="3THzug" id="i46UUM$" role="HW$YZ" />
                   <node concept="3TUQnm" id="i46UWS8" role="HW$Y0">
                     <ref role="3TV0OU" to="tp2q:gKA3Dh4" resolve="SequenceType" />
                   </node>
