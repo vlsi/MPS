@@ -149,10 +149,6 @@ public class CollectHashes_Facet extends IFacet.Stub {
       public Map<String, String> fileHashes() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public CollectHashes_Facet.Target_collect.Parameters assignFrom(Tuples._1<Map<String, String>> from) {
-        return (CollectHashes_Facet.Target_collect.Parameters) super.assign(from);
-      }
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

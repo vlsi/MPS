@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class NamedTupleInFunctionType {
   public NamedTupleInFunctionType() {
@@ -54,10 +53,6 @@ public class NamedTupleInFunctionType {
     }
     public String s2() {
       return super._1();
-    }
-    @SuppressWarnings(value = "unchecked")
-    public NamedTupleInFunctionType.TwoStrings assignFrom(Tuples._2<String, String> from) {
-      return (NamedTupleInFunctionType.TwoStrings) super.assign(from);
     }
   }
 }

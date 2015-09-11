@@ -7,7 +7,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> implements IFResource {
   public FResource() {
@@ -45,10 +44,6 @@ public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SN
   }
   public SModel model() {
     return super._4();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public FResource assignFrom(Tuples._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> from) {
-    return (FResource) super.assign(from);
   }
   public String describe() {
     return null;

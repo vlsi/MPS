@@ -141,60 +141,54 @@
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/4652592318748334972">
     <file name="Bounds.java">
-      <node id="4652592318748334972" at="9,19,10,12" concept="18" />
-      <node id="4652592318748334972" at="12,45,13,22" concept="18" />
-      <node id="4652592318748334972" at="15,39,16,27" concept="13" />
-      <node id="4652592318748334972" at="18,37,19,27" concept="13" />
-      <node id="4652592318748334972" at="21,26,22,22" concept="13" />
-      <node id="4652592318748334972" at="24,24,25,22" concept="13" />
-      <node id="4652592318748334972" at="28,62,29,39" concept="13" />
-      <node id="4652592318748334977" at="31,23,32,49" concept="13" />
-      <node id="4652592318748334991" at="34,36,35,118" concept="13" />
-      <node id="6786798249452902952" at="37,38,38,67" concept="13" />
-      <node id="4652592318748334972" at="9,0,12,0" concept="3" trace="Bounds#()V" />
-      <node id="4652592318748334972" at="12,0,15,0" concept="3" trace="Bounds#(Ljava/lang/Integer;Ljava/lang/Integer;)V" />
-      <node id="4652592318748334972" at="15,0,18,0" concept="11" trace="start#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-      <node id="4652592318748334972" at="18,0,21,0" concept="11" trace="end#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-      <node id="4652592318748334972" at="21,0,24,0" concept="11" trace="start#()Ljava/lang/Integer;" />
-      <node id="4652592318748334972" at="24,0,27,0" concept="11" trace="end#()Ljava/lang/Integer;" />
-      <node id="4652592318748334973" at="31,0,34,0" concept="11" trace="length#()I" />
-      <node id="4652592318748334985" at="34,0,37,0" concept="11" trace="merge#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-      <node id="6786798249452853798" at="37,0,40,0" concept="11" trace="contains#(I)Z" />
-      <node id="4652592318748334972" at="27,0,31,0" concept="11" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/vcs/diff/ui/common/Bounds;" />
-      <scope id="4652592318748334972" at="9,19,10,12" />
-      <scope id="4652592318748334972" at="12,45,13,22" />
-      <scope id="4652592318748334972" at="15,39,16,27" />
-      <scope id="4652592318748334972" at="18,37,19,27" />
-      <scope id="4652592318748334972" at="21,26,22,22" />
-      <scope id="4652592318748334972" at="24,24,25,22" />
-      <scope id="4652592318748334972" at="28,62,29,39" />
-      <scope id="4652592318748334976" at="31,23,32,49" />
-      <scope id="4652592318748334990" at="34,36,35,118" />
-      <scope id="6786798249452853801" at="37,38,38,67" />
-      <scope id="4652592318748334972" at="9,0,12,0" />
-      <scope id="4652592318748334972" at="12,0,15,0">
+      <node id="4652592318748334972" at="8,19,9,12" concept="18" />
+      <node id="4652592318748334972" at="11,45,12,22" concept="18" />
+      <node id="4652592318748334972" at="14,39,15,27" concept="13" />
+      <node id="4652592318748334972" at="17,37,18,27" concept="13" />
+      <node id="4652592318748334972" at="20,26,21,22" concept="13" />
+      <node id="4652592318748334972" at="23,24,24,22" concept="13" />
+      <node id="4652592318748334977" at="26,23,27,49" concept="13" />
+      <node id="4652592318748334991" at="29,36,30,118" concept="13" />
+      <node id="6786798249452902952" at="32,38,33,67" concept="13" />
+      <node id="4652592318748334972" at="8,0,11,0" concept="3" trace="Bounds#()V" />
+      <node id="4652592318748334972" at="11,0,14,0" concept="3" trace="Bounds#(Ljava/lang/Integer;Ljava/lang/Integer;)V" />
+      <node id="4652592318748334972" at="14,0,17,0" concept="11" trace="start#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="4652592318748334972" at="17,0,20,0" concept="11" trace="end#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="4652592318748334972" at="20,0,23,0" concept="11" trace="start#()Ljava/lang/Integer;" />
+      <node id="4652592318748334972" at="23,0,26,0" concept="11" trace="end#()Ljava/lang/Integer;" />
+      <node id="4652592318748334973" at="26,0,29,0" concept="11" trace="length#()I" />
+      <node id="4652592318748334985" at="29,0,32,0" concept="11" trace="merge#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="6786798249452853798" at="32,0,35,0" concept="11" trace="contains#(I)Z" />
+      <scope id="4652592318748334972" at="8,19,9,12" />
+      <scope id="4652592318748334972" at="11,45,12,22" />
+      <scope id="4652592318748334972" at="14,39,15,27" />
+      <scope id="4652592318748334972" at="17,37,18,27" />
+      <scope id="4652592318748334972" at="20,26,21,22" />
+      <scope id="4652592318748334972" at="23,24,24,22" />
+      <scope id="4652592318748334976" at="26,23,27,49" />
+      <scope id="4652592318748334990" at="29,36,30,118" />
+      <scope id="6786798249452853801" at="32,38,33,67" />
+      <scope id="4652592318748334972" at="8,0,11,0" />
+      <scope id="4652592318748334972" at="11,0,14,0">
         <var name="end" id="4652592318748334972" />
         <var name="start" id="4652592318748334972" />
       </scope>
-      <scope id="4652592318748334972" at="15,0,18,0">
+      <scope id="4652592318748334972" at="14,0,17,0">
         <var name="value" id="4652592318748334972" />
       </scope>
-      <scope id="4652592318748334972" at="18,0,21,0">
+      <scope id="4652592318748334972" at="17,0,20,0">
         <var name="value" id="4652592318748334972" />
       </scope>
-      <scope id="4652592318748334972" at="21,0,24,0" />
-      <scope id="4652592318748334972" at="24,0,27,0" />
-      <scope id="4652592318748334973" at="31,0,34,0" />
-      <scope id="4652592318748334985" at="34,0,37,0">
+      <scope id="4652592318748334972" at="20,0,23,0" />
+      <scope id="4652592318748334972" at="23,0,26,0" />
+      <scope id="4652592318748334973" at="26,0,29,0" />
+      <scope id="4652592318748334985" at="29,0,32,0">
         <var name="that" id="4652592318748334986" />
       </scope>
-      <scope id="6786798249452853798" at="37,0,40,0">
+      <scope id="6786798249452853798" at="32,0,35,0">
         <var name="value" id="6786798249452902943" />
       </scope>
-      <scope id="4652592318748334972" at="27,0,31,0">
-        <var name="from" id="4652592318748334972" />
-      </scope>
-      <unit id="4652592318748334972" at="8,0,41,0" name="jetbrains.mps.vcs.diff.ui.common.Bounds" />
+      <unit id="4652592318748334972" at="7,0,36,0" name="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     </file>
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/4652592318748335014">

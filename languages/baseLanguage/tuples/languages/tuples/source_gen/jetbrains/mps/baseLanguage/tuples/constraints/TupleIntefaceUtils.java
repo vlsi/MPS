@@ -16,7 +16,6 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.internal.collections.runtime.IEnumerator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class TupleIntefaceUtils {
   public TupleIntefaceUtils() {
@@ -95,10 +94,6 @@ public class TupleIntefaceUtils {
     }
     public SNode type() {
       return super._2();
-    }
-    @SuppressWarnings(value = "unchecked")
-    public TupleIntefaceUtils.Property assignFrom(Tuples._3<Boolean, String, SNode> from) {
-      return (TupleIntefaceUtils.Property) super.assign(from);
     }
   }
 }

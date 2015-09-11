@@ -235,10 +235,6 @@ public class Test_Facet extends IFacet.Stub {
       public UnitTestListener testListener() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Test_Facet.Target_runTests.Parameters assignFrom(Tuples._1<UnitTestListener> from) {
-        return (Test_Facet.Target_runTests.Parameters) super.assign(from);
-      }
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

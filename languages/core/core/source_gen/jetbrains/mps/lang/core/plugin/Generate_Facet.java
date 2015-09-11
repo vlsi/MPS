@@ -185,10 +185,6 @@ public class Generate_Facet extends IFacet.Stub {
       public Boolean cleanMake() {
         return super._1();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._2<MakeSession, Boolean> from) {
-        return (Generate_Facet.Target_checkParameters.Variables) super.assign(from);
-      }
     }
   }
   public static class Target_configure implements ITargetEx2 {
@@ -324,10 +320,6 @@ public class Generate_Facet extends IFacet.Stub {
       }
       public TransientModelsProvider transientModelsProvider() {
         return super._3();
-      }
-      @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_configure.Variables assignFrom(Tuples._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> from) {
-        return (Generate_Facet.Target_configure.Variables) super.assign(from);
       }
     }
   }

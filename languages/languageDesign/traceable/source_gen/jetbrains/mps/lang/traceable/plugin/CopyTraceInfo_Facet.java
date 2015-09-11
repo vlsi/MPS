@@ -198,10 +198,6 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
       public Boolean skipCopying() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters assignFrom(Tuples._1<Boolean> from) {
-        return (CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters) super.assign(from);
-      }
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

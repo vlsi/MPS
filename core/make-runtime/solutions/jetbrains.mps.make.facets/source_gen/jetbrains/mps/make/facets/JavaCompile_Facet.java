@@ -211,10 +211,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
       public JavaCompilerOptions options() {
         return super._2();
       }
-      @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._3<Boolean, Boolean, JavaCompilerOptions> from) {
-        return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
-      }
     }
   }
   public static class Target_auxCompile implements ITargetEx2 {
@@ -369,10 +365,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
       }
       public Boolean skipAuxCompile() {
         return super._1();
-      }
-      @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_auxCompile.Parameters assignFrom(Tuples._2<Project, Boolean> from) {
-        return (JavaCompile_Facet.Target_auxCompile.Parameters) super.assign(from);
       }
     }
   }

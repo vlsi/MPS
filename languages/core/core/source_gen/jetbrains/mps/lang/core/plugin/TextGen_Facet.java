@@ -172,10 +172,6 @@ public class TextGen_Facet extends IFacet.Stub {
       public MakeSession makeSession() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_configure.Parameters assignFrom(Tuples._1<MakeSession> from) {
-        return (TextGen_Facet.Target_configure.Parameters) super.assign(from);
-      }
     }
   }
   public static class Target_textGen implements ITargetEx2 {
@@ -404,10 +400,6 @@ public class TextGen_Facet extends IFacet.Stub {
       }
       public Boolean generateDebugInfo() {
         return super._1();
-      }
-      @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_textGen.Parameters assignFrom(Tuples._2<Boolean, Boolean> from) {
-        return (TextGen_Facet.Target_textGen.Parameters) super.assign(from);
       }
     }
   }

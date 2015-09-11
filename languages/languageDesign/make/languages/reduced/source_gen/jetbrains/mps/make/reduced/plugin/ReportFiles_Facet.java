@@ -182,10 +182,6 @@ public class ReportFiles_Facet extends IFacet.Stub {
       public Map<String, SModel> sourceModels() {
         return super._3();
       }
-      @SuppressWarnings(value = "unchecked")
-      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> from) {
-        return (ReportFiles_Facet.Target_report.Parameters) super.assign(from);
-      }
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

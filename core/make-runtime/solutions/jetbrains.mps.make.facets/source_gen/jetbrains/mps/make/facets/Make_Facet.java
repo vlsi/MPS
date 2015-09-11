@@ -195,10 +195,6 @@ public class Make_Facet extends IFacet.Stub {
       public Boolean skipReconcile() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Make_Facet.Target_reconcile.Parameters assignFrom(Tuples._1<Boolean> from) {
-        return (Make_Facet.Target_reconcile.Parameters) super.assign(from);
-      }
     }
   }
   public static class Target_cleanup implements ITargetEx {
@@ -362,10 +358,6 @@ public class Make_Facet extends IFacet.Stub {
       }
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
         return super._0();
-      }
-      @SuppressWarnings(value = "unchecked")
-      public Make_Facet.Target_make.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
-        return (Make_Facet.Target_make.Parameters) super.assign(from);
       }
     }
   }

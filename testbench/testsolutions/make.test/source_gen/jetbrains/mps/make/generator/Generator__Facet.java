@@ -129,10 +129,6 @@ public class Generator__Facet extends IFacet.Stub {
       public String value() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Generator__Facet.Target_Configure.Variables assignFrom(Tuples._1<String> from) {
-        return (Generator__Facet.Target_Configure.Variables) super.assign(from);
-      }
     }
   }
   public static class Target_Generate implements ITargetEx {
