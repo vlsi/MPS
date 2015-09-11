@@ -5,24 +5,20 @@ package jetbrains.mps.lang.intentions.behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class ChildFilter_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements AutoInitDSLClass_BehaviorDescriptor, INamedConcept_BehaviorDescriptor, MemberInstance_BehaviorDescriptor {
-  public ChildFilter_BehaviorDescriptor() {
-  }
-  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
-    return ChildFilter_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
+public class FilterFunctionStrategy_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements AutoInitDSLClass_BehaviorDescriptor, INamedConcept_BehaviorDescriptor, ChildFilterStrategy_BehaviorDescriptor {
+  public FilterFunctionStrategy_BehaviorDescriptor() {
   }
   public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
-    return ChildFilter_Behavior.virtual_getDescriptor_1055884086724995485(thisNode);
+    return FilterFunctionStrategy_Behavior.virtual_getDescriptor_1055884086724995485(thisNode);
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.intentions.structure.ChildFilter";
+    return "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy";
   }
 }

@@ -15,22 +15,28 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new AlwaysAvailableInChildNodesStrategy_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ChildFilter_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Intention_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentParameterDeclaration_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new IntentionParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new FilterFunctionStrategy_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new Normal_Editor());
+        return Collections.<ConceptEditor>singletonList(new Intention_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new ParameterizedIntentionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntentionParameter_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new Parametrized_Editor());
+        return Collections.<ConceptEditor>singletonList(new Normal_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new QueryBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new Parameter_Editor());
       case 8:
+        return Collections.<ConceptEditor>singletonList(new ParameterizedIntentionDeclaration_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new Parametrized_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new QueryBlock_Editor());
+      case 11:
         return Collections.<ConceptEditor>singletonList(new SurroundWith_Editor());
       default:
     }
@@ -41,5 +47,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilter", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith"};
 }

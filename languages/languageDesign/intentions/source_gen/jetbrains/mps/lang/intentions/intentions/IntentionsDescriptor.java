@@ -17,7 +17,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
 
   public IntentionsDescriptor() {
     myId2Index = new long[1];
-    myId2Index[0] = 0x2303633a9c3cc675L;
+    myId2Index[0] = 0x115b81b652bL;
   }
 
   @Override
@@ -27,7 +27,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
 
     switch (index) {
       case 0:
-        // Concept: BaseIntentionDeclaration 
+        // Concept: IntentionDeclaration 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
           // base intentions 

@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.intentions.methods.ChildFilterDeclaration_Queries" file="ChildFilterDeclaration_Queries.java">
-    <classNode dependClassName="jetbrains.mps.lang.intentions.methods.TypeCalculator" />
+  <dependency className="jetbrains.mps.lang.intentions.methods.FilterFunctionStrategyDeclaration_Queries" file="FilterFunctionStrategyDeclaration_Queries.java">
+    <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.methods.IntentionDeclaration_Queries" file="IntentionDeclaration_Queries.java">
-    <classNode dependClassName="jetbrains.mps.lang.intentions.methods.TypeCalculator" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.methods.ParametrizedDeclaration_Queries" file="ParametrizedDeclaration_Queries.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.methods.TypeCalculator" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.util.TypeCalculator" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.methods.TypeCalculator" file="TypeCalculator.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
 </dependenciesRoot>

@@ -3,16 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" version="0" />
-    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
@@ -22,6 +15,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
@@ -272,9 +267,9 @@
     <property role="TrG5h" value="IIntentionType" />
   </node>
   <node concept="1TIwiD" id="6rleQs35avS">
-    <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="ChildFilter" />
-    <property role="34LRSv" value="child filter" />
+    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="TrG5h" value="FilterFunctionStrategy" />
+    <property role="34LRSv" value="filter function" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="6rleQs35ax3" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
@@ -282,8 +277,8 @@
     <node concept="PrWs8" id="6rleQs35ax8" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="2n1DO7EfM7R" role="PzmwI">
-      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    <node concept="PrWs8" id="63iz5ddjPo8" role="PzmwI">
+      <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
     </node>
   </node>
   <node concept="1TIwiD" id="77ZFhhOGiCb">
@@ -303,12 +298,52 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
-    <node concept="1TJgyj" id="3_zGkPoFdO9" role="1TKVEi">
+    <node concept="1TJgyj" id="63iz5ddjJ_C" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="type" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3_zGkPoFdO4" resolve="IIntentionType" />
+      <property role="20kJfa" value="childFilter" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
     </node>
+    <node concept="1TJgyi" id="63iz5ddj4mY" role="1TKVEl">
+      <property role="TrG5h" value="isError" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="63iz5ddjJkS">
+    <property role="TrG5h" value="ChildFilterStrategy" />
+    <property role="3GE5qa" value="childFilterStrategy" />
+  </node>
+  <node concept="1TIwiD" id="63iz5ddjJBC">
+    <property role="TrG5h" value="AlwaysAvailableInChildNodesStrategy" />
+    <property role="34LRSv" value="always available" />
+    <property role="3GE5qa" value="childFilterStrategy" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="63iz5ddjJBD" role="PzmwI">
+      <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6q8H2OTpOHU">
+    <property role="TrG5h" value="Parameter" />
+    <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+    <node concept="PrWs8" id="6q8H2OTpOHV" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+    <node concept="1TJgyj" id="6q8H2OTpOYg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5ChbRjKIZ4m">
+    <property role="TrG5h" value="DependentParameterDeclaration" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="4jgyS0Z9lVZ">
+    <property role="TrG5h" value="ForConceptParameterDeclaration" />
+    <ref role="1TJDcQ" node="5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
   </node>
 </model>
 

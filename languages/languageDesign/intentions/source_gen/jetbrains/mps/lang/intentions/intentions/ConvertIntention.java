@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -43,22 +43,22 @@ public class ConvertIntention implements IntentionFactory {
 
 
   public SConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration");
+    return MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration");
   }
 
   public SNodePointer getDeclarationNode() {
     return implementationNode;
   }
 
-  private SNodePointer implementationNode = new SNodePointer("r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)", "2971073457767391453");
+  private SNodePointer implementationNode = new SNodePointer("r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)", "1188842953201006833");
 
 
   private boolean isApplicableHelper(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration")));
+    return true;
   }
 
-  private boolean childFilter(SNode node, SNode childNode, EditorContext editorContext) {
-    return true;
+  private boolean filterChild(SNode node, SNode childNode, EditorContext editorContext) {
+    return false;
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
@@ -68,7 +68,7 @@ public class ConvertIntention implements IntentionFactory {
 
     SNode child = editorContext.getSelectedNode();
     if (child != node) {
-      if (!(childFilter(node, child, editorContext))) {
+      if (!(filterChild(node, child, editorContext))) {
         return false;
       }
     }
@@ -89,19 +89,28 @@ public class ConvertIntention implements IntentionFactory {
     SLinkOperations.setTarget(nodeRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(argumentNumber));
     return nodeRef;
   }
-  public void resolveReference(SNode root, SNode node) {
-    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
-      SNodeOperations.replaceWithAnother(node, createParameterReference(root, 0));
-    } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
-      SNodeOperations.replaceWithAnother(node, createParameterReference(root, 1));
+  public void resolveReference(SNode root, SNode node, boolean threeParameters) {
+    if (threeParameters) {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
+        SNodeOperations.replaceWithAnother(node, createParameterReference(root, 0));
+      } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
+        SNodeOperations.replaceWithAnother(node, createParameterReference(root, 1));
+      } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
+        SNodeOperations.replaceWithAnother(node, createParameterReference(root, 2));
+      }
+    } else {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
+        SNodeOperations.replaceWithAnother(node, createParameterReference(root, 0));
+      } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
+        SNodeOperations.replaceWithAnother(node, createParameterReference(root, 1));
+      }
     }
 
     for (SNode child : SNodeOperations.getChildren(node)) {
-      resolveReference(root, child);
+      resolveReference(root, child, threeParameters);
     }
   }
   public void execute(SNode node, EditorContext editorContext) {
-    // extract information from old intention 
     boolean oldIsErrorIntention = SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cc679L, "isErrorIntention"));
     boolean oldIsAvailableInChildNodes = SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cc67aL, "isAvailableInChildNodes"));
     SNode oldExecute = SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6813L, "executeFunction")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -116,37 +125,38 @@ public class ConvertIntention implements IntentionFactory {
 
     SNode newExecute = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063981347"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
     SNode newDescription = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982514"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
-    SNode newIsApplicable = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982606"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
-    SNode newIsErrorIntention = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063979054"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance"));
 
+    SNode newIsApplicable = null;
 
-    ListSequence.fromList(SLinkOperations.getChildren(newIntention, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.ChildFilter")), null));
-    SNode childFilter = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "2720639551453208873"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.ChildFilter"));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0abL, "isApplicableFunction")) != null)) {
+      ListSequence.fromList(SLinkOperations.getChildren(newIntention, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982606"), "virtual_create_8260330507834998478", new Object[]{}));
+      newIsApplicable = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982606"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
+      SNodeOperations.deleteNode(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982606"), "virtual_findPlaceholders_6909536935410952255", new Object[]{newIntention})).first());
+    }
 
-    SNode newIsDirectDescendant = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7409894075527378776"), "virtual_find_2603987804376013077", new Object[]{childFilter})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance"));
-    SNode newIsSimple = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7409894075527378771"), "virtual_find_2603987804376013077", new Object[]{childFilter})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance"));
-    SNode newFilter = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7409894075527378784"), "virtual_find_2603987804376013077", new Object[]{childFilter})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
+    if (oldIsAvailableInChildNodes) {
+      SLinkOperations.setTarget(newIntention, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x60d28c534d4ef968L, "childFilter"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy")), null));
+      SNode newChildFilter = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7409894075527378784"), "virtual_find_2603987804376013077", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(newIntention, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x60d28c534d4ef968L, "childFilter")), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy"))})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
+      copyFunctionBody(oldChildFilter, newChildFilter);
+      resolveReference(newChildFilter, newChildFilter, true);
+    }
 
     // set members 
     SPropertyOperations.set(newIntention, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     SLinkOperations.setTarget(newIntention, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x10d005a50b96761L, "forConcept"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept")));
 
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0abL, "isApplicableFunction")) != null)) {
+      copyFunctionBody(oldIsApplicable, newIsApplicable);
+      resolveReference(newIsApplicable, newIsApplicable, false);
+    }
+
     copyFunctionBody(oldExecute, newExecute);
+    resolveReference(newExecute, newExecute, false);
+
     copyFunctionBody(oldDescription, newDescription);
-    copyFunctionBody(oldIsApplicable, newIsApplicable);
-    copyFunctionBody(oldChildFilter, newFilter);
+    resolveReference(newDescription, newDescription, false);
 
-    resolveReference(newExecute, newExecute);
-    resolveReference(newDescription, newDescription);
-    resolveReference(newIsApplicable, newIsApplicable);
-    resolveReference(newFilter, newFilter);
-
-    SPropertyOperations.set(newIsDirectDescendant, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"), "" + (false));
-    SPropertyOperations.set(newIsSimple, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"), "" + (false));
-
-    SPropertyOperations.set(newIsErrorIntention, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"), "" + (oldIsErrorIntention));
-
-    SLinkOperations.setTarget(newIntention, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x3963b14d58acdd09L, "type"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x3963b14d58acdc93L, "jetbrains.mps.lang.intentions.structure.Normal"))));
+    SPropertyOperations.set(newIntention, MetaAdapterFactory.getProperty(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x60d28c534d4c45beL, "isError"), "" + (oldIsErrorIntention));
 
     SPropertyOperations.set(newIntention, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     SModelOperations.addRootNode(SNodeOperations.getModel(node), newIntention);
@@ -154,9 +164,6 @@ public class ConvertIntention implements IntentionFactory {
   public String description(SNode node, EditorContext editorContext) {
     return "convert intention";
   }
-
-
-
 
   public Collection<Intention> getIntentions(SNode node, EditorContext editorContext) {
     Collection<Intention> result = CollectionSequence.fromCollection(new ArrayList<Intention>());

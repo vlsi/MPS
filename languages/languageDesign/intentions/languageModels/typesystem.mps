@@ -12,6 +12,8 @@
   <imports>
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="6003" ref="r:cd31458a-5129-42ac-be1d-44effd111f4a(jetbrains.mps.lang.intentions.util)" />
+    <import index="tp3m" ref="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -35,6 +37,9 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -79,6 +84,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -234,6 +240,35 @@
     <node concept="1YaCAy" id="38RcvkhOstm" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tp3j:38RcvkhOstg" resolve="ConceptFunctionParameter_childNode" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5ChbRjKJ1AY">
+    <property role="TrG5h" value="typeof_DependentParameterDeclaration" />
+    <property role="18ip37" value="true" />
+    <node concept="3clFbS" id="5ChbRjKJ1AZ" role="18ibNy">
+      <node concept="1Z5TYs" id="5ChbRjKJ1Ga" role="3cqZAp">
+        <node concept="mw_s8" id="5ChbRjKJ1Gu" role="1ZfhKB">
+          <node concept="2OqwBi" id="4jgyS0Zac9V" role="mwGJk">
+            <node concept="1YBJjd" id="4jgyS0Zac4o" role="2Oq$k0">
+              <ref role="1YBMHb" node="5ChbRjKJ1B1" resolve="dependentParameterDeclaration" />
+            </node>
+            <node concept="2qgKlT" id="4jgyS0Zaczs" role="2OqNvi">
+              <ref role="37wK5l" to="tp3m:5ChbRjKIZvf" resolve="calculateType" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5ChbRjKJ1Gd" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5ChbRjKJ1B5" role="mwGJk">
+            <node concept="1YBJjd" id="5ChbRjKJ1BH" role="1Z2MuG">
+              <ref role="1YBMHb" node="5ChbRjKJ1B1" resolve="dependentParameterDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5ChbRjKJ1B1" role="1YuTPh">
+      <property role="TrG5h" value="dependentParameterDeclaration" />
+      <ref role="1YaFvo" to="tp3j:5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
     </node>
   </node>
 </model>

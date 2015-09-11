@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.Parameter_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
@@ -18,6 +19,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.intentions.constraints.Parameter_Constraints" file="Parameter_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" file="SurroundWithIntentionDeclaration_Constraints.java">
