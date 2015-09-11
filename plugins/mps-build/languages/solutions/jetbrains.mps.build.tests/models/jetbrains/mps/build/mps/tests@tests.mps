@@ -50,8 +50,12 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -188,6 +192,16 @@
   </registry>
   <node concept="3s_ewN" id="6MogiNnQtO8">
     <property role="3s_ewP" value="ModuleClosure" />
+    <node concept="312cEg" id="6lHgfBD5DJq" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myEnv" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="6lHgfBD5DBI" role="1B3o_S" />
+      <node concept="3uibUv" id="6lHgfBD5DJj" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+    </node>
     <node concept="312cEg" id="47fY$PLJDZu" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <node concept="3Tm6S6" id="47fY$PLJDZv" role="1B3o_S" />
@@ -1172,21 +1186,20 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="47fY$PLJDI_" role="3cqZAp">
-          <node concept="3cpWsn" id="47fY$PLJDIA" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="47fY$PLJDIy" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        <node concept="3clFbF" id="6lHgfBD5DTj" role="3cqZAp">
+          <node concept="37vLTI" id="6lHgfBD5DVR" role="3clFbG">
+            <node concept="37vLTw" id="6lHgfBD5DTh" role="37vLTJ">
+              <ref role="3cqZAo" node="6lHgfBD5DJq" resolve="myEnv" />
             </node>
-            <node concept="2YIFZM" id="47fY$PLJDIB" role="33vP2m">
-              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+            <node concept="2YIFZM" id="47fY$PLJDIB" role="37vLTx">
               <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
+              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
               <node concept="2OqwBi" id="47fY$PLJDIC" role="37wK5m">
                 <node concept="2OqwBi" id="47fY$PLJDID" role="2Oq$k0">
                   <node concept="2OqwBi" id="47fY$PLJDIE" role="2Oq$k0">
                     <node concept="2YIFZM" id="47fY$PLJDIF" role="2Oq$k0">
-                      <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
                       <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                      <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
                     </node>
                     <node concept="liA8E" id="47fY$PLJDIG" role="2OqNvi">
                       <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
@@ -1209,8 +1222,8 @@
         <node concept="3clFbF" id="47fY$PLJE5A" role="3cqZAp">
           <node concept="37vLTI" id="47fY$PLJEah" role="3clFbG">
             <node concept="2OqwBi" id="47fY$PLJEe7" role="37vLTx">
-              <node concept="37vLTw" id="47fY$PLJEdi" role="2Oq$k0">
-                <ref role="3cqZAo" node="47fY$PLJDIA" resolve="env" />
+              <node concept="37vLTw" id="6lHgfBD5E2h" role="2Oq$k0">
+                <ref role="3cqZAo" node="6lHgfBD5DJq" resolve="myEnv" />
               </node>
               <node concept="liA8E" id="47fY$PLJElt" role="2OqNvi">
                 <ref role="37wK5l" to="79ha:2BGPXkEw$sz" resolve="createEmptyProject" />
@@ -1225,13 +1238,24 @@
     </node>
     <node concept="1KhZuU" id="47fY$PLJEnX" role="1KhZu3">
       <node concept="3clFbS" id="47fY$PLJEnY" role="2VODD2">
-        <node concept="3clFbF" id="47fY$PLJEsw" role="3cqZAp">
-          <node concept="2OqwBi" id="47fY$PLJEvn" role="3clFbG">
-            <node concept="37vLTw" id="47fY$PLJEsv" role="2Oq$k0">
-              <ref role="3cqZAo" node="47fY$PLJDZu" resolve="myProject" />
+        <node concept="3clFbF" id="6lHgfBD5E3T" role="3cqZAp">
+          <node concept="2OqwBi" id="6lHgfBD5E4X" role="3clFbG">
+            <node concept="37vLTw" id="6lHgfBD5E3R" role="2Oq$k0">
+              <ref role="3cqZAo" node="6lHgfBD5DJq" resolve="myEnv" />
             </node>
-            <node concept="liA8E" id="47fY$PLJEN2" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
+            <node concept="liA8E" id="6lHgfBD5Ecy" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:6rx4kZDk5qB" resolve="closeProject" />
+              <node concept="37vLTw" id="6lHgfBD5Edo" role="37wK5m">
+                <ref role="3cqZAo" node="47fY$PLJDZu" resolve="myProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6lHgfBD5Ef_" role="3cqZAp">
+          <node concept="37vLTI" id="6lHgfBD5Ejq" role="3clFbG">
+            <node concept="10Nm6u" id="6lHgfBD5EkH" role="37vLTx" />
+            <node concept="37vLTw" id="6lHgfBD5Efz" role="37vLTJ">
+              <ref role="3cqZAo" node="47fY$PLJDZu" resolve="myProject" />
             </node>
           </node>
         </node>
