@@ -16,6 +16,8 @@
 package org.jetbrains.mps.openapi.language;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -37,6 +39,11 @@ public interface SMethod<T> extends SExecutable {
    * @return the return type of the SMethod
    */
   @NotNull SAbstractType getReturnType();
+
+  /**
+   * invokes a method (trying to resolve the right method on runtime if it is virtual)
+   */
+  T invoke(@Nullable SNode node, Object... parameters);
 
   /**
    * @return true iff the method has a virtual modifier

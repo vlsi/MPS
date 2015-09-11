@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.*;
 import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private SAbstractConcept myConcept;
   private boolean myInitialized = false;
   private SMethodVirtualTable myVTable;
-  private final BehaviorRegistry myBehaviorRegistry;
+  protected final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
@@ -100,11 +101,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @NotNull
   @Override
-  public SNode newNode(@NotNull SConstructor constructor, Object... parameters) {
+  public SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
     if (parameters != null && parameters.length > 0) {
       throw new IllegalArgumentException("For now one cannot pass arguments to a behavior constructor");
     }
-    SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, null, null, false);
+    SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, model, null, false);
     new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor);
     return node;
   }

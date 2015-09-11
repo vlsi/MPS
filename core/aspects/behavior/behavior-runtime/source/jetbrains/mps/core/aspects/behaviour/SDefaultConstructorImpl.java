@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SModifiers;
 import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.language.SThrowable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,14 +34,16 @@ import java.util.List;
  * A simple implementation of constructor (no params)
  */
 public final class SDefaultConstructorImpl implements SConstructor {
-  public final static String DEFAULT_CONSTRUCTOR_NAME = "___init___";
+  public final static String DEFAULT_CONSTRUCTOR_NAME = "___init___"; // used in the generator
 
   private final SAbstractConcept myConcept;
+  @NotNull
+  private final BHDescriptor myDescriptor;
   private SModifiers myModifiers;
 
-  public SDefaultConstructorImpl(@NotNull SAbstractConcept concept,
-      @NotNull AccessPrivileges accessPrivileges) {
-    myConcept = concept;
+  public SDefaultConstructorImpl(@NotNull BHDescriptor descriptor, @NotNull AccessPrivileges accessPrivileges) {
+    myDescriptor = descriptor;
+    myConcept = descriptor.getConcept();
     myModifiers = SModifiersImpl.create(0, accessPrivileges);
   }
 
@@ -65,5 +72,11 @@ public final class SDefaultConstructorImpl implements SConstructor {
   @Override
   public String getName() {
     return myConcept.getName();
+  }
+
+  @NotNull
+  @Override
+  public SNode newNode(@Nullable SModel model, Object... parameters) {
+    return myDescriptor.newNode(model, this, parameters);
   }
 }

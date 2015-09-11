@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -44,11 +45,12 @@ public interface BHDescriptor {
   /**
    * invokes the behavior constructor
    *
+   * @param model a container for the new node
    * @param constructor constructor to invoke
    * @param parameters parameters to pass
    * @return new SNode which is initialized and constructed
    */
-  @NotNull SNode newNode(@NotNull SConstructor constructor, Object... parameters);
+  @NotNull SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters);
 
   /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)

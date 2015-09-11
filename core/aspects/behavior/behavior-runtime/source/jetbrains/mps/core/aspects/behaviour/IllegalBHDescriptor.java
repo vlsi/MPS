@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public final class IllegalBHDescriptor implements BHDescriptor {
 
   @NotNull
   @Override
-  public SNode newNode(@NotNull SConstructor constructor, Object... parameters) {
+  public SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
     throw new UnsupportedOperationException();
   }
 

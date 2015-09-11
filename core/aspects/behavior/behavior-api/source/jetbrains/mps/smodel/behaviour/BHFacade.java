@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -35,9 +36,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public final class BHFacade {
   @NotNull
-  public static SNode newNode(@NotNull SAbstractConcept concept, @NotNull SConstructor constructor, Object... parameters) {
+  public static SNode newNode(@NotNull SAbstractConcept concept, @Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.newNode(constructor, parameters);
+    return bhDescriptor.newNode(model, constructor, parameters);
   }
 
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {

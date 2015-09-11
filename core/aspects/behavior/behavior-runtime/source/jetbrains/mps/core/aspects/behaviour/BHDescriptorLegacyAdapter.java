@@ -90,7 +90,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   private void fillOwnMethods() {
     for (Entry<String, Method> entry : myLegacyDescriptor.getOwnMethods().entrySet()) {
-      SExecutable fromLegacy = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
+      SExecutable fromLegacy = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), this);
       if (fromLegacy instanceof SMethod) {
         SMethod<?> sMethod = (SMethod<?>) fromLegacy;
         myInvocationMap.put(sMethod, entry.getValue());

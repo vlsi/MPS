@@ -40,9 +40,10 @@ class SMethodLegacyAdapter {
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
   @NotNull
-  static SExecutable createFromLegacy(String legacyMethodName, Method legacyBHMethod, SAbstractConcept concept) {
+  static SExecutable createFromLegacy(String legacyMethodName, Method legacyBHMethod, @NotNull BHDescriptor descriptor) {
+    SAbstractConcept concept = descriptor.getConcept();
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
-      return new SDefaultConstructorImpl(concept, AccessPrivileges.PUBLIC);
+      return new SDefaultConstructorImpl(descriptor, AccessPrivileges.PUBLIC);
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
     SModifiers modifiers = extractMethodModifiers(legacyMethodName, legacyBHMethod);
@@ -57,6 +58,7 @@ class SMethodLegacyAdapter {
         concept,
         null,
         parameters,
+        descriptor,
         methodNodeId);
   }
 
@@ -67,7 +69,7 @@ class SMethodLegacyAdapter {
   static SExecutable createFromLegacy(@NotNull BHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
       assert parameters.length == 0;
-      return new SDefaultConstructorImpl(newDescriptor.getConcept(), AccessPrivileges.PUBLIC);
+      return new SDefaultConstructorImpl(newDescriptor, AccessPrivileges.PUBLIC);
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
     SModifiers modifiers = SModifiersImpl.create(isStatic, false, isVirtual(legacyMethodName), false, AccessPrivileges.PUBLIC);

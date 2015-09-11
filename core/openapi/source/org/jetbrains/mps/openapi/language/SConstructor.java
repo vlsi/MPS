@@ -16,10 +16,14 @@
 package org.jetbrains.mps.openapi.language;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * FIXME docs
  */
 public interface SConstructor extends SExecutable {
-//  @NotNull SConcept newInstance(SParameter... parameters);
+  @NotNull
+  SNode newNode(@Nullable SModel model, Object... parameters);
 }

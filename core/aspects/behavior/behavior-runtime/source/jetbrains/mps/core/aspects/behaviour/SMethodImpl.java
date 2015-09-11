@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.language.SModifiers;
 import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.language.SThrowable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.List;
@@ -72,6 +74,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
   private final SAbstractConcept myConcept;
   @Deprecated private final SMethod myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
   private final List<SParameter> myParameters;
+  private final BHDescriptor myDescriptor;
   private final SMethodId myId;
 
   private SMethodImpl(@NotNull String name,
@@ -80,13 +83,15 @@ public final class SMethodImpl<T> implements SMethod<T> {
       @NotNull SAbstractConcept concept,
       @Nullable SMethod baseMethod,
       List<SParameter> parameters,
-      @NotNull SNodeId id) {
+      @NotNull SNodeId id,
+      @NotNull BHDescriptor descriptor) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
     myConcept = concept;
     myBaseMethod = baseMethod;
     myParameters = parameters;
+    myDescriptor = descriptor;
     myId = SMethodIdBySNode.create(id);
   }
 
@@ -114,8 +119,15 @@ public final class SMethodImpl<T> implements SMethod<T> {
       @NotNull SAbstractConcept concept,
       @Nullable SMethod baseMethod,
       List<SParameter> parameters,
-      @NotNull SNodeId id) {
-    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters, id);
+      @NotNull BHDescriptor descriptor,
+      @NotNull SNodeId id)
+  {
+    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters, id, descriptor);
+  }
+
+  @Override
+  public T invoke(@Nullable SNode node, Object... parameters) {
+    return myDescriptor.invoke(node, this, parameters);
   }
 
   static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {

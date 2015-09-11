@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -37,6 +38,7 @@ public final class SMethodBuilder<T> {
   private final SAbstractType myReturnType;
   private SAbstractConcept myConcept;
   private SMethod<T> myBaseMethod;
+  private BHDescriptor myDescriptor;
   private SNodeId myId;
 
   public SMethodBuilder(SAbstractType returnType) {
@@ -48,7 +50,7 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethod<T> build(List<SParameter> paramTypes) {
-    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes, myId);
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes, myDescriptor, myId);
   }
 
   public SMethodBuilder<T> name(@NotNull String name) {
@@ -73,6 +75,11 @@ public final class SMethodBuilder<T> {
 
   public SMethodBuilder<T> id(@NotNull SNodeId id) {
     myId = id;
+    return this;
+  }
+
+  public SMethodBuilder<T> descriptor(@NotNull BHDescriptor descriptor) {
+    myDescriptor = descriptor;
     return this;
   }
 }
