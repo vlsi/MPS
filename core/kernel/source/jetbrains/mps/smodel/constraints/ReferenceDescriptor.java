@@ -146,7 +146,6 @@ public abstract class ReferenceDescriptor {
     @Override
     @Nullable
     public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
-      // todo: remove default presentation, use node.getPresentation() instead?
       if (scopeProvider == null || !scopeProvider.hasPresentation()) {
         return null;
       }
