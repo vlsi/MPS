@@ -4,17 +4,24 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
-public class BreakpointsUtil {
+public final class BreakpointsUtil {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   public static DataKey<BreakpointsBrowserDialog> MPS_BREAKPOINTS_BROWSER_DIALOG = DataKey.create("MPS_Breakpoints_Browser_Dialog");
-  public BreakpointsUtil() {
+  private BreakpointsUtil() {
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.openapi.navigation.EditorNavigator } instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static void openNode(final IOperationContext context, final ILocationBreakpoint breakpoint, final boolean focus, final boolean select) {
     final Project project = context.getProject();
     project.getModelAccess().executeCommand(new Runnable() {
