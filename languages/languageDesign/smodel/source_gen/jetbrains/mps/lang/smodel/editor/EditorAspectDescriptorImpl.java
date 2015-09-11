@@ -186,92 +186,94 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 85:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_IsRoleOperation_Editor()));
       case 86:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_ReplaceWithAnotherOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_PointerOperation_Editor()));
       case 87:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_ReplaceWithNewOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_ReplaceWithAnotherOperation_Editor()));
       case 88:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OfConceptOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Node_ReplaceWithNewOperation_Editor()));
       case 89:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_Concept_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OfConceptOperation_Editor()));
       case 90:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_ConceptList_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_Concept_Editor()));
       case 91:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_LinkQualifier_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_ConceptList_Editor()));
       case 92:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_StopConceptList_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_LinkQualifier_Editor()));
       case 93:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PoundExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationParm_StopConceptList_Editor()));
       case 94:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyAttributeQualifier_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PoundExpression_Editor()));
       case 95:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyIdRefExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyAttributeQualifier_Editor()));
       case 96:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyNameRefExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyIdRefExpression_Editor()));
       case 97:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyQualifier_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyNameRefExpression_Editor()));
       case 98:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_HasValue_Enum_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyQualifier_Editor()));
       case 99:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_HasValue_Simple_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_HasValue_Enum_Editor()));
       case 100:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_SetOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_HasValue_Simple_Editor()));
       case 101:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefConcept_Reference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Property_SetOperation_Editor()));
       case 102:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetLinkDeclarationOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefConcept_Reference_Editor()));
       case 103:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetResolveInfo_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetLinkDeclarationOperation_Editor()));
       case 104:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetRoleOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetResolveInfo_Editor()));
       case 105:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetTargetOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetRoleOperation_Editor()));
       case 106:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SConceptOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Reference_GetTargetOperation_Editor()));
       case 107:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SConceptType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SConceptOperation_Editor()));
       case 108:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnumMemberType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SConceptType_Editor()));
       case 109:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnumOperationInvocation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnumMemberType_Editor()));
       case 110:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberForNameOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnumOperationInvocation_Editor()));
       case 111:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberForValueOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberForNameOperation_Editor()));
       case 112:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberForValueOperation_Editor()));
       case 113:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MembersOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MemberOperation_Editor()));
       case 114:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkAccess_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SEnum_MembersOperation_Editor()));
       case 115:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkImplicitSelect_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkAccess_Editor()));
       case 116:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkListAccess_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkImplicitSelect_Editor()));
       case 117:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SModelType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SLinkListAccess_Editor()));
       case 118:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeCreator_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SModelType_Editor()));
       case 119:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeListCreator_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeCreator_Editor()));
       case 120:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeListType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeListCreator_Editor()));
       case 121:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeListType_Editor()));
       case 122:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeOperation_Editor()));
       case 123:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeTypeCastExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeType_Editor()));
       case 124:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SPropertyAccess_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeTypeCastExpression_Editor()));
       case 125:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SReferenceType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SPropertyAccess_Editor()));
       case 126:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SearchScopeType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SReferenceType_Editor()));
       case 127:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SearchScope_ContainsOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SearchScopeType_Editor()));
       case 128:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SemanticDowncastExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SearchScope_ContainsOperation_Editor()));
       case 129:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SemanticDowncastExpression_Editor()));
+      case 130:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubconceptCase_Editor()));
       default:
     }
@@ -310,7 +312,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptNodeType", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.ExactConceptCase", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LanguageId", "jetbrains.mps.lang.smodel.structure.LanguageRefExpression", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OfConceptOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptOperation", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.lang.smodel.structure.SubconceptCase"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptNodeType", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.ExactConceptCase", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LanguageId", "jetbrains.mps.lang.smodel.structure.LanguageRefExpression", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_PointerOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OfConceptOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptOperation", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.lang.smodel.structure.SubconceptCase"};
   private static String[] stringSwitchCases_xbvbvu_a0a0d0a2 = new String[]{"jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp", "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.LanguageId", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.SNodeOperation"};
 }

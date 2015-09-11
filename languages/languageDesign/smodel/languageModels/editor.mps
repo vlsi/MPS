@@ -5283,5 +5283,25 @@
       <node concept="l2Vlx" id="5ffMBka$a2R" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="4o40NPkYE0W">
+    <property role="3GE5qa" value="operation.node" />
+    <ref role="1XX52x" to="tp25:4o40NPkYE0z" resolve="Node_PointerOperation" />
+    <node concept="3EZMnI" id="4o40NPkYE7y" role="6VMZX">
+      <node concept="3EZMnI" id="4o40NPkYE7O" role="3EZMnx">
+        <node concept="VPM3Z" id="4o40NPkYE7Q" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="4o40NPkYE8k" role="3EZMnx">
+          <property role="3F0ifm" value="This operation gives access to serializable node pointer (aka SNodeReference)" />
+          <node concept="Vb9p2" id="4o40NPkYECk" role="3F10Kt" />
+        </node>
+        <node concept="2iRfu4" id="4o40NPkYE7T" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="4o40NPkYE7_" role="2iSdaV" />
+    </node>
+    <node concept="PMmxH" id="1_xVpohY4R8" role="2wV5jI">
+      <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
+    </node>
+  </node>
 </model>
 

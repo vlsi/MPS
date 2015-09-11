@@ -38,6 +38,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
@@ -681,5 +683,10 @@ public class SNodeOperations {
     InstanceOfCondition condition = new InstanceOfCondition(concept).tolerateNulls();
     Iterable<SNode> rv = new ConditionalIterable<SNode>(nodes, condition);
     return rv;
+  }
+
+  @Nullable
+  public static SNodeReference getPointer(SNode node) {
+    return (node == null ? null : node.getReference());
   }
 }

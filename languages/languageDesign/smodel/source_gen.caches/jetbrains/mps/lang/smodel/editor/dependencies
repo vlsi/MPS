@@ -575,6 +575,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_IsNotNullOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_IsNullOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_IsRoleOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_PointerOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_ReplaceWithAnotherOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Node_ReplaceWithNewOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.OfConceptOperation_Editor" />
@@ -1973,6 +1974,21 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.editor.Node_PointerOperation_Editor" file="Node_PointerOperation_Editor.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

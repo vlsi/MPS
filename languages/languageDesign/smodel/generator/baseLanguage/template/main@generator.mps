@@ -3545,6 +3545,31 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="4o40NPkYGki" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:4o40NPkYE0z" resolve="Node_PointerOperation" />
+      <node concept="gft3U" id="4o40NPkYSoC" role="1lVwrX">
+        <node concept="2YIFZM" id="4o40NPkYTl6" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:4o40NPkYQhu" resolve="getPointer" />
+          <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
+          <node concept="10Nm6u" id="4o40NPkYTlE" role="37wK5m">
+            <node concept="29HgVG" id="4o40NPkYTlF" role="lGtFl">
+              <node concept="3NFfHV" id="4o40NPkYTlG" role="3NFExx">
+                <node concept="3clFbS" id="4o40NPkYTlH" role="2VODD2">
+                  <node concept="3clFbF" id="4o40NPkYTlI" role="3cqZAp">
+                    <node concept="2OqwBi" id="4o40NPkYTlJ" role="3clFbG">
+                      <node concept="30H73N" id="4o40NPkYTlK" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="4o40NPkYTlL" role="2OqNvi">
+                        <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="13MO4I" id="g_$ZyOK">
     <property role="TrG5h" value="reduce_InsertNewNextSiblingOperation" />

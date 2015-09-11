@@ -2186,5 +2186,12 @@
     <property role="3GE5qa" value="conceptSwitch" />
     <property role="TrG5h" value="IConceptSwitchCase" />
   </node>
+  <node concept="1TIwiD" id="4o40NPkYE0z">
+    <property role="3GE5qa" value="operation.node" />
+    <property role="TrG5h" value="Node_PointerOperation" />
+    <property role="34LRSv" value="pointer" />
+    <property role="R4oN_" value="persistable pointer to a node" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+  </node>
 </model>
 

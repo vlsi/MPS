@@ -11533,5 +11533,37 @@
       <ref role="1YaFvo" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="4o40NPkYEEh">
+    <property role="TrG5h" value="typeof_Node_PointerOperation" />
+    <property role="3GE5qa" value="operation.node" />
+    <node concept="3clFbS" id="4o40NPkYEEi" role="18ibNy">
+      <node concept="1Z5TYs" id="4o40NPkYFEc" role="3cqZAp">
+        <node concept="mw_s8" id="4o40NPkYFEw" role="1ZfhKB">
+          <node concept="2pJPEk" id="4o40NPkYFEs" role="mwGJk">
+            <node concept="2pJPED" id="4o40NPkYFEF" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="4o40NPkYFFe" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="4o40NPkYFFP" role="2pJxcZ">
+                  <ref role="36bGnp" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4o40NPkYFEf" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4o40NPkYFBD" role="mwGJk">
+            <node concept="1YBJjd" id="4o40NPkYFC5" role="1Z2MuG">
+              <ref role="1YBMHb" node="4o40NPkYEEk" resolve="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4o40NPkYEEk" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:4o40NPkYE0z" resolve="Node_PointerOperation" />
+    </node>
+  </node>
 </model>
 
