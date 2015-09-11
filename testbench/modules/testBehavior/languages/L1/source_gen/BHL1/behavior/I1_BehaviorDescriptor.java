@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SMethodModifiers;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
@@ -18,18 +19,17 @@ import org.jetbrains.annotations.Nullable;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.core.aspects.behaviour.SMethodImpl;
+import org.jetbrains.mps.openapi.language.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "BHL1.structure.I1");
 
-  public static final SMethod<Object> foo_id20708 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> foo_id20708 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("9105163402711226683")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id20708);
 
-  public static Void __init__(SNode __thisNode__) {
-    return null;
+  public static void ___init___(SNode __thisNode__) {
   }
 
   public static Object foo(@Nullable SNode __thisNode__) {
@@ -40,11 +40,12 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
     super(ConceptRegistry.getInstance().getBehaviorRegistry());
   }
 
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
+    ___init___(node);
+  }
+
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (method == SMethodImpl.INIT) {
-      return (T) __init__(node);
-    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(method);
@@ -59,7 +60,7 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  public List<SMethod<?>> getDeclaredMethods() {
     return BH_METHODS;
   }
 

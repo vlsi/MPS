@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SMethodModifiers;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
@@ -18,21 +19,20 @@ import org.jetbrains.annotations.Nullable;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.core.aspects.behaviour.SMethodImpl;
+import org.jetbrains.mps.openapi.language.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B");
 
-  public static final SMethod<Object> virtualMethod_id23398 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("virtualMethod").modifiers(SMethodModifiers.create(true, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.virtualMethod_id17590).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Object> staticVirtualMethod_id23322 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("staticVirtualMethod").modifiers(SMethodModifiers.create(true, true, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.staticVirtualMethod_id18307).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> primitiveReturnValue_id32853 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("primitiveReturnValue").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Class<Integer>> genericReturnValue_id47836 = new SMethodBuilder(new SJavaCompoundTypeImpl(Class.class)).name("genericReturnValue").modifiers(SMethodModifiers.create(false, false, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> virtualMethod_id23398 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("virtualMethod").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.virtualMethod_id17590).id(SNodeId.fromString("6167444251392504504")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> staticVirtualMethod_id23322 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("staticVirtualMethod").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(A_BehaviorDescriptor.staticVirtualMethod_id18307).id(SNodeId.fromString("6167444251392504516")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> primitiveReturnValue_id32853 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("primitiveReturnValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("5606797489885796553")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Class<Integer>> genericReturnValue_id47836 = new SMethodBuilder(new SJavaCompoundTypeImpl(Class.class)).name("genericReturnValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("5606797489885798976")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_id23398, staticVirtualMethod_id23322, primitiveReturnValue_id32853, genericReturnValue_id47836);
 
-  public static Void __init__(SNode __thisNode__) {
-    return null;
+  public static void ___init___(SNode __thisNode__) {
   }
 
   public static Object virtualMethod(@Nullable SNode __thisNode__) {
@@ -52,11 +52,12 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     super(ConceptRegistry.getInstance().getBehaviorRegistry());
   }
 
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
+    ___init___(node);
+  }
+
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (method == SMethodImpl.INIT) {
-      return (T) __init__(node);
-    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(method);
@@ -77,7 +78,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  public List<SMethod<?>> getDeclaredMethods() {
     return BH_METHODS;
   }
 

@@ -21,8 +21,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
 import java.util.List;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper;
-import jetbrains.mps.core.aspects.behaviour.SMethodImpl;
+import jetbrains.mps.core.aspects.behaviour.SDefaultConstructorImpl;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -37,6 +38,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.core.aspects.behaviour.SMethodImpl;
 
 @Generated
 public class QueriesGenerated {
@@ -135,11 +137,21 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3176885412940615083(final PropertyMacroContext _context) {
     return ListSequence.fromList(((List<String>) _context.getVariable("var:MethodNames"))).getElement(((Integer) _context.getVariable("cv:methodCounter")));
   }
-  public static Object propertyMacro_GetPropertyValue_3176885412940615098(final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480580L, "isVirtual")) || SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) != null;
-  }
-  public static Object propertyMacro_GetPropertyValue_3176885412940615112(final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"));
+  public static Object propertyMacro_GetPropertyValue_2386721254951957139(final PropertyMacroContext _context) {
+    int mask = 0;
+    if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480580L, "isVirtual")) || SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) != null) {
+      mask |= SModifiersImpl.VIRTUAL;
+    }
+    if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"))) {
+      mask |= SModifiersImpl.STATIC;
+    }
+    if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) {
+      mask |= SModifiersImpl.FINAL;
+    }
+    if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"))) {
+      mask |= SModifiersImpl.ABSTRACT;
+    }
+    return mask;
   }
   public static Object propertyMacro_GetPropertyValue_3176885412940615158(final PropertyMacroContext _context) {
     SNode baseMethod = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
@@ -151,6 +163,9 @@ public class QueriesGenerated {
     SNode behaviour = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getBehaviour_1225196403947", new Object[]{});
     return NameUtil.getModelLongName(SNodeOperations.getModel(behaviour)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(behaviour, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + Constants.BEHAVIOR_DESCRIPTOR_SUFFIX;
   }
+  public static Object propertyMacro_GetPropertyValue_5216932936550453175(final PropertyMacroContext _context) {
+    return _context.getNode().getNodeId().toString();
+  }
   public static Object propertyMacro_GetPropertyValue_3176885412940615260(final PropertyMacroContext _context) {
     return ((MethodNameHelper) _context.getVariable("var:MethodNameHelper")).getGeneratedName(_context.getNode());
   }
@@ -158,7 +173,7 @@ public class QueriesGenerated {
     return Constants.THIS_NODE_VARIABLE_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_1843690775058914308(final PropertyMacroContext _context) {
-    return SMethodImpl.INIT.getName();
+    return SDefaultConstructorImpl.DEFAULT_CONSTRUCTOR_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_1843690775058968431(final PropertyMacroContext _context) {
     return ListSequence.fromList(((List<String>) _context.getVariable("var:MethodNames"))).getElement(((Integer) _context.getVariable("cv:methodCounter")));
@@ -217,7 +232,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_4006517209906256417(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
   }
-  public static Object referenceMacro_GetReferent_3176885412940615120(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2386721254951859760(final ReferenceMacroContext _context) {
     SNode visibility = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
     if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
       return "PRIVATE";
@@ -556,7 +571,7 @@ public class QueriesGenerated {
       String name = baseName;
       int k = 0;
       while (ListSequence.fromList(result).contains(name)) {
-        name = baseName + "___" + ++k;
+        name = baseName + SMethodImpl.METHOD_NAME_ID_SEPARATOR + ++k;
       }
       ListSequence.fromList(result).addElement(name);
     }

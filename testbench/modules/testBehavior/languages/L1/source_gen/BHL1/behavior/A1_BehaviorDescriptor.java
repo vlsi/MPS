@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.language.SMethod;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.core.aspects.behaviour.SMethodImpl;
+import org.jetbrains.mps.openapi.language.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
@@ -21,8 +21,7 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
-  public static Void __init__(SNode __thisNode__) {
-    return null;
+  public static void ___init___(SNode __thisNode__) {
   }
 
 
@@ -30,11 +29,12 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
     super(ConceptRegistry.getInstance().getBehaviorRegistry());
   }
 
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
+    ___init___(node);
+  }
+
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (method == SMethodImpl.INIT) {
-      return (T) __init__(node);
-    }
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(method);
@@ -47,7 +47,7 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  public List<SMethod<?>> getDeclaredMethods() {
     return BH_METHODS;
   }
 
