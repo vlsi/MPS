@@ -19,14 +19,24 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.List;
 
 public final class IllegalBHDescriptor implements BHDescriptor {
   private final SAbstractConcept myConcept;
 
   public IllegalBHDescriptor(@NotNull SAbstractConcept concept) {
     myConcept = concept;
+  }
+
+  @NotNull
+  @Override
+  public SNode newNode(@NotNull SConstructor constructor, Object... parameters) {
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -36,6 +46,24 @@ public final class IllegalBHDescriptor implements BHDescriptor {
 
   @Override
   public <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    throw new UnsupportedOperationException();
+  }
+
+  @NotNull
+  @Override
+  public List<SMethod<?>> getMethods() {
+    throw new UnsupportedOperationException();
+  }
+
+  @NotNull
+  @Override
+  public List<SMethod<?>> getDeclaredMethods() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Nullable
+  @Override
+  public SMethod<?> getMethod(@NotNull SMethodId methodId) {
     throw new UnsupportedOperationException();
   }
 

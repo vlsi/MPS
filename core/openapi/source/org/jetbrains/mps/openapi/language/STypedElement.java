@@ -15,10 +15,13 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  *
  * Created by apyshkin on 08/09/15.
  */
 public interface STypedElement {
+  @NotNull
   SAbstractType getType();
 }

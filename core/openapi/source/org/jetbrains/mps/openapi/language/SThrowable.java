@@ -15,14 +15,8 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
- *
- * Created by apyshkin on 08/09/15.
+ * fixme docs
  */
 public interface SThrowable extends STypedElement {
-  @NotNull
-  @Override
-  SAbstractType getType();
 }

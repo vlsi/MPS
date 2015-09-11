@@ -15,10 +15,11 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * Represents a parameter of {@link SMethod}
- *
- * Created by apyshkin on 07/09/15.
+ * FIXME docs
  */
-public interface SParameter extends SNamedElement, STypedElement {
+public interface SConstructor extends SExecutable {
+//  @NotNull SConcept newInstance(SParameter... parameters);
 }

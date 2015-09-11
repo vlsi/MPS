@@ -19,6 +19,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -42,8 +43,13 @@ public final class EmptyBHDescriptor extends BaseBHDescriptor {
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  public List<SMethod<?>> getDeclaredMethods() {
     return Collections.emptyList();
+  }
+
+  @Override
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... parameters) {
+    // NOP
   }
 
   @Override

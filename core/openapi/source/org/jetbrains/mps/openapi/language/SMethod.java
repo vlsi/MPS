@@ -21,25 +21,37 @@ import java.util.List;
 
 /**
  * FIXME documentation
- * Represents behavior functionality for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
- * T -- java runtime return type (for compile-time checking)
+ * Represents a behavior method for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
+ * It has a {@link SMethodId} which uniquely identifies the instance of {@link SMethod}.
  *
- * Created by apyshkin on 07/09/15.
+ * T -- java runtime return type (for compile-time checking)
  */
-public interface SMethod<T> extends SNamedElement {
-  @NotNull SAbstractConcept getConcept();
+public interface SMethod<T> extends SExecutable {
+  /**
+   * @return {@link SMethodId} which uniquely identifies the behavior methods within the concept
+   * NB: all inherited methods count as well
+   */
+  @NotNull SMethodId getId();
 
+  /**
+   * @return the return type of the SMethod
+   */
   @NotNull SAbstractType getReturnType();
 
-  List<SParameter> getParameters();
-
-  List<SThrowable> getExceptions();
-
+  /**
+   * @return true iff the method has a virtual modifier
+   */
   boolean isVirtual();
 
+  /**
+   * @return true iff the method has a static modifier
+   */
   boolean isStatic();
 
-  boolean isFinal();
-
+  /**
+   * @param another -- an instance of SMethod
+   * @return true iff this SMethod does override another SMethod.
+   * (That includes that the concept of this SMethod is a subconcept of the another method's concept)
+   */
   boolean isOverrideOf(@NotNull SMethod another);
 }

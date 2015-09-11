@@ -20,29 +20,36 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConstructor;
 import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Behavior Facade.
  * API for the generated behavior code. Intended to replace {@link jetbrains.mps.smodel.behaviour.BehaviorReflection} calls
+ * The non-reflective API is null-safe
  *
  * Created by apyshkin on 7/15/15.
  */
 public final class BHFacade {
-  // null-safe public API
+  @NotNull
+  public static SNode newNode(@NotNull SAbstractConcept concept, @NotNull SConstructor constructor, Object... parameters) {
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    return bhDescriptor.newNode(constructor, parameters);
+  }
+
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     SAbstractConcept concept = method.getConcept();
     if (node != null && !node.getConcept().isSubConceptOf(concept)) {
       return (T) method.getReturnType().getDefaultValue();
-//      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
     return BHFacade.invokeSpecial0(node, method, parameters);
   }
 
   public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (node == null) {
-//      return DefaultValuesHolder.defaultValue(method.getReturnType());
       return (T) method.getReturnType().getDefaultValue();
     }
     return BHFacade.invoke0(node, method, parameters);
@@ -51,9 +58,30 @@ public final class BHFacade {
   public static <T> T invokeStatic(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     if (concept == null) {
       return (T) method.getReturnType().getDefaultValue();
-//      return DefaultValuesHolder.defaultValue(method.getReturnType());
     }
     return BHFacade.invokeStatic0(concept, method, parameters);
+  }
+
+  /**
+   * reflective api (not null-safe!)
+   */
+  public static Object invokeReflectively(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
+    SConcept concept = node.getConcept();
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId);
+    }
+    return bhDescriptor.invoke(node, method, parameters);
+  }
+
+  public static Object invokeReflectively(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+    BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId);
+    }
+    return bhDescriptor.invoke(null, method, parameters);
   }
 
   @NotNull
@@ -76,5 +104,14 @@ public final class BHFacade {
   private static <T> T invoke0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(node.getConcept());
     return bhDescriptor.invoke(node, method, parameters);
+  }
+
+  /**
+   * We have it extending the RuntimeException opposed to java {@link java.lang.NoSuchMethodException}
+   */
+  private static class BHNoSuchMethodException extends RuntimeException {
+    public BHNoSuchMethodException(@NotNull SMethodId methodId) {
+      super("SMethod with id '" + methodId + "' could not be found");
+    }
   }
 }

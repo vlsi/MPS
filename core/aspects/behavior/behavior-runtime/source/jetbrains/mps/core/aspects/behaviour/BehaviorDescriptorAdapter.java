@@ -21,6 +21,8 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConstructor;
+import org.jetbrains.mps.openapi.language.SExecutable;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -28,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * This class is needed to support legacy behavior calls via {@link jetbrains.mps.smodel.behaviour.BehaviorReflection}
  * It wraps newly generated BHDescriptors and acts like a BehaviorDescriptor
  *
- * @see BHDescriptorLegacyAdapter , the second adapter
+ * @see BHDescriptorLegacyAdapter , the 'opposite' adapter
  * @deprecated we need it only to migrate, will be gone after 3.3
  */
 @Deprecated
@@ -47,11 +49,6 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
   }
 
   @Override
-  public void initNode(SNode node) {
-    myDescriptor.invoke(node, SMethodImpl.INIT);
-  }
-
-  @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
     return genericInvoke(NodeOrConcept.create(node), methodName, parameters);
   }
@@ -63,15 +60,25 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
 
   public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
     boolean isStatic = (node == null);
-    @Nullable SMethod method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
     if (method == null) {
       throwNoSuchMethod(methodName);
     }
-    return myDescriptor.invokeOwn(node, method, parameters);
+    if (method instanceof SConstructor) {
+      assert node != null;
+      myDescriptor.initNode(node, (SConstructor) method);
+      return null;
+    } else if (method instanceof SMethod) {
+      return myDescriptor.invokeOwn(node, (SMethod<?>) method, parameters);
+    }
+    throw new IllegalArgumentException("Unknown instance of SExecutable : " + method);
   }
 
-  public boolean hasOwnMethod(String methodName, Object[] parameters, boolean isStatic) {
-    @Nullable SMethod method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+  /**
+   * @return true iff the method is present (constructors are included)
+   */
+  public boolean hasOwnMethod(String methodName, boolean isStatic, Object[] parameters) {
+    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
     return method != null;
   }
 

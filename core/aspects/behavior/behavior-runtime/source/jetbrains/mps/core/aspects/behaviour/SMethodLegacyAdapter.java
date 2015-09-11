@@ -15,13 +15,17 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SExecutable;
 import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SModifiers;
 import org.jetbrains.mps.openapi.language.SParameter;
 
 import java.lang.reflect.Method;
@@ -36,32 +40,38 @@ class SMethodLegacyAdapter {
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
   @NotNull
-  static SMethod<?> createFromLegacy(String legacyMethodName, Method legacyBHMethod, SAbstractConcept abstractConcept) {
+  static SExecutable createFromLegacy(String legacyMethodName, Method legacyBHMethod, SAbstractConcept concept) {
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
-      return SMethodImpl.INIT;
+      return new SDefaultConstructorImpl(concept, AccessPrivileges.PUBLIC);
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
-    SMethodModifiers modifiers = extractMethodModifiers(methodName, legacyBHMethod);
+    SModifiers modifiers = extractMethodModifiers(legacyMethodName, legacyBHMethod);
+    SNodeId methodNodeId = extractMethodId(legacyMethodName);
     List<SParameter> parameters = new ArrayList<SParameter>();
     for (Class<?> param : legacyBHMethod.getParameterTypes()) {
       parameters.add(new SParameterImpl(new SJavaCompoundTypeImpl(param), ""));
     }
-    return SMethodImpl.create(methodName, modifiers, new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
-        abstractConcept, null, parameters);
+    return SMethodImpl.create(methodName,
+        modifiers,
+        new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
+        concept,
+        null,
+        parameters,
+        methodNodeId);
   }
 
   /**
    * @return null if could not construct any method
    */
   @Nullable
-  static SMethod createFromLegacy(@NotNull BaseBHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
+  static SExecutable createFromLegacy(@NotNull BHDescriptor newDescriptor, String legacyMethodName, boolean isStatic, Object[] parameters) {
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
       assert parameters.length == 0;
-      return SMethodImpl.INIT;
+      return new SDefaultConstructorImpl(newDescriptor.getConcept(), AccessPrivileges.PUBLIC);
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
-    SMethodModifiers modifiers = SMethodModifiers.create(isVirtual(legacyMethodName), isStatic, AccessPrivileges.PUBLIC);
-    List<SMethod<?>> possibleMethods = newDescriptor.getOwnMethods(); // need to choose the suitable one
+    SModifiers modifiers = SModifiersImpl.create(isStatic, false, isVirtual(legacyMethodName), false, AccessPrivileges.PUBLIC);
+    List<SMethod<?>> possibleMethods = newDescriptor.getDeclaredMethods(); // need to choose the suitable one
     MethodMatcher methodMatcher = new MethodMatcher(methodName, modifiers, newDescriptor.getConcept(), parameters);
     for (SMethod possibleMethod : possibleMethods) {
       if (methodMatcher.suits(possibleMethod)) {
@@ -71,10 +81,15 @@ class SMethodLegacyAdapter {
     return null;
   }
 
-  private static SMethodModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
+  private static SNodeId extractMethodId(String legacyMethodName) {
+    int lastIndexBeforeMethodId = legacyMethodName.lastIndexOf("_");
+    return SNodeId.fromString(legacyMethodName.substring(lastIndexBeforeMethodId + 1, legacyMethodName.length()));
+  }
+
+  private static SModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {
     boolean aVirtual = isVirtual(methodName);
     boolean aStatic = method.getParameterTypes()[0].equals(SAbstractConcept.class);
-    return SMethodModifiers.create(aVirtual, aStatic, AccessPrivileges.fromModifiers(method.getModifiers()));
+    return SModifiersImpl.create(aStatic, false, aVirtual, false, AccessPrivileges.fromModifiers(method.getModifiers()));
   }
 
   private static boolean isVirtual(String methodName) {
@@ -96,11 +111,11 @@ class SMethodLegacyAdapter {
    */
   private static final class MethodMatcher {
     private final String myMethodBaseName;
-    private final SMethodModifiers myModifiers;
+    private final SModifiers myModifiers;
     private final SAbstractConcept myConcept;
     private final Object[] myParameters;
 
-    private MethodMatcher(String methodBaseName, SMethodModifiers modifiers, SAbstractConcept concept, Object[] parameters) {
+    private MethodMatcher(String methodBaseName, SModifiers modifiers, SAbstractConcept concept, Object[] parameters) {
       myMethodBaseName = methodBaseName;
       myModifiers = modifiers;
       myConcept = concept;
@@ -109,7 +124,7 @@ class SMethodLegacyAdapter {
 
     public <T> boolean suits(@NotNull SMethod<T> methodCandidate) {
       if (!((SMethodImpl) methodCandidate).getBaseName().equals(myMethodBaseName)) return false;
-      if (!((SMethodImpl) methodCandidate).getMethodModifiers().isVirtual() == myModifiers.isVirtual()) return false;
+      if (!((SMethodImpl) methodCandidate).getModifiers().isVirtual() == myModifiers.isVirtual()) return false;
       if (!methodCandidate.isStatic() == myModifiers.isStatic()) return false;
       if (!myModifiers.isVirtual()) {
         if (!EqualUtil.equals(methodCandidate.getConcept(), myConcept)) return false;

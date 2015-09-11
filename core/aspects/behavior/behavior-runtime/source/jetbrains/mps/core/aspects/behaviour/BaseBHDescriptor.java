@@ -19,26 +19,26 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.NodeNotifier;
-import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.smodel.SModelUtil_new;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SParameter;
+import org.jetbrains.mps.openapi.language.*;
+import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
  */
 /**
- * Todo check destruction ??
- *
  * Features:
  * Multiple dispatch?
  * Default parameter values?
@@ -52,7 +52,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private SMethodVirtualTable myVTable;
   private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
-  private ConstructionHandler myConstructionHandler;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
     myBehaviorRegistry = behaviorRegistry;
@@ -66,7 +65,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     if (!myInitialized) {
       myConcept = getConcept();
       myAncestorCache = new AncestorCache(myConcept, myBehaviorRegistry);
-      myConstructionHandler = new ConstructionHandler(myAncestorCache, myConcept);
       initVirtualTable();
       myInitialized = true;
     }
@@ -79,7 +77,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private void initVirtualTable() {
-    myVTable = new SMethodVirtualTable(this, getOwnMethods());
+    myVTable = new SMethodVirtualTable(this, getDeclaredMethods());
     List<SAbstractConcept> ancestors = myAncestorCache.getAncestorsVirtualInvocationOrder();
     for (SAbstractConcept ancestor : ancestors) {
       if (ancestor != myConcept) {
@@ -100,20 +98,27 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return myBehaviorRegistry.getBHDescriptor(concept);
   }
 
+  @NotNull
+  @Override
+  public SNode newNode(@NotNull SConstructor constructor, Object... parameters) {
+    if (parameters != null && parameters.length > 0) {
+      throw new IllegalArgumentException("For now one cannot pass arguments to a behavior constructor");
+    }
+    SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, null, null, false);
+    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor);
+    return node;
+  }
+
   @Override
   public final <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
     checkForNPE(node, method);
     checkParameters(method, parameters);
 
-    if (method == SMethodImpl.INIT) {
-      assert node != null;
-      myConstructionHandler.initNode(node);
-      return null;
-    } else if (method.isVirtual()) {
+    if (method.isVirtual()) {
       return invokeVirtual(node, method, parameters);
     } else {
-      if (((SMethodImpl) method).getMethodModifiers().getAccessPrivileges() == AccessPrivileges.PRIVATE) {
+      if (method.getModifiers().isPrivate()) {
         return invokeOwn(node, method, parameters);
       }
       return invokeSpecial(node, method, parameters);
@@ -145,7 +150,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BaseBHDescriptor) {
         BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
-        if (bhDescriptor1.hasOwnMethod(method)) {
+        if (bhDescriptor1.hasDeclaredMethod(method)) {
           return bhDescriptor1.invokeOwn(node, method, parameters);
         }
       } else {
@@ -166,15 +171,57 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return bhDescriptor.invokeOwn(node, method, parameters);
   }
 
+  @Nullable
+  @Override
+  public SMethod<?> getMethod(@NotNull SMethodId methodId) {
+    List<SMethod<?>> methods = getMethods();
+    for (SMethod<?> method : methods) {
+      if (method.getId().equals(methodId)) {
+        return method;
+      }
+    }
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public List<SMethod<?>> getMethods() {
+    Set<SMethod<?>> result = new HashSet<SMethod<?>>();
+    for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
+      BHDescriptor bhDescriptor = getBHDescriptor(concept);
+      List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
+      for (SMethod<?> method : conceptMethods) {
+        if (method.getModifiers().isPublic() && !method.getModifiers().isVirtual()) {
+          result.add(method);
+        }
+      }
+    }
+    for (SMethod<?> virtualMethod : myVTable.getMethods()) {
+      result.add(virtualMethod);
+    }
+    return new ArrayList<SMethod<?>>(result);
+  }
+
   /**
-   * @generated : listing all methods except the constructor.
+   * @generated : listing all the declared methods
    * NB: must be fast
    **/
   @NotNull
-  protected abstract List<SMethod<?>> getOwnMethods();
+  @Override
+  public abstract List<SMethod<?>> getDeclaredMethods();
+
+  /**
+   * @generated : switch by constructor; invoking without calling supers
+   * @param node -- the new node to initialize
+   * @param constructor -- constructor to invoke
+   * @param parameters -- parameters to pass to the constructor
+   */
+  protected abstract void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... parameters);
 
   /**
    * invokes a method without dynamic resolution
+   * node == null <=> the method is static
+   *
    * @generated : switch by the method; direct invocation in each case
    * @throws BHMethodNotFoundException if the method has not been found
    **/
@@ -183,8 +230,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   /**
    * @return true iff the method exists (constructor is not a method here)
    **/
-  private <T> boolean hasOwnMethod(@NotNull SMethod<T> method) {
-    return getOwnMethods().contains(method);
+  private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
+    return getDeclaredMethods().contains(method);
   }
 
   @Override
@@ -192,7 +239,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return getConcept() + " BHDescriptor";
   }
 
-  public class ConstructionHandler {
+  private final class ConstructionHandler {
     private final AncestorCache myAncestorCache;
     private final SAbstractConcept myConcept;
 
@@ -201,15 +248,15 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       myConcept = concept;
     }
 
-    public void initNode(@NotNull SNode node) {
+    public void initNode(@NotNull SNode node, @NotNull SConstructor constructor) {
       assert myConcept.equals(node.getConcept());
       for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
         BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
         if (ancestorDescriptor instanceof BaseBHDescriptor) {
-          ((BaseBHDescriptor) ancestorDescriptor).invokeOwn(node, SMethodImpl.INIT);
+          ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor);
         }
       }
-      NodeNotifier.notify(node);
+      NodeNotifier.notify(node); // do I still need that?
     }
   }
 

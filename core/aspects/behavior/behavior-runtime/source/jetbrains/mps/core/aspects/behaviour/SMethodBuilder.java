@@ -21,8 +21,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SParameter;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,10 +33,11 @@ import java.util.List;
  */
 public final class SMethodBuilder<T> {
   private String myName;
-  private SMethodModifiers myModifiers;
+  private SModifiersImpl myModifiers;
   private final SAbstractType myReturnType;
   private SAbstractConcept myConcept;
   private SMethod<T> myBaseMethod;
+  private SNodeId myId;
 
   public SMethodBuilder(SAbstractType returnType) {
     myReturnType = returnType;
@@ -47,7 +48,7 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethod<T> build(List<SParameter> paramTypes) {
-    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes);
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes, myId);
   }
 
   public SMethodBuilder<T> name(@NotNull String name) {
@@ -55,7 +56,7 @@ public final class SMethodBuilder<T> {
     return this;
   }
 
-  public SMethodBuilder<T> modifiers(@NotNull SMethodModifiers modifiers) {
+  public SMethodBuilder<T> modifiers(@NotNull SModifiersImpl modifiers) {
     myModifiers = modifiers;
     return this;
   }
@@ -67,6 +68,11 @@ public final class SMethodBuilder<T> {
 
   public SMethodBuilder<T> baseMethod(@Nullable SMethod<T> baseMethod) {
     myBaseMethod = baseMethod;
+    return this;
+  }
+
+  public SMethodBuilder<T> id(@NotNull SNodeId id) {
+    myId = id;
     return this;
   }
 }

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.impl.SVoidType;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,11 +22,12 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SMethod;
+import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.language.SModifiers;
 import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.language.SThrowable;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -66,31 +64,30 @@ import java.util.List;
  */
 @Immutable
 public final class SMethodImpl<T> implements SMethod<T> {
-  private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
-  public static final SMethod<Void> INIT = SMethodImpl.create(DEFAULT_CONSTRUCTOR_NAME, SMethodModifiers.DEFAULT, new SVoidType(),
-      SNodeUtil.concept_BaseConcept, null, new ArrayList<SParameter>());
-  private static final String METHOD_NAME_ID_SEPARATOR ="___";
-  private static final int DEFAULT_MOD_FOR_HASHCODE = 31;
+  public static final String METHOD_NAME_ID_SEPARATOR ="_";
 
   private final String myName;
-  private final SMethodModifiers myMethodModifiers;
+  private final SModifiers myMethodModifiers;
   private final SAbstractType myReturnType;
   private final SAbstractConcept myConcept;
   @Deprecated private final SMethod myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
   private final List<SParameter> myParameters;
+  private final SMethodId myId;
 
   private SMethodImpl(@NotNull String name,
-      @NotNull SMethodModifiers modifiers,
-      SAbstractType returnType,
+      @NotNull SModifiers modifiers,
+      @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
       @Nullable SMethod baseMethod,
-      List<SParameter> parameters) {
+      List<SParameter> parameters,
+      @NotNull SNodeId id) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
     myConcept = concept;
     myBaseMethod = baseMethod;
     myParameters = parameters;
+    myId = SMethodIdBySNode.create(id);
   }
 
   /**
@@ -107,15 +104,18 @@ public final class SMethodImpl<T> implements SMethod<T> {
    *                   or it is not virtual
    *                   or it is the topmost method
    * @param parameters -- the types of method's arguments
+   * @param id -- method id which uniquely represents the method throughout the concept
+   *
    * @return new SMethod
    */
   public static <T> SMethod<T> create(@NotNull String methodName,
-      SMethodModifiers modifiers,
+      @NotNull SModifiers modifiers,
       @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
       @Nullable SMethod baseMethod,
-      List<SParameter> parameters) {
-    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters);
+      List<SParameter> parameters,
+      @NotNull SNodeId id) {
+    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters, id);
   }
 
   static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {
@@ -140,7 +140,8 @@ public final class SMethodImpl<T> implements SMethod<T> {
   }
 
   @NotNull
-  public SMethodModifiers getMethodModifiers() {
+  @Override
+  public SModifiers getModifiers() {
     return myMethodModifiers;
   }
 
@@ -151,12 +152,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
   @Override
   public boolean isStatic() {
     return myMethodModifiers.isStatic();
-  }
-
-  @Override
-  public boolean isFinal() {
-    // fixme
-    return false;
   }
 
   @Override
@@ -176,6 +171,12 @@ public final class SMethodImpl<T> implements SMethod<T> {
   @Override
   public SAbstractConcept getConcept() {
     return myConcept;
+  }
+
+  @NotNull
+  @Override
+  public org.jetbrains.mps.openapi.language.SMethodId getId() {
+    return myId;
   }
 
   /**
@@ -205,6 +206,10 @@ public final class SMethodImpl<T> implements SMethod<T> {
     }
   }
 
+  public boolean isPublic() {
+    return myMethodModifiers.isPublic();
+  }
+
   @Override
   public String toString() {
     return String.format("%s:%s(%s)%s", myReturnType.toString(), myName, myParameters, myMethodModifiers.toString());
@@ -212,28 +217,15 @@ public final class SMethodImpl<T> implements SMethod<T> {
 
   @Override
   public boolean equals(Object o) {
-    if (o instanceof SMethodImpl) {
-      SMethodImpl another = (SMethodImpl) o;
-      if (!this.getName().equals(another.getName())) return false;
-      if (!this.getMethodModifiers().equals(another.getMethodModifiers())) return false;
-      if (!this.getReturnType().equals(another.getReturnType())) return false;
-      if (!EqualUtil.equals(getConcept(), another.getConcept())) return false;
-      if (!EqualUtil.equals(myBaseMethod, another.myBaseMethod)) return false;
-      if (!getParameters().equals(another.getParameters())) return false;
-      return true;
+    if (o instanceof SMethod) {
+      SMethod another = (SMethod) o;
+      return this.getId().equals(another.getId());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    int hashCode = myName.hashCode();
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myMethodModifiers.hashCode();
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myReturnType.hashCode();
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myConcept.hashCode();
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + (myBaseMethod != null ? myBaseMethod.hashCode() : 0);
-    hashCode = DEFAULT_MOD_FOR_HASHCODE * hashCode + myParameters.hashCode();
-    return hashCode;
+    return myId.hashCode();
   }
-
 }

@@ -53,7 +53,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
   private static final Pattern CONCEPT_FQ_NAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
-  private static final String DEFAULT_INIT_METHOD_NAME = "init";
 
   private final SAbstractConcept myConcept;
   private final List<SAbstractConcept> myAncestors; // including me
@@ -72,12 +71,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     return ConceptRegistry.getInstance().getBehaviorRegistry();
   }
 
-  private List<SAbstractConcept> getConstructionOrder() {
-    List<SAbstractConcept> reversedAncestors = new ArrayList<SAbstractConcept>(myAncestors);
-    Collections.reverse(reversedAncestors);
-    return Collections.unmodifiableList(reversedAncestors);
-  }
-
   @NotNull
   private SAbstractConcept getConcept(String conceptFqName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName);
@@ -94,8 +87,34 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     if (node == null) {
       throw new IllegalArgumentException("initNode on null node");
     }
+    Object[] parameters = new Object[0];
+    NodeOrConcept nodeOrConcept = NodeOrConcept.create(node);
+    String constructorName = BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME;
+    for (SAbstractConcept ancestor : getConstructingOrder()) {
+      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(ancestor);
+      if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
+        InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
+        if (legacyDescriptor.hasOwnMethod(constructorName)) {
+          legacyDescriptor.invokeOwn(nodeOrConcept, constructorName, parameters);
+        }
+      } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
+        BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
+        if (!(behaviorDescriptor instanceof BehaviorDescriptorAdapter)) {
+          throw new IllegalStateException("Could not get legacy behavior descriptor + " + behaviorDescriptor +
+              "; unable to resolve the constructor");
+        }
+        BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
+        if (behaviorDescriptorAdapter.hasOwnMethod(constructorName, false, parameters)) {
+          behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), constructorName, parameters);
+        }
+      }
+    }
+  }
 
-    genericInvoke(NodeOrConcept.create(node), BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME, new Object[0]);
+  private Iterable<SAbstractConcept> getConstructingOrder() {
+    List<SAbstractConcept> order = new ArrayList<SAbstractConcept>(myAncestors);
+    Collections.reverse(order);
+    return order;
   }
 
   public static String behaviorClassByConceptFqName(@NotNull String fqName) {
@@ -125,7 +144,11 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
    * and {@link jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
    */
   protected <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
-    for (SAbstractConcept ancestor : myAncestors) {
+    return genericInvoke(nodeOrConcept, methodName, myAncestors, parameters);
+  }
+
+  private <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors, Object[] parameters) {
+    for (SAbstractConcept ancestor : ancestors) {
       BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
         InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
@@ -140,7 +163,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
         boolean isStatic = (nodeOrConcept.getNode() == null);
-        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters, isStatic)) {
+        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, isStatic, parameters)) {
           return (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
         }
       }

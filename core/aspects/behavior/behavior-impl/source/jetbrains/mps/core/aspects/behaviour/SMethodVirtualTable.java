@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Primitive representation of the virtual behavior methods table.
@@ -68,5 +69,10 @@ public final class SMethodVirtualTable {
         myTable.put(method, descriptor);
       }
     }
+  }
+
+  @NotNull
+  public Set<SMethod<?>> getMethods() {
+    return myTable.keySet();
   }
 }

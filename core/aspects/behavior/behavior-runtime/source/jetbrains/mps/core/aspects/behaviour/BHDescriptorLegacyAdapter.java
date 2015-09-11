@@ -19,12 +19,16 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.NodeOrConcept;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConstructor;
+import org.jetbrains.mps.openapi.language.SExecutable;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -86,8 +90,9 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   private void fillOwnMethods() {
     for (Entry<String, Method> entry : myLegacyDescriptor.getOwnMethods().entrySet()) {
-      SMethod sMethod = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
-      if (sMethod != SMethodImpl.INIT) {
+      SExecutable fromLegacy = SMethodLegacyAdapter.createFromLegacy(entry.getKey(), entry.getValue(), getConcept());
+      if (fromLegacy instanceof SMethod) {
+        SMethod<?> sMethod = (SMethod<?>) fromLegacy;
         myInvocationMap.put(sMethod, entry.getValue());
       }
     }
@@ -96,27 +101,28 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (method == SMethodImpl.INIT) {
-      if (node == null) {
-        throw new IllegalArgumentException("Cannot pass null node to constructor");
-      }
-      myLegacyDescriptor.initNode(node);
-      return null;
-    }
     if (!myInvocationMap.containsKey(method)) {
       throw new BHMethodNotFoundException(method);
     }
     String methodName = myInvocationMap.get(method).getName();
     if (node == null) {
-      return (T) myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters);
+      return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(getConcept()), methodName, parameters);
     } else {
-      return (T) myLegacyDescriptor.invoke(node, methodName, parameters);
+      return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), methodName, parameters);
     }
+  }
+
+  @Override
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... parameters) {
+    if (parameters.length > 0) {
+      throw new IllegalArgumentException("The default constructor has no parameters");
+    }
+    myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME, parameters);
   }
 
   @NotNull
   @Override
-  protected List<SMethod<?>> getOwnMethods() {
+  public List<SMethod<?>> getDeclaredMethods() {
     return myOwnMethods;
   }
 }

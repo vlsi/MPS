@@ -15,10 +15,13 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-/**
- * Represents a parameter of {@link SMethod}
- *
- * Created by apyshkin on 07/09/15.
- */
-public interface SParameter extends SNamedElement, STypedElement {
+public interface SModifiers {
+  boolean isPublic();
+  boolean isPrivate();
+  boolean isProtected();
+  boolean isPackage();
+  boolean isStatic();
+  boolean isFinal();
+  boolean isAbstract();
+  boolean isVirtual();
 }

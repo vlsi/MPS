@@ -21,10 +21,10 @@ import java.lang.reflect.Modifier;
  * Access privileges in the behavior language.
  */
 public enum AccessPrivileges {
+  PUBLIC,
   PRIVATE,
-  PACKAGE,
   PROTECTED,
-  PUBLIC;
+  PACKAGE;
 
   public static AccessPrivileges fromModifiers(Integer modifier) {
     if (Modifier.isPrivate(modifier)) {
