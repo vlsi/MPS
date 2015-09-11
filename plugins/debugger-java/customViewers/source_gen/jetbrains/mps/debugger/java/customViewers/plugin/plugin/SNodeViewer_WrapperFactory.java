@@ -19,7 +19,6 @@ import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
 public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
   public SNodeViewer_WrapperFactory() {
@@ -107,16 +106,16 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy node = (IObjectValueProxy) value;
 
-      IObjectValueProxy containingRole = ((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myRoleInParent")).invokeMethod("getRoleName", "()Ljava/lang/String;", getThreadReference()));
-      if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" in role: " + (String) (containingRole).getJavaValue(), getVM()));
+      String containingRole = (ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("myRoleInParent")), null) ? null : (String) (((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myRoleInParent")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference()))).getJavaValue());
+      if (containingRole != null) {
+        containingRole = " in role: " + containingRole;
       } else {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava("", getVM()));
+        containingRole = "";
         if (ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null)) {
-          containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" (root)", getVM()));
+          containingRole = " (root)";
         }
       }
-      return "node<" + (String) (((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myConcept")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference()))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
+      return "node<" + (String) (((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myConcept")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference()))).getJavaValue() + ">" + containingRole;
     }
   }
 

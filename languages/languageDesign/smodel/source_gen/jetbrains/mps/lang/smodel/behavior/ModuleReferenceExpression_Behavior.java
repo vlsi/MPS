@@ -29,7 +29,7 @@ public class ModuleReferenceExpression_Behavior {
   }
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
-    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression").getDeclarationNode()));
+    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
   }
   @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {

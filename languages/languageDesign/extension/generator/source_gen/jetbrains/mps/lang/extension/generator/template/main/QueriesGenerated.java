@@ -43,8 +43,7 @@ public class QueriesGenerated {
     return IRootWithUniqueName_Behavior.call_getId_63012922130945363(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_8820339482096486801(final PropertyMacroContext _context) {
-    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()) + _context.getNode().getNodeId().toString(), null);
-
+    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()), null);
   }
   public static Object propertyMacro_GetPropertyValue_7036359038356140565(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

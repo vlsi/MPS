@@ -4,6 +4,7 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -195,7 +196,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -310,6 +311,28 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
     </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
@@ -5418,6 +5441,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5RIkdF7qUZo" role="jymVt" />
     <node concept="3clFb_" id="6xJrZo0GWab" role="jymVt">
       <property role="TrG5h" value="closure" />
       <node concept="3uibUv" id="6xJrZo0GWah" role="3clF45">
@@ -5601,7 +5625,20 @@
           <node concept="Xjq3P" id="6xJrZo0GWaV" role="3clFbG" />
         </node>
       </node>
+      <node concept="P$JXv" id="5RIkdF7r4Ho" role="lGtFl">
+        <node concept="TZ5HA" id="5RIkdF7r4Hp" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7r4Hq" role="1dT_Ay">
+            <property role="1dT_AB" value="To compile, module needs its direct dependencies, plus re-exported dependencies of those." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7renK" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7renL" role="1dT_Ay">
+            <property role="1dT_AB" value="RTs of used languages and their dependencies won't hurt either." />
+          </node>
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5RIkdF7q_ie" role="jymVt" />
     <node concept="3clFb_" id="5bXKZTgq2AH" role="jymVt">
       <property role="TrG5h" value="runtimeClosure" />
       <node concept="3uibUv" id="5bXKZTgq2AS" role="3clF45">
@@ -5648,7 +5685,56 @@
           <node concept="Xjq3P" id="5bXKZTgq2Bb" role="3clFbG" />
         </node>
       </node>
+      <node concept="P$JXv" id="5RIkdF7qLzN" role="lGtFl">
+        <node concept="TZ5HA" id="5RIkdF7qLzO" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7qLzP" role="1dT_Ay">
+            <property role="1dT_AB" value="To start, module needs all its dependencies plus RTs of languages it uses." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uqjC" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uqjD" role="1dT_Ay">
+            <property role="1dT_AB" value="However, its use in mps.build.mps generator is dubious, as it merely adds rt dependencies of specific module" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uqjK" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uqjL" role="1dT_Ay">
+            <property role="1dT_AB" value="to the list of external (for the current project) modules." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uHac" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uHad" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uBLO" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uBLP" role="1dT_Ay">
+            <property role="1dT_AB" value="Its use in MPSModulesPartitioner is another way of saying &quot;if I generate a model and there's a language, which has runtime coming from another build script, add it to dependencies&quot;" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uBM0" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uBM1" role="1dT_Ay">
+            <property role="1dT_AB" value="Although it's not clear why would one need language runtime during generation." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uFwX" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uFwY" role="1dT_Ay">
+            <property role="1dT_AB" value="XXX Perhaps, " />
+          </node>
+          <node concept="1dT_AA" id="5RIkdF7uBMf" role="1dT_Ay">
+            <node concept="92FcH" id="5RIkdF7uBMl" role="qph3F">
+              <node concept="VXe0Z" id="5RIkdF7uDS7" role="92FcQ">
+                <ref role="VXe0S" node="5D0zVz81aDF" resolve="generationDependenciesClosure" />
+              </node>
+              <node concept="TZ5HA" id="5RIkdF7uBMp" role="2XjZqd" />
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5RIkdF7uBMe" role="1dT_Ay">
+            <property role="1dT_AB" value=" shall collect module's dependencies (collectDependencies(false)) instead" />
+          </node>
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5RIkdF7uqnc" role="jymVt" />
     <node concept="3clFb_" id="7LkEFTMzmuw" role="jymVt">
       <property role="TrG5h" value="designtimeClosure" />
       <node concept="3uibUv" id="7LkEFTMzmux" role="3clF45">
@@ -5761,7 +5847,20 @@
           <node concept="Xjq3P" id="7LkEFTMzmuP" role="3clFbG" />
         </node>
       </node>
+      <node concept="P$JXv" id="5RIkdF7u1s5" role="lGtFl">
+        <node concept="TZ5HA" id="5RIkdF7u1s6" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7u1s7" role="1dT_Ay">
+            <property role="1dT_AB" value="Looks like an attempt to replace MPSModulePartitioner.getExternal() + runtimeClosure() (i.e. expand external dependencies with dependencies from this project)" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7uyBD" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7uyBE" role="1dT_Ay">
+            <property role="1dT_AB" value="We use this to populate libraries of Environment for our tasks (MpsWorker) to start MPS with specific set of modules (hence we need a closure of modules for MPS to start properly)." />
+          </node>
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5RIkdF7rmW8" role="jymVt" />
     <node concept="3clFb_" id="5D0zVz81aDF" role="jymVt">
       <property role="TrG5h" value="generationDependenciesClosure" />
       <node concept="3uibUv" id="5D0zVz81aDP" role="3clF45">
@@ -5847,7 +5946,47 @@
           <node concept="Xjq3P" id="5D0zVz81aEW" role="3clFbG" />
         </node>
       </node>
+      <node concept="P$JXv" id="5RIkdF7rep_" role="lGtFl">
+        <node concept="TZ5HA" id="5RIkdF7repA" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7repB" role="1dT_Ay">
+            <property role="1dT_AB" value="To generate a module, we need its languages and all their dependencies." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7rwqK" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7rwqL" role="1dT_Ay">
+            <property role="1dT_AB" value="Unlike " />
+          </node>
+          <node concept="1dT_AA" id="5RIkdF7rwsh" role="1dT_Ay">
+            <node concept="92FcH" id="5RIkdF7rwsn" role="qph3F">
+              <node concept="VXe0Z" id="5RIkdF7rH$x" role="92FcQ">
+                <ref role="VXe0S" node="5bXKZTgq2AH" resolve="runtimeClosure" />
+              </node>
+              <node concept="TZ5HA" id="5RIkdF7rwsr" role="2XjZqd" />
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5RIkdF7rwsg" role="1dT_Ay">
+            <property role="1dT_AB" value=" or " />
+          </node>
+          <node concept="1dT_AA" id="5RIkdF7rLhD" role="1dT_Ay">
+            <node concept="92FcH" id="5RIkdF7rLhO" role="qph3F">
+              <node concept="VXe0Z" id="5RIkdF7rPtf" role="92FcQ">
+                <ref role="VXe0S" node="7LkEFTMzmuw" resolve="designtimeClosure" />
+              </node>
+              <node concept="TZ5HA" id="5RIkdF7rLhS" role="2XjZqd" />
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5RIkdF7rLhC" role="1dT_Ay">
+            <property role="1dT_AB" value=", dependencies of the module itself (aka classpath) doesn't look" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7rR65" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7rR66" role="1dT_Ay">
+            <property role="1dT_AB" value="that imporant (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)" />
+          </node>
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5RIkdF7shVx" role="jymVt" />
     <node concept="3clFb_" id="41K1b4v5Z_a" role="jymVt">
       <property role="TrG5h" value="runtimeDependencies" />
       <node concept="3uibUv" id="41K1b4v5Z_b" role="3clF45">
@@ -5976,6 +6115,28 @@
         </node>
         <node concept="3clFbF" id="41K1b4v5Z_$" role="3cqZAp">
           <node concept="Xjq3P" id="41K1b4v5Z__" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5RIkdF7sawZ" role="lGtFl">
+        <node concept="TZ5HA" id="5RIkdF7sHVH" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7sHVI" role="1dT_Ay">
+            <property role="1dT_AB" value="This is what we list as module dependencies in module.xml" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7sI16" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7sI17" role="1dT_Ay">
+            <property role="1dT_AB" value="I have no idea why it's a list of runtime solutions of used languages." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7sVT9" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7sVTa" role="1dT_Ay">
+            <property role="1dT_AB" value="As long as we distribute (and process) original module descriptor in src.jar, it seems these dependencies " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5RIkdF7t4Zz" role="TZ5H$">
+          <node concept="1dT_AC" id="5RIkdF7t4Z$" role="1dT_Ay">
+            <property role="1dT_AB" value="(ModuleDescriptor.getDeploymentDescriptor().getDependencies()) are irrelevant." />
+          </node>
         </node>
       </node>
     </node>
@@ -8437,6 +8598,11 @@
       <node concept="3cqZAl" id="5bqm540IfbX" role="3clF45" />
       <node concept="3Tm1VV" id="5bqm540IfbY" role="1B3o_S" />
       <node concept="3clFbS" id="5bqm540IfbZ" role="3clF47">
+        <node concept="3SKdUt" id="5RIkdF7uzlx" role="3cqZAp">
+          <node concept="3SKdUq" id="5RIkdF7uzrK" role="3SKWNk">
+            <property role="3SKdUp" value="XXX why runtimeClosure? why do we care about RT of the module?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="5bqm540IiQK" role="3cqZAp">
           <node concept="37vLTI" id="5bqm540IiQL" role="3clFbG">
             <node concept="2OqwBi" id="5bqm540IiQM" role="37vLTJ">

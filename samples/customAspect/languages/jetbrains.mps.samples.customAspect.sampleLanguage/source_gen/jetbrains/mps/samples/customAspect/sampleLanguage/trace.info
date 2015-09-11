@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <root>
+    <file name="DocumentationDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.DocumentationDescriptor" />
+    </file>
     <file name="Language.java">
-      <unit at="13,0,43,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.Language" />
+      <unit at="19,0,61,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.Language" />
     </file>
   </root>
 </debug-info>

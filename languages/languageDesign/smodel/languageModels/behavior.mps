@@ -234,6 +234,9 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -271,7 +274,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
@@ -856,7 +859,7 @@
   </node>
   <node concept="13h7C7" id="hEwIqRp">
     <property role="3GE5qa" value="type" />
-    <ref role="13h7C2" to="tp25:h3THzq0" resolve="SConceptType" />
+    <ref role="13h7C2" to="tp25:h3THzq0" resolve="ConceptNodeType" />
     <node concept="13i0hz" id="hEwIqRq" role="13h7CS">
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
@@ -3747,8 +3750,8 @@
             <node concept="2qgKlT" id="L_Hr3kErXK" role="2OqNvi">
               <ref role="37wK5l" node="3wj3sjzSgFZ" resolve="getVisibleModules" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kErXM" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp25:3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
+            <node concept="35c_gC" id="63eA7gRdGRY" role="2Oq$k0">
+              <ref role="35c_gD" to="tp25:3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
             </node>
           </node>
         </node>
@@ -6773,7 +6776,7 @@
   </node>
   <node concept="13h7C7" id="5MFgGQnlMJX">
     <property role="3GE5qa" value="type" />
-    <ref role="13h7C2" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+    <ref role="13h7C2" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
     <node concept="13i0hz" id="5MFgGQnlMJY" role="13h7CS">
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />

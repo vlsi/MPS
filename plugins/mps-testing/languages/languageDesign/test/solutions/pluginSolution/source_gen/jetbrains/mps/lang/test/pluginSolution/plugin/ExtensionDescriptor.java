@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new Extension_ActionIDs136702651994179408_()};
+  private Extension[] extensions = new Extension[]{new Extension_ActionIDs_()};
   public ExtensionDescriptor() {
   }
   @Override

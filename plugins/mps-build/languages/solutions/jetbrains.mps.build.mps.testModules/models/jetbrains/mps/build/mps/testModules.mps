@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:645f17f0-02ac-4c69-aeef-a809c800f9f6(jetbrains.mps.build.mps.testModules)">
+<model ref="r:645f17f0-02ac-4c69-aeef-a809c800f9f6(jetbrains.mps.build.mps.testModules)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />

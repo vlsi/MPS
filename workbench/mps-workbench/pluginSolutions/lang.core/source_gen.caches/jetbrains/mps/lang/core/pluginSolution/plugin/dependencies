@@ -4,11 +4,11 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
+    <classNode dependClassName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" file="Extension_GeneratorCache6905339732004138486_.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" file="Extension_GeneratorCache_.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />

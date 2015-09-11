@@ -5,6 +5,11 @@
     <use id="4ac0b19e-3e88-4e61-bab3-507ba2cceae8" name="jetbrains.mps.samples.customAspect.sampleLanguage" version="-1" />
   </languages>
   <imports />
-  <registry />
+  <registry>
+    <language id="4ac0b19e-3e88-4e61-bab3-507ba2cceae8" name="jetbrains.mps.samples.customAspect.sampleLanguage">
+      <concept id="2897519568668509945" name="jetbrains.mps.samples.customAspect.sampleLanguage.structure.DocumentedConcept" flags="ng" index="43cxb" />
+    </language>
+  </registry>
+  <node concept="43cxb" id="2wQ3F8GeLNN" />
 </model>
 

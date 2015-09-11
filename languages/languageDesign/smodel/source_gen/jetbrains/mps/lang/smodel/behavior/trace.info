@@ -2888,7 +2888,7 @@
     <file name="ModuleReferenceExpression_Behavior.java">
       <node id="2240889477919504544" at="25,186,26,18" concept="7" />
       <node id="4040588429969066445" at="27,5,28,245" concept="7" />
-      <node id="4040588429969394462" at="31,93,32,297" concept="7" />
+      <node id="4040588429969394462" at="31,93,32,276" concept="7" />
       <node id="4040588429969394435" at="35,104,36,75" concept="6" />
       <node id="559557797392947583" at="36,75,37,117" concept="2" />
       <node id="4040588429969394449" at="37,117,38,18" concept="7" />
@@ -2899,7 +2899,7 @@
       <node id="4040588429969043134" at="23,0,30,0" concept="8" trace="call_getModule_4040588429969043137#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <scope id="4040588429969043136" at="21,43,21,43" />
       <scope id="2240889477919504500" at="25,186,26,18" />
-      <scope id="4040588429969394407" at="31,93,32,297" />
+      <scope id="4040588429969394407" at="31,93,32,276" />
       <scope id="4040588429969043134" at="21,0,23,0">
         <var name="thisNode" id="4040588429969043134" />
       </scope>

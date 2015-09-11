@@ -25,7 +25,7 @@
   <node concept="24kQdi" id="2wQ3F8GeGsi">
     <ref role="1XX52x" to="bc4t:2wQ3F8GeGrT" resolve="DocumentedConcept" />
     <node concept="3F0ifn" id="2wQ3F8GeGsk" role="2wV5jI">
-      <property role="3F0ifm" value="This is an instance of documented concept. Press ctrl+alt+H to see the doc." />
+      <property role="3F0ifm" value="This is an instance of documented concept. Select MainMenu-&gt;Code-&gt;Show Doc to see the doc." />
     </node>
   </node>
 </model>

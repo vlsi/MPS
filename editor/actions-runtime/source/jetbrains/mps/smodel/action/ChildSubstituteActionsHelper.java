@@ -45,7 +45,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -148,8 +147,8 @@ public class ChildSubstituteActionsHelper {
     Set<SLanguage> importedLangs = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(parentNode.getModel())).getExtended();
     SAbstractConcept childConcept = MetaAdapterByDeclaration.getConcept(childConceptNode);
     final Set<SAbstractConcept> desc = ConceptDescendantsCache.getInstance().getDescendants(childConcept);
-    Set<SConcept> concepts = new HashSet<SConcept>();
-    for (SAbstractConcept concept: desc){
+    List<SConcept> concepts = new ArrayList<SConcept>();
+    for (SAbstractConcept concept : desc) {
       if (!(concept instanceof SConcept)) continue;
       if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
 
@@ -226,7 +225,8 @@ public class ChildSubstituteActionsHelper {
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      if (referentNode == null || !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference))))
+      if (referentNode == null ||
+          !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference))))
         continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
           currentChild, childSetter, smartConcept, smartReference, refDescriptor));

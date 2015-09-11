@@ -5463,7 +5463,7 @@
         <property role="Xl_RC" value="trace.info" />
       </node>
       <node concept="Xl_RD" id="5YKGT2oZeHg" role="37wK5m">
-        <property role="Xl_RC" value="debugInfo" />
+        <property role="Xl_RC" value="debug-info" />
       </node>
     </node>
     <node concept="QsSxf" id="2TzypFyLPUU" role="Qtgdg">
