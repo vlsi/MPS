@@ -11,6 +11,8 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public final class GeneratorUtilEx {
@@ -37,13 +39,13 @@ public final class GeneratorUtilEx {
     List<SNode> templateFragments = new ArrayList<SNode>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
     queue.addFirst(template);
-    final SNode conceptTemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment").getDeclarationNode();
+    final SAbstractConcept conceptTemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment");
     while (!(queue.isEmpty())) {
       SNode subnode = queue.removeFirst();
       // do not look for TemplateFragments in subnode's children as TFs couldn't be nested 
       boolean tfFound = false;
       for (SNode attr : SLinkOperations.getChildren(subnode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) {
-        if (SNodeOperations.getConceptDeclaration(attr) == conceptTemplateFragment) {
+        if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(attr)), SNodeOperations.asSConcept(conceptTemplateFragment))) {
           templateFragments.add((SNode) attr);
           tfFound = true;
           break;
