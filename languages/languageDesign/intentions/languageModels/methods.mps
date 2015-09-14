@@ -19,7 +19,6 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -77,31 +76,14 @@
         <child id="3402736933911577960" name="modifier" index="2IRzpu" />
       </concept>
     </language>
-    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
-        <child id="1196350785111" name="expression" index="2c44t1" />
-      </concept>
-      <concept id="1196350785112" name="jetbrains.mps.lang.quotation.structure.Antiquotation" flags="ng" index="2c44te" />
-      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
-        <child id="1196350785114" name="quotedNode" index="2c44tc" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
-        <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
     </language>
   </registry>
@@ -339,68 +321,6 @@
       <node concept="QcxE9" id="2lJOBsqvJuQ" role="2IRzpu">
         <property role="QcwnP" value="&lt;no parameter&gt;" />
       </node>
-    </node>
-  </node>
-  <node concept="q3mft" id="2Hif5ue1I1A">
-    <property role="TrG5h" value="ParametrizedDeclaration" />
-    <node concept="q3mfq" id="2Hif5ue1I1B" role="QNr5C">
-      <property role="TrG5h" value="parameter" />
-      <node concept="q3mfp" id="2Hif5ue1I1E" role="q3mfl">
-        <property role="TrG5h" value="node" />
-        <node concept="q3mfx" id="2Hif5ue1Imc" role="q3mfr">
-          <node concept="1bVj0M" id="2Hif5ue1Ime" role="q3mfw">
-            <node concept="37vLTG" id="2Hif5ue1Imf" role="1bW2Oz">
-              <property role="TrG5h" value="point" />
-              <node concept="3Tqbb2" id="2Hif5ue1Img" role="1tU5fm" />
-            </node>
-            <node concept="3clFbS" id="2Hif5ue1Imh" role="1bW5cS">
-              <node concept="3clFbF" id="2Hif5ue1IG7" role="3cqZAp">
-                <node concept="2YIFZM" id="2Hif5ue1IG8" role="3clFbG">
-                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
-                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                  <node concept="37vLTw" id="2Hif5ue1IG9" role="37wK5m">
-                    <ref role="3cqZAo" node="2Hif5ue1Imf" resolve="point" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="q3mfp" id="2Hif5ue1Inu" role="q3mfl">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="2Hif5ue1Ipl" role="q3mfr">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="q3mfx" id="2Hif5ue1Iq2" role="q3mfk">
-        <node concept="1bVj0M" id="2Hif5ue1Iq3" role="q3mfw">
-          <node concept="37vLTG" id="2Hif5ue1Iq4" role="1bW2Oz">
-            <property role="TrG5h" value="point" />
-            <node concept="3Tqbb2" id="2Hif5ue1Iq5" role="1tU5fm" />
-          </node>
-          <node concept="3clFbS" id="2Hif5ue1Iq6" role="1bW5cS">
-            <node concept="3clFbF" id="2Hif5ue2iTE" role="3cqZAp">
-              <node concept="2c44tf" id="2Hif5ue2iTC" role="3clFbG">
-                <node concept="_YKpA" id="2Hif5ue2iV4" role="2c44tc">
-                  <node concept="33vP2l" id="2Hif5ue2iV6" role="_ZDj9">
-                    <node concept="2c44te" id="2Hif5ue2iZh" role="lGtFl">
-                      <node concept="2YIFZM" id="2Hif5ue2j3t" role="2c44t1">
-                        <ref role="37wK5l" to="6003:TGYTOye75D" resolve="parameterType" />
-                        <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                        <node concept="37vLTw" id="2Hif5ue2j5i" role="37wK5m">
-                          <ref role="3cqZAo" node="2Hif5ue1Iq4" resolve="point" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2IRzkw" id="3_zGkPoKmS8" role="2IRzpu" />
     </node>
   </node>
 </model>
