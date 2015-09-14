@@ -63,6 +63,6 @@ public abstract class BaseTreeTransformer implements TreeTransformer {
     return getDescription(myNode, myEditorContext);
   }
 
-  public abstract void execute(SNode node, EditorContext editorContext);
-  public abstract String getDescription(SNode node, EditorContext editorContext);
+  protected abstract void execute(SNode node, EditorContext editorContext);
+  protected abstract String getDescription(SNode node, EditorContext editorContext);
 }

@@ -74,7 +74,7 @@ public class TreeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public String getPersistentStateKey() {
-    return myFactory.getClass().getName();
+    return myFactory.getPersistentStateKey();
   }
 
   @Override

@@ -317,7 +317,7 @@
     <property role="TrG5h" value="AlwaysAvailableInChildNodesStrategy" />
     <property role="34LRSv" value="always available" />
     <property role="3GE5qa" value="childFilterStrategy" />
-    <ref role="1TJDcQ" node="4nRSVgZCeVi" resolve="ChildFilter" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="63iz5ddjJBD" role="PzmwI">
       <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
     </node>
