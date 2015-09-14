@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="TestBehavior.test.BHTest_Test" file="BHTest_Test.java">
-    <classNode dependClassName="BHL1.behavior.I1_BehaviorDescriptor" />
-    <classNode dependClassName="BHL1.behavior.I_BehaviorDescriptor" />
-    <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL3.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL3.behavior.B_BehaviorDescriptor" />
-    <classNode dependClassName="BHL4.behavior.I_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.E_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.F_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.B_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.C_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.H_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.I1_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.I2_BehaviorDescriptor" />
-    <classNode dependClassName="BHL7.behavior.I3_BehaviorDescriptor" />
+  <dependency className="TestBehaviorReflective.test.BHTestRef_Test" file="BHTestRef_Test.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
@@ -26,12 +8,14 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodIdBySNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />

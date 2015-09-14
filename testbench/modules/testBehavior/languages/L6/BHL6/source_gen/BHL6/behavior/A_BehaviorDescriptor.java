@@ -5,30 +5,30 @@ package BHL6.behavior;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.language.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BHFacade;
 import UtilSolution.util.TestResults;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04606a7L, "BHL6.structure.A");
+  private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id12061 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("6167444251392476867")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> bar_id12047 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("6167444251392476881")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  private static final SMethod<Integer> bar2_id64538 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("7808537626115736451")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id12061 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392476867").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> bar_id12047 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392476881").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  private static final SMethod<Integer> bar2_id64538 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7808537626115736451").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id12061, bar_id12047, bar2_id64538);
 
@@ -39,14 +39,14 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     return A_BehaviorDescriptor.bar(__thisNode__);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
-    return BHFacade.invoke(__thisNode__, A_BehaviorDescriptor.bar2_id64538);
+    return A_BehaviorDescriptor.bar2_id64538.invoke(__thisNode__);
   }
   private static Integer bar2(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
 
   /*package*/ A_BehaviorDescriptor() {
-    super(ConceptRegistry.getInstance().getBehaviorRegistry());
+    super(REGISTRY);
   }
 
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {

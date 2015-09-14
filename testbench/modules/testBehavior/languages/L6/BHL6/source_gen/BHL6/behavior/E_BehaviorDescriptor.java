@@ -5,29 +5,32 @@ package BHL6.behavior;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.language.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.behaviour.BHFacade;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class E_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
+  private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id3693 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).baseMethod(null).id(SNodeId.fromString("6167444251392485299")).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id3693 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392485299").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> virtual_id8900 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("virtual").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4743819545113152010").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id3693);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id3693, virtual_id8900);
 
   public static void ___init___(SNode __thisNode__) {
   }
@@ -35,9 +38,12 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
   public static Integer foo(@Nullable SNode __thisNode__) {
     return BHFacade.invokeSpecial(null, C_BehaviorDescriptor.foo_id13713);
   }
+  public static Object virtual(@Nullable SNode __thisNode__) {
+    return TestResults.POLYMORPHIC_CHILD;
+  }
 
   /*package*/ E_BehaviorDescriptor() {
-    super(ConceptRegistry.getInstance().getBehaviorRegistry());
+    super(REGISTRY);
   }
 
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
@@ -53,6 +59,8 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) foo(node);
+      case 1:
+        return (T) virtual(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

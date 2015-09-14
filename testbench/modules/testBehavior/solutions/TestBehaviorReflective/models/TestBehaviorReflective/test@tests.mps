@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)">
+<model ref="r:d7fa4265-2db2-475e-a521-ccd734907efd(TestBehaviorReflective.test@tests)">
   <persistence version="9" />
   <languages>
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
-    <import index="8jon" ref="r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)" />
+    <import index="5fgz" ref="r:306699ac-7981-4117-bc07-ec2d425bff05(TestBehavior.test@tests)" />
+    <import index="g0pg" ref="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)" />
     <import index="ynox" ref="r:d5b954f8-51a0-4e5e-8222-e5ceaabb7619(UtilSolution.util)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="9x1z" ref="r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(BHL2.structure)" />
-    <import index="b361" ref="r:550e598c-d156-49bb-9397-c8a08d52175e(BHL3.structure)" />
-    <import index="g0pg" ref="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="8srx" ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(BHL3.behavior)" />
-    <import index="se8q" ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)" />
-    <import index="442" ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(BHL5.structure)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
-    <import index="3cc8" ref="r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)" />
     <import index="n871" ref="r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
-    <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" implicit="true" />
-    <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" implicit="true" />
-    <import index="5a2" ref="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="4uhy" ref="r:e76e445e-2173-496b-9059-50cca123009f(BHL1.behavior)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="442" ref="r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(BHL5.structure)" />
+    <import index="8jon" ref="r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)" />
+    <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" />
+    <import index="5a2" ref="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)" />
+    <import index="8srx" ref="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(BHL3.behavior)" />
+    <import index="b361" ref="r:550e598c-d156-49bb-9397-c8a08d52175e(BHL3.structure)" />
+    <import index="se8q" ref="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)" />
+    <import index="4uhy" ref="r:e76e445e-2173-496b-9059-50cca123009f(BHL1.behavior)" />
+    <import index="3cc8" ref="r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" />
+    <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -186,7 +187,7 @@
     </language>
   </registry>
   <node concept="3s_ewN" id="6EMTxOPT2R6">
-    <property role="3s_ewP" value="BHTest" />
+    <property role="3s_ewP" value="BHTestRef" />
     <node concept="Wx3nA" id="74sHQpDbWx3" role="jymVt">
       <property role="TrG5h" value="PROJECT_PATH" />
       <property role="3TUv4t" value="true" />
@@ -235,8 +236,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="5ZuOEs_PvKP" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -303,8 +304,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV4FdL" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT4pe" resolve="DEFAULT_METHOD" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -337,8 +338,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV4ETx" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
           <node concept="3clFbF" id="6EMTxOPT6Qy" role="3cqZAp">
@@ -397,8 +398,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="4hDSxB1ZrcP" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
           <node concept="3clFbF" id="4hDSxB1ZrcQ" role="3cqZAp">
@@ -423,8 +424,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="4hDSxB1ZrcZ" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT5P8" resolve="POLYMORPHIC_PARENT" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -484,8 +485,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV4DTH" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT7fo" resolve="NON_VIRTUAL_PARENT" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
           <node concept="3vMLTj" id="4Z_250NI_U5" role="3cqZAp">
@@ -566,8 +567,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV54qx" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT9vr" resolve="DIAMOND_I1" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -600,8 +601,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="6LXMTdV54Hs" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT9vr" resolve="DIAMOND_I1" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -815,8 +816,8 @@
                         </node>
                       </node>
                       <node concept="10M0yZ" id="4uPaNIY9nRL" role="3tpDZB">
-                        <ref role="3cqZAo" to="ynox:3lthDWbCKsA" resolve="C3_DEFAULT_VALUE" />
                         <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+                        <ref role="3cqZAo" to="ynox:3lthDWbCKsA" resolve="C3_DEFAULT_VALUE" />
                       </node>
                     </node>
                   </node>
@@ -973,8 +974,8 @@
           </node>
           <node concept="3vMLTj" id="47lrFSh1AR0" role="3cqZAp">
             <node concept="10M0yZ" id="47lrFSh1AR1" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
             <node concept="2OqwBi" id="47lrFSh1AR2" role="3tpDZA">
               <node concept="37vLTw" id="47lrFSh1AR3" role="2Oq$k0">
@@ -1083,8 +1084,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="5jWiLvujTxv" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -1120,8 +1121,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="5mnatV0hzQ$" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -1262,8 +1263,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5EHyDMrqP2G" role="3tpDZA">
-              <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
               <ref role="37wK5l" to="cm63:~BehaviorReflection.invokeVirtualStatic(java.lang.Class,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,java.lang.Object[]):java.lang.Object" resolve="invokeVirtualStatic" />
+              <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
               <node concept="3VsKOn" id="5EHyDMrqP2H" role="37wK5m">
                 <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
               </node>
@@ -1336,8 +1337,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5Omjac1VMaw" role="3tpDZA">
-              <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
               <ref role="37wK5l" to="cm63:~BehaviorReflection.invokeNonVirtual(java.lang.Class,org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.Object[]):java.lang.Object" resolve="invokeNonVirtual" />
+              <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
               <node concept="3VsKOn" id="5Omjac1WdZq" role="37wK5m">
                 <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
               </node>
@@ -1404,8 +1405,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5EHyDMrqPqX" role="3tpDZA">
-              <ref role="37wK5l" to="cm63:~BehaviorReflection.invokeNonVirtualStatic(java.lang.Class,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,java.lang.Object[]):java.lang.Object" resolve="invokeNonVirtualStatic" />
               <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
+              <ref role="37wK5l" to="cm63:~BehaviorReflection.invokeNonVirtualStatic(java.lang.Class,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,java.lang.Object[]):java.lang.Object" resolve="invokeNonVirtualStatic" />
               <node concept="3VsKOn" id="5EHyDMrqPqY" role="37wK5m">
                 <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
               </node>
@@ -1453,8 +1454,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="4Rfm9LCctEF" role="3tpDZB">
-              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
               <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
             </node>
           </node>
         </node>
@@ -1844,8 +1845,8 @@
               <ref role="1Pybhc" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
               <ref role="37wK5l" to="79ha:6LlhC3WJZzD" resolve="getOrCreate" />
               <node concept="2YIFZM" id="6LXMTdV54dD" role="37wK5m">
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
                 <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               </node>
             </node>
           </node>
@@ -1864,8 +1865,9 @@
                 <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
                   <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                    <node concept="37vLTw" id="2q6iWMfPjNq" role="37wK5m">
+                    <node concept="10M0yZ" id="24JB88Km5_P" role="37wK5m">
                       <ref role="3cqZAo" node="74sHQpDbWx3" resolve="PROJECT_PATH" />
+                      <ref role="1PxDUh" node="6EMTxOPT2R6" resolve="BHTestRef_Test" />
                     </node>
                   </node>
                 </node>
