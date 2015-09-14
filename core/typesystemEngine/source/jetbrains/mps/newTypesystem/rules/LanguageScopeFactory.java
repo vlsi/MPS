@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.util.SimpleLRUCache;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.BitSet;
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -70,7 +69,7 @@ public class LanguageScopeFactory {
    * @param langs2
    * @return
    */
-  public LanguageScope getLanguageScope (Iterable<SModuleReference> langs1, Iterable<SModuleReference> langs2) {
+  public LanguageScope getLanguageScope (Collection<SLanguage> langs1, Collection<SLanguage> langs2) {
     LanguageScope langScope1 = getLanguageScope(langs1);
     LanguageScope langScope2 = getLanguageScope(langs2);
     return langScope1.disjunction(langScope2);
@@ -81,9 +80,9 @@ public class LanguageScopeFactory {
    * @param multiLangs
    * @return
    */
-  public LanguageScope getMultiLanguageScope (Iterable<? extends Iterable<SModuleReference>> multiLangs) {
+  public LanguageScope getMultiLanguageScope (Iterable<? extends Collection<SLanguage>> multiLangs) {
     LanguageScope langScope = null;
-    for(Iterable<SModuleReference> langs: multiLangs) {
+    for(Collection<SLanguage> langs: multiLangs) {
       LanguageScope tmp = getLanguageScope(langs);
       langScope = langScope == null? tmp : langScope.disjunction(tmp);
     }
@@ -96,24 +95,15 @@ public class LanguageScopeFactory {
    * @param langs the dependencies collection; all languages included in this scope
    * @return
    */
-  public LanguageScope getLanguageScope (Iterable<SModuleReference> langs) {
+  public LanguageScope getLanguageScope (Collection<SLanguage> langs) {
     LanguagesHolder cached = getHolder(langs);
     if (cached.hasScope()) {
       return cached.getScope();
     }
 
     BitSet nsBitSet = new BitSet(myBits.intValue());
-    for (SModuleReference langRef: langs) {
-      Language lng = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
-      if (lng == null || lng.getModuleDescriptor() == null) {
-        LOG.debug("language not found: "+langRef);
-        continue;
-      }
-      updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
-      for (SModuleReference mref : LanguageDependenciesManager.getAllExtendedLanguageReferences(lng)) {
-        Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);
-        updateNamespaceBit(nsBitSet, ext.getModuleDescriptor().getNamespace());
-      }
+    for (SLanguage lng: new SLanguageHierarchy(langs).getExtended()) {
+      updateNamespaceBit(nsBitSet, lng.getQualifiedName());
     }
     LanguageScope langScope = new LanguageScope(this, nsBitSet);
     cached.setScope(langScope);
@@ -130,7 +120,7 @@ public class LanguageScopeFactory {
     }
   }
 
-  private LanguagesHolder getHolder(Iterable<SModuleReference> langs) {
+  private LanguagesHolder getHolder(Iterable<SLanguage> langs) {
     return myCachedLanguages.cacheObject(new LanguagesHolder(langs));
   }
 
@@ -163,11 +153,11 @@ public class LanguageScopeFactory {
     }
   }
 
-  private static class LanguagesHolder extends IdentityWrapper<Iterable<SModuleReference>> {
+  private static class LanguagesHolder extends IdentityWrapper<Iterable<SLanguage>> {
 
     private LanguageScope myLangScope = null;
 
-    public LanguagesHolder(Iterable<SModuleReference> langs)  {
+    public LanguagesHolder(Iterable<SLanguage> langs)  {
       super(langs);
     }
 
