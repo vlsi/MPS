@@ -6,11 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.intentions.util.TypeCalculator;
 
 public class IntentionDeclaration_Queries {
-  public static SNode execute_node_type(SNode point) {
+  public static SNode isApplicable_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
-  }
-  public static SNode execute_parameter_type(SNode point) {
-    return TypeCalculator.parameterType(point);
   }
   public static SNode description_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
@@ -18,13 +15,16 @@ public class IntentionDeclaration_Queries {
   public static SNode description_parameter_type(SNode point) {
     return TypeCalculator.parameterType(point);
   }
-  public static SNode isApplicable_node_type(SNode point) {
+  public static SNode execute_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
   }
-  public static boolean execute_null_opt(SNode method) {
-    return TypeCalculator.isParametrized(method);
+  public static SNode execute_parameter_type(SNode point) {
+    return TypeCalculator.parameterType(point);
   }
   public static boolean description_null_opt(SNode method) {
+    return TypeCalculator.isParametrized(method);
+  }
+  public static boolean execute_null_opt(SNode method) {
     return TypeCalculator.isParametrized(method);
   }
 }

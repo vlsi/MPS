@@ -107,6 +107,121 @@
   <node concept="q3mft" id="6yt8uwrpQZP">
     <property role="TrG5h" value="IntentionDeclaration" />
     <ref role="2qG0Lo" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
+    <node concept="q3mfq" id="6yt8uwrpTKe" role="QNr5C">
+      <property role="TrG5h" value="isApplicable" />
+      <node concept="q3mfp" id="6yt8uwrpTKS" role="q3mfl">
+        <property role="TrG5h" value="node" />
+        <node concept="q3mfx" id="4d05DgIzdW" role="q3mfr">
+          <node concept="1bVj0M" id="4d05DgIzdY" role="q3mfw">
+            <node concept="37vLTG" id="4d05DgIzdZ" role="1bW2Oz">
+              <property role="TrG5h" value="point" />
+              <node concept="3Tqbb2" id="4d05DgIze0" role="1tU5fm" />
+            </node>
+            <node concept="3clFbS" id="4d05DgIze1" role="1bW5cS">
+              <node concept="3clFbF" id="4d05DgIzj3" role="3cqZAp">
+                <node concept="2YIFZM" id="4d05DgIzj4" role="3clFbG">
+                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
+                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
+                  <node concept="37vLTw" id="4d05DgIzj5" role="37wK5m">
+                    <ref role="3cqZAo" node="4d05DgIzdZ" resolve="point" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="q3mfp" id="6Y8LBKcqR$j" role="q3mfl">
+        <property role="TrG5h" value="editorContext" />
+        <node concept="3uibUv" id="6Y8LBKcqR$K" role="q3mfr">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6yt8uwrpTKM" role="q3mfk" />
+      <node concept="QcxE9" id="6yt8uwrpTKY" role="2IRzpu">
+        <property role="QcwnP" value="&lt;isApplicable = true&gt;" />
+      </node>
+    </node>
+    <node concept="QcwwW" id="4nRSVgZChkF" role="QNr5C">
+      <ref role="QcwwZ" to="tp3j:4nRSVgZCeVi" resolve="ChildFilter" />
+      <node concept="QcxE9" id="4nRSVgZChm5" role="2IRzpu">
+        <property role="QcwnP" value="&lt;never available in child nodes&gt;" />
+      </node>
+    </node>
+    <node concept="q3mfq" id="6yt8uwrpTIM" role="QNr5C">
+      <property role="TrG5h" value="description" />
+      <node concept="17QB3L" id="6yt8uwrpTJ3" role="q3mfk" />
+      <node concept="2IRzkw" id="6yt8uwrpTJX" role="2IRzpu" />
+      <node concept="q3mfp" id="6yt8uwrpTKC" role="q3mfl">
+        <property role="TrG5h" value="node" />
+        <node concept="q3mfx" id="4d05DgIyMi" role="q3mfr">
+          <node concept="1bVj0M" id="4d05DgIyMk" role="q3mfw">
+            <node concept="37vLTG" id="4d05DgIyMl" role="1bW2Oz">
+              <property role="TrG5h" value="point" />
+              <node concept="3Tqbb2" id="4d05DgIyMm" role="1tU5fm" />
+            </node>
+            <node concept="3clFbS" id="4d05DgIyMn" role="1bW5cS">
+              <node concept="3clFbF" id="4d05DgIyNq" role="3cqZAp">
+                <node concept="2YIFZM" id="4d05DgIyNr" role="3clFbG">
+                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
+                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
+                  <node concept="37vLTw" id="4d05DgIyNs" role="37wK5m">
+                    <ref role="3cqZAo" node="4d05DgIyMl" resolve="point" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="q3mfp" id="6yt8uwrpTKG" role="q3mfl">
+        <property role="TrG5h" value="editorContext" />
+        <node concept="3uibUv" id="4d05DgIzdB" role="q3mfr">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="q3mfp" id="6GoW$$fHn8B" role="q3mfl">
+        <property role="TrG5h" value="parameter" />
+        <node concept="q3mfx" id="TGYTOyctTR" role="q3mfr">
+          <node concept="1bVj0M" id="TGYTOyctTT" role="q3mfw">
+            <node concept="37vLTG" id="TGYTOyctTU" role="1bW2Oz">
+              <property role="TrG5h" value="point" />
+              <node concept="3Tqbb2" id="TGYTOyctTV" role="1tU5fm" />
+            </node>
+            <node concept="3clFbS" id="TGYTOyctTW" role="1bW5cS">
+              <node concept="3clFbF" id="4ODFRGrN8ef" role="3cqZAp">
+                <node concept="2YIFZM" id="4ODFRGrN8eg" role="3clFbG">
+                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
+                  <ref role="37wK5l" to="6003:TGYTOye75D" resolve="parameterType" />
+                  <node concept="37vLTw" id="4ODFRGrN8eh" role="37wK5m">
+                    <ref role="3cqZAo" node="TGYTOyctTU" resolve="point" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1bVj0M" id="1AttYWG97bI" role="w9H94">
+          <node concept="3clFbS" id="1AttYWG97bJ" role="1bW5cS">
+            <node concept="3clFbF" id="TGYTOyeah3" role="3cqZAp">
+              <node concept="2YIFZM" id="TGYTOyeaHA" role="3clFbG">
+                <ref role="37wK5l" to="6003:TGYTOyeanT" resolve="isParametrized" />
+                <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
+                <node concept="37vLTw" id="TGYTOyeaIv" role="37wK5m">
+                  <ref role="3cqZAo" node="1AttYWG97bK" resolve="method" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTG" id="1AttYWG97bK" role="1bW2Oz">
+            <property role="TrG5h" value="method" />
+            <node concept="3Tqbb2" id="1AttYWG97bL" role="1tU5fm">
+              <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="QcwwW" id="2lJOBsqvJqh" role="QNr5C">
       <ref role="QcwwZ" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
       <node concept="QcxE9" id="2lJOBsqvJuQ" role="2IRzpu">
@@ -186,115 +301,6 @@
       </node>
       <node concept="2IRzkw" id="6yt8uwrpTIw" role="2IRzpu" />
       <node concept="3cqZAl" id="1AttYWGd79L" role="q3mfk" />
-    </node>
-    <node concept="q3mfq" id="6yt8uwrpTIM" role="QNr5C">
-      <property role="TrG5h" value="description" />
-      <node concept="17QB3L" id="6yt8uwrpTJ3" role="q3mfk" />
-      <node concept="2IRzkw" id="6yt8uwrpTJX" role="2IRzpu" />
-      <node concept="q3mfp" id="6yt8uwrpTKC" role="q3mfl">
-        <property role="TrG5h" value="node" />
-        <node concept="q3mfx" id="4d05DgIyMi" role="q3mfr">
-          <node concept="1bVj0M" id="4d05DgIyMk" role="q3mfw">
-            <node concept="37vLTG" id="4d05DgIyMl" role="1bW2Oz">
-              <property role="TrG5h" value="point" />
-              <node concept="3Tqbb2" id="4d05DgIyMm" role="1tU5fm" />
-            </node>
-            <node concept="3clFbS" id="4d05DgIyMn" role="1bW5cS">
-              <node concept="3clFbF" id="4d05DgIyNq" role="3cqZAp">
-                <node concept="2YIFZM" id="4d05DgIyNr" role="3clFbG">
-                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
-                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                  <node concept="37vLTw" id="4d05DgIyNs" role="37wK5m">
-                    <ref role="3cqZAo" node="4d05DgIyMl" resolve="point" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="q3mfp" id="6yt8uwrpTKG" role="q3mfl">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="4d05DgIzdB" role="q3mfr">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="q3mfp" id="6GoW$$fHn8B" role="q3mfl">
-        <property role="TrG5h" value="parameter" />
-        <node concept="q3mfx" id="TGYTOyctTR" role="q3mfr">
-          <node concept="1bVj0M" id="TGYTOyctTT" role="q3mfw">
-            <node concept="37vLTG" id="TGYTOyctTU" role="1bW2Oz">
-              <property role="TrG5h" value="point" />
-              <node concept="3Tqbb2" id="TGYTOyctTV" role="1tU5fm" />
-            </node>
-            <node concept="3clFbS" id="TGYTOyctTW" role="1bW5cS">
-              <node concept="3clFbF" id="4ODFRGrN8ef" role="3cqZAp">
-                <node concept="2YIFZM" id="4ODFRGrN8eg" role="3clFbG">
-                  <ref role="37wK5l" to="6003:TGYTOye75D" resolve="parameterType" />
-                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                  <node concept="37vLTw" id="4ODFRGrN8eh" role="37wK5m">
-                    <ref role="3cqZAo" node="TGYTOyctTU" resolve="point" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1bVj0M" id="1AttYWG97bI" role="w9H94">
-          <node concept="3clFbS" id="1AttYWG97bJ" role="1bW5cS">
-            <node concept="3clFbF" id="TGYTOyeah3" role="3cqZAp">
-              <node concept="2YIFZM" id="TGYTOyeaHA" role="3clFbG">
-                <ref role="37wK5l" to="6003:TGYTOyeanT" resolve="isParametrized" />
-                <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                <node concept="37vLTw" id="TGYTOyeaIv" role="37wK5m">
-                  <ref role="3cqZAo" node="1AttYWG97bK" resolve="method" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="37vLTG" id="1AttYWG97bK" role="1bW2Oz">
-            <property role="TrG5h" value="method" />
-            <node concept="3Tqbb2" id="1AttYWG97bL" role="1tU5fm">
-              <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="q3mfq" id="6yt8uwrpTKe" role="QNr5C">
-      <property role="TrG5h" value="isApplicable" />
-      <node concept="q3mfp" id="6yt8uwrpTKS" role="q3mfl">
-        <property role="TrG5h" value="node" />
-        <node concept="q3mfx" id="4d05DgIzdW" role="q3mfr">
-          <node concept="1bVj0M" id="4d05DgIzdY" role="q3mfw">
-            <node concept="37vLTG" id="4d05DgIzdZ" role="1bW2Oz">
-              <property role="TrG5h" value="point" />
-              <node concept="3Tqbb2" id="4d05DgIze0" role="1tU5fm" />
-            </node>
-            <node concept="3clFbS" id="4d05DgIze1" role="1bW5cS">
-              <node concept="3clFbF" id="4d05DgIzj3" role="3cqZAp">
-                <node concept="2YIFZM" id="4d05DgIzj4" role="3clFbG">
-                  <ref role="37wK5l" to="6003:4d05DgIy7S" resolve="calculateType" />
-                  <ref role="1Pybhc" to="6003:4d05DgIy7g" resolve="TypeCalculator" />
-                  <node concept="37vLTw" id="4d05DgIzj5" role="37wK5m">
-                    <ref role="3cqZAo" node="4d05DgIzdZ" resolve="point" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="q3mfp" id="6Y8LBKcqR$j" role="q3mfl">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="6Y8LBKcqR$K" role="q3mfr">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="10P_77" id="6yt8uwrpTKM" role="q3mfk" />
-      <node concept="QcxE9" id="6yt8uwrpTKY" role="2IRzpu">
-        <property role="QcwnP" value="&lt;isApplicable = true&gt;" />
-      </node>
     </node>
   </node>
   <node concept="q3mft" id="6rleQs35avH">

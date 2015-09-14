@@ -317,7 +317,7 @@
     <property role="TrG5h" value="AlwaysAvailableInChildNodesStrategy" />
     <property role="34LRSv" value="always available" />
     <property role="3GE5qa" value="childFilterStrategy" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="4nRSVgZCeVi" resolve="ChildFilter" />
     <node concept="PrWs8" id="63iz5ddjJBD" role="PzmwI">
       <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
     </node>
@@ -344,6 +344,21 @@
   <node concept="1TIwiD" id="4jgyS0Z9lVZ">
     <property role="TrG5h" value="ForConceptParameterDeclaration" />
     <ref role="1TJDcQ" node="5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="4nRSVgZCeVi">
+    <property role="TrG5h" value="ChildFilter" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4nRSVgZCgWF" role="PzmwI">
+      <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="PrWs8" id="4nRSVgZCgWK" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+    <node concept="1TJgyj" id="4nRSVgZCh$3" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childFilter" />
+      <ref role="20lvS9" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
+    </node>
   </node>
 </model>
 

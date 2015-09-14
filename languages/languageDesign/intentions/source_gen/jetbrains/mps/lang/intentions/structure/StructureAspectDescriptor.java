@@ -13,8 +13,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptAlwaysAvailableInChildNodesStrategy = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef9e8L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.intentions.structure.ChildFilterStrategy").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef538L)).alias("always available", "").create();
+  /*package*/ final ConceptDescriptor myConceptAlwaysAvailableInChildNodesStrategy = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef9e8L)).super_("jetbrains.mps.lang.intentions.structure.ChildFilter").super_(MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x45f7e3b43fa0eed2L)).parents("jetbrains.mps.lang.intentions.structure.ChildFilter", "jetbrains.mps.lang.intentions.structure.ChildFilterStrategy").parentIds(MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x45f7e3b43fa0eed2L), MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef538L)).alias("always available", "").create();
   /*package*/ final ConceptDescriptor myConceptBaseIntentionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.InterfacePart").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL), MetaIdFactory.conceptId(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(2522969319638091385L, "isErrorIntention"), new ConceptDescriptorBuilder.Prop(2522969319638091386L, "isAvailableInChildNodes")).properties("isErrorIntention", "isAvailableInChildNodes").referenceDescriptors(new ConceptDescriptorBuilder.Ref(2522969319638198290L, "forConcept", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false)).references("forConcept").childDescriptors(new ConceptDescriptorBuilder.Link(2522969319638093993L, "descriptionFunction", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81bfaa7L), false, false, false), new ConceptDescriptorBuilder.Link(2522969319638093994L, "childFilterFunction", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L), true, false, false), new ConceptDescriptorBuilder.Link(2522969319638093995L, "isApplicableFunction", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82b10f5L), true, false, false), new ConceptDescriptorBuilder.Link(2522969319638198291L, "executeFunction", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82d36d9L), false, false, false)).children(new String[]{"descriptionFunction", "childFilterFunction", "isApplicableFunction", "executeFunction"}, new boolean[]{false, false, false, false}).create();
+  /*package*/ final ConceptDescriptor myConceptChildFilter = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilter", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x45f7e3b43fa0eed2L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L)).childDescriptors(new ConceptDescriptorBuilder.Link(5041748671165700355L, "childFilter", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef538L), true, false, false)).children(new String[]{"childFilter"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptChildFilterBlock = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilterBlock", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptChildFilterFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c1bbL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L), MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L)).alias("child filter function", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptChildFilterStrategy = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilterStrategy", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x60d28c534d4ef538L)).interface_().create();
@@ -42,68 +43,70 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAlwaysAvailableInChildNodesStrategy, myConceptBaseIntentionDeclaration, myConceptChildFilterBlock, myConceptChildFilterFunction, myConceptChildFilterStrategy, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_node, myConceptDependentParameterDeclaration, myConceptDescriptionBlock, myConceptExecuteBlock, myConceptFilterFunctionStrategy, myConceptForConceptParameterDeclaration, myConceptIIntentionType, myConceptIntention, myConceptIntentionDeclaration, myConceptIntentionParameter, myConceptIsApplicableBlock, myConceptNormal, myConceptParameter, myConceptParameterizedDescriptionBlock, myConceptParameterizedExecuteBlock, myConceptParameterizedIntentionDeclaration, myConceptParametrized, myConceptQueryBlock, myConceptSurroundWith, myConceptSurroundWithIntentionDeclaration);
+    return Arrays.asList(myConceptAlwaysAvailableInChildNodesStrategy, myConceptBaseIntentionDeclaration, myConceptChildFilter, myConceptChildFilterBlock, myConceptChildFilterFunction, myConceptChildFilterStrategy, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_node, myConceptDependentParameterDeclaration, myConceptDescriptionBlock, myConceptExecuteBlock, myConceptFilterFunctionStrategy, myConceptForConceptParameterDeclaration, myConceptIIntentionType, myConceptIntention, myConceptIntentionDeclaration, myConceptIntentionParameter, myConceptIsApplicableBlock, myConceptNormal, myConceptParameter, myConceptParameterizedDescriptionBlock, myConceptParameterizedExecuteBlock, myConceptParameterizedIntentionDeclaration, myConceptParametrized, myConceptQueryBlock, myConceptSurroundWith, myConceptSurroundWithIntentionDeclaration);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0eb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fb, conceptFqName)) {
       case 0:
         return myConceptAlwaysAvailableInChildNodesStrategy;
       case 1:
         return myConceptBaseIntentionDeclaration;
       case 2:
-        return myConceptChildFilterBlock;
+        return myConceptChildFilter;
       case 3:
-        return myConceptChildFilterFunction;
+        return myConceptChildFilterBlock;
       case 4:
-        return myConceptChildFilterStrategy;
+        return myConceptChildFilterFunction;
       case 5:
-        return myConceptConceptFunctionParameter_childNode;
+        return myConceptChildFilterStrategy;
       case 6:
-        return myConceptConceptFunctionParameter_node;
+        return myConceptConceptFunctionParameter_childNode;
       case 7:
-        return myConceptDependentParameterDeclaration;
+        return myConceptConceptFunctionParameter_node;
       case 8:
-        return myConceptDescriptionBlock;
+        return myConceptDependentParameterDeclaration;
       case 9:
-        return myConceptExecuteBlock;
+        return myConceptDescriptionBlock;
       case 10:
-        return myConceptFilterFunctionStrategy;
+        return myConceptExecuteBlock;
       case 11:
-        return myConceptForConceptParameterDeclaration;
+        return myConceptFilterFunctionStrategy;
       case 12:
-        return myConceptIIntentionType;
+        return myConceptForConceptParameterDeclaration;
       case 13:
-        return myConceptIntention;
+        return myConceptIIntentionType;
       case 14:
-        return myConceptIntentionDeclaration;
+        return myConceptIntention;
       case 15:
-        return myConceptIntentionParameter;
+        return myConceptIntentionDeclaration;
       case 16:
-        return myConceptIsApplicableBlock;
+        return myConceptIntentionParameter;
       case 17:
-        return myConceptNormal;
+        return myConceptIsApplicableBlock;
       case 18:
-        return myConceptParameter;
+        return myConceptNormal;
       case 19:
-        return myConceptParameterizedDescriptionBlock;
+        return myConceptParameter;
       case 20:
-        return myConceptParameterizedExecuteBlock;
+        return myConceptParameterizedDescriptionBlock;
       case 21:
-        return myConceptParameterizedIntentionDeclaration;
+        return myConceptParameterizedExecuteBlock;
       case 22:
-        return myConceptParametrized;
+        return myConceptParameterizedIntentionDeclaration;
       case 23:
-        return myConceptQueryBlock;
+        return myConceptParametrized;
       case 24:
-        return myConceptSurroundWith;
+        return myConceptQueryBlock;
       case 25:
+        return myConceptSurroundWith;
+      case 26:
         return myConceptSurroundWithIntentionDeclaration;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0eb = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterStrategy", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy", "jetbrains.mps.lang.intentions.structure.ForConceptParameterDeclaration", "jetbrains.mps.lang.intentions.structure.IIntentionType", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0fb = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableInChildNodesStrategy", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilter", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterStrategy", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy", "jetbrains.mps.lang.intentions.structure.ForConceptParameterDeclaration", "jetbrains.mps.lang.intentions.structure.IIntentionType", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.Normal", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.Parametrized", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWith", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
 }

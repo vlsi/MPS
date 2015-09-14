@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -136,17 +137,22 @@ public class Intention_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_dnq3sg_a0e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_dnq3sg_b0e0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_dnq3sg_a0e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dnq3sg_b0e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_dnq3sg_c0e0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_dnq3sg_a0e0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_dnq3sg_a0e0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+  private EditorCell createConstant_dnq3sg_b0e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is error intention: ");
-    editorCell.setCellId("Constant_dnq3sg_a0e0");
+    editorCell.setCellId("Constant_dnq3sg_b0e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_dnq3sg_b0e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_dnq3sg_c0e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isError");
     provider.setNoTargetText("<no isError>");
@@ -165,15 +171,20 @@ public class Intention_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dnq3sg_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dnq3sg_b4a");
-    editorCell.addEditorCell(this.createRefNode_dnq3sg_a1e0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_dnq3sg_a1e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dnq3sg_b1e0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createRefNode_dnq3sg_a1e0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new Intention_Editor.childFilterSingleRoleHandler_dnq3sg_a1e0(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x60d28c534d4ef968L, "childFilter"), editorContext);
+  private EditorCell createIndentCell_dnq3sg_a1e0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+  private EditorCell createRefNode_dnq3sg_b1e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new Intention_Editor.childFilterSingleRoleHandler_dnq3sg_b1e0(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x60d28c534d4ef968L, "childFilter"), editorContext);
     return provider.createCell();
   }
-  private class childFilterSingleRoleHandler_dnq3sg_a1e0 extends SingleRoleCellProvider {
-    public childFilterSingleRoleHandler_dnq3sg_a1e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class childFilterSingleRoleHandler_dnq3sg_b1e0 extends SingleRoleCellProvider {
+    public childFilterSingleRoleHandler_dnq3sg_b1e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {
