@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public class DirectNodeReference_Behavior {
@@ -13,6 +14,9 @@ public class DirectNodeReference_Behavior {
   }
   public static boolean virtual_isSameTarget_7431903976166009839(SNode thisNode, SReference reference) {
     return reference.getTargetNode() == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target"));
+  }
+  public static SNodeReference virtual_getNodeReference_5168866961623921507(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target")).getReference();
   }
   public static SNode virtual_tryToFindNode_7431903976166009863(SNode thisNode, SRepository repository) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target"));

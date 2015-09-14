@@ -441,7 +441,7 @@
       <node id="5168866961619747873" at="131,40,132,34" concept="2" />
       <node id="5168866961619747873" at="132,34,133,22" concept="6" />
       <node id="5168866961619747793" at="28,0,31,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="5168866961619747793" at="95,0,98,0" concept="1" trace="itemListHandler_wcbf5s_e0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5168866961619747793" at="95,0,98,0" concept="1" trace="partListHandler_wcbf5s_e0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="5168866961619747793" at="119,9,122,9" concept="3" />
       <node id="5168866961619747793" at="98,0,102,0" concept="4" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5168866961619747793" at="115,134,119,9" concept="3" />
@@ -562,7 +562,7 @@
         <var name="editorContext" id="5168866961619747860" />
         <var name="node" id="5168866961619747860" />
       </scope>
-      <unit id="5168866961619747793" at="94,0,126,0" name="jetbrains.mps.lang.migration.util.editor.RefactoringStep_Editor$itemListHandler_wcbf5s_e0" />
+      <unit id="5168866961619747793" at="94,0,126,0" name="jetbrains.mps.lang.migration.util.editor.RefactoringStep_Editor$partListHandler_wcbf5s_e0" />
       <unit id="5168866961619747793" at="27,0,136,0" name="jetbrains.mps.lang.migration.util.editor.RefactoringStep_Editor" />
     </file>
   </root>

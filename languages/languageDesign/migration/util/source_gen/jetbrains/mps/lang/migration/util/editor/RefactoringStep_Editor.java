@@ -80,9 +80,9 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNodeList_wcbf5s_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RefactoringStep_Editor.itemListHandler_wcbf5s_e0(node, "item", editorContext);
+    AbstractCellListHandler handler = new RefactoringStep_Editor.partListHandler_wcbf5s_e0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_item");
+    editorCell.setCellId("refNodeList_part");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
@@ -91,8 +91,8 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class itemListHandler_wcbf5s_e0 extends RefNodeListHandler {
-    public itemListHandler_wcbf5s_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_wcbf5s_e0 extends RefNodeListHandler {
+    public partListHandler_wcbf5s_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

@@ -5,6 +5,16 @@ package jetbrains.mps.lang.migration.util.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringStepReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringStep;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 
 public class RefactoringStep_Behavior {
   public static void init(SNode thisNode) {
@@ -14,5 +24,27 @@ public class RefactoringStep_Behavior {
   }
   public static boolean virtual_isVersionSet_5168866961621097742(SNode thisNode) {
     return thisNode.getProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion")) != null;
+  }
+  public static RefactoringStepReference call_getDescriptor_5168866961623837055(SNode thisNode) {
+    return new RefactoringStepReference(SNodeOperations.getModel(thisNode).getModule().getModuleReference(), BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_fromVersion_5168866961621042645", new Object[]{}));
+  }
+  public static RefactoringStep call_getImplementation_5168866961623780909(SNode thisNode) {
+    return new RefactoringStepImpl(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), RefactoringStep_Behavior.call_getDescriptor_5168866961623837055(thisNode), ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring")) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring"));
+      }
+    }).select(new ISelector<SNode, RefactoringStepReference>() {
+      public RefactoringStepReference select(SNode it) {
+        return RefactoringStep_Behavior.call_getDescriptor_5168866961623837055(it);
+      }
+    }), ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).select(new ISelector<SNode, RefactoringPart>() {
+      public RefactoringPart select(SNode it) {
+        return BehaviorReflection.invokeVirtual(RefactoringPart.class, it, "virtual_getImplementation_5168866961623875693", new Object[]{});
+      }
+    }));
   }
 }

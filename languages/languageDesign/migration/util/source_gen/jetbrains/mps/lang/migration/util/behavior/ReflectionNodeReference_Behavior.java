@@ -8,12 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReflectionNodeReference_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static SNodeReference call_getNodeReference_2864063292004109237(SNode thisNode) {
+  public static SNodeReference virtual_getNodeReference_5168866961623921507(SNode thisNode) {
     if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f443L, "modelRef"))) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f44fL, "nodeId")))) {
       return null;
     }
@@ -25,10 +26,10 @@ public class ReflectionNodeReference_Behavior {
     return result;
   }
   public static SNode virtual_tryToFindNode_7431903976166009863(SNode thisNode, SRepository repository) {
-    return check_gp0spl_a0a1(ReflectionNodeReference_Behavior.call_getNodeReference_2864063292004109237(thisNode), repository);
+    return check_gp0spl_a0a1(BehaviorReflection.invokeVirtual(SNodeReference.class, thisNode, "virtual_getNodeReference_5168866961623921507", new Object[]{}), repository);
   }
   public static boolean virtual_isSameTarget_7431903976166009839(SNode thisNode, SReference reference) {
-    SNodeReference myReference = ReflectionNodeReference_Behavior.call_getNodeReference_2864063292004109237(thisNode);
+    SNodeReference myReference = BehaviorReflection.invokeVirtual(SNodeReference.class, thisNode, "virtual_getNodeReference_5168866961623921507", new Object[]{});
     return myReference != null && myReference.equals(reference.getTargetNodeReference());
   }
   private static boolean isEmptyString(String str) {

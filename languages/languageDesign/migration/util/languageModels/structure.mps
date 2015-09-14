@@ -91,7 +91,7 @@
   <node concept="1TIwiD" id="6szrkDoc28u">
     <property role="TrG5h" value="MoveNode" />
     <property role="3GE5qa" value="refactoring" />
-    <ref role="1TJDcQ" node="2GZlO$G5z5o" resolve="RefactoringStepItem" />
+    <ref role="1TJDcQ" node="2GZlO$G5z5o" resolve="RefactoringPart" />
     <node concept="1TJgyj" id="6szrkDod3Ol" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fromNode" />
@@ -127,18 +127,27 @@
     <property role="TrG5h" value="RefactoringStep" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="4uVwhQyFcjr" role="PzmwI">
-      <ref role="PrY4T" node="4uVwhQyFcjm" resolve="IMigrationUnit" />
+    <node concept="PrWs8" id="4uVwhQyPPvQ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="6szrkDodHvN" role="1TKVEi">
+    <node concept="1TJgyj" id="4uVwhQyPCRg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="item" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="2GZlO$G5z5o" resolve="RefactoringStepItem" />
+      <property role="20kJfa" value="executeAfter" />
+      <ref role="20lvS9" node="4uVwhQyPCRd" resolve="RefactoringOrderDependency" />
     </node>
     <node concept="1TJgyi" id="6szrkDodGEW" role="1TKVEl">
       <property role="TrG5h" value="fromVersion" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="6szrkDodHvN" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="part" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2GZlO$G5z5o" resolve="RefactoringPart" />
+    </node>
+    <node concept="PrWs8" id="4uVwhQyFcjr" role="PzmwI">
+      <ref role="PrY4T" node="4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
     <node concept="PrWs8" id="4uVwhQy_XuE" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -146,7 +155,7 @@
   </node>
   <node concept="1TIwiD" id="2GZlO$G5z5o">
     <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="RefactoringStepItem" />
+    <property role="TrG5h" value="RefactoringPart" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -209,6 +218,17 @@
   <node concept="PlHQZ" id="4uVwhQyFcjm">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="IMigrationUnit" />
+  </node>
+  <node concept="1TIwiD" id="4uVwhQyPCRd">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="RefactoringOrderDependency" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4uVwhQyPCRe" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="refactoring" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6szrkDodGEV" resolve="RefactoringStep" />
+    </node>
   </node>
 </model>
 

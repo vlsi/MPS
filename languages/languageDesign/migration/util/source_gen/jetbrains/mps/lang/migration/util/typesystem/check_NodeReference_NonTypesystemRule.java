@@ -8,11 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.lang.migration.util.behavior.ReflectionNodeReference_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,7 +23,7 @@ public class check_NodeReference_NonTypesystemRule extends AbstractNonTypesystem
   public check_NodeReference_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNodeReference ref = ReflectionNodeReference_Behavior.call_getNodeReference_2864063292004109237(nodeReference);
+    SNodeReference ref = BehaviorReflection.invokeVirtual(SNodeReference.class, nodeReference, "virtual_getNodeReference_5168866961623921507", new Object[]{});
     if (!(ref != null)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeReference, "Invalid node reference", "9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)", "112372100253050975", null, errorTarget);
