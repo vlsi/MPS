@@ -319,7 +319,7 @@
       <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperationExpression_BehaviorDescriptor" />
     </file>
     <file name="MapOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
+      <unit at="12,0,35,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
     </file>
     <file name="MapRemoveOperation_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapRemoveOperation_BehaviorDescriptor" />
@@ -418,7 +418,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceCreator_BehaviorDescriptor" />
     </file>
     <file name="SequenceOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
+      <unit at="12,0,35,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
     </file>
     <file name="SequenceType_BehaviorDescriptor.java">
       <unit at="12,0,50,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_BehaviorDescriptor" />
