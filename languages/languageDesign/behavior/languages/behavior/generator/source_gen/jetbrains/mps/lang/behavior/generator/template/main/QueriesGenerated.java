@@ -153,18 +153,12 @@ public class QueriesGenerated {
     }
     return mask;
   }
-  public static Object propertyMacro_GetPropertyValue_3176885412940615158(final PropertyMacroContext _context) {
-    SNode baseMethod = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
-    SNode behaviour = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getBehaviour_1225196403947", new Object[]{});
-    return new MethodNameHelper(behaviour).getGeneratedName(SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
-  }
-  public static Object propertyMacro_GetPropertyValue_3176885412940615182(final PropertyMacroContext _context) {
-    SNode baseMethod = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
-    SNode behaviour = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getBehaviour_1225196403947", new Object[]{});
-    return NameUtil.getModelLongName(SNodeOperations.getModel(behaviour)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(behaviour, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + Constants.BEHAVIOR_DESCRIPTOR_SUFFIX;
-  }
   public static Object propertyMacro_GetPropertyValue_5216932936550453175(final PropertyMacroContext _context) {
-    return _context.getNode().getNodeId().toString();
+    SNode baseMethod = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
+    if (baseMethod == null) {
+      baseMethod = _context.getNode();
+    }
+    return baseMethod.getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_3176885412940615260(final PropertyMacroContext _context) {
     return ((MethodNameHelper) _context.getVariable("var:MethodNameHelper")).getGeneratedName(_context.getNode());
@@ -279,9 +273,6 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_2949815620942818983(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")));
-  }
-  public static boolean ifMacro_Condition_3176885412940615213(final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) != null;
   }
   public static boolean ifMacro_Condition_737333977599691798(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
