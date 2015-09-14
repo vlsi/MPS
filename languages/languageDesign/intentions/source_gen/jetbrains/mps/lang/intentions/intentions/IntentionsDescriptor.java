@@ -9,7 +9,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.newIntentions.NewIntentionFactoryToIntentionFactoryAdapter;
+import jetbrains.mps.editor.intentions.NodeTransformerFactoryToIntentionFactoryAdapter;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -32,7 +32,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions0 = new IntentionFactory[1];
           // base intentions 
           // classlike intentions 
-          myIntentions0[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new ConvertIntention());
+          myIntentions0[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
         }
 
         return Arrays.asList(myIntentions0);
@@ -46,7 +46,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   public Collection<IntentionFactory> getAllIntentions() {
     IntentionFactory[] rv = new IntentionFactory[1];
     // classlike intentions 
-    rv[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new ConvertIntention());
+    rv[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
     return Arrays.asList(rv);
   }
 }
