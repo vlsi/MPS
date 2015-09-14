@@ -2961,43 +2961,6 @@
       <unit id="6207253590664784098" at="23,0,99,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction" />
     </file>
   </root>
-  <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/6338816248150858374">
-    <file name="ImportSourcesIntoModelUtils.java">
-      <node id="6338816248142358121" at="11,94,12,56" concept="9" />
-      <node id="1366781238034254751" at="13,35,14,57" concept="9" />
-      <node id="1366781238034254767" at="14,57,15,52" concept="9" />
-      <node id="1366781238034254778" at="16,35,17,46" concept="4" />
-      <node id="1366781238034254791" at="18,7,19,27" concept="4" />
-      <node id="1366781238034254797" at="20,32,21,89" concept="9" />
-      <node id="1366781238034254809" at="22,35,23,32" concept="4" />
-      <node id="6338816248142694816" at="25,7,26,21" concept="10" />
-      <node id="6338816248142679751" at="27,12,28,18" concept="10" />
-      <node id="6338816248142679433" at="27,10,29,5" concept="1" />
-      <node id="1366781238034254776" at="15,52,18,7" concept="7" />
-      <node id="1366781238034254807" at="21,89,24,9" concept="7" />
-      <node id="1366781238034254795" at="19,27,25,7" concept="7" />
-      <node id="1366781238034254761" at="12,56,29,5" concept="7" />
-      <node id="6338816248150875547" at="11,0,31,0" concept="14" trace="getInitialDirectoryForImport#(Ljetbrains/mps/project/AbstractModule;Ljava/lang/String;)Ljava/io/File;" />
-      <scope id="1366781238034254777" at="16,35,17,46" />
-      <scope id="1366781238034254808" at="22,35,23,32" />
-      <scope id="6338816248142679434" at="27,12,28,18" />
-      <scope id="1366781238034254796" at="20,32,24,9">
-        <var name="modelSource" id="1366781238034254798" />
-      </scope>
-      <scope id="1366781238034254762" at="13,35,26,21">
-        <var name="initial" id="1366781238034254752" />
-        <var name="sourceRoot" id="1366781238034254768" />
-      </scope>
-      <scope id="6338816248150875550" at="11,94,29,5">
-        <var name="moduleSourceDir" id="6338816248142358122" />
-      </scope>
-      <scope id="6338816248150875547" at="11,0,31,0">
-        <var name="module" id="6338816248150876150" />
-        <var name="packageName" id="6338816248150876154" />
-      </scope>
-      <unit id="6338816248150858374" at="10,0,32,0" name="jetbrains.mps.ide.java.actions.ImportSourcesIntoModelUtils" />
-    </file>
-  </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/6354194863340390600">
     <file name="CommentLine_Action.java">
       <node id="6354194863340390600" at="23,0,24,0" concept="13" trace="ICON" />
