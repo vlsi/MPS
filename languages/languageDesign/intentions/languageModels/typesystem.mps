@@ -111,6 +111,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
@@ -125,6 +126,7 @@
   <node concept="1YbPZF" id="hmSkZ6f">
     <property role="18ip37" value="true" />
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_node" />
+    <property role="3GE5qa" value="old" />
     <node concept="3clFbS" id="hmSkZ6g" role="18ibNy">
       <node concept="3cpWs8" id="hmSkZ6h" role="3cqZAp">
         <node concept="3cpWsn" id="hmSkZ6i" role="3cpWs9">
@@ -234,6 +236,7 @@
   </node>
   <node concept="1YbPZF" id="38RcvkhOstk">
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_childNode" />
+    <property role="3GE5qa" value="old" />
     <node concept="3clFbS" id="38RcvkhOstl" role="18ibNy">
       <node concept="1Z5TYs" id="38RcvkhOsvm" role="3cqZAp">
         <node concept="mw_s8" id="38RcvkhOsvq" role="1ZfhKB">
@@ -312,7 +315,7 @@
     </node>
     <node concept="1YaCAy" id="5_2vHPPr5tS" role="1YuTPh">
       <property role="TrG5h" value="filterFunctionStrategy" />
-      <ref role="1YaFvo" to="tp3j:6rleQs35avS" resolve="FilterFunctionStrategy" />
+      <ref role="1YaFvo" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
     </node>
   </node>
 </model>

@@ -10,7 +10,7 @@
   </languages>
   <imports>
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
-    <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -60,25 +60,31 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="hQOgExi">
+    <property role="3GE5qa" value="old" />
     <ref role="1M2myG" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
     <node concept="2NXJUA" id="hQOgHAO" role="2NY200">
       <node concept="3clFbS" id="hQOgHAP" role="2VODD2">
         <node concept="3clFbF" id="hQOgIM2" role="3cqZAp">
           <node concept="22lmx$" id="2EFylI5n7qQ" role="3clFbG">
             <node concept="2YIFZM" id="2EFylI5n7IY" role="3uHU7w">
-              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="2EFylI5n7IZ" role="37wK5m" />
             </node>
             <node concept="2OqwBi" id="hQOgJvv" role="3uHU7B">
               <node concept="Rm8GO" id="hQOgJmd" role="2Oq$k0">
-                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
-                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="hQOgPg6" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoH0y" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOgPrP" role="2JrQYb" />
                 </node>
@@ -97,19 +103,19 @@
           <node concept="22lmx$" id="1KFbmnBQDYj" role="3clFbG">
             <node concept="2OqwBi" id="5rGvd38DcHz" role="3uHU7B">
               <node concept="Rm8GO" id="5rGvd38DcH$" role="2Oq$k0">
-                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
               </node>
               <node concept="liA8E" id="5rGvd38DcH_" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoIcp" role="37wK5m">
                   <node concept="1Q6Npb" id="5rGvd38DcHA" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQDYp" role="3uHU7w">
-              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDYq" role="37wK5m" />
             </node>
           </node>

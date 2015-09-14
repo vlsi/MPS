@@ -58,24 +58,28 @@
     <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
     <property role="TrG5h" value="IntentionDeclaration" />
     <property role="34LRSv" value="Intention" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
   </node>
   <node concept="1TIwiD" id="hmS6ZEB">
     <property role="TrG5h" value="DescriptionBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="description" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSaL3P">
     <property role="TrG5h" value="IsApplicableBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="isApplicable" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSbjrp">
     <property role="TrG5h" value="ExecuteBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="execute" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSf5oI">
@@ -83,6 +87,7 @@
     <property role="TrG5h" value="ConceptFunctionParameter_node" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6gD" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -91,7 +96,7 @@
   <node concept="1TIwiD" id="i38Bcsp">
     <property role="TrG5h" value="QueryBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="parameter" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="1TJgyj" id="i3ddBrI" role="1TKVEi">
@@ -104,7 +109,7 @@
     <property role="R4oN_" value="intention parameter" />
     <property role="TrG5h" value="IntentionParameter" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="parameter" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="1653mnvB5X4" role="PzmwI">
@@ -114,7 +119,7 @@
   <node concept="1TIwiD" id="i3dkpKH">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ParameterizedIntentionDeclaration" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="Parameterized Intention" />
     <ref role="1TJDcQ" node="hmS6QkF" resolve="IntentionDeclaration" />
     <node concept="1TJgyj" id="i3dlsyr" role="1TKVEi">
@@ -137,12 +142,12 @@
   </node>
   <node concept="PlHQZ" id="38RcvkhOs6o">
     <property role="TrG5h" value="ChildFilterBlock" />
-    <property role="3GE5qa" value="childfilter" />
+    <property role="3GE5qa" value="old.childfilter" />
   </node>
   <node concept="1TIwiD" id="38RcvkhOs6V">
     <property role="TrG5h" value="ChildFilterFunction" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="childfilter" />
+    <property role="3GE5qa" value="old.childfilter" />
     <property role="34LRSv" value="child filter function" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="38RcvkhOs6W" role="PzmwI">
@@ -154,6 +159,7 @@
     <property role="TrG5h" value="ConceptFunctionParameter_childNode" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="childNode" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOP3" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -161,6 +167,7 @@
   </node>
   <node concept="1TIwiD" id="2c3oNEsfcpP">
     <property role="TrG5h" value="BaseIntentionDeclaration" />
+    <property role="3GE5qa" value="old" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="74KP_fVapze" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -221,14 +228,14 @@
   <node concept="1TIwiD" id="1$_U1xaW3xx">
     <property role="TrG5h" value="ParameterizedDescriptionBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="description" />
     <ref role="1TJDcQ" node="hmS6ZEB" resolve="DescriptionBlock" />
   </node>
   <node concept="1TIwiD" id="1$_U1xaWL3H">
     <property role="TrG5h" value="ParameterizedExecuteBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="execute" />
     <ref role="1TJDcQ" node="hmSbjrp" resolve="ExecuteBlock" />
   </node>

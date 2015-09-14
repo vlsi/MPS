@@ -282,7 +282,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="i38NSC6">
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <ref role="1XX52x" to="tp3j:i38Bcsp" resolve="QueryBlock" />
     <node concept="3EZMnI" id="i38NZ29" role="2wV5jI">
       <node concept="3EZMnI" id="i38O3rx" role="3EZMnx">
@@ -592,7 +592,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="i3dlAbB">
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <ref role="1XX52x" to="tp3j:i3dkpKH" resolve="ParameterizedIntentionDeclaration" />
     <node concept="b$f91" id="i3dlAyP" role="2wV5jI">
       <node concept="3EZMnI" id="i3dlAyQ" role="b$wch">
@@ -692,7 +692,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="i3dUSO3">
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <ref role="1XX52x" to="tp3j:i38ZlvV" resolve="IntentionParameter" />
     <node concept="3EZMnI" id="i3dUXBY" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY6v" role="3EZMnx">
@@ -707,6 +707,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5rGvd38Dc3U">
+    <property role="3GE5qa" value="old" />
     <ref role="1XX52x" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
     <node concept="b$f91" id="5rGvd38Dc3W" role="2wV5jI">
       <node concept="3EZMnI" id="5rGvd38Dc3X" role="b$wch">
@@ -1059,7 +1060,7 @@
   </node>
   <node concept="24kQdi" id="5ChbRjKHMrk">
     <property role="3GE5qa" value="childFilterStrategy" />
-    <ref role="1XX52x" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableInChildNodesStrategy" />
+    <ref role="1XX52x" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
     <node concept="3F0ifn" id="5ChbRjKHMrm" role="2wV5jI">
       <property role="3F0ifm" value="availability in child nodes: always available" />
       <node concept="Vb9p2" id="5ChbRjKHP0l" role="3F10Kt">
@@ -1117,7 +1118,7 @@
   </node>
   <node concept="24kQdi" id="4F1$mtFybFt">
     <property role="3GE5qa" value="childFilterStrategy" />
-    <ref role="1XX52x" to="tp3j:6rleQs35avS" resolve="FilterFunctionStrategy" />
+    <ref role="1XX52x" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
     <node concept="3EZMnI" id="htbWbt0" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3EZMnI" id="4L3eaLFn6mV" role="3EZMnx">

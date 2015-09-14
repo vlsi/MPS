@@ -621,7 +621,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="63iz5ddmsz0" role="3acgRq">
-      <ref role="30HIoZ" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableInChildNodesStrategy" />
+      <ref role="30HIoZ" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
       <node concept="j$656" id="4bWTMfRjnWL" role="1lVwrX">
         <ref role="v9R2y" node="4bWTMfRjnWJ" resolve="reduce_AlwaysAvailableInChildNodesStrategy" />
       </node>
@@ -694,6 +694,7 @@
   <node concept="312cEu" id="6h71hRDS6Lm">
     <property role="TrG5h" value="IntentionsDescriptor" />
     <property role="1EXbeo" value="true" />
+    <property role="3GE5qa" value="old" />
     <node concept="312cEg" id="7ZU0Lz4JDI8" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1762,6 +1763,7 @@
   <node concept="312cEu" id="zWYlCGIiYB">
     <property role="TrG5h" value="IntentionFactoryClass" />
     <property role="1EXbeo" value="true" />
+    <property role="3GE5qa" value="old" />
     <node concept="3Tm1VV" id="zWYlCGIiYC" role="1B3o_S" />
     <node concept="n94m4" id="zWYlCGIiYH" role="lGtFl">
       <ref role="n9lRv" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
@@ -4341,7 +4343,7 @@
   </node>
   <node concept="13MO4I" id="4bWTMfRjnWJ">
     <property role="TrG5h" value="reduce_AlwaysAvailableInChildNodesStrategy" />
-    <ref role="3gUMe" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableInChildNodesStrategy" />
+    <ref role="3gUMe" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
     <node concept="3clFb_" id="4bWTMfRjnXQ" role="13RCb5">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
