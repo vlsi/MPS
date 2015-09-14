@@ -286,7 +286,7 @@
   </node>
   <node concept="1TIwiD" id="6q8H2OTpOHU">
     <property role="TrG5h" value="Parameter" />
-    <property role="3GE5qa" value="new" />
+    <property role="3GE5qa" value="new.parameter" />
     <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="PrWs8" id="6q8H2OTpOHV" role="PzmwI">
       <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
@@ -303,7 +303,7 @@
   </node>
   <node concept="1TIwiD" id="4jgyS0Z9lVZ">
     <property role="TrG5h" value="ForConceptMethodParameter" />
-    <property role="3GE5qa" value="new" />
+    <property role="3GE5qa" value="new.parameter" />
     <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
   </node>
   <node concept="1TIwiD" id="5_2vHPPt4ol">

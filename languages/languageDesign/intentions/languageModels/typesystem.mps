@@ -264,7 +264,7 @@
   <node concept="1YbPZF" id="5ChbRjKJ1AY">
     <property role="TrG5h" value="typeof_ForConceptParameterDeclaration" />
     <property role="18ip37" value="true" />
-    <property role="3GE5qa" value="new" />
+    <property role="3GE5qa" value="new.parameter" />
     <node concept="3clFbS" id="5ChbRjKJ1AZ" role="18ibNy">
       <node concept="1Z5TYs" id="5ChbRjKJ1Ga" role="3cqZAp">
         <node concept="mw_s8" id="4y11RyiW0mW" role="1ZfhKB">
@@ -287,7 +287,7 @@
     </node>
     <node concept="1YaCAy" id="5ChbRjKJ1B1" role="1YuTPh">
       <property role="TrG5h" value="pd" />
-      <ref role="1YaFvo" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptParameterDeclaration" />
+      <ref role="1YaFvo" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptMethodParameter" />
     </node>
   </node>
   <node concept="1YbPZF" id="5_2vHPPr5tP">

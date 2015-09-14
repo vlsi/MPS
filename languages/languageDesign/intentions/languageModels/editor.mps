@@ -898,7 +898,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5ChbRjKH1Gg">
-    <property role="3GE5qa" value="new" />
+    <property role="3GE5qa" value="new.parameter" />
     <ref role="1XX52x" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
     <node concept="3EZMnI" id="3geGFOI14vc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
@@ -1110,8 +1110,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="4y11RyiW0zw">
-    <property role="3GE5qa" value="new" />
-    <ref role="1XX52x" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptParameterDeclaration" />
+    <property role="3GE5qa" value="new.parameter" />
+    <ref role="1XX52x" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptMethodParameter" />
     <node concept="3EZMnI" id="5ChbRjKJ19L" role="2wV5jI">
       <node concept="2iRfu4" id="5ChbRjKJ19M" role="2iSdaV" />
       <node concept="1HlG4h" id="5ChbRjKIZvU" role="3EZMnx">
