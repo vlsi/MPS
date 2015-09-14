@@ -18,7 +18,6 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
-import jetbrains.mps.smodel.NodeNotifier;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -262,7 +261,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
           ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor);
         }
       }
-      NodeNotifier.notify(node); // do I still need that?
     }
   }
 

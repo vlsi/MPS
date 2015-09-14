@@ -67,10 +67,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SConcept myConcept; //todo make final after 3.2
   private SNode parent;
   /**
-   * true iff a bh constructor was called for this node
-   */
-  private AtomicBoolean myConstructed = new AtomicBoolean(false);
-  /**
    * access only in firstChild()/firstChildInRole(role)
    */
   private SNode first;
@@ -960,15 +956,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   private SProperty convertToProp(String name) {
     return ((ConceptMetaInfoConverter) myConcept).convertProperty(name);
-  }
-
-  /**
-   * called from behavior
-   */
-  public void onConstructed() {
-    if (!myConstructed.compareAndSet(false, true)) {
-      throw new AlreadyConstructedException(this);
-    }
   }
 
   private static final class AlreadyConstructedException extends RuntimeException {
