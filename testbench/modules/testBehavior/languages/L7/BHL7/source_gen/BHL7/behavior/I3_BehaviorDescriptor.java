@@ -25,10 +25,10 @@ public final class I3_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd713731eL, "BHL7.structure.I3");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id53654 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1203202913687794490").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo_id53737 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo_1").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1203202913687794501").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id26679116 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo_id26679116").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id26679199 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo_1").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo_id26679199").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id53654, foo_id53737);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id26679116, foo_id26679199);
 
   public static void ___init___(SNode __thisNode__) {
   }

@@ -26,10 +26,10 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L, "BHL7.structure.C");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> argTypeResolve_id32443 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1474492522700410264").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.class)));
-  public static final SMethod<Integer> argTypeResolve_id31830 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve_1").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1474492522700410741").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
+  public static final SMethod<Integer> argTypeResolve_id200375995 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("argTypeResolve_id200375995").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.class)));
+  public static final SMethod<Integer> argTypeResolve_id200375382 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve_1").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("argTypeResolve_id200375382").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id32443, argTypeResolve_id31830);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id200375995, argTypeResolve_id200375382);
 
   public static void ___init___(SNode __thisNode__) {
   }

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.smodel.behaviour.BHFacade;
-import jetbrains.mps.core.aspects.behaviour.SMethodIdBySNode;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,46 +27,46 @@ public class BHTestRef_Test extends TestCase {
   /*package*/ Project myProject;
   public void test_simpleVirtualMethodCall() throws Exception {
     SNode nodeA = createA_cc8y9n_a0a0a0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("6123852159203091688")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id462986822")));
   }
   public void test_simpleAbstractMethodCall() throws Exception {
     SNode nodeI = createA_cc8y9n_a0a0b0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeI, SMethodIdBySNode.create("6123852159203091688")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeI, SMethodTrimmedId.create("foo_id462986822")));
   }
   public void test_defaultMethodWorks() throws Exception {
     SNode nodeI1 = createA1_cc8y9n_a0a0c0();
-    Assert.assertSame(TestResults.DEFAULT_METHOD, BHFacade.invokeReflective(nodeI1, SMethodIdBySNode.create("9105163402711226683")));
+    Assert.assertSame(TestResults.DEFAULT_METHOD, BHFacade.invokeReflective(nodeI1, SMethodTrimmedId.create("foo_id404133530")));
   }
   public void test_simplePolymorphism() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0d0();
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("7688460527007456377")));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id140956115")));
     nodeA = createA_cc8y9n_a0c0d0();
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("7688460527007456377")));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id140956115")));
   }
   public void test_polymorphism() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0e0();
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("7688460527007456377")));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id140956115")));
     nodeA = createA_cc8y9n_a0c0e0();
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("7688460527007456377")));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id140956115")));
   }
   public void test_nonVirtualMethod() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0f0();
-    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("7688460527007462273")));
+    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id140946699")));
     SNode nodeB = createB_cc8y9n_a0c0f0();
-    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("7688460527007462273")));
-    Assert.assertSame(TestResults.NON_VIRTUAL_CHILD, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("7688460527007462920")));
+    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("foo_id140946699")));
+    Assert.assertSame(TestResults.NON_VIRTUAL_CHILD, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("foo_id140945284")));
   }
   public void test_simpleDiamond1() throws Exception {
     SNode nodeI = createC1_cc8y9n_a0a0g0();
-    Assert.assertEquals(TestResults.DIAMOND_C1, BHFacade.invokeReflective(nodeI, SMethodIdBySNode.create("7688460527007471061")));
+    Assert.assertEquals(TestResults.DIAMOND_C1, BHFacade.invokeReflective(nodeI, SMethodTrimmedId.create("foo_id140938039")));
   }
   public void test_simpleDiamond2() throws Exception {
     SNode nodeI = createC2_cc8y9n_a0a0h0();
-    Assert.assertEquals(TestResults.DIAMOND_I1, BHFacade.invokeReflective(nodeI, SMethodIdBySNode.create("7688460527007471061")));
+    Assert.assertEquals(TestResults.DIAMOND_I1, BHFacade.invokeReflective(nodeI, SMethodTrimmedId.create("foo_id140938039")));
   }
   public void test_simpleDiamond3() throws Exception {
     SNode nodeI = createC3_cc8y9n_a0a0i0();
-    Assert.assertEquals(TestResults.DIAMOND_I1, BHFacade.invokeReflective(nodeI, SMethodIdBySNode.create("7688460527007471061")));
+    Assert.assertEquals(TestResults.DIAMOND_I1, BHFacade.invokeReflective(nodeI, SMethodTrimmedId.create("foo_id140938039")));
   }
   public void test_constructorInvocation1() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
@@ -102,104 +102,104 @@ public class BHTestRef_Test extends TestCase {
   }
   public void test_localBehaviorCall() throws Exception {
     SNode nodeA = createA_cc8y9n_a0a0n0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("6167444251392476867")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("foo_id163297929")));
   }
   public void test_thisBehaviorCall() throws Exception {
     SNode nodeB = createB_cc8y9n_a0a0o0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("6167444251392479222")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("foo_id163295636")));
   }
   public void test_thisStaticBehaviorCall() throws Exception {
     SNode nodeC = createC_cc8y9n_a0a0p0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeC), SMethodIdBySNode.create("6167444251392482383")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeC), SMethodTrimmedId.create("foo_id163299581")));
   }
   public void test_simpleVirtualStaticBehaviorCall() throws Exception {
     SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(conceptC, SMethodIdBySNode.create("4743819545113152010")));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BHFacade.invokeReflective(conceptC, SMethodTrimmedId.create("virtual_id383639294")));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(conceptC, SMethodIdBySNode.create("4743819545113152010")));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(conceptC, SMethodTrimmedId.create("virtual_id383639294")));
   }
   public void test_superBehaviorCall() throws Exception {
     SNode nodeD = createD_cc8y9n_a0a0r0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeD, SMethodIdBySNode.create("6167444251392479222")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeD, SMethodTrimmedId.create("foo_id163295636")));
   }
   public void test_superBehaviorVirtualCall() throws Exception {
     SNode nodeB = createD_cc8y9n_a0a0s0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("6123852159203116448")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("foo1_id463011070")));
   }
   public void test_superThisVirtualBehaviorCall() throws Exception {
     SNode nodeB = createD_cc8y9n_a0a0t0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("6123852159203117295")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("foo2_id463008319")));
   }
   public void test_superStaticBehaviorCall() throws Exception {
     SNode nodeE = createE_cc8y9n_a0a0u0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeE), SMethodIdBySNode.create("6167444251392485299")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeE), SMethodTrimmedId.create("foo_id163289561")));
   }
   public void test_conceptPolymorphism() throws Exception {
     SNode nodeF = createG_cc8y9n_a0a0v0();
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeF), SMethodIdBySNode.create("6167444251392496533")));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BHFacade.invokeReflective(SNodeOperations.getConcept(nodeF), SMethodTrimmedId.create("foo_id163317175")));
   }
   public void test_oldApiBehaviorCall() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0w0();
     Object[] params = {};
-    Assert.assertSame(BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("6167444251392503144")), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_1234567890", params));
+    Assert.assertSame(BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("virtualMethod_id163303458")), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_1234567890", params));
   }
   public void test_oldApiBehaviorStaticCall() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0x0();
     Object[] params = {};
-    Assert.assertSame(BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodIdBySNode.create("6167444251392503389")), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_1234567890", params));
+    Assert.assertSame(BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodTrimmedId.create("staticVirtualMethod_id163304175")), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_1234567890", params));
   }
   public void test_oldApiBehaviorCallNonVirtual() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0y0();
     Object[] params = {};
     SAbstractConcept conceptA = SNodeOperations.getConcept(nodeA);
-    Assert.assertSame(BHFacade.invokeReflective(nodeA, SMethodIdBySNode.create("6167444251392503129")), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_1234567890", params));
+    Assert.assertSame(BHFacade.invokeReflective(nodeA, SMethodTrimmedId.create("nonVirtualMethod_id163303411")), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_1234567890", params));
   }
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0z0();
     Object[] params = {};
-    Assert.assertSame(BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodIdBySNode.create("6167444251392503213")), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_1234567890", params));
+    Assert.assertSame(BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodTrimmedId.create("staticMethod_id163303391")), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_1234567890", params));
   }
   public void test_primitiveMethodReturnType() throws Exception {
     SNode nodeB = createB_cc8y9n_a0a0ab0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("5606797489885796553")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("primitiveReturnValue_id151248250")));
   }
   public void test_genericMethodReturnType() throws Exception {
     SNode nodeB = createB_cc8y9n_a0a0bb0();
-    Assert.assertSame(Integer.class, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("5606797489885798976")));
+    Assert.assertSame(Integer.class, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("genericReturnValue_id151263233")));
   }
   public void test_voidMethod() throws Exception {
     SNode nodeB = createB_cc8y9n_a0a0cb0();
-    Assert.assertSame(null, BHFacade.invokeReflective(nodeB, SMethodIdBySNode.create("6167444251392504413")));
+    Assert.assertSame(null, BHFacade.invokeReflective(nodeB, SMethodTrimmedId.create("justVoidReturnTypeMethod_id163309295")));
   }
   public void test_parameterTypes() throws Exception {
     SNode nodeC = createC_cc8y9n_a0a0db0();
-    Assert.assertSame(TestResults.NOT_SPECIFIED_RETURN_VALUE, BHFacade.invokeReflective(nodeC, SMethodIdBySNode.create("1474492522700410741"), new Integer(1)));
-    Assert.assertSame(TestResults.SPECIFIED_RETURN_VALUE, BHFacade.invokeReflective(nodeC, SMethodIdBySNode.create("1474492522700410264"), new Integer(1)));
+    Assert.assertSame(TestResults.NOT_SPECIFIED_RETURN_VALUE, BHFacade.invokeReflective(nodeC, SMethodTrimmedId.create("argTypeResolve_id200375382"), new Integer(1)));
+    Assert.assertSame(TestResults.SPECIFIED_RETURN_VALUE, BHFacade.invokeReflective(nodeC, SMethodTrimmedId.create("argTypeResolve_id200375995"), new Integer(1)));
   }
   public void test_twoVirtualMethodsWithTheSameName() throws Exception {
     SNode node1 = createH_cc8y9n_a0a0eb0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(node1, SMethodIdBySNode.create("4208420198882789398")));
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE + 1, BHFacade.invokeReflective(node1, SMethodIdBySNode.create("4208420198882789409")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHFacade.invokeReflective(node1, SMethodTrimmedId.create("foo_id92672821")));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE + 1, BHFacade.invokeReflective(node1, SMethodTrimmedId.create("foo_id92672874")));
   }
   public void test_methodOverrideWithTheSameName() throws Exception {
     SNode node1 = createD_cc8y9n_a0a0fb0();
-    Assert.assertSame(1, BHFacade.invokeReflective(node1, SMethodIdBySNode.create("6097773470847816317")));
+    Assert.assertSame(1, BHFacade.invokeReflective(node1, SMethodTrimmedId.create("foo_id205238561")));
     SNode node2 = createD_cc8y9n_a0c0fb0();
-    Assert.assertSame(2, BHFacade.invokeReflective(node2, SMethodIdBySNode.create("6097773470847816360")));
+    Assert.assertSame(2, BHFacade.invokeReflective(node2, SMethodTrimmedId.create("foo_id205238348")));
   }
   public void test_methodOverrideWithTheSameName2() throws Exception {
     SNode nodeF = createF_cc8y9n_a0a0gb0();
-    Assert.assertSame(1, BHFacade.invokeReflective(nodeF, SMethodIdBySNode.create("6097773470847816317")));
+    Assert.assertSame(1, BHFacade.invokeReflective(nodeF, SMethodTrimmedId.create("foo_id205238561")));
 
     SNode nodeG = createG_cc8y9n_a0d0gb0();
-    Assert.assertSame(1, BHFacade.invokeReflective(nodeG, SMethodIdBySNode.create("6097773470847816317")));
+    Assert.assertSame(1, BHFacade.invokeReflective(nodeG, SMethodTrimmedId.create("foo_id205238561")));
     SNode nodeG2 = createG_cc8y9n_a0f0gb0();
-    Assert.assertSame(2, BHFacade.invokeReflective(nodeG2, SMethodIdBySNode.create("6097773470847816360")));
+    Assert.assertSame(2, BHFacade.invokeReflective(nodeG2, SMethodTrimmedId.create("foo_id205238348")));
   }
   public void test_twoEqualMethodOverriding() throws Exception {
     SNode node3 = createE_cc8y9n_a0a0hb0();
-    Assert.assertSame(2, BHFacade.invokeReflective(node3, SMethodIdBySNode.create("1203202913687794490")));
-    Assert.assertSame(1, BHFacade.invokeReflective(node3, SMethodIdBySNode.create("1203202913687794501")));
+    Assert.assertSame(2, BHFacade.invokeReflective(node3, SMethodTrimmedId.create("foo_id26679116")));
+    Assert.assertSame(1, BHFacade.invokeReflective(node3, SMethodTrimmedId.create("foo_id26679199")));
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());

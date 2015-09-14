@@ -20,7 +20,7 @@
     <file name="A_BehaviorDescriptor.java">
       <node id="7688460527007462270" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007462270" at="27,0,28,0" concept="6" trace="REGISTRY" />
-      <node id="7688460527007462270" at="29,0,30,0" concept="6" trace="foo_id38300" />
+      <node id="7688460527007462270" at="29,0,30,0" concept="6" trace="foo_id140946699" />
       <node id="7688460527007462270" at="31,0,32,0" concept="6" trace="BH_METHODS" />
       <node id="7688460527007462284" at="36,58,37,42" concept="5" />
       <node id="7688460527007462270" at="40,38,41,20" concept="8" />
@@ -78,7 +78,7 @@
     <file name="B_BehaviorDescriptor.java">
       <node id="7688460527007462917" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007462917" at="27,0,28,0" concept="6" trace="REGISTRY" />
-      <node id="7688460527007462917" at="29,0,30,0" concept="6" trace="foo_id36885" />
+      <node id="7688460527007462917" at="29,0,30,0" concept="6" trace="foo_id140945284" />
       <node id="7688460527007462917" at="31,0,32,0" concept="6" trace="BH_METHODS" />
       <node id="7688460527007462932" at="36,58,37,41" concept="5" />
       <node id="7688460527007462917" at="40,38,41,20" concept="8" />

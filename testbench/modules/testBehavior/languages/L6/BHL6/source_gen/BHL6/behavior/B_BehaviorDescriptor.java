@@ -26,19 +26,19 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL, "BHL6.structure.B");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id9768 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392479222").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> bar_id14810 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392479236").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> bar1_id49425 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203117574").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo1_id52919 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203116448").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo2_id50168 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203117295").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id163295636 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo_id163295636").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> bar_id163300678 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("bar_id163300678").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> bar1_id463007576 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("bar1_id463007576").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo1_id463011070 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo1_id463011070").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo2_id463008319 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo2_id463008319").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id9768, bar_id14810, bar1_id49425, foo1_id52919, foo2_id50168);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id163295636, bar_id163300678, bar1_id463007576, foo1_id463011070, foo2_id463008319);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return B_BehaviorDescriptor.bar_id14810.invoke(__thisNode__);
+    return B_BehaviorDescriptor.bar_id163300678.invoke(__thisNode__);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -50,7 +50,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   public static Integer foo2(@Nullable SNode __thisNode__) {
-    return B_BehaviorDescriptor.bar1_id49425.invoke(__thisNode__);
+    return B_BehaviorDescriptor.bar1_id463007576.invoke(__thisNode__);
   }
 
   /*package*/ B_BehaviorDescriptor() {

@@ -27,24 +27,24 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L, "BHL6.structure.D");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id3546 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6167444251392484356").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo1_id52493 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203116448").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo2_id56096 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203117295").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> bar1_id55675 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6123852159203117574").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id163289414 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo_id163289414").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo1_id463011070 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo1_id463011070").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo2_id463008319 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("foo2_id463008319").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> bar1_id463007576 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("bar1_id463007576").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id3546, foo1_id52493, foo2_id56096, bar1_id55675);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id163289414, foo1_id463011070, foo2_id463008319, bar1_id463007576);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo_id9768);
+    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo_id163295636);
   }
   public static Integer foo1(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo1_id52919);
+    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo1_id463011070);
   }
   public static Integer foo2(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo2_id50168);
+    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo2_id463008319);
   }
   public static Integer bar1(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;

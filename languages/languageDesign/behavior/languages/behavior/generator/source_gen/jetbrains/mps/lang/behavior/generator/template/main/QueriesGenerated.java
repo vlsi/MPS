@@ -154,11 +154,8 @@ public class QueriesGenerated {
     return mask;
   }
   public static Object propertyMacro_GetPropertyValue_5216932936550453175(final PropertyMacroContext _context) {
-    SNode baseMethod = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
-    if (baseMethod == null) {
-      baseMethod = _context.getNode();
-    }
-    return baseMethod.getNodeId().toString();
+    SNode node = _context.getOriginalCopiedInputNode(_context.getNode());
+    return ((MethodNameHelper) _context.getVariable("var:MethodNameHelper")).getGeneratedName(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
   }
   public static Object propertyMacro_GetPropertyValue_3176885412940615260(final PropertyMacroContext _context) {
     return ((MethodNameHelper) _context.getVariable("var:MethodNameHelper")).getGeneratedName(_context.getNode());
@@ -550,7 +547,8 @@ public class QueriesGenerated {
     }, true).toListSequence();
   }
   public static Object insertMacro_varValue_3176885412940615245(final TemplateQueryContext _context) {
-    return new MethodNameHelper(_context.getNode());
+    SNode node = _context.getOriginalCopiedInputNode(_context.getNode());
+    return new MethodNameHelper((SNode) node);
   }
   public static Object insertMacro_varValue_492633946294269772(final TemplateQueryContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"));
