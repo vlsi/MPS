@@ -14,14 +14,14 @@ import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -116,7 +116,7 @@ public final class SConceptOperations {
   @ToRemove(version = 3.3)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     // not used in MPS 
-    return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
+    return getAllSubConcepts(conceptDeclarationNode, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
   }
   /**
    * Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model,
@@ -129,8 +129,8 @@ public final class SConceptOperations {
   }
   @Deprecated
   @ToRemove(version = 3.2)
-  public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {
-    // not used in MPS 
+  private static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<SLanguage> availableLanguages) {
+    // remove this method along with getAllSubConcepts(conceptNode, model) 
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
@@ -139,7 +139,7 @@ public final class SConceptOperations {
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant);
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
-      if (SetSequence.fromSet(availableLanguages).contains(lang)) {
+      if (lang != null && SetSequence.fromSet(availableLanguages).contains(MetaAdapterByDeclaration.getLanguage(lang))) {
         result.add(declaration);
       }
     }
