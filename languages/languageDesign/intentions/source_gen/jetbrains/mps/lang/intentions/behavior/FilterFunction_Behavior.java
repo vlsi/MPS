@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 
-public class FilterFunctionStrategy_Behavior {
+public class FilterFunction_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getHeader_3721059191406386584(SNode thisNode) {

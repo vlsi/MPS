@@ -84,7 +84,7 @@ public class Parametrized_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "parameterType" + ">";
+      return "<no parameterType>";
     }
 
   }

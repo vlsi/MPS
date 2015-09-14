@@ -9,7 +9,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
-    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" implicit="true" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
   <registry>
@@ -269,11 +269,11 @@
   </node>
   <node concept="1TIwiD" id="6rleQs35avS">
     <property role="3GE5qa" value="childFilterStrategy" />
-    <property role="TrG5h" value="FilterFunctionStrategy" />
+    <property role="TrG5h" value="FilterFunction" />
     <property role="34LRSv" value="filter function" />
     <ref role="1TJDcQ" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     <node concept="PrWs8" id="63iz5ddjPo8" role="PzmwI">
-      <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilterStrategy" />
+      <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilter" />
     </node>
     <node concept="PrWs8" id="5Va0QLqEVw6" role="PzmwI">
       <ref role="PrY4T" to="oubp:3ezQTUrYHPc" resolve="Uneditable" />
@@ -304,11 +304,11 @@
     </node>
   </node>
   <node concept="PlHQZ" id="63iz5ddjJkS">
-    <property role="TrG5h" value="ChildFilterStrategy" />
+    <property role="TrG5h" value="ChildFilter" />
     <property role="3GE5qa" value="childFilterStrategy" />
   </node>
   <node concept="1TIwiD" id="63iz5ddjJBC">
-    <property role="TrG5h" value="AlwaysAvailableInChildNodesStrategy" />
+    <property role="TrG5h" value="AlwaysAvailableFilter" />
     <property role="34LRSv" value="always available" />
     <property role="3GE5qa" value="childFilterStrategy" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />

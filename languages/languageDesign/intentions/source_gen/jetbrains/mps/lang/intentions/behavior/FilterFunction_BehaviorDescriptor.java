@@ -7,17 +7,17 @@ import jetbrains.mps.baseLanguage.lightweightdsl.behavior.Uneditable_BehaviorDes
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class FilterFunctionStrategy_BehaviorDescriptor extends ClosureLiteral_BehaviorDescriptor implements ChildFilterStrategy_BehaviorDescriptor, Uneditable_BehaviorDescriptor {
-  public FilterFunctionStrategy_BehaviorDescriptor() {
+public class FilterFunction_BehaviorDescriptor extends ClosureLiteral_BehaviorDescriptor implements ChildFilter_BehaviorDescriptor, Uneditable_BehaviorDescriptor {
+  public FilterFunction_BehaviorDescriptor() {
   }
   public AnAction virtual_getGoToDeclarationAction_6830275548773022915(SNode thisNode) {
-    return FilterFunctionStrategy_Behavior.virtual_getGoToDeclarationAction_6830275548773022915(thisNode);
+    return FilterFunction_Behavior.virtual_getGoToDeclarationAction_6830275548773022915(thisNode);
   }
   public SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
-    return FilterFunctionStrategy_Behavior.virtual_getHeader_3721059191406386584(thisNode);
+    return FilterFunction_Behavior.virtual_getHeader_3721059191406386584(thisNode);
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy";
+    return "jetbrains.mps.lang.intentions.structure.FilterFunction";
   }
 }

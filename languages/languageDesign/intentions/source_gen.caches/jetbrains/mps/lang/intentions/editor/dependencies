@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.intentions.editor.AlwaysAvailableInChildNodesStrategy_Editor" file="AlwaysAvailableInChildNodesStrategy_Editor.java">
+  <dependency className="jetbrains.mps.lang.intentions.editor.AlwaysAvailableFilter_Editor" file="AlwaysAvailableFilter_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -75,10 +75,10 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.editor.AlwaysAvailableInChildNodesStrategy_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.editor.AlwaysAvailableFilter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.DependentParameterDeclaration_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.editor.FilterFunctionStrategy_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.editor.FilterFunction_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.Intention_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.IsError_Editor" />
@@ -94,7 +94,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.editor.FilterFunctionStrategy_Editor" file="FilterFunctionStrategy_Editor.java">
+  <dependency className="jetbrains.mps.lang.intentions.editor.FilterFunction_Editor" file="FilterFunction_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

@@ -14,13 +14,13 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
-public class AlwaysAvailableInChildNodesStrategy_Editor extends DefaultNodeEditor {
+public class AlwaysAvailableFilter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_of7qsi_a(editorContext, node);
+    return this.createConstant_eivu65_a(editorContext, node);
   }
-  private EditorCell createConstant_of7qsi_a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_eivu65_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "availability in child nodes: always available");
-    editorCell.setCellId("Constant_of7qsi_a");
+    editorCell.setCellId("Constant_eivu65_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);

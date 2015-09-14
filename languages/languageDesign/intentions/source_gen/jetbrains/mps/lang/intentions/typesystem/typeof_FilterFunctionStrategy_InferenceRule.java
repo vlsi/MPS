@@ -27,7 +27,7 @@ public class typeof_FilterFunctionStrategy_InferenceRule extends AbstractInferen
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.FilterFunctionStrategy");
+    return MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x66d53b670314a7f8L, "jetbrains.mps.lang.intentions.structure.FilterFunction");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

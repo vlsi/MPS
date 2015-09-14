@@ -110,7 +110,7 @@ public class Parameter_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "parameterType" + ">";
+      return "<no parameterType>";
     }
 
   }
@@ -298,7 +298,7 @@ public class Parameter_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
