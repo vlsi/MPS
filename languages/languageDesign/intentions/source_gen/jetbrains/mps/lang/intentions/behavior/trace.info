@@ -8,23 +8,17 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="AlwaysAvailableFilter_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.AlwaysAvailableFilter_BehaviorDescriptor" />
-    </file>
     <file name="BaseIntentionDeclaration_BehaviorDescriptor.java">
       <unit at="19,0,66,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,60,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,56,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildFilterBlock_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
     </file>
     <file name="ChildFilterFunction_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ChildFilter_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilter_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_childNode_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
@@ -40,9 +34,6 @@
     </file>
     <file name="ExecuteBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
-    </file>
-    <file name="FilterFunction_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.intentions.behavior.FilterFunction_BehaviorDescriptor" />
     </file>
     <file name="ForConceptMethodParameter_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptMethodParameter_BehaviorDescriptor" />
@@ -543,28 +534,6 @@
         <var name="parameter_1" id="4958616572667243135" />
       </scope>
       <unit id="7388353295030898203" at="16,0,43,0" name="jetbrains.mps.lang.intentions.behavior.Parameter_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/7409894075527374948">
-    <file name="FilterFunction_Behavior.java">
-      <node id="6830275548773333247" at="16,77,17,206" concept="4" />
-      <node id="6830275548773333015" at="19,95,20,130" concept="4" />
-      <node id="7409894075527374948" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7409894075527374948" at="16,0,19,0" concept="6" trace="virtual_getHeader_3721059191406386584#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7409894075527374948" at="19,0,22,0" concept="6" trace="virtual_getGoToDeclarationAction_6830275548773022915#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/openapi/actionSystem/AnAction;" />
-      <scope id="7409894075527374950" at="14,43,14,43" />
-      <scope id="6830275548773333006" at="16,77,17,206" />
-      <scope id="6830275548773333012" at="19,95,20,130" />
-      <scope id="7409894075527374948" at="14,0,16,0">
-        <var name="thisNode" id="7409894075527374948" />
-      </scope>
-      <scope id="7409894075527374948" at="16,0,19,0">
-        <var name="thisNode" id="7409894075527374948" />
-      </scope>
-      <scope id="7409894075527374948" at="19,0,22,0">
-        <var name="thisNode" id="7409894075527374948" />
-      </scope>
-      <unit id="7409894075527374948" at="13,0,23,0" name="jetbrains.mps.lang.intentions.behavior.FilterFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/7538218632063813121">

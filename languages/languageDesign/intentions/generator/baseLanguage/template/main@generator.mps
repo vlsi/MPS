@@ -264,7 +264,6 @@
         <child id="5015072279636624596" name="value" index="2jfP_Y" />
       </concept>
       <concept id="5015072279636592410" name="jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery" flags="in" index="2jfdEK" />
-      <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
@@ -292,10 +291,6 @@
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
-      </concept>
-      <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
-        <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
-        <child id="1092060348987" name="contentNode" index="13RCb5" />
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
@@ -618,12 +613,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="63iz5ddmsz0" role="3acgRq">
-      <ref role="30HIoZ" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
-      <node concept="j$656" id="4bWTMfRjnWL" role="1lVwrX">
-        <ref role="v9R2y" node="4bWTMfRjnWJ" resolve="reduce_AlwaysAvailableInChildNodesStrategy" />
       </node>
     </node>
     <node concept="3aamgX" id="11ZB_RZa9ND" role="3acgRq">
@@ -4339,26 +4328,6 @@
           <node concept="10Nm6u" id="1VQ0jyzrH2M" role="3clFbG" />
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="4bWTMfRjnWJ">
-    <property role="TrG5h" value="reduce_AlwaysAvailableInChildNodesStrategy" />
-    <ref role="3gUMe" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
-    <node concept="3clFb_" id="4bWTMfRjnXQ" role="13RCb5">
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="method" />
-      <node concept="3clFbS" id="4bWTMfRjnXT" role="3clF47">
-        <node concept="raruj" id="1FdraouYhpr" role="lGtFl" />
-        <node concept="3cpWs6" id="1FdraouYhpt" role="3cqZAp">
-          <node concept="3clFbT" id="1FdraouYhpE" role="3cqZAk">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="4bWTMfRjnYF" role="3clF45" />
-      <node concept="3Tm1VV" id="4bWTMfRjnXV" role="1B3o_S" />
     </node>
   </node>
 </model>

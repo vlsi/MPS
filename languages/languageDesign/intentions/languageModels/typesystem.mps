@@ -25,7 +25,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -45,15 +44,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-      </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
-    </language>
-    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
-      <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
-        <child id="1199542457201" name="resultType" index="1ajl9A" />
-        <child id="1199542501692" name="parameterType" index="1ajw0F" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -88,11 +78,9 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <property id="1206359757216" name="checkOnly" index="3wDh2S" />
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
-      <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -288,37 +276,6 @@
     <node concept="1YaCAy" id="5ChbRjKJ1B1" role="1YuTPh">
       <property role="TrG5h" value="pd" />
       <ref role="1YaFvo" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptMethodParameter" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="5_2vHPPr5tP">
-    <property role="TrG5h" value="typeof_FilterFunctionStrategy" />
-    <node concept="3clFbS" id="5_2vHPPr5tQ" role="18ibNy">
-      <node concept="1ZobV4" id="6svLy19yAUt" role="3cqZAp">
-        <property role="3wDh2S" value="true" />
-        <node concept="mw_s8" id="6svLy19yAUv" role="1ZfhK$">
-          <node concept="1Z2H0r" id="6svLy19yAUw" role="mwGJk">
-            <node concept="1YBJjd" id="6svLy19yAUx" role="1Z2MuG">
-              <ref role="1YBMHb" node="5_2vHPPr5tS" resolve="filterFunctionStrategy" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="6svLy19yAUy" role="1ZfhKB">
-          <node concept="2c44tf" id="6svLy19yAUz" role="mwGJk">
-            <node concept="1ajhzC" id="6svLy19yAU$" role="2c44tc">
-              <node concept="10P_77" id="6svLy19yAU_" role="1ajl9A" />
-              <node concept="3Tqbb2" id="6svLy19yAUA" role="1ajw0F" />
-              <node concept="3Tqbb2" id="6svLy19yAUB" role="1ajw0F" />
-              <node concept="3uibUv" id="6svLy19yAUC" role="1ajw0F">
-                <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5_2vHPPr5tS" role="1YuTPh">
-      <property role="TrG5h" value="filterFunctionStrategy" />
-      <ref role="1YaFvo" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
     </node>
   </node>
 </model>

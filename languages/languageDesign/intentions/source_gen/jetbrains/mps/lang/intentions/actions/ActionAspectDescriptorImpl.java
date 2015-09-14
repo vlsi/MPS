@@ -16,13 +16,11 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
-          return Collections.<NodeFactory>singletonList(new FilterFunction.NodeFactory_8650051857090215660());
-        case 1:
           return Collections.<NodeFactory>singletonList(new ParameterFactory.NodeFactory_4958616572666533619());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"FilterFunction", "Parameter"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"Parameter"};
 }

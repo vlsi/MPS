@@ -10,7 +10,6 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
-    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -238,18 +237,6 @@
     <property role="34LRSv" value="execute" />
     <ref role="1TJDcQ" node="hmSbjrp" resolve="ExecuteBlock" />
   </node>
-  <node concept="1TIwiD" id="6rleQs35avS">
-    <property role="3GE5qa" value="new.childFilter" />
-    <property role="TrG5h" value="FilterFunction" />
-    <property role="34LRSv" value="filter function" />
-    <ref role="1TJDcQ" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
-    <node concept="PrWs8" id="63iz5ddjPo8" role="PzmwI">
-      <ref role="PrY4T" node="63iz5ddjJkS" resolve="ChildFilter" />
-    </node>
-    <node concept="PrWs8" id="5Va0QLqEVw6" role="PzmwI">
-      <ref role="PrY4T" to="oubp:3ezQTUrYHPc" resolve="Uneditable" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="77ZFhhOGiCb">
     <property role="TrG5h" value="Intention" />
     <property role="3GE5qa" value="new" />
@@ -269,20 +256,10 @@
     </node>
     <node concept="1TJgyj" id="5_2vHPPt4pL" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="error" />
+      <property role="20kJfa" value="priority" />
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
     </node>
-  </node>
-  <node concept="PlHQZ" id="63iz5ddjJkS">
-    <property role="TrG5h" value="ChildFilter" />
-    <property role="3GE5qa" value="new.childFilter" />
-  </node>
-  <node concept="1TIwiD" id="63iz5ddjJBC">
-    <property role="TrG5h" value="AlwaysAvailableFilter" />
-    <property role="34LRSv" value="always available" />
-    <property role="3GE5qa" value="new.childFilter" />
-    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
   <node concept="1TIwiD" id="6q8H2OTpOHU">
     <property role="TrG5h" value="Parameter" />
