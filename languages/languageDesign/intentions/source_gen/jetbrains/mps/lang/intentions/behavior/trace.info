@@ -32,9 +32,6 @@
     <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
     </file>
-    <file name="DependentParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.lang.intentions.behavior.DependentParameterDeclaration_BehaviorDescriptor" />
-    </file>
     <file name="DescriptionBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
     </file>
@@ -47,8 +44,8 @@
     <file name="FilterFunction_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.intentions.behavior.FilterFunction_BehaviorDescriptor" />
     </file>
-    <file name="ForConceptParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptParameterDeclaration_BehaviorDescriptor" />
+    <file name="ForConceptMethodParameter_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptMethodParameter_BehaviorDescriptor" />
     </file>
     <file name="IntentionDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
@@ -420,22 +417,6 @@
       <unit id="3044950653914725992" at="12,0,21,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedDescriptionBlock_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/4958616572666404632">
-    <file name="ForConceptParameterDeclaration_Behavior.java">
-      <node id="4958616572666404646" at="11,81,12,50" concept="4" />
-      <node id="4958616572666404632" at="9,0,11,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4958616572666404632" at="11,0,14,0" concept="6" trace="virtual_calculateType_6490020717319157711#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4958616572666404634" at="9,43,9,43" />
-      <scope id="4958616572666404639" at="11,81,12,50" />
-      <scope id="4958616572666404632" at="9,0,11,0">
-        <var name="thisNode" id="4958616572666404632" />
-      </scope>
-      <scope id="4958616572666404632" at="11,0,14,0">
-        <var name="thisNode" id="4958616572666404632" />
-      </scope>
-      <unit id="4958616572666404632" at="8,0,15,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptParameterDeclaration_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/6263518417926802282">
     <file name="BaseIntentionDeclaration_Behavior.java">
       <node id="6263518417926802292" at="20,85,21,208" concept="4" />
@@ -504,30 +485,6 @@
         <var name="thisNode" id="6263518417926802282" />
       </scope>
       <unit id="6263518417926802282" at="17,0,57,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/6490020717319156015">
-    <file name="DependentParameterDeclaration_Behavior.java">
-      <node id="4958616572666411946" at="12,43,13,209" concept="1" />
-      <node id="4958616572666451380" at="15,61,16,63" concept="3" />
-      <node id="4958616572666451380" at="16,63,17,30" concept="3" />
-      <node id="4958616572666451380" at="17,30,18,221" concept="0" />
-      <node id="4958616572666451380" at="17,30,18,221" concept="0" />
-      <node id="4958616572666451380" at="17,30,18,221" concept="1" />
-      <node id="4958616572666451380" at="18,221,19,24" concept="4" />
-      <node id="6490020717319156015" at="12,0,15,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4958616572666451380" at="15,0,21,0" concept="6" trace="_quotation_createNode_sh4a3k_a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6490020717319156017" at="12,43,13,209" />
-      <scope id="4958616572666451380" at="17,30,18,221" />
-      <scope id="6490020717319156015" at="12,0,15,0">
-        <var name="thisNode" id="6490020717319156015" />
-      </scope>
-      <scope id="4958616572666451380" at="15,61,19,24">
-        <var name="facade" id="4958616572666451380" />
-        <var name="quotedNode_1" id="4958616572666451380" />
-      </scope>
-      <scope id="4958616572666451380" at="15,0,21,0" />
-      <unit id="6490020717319156015" at="11,0,22,0" name="jetbrains.mps.lang.intentions.behavior.DependentParameterDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/7388353295030898203">

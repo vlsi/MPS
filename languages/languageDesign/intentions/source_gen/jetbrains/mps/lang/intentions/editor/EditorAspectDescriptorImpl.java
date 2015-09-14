@@ -18,11 +18,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor()));
       case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DependentParameterDeclaration_Editor()));
-      case 3:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ErrorIntentionPriority_Editor()));
-      case 4:
+      case 3:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FilterFunction_Editor()));
+      case 4:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ForConceptMethodParameter_Editor()));
       case 5:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Intention_Editor()));
       case 6:
@@ -43,5 +43,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableFilter", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.DependentParameterDeclaration", "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority", "jetbrains.mps.lang.intentions.structure.FilterFunction", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableFilter", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority", "jetbrains.mps.lang.intentions.structure.FilterFunction", "jetbrains.mps.lang.intentions.structure.ForConceptMethodParameter", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock"};
 }

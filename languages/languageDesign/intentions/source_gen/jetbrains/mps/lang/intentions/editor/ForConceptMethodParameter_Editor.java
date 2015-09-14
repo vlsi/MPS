@@ -12,6 +12,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -22,23 +24,23 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class DependentParameterDeclaration_Editor extends DefaultNodeEditor {
+public class ForConceptMethodParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_k0v5am_a(editorContext, node);
+    return this.createCollection_xynqqp_a(editorContext, node);
   }
-  private EditorCell createCollection_k0v5am_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_xynqqp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_k0v5am_a");
+    editorCell.setCellId("Collection_xynqqp_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_k0v5am_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_k0v5am_b0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_xynqqp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_xynqqp_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_k0v5am_a0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_xynqqp_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_calculateType_6490020717319157711", new Object[]{}), "virtual_getPresentation_1213877396640", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), "virtual_getPresentation_1213877396640", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -48,13 +50,13 @@ public class DependentParameterDeclaration_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_k0v5am_a0");
+    editorCell.setCellId("ReadOnlyModelAccessor_xynqqp_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createProperty_k0v5am_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_xynqqp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
