@@ -18,47 +18,42 @@ package jetbrains.mps.core.aspects.behaviour;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SMethodId;
-import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod} within the concept (including all the ancestors).
  * This implementation is based on the transformed id of the method node (in the behavior aspect of the concept)
- * The node id is unique within the model, so there is a concept as a second key to provide the uniqueness throughout the concept hierarchy.
+ * The
  *
  * Created by apyshkin on 11/09/15.
  */
 @Immutable
 public final class SMethodTrimmedId implements SMethodId {
-  private final SNodeId myId;
+  private final String myTrimmedId; // contains methodName and trimmed id (integer)
 
-  private SMethodTrimmedId(@NotNull SNodeId id) {
-    myId = id;
-  }
-
-  public SNodeId getId() {
-    return myId;
+  private SMethodTrimmedId(@NotNull String trimmedId) {
+    myTrimmedId = trimmedId;
   }
 
   @Override
   public int hashCode() {
-    return myId.hashCode();
+    return myTrimmedId.hashCode();
   }
 
   @Override
   public boolean equals(Object o) {
     if (o instanceof SMethodTrimmedId) {
-      return ((SMethodTrimmedId) o).myId.equals(myId);
+      return ((SMethodTrimmedId) o).myTrimmedId.equals(myTrimmedId);
     }
     return false;
   }
 
   @Override
   public String toString() {
-    return "SMethodId(" + myId + ")";
+    return "SMTrimmedId(" + myTrimmedId + ")";
   }
 
   @NotNull
-  public static SMethodTrimmedId create(@NotNull String id) {
-    return new SMethodTrimmedId(jetbrains.mps.smodel.SNodeId.fromString(id));
+  public static SMethodTrimmedId create(@NotNull String trimmedId) {
+    return new SMethodTrimmedId(trimmedId);
   }
 }

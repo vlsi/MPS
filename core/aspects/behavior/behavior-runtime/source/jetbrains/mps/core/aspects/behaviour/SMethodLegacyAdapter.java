@@ -16,7 +16,6 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +46,7 @@ class SMethodLegacyAdapter {
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
     SModifiers modifiers = extractMethodModifiers(legacyMethodName, legacyBHMethod);
-    String methodNodeId = extractMethodId(legacyMethodName);
+    String methodNodeId = trim(extractMethodId(legacyMethodName));
     List<SParameter> parameters = new ArrayList<SParameter>();
     for (Class<?> param : legacyBHMethod.getParameterTypes()) {
       parameters.add(new SParameterImpl(new SJavaCompoundTypeImpl(param), ""));
@@ -59,6 +58,11 @@ class SMethodLegacyAdapter {
         methodNodeId,
         descriptor.getBehaviorRegistry(),
         parameters);
+  }
+
+  private static String trim(String s) {
+    long id = Long.valueOf(s);
+    return (id % SMethodImpl.MODULE_FOR_TRIMMING_ID) + "";
   }
 
   /**

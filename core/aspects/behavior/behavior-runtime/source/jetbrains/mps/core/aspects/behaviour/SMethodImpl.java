@@ -22,7 +22,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.language.SModifiers;
@@ -67,6 +66,7 @@ import java.util.List;
 @Immutable
 public final class SMethodImpl<T> implements SMethod<T> {
   public static final String METHOD_NAME_ID_SEPARATOR ="_";
+  public static final int MODULE_FOR_TRIMMING_ID = 486187739;
 
   private final String myName;
   private final SModifiers myMethodModifiers;
@@ -75,7 +75,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
   private final List<SParameter> myParameters;
   private final SMethodId myId; // in the case of virtual methods the id is always the id of the base method (topmost)
   private final BehaviorRegistry myRegistry;
-  private volatile BHDescriptor myDescriptor;
 
   private SMethodImpl(@NotNull String name,
       @NotNull SModifiers modifiers,
@@ -91,15 +90,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
     myConcept = concept;
     myParameters = parameters;
     myRegistry = registry;
-    myId = SMethodIdBySNode.create(id);
-  }
-
-  @NotNull
-  private BHDescriptor getDescriptor() {
-    if (myDescriptor == null) {
-      myDescriptor = myRegistry.getBHDescriptor(myConcept);
-    }
-    return myDescriptor;
+    myId = SMethodTrimmedId.create(id);
   }
 
   /**
