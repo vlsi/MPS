@@ -26,7 +26,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
@@ -915,25 +914,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   public IFile getOutputPath() {
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
-  }
-
-  @Deprecated
-  public final String getGeneratorOutputPath() {
-    IFile outputPath = getOutputPath();
-    return outputPath != null ? outputPath.getPath() : null;
-  }
-
-  @Deprecated
-  public final String getTestsGeneratorOutputPath() {
-    TestsFacet testsFacet = this.getFacet(TestsFacet.class);
-    if (testsFacet == null) {
-      return null;
-    }
-    IFile testsOutputPath = testsFacet.getTestsOutputPath();
-    if (testsOutputPath == null) {
-      return null;
-    }
-    return testsOutputPath.getPath();
   }
 
   public void validateLanguageVersions() {
