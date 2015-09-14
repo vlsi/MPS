@@ -53,6 +53,7 @@ public final class SDefaultConstructorImpl implements SConstructor {
     return myConcept;
   }
 
+  @NotNull
   @Override
   public SModifiers getModifiers() {
     return myModifiers;

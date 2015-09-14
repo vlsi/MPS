@@ -15,6 +15,13 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.mps.annotations.Immutable;
+
+/**
+ * Represents a method/constructor modifiers' container.
+ * @see java.lang.reflect.Modifier
+ */
+@Immutable
 public interface SModifiers {
   boolean isPublic();
   boolean isPrivate();

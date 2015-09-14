@@ -21,8 +21,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * FIXME docs
+ * SConstructor serves as a descriptor of the single constructor of the {@link org.jetbrains.mps.openapi.language.SAbstractConcept}.
  */
 public interface SConstructor extends SExecutable {
+  /**
+   * Creates a new node in the provided model and initialises it with given parameters
+   * @param model the model to attach to the new node
+   * @param parameters the parameters of this constructor
+   * @return new initialized node in the model {@param model}
+   */
   @NotNull SNode newNode(@Nullable SModel model, Object... parameters);
 }

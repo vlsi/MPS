@@ -16,7 +16,8 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * fixme docs
+ * The interface is the descriptor of the exception, which might be presented in the
+ * method/constructor declaration.
  */
 public interface SThrowable extends STypedElement {
 }

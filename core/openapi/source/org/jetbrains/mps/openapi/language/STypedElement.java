@@ -18,10 +18,9 @@ package org.jetbrains.mps.openapi.language;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * This interface must be implemented by the entities which has type.
  *
- * Created by apyshkin on 08/09/15.
  */
 public interface STypedElement {
-  @NotNull
-  SAbstractType getType();
+  @NotNull SAbstractType getType();
 }

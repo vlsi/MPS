@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Represents a type abstraction in MPS
+ * Represents a type abstraction in MPS.
  */
 public interface SAbstractType {
 

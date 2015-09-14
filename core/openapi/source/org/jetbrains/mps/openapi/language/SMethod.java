@@ -25,6 +25,8 @@ import java.util.List;
  * FIXME documentation
  * Represents a behavior method for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
  * It has a {@link SMethodId} which uniquely identifies the instance of {@link SMethod}.
+ * One needs to think of SMethod as of pair <SAbstractConcept, SMethodId>, that is the concept which has this
+ * method available and the id of the method which is an equivalent of the method's signature.
  *
  * T -- java runtime return type (for compile-time checking)
  */
@@ -52,11 +54,13 @@ public interface SMethod<T> extends SExecutable {
 
   /**
    * @return true iff the method has a virtual modifier
+   * @see #getModifiers()
    */
   boolean isVirtual();
 
   /**
    * @return true iff the method has a static modifier
+   * @see #getModifiers()
    */
   boolean isStatic();
 
