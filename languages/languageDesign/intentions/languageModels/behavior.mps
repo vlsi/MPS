@@ -1441,44 +1441,6 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="whfZfEu60P">
-    <property role="3GE5qa" value="" />
-    <ref role="13h7C2" to="tp3j:whfZfEu5_z" resolve="Parametrized" />
-    <node concept="13i0hz" id="2Hif5ue1JZE" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getDescriptor" />
-      <ref role="13i0hy" to="9nqt:UBgfI9eMAt" resolve="getDescriptor" />
-      <node concept="3Tm1VV" id="2Hif5ue1JZF" role="1B3o_S" />
-      <node concept="3clFbS" id="2Hif5ue1JZG" role="3clF47">
-        <node concept="3cpWs6" id="2Hif5ue1JZH" role="3cqZAp">
-          <node concept="3B5_sB" id="2Hif5ue1JZI" role="3cqZAk">
-            <ref role="3B5MYn" to="6bz1:2Hif5ue1I1A" resolve="ParametrizedDeclaration" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="2Hif5ue1JZJ" role="3clF45">
-        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
-      </node>
-    </node>
-    <node concept="13hLZK" id="whfZfEu60Q" role="13h7CW">
-      <node concept="3clFbS" id="whfZfEu60R" role="2VODD2">
-        <node concept="3clFbF" id="whfZfEvbHi" role="3cqZAp">
-          <node concept="37vLTI" id="whfZfEvcOs" role="3clFbG">
-            <node concept="Xl_RD" id="whfZfEvcRf" role="37vLTx">
-              <property role="Xl_RC" value="intentionTypeBlock" />
-            </node>
-            <node concept="2OqwBi" id="whfZfEvbNs" role="37vLTJ">
-              <node concept="13iPFW" id="whfZfEvbHh" role="2Oq$k0" />
-              <node concept="3TrcHB" id="whfZfEvcIN" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="13h7C7" id="6q8H2OTpOSr">
     <ref role="13h7C2" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
     <node concept="13hLZK" id="6q8H2OTpOSs" role="13h7CW">
