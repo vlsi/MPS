@@ -10,6 +10,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -47,20 +50,25 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
     }
     public boolean execute(Project project, ExecutionEnvironment environment) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-      Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
-        public boolean accept(SNodeReference it) {
-          return it != null;
-        }
-      }).select(new ISelector<SNodeReference, SModel>() {
-        public SModel select(SNodeReference it) {
-          SNode n = it.resolve(mpsProject.getRepository());
-          return (n == null ? null : n.getModel());
-        }
-      }).distinct().where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it) {
-          return ModelGenerationStatusManager.getInstance().generationRequired(it);
+      Iterable<SModel> models = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ISequence<SModel>>() {
+        public ISequence<SModel> compute() {
+          return ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
+            public boolean accept(SNodeReference it) {
+              return it != null;
+            }
+          }).select(new ISelector<SNodeReference, SModel>() {
+            public SModel select(SNodeReference it) {
+              SNode n = it.resolve(mpsProject.getRepository());
+              return (n == null ? null : n.getModel());
+            }
+          }).distinct().where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return ModelGenerationStatusManager.getInstance().generationRequired(it);
+            }
+          });
         }
       });
+
       if (Sequence.fromIterable(models).isEmpty()) {
         return true;
       }
