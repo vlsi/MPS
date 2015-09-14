@@ -17,12 +17,14 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
- * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod}
+ * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod} within the concept (including all the ancestors).
  * This implementation is based on the node id of the method node (in the behavior aspect of the concept)
+ * The node id is unique within the model, so there is a concept as a second key to provide the uniqueness throughout the concept hierarchy.
  *
  * Created by apyshkin on 11/09/15.
  */
@@ -56,7 +58,8 @@ public final class SMethodIdBySNode implements SMethodId {
     return "SMethodId(" + myId + ")";
   }
 
-  public static SMethodIdBySNode create(SNodeId id) {
-    return new SMethodIdBySNode(id);
+  @NotNull
+  public static SMethodIdBySNode create(@NotNull String id) {
+    return new SMethodIdBySNode(jetbrains.mps.smodel.SNodeId.fromString(id));
   }
 }

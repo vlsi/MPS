@@ -36,9 +36,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public final class BHFacade {
   @NotNull
-  public static SNode newNode(@NotNull SAbstractConcept concept, @Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
-    BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.newNode(model, constructor, parameters);
+  public static SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
+    return constructor.newNode(model, parameters);
   }
 
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
@@ -50,23 +49,17 @@ public final class BHFacade {
   }
 
   public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    if (node == null) {
-      return (T) method.getReturnType().getDefaultValue();
-    }
-    return BHFacade.invoke0(node, method, parameters);
+    return method.invoke(node, parameters);
   }
 
   public static <T> T invokeStatic(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
-    if (concept == null) {
-      return (T) method.getReturnType().getDefaultValue();
-    }
-    return BHFacade.invokeStatic0(concept, method, parameters);
+    return method.invokeStatic(concept, parameters);
   }
 
   /**
-   * reflective api (not null-safe!)
+   * reflective api
    */
-  public static Object invokeReflectively(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invokeReflective(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
     SConcept concept = node.getConcept();
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
@@ -76,7 +69,7 @@ public final class BHFacade {
     return bhDescriptor.invoke(node, method, parameters);
   }
 
-  public static Object invokeReflectively(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invokeReflective(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
@@ -94,16 +87,6 @@ public final class BHFacade {
     SAbstractConcept concept = method.getConcept();
     assert node == null || node.getConcept().isSubConceptOf(concept);
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.invoke(node, method, parameters);
-  }
-
-  private static <T> T invokeStatic0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
-    BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.invoke(null, method, parameters);
-  }
-
-  private static <T> T invoke0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    BHDescriptor bhDescriptor = getBHDescriptor(node.getConcept());
     return bhDescriptor.invoke(node, method, parameters);
   }
 

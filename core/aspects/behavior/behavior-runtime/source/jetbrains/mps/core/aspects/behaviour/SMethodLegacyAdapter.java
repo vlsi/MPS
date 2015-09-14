@@ -40,14 +40,14 @@ class SMethodLegacyAdapter {
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
 
   @NotNull
-  static SExecutable createFromLegacy(String legacyMethodName, Method legacyBHMethod, @NotNull BHDescriptor descriptor) {
+  static SExecutable createFromLegacy(String legacyMethodName, Method legacyBHMethod, @NotNull BaseBHDescriptor descriptor) {
     SAbstractConcept concept = descriptor.getConcept();
     if (legacyMethodName.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
       return new SDefaultConstructorImpl(descriptor, AccessPrivileges.PUBLIC);
     }
     String methodName = extractNewMethodNameFromOld(legacyMethodName);
     SModifiers modifiers = extractMethodModifiers(legacyMethodName, legacyBHMethod);
-    SNodeId methodNodeId = extractMethodId(legacyMethodName);
+    String methodNodeId = extractMethodId(legacyMethodName);
     List<SParameter> parameters = new ArrayList<SParameter>();
     for (Class<?> param : legacyBHMethod.getParameterTypes()) {
       parameters.add(new SParameterImpl(new SJavaCompoundTypeImpl(param), ""));
@@ -56,10 +56,9 @@ class SMethodLegacyAdapter {
         modifiers,
         new SJavaCompoundTypeImpl(legacyBHMethod.getReturnType()),
         concept,
-        null,
-        parameters,
-        descriptor,
-        methodNodeId);
+        methodNodeId,
+        descriptor.getBehaviorRegistry(),
+        parameters);
   }
 
   /**
@@ -83,9 +82,9 @@ class SMethodLegacyAdapter {
     return null;
   }
 
-  private static SNodeId extractMethodId(String legacyMethodName) {
+  private static String extractMethodId(String legacyMethodName) {
     int lastIndexBeforeMethodId = legacyMethodName.lastIndexOf("_");
-    return SNodeId.fromString(legacyMethodName.substring(lastIndexBeforeMethodId + 1, legacyMethodName.length()));
+    return legacyMethodName.substring(lastIndexBeforeMethodId + 1, legacyMethodName.length());
   }
 
   private static SModifiers extractMethodModifiers(@NotNull String methodName, @NotNull Method method) {

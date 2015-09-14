@@ -77,6 +77,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
+  @NotNull
+  BehaviorRegistry getBehaviorRegistry() {
+    return myBehaviorRegistry;
+  }
+
   private void initVirtualTable() {
     myVTable = new SMethodVirtualTable(this, getDeclaredMethods());
     List<SAbstractConcept> ancestors = myAncestorCache.getAncestorsVirtualInvocationOrder();

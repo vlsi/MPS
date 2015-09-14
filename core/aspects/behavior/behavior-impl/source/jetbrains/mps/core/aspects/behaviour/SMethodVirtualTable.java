@@ -50,7 +50,12 @@ public final class SMethodVirtualTable {
   @Nullable
   public Entry<SMethod<?>, BHDescriptor> get(@NotNull SMethod<?> method) {
     for (Entry<SMethod<?>, BHDescriptor> methodEntry : myTable.entrySet()) {
-      if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
+//      if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
+//        return methodEntry;
+//      }
+      SMethod<?> existingMethod = methodEntry.getKey();
+      if (existingMethod.isOverrideOf(method)) {
+//        assert SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method);
         return methodEntry;
       }
     }

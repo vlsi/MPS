@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
-import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -37,9 +37,8 @@ public final class SMethodBuilder<T> {
   private SModifiersImpl myModifiers;
   private final SAbstractType myReturnType;
   private SAbstractConcept myConcept;
-  private SMethod<T> myBaseMethod;
-  private BHDescriptor myDescriptor;
-  private SNodeId myId;
+  private String myId;
+  private BehaviorRegistry myRegistry;
 
   public SMethodBuilder(SAbstractType returnType) {
     myReturnType = returnType;
@@ -50,7 +49,7 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethod<T> build(List<SParameter> paramTypes) {
-    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myBaseMethod, paramTypes, myDescriptor, myId);
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myId, myRegistry, paramTypes);
   }
 
   public SMethodBuilder<T> name(@NotNull String name) {
@@ -68,18 +67,13 @@ public final class SMethodBuilder<T> {
     return this;
   }
 
-  public SMethodBuilder<T> baseMethod(@Nullable SMethod<T> baseMethod) {
-    myBaseMethod = baseMethod;
-    return this;
-  }
-
-  public SMethodBuilder<T> id(@NotNull SNodeId id) {
+  public SMethodBuilder<T> id(@NotNull String id) {
     myId = id;
     return this;
   }
 
-  public SMethodBuilder<T> descriptor(@NotNull BHDescriptor descriptor) {
-    myDescriptor = descriptor;
+  public SMethodBuilder<T> registry(@NotNull BehaviorRegistry registry) {
+    myRegistry = registry;
     return this;
   }
 }

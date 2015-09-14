@@ -54,6 +54,7 @@ public interface BHDescriptor {
 
   /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)
+   * node == null <=> it is the static call
    */
   <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
@@ -64,24 +65,25 @@ public interface BHDescriptor {
   <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   /**
-   * Returns list of {@link SMethod} objects reflecting all the public (!) methods
+   * Returns list of {@link SMethod} objects reflecting all the methods (from private to public)
    * of the concept represented by this descriptor
-   * including those declared by the concept itself and including those inherited from super concepts.
-   */
-  @NotNull List<SMethod<?>> getMethods();
-
-  /**
-   * Returns list of {@link SMethod} objects reflecting all the public (!) methods
-   * of the concept represented by this descriptor
-   * NOT including those inherited from super concepts.
+   * EXCLUDING those inherited from super concepts.
    */
   @NotNull List<SMethod<?>> getDeclaredMethods();
 
   /**
-   * Returns a {@link SMethod} handle that reflects the specified public (!) behavior method
+   * Returns list of {@link SMethod} objects reflecting all the public (!) methods
+   * of the concept represented by this descriptor
+   * INCLUDING those declared by the concept itself and including those inherited from super concepts.
+   */
+  @NotNull List<SMethod<?>> getMethods();
+
+  /**
+   * Returns a {@link SMethod} handle that reflects the public (!) behavior method
    * of the concept represented by the owning {@link SAbstractConcept}
    *
    * @return null if the method was not found
+   * @see #getMethods()
    */
   @Nullable SMethod<?> getMethod(@NotNull SMethodId methodId);
 

@@ -16,19 +16,19 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.language.SModifiers;
 import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.language.SThrowable;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.List;
 
@@ -72,27 +72,34 @@ public final class SMethodImpl<T> implements SMethod<T> {
   private final SModifiers myMethodModifiers;
   private final SAbstractType myReturnType;
   private final SAbstractConcept myConcept;
-  @Deprecated private final SMethod myBaseMethod; // must go away after 3.3 when there are no 'overrides' refs in the behavior anymore
   private final List<SParameter> myParameters;
-  private final BHDescriptor myDescriptor;
-  private final SMethodId myId;
+  private final SMethodId myId; // in the case of virtual methods the id is always the id of the base method (topmost)
+  private final BehaviorRegistry myRegistry;
+  private volatile BHDescriptor myDescriptor;
 
   private SMethodImpl(@NotNull String name,
       @NotNull SModifiers modifiers,
       @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
-      @Nullable SMethod baseMethod,
-      List<SParameter> parameters,
-      @NotNull SNodeId id,
-      @NotNull BHDescriptor descriptor) {
+      @NotNull String id,
+      @NotNull BehaviorRegistry registry,
+      List<SParameter> parameters)
+  {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
     myConcept = concept;
-    myBaseMethod = baseMethod;
     myParameters = parameters;
-    myDescriptor = descriptor;
+    myRegistry = registry;
     myId = SMethodIdBySNode.create(id);
+  }
+
+  @NotNull
+  private BHDescriptor getDescriptor() {
+    if (myDescriptor == null) {
+      myDescriptor = myRegistry.getBHDescriptor(myConcept);
+    }
+    return myDescriptor;
   }
 
   /**
@@ -104,35 +111,40 @@ public final class SMethodImpl<T> implements SMethod<T> {
    * @param returnType -- return type
    * @param concept -- the concept, which contains the method declaration.
    *                            we need it to distinguish two identically named non-virtual methods in the parent and the child classes.
-   * @param baseMethod -- the topmost method in the hierarchy which is overridden by this method
-   *                   can be null if there is no 'overrides' reference
-   *                   or it is not virtual
-   *                   or it is the topmost method
    * @param parameters -- the types of method's arguments
-   * @param id -- method id which uniquely represents the method throughout the concept
+   * @param id -- method string id which must uniquely identify the method throughout the concept hierarchy.
+   *           NB: for the virtual methods which have the same base method, the id must be the same.
    *
+   * @param registry -- BehaviorRegistry to get the mapping concept <-> behavior descriptor
    * @return new SMethod
    */
   public static <T> SMethod<T> create(@NotNull String methodName,
       @NotNull SModifiers modifiers,
       @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
-      @Nullable SMethod baseMethod,
-      List<SParameter> parameters,
-      @NotNull BHDescriptor descriptor,
-      @NotNull SNodeId id)
+      @NotNull String id,
+      @NotNull BehaviorRegistry registry,
+      List<SParameter> parameters)
   {
-    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, baseMethod, parameters, id, descriptor);
+    return new SMethodImpl<T>(methodName, modifiers, returnType, concept, id, registry, parameters);
   }
 
   @Override
   public T invoke(@Nullable SNode node, Object... parameters) {
-    return myDescriptor.invoke(node, this, parameters);
+    if (node == null) {
+      return (T) getReturnType().getDefaultValue();
+    }
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(node.getConcept());
+    return bhDescriptor.invoke(node, this, parameters);
   }
 
-  static boolean sameVirtualMethods(SMethod<?> method1, SMethod<?> method2) {
-    assert method1 instanceof SMethodImpl && method2 instanceof SMethodImpl;
-    return ((SMethodImpl) method1).getBaseMethod().equals(((SMethodImpl) method2).getBaseMethod());
+  @Override
+  public T invokeStatic(@Nullable SAbstractConcept concept, Object... parameters) {
+    if (concept == null) {
+      return (T) getReturnType().getDefaultValue();
+    }
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concept);
+    return bhDescriptor.invoke(null, this, parameters);
   }
 
   @NotNull
@@ -168,15 +180,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
 
   @Override
   public boolean isOverrideOf(@NotNull SMethod another) {
-    SMethod anotherBaseMethod = ((SMethodImpl) another).getBaseMethod();
-    return getBaseMethod().equals(anotherBaseMethod) && getConcept().isSubConceptOf(another.getConcept());
-  }
-
-  @ToRemove(version = 3.3)
-  @Deprecated
-  @NotNull
-  SMethod getBaseMethod() {
-    return myBaseMethod != null ? myBaseMethod : this;
+    return myId.equals(another.getId()) && getConcept().isSubConceptOf(another.getConcept());
   }
 
   @NotNull
@@ -207,9 +211,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
   @NotNull
   String getBaseName() {
     String name = myName;
-    if (myBaseMethod != null) {
-      name = myBaseMethod.getName();
-    }
     int suffixStart = name.lastIndexOf(METHOD_NAME_ID_SEPARATOR);
     if (suffixStart < 0) {
       return name;
@@ -231,13 +232,13 @@ public final class SMethodImpl<T> implements SMethod<T> {
   public boolean equals(Object o) {
     if (o instanceof SMethod) {
       SMethod another = (SMethod) o;
-      return this.getId().equals(another.getId());
+      return getConcept().equals(another.getConcept()) && getId().equals(another.getId());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return myId.hashCode();
+    return 31 * myId.hashCode() + getConcept().hashCode();
   }
 }

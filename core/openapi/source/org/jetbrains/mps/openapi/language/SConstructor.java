@@ -24,6 +24,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  * FIXME docs
  */
 public interface SConstructor extends SExecutable {
-  @NotNull
-  SNode newNode(@Nullable SModel model, Object... parameters);
+  @NotNull SNode newNode(@Nullable SModel model, Object... parameters);
 }

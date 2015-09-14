@@ -28,12 +28,12 @@ import java.util.List;
 /**
  * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod}
  * This implementation is based on the method signature (in the behavior aspect of the concept)
+ *
  * Must be exploited after behavior language migrations in 3.4 release
  */
 @Immutable
 public final class SMethodIdBySignature implements SMethodId {
   private final SNodeId myId;
-  private final SAbstractConcept myConcept;
   private final String myName;
   private final SModifiersImpl myMethodModifiers;
   private final SAbstractType myReturnType;
@@ -46,7 +46,6 @@ public final class SMethodIdBySignature implements SMethodId {
       @NotNull SAbstractType returnType,
       List<SParameter> parameters) {
     myId = id;
-    myConcept = concept;
     myName = name;
     myMethodModifiers = methodModifiers;
     myReturnType = returnType;
@@ -63,7 +62,6 @@ public final class SMethodIdBySignature implements SMethodId {
     if (o instanceof SMethodIdBySignature) {
       SMethodIdBySignature another = (SMethodIdBySignature) o;
       if (!myName.equals(another.myName)) return false;
-      if (!myConcept.equals(another.myConcept)) return false;
       if (!myMethodModifiers.equals(another.myMethodModifiers)) return false;
       if (!myReturnType.equals(another.myReturnType)) return false;
       if (!myParameters.equals(another.myParameters)) return false;

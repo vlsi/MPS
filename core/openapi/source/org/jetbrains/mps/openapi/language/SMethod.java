@@ -46,6 +46,11 @@ public interface SMethod<T> extends SExecutable {
   T invoke(@Nullable SNode node, Object... parameters);
 
   /**
+   * invokes a static method (trying to resolve the right method on runtime if it is virtual)
+   */
+  T invokeStatic(@Nullable SAbstractConcept concept, Object... parameters);
+
+  /**
    * @return true iff the method has a virtual modifier
    */
   boolean isVirtual();
