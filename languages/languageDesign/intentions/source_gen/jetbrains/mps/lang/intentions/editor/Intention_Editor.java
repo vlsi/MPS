@@ -86,7 +86,7 @@ public class Intention_Editor extends DefaultNodeEditor {
   }
   private static int _StyleParameter_QueryFunction_dnq3sg_a0a0(EditorContext editorContext, SNode node) {
     // ToDo fix after  
-    return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.IsError")) ? MPSFonts.BOLD : MPSFonts.PLAIN);
+    return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority")) ? MPSFonts.BOLD : MPSFonts.PLAIN);
   }
   private EditorCell createConstant_dnq3sg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention");

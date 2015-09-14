@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,50,0" name="jetbrains.mps.lang.intentions.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,48,0" name="jetbrains.mps.lang.intentions.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/1240319625734">
@@ -2158,7 +2158,7 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/6431842707461916210">
-    <file name="IsError_Editor.java">
+    <file name="ErrorIntentionPriority_Editor.java">
       <node id="6431842707461916210" at="18,79,19,61" concept="7" />
       <node id="6431842707461916212" at="21,87,22,91" concept="6" />
       <node id="6431842707461916212" at="22,91,23,46" concept="2" />
@@ -2170,7 +2170,7 @@
       <node id="6431842707461916212" at="28,79,29,34" concept="2" />
       <node id="6431842707461916212" at="29,34,30,22" concept="7" />
       <node id="6431842707461916210" at="18,0,21,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6431842707461916212" at="21,0,32,0" concept="5" trace="createConstant_d88phj_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6431842707461916212" at="21,0,32,0" concept="5" trace="createConstant_6zy5c2_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="6431842707461916210" at="18,79,19,61" />
       <scope id="6431842707461916210" at="18,0,21,0">
         <var name="editorContext" id="6431842707461916210" />
@@ -2184,33 +2184,7 @@
         <var name="editorContext" id="6431842707461916212" />
         <var name="node" id="6431842707461916212" />
       </scope>
-      <unit id="6431842707461916210" at="17,0,33,0" name="jetbrains.mps.lang.intentions.editor.IsError_Editor" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/6431842707461916266">
-    <file name="IsNotError_Editor.java">
-      <node id="6431842707461916266" at="14,79,15,61" concept="7" />
-      <node id="6431842707461916268" at="17,87,18,105" concept="6" />
-      <node id="6431842707461916268" at="18,105,19,46" concept="2" />
-      <node id="6431842707461916268" at="19,46,20,28" concept="2" />
-      <node id="6431842707461916268" at="20,28,21,79" concept="2" />
-      <node id="6431842707461916268" at="21,79,22,34" concept="2" />
-      <node id="6431842707461916268" at="22,34,23,22" concept="7" />
-      <node id="6431842707461916266" at="14,0,17,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6431842707461916268" at="17,0,25,0" concept="5" trace="createConstant_j89512_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="6431842707461916266" at="14,79,15,61" />
-      <scope id="6431842707461916266" at="14,0,17,0">
-        <var name="editorContext" id="6431842707461916266" />
-        <var name="node" id="6431842707461916266" />
-      </scope>
-      <scope id="6431842707461916268" at="17,87,23,22">
-        <var name="editorCell" id="6431842707461916268" />
-      </scope>
-      <scope id="6431842707461916268" at="17,0,25,0">
-        <var name="editorContext" id="6431842707461916268" />
-        <var name="node" id="6431842707461916268" />
-      </scope>
-      <unit id="6431842707461916266" at="13,0,26,0" name="jetbrains.mps.lang.intentions.editor.IsNotError_Editor" />
+      <unit id="6431842707461916210" at="17,0,33,0" name="jetbrains.mps.lang.intentions.editor.ErrorIntentionPriority_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/6490020717318642448">
@@ -2868,7 +2842,7 @@
       <node id="75717156636612183" at="78,40,79,24" concept="7" />
       <node id="75717156636612183" at="82,40,83,25" concept="7" />
       <node id="4137216034676877951" at="87,105,88,23" concept="8" />
-      <node id="7430875752159918087" at="88,23,89,226" concept="7" />
+      <node id="7430875752159918087" at="88,23,89,241" concept="7" />
       <node id="5820409521797704713" at="91,88,92,95" concept="6" />
       <node id="5820409521797704713" at="92,95,93,47" concept="2" />
       <node id="5820409521797704713" at="93,47,94,34" concept="6" />
@@ -2975,7 +2949,7 @@
       <scope id="75717156636612183" at="50,87,52,33">
         <var name="provider" id="75717156636612183" />
       </scope>
-      <scope id="7430875752159880861" at="87,105,89,226" />
+      <scope id="7430875752159880861" at="87,105,89,241" />
       <scope id="5820409521797704719" at="110,35,112,94">
         <var name="manager" id="5820409521797704719" />
       </scope>

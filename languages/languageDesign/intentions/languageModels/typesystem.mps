@@ -261,6 +261,7 @@
   <node concept="1YbPZF" id="5ChbRjKJ1AY">
     <property role="TrG5h" value="typeof_DependentParameterDeclaration" />
     <property role="18ip37" value="true" />
+    <property role="3GE5qa" value="new" />
     <node concept="3clFbS" id="5ChbRjKJ1AZ" role="18ibNy">
       <node concept="1Z5TYs" id="5ChbRjKJ1Ga" role="3cqZAp">
         <node concept="mw_s8" id="5ChbRjKJ1Gu" role="1ZfhKB">

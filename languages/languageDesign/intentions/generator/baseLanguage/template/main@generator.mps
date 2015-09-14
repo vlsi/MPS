@@ -2940,7 +2940,7 @@
   <node concept="312cEu" id="6wolOhZxLiI">
     <property role="TrG5h" value="NewIntentionFactory" />
     <property role="1EXbeo" value="false" />
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="new" />
     <node concept="3uibUv" id="46nxkdGD0tt" role="1zkMxy">
       <ref role="3uigEE" to="uxaq:~IntentionsFactory" resolve="IntentionsFactory" />
     </node>
@@ -3054,7 +3054,7 @@
                     </node>
                     <node concept="1mIQ4w" id="5xKN8rBACaH" role="2OqNvi">
                       <node concept="chp4Y" id="5xKN8rBACs7" role="cj9EA">
-                        <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="IsError" />
+                        <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
                       </node>
                     </node>
                   </node>

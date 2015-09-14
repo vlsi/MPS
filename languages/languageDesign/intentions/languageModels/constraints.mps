@@ -96,6 +96,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5rGvd38DcHu">
+    <property role="3GE5qa" value="new" />
     <ref role="1M2myG" to="tp3j:2c3oNEsfAwl" resolve="SurroundWithIntentionDeclaration" />
     <node concept="2NXJUA" id="5rGvd38DcHw" role="2NY200">
       <node concept="3clFbS" id="5rGvd38DcHx" role="2VODD2">

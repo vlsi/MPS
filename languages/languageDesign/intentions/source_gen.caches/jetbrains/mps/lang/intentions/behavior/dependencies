@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ErrorIntentionPriority_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.FilterFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ForConceptParameterDeclaration_BehaviorDescriptor" />
@@ -60,8 +61,6 @@
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.Intention_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IsError_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IsNotError_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.Parameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ParameterizedDescriptionBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ParameterizedExecuteBlock_BehaviorDescriptor" />
@@ -152,6 +151,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.intentions.behavior.ErrorIntentionPriority_BehaviorDescriptor" file="ErrorIntentionPriority_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IntentionPriority_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_Behavior" file="ExecuteBlock_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -208,7 +215,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.behavior.IIsError_BehaviorDescriptor" file="IIsError_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" file="IntentionDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -236,6 +242,7 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.intentions.behavior.IntentionPriority_BehaviorDescriptor" file="IntentionPriority_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.intentions.behavior.Intention_Behavior" file="Intention_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -273,20 +280,6 @@
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.behavior.IsError_BehaviorDescriptor" file="IsError_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.IIsError_BehaviorDescriptor" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.intentions.behavior.IsNotError_BehaviorDescriptor" file="IsNotError_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.behavior.Parameter_Behavior" file="Parameter_Behavior.java">

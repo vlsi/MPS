@@ -223,6 +223,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/surroundWithIntention.png" />
     <property role="TrG5h" value="SurroundWithIntentionDeclaration" />
     <property role="34LRSv" value="Surround-With Intention" />
+    <property role="3GE5qa" value="new" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
   </node>
   <node concept="1TIwiD" id="1$_U1xaW3xx">
@@ -240,7 +241,7 @@
     <ref role="1TJDcQ" node="hmSbjrp" resolve="ExecuteBlock" />
   </node>
   <node concept="1TIwiD" id="6rleQs35avS">
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <property role="TrG5h" value="FilterFunction" />
     <property role="34LRSv" value="filter function" />
     <ref role="1TJDcQ" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
@@ -253,7 +254,7 @@
   </node>
   <node concept="1TIwiD" id="77ZFhhOGiCb">
     <property role="TrG5h" value="Intention" />
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="new" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="6yt8uwrpgn_" role="PzmwI">
@@ -272,21 +273,22 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="error" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="5_2vHPPt4ol" resolve="IsError" />
+      <ref role="20lvS9" node="5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
     </node>
   </node>
   <node concept="PlHQZ" id="63iz5ddjJkS">
     <property role="TrG5h" value="ChildFilter" />
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
   </node>
   <node concept="1TIwiD" id="63iz5ddjJBC">
     <property role="TrG5h" value="AlwaysAvailableFilter" />
     <property role="34LRSv" value="always available" />
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
   <node concept="1TIwiD" id="6q8H2OTpOHU">
     <property role="TrG5h" value="Parameter" />
+    <property role="3GE5qa" value="new" />
     <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="PrWs8" id="6q8H2OTpOHV" role="PzmwI">
       <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
@@ -305,27 +307,26 @@
     <property role="TrG5h" value="DependentParameterDeclaration" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="new" />
     <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
   </node>
   <node concept="1TIwiD" id="4jgyS0Z9lVZ">
     <property role="TrG5h" value="ForConceptParameterDeclaration" />
+    <property role="3GE5qa" value="new" />
     <ref role="1TJDcQ" node="5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
   </node>
   <node concept="1TIwiD" id="5_2vHPPt4ol">
-    <property role="TrG5h" value="IsError" />
+    <property role="TrG5h" value="ErrorIntentionPriority" />
     <property role="34LRSv" value="error" />
+    <property role="3GE5qa" value="new.priority" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5_2vHPPt4oo" role="PzmwI">
-      <ref role="PrY4T" node="5_2vHPPt4on" resolve="IIsError" />
+      <ref role="PrY4T" node="5_2vHPPt4on" resolve="IntentionPriority" />
     </node>
   </node>
   <node concept="PlHQZ" id="5_2vHPPt4on">
-    <property role="TrG5h" value="IIsError" />
-  </node>
-  <node concept="1TIwiD" id="5_2vHPPt4oR">
-    <property role="TrG5h" value="IsNotError" />
-    <property role="34LRSv" value="not error" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <property role="TrG5h" value="IntentionPriority" />
+    <property role="3GE5qa" value="new.priority" />
   </node>
 </model>
 

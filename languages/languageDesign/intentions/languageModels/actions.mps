@@ -398,10 +398,10 @@
     </node>
   </node>
   <node concept="37WguZ" id="7wba5m6$vVF">
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <property role="TrG5h" value="FilterFunction" />
     <node concept="37WvkG" id="7wba5m6$vVG" role="37WGs$">
-      <ref role="37XkoT" to="tp3j:6rleQs35avS" resolve="FilterFunctionStrategy" />
+      <ref role="37XkoT" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
       <node concept="37Y9Zx" id="7wba5m6$vVH" role="37ZfLb">
         <node concept="3clFbS" id="7wba5m6$vVI" role="2VODD2">
           <node concept="3clFbH" id="7wba5m6Bax4" role="3cqZAp" />

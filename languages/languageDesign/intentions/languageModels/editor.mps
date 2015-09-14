@@ -822,7 +822,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4d05DgI_pn">
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="new" />
     <ref role="1XX52x" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
     <node concept="3EZMnI" id="536fTXa3qK2" role="2wV5jI">
       <property role="1cu_pB" value="2" />
@@ -852,7 +852,7 @@
                     <node concept="pncrf" id="3_Em119Xwn2" role="2Oq$k0" />
                     <node concept="1mIQ4w" id="3_Em119XCvu" role="2OqNvi">
                       <node concept="chp4Y" id="3_Em119XCK7" role="cj9EA">
-                        <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="IsError" />
+                        <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
                       </node>
                     </node>
                   </node>
@@ -895,6 +895,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5ChbRjKH1Gg">
+    <property role="3GE5qa" value="new" />
     <ref role="1XX52x" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
     <node concept="3EZMnI" id="3geGFOI14vc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
@@ -1011,7 +1012,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5ChbRjKHMrk">
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <ref role="1XX52x" to="tp3j:63iz5ddjJBC" resolve="AlwaysAvailableFilter" />
     <node concept="3F0ifn" id="5ChbRjKHMrm" role="2wV5jI">
       <property role="3F0ifm" value="availability in child nodes: always available" />
@@ -1021,6 +1022,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5ChbRjKIZvS">
+    <property role="3GE5qa" value="new" />
     <ref role="1XX52x" to="tp3j:5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
     <node concept="3EZMnI" id="5ChbRjKJ19L" role="2wV5jI">
       <node concept="2iRfu4" id="5ChbRjKJ19M" role="2iSdaV" />
@@ -1054,7 +1056,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="5_2vHPPt4oM">
-    <ref role="1XX52x" to="tp3j:5_2vHPPt4ol" resolve="IsError" />
+    <property role="3GE5qa" value="new.priority" />
+    <ref role="1XX52x" to="tp3j:5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
     <node concept="3F0ifn" id="5_2vHPPt4oO" role="2wV5jI">
       <property role="3F0ifm" value="error" />
       <node concept="Vb9p2" id="6svLy19zkiI" role="3F10Kt">
@@ -1062,14 +1065,8 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="5_2vHPPt4pE">
-    <ref role="1XX52x" to="tp3j:5_2vHPPt4oR" resolve="IsNotError" />
-    <node concept="3F0ifn" id="5_2vHPPt4pG" role="2wV5jI">
-      <property role="3F0ifm" value="not error intention" />
-    </node>
-  </node>
   <node concept="24kQdi" id="4F1$mtFybFt">
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <ref role="1XX52x" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
     <node concept="3EZMnI" id="htbWbt0" role="2wV5jI">
       <property role="3EZMnw" value="false" />

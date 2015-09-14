@@ -15,7 +15,7 @@
       <unit at="19,0,66,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,62,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,60,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildFilterBlock_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
@@ -38,6 +38,9 @@
     <file name="DescriptionBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
     </file>
+    <file name="ErrorIntentionPriority_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.ErrorIntentionPriority_BehaviorDescriptor" />
+    </file>
     <file name="ExecuteBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
     </file>
@@ -47,26 +50,20 @@
     <file name="ForConceptParameterDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptParameterDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="IIsError_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.IIsError_BehaviorDescriptor" />
-    </file>
     <file name="IntentionDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IntentionParameter_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
     </file>
+    <file name="IntentionPriority_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.IntentionPriority_BehaviorDescriptor" />
+    </file>
     <file name="Intention_BehaviorDescriptor.java">
       <unit at="11,0,25,0" name="jetbrains.mps.lang.intentions.behavior.Intention_BehaviorDescriptor" />
     </file>
     <file name="IsApplicableBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
-    </file>
-    <file name="IsError_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.IsError_BehaviorDescriptor" />
-    </file>
-    <file name="IsNotError_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.intentions.behavior.IsNotError_BehaviorDescriptor" />
     </file>
     <file name="Parameter_BehaviorDescriptor.java">
       <unit at="11,0,31,0" name="jetbrains.mps.lang.intentions.behavior.Parameter_BehaviorDescriptor" />

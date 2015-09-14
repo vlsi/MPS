@@ -11,21 +11,21 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 10:
+      case 11:
         return new IntentionDeclaration_BehaviorDescriptor();
       case 5:
         return new DescriptionBlock_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new IsApplicableBlock_BehaviorDescriptor();
-      case 6:
+      case 7:
         return new ExecuteBlock_BehaviorDescriptor();
       case 4:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 19:
-        return new QueryBlock_BehaviorDescriptor();
-      case 11:
-        return new IntentionParameter_BehaviorDescriptor();
       case 18:
+        return new QueryBlock_BehaviorDescriptor();
+      case 12:
+        return new IntentionParameter_BehaviorDescriptor();
+      case 17:
         return new ParameterizedIntentionDeclaration_BehaviorDescriptor();
       case 2:
         return new ChildFilterFunction_BehaviorDescriptor();
@@ -33,29 +33,27 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_childNode_BehaviorDescriptor();
       case 1:
         return new BaseIntentionDeclaration_BehaviorDescriptor();
-      case 20:
+      case 19:
         return new SurroundWithIntentionDeclaration_BehaviorDescriptor();
-      case 16:
+      case 15:
         return new ParameterizedDescriptionBlock_BehaviorDescriptor();
-      case 17:
+      case 16:
         return new ParameterizedExecuteBlock_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new FilterFunction_BehaviorDescriptor();
-      case 9:
+      case 10:
         return new Intention_BehaviorDescriptor();
       case 0:
         return new AlwaysAvailableFilter_BehaviorDescriptor();
-      case 15:
-        return new Parameter_BehaviorDescriptor();
-      case 8:
-        return new ForConceptParameterDeclaration_BehaviorDescriptor();
-      case 13:
-        return new IsError_BehaviorDescriptor();
       case 14:
-        return new IsNotError_BehaviorDescriptor();
+        return new Parameter_BehaviorDescriptor();
+      case 9:
+        return new ForConceptParameterDeclaration_BehaviorDescriptor();
+      case 6:
+        return new ErrorIntentionPriority_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableFilter", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.FilterFunction", "jetbrains.mps.lang.intentions.structure.ForConceptParameterDeclaration", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.IsError", "jetbrains.mps.lang.intentions.structure.IsNotError", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.AlwaysAvailableFilter", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.FilterFunction", "jetbrains.mps.lang.intentions.structure.ForConceptParameterDeclaration", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
 }

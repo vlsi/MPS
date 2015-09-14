@@ -1373,7 +1373,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6yt8uwrpgo1">
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="new" />
     <ref role="13h7C2" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
     <node concept="13i0hz" id="UBgfI9gdE3" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -1397,7 +1397,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6rleQs35ax$">
-    <property role="3GE5qa" value="childFilterStrategy" />
+    <property role="3GE5qa" value="new.childFilter" />
     <ref role="13h7C2" to="tp3j:6rleQs35avS" resolve="FilterFunction" />
     <node concept="13hLZK" id="6rleQs35ax_" role="13h7CW">
       <node concept="3clFbS" id="6rleQs35axA" role="2VODD2" />
@@ -1442,6 +1442,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6q8H2OTpOSr">
+    <property role="3GE5qa" value="new" />
     <ref role="13h7C2" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
     <node concept="13hLZK" id="6q8H2OTpOSs" role="13h7CW">
       <node concept="3clFbS" id="6q8H2OTpOSt" role="2VODD2" />
@@ -1529,6 +1530,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5ChbRjKIZ4J">
+    <property role="3GE5qa" value="new" />
     <ref role="13h7C2" to="tp3j:5ChbRjKIZ4m" resolve="DependentParameterDeclaration" />
     <node concept="13hLZK" id="5ChbRjKIZ4K" role="13h7CW">
       <node concept="3clFbS" id="5ChbRjKIZ4L" role="2VODD2">
@@ -1559,6 +1561,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4jgyS0Z9lWo">
+    <property role="3GE5qa" value="new" />
     <ref role="13h7C2" to="tp3j:4jgyS0Z9lVZ" resolve="ForConceptParameterDeclaration" />
     <node concept="13hLZK" id="4jgyS0Z9lWp" role="13h7CW">
       <node concept="3clFbS" id="4jgyS0Z9lWq" role="2VODD2" />
