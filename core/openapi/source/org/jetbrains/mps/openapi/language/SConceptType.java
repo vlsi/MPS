@@ -22,6 +22,5 @@ import org.jetbrains.annotations.NotNull;
  * Contains a reference to a {@link SAbstractConcept}
  */
 public interface SConceptType extends SAbstractType {
-  @NotNull
-  SAbstractConcept getConcept();
+  @NotNull SAbstractConcept getConcept();
 }

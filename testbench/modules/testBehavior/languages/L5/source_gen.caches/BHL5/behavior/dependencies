@@ -3,6 +3,7 @@
   <dependency className="BHL5.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="BHL5.behavior.C1_BehaviorDescriptor" />
     <classNode dependClassName="BHL5.behavior.C3_BehaviorDescriptor" />
+    <classNode dependClassName="BHL5.behavior.C5_BehaviorDescriptor" />
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
     <classNode dependClassName="BHL5.behavior.I2_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -38,6 +39,24 @@
   </dependency>
   <dependency className="BHL5.behavior.C3_BehaviorDescriptor" file="C3_BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConstructor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SMethod" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL5.behavior.C5_BehaviorDescriptor" file="C5_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

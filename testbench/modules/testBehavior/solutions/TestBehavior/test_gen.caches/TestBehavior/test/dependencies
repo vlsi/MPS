@@ -10,8 +10,8 @@
     <classNode dependClassName="BHL6.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.D_BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.E_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.F_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.A_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.B_BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.C_BehaviorDescriptor" />

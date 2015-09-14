@@ -20,13 +20,9 @@
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">424c173a-ee73-4dc9-bc43-d0051c9b1e8f(BHL6)</dependency>
     <dependency reexport="false">4239359f-6457-4d2a-b1e0-14d3f948db39(BHL7)</dependency>
+    <dependency reexport="false">beff1186-d062-491c-bb4e-4c63c5bc07f4(TestBehaviorReflective)</dependency>
   </dependencies>
   <languageVersions>
-    <language id="43359135-f67c-4a3d-9fdd-a3d7dba50995" fqName="BHL1" version="0" />
-    <language id="d9c7536e-76b5-498f-8064-0955dd8aebcb" fqName="BHL2" version="0" />
-    <language id="9dabd0d4-b67a-4eef-b645-d5534ca67594" fqName="BHL3" version="0" />
-    <language id="2b679aa1-c9e8-4a47-84b9-ce94c2202df5" fqName="BHL4" version="-1" />
-    <language id="b4fa1e36-714a-4c77-8e95-3eae9632decb" fqName="BHL5" version="0" />
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="1" />
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <language id="fd392034-7849-419d-9071-12563d152375" fqName="jetbrains.mps.baseLanguage.closures" version="0" />

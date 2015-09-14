@@ -16,15 +16,17 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myI2_BehaviorDescriptor = new I2_BehaviorDescriptor();
   private final BHDescriptor myC1_BehaviorDescriptor = new C1_BehaviorDescriptor();
   private final BHDescriptor myC3_BehaviorDescriptor = new C3_BehaviorDescriptor();
+  private final BHDescriptor myC5_BehaviorDescriptor = new C5_BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[4];
+    myConceptBehaviorIds = new long[5];
     myConceptBehaviorIds[0] = 0x355d469f0ba114cbL;
     myConceptBehaviorIds[1] = 0x355d469f0ba23ba9L;
     myConceptBehaviorIds[2] = 0x355d469f0ba23bc7L;
     myConceptBehaviorIds[3] = 0x355d469f0ba2f82fL;
+    myConceptBehaviorIds[4] = 0x3f852a67e9131504L;
   }
 
   @Deprecated
@@ -46,6 +48,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
         return myC1_BehaviorDescriptor;
       case 3:
         return myC3_BehaviorDescriptor;
+      case 4:
+        return myC5_BehaviorDescriptor;
       default:
         return null;
     }

@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 
-public class SVoidType implements SAbstractType {
+public final class SVoidType implements SAbstractType {
   @Nullable
   @Override
   public Object getDefaultValue() {
