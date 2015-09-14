@@ -14,12 +14,10 @@ import jetbrains.mps.intentions.newIntentions.NewIntentionFactoryToIntentionFact
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
   private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[2];
-    myId2Index[0] = 0x10802efe25aL;
-    myId2Index[1] = 0x115b81b652bL;
+    myId2Index = new long[1];
+    myId2Index[0] = 0x115b81b652bL;
   }
 
   @Override
@@ -29,25 +27,15 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
 
     switch (index) {
       case 0:
-        // Concept: BaseConcept 
+        // Concept: IntentionDeclaration 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
           // base intentions 
           // classlike intentions 
-          myIntentions0[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new Test());
+          myIntentions0[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new ConvertIntention());
         }
 
         return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: IntentionDeclaration 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          // base intentions 
-          // classlike intentions 
-          myIntentions1[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new ConvertIntention());
-        }
-
-        return Arrays.asList(myIntentions1);
       default:
         return null;
     }
@@ -56,10 +44,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[2];
+    IntentionFactory[] rv = new IntentionFactory[1];
     // classlike intentions 
     rv[0] = new NewIntentionFactoryToIntentionFactoryAdapter(new ConvertIntention());
-    rv[1] = new NewIntentionFactoryToIntentionFactoryAdapter(new Test());
     return Arrays.asList(rv);
   }
 }

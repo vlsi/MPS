@@ -43,7 +43,7 @@ public class AddNodeMacro implements IntentionFactory {
     return implementationNode;
   }
 
-  private SNodePointer implementationNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1931319275951593228");
+  private SNodePointer implementationNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1931319275952475609");
 
 
   private boolean isApplicableHelper(SNode node, EditorContext editorContext) {
