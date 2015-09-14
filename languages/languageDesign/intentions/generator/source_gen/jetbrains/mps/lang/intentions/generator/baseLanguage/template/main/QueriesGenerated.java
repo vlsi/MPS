@@ -140,10 +140,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_581316143750725400(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x10d005a50b96761L, "forConcept"));
   }
-  public static Object referenceMacro_GetReferent_8156254581354108694(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_isApplicable_helper");
-  }
-  public static Object referenceMacro_GetReferent_8156254581354108704(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_7311909354344303052(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_isApplicable_helper");
   }
   public static boolean ifMacro_Condition_2230972008180147293(final IfMacroContext _context) {

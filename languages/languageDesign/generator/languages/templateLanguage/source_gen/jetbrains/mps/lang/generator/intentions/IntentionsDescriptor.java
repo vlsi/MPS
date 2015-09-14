@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.newIntentions.NewIntentionFactoryToIntentionFactoryAdapter;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -99,7 +98,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 4:
         // Concept: BaseConcept 
         if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[13];
+          myIntentions4 = new IntentionFactory[12];
           // base intentions 
           myIntentions4[0] = new AddNodeMacro_Intention();
           myIntentions4[1] = new AddPropertyMacro_Intention();
@@ -114,7 +113,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions4[10] = new AddNodeMacroParam_switch_Intention();
           myIntentions4[11] = new ReplaceWithConcreteSubconcept_Intention();
           // classlike intentions 
-          myIntentions4[12] = new NewIntentionFactoryToIntentionFactoryAdapter(new AddNodeMacro());
         }
 
         return Arrays.asList(myIntentions4);
@@ -239,7 +237,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[31];
+    IntentionFactory[] rv = new IntentionFactory[30];
     rv[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
     rv[1] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
     rv[2] = new AddNodeMacro_Intention();
@@ -271,7 +269,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[28] = new ConvertLoopWithCopySrc_Intention();
     rv[29] = new ConvertSwitchToParameterized_Intention();
     // classlike intentions 
-    rv[30] = new NewIntentionFactoryToIntentionFactoryAdapter(new AddNodeMacro());
     return Arrays.asList(rv);
   }
 }

@@ -13,35 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions.newIntentions;
+package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collection;
+import javax.swing.Icon;
 
-public interface IntentionFactory {
+/**
+ * Represents an operation on some node in AST.
+ */
 
-  Collection<Intention> getIntentions(SNode node, EditorContext editorContext);
+public interface TreeTransformer {
 
-  boolean isApplicable(SNode node, EditorContext editorContext);
+  void execute();
 
-  boolean isAvailableInChildren();
+  String getDescription();
 
-  SConcept getApplicableConcept();
+  void disable();
 
-  boolean isSurroundWith();
-
-  SNodePointer getDeclarationNode();
-
-  enum IntentionType {
-    NORMAL,
-    ERROR,
-    MIGRATION,
-    QUICKFIX,
-  }
-
-  IntentionType getType();
+  Icon getIcon();
 }

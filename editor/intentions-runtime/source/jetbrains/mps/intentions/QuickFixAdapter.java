@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import java.util.Collections;
 
-public class QuickFixAdapter extends BaseIntentionFactory {
+public class QuickFixAdapter extends OldBaseIntentionFactory {
   private QuickFix_Runtime myQuickFix;
   private boolean myIsError;
 

@@ -15,12 +15,19 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.intentions.TreeTransformerFactory;
-
 /**
- * Factory of intentions, which are invoked by pressing alt-enter
- * All IntentionFactory's must extend this class
+ * Factory of surround-with intentions, which are invoked by pressing ctrl-alt-T
+ * All SurroundWithFactory's must extend this class
  */
-public abstract class BaseIntentionFactory implements TreeTransformerFactory {
 
+public abstract class BaseSurroundWithFactory implements TreeTransformerFactory {
+  @Override
+  public boolean isAvailableInChildren() {
+    return false;
+  }
+
+  @Override
+  public Priority getPriority() {
+    return Priority.NORMAL;
+  }
 }

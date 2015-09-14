@@ -15,12 +15,5 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.intentions.TreeTransformerFactory;
-
-/**
- * Factory of intentions, which are invoked by pressing alt-enter
- * All IntentionFactory's must extend this class
- */
-public abstract class BaseIntentionFactory implements TreeTransformerFactory {
-
+public interface SurroundWithFactory extends TreeTransformerFactory {
 }
