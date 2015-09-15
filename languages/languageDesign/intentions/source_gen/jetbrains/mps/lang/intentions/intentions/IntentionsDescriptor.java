@@ -24,17 +24,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @Nullable
   public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-
     switch (index) {
       case 0:
         // Concept: IntentionDeclaration 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
-          // base intentions 
-          // classlike intentions 
           myIntentions0[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
         }
-
         return Arrays.asList(myIntentions0);
       default:
         return null;
@@ -45,7 +41,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
     IntentionFactory[] rv = new IntentionFactory[1];
-    // classlike intentions 
     rv[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
     return Arrays.asList(rv);
   }
