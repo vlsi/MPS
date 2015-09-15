@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ public class DeploymentDescriptor extends ModuleDescriptor {
   private String myDescriptorFile;
   private String myType;
 
-  private final List<String> myRuntime = new ArrayList<String>();
   private final List<String> myLibraries = new ArrayList<String>();
 
   public String getSourcesJar() {
@@ -57,11 +56,6 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     myType = type;
   }
 
-  @Deprecated
-  public List<String> getRuntimeJars() {
-    return myRuntime;
-  }
-
   public List<String> getLibraries() {
     return myLibraries;
   }
@@ -78,7 +72,6 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     stream.writeString(myDescriptorFile);
     stream.writeString(myType);
 
-    stream.writeStrings(myRuntime);
     stream.writeStrings(myLibraries);
   }
 
@@ -88,9 +81,6 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     mySourcesJar = stream.readString();
     myDescriptorFile = stream.readString();
     myType = stream.readString();
-
-    myRuntime.clear();
-    myRuntime.addAll(stream.readStrings());
 
     myLibraries.clear();
     myLibraries.addAll(stream.readStrings());
