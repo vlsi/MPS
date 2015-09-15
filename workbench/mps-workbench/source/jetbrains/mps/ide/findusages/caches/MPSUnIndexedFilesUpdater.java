@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.caches;
 
-import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
@@ -28,7 +27,6 @@ import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexingStamp;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +34,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Set;
 
-public class MPSUnIndexedFilesUpdater implements CacheUpdater {
+//TODO: implement in changed cache updater system
+public class MPSUnIndexedFilesUpdater /*implements CacheUpdater*/ {
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSUnIndexedFilesUpdater.class);
   private final FileBasedIndexImpl myIndex;
   private ProjectRootManagerEx myManager;
@@ -48,13 +47,13 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
     myProject = project;
   }
 
-  @Override
+  /*@Override*/
   public int getNumberOfPendingUpdateJobs() {
     return myIndex.getNumberOfPendingInvalidations();
   }
 
   @NotNull
-  @Override
+  /*@Override*/
   public VirtualFile[] queryNeededFiles(@NotNull ProgressIndicator indicator) {
     final CollectingContentIterator finder = myIndex.createContentIterator(indicator);
 
@@ -68,7 +67,7 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
     return files.toArray(new VirtualFile[files.size()]);
   }
 
-  @Override
+  /*@Override*/
   public void processFile(@NotNull final FileContent fileContent) {
     myIndex.indexFileContent(null, fileContent);
     IndexingStamp.flushCache(fileContent.getVirtualFile());
@@ -110,12 +109,12 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
     }
   }
 
-  @Override
+  /*@Override*/
   public void updatingDone() {
     LOG.debug("Updating index is done");
   }
 
-  @Override
+  /*@Override*/
   public void canceled() {
 
   }

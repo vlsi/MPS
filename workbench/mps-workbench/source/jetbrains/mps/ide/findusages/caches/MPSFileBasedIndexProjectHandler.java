@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.caches;
 
-import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.startup.StartupManagerEx;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.project.DumbServiceImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
@@ -30,17 +27,14 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexableFileSet;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.make.StartupModuleMaker;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.util.Collections;
 import java.util.Set;
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
@@ -68,7 +62,6 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     myProjectManager = projectManager;
     myIndex = index;
 
-    final MPSUnIndexedFilesUpdater updater = new MPSUnIndexedFilesUpdater(myIndex, myRootManager, project);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager == null) return;
@@ -76,15 +69,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     startupManager.registerPreStartupActivity(new Runnable() {
       @Override
       public void run() {
-        startupManager.registerCacheUpdater(updater);
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
         LOG.debug("Queueing cache update");
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(updater));
-          }
-        });
       }
     });
   }
