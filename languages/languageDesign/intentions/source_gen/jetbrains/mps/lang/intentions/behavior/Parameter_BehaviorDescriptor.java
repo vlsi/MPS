@@ -4,10 +4,9 @@ package jetbrains.mps.lang.intentions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.Uneditable_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor, Uneditable_BehaviorDescriptor {
+public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor {
   public Parameter_BehaviorDescriptor() {
   }
   public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
@@ -15,9 +14,6 @@ public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_Beha
   }
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return Parameter_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
-  }
-  public SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
-    return Parameter_Behavior.virtual_getHeader_3721059191406386584(thisNode);
   }
   @Override
   public String getConceptFqName() {

@@ -7,11 +7,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
 
 public class LightweightDSLUneditableMemberGutter_CustomProjectPlugin extends BaseCustomProjectPlugin {
-  private UneditableChecker checker;
+  private DSLComponentChecker checker;
   public LightweightDSLUneditableMemberGutter_CustomProjectPlugin() {
   }
   public void doInit(MPSProject project) {
-    LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.checker = new UneditableChecker();
+    LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.checker = new DSLComponentChecker();
     project.getComponent(Highlighter.class).addChecker(LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.checker);
   }
   public void doDispose(MPSProject project) {

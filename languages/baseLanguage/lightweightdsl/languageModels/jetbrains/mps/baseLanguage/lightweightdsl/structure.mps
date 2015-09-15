@@ -77,9 +77,6 @@
     <node concept="PrWs8" id="3m06JgsoqNo" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="PrWs8" id="6svLy19yXob" role="PzmwI">
-      <ref role="PrY4T" node="3ezQTUrYHPc" resolve="Uneditable" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5s">
     <property role="3GE5qa" value="member.methodDescriptor" />
@@ -401,9 +398,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
     </node>
-  </node>
-  <node concept="PlHQZ" id="3ezQTUrYHPc">
-    <property role="TrG5h" value="Uneditable" />
   </node>
 </model>
 

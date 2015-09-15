@@ -6,5 +6,5 @@ import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
 
 public class IconContainer {
-  protected static Icon ICON_a0a6 = IconUtil.getIcon("arrow.png");
+  protected static Icon ICON_a0a4 = IconUtil.getIcon("arrow.png");
 }

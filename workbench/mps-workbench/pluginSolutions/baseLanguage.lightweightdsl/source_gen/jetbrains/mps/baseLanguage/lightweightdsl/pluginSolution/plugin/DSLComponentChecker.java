@@ -17,12 +17,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public class UneditableChecker extends EditorCheckerAdapter {
+public class DSLComponentChecker extends EditorCheckerAdapter {
   protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean b, EditorContext editorContext) {
     final Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
-    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x33a3db9e9bfadd4cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.Uneditable"), false, new SAbstractConcept[]{})).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"), false, new SAbstractConcept[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        result.add(new UneditableMessage(it, UneditableChecker.this, "Go to declaration"));
+        result.add(new DSLComponentMessage(it, DSLComponentChecker.this, "Go to declaration"));
       }
     });
     return result;
