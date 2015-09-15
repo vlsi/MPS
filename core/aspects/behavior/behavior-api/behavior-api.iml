@@ -14,5 +14,6 @@
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>

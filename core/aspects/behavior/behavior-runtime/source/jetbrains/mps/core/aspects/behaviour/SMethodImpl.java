@@ -65,8 +65,7 @@ import java.util.List;
  */
 @Immutable
 public final class SMethodImpl<T> implements SMethod<T> {
-  public static final String METHOD_NAME_ID_SEPARATOR ="_";
-  public static final int MODULE_FOR_TRIMMING_ID = 486187739;
+  public static final String METHOD_NAME_ID_SEPARATOR ="_"; // used in the behavior generator
 
   private final String myName;
   private final SModifiers myMethodModifiers;
@@ -80,7 +79,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       @NotNull SModifiers modifiers,
       @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
-      @NotNull String id,
+      @NotNull SMethodId methodId,
       @NotNull BehaviorRegistry registry,
       List<SParameter> parameters)
   {
@@ -90,7 +89,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
     myConcept = concept;
     myParameters = parameters;
     myRegistry = registry;
-    myId = SMethodTrimmedId.create(id);
+    myId = methodId;
   }
 
   /**
@@ -113,7 +112,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       @NotNull SModifiers modifiers,
       @NotNull SAbstractType returnType,
       @NotNull SAbstractConcept concept,
-      @NotNull String id,
+      @NotNull SMethodId id,
       @NotNull BehaviorRegistry registry,
       List<SParameter> parameters)
   {
@@ -171,7 +170,11 @@ public final class SMethodImpl<T> implements SMethod<T> {
 
   @Override
   public boolean isOverrideOf(@NotNull SMethod another) {
-    return myId.equals(another.getId()) && getConcept().isSubConceptOf(another.getConcept());
+    if (!isVirtual() || !another.isVirtual()) {
+      throw new IllegalArgumentException("Methods must be virtual");
+    }
+    return getId().equals(another.getId()) &&
+        getConcept().isSubConceptOf(another.getConcept());
   }
 
   @NotNull
@@ -195,21 +198,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
     return myName;
   }
 
-  /**
-   * baseName only
-   * not in api until 'overrides' references migration
-   */
-  @NotNull
-  String getBaseName() {
-    String name = myName;
-    int suffixStart = name.lastIndexOf(METHOD_NAME_ID_SEPARATOR);
-    if (suffixStart < 0) {
-      return name;
-    } else {
-      return name.substring(0, suffixStart);
-    }
-  }
-
   public boolean isPublic() {
     return myMethodModifiers.isPublic();
   }
@@ -223,13 +211,13 @@ public final class SMethodImpl<T> implements SMethod<T> {
   public boolean equals(Object o) {
     if (o instanceof SMethod) {
       SMethod another = (SMethod) o;
-      return getConcept().equals(another.getConcept()) && getId().equals(another.getId());
+      return getId().equals(another.getId());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return 31 * myId.hashCode() + getConcept().hashCode();
+    return myId.hashCode();
   }
 }

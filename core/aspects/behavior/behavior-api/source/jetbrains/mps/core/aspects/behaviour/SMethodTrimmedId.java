@@ -15,45 +15,66 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
+import jetbrains.mps.smodel.persistence.def.v9.IdEncoder.EncodingException;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SMethodId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod} within the concept (including all the ancestors).
  * This implementation is based on the transformed id of the method node (in the behavior aspect of the concept)
- * The
  *
  * Created by apyshkin on 11/09/15.
  */
 @Immutable
 public final class SMethodTrimmedId implements SMethodId {
-  private final String myTrimmedId; // contains methodName and trimmed id (integer)
+  private final SAbstractConcept myConcept;
+  private final SNodeId myNodeId;
 
-  private SMethodTrimmedId(@NotNull String trimmedId) {
-    myTrimmedId = trimmedId;
+  /**
+   * @param concept is null iff is is a virtual method id (for them the concept does not belong to the id)
+   */
+  private SMethodTrimmedId(@Nullable SAbstractConcept concept, @NotNull SNodeId id) {
+    myConcept = concept;
+    myNodeId = id;
   }
 
   @Override
   public int hashCode() {
-    return myTrimmedId.hashCode();
+    int conceptHash = myConcept != null ? myConcept.hashCode() : 0;
+    return myNodeId.hashCode() + 31 * conceptHash;
   }
 
   @Override
   public boolean equals(Object o) {
     if (o instanceof SMethodTrimmedId) {
-      return ((SMethodTrimmedId) o).myTrimmedId.equals(myTrimmedId);
+      return ((SMethodTrimmedId) o).myNodeId.equals(myNodeId) &&
+          EqualUtil.equals(((SMethodTrimmedId) o).myConcept, myConcept);
     }
     return false;
   }
 
   @Override
   public String toString() {
-    return "SMTrimmedId(" + myTrimmedId + ")";
+    return "SMethodId(" + myNodeId + ":" + myConcept + ")";
   }
 
   @NotNull
-  public static SMethodTrimmedId create(@NotNull String trimmedId) {
-    return new SMethodTrimmedId(trimmedId);
+  public static SMethodTrimmedId create(@NotNull String name, @Nullable SAbstractConcept concept, @NotNull String trimmedId) {
+    try {
+      SNodeId nodeId = new IdEncoder().parseNodeId(trimmedId);
+      return new SMethodTrimmedId(concept, nodeId);
+    } catch (EncodingException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static SMethodTrimmedId create(@NotNull SNodeId nodeId, @Nullable SAbstractConcept concept) {
+    return new SMethodTrimmedId(concept, nodeId);
   }
 }

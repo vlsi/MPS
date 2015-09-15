@@ -60,7 +60,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
 
   public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
     boolean isStatic = (node == null);
-    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, parameters);
     if (method == null) {
       throwNoSuchMethod(methodName);
     }
@@ -77,8 +77,8 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
   /**
    * @return true iff the method is present (constructors are included)
    */
-  public boolean hasOwnMethod(String methodName, boolean isStatic, Object[] parameters) {
-    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, isStatic, parameters);
+  public boolean hasOwnMethod(String methodName, Object[] parameters) {
+    @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, parameters);
     return method != null;
   }
 

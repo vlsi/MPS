@@ -104,7 +104,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
               "; unable to resolve the constructor");
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
-        if (behaviorDescriptorAdapter.hasOwnMethod(constructorName, false, parameters)) {
+        if (behaviorDescriptorAdapter.hasOwnMethod(constructorName, parameters)) {
           behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), constructorName, parameters);
         }
       }
@@ -163,7 +163,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
         boolean isStatic = (nodeOrConcept.getNode() == null);
-        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, isStatic, parameters)) {
+        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters)) {
           return (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
         }
       }

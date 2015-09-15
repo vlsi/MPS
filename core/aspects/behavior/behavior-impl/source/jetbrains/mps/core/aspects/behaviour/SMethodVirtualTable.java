@@ -53,9 +53,12 @@ public final class SMethodVirtualTable {
 //      if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
 //        return methodEntry;
 //      }
-      SMethod<?> existingMethod = methodEntry.getKey();
-      if (existingMethod.isOverrideOf(method)) {
+//      SMethod<?> existingMethod = methodEntry.getKey();
+//      if (existingMethod.isOverrideOf(method) || method.isOverrideOf(existingMethod)) {
 //        assert SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method);
+//        return methodEntry;
+//      }
+      if (method.equals(methodEntry.getKey())) {
         return methodEntry;
       }
     }

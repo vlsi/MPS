@@ -17,12 +17,10 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.language.SParameter;
-import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +35,7 @@ public final class SMethodBuilder<T> {
   private SModifiersImpl myModifiers;
   private final SAbstractType myReturnType;
   private SAbstractConcept myConcept;
-  private String myId;
+  private String myId64; // base = 64
   private BehaviorRegistry myRegistry;
 
   public SMethodBuilder(SAbstractType returnType) {
@@ -49,7 +47,8 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethod<T> build(List<SParameter> paramTypes) {
-    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, myId, myRegistry, paramTypes);
+    SMethodTrimmedId methodId = SMethodTrimmedId.create("", myModifiers.isVirtual() ? null : myConcept, myId64);
+    return SMethodImpl.create(myName, myModifiers, myReturnType, myConcept, methodId, myRegistry, paramTypes);
   }
 
   public SMethodBuilder<T> name(@NotNull String name) {
@@ -68,7 +67,7 @@ public final class SMethodBuilder<T> {
   }
 
   public SMethodBuilder<T> id(@NotNull String id) {
-    myId = id;
+    myId64 = id;
     return this;
   }
 
