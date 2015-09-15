@@ -368,8 +368,8 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L3/BHL3.mpl" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L4/BHL4.mpl" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L5/BHL5.mpl" folder="tests.testBehavior" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L6/BHL6/BHL6.mpl" folder="tests.testBehavior" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L7/BHL7/BHL7.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L6/BHL6.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L7/BHL7.mpl" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/TestBehavior/TestBehavior.msd" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/TestBehaviorReflective/TestBehaviorReflective.msd" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" folder="tests.testBehavior" />
