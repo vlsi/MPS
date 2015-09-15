@@ -11259,8 +11259,8 @@
     </node>
     <node concept="3aamgX" id="tb1xa55Krf" role="3acgRq">
       <ref role="30HIoZ" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
-      <node concept="j$656" id="6oziGM_t9ta" role="1lVwrX">
-        <ref role="v9R2y" node="51PUiXhil_y" resolve="reduce_ConceptMethodCall" />
+      <node concept="j$656" id="nLgsWA4ltV" role="1lVwrX">
+        <ref role="v9R2y" node="2up2FNsZNoA" resolve="reduce_ConceptMethodCallOld" />
       </node>
     </node>
     <node concept="3aamgX" id="54LPR8Ot4n5" role="3acgRq">
@@ -15464,41 +15464,6 @@
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="6qWswXqUapQ" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SMethod.invoke(org.jetbrains.mps.openapi.model.SNode,java.lang.Object...):java.lang.Object" resolve="invoke" />
-              <node concept="10Nm6u" id="5I1X$KGMnN4" role="37wK5m">
-                <node concept="29HgVG" id="5I1X$KGMnN5" role="lGtFl">
-                  <node concept="3NFfHV" id="5I1X$KGMnN6" role="3NFExx">
-                    <node concept="3clFbS" id="5I1X$KGMnN7" role="2VODD2">
-                      <node concept="3cpWs6" id="5I1X$KGMnN8" role="3cqZAp">
-                        <node concept="2OqwBi" id="5I1X$KGMnN9" role="3cqZAk">
-                          <node concept="30H73N" id="5I1X$KGMnNa" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="5I1X$KGMnNb" role="2OqNvi">
-                            <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="10Nm6u" id="6qWswXqUawD" role="37wK5m">
-                <node concept="2b32R4" id="6qWswXqUawE" role="lGtFl">
-                  <node concept="3JmXsc" id="6qWswXqUawF" role="2P8S$">
-                    <node concept="3clFbS" id="6qWswXqUawG" role="2VODD2">
-                      <node concept="3clFbF" id="6qWswXqUawH" role="3cqZAp">
-                        <node concept="2OqwBi" id="6qWswXqUawI" role="3clFbG">
-                          <node concept="3Tsc0h" id="6qWswXqUawJ" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpee:fz7wK6I" />
-                          </node>
-                          <node concept="30H73N" id="6qWswXqUawK" role="2Oq$k0" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="raruj" id="24JB88Kk0WR" role="lGtFl" />
             <node concept="1W57fq" id="4oDVEog3MM5" role="lGtFl">
               <node concept="3IZrLx" id="4oDVEog3MM8" role="3IZSJc">
@@ -15617,16 +15582,16 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="4oDVEog3Ukq" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SMethod.invokeStatic(org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.Object...):java.lang.Object" resolve="invokeStatic" />
-                    <node concept="10Nm6u" id="4oDVEog3UEa" role="37wK5m">
-                      <node concept="29HgVG" id="4oDVEog3UEb" role="lGtFl">
-                        <node concept="3NFfHV" id="4oDVEog3UEc" role="3NFExx">
-                          <node concept="3clFbS" id="4oDVEog3UEd" role="2VODD2">
-                            <node concept="3cpWs6" id="4oDVEog3UEe" role="3cqZAp">
-                              <node concept="2OqwBi" id="4oDVEog3UEf" role="3cqZAk">
-                                <node concept="30H73N" id="4oDVEog3UEg" role="2Oq$k0" />
-                                <node concept="2qgKlT" id="4oDVEog3UEh" role="2OqNvi">
+                  <node concept="liA8E" id="nLgsWA4ggv" role="2OqNvi">
+                    <ref role="37wK5l" to="9r19:~SMethod.invokeStatic(org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.Object...):java.lang.Object" resolve="invokeStatic" />
+                    <node concept="10Nm6u" id="nLgsWA4gwA" role="37wK5m">
+                      <node concept="29HgVG" id="nLgsWA4gwB" role="lGtFl">
+                        <node concept="3NFfHV" id="nLgsWA4gwC" role="3NFExx">
+                          <node concept="3clFbS" id="nLgsWA4gwD" role="2VODD2">
+                            <node concept="3cpWs6" id="nLgsWA4gwE" role="3cqZAp">
+                              <node concept="2OqwBi" id="nLgsWA4gwF" role="3cqZAk">
+                                <node concept="30H73N" id="nLgsWA4gwG" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="nLgsWA4gwH" role="2OqNvi">
                                   <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
                                 </node>
                               </node>
@@ -15635,19 +15600,54 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="10Nm6u" id="4oDVEog3Vcu" role="37wK5m">
-                      <node concept="2b32R4" id="4oDVEog3Vcv" role="lGtFl">
-                        <node concept="3JmXsc" id="4oDVEog3Vcw" role="2P8S$">
-                          <node concept="3clFbS" id="4oDVEog3Vcx" role="2VODD2">
-                            <node concept="3clFbF" id="4oDVEog3Vcy" role="3cqZAp">
-                              <node concept="2OqwBi" id="4oDVEog3Vcz" role="3clFbG">
-                                <node concept="3Tsc0h" id="4oDVEog3Vc$" role="2OqNvi">
+                    <node concept="10Nm6u" id="nLgsWA4gUA" role="37wK5m">
+                      <node concept="2b32R4" id="nLgsWA4gUB" role="lGtFl">
+                        <node concept="3JmXsc" id="nLgsWA4gUC" role="2P8S$">
+                          <node concept="3clFbS" id="nLgsWA4gUD" role="2VODD2">
+                            <node concept="3clFbF" id="nLgsWA4gUE" role="3cqZAp">
+                              <node concept="2OqwBi" id="nLgsWA4gUF" role="3clFbG">
+                                <node concept="3Tsc0h" id="nLgsWA4gUG" role="2OqNvi">
                                   <ref role="3TtcxE" to="tpee:fz7wK6I" />
                                 </node>
-                                <node concept="30H73N" id="4oDVEog3Vc_" role="2Oq$k0" />
+                                <node concept="30H73N" id="nLgsWA4gUH" role="2Oq$k0" />
                               </node>
                             </node>
                           </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="nLgsWA4ecn" role="2OqNvi">
+              <ref role="37wK5l" to="9r19:~SMethod.invoke(org.jetbrains.mps.openapi.model.SNode,java.lang.Object...):java.lang.Object" resolve="invoke" />
+              <node concept="10Nm6u" id="nLgsWA4eEO" role="37wK5m">
+                <node concept="29HgVG" id="nLgsWA4eEP" role="lGtFl">
+                  <node concept="3NFfHV" id="nLgsWA4eEQ" role="3NFExx">
+                    <node concept="3clFbS" id="nLgsWA4eER" role="2VODD2">
+                      <node concept="3cpWs6" id="nLgsWA4eES" role="3cqZAp">
+                        <node concept="2OqwBi" id="nLgsWA4eET" role="3cqZAk">
+                          <node concept="30H73N" id="nLgsWA4eEU" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="nLgsWA4eEV" role="2OqNvi">
+                            <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="10Nm6u" id="nLgsWA4fD8" role="37wK5m">
+                <node concept="2b32R4" id="nLgsWA4fD9" role="lGtFl">
+                  <node concept="3JmXsc" id="nLgsWA4fDa" role="2P8S$">
+                    <node concept="3clFbS" id="nLgsWA4fDb" role="2VODD2">
+                      <node concept="3clFbF" id="nLgsWA4fDc" role="3cqZAp">
+                        <node concept="2OqwBi" id="nLgsWA4fDd" role="3clFbG">
+                          <node concept="3Tsc0h" id="nLgsWA4fDe" role="2OqNvi">
+                            <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                          </node>
+                          <node concept="30H73N" id="nLgsWA4fDf" role="2Oq$k0" />
                         </node>
                       </node>
                     </node>
@@ -15674,7 +15674,7 @@
         <node concept="3clFbF" id="tb1xa55L1I" role="3cqZAp">
           <node concept="2YIFZM" id="UlYvySZCua" role="3clFbG">
             <ref role="1Pybhc" to="cm63:~BHFacade" resolve="BHFacade" />
-            <ref role="37wK5l" to="cm63:~BHFacade.invokeSpecial(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SMethod,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
+            <ref role="37wK5l" to="cm63:~BHFacade.invokeSpecial(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.core.aspects.behaviour.api.SMethod,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
             <node concept="10Nm6u" id="UlYvySZCub" role="37wK5m">
               <node concept="1W57fq" id="UlYvySZCuc" role="lGtFl">
                 <node concept="3IZrLx" id="UlYvySZCud" role="3IZSJc">
@@ -15868,8 +15868,8 @@
       <node concept="3clFbS" id="24JB88Kl579" role="3clF47">
         <node concept="3clFbF" id="24JB88Kl57a" role="3cqZAp">
           <node concept="2YIFZM" id="7CCjUPQfovx" role="3clFbG">
-            <ref role="37wK5l" to="cm63:~BHFacade.invokeReflective(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeReflective" />
             <ref role="1Pybhc" to="cm63:~BHFacade" resolve="BHFacade" />
+            <ref role="37wK5l" to="cm63:~BHFacade.invokeReflective(org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeReflective" />
             <node concept="10Nm6u" id="7CCjUPQfovy" role="37wK5m">
               <node concept="29HgVG" id="7CCjUPQfovz" role="lGtFl">
                 <node concept="3NFfHV" id="7CCjUPQfov$" role="3NFExx">

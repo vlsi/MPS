@@ -16,11 +16,11 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SParameter;
 
 import java.util.Arrays;
 import java.util.List;

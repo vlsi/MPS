@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 

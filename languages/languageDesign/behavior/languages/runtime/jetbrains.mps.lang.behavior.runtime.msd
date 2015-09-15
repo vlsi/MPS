@@ -7,16 +7,12 @@
     <modelRoot contentPath="${mps_home}/core/aspects/behavior/behavior-runtime" type="java_classes">
       <sourceRoot location="classes" />
     </modelRoot>
-    <modelRoot contentPath="${mps_home}/core/aspects/behavior/behavior-impl" type="java_classes">
-      <sourceRoot location="classes" />
-    </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/core/aspects/behavior/behavior-runtime/classes" />
-    <stubModelEntry path="${mps_home}/core/aspects/behavior/behavior-impl/classes" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

@@ -16,12 +16,12 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConstructor;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 

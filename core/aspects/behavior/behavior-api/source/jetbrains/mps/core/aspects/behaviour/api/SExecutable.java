@@ -1,6 +1,8 @@
-package org.jetbrains.mps.openapi.language;
+package jetbrains.mps.core.aspects.behaviour.api;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SNamedElement;
 
 import java.util.List;
 
@@ -15,23 +17,24 @@ public interface SExecutable extends SNamedElement {
      * SExecutable must belong to some concept
      * @return the concept which this executable belongs to
      */
-    @NotNull SAbstractConcept getConcept();
+    @NotNull
+    SAbstractConcept getConcept();
 
     /**
      * @return modifiers of the method (public/private, virtual, etc.)
-     * @see org.jetbrains.mps.openapi.language.SModifiers
+     * @see SModifiers
      */
     @NotNull SModifiers getModifiers();
 
     /**
      * @return the parameters description
-     * @see org.jetbrains.mps.openapi.language.SParameter
+     * @see SParameter
      */
     List<SParameter> getParameters();
 
     /**
      * @return the declared throwable exceptions description
-     * @see org.jetbrains.mps.openapi.language.SThrowable
+     * @see SThrowable
      */
     List<SThrowable> getExceptions();
 }

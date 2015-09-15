@@ -18,10 +18,6 @@ package jetbrains.mps.core.aspects.behaviour.api;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConstructor;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -36,7 +32,7 @@ import java.util.List;
  *
  * The proper way is to use a special behavior facade {@link jetbrains.mps.smodel.behaviour.BHFacade}.
  *
- * @see org.jetbrains.mps.openapi.language.SMethod
+ * @see SMethod
  *
  * Must be used instead of {@link jetbrains.mps.smodel.runtime.BehaviorDescriptor}
  * @since 9.07.15
@@ -69,7 +65,8 @@ public interface BHDescriptor {
    * of the concept represented by this descriptor
    * EXCLUDING those inherited from super concepts.
    */
-  @NotNull List<SMethod<?>> getDeclaredMethods();
+  @NotNull
+  List<SMethod<?>> getDeclaredMethods();
 
   /**
    * Returns list of {@link SMethod} objects reflecting all the public (!) methods
@@ -85,7 +82,8 @@ public interface BHDescriptor {
    * @return null if the method was not found
    * @see #getMethods()
    */
-  @Nullable SMethod<?> getMethod(@NotNull SMethodId methodId);
+  @Nullable
+  SMethod<?> getMethod(@NotNull SMethodId methodId);
 
   /**
    * @return owning concept of this descriptor

@@ -3415,8 +3415,8 @@
     <node concept="2tJIrI" id="6pZ_jf9P9OC" role="jymVt" />
     <node concept="3Tm1VV" id="1MagDVHkvxS" role="1B3o_S" />
     <node concept="n94m4" id="1MagDVHkvxX" role="lGtFl" />
-    <node concept="3uibUv" id="4p6JbxD_iAy" role="1zkMxy">
-      <ref role="3uigEE" to="cm64:~BaseBehaviorAspectDescriptor" resolve="BaseBehaviorAspectDescriptor" />
+    <node concept="3uibUv" id="nLgsWA471f" role="1zkMxy">
+      <ref role="3uigEE" to="manl:~BaseBehaviorAspectDescriptor" resolve="BaseBehaviorAspectDescriptor" />
     </node>
     <node concept="3clFb_" id="6pZ_jf9P94I" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -3711,7 +3711,7 @@
       <property role="TrG5h" value="BH_METHOD" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2Km$7e2swQ1" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+        <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
         <node concept="3uibUv" id="2Km$7e2swQ2" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="2Km$7e2swQ3" role="lGtFl">
@@ -3759,7 +3759,7 @@
                 <node concept="2OqwBi" id="2Km$7e2swQo" role="2Oq$k0">
                   <node concept="2ShNRf" id="2Km$7e2swQp" role="2Oq$k0">
                     <node concept="1pGfFk" id="2Km$7e2swQq" role="2ShVmc">
-                      <ref role="37wK5l" to="manl:~SMethodBuilder.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractType)" resolve="SMethodBuilder" />
+                      <ref role="37wK5l" to="manl:~SMethodBuilder.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.SAbstractType)" resolve="SMethodBuilder" />
                       <node concept="2ShNRf" id="504Ybz_gccK" role="37wK5m">
                         <node concept="1pGfFk" id="504Ybz_gkm3" role="2ShVmc">
                           <ref role="37wK5l" to="manl:~SJavaCompoundTypeImpl.&lt;init&gt;(java.lang.Class)" resolve="SJavaCompoundTypeImpl" />
@@ -4076,7 +4076,7 @@
           </node>
         </node>
         <node concept="liA8E" id="2Km$7e2swSR" role="2OqNvi">
-          <ref role="37wK5l" to="manl:~SMethodBuilder.build(java.util.List):org.jetbrains.mps.openapi.language.SMethod" resolve="build" />
+          <ref role="37wK5l" to="manl:~SMethodBuilder.build(java.util.List):jetbrains.mps.core.aspects.behaviour.api.SMethod" resolve="build" />
           <node concept="2YIFZM" id="6Aduc92JssW" role="37wK5m">
             <ref role="37wK5l" to="manl:~SParameterImpl.fromList(java.util.List):java.util.List" resolve="fromList" />
             <ref role="1Pybhc" to="manl:~SParameterImpl" resolve="SParameterImpl" />
@@ -4164,7 +4164,7 @@
       <node concept="3uibUv" id="rmbZrd9uKI" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="rmbZrd9w94" role="11_B2D">
-          <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+          <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
           <node concept="3qTvmN" id="rmbZrd9xyy" role="11_B2D" />
         </node>
       </node>
@@ -4207,7 +4207,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="CVylyn_LuN" role="3PaCim">
-          <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+          <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
           <node concept="3qTvmN" id="CVylyn_NQS" role="11_B2D" />
         </node>
       </node>
@@ -4565,7 +4565,7 @@
       <node concept="37vLTG" id="24vl_o3i$c7" role="3clF46">
         <property role="TrG5h" value="constructor" />
         <node concept="3uibUv" id="24vl_o3i$c8" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SConstructor" resolve="SConstructor" />
+          <ref role="3uigEE" to="9r19:~SConstructor" resolve="SConstructor" />
         </node>
         <node concept="2AHcQZ" id="24vl_o3i$c9" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -4621,7 +4621,7 @@
       <node concept="37vLTG" id="6pZ_jf9SAym" role="3clF46">
         <property role="TrG5h" value="method" />
         <node concept="3uibUv" id="6pZ_jf9SAyn" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+          <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
           <node concept="16syzq" id="6pZ_jf9SAyo" role="11_B2D">
             <ref role="16sUi3" node="6pZ_jf9SAyh" resolve="T" />
           </node>
@@ -4661,7 +4661,7 @@
             <node concept="YS8fn" id="rmbZrdamGx" role="3cqZAp">
               <node concept="2ShNRf" id="rmbZrdamH0" role="YScLw">
                 <node concept="1pGfFk" id="rmbZrdan2i" role="2ShVmc">
-                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(org.jetbrains.mps.openapi.language.SMethod)" resolve="BHMethodNotFoundException" />
+                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
                   <node concept="37vLTw" id="rmbZrdan3d" role="37wK5m">
                     <ref role="3cqZAo" node="6pZ_jf9SAym" resolve="method" />
                   </node>
@@ -4821,7 +4821,7 @@
             <node concept="YS8fn" id="rmbZrddfrs" role="3cqZAp">
               <node concept="2ShNRf" id="rmbZrddfrQ" role="YScLw">
                 <node concept="1pGfFk" id="rmbZrddfL8" role="2ShVmc">
-                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(org.jetbrains.mps.openapi.language.SMethod)" resolve="BHMethodNotFoundException" />
+                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
                   <node concept="37vLTw" id="rmbZrddfM0" role="37wK5m">
                     <ref role="3cqZAo" node="6pZ_jf9SAym" resolve="method" />
                   </node>
@@ -4848,7 +4848,7 @@
       <node concept="3uibUv" id="5xd5qMUclQJ" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="5xd5qMUclQK" role="11_B2D">
-          <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+          <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
           <node concept="3qTvmN" id="5xd5qMUclQL" role="11_B2D" />
         </node>
       </node>
@@ -5074,7 +5074,7 @@
         <property role="3TUv4t" value="true" />
         <node concept="3Tm1VV" id="1YPFSpKt8lF" role="1B3o_S" />
         <node concept="3uibUv" id="1YPFSpKt8AB" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SMethod" resolve="SMethod" />
+          <ref role="3uigEE" to="9r19:~SMethod" resolve="SMethod" />
           <node concept="3uibUv" id="1YPFSpKt8AP" role="11_B2D">
             <ref role="3uigEE" to="wyt6:~Void" resolve="Void" />
           </node>

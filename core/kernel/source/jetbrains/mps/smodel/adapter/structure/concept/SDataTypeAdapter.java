@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractType;
 import org.jetbrains.mps.openapi.language.SDataType;
 
 /**
@@ -35,16 +32,5 @@ public class SDataTypeAdapter implements SDataType {
   @Override
   public String toString(Object object) {
     return null;
-  }
-
-  @Nullable
-  @Override
-  public Object getDefaultValue() {
-    return null;
-  }
-
-  @Override
-  public boolean isAssignableFrom(@NotNull SAbstractType another) {
-    return false;
   }
 }

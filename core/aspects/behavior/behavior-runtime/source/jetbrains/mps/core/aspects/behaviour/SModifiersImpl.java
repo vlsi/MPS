@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.SModifiers;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.SModifiers;
 
 @Immutable
 public final class SModifiersImpl implements SModifiers {

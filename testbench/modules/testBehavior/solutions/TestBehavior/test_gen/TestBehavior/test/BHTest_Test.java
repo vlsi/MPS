@@ -7,22 +7,12 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import UtilSolution.util.TestResults;
-import BHL1.behavior.I_BehaviorDescriptor;
-import BHL1.behavior.I1_BehaviorDescriptor;
-import BHL2.behavior.A_BehaviorDescriptor;
-import BHL3.behavior.B_BehaviorDescriptor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import BHL6.behavior.C_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import BHL6.behavior.D_BehaviorDescriptor;
-import BHL6.behavior.E_BehaviorDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import BHL7.behavior.H_BehaviorDescriptor;
-import BHL7.behavior.I2_BehaviorDescriptor;
-import BHL7.behavior.I3_BehaviorDescriptor;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -35,45 +25,45 @@ public class BHTest_Test extends TestCase {
   /*package*/ Project myProject;
   public void test_simpleVirtualMethodCall() throws Exception {
     SNode nodeA = createA_a2wy8c_a0a0a0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, I_BehaviorDescriptor.foo_id5jWiLvujMjC.invoke(nodeA));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeA, "virtual_foo_6123852159203091688", new Object[]{}));
   }
   public void test_simpleAbstractMethodCall() throws Exception {
     SNode nodeI = createA_a2wy8c_a0a0b0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, I_BehaviorDescriptor.foo_id5jWiLvujMjC.invoke(nodeI));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeI, "virtual_foo_6123852159203091688", new Object[]{}));
   }
   public void test_defaultMethodWorks() throws Exception {
     SNode nodeI1 = createA1_a2wy8c_a0a0c0();
-    Assert.assertSame(TestResults.DEFAULT_METHOD, I1_BehaviorDescriptor.foo_id7Ts2tYwvl$V.invoke(nodeI1));
+    Assert.assertSame(TestResults.DEFAULT_METHOD, BehaviorReflection.invokeVirtual(Object.class, nodeI1, "virtual_foo_9105163402711226683", new Object[]{}));
   }
   public void test_polymorphism() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0d0();
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, A_BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(nodeA));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_foo_7688460527007456377", new Object[]{}));
     nodeA = createA_a2wy8c_a0c0d0();
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, A_BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(nodeA));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_foo_7688460527007456377", new Object[]{}));
   }
   public void test_nonVirtualMethod() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0e0();
-    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHL3.behavior.A_BehaviorDescriptor.foo_id6EMTxOPT7e1.invoke(nodeA));
+    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BehaviorReflection.invokeNonVirtual(Object.class, nodeA, "BHL3.structure.A", "call_foo_7688460527007462273", new Object[]{}));
     SNode nodeB = createB_a2wy8c_a0c0e0();
     // checks that methods are resolved by id not by name 
-    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BHL3.behavior.A_BehaviorDescriptor.foo_id6EMTxOPT7e1.invoke(nodeB));
-    Assert.assertSame(TestResults.NON_VIRTUAL_CHILD, B_BehaviorDescriptor.foo_id6EMTxOPT7o8.invoke(nodeB));
+    Assert.assertSame(TestResults.NON_VIRTUAL_PARENT, BehaviorReflection.invokeNonVirtual(Object.class, nodeB, "BHL3.structure.A", "call_foo_7688460527007462273", new Object[]{}));
+    Assert.assertSame(TestResults.NON_VIRTUAL_CHILD, BehaviorReflection.invokeNonVirtual(Object.class, nodeB, "BHL3.structure.B", "call_foo_7688460527007462920", new Object[]{}));
   }
   public void test_simpleDiamond1() throws Exception {
     SNode nodeI = createC1_a2wy8c_a0a0f0();
-    Assert.assertEquals(TestResults.DIAMOND_C1, BHL4.behavior.I_BehaviorDescriptor.foo_id6EMTxOPT9nl.invoke(nodeI));
+    Assert.assertEquals(TestResults.DIAMOND_C1, BehaviorReflection.invokeVirtual(Object.class, nodeI, "virtual_foo_7688460527007471061", new Object[]{}));
   }
   public void test_simpleDiamond2() throws Exception {
     SNode nodeI = createC2_a2wy8c_a0a0g0();
-    Assert.assertEquals(TestResults.DIAMOND_I1, BHL4.behavior.I_BehaviorDescriptor.foo_id6EMTxOPT9nl.invoke(nodeI));
+    Assert.assertEquals(TestResults.DIAMOND_I1, BehaviorReflection.invokeVirtual(Object.class, nodeI, "virtual_foo_7688460527007471061", new Object[]{}));
   }
   public void test_simpleDiamond3() throws Exception {
     SNode nodeI = createC3_a2wy8c_a0a0h0();
-    Assert.assertEquals(TestResults.DIAMOND_I1, BHL4.behavior.I_BehaviorDescriptor.foo_id6EMTxOPT9nl.invoke(nodeI));
+    Assert.assertEquals(TestResults.DIAMOND_I1, BehaviorReflection.invokeVirtual(Object.class, nodeI, "virtual_foo_7688460527007471061", new Object[]{}));
   }
   public void test_simpleDiamond4() throws Exception {
     SNode nodeI = createC4_a2wy8c_a0a0i0();
-    Assert.assertEquals(TestResults.DIAMOND_I2, BHL4.behavior.I_BehaviorDescriptor.foo_id6EMTxOPT9nl.invoke(nodeI));
+    Assert.assertEquals(TestResults.DIAMOND_I2, BehaviorReflection.invokeVirtual(Object.class, nodeI, "virtual_foo_7688460527007471061", new Object[]{}));
   }
   public void test_constructorInvocation1() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
@@ -120,101 +110,101 @@ public class BHTest_Test extends TestCase {
   }
   public void test_localBehaviorCall() throws Exception {
     SNode nodeA = createA_a2wy8c_a0a0o0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL6.behavior.A_BehaviorDescriptor.foo_id5mnatV0hwr3.invoke(nodeA));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeA, "BHL6.structure.A", "call_foo_6167444251392476867", new Object[]{}));
   }
   public void test_thisBehaviorCall() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0p0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL6.behavior.B_BehaviorDescriptor.foo_id5mnatV0hwZQ.invoke(nodeB));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeB, "BHL6.structure.B", "call_foo_6167444251392479222", new Object[]{}));
   }
   public void test_thisStaticBehaviorCall() throws Exception {
     SNode nodeC = createC_a2wy8c_a0a0q0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, C_BehaviorDescriptor.foo_id5mnatV0hxLf.invokeStatic(SNodeOperations.getConcept(nodeC)));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeC)), "call_foo_6167444251392482383", new Object[]{}));
   }
   public void test_simpleVirtualStaticBehaviorCall() throws Exception {
     SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(conceptC));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.asSConcept(conceptC), "virtual_virtual_4743819545113152010", new Object[]{}));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(conceptC));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.asSConcept(conceptC), "virtual_virtual_4743819545113152010", new Object[]{}));
   }
   public void test_superBehaviorCall() throws Exception {
     SNode nodeD = createD_a2wy8c_a0a0s0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, D_BehaviorDescriptor.foo_id5mnatV0hyg4.invoke(nodeD));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeD, "BHL6.structure.D", "call_foo_6167444251392484356", new Object[]{}));
   }
   public void test_superBehaviorVirtualCall() throws Exception {
     SNode nodeB = createD_a2wy8c_a0a0t0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL6.behavior.B_BehaviorDescriptor.foo1_id5jWiLvujSmw.invoke(nodeB));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeB, "virtual_foo1_6123852159203116448", new Object[]{}));
   }
   public void test_superThisVirtualBehaviorCall() throws Exception {
     SNode nodeB = createD_a2wy8c_a0a0u0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL6.behavior.B_BehaviorDescriptor.foo2_id5jWiLvujSzJ.invoke(nodeB));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeB, "virtual_foo2_6123852159203117295", new Object[]{}));
   }
   public void test_superStaticBehaviorCall() throws Exception {
     SNode nodeE = createE_a2wy8c_a0a0v0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, E_BehaviorDescriptor.foo_id5mnatV0hyuN.invokeStatic(SNodeOperations.getConcept(nodeE)));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeE)), "call_foo_6167444251392485299", new Object[]{}));
   }
   public void test_oldApiBehaviorCall() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0w0();
     Object[] params = {};
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.virtualMethod_id5mnatV0hAPC.invoke(nodeA), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_6167444251392503144", params));
+    Assert.assertSame(BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_6167444251392503144", new Object[]{}), BehaviorReflection.invokeVirtual(Object.class, nodeA, "virtual_virtualMethod_6167444251392503144", params));
   }
   public void test_oldApiBehaviorStaticCall() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0x0();
     Object[] params = {};
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticVirtualMethod_id5mnatV0hATt.invokeStatic(SNodeOperations.getConcept(nodeA)), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
+    Assert.assertSame(BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA)), "virtual_staticVirtualMethod_6167444251392503389", new Object[]{}), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
   }
   public void test_oldApiBehaviorCallNonVirtual() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0y0();
     Object[] params = {};
     SAbstractConcept conceptA = SNodeOperations.getConcept(nodeA);
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.nonVirtualMethod_id5mnatV0hAPp.invoke(nodeA), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_6167444251392503129", params));
+    Assert.assertSame(BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeA, "BHL7.structure.A", "call_nonVirtualMethod_6167444251392503129", new Object[]{}), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_6167444251392503129", params));
   }
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0z0();
     Object[] params = {};
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.getConcept(nodeA)), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
+    Assert.assertSame(BehaviorReflection.invokeNonVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA)), "call_staticMethod_6167444251392503213", new Object[]{}), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
   }
   public void test_primitiveMethodReturnType() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0ab0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL7.behavior.B_BehaviorDescriptor.primitiveReturnValue_id4Rfm9LCctz9.invoke(nodeB));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeB, "BHL7.structure.B", "call_primitiveReturnValue_5606797489885796553", new Object[]{}));
   }
   public void test_genericMethodReturnType() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0bb0();
-    Assert.assertSame(Integer.class, BHL7.behavior.B_BehaviorDescriptor.genericReturnValue_id4Rfm9LCcu90.invoke(nodeB));
+    Assert.assertSame(Integer.class, BehaviorReflection.invokeNonVirtual((Class<Class<Integer>>) ((Class) Object.class), nodeB, "BHL7.structure.B", "call_genericReturnValue_5606797489885798976", new Object[]{}));
   }
   public void test_voidMethod() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0cb0();
-    Assert.assertSame(null, BHL7.behavior.A_BehaviorDescriptor.justVoidReturnTypeMethod_id5mnatV0hB9t.invoke(nodeB));
+    Assert.assertSame(null, BehaviorReflection.invokeNonVirtual(Void.class, nodeB, "BHL7.structure.A", "call_justVoidReturnTypeMethod_6167444251392504413", new Object[]{}));
   }
   public void test_parameterTypes() throws Exception {
     SNode nodeC = createC_a2wy8c_a0a0db0();
-    Assert.assertSame(TestResults.NOT_SPECIFIED_RETURN_VALUE, BHL7.behavior.C_BehaviorDescriptor.argTypeResolve_id1hQsMcvxKXP.invoke(nodeC, new Integer(1)));
-    Assert.assertSame(TestResults.SPECIFIED_RETURN_VALUE, BHL7.behavior.C_BehaviorDescriptor.argTypeResolve_id1hQsMcvxKQo.invoke(nodeC, new Integer(1)));
+    Assert.assertSame(TestResults.NOT_SPECIFIED_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeC, "BHL7.structure.C", "call_argTypeResolve_1474492522700410741", new Object[]{new Integer(1)}));
+    Assert.assertSame(TestResults.SPECIFIED_RETURN_VALUE, BehaviorReflection.invokeNonVirtual(Integer.TYPE, nodeC, "BHL7.structure.C", "call_argTypeResolve_1474492522700410264", new Object[]{new Integer(1)}));
   }
   public void test_twoVirtualMethodsWithTheSameName() throws Exception {
     SNode node1 = createH_a2wy8c_a0a0eb0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, H_BehaviorDescriptor.foo_id3DBjXYFZcwm.invoke(node1));
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE + 1, H_BehaviorDescriptor.foo_id3DBjXYFZcwx.invoke(node1));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BehaviorReflection.invokeVirtual(Integer.TYPE, node1, "virtual_foo_4208420198882789398", new Object[]{}));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE + 1, BehaviorReflection.invokeVirtual(Integer.TYPE, node1, "virtual_foo_4208420198882789409", new Object[]{}));
   }
   public void test_methodOverrideWithTheSameName() throws Exception {
     // this and the next tests check current behavior to be able to resolve the method calls with identical signature 
     SNode node1 = createD_a2wy8c_a0b0fb0();
-    Assert.assertSame(1, BHL7.behavior.I1_BehaviorDescriptor.foo_id5ivDaCiFP9X.invoke(node1));
+    Assert.assertSame(1, BehaviorReflection.invokeVirtual(Integer.TYPE, node1, "virtual_foo_6097773470847816317", new Object[]{}));
     SNode node2 = createD_a2wy8c_a0d0fb0();
-    Assert.assertSame(2, I2_BehaviorDescriptor.foo_id5ivDaCiFPaC.invoke(node2));
+    Assert.assertSame(2, BehaviorReflection.invokeVirtual(Integer.TYPE, node2, "virtual_foo_6097773470847816360", new Object[]{}));
   }
   public void test_methodOverrideWithTheSameName2() throws Exception {
     SNode nodeF = createF_a2wy8c_a0a0gb0();
-    Assert.assertSame(1, BHL7.behavior.I1_BehaviorDescriptor.foo_id5ivDaCiFP9X.invoke(nodeF));
+    Assert.assertSame(1, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeF, "virtual_foo_6097773470847816317", new Object[]{}));
 
     SNode nodeG = createG_a2wy8c_a0d0gb0();
-    Assert.assertSame(1, BHL7.behavior.I1_BehaviorDescriptor.foo_id5ivDaCiFP9X.invoke(nodeG));
+    Assert.assertSame(1, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeG, "virtual_foo_6097773470847816317", new Object[]{}));
     SNode nodeG2 = createG_a2wy8c_a0f0gb0();
-    Assert.assertSame(2, I2_BehaviorDescriptor.foo_id5ivDaCiFPaC.invoke(nodeG2));
+    Assert.assertSame(2, BehaviorReflection.invokeVirtual(Integer.TYPE, nodeG2, "virtual_foo_6097773470847816360", new Object[]{}));
   }
   public void test_twoEqualMethodOverriding() throws Exception {
     SNode node3 = createE_a2wy8c_a0a0hb0();
-    Assert.assertSame(2, I3_BehaviorDescriptor.foo_id12MCENn4RcU.invoke(node3));
-    Assert.assertSame(1, I3_BehaviorDescriptor.foo_id12MCENn4Rd5.invoke(node3));
+    Assert.assertSame(2, BehaviorReflection.invokeVirtual(Integer.TYPE, node3, "virtual_foo_1203202913687794490", new Object[]{}));
+    Assert.assertSame(1, BehaviorReflection.invokeVirtual(Integer.TYPE, node3, "virtual_foo_1203202913687794501", new Object[]{}));
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());

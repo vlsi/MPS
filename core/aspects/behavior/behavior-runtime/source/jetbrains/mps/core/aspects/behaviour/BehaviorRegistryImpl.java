@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.language.ConceptInLoadingStorage;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;

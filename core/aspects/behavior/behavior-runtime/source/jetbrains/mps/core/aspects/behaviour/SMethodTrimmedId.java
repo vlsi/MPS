@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
 import jetbrains.mps.smodel.persistence.def.v9.IdEncoder.EncodingException;
 import jetbrains.mps.util.EqualUtil;
@@ -22,11 +24,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
- * Represents a handle which uniquely identifies {@link org.jetbrains.mps.openapi.language.SMethod} within the concept (including all the ancestors).
+ * Represents a handle which uniquely identifies {@link SMethod} within the concept (including all the ancestors).
  * This implementation is based on the transformed id of the method node (in the behavior aspect of the concept)
  *
  * Created by apyshkin on 11/09/15.

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import org.jetbrains.mps.openapi.language.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -17,9 +17,10 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
@@ -38,7 +39,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   public static Integer foo(@Nullable SNode __thisNode__) {
-    return B_BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
+    return BehaviorReflection.invokeNonVirtual(Integer.TYPE, __thisNode__, "BHL6.structure.B", "call_bar_6167444251392479236", new Object[]{});
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -50,7 +51,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   public static Integer foo2(@Nullable SNode __thisNode__) {
-    return B_BehaviorDescriptor.bar1_id5jWiLvujSC6.invoke(__thisNode__);
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, __thisNode__, "virtual_bar1_6123852159203117574", new Object[]{});
   }
 
   /*package*/ B_BehaviorDescriptor() {

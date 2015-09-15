@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
-import jetbrains.mps.smodel.impl.SConceptTypeImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,8 +44,6 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
   public boolean isAssignableFrom(@NotNull SAbstractType another) {
     if (another instanceof SJavaCompoundType) {
       return myType.isAssignableFrom(((SJavaCompoundType) another).getJavaType());
-    } else if (another instanceof SConceptTypeImpl) {
-      return myType.isAssignableFrom(SNode.class);
     }
     return false;
   }

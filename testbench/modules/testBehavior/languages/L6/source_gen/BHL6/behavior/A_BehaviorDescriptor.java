@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import org.jetbrains.mps.openapi.language.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -17,9 +17,10 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
@@ -39,7 +40,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     return A_BehaviorDescriptor.bar(__thisNode__);
   }
   public static Integer bar(@Nullable SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
+    return BehaviorReflection.invokeNonVirtual(Integer.TYPE, __thisNode__, "BHL6.structure.A", "call_bar2_7808537626115736451", new Object[]{});
   }
   private static Integer bar2(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;

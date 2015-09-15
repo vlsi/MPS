@@ -20,7 +20,7 @@ package org.jetbrains.mps.openapi.language;
  * or a {@link org.jetbrains.mps.openapi.language.SEnumeration}
  * Data types need to be able to save to and load from strings.
  */
-public interface SDataType extends SAbstractType {
+public interface SDataType {
   Object fromString(String value);
 
   String toString(Object value);

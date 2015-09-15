@@ -1,4 +1,4 @@
-/*
+package jetbrains.mps.core.aspects.behaviour.api;/*
  * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SNamedElement;
 
 /**
- * Represents a method/constructor modifiers' container.
- * @see java.lang.reflect.Modifier
+ * Represents a parameter of {@link SMethod}
+ *
+ * Created by apyshkin on 07/09/15.
  */
-@Immutable
-public interface SModifiers {
-  boolean isPublic();
-  boolean isPrivate();
-  boolean isProtected();
-  boolean isPackage();
-  boolean isStatic();
-  boolean isFinal();
-  boolean isAbstract();
-  boolean isVirtual();
+public interface SParameter extends SNamedElement, STypedElement {
 }

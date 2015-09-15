@@ -38,12 +38,12 @@
       <node id="7688460527007456374" at="37,0,40,0" concept="7" trace="foo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="7688460527007456374" at="40,0,43,0" concept="7" trace="foo2#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="7688460527007456374" at="44,0,47,0" concept="0" trace="A_BehaviorDescriptor#()V" />
-      <node id="7688460527007456374" at="48,0,51,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConstructor;null)V" />
+      <node id="7688460527007456374" at="48,0,51,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;null)V" />
       <node id="7688460527007456374" at="54,49,57,5" concept="2" />
       <node id="7688460527007456374" at="68,0,73,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="7688460527007456374" at="74,0,79,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7688460527007456374" at="57,5,65,5" concept="9" />
-      <node id="7688460527007456374" at="52,0,67,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SMethod;null)null" />
+      <node id="7688460527007456374" at="52,0,67,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;null)null" />
       <scope id="7688460527007456374" at="34,53,34,53" />
       <scope id="7688460527007456374" at="37,58,38,42" />
       <scope id="7688460527007456374" at="40,62,41,42" />
@@ -105,12 +105,12 @@
       <node id="7688460527007457406" at="37,0,40,0" concept="7" trace="foo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="7688460527007457406" at="40,0,43,0" concept="7" trace="foo2#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="7688460527007457406" at="44,0,47,0" concept="0" trace="B_BehaviorDescriptor#()V" />
-      <node id="7688460527007457406" at="48,0,51,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConstructor;null)V" />
+      <node id="7688460527007457406" at="48,0,51,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;null)V" />
       <node id="7688460527007457406" at="54,49,57,5" concept="2" />
       <node id="7688460527007457406" at="68,0,73,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="7688460527007457406" at="74,0,79,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7688460527007457406" at="57,5,65,5" concept="9" />
-      <node id="7688460527007457406" at="52,0,67,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SMethod;null)null" />
+      <node id="7688460527007457406" at="52,0,67,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;null)null" />
       <scope id="7688460527007457406" at="34,53,34,53" />
       <scope id="7688460527007457406" at="37,58,38,41" />
       <scope id="7688460527007457406" at="40,59,41,41" />

@@ -13,14 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.language;
+package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Represents a concept type abstraction in MPS (node<>).
- * Contains a reference to a {@link SAbstractConcept}
+ * Represents a type which internally uses the java class
+ * Intended to represent the compound type (not primitive and not enumeration)
+ *
+ * Created by apyshkin on 08/09/15.
  */
-public interface SConceptType extends SAbstractType {
-  @NotNull SAbstractConcept getConcept();
+public interface SJavaCompoundType extends SAbstractType {
+  @NotNull
+  Class<?> getJavaType();
 }

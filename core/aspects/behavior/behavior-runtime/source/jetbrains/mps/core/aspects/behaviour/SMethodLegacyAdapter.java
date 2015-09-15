@@ -16,15 +16,15 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.SExecutable;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
+import jetbrains.mps.core.aspects.behaviour.api.SModifiers;
+import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SExecutable;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SMethodId;
-import org.jetbrains.mps.openapi.language.SModifiers;
-import org.jetbrains.mps.openapi.language.SParameter;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.lang.reflect.Method;

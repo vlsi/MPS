@@ -17,6 +17,9 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SExecutable;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -27,9 +30,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConstructor;
-import org.jetbrains.mps.openapi.language.SExecutable;
-import org.jetbrains.mps.openapi.language.SMethod;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Method;

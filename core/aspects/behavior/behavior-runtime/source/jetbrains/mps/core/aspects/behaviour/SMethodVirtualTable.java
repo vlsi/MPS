@@ -16,9 +16,9 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SMethod;
 
 import java.util.HashMap;
 import java.util.List;

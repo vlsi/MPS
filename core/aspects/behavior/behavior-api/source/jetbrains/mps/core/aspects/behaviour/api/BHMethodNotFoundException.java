@@ -16,7 +16,6 @@
 package jetbrains.mps.core.aspects.behaviour.api;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SMethod;
 
 /**
 * Created by apyshkin on 09/09/15.

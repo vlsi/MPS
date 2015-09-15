@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.util.annotation.ToRemove;
 
@@ -25,7 +26,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 public interface BehaviorAspectDescriptor extends LanguageAspectDescriptor {
   /**
    * Leaving this method in API for the easy transition from 3.2 to 3.3.
-   * After 3.3 the {@link jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor#getDescriptor(SConceptId)} will be in API
+   * After 3.3 the {@link BaseBehaviorAspectDescriptor#getDescriptor(SConceptId)} will be in API
    * @param fqName is the name id of the concept
    * @return a behavior descriptor for this concept
    */

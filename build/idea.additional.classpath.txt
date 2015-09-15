@@ -1,7 +1,6 @@
 :openapi
 core/openapi/classes
 :aspects
-core/aspects/behavior/behavior-impl/classes
 :core
 core/analyzers/classes
 core/aspects/behavior/behavior-api/classes

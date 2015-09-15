@@ -18,20 +18,22 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
+import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.*;
-import org.jetbrains.mps.openapi.language.SMethodId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 
 /**

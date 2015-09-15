@@ -15,11 +15,11 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A named meta-object
- *
- * Created by apyshkin on 07/09/15.
  */
 public interface SNamedElement {
-  String getName();
+  @NotNull String getName();
 }

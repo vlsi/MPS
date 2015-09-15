@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
+import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SParameter;
 
 import java.util.ArrayList;
 import java.util.List;

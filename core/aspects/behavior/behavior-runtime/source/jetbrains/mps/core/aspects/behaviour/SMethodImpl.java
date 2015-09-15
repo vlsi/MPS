@@ -17,16 +17,16 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
+import jetbrains.mps.core.aspects.behaviour.api.SModifiers;
+import jetbrains.mps.core.aspects.behaviour.api.SParameter;
+import jetbrains.mps.core.aspects.behaviour.api.SThrowable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractType;
-import org.jetbrains.mps.openapi.language.SMethod;
-import org.jetbrains.mps.openapi.language.SMethodId;
-import org.jetbrains.mps.openapi.language.SModifiers;
-import org.jetbrains.mps.openapi.language.SParameter;
-import org.jetbrains.mps.openapi.language.SThrowable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -185,13 +185,10 @@ public final class SMethodImpl<T> implements SMethod<T> {
 
   @NotNull
   @Override
-  public org.jetbrains.mps.openapi.language.SMethodId getId() {
+  public SMethodId getId() {
     return myId;
   }
 
-  /**
-   * baseName___*****
-   */
   @NotNull
   @Override
   public String getName() {
