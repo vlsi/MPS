@@ -195,9 +195,9 @@
     <!--
     lib
       src-->
-    <dependency org="lib.src" name="Xerces-J-src.2.9.1.zip" rev="${idea.platform.version}">
-      <artifact name="Xerces-J-src.2.9.1.zip" ext="zip"/>
-    </dependency>
+    <!--<dependency org="lib.src" name="Xerces-J-src.2.11.zip" rev="${idea.platform.version}">
+      <artifact name="Xerces-J-src.2.11.zip" ext="zip"/>
+    </dependency>-->
     <dependency org="lib.src" name="asm-src.zip" rev="${idea.platform.version}">
       <artifact name="asm-src.zip" ext="zip"/>
     </dependency>
@@ -207,20 +207,20 @@
     <dependency org="lib.src" name="cglib-src-2.2.2.jar" rev="${idea.platform.version}">
       <artifact name="cglib-src-2.2.2.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="commons-codec-1.8-sources.jar" rev="${idea.platform.version}">
-      <artifact name="commons-codec-1.8-sources.jar" ext="jar"/>
-    </dependency>
+    <!--<dependency org="lib.src" name="commons-codec-1.9-sources.jar" rev="${idea.platform.version}">
+      <artifact name="commons-codec-1.9-sources.jar" ext="jar"/>
+    </dependency>-->
     <dependency org="lib.src" name="commons-httpclient-3.1-src-patched.zip" rev="${idea.platform.version}">
       <artifact name="commons-httpclient-3.1-src-patched.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="commons-logging-1.1.3-src.zip" rev="${idea.platform.version}">
-      <artifact name="commons-logging-1.1.3-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="commons-logging-1.2-src.zip" rev="${idea.platform.version}">
+      <artifact name="commons-logging-1.2-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="138.1980">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="gson-2.3-sources.jar" rev="${idea.platform.version}">
-      <artifact name="gson-2.3-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="gson-2.3.1-sources.jar" rev="${idea.platform.version}">
+      <artifact name="gson-2.3.1-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="guava-17.0-sources.jar" rev="${idea.platform.version}">
       <artifact name="guava-17.0-sources.jar" ext="jar"/>
@@ -228,11 +228,11 @@
     <dependency org="lib.src" name="hamcrest-1.3-src.zip" rev="${idea.platform.version}">
       <artifact name="hamcrest-1.3-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="httpcomponents-client-4.3.6-src.zip" rev="${idea.platform.version}">
-      <artifact name="httpcomponents-client-4.3.6-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="httpcomponents-client-4.4.1-src.zip" rev="${idea.platform.version}">
+      <artifact name="httpcomponents-client-4.4.1-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="httpcomponents-core-4.3.3-src.zip" rev="${idea.platform.version}">
-      <artifact name="httpcomponents-core-4.3.3-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="httpcomponents-core-4.4.1-src.zip" rev="${idea.platform.version}">
+      <artifact name="httpcomponents-core-4.4.1-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="jaxen-1.1.3-src.zip" rev="${idea.platform.version}">
       <artifact name="jaxen-1.1.3-src.zip" ext="zip"/>
@@ -258,8 +258,8 @@
     <dependency org="lib.src" name="jsr166e_src.jar" rev="${idea.platform.version}">
       <artifact name="jsr166e_src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="junit-4.11-src.jar" rev="${idea.platform.version}">
-      <artifact name="junit-4.11-src.jar" ext="jar"/>
+    <dependency org="lib.src" name="junit-4.12-sources.jar" rev="${idea.platform.version}">
+      <artifact name="junit-4.12-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="log4j.zip" rev="${idea.platform.version}">
       <artifact name="log4j.zip" ext="zip"/>
@@ -273,8 +273,8 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.0.Beta4-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta4-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.0.Beta6-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta6-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -296,9 +296,6 @@
     </dependency>
     <dependency org="lib.src" name="velocity-1.7-src.zip" rev="${idea.platform.version}">
       <artifact name="velocity-1.7-src.zip" ext="zip"/>
-    </dependency>
-    <dependency org="lib.src" name="winp-1.21-patched.zip" rev="${idea.platform.version}">
-      <artifact name="winp-1.21-patched.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="xmlrpc2.src.zip" rev="${idea.platform.version}">
       <artifact name="xmlrpc2.src.zip" ext="zip"/>
@@ -336,14 +333,14 @@
     <dependency org="lib" name="cglib-2.2.2.jar" rev="${idea.platform.version}">
       <artifact name="cglib-2.2.2.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="commons-codec-1.8.jar" rev="${idea.platform.version}">
-      <artifact name="commons-codec-1.8.jar" ext="jar"/>
+    <dependency org="lib" name="commons-codec-1.9.jar" rev="${idea.platform.version}">
+      <artifact name="commons-codec-1.9.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="commons-httpclient-3.1-patched.jar" rev="${idea.platform.version}">
+    <!--<dependency org="lib" name="commons-httpclient-3.1-patched.jar" rev="${idea.platform.version}">
       <artifact name="commons-httpclient-3.1-patched.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="commons-logging-1.1.3.jar" rev="${idea.platform.version}">
-      <artifact name="commons-logging-1.1.3.jar" ext="jar"/>
+    </dependency>-->
+    <dependency org="lib" name="commons-logging-1.2.jar" rev="${idea.platform.version}">
+      <artifact name="commons-logging-1.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="commons-net-3.1.jar" rev="138.1980">
       <artifact name="commons-net-3.1.jar" ext="jar"/>
@@ -354,32 +351,26 @@
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="fluent-hc-4.3.6.jar" rev="${idea.platform.version}">
-      <artifact name="fluent-hc-4.3.6.jar" ext="jar"/>
+    <dependency org="lib" name="fluent-hc-4.4.1.jar" rev="${idea.platform.version}">
+      <artifact name="fluent-hc-4.4.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="forms_rt.jar" rev="${idea.platform.version}">
       <artifact name="forms_rt.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="gson-2.3.jar" rev="${idea.platform.version}">
-      <artifact name="gson-2.3.jar" ext="jar"/>
+    <dependency org="lib" name="gson-2.3.1.jar" rev="${idea.platform.version}">
+      <artifact name="gson-2.3.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="guava-17.0.jar" rev="${idea.platform.version}">
       <artifact name="guava-17.0.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="hamcrest-core-1.3.jar" rev="${idea.platform.version}">
-      <artifact name="hamcrest-core-1.3.jar" ext="jar"/>
+    <dependency org="lib" name="httpclient-4.4.1.jar" rev="${idea.platform.version}">
+      <artifact name="httpclient-4.4.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="hamcrest-library-1.3.jar" rev="${idea.platform.version}">
-      <artifact name="hamcrest-library-1.3.jar" ext="jar"/>
+    <dependency org="lib" name="httpcore-4.4.1.jar" rev="${idea.platform.version}">
+      <artifact name="httpcore-4.4.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="httpclient-4.3.6.jar" rev="${idea.platform.version}">
-      <artifact name="httpclient-4.3.6.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="httpcore-4.3.3.jar" rev="${idea.platform.version}">
-      <artifact name="httpcore-4.3.3.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="httpmime-4.3.6.jar" rev="${idea.platform.version}">
-      <artifact name="httpmime-4.3.6.jar" ext="jar"/>
+    <dependency org="lib" name="httpmime-4.4.1.jar" rev="${idea.platform.version}">
+      <artifact name="httpmime-4.4.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="icons.jar" rev="${idea.platform.version}">
       <artifact name="icons.jar" ext="jar"/>
@@ -411,8 +402,8 @@
     <dependency org="lib" name="jna.jar" rev="${idea.platform.version}">
       <artifact name="jna.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="jsch-0.1.51.jar" rev="${idea.platform.version}">
-      <artifact name="jsch-0.1.51.jar" ext="jar"/>
+    <dependency org="lib" name="jsch-0.1.52.jar" rev="${idea.platform.version}">
+      <artifact name="jsch-0.1.52.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="jsr166e.jar" rev="${idea.platform.version}">
       <artifact name="jsr166e.jar" ext="jar"/>
@@ -420,8 +411,8 @@
     <dependency org="lib" name="jsr173_1.0_api.jar" rev="${idea.platform.version}">
       <artifact name="jsr173_1.0_api.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="junit-4.11.jar" rev="${idea.platform.version}">
-      <artifact name="junit-4.11.jar" ext="jar"/>
+    <dependency org="lib" name="junit-4.12.jar" rev="${idea.platform.version}">
+      <artifact name="junit-4.12.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="log4j.jar" rev="${idea.platform.version}">
       <artifact name="log4j.jar" ext="jar"/>
@@ -435,8 +426,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.0.Beta4.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta4.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.0.Beta6.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta6.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -483,14 +474,11 @@
     <dependency org="lib" name="velocity.jar" rev="${idea.platform.version}">
       <artifact name="velocity.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="winp-1.21-patched.jar" rev="${idea.platform.version}">
-      <artifact name="winp-1.21-patched.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib" name="xbean.jar" rev="${idea.platform.version}">
       <artifact name="xbean.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="xerces.jar" rev="${idea.platform.version}">
-      <artifact name="xerces.jar" ext="jar"/>
+    <dependency org="lib" name="xercesImpl.jar" rev="${idea.platform.version}">
+      <artifact name="xercesImpl.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="xmlrpc-2.0.jar" rev="${idea.platform.version}">
       <artifact name="xmlrpc-2.0.jar" ext="jar"/>
@@ -590,9 +578,6 @@
     </dependency>
     <dependency org="license" name="swingx_license.txt" rev="${idea.platform.version}">
       <artifact name="swingx_license.txt" ext="txt"/>
-    </dependency>
-    <dependency org="license" name="winp_license.txt" rev="${idea.platform.version}">
-      <artifact name="winp_license.txt" ext="txt"/>
     </dependency>
     <dependency org="license" name="xerces_license.txt" rev="${idea.platform.version}">
       <artifact name="xerces_license.txt" ext="txt"/>
