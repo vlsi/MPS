@@ -12,13 +12,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
@@ -50,8 +49,8 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
     }
     public boolean execute(Project project, ExecutionEnvironment environment) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-      Iterable<SModel> models = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ISequence<SModel>>() {
-        public ISequence<SModel> compute() {
+      List<SModel> models = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<IListSequence<SModel>>() {
+        public IListSequence<SModel> compute() {
           return ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
             public boolean accept(SNodeReference it) {
               return it != null;
@@ -65,11 +64,11 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
             public boolean accept(SModel it) {
               return ModelGenerationStatusManager.getInstance().generationRequired(it);
             }
-          });
+          }).toListSequence();
         }
       });
 
-      if (Sequence.fromIterable(models).isEmpty()) {
+      if (ListSequence.fromList(models).isEmpty()) {
         return true;
       }
 
