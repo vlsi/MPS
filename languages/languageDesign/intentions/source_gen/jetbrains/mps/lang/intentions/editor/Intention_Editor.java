@@ -17,11 +17,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -67,7 +64,7 @@ public class Intention_Editor extends DefaultNodeEditor {
         editorCell.setRole("priority");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.FONT_STYLE, 0, Intention_Editor._StyleParameter_QueryFunction_dnq3sg_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+      BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
       editorCell.getStyle().putAll(style);
     }
 
@@ -84,9 +81,6 @@ public class Intention_Editor extends DefaultNodeEditor {
       return "<regular>";
     }
 
-  }
-  private static int _StyleParameter_QueryFunction_dnq3sg_a0a0(EditorContext editorContext, SNode node) {
-    return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority")), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority")) ? MPSFonts.BOLD : MPSFonts.PLAIN);
   }
   private EditorCell createConstant_dnq3sg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention");
