@@ -65,9 +65,12 @@
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
+      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
+        <property id="1207318242773" name="modifiers" index="pLAjc" />
+        <property id="1207318242774" name="keycode" index="pLAjf" />
+      </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="1213273179528" name="description" index="1WHSii" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1227008813498" name="constructionParameter" index="2JrayB" />
@@ -101,6 +104,15 @@
       </concept>
       <concept id="1239975436002" name="jetbrains.mps.lang.plugin.structure.UpdateGroupFunction" flags="in" index="2OiTZ2" />
       <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
+      <concept id="1562714432501166198" name="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" flags="lg" index="Zd509">
+        <child id="1562714432501166206" name="keystroke" index="Zd501" />
+      </concept>
+      <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
+      </concept>
+      <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
+        <reference id="6193305307616734326" name="action" index="1bYAoF" />
+      </concept>
       <concept id="1206092561075" name="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" flags="nn" index="3gHZIF" />
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="3205675194086589964" name="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" flags="nn" index="3$FdUm">
@@ -1781,9 +1793,8 @@
   </node>
   <node concept="sE7Ow" id="6pKGoub8wBU">
     <property role="TrG5h" value="GoToMemberDeclaration" />
-    <property role="2uzpH1" value="lightwightDSL declaration" />
+    <property role="2uzpH1" value="Go To Declaration" />
     <property role="3GE5qa" value="memberGutter" />
-    <property role="1WHSii" value="go to declaration" />
     <node concept="tnohg" id="6pKGoub8wBV" role="tncku">
       <node concept="3clFbS" id="6pKGoub8wBW" role="2VODD2">
         <node concept="3cpWs8" id="6pKGoub90qj" role="3cqZAp">
@@ -1840,7 +1851,9 @@
       <property role="TrG5h" value="node" />
       <node concept="3Tm6S6" id="6pKGoub8U0F" role="1B3o_S" />
       <node concept="1oajcY" id="6pKGoub8U0G" role="1oa70y" />
-      <node concept="3Tqbb2" id="6pKGoub8TDp" role="1tU5fm" />
+      <node concept="3Tqbb2" id="6pKGoub8TDp" role="1tU5fm">
+        <ref role="ehGHo" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+      </node>
     </node>
     <node concept="1DS2jV" id="3D0DuOpyjuU" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
@@ -1923,6 +1936,16 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="49GjS3OmPY_">
+    <property role="TrG5h" value="Default" />
+    <node concept="Zd509" id="49GjS3OmPYI" role="Zd508">
+      <ref role="1bYAoF" node="6pKGoub8wBU" resolve="GoToMemberDeclaration" />
+      <node concept="pLAjd" id="49GjS3OmPYK" role="Zd501">
+        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_U" />
       </node>
     </node>
   </node>

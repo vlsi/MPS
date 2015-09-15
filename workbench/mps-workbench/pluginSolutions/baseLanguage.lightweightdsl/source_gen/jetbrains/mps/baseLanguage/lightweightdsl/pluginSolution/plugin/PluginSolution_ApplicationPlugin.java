@@ -6,9 +6,10 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.CreateRootNode_ActionGroup;
 import java.util.List;
-import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution");
@@ -25,6 +26,11 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ClassLikes_ActionGroup.ID, CreateRootNode_ActionGroup.ID, CreateRootNode_ActionGroup.LABEL_ID_mainRoot);
+  }
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
