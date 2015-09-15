@@ -61,7 +61,7 @@ public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_Beh
     return ConceptFunction_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+    return ConceptFunction_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return IMethodLike_Behavior.virtual_suppress_3393165121846091591(thisNode, child);

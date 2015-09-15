@@ -24717,6 +24717,31 @@
       <node concept="3Tm1VV" id="hJrm0rV" role="1B3o_S" />
       <node concept="3Tqbb2" id="i2fj8Nz" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="f4FER0FBq9" role="13h7CS">
+      <property role="TrG5h" value="supportsCheckedExceptions" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="7orZYjMoFMH" resolve="supportsCheckedExceptions" />
+      <node concept="3Tm1VV" id="f4FER0FBqa" role="1B3o_S" />
+      <node concept="3clFbS" id="f4FER0FBqf" role="3clF47">
+        <node concept="3SKdUt" id="f4FER0FCYY" role="3cqZAp">
+          <node concept="3SKdUq" id="f4FER0FCZc" role="3SKWNk">
+            <property role="3SKdUp" value="afaik, tells RulesFunction_BaseLanguage that it's not possible to augment list of checked exceptions" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="f4FER0FCZv" role="3cqZAp">
+          <node concept="3SKdUq" id="f4FER0FCZJ" role="3SKWNk">
+            <property role="3SKdUp" value="thrown from this function" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="f4FER0FCWZ" role="3cqZAp">
+          <node concept="3clFbT" id="f4FER0FCXr" role="3cqZAk">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="f4FER0FBqg" role="3clF45" />
+    </node>
     <node concept="13i0hz" id="5op8ooRkzIK" role="13h7CS">
       <property role="TrG5h" value="getThrowableTypes" />
       <property role="13i0it" value="true" />
