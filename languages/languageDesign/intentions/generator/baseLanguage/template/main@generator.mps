@@ -385,6 +385,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
@@ -3071,9 +3072,7 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="whfZfEtxYz" role="1B3o_S" />
-      <node concept="3uibUv" id="whfZfEtxY_" role="3clF45">
-        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-      </node>
+      <node concept="3bZ5Sz" id="49GjS3On6BI" role="3clF45" />
       <node concept="3clFbS" id="whfZfEtxYA" role="3clF47">
         <node concept="3clFbF" id="whfZfEtzWl" role="3cqZAp">
           <node concept="35c_gC" id="whfZfEtzWm" role="3clFbG">

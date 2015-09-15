@@ -19,6 +19,7 @@ import jetbrains.mps.editor.intentions.NodeTransformer.Kind;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -46,7 +47,7 @@ public interface NodeTransformerFactory {
    * This factory is only applicable to instances of this concept
    * See also applicability algorithm in class documentation
    */
-  SConcept getApplicableConcept();
+  SAbstractConcept getApplicableConcept();
 
   /**
    * Additional check for whether this factory can be applied to the given node
