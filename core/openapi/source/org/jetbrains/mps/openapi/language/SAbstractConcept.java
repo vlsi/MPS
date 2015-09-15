@@ -28,6 +28,9 @@ import java.util.Collection;
  * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept extends SNamedElement {
+  @Override
+  @NotNull
+  String getName();
   /**
    * The language that defines the concept
    */

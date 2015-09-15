@@ -63,6 +63,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   protected abstract SNode findInModel(SModel strucModel);
 
+  @NotNull
   @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(getQualifiedName());
