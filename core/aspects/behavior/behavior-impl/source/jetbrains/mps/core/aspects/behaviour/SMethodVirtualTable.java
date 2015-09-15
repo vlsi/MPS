@@ -48,21 +48,8 @@ public final class SMethodVirtualTable {
    * @return corresponding BHDescriptor or null if the virtual table does not contain the method
    */
   @Nullable
-  public Entry<SMethod<?>, BHDescriptor> get(@NotNull SMethod<?> method) {
-    for (Entry<SMethod<?>, BHDescriptor> methodEntry : myTable.entrySet()) {
-//      if (SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method)) {
-//        return methodEntry;
-//      }
-//      SMethod<?> existingMethod = methodEntry.getKey();
-//      if (existingMethod.isOverrideOf(method) || method.isOverrideOf(existingMethod)) {
-//        assert SMethodImpl.sameVirtualMethods(methodEntry.getKey(), method);
-//        return methodEntry;
-//      }
-      if (method.equals(methodEntry.getKey())) {
-        return methodEntry;
-      }
-    }
-    return null;
+  public BHDescriptor get(@NotNull SMethod<?> method) {
+    return myTable.get(method);
   }
 
   /**
@@ -73,7 +60,7 @@ public final class SMethodVirtualTable {
     for (Entry<SMethod<?>, BHDescriptor> pair : anotherTable.entrySet()) {
       SMethod method = pair.getKey();
       BHDescriptor descriptor = pair.getValue();
-      if (get(method) == null) {
+      if (!myTable.containsKey(method)) {
         myTable.put(method, descriptor);
       }
     }

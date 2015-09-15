@@ -166,14 +166,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object[] parameters) {
-    Entry<SMethod<?>, BHDescriptor> methodDescriptor = myVTable.get(method);
-    if (methodDescriptor == null) {
+    BHDescriptor bhDescriptor = myVTable.get(method);
+    if (bhDescriptor == null) {
       throw new BHMethodNotFoundException(method);
     }
-    assert methodDescriptor.getValue() instanceof BaseBHDescriptor;
-    BaseBHDescriptor bhDescriptor = (BaseBHDescriptor) methodDescriptor.getValue();
-    method = (SMethod<T>) methodDescriptor.getKey();
-    return bhDescriptor.invokeOwn(node, method, parameters);
+    assert bhDescriptor instanceof BaseBHDescriptor;
+    BaseBHDescriptor baseBHDescriptor = (BaseBHDescriptor) bhDescriptor;
+    return baseBHDescriptor.invokeOwn(node, method, parameters);
   }
 
   @Nullable

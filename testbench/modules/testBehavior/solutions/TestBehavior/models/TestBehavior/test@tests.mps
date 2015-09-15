@@ -27,11 +27,11 @@
     <import index="n871" ref="r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)" />
     <import index="jbip" ref="r:d7fa4265-2db2-475e-a521-ccd734907efd(TestBehaviorReflective.test@tests)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
-    <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" implicit="true" />
-    <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" implicit="true" />
-    <import index="5a2" ref="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" implicit="true" />
+    <import index="5a2" ref="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)" implicit="true" />
     <import index="4uhy" ref="r:e76e445e-2173-496b-9059-50cca123009f(BHL1.behavior)" implicit="true" />
+    <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1241,7 +1241,7 @@
                 <ref role="3cqZAo" node="5mnatV0hBrO" resolve="nodeA" />
               </node>
               <node concept="Xl_RD" id="5mnatV0hGhj" role="37wK5m">
-                <property role="Xl_RC" value="virtual_virtualMethod_1234567890" />
+                <property role="Xl_RC" value="virtual_virtualMethod_6167444251392503144" />
               </node>
               <node concept="37vLTw" id="5mnatV0hGhk" role="37wK5m">
                 <ref role="3cqZAo" node="5mnatV0hC4$" resolve="params" />
@@ -1304,7 +1304,7 @@
                 <node concept="2yIwOk" id="5EHyDMrqP2K" role="2OqNvi" />
               </node>
               <node concept="Xl_RD" id="5EHyDMrqP2L" role="37wK5m">
-                <property role="Xl_RC" value="virtual_staticVirtualMethod_1234567890" />
+                <property role="Xl_RC" value="virtual_staticVirtualMethod_6167444251392503389" />
               </node>
               <node concept="37vLTw" id="5EHyDMrqP2M" role="37wK5m">
                 <ref role="3cqZAo" node="5EHyDMrqP2p" resolve="params" />
@@ -1383,7 +1383,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="5Omjac1VMaz" role="37wK5m">
-                <property role="Xl_RC" value="call_nonVirtualMethod_1234567890" />
+                <property role="Xl_RC" value="call_nonVirtualMethod_6167444251392503129" />
               </node>
               <node concept="37vLTw" id="5Omjac1VMa$" role="37wK5m">
                 <ref role="3cqZAo" node="5Omjac1VOrS" resolve="params" />
@@ -1446,7 +1446,7 @@
                 <node concept="2yIwOk" id="5EHyDMrqPr1" role="2OqNvi" />
               </node>
               <node concept="Xl_RD" id="5EHyDMrqPr2" role="37wK5m">
-                <property role="Xl_RC" value="call_staticMethod_1234567890" />
+                <property role="Xl_RC" value="call_staticMethod_6167444251392503213" />
               </node>
               <node concept="37vLTw" id="5EHyDMrqPr3" role="37wK5m">
                 <ref role="3cqZAo" node="5EHyDMrqPqx" resolve="params" />
