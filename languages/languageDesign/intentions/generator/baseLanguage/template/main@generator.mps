@@ -2920,36 +2920,36 @@
     <node concept="n94m4" id="6wolOhZxLiK" role="lGtFl">
       <ref role="n9lRv" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
     </node>
-    <node concept="2tJIrI" id="4K00xf3BDxR" role="jymVt" />
-    <node concept="3clFb_" id="7wba5m6x0l5" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getPersistentStateKey" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="7wba5m6x0l6" role="1B3o_S" />
-      <node concept="3uibUv" id="7wba5m6x0l8" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-      <node concept="3clFbS" id="7wba5m6x0lb" role="3clF47">
-        <node concept="3clFbF" id="7wba5m6x1MR" role="3cqZAp">
-          <node concept="2OqwBi" id="7wba5m6x1RP" role="3clFbG">
-            <node concept="1rXfSq" id="7wba5m6x1MP" role="2Oq$k0">
-              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-            </node>
-            <node concept="liA8E" id="7wba5m6x2fP" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7wba5m6x2hn" role="jymVt" />
     <node concept="3clFbW" id="67BWEBqY1RG" role="jymVt">
       <node concept="3cqZAl" id="67BWEBqY1RI" role="3clF45" />
       <node concept="3Tm1VV" id="67BWEBqY1RJ" role="1B3o_S" />
       <node concept="3clFbS" id="67BWEBqY1RK" role="3clF47" />
       <node concept="2ZBi8u" id="67BWEBqY3cT" role="lGtFl">
         <ref role="2rW$FS" node="1wwM2ppyXcO" resolve="map_newIntentionFactoryConstructor" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="49GjS3OoGkz" role="jymVt" />
+    <node concept="3clFb_" id="49GjS3OocFE" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getId" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="49GjS3OocFF" role="1B3o_S" />
+      <node concept="3uibUv" id="49GjS3OocFH" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="49GjS3OocFK" role="3clF47">
+        <node concept="3clFbF" id="49GjS3OoecO" role="3cqZAp">
+          <node concept="2OqwBi" id="46nxkdGDd5i" role="3clFbG">
+            <node concept="1rXfSq" id="46nxkdGDd5j" role="2Oq$k0">
+              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+            </node>
+            <node concept="liA8E" id="46nxkdGDd5k" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="67BWEBqWi_n" role="jymVt" />
@@ -3822,23 +3822,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5ttX5GUlb9c" role="3cqZAp" />
-        <node concept="3cpWs8" id="46nxkdGDcc3" role="3cqZAp">
-          <node concept="3cpWsn" id="46nxkdGDcc4" role="3cpWs9">
-            <property role="TrG5h" value="id" />
-            <node concept="3uibUv" id="46nxkdGDcc5" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
-            <node concept="2OqwBi" id="46nxkdGDd5i" role="33vP2m">
-              <node concept="1rXfSq" id="46nxkdGDd5j" role="2Oq$k0">
-                <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-              </node>
-              <node concept="liA8E" id="46nxkdGDd5k" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1DcWWT" id="5ttX5GUlfKt" role="3cqZAp">
           <node concept="3clFbS" id="5ttX5GUlfKv" role="2LFqv$">
             <node concept="3clFbF" id="5ttX5GUlJVr" role="3cqZAp">
@@ -3852,7 +3835,7 @@
                       <node concept="1Y3b0j" id="5ttX5GUlLcu" role="YeSDq">
                         <property role="2bfB8j" value="true" />
                         <ref role="1Y3XeK" to="uxaq:~BaseNodeTransformer" resolve="BaseNodeTransformer" />
-                        <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
+                        <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
                         <node concept="3Tm1VV" id="5ttX5GUlLcv" role="1B3o_S" />
                         <node concept="3clFb_" id="5ttX5GUlLwm" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -3949,9 +3932,6 @@
                             <ref role="37wK5l" node="1wwM2ppGdPz" resolve="getKind" />
                           </node>
                         </node>
-                        <node concept="37vLTw" id="46nxkdGDdH_" role="37wK5m">
-                          <ref role="3cqZAo" node="46nxkdGDcc4" resolve="id" />
-                        </node>
                         <node concept="37vLTw" id="46nxkdGD9at" role="37wK5m">
                           <ref role="3cqZAo" node="6wEWLXPJjxE" resolve="implementationNode" />
                         </node>
@@ -4035,22 +4015,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs8" id="46nxkdGDdYu" role="3cqZAp">
-                <node concept="3cpWsn" id="46nxkdGDdYv" role="3cpWs9">
-                  <property role="TrG5h" value="id" />
-                  <node concept="3uibUv" id="46nxkdGDdYw" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="46nxkdGDdYx" role="33vP2m">
-                    <node concept="1rXfSq" id="46nxkdGDdYy" role="2Oq$k0">
-                      <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-                    </node>
-                    <node concept="liA8E" id="46nxkdGDdYz" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="5ttX5GUmYyL" role="3cqZAp">
                 <node concept="2OqwBi" id="5ttX5GUmYUw" role="3clFbG">
                   <node concept="37vLTw" id="5ttX5GUmYyJ" role="2Oq$k0">
@@ -4062,7 +4026,7 @@
                         <node concept="1Y3b0j" id="5ttX5GUmZ_X" role="YeSDq">
                           <property role="2bfB8j" value="true" />
                           <ref role="1Y3XeK" to="uxaq:~BaseNodeTransformer" resolve="BaseNodeTransformer" />
-                          <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
+                          <ref role="37wK5l" to="uxaq:~BaseNodeTransformer.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.editor.intentions.NodeTransformer$Kind,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodeTransformer" />
                           <node concept="3Tm1VV" id="5ttX5GUmZ_Y" role="1B3o_S" />
                           <node concept="3clFb_" id="5ttX5GUmZ_Z" role="jymVt">
                             <property role="1EzhhJ" value="false" />
@@ -4152,9 +4116,6 @@
                             <node concept="liA8E" id="46nxkdGDgHl" role="2OqNvi">
                               <ref role="37wK5l" node="1wwM2ppGdPz" resolve="getKind" />
                             </node>
-                          </node>
-                          <node concept="37vLTw" id="46nxkdGDel1" role="37wK5m">
-                            <ref role="3cqZAo" node="46nxkdGDdYv" resolve="id" />
                           </node>
                           <node concept="37vLTw" id="46nxkdGD9q1" role="37wK5m">
                             <ref role="3cqZAo" node="6wEWLXPJjxE" resolve="implementationNode" />

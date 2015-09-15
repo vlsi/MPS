@@ -29,12 +29,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConvertIntention extends IntentionsFactory {
-
-  public String getPersistentStateKey() {
-    return getClass().getName();
+  public ConvertIntention() {
   }
 
-  public ConvertIntention() {
+  public String getId() {
+    return getClass().getName();
   }
 
   public boolean isAvailableInChildren() {
@@ -175,8 +174,7 @@ public class ConvertIntention extends IntentionsFactory {
 
   public Collection<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext) {
     Collection<NodeTransformer> result = CollectionSequence.fromCollection(new ArrayList<NodeTransformer>());
-    String id = getClass().getName();
-    CollectionSequence.fromCollection(result).addElement(new BaseNodeTransformer(this, node, editorContext, ConvertIntention.this.getKind(), id, implementationNode) {
+    CollectionSequence.fromCollection(result).addElement(new BaseNodeTransformer(this, node, editorContext, ConvertIntention.this.getKind(), implementationNode) {
       protected void execute(SNode node, EditorContext editorContext) {
         ConvertIntention.this.execute(node, editorContext);
       }

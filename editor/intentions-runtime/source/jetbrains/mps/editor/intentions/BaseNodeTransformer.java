@@ -29,16 +29,14 @@ public abstract class BaseNodeTransformer implements NodeTransformer {
   private SNode myNode;
   private EditorContext myEditorContext;
   private final Kind myKind;
-  private final String myId;
   @Nullable
   private SNodeReference myDeclNode;
 
-  public BaseNodeTransformer(NodeTransformerFactory factory, SNode node, EditorContext editorContext, Kind kind, String id, @Nullable SNodeReference declNode) {
+  public BaseNodeTransformer(NodeTransformerFactory factory, SNode node, EditorContext editorContext, Kind kind, @Nullable SNodeReference declNode) {
     myFactory = factory;
     myNode = node;
     myEditorContext = editorContext;
     myKind = kind;
-    myId = id;
     myDeclNode = declNode;
   }
 
@@ -57,11 +55,6 @@ public abstract class BaseNodeTransformer implements NodeTransformer {
   @Override
   public Kind getKind() {
     return myKind;
-  }
-
-  @Override
-  public String getId() {
-    return myId;
   }
 
   @Override

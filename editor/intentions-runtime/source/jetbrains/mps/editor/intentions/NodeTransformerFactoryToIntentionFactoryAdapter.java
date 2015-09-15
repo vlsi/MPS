@@ -76,7 +76,7 @@ public class NodeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public String getPersistentStateKey() {
-    return myFactory.getPersistentStateKey();
+    return myFactory.getId();
   }
 
   @Override

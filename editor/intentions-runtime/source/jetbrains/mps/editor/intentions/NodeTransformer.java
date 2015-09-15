@@ -44,12 +44,6 @@ public interface NodeTransformer {
   String getDescription();
 
   /**
-   * This id can be used e.g. for disabling transformers from UI.
-   * Id can be not unique (e.g. all transformers from same factory can have same id)
-   */
-  String getId();
-
-  /**
    * Associated icon to show in menus
    */
   Icon getIcon();

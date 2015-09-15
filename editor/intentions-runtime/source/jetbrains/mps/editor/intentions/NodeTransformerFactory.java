@@ -71,6 +71,11 @@ public interface NodeTransformerFactory {
    */
   boolean isAvailableInChild(SNode node, SNode childNode, EditorContext editorContext);
 
+  /**
+   * This id is used for disabling transformers from UI.
+   */
+  String getId();
+
   //---------deprecated, needed for compatibility. remove after 3.3----------
 
   @Deprecated
@@ -89,12 +94,4 @@ public interface NodeTransformerFactory {
    */
   @Nullable
   SNodeReference getDeclarationNode();
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  /**
-   * required for compatibility purposes
-   * use NodeTransformer.getId()
-   */
-  String getPersistentStateKey();
 }
