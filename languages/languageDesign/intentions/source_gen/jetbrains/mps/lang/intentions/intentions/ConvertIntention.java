@@ -137,7 +137,7 @@ public class ConvertIntention extends IntentionsFactory {
       SNodeOperations.replaceWithAnother(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7271443492837194032"), "virtual_findPlaceholders_6909536935410952255", new Object[]{newIntention})).first(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7271443492837194032"), "virtual_create_8260330507834998478", new Object[]{}));
       SNode newIsApplicableInChild = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7271443492837194032"), "virtual_find_2603987804376013077", new Object[]{newIntention})).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
       if ((oldChildFilter == null)) {
-        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(newIsApplicableInChild, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(_quotation_createNode_lf8yx8_a0a0a2a51a6());
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(newIsApplicableInChild, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(_quotation_createNode_lf8yx8_a0a0a2a51a8());
       } else {
         copyFunctionBody(oldChildFilter, newIsApplicableInChild);
         resolveChildFilterRefernce(newIsApplicableInChild, newIsApplicableInChild);
@@ -187,7 +187,7 @@ public class ConvertIntention extends IntentionsFactory {
     });
     return result;
   }
-  private static SNode _quotation_createNode_lf8yx8_a0a0a2a51a6() {
+  private static SNode _quotation_createNode_lf8yx8_a0a0a2a51a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
