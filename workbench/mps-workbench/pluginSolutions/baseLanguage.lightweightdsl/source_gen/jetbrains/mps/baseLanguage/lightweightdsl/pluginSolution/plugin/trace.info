@@ -47,35 +47,33 @@
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/1349873286205735780">
     <file name="UneditableMessage.java">
-      <node id="1349873286205755693" at="21,0,22,0" concept="11" trace="TYPE" />
-      <node id="4271512031150588307" at="22,0,23,0" concept="3" trace="methodHeaderCondition" />
-      <node id="6830275548773063488" at="23,0,24,0" concept="3" trace="action" />
-      <node id="1349873286205749227" at="25,88,26,32" concept="13" />
-      <node id="4271512031150689764" at="28,43,29,360" concept="8" />
-      <node id="6830275548773065137" at="31,6,32,336" concept="2" />
+      <node id="1349873286205755693" at="23,0,24,0" concept="11" trace="TYPE" />
+      <node id="4271512031150588307" at="24,0,25,0" concept="3" trace="methodHeaderCondition" />
+      <node id="1349873286205749227" at="26,88,27,32" concept="13" />
+      <node id="4271512031150689764" at="29,43,30,360" concept="8" />
       <node id="3721059191406272005" at="35,25,36,35" concept="8" />
       <node id="1349873286205785418" at="38,63,39,34" concept="8" />
       <node id="4271512031150706470" at="41,52,42,103" concept="7" />
       <node id="4271512031150748509" at="42,103,43,60" concept="8" />
-      <node id="1349873286205736230" at="45,36,46,18" concept="8" />
+      <node id="557086229177619927" at="45,36,46,160" concept="8" />
       <node id="1349873286205736241" at="48,36,49,16" concept="8" />
-      <node id="4271512031150702186" at="28,0,31,0" concept="6" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="4271512031150702186" at="29,0,32,0" concept="6" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <node id="1349873286205736185" at="35,0,38,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="1349873286205736196" at="38,0,41,0" concept="6" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
       <node id="1349873286205736220" at="45,0,48,0" concept="6" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
       <node id="1349873286205736231" at="48,0,51,0" concept="6" trace="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
       <node id="1349873286205736207" at="41,0,45,0" concept="6" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="3721059191406432041" at="26,32,31,6" concept="2" />
-      <node id="1349873286205743809" at="25,0,34,0" concept="1" trace="UneditableMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
-      <scope id="4271512031150702195" at="28,43,29,360" />
+      <node id="3721059191406432041" at="27,32,32,6" concept="2" />
+      <node id="1349873286205743809" at="26,0,34,0" concept="1" trace="UneditableMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
+      <scope id="4271512031150702195" at="29,43,30,360" />
       <scope id="1349873286205736193" at="35,25,36,35" />
       <scope id="1349873286205736204" at="38,63,39,34" />
-      <scope id="1349873286205736228" at="45,36,46,18" />
+      <scope id="1349873286205736228" at="45,36,46,160" />
       <scope id="1349873286205736239" at="48,36,49,16" />
       <scope id="1349873286205736217" at="41,52,43,60">
         <var name="returnTypeCell" id="4271512031150706471" />
       </scope>
-      <scope id="4271512031150702186" at="28,0,31,0">
+      <scope id="4271512031150702186" at="29,0,32,0">
         <var name="cell" id="4271512031150702190" />
       </scope>
       <scope id="1349873286205736185" at="35,0,38,0" />
@@ -85,14 +83,14 @@
       <scope id="1349873286205736207" at="41,0,45,0">
         <var name="cell" id="1349873286205736211" />
       </scope>
-      <scope id="1349873286205743813" at="25,88,32,336" />
-      <scope id="1349873286205743809" at="25,0,34,0">
+      <scope id="1349873286205743813" at="26,88,32,6" />
+      <scope id="1349873286205743809" at="26,0,34,0">
         <var name="node" id="1349873286205745049" />
         <var name="owner" id="1349873286205745097" />
         <var name="tooltip" id="1349873286205746269" />
       </scope>
-      <unit id="4271512031150682843" at="27,32,31,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.UneditableMessage$1" />
-      <unit id="1349873286205735780" at="19,0,52,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.UneditableMessage" />
+      <unit id="4271512031150682843" at="28,32,32,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.UneditableMessage$1" />
+      <unit id="1349873286205735780" at="21,0,52,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.UneditableMessage" />
     </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/3402736933910154624">

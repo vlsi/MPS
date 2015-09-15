@@ -35,11 +35,6 @@
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
-      <concept id="3205675194086589964" name="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" flags="nn" index="3$FdUm">
-        <reference id="3205675194086671728" name="action" index="3$FpRE" />
-      </concept>
-    </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
@@ -136,9 +131,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-      </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -1464,23 +1456,6 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="3ezQTUrZk44" role="3clF45" />
-    </node>
-    <node concept="13i0hz" id="5Va0QLqElrx" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getGoToDeclarationAction" />
-      <ref role="13i0hy" to="9nqt:5Va0QLqDJN3" resolve="getGoToDeclarationAction" />
-      <node concept="3Tm1VV" id="5Va0QLqElry" role="1B3o_S" />
-      <node concept="3clFbS" id="5Va0QLqElr_" role="3clF47">
-        <node concept="3clFbF" id="5Va0QLqElrC" role="3cqZAp">
-          <node concept="3$FdUm" id="6pKGoub9$qz" role="3clFbG">
-            <ref role="3$FpRE" to="6j0q:6pKGoub8wBU" resolve="GoToMemberDeclaration" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="5Va0QLqElrA" role="3clF45">
-        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
-      </node>
     </node>
   </node>
 </model>

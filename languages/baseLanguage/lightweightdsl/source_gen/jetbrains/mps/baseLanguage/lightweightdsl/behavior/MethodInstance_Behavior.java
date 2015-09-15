@@ -8,9 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.ActionManager;
 
 public class MethodInstance_Behavior {
   public static void init(SNode thisNode) {
@@ -31,8 +28,5 @@ public class MethodInstance_Behavior {
   }
   public static SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"));
-  }
-  public static AnAction virtual_getGoToDeclarationAction_6830275548773022915(SNode thisNode) {
-    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.GoToMemberDeclaration_Action"));
   }
 }

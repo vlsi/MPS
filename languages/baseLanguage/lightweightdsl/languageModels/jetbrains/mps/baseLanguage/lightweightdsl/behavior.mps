@@ -27,11 +27,6 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
-    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
-      <concept id="3205675194086589964" name="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" flags="nn" index="3$FdUm">
-        <reference id="3205675194086671728" name="action" index="3$FpRE" />
-      </concept>
-    </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
@@ -2311,23 +2306,6 @@
       </node>
       <node concept="3Tqbb2" id="3ezQTUrYNHf" role="3clF45" />
     </node>
-    <node concept="13i0hz" id="5Va0QLqDQz$" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getGoToDeclarationAction" />
-      <ref role="13i0hy" node="5Va0QLqDJN3" resolve="getGoToDeclarationAction" />
-      <node concept="3Tm1VV" id="5Va0QLqDQz_" role="1B3o_S" />
-      <node concept="3clFbS" id="5Va0QLqDQzC" role="3clF47">
-        <node concept="3clFbF" id="1aVHDCk5gkA" role="3cqZAp">
-          <node concept="3$FdUm" id="6pKGoub9$qz" role="3clFbG">
-            <ref role="3$FpRE" to="6j0q:6pKGoub8wBU" resolve="GoToMemberDeclaration" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="5Va0QLqDQzD" role="3clF45">
-        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
-      </node>
-    </node>
   </node>
   <node concept="13h7C7" id="7T23sO8vZuO">
     <property role="3GE5qa" value="instances" />
@@ -3015,16 +2993,6 @@
       <node concept="3Tm1VV" id="3ezQTUrYHQp" role="1B3o_S" />
       <node concept="3Tqbb2" id="3ezQTUrYItp" role="3clF45" />
       <node concept="3clFbS" id="3ezQTUrYHQr" role="3clF47" />
-    </node>
-    <node concept="13i0hz" id="5Va0QLqDJN3" role="13h7CS">
-      <property role="13i0iv" value="true" />
-      <property role="13i0it" value="true" />
-      <property role="TrG5h" value="getGoToDeclarationAction" />
-      <node concept="3Tm1VV" id="5Va0QLqDJN4" role="1B3o_S" />
-      <node concept="3uibUv" id="5Va0QLqDKyb" role="3clF45">
-        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
-      </node>
-      <node concept="3clFbS" id="5Va0QLqDJN6" role="3clF47" />
     </node>
   </node>
 </model>

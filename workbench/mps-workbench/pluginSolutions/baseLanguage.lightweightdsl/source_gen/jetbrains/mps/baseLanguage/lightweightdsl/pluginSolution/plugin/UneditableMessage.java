@@ -6,7 +6,6 @@ import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,13 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.ActionManager;
 import javax.swing.JPopupMenu;
 
 public class UneditableMessage extends AbstractLeftEditorHighlighterMessage {
 
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(0);
   private Condition<EditorCell> methodHeaderCondition;
-  private AnAction action;
 
   public UneditableMessage(final SNode node, EditorMessageOwner owner, String tooltip) {
     super(node, owner, tooltip);
@@ -29,11 +30,10 @@ public class UneditableMessage extends AbstractLeftEditorHighlighterMessage {
         return cell.getSNode() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x33a3db9e9bfadd4cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.Uneditable")), "virtual_getHeader_3721059191406386584", new Object[]{});
       }
     };
-    this.action = BehaviorReflection.invokeVirtual(AnAction.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x33a3db9e9bfadd4cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.Uneditable")), "virtual_getGoToDeclarationAction_6830275548773022915", new Object[]{});
   }
 
   public Icon getIcon() {
-    return IconContainer.ICON_a0a7;
+    return IconContainer.ICON_a0a6;
   }
   public EditorMessageIconRenderer.IconRendererType getType() {
     return UneditableMessage.TYPE;
@@ -43,7 +43,7 @@ public class UneditableMessage extends AbstractLeftEditorHighlighterMessage {
     return (returnTypeCell == null ? cell : returnTypeCell);
   }
   public AnAction getClickAction() {
-    return action;
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.GoToMemberDeclaration_Action"));
   }
   public JPopupMenu getPopupMenu() {
     return null;

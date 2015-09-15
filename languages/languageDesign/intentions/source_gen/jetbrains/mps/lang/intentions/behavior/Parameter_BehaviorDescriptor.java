@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDes
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.Uneditable_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor, Uneditable_BehaviorDescriptor {
   public Parameter_BehaviorDescriptor() {
@@ -16,9 +15,6 @@ public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_Beha
   }
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return Parameter_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
-  }
-  public AnAction virtual_getGoToDeclarationAction_6830275548773022915(SNode thisNode) {
-    return Parameter_Behavior.virtual_getGoToDeclarationAction_6830275548773022915(thisNode);
   }
   public SNode virtual_getHeader_3721059191406386584(SNode thisNode) {
     return Parameter_Behavior.virtual_getHeader_3721059191406386584(thisNode);
