@@ -30,7 +30,6 @@ import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -39,6 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComponent;
@@ -125,7 +125,7 @@ final class GenerationTracerView {
       return null;
     }
     if (selected.hasPrevStep() || selected.hasNextStep()) {
-      return new ModelComputeRunnable<ActionGroup>(new NodeActionGroup(selected)).runRead(myProject.getModelAccess());
+      return new ModelComputeRunnable<ActionGroup>(new NodeActionGroup(selected, myProject.getRepository())).runRead(myProject.getModelAccess());
     }
     return null;
   }
@@ -158,7 +158,7 @@ final class GenerationTracerView {
   }
 
   void rebuildTree() {
-    SNode inputNode = myInputNode.resolve(MPSModuleRepository.getInstance());
+    SNode inputNode = myInputNode.resolve(myProject.getRepository());
     if (inputNode == null) {
       return;
     }
@@ -223,9 +223,11 @@ final class GenerationTracerView {
 
   private class NodeActionGroup implements Computable<ActionGroup> {
     private final TraceNodeUI myTraceNode;
+    private final SRepository myRepo;
 
-    public NodeActionGroup(@NotNull TraceNodeUI nodeUI) {
+    public NodeActionGroup(@NotNull TraceNodeUI nodeUI, @NotNull SRepository repository) {
       myTraceNode = nodeUI;
+      myRepo = repository;
     }
 
     public ActionGroup compute() {
@@ -233,15 +235,15 @@ final class GenerationTracerView {
       DefaultActionGroup group = new DefaultActionGroup();
       if (myTraceNode.hasPrevStep()) {
         if (isBackwardTraceView()) {
-          group.add(new ShowTraceAction("Show Trace", myTraceNode.getNavigateTarget()));
+          group.add(new ShowTraceAction("Show Trace", myTraceNode.getNavigateTarget(), myRepo));
         }
 
-        group.add(new ShowTracebackAction("Show Prev Step Traceback", myTraceNode.getNavigateTarget()));
+        group.add(new ShowTracebackAction("Show Prev Step Traceback", myTraceNode.getNavigateTarget(), myRepo));
       } else if (myTraceNode.hasNextStep()) {
         if (isForwardTraceView()) {
-          group.add(new ShowTracebackAction("Show Traceback", myTraceNode.getNavigateTarget()));
+          group.add(new ShowTracebackAction("Show Traceback", myTraceNode.getNavigateTarget(), myRepo));
         }
-        group.add(new ShowTraceAction("Show Next Step Trace", myTraceNode.getNavigateTarget()));
+        group.add(new ShowTraceAction("Show Next Step Trace", myTraceNode.getNavigateTarget(), myRepo));
       }
       //
       return group;
@@ -251,41 +253,44 @@ final class GenerationTracerView {
 
   private class ShowTraceAction extends BaseAction {
     private final SNodeReference myNode;
+    private final SRepository myRepo;
 
-    ShowTraceAction(@NotNull String title, @NotNull SNodeReference node) {
+    ShowTraceAction(@NotNull String title, @NotNull SNodeReference node, @NotNull SRepository repository) {
       super(title);
       myNode = node;
+      myRepo = repository;
     }
 
     @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      getTool().showTraceInputData(myNode.resolve(MPSModuleRepository.getInstance()));
+      getTool().showTraceInputData(myNode.resolve(myRepo));
     }
 
     @Override
     protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getTool().hasTraceInputData(myNode.getModelReference());
+      boolean enabled = myNode.resolve(myRepo) != null && getTool().hasTraceInputData(myNode.getModelReference());
       setEnabledState(e.getPresentation(), enabled);
     }
   }
 
   private class ShowTracebackAction extends BaseAction {
-    @NotNull
     private final SNodeReference myNode;
+    private final SRepository myRepo;
 
-    ShowTracebackAction(@NotNull String title, @NotNull SNodeReference node) {
+    ShowTracebackAction(@NotNull String title, @NotNull SNodeReference node, @NotNull SRepository repository) {
       super(title);
       myNode = node;
+      myRepo = repository;
     }
 
     @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      getTool().showTracebackData(myNode.resolve(MPSModuleRepository.getInstance()));
+      getTool().showTracebackData(myNode.resolve(myRepo));
     }
 
     @Override
     protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-      boolean enabled = myNode.resolve(MPSModuleRepository.getInstance()) != null && getTool().hasTracebackData(myNode.getModelReference());
+      boolean enabled = myNode.resolve(myRepo) != null && getTool().hasTracebackData(myNode.getModelReference());
       setEnabledState(e.getPresentation(), enabled);
     }
   }

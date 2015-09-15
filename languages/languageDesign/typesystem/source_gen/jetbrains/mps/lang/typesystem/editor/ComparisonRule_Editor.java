@@ -130,7 +130,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicableNode" + ">";
+      return "<no applicableNode>";
     }
 
   }
@@ -170,7 +170,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "anotherNode" + ">";
+      return "<no anotherNode>";
     }
 
   }
@@ -256,7 +256,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

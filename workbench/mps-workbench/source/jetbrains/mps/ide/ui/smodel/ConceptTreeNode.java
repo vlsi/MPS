@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,16 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class ConceptTreeNode extends MPSTreeNodeEx {
-  private final Project myProject;
-  private SNode myNode;
-  private boolean myInitialized;
+public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
+  private final SNode myNode;
 
-  @Override
-  public boolean isLeaf() {
-    return true;
-  }
-
-  public ConceptTreeNode(Project project, SNode node) {
-    myProject = project;
+  public ConceptTreeNode(SNode node) {
     myNode = node;
 
     SConcept concept = myNode.getConcept();
@@ -50,34 +39,11 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     return myNode;
   }
 
+  @Nullable
   @Override
-  public boolean isInitialized() {
-    return myInitialized;
-  }
-
-  @Override
-  protected void doInit() {
-    super.doInit();
-    myInitialized = true;
-  }
-
-  @Override
-  protected void doUpdate() {
-    super.doUpdate();
-    myInitialized = false;
-  }
-
-  @Override
-  public void doubleClick() {
-    // XXX doubleClick shall be external, so that neither ConceptTreeNode nor ReferenceTreeNode shall know about project and writeInEDT
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode concept = getSNode();
-        if (concept == null || !SNodeUtil.isAccessible(concept, myProject.getRepository())) return;
-        // TODO: use node pointers here
-        NavigationSupport.getInstance().openNode(myProject, concept, true, true);
-      }
-    });
+  public SNodeReference getNavigationTarget() {
+    // navigate to concept declaration, if any
+    SNode conceptNode = myNode.getConcept().getDeclarationNode();
+    return conceptNode == null ? myNode.getReference() : conceptNode.getReference();
   }
 }

@@ -78,7 +78,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "tryPart" + ">";
+      return "<no tryPart>";
     }
 
   }
@@ -126,7 +126,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "finallyPart" + ">";
+      return "<no finallyPart>";
     }
 
   }

@@ -481,7 +481,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "deprecated" + ">";
+      return "<no deprecated>";
     }
 
   }

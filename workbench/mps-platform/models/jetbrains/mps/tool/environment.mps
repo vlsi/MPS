@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
@@ -26,6 +26,7 @@
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="ab4o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs.newvfs.impl(MPS.IDEA/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1573,6 +1574,31 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5A5jZryYPrX" role="jymVt" />
+    <node concept="2tJIrI" id="8PnvxglxuZ" role="jymVt" />
+    <node concept="3clFb_" id="8PnvxglxX$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPlatform" />
+      <node concept="3uibUv" id="8PnvxglxX_" role="3clF45">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+      <node concept="3Tm1VV" id="8PnvxglxXA" role="1B3o_S" />
+      <node concept="3clFbS" id="8PnvxglxXF" role="3clF47">
+        <node concept="3cpWs6" id="8Pnvxglyw9" role="3cqZAp">
+          <node concept="2OqwBi" id="8Pnvxgl_6J" role="3cqZAk">
+            <node concept="1rXfSq" id="8Pnvxgl$Vg" role="2Oq$k0">
+              <ref role="37wK5l" node="5A5jZrz2$ao" resolve="getMPSCoreComponents" />
+            </node>
+            <node concept="liA8E" id="8Pnvxgl_uM" role="2OqNvi">
+              <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="8PnvxglANa" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8Pnvxglx0B" role="jymVt" />
     <node concept="3clFb_" id="5A5jZryYOQ0" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="rootClassLoader" />

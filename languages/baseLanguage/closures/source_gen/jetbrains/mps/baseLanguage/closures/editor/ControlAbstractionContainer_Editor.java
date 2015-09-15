@@ -98,7 +98,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "visibility" + ">";
+      return "<no visibility>";
     }
 
   }

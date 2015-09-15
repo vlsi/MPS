@@ -86,7 +86,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "returnType" + ">";
+      return "<no returnType>";
     }
 
   }
@@ -177,7 +177,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultValue" + ">";
+      return "<no defaultValue>";
     }
 
   }
@@ -298,7 +298,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultValue" + ">";
+      return "<no defaultValue>";
     }
 
   }

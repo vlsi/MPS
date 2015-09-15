@@ -169,10 +169,6 @@ public class Sample_Facet extends IFacet.Stub {
       public String arch() {
         return super._2();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Sample_Facet.Target_readParams.Parameters assignFrom(Tuples._3<String, Integer, String> from) {
-        return (Sample_Facet.Target_readParams.Parameters) super.assign(from);
-      }
     }
   }
   public static class Target_reportFiles implements ITargetEx2 {

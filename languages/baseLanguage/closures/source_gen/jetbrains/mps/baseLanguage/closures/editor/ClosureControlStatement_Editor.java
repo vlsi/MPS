@@ -367,7 +367,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "controlClosure" + ">";
+      return "<no controlClosure>";
     }
 
   }

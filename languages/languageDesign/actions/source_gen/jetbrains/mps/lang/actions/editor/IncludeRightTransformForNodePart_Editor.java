@@ -88,7 +88,7 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeBlock" + ">";
+      return "<no nodeBlock>";
     }
 
   }

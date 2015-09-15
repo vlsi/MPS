@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,14 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -35,9 +37,8 @@ import java.util.List;
 import java.util.Map;
 
 public class BookmarksTree extends MPSTree {
-
-  private BookmarkManager myBookmarkManager;
-  private Project myProject;
+  private final BookmarkManager myBookmarkManager;
+  private final Project myProject;
 
   public BookmarksTree(Project project, BookmarkManager bookmarkManager) {
     myBookmarkManager = bookmarkManager;
@@ -53,17 +54,13 @@ public class BookmarksTree extends MPSTree {
       public void bookmarkRemoved(int number, SNode node) {
         rebuildBookmarksTree();
       }
-    });
-  }
 
-  private void rebuildBookmarksTree() {
-    myProject.getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        BookmarksTree.this.rebuildNow();
+      private void rebuildBookmarksTree() {
+        BookmarksTree.this.rebuildLater();
       }
     });
   }
+
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
@@ -95,7 +92,7 @@ public class BookmarksTree extends MPSTree {
     boolean hasBookmarks = false;
     for (int i = 0; i < nodePointers.size(); i++) {
       final SNodeReference nodePointer = nodePointers.get(i);
-      if (nodePointer != null && nodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      if (nodePointer != null && nodePointer.resolve(myProject.getRepository()) != null) {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
@@ -105,7 +102,7 @@ public class BookmarksTree extends MPSTree {
     }
     nodePointers = myBookmarkManager.getAllUnnumberedBookmarks();
     for (SNodeReference nodePointer : nodePointers) {
-      if (nodePointer != null && nodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      if (nodePointer != null && nodePointer.resolve(myProject.getRepository()) != null) {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
@@ -122,12 +119,7 @@ public class BookmarksTree extends MPSTree {
   public void gotoSelectedBookmark() {
     final BookmarkNode node = getSelectedBookmarkNode();
     if (node != null) {
-      myProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          node.navigateToBookmark();
-        }
-      });
+      node.navigateToBookmark();
     }
   }
 
@@ -147,6 +139,19 @@ public class BookmarksTree extends MPSTree {
       selectedNode = (MPSTreeNode) selectedNode.getParent();
     }
     return null;
+  }
+
+  @Override
+  protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+    if (nodeToClick instanceof NodeTargetProvider) {
+      final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
+      if (navigationTarget != null) {
+        new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(navigationTarget);
+        return;
+      }
+      // fall-through
+    }
+    super.doubleClick(nodeToClick);
   }
 
   private interface BookmarkNode {
@@ -191,10 +196,7 @@ public class BookmarksTree extends MPSTree {
 
     @Override
     public void navigateToBookmark() {
-      SNode targetNode = myNodePointer.resolve(MPSModuleRepository.getInstance());
-      if (targetNode != null) {
-        NavigationSupport.getInstance().openNode(myProject, targetNode, true, true);
-      }
+      new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(myNodePointer);
     }
   }
 

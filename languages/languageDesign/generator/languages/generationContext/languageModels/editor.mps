@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="tpf3" ref="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
@@ -468,12 +468,7 @@
         <node concept="3F0A7n" id="3YMQ4vlnXNq" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Vb9p2" id="3YMQ4vlnXNr" role="3F10Kt">
-            <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="VechU" id="3YMQ4vlnXNs" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
+          <ref role="1k5W1q" to="tpfj:5Ex$Jzqi8J0" resolve="PatternRef" />
         </node>
       </node>
     </node>
@@ -486,12 +481,7 @@
         <node concept="3F0A7n" id="4w6U_Q4Qdkg" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Vb9p2" id="4w6U_Q4Qdkh" role="3F10Kt">
-            <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="VechU" id="4w6U_Q4Qdki" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
+          <ref role="1k5W1q" to="tpfj:5Ex$Jzqi6o7" resolve="TemplateParameterRef" />
         </node>
       </node>
     </node>
@@ -504,12 +494,7 @@
         <node concept="3F0A7n" id="1xCtdgeQstx" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Vb9p2" id="1xCtdgeQsty" role="3F10Kt">
-            <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="VechU" id="1xCtdgeQstz" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
+          <ref role="1k5W1q" to="tpfj:5Ex$Jzqi8J0" resolve="PatternRef" />
         </node>
       </node>
     </node>
@@ -522,12 +507,7 @@
         <node concept="3F0A7n" id="1xCtdgeQstC" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Vb9p2" id="1xCtdgeQstD" role="3F10Kt">
-            <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="VechU" id="1xCtdgeQstE" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
+          <ref role="1k5W1q" to="tpfj:5Ex$Jzqi8J0" resolve="PatternRef" />
         </node>
       </node>
     </node>
@@ -613,12 +593,7 @@
         <node concept="3F0A7n" id="2n6lsTIwfRw" role="2wV5jI">
           <property role="1Intyy" value="true" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Vb9p2" id="2n6lsTIwfRx" role="3F10Kt">
-            <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="VechU" id="2n6lsTIwfRy" role="3F10Kt">
-            <property role="Vb096" value="DARK_GREEN" />
-          </node>
+          <ref role="1k5W1q" to="tpfj:5Ex$Jzqi8Mt" resolve="VariableRef" />
         </node>
       </node>
     </node>

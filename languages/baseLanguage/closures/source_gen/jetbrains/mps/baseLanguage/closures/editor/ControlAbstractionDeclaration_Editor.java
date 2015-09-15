@@ -95,7 +95,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "visibility" + ">";
+      return "<no visibility>";
     }
 
   }
@@ -342,7 +342,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

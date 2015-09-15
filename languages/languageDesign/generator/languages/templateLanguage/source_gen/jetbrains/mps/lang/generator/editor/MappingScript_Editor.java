@@ -224,7 +224,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "codeBlock" + ">";
+      return "<no codeBlock>";
     }
 
   }

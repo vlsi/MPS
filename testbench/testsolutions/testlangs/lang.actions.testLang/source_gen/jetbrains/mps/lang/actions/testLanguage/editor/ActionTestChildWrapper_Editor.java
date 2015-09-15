@@ -117,7 +117,7 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "childToWrap" + ">";
+      return "<no childToWrap>";
     }
 
   }

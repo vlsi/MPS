@@ -74,8 +74,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

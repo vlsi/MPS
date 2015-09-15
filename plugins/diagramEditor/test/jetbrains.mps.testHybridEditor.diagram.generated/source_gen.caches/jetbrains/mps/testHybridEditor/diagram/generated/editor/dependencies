@@ -249,7 +249,7 @@
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" file="InputPort_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />

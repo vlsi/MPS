@@ -89,7 +89,7 @@ public class Transition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromState" + ">";
+      return "<no fromState>";
     }
 
   }
@@ -139,7 +139,7 @@ public class Transition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toState" + ">";
+      return "<no toState>";
     }
 
   }
@@ -189,7 +189,7 @@ public class Transition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "trigger" + ">";
+      return "<no trigger>";
     }
 
   }

@@ -77,7 +77,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expected" + ">";
+      return "<no expected>";
     }
 
   }
@@ -121,7 +121,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "actual" + ">";
+      return "<no actual>";
     }
 
   }

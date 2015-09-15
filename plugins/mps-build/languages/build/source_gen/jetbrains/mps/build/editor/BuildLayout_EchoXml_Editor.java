@@ -74,7 +74,7 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileName" + ">";
+      return "<no fileName>";
     }
 
   }
@@ -111,7 +111,7 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "element" + ">";
+      return "<no element>";
     }
 
   }

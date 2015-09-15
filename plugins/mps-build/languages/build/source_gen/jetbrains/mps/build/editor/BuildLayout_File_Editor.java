@@ -97,7 +97,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }

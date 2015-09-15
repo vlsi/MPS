@@ -16,15 +16,16 @@
 package jetbrains.mps.typesystem.uiActions;
 
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
-import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Action;
 import javax.swing.JComponent;
@@ -35,8 +36,8 @@ public class SupertypesTree extends AbstractHierarchyTree {
   private final Project myProject;
   private boolean myShowOnlyStrong = false;
 
-  public SupertypesTree(Project mpsProject, AbstractHierarchyView abstractHierarchyView) {
-    super(abstractHierarchyView, SNodeUtil.conceptName_BaseConcept, false);
+  public SupertypesTree(Project mpsProject) {
+    super(mpsProject.getRepository());
     myProject = mpsProject;
   }
 
@@ -65,17 +66,19 @@ public class SupertypesTree extends AbstractHierarchyTree {
     rebuildLater();
   }
 
-  public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    if (new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return hierarchyTreeNode.getNodeReference().resolve(myProject.getRepository()) == null;
+  @Override
+  protected void doubleClick(@NotNull MPSTreeNode node) {
+    if (node instanceof HierarchyTreeNode) {
+      final HierarchyTreeNode hierarchyTreeNode = (HierarchyTreeNode) node;
+      if (new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return hierarchyTreeNode.getNodeReference().resolve(myProject.getRepository()) != null;
+        }
+      })) {
+        new MyBaseNodeDialog(myProject, hierarchyTreeNode.getNodeReference()).show();
       }
-    })) {
-      return false;
     }
-    new MyBaseNodeDialog(myProject, hierarchyTreeNode).show();
-    return true;
   }
 
   public boolean overridesNodeIdentifierCalculation() {
@@ -87,11 +90,11 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   private static class MyBaseNodeDialog extends BaseNodeDialog {
-    private final HierarchyTreeNode myHierarchyTreeNode;
+    private final SNodeReference myNodeReference;
 
-    public MyBaseNodeDialog(Project mpsProject, HierarchyTreeNode hierarchyTreeNode) {
-      super(mpsProject, "");
-      myHierarchyTreeNode = hierarchyTreeNode;
+    public MyBaseNodeDialog(Project mpsProject, SNodeReference nodeReference) {
+      super(mpsProject, "Type Explorer");
+      myNodeReference = nodeReference;
 
       setHorizontalStretch(2f);
       setVerticalStretch(2f);
@@ -101,7 +104,8 @@ public class SupertypesTree extends AbstractHierarchyTree {
 
     @Override
     protected SNode getNode() {
-      return myHierarchyTreeNode.getNode();
+      // BaseNodeDialog runs #getNode() from model read action
+      return myNodeReference.resolve(getProject().getRepository());
     }
 
     @Override

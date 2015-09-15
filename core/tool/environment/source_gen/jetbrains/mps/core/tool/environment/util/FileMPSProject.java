@@ -155,7 +155,6 @@ public class FileMPSProject extends Project {
       if (project.isDirectory()) {
         load(project, new File(project, ".mps/modules.xml"));
       } else {
-        // <node> 
         load(project, project);
       }
     }

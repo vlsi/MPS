@@ -104,7 +104,7 @@ public class EditorComponent implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "editor" + ">";
+      return "<no editor>";
     }
 
   }

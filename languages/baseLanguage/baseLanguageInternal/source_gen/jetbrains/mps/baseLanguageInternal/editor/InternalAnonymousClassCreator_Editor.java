@@ -61,7 +61,7 @@ public class InternalAnonymousClassCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "cls" + ">";
+      return "<no cls>";
     }
 
   }

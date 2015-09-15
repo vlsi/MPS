@@ -48,21 +48,16 @@ public class ConceptRef {
     SNode n1 = SNodeOperations.asNode(exprConcept);
     SNode n2 = SNodeOperations.asNode(exprConcept);
     // -- not ok -- 
-    // <node> 
-    // <node> 
-    // <node> 
     // ====== to concept 
     // - ok - 
     SNode exprConc = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression").getDeclarationNode();
     SNode bExprConc = SNodeOperations.castConcept(exprConc, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     exprConc = bExprConc;
     // -- not ok -- 
-    // <node> 
   }
 
   public void concept_hierarchy1(SAbstractConcept concept) {
     // concept and all its supers 
-    // <node> 
     // supers 
     List<SAbstractConcept> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
     List<SAbstractConcept> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);

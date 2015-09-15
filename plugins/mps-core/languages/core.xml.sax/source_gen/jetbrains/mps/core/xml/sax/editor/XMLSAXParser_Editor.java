@@ -393,7 +393,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "globalText" + ">";
+      return "<no globalText>";
     }
 
   }

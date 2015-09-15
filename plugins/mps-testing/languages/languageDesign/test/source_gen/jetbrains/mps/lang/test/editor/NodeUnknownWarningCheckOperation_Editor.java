@@ -80,7 +80,7 @@ public class NodeUnknownWarningCheckOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "warningRef" + ">";
+      return "<no warningRef>";
     }
 
   }

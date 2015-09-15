@@ -31,40 +31,49 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
   public static final ID<GlobalSNodeId, List<GlobalSNodeId>> NAME = ID.create("jetbrains.mps.ClassifierSuccessorsIndexer");
   private FileBasedIndex.InputFilter myInputFilter = new ClassifierSuccessorsIndexer.InputFilter();
   private KeyDescriptor<GlobalSNodeId> myKeyDescriptor = new GlobalSNodeIdDescriptor();
-  private DataExternalizer<List<GlobalSNodeId>> myDataExternalizer = new ListExternalizer(myKeyDescriptor);
+  private DataExternalizer<List<GlobalSNodeId>> myDataExternalizer = new ListExternalizer<GlobalSNodeId>(myKeyDescriptor);
   private DataIndexer<GlobalSNodeId, List<GlobalSNodeId>, FileContent> myIndexer = new ClassifierSuccessorsIndexer.Indexer();
-  public ClassifierSuccessorsIndexer() {
-  }
+
   @NotNull
   @Override
   public ID<GlobalSNodeId, List<GlobalSNodeId>> getName() {
     return NAME;
   }
+
   @Override
   public int getVersion() {
-    return 4;
+    return 5;
   }
+
   @Override
   public boolean dependsOnFileContent() {
     return true;
   }
+
   @Override
+  @NotNull
   public FileBasedIndex.InputFilter getInputFilter() {
     return myInputFilter;
   }
+
   @Override
+  @NotNull
   public KeyDescriptor<GlobalSNodeId> getKeyDescriptor() {
     return myKeyDescriptor;
   }
+
   @Override
+  @NotNull
   public DataExternalizer<List<GlobalSNodeId>> getValueExternalizer() {
     return myDataExternalizer;
   }
+
   @NotNull
   @Override
   public DataIndexer<GlobalSNodeId, List<GlobalSNodeId>, FileContent> getIndexer() {
     return myIndexer;
   }
+
   private static class InputFilter implements FileBasedIndex.InputFilter {
     private InputFilter() {
     }
@@ -73,9 +82,8 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       return MPSFileTypeFactory.MPS_FILE_TYPE.equals(file.getFileType());
     }
   }
+
   private static class Indexer implements DataIndexer<GlobalSNodeId, List<GlobalSNodeId>, FileContent> {
-    private Indexer() {
-    }
     @NotNull
     @Override
     public Map<GlobalSNodeId, List<GlobalSNodeId>> map(final FileContent inputData) {
@@ -116,6 +124,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     private void safeMap(Map<GlobalSNodeId, List<GlobalSNodeId>> result, SNode classifierType, SNode node) {
       safeMap(result, classifierType.getReference("classifier"), node);
     }
+
     private void safeMap(Map<GlobalSNodeId, List<GlobalSNodeId>> result, SReference reference, SNode node) {
       GlobalSNodeId key = GlobalSNodeId.createSNodeId(reference);
       if (key == null) {
@@ -126,15 +135,18 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         successors = ListSequence.fromList(new ArrayList<GlobalSNodeId>());
         MapSequence.fromMap(result).put(key, successors);
       }
-      ListSequence.fromList(successors).addElement(new GlobalSNodeId(node));
+      ListSequence.fromList(successors).addElement(GlobalSNodeId.createSNodeId(node));
     }
+
     private boolean isInstanceOfClassConcept(SNode node) {
       String conceptFQName = node.getConcept().getQualifiedName();
       return "jetbrains.mps.baseLanguage.structure.ClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.EnumClass".equals(conceptFQName) || "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase".equals(conceptFQName);
     }
+
     private boolean isInstanceOfAnonymousClassConcept(SNode node) {
       return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConcept().getQualifiedName());
     }
+
     private boolean isInstanceOfInterfaceConcept(SNode node) {
       String conceptFQName = node.getConcept().getQualifiedName();
       return "jetbrains.mps.baseLanguage.structure.Interface".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.Annotation".equals(conceptFQName);

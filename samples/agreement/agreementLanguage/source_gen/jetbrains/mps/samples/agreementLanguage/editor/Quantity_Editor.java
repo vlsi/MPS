@@ -95,7 +95,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "amount" + ">";
+      return "<no amount>";
     }
 
   }

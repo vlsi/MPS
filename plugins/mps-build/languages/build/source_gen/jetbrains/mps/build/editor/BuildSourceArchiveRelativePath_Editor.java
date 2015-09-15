@@ -83,7 +83,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "archivePath" + ">";
+      return "<no archivePath>";
     }
 
   }

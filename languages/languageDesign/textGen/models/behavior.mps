@@ -4,9 +4,9 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -211,7 +211,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
     </language>
@@ -1302,6 +1302,28 @@
       </node>
       <node concept="3Tqbb2" id="$yZ68hB78M" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="$P$7g1EPpd" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="usesParameterObjectFor" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRw" resolve="usesParameterObjectFor" />
+      <node concept="3Tm1VV" id="$P$7g1EPpo" role="1B3o_S" />
+      <node concept="3clFbS" id="$P$7g1EPpp" role="3clF47">
+        <node concept="3clFbF" id="$P$7g1EPvk" role="3cqZAp">
+          <node concept="3clFbT" id="$P$7g1EPvj" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="$P$7g1EPpq" role="3clF46">
+        <property role="TrG5h" value="parameter" />
+        <node concept="3Tqbb2" id="$P$7g1EPpr" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node concept="10P_77" id="$P$7g1EPps" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="2D1PBM_bzG7">
     <ref role="13h7C2" to="2omo:hX1bSug" resolve="GenerateTextDeclaration" />
@@ -1397,6 +1419,28 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="$yZ68hBhOk" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="$P$7g1ELPC" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="usesParameterObjectFor" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRw" resolve="usesParameterObjectFor" />
+      <node concept="3Tm1VV" id="$P$7g1ELPN" role="1B3o_S" />
+      <node concept="3clFbS" id="$P$7g1ELPO" role="3clF47">
+        <node concept="3clFbF" id="$P$7g1EOZ7" role="3cqZAp">
+          <node concept="3clFbT" id="$P$7g1EOZ6" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="$P$7g1ELPP" role="3clF46">
+        <property role="TrG5h" value="parameter" />
+        <node concept="3Tqbb2" id="$P$7g1ELPQ" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node concept="10P_77" id="$P$7g1ELPR" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="4IGpg_YjKoi">
@@ -1561,6 +1605,29 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="$P$7g1EKUC">
+    <property role="3GE5qa" value="parameter" />
+    <ref role="13h7C2" to="2omo:hX17ltF" resolve="NodeParameter" />
+    <node concept="13hLZK" id="$P$7g1EKUD" role="13h7CW">
+      <node concept="3clFbS" id="$P$7g1EKUE" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="$P$7g1ELhY" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="isParameterObjectUsed" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwJh7I" resolve="isParameterObjectUsed" />
+      <node concept="3Tm1VV" id="$P$7g1ELi8" role="1B3o_S" />
+      <node concept="3clFbS" id="$P$7g1ELi9" role="3clF47">
+        <node concept="3clFbF" id="$P$7g1ELmm" role="3cqZAp">
+          <node concept="3clFbT" id="$P$7g1ELml" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="$P$7g1ELia" role="3clF45" />
     </node>
   </node>
 </model>

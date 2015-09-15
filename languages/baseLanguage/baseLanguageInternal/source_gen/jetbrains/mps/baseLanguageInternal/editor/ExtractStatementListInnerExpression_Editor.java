@@ -56,7 +56,7 @@ public class ExtractStatementListInnerExpression_Editor extends DefaultNodeEdito
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inner" + ">";
+      return "<no inner>";
     }
 
   }

@@ -16,6 +16,12 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import java.util.LinkedList;
 import org.apache.log4j.Level;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
@@ -65,15 +71,11 @@ public abstract class MergeDriverPacker {
             internalPack(classPathJars, tmpDir, false);
 
             if (isFromSources()) {
-              Iterable<String> classpathInternal = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
+              packMergerRT(Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
                 public boolean accept(String cpd) {
                   return !(cpd.endsWith(".jar"));
                 }
-              });
-              File tmpDirRT = FileUtil.createTmpDir();
-              internalPack(classpathInternal, tmpDirRT, true);
-              FileUtil.zip(tmpDirRT, new File(tmpDir + File.separator + MERGER_RT));
-              FileUtil.delete(tmpDirRT);
+              }), new File(tmpDir, MERGER_RT));
             }
             monitor.step("Installing merge driver");
             FileUtil.copyDir(tmpDir, getFile());
@@ -83,6 +85,27 @@ public abstract class MergeDriverPacker {
         });
       }
     });
+  }
+  private void packMergerRT(Iterable<String> classpathDirs, File to) {
+    Map<String, File> files = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
+    for (String basePath : classpathDirs) {
+      File baseDir = new File(basePath);
+      Queue<String> pathQueue = QueueSequence.fromQueueAndArray(new LinkedList<String>(), baseDir.list());
+      while (QueueSequence.fromQueue(pathQueue).isNotEmpty()) {
+        String path = QueueSequence.fromQueue(pathQueue).removeFirstElement();
+        File f = new File(baseDir, path);
+        if (f.isDirectory()) {
+          for (String child : f.list()) {
+            QueueSequence.fromQueue(pathQueue).addLastElement(path + "/" + child);
+          }
+        } else if (path.endsWith(".class")) {
+          MapSequence.fromMap(files).put(path, f);
+        }
+      }
+    }
+    if (MapSequence.fromMap(files).isNotEmpty()) {
+      FileUtil.zip(files, to);
+    }
   }
   private void internalPack(Iterable<String> classpathDirs, File tmpDir, boolean isForZip) {
     for (String classpathDir : classpathDirs) {

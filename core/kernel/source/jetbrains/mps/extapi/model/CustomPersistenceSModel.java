@@ -66,9 +66,9 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      // TODO FIXME listeners are invoked while holding the lock
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      setLoadingState(ModelLoadingState.FULLY_LOADED);
     }
+    fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     return myModel;
   }
 
@@ -107,11 +107,6 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     } catch (IOException e) {
       return new StubModel(getReference(), e);
     }
-  }
-
-  @Override
-  public boolean isLoaded() {
-    return myModel != null;
   }
 
   @Override

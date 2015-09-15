@@ -91,7 +91,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "length" + ">";
+      return "<no length>";
     }
 
   }

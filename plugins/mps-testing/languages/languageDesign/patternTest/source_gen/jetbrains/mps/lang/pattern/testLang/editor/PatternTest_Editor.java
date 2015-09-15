@@ -125,7 +125,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pattern" + ">";
+      return "<no pattern>";
     }
 
   }
@@ -172,7 +172,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeToMatch" + ">";
+      return "<no nodeToMatch>";
     }
 
   }
@@ -225,7 +225,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "matches" + ">";
+      return "<no matches>";
     }
 
   }

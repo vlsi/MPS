@@ -66,7 +66,7 @@ public class NullSafeDotExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operand" + ">";
+      return "<no operand>";
     }
 
   }
@@ -106,7 +106,7 @@ public class NullSafeDotExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }

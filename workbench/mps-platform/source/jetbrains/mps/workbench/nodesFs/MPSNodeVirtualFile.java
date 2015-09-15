@@ -19,8 +19,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
@@ -29,10 +27,8 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,18 +50,14 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer, @NotNull MPSNodesVirtualFileSystem vfs) {
     myNode = nodePointer;
     myFileSystem = vfs;
-    SModel model = nodePointer.getModelReference() == null ? null : nodePointer.getModelReference().resolve(MPSModuleRepository.getInstance());
-    if (model != null) {
-      myTimeStamp = model.getSource().getTimestamp();
-    }
     updateFields();
   }
 
   void updateFields() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myFileSystem.getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
+        SNode node = myNode.resolve(myFileSystem.getRepository());
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = myPresentationName = "";
@@ -81,19 +73,21 @@ public final class MPSNodeVirtualFile extends VirtualFile {
             }
           }
           myPath = NODE_PREFIX + NiceReferenceSerializer.serializeNode(node);
+          myTimeStamp = node.getModel().getSource().getTimestamp();
         }
       }
     });
   }
 
   public SNode getNode() {
-    return myNode.resolve(MPSModuleRepository.getInstance());
+    return myNode.resolve(myFileSystem.getRepository());
   }
 
   public SNodeReference getSNodePointer() {
     return myNode;
   }
 
+  @NotNull
   @Override
   public String getPath() {
     return myPath;
@@ -150,13 +144,13 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     // Returning the parent of this node's model virtual file
     // i.e. a real directory wherein the model file lives
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
+    // but why it's not MPSModelVirtualFile that serves as parent for node VF?
     if (myNode == null || myNode.getModelReference() == null) return null;
-    final SRepository repo = MPSModuleRepository.getInstance();
-    return new ModelAccessHelper(repo).runReadAction(new Computable<VirtualFile>() {
+    return new ModelAccessHelper(myFileSystem.getRepository()).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
         org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
-        if (modelRef.resolve(repo) == null) {
+        if (modelRef.resolve(myFileSystem.getRepository()) == null) {
           return null;
         }
         MPSModelVirtualFile modelVFile = myFileSystem.getFileFor(modelRef);

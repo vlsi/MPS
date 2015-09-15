@@ -74,7 +74,7 @@ public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "classpath" + ">";
+      return "<no classpath>";
     }
 
   }

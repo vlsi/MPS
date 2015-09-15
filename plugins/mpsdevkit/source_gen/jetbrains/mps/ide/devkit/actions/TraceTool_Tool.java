@@ -6,21 +6,26 @@ import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
+import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.impl.ToolWindowImpl;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 import com.intellij.openapi.wm.ex.ToolWindowEx;
+import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JComponent;
 
 public class TraceTool_Tool extends GeneratedTool {
   private static final Icon ICON = MPSIcons.ToolWindows.TypeTraceView;
   private TypeSystemTracePanel myPanel;
+  private MessageBusConnection myBusConnection;
+  private EditorComponent myEditorComponent;
   public TraceTool_Tool(Project project) {
     super(project, "Typesystem Trace", 5, ICON, ToolWindowAnchor.RIGHT, false);
   }
@@ -35,14 +40,26 @@ public class TraceTool_Tool extends GeneratedTool {
         }
       }
     });
-
+    TraceTool_Tool.this.myBusConnection = project.getMessageBus().connect();
+    TraceTool_Tool.this.myBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorComponentCreateListener() {
+      public void editorComponentCreated(@NotNull EditorComponent ecomp) {
+      }
+      public void editorComponentDisposed(@NotNull EditorComponent ecomp) {
+        if (ecomp == TraceTool_Tool.this.myEditorComponent) {
+          TraceTool_Tool.this.myPanel.cleanUp();
+          TraceTool_Tool.this.myEditorComponent = null;
+        }
+      }
+    });
   }
   public void dispose() {
     Disposer.dispose(TraceTool_Tool.this.myPanel);
+    TraceTool_Tool.this.myBusConnection.disconnect();
     super.dispose();
   }
-  public void buildTrace(final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
-    TraceTool_Tool.this.myPanel.showTraceForNode(operationContext, node, editorComponent, rebuild);
+  public void buildTrace(MPSProject mpsProject, SNode node, EditorComponent editorComponent) {
+    TraceTool_Tool.this.myEditorComponent = editorComponent;
+    TraceTool_Tool.this.myPanel.showTraceForNode(mpsProject, node, editorComponent);
   }
   public JComponent getComponent() {
     return TraceTool_Tool.this.myPanel;

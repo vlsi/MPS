@@ -73,7 +73,7 @@ public class ConnectorCreationHandlers_EditorComponent implements ConceptEditorC
     }
 
     protected String getNoTargetText() {
-      return "<no " + "canCreate" + ">";
+      return "<no canCreate>";
     }
 
   }
@@ -116,7 +116,7 @@ public class ConnectorCreationHandlers_EditorComponent implements ConceptEditorC
     }
 
     protected String getNoTargetText() {
-      return "<no " + "handler" + ">";
+      return "<no handler>";
     }
 
   }

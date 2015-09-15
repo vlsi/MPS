@@ -106,7 +106,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ofTotal" + ">";
+      return "<no ofTotal>";
     }
 
   }
@@ -158,7 +158,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expected" + ">";
+      return "<no expected>";
     }
 
   }

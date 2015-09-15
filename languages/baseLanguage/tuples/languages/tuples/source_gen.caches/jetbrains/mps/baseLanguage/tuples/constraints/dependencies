@@ -96,13 +96,11 @@
   <dependency className="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils" file="TupleIntefaceUtils.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

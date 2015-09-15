@@ -81,7 +81,7 @@ public class PopupCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "group" + ">";
+      return "<no group>";
     }
 
   }

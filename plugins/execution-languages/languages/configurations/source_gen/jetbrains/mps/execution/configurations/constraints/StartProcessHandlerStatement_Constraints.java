@@ -29,7 +29,6 @@ public class StartProcessHandlerStatement_Constraints extends BaseConstraintsDes
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    // <node> 
     return true;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "258639336594554645");

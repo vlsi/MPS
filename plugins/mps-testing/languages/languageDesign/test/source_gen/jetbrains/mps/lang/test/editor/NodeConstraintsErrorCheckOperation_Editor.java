@@ -81,7 +81,7 @@ public class NodeConstraintsErrorCheckOperation_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "errorRef" + ">";
+      return "<no errorRef>";
     }
 
   }

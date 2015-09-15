@@ -155,7 +155,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }
@@ -504,7 +504,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -578,7 +578,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }

@@ -16,9 +16,7 @@
   <dependency className="jetbrains.mps.vcs.diff.ui.common.Bounds" file="Bounds.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" file="ButtonsPainter.java">

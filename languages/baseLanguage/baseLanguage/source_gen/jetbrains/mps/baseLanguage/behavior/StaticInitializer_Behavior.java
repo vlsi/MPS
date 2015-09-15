@@ -23,4 +23,7 @@ public class StaticInitializer_Behavior {
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return true;
   }
+  public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
+    return true;
+  }
 }

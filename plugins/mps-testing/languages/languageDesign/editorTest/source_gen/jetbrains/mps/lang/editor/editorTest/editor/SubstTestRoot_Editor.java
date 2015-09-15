@@ -104,7 +104,7 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "singleChild" + ">";
+      return "<no singleChild>";
     }
 
   }

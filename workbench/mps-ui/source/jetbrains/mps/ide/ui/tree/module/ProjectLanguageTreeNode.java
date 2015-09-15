@@ -49,7 +49,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myShortNameOnly = shortNameOnly;
     myProject = project;
     setNodeIdentifier(language.getModuleReference().toString());
-    setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
+    setIcon(IdeIcons.LANGUAGE_ICON);
   }
 
   @Override

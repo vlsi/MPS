@@ -131,7 +131,7 @@ public class Workflow_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "stateMachine" + ">";
+      return "<no stateMachine>";
     }
 
   }

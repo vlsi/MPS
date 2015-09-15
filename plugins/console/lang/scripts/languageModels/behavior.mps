@@ -9,6 +9,7 @@
     <import index="z2sp" ref="r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="zyb2" ref="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
+    <import index="fq2o" ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -123,12 +124,6 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="DySRn8ZRY$">
-    <ref role="13h7C2" to="z2sp:1whNchEKXLE" resolve="Execute" />
-    <node concept="13hLZK" id="DySRn8ZRY_" role="13h7CW">
-      <node concept="3clFbS" id="DySRn8ZRYA" role="2VODD2" />
-    </node>
-  </node>
   <node concept="13h7C7" id="2jRIeHQ1WiA">
     <ref role="13h7C2" to="z2sp:23X86fnRD$Y" resolve="RefactorOperation" />
     <node concept="13hLZK" id="2jRIeHQ1Wl1" role="13h7CW">
@@ -139,7 +134,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
+      <ref role="13i0hy" to="fq2o:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="2jRIeHQ1XWr" role="1B3o_S" />
       <node concept="3clFbS" id="2jRIeHQ1XWu" role="3clF47">
         <node concept="3clFbF" id="2jRIeHQ27BD" role="3cqZAp">
@@ -155,7 +150,7 @@
       <property role="13i0it" value="false" />
       <property role="2Ki8OM" value="true" />
       <property role="TrG5h" value="getHelpPage" />
-      <ref role="13i0hy" to="zyb2:64VftqEen2L" resolve="getHelpPage" />
+      <ref role="13i0hy" to="fq2o:64VftqEen2L" resolve="getHelpPage" />
       <node concept="3Tm1VV" id="2jRIeHQ27BS" role="1B3o_S" />
       <node concept="3clFbS" id="2jRIeHQ27BX" role="3clF47">
         <node concept="3clFbF" id="2jRIeHQ27Iw" role="3cqZAp">

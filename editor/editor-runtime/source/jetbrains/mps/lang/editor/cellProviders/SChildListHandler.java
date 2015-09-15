@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -84,17 +86,25 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
   @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
+
+    Iterable<SNode> nodesAndComments =
+        AttributeOperations.getChildNodesAndAttributes(myOwnerNode, myLink);
     if (!myIsReverseOrder) {
-      resultList.addAll(IterableUtil.asCollection(myOwnerNode.getChildren(myLink)));
+      resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
-      List<? extends SNode> children = IterableUtil.copyToList(myOwnerNode.getChildren(myLink));
+      List<? extends SNode> children = IterableUtil.copyToList(nodesAndComments);
       Collections.reverse(children);
       resultList.addAll(children);
     }
 
     Iterator<SNode> it = resultList.iterator();
     while (it.hasNext()) {
-      if (!filter(it.next())) {
+      SNode next = it.next();
+      SNode nodeToFilter = next;
+      if (CommentUtil.isComment(next)) {
+        nodeToFilter = CommentUtil.getCommentedNode(next);
+      }
+      if (!filter(nodeToFilter)) {
         it.remove();
       }
     }

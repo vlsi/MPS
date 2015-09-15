@@ -135,7 +135,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "customizes" + ">";
+      return "<no customizes>";
     }
 
   }

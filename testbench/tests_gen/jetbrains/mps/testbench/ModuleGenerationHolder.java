@@ -94,12 +94,10 @@ public class ModuleGenerationHolder {
     }
     // sanity check build() doesn't come after diff() (due to broken test method ordering) 
     assert tmpPath != null;
-    // <node> 
     final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
     boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
     if (isParallel) {
       optBuilder.strictMode(true).generateInParallel(isParallel, 8);
-      // <node> 
     }
 
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();

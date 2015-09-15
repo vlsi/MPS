@@ -95,7 +95,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operator" + ">";
+      return "<no operator>";
     }
 
   }
@@ -139,7 +139,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftType" + ">";
+      return "<no leftType>";
     }
 
   }
@@ -182,7 +182,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rightType" + ">";
+      return "<no rightType>";
     }
 
   }
@@ -235,7 +235,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "returnType" + ">";
+      return "<no returnType>";
     }
 
   }

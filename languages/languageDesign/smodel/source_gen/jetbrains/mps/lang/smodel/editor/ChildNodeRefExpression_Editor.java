@@ -86,7 +86,7 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "parent" + ">";
+      return "<no parent>";
     }
 
   }

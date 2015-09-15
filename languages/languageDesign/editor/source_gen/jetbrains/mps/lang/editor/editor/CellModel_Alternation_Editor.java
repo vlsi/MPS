@@ -462,7 +462,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "alternationCondition" + ">";
+      return "<no alternationCondition>";
     }
 
   }

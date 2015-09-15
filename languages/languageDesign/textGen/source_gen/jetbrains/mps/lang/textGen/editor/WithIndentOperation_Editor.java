@@ -97,7 +97,7 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list" + ">";
+      return "<no list>";
     }
 
   }

@@ -123,7 +123,7 @@ public abstract class BaseAction extends AnAction {
         }
         try {
           doUpdate(e, params);
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
           final Logger log = LogManager.getLogger(getClass());
           if (log.isEnabledFor(Level.ERROR)) {
             log.error(String.format("User's action doUpdate method failed. Action: %s. Class: %s", getTemplatePresentation().getText(), BaseAction.this.getClass().getName()), ex);
@@ -143,7 +143,7 @@ public abstract class BaseAction extends AnAction {
       public void run() {
         try {
           doExecute(event, params);
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
           final Logger log = LogManager.getLogger(getClass());
           if (log.isEnabledFor(Level.ERROR)) {
             log.error(String.format("User's action execute method failed. Action: %s. Class: %s", getName(), BaseAction.this.getClass().getName()), ex);

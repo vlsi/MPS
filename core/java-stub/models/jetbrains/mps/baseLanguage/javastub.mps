@@ -7,9 +7,9 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="45y3" ref="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" />
@@ -6483,6 +6483,26 @@
               </node>
               <node concept="liA8E" id="4sm8lF4o_Ww" role="2OqNvi">
                 <ref role="37wK5l" to="45y3:6hYzBiUOuLo" resolve="isDeprecated" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5N7M5_4eIkR" role="3cqZAp">
+          <node concept="37vLTI" id="5N7M5_4eLsD" role="3clFbG">
+            <node concept="2OqwBi" id="5N7M5_4eMdr" role="37vLTx">
+              <node concept="37vLTw" id="5N7M5_4eMcP" role="2Oq$k0">
+                <ref role="3cqZAo" node="4sm8lF4o_W8" resolve="m" />
+              </node>
+              <node concept="liA8E" id="5N7M5_4eMn5" role="2OqNvi">
+                <ref role="37wK5l" to="45y3:5N7M5_4e5mt" resolve="isSynchronized" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5N7M5_4eJ9H" role="37vLTJ">
+              <node concept="37vLTw" id="5N7M5_4eIkP" role="2Oq$k0">
+                <ref role="3cqZAo" node="4sm8lF4o_W7" resolve="md" />
+              </node>
+              <node concept="3TrcHB" id="5N7M5_4eKLW" role="2OqNvi">
+                <ref role="3TsBF5" to="tpee:3HnrdCzoiLU" resolve="isSynchronized" />
               </node>
             </node>
           </node>

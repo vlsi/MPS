@@ -60,7 +60,7 @@ public class ListCustomParameter_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }

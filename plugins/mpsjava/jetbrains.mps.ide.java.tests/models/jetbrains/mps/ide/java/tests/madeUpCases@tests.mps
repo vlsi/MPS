@@ -4,9 +4,10 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -181,12 +182,6 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -210,6 +205,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1049,25 +1051,25 @@
       <property role="TrG5h" value="FullSource" />
       <node concept="3cqZAl" id="LfG6aZ8Cgi" role="3clF45" />
       <node concept="3clFbS" id="LfG6aZ8Cgj" role="3clF47">
-        <node concept="3SKdUt" id="7TY8R4TXJry" role="3cqZAp">
-          <node concept="3SKWN0" id="7TY8R4TXJrz" role="3SKWNk">
-            <node concept="3clFbF" id="LfG6aZ92Mm" role="3SKWNf">
-              <node concept="2YIFZM" id="LfG6aZ92Mo" role="3clFbG">
-                <ref role="37wK5l" to="wfc9:LfG6aZ8Ic$" resolve="checkSourceModel" />
-                <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
-                <node concept="3cpWs3" id="LfG6aZ92MG" role="37wK5m">
-                  <node concept="Xl_RD" id="LfG6aZ92MJ" role="3uHU7w">
-                    <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir4/jetbrains/mps/ide/java/testMaterial4" />
-                  </node>
-                  <node concept="2YIFZM" id="LfG6aZ92Mr" role="3uHU7B">
-                    <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                    <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
-                  </node>
+        <node concept="1X3_iC" id="3$ZLRFpSV7o" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="LfG6aZ92Mm" role="8Wnug">
+            <node concept="2YIFZM" id="LfG6aZ92Mo" role="3clFbG">
+              <ref role="37wK5l" to="wfc9:LfG6aZ8Ic$" resolve="checkSourceModel" />
+              <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
+              <node concept="3cpWs3" id="LfG6aZ92MG" role="37wK5m">
+                <node concept="Xl_RD" id="LfG6aZ92MJ" role="3uHU7w">
+                  <property role="Xl_RC" value="/plugins/mpsjava/tests/testDir4/jetbrains/mps/ide/java/testMaterial4" />
                 </node>
-                <node concept="BaHAS" id="LfG6aZ92N4" role="37wK5m">
-                  <property role="BaGAP" value="" />
-                  <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial4" />
+                <node concept="2YIFZM" id="LfG6aZ92Mr" role="3uHU7B">
+                  <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                  <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
                 </node>
+              </node>
+              <node concept="BaHAS" id="LfG6aZ92N4" role="37wK5m">
+                <property role="BaGAP" value="" />
+                <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial4" />
               </node>
             </node>
           </node>

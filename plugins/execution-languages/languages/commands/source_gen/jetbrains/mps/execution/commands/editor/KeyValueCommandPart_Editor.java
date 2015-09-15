@@ -100,7 +100,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "key" + ">";
+      return "<no key>";
     }
 
   }
@@ -134,7 +134,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }

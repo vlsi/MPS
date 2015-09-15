@@ -145,7 +145,7 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "preProcessFunction" + ">";
+      return "<no preProcessFunction>";
     }
 
   }

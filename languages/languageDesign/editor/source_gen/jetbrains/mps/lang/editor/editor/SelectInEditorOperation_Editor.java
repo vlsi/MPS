@@ -104,7 +104,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "editorContext" + ">";
+      return "<no editorContext>";
     }
 
   }
@@ -178,7 +178,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "cellSelector" + ">";
+      return "<no cellSelector>";
     }
 
   }
@@ -255,7 +255,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "selectionStart" + ">";
+      return "<no selectionStart>";
     }
 
   }
@@ -328,7 +328,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "selectionEnd" + ">";
+      return "<no selectionEnd>";
     }
 
   }

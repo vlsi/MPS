@@ -11,6 +11,9 @@ public class JUnit3TestCaseRef_BehaviorDescriptor extends BaseConcept_BehaviorDe
   public String virtual_fqClassName_2956932267233324537(SNode thisNode) {
     return JUnit3TestCaseRef_Behavior.virtual_fqClassName_2956932267233324537(thisNode);
   }
+  public boolean virtual_isSame_24903889606765997(SNode thisNode, SNode testRef) {
+    return JUnit3TestCaseRef_Behavior.virtual_isSame_24903889606765997(thisNode, testRef);
+  }
   public Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     return JUnit3TestCaseRef_Behavior.virtual_testNames_4089647634160960707(thisNode);
   }

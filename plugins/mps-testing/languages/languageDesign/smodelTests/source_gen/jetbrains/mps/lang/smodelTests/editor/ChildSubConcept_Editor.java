@@ -174,7 +174,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "specializedGranChild_0_1" + ">";
+      return "<no specializedGranChild_0_1>";
     }
 
   }

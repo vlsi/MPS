@@ -75,7 +75,7 @@ public class XmlLiteral_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "element" + ">";
+      return "<no element>";
     }
 
   }

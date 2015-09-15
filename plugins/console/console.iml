@@ -24,5 +24,9 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="mps-core" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>
+

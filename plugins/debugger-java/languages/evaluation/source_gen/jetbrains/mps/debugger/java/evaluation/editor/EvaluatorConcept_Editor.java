@@ -136,7 +136,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "contextNode" + ">";
+      return "<no contextNode>";
     }
 
   }
@@ -191,7 +191,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "thisNode" + ">";
+      return "<no thisNode>";
     }
 
   }
@@ -323,7 +323,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "evaluatedStatements" + ">";
+      return "<no evaluatedStatements>";
     }
 
   }

@@ -71,7 +71,7 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statement" + ">";
+      return "<no statement>";
     }
 
   }

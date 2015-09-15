@@ -62,7 +62,7 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }

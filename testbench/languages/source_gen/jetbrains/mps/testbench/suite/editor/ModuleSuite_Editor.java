@@ -77,7 +77,7 @@ public class ModuleSuite_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "moduleRef" + ">";
+      return "<no moduleRef>";
     }
 
   }

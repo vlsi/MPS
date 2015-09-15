@@ -100,13 +100,13 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6452985437061870314(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL, 0x2cb3222730d5c47cL, "declaration")));
   }
-  public static Object propertyMacro_GetPropertyValue_7527743013695061394(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3057017847072011260(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, 0x6877ea6323b8f1a4L, "declaration")));
   }
-  public static Object propertyMacro_GetPropertyValue_1309355481571303327(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3057017847072056398(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL, 0x2cb3222730cfe469L, "declaration")));
   }
-  public static Object propertyMacro_GetPropertyValue_6129256022887942008(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3057017847072043299(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, 0x550f7de0eda8c07bL, "declaration")));
   }
   public static Object referenceMacro_GetReferent_7153805464398888188(final ReferenceMacroContext _context) {

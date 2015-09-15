@@ -70,7 +70,6 @@ public class AnnotationHelper {
     IFile iFile;
     if (source instanceof FileDataSource) {
       iFile = ((FileDataSource) source).getFile();
-      // <node> 
     } else if (source instanceof FilePerRootDataSource) {
       iFile = ((FilePerRootDataSource) source).getFile(root.getName() + "." + FilePerRootDataSource.ROOT_EXTENSION);
     } else {

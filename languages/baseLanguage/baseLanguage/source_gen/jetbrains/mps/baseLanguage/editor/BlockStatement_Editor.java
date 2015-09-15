@@ -77,7 +77,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "statements" + ">";
+      return "<no statements>";
     }
 
   }

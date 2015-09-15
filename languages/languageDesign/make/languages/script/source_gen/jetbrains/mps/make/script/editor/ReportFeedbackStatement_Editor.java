@@ -92,7 +92,7 @@ public class ReportFeedbackStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "message" + ">";
+      return "<no message>";
     }
 
   }

@@ -569,7 +569,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "layout" + ">";
+      return "<no layout>";
     }
 
   }

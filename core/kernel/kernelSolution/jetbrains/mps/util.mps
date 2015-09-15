@@ -5,10 +5,10 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -5355,7 +5355,10 @@
         <node concept="TZ5HI" id="2DYuqezx02C" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx02D" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx05v" role="1dT_Ay">
-              <property role="1dT_AB" value="just inline" />
+              <property role="1dT_AB" value="use SNodeReference.getModelReference().resolve() instead." />
+            </node>
+            <node concept="1dT_AC" id="1_xVpohZcFs" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
             </node>
           </node>
         </node>
@@ -5516,11 +5519,20 @@
       </node>
       <node concept="3clFbS" id="7WvVJ3rO1IW" role="3clF47">
         <node concept="3cpWs6" id="4W4PrCD6A$6" role="3cqZAp">
-          <node concept="2YIFZM" id="4W4PrCD6B_x" role="3cqZAk">
-            <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-            <node concept="37vLTw" id="4W4PrCD6BVE" role="37wK5m">
-              <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+          <node concept="3K4zz7" id="5iC9mDBZf1E" role="3cqZAk">
+            <node concept="10Nm6u" id="5iC9mDBZf3k" role="3K4GZi" />
+            <node concept="3y3z36" id="5iC9mDBZeVP" role="3K4Cdx">
+              <node concept="10Nm6u" id="5iC9mDBZeYJ" role="3uHU7w" />
+              <node concept="37vLTw" id="5iC9mDBZeUO" role="3uHU7B">
+                <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="4W4PrCD6B_x" role="3K4E3e">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
+              <node concept="37vLTw" id="4W4PrCD6BVE" role="37wK5m">
+                <ref role="3cqZAo" node="7WvVJ3rO3gA" resolve="model" />
+              </node>
             </node>
           </node>
         </node>

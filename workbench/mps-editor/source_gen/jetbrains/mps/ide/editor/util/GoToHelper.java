@@ -8,8 +8,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -36,14 +38,18 @@ public class GoToHelper {
   public static boolean hasApplicableFinder(SNode node, String finderClassName) {
     return FindUtils.getFinderByClassName(finderClassName).isApplicable(node);
   }
-  public static void executeFinders(final SNode method, Project project, final String finderClassName, RelativePoint relativePoint) {
-    final Wrappers._T<String> methodName = new Wrappers._T<String>();
+  public static void executeFinders(final SNode node, Project project, final String finderClassName, RelativePoint relativePoint) {
+    final Wrappers._T<String> caption = new Wrappers._T<String>();
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
 
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        methodName.value = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        assert hasApplicableFinder(method, finderClassName);
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+          caption.value = SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        } else {
+          caption.value = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
+        }
+        assert hasApplicableFinder(node, finderClassName);
       }
     });
 
@@ -53,7 +59,7 @@ public class GoToHelper {
       public void run(@NotNull final ProgressIndicator p) {
         mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            List<SNode> list = FindUtils.executeFinder(finderClassName, method, GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
+            List<SNode> list = FindUtils.executeFinder(finderClassName, node, GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
             SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
               public SNodePointer select(SNode it) {
                 return new SNodePointer(it);
@@ -64,7 +70,7 @@ public class GoToHelper {
       }
     });
 
-    String title = "Choose overriding method of " + methodName.value + "() to navigate to";
+    String title = "Choose overriding method of " + caption.value + "() to navigate to";
     GoToContextMenuUtil.showMenu(mpsProject, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(), relativePoint);
   }
 }

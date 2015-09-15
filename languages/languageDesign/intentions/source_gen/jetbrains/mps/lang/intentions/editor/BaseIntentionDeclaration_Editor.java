@@ -359,7 +359,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "descriptionFunction" + ">";
+      return "<no descriptionFunction>";
     }
 
   }
@@ -445,7 +445,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "executeFunction" + ">";
+      return "<no executeFunction>";
     }
 
   }

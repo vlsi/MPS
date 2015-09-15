@@ -23,6 +23,9 @@ public class EncodingDeclaration_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_8f19ed_a0a1();
   }
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return true;
+  }
   private static SNode _quotation_createNode_8f19ed_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

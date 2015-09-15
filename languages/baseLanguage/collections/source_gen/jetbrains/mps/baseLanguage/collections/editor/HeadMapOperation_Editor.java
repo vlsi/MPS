@@ -79,7 +79,7 @@ public class HeadMapOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toKey" + ">";
+      return "<no toKey>";
     }
 
   }

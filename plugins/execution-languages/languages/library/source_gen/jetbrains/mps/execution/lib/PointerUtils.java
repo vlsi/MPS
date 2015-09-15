@@ -4,47 +4,55 @@ package jetbrains.mps.execution.lib;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.Nls;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 
 public class PointerUtils {
-  public static final String POINTER_SEPARATOR = "%";
+  private static final String POINTER_SEPARATOR = "%";
   @Nullable
-  public static SNodeReference stringToPointer(@Nls String pointerString) {
+  public static SNodeReference stringToPointer(String pointerString) {
     if ((pointerString == null || pointerString.length() == 0)) {
       return null;
     }
-    String[] split = pointerString.split(POINTER_SEPARATOR);
-    return new SNodePointer(split[0], split[1]);
+
+    SNodeReference rv = tryLegacyFormat(pointerString);
+    if (rv != null) {
+      return rv;
+    }
+    return PersistenceFacade.getInstance().createNodeReference(pointerString);
   }
-  public static String pointerToString(@NotNull final SNodeReference pointer) {
-    final Wrappers._T<String> value = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        value.value = SNodeOperations.getModelFromNodeReference(((SNodePointer) pointer)).getReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
-      }
-    });
-    return value.value;
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  private static SNodeReference tryLegacyFormat(String pointerString) {
+    // this is compatibility code, to read run configurations serialized with previous MPS versions 
+    // remove this code after 3.3 is out, use PersistenceFacade only 
+    if (pointerString.indexOf(POINTER_SEPARATOR) > 0) {
+      String[] split = pointerString.split(POINTER_SEPARATOR);
+      return new SNodePointer(split[0], split[1]);
+    }
+    return null;
+  }
+  public static String pointerToString(@NotNull SNodeReference pointer) {
+    return PersistenceFacade.getInstance().asString(pointer);
   }
   public static ClonableList<String> nodesToCloneableList(List<SNode> nodes) {
     return new ClonableList<String>(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return PointerUtils.pointerToString(new SNodePointer(it));
+        return PointerUtils.pointerToString(SNodeOperations.getPointer(it));
       }
     }).toListSequence());
   }
   public static ClonableList<String> nodeToCloneableList(SNode node) {
-    return new ClonableList<String>(PointerUtils.pointerToString(new SNodePointer(node)));
+    return new ClonableList<String>(PointerUtils.pointerToString(SNodeOperations.getPointer(node)));
   }
   public static List<SNodeReference> clonableListToNodes(ClonableList<String> clonableList) {
     List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());

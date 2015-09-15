@@ -80,7 +80,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "exception" + ">";
+      return "<no exception>";
     }
 
   }
@@ -120,7 +120,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "message" + ">";
+      return "<no message>";
     }
 
   }

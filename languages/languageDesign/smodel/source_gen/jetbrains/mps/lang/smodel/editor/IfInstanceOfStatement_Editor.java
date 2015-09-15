@@ -92,7 +92,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeExpression" + ">";
+      return "<no nodeExpression>";
     }
 
   }
@@ -186,7 +186,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variable" + ">";
+      return "<no variable>";
     }
 
   }
@@ -243,7 +243,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

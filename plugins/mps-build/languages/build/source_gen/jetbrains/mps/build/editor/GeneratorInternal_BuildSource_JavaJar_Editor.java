@@ -104,7 +104,7 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
       }
 
       protected String getNoTargetText() {
-        return "<no " + "path" + ">";
+        return "<no path>";
       }
 
     }

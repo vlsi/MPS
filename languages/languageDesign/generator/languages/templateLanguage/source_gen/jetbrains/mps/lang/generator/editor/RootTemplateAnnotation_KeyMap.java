@@ -11,14 +11,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
   public RootTemplateAnnotation_KeyMap() {
@@ -57,8 +54,7 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
         return false;
       }
       SNode applyToNode = SNodeOperations.getContainingRoot(node);
-      Language language = (Language) check_366854_a0a2a0a(SNodeOperations.getConceptDeclaration(((SNode) applyToNode)).getModel());
-      if (language == BootstrapLanguages.generatorLanguage()) {
+      if (MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator").equals(SNodeOperations.getConcept(applyToNode).getLanguage())) {
         return false;
       }
       return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null;
@@ -68,12 +64,6 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
     }
     public String getKeyStroke() {
       return "ctrl shift H";
-    }
-    private static SModule check_366854_a0a2a0a(SModel checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getModule();
-      }
-      return null;
     }
   }
 }

@@ -4,47 +4,56 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import com.intellij.refactoring.RefactoringBundle;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
 import javax.swing.JOptionPane;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public class MoveUpDialog extends RefactoringDialog {
   private static String REFACTORING_NAME = RefactoringBundle.message("move.title");
+
+  private final MPSProject myProject;
   private SNode myTarget;
   private NodeHierarchyChooser myPanel;
   private SNode myConcept;
   private String myNodeType;
-  public MoveUpDialog(@NotNull Project project, SNode target, String nodeType) {
-    super(project, true);
-    this.myTarget = target;
-    this.myNodeType = nodeType;
+
+  public MoveUpDialog(@NotNull MPSProject mpsProject, SNode target, String nodeType) {
+    super(mpsProject.getProject(), true);
+    myProject = mpsProject;
+    myTarget = target;
+    myNodeType = nodeType;
     init();
     setTitle(REFACTORING_NAME + " " + nodeType);
 
   }
   @Override
   protected void doRefactoringAction() {
-    Object treeNode = this.myPanel.getSelectedObject();
+    final Object treeNode = myPanel.getSelectedObject();
     if (treeNode == null || !(treeNode instanceof ChildHierarchyTreeNode)) {
       JOptionPane.showMessageDialog(this.myPanel, "Choose Concept or Interface", this.myNodeType + " can't be moved", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
-    SNode result = ((ChildHierarchyTreeNode) treeNode).getNode();
-
-    this.myConcept = (SNode) result;
+    myConcept = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.as(((ChildHierarchyTreeNode) treeNode).getNodeReference().resolve(myProject.getRepository()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      }
+    });
     super.doRefactoringAction();
   }
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    this.myPanel = new NodeHierarchyChooser(this.myTarget);
-    return myPanel;
+    return myPanel = new NodeHierarchyChooser(myProject, myTarget);
   }
-  public static SNode getConcept(@NotNull Project project, SNode target, String nodeType) {
+  public static SNode getConcept(@NotNull MPSProject project, SNode target, String nodeType) {
     MoveUpDialog dialog = new MoveUpDialog(project, target, nodeType);
     dialog.show();
     return dialog.myConcept;

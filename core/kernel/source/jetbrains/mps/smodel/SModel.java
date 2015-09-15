@@ -17,8 +17,12 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
@@ -780,6 +784,13 @@ public class SModel implements SModelData {
     if (model instanceof EditableSModel) {
       ((EditableSModel) model).setChanged(true);
     }
+  }
+
+  public void addEngagedOnGenerationLanguage(SLanguage lang) {
+    String name = lang.getQualifiedName();
+    SLanguageId id = ((SLanguageAdapter) lang).getId();
+    ModuleId moduleId = ModuleId.regular(id.getIdValue());
+    addEngagedOnGenerationLanguage(new ModuleReference(name, moduleId));
   }
 
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {

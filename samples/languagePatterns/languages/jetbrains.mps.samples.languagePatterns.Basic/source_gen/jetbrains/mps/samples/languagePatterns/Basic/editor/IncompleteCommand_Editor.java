@@ -68,7 +68,7 @@ public class IncompleteCommand_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "lineStyle" + ">";
+      return "<no lineStyle>";
     }
 
   }

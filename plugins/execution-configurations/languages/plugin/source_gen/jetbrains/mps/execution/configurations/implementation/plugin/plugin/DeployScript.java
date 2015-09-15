@@ -57,7 +57,6 @@ public class DeployScript {
     SModel model = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(myModule));
     SetSequence.fromSet(myModelsToMake).addElement(model);
     // tmp disable, need to check generation status and generate dependencies 
-    // <node> 
 
     SNode deployScriptNode = DeployScriptCreator.createDeployScript(myProject, plugins, myModule.getBaseDirectory());
     model.addRootNode(deployScriptNode);

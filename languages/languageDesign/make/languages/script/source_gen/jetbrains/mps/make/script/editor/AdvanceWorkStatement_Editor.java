@@ -78,7 +78,7 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "amount" + ">";
+      return "<no amount>";
     }
 
   }
@@ -181,7 +181,7 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "comment" + ">";
+      return "<no comment>";
     }
 
   }

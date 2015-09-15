@@ -167,7 +167,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getter" + ">";
+      return "<no getter>";
     }
 
   }
@@ -254,7 +254,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "setter" + ">";
+      return "<no setter>";
     }
 
   }
@@ -341,7 +341,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "validator" + ">";
+      return "<no validator>";
     }
 
   }

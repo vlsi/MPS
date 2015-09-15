@@ -11,8 +11,9 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="rgfa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.tree()" />
@@ -392,9 +393,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
@@ -471,6 +469,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -6836,28 +6841,28 @@
             <property role="3SKdUp" value="TODO: Use only one Icon. This hack helps to avoid tests fails" />
           </node>
         </node>
-        <node concept="3SKdUt" id="7hIrQB9IzUu" role="3cqZAp">
-          <node concept="3SKWN0" id="7hIrQB9IzUv" role="3SKWNk">
-            <node concept="3clFbF" id="hP8D6fqe88" role="3SKWNf">
-              <node concept="2OqwBi" id="hP8D6fqe89" role="3clFbG">
-                <node concept="liA8E" id="hP8D6fqe8b" role="2OqNvi">
-                  <ref role="37wK5l" to="dxuu:~LookAndFeel.getDisabledIcon(javax.swing.JComponent,javax.swing.Icon):javax.swing.Icon" resolve="getDisabledIcon" />
-                  <node concept="2OqwBi" id="hP8D6fqe8c" role="37wK5m">
-                    <node concept="liA8E" id="hP8D6fqe8e" role="2OqNvi">
-                      <ref role="37wK5l" to="jkny:~StatusBar.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                    </node>
-                    <node concept="37vLTw" id="2BHiRxeukng" role="2Oq$k0">
-                      <ref role="3cqZAo" node="hP8D6fqe6q" resolve="myStatusBar" />
-                    </node>
+        <node concept="1X3_iC" id="3$ZLRFpSWlq" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="hP8D6fqe88" role="8Wnug">
+            <node concept="2OqwBi" id="hP8D6fqe89" role="3clFbG">
+              <node concept="liA8E" id="hP8D6fqe8b" role="2OqNvi">
+                <ref role="37wK5l" to="dxuu:~LookAndFeel.getDisabledIcon(javax.swing.JComponent,javax.swing.Icon):javax.swing.Icon" resolve="getDisabledIcon" />
+                <node concept="2OqwBi" id="hP8D6fqe8c" role="37wK5m">
+                  <node concept="liA8E" id="hP8D6fqe8e" role="2OqNvi">
+                    <ref role="37wK5l" to="jkny:~StatusBar.getComponent():javax.swing.JComponent" resolve="getComponent" />
                   </node>
-                  <node concept="37vLTw" id="6uT0Sim0wE8" role="37wK5m">
-                    <ref role="3cqZAo" node="hP8D6fqe8n" resolve="myIcon" />
+                  <node concept="37vLTw" id="2BHiRxeukng" role="2Oq$k0">
+                    <ref role="3cqZAo" node="hP8D6fqe6q" resolve="myStatusBar" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="hP8D6fqe8a" role="2Oq$k0">
-                  <ref role="37wK5l" to="dxuu:~UIManager.getLookAndFeel():javax.swing.LookAndFeel" resolve="getLookAndFeel" />
-                  <ref role="1Pybhc" to="dxuu:~UIManager" resolve="UIManager" />
+                <node concept="37vLTw" id="6uT0Sim0wE8" role="37wK5m">
+                  <ref role="3cqZAo" node="hP8D6fqe8n" resolve="myIcon" />
                 </node>
+              </node>
+              <node concept="2YIFZM" id="hP8D6fqe8a" role="2Oq$k0">
+                <ref role="37wK5l" to="dxuu:~UIManager.getLookAndFeel():javax.swing.LookAndFeel" resolve="getLookAndFeel" />
+                <ref role="1Pybhc" to="dxuu:~UIManager" resolve="UIManager" />
               </node>
             </node>
           </node>

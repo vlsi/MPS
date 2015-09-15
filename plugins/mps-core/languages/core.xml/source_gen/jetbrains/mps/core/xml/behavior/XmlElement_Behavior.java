@@ -21,8 +21,6 @@ public class XmlElement_Behavior {
           multiline = true;
         }
       } else if ((n != null) && (SNodeOperations.getPrevSibling(n) != null)) {
-        // <node> 
-        // <node> 
       }
     }
     return multiline;

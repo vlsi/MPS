@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,7 +14,9 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
-      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
+        <child id="2597348684684069742" name="contextHints" index="CpUAK" />
+      </concept>
       <concept id="6822301196700715228" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference" flags="ig" index="2aJ2om">
         <reference id="5944657839026714445" name="hint" index="2$4xQ3" />
       </concept>
@@ -32,8 +34,10 @@
         <child id="5944657839000877563" name="hints" index="2ABdcP" />
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
-        <property id="168363875802087287" name="showInUI" index="2gpH_U" />
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
+      </concept>
+      <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_NextEditor" flags="ng" index="B$lHz">
+        <child id="8383079901754291620" name="removeHints" index="B$lH_" />
       </concept>
       <concept id="4151393920374910634" name="jetbrains.mps.lang.editor.structure.StyleKey" flags="ng" index="2NdhxG" />
       <concept id="4151393920374910722" name="jetbrains.mps.lang.editor.structure.StyleKeyPack" flags="ng" index="2NdhB4">
@@ -56,6 +60,7 @@
         <child id="1223387335081" name="query" index="3n$kyP" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
+      <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt">
         <child id="3383245079137422296" name="dominates" index="14Sbyx" />
       </concept>
@@ -424,18 +429,21 @@
     <node concept="2BsEeg" id="3Rc6kd0K$RQ" role="2ABdcP">
       <property role="TrG5h" value="comment" />
       <property role="2BUmq6" value="comment" />
-      <property role="2gpH_U" value="true" />
     </node>
   </node>
   <node concept="24kQdi" id="2ETBKOyksop">
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
-    <node concept="3F1sOY" id="4NfTi62PfCN" role="2wV5jI">
-      <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+    <node concept="3EZMnI" id="43t9AOLcZPi" role="2wV5jI">
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
-      <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
-        <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
-          <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+      <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
+      <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
+        <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
+          <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
+            <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+          </node>
         </node>
       </node>
     </node>
@@ -477,6 +485,47 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="V5hpn" id="3VARyd8XcQl">
+    <property role="TrG5h" value="BaseStyleSheet" />
+    <node concept="14StLt" id="3VARyd8XcQs" role="V601i">
+      <property role="TrG5h" value="Comment" />
+      <node concept="2lhJJ2" id="3VARyd8XcQy" role="14Sbyx" />
+      <node concept="3Xmtl4" id="3VARyd8XcSu" role="3F10Kt">
+        <node concept="1wgc9g" id="3VARyd8XcS$" role="3XvnJa">
+          <ref role="1wgcnl" node="2BgJggCaJy6" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7hmFG5jQPyy">
+    <ref role="1XX52x" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="3EZMnI" id="7hmFG5jQPBs" role="2wV5jI">
+      <ref role="1k5W1q" node="3VARyd8XcQs" resolve="Comment" />
+      <node concept="3F0ifn" id="7hmFG5jQPBz" role="3EZMnx">
+        <property role="3F0ifm" value="/*" />
+        <node concept="11LMrY" id="3VARyd8Xg0r" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7hmFG5jQPBv" role="2iSdaV" />
+      <node concept="B$lHz" id="5DmTQrINSQQ" role="3EZMnx">
+        <node concept="2w$q5c" id="5FS0W4V2r66" role="B$lH_">
+          <node concept="2aJ2om" id="5FS0W4V2r67" role="2w$qW5">
+            <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3VARyd8X5Rv" role="3EZMnx">
+        <property role="3F0ifm" value="*/" />
+        <node concept="11L4FC" id="3VARyd8Xg26" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+    <node concept="2aJ2om" id="7hmFG5jQPBm" role="CpUAK">
+      <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
     </node>
   </node>
 </model>

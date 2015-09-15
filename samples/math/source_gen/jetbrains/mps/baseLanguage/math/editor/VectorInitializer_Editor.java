@@ -86,7 +86,7 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rowsCount" + ">";
+      return "<no rowsCount>";
     }
 
   }
@@ -129,7 +129,7 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rowIndex" + ">";
+      return "<no rowIndex>";
     }
 
   }
@@ -169,7 +169,7 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }

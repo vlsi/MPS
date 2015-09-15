@@ -159,7 +159,7 @@ public class SomeForm_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "validation" + ">";
+      return "<no validation>";
     }
 
   }

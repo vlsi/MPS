@@ -68,7 +68,7 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "instruction" + ">";
+      return "<no instruction>";
     }
 
   }

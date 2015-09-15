@@ -64,7 +64,7 @@ public class FactoryMigrationScriptPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "factoryMethod" + ">";
+      return "<no factoryMethod>";
     }
 
   }

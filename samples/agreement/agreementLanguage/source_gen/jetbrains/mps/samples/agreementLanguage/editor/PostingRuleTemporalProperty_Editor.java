@@ -62,7 +62,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "date" + ">";
+      return "<no date>";
     }
 
   }
@@ -105,7 +105,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "postingRule" + ">";
+      return "<no postingRule>";
     }
 
   }

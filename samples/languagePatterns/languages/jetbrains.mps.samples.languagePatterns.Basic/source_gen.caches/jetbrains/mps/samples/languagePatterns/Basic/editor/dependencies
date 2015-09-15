@@ -288,7 +288,7 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.editor.StringDescription_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.editor.TruckProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />

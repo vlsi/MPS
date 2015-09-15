@@ -170,6 +170,9 @@ public class ASMMethod {
   public boolean isSynthetic() {
     return (Opcodes.ACC_SYNTHETIC & myMethod.access) != 0;
   }
+  public boolean isSynchronized() {
+    return (Opcodes.ACC_SYNCHRONIZED & myMethod.access) != 0;
+  }
   public boolean isConstructor() {
     return myMethod.name.equals("<init>");
   }

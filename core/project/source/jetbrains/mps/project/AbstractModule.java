@@ -26,7 +26,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
@@ -249,8 +248,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //todo move to EditableModule class
   @Nullable
   public ModuleDescriptor getModuleDescriptor() {
-    assertCanRead();
-
     return null;
   }
 
@@ -632,14 +629,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void rename(String newName) {
-    //if module name is a prefix of it's model's name - rename the model, too
-    for (SModel m : getModels()) {
-      if (m.isReadOnly()) continue;
-      if (!m.getModelName().startsWith(getModuleName() + ".")) continue;
-      if (!(m instanceof EditableSModel)) continue;
-
-      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
-    }
+    renameModels(getModuleName(), newName, true);
 
     //see MPS-18743, need to save before setting descriptor
     getRepository().saveAll();
@@ -651,6 +641,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     descriptor.setNamespace(newName);
     setModuleDescriptor(descriptor);
+  }
+
+  protected void renameModels(String oldName, String newName, boolean moveModels) {
+    //if module name is a prefix of it's model's name - rename the model, too
+    for (SModel m : getModels()) {
+      if (m.isReadOnly()) continue;
+      if (!m.getModelName().startsWith(oldName + ".")) continue;
+      if (!(m instanceof EditableSModel)) continue;
+
+      ((EditableSModel) m).rename(newName + m.getModelName().substring(oldName.length()), moveModels);
+    }
   }
 
   @NotNull
@@ -913,25 +914,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   public IFile getOutputPath() {
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
-  }
-
-  @Deprecated
-  public final String getGeneratorOutputPath() {
-    IFile outputPath = getOutputPath();
-    return outputPath != null ? outputPath.getPath() : null;
-  }
-
-  @Deprecated
-  public final String getTestsGeneratorOutputPath() {
-    TestsFacet testsFacet = this.getFacet(TestsFacet.class);
-    if (testsFacet == null) {
-      return null;
-    }
-    IFile testsOutputPath = testsFacet.getTestsOutputPath();
-    if (testsOutputPath == null) {
-      return null;
-    }
-    return testsOutputPath.getPath();
   }
 
   public void validateLanguageVersions() {

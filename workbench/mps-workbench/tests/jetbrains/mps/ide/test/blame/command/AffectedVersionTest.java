@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,47 +17,42 @@ package jetbrains.mps.ide.test.blame.command;
 
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.blame.command.Command;
-import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.GetMethod;
 import org.jdom.Element;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class AffectedVersionTest extends WorkbenchMpsTest {
-  private static final String URL = Command.YOUTRACK_BASE_URL + "/rest/admin/customfield/versionBundle/MPS%20Versions";
-
   @Test
   public void testVersion() throws IOException {
     String version = Command.getVersion();
     if (version == null) return;
 
-    HttpClient client = new HttpClient();
-    Poster.setTimeouts(client);
+    Command c = new Command();
+    c.setTimeouts(5000);
 
-    Response r = Command.login(client, Query.ANONYMOUS);
+    Response r = c.login(Query.ANONYMOUS);
     if (!r.isSuccess()) fail("Was not able to login anonymously");
 
-    GetMethod p = new GetMethod(URL);
-    client.executeMethod(p);
-
-    int statusCode = p.getStatusCode();
-    if (statusCode != 200) fail("Status code: " + statusCode);
-
     //check that version is in versions
-    Element e = Response.responseAsElement(p.getResponseBodyAsString());
+    r = c.listVersions();
+    if (!r.isSuccess()) {
+      fail("Failed to retrieve list of versions from server");
+    }
+    Element e = r.getResponseXml();
 
     List<Element> versions = e.getChildren("version");
+    HashSet<String> availableVersions = new HashSet<String>();
     for (Element v : versions) {
-      if (v.getText().equals(version)) return;
+      availableVersions.add(v.getText());
     }
-
-    fail("version " + version + " does not exist in tracker");
+    assertTrue("version " + version + " does not exist in tracker", availableVersions.contains(version));
   }
 }

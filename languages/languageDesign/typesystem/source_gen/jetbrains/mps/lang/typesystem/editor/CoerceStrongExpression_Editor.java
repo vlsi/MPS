@@ -92,7 +92,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeToCoerce" + ">";
+      return "<no nodeToCoerce>";
     }
 
   }
@@ -132,7 +132,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pattern" + ">";
+      return "<no pattern>";
     }
 
   }

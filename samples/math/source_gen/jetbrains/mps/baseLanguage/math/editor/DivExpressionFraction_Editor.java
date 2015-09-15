@@ -90,7 +90,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "numerator" + ">";
+      return "<no numerator>";
     }
 
   }
@@ -138,7 +138,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "denominator" + ">";
+      return "<no denominator>";
     }
 
   }

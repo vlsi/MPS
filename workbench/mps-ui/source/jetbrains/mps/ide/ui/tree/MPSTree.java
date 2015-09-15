@@ -105,12 +105,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   /**
-   * Initialization node common for each node initialized in the tree.
-   * Shall invoke {@link MPSTreeNode#doInit()} to perform actual initialization.
-   * May add extra utility stuff, as model read or progress indication (hence left protected for subclasses).
-   * Despite being accessible to subclasses, not deemed to be invoked by anything but {@link MPSTreeNode#init()} method.
+   * Initialization sequence common for each node initialized in the tree.
+   * Shall invoke {@link MPSTreeNode#doInit()} to perform actual initialization, does this through appropriate runnable
+   * supplied to {@link #doInit(MPSTreeNode, Runnable)}},  which is left protected for sub-classes
+   * that may add extra utility stuff, like progress indication.
+   * Primary responsibility is guards to prevent endless initialization
    */
-  protected void doInit(final MPSTreeNode node) {
+  /*package*/ final void performInit(final MPSTreeNode node) {
     assert ThreadUtils.isInEDT();
     if (myExpandingNodes.contains(node)) {
       return;
@@ -118,33 +119,48 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     myExpandingNodes.add(node);
     try {
-      TextTreeNode progressNode = null;
-      if (!myLoadingDisabled && node.isLoadingEnabled()) {
-        progressNode = new TextTreeNode("loading...");
-        node.add(progressNode);
-        ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
-        expandPath(new TreePath(progressNode.getPath()));
-
-        Graphics g = getGraphics();
-        if (g != null && g.getClipBounds() != null) paint(g);
-      }
-
-      ModelAccess.instance().runReadAction(new Runnable() {
+      doInit(node, new Runnable() {
         @Override
         public void run() {
           node.doInit();
         }
       });
-      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
-
-      if (!myLoadingDisabled && node.isLoadingEnabled() && node.hasChild(progressNode)) { //node.init() might remove all the children
-        node.remove(progressNode);
-        ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
-      }
-
     } finally {
       myExpandingNodes.remove(node);
     }
+  }
+
+  /**
+   * Extra initialization stuff, by default adds progress indication (conditional, myLoadingDisabled and node.isLoadingEnabled).
+   * Sub-classes may override to provide extra initialization stuff (shall invoke nodeInitRunnable if do not delegate to super)
+   * or to wrap nodeInitRunnable into proper access code (e.g. model read if tree node initialization might demand access to model).
+   *
+   * Note, if tree nodes do not initialize lazily with access to a data model, there's no need to override the method and to wrap nodeInitRunnable with
+   * data model access control (e.g. model read)
+   */
+  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+    TextTreeNode progressNode = null;
+    if (!myLoadingDisabled && node.isLoadingEnabled()) {
+      progressNode = new TextTreeNode("loading...");
+      node.add(progressNode);
+      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
+      expandPath(new TreePath(progressNode.getPath()));
+
+      Graphics g = getGraphics();
+      if (g != null && g.getClipBounds() != null) {
+        paint(g);
+      }
+    }
+
+    nodeInitRunnable.run();
+
+    if (!myLoadingDisabled && node.isLoadingEnabled() && node.hasChild(progressNode)) {
+      // node initialization code (nodeInitRunnable, node.doInit()) may remove all the children
+      node.remove(progressNode);
+    }
+
+    // initialization of a node is supposed to update its children, notify structure had likely changed
+    ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
   }
 
   public void addTreeNodeListener(MPSTreeNodeListener listener) {
@@ -241,6 +257,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     nodeToClick.autoscroll();
   }
 
+  // if we navigate to a node which is MPSTreeNode#isAutoExpandable() == true,
+  // it's automatically expanded, unless myAutoExpandEnabled == false
+  // XXX is there any case but select node in the runnable? Perhaps, could
+  // get better api (e.g. selectWithoutExpansion(MPSTreeNode)?)
   public void runWithoutExpansion(Runnable r) {
     try {
       myAutoExpandEnabled = false;
@@ -420,19 +440,16 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
   }
 
+  // XXX Rename to scheduleRebuild()?
   public void rebuildLater() {
-    myQueue.queue(new Update(myUpdateId) {
+    myQueue.queue(new SafeUpdate(myUpdateId, new Runnable() {
       @Override
       public void run() {
-        ThreadUtils.runInUIThreadNoWait(new Runnable() {
-          @Override
-          public void run() {
-            if (MPSTree.this.isDisposed()) return;
-            rebuildNow();
-          }
-        });
+        // myQueue is attached to EDT
+        if (MPSTree.this.isDisposed()) return;
+        rebuildNow();
       }
-    });
+    }, LOG));
   }
 
   public void rebuildNow() {
@@ -823,6 +840,37 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     @Override
     public void actionPerformed(ActionEvent e) {
       rebuildNow();
+    }
+  }
+
+  // XXX this class is worth re-use
+  private static final class SafeUpdate extends Update {
+    private final Runnable myDelegate;
+    @Nullable
+    private Logger myLogger;
+    private Exception myException;
+
+    public SafeUpdate(@NotNull Object updateId, @NotNull Runnable updateCode, @Nullable Logger logger) {
+      super(updateId);
+      myDelegate = updateCode;
+      myLogger = logger;
+    }
+
+    @Override
+    public void run() {
+      try {
+        myDelegate.run();
+      } catch (Exception ex) {
+        if (myLogger != null) {
+          myLogger.error("Update failed", ex);
+        }
+        myException = ex;
+      }
+    }
+
+    @Nullable
+    public Exception getException() {
+      return myException;
     }
   }
 }

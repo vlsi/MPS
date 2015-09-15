@@ -72,7 +72,7 @@ public class IconResourceExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "icon" + ">";
+      return "<no icon>";
     }
 
   }

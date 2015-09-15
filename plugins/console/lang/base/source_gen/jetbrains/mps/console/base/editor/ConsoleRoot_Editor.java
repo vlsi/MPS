@@ -110,7 +110,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "history" + ">";
+      return "<no history>";
     }
 
   }
@@ -152,7 +152,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "commandHolder" + ">";
+      return "<no commandHolder>";
     }
 
   }

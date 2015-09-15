@@ -53,6 +53,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -76,6 +77,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableMo
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
+import jetbrains.mps.ide.ui.finders.LanguageModelImportFinder;
+import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.persistence.MementoImpl;
@@ -154,6 +157,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.EventObject;
@@ -251,6 +255,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     forceCancelCloseDialog();
   }
 
+  /*package*/ void findLanguageUsages(List<SLanguage> languages) {
+    final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), new ModelsScope(myModule.getModels()));
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageModelImportFinder()), new CompositeFinder(new LanguageUsagesFinder()));
+    showUsageImpl(query, provider);
+    forceCancelCloseDialog();
+  }
+
 
   public class ModuleCommonTab extends CommonTab {
 
@@ -266,11 +277,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected String getConfigItemPath() {
-      if (myModule instanceof Generator)
+      if (myModule.getDescriptorFile() == null) {
         return "";
-      return FileUtil.getCanonicalPath(
-          myModule.getDescriptorFile().getPath()
-      );
+      } else {
+        return FileUtil.getCanonicalPath(myModule.getDescriptorFile().getPath());
+      }
     }
 
     @Override
@@ -481,8 +492,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Nullable
     @Override
-    protected FindAnActionButton getFindAnAction(JBTable table) {
-      return new FindAnActionButton(table) {
+    protected FindActionButton getFindAnAction(JBTable table) {
+      return new FindActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
@@ -589,7 +600,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             myRuntimeTableModel.addItem(reference);
           }
         }
-      }).setRemoveAction(new RemoveEntryAction(runtimeTable)).addExtraAction(new FindAnActionButton(runtimeTable) {
+      }).setRemoveAction(new RemoveEntryAction(runtimeTable)).addExtraAction(new FindActionButton(runtimeTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
@@ -632,7 +643,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             myAccessoriesModelsTableModel.addItem(reference);
           }
         }
-      }).setRemoveAction(new RemoveEntryAction(accessoriesTable)).addExtraAction(new FindAnActionButton(accessoriesTable) {
+      }).setRemoveAction(new RemoveEntryAction(accessoriesTable)).addExtraAction(new FindActionButton(accessoriesTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<SModelReference> models = new ArrayList<SModelReference>();
@@ -810,9 +821,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  /**
-   * FIXME needs Find button to look up uses of particular language within the module
-   */
   public class ModuleUsedLanguagesTab extends UsedLanguagesTab {
 
     @Override
@@ -827,6 +835,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       Collections.sort(usedLanguages, new ToStringComparator());
       rv.init(usedLanguages, Collections.<SModuleReference>emptySet());
       return rv;
+    }
+
+    @Override
+    protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
+      ToolbarDecorator decorator =  super.createToolbar(usedLangsTable);
+      decorator.addExtraAction(new FindActionButton(usedLangsTable) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          final List<SLanguage> languages = getSelectedLanguages();
+          findLanguageUsages(languages);
+        }
+      });
+      return decorator;
     }
 
     @Override

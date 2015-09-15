@@ -462,7 +462,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "executeFunction" + ">";
+      return "<no executeFunction>";
     }
 
   }

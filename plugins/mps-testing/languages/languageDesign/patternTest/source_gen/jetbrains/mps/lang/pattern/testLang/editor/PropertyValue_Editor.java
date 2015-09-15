@@ -67,7 +67,7 @@ public class PropertyValue_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variable" + ">";
+      return "<no variable>";
     }
 
   }
@@ -110,7 +110,7 @@ public class PropertyValue_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }

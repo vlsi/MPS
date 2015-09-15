@@ -41,8 +41,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

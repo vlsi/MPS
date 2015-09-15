@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.actions.runtime.impl.InterpretedActionDescriptor;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,22 +24,18 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class NodeFactoryManager {
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
@@ -106,7 +101,7 @@ public class NodeFactoryManager {
         actionAspectDescriptor = languageRuntime.getAspect(ActionAspectDescriptor.class);
       }
       if (actionAspectDescriptor == null) {
-        actionAspectDescriptor = new InterpretedActionDescriptor();
+        continue;
       }
       Collection<NodeFactory> factories = actionAspectDescriptor.getFactories(ancestor);
       for (NodeFactory factory : factories) {

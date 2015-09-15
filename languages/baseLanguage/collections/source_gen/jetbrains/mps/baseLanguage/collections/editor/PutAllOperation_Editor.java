@@ -79,7 +79,7 @@ public class PutAllOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "map" + ">";
+      return "<no map>";
     }
 
   }

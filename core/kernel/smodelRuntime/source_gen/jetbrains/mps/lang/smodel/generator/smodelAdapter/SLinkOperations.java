@@ -50,12 +50,10 @@ public class SLinkOperations {
 
       if (targetNode != null) {
         SNode targetParent = targetNode.getParent();
-        if (targetParent != node) {
-          if (targetParent != null) {
-            targetParent.removeChild(targetNode);
-          }
-          node.addChild(role, targetNode);
+        if (targetParent != null) {
+          targetParent.removeChild(targetNode);
         }
+        node.addChild(role, targetNode);
       }
     }
     return targetNode;

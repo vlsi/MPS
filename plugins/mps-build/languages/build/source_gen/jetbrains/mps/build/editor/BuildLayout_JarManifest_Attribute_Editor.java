@@ -88,7 +88,7 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "name" + ">";
+      return "<no name>";
     }
 
   }
@@ -132,7 +132,7 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }

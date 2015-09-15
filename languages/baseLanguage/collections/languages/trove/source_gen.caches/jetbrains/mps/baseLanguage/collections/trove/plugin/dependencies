@@ -4,11 +4,11 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers5633688998557455347_" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers_" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers5633688998557455347_" file="Extension_customContainers5633688998557455347_.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.trove.plugin.Extension_customContainers_" file="Extension_customContainers_.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />

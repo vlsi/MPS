@@ -82,7 +82,7 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }

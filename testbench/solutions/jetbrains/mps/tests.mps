@@ -497,6 +497,66 @@
     <node concept="lpD6D" id="7BzI3N6F9zF" role="lpD6w">
       <ref role="lpD7u" to="h8fw:2ZnZLV$g_aR" resolve="RightTransformForAttributedProperty" />
     </node>
+    <node concept="lpD6D" id="4IrZ8JbCd9V" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cK74" resolve="Comment_BetweenTwoComments" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdbq" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cQ7i" resolve="Comment_CommentUncommentTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdcV" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3FNxLZIq6le" resolve="Comment_EditInsideComment_Test" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdeu" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cPl5" resolve="Comment_ExpressionStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdhE" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cGoI" resolve="Comment_FirstStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdjj" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3FNxLZIq69L" resolve="Comment_InsertAfterComment" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdkY" role="lpD6w">
+      <ref role="lpD7u" to="e6od:37G2lO3eGZ9" resolve="Comment_InsertBeforeComment" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdmF" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cJIH" resolve="Comment_InsideComment" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdoq" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cHEt" resolve="Comment_LastStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdqb" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cPyE" resolve="Comment_NodeWithComment" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdrY" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cI7w" resolve="Comment_SecondStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdtN" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cPm4" resolve="Comment_SecondTypeTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdvE" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0c9kv" resolve="Comment_TypeTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdxz" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cI6e" resolve="Uncomment_FirstStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdzu" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cI6R" resolve="Uncomment_LastStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCd_r" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cKzo" resolve="Uncomment_MethodTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdBq" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3FNxLZIqrJI" resolve="Uncomment_NodeWithComment" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdDr" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cFvu" resolve="Uncomment_SecondStatementTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdFu" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cPG7" resolve="Uncomment_SecondTypeTest" />
+    </node>
+    <node concept="lpD6D" id="4IrZ8JbCdHz" role="lpD6w">
+      <ref role="lpD7u" to="e6od:5fIuys0cJ7d" resolve="Uncomment_TypeTest" />
+    </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61DD">
     <node concept="2R4zua" id="2m_lP2P61DE" role="2R4z3u">
@@ -3887,30 +3947,6 @@
     <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="1V0dlEgZt9s">
-    <node concept="2R4zua" id="1V0dlEgZt9t" role="2R4z3u">
-      <property role="2R4zub" value="testSubtypingTest" />
-      <property role="2R4zu8" value="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c" />
-    </node>
-    <node concept="lpD6D" id="1V0dlEgZt9u" role="lpD6w">
-      <ref role="lpD7u" to="tw7x:1NmRLF_DeDu" resolve="Subtyping" />
-    </node>
-    <node concept="lpD6D" id="1V0dlEgZt9x" role="lpD6w">
-      <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="5GF7bt500qz">
-    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
-      <property role="2R4zub" value="testSubstituteType" />
-      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
-    </node>
-    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
-      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
-    </node>
-    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
-      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
     </node>
   </node>
   <node concept="lpD6F" id="1lM6JtOM9Yh">

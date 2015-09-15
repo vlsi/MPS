@@ -69,7 +69,7 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fileset" + ">";
+      return "<no fileset>";
     }
 
   }

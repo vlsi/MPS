@@ -146,11 +146,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   private void unloadModel(TransientSModelDescriptor model) {
-    if (model.unloadModel(true)) {
-      if (myPublished.contains(model)) {
-//            SModelRepository.getInstance().removeModelDescriptor(model);
-      }
-    }
+    model.unloadModel(true);
   }
 
   public void publishAll() {
@@ -256,7 +252,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       if (mySModel != null) {
         return mySModel;
       }
+
+      // FIXME code identical to BaseSpecialModelDescriptor
+      final ModelLoadingState oldState;
       synchronized (this) {
+        oldState = getLoadingState();
         if (mySModel == null) {
           mySModel = createModel();
           mySModel.setModelDescriptor(this);
@@ -265,15 +265,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
             SModelOperations.validateLanguagesAndImports(this, false, false);
             wasUnloaded = false;
           }
-          fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+          setLoadingState(ModelLoadingState.FULLY_LOADED);
         }
       }
+      fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
       return mySModel;
-    }
-
-    @Override
-    public boolean isLoaded() {
-      return mySModel != null && getLoadingState() == ModelLoadingState.FULLY_LOADED;
     }
 
     private jetbrains.mps.smodel.SModel createModel() {
@@ -296,27 +292,28 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
     @Override
     protected void doUnload() {
+      // unload() implementation does proper load state notifications
       unloadModel(false);
     }
 
-    private boolean unloadModel(boolean fireLoadStateChange) {
+    /*package*/ void unloadModel(boolean fireLoadStateChange) {
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null || !swap.swapOut(mySModel)) {
-          return false;
+          return;
         }
 
         dropModel();
 
         if (fireLoadStateChange) {
-          fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+          setLoadingState(ModelLoadingState.NOT_LOADED);
+          fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
         }
 
         wasUnloaded = true;
       }
-      return false;
     }
 
     private void dropModel() {

@@ -31,33 +31,35 @@ public class MigrateReferences extends MigrationScriptBase {
     return "migrate the references using a TransformStatement";
   }
   public SNode execute(SModule m) {
-    final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a1();
-    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return pattern.match(it);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode n) {
-        return !(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(n)));
-      }
-    }).sort(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
-      }
-    }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode nodeToMigrate) {
-        pattern.match(nodeToMigrate);
-        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
-          public SNode compute() {
-            return _quotation_createNode_w5820p_a0a0f(pattern.getFieldValue("patternVar_comp"));
-          }
-        }, null);
-      }
-    });
+    {
+      final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a1();
+      Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode n) {
+          return !(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(n)));
+        }
+      }).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
+        }
+      }, false).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode nodeToMigrate) {
+          pattern.match(nodeToMigrate);
+          applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+            public SNode compute() {
+              return _quotation_createNode_w5820p_a0a0f(pattern.getFieldValue("patternVar_comp"));
+            }
+          }, null);
+        }
+      });
+    }
     return null;
   }
   public Iterable<MigrationScriptReference> executeAfter() {
@@ -67,9 +69,9 @@ public class MigrateReferences extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0);
   }
 
-  public static class Pattern_w5820p_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_w5820p_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_comp;
-    public Pattern_w5820p_a0a0a1() {
+    public Pattern_w5820p_a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef");

@@ -153,7 +153,6 @@ public class TraceInfoTest extends WorkbenchMpsTest {
     } catch (Throwable t) {
       StackTraceElement stackTraceElement = t.getStackTrace()[0];
       SNode node = TraceInfoUtil.getJavaNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
-      // <node> 
       return node;
     }
     return null;

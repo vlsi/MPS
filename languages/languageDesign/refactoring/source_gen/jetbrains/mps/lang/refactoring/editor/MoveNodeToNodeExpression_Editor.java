@@ -74,7 +74,7 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "whatToMove" + ">";
+      return "<no whatToMove>";
     }
 
   }
@@ -117,7 +117,7 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "destination" + ">";
+      return "<no destination>";
     }
 
   }
@@ -160,7 +160,7 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "roleInTarget" + ">";
+      return "<no roleInTarget>";
     }
 
   }

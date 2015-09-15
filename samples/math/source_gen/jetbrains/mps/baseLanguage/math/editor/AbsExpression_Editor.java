@@ -73,7 +73,7 @@ public class AbsExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expr" + ">";
+      return "<no expr>";
     }
 
   }

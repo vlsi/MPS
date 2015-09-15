@@ -128,4 +128,10 @@ public class CommentUtil {
     }
     return null;
   }
+  public static boolean isComment(SNode node) {
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"));
+  }
+  public static SNode getCommentedNode(SNode comment) {
+    return SLinkOperations.getTarget(comment, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"));
+  }
 }

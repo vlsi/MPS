@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
@@ -54,9 +54,13 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
 
   public ProjectTree(Project project) {
     myProject = project;
-
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
+  }
+
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), nodeInitRunnable));
   }
 
   @Override

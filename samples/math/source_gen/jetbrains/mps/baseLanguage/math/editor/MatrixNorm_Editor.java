@@ -73,7 +73,7 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "mat" + ">";
+      return "<no mat>";
     }
 
   }

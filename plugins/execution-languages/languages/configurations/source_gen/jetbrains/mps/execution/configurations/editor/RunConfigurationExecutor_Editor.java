@@ -260,7 +260,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "execute" + ">";
+      return "<no execute>";
     }
 
   }
@@ -332,7 +332,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debuggerConfiguration" + ">";
+      return "<no debuggerConfiguration>";
     }
 
   }

@@ -262,7 +262,9 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="5858074156537516440" name="return" index="x79VK" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -689,6 +691,21 @@
           <node concept="1dT_AC" id="3eUNqOk4fSk" role="1dT_Ay">
             <property role="1dT_AB" value="flushes all #invokeAndLater calls and all ModelAccess event queue if needed" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8Pnvxglo9c" role="jymVt" />
+    <node concept="3clFb_" id="8Pnvxgloc_" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getPlatform" />
+      <node concept="3uibUv" id="8Pnvxglohb" role="3clF45">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+      <node concept="3Tm1VV" id="8PnvxglocC" role="1B3o_S" />
+      <node concept="3clFbS" id="8PnvxglocD" role="3clF47" />
+      <node concept="P$JXv" id="8Pnvxglp3V" role="lGtFl">
+        <node concept="x79VA" id="8Pnvxglp3Y" role="x79VK">
+          <property role="x79VB" value="MPS (its platform aspect) of this tooling environment, not null when initialized." />
         </node>
       </node>
     </node>
@@ -1964,6 +1981,27 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3eUNqOk6pLg" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8Pnvxglke9" role="jymVt" />
+    <node concept="3clFb_" id="8PnvxglhX7" role="jymVt">
+      <property role="TrG5h" value="getPlatform" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3clFbS" id="8PnvxglhX8" role="3clF47">
+        <node concept="3cpWs6" id="8PnvxglhX9" role="3cqZAp">
+          <node concept="37vLTw" id="8PnvxglhXa" role="3cqZAk">
+            <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="8PnvxglhXb" role="1B3o_S" />
+      <node concept="3uibUv" id="8PnvxglhXc" role="3clF45">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+      <node concept="2AHcQZ" id="8Pnvxglq0O" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

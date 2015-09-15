@@ -4,30 +4,30 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" />
-    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" />
-    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" />
-    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint7036359038356253986_" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint_" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint_" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint__0" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint_" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" file="Extension_lazyTestExtensionPoint2622946712629256054_.java">
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint_" file="Extension_lazyTestExtensionPoint_.java">
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" file="Extension_multiExtensionPoint4451661519483734260_.java">
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint_" file="Extension_multiExtensionPoint_.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" file="Extension_multiExtensionPoint4451661519483734265_.java">
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint__0" file="Extension_multiExtensionPoint__0.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint7036359038356253986_" file="Extension_testExtensionPoint7036359038356253986_.java">
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint_" file="Extension_testExtensionPoint_.java">
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />

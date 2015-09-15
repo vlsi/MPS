@@ -4,7 +4,6 @@ package jetbrains.mps.ide.vcs.test.merge;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class RootStatusItem extends MultiTuple._2<String, FileStatus> {
   public RootStatusItem() {
@@ -24,9 +23,5 @@ public class RootStatusItem extends MultiTuple._2<String, FileStatus> {
   }
   public FileStatus status() {
     return super._1();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public RootStatusItem assignFrom(Tuples._2<String, FileStatus> from) {
-    return (RootStatusItem) super.assign(from);
   }
 }

@@ -16,11 +16,11 @@
 package jetbrains.mps.ide.typesystem.trace;
 
 public class TraceSettings {
-  public static boolean generationMode;
-  public static boolean showBlockDependencies;
-  public static boolean showApplyRuleOperations = true;
-  public static boolean traceForSelectedNode;
-  public static boolean showTypesExpansion;
+  private static boolean generationMode;
+  private static boolean showBlockDependencies;
+  private static boolean showApplyRuleOperations = true;
+  private static boolean traceForSelectedNode = true;
+  private static boolean showTypesExpansion;
 
   public TraceSettings() {
   }

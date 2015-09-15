@@ -104,7 +104,7 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "method" + ">";
+      return "<no method>";
     }
 
   }
@@ -148,7 +148,7 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inner" + ">";
+      return "<no inner>";
     }
 
   }

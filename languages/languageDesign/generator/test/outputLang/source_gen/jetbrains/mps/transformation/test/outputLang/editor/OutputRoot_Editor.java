@@ -151,7 +151,7 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "specialChild" + ">";
+      return "<no specialChild>";
     }
 
   }

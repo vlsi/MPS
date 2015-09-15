@@ -23,6 +23,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
@@ -64,6 +65,8 @@ public abstract class NavigationSupport implements CoreComponent {
    *
    * Model write is required because saveAll() will be called by implementation
    * of this method (IDEA API calls).
+   *
+   * Unless you care about return value or do some extra stuff with the node, use {@link EditorNavigator#open(SNodeReference)} instead
    *
    * @param mpsProject project where node is looked up and where editor is opened
    * @param node alive node from model repository

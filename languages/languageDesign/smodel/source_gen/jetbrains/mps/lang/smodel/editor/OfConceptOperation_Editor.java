@@ -80,7 +80,7 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "requestedConcept" + ">";
+      return "<no requestedConcept>";
     }
 
   }

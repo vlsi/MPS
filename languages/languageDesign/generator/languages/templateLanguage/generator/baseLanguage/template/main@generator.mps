@@ -35819,6 +35819,16 @@
         <ref role="v9R2y" to="tpe8:gCCYkhx" resolve="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
+    <node concept="3aamgX" id="5Ex$Jzqhbg7" role="3acgRq">
+      <property role="2n97ot" value="With TAPE allowed inside queries (not only inside ITemplateCall arguments), shall generate proper code. Re-use of templates for generated generatorh here is not the best solution (we are in 'interpreted generators' part now), but gives me some code re-use at least." />
+      <ref role="30HIoZ" to="tpf8:4lQlo5qukTT" resolve="TemplateArgumentParameterExpression" />
+      <node concept="j$656" id="5Ex$JzqhbBJ" role="1lVwrX">
+        <ref role="v9R2y" node="4UbAqfvNMQo" resolve="reduce_TemplateArgumentParameterExpr" />
+        <node concept="Xl_RD" id="5Ex$JzqhbBK" role="v9R3O">
+          <property role="Xl_RC" value="_context" />
+        </node>
+      </node>
+    </node>
     <node concept="aNPBN" id="4gPmXg0dlz_" role="aQYdv">
       <ref role="aOQi4" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="aO8KQ" id="4gPmXg0dlzA" role="aOLnb">

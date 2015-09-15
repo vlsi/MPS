@@ -89,7 +89,7 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "linkQualifier" + ">";
+      return "<no linkQualifier>";
     }
 
   }

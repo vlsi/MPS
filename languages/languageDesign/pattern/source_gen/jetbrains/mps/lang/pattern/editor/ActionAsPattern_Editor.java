@@ -93,7 +93,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "action" + ">";
+      return "<no action>";
     }
 
   }
@@ -130,7 +130,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "position" + ">";
+      return "<no position>";
     }
 
   }
@@ -205,7 +205,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "action" + ">";
+      return "<no action>";
     }
 
   }
@@ -239,7 +239,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "position" + ">";
+      return "<no position>";
     }
 
   }

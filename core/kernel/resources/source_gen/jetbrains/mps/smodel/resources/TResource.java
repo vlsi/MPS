@@ -54,10 +54,6 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     tuple.assign(from._1(), from._2());
     return this;
   }
-  @SuppressWarnings(value = "unchecked")
-  public TResource assignFrom(Tuples._2<SModule, SModel> from) {
-    return (TResource) super.assign(from);
-  }
   public String describe() {
     return null;
   }

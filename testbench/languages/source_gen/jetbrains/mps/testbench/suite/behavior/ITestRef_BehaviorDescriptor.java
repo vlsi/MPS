@@ -5,6 +5,7 @@ package jetbrains.mps.testbench.suite.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ITestRef_BehaviorDescriptor {
+  public boolean virtual_isSame_24903889606765997(SNode thisNode, SNode testRef);
   public String virtual_fqClassName_2956932267233324537(SNode thisNode);
   public Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode);
 }

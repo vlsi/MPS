@@ -38,7 +38,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.lang.core", "jetbrains.mps.console.base", "jetbrains.mps.baseLanguage", "jetbrains.mps.console.blCommand"};
+    return new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.lang.core", "jetbrains.mps.console.base", "jetbrains.mps.baseLanguage", "jetbrains.mps.lang.smodel.query"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
@@ -64,8 +64,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

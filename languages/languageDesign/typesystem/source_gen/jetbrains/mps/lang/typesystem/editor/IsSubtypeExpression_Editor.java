@@ -92,7 +92,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "subtypeExpression" + ">";
+      return "<no subtypeExpression>";
     }
 
   }
@@ -132,7 +132,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "supertypeExpression" + ">";
+      return "<no supertypeExpression>";
     }
 
   }

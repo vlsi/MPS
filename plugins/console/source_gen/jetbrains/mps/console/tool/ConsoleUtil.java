@@ -23,15 +23,14 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.concurrent.ExecutionException;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ConsoleUtil {
-
-  public static String getGeneratedModelName(ConsoleContext context) {
-    return context.getConsoleTab().getConsoleModel().getModelName() + ".Main";
-  }
-
   public static boolean make(final Project project, final SModel model) {
     if (SwingUtilities.isEventDispatchThread()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -70,5 +69,20 @@ public class ConsoleUtil {
     return false;
   }
 
+  public static void show(Project p, _FunctionTypes._return_P0_E0<? extends SearchResults> results) {
+    try {
+      check_xg48a4_a0a0a0c(ProjectHelper.toIdeaProject(p)).show(results.invoke(), "No results to show");
+    } catch (Exception e) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("Exception in showing custom console result", e);
+      }
+    }
+  }
   protected static Logger LOG = LogManager.getLogger(ConsoleUtil.class);
+  private static UsagesViewTool check_xg48a4_a0a0a0c(com.intellij.openapi.project.Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent(UsagesViewTool.class);
+    }
+    return null;
+  }
 }

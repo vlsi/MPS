@@ -23,9 +23,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Disposer;
@@ -36,6 +36,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
@@ -44,22 +45,18 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.projectView.ProjectViewPaneOverride;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
-import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -68,7 +65,9 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
@@ -104,19 +103,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       ProjectPane.this.updateFromRoot(true);
     }
   };
-  private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
-    @Override
-    protected ProjectTree getTree() {
-      return ProjectPane.this.getTree();
-    }
-  };
 
   private MyScrollPane myScrollPane;
+  // FIXME there's update queue in MPSTree, do really we need both?
   private final MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane, null, null, true);
 
   public static final String ID = ProjectViewPane.ID;
 
-  private FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
+  private final FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
     @Override
     public void selectionChanged(FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
@@ -126,7 +120,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return;
           final SNode sNode = editorComponent.getEditedNode();
-          selectNodeWithoutExpansion(sNode);
+          selectNodeWithoutExpansion(sNode.getReference());
         }
       }
     }
@@ -135,6 +129,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   private static boolean ourShowGenStatus = true;
   private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
   private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
+  private MessageBusConnection myConnection;
 
   public ProjectPane(final Project project, ProjectView projectView) {
     super(project, projectView);
@@ -155,15 +150,17 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Override
   protected void removeListeners() {
     super.removeListeners();
-    FileEditorManager fileEditorManager = getProject().getComponent(FileEditorManager.class);
-    fileEditorManager.removeFileEditorManagerListener(myEditorListener);
+    myConnection.disconnect();
+    myConnection = null;
     MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
   }
 
   @Override
   protected void addListeners() {
     super.addListeners();
-    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
+    assert myConnection == null; // double initialization
+    myConnection = getProject().getMessageBus().connect();
+    myConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, myEditorListener);
     MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
   }
 
@@ -188,6 +185,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Override
   public ProjectTree getTree() {
     return (jetbrains.mps.ide.projectPane.logicalview.ProjectTree) myTree;
+  }
+
+  /*package*/ MPSProject getMPSProject() {
+    // Shall I use getTree().getProject() instead?
+    return getProject().getComponent(MPSProject.class);
   }
 
   @Override
@@ -216,8 +218,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     return MPSIcons.ProjectPane.LogicalView;
   }
 
+  @NotNull
   @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
+    // XXX why not MPSTree.rebuildLater?
+    // FIXME what's the difference with #rebuildTree?
     myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
       @Override
       public void run() {
@@ -266,6 +271,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   public void rebuildTree() {
+    // @see #updateFromRoot
     myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
       @Override
       public void run() {
@@ -280,7 +286,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   public void activate() {
     ThreadUtils.assertEDT();
-    activatePane(new PaneActivator(false), true);
+    activatePane(null, true);
   }
 
   @Override
@@ -315,7 +321,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         @Override
         public void run() {
           ((MPSTree) myTree).loadState(myExpandedPathsRaw, mySelectedPathsRaw);
-
         }
       });
     }
@@ -332,13 +337,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       subPane.setAttribute("subId", getSubId());
     }
 
-    witePaths(subPane, myExpandedPathsRaw, "PATH");
-    witePaths(subPane, mySelectedPathsRaw, "SELECTED");
+    writePaths(subPane, myExpandedPathsRaw, "PATH");
+    writePaths(subPane, mySelectedPathsRaw, "SELECTED");
 
     element.addContent(subPane);
   }
 
-  private void witePaths(Element parentElement, List<List<String>> pathsRaw, String elementName) {
+  private void writePaths(Element parentElement, List<List<String>> pathsRaw, String elementName) {
     for (List<String> path: pathsRaw) {
       Element pathElement = new Element(elementName);
       writePath(path, pathElement);
@@ -413,83 +418,65 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   //----selection----
 
   public void selectModule(@NotNull final SModule module, final boolean autofocus) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        activatePane(new PaneActivator(true) {
-          @Override
-          public void doOnPaneActivation() {
-            MPSTreeNode moduleTreeNode = myFindHelper.findMostSuitableModuleTreeNode(module);
-
-            if (moduleTreeNode == null) {
-              LOG.warn("Couldn't select module \"" + module.getModuleName() + "\" : tree node not found.");
-              return;
-            }
-
-            getTree().selectNode(moduleTreeNode);
-          }
-        }, autofocus);
-      }
-    });
+    ThreadUtils.assertEDT();
+    Runnable lookupAndSelect = new LookupAndSelect(module.getModuleReference());
+    activatePane(new ScheduleUpdateRunnable(myUpdateQueue, createModelReadUpdate(UpdateID.SELECT, lookupAndSelect)), autofocus);
   }
 
   public void selectModel(@NotNull final SModel model, boolean autofocus) {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
-    activatePane(new PaneActivator(true) {
-      @Override
-      public void doOnPaneActivation() {
-        SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
-        if (modelTreeNode == null) {
-          LOG.warn("Couldn't select model \"" + SNodeOperations.getModelLongName(model) + "\" : tree node not found.");
-          return;
-        }
-        getTree().selectNode(modelTreeNode);
-      }
-    }, autofocus);
+    ThreadUtils.assertEDT();
+    Runnable lookupAndSelect = new LookupAndSelect(model.getReference());
+    activatePane(new ScheduleUpdateRunnable(myUpdateQueue, createModelReadUpdate(UpdateID.SELECT, lookupAndSelect)), autofocus);
   }
 
-  private void activatePane(PaneActivator activator, boolean autoFocusContents) {
+  private void activatePane(@Nullable final Runnable postActivate, boolean autoFocusContents) {
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     //In unit test mode projectViewToolWindow == null
     if(!ApplicationManager.getApplication().isUnitTestMode()) {
-      projectViewToolWindow.activate(activator, autoFocusContents);
+      projectViewToolWindow.activate(new Runnable() {
+        @Override
+        public void run() {
+          // I'm not quite sure next changeView is essential (what does toolWindow.activate() does then?),
+          // but since there's no documentation what to expect, leave it the way it used to be in PaneActivator.
+          getProjectView().changeView(getId());
+          if (postActivate != null) {
+            postActivate.run();
+          }
+        }
+      }, autoFocusContents);
     }
   }
 
   public void selectNode(@NotNull final SNode node, boolean autofocus) {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
-    activatePane(new PaneActivator(true) {
-      @Override
-      public void doOnPaneActivation() {
-        selectNodeWithoutExpansion(node);
-      }
-    }, autofocus);
+    ThreadUtils.assertEDT();
+    final Runnable lookupAndSelect = new LookupAndSelect(node.getReference());
+    activatePane(new ScheduleUpdateRunnable(myUpdateQueue, createModelReadUpdate(UpdateID.SELECT, lookupAndSelect)), autofocus);
   }
 
-  private void selectNodeWithoutExpansion(final SNode node) {
-    getTree().runWithoutExpansion(new Runnable() {
+  private void selectNodeWithoutExpansion(@NotNull SNodeReference nodeRef) {
+    final Runnable lookupAndSelect = new LookupAndSelect(nodeRef);
+    myUpdateQueue.queue(createModelReadUpdate(UpdateID.SELECT, new Runnable() {
       @Override
       public void run() {
-        MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
-        if (sNodeNode == null) {
-          LOG.warn("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
-          return;
-        }
-        getTree().selectNode(sNodeNode);
+        getTree().runWithoutExpansion(lookupAndSelect);
       }
-    });
+    }));
+  }
+
+  /**
+   * @return update code block with the given id, that runs supplied delegate with read access to project repository
+   */
+  private Update createModelReadUpdate(@NotNull UpdateID id, @NotNull Runnable delegate) {
+    return new UpdateAdapter(id, new ModelReadRunnable(getMPSProject().getModelAccess(), delegate));
   }
 
   //----select next queries----
 
   @Override
   public void selectNextModel(SModel modelDescriptor) {
-    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
+    final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(modelDescriptor);
+    // FIXME selectNextNode does the same, refactor. Check callers if need ThreadUtils at all
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
@@ -502,7 +489,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   public void selectNextNode(SNode node) {
-    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(node);
+    final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(node);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
@@ -514,7 +501,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   //----tree node selection queries---
 
   public MPSTreeNode findNextTreeNode(SNode node) {
-    return myFindHelper.findNextTreeNode(node);
+    return createFindHelper().findNextTreeNode(node);
   }
 
   private void fireComponentCreated() {
@@ -553,6 +540,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     return ourShowGenStatus;
   }
 
+  @NotNull
+  /*package*/ ProjectTreeFindHelper createFindHelper() {
+    return new ProjectTreeFindHelper(getTree());
+  }
+
   //----UI----
 
   private class MyScrollPane extends JBScrollPane implements DataProvider {
@@ -564,38 +556,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     @Nullable
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
-    }
-  }
-
-  private class PaneActivator implements Runnable {
-    private boolean myRunReadAction;
-
-    private PaneActivator(boolean runReadAction) {
-      myRunReadAction = runReadAction;
-    }
-
-    @Override
-    public final void run() {
-      getProjectView().changeView(getId());
-      myUpdateQueue.queue(new AbstractUpdate(UpdateID.SELECT) {
-        @Override
-        public void run() {
-          // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
-          if (myRunReadAction) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                doOnPaneActivation();
-              }
-            });
-          } else {
-            doOnPaneActivation();
-          }
-        }
-      });
-    }
-
-    protected void doOnPaneActivation() {
     }
   }
 
@@ -619,9 +579,99 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     }
   }
 
-  private abstract class AbstractUpdate extends Update {
-    private AbstractUpdate(UpdateID id) {
+  private abstract static class AbstractUpdate extends Update {
+    /*package*/ AbstractUpdate(UpdateID id) {
       super(id, id.getPriority());
+    }
+  }
+
+  private static class UpdateAdapter extends Update {
+    private final Runnable myDelegate;
+
+    /*package*/ UpdateAdapter(@NotNull UpdateID id, @NotNull Runnable delegate) {
+      super(id, id.getPriority());
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() {
+      myDelegate.run();
+    }
+  }
+
+  // handy runnable that places an update into given queue
+  private static class ScheduleUpdateRunnable implements Runnable {
+    private final MergingUpdateQueue myQueue;
+    private final Update myUpdate;
+
+    /*package*/ ScheduleUpdateRunnable(@NotNull MergingUpdateQueue queue, @NotNull Update update) {
+      myQueue = queue;
+      myUpdate = update;
+    }
+
+    @Override
+    public void run() {
+      myQueue.queue(myUpdate);
+    }
+  }
+
+  // resolve a reference, look up a corresponding tree node, and select it if found
+  // XXX split to Computable<TreeNode> and runnable that takes it?
+  private class LookupAndSelect implements Runnable {
+    private SNodeReference myNode;
+    private SModelReference myModel;
+    private SModuleReference myModule;
+
+    public LookupAndSelect(SModuleReference module) {
+      myModule = module;
+    }
+
+    public LookupAndSelect(SModelReference model) {
+      myModel = model;
+    }
+
+    public LookupAndSelect(SNodeReference node) {
+      myNode = node;
+    }
+
+    @Override
+    public void run() {
+      MPSTreeNode toSelect = null;
+      if (myModule != null) {
+        SModule module = myModule.resolve(getMPSProject().getRepository());
+        if (module == null) {
+          // likely, by the time we got to this point (selection update), the reference is no longer valid, exit gracefully
+          return;
+        }
+        toSelect = createFindHelper().findMostSuitableModuleTreeNode(module);
+        if (toSelect == null) {
+          LOG.warn("Couldn't select module \"" + myModule.getModuleName() + "\" : tree node not found.");
+          return;
+        }
+      } else if (myModel != null) {
+        SModel model = myModel.resolve(getMPSProject().getRepository());
+        if (model == null) {
+          return;
+        }
+        toSelect = createFindHelper().findMostSuitableModelTreeNode(model);
+        if (toSelect == null) {
+          LOG.warn("Couldn't select model \"" + myModel.getModelName() + "\" : tree node not found.");
+          return;
+        }
+      } else if (myNode != null) {
+        SNode node = myNode.resolve(getMPSProject().getRepository());
+        if (node == null) {
+          return;
+        }
+        toSelect = createFindHelper().findMostSuitableSNodeTreeNode(node);
+        if (toSelect == null) {
+          LOG.warn("Couldn't select node \"" + myNode.toString() + "\" : tree node not found.");
+          return;
+        }
+      }
+      if (toSelect != null) {
+        getTree().selectNode(toSelect);
+      }
     }
   }
 }

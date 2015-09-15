@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.Attribute", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptBaseCommentAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.BaseCommentAttribute", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL)).super_("jetbrains.mps.lang.core.structure.ChildAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL)).parents("jetbrains.mps.lang.core.structure.ChildAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL)).childDescriptors(new ConceptDescriptorBuilder.Link(3078666699043039389L, "commentedNode", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false)).children(new String[]{"commentedNode"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptBaseCommentAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.BaseCommentAttribute", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL)).super_("jetbrains.mps.lang.core.structure.ChildAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL)).parents("jetbrains.mps.lang.core.structure.ChildAttribute", "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking", "jetbrains.mps.lang.core.structure.IDontApplyTypesystemRules", "jetbrains.mps.lang.core.structure.ISuppressErrors").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L)).childDescriptors(new ConceptDescriptorBuilder.Link(3078666699043039389L, "commentedNode", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false)).children(new String[]{"commentedNode"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptBaseConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.BaseConcept", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1156234966388L, "shortDescription"), new ConceptDescriptorBuilder.Prop(1156235010670L, "alias"), new ConceptDescriptorBuilder.Prop(1193676396447L, "virtualPackage")).properties("shortDescription", "alias", "virtualPackage").childDescriptors(new ConceptDescriptorBuilder.Link(5169995583184591170L, "smodelAttribute", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L), true, true, false)).children(new String[]{"smodelAttribute"}, new boolean[]{true}).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptChildAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ChildAttribute", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL)).super_("jetbrains.mps.lang.core.structure.Attribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L)).parents("jetbrains.mps.lang.core.structure.Attribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(709746936026609029L, "linkRole"), new ConceptDescriptorBuilder.Prop(709746936026609031L, "linkId")).properties("linkRole", "linkId").create();
   /*package*/ final ConceptDescriptor myConceptExportScope = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScope", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.InterfacePart").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L)).abstract_().create();
@@ -24,10 +24,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptICanSuppressErrors = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ICanSuppressErrors", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IContainer", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIDeprecatable = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IDeprecatable", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptIDontApplyTypesystemRules = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IDontApplyTypesystemRules", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIDontSubstituteByDefault = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIMetaLevelChanger = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IMetaLevelChanger", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptINamedConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.INamedConcept", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(1169194664001L, "name")).properties("name").create();
   /*package*/ final ConceptDescriptor myConceptIResolveInfo = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IResolveInfo", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L)).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(1196978656277L, "resolveInfo")).properties("resolveInfo").create();
+  /*package*/ final ConceptDescriptor myConceptISkipConstraintsChecking = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ISkipConstraintsChecking", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIStubForAnotherConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IStubForAnotherConcept", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x226fb4c3ba26d45L)).interface_().parents("jetbrains.mps.lang.core.structure.InterfacePart").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L)).create();
   /*package*/ final ConceptDescriptor myConceptISuppressErrors = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ISuppressErrors", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIType = new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IType", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f8a0774f2L)).interface_().create();
@@ -46,13 +48,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIResolveInfo, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lb, conceptFqName)) {
       case 0:
         return myConceptAttribute;
       case 1:
@@ -78,46 +80,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 11:
         return myConceptIDeprecatable;
       case 12:
-        return myConceptIDontSubstituteByDefault;
+        return myConceptIDontApplyTypesystemRules;
       case 13:
-        return myConceptIMetaLevelChanger;
+        return myConceptIDontSubstituteByDefault;
       case 14:
-        return myConceptINamedConcept;
+        return myConceptIMetaLevelChanger;
       case 15:
-        return myConceptIResolveInfo;
+        return myConceptINamedConcept;
       case 16:
-        return myConceptIStubForAnotherConcept;
+        return myConceptIResolveInfo;
       case 17:
-        return myConceptISuppressErrors;
+        return myConceptISkipConstraintsChecking;
       case 18:
-        return myConceptIType;
+        return myConceptIStubForAnotherConcept;
       case 19:
-        return myConceptIWrapper;
+        return myConceptISuppressErrors;
       case 20:
-        return myConceptImplementationContainer;
+        return myConceptIType;
       case 21:
-        return myConceptImplementationPart;
+        return myConceptIWrapper;
       case 22:
-        return myConceptImplementationWithStubPart;
+        return myConceptImplementationContainer;
       case 23:
-        return myConceptInterfacePart;
+        return myConceptImplementationPart;
       case 24:
-        return myConceptLinkAttribute;
+        return myConceptImplementationWithStubPart;
       case 25:
-        return myConceptNodeAttribute;
+        return myConceptInterfacePart;
       case 26:
-        return myConceptPropertyAttribute;
+        return myConceptLinkAttribute;
       case 27:
-        return myConceptScopeFacade;
+        return myConceptNodeAttribute;
       case 28:
-        return myConceptScopeProvider;
+        return myConceptPropertyAttribute;
       case 29:
-        return myConceptSideTransformInfo;
+        return myConceptScopeFacade;
       case 30:
+        return myConceptScopeProvider;
+      case 31:
+        return myConceptSideTransformInfo;
+      case 32:
         return myConceptSuppressErrorsAnnotation;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ChildAttribute", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ICanSuppressErrors", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.IStubForAnotherConcept", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.ImplementationContainer", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.ScopeFacade", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0lb = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ChildAttribute", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ICanSuppressErrors", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IDontApplyTypesystemRules", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking", "jetbrains.mps.lang.core.structure.IStubForAnotherConcept", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.ImplementationContainer", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.ScopeFacade", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
 }

@@ -183,10 +183,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     if (myNonTypeSystemComponent != null) {
       myNonTypeSystemComponent = null;
     }
-    if (mySModelListener != null) {
-      SRepositoryRegistry.getInstance().removeGlobalListener(mySModelListener);
-      mySModelListener = null;
-    }
+    mySModelListener = null;
     super.dispose();
   }
 

@@ -219,8 +219,7 @@ final class TestModelFactory {
       super(modelData.getReference(), new NullDataSource());
       myModelData = modelData;
       myModelData.setModelDescriptor(this);
-      // the only point to fire state change at construction time (with no listeners yet) is to change myModelLoadState field
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      setLoadingState(ModelLoadingState.FULLY_LOADED);
     }
 
     @Override
@@ -232,12 +231,6 @@ final class TestModelFactory {
     @Override
     protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
       return myModelData;
-    }
-
-    @Override
-    public boolean isLoaded() {
-      // FIXME why don't SModelBase use getLoadingState() field to implement this method? Check overrides to see if there's reason not to.
-      return true;
     }
 
     @Override

@@ -62,7 +62,7 @@ public class StatementCommentPart_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "commentedStatement" + ">";
+      return "<no commentedStatement>";
     }
 
   }

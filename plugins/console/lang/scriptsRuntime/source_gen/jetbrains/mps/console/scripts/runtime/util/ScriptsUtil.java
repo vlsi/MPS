@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -41,7 +42,7 @@ public class ScriptsUtil {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        context.getConsoleTab().execute(ListSequence.fromList(commands).getElement(startWith), null, new Runnable() {
+        ((BaseConsoleTab) context.getOutputWindow()).execute(ListSequence.fromList(commands).getElement(startWith), null, new Runnable() {
           public void run() {
             executeCommands(context, commands, startWith + 1);
           }
@@ -76,8 +77,7 @@ public class ScriptsUtil {
           }
         });
         refactoringViewItem.close();
-        context.getConsoleTab().getConsoleTool().getToolWindow().activate(null);
-        context.getConsoleTab().getConsoleTool().selectTab(context.getConsoleTab());
+        context.getOutputWindow().activate();
       }
     }, sr, false, "refactor");
   }

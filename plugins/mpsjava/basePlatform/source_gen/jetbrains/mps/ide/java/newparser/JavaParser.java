@@ -244,8 +244,6 @@ public class JavaParser {
     // we want to insert imports section before any javadoc 
     // because javadoc is data while imports section is meta-data for assisting class resolving 
 
-    // <node> 
-    // <node> 
   }
   private SNode makeImport(ImportReference impRef) {
     SNode imp = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, "jetbrains.mps.baseLanguage.structure.JavaImport")));
@@ -364,8 +362,6 @@ public class JavaParser {
           continue;
         }
         // FIXME temp hack around typesystem looping when resolving certain dyn.references 
-        // <node> 
-        // <node> 
 
         SNode target = ref.getTargetNode();
         if (target == null) {

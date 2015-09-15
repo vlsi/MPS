@@ -87,7 +87,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "position" + ">";
+      return "<no position>";
     }
 
   }

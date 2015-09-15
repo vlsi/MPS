@@ -82,7 +82,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dependency" + ">";
+      return "<no dependency>";
     }
 
   }

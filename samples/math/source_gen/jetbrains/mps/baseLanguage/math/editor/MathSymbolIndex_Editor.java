@@ -84,7 +84,7 @@ public class MathSymbolIndex_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "iterable" + ">";
+      return "<no iterable>";
     }
 
   }

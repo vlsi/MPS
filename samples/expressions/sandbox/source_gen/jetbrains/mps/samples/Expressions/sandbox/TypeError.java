@@ -10,6 +10,5 @@ package jetbrains.mps.samples.Expressions.sandbox;
  */
 public class TypeError {
   {
-    // <node> 
   }
 }

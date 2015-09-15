@@ -98,7 +98,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeToCoerce" + ">";
+      return "<no nodeToCoerce>";
     }
 
   }
@@ -138,7 +138,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pattern" + ">";
+      return "<no pattern>";
     }
 
   }
@@ -195,7 +195,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -261,7 +261,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elseClause" + ">";
+      return "<no elseClause>";
     }
 
   }

@@ -126,7 +126,7 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list" + ">";
+      return "<no list>";
     }
 
   }
@@ -257,7 +257,7 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list1" + ">";
+      return "<no list1>";
     }
 
   }
@@ -320,7 +320,7 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "list2" + ">";
+      return "<no list2>";
     }
 
   }

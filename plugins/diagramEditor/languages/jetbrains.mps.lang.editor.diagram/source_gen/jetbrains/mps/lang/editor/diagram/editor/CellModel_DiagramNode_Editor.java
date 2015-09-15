@@ -87,7 +87,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "figure" + ">";
+      return "<no figure>";
     }
 
   }
@@ -200,7 +200,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inputPort" + ">";
+      return "<no inputPort>";
     }
 
   }
@@ -240,7 +240,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "outputPort" + ">";
+      return "<no outputPort>";
     }
 
   }

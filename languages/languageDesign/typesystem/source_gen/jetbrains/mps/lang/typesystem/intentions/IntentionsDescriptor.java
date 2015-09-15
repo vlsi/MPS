@@ -33,9 +33,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 0:
         // Concept: InferenceRule 
         if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[2];
+          myIntentions0 = new IntentionFactory[1];
           myIntentions0[0] = new ConvertInferenceRuleToNonTypesystemRule_Intention();
-          myIntentions0[1] = new ConvertOverridesFlagToMethod_Intention();
         }
         return Arrays.asList(myIntentions0);
       case 1:
@@ -68,13 +67,12 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[6];
+    IntentionFactory[] rv = new IntentionFactory[5];
     rv[0] = new ConvertInferenceRuleToNonTypesystemRule_Intention();
     rv[1] = new CreateTypesystemIntention_Intention();
     rv[2] = new FlipInequality_Intention();
     rv[3] = new MakeInequalityCheckOnly_Intention();
     rv[4] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
-    rv[5] = new ConvertOverridesFlagToMethod_Intention();
     return Arrays.asList(rv);
   }
 }

@@ -62,7 +62,7 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variable" + ">";
+      return "<no variable>";
     }
 
   }
@@ -105,7 +105,7 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "input" + ">";
+      return "<no input>";
     }
 
   }

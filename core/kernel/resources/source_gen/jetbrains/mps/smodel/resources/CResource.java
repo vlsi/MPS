@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.compiler.IClassesData;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class CResource extends MultiTuple._1<IClassesData> implements ICResouce {
   public CResource() {
@@ -18,10 +17,6 @@ public class CResource extends MultiTuple._1<IClassesData> implements ICResouce 
   }
   public IClassesData classes() {
     return super._0();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public CResource assignFrom(Tuples._1<IClassesData> from) {
-    return (CResource) super.assign(from);
   }
   public String describe() {
     return null;

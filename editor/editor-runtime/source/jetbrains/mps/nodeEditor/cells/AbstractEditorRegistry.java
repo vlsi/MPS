@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,23 +47,31 @@ import java.util.Set;
 abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(AbstractEditorRegistry.class));
 
-  private final EditorCellFactory myCellFactory;
-  private Comparator<BaseConceptEditor> myEditorComparator;
+  protected final EditorCellFactory myCellFactory;
+  private static Comparator<BaseConceptEditor> myEditorComparator;
+  private static Comparator<BaseConceptEditor> myAncestorEditorComparator;
 
   protected AbstractEditorRegistry(EditorCellFactory cellFactory) {
     myCellFactory = cellFactory;
   }
-
   T getEditor(ConceptDescriptor conceptDescriptor) {
+    return getEditor(conceptDescriptor, new ArrayList<Class<? extends BaseConceptEditor>>());
+  }
+  T getEditor(ConceptDescriptor conceptDescriptor, Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);
     processedConcepts.add(conceptDescriptor.getId());
+    List<T> resultList = new ArrayList<T>();
     while (!queue.isEmpty()) {
       ConceptDescriptor nextConcept = queue.remove();
-      T conceptEditor = getEditorForConcept(nextConcept);
+      T conceptEditor = getEditorForConcept(nextConcept, excludedEditors);
       if (conceptEditor != null) {
-        return conceptEditor;
+        if (isEnoughForCurrentContext(conceptEditor)) {
+          return conceptEditor;
+        } else {
+          resultList.add(conceptEditor);
+        }
       }
       for (SConceptId ancestorId : nextConcept.getParentsIds()) {
         if (processedConcepts.contains(ancestorId)) {
@@ -71,22 +81,26 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
         queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorId));
       }
     }
-    return null;
+    if (resultList.isEmpty()) {
+      return null;
+    }
+    Collections.sort(resultList, getAncestorEditorComparator());
+    return resultList.get(0);
   }
 
-  private T getEditorForConcept(ConceptDescriptor conceptDescriptor) {
+
+  private T getEditorForConcept(ConceptDescriptor conceptDescriptor, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
     List<T> conceptEditors = collectApplicableEditors(conceptDescriptor);
     if (conceptEditors.isEmpty()) {
       return null;
-    }
-    if (conceptEditors.size() == 1) {
-      return conceptEditors.get(0);
     }
     Collections.sort(conceptEditors, getEditorComparator());
     T result = null;
     for (T conceptEditor : conceptEditors) {
       if (result == null) {
-        result = conceptEditor;
+        if (!excludedEditors.contains(conceptEditor.getClass())) {
+          result = conceptEditor;
+        }
       } else if (conceptEditor.getContextHints().size() == result.getContextHints().size()) {
         LOG.error(getErrorMessage(conceptEditor, result));
       } else {
@@ -99,22 +113,24 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private List<T> collectApplicableEditors(ConceptDescriptor conceptDescriptor) {
     List<T> result = new ArrayList<T>();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
-    for (Iterator<LanguageRuntime> extendingLanguagesIterator = null; languageRuntime != null; ) {
-      EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
-      if (aspectDescriptor != null) {
-        for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
-          if (isApplicableInCurrentContext(conceptEditor)) {
-            result.add(conceptEditor);
-          }
+    EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
+    if (aspectDescriptor != null) {
+      for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
+        if (isApplicableInCurrentContext(conceptEditor)) {
+          result.add(conceptEditor);
         }
       }
-      if (extendingLanguagesIterator == null) {
-        // initializing iterator for first language only
-        extendingLanguagesIterator = languageRuntime.getExtendingLanguages().iterator();
-      }
-      languageRuntime = extendingLanguagesIterator.hasNext() ? extendingLanguagesIterator.next() : null;
     }
     return result;
+  }
+  
+  private boolean isEnoughForCurrentContext(BaseConceptEditor editor) {
+    for (String hint : myCellFactory.getCellContext().getHints()) {
+      if (!editor.getContextHints().contains(hint)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private boolean isApplicableInCurrentContext(BaseConceptEditor editor) {
@@ -138,7 +154,7 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
         mainEditor.getClass() + ".";
   }
 
-  private Comparator<BaseConceptEditor> getEditorComparator() {
+  private static Comparator<BaseConceptEditor> getEditorComparator() {
     if (myEditorComparator == null) {
       myEditorComparator = new Comparator<BaseConceptEditor>() {
         @Override
@@ -151,6 +167,17 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
       };
     }
     return myEditorComparator;
+  }
+  private static Comparator<BaseConceptEditor> getAncestorEditorComparator() {
+    if (myAncestorEditorComparator == null) {
+      myAncestorEditorComparator = new Comparator<BaseConceptEditor>() {
+        @Override
+        public int compare(BaseConceptEditor editor1, BaseConceptEditor editor2) {
+          return editor2.getContextHints().size() - editor1.getContextHints().size();
+        }
+      };
+    }
+    return myAncestorEditorComparator;
   }
 
   protected abstract Collection<T> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor);

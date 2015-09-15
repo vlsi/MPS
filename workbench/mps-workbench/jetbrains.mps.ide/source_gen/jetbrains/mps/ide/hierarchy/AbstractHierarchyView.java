@@ -9,15 +9,15 @@ import com.intellij.ide.OccurenceNavigatorSupport;
 import com.intellij.openapi.project.Project;
 import javax.swing.Icon;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.pom.Navigatable;
 import javax.swing.tree.DefaultMutableTreeNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.usageView.UsageViewBundle;
-import java.awt.BorderLayout;
 import com.intellij.ui.ScrollPaneFactory;
+import java.awt.BorderLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.ide.OccurenceNavigator;
@@ -43,12 +44,14 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
-  protected HierarchyTreeNode myTreeNode;
   protected JPanel myComponent;
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
+  }
+  public MPSProject getMPSProject() {
+    return getProject().getComponent(MPSProject.class);
   }
   @Override
   public void disposeComponent() {
@@ -70,7 +73,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
         SNodeReference ptr = ((HierarchyTreeNode) node).getNodeReference();
 
-        Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr);
+        Navigatable n = new NodeNavigatable(getMPSProject(), ptr);
         return (n.canNavigate() ? n : null);
       }
       @Override
@@ -83,12 +86,16 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     };
     myHierarchyTree.setRootVisible(true);
-    final JPanel panel = new JPanel(new BorderLayout());
     this.myComponent = new AbstractHierarchyView.RootPanel();
-    myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = ScrollPaneFactory.createScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showItemInHierarchy(null);
+    createControlPanel();
+  }
+
+  protected void createControlPanel() {
+    final JPanel panel = new JPanel(new BorderLayout());
+    myComponent.add(panel, BorderLayout.NORTH);
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
@@ -97,9 +104,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     });
   }
+
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
   public void openNode(final SNodeReference nodeRef) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
     if (mpsProject == null) {
       return;
     }
@@ -175,11 +183,8 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
   public void showItemInHierarchy(SNode node) {
-    myHierarchyTree.myHierarchyNode = node;
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-    if (mpsProject == null) {
-      return;
-    }
+    myHierarchyTree.setHierarchyNode(node);
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
@@ -188,8 +193,9 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
           return;
         }
         myHierarchyTree.rebuildNow();
-        if (myTreeNode != null) {
-          myHierarchyTree.selectNode(myTreeNode);
+        if (myHierarchyTree.getActiveTreeNode() != null) {
+          myHierarchyTree.setRootNodeText("<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyTree.getActiveTreeNode().calculateNodeIdentifier()) + "</b></font>", getIcon());
+          myHierarchyTree.selectNode(myHierarchyTree.getActiveTreeNode());
         }
         if (!(isTreeInfinite())) {
           myHierarchyTree.expandAll();

@@ -14,18 +14,22 @@ import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import javax.swing.JOptionPane;
+import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.errors.NullErrorReporter;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.ui.MessageType;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Type;
@@ -74,29 +78,47 @@ public class ShowNodeType_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
+    final Wrappers._T<IErrorReporter> error = new Wrappers._T<IErrorReporter>();
     final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeForTypechecking(), new ITypechecking.Action() {
+        ShowNodeType_Action.this.runTypecheckingAction(new ITypechecking.Action() {
           public void run(TypeCheckingContext typeCheckingContext) {
             if (!(typeCheckingContext.isCheckedRoot(false))) {
               typeCheckingContext.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
             }
             type.value = typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
-            reporter.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+            error.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+
+            if (error.value == null && TypesUtil.hasVariablesInside(type.value)) {
+              error.value = new NullErrorReporter() {
+                @Override
+                public String reportError() {
+                  return "Type was not fully instantiated";
+                }
+              };
+            }
           }
-        });
+        }, _params);
       }
     });
 
     if (type.value == null) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+      ToolWindowManager manager = ToolWindowManager.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
+      manager.notifyByBalloon("Messages", MessageType.INFO, "Selected node has no type");
       return;
     }
 
@@ -105,12 +127,14 @@ public class ShowNodeType_Action extends BaseAction {
     try {
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
-          tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+          tmpModel.value = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
           tmpModel.value.addRootNode(type.value);
           TemporaryModels.getInstance().addMissingImports(tmpModel.value);
         }
       });
-      new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
+
+      new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, error.value).show();
+
     } finally {
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
@@ -119,5 +143,8 @@ public class ShowNodeType_Action extends BaseAction {
         }
       });
     }
+  }
+  private void runTypecheckingAction(ITypechecking.Action action, final Map<String, Object> _params) {
+    TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeForTypechecking(), action);
   }
 }

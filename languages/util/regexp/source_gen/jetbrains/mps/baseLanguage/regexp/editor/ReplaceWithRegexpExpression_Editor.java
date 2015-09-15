@@ -77,7 +77,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "regexp" + ">";
+      return "<no regexp>";
     }
 
   }
@@ -123,7 +123,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expr" + ">";
+      return "<no expr>";
     }
 
   }
@@ -178,7 +178,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "replaceBlock" + ">";
+      return "<no replaceBlock>";
     }
 
   }

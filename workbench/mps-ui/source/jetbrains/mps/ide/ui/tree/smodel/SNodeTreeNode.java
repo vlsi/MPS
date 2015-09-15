@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import com.intellij.ide.projectView.impl.ProjectViewTree;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -24,11 +23,13 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
@@ -37,7 +38,7 @@ import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.font.TextAttribute;
 
-public class SNodeTreeNode extends MPSTreeNodeEx {
+public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   private static final Logger LOG = LogManager.getLogger(SNodeTreeNode.class);
 
   protected boolean myInitialized = false;
@@ -191,6 +192,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return child;
   }
 
+  @Nullable
+  @Override
+  public SNodeReference getNavigationTarget() {
+    return myNode == null ? null : myNode.getReference();
+  }
+
   @Override
   public void doubleClick() {
     NodeNavigationProvider provider = getAncestor(NodeNavigationProvider.class);
@@ -254,8 +261,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     void populate(SNodeTreeNode treeNode);
   }
 
+  /**
+   * @deprecated use {@link NodeTargetProvider} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public interface NodeNavigationProvider {
-
     void editNode(SNodeTreeNode treeNode, boolean wasClicked);
   }
 }

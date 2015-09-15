@@ -182,7 +182,7 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "sourceNodeQuery" + ">";
+      return "<no sourceNodeQuery>";
     }
 
   }

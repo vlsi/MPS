@@ -98,7 +98,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "visibility" + ">";
+      return "<no visibility>";
     }
 
   }
@@ -222,7 +222,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }

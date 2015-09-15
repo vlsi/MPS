@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IDeltaResource {
   public DResource() {
@@ -18,10 +17,6 @@ public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IDelta
   }
   public Iterable<IDelta> delta() {
     return super._0();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public DResource assignFrom(Tuples._1<Iterable<IDelta>> from) {
-    return (DResource) super.assign(from);
   }
   public String describe() {
     return null;

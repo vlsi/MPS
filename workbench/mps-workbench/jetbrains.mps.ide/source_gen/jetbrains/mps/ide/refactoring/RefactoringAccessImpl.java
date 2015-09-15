@@ -34,11 +34,15 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   }
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModel model) {
-    return new ModelOrNodeChooser(project, model);
+    ModelOrNodeChooser rv = new ModelOrNodeChooser(project);
+    rv.select(model);
+    return rv;
   }
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    return new ModelOrNodeChooser(project, node);
+    ModelOrNodeChooser rv = new ModelOrNodeChooser(project);
+    rv.select(node);
+    return rv;
   }
   @Override
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {

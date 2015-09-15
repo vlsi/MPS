@@ -292,7 +292,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "handler" + ">";
+      return "<no handler>";
     }
 
   }
@@ -429,7 +429,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }

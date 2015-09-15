@@ -101,7 +101,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "applicability" + ">";
+      return "<no applicability>";
     }
 
   }
@@ -151,7 +151,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "customizes" + ">";
+      return "<no customizes>";
     }
 
   }

@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.event.SReferenceReadEvent;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
@@ -48,6 +49,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class ModelEventDispatch {
   // model we dispatch events for
   private final SModel myModel;
+  // same as myModel, casted to EditableSModel for convenience, or null if myModel is not editable
+  private final EditableSModel myEditableSModel;
   private final List<SNodeAccessListener> myAccessListeners = new CopyOnWriteArrayList<SNodeAccessListener>();
   private final List<SNodeChangeListener> myChangeListeners = new CopyOnWriteArrayList<SNodeChangeListener>();
   @ToRemove(version = 3.3)
@@ -57,6 +60,7 @@ public final class ModelEventDispatch {
 
   public ModelEventDispatch(@NotNull SModel model) {
     myModel = model;
+    myEditableSModel = model instanceof EditableSModel ? (EditableSModel) model : null;
   }
 
   @ToRemove(version = 3.3)
@@ -174,6 +178,7 @@ public final class ModelEventDispatch {
   }
 
   public void fireReferenceChange(SNode node, SReferenceLink role, SReference oldValue, SReference newValue) {
+    markEditableModelChanged();
     if (myChangeListeners.isEmpty()) {
       return;
     }
@@ -184,6 +189,7 @@ public final class ModelEventDispatch {
   }
 
   public void firePropertyChange(SNode node, SProperty property, String oldValue, String newValue) {
+    markEditableModelChanged();
     if (myChangeListeners.isEmpty()) {
       return;
     }
@@ -194,6 +200,7 @@ public final class ModelEventDispatch {
   }
 
   public void fireNodeAdd(SNode node, SContainmentLink role, SNode child) {
+    markEditableModelChanged();
     if (myChangeListeners.isEmpty()) {
       return;
     }
@@ -204,6 +211,7 @@ public final class ModelEventDispatch {
   }
 
   public void fireNodeRemove(SNode node, SContainmentLink role, SNode child) {
+    markEditableModelChanged();
     if (myChangeListeners.isEmpty()) {
       return;
     }
@@ -213,4 +221,11 @@ public final class ModelEventDispatch {
     }
   }
 
+  // instead of EditableSModelBase attaching a change listener to itself to update its 'changed' state,
+  // we update this state from event dispatcher
+  private void markEditableModelChanged() {
+    if (myEditableSModel != null) {
+      myEditableSModel.setChanged(true);
+    }
+  }
 }

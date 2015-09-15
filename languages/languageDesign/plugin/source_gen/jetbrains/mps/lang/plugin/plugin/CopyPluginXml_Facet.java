@@ -183,10 +183,6 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       public String pluginRoot() {
         return super._0();
       }
-      @SuppressWarnings(value = "unchecked")
-      public CopyPluginXml_Facet.Target_copyPluginXml.Parameters assignFrom(Tuples._1<String> from) {
-        return (CopyPluginXml_Facet.Target_copyPluginXml.Parameters) super.assign(from);
-      }
     }
     private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);

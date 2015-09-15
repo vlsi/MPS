@@ -24,4 +24,14 @@ public class ModuleDependencyUtils {
       model.addLanguage(javadocLang);
     }
   }
+  public static void addDependencyOnCoreIfMissing(SModel currentModel) {
+    if (!(currentModel instanceof SModelInternal)) {
+      return;
+    }
+    SModelInternal model = (SModelInternal) currentModel;
+    SLanguage langCoreLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
+    if (!(model.importedLanguageIds().contains(langCoreLang))) {
+      model.addLanguage(langCoreLang);
+    }
+  }
 }

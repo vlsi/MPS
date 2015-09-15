@@ -25,7 +25,7 @@ public class ClassLikeMemberPlaceholderMenu extends AbstractCellMenuPart_Generic
     return BehaviorReflection.invokeVirtual(String.class, ((SNode) object), "virtual_getMatchingText_2736582054146581585", new Object[]{});
   }
   protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-    EditorUtil.substitutePlaceholder(node);
+    EditorUtil.substitutePlaceholder(((SNode) node));
   }
   public boolean isReferentPresentation() {
     return false;

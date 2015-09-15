@@ -212,7 +212,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     });
   }
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
-    // <node> 
 
     if (isApplicationInUnitTestOrHeadless()) {
       return ourTestImplementation.show("") == 0;
@@ -225,7 +224,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     String title = "Model Versions Conflict";
     String[] options = {"Load File System Version", "Save Memory Version", "Show Difference"};
     while (true) {
-      // <node> 
       if (isApplicationInUnitTestOrHeadless()) {
         return ourTestImplementation.show("") == 1;
       }

@@ -101,7 +101,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "innerClass" + ">";
+      return "<no innerClass>";
     }
 
   }
@@ -145,7 +145,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inner" + ">";
+      return "<no inner>";
     }
 
   }

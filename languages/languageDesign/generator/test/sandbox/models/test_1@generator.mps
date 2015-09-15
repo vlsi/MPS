@@ -6,9 +6,9 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -154,7 +154,9 @@
       <concept id="1168559512253" name="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" flags="lg" index="j$LIH">
         <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
       </concept>
-      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub" />
+      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+      </concept>
       <concept id="1170725621272" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" flags="in" index="2kFOW8" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
@@ -1260,6 +1262,31 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="rez4bFHyvK">
+    <property role="TrG5h" value="SwitchWithParametes" />
+    <node concept="1N15co" id="rez4bFHyvL" role="1s_3oS">
+      <property role="TrG5h" value="first" />
+      <node concept="3Tqbb2" id="rez4bFIkYO" role="1N15GL">
+        <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+      </node>
+    </node>
+    <node concept="1N15co" id="rez4bFHyNT" role="1s_3oS">
+      <property role="TrG5h" value="second" />
+      <node concept="10Oyi0" id="rez4bFIkYU" role="1N15GL" />
+    </node>
+  </node>
+  <node concept="jVnub" id="rez4bFHyO8">
+    <property role="TrG5h" value="ExtendWithParams" />
+    <ref role="phYkn" node="rez4bFHyvK" resolve="SwitchWithParametes" />
+    <node concept="1N15co" id="rez4bFIvVO" role="1s_3oS">
+      <property role="TrG5h" value="first" />
+      <node concept="3Tqbb2" id="rez4bFIvVP" role="1N15GL" />
+    </node>
+    <node concept="1N15co" id="rez4bFIvVQ" role="1s_3oS">
+      <property role="TrG5h" value="second" />
+      <node concept="10Oyi0" id="rez4bFIvVR" role="1N15GL" />
     </node>
   </node>
 </model>

@@ -4,9 +4,9 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -23,12 +23,12 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
-    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
-    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
-    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
+    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -289,7 +289,7 @@
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -308,7 +308,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -371,11 +371,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="379IfaV6Tbp" role="lGtFl">
-        <node concept="TZ5HA" id="379IfaV6Tbq" role="TZ5H$">
-          <node concept="1dT_AC" id="379IfaV6Tbr" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns all available elements in the scope." />
-          </node>
-        </node>
         <node concept="TUZQ0" id="379IfaV6Tbs" role="3nqlJM">
           <property role="TUZQ4" value="(if not null) filters out elements whose reference text doesn't start with prefix" />
           <node concept="zr_55" id="379IfaV6Tbt" role="zr_5Q">
@@ -384,6 +379,11 @@
         </node>
         <node concept="x79VA" id="379IfaV6Tbu" role="3nqlJM">
           <property role="x79VB" value="list of nodes in the scope" />
+        </node>
+        <node concept="TZ5HA" id="379IfaV6Tbq" role="TZ5H$">
+          <node concept="1dT_AC" id="379IfaV6Tbr" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns all available elements in the scope." />
+          </node>
         </node>
       </node>
     </node>
@@ -412,6 +412,15 @@
         <node concept="3Tqbb2" id="379IfaV6Tb9" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="379IfaV6Tbi" role="lGtFl">
+        <node concept="TUZQ0" id="379IfaV6Tbl" role="3nqlJM">
+          <property role="TUZQ4" value="element to check presence for" />
+          <node concept="zr_55" id="379IfaV6Tbm" role="zr_5Q">
+            <ref role="zr_51" node="379IfaV6Tb8" resolve="node" />
+          </node>
+        </node>
+        <node concept="x79VA" id="379IfaV6Tbn" role="3nqlJM">
+          <property role="x79VB" value="&lt;tt&gt;true&lt;/tt&gt; if this scope contains the specified element" />
+        </node>
         <node concept="TZ5HA" id="379IfaV6Tbj" role="TZ5H$">
           <node concept="1dT_AC" id="379IfaV6Te9" role="1dT_Ay">
             <property role="1dT_AB" value="Returns " />
@@ -436,15 +445,6 @@
             <property role="1dT_AB" value="Invariant: contains(node) == getAvailableElements(null).contains(node)" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6Tbl" role="3nqlJM">
-          <property role="TUZQ4" value="element to check presence for" />
-          <node concept="zr_55" id="379IfaV6Tbm" role="zr_5Q">
-            <ref role="zr_51" node="379IfaV6Tb8" resolve="node" />
-          </node>
-        </node>
-        <node concept="x79VA" id="379IfaV6Tbn" role="3nqlJM">
-          <property role="x79VB" value="&lt;tt&gt;true&lt;/tt&gt; if this scope contains the specified element" />
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="3fifI_xCtP3" role="jymVt">
@@ -465,19 +465,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="379IfaV6_gn" role="lGtFl">
-        <node concept="TZ5HA" id="379IfaV6_go" role="TZ5H$">
-          <node concept="1dT_AC" id="379IfaV6_gp" role="1dT_Ay">
-            <property role="1dT_AB" value="Resolves element by reference text." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="379IfaV6Tbe" role="TZ5H$">
-          <node concept="1dT_AC" id="379IfaV6Tbf" role="1dT_Ay" />
-        </node>
-        <node concept="TZ5HA" id="379IfaV6Tbg" role="TZ5H$">
-          <node concept="1dT_AC" id="379IfaV6Tbh" role="1dT_Ay">
-            <property role="1dT_AB" value="Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText" />
-          </node>
-        </node>
         <node concept="TUZQ0" id="379IfaV6_gq" role="3nqlJM">
           <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
           <node concept="zr_55" id="379IfaV6_gr" role="zr_5Q">
@@ -492,6 +479,19 @@
         </node>
         <node concept="x79VA" id="379IfaV6_gu" role="3nqlJM">
           <property role="x79VB" value="resolved element when reference text unambiguously identifies element, null otherwise" />
+        </node>
+        <node concept="TZ5HA" id="379IfaV6_go" role="TZ5H$">
+          <node concept="1dT_AC" id="379IfaV6_gp" role="1dT_Ay">
+            <property role="1dT_AB" value="Resolves element by reference text." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="379IfaV6Tbe" role="TZ5H$">
+          <node concept="1dT_AC" id="379IfaV6Tbf" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HA" id="379IfaV6Tbg" role="TZ5H$">
+          <node concept="1dT_AC" id="379IfaV6Tbh" role="1dT_Ay">
+            <property role="1dT_AB" value="Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText" />
+          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="379IfaV6Tep" role="2AJF6D">
@@ -516,6 +516,21 @@
         </node>
       </node>
       <node concept="P$JXv" id="379IfaV6_gv" role="lGtFl">
+        <node concept="TUZQ0" id="379IfaV6_gy" role="3nqlJM">
+          <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
+          <node concept="zr_55" id="379IfaV6_gz" role="zr_5Q">
+            <ref role="zr_51" node="3fifI_xCtPp" resolve="contextNode" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="379IfaV6_g$" role="3nqlJM">
+          <property role="TUZQ4" value="element from the current scope (contains(node) == true)" />
+          <node concept="zr_55" id="379IfaV6_g_" role="zr_5Q">
+            <ref role="zr_51" node="3fifI_xCtPr" resolve="node" />
+          </node>
+        </node>
+        <node concept="x79VA" id="379IfaV6_gA" role="3nqlJM">
+          <property role="x79VB" value="reference text for the node element in the current scope" />
+        </node>
         <node concept="TZ5HA" id="379IfaV6_gw" role="TZ5H$">
           <node concept="1dT_AC" id="379IfaV6_gB" role="1dT_Ay">
             <property role="1dT_AB" value="Creates textual reference for scope element. If element has no textual representation" />
@@ -535,21 +550,6 @@
           <node concept="1dT_AC" id="379IfaV6TeI" role="1dT_Ay">
             <property role="1dT_AB" value="Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node" />
           </node>
-        </node>
-        <node concept="TUZQ0" id="379IfaV6_gy" role="3nqlJM">
-          <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
-          <node concept="zr_55" id="379IfaV6_gz" role="zr_5Q">
-            <ref role="zr_51" node="3fifI_xCtPp" resolve="contextNode" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="379IfaV6_g$" role="3nqlJM">
-          <property role="TUZQ4" value="element from the current scope (contains(node) == true)" />
-          <node concept="zr_55" id="379IfaV6_g_" role="zr_5Q">
-            <ref role="zr_51" node="3fifI_xCtPr" resolve="node" />
-          </node>
-        </node>
-        <node concept="x79VA" id="379IfaV6_gA" role="3nqlJM">
-          <property role="x79VB" value="reference text for the node element in the current scope" />
         </node>
       </node>
       <node concept="2AHcQZ" id="379IfaV6Teo" role="2AJF6D">
@@ -1010,19 +1010,40 @@
     <node concept="312cEg" id="7ipADkTevTt" role="jymVt">
       <property role="TrG5h" value="myLink" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="7ipADkTevTu" role="1B3o_S" />
       <node concept="3uibUv" id="6t3ylNOz$g7" role="1tU5fm">
         <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
       </node>
+      <node concept="3Tm6S6" id="7ipADkTevTu" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="7ipADkTevTC" role="jymVt">
       <property role="TrG5h" value="concept" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="7ipADkTevTD" role="1B3o_S" />
       <node concept="3bZ5Sz" id="4wG2MBH_Hic" role="1tU5fm" />
+      <node concept="3Tm6S6" id="7ipADkTevTD" role="1B3o_S" />
     </node>
     <node concept="3clFbW" id="7ipADkTevTG" role="jymVt">
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="1pnkBUIVoXI" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="4wG2MBH_FK$" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="4wG2MBH_FK_" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="4wG2MBH_FKA" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="1pnkBUIVoXF" role="lGtFl">
+        <node concept="TZ5HI" id="1pnkBUIVoXG" role="3nqlJM">
+          <node concept="TZ5HA" id="1pnkBUIVoXH" role="3HnX3l">
+            <node concept="1dT_AC" id="1pnkBUIVp6H" role="1dT_Ay">
+              <property role="1dT_AB" value="use SContainmentLink variant" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cqZAl" id="7ipADkTevTH" role="3clF45" />
       <node concept="3Tm1VV" id="7ipADkTevTI" role="1B3o_S" />
       <node concept="3clFbS" id="7ipADkTevTK" role="3clF47">
@@ -1041,12 +1062,6 @@
         </node>
         <node concept="3clFbF" id="7ipADkTevTW" role="3cqZAp">
           <node concept="37vLTI" id="7ipADkTevTY" role="3clFbG">
-            <node concept="2OqwBi" id="7ipADkTevUF" role="37vLTJ">
-              <node concept="Xjq3P" id="7ipADkTevUI" role="2Oq$k0" />
-              <node concept="2OwXpG" id="7ipADkTevUH" role="2OqNvi">
-                <ref role="2Oxat5" node="7ipADkTevTt" resolve="myLink" />
-              </node>
-            </node>
             <node concept="2YIFZM" id="1pnkBUIVoWA" role="37vLTx">
               <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
               <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
@@ -1054,21 +1069,27 @@
                 <ref role="3cqZAo" node="7ipADkTevTU" resolve="link" />
               </node>
             </node>
+            <node concept="2OqwBi" id="7ipADkTevUF" role="37vLTJ">
+              <node concept="Xjq3P" id="7ipADkTevUI" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7ipADkTevUH" role="2OqNvi">
+                <ref role="2Oxat5" node="7ipADkTevTt" resolve="myLink" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="7ipADkTevU5" role="3cqZAp">
           <node concept="37vLTI" id="7ipADkTevU7" role="3clFbG">
-            <node concept="2OqwBi" id="7ipADkTevUJ" role="37vLTJ">
-              <node concept="Xjq3P" id="7ipADkTevUM" role="2Oq$k0" />
-              <node concept="2OwXpG" id="7ipADkTevUL" role="2OqNvi">
-                <ref role="2Oxat5" node="7ipADkTevTC" resolve="concept" />
-              </node>
-            </node>
             <node concept="2YIFZM" id="4wG2MBH_HBd" role="37vLTx">
               <ref role="37wK5l" to="2k9e:~MetaAdapterFactoryByName.getTypedConcept_DoNotUse(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTypedConcept_DoNotUse" />
               <ref role="1Pybhc" to="2k9e:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
               <node concept="37vLTw" id="4wG2MBH_HDZ" role="37wK5m">
                 <ref role="3cqZAo" node="7ipADkTevU3" resolve="conceptFqName" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7ipADkTevUJ" role="37vLTJ">
+              <node concept="Xjq3P" id="7ipADkTevUM" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7ipADkTevUL" role="2OqNvi">
+                <ref role="2Oxat5" node="7ipADkTevTC" resolve="concept" />
               </node>
             </node>
           </node>
@@ -1087,27 +1108,6 @@
       <node concept="37vLTG" id="7ipADkTevU3" role="3clF46">
         <property role="TrG5h" value="conceptFqName" />
         <node concept="17QB3L" id="7ipADkTevU4" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="1pnkBUIVoXF" role="lGtFl">
-        <node concept="TZ5HI" id="1pnkBUIVoXG" role="3nqlJM">
-          <node concept="TZ5HA" id="1pnkBUIVoXH" role="3HnX3l">
-            <node concept="1dT_AC" id="1pnkBUIVp6H" role="1dT_Ay">
-              <property role="1dT_AB" value="use SContainmentLink variant" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1pnkBUIVoXI" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="4wG2MBH_FK$" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="4wG2MBH_FK_" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="4wG2MBH_FKA" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFbW" id="1pnkBUIVmcX" role="jymVt">
@@ -1173,6 +1173,27 @@
     </node>
     <node concept="3clFbW" id="7ipADkTevUg" role="jymVt">
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="5TYh2YDX_tZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="4wG2MBH_Fp5" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="4wG2MBH_FE6" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="4wG2MBH_FIK" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="5TYh2YDX_tW" role="lGtFl">
+        <node concept="TZ5HI" id="5TYh2YDX_tX" role="3nqlJM">
+          <node concept="TZ5HA" id="5TYh2YDX_tY" role="3HnX3l">
+            <node concept="1dT_AC" id="5TYh2YDX_Dz" role="1dT_Ay">
+              <property role="1dT_AB" value="use SContainmentLink variant" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cqZAl" id="7ipADkTevUh" role="3clF45" />
       <node concept="3Tm1VV" id="7ipADkTevUi" role="1B3o_S" />
       <node concept="3clFbS" id="7ipADkTevUk" role="3clF47">
@@ -1191,17 +1212,17 @@
         </node>
         <node concept="3clFbF" id="7ipADkTevUw" role="3cqZAp">
           <node concept="37vLTI" id="7ipADkTevUy" role="3clFbG">
-            <node concept="2OqwBi" id="7ipADkTevUR" role="37vLTJ">
-              <node concept="Xjq3P" id="7ipADkTevUU" role="2Oq$k0" />
-              <node concept="2OwXpG" id="7ipADkTevUT" role="2OqNvi">
-                <ref role="2Oxat5" node="7ipADkTevTt" resolve="myLink" />
-              </node>
-            </node>
             <node concept="2YIFZM" id="5TYh2YDX_q2" role="37vLTx">
               <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getContainmentLink(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
               <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
               <node concept="37vLTw" id="5TYh2YDX_sQ" role="37wK5m">
                 <ref role="3cqZAo" node="7ipADkTevUu" resolve="link" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7ipADkTevUR" role="37vLTJ">
+              <node concept="Xjq3P" id="7ipADkTevUU" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7ipADkTevUT" role="2OqNvi">
+                <ref role="2Oxat5" node="7ipADkTevTt" resolve="myLink" />
               </node>
             </node>
           </node>
@@ -1226,27 +1247,6 @@
         <property role="TrG5h" value="link" />
         <node concept="3Tqbb2" id="7ipADkTevUv" role="1tU5fm">
           <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="5TYh2YDX_tW" role="lGtFl">
-        <node concept="TZ5HI" id="5TYh2YDX_tX" role="3nqlJM">
-          <node concept="TZ5HA" id="5TYh2YDX_tY" role="3HnX3l">
-            <node concept="1dT_AC" id="5TYh2YDX_Dz" role="1dT_Ay">
-              <property role="1dT_AB" value="use SContainmentLink variant" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5TYh2YDX_tZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="4wG2MBH_Fp5" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="4wG2MBH_FE6" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="4wG2MBH_FIK" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
         </node>
       </node>
     </node>
@@ -1796,6 +1796,18 @@
     <node concept="2YIFZL" id="379IfaV6Tee" role="jymVt">
       <property role="TrG5h" value="forNamedElements" />
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="6t3ylNOzDNZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="6t3ylNOzDNW" role="lGtFl">
+        <node concept="TZ5HI" id="6t3ylNOzDNX" role="3nqlJM">
+          <node concept="TZ5HA" id="6t3ylNOzDNY" role="3HnX3l">
+            <node concept="1dT_AC" id="6t3ylNOzGww" role="1dT_Ay">
+              <property role="1dT_AB" value="use SContainmentLink variant, to remove after 3.3" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3uibUv" id="379IfaV6Tei" role="3clF45">
         <ref role="3uigEE" node="7ipADkTevLm" resolve="SimpleRoleScope" />
       </node>
@@ -1857,18 +1869,6 @@
         <node concept="3Tqbb2" id="379IfaV6Ten" role="1tU5fm">
           <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
         </node>
-      </node>
-      <node concept="P$JXv" id="6t3ylNOzDNW" role="lGtFl">
-        <node concept="TZ5HI" id="6t3ylNOzDNX" role="3nqlJM">
-          <node concept="TZ5HA" id="6t3ylNOzDNY" role="3HnX3l">
-            <node concept="1dT_AC" id="6t3ylNOzGww" role="1dT_Ay">
-              <property role="1dT_AB" value="use SContainmentLink variant, to remove after 3.3" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6t3ylNOzDNZ" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="6t3ylNOzI9Y" role="jymVt">
@@ -2935,6 +2935,18 @@
     </node>
     <node concept="3clFbW" id="7ipADkTfyJc" role="jymVt">
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="4k9eBec$R4h" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="4k9eBec$R4e" role="lGtFl">
+        <node concept="TZ5HI" id="4k9eBec$R4f" role="3nqlJM">
+          <node concept="TZ5HA" id="4k9eBec$R4g" role="3HnX3l">
+            <node concept="1dT_AC" id="4k9eBec$R6Z" role="1dT_Ay">
+              <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cqZAl" id="7ipADkTfyJd" role="3clF45" />
       <node concept="3Tm1VV" id="7ipADkTfyJe" role="1B3o_S" />
       <node concept="3clFbS" id="7ipADkTfyJg" role="3clF47">
@@ -2965,18 +2977,6 @@
       <node concept="37vLTG" id="7ipADkTfyPs" role="3clF46">
         <property role="TrG5h" value="targetConcept" />
         <node concept="17QB3L" id="7ipADkTfyPu" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="4k9eBec$R4e" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBec$R4f" role="3nqlJM">
-          <node concept="TZ5HA" id="4k9eBec$R4g" role="3HnX3l">
-            <node concept="1dT_AC" id="4k9eBec$R6Z" role="1dT_Ay">
-              <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4k9eBec$R4h" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="4k9eBec$Rqo" role="jymVt" />
@@ -4032,6 +4032,9 @@
       </node>
       <node concept="37vLTG" id="4IP40Bi3e_X" role="3clF46">
         <property role="TrG5h" value="elements" />
+        <node concept="2AHcQZ" id="5qGTaM8wBZz" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="A3Dl8" id="4IP40Bi3e_Y" role="1tU5fm">
           <node concept="3Tqbb2" id="4IP40Bi3eA0" role="A3Ik2" />
         </node>
@@ -4417,8 +4420,8 @@
     <node concept="312cEg" id="VXQuBhR9t" role="jymVt">
       <property role="TrG5h" value="myTargetConcept" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="VXQuBhR9u" role="1B3o_S" />
       <node concept="3bZ5Sz" id="4k9eBec$AZu" role="1tU5fm" />
+      <node concept="3Tm6S6" id="VXQuBhR9u" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="VXQuBhR9w" role="jymVt">
       <property role="TrG5h" value="myModels" />
@@ -4430,6 +4433,21 @@
     </node>
     <node concept="3clFbW" id="VXQuBi1M2" role="jymVt">
       <property role="IEkAT" value="true" />
+      <node concept="2AHcQZ" id="4k9eBec$CgY" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="4k9eBec$CgV" role="lGtFl">
+        <node concept="TZ5HI" id="4k9eBec$CgW" role="3nqlJM">
+          <node concept="TZ5HA" id="4k9eBec$CgX" role="3HnX3l">
+            <node concept="1dT_AC" id="4k9eBec$CC$" role="1dT_Ay">
+              <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
+            </node>
+            <node concept="1dT_AC" id="4k9eBec$CCA" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cqZAl" id="VXQuBi1M4" role="3clF45" />
       <node concept="3Tm1VV" id="VXQuBi1M5" role="1B3o_S" />
       <node concept="3clFbS" id="VXQuBi1M6" role="3clF47">
@@ -4547,21 +4565,6 @@
         <property role="TrG5h" value="targetConcept" />
         <node concept="17QB3L" id="VXQuBi35f" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="4k9eBec$CgV" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBec$CgW" role="3nqlJM">
-          <node concept="TZ5HA" id="4k9eBec$CgX" role="3HnX3l">
-            <node concept="1dT_AC" id="4k9eBec$CC$" role="1dT_Ay">
-              <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
-            </node>
-            <node concept="1dT_AC" id="4k9eBec$CCA" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4k9eBec$CgY" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="3clFbW" id="4k9eBec$Bew" role="jymVt">
       <node concept="3cqZAl" id="4k9eBec$Bex" role="3clF45" />
@@ -4637,10 +4640,10 @@
             </node>
           </node>
           <node concept="3clFbC" id="2$CHaMIT4xA" role="3clFbw">
-            <node concept="10Nm6u" id="2$CHaMIT4Pg" role="3uHU7w" />
             <node concept="37vLTw" id="4k9eBec$Dei" role="3uHU7B">
               <ref role="3cqZAo" node="VXQuBhR9t" resolve="myTargetConcept" />
             </node>
+            <node concept="10Nm6u" id="2$CHaMIT4Pg" role="3uHU7w" />
           </node>
         </node>
         <node concept="3clFbF" id="2woCTAJO_Yw" role="3cqZAp">

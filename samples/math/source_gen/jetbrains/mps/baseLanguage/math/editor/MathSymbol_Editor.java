@@ -116,7 +116,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "upperBound" + ">";
+      return "<no upperBound>";
     }
 
   }
@@ -181,7 +181,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "var" + ">";
+      return "<no var>";
     }
 
   }
@@ -227,7 +227,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "precondition" + ">";
+      return "<no precondition>";
     }
 
   }
@@ -264,7 +264,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -339,7 +339,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "precondition" + ">";
+      return "<no precondition>";
     }
 
   }

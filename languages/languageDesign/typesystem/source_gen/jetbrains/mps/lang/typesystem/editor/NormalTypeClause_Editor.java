@@ -60,7 +60,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "normalType" + ">";
+      return "<no normalType>";
     }
 
   }

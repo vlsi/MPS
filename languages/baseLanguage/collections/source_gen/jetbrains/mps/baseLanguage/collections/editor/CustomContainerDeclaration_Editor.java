@@ -135,7 +135,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "containerType" + ">";
+      return "<no containerType>";
     }
 
   }
@@ -208,7 +208,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "runtimeType" + ">";
+      return "<no runtimeType>";
     }
 
   }
@@ -275,7 +275,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "factory" + ">";
+      return "<no factory>";
     }
 
   }

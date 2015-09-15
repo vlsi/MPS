@@ -20,12 +20,11 @@ import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.AsyncResult.Handler;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
@@ -67,16 +66,11 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
       @Override
       public void run(final DataContext dataContext) {
         final Project p = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-        if (p == null) return;
-
-        p.getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = myNode.resolve(p.getRepository());
-            if (node == null) return;
-            NavigationSupport.getInstance().openNode(p, node, true, true);
-          }
-        });
+        if (p == null) {
+          return;
+        }
+        // XXX similar to BaseNodePointerModel.doGetNavigationItem, can't we refactor not to duplicate code?
+        new EditorNavigator(p).shallFocus(true).shallSelect(true).open(myNode);
       }
     });
   }

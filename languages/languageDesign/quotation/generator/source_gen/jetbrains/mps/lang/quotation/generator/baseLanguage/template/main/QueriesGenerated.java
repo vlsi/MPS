@@ -120,7 +120,6 @@ public class QueriesGenerated {
     return "quotedNode_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("transientQuotation")));
   }
   public static Object propertyMacro_GetPropertyValue_1025590056397541505(final PropertyMacroContext _context) {
-    // <node> 
     // This is an ugly temporary solution to ensure method names do not change due to use 
     // of original input node for quotation generation. I just can't afford regenerating 80+ 
     // models right now, as these changes are unrelated to the task at hand.  

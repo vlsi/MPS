@@ -78,7 +78,7 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "block" + ">";
+      return "<no block>";
     }
 
   }

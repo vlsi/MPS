@@ -75,7 +75,7 @@ public class MovingAverage_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "symbol" + ">";
+      return "<no symbol>";
     }
 
   }

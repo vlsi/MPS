@@ -16,25 +16,25 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.ArrayList;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -44,7 +44,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -79,6 +78,13 @@ public class CollectTests_Action extends BaseAction {
       }
     }
     {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
       MapSequence.fromMap(_params).put("modelDesc", p);
       if (p == null) {
@@ -107,17 +113,13 @@ public class CollectTests_Action extends BaseAction {
     }
   }
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
-    final Logger LOG = LogManager.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
-    final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
-    ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         solutions.value = CollectTests_Action.this.allSolutions(_params);
-        existing.value = CollectTests_Action.this.existingSolutions(model, _params);
       }
     });
-    ListSequence.fromList(solutions.value).removeSequence(ListSequence.fromList(existing.value));
 
     int done = 0;
     for (SModuleReference mref : solutions.value) {
@@ -127,36 +129,57 @@ public class CollectTests_Action extends BaseAction {
       proInd.setText("Processing " + mref.getModuleName());
       final SModule module = ModuleRepositoryFacade.getInstance().getModule(mref);
       if (module != null) {
-        final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
         for (final SModel smodel : module.getModels()) {
           if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smodel, _params))) {
             continue;
           }
 
-
-          if (new TestCollector().collectTests(smodel, new _FunctionTypes._void_P1_E0<_FunctionTypes._return_P0_E0<? extends SNode>>() {
-            public void invoke(final _FunctionTypes._return_P0_E0<? extends SNode> tref) {
-              ThreadUtils.runInUIThreadAndWait(new Runnable() {
-                public void run() {
-                  ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
-                    public void run() {
-                      if (suite.value == null) {
-                        suite.value = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite")));
-                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
-                        SModuleReference mref = module.getModuleReference();
-                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"), mref.getModuleName());
-                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"), mref.getModuleId().toString());
-                      }
-                      ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(tref.invoke());
-                      ((SModelInternal) model).addModelImport(smodel.getReference(), false);
-                      ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
-                    }
-                  });
-                }
-              });
+          final List<SNode> tests = new ArrayList<SNode>();
+          final Wrappers._boolean collected = new Wrappers._boolean();
+          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              collected.value = new TestCollector().collectTests(smodel, tests);
             }
-          })) {
-            // huh? 
+          });
+
+          if (collected.value) {
+            ThreadUtils.runInUIThreadAndWait(new Runnable() {
+              public void run() {
+                ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
+                    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+                      public void run() {
+                        suite.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).findFirst(new IWhereFilter<SNode>() {
+                          public boolean accept(SNode it) {
+                            return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{}).equals(module.getModuleReference());
+                          }
+                        });
+                      }
+                    });
+
+                    if (suite.value == null) {
+                      suite.value = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite")));
+                      SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
+                      SModuleReference mref = module.getModuleReference();
+                      SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"), mref.getModuleName());
+                      SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"), mref.getModuleId().toString());
+                    }
+                    for (final SNode tref : tests) {
+                      if (!(ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).any(new IWhereFilter<SNode>() {
+                        public boolean accept(SNode it) {
+                          return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isSame_24903889606765997", new Object[]{tref});
+                        }
+                      }))) {
+                        ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(SNodeOperations.cast(tref, MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef")));
+                        ((SModelInternal) model).addModelImport(smodel.getReference(), false);
+                        ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
+                      }
+                    }
+                  }
+                });
+              }
+            });
           }
         }
       }
@@ -186,12 +209,5 @@ public class CollectTests_Action extends BaseAction {
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
-  }
-  private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).select(new ISelector<SNode, SModuleReference>() {
-      public SModuleReference select(SNode ms) {
-        return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
-      }
-    }).toListSequence();
   }
 }

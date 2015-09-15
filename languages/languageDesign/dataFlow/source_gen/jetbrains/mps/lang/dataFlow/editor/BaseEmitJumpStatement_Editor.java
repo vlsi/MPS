@@ -98,7 +98,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "jumpTo" + ">";
+      return "<no jumpTo>";
     }
 
   }
@@ -132,7 +132,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "position" + ">";
+      return "<no position>";
     }
 
   }

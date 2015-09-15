@@ -78,7 +78,7 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "subtypeExpression" + ">";
+      return "<no subtypeExpression>";
     }
 
   }

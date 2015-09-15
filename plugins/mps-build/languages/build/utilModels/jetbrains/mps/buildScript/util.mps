@@ -284,9 +284,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -424,7 +421,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -434,6 +431,13 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
       <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -14872,37 +14876,37 @@
               </node>
             </node>
             <node concept="3clFbS" id="6b4RkXS7wPM" role="3clFbx">
-              <node concept="3SKdUt" id="3BUsTklCkVV" role="3cqZAp">
-                <node concept="3SKWN0" id="3BUsTklCkVW" role="3SKWNk">
-                  <node concept="3clFbF" id="6b4RkXS7wPN" role="3SKWNf">
-                    <node concept="2OqwBi" id="6b4RkXS7wPO" role="3clFbG">
-                      <node concept="2k5nB$" id="6b4RkXS7wPQ" role="2OqNvi">
-                        <node concept="37vLTw" id="2BHiRxeug5x" role="2k6f33">
-                          <ref role="3cqZAo" node="3u59u8luOuT" resolve="dep" />
+              <node concept="1X3_iC" id="3$ZLRFpSTc2" role="lGtFl">
+                <property role="3V$3am" value="statement" />
+                <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                <node concept="3clFbF" id="6b4RkXS7wPN" role="8Wnug">
+                  <node concept="2OqwBi" id="6b4RkXS7wPO" role="3clFbG">
+                    <node concept="2k5nB$" id="6b4RkXS7wPQ" role="2OqNvi">
+                      <node concept="37vLTw" id="2BHiRxeug5x" role="2k6f33">
+                        <ref role="3cqZAo" node="3u59u8luOuT" resolve="dep" />
+                      </node>
+                      <node concept="3cpWs3" id="6b4RkXS7wPR" role="2k5Stb">
+                        <node concept="Xl_RD" id="6b4RkXS7wPS" role="3uHU7B">
+                          <property role="Xl_RC" value="cannot register artifact in transient model " />
                         </node>
-                        <node concept="3cpWs3" id="6b4RkXS7wPR" role="2k5Stb">
-                          <node concept="Xl_RD" id="6b4RkXS7wPS" role="3uHU7B">
-                            <property role="Xl_RC" value="cannot register artifact in transient model " />
-                          </node>
-                          <node concept="2YIFZM" id="7LmwlFdRJyP" role="3uHU7w">
-                            <ref role="1Pybhc" to="18ew:~SNodeOperations" resolve="SNodeOperations" />
-                            <ref role="37wK5l" to="18ew:~SNodeOperations.getDebugText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="getDebugText" />
-                            <node concept="1eOMI4" id="7LmwlFdRJyQ" role="37wK5m">
-                              <node concept="10QFUN" id="7LmwlFdRJyR" role="1eOMHV">
-                                <node concept="37vLTw" id="2BHiRxgkWrC" role="10QFUP">
-                                  <ref role="3cqZAo" node="6b4RkXS7wPC" resolve="artifactId" />
-                                </node>
-                                <node concept="3uibUv" id="7LmwlFdRJyS" role="10QFUM">
-                                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                                </node>
+                        <node concept="2YIFZM" id="7LmwlFdRJyP" role="3uHU7w">
+                          <ref role="1Pybhc" to="18ew:~SNodeOperations" resolve="SNodeOperations" />
+                          <ref role="37wK5l" to="18ew:~SNodeOperations.getDebugText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="getDebugText" />
+                          <node concept="1eOMI4" id="7LmwlFdRJyQ" role="37wK5m">
+                            <node concept="10QFUN" id="7LmwlFdRJyR" role="1eOMHV">
+                              <node concept="37vLTw" id="2BHiRxgkWrC" role="10QFUP">
+                                <ref role="3cqZAo" node="6b4RkXS7wPC" resolve="artifactId" />
+                              </node>
+                              <node concept="3uibUv" id="7LmwlFdRJyS" role="10QFUM">
+                                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="2BHiRxeuXhZ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3u59u8luOxh" resolve="genContext" />
-                      </node>
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxeuXhZ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3u59u8luOxh" resolve="genContext" />
                     </node>
                   </node>
                 </node>

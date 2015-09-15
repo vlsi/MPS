@@ -79,7 +79,6 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
             if (newRef == null) {
               return;
             }
-            // <node> 
             SNode newTarget = finalRef.getTargetNode();
             if (newTarget == null) {
               return;

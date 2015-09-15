@@ -19,6 +19,12 @@ import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 /**
  * This interface can be implemented to track model state.
+ *
+ * Generally, we try to send most specific event only, e.g.
+ * if a model content is replaced, we likely to send only {@link #modelReplaced(SModel)}, not a sequence of
+ * {@link #modelUnloaded(SModel)}, {@link #modelLoaded(SModel, boolean)}, {@link #modelReplaced(SModel)}.
+ * However, at the moment we do not ensure this, and chances are you get different sequence for different models.
+ * FIXME we lack tests that state aforementioned contract for notifications.
  */
 public interface SModelListener {
 

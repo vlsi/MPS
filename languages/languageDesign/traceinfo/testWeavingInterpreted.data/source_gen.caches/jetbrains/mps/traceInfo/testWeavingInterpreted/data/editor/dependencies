@@ -69,7 +69,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeaveMany_Editor" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeave_Editor" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.RootConcept_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.RootConcept_Editor" file="RootConcept_Editor.java">
     <classNode dependClassName="java.lang.Class" />

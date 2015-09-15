@@ -180,7 +180,7 @@ public class Child_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "grandChild_0_1" + ">";
+      return "<no grandChild_0_1>";
     }
 
   }
@@ -233,7 +233,7 @@ public class Child_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "grandChild_1" + ">";
+      return "<no grandChild_1>";
     }
 
   }

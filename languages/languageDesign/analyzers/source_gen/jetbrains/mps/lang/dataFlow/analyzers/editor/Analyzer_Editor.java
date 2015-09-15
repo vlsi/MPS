@@ -123,7 +123,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "direction" + ">";
+      return "<no direction>";
     }
 
   }
@@ -166,7 +166,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "latticeElementType" + ">";
+      return "<no latticeElementType>";
     }
 
   }
@@ -248,7 +248,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initialFunction" + ">";
+      return "<no initialFunction>";
     }
 
   }
@@ -330,7 +330,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "mergeFunction" + ">";
+      return "<no mergeFunction>";
     }
 
   }
@@ -412,7 +412,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "funFunction" + ">";
+      return "<no funFunction>";
     }
 
   }

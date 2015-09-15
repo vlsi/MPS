@@ -121,7 +121,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     }
 
     protected String getNoTargetText() {
-      return "<no " + "postfixesFunction" + ">";
+      return "<no postfixesFunction>";
     }
 
   }

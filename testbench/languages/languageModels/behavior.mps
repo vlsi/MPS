@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,8 +22,8 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="5o51" ref="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)" />
     <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -71,6 +72,7 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -161,6 +163,11 @@
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
+        <reference id="1140138128738" name="concept" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -424,6 +431,20 @@
   </node>
   <node concept="13h7C7" id="2$98zG5liRQ">
     <ref role="13h7C2" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
+    <node concept="13i0hz" id="1ouvi_ymQH" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="isSame" />
+      <node concept="37vLTG" id="1ouvi_ymRe" role="3clF46">
+        <property role="TrG5h" value="testRef" />
+        <node concept="3Tqbb2" id="1ouvi_ymRk" role="1tU5fm">
+          <ref role="ehGHo" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1ouvi_ymQI" role="1B3o_S" />
+      <node concept="3clFbS" id="1ouvi_ymQJ" role="3clF47" />
+      <node concept="10P_77" id="1ouvi_ymRb" role="3clF45" />
+    </node>
     <node concept="13i0hz" id="2$98zG5liRT" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="TrG5h" value="fqClassName" />
@@ -450,6 +471,44 @@
     <ref role="13h7C2" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
     <node concept="13hLZK" id="2$98zG5liRZ" role="13h7CW">
       <node concept="3clFbS" id="2$98zG5liS0" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1ouvi_yueK" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="isSame" />
+      <ref role="13i0hy" node="1ouvi_ymQH" resolve="isSame" />
+      <node concept="3Tm1VV" id="1ouvi_yueN" role="1B3o_S" />
+      <node concept="3clFbS" id="1ouvi_yueQ" role="3clF47">
+        <node concept="3clFbF" id="1ouvi_yupd" role="3cqZAp">
+          <node concept="3clFbC" id="1ouvi_yv3b" role="3clFbG">
+            <node concept="2OqwBi" id="1ouvi_yv7R" role="3uHU7w">
+              <node concept="13iPFW" id="1ouvi_yv63" role="2Oq$k0" />
+              <node concept="3TrEf2" id="1ouvi_yvi5" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:3U1VhSFTRN0" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1ouvi_yvmP" role="3uHU7B">
+              <node concept="1PxgMI" id="1ouvi_yurE" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <ref role="1PxNhF" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
+                <node concept="37vLTw" id="1ouvi_yupc" role="1PxMeX">
+                  <ref role="3cqZAo" node="1ouvi_yueR" resolve="testRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1ouvi_yvAw" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:3U1VhSFTRN0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1ouvi_yueR" role="3clF46">
+        <property role="TrG5h" value="testRef" />
+        <node concept="3Tqbb2" id="1ouvi_yueS" role="1tU5fm">
+          <ref role="ehGHo" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
+        </node>
+      </node>
+      <node concept="10P_77" id="1ouvi_yueT" role="3clF45" />
     </node>
     <node concept="13i0hz" id="2$98zG5liS1" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -583,6 +642,44 @@
     <ref role="13h7C2" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
     <node concept="13hLZK" id="2$98zG5liSi" role="13h7CW">
       <node concept="3clFbS" id="2$98zG5liSj" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1ouvi_yne$" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="isSame" />
+      <ref role="13i0hy" node="1ouvi_ymQH" resolve="isSame" />
+      <node concept="3Tm1VV" id="1ouvi_yneB" role="1B3o_S" />
+      <node concept="3clFbS" id="1ouvi_yneE" role="3clF47">
+        <node concept="3clFbF" id="1ouvi_yo4P" role="3cqZAp">
+          <node concept="3clFbC" id="1ouvi_yqtv" role="3clFbG">
+            <node concept="2OqwBi" id="1ouvi_yq$_" role="3uHU7w">
+              <node concept="13iPFW" id="1ouvi_yqx0" role="2Oq$k0" />
+              <node concept="3TrEf2" id="1ouvi_yqGH" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:173Z5qAOgIZ" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1ouvi_yogR" role="3uHU7B">
+              <node concept="1PxgMI" id="1ouvi_yo72" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <ref role="1PxNhF" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
+                <node concept="37vLTw" id="1ouvi_yo4O" role="1PxMeX">
+                  <ref role="3cqZAo" node="1ouvi_yneF" resolve="testRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1ouvi_yooE" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:173Z5qAOgIZ" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1ouvi_yneF" role="3clF46">
+        <property role="TrG5h" value="testRef" />
+        <node concept="3Tqbb2" id="1ouvi_yneG" role="1tU5fm">
+          <ref role="ehGHo" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
+        </node>
+      </node>
+      <node concept="10P_77" id="1ouvi_yneH" role="3clF45" />
     </node>
     <node concept="13i0hz" id="2$98zG5liSk" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -892,6 +989,44 @@
     <ref role="13h7C2" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
     <node concept="13hLZK" id="2$98zG5llR_" role="13h7CW">
       <node concept="3clFbS" id="2$98zG5llRA" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1ouvi_yrCj" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="isSame" />
+      <ref role="13i0hy" node="1ouvi_ymQH" resolve="isSame" />
+      <node concept="3Tm1VV" id="1ouvi_yrCm" role="1B3o_S" />
+      <node concept="3clFbS" id="1ouvi_yrCp" role="3clF47">
+        <node concept="3clFbF" id="1ouvi_yslp" role="3cqZAp">
+          <node concept="3clFbC" id="1ouvi_ysUc" role="3clFbG">
+            <node concept="2OqwBi" id="1ouvi_yt1i" role="3uHU7w">
+              <node concept="13iPFW" id="1ouvi_ysXH" role="2Oq$k0" />
+              <node concept="3TrEf2" id="1ouvi_ytbL" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:3U1VhSFTRN1" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1ouvi_ysqb" role="3uHU7B">
+              <node concept="1PxgMI" id="1ouvi_ysnA" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <ref role="1PxNhF" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
+                <node concept="37vLTw" id="1ouvi_yslo" role="1PxMeX">
+                  <ref role="3cqZAo" node="1ouvi_yrCq" resolve="testRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1ouvi_ysDv" role="2OqNvi">
+                <ref role="3Tt5mk" to="pop3:3U1VhSFTRN1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1ouvi_yrCq" role="3clF46">
+        <property role="TrG5h" value="testRef" />
+        <node concept="3Tqbb2" id="1ouvi_yrCr" role="1tU5fm">
+          <ref role="ehGHo" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
+        </node>
+      </node>
+      <node concept="10P_77" id="1ouvi_yrCs" role="3clF45" />
     </node>
     <node concept="13i0hz" id="2$98zG5llRB" role="13h7CS">
       <property role="13i0iv" value="false" />

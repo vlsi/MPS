@@ -113,7 +113,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultPath" + ">";
+      return "<no defaultPath>";
     }
 
   }

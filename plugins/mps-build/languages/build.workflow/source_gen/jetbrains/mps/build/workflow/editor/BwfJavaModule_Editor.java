@@ -195,7 +195,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "sources" + ">";
+      return "<no sources>";
     }
 
   }
@@ -243,7 +243,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resources" + ">";
+      return "<no resources>";
     }
 
   }

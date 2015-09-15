@@ -142,7 +142,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }
@@ -197,7 +197,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variable" + ">";
+      return "<no variable>";
     }
 
   }
@@ -243,7 +243,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inputSequence" + ">";
+      return "<no inputSequence>";
     }
 
   }
@@ -295,7 +295,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }
@@ -369,7 +369,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopLabel" + ">";
+      return "<no loopLabel>";
     }
 
   }

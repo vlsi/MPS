@@ -21,18 +21,19 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -41,6 +42,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -67,8 +69,11 @@ public class Generator extends ReloadableModuleBase {
   //models will be named like xxx.modelName, where xxx is a part of newName before sharp symbol
   public void rename(String newName) {
     int sharp = newName.indexOf("#");
-    super.rename(sharp < 0 ? newName : newName.substring(sharp));
-    myGeneratorDescriptor.setGeneratorUID(newName);
+    newName = sharp < 0 ? newName : newName.substring(sharp);
+    renameModels(getSourceLanguage().getModuleName(), newName, false);
+
+    //see MPS-18743, need to save before setting descriptor
+    getRepository().saveAll();
   }
 
   @Override
@@ -237,16 +242,17 @@ public class Generator extends ReloadableModuleBase {
       return Generator.class;
     }
 
+    @NotNull
     @Override
-    public Set<Language> getAutoImportedLanguages(Generator contextGenerator, org.jetbrains.mps.openapi.model.SModel model) {
+    public Collection<SLanguage> getLanguages(Generator contextGenerator, SModel model) {
       if (SModelStereotype.isGeneratorModel(model)) {
-        Language sourceLanguage = contextGenerator.getSourceLanguage();
+        SLanguage sourceLanguage = MetaAdapterByDeclaration.getLanguage(contextGenerator.getSourceLanguage());
 
-        Set<Language> result = new LinkedHashSet<Language>();
-        result.add(BootstrapLanguages.generatorLanguage());
-        result.add(BootstrapLanguages.generatorContextLanguage());
+        Set<SLanguage> result = new LinkedHashSet<SLanguage>();
+        result.add(BootstrapLanguages.getGeneratorLang());
+        result.add(BootstrapLanguages.getGenContextLang());
 
-        result.addAll(LanguageDependenciesManager.getAllExtendedLanguages(sourceLanguage));
+        result.addAll(new SLanguageHierarchy(Collections.singleton(sourceLanguage)).getExtended());
 
         return result;
       } else {

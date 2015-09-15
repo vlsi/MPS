@@ -312,7 +312,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extension" + ">";
+      return "<no extension>";
     }
 
   }

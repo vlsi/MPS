@@ -28,12 +28,15 @@ import javax.swing.event.DocumentEvent;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PathField extends JPanel {
   private final JTextField myPathField;
   private final JButton myButton;
   private String myPath;
   private int myMode;
+  private final List<PathChangedListner> myListners = new ArrayList<PathChangedListner>();
 
   public PathField() {
     setLayout(new BorderLayout());
@@ -75,10 +78,16 @@ public class PathField extends JPanel {
   public void setPath(String newValue) {
     myPath = newValue;
     myPathField.setText(newValue);
+    for (PathChangedListner listner : myListners) {
+      listner.firePathChanged(myPath);
+    }
   }
 
-  /*package*/ void pathFromField() {
+  private void pathFromField() {
     myPath = myPathField.getText();
+    for (PathChangedListner listner : myListners) {
+      listner.firePathChanged(myPath);
+    }
   }
 
   public void setMode(int newValue) {
@@ -101,5 +110,18 @@ public class PathField extends JPanel {
   public void setEnabled(boolean enabled) {
     myPathField.setEnabled(enabled);
     myButton.setEnabled(enabled);
+  }
+
+  public void addPathChangedListner(final PathChangedListner listner) {
+    myListners.add(listner);
+  }
+
+  public void removePathChangedListner(final PathChangedListner listner) {
+    myListners.remove(listner);
+  }
+
+  //Notify when path field updated
+  public interface PathChangedListner {
+    void firePathChanged(final String newValue);
   }
 }

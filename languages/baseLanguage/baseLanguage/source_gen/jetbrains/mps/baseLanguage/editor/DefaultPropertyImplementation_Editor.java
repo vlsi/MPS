@@ -58,7 +58,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultGetAccessor" + ">";
+      return "<no defaultGetAccessor>";
     }
 
   }
@@ -93,7 +93,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultSetAccessor" + ">";
+      return "<no defaultSetAccessor>";
     }
 
   }

@@ -171,7 +171,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftOperandType" + ">";
+      return "<no leftOperandType>";
     }
 
   }
@@ -293,7 +293,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rightOperandType" + ">";
+      return "<no rightOperandType>";
     }
 
   }
@@ -390,7 +390,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isApplicable" + ">";
+      return "<no isApplicable>";
     }
 
   }
@@ -430,7 +430,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "function" + ">";
+      return "<no function>";
     }
 
   }

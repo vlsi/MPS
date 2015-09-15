@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,39 +15,36 @@
  */
 package jetbrains.mps.ide.typesystem.trace;
 
-import javax.swing.JPanel;
-
 import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.Disposable;
-import jetbrains.mps.icons.MPSIcons;
-import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.tools.BaseTool;
-import jetbrains.mps.ide.ui.tree.MPSTree;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import javax.swing.SwingUtilities;
-import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import java.awt.Color;
-
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.ui.components.JBScrollPane;
-import com.intellij.openapi.ui.Splitter;
-import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.newTypesystem.state.State;
-import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.BaseAction;
-import java.util.Map;
+import com.intellij.openapi.ui.Splitter;
+import com.intellij.openapi.util.Disposer;
+import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.util.Map;
 
 public class TypeSystemTracePanel extends JPanel implements Disposable {
   private TypeSystemTraceTree myTraceTree;
@@ -57,6 +54,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
   private BaseTool myTool;
   private MPSTree myDetailsTree;
   private TypecheckingContextTracker myContextTracker;
+  private Project myProject;
 
   public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
@@ -77,16 +75,14 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     return Color.WHITE;
   }
 
-  public void showTraceForNode(final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
-//    if (rebuild) {
-//      incrementalTypecheckingContext.checkRootInTraceMode(true);
-//    }
+  public void showTraceForNode(Project mpsProject, SNode node, EditorComponent editorComponent) {
     cleanUp();
+    myProject = mpsProject;
     myEditorComponent = editorComponent;
-    myTraceTree = new TypeSystemTraceTree(operationContext, node, this, editorComponent);
+    myTraceTree = new TypeSystemTraceTree(mpsProject, node, this, editorComponent);
     // TODO: refactor into a separate class 
     this.myDetailsTree = myTraceTree.getDetailsTree();
-    myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
+    myStateTree = new TypeSystemStateTree(mpsProject, myTraceTree.getState(), editorComponent);
     JBScrollPane traceScrollPane = new JBScrollPane(myTraceTree);
     traceScrollPane.setPreferredSize(new Dimension(400, 700));
     JBScrollPane detailsScrollPane = new JBScrollPane(myDetailsTree);
@@ -95,16 +91,12 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     stateScrollPane.setPreferredSize(new Dimension(400, 900));
 
     Splitter leftHSplitPane = new Splitter(true, 0.8f);
-    // <node> 
-    // <node> 
     leftHSplitPane.setFirstComponent(traceScrollPane);
     leftHSplitPane.setSecondComponent(detailsScrollPane);
     leftHSplitPane.getDivider().setBackground(UIUtil.getPanelBackground());
     leftHSplitPane.getDivider().setOpaque(true);
 
     Splitter vSplitPane = new Splitter(false, 0.65f);
-    // <node> 
-    // <node> 
     vSplitPane.setFirstComponent(leftHSplitPane);
     vSplitPane.setSecondComponent(stateScrollPane);
     vSplitPane.getDivider().setBackground(UIUtil.getPanelBackground());
@@ -144,124 +136,138 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
       this.myDetailsTree = null;
     }
   }
-
   protected DefaultActionGroup createButtonsGroup() {
-    ToggleAction showApplyRuleAction = new ToggleAction("Show Apply Rule", "Show apply rule operations in trace", Nodes.Rule) {
-      private boolean mySelected = TraceSettings.isShowApplyRuleOperations();
 
-      @Override
-    public boolean isSelected(AnActionEvent e) {
-        return mySelected;
-      }
+    return ActionUtils.groupFromActions(
+        new BaseAction("Close", "Close type system trace tool", Actions.Cancel) {
+          @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+            myTool.setAvailable(false);
+          }
+        },
+/*      Let's always show applied rules
 
-      @Override
-    public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        TraceSettings.setShowApplyRuleOperations(state);
-        myTraceTree.rebuildNow();
-        myTraceTree.expandAll();
-      }
-    };
-    ToggleAction showGenerationModeAction = new ToggleAction("Generation Mode", "Show trace in generation mode", Nodes.Generator) {
-      private boolean mySelected = TraceSettings.isGenerationMode();
+        new MyToggleAction("Show Apply Rule", "Show apply rule operations in trace", Nodes.Rule) {
+          @Override
+          boolean initialState() {
+            return TraceSettings.isShowApplyRuleOperations();
+          }
 
-      @Override
-    public boolean isSelected(AnActionEvent e) {
-        return mySelected;
-      }
+          @Override
+          void stateChanged(boolean newState) {
+            TraceSettings.setShowApplyRuleOperations(newState);
+          }
+        },
+*/
+/*      Generation mode is not currently supported
 
-      @Override
-    public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        TraceSettings.setGenerationMode(state);
-        myTraceTree.rebuildNow();
-        myTraceTree.expandAll();
-      }
-    };
-    ToggleAction showTypesExpansion = new ToggleAction("Show types expansion", "Show types expansion", AllIcons.Nodes.Folder) {
-      private boolean mySelected = TraceSettings.isShowTypesExpansion();
+        new ToggleAction("Generation Mode", "Show trace in generation mode", Nodes.Generator) {
+          @Override
+          public boolean isSelected(AnActionEvent e) {
+            return TraceSettings.isGenerationMode();
+          }
 
-      @Override
-    public boolean isSelected(AnActionEvent e) {
-        return mySelected;
-      }
+          @Override
+          public void setSelected(AnActionEvent e, boolean state) {
+            TraceSettings.setGenerationMode(state);
+          }
+        },
+ */
+        new MyToggleAction("Trace for Selected Node", "Show trace for selected node", Nodes.Node) {
+          @Override
+          boolean initialState() {
+            return TraceSettings.isTraceForSelectedNode();
+          }
 
-      @Override
-    public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        TraceSettings.setShowTypesExpansion(state);
-        myTraceTree.rebuildNow();
-        myTraceTree.expandAll();
-      }
-    };
-    ToggleAction showTraceForSelectedNode = new ToggleAction("Trace for Selected Node", "Show trace for selected node", Nodes.Node) {
-      private boolean mySelected = TraceSettings.isTraceForSelectedNode();
+          @Override
+          void stateChanged(boolean newState) {
+            TraceSettings.setTraceForSelectedNode(newState);
+          }
+        },
+/*      Always show type expansion
 
-      @Override
-    public boolean isSelected(AnActionEvent e) {
-        return mySelected;
-      }
+        new MyToggleAction("Show types expansion", "Show types expansion", AllIcons.Nodes.Folder) {
+          @Override
+          boolean initialState() {
+            return TraceSettings.isShowTypesExpansion();
+          }
 
-      @Override
-    public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        TraceSettings.setTraceForSelectedNode(state);
-        refresh(false);
-      }
-    };
-    ToggleAction showBlockDependencies = new ToggleAction("Show block dependencies", "Show block dependencies in trace", MPSIcons.General.Block) {
-      private boolean mySelected = TraceSettings.isShowBlockDependencies();
+          @Override
+          void stateChanged(boolean newState) {
+            TraceSettings.setShowTypesExpansion(newState);
+          }
+        },
+*/
+/*      Never show block dependencies
+        new MyToggleAction("Show block dependencies", "Show block dependencies in trace", MPSIcons.General.Block) {
+          @Override
+          boolean initialState() {
+            return TraceSettings.isShowBlockDependencies();
+          }
 
-      @Override
-    public boolean isSelected(AnActionEvent e) {
-        return mySelected;
-      }
-
-      @Override
-    public void setSelected(AnActionEvent e, boolean state) {
-        mySelected = state;
-        TraceSettings.setShowBlockDependencies(state);
-        myTraceTree.rebuildNow();
-        myTraceTree.expandAll();
-      }
-    };
-
-    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Actions.Refresh) {
-      @Override
-    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        refresh(true);
-      }
-    };
-    BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", AllIcons.General.Error) {
-      @Override
-    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        myTraceTree.goToNextError();
-      }
-    };
-    BaseAction closeAction = new BaseAction("Close", "Close type system trace tool", Actions.Cancel) {
-      @Override
-    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        myTool.setAvailable(false);
-      }
-    };
-
-    return ActionUtils.groupFromActions(closeAction, showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
+          @Override
+          void stateChanged(boolean newState) {
+            TraceSettings.setShowBlockDependencies(newState);
+          }
+        },
+ */
+        new BaseAction("Refresh", "Refresh", Actions.Refresh) {
+          @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+            myProject.getModelAccess().runReadInEDT(new Runnable() {
+              @Override
+              public void run() {
+                refresh();
+              }
+            });
+          }
+        },
+        new BaseAction("Next error", "Navigate to next error in trace", AllIcons.General.Error) {
+          @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+            myTraceTree.goToNextError();
+          }
+        });
   }
 
-  public void refresh(final boolean checkRoot) {
-    if (myEditorComponent == null) {
+  public void refresh() {
+    if (myEditorComponent == null || myProject == null) {
       return;
     }
     final SNode selectedNode = myEditorComponent.getSelectedNode();
     if (selectedNode == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-    public void run() {
-        showTraceForNode(myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
-      }
-    });
+    showTraceForNode(myProject, selectedNode, myEditorComponent);
     this.validate();
   }
+
+  protected abstract class MyToggleAction extends ToggleAction {
+    public MyToggleAction(String text, String description, Icon icon) {
+      super(text, description, icon);
+      mySelected = initialState();
+    }
+
+    @Override
+    public boolean isSelected(AnActionEvent e) {
+      return mySelected;
+    }
+
+    @Override
+    public void setSelected(AnActionEvent e, boolean state) {
+      mySelected = state;
+      stateChanged(state);
+      if (myTraceTree != null) {
+        myTraceTree.rebuildNow();
+        myTraceTree.expandAll();
+      }
+    }
+
+    abstract boolean initialState();
+
+    abstract void stateChanged(boolean newState);
+
+    private boolean mySelected;
+  }
+
 }

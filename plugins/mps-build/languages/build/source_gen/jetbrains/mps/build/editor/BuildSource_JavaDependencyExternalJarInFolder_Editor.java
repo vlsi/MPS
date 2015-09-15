@@ -106,7 +106,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extFolder" + ">";
+      return "<no extFolder>";
     }
 
   }

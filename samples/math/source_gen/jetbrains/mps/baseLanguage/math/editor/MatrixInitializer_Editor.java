@@ -92,7 +92,7 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rowsCount" + ">";
+      return "<no rowsCount>";
     }
 
   }
@@ -136,7 +136,7 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "colsCount" + ">";
+      return "<no colsCount>";
     }
 
   }
@@ -188,7 +188,7 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rowIndex" + ">";
+      return "<no rowIndex>";
     }
 
   }
@@ -231,7 +231,7 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "colIndex" + ">";
+      return "<no colIndex>";
     }
 
   }
@@ -280,7 +280,7 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }

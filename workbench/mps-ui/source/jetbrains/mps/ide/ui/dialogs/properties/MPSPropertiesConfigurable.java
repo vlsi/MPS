@@ -46,23 +46,20 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
-import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
-import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
-import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel.Import;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -84,6 +81,7 @@ import javax.swing.table.TableModel;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -368,9 +366,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
           return DependenciesTab.this.confirmRemove(myDependTableModel.getValueAt(row, myDependTableModel.getItemColumnIndex()));
         }
       });
-      FindAnActionButton findAnActionButton = getFindAnAction(tableDepend);
-      if(findAnActionButton != null)
-        decorator.addExtraAction(findAnActionButton);
+      FindActionButton findActionButton = getFindAnAction(tableDepend);
+      if(findActionButton != null) {
+        decorator.addExtraAction(findActionButton);
+      }
 
       decorator.setPreferredSize(new Dimension(500, 300));
 
@@ -391,7 +390,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     @Nullable
-    protected FindAnActionButton getFindAnAction(JBTable table) {
+    protected FindActionButton getFindAnAction(JBTable table) {
       return null;
     }
 
@@ -411,9 +410,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   public abstract class UsedLanguagesTab extends BaseTab {
 
     protected UsedLangsTableModel myUsedLangsTableModel;
+    protected JBTable myUsedLangsTable;
 
     public UsedLanguagesTab() {
-      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
+      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
       init();
     }
 
@@ -433,6 +433,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       myUsedLangsTableModel = getUsedLangsTableModel();
       usedLangsTable.setModel(myUsedLangsTableModel);
+      myUsedLangsTable = usedLangsTable;
 
       usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, getTableCellRender());
 
@@ -462,12 +463,39 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     public boolean isModified() {
       return myUsedLangsTableModel.isModified();
     }
+
+    protected final List<SLanguage> getSelectedLanguages() {
+      final List<SLanguage> languages = new LinkedList<SLanguage>();
+      myProject.getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          for (int i : myUsedLangsTable.getSelectedRows()) {
+            Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
+            if (value instanceof UsedLangsTableModel.Import) {
+              final Import entry = (Import) value;
+              if (entry.myLanguage != null) {
+                languages.add(entry.myLanguage);
+              } else {
+                final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
+                if (devkit instanceof DevKit) {
+                  // FIXME update DevKit to use SLanguage
+                  for (Language l : ((DevKit) devkit).getAllExportedLanguages()) {
+                    languages.add(MetaAdapterByDeclaration.getLanguage(l));
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+      return languages;
+    }
   }
 
-  public abstract class FindAnActionButton extends AnActionButton {
+  public abstract static class FindActionButton extends AnActionButton {
     protected final JBTable myTable;
 
-    public FindAnActionButton(JBTable table) {
+    public FindActionButton(JBTable table) {
       myTable = table;
       this.getTemplatePresentation().setEnabledAndVisible(true);
       this.getTemplatePresentation().setIcon(Actions.Find);

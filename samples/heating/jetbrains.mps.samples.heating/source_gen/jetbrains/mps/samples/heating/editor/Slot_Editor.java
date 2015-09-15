@@ -110,7 +110,7 @@ public class Slot_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "event" + ">";
+      return "<no event>";
     }
 
   }

@@ -64,7 +64,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -109,7 +109,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ifTrue" + ">";
+      return "<no ifTrue>";
     }
 
   }
@@ -154,7 +154,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "ifFalse" + ">";
+      return "<no ifFalse>";
     }
 
   }

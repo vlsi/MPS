@@ -1286,8 +1286,8 @@
       <node id="658365993681975241" at="30,63,31,30" concept="4" />
       <node id="658365993681975241" at="31,30,32,30" concept="4" />
       <node id="658365993681975241" at="32,30,33,233" concept="1" />
-      <node id="658365993681975241" at="33,233,34,224" concept="1" />
-      <node id="658365993681975241" at="34,224,35,168" concept="1" />
+      <node id="658365993681975241" at="33,233,34,227" concept="1" />
+      <node id="658365993681975241" at="34,227,35,168" concept="1" />
       <node id="658365993681975241" at="35,168,36,24" concept="5" />
       <node id="1262430001741647298" at="16,0,18,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="658365993681975241" at="33,233,35,168" concept="0" />
@@ -2358,16 +2358,16 @@
       <node id="5452844340287052797" at="13,75,14,47" concept="5" />
       <node id="5452844340287052793" at="16,60,17,63" concept="4" />
       <node id="5452844340287052793" at="17,63,18,30" concept="4" />
-      <node id="5452844340287052793" at="18,30,19,224" concept="0" />
-      <node id="5452844340287052793" at="18,30,19,224" concept="0" />
-      <node id="5452844340287052793" at="18,30,19,224" concept="1" />
-      <node id="5452844340287052793" at="19,224,20,24" concept="5" />
+      <node id="5452844340287052793" at="18,30,19,227" concept="0" />
+      <node id="5452844340287052793" at="18,30,19,227" concept="0" />
+      <node id="5452844340287052793" at="18,30,19,227" concept="1" />
+      <node id="5452844340287052793" at="19,227,20,24" concept="5" />
       <node id="5452844340287052790" at="11,0,13,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5452844340287052790" at="13,0,16,0" concept="6" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5452844340287052793" at="16,0,22,0" concept="6" trace="_quotation_createNode_a1nuxr_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5452844340287052792" at="11,43,11,43" />
       <scope id="5452844340287052796" at="13,75,14,47" />
-      <scope id="5452844340287052793" at="18,30,19,224" />
+      <scope id="5452844340287052793" at="18,30,19,227" />
       <scope id="5452844340287052790" at="11,0,13,0">
         <var name="thisNode" id="5452844340287052790" />
       </scope>

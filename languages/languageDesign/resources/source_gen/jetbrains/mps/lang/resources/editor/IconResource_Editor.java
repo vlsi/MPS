@@ -201,7 +201,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "iconExpression" + ">";
+      return "<no iconExpression>";
     }
 
   }

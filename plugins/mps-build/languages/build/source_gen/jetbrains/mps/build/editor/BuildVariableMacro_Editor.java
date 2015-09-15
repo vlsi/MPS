@@ -113,7 +113,7 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initialValue" + ">";
+      return "<no initialValue>";
     }
 
   }

@@ -356,7 +356,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "handlerBlock" + ">";
+      return "<no handlerBlock>";
     }
 
   }

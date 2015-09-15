@@ -125,7 +125,7 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "order" + ">";
+      return "<no order>";
     }
 
   }

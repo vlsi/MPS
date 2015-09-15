@@ -70,7 +70,7 @@ public class PropertyNameTarget_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "propertyName" + ">";
+      return "<no propertyName>";
     }
 
   }

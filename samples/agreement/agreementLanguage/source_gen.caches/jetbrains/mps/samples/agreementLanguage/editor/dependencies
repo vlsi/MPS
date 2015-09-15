@@ -118,7 +118,7 @@
     <classNode dependClassName="jetbrains.mps.samples.agreementLanguage.editor.ValueReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.agreementLanguage.editor.Value_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.agreementLanguage.editor.EventType_Editor" file="EventType_Editor.java">
     <classNode dependClassName="java.lang.Class" />

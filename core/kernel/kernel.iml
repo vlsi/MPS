@@ -41,5 +41,6 @@
     <orderEntry type="module" module-name="components" exported="" />
     <orderEntry type="module" module-name="behavior-api" />
     <orderEntry type="module" module-name="behavior-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>

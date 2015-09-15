@@ -66,7 +66,7 @@ public class BuilderCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "builder" + ">";
+      return "<no builder>";
     }
 
   }
@@ -127,7 +127,7 @@ public class BuilderCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

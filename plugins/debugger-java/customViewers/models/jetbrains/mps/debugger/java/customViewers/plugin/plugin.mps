@@ -7,8 +7,8 @@
     <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -1261,20 +1261,34 @@
         <node concept="3cpWs8" id="2yCvSeNKOPX" role="3cqZAp">
           <node concept="3cpWsn" id="2yCvSeNKOPY" role="3cpWs9">
             <property role="TrG5h" value="containingRole" />
-            <node concept="2OqwBi" id="5oePWfG5fSM" role="33vP2m">
-              <node concept="2OqwBi" id="2yCvSeNKOQ0" role="2Oq$k0">
-                <node concept="37vLTw" id="tajkkrJ4OE" role="2Oq$k0">
-                  <ref role="3cqZAo" node="tajkkrJ4tJ" resolve="node" />
+            <node concept="17QB3L" id="2yCvSeNKOPZ" role="1tU5fm" />
+            <node concept="3K4zz7" id="47fY$PLKTZM" role="33vP2m">
+              <node concept="2OqwBi" id="47fY$PLKV4M" role="3K4GZi">
+                <node concept="2OqwBi" id="47fY$PLKUuA" role="2Oq$k0">
+                  <node concept="37vLTw" id="47fY$PLKUl2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="tajkkrJ4tJ" resolve="node" />
+                  </node>
+                  <node concept="n0Ref" id="47fY$PLKUPC" role="2OqNvi">
+                    <ref role="2Oxat5" to="w1kc:~SNode.myRoleInParent" resolve="myRoleInParent" />
+                  </node>
                 </node>
-                <node concept="n0Ref" id="tajkkrJ2PN" role="2OqNvi">
-                  <ref role="2Oxat5" to="w1kc:~SNode.myRoleInParent" resolve="myRoleInParent" />
+                <node concept="liA8E" id="47fY$PLKVki" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
-              <node concept="liA8E" id="5oePWfG5gC5" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+              <node concept="10Nm6u" id="47fY$PLKUaw" role="3K4E3e" />
+              <node concept="3clFbC" id="47fY$PLKTET" role="3K4Cdx">
+                <node concept="10Nm6u" id="47fY$PLKTP6" role="3uHU7w" />
+                <node concept="2OqwBi" id="47fY$PLKT5L" role="3uHU7B">
+                  <node concept="37vLTw" id="47fY$PLKSWQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="tajkkrJ4tJ" resolve="node" />
+                  </node>
+                  <node concept="n0Ref" id="47fY$PLKTsh" role="2OqNvi">
+                    <ref role="2Oxat5" to="w1kc:~SNode.myRoleInParent" resolve="myRoleInParent" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="17QB3L" id="2yCvSeNKOPZ" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbJ" id="2yCvSeNKOQ4" role="3cqZAp">

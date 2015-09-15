@@ -20,6 +20,8 @@ import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.baseLanguage.javadoc.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)";
@@ -72,8 +74,9 @@ public class Language extends LanguageRuntime {
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor();
     }
-
-
+    if (aspectClass == IHelginsDescriptor.class) {
+      return (T) new TypesystemDescriptor();
+    }
     return super.createAspect(aspectClass);
   }
 }

@@ -127,6 +127,9 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       // we do not save stub model to not overwrite the real model
       return false;
     }
+    // if we do save model, ensure we write proper references. It's not the best possible solution, see MPS-22440 for details
+    smodel.updateSModelReferences();
+    smodel.updateModuleReferences();
     boolean upgraded = myPersistence.doesSaveUpgradePersistence(myHeader);
     myPersistence.saveModel(myHeader, smodel);
     return upgraded;

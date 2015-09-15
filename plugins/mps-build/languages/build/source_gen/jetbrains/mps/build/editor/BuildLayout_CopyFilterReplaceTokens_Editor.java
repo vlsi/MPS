@@ -120,7 +120,7 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }

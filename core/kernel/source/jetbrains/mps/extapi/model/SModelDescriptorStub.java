@@ -42,6 +42,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * Stub for model implementations with data kept separately in a SModel/SModelData (as of now/planned).
+ * Keeps transition stuff like legacy SModelListeners and SModelInternal methods.
  * TODO move listeners to openapi
  */
 public abstract class SModelDescriptorStub implements SModelInternal, SModel, FastNodeFinder.Factory {
@@ -49,8 +51,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
   private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-
-  private ModelLoadingState myModelLoadState = ModelLoadingState.NOT_LOADED;
 
   /**
    * Migration to 3.0. Loads and returns model data.
@@ -90,11 +90,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   protected void clearListeners() {
     myModelListeners.clear();
-  }
-
-  @NotNull
-  protected ModelLoadingState getLoadingState() {
-    return myModelLoadState;
   }
 
   protected void notifyModelReplaced(jetbrains.mps.smodel.SModel oldSModel) {
@@ -145,8 +140,12 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
+  /**
+   * @deprecated (a) we are in process to get rid of SModelListener; (b) this method used to change loading state in addition
+   * to event dispatch, and if you used to invoke it, please re-consider that code.
+   */
+  @Deprecated
   protected void fireModelStateChanged(ModelLoadingState newState) {
-    myModelLoadState = newState;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelLoadingStateChanged(this, newState);

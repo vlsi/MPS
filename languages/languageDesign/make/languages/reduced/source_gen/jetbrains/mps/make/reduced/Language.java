@@ -41,8 +41,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == MakeAspectDescriptor.class) {
       return (T) new FacetAspectDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

@@ -143,7 +143,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "switchLabel" + ">";
+      return "<no switchLabel>";
     }
 
   }
@@ -202,7 +202,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -333,7 +333,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "defaultBlock" + ">";
+      return "<no defaultBlock>";
     }
 
   }
@@ -406,7 +406,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "switchLabel" + ">";
+      return "<no switchLabel>";
     }
 
   }

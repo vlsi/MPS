@@ -70,7 +70,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "regexp" + ">";
+      return "<no regexp>";
     }
 
   }

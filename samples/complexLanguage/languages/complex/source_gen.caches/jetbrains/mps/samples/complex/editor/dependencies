@@ -27,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.samples.complex.editor.ImaginaryUnit_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.complex.editor.SingleComplexExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.complex.editor.ImaginaryUnit_Editor" file="ImaginaryUnit_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />

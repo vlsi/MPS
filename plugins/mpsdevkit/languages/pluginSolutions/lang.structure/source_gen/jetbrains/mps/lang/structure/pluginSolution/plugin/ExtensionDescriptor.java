@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new Extension_NodeRenamer7972144475523791621_(), new MoveContainmentLinkUp_extension(), new MoveConcepts_extension(), new MoveReferenceLinkUp_extension(), new MovePropertyUp_extension()};
+  private Extension[] extensions = new Extension[]{new Extension_NodeRenamer_(), new MoveConcepts.MoveConcepts_extension(), new MovePropertyUp.MovePropertyUp_extension(), new MoveContainmentLinkUp.MoveContainmentLinkUp_extension(), new MoveReferenceLinkUp.MoveReferenceLinkUp_extension()};
   public ExtensionDescriptor() {
   }
   @Override

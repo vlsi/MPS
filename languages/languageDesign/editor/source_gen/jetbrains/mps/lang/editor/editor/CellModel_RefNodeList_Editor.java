@@ -620,7 +620,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "filter" + ">";
+      return "<no filter>";
     }
 
   }
@@ -674,7 +674,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "cellLayout" + ">";
+      return "<no cellLayout>";
     }
 
   }
@@ -814,7 +814,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "usesFoldingCondition" + ">";
+      return "<no usesFoldingCondition>";
     }
 
   }
@@ -931,7 +931,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "separatorTextQuery" + ">";
+      return "<no separatorTextQuery>";
     }
 
   }
@@ -1330,7 +1330,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "addHints" + ">";
+      return "<no addHints>";
     }
 
   }
@@ -1385,7 +1385,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "removeHints" + ">";
+      return "<no removeHints>";
     }
 
   }

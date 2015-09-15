@@ -30,13 +30,12 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -45,7 +44,6 @@ import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.After;
 import org.junit.Assert;
@@ -200,8 +198,8 @@ public class RepoListenerTest extends CoreMpsTest {
     project.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        solution.registerModel(new ModelImpl(solution.getModuleReference(), "m1"));
-        solution.registerModel(new ModelImpl(solution.getModuleReference(), "m2"));
+        solution.registerModel(createModel(solution.getModuleReference(), "m1"));
+        solution.registerModel(createModel(solution.getModuleReference(), "m2"));
       }
     });
     l.checkModelEvents(2, 0, 0);
@@ -220,6 +218,11 @@ public class RepoListenerTest extends CoreMpsTest {
 //      l.checkModelEvents(2, 2, 2); // FIXME at the moment, removal of a module doesn't trigger events for modelRemoved
     l.checkModelEvents(2, 1, 1);
     closeProject();
+  }
+
+  private SModelBase createModel(SModuleReference moduleRef, String name) {
+    // FIXME perhaps, can re-use TestModelFactory and its TestModelBase?
+    return new TrivialModelDescriptor(new SModel(PersistenceFacade.getInstance().createModelReference(moduleRef, SModelId.generate(), name)));
   }
 
   private static class CreateSolution implements Computable<Solution> {
@@ -263,42 +266,6 @@ public class RepoListenerTest extends CoreMpsTest {
 
     public void execute() {
       myRepository.getModelAccess().runWriteAction(this);
-    }
-  }
-
-  // FIXME perhaps, can re-use TestModelFactory and its TestModelBase?
-  private static class ModelImpl extends SModelBase {
-    private final SModel myModelData;
-
-    public ModelImpl(SModuleReference moduleRef, String name) {
-      this(PersistenceFacade.getInstance().createModelReference(moduleRef, SModelId.generate(), name));
-    }
-
-    public ModelImpl(SModelReference modelReference) {
-      super(modelReference, new NullDataSource());
-      myModelData = new SModel(modelReference);
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED); // initialize myLoadingState field
-    }
-
-    @Override
-    public SModel getSModelInternal() {
-      return myModelData;
-    }
-
-    @Nullable
-    @Override
-    protected SModel getCurrentModelInternal() {
-      return myModelData;
-    }
-
-    @Override
-    public boolean isLoaded() {
-      return true;
-    }
-
-    @Override
-    public void unload() {
-      // no-op
     }
   }
 

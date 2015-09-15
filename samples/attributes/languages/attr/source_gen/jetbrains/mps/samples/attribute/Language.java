@@ -55,8 +55,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

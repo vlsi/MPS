@@ -180,10 +180,6 @@ public class Diff_Facet extends IFacet.Stub {
       public Set<File> excludedFiles() {
         return super._1();
       }
-      @SuppressWarnings(value = "unchecked")
-      public Diff_Facet.Target_diff.Parameters assignFrom(Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> from) {
-        return (Diff_Facet.Target_diff.Parameters) super.assign(from);
-      }
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

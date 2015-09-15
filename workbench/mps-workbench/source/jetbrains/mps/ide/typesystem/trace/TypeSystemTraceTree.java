@@ -20,7 +20,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.ui.JBColor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -46,7 +45,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -71,9 +70,8 @@ import java.util.List;
 import java.util.Set;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
-  private final IOperationContext myOperationContext;
+  private final Project myProject;
   private final TypecheckingContextTracker myContextTracker;
-
 
   private final SNode mySelectedNode;
   private Set<SNode> myNodes;
@@ -84,8 +82,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
-    myOperationContext = operationContext;
+  public TypeSystemTraceTree(Project mpsProject, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
+    myProject = mpsProject;
     myContextTracker = new TypecheckingContextTracker(node.getContainingRoot());
     myParent = parent;
     myEditorComponent = editorComponent;
@@ -337,9 +335,6 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
     final Pair<String, String> rule = operation.getRule();
     final SNode source = operation.getSource();
-    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return myOperationContext;
-    }
     if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
       return rule;
     }
@@ -353,8 +348,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
-    return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"),
-        ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
+    return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"));
   }
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
@@ -574,9 +568,6 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       }
       final Pair<String, String> rule = operation.getRule();
       final SNode source = operation.getSource();
-      if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-        return myOperationContext;
-      }
       if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
         return rule;
       }
@@ -590,7 +581,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
     @Override
     protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
-      return TypeSystemTraceTree.this.createPopupActionGroup(node);
+      return ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"),
+          ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
     }
 
     @Override

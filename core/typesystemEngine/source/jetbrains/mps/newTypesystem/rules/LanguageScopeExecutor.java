@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.Collection;
+import java.util.Collections;
 
 public class LanguageScopeExecutor {
 
   public static <T> T execWithModelScope(SModel sModel, Computable<T> computable) {
     LanguageScope languageScope = sModel == null ? LanguageScope.getGlobal() :
-      LanguageScopeFactory.getInstance().getLanguageScope(SModelOperations.getAllImportedLanguages(sModel));
+      LanguageScopeFactory.getInstance().getLanguageScope(SModelOperations.getAllLanguageImports(sModel));
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();
@@ -43,7 +42,7 @@ public class LanguageScopeExecutor {
   public static <T> T execWithLanguageScope(Language lang, Computable<T> computable) {
     LanguageScope languageScope = lang == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(
-        LanguageDependenciesManager.getAllExtendedLanguageReferences(lang));
+          Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang)));
     try{
        LanguageScope.pushCurrent(languageScope, computable);
        return computable.compute();
@@ -57,8 +56,8 @@ public class LanguageScopeExecutor {
     if (lang1 == null || lang2 == null) return execWithLanguageScope(lang1 != null ? lang1 : lang2, computable);
 
     LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      LanguageDependenciesManager.getAllExtendedLanguageReferences(lang1),
-      LanguageDependenciesManager.getAllExtendedLanguageReferences(lang2));
+      Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang1)),
+      Collections.singleton(MetaAdapterByDeclaration.getLanguage(lang2)));
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();
@@ -68,14 +67,8 @@ public class LanguageScopeExecutor {
     }
   }
 
-  public static <T> T execWithMultiLanguageScope(Iterable<Language> langs, Computable<T> computable) {
-
-    ArrayList<Set<SModuleReference>> multiLangs = new ArrayList<Set<SModuleReference>>();
-    for(Language lang: langs) {
-      multiLangs.add(LanguageDependenciesManager.getAllExtendedLanguageReferences(lang));
-    }
-
-    LanguageScope languageScope = LanguageScopeFactory.getInstance().getMultiLanguageScope(multiLangs);
+  public static <T> T execWithMultiLanguageScope(Collection<SLanguage> langs, Computable<T> computable) {
+    LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(langs);
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

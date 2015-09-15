@@ -165,7 +165,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }

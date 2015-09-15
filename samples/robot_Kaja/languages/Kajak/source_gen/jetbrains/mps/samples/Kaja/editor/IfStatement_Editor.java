@@ -81,7 +81,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "condition" + ">";
+      return "<no condition>";
     }
 
   }
@@ -137,7 +137,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "trueBranch" + ">";
+      return "<no trueBranch>";
     }
 
   }
@@ -221,7 +221,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "falseBranch" + ">";
+      return "<no falseBranch>";
     }
 
   }

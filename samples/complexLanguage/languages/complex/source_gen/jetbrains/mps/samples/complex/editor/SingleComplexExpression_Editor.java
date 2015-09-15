@@ -81,7 +81,7 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "complexExpression" + ">";
+      return "<no complexExpression>";
     }
 
   }

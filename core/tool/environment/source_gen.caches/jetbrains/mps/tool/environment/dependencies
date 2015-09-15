@@ -11,6 +11,7 @@
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.Environment" file="Environment.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

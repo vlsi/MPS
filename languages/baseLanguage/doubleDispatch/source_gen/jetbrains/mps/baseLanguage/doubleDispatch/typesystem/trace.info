@@ -35,63 +35,62 @@
       <node id="2323553266855130379" at="42,0,43,371" concept="10" />
       <node id="2323553266855240526" at="43,371,44,0" concept="13" />
       <node id="2323553266855354626" at="44,0,45,80" concept="12" />
-      <node id="2323553266855353732" at="45,80,46,14" concept="12" />
-      <node id="2323553266855217315" at="46,14,47,0" concept="13" />
-      <node id="2323553266855237975" at="49,7,50,60" concept="10" />
-      <node id="2323553266855237975" at="50,60,51,274" concept="10" />
-      <node id="2323553266855238593" at="52,7,53,13" concept="11" />
-      <node id="2323553266854757446" at="56,50,57,162" concept="11" />
-      <node id="2323553266854757446" at="59,68,60,102" concept="1" />
-      <node id="2323553266854757446" at="59,68,60,102" concept="11" />
-      <node id="2323553266854757446" at="62,30,63,17" concept="11" />
+      <node id="2323553266855217315" at="45,80,46,0" concept="13" />
+      <node id="2323553266855237975" at="48,7,49,60" concept="10" />
+      <node id="2323553266855237975" at="49,60,50,274" concept="10" />
+      <node id="2323553266855238593" at="51,7,52,13" concept="11" />
+      <node id="2323553266854757446" at="55,50,56,162" concept="11" />
+      <node id="2323553266854757446" at="58,68,59,102" concept="1" />
+      <node id="2323553266854757446" at="58,68,59,102" concept="11" />
+      <node id="2323553266854757446" at="61,30,62,17" concept="11" />
       <node id="2323553266854757446" at="21,0,23,0" concept="3" trace="DisptachParamIsClass_NonTypesystemRule#()V" />
       <node id="2323553266854805157" at="25,0,28,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3166734731694058786" at="31,30,34,5" concept="8" />
-      <node id="2323553266854757446" at="56,0,59,0" concept="9" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="2323553266854757446" at="59,0,62,0" concept="9" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="2323553266854757446" at="62,0,65,0" concept="9" trace="overrides#()Z" />
+      <node id="2323553266854757446" at="55,0,58,0" concept="9" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="2323553266854757446" at="58,0,61,0" concept="9" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="2323553266854757446" at="61,0,64,0" concept="9" trace="overrides#()Z" />
       <node id="2323553266854878723" at="35,203,39,7" concept="1" />
-      <node id="2323553266855237975" at="48,702,52,7" concept="1" />
+      <node id="2323553266855237975" at="47,702,51,7" concept="1" />
       <node id="2323553266854787393" at="23,119,30,5" concept="8" />
       <node id="2323553266854821743" at="34,5,41,5" concept="8" />
-      <node id="2323553266855219693" at="47,0,54,5" concept="8" />
-      <node id="2323553266854757446" at="23,0,56,0" concept="9" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="2323553266855219693" at="46,0,53,5" concept="8" />
+      <node id="2323553266854757446" at="23,0,55,0" concept="9" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2323553266854757446" at="21,51,21,51" />
       <scope id="2323553266854805158" at="25,39,26,214" />
       <scope id="2323553266854787395" at="28,19,29,13" />
       <scope id="3166734731694058788" at="32,369,33,13" />
-      <scope id="2323553266854757446" at="56,50,57,162" />
-      <scope id="2323553266854757446" at="59,68,60,102" />
-      <scope id="2323553266854757446" at="62,30,63,17" />
+      <scope id="2323553266854757446" at="55,50,56,162" />
+      <scope id="2323553266854757446" at="58,68,59,102" />
+      <scope id="2323553266854757446" at="61,30,62,17" />
       <scope id="2323553266854757446" at="21,0,23,0" />
       <scope id="2323553266854878723" at="36,7,38,280">
         <var name="_reporter_2309309498" id="2323553266854878723" />
         <var name="errorTarget" id="2323553266854878723" />
       </scope>
-      <scope id="2323553266855237975" at="49,7,51,274">
+      <scope id="2323553266855237975" at="48,7,50,274">
         <var name="_reporter_2309309498" id="2323553266855237975" />
         <var name="errorTarget" id="2323553266855237975" />
       </scope>
       <scope id="2323553266854805157" at="25,0,28,0">
         <var name="it" id="2323553266854805157" />
       </scope>
-      <scope id="2323553266854757446" at="56,0,59,0" />
-      <scope id="2323553266854757446" at="59,0,62,0">
+      <scope id="2323553266854757446" at="55,0,58,0" />
+      <scope id="2323553266854757446" at="58,0,61,0">
         <var name="argument" id="2323553266854757446" />
       </scope>
-      <scope id="2323553266854757446" at="62,0,65,0" />
+      <scope id="2323553266854757446" at="61,0,64,0" />
       <scope id="2323553266854821745" at="35,203,40,13" />
-      <scope id="2323553266855219695" at="48,702,53,13" />
-      <scope id="2323553266854757447" at="23,119,54,5">
+      <scope id="2323553266855219695" at="47,702,52,13" />
+      <scope id="2323553266854757447" at="23,119,53,5">
         <var name="paramType" id="2323553266855130382" />
       </scope>
-      <scope id="2323553266854757446" at="23,0,56,0">
+      <scope id="2323553266854757446" at="23,0,55,0">
         <var name="method" id="2323553266854757446" />
         <var name="status" id="2323553266854757446" />
         <var name="typeCheckingContext" id="2323553266854757446" />
       </scope>
       <unit id="2323553266854805157" at="24,213,28,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule$1" />
-      <unit id="2323553266854757446" at="20,0,66,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" />
+      <unit id="2323553266854757446" at="20,0,65,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548948757">

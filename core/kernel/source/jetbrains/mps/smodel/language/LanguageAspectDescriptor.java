@@ -53,12 +53,7 @@ public abstract class LanguageAspectDescriptor {
   }
 
   @Nullable
-  public SNode getInterfaceClassDeclaration(){
-    return null;
-  }
-
-  @Nullable
-  public String getImplementationClassName(SModule language){
+  public LanguageAspectGenerator getGenerator(){
     return null;
   }
 

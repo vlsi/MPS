@@ -99,7 +99,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "file" + ">";
+      return "<no file>";
     }
 
   }
@@ -145,7 +145,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "root" + ">";
+      return "<no root>";
     }
 
   }
@@ -188,7 +188,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "url" + ">";
+      return "<no url>";
     }
 
   }

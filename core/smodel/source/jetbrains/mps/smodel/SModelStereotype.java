@@ -81,7 +81,7 @@ public class SModelStereotype {
   }
 
   @NotNull
-  public static String getStereotype(SModel model) {
+  public static String getStereotype(@NotNull SModel model) {
     return getStereotype(model.getModelName());
   }
 

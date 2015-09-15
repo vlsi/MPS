@@ -96,7 +96,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "logExpression" + ">";
+      return "<no logExpression>";
     }
 
   }
@@ -153,7 +153,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "exception" + ">";
+      return "<no exception>";
     }
 
   }

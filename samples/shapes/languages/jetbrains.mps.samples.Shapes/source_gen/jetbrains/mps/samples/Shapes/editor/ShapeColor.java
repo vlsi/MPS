@@ -65,7 +65,7 @@ public class ShapeColor implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "color" + ">";
+      return "<no color>";
     }
 
   }

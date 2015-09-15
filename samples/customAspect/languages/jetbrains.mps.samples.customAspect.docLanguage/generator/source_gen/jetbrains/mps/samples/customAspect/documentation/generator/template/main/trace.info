@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="21,0,47,0" name="jetbrains.mps.samples.customAspect.documentation.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:291c2e75-1693-4702-b50c-6c96d8d6956d(jetbrains.mps.samples.customAspect.documentation.generator.template.main@generator)/2897519568668587738">
+    <file name="QueriesGenerated.java">
+      <node id="2897519568668630019" at="28,39,29,197" concept="1" />
+      <node id="2897519568668612428" at="36,109,37,30" concept="1" />
+      <node id="670382098842366766" at="41,37,42,175" concept="1" />
+      <node id="2897519568668629077" at="28,0,31,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="670382098842361371" at="41,0,44,0" concept="0" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2897519568668615043" at="26,112,31,132" concept="1" />
+      <node id="2897519568668611591" at="39,120,44,18" concept="1" />
+      <scope id="2897519568668629078" at="28,39,29,197" />
+      <scope id="2897519568668612288" at="36,109,37,30" />
+      <scope id="670382098842361372" at="41,37,42,175" />
+      <scope id="2897519568668629077" at="28,0,31,0">
+        <var name="it" id="2897519568668629077" />
+      </scope>
+      <scope id="670382098842361371" at="41,0,44,0">
+        <var name="it" id="670382098842361371" />
+      </scope>
+      <scope id="2897519568668614239" at="26,112,31,132" />
+      <scope id="2897519568668600554" at="39,120,44,18" />
+      <unit id="2897519568668629077" at="27,304,31,5" name="jetbrains.mps.samples.customAspect.documentation.generator.template.main.QueriesGenerated$1" />
+      <unit id="670382098842361371" at="40,279,44,5" name="jetbrains.mps.samples.customAspect.documentation.generator.template.main.QueriesGenerated$2" />
+    </file>
+  </root>
+  <root nodeRef="r:291c2e75-1693-4702-b50c-6c96d8d6956d(jetbrains.mps.samples.customAspect.documentation.generator.template.main@generator)/2897519568668637315">
+    <file name="QueriesGenerated.java">
+      <node id="4469912675310105980" at="23,110,24,392" concept="1" />
+      <node id="4565427742315565555" at="33,112,34,223" concept="1" />
+      <scope id="1570228009929814974" at="23,110,24,392" />
+      <scope id="4565427742315554125" at="33,112,34,223" />
+    </file>
+  </root>
+</debug-info>
+

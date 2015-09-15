@@ -73,7 +73,6 @@ public class AutoResolver extends EditorCheckerAdapter {
           @Override
           public void run() {
             // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
-            // <node> 
             boolean doRecheckEditor = false;
             // Trying to resolve all broken references using scope and then using substitute actions. 
             for (SReference brokenRef : SetSequence.fromSet(badReferences)) {

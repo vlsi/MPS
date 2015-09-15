@@ -78,7 +78,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -138,7 +138,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializer" + ">";
+      return "<no initializer>";
     }
 
   }

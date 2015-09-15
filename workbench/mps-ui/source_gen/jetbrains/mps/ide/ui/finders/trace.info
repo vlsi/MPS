@@ -147,7 +147,7 @@
       <node id="4132059805486521445" at="195,51,196,17" concept="3" />
       <node id="8016074595323626903" at="197,7,198,103" concept="11" />
       <node id="8016074595323627444" at="198,103,199,74" concept="11" />
-      <node id="4132059805486521461" at="200,89,201,87" concept="4" />
+      <node id="4132059805486521461" at="200,85,201,87" concept="4" />
       <node id="2323617542423182684" at="205,91,206,67" concept="9" />
       <node id="2323617542423331239" at="207,62,208,40" concept="4" />
       <node id="2323617542423336261" at="209,5,210,18" concept="10" />
@@ -235,7 +235,7 @@
       <scope id="4132059805486521335" at="178,75,179,77" />
       <scope id="8016074595323658072" at="183,33,184,13" />
       <scope id="4132059805486521444" at="195,51,196,17" />
-      <scope id="4132059805486521454" at="200,89,201,87" />
+      <scope id="4132059805486521454" at="200,85,201,87" />
       <scope id="2323617542423291584" at="207,62,208,40" />
       <scope id="2432409624890547070" at="215,53,216,17" />
       <scope id="954099380646504050" at="227,45,228,20" />
@@ -542,6 +542,53 @@
         <var name="query" id="4132059805486521797" />
       </scope>
       <unit id="4132059805486521762" at="31,0,87,0" name="jetbrains.mps.ide.ui.finders.LanguageUsagesFinder" />
+    </file>
+  </root>
+  <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/457188507851339859">
+    <file name="LanguageModelImportFinder.java">
+      <node id="457188507851358299" at="25,73,26,54" concept="9" />
+      <node id="457188507851369837" at="26,54,27,62" concept="9" />
+      <node id="457188507851426611" at="28,47,29,27" concept="10" />
+      <node id="457188507851358304" at="30,5,31,63" concept="9" />
+      <node id="457188507851358313" at="31,63,32,58" concept="4" />
+      <node id="457188507851358320" at="32,58,33,88" concept="9" />
+      <node id="457188507851358330" at="33,88,34,61" concept="4" />
+      <node id="457188507851358345" at="36,33,37,29" concept="10" />
+      <node id="457188507851449401" at="38,7,39,0" concept="12" />
+      <node id="457188507851436220" at="39,0,40,80" concept="11" />
+      <node id="457188507851450818" at="40,80,41,79" concept="11" />
+      <node id="457188507851439226" at="41,79,42,0" concept="12" />
+      <node id="457188507851443774" at="43,84,44,76" concept="4" />
+      <node id="457188507851358356" at="45,7,46,0" concept="12" />
+      <node id="457188507851358381" at="46,0,47,25" concept="4" />
+      <node id="457188507851358388" at="48,5,49,19" concept="4" />
+      <node id="457188507851358392" at="49,19,50,25" concept="10" />
+      <node id="457188507851341165" at="22,0,24,0" concept="2" trace="LanguageModelImportFinder#()V" />
+      <node id="457188507851421307" at="27,62,30,5" concept="7" />
+      <node id="457188507851358343" at="35,33,38,7" concept="7" />
+      <node id="457188507851443767" at="42,0,45,7" concept="7" />
+      <node id="457188507851358338" at="34,61,48,5" concept="6" />
+      <node id="457188507851341343" at="25,0,52,0" concept="8" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <scope id="457188507851341169" at="22,38,22,38" />
+      <scope id="457188507851421309" at="28,47,29,27" />
+      <scope id="457188507851358344" at="36,33,37,29" />
+      <scope id="457188507851443773" at="43,84,44,76" />
+      <scope id="457188507851341165" at="22,0,24,0" />
+      <scope id="457188507851358342" at="35,33,47,25" />
+      <scope id="457188507851358338" at="34,61,48,5">
+        <var name="model" id="457188507851358340" />
+      </scope>
+      <scope id="457188507851341351" at="25,73,50,25">
+        <var name="language2lookup" id="457188507851358305" />
+        <var name="lookupObject" id="457188507851369838" />
+        <var name="models" id="457188507851358321" />
+        <var name="searchResults" id="457188507851358300" />
+      </scope>
+      <scope id="457188507851341343" at="25,0,52,0">
+        <var name="monitor" id="457188507851341349" />
+        <var name="query" id="457188507851341347" />
+      </scope>
+      <unit id="457188507851339859" at="21,0,53,0" name="jetbrains.mps.ide.ui.finders.LanguageModelImportFinder" />
     </file>
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/6355759290342865490">

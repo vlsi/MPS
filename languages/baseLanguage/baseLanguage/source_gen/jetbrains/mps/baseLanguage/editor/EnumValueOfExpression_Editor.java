@@ -169,7 +169,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }

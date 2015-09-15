@@ -46,7 +46,9 @@ class IndexableRootCalculator {
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (final SModule m : myProject.getModules()) {
+        // We should iterate over all modules, visible inside this project including libraries & core modules.
+        // Not only those modules explicitly included into this project.
+        for (final SModule m : myProject.getRepository().getModules()) {
           for (String path : getIndexablePaths(m)) {
             VirtualFile file = VirtualFileUtils.getVirtualFile(path);
             if (file == null) continue;

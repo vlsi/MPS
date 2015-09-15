@@ -333,7 +333,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "input" + ">";
+      return "<no input>";
     }
 
   }
@@ -379,7 +379,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "output" + ">";
+      return "<no output>";
     }
 
   }
@@ -598,7 +598,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "job" + ">";
+      return "<no job>";
     }
 
   }

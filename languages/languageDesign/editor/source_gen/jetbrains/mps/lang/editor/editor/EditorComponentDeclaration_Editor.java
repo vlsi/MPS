@@ -468,7 +468,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "cellModel" + ">";
+      return "<no cellModel>";
     }
 
   }

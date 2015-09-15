@@ -23,7 +23,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.TypeSubstitution;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
@@ -50,6 +50,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -491,28 +492,29 @@ public class State {
 
   @Nullable
   private SNode lookupTypeSubstitution(SNode origType) {
-    if (origType == null) return null;
+    if (origType == null || TypesUtil.isVariable(origType)) return origType;
 
-    if (!TypesUtil.isVariable(origType)) {
-      SNode subsType = new TypeSubstitution(origType, myTypeCheckingContext).substitutedType();
+    SNode newType = origType;
 
-      if (subsType != null && !subsType.equals(origType)) {
+    // exhaustively apply substitutions until the operation has no effect
+    StructuralNodeSet<SNode> seen = new StructuralNodeSet<SNode>();
 
-        // exhaustively apply substitutions until the operation has no effect
-        Set<SNode> seen = new HashSet<SNode>(Collections.singleton(subsType));
-        for (SNode nextSubs = null;
-             !seen.contains(nextSubs);
-             seen.add(nextSubs))
-        {
-          nextSubs = new TypeSubstitution(subsType, myTypeCheckingContext).substitutedType();
-          subsType = nextSubs;
-        }
+    TypeSubstitution typeSubs = myTypeCheckingContext.getSubstitution(origType);
+    while (typeSubs != null && typeSubs.isValid()) {
 
-        executeOperation(new SubstituteTypeOperation(origType, subsType));
-        origType = subsType;
+      newType = typeSubs.getNewNode();
+      if (seen.containsStructurally(newType)) {
+        break;
       }
+      seen.addStructurally(newType);
+
+      executeOperation(new SubstituteTypeOperation(typeSubs));
+
+      // next iteration
+      typeSubs = myTypeCheckingContext.getSubstitution(newType);
     }
-    return origType;
+
+    return newType;
   }
 
   /** Nulls are not allowed. Not serializable. Not cloneable. */

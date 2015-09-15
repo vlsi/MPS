@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MoneyType_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MovingAverage_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.StockSymbol_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_Editor" file="GetAmount_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />

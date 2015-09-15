@@ -84,7 +84,6 @@ public class EditorUtil {
               SModel model = sourceNode.getModel();
               String outputRoot = ((AbstractModule) model.getModule()).getModuleSourceDir().getPath() + File.separator + "icons";
               IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
-              // <node> 
 
               // copy 
               String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(result.value.getPath());

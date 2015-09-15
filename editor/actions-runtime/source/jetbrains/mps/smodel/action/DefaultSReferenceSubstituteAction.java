@@ -68,6 +68,12 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
     if (text != null) {
       return text;
     }
+
+    if (myCurrentReferent!=null) {
+      String referentMatchingText = NodePresentationUtil.matchingText(myTargetNode, true, true);
+      if (referentMatchingText != null) return referentMatchingText;
+    }
+
     if (myTargetNode.getConcept().isSubConceptOf(SNodeUtil.concept_IResolveInfo)) {
       return SNodeUtil.getResolveInfo(myTargetNode);
     }

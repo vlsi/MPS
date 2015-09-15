@@ -239,7 +239,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "target" + ">";
+      return "<no target>";
     }
 
   }
@@ -476,7 +476,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "doRefactorBlock" + ">";
+      return "<no doRefactorBlock>";
     }
 
   }
@@ -519,7 +519,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "modelsToGenerateBlock" + ">";
+      return "<no modelsToGenerateBlock>";
     }
 
   }
@@ -562,7 +562,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "doWhenDoneBlock" + ">";
+      return "<no doWhenDoneBlock>";
     }
 
   }

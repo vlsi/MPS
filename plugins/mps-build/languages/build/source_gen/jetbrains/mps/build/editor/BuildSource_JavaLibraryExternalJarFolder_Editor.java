@@ -69,7 +69,7 @@ public class BuildSource_JavaLibraryExternalJarFolder_Editor extends DefaultNode
     }
 
     protected String getNoTargetText() {
-      return "<no " + "extFolder" + ">";
+      return "<no extFolder>";
     }
 
   }

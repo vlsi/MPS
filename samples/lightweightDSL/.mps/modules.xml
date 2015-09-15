@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.SwingBuilder/jetbrains.mps.samples.SwingBuilder.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.samples.SwingBuilder/sandbox/jetbrains.mps.samples.LightweightDSL.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.samples.LightweightDSL.plugin/jetbrains.mps.samples.LightweightDSL.plugin.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

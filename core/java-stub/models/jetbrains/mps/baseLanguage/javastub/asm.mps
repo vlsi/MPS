@@ -2,7 +2,7 @@
 <model ref="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -2407,6 +2407,36 @@
               </node>
             </node>
             <node concept="3cmrfG" id="XZeAgvHXB_" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="5N7M5_4e5mt" role="jymVt">
+      <property role="TrG5h" value="isSynchronized" />
+      <node concept="10P_77" id="5N7M5_4e7GP" role="3clF45" />
+      <node concept="3Tm1VV" id="5N7M5_4e5mw" role="1B3o_S" />
+      <node concept="3clFbS" id="5N7M5_4e5mx" role="3clF47">
+        <node concept="3cpWs6" id="5N7M5_4elL3" role="3cqZAp">
+          <node concept="3y3z36" id="5N7M5_4enHk" role="3cqZAk">
+            <node concept="1eOMI4" id="5N7M5_4enHl" role="3uHU7B">
+              <node concept="pVHWs" id="5N7M5_4enHm" role="1eOMHV">
+                <node concept="10M0yZ" id="5N7M5_4enHn" role="3uHU7B">
+                  <ref role="1PxDUh" to="k8ye:~Opcodes" resolve="Opcodes" />
+                  <ref role="3cqZAo" to="k8ye:~Opcodes.ACC_SYNCHRONIZED" resolve="ACC_SYNCHRONIZED" />
+                </node>
+                <node concept="2OqwBi" id="5N7M5_4enHo" role="3uHU7w">
+                  <node concept="2OwXpG" id="5N7M5_4enHp" role="2OqNvi">
+                    <ref role="2Oxat5" to="dd86:~MethodNode.access" resolve="access" />
+                  </node>
+                  <node concept="37vLTw" id="5N7M5_4enHq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6hYzBiUOu_0" resolve="myMethod" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cmrfG" id="5N7M5_4enHr" role="3uHU7w">
               <property role="3cmrfH" value="0" />
             </node>
           </node>

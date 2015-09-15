@@ -81,7 +81,6 @@ public class GenModuleXmlWorker extends MpsWorker {
       wr.println(INDENT_WITH + "<dependencies>");
       Collection<SModule> dependencies = getDependencies(module);
       if (dependencies == null) {
-        // <node> 
         error("module " + moduleRef + " was not found in repository");
         return;
       }

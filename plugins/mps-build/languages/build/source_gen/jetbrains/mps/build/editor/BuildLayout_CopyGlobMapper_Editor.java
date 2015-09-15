@@ -125,7 +125,7 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "to" + ">";
+      return "<no to>";
     }
 
   }

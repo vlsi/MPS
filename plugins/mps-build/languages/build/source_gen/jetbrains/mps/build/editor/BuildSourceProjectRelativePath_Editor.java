@@ -125,7 +125,7 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "compositePart" + ">";
+      return "<no compositePart>";
     }
 
   }

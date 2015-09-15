@@ -97,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.editor.Constant_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.editor.Constants_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.editor.DistantConstantReference_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
 </dependenciesRoot>
 

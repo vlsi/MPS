@@ -30,41 +30,43 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     return "Add CommentLine child to DeprecatedBlockDocTags";
   }
   public SNode execute(SModule m) {
-    final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a1();
-    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return pattern.match(it);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode node) {
-        return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
-      }
-    }).sort(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
-      }
-    }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode nodeToMigrate) {
-        pattern.match(nodeToMigrate);
-        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
-          public SNode compute() {
-            return _quotation_createNode_fgay1s_a0a0f();
-          }
-        }, null);
-      }
-    });
+    {
+      final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a1();
+      Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode node) {
+          return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
+        }
+      }).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
+        }
+      }, false).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode nodeToMigrate) {
+          pattern.match(nodeToMigrate);
+          applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+            public SNode compute() {
+              return _quotation_createNode_fgay1s_a0a0f();
+            }
+          }, null);
+        }
+      });
+    }
     return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);
   }
 
-  public static class Pattern_fgay1s_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_fgay1s_a0a0a1() {
+  public static class Pattern_fgay1s_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_fgay1s_a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");

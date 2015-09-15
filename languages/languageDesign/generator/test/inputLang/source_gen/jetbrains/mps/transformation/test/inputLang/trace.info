@@ -5,7 +5,7 @@
       <unit at="17,0,77,0" name="jetbrains.mps.transformation.test.inputLang.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="18,0,62,0" name="jetbrains.mps.transformation.test.inputLang.Language" />
+      <unit at="18,0,60,0" name="jetbrains.mps.transformation.test.inputLang.Language" />
     </file>
   </root>
 </debug-info>

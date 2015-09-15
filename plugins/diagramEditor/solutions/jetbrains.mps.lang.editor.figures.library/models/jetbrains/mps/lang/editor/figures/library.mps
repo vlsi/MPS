@@ -5,7 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" name="jetbrains.mps.lang.editor.figures" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="jqfx" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)" />
@@ -190,12 +191,6 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -221,6 +216,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -797,6 +799,17 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="ppUOJqaQ7D" role="3cqZAp">
+            <node concept="3cpWsn" id="ppUOJqaQ7E" role="3cpWs9">
+              <property role="TrG5h" value="source" />
+              <node concept="3uibUv" id="ppUOJqaR0a" role="1tU5fm">
+                <ref role="3uigEE" node="7CaZq42X0Ik" resolve="BoxFigure" />
+              </node>
+              <node concept="1rXfSq" id="ppUOJqaQ7F" role="33vP2m">
+                <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1ZQTqiP34h5" role="3cqZAp">
             <node concept="2OqwBi" id="1ZQTqiP34h6" role="3clFbG">
               <node concept="37vLTw" id="1ZQTqiP34h7" role="2Oq$k0">
@@ -808,8 +821,8 @@
                   <ref role="1Pybhc" to="sm7x:~Synchronizers" resolve="Synchronizers" />
                   <ref role="37wK5l" to="sm7x:~Synchronizers.forProperty(jetbrains.jetpad.model.property.ReadableProperty,java.lang.Runnable):jetbrains.jetpad.mapper.Synchronizer" resolve="forProperty" />
                   <node concept="2OqwBi" id="1ZQTqiPjFC9" role="37wK5m">
-                    <node concept="1rXfSq" id="1ZQTqiPjFWV" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7G" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                     <node concept="2OwXpG" id="1ZQTqiPjFCc" role="2OqNvi">
                       <ref role="2Oxat5" node="1ZQTqiP9XUz" resolve="figureWidth" />
@@ -822,8 +835,8 @@
                           <node concept="liA8E" id="1ZQTqiPjJaB" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjJvA" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7H" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -847,8 +860,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjGxW" role="2OqNvi">
                       <ref role="2Oxat5" node="1ZQTqiP9XUH" resolve="figureHeight" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjGQf" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7I" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="1bVj0M" id="1ZQTqiP34hN" role="37wK5m">
@@ -858,8 +871,8 @@
                           <node concept="liA8E" id="1ZQTqiPjK7$" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjKsz" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7J" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -883,8 +896,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjHre" role="2OqNvi">
                       <ref role="2Oxat5" node="7CaZq43bXmc" resolve="lineWidth" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjHyn" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7K" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="1bVj0M" id="1ZQTqiP34il" role="37wK5m">
@@ -894,8 +907,8 @@
                           <node concept="liA8E" id="1ZQTqiPjL4x" role="2OqNvi">
                             <ref role="37wK5l" node="4UC9Eb7y_EU" resolve="adjustPolyLinePoints" />
                           </node>
-                          <node concept="1rXfSq" id="1ZQTqiPjLpw" role="2Oq$k0">
-                            <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                          <node concept="37vLTw" id="ppUOJqaQ7L" role="2Oq$k0">
+                            <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                           </node>
                         </node>
                       </node>
@@ -919,8 +932,8 @@
                     <node concept="2OwXpG" id="1ZQTqiPjI8W" role="2OqNvi">
                       <ref role="2Oxat5" node="7CaZq43bXmc" resolve="lineWidth" />
                     </node>
-                    <node concept="1rXfSq" id="1ZQTqiPjIlG" role="2Oq$k0">
-                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                    <node concept="37vLTw" id="ppUOJqaQ7M" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="1ZQTqiP34iv" role="37wK5m">
@@ -928,8 +941,8 @@
                       <node concept="2OwXpG" id="1ZQTqiPjM1o" role="2OqNvi">
                         <ref role="2Oxat5" node="7CaZq432giM" resolve="myPolyLine" />
                       </node>
-                      <node concept="1rXfSq" id="1ZQTqiPjMlN" role="2Oq$k0">
-                        <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                      <node concept="37vLTw" id="ppUOJqaQ7N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ppUOJqaQ7E" resolve="source" />
                       </node>
                     </node>
                     <node concept="liA8E" id="1ZQTqiP34ix" role="2OqNvi">
@@ -1041,19 +1054,19 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="1ZQTqiPo3F1" role="3cqZAp">
-          <node concept="3SKWN0" id="1ZQTqiPo3F2" role="3SKWNk">
-            <node concept="3clFbF" id="4UC9Eb7y_AD" role="3SKWNf">
-              <node concept="2OqwBi" id="4UC9Eb7y_Ge" role="3clFbG">
-                <node concept="37vLTw" id="4UC9Eb7y_Gd" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4UC9Eb7y_Ae" resolve="myCell" />
-                </node>
-                <node concept="liA8E" id="4UC9Eb7y_Gf" role="2OqNvi">
-                  <ref role="37wK5l" to="d7dq:~Cell.addTrait(jetbrains.jetpad.cell.trait.CellTrait):jetbrains.jetpad.base.Registration" resolve="addTrait" />
-                  <node concept="2YIFZM" id="4UC9Eb7y_Gh" role="37wK5m">
-                    <ref role="37wK5l" to="5v25:~TextEditing.textEditing():jetbrains.jetpad.cell.trait.CellTrait" resolve="textEditing" />
-                    <ref role="1Pybhc" to="5v25:~TextEditing" resolve="TextEditing" />
-                  </node>
+        <node concept="1X3_iC" id="3$ZLRFpRhzo" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="4UC9Eb7y_AD" role="8Wnug">
+            <node concept="2OqwBi" id="4UC9Eb7y_Ge" role="3clFbG">
+              <node concept="37vLTw" id="4UC9Eb7y_Gd" role="2Oq$k0">
+                <ref role="3cqZAo" node="4UC9Eb7y_Ae" resolve="myCell" />
+              </node>
+              <node concept="liA8E" id="4UC9Eb7y_Gf" role="2OqNvi">
+                <ref role="37wK5l" to="d7dq:~Cell.addTrait(jetbrains.jetpad.cell.trait.CellTrait):jetbrains.jetpad.base.Registration" resolve="addTrait" />
+                <node concept="2YIFZM" id="4UC9Eb7y_Gh" role="37wK5m">
+                  <ref role="37wK5l" to="5v25:~TextEditing.textEditing():jetbrains.jetpad.cell.trait.CellTrait" resolve="textEditing" />
+                  <ref role="1Pybhc" to="5v25:~TextEditing" resolve="TextEditing" />
                 </node>
               </node>
             </node>
@@ -1337,6 +1350,17 @@
                           <node concept="3clFbS" id="1ZQTqiPoK5p" role="3clF47">
                             <node concept="3clFbJ" id="1ZQTqiPoOlE" role="3cqZAp">
                               <node concept="3clFbS" id="1ZQTqiPoOlF" role="3clFbx">
+                                <node concept="3cpWs8" id="ppUOJqaS7h" role="3cqZAp">
+                                  <node concept="3cpWsn" id="ppUOJqaS7i" role="3cpWs9">
+                                    <property role="TrG5h" value="source" />
+                                    <node concept="3uibUv" id="ppUOJqaSgr" role="1tU5fm">
+                                      <ref role="3uigEE" node="HEilRNynZA" resolve="NamedBoxFigure" />
+                                    </node>
+                                    <node concept="1rXfSq" id="ppUOJqaS7j" role="33vP2m">
+                                      <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3clFbF" id="1ZQTqiPoQJf" role="3cqZAp">
                                   <node concept="37vLTI" id="1ZQTqiPoQRm" role="3clFbG">
                                     <node concept="37vLTw" id="1ZQTqiPoQJe" role="37vLTJ">
@@ -1344,8 +1368,8 @@
                                     </node>
                                     <node concept="2OqwBi" id="1ZQTqiPoRdu" role="37vLTx">
                                       <node concept="2OqwBi" id="1ZQTqiPoRdv" role="2Oq$k0">
-                                        <node concept="1rXfSq" id="1ZQTqiPoRdw" role="2Oq$k0">
-                                          <ref role="37wK5l" to="sm7x:~Mapper.getSource():java.lang.Object" resolve="getSource" />
+                                        <node concept="37vLTw" id="ppUOJqaS7k" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="ppUOJqaS7i" resolve="source" />
                                         </node>
                                         <node concept="2OwXpG" id="1ZQTqiPoRdx" role="2OqNvi">
                                           <ref role="2Oxat5" node="4UC9Eb7y_Ae" resolve="myCell" />

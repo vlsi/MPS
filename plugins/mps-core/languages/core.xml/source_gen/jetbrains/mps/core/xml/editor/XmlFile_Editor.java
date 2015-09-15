@@ -105,7 +105,7 @@ public class XmlFile_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "document" + ">";
+      return "<no document>";
     }
 
   }

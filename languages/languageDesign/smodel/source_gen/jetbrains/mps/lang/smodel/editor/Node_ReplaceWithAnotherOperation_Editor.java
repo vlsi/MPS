@@ -76,7 +76,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "replacementNode" + ">";
+      return "<no replacementNode>";
     }
 
   }

@@ -87,10 +87,21 @@ public final class ModelDependencyScanner {
     return myConcepts;
   }
 
+  /**
+   * Iterate over all nodes of the given model
+   * @return <code>this</code> for convenience
+   */
   public ModelDependencyScanner walk(@NotNull SModel model) {
     return walk(SNodeUtil.getDescendants(model));
   }
 
+  /**
+   * Iterate over given nodes.
+   * IMPORTANT! This method doesn't look into children of supplied nodes, it takes parameter 'literally' and visits
+   * only nodes specified. To visit complete tree, consider using {@link SNodeUtil#getDescendants(SNode)}.
+   *
+   * @return <code>this</code> for convenience
+   */
   public ModelDependencyScanner walk(@NotNull Iterable<org.jetbrains.mps.openapi.model.SNode> nodes) {
     HashSet<org.jetbrains.mps.openapi.model.SModelReference> allRefTargets = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     // collection of input nodes is not restricted to come from a single model,

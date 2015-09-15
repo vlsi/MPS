@@ -89,6 +89,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x3744c0f9eae0a402L) {
       return new AttributeStyleClassItem_Constraints();
     }
+    if (id == 0x7456aec153c7f5a2L) {
+      return new CellModel_NextEditor_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

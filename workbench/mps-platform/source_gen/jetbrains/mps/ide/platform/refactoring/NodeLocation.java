@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,9 +33,10 @@ public interface NodeLocation {
       });
     }
     public void insertNodes(List<SNode> nodesToMove) {
+      SContainmentLink role = ListSequence.fromList(nodesToMove).first().getContainmentLink();
       for (SNode node : ListSequence.fromList(nodesToMove)) {
         node.getParent().removeChild(node);
-        parent.addChild(ListSequence.fromList(nodesToMove).first().getContainmentLink(), node);
+        parent.addChild(role, node);
       }
 
     }

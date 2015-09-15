@@ -86,7 +86,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "componentProvider" + ">";
+      return "<no componentProvider>";
     }
 
   }

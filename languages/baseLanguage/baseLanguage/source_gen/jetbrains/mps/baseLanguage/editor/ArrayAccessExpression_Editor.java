@@ -62,7 +62,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "array" + ">";
+      return "<no array>";
     }
 
   }
@@ -107,7 +107,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "index" + ">";
+      return "<no index>";
     }
 
   }

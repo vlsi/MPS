@@ -33,42 +33,44 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
     return "Add necessary parentheses to NotExpressions";
   }
   public SNode execute(SModule m) {
-    final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a1();
-    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return pattern.match(it);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode node) {
-        return PrecedenceUtil.needsParensAroundNotExpression(node);
-      }
-    }).sort(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
-      }
-    }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode nodeToMigrate) {
-        pattern.match(nodeToMigrate);
-        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
-          public SNode compute() {
-            return _quotation_createNode_fbexqr_a0a0f(pattern.getFieldValue("patternVar_expr"));
-          }
-        }, null);
-      }
-    });
+    {
+      final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a1();
+      Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode node) {
+          return PrecedenceUtil.needsParensAroundNotExpression(node);
+        }
+      }).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
+        }
+      }, false).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode nodeToMigrate) {
+          pattern.match(nodeToMigrate);
+          applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+            public SNode compute() {
+              return _quotation_createNode_fbexqr_a0a0f(((SNode) pattern.getFieldValue("patternVar_expr")));
+            }
+          }, null);
+        }
+      });
+    }
     return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0);
   }
 
-  public static class Pattern_fbexqr_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_fbexqr_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_expr;
-    public Pattern_fbexqr_a0a0a1() {
+    public Pattern_fbexqr_a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression");

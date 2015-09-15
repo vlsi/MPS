@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathVarReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Expressions.editor.LogicalSimpleMathExpression_Editor" file="LogicalSimpleMathExpression_Editor.java">
     <classNode dependClassName="java.lang.Override" />

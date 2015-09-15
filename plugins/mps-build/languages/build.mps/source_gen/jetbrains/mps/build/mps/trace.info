@@ -2,7 +2,10 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="24,0,77,0" name="jetbrains.mps.build.mps.Language" />
+      <unit at="24,0,75,0" name="jetbrains.mps.build.mps.Language" />
+    </file>
+    <file name="MigrationDescriptorImpl.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.MigrationDescriptorImpl" />
     </file>
   </root>
 </debug-info>

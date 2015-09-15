@@ -285,6 +285,11 @@ public class MPSModulesClosure {
     trackDevkits = false;
     return this;
   }
+
+  /**
+   * To compile, module needs its direct dependencies, plus re-exported dependencies of those.
+   * RTs of used languages and their dependencies won't hurt either.
+   */
   public MPSModulesClosure closure() {
     // get all direct dependencies abd runtimes, plus re-exported dependencies thereof. 
     Set<SNode> langs = SetSequence.fromSet(new HashSet<SNode>());
@@ -302,12 +307,27 @@ public class MPSModulesClosure {
     modules.removeAll(Sequence.fromIterable(initialModules).toListSequence());
     return this;
   }
+
+  /**
+   * To start, module needs all its dependencies plus RTs of languages it uses.
+   * However, its use in mps.build.mps generator is dubious, as it merely adds rt dependencies of specific module
+   * to the list of external (for the current project) modules.
+   * 
+   * Its use in MPSModulesPartitioner is another way of saying "if I generate a model and there's a language, which has runtime coming from another build script, add it to dependencies"
+   * Although it's not clear why would one need language runtime during generation.
+   * XXX Perhaps, {@link jetbrains.mps.build.mps.util.MPSModulesClosure#generationDependenciesClosure() } shall collect module's dependencies (collectDependencies(false)) instead
+   */
   public MPSModulesClosure runtimeClosure() {
     collectDependencies(initialModules, false);
     collectAllUsedLanguageRuntimesAndTheirDeps(initialModules);
     modules.removeAll(Sequence.fromIterable(initialModules).toListSequence());
     return this;
   }
+
+  /**
+   * Looks like an attempt to replace MPSModulePartitioner.getExternal() + runtimeClosure() (i.e. expand external dependencies with dependencies from this project)
+   * We use this to populate libraries of Environment for our tasks (MpsWorker) to start MPS with specific set of modules (hence we need a closure of modules for MPS to start properly).
+   */
   public MPSModulesClosure designtimeClosure() {
     // direct and indirect dependencies of the modules, languages used and their runtimes 
     collectDependencies(initialModules, false);
@@ -321,6 +341,12 @@ public class MPSModulesClosure {
     modules.removeAll(Sequence.fromIterable(initialModules).toListSequence());
     return this;
   }
+
+  /**
+   * To generate a module, we need its languages and all their dependencies.
+   * Unlike {@link jetbrains.mps.build.mps.util.MPSModulesClosure#runtimeClosure() } or {@link jetbrains.mps.build.mps.util.MPSModulesClosure#designtimeClosure() }, dependencies of the module itself (aka classpath) doesn't look
+   * that imporant (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)
+   */
   public MPSModulesClosure generationDependenciesClosure() {
     // direct and indirect dependencies of used languages and their runtimes; source languages of generators involved 
     for (SNode m : Sequence.fromIterable(initialModules)) {
@@ -332,6 +358,13 @@ public class MPSModulesClosure {
     }
     return this;
   }
+
+  /**
+   * This is what we list as module dependencies in module.xml
+   * I have no idea why it's a list of runtime solutions of used languages.
+   * As long as we distribute (and process) original module descriptor in src.jar, it seems these dependencies 
+   * (ModuleDescriptor.getDeploymentDescriptor().getDependencies()) are irrelevant.
+   */
   public MPSModulesClosure runtimeDependencies() {
     // direct dependencies of used languages' runtime solutions 
     if (Sequence.fromIterable(initialModules).count() != 1) {

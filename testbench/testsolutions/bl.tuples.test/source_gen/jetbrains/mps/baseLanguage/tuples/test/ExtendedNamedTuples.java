@@ -27,10 +27,6 @@ public class ExtendedNamedTuples {
     public String str() {
       return super._1();
     }
-    @SuppressWarnings(value = "unchecked")
-    public ExtendedNamedTuples.Foo assignFrom(Tuples._2<Integer, String> from) {
-      return (ExtendedNamedTuples.Foo) super.assign(from);
-    }
   }
   public static class Bar extends ExtendedNamedTuples.Foo implements Tuples._4<Integer, String, String, Double> {
     private MultiTuple._2<String, Double> tuple;
@@ -75,10 +71,6 @@ public class ExtendedNamedTuples {
       tuple.assign(from._2(), from._3());
       return this;
     }
-    @SuppressWarnings(value = "unchecked")
-    public ExtendedNamedTuples.Bar assignFrom(Tuples._2<String, Double> from) {
-      return (ExtendedNamedTuples.Bar) super.assign(from);
-    }
   }
   public static class Qux extends ExtendedNamedTuples.Bar implements Tuples._5<Integer, String, String, Double, String> {
     private MultiTuple._1<String> tuple;
@@ -105,10 +97,6 @@ public class ExtendedNamedTuples {
       super.assign(from);
       tuple.assign(from._4());
       return this;
-    }
-    @SuppressWarnings(value = "unchecked")
-    public ExtendedNamedTuples.Qux assignFrom(Tuples._1<String> from) {
-      return (ExtendedNamedTuples.Qux) super.assign(from);
     }
   }
 }

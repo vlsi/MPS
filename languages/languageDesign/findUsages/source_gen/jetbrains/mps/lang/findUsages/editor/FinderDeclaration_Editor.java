@@ -433,7 +433,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "findFunction" + ">";
+      return "<no findFunction>";
     }
 
   }

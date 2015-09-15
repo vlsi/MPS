@@ -72,7 +72,7 @@ public class ResultStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "foundNode" + ">";
+      return "<no foundNode>";
     }
 
   }

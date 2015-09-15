@@ -43,7 +43,8 @@ public class DeleteModules_Action extends BaseAction {
       return false;
     }
     for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-      if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
+      // Better not allow to delete mixed selection than filter it automatically to confuse user 
+      if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit)) || module.isPackaged() || module.isReadOnly()) {
         return false;
       }
     }

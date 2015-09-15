@@ -5,6 +5,7 @@
     <use id="7db4447f-913e-4b81-bd75-c9a473319ac6" name="jetbrains.mps.baseLanguage.doubleDispatch" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -162,9 +163,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -272,6 +270,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -487,39 +492,39 @@
           <property role="3SKdUp" value="turned it off, because unentered yet type is shown as error which is bad" />
         </node>
       </node>
-      <node concept="3SKdUt" id="20YUQaJB9Q4" role="3cqZAp">
-        <node concept="3SKWN0" id="20YUQaJB9Q5" role="3SKWNk">
-          <node concept="3clFbJ" id="20YUQaJAhUj" role="3SKWNf">
-            <node concept="2OqwBi" id="20YUQaJABNv" role="3clFbw">
-              <node concept="3w_OXm" id="20YUQaJABVp" role="2OqNvi" />
-              <node concept="37vLTw" id="20YUQaJABGs" role="2Oq$k0">
-                <ref role="3cqZAo" node="20YUQaJAjke" resolve="paramType" />
+      <node concept="1X3_iC" id="3$ZLRFpQ3nT" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="3clFbJ" id="20YUQaJAhUj" role="8Wnug">
+          <node concept="2OqwBi" id="20YUQaJABNv" role="3clFbw">
+            <node concept="3w_OXm" id="20YUQaJABVp" role="2OqNvi" />
+            <node concept="37vLTw" id="20YUQaJABGs" role="2Oq$k0">
+              <ref role="3cqZAo" node="20YUQaJAjke" resolve="paramType" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="20YUQaJAhUl" role="3clFbx">
+            <node concept="3SKdUt" id="20YUQaJ_H6F" role="3cqZAp">
+              <node concept="3SKdUq" id="20YUQaJ_H6H" role="3SKWNk">
+                <property role="3SKdUp" value="just in case of future constructs which allow omitting parameter type" />
               </node>
             </node>
-            <node concept="3clFbS" id="20YUQaJAhUl" role="3clFbx">
-              <node concept="3SKdUt" id="20YUQaJ_H6F" role="3cqZAp">
-                <node concept="3SKdUq" id="20YUQaJ_H6H" role="3SKWNk">
-                  <property role="3SKdUp" value="just in case of future constructs which allow omitting parameter type" />
-                </node>
+            <node concept="2MkqsV" id="20YUQaJ_H6N" role="3cqZAp">
+              <node concept="Xl_RD" id="20YUQaJ_Upt" role="2MkJ7o">
+                <property role="Xl_RC" value="Dispatch parameter type must be specified" />
               </node>
-              <node concept="2MkqsV" id="20YUQaJ_H6N" role="3cqZAp">
-                <node concept="Xl_RD" id="20YUQaJ_Upt" role="2MkJ7o">
-                  <property role="Xl_RC" value="Dispatch parameter type must be specified" />
-                </node>
-                <node concept="2OqwBi" id="20YUQaJ_Mq_" role="2OEOjV">
-                  <node concept="1uHKPH" id="20YUQaJ_Ul0" role="2OqNvi" />
-                  <node concept="2OqwBi" id="20YUQaJ_Hqa" role="2Oq$k0">
-                    <node concept="3Tsc0h" id="20YUQaJ_HXJ" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpee:fzclF7Y" />
-                    </node>
-                    <node concept="1YBJjd" id="20YUQaJ_H7g" role="2Oq$k0">
-                      <ref role="1YBMHb" node="20YUQaJ$Z$N" resolve="method" />
-                    </node>
+              <node concept="2OqwBi" id="20YUQaJ_Mq_" role="2OEOjV">
+                <node concept="1uHKPH" id="20YUQaJ_Ul0" role="2OqNvi" />
+                <node concept="2OqwBi" id="20YUQaJ_Hqa" role="2Oq$k0">
+                  <node concept="3Tsc0h" id="20YUQaJ_HXJ" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                  </node>
+                  <node concept="1YBJjd" id="20YUQaJ_H7g" role="2Oq$k0">
+                    <ref role="1YBMHb" node="20YUQaJ$Z$N" resolve="method" />
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs6" id="20YUQaJACkG" role="3cqZAp" />
             </node>
+            <node concept="3cpWs6" id="20YUQaJACkG" role="3cqZAp" />
           </node>
         </node>
       </node>

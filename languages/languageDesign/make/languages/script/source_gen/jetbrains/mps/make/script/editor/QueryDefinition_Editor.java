@@ -98,7 +98,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "title" + ">";
+      return "<no title>";
     }
 
   }
@@ -148,7 +148,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "presentation" + ">";
+      return "<no presentation>";
     }
 
   }
@@ -198,7 +198,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expected" + ">";
+      return "<no expected>";
     }
 
   }

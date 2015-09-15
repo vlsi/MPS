@@ -11,10 +11,11 @@ import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.GoToSource;
@@ -38,8 +39,8 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -56,6 +57,6 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
     if (dialog != null) {
       dialog.dispose();
     }
-    BreakpointsUtil.openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), (ILocationBreakpoint) breakpoint, true, true);
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).shallFocus(true).shallSelect(true).open(((ILocationBreakpoint) breakpoint).getLocation().getNodePointer());
   }
 }

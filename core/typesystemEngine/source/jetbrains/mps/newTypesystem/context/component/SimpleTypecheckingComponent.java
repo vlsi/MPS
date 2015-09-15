@@ -17,13 +17,20 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
+import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -47,7 +54,7 @@ import java.util.Set;
   private final STATE myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
-  protected BaseTypechecking myTypechecking;
+  protected BaseTypechecking<?, ?> myTypechecking;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
@@ -158,20 +165,8 @@ import java.util.Set;
    */
   protected boolean applyRulesToNode(SNode node) {
     final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
-    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
-      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
-      if (rules != null && !rules.isEmpty()) {
-        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
 
-        // check if the last rule applicable to an attribute overrides other rules (last one wins)
-        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
-        if (lastPair.o1.overrides(nodeOrAttr, lastPair.o2)) {
-          break;
-        }
-      }
-    }
-
-    if (nodesAndRules.isEmpty()) return false;
+    if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
     for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
       applyRulesToNode(pair.o1, pair.o2);
@@ -180,21 +175,37 @@ import java.util.Set;
     return true;
   }
 
-  /**
-   * Returns the list of all node attributes and the node itself as the last element.
-   * Earlier attributes have precedence over the ones added later.
-   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
-   *
-   * @param origNode
-   * @return
-   */
-  protected List<SNode> nodesToApplyRulesTo(SNode origNode) {
-    if (origNode == null) return Collections.emptyList();
+  @NotNull
+  protected SConcept getNodeAttributeConcept() {
+    return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute");
+  }
 
-    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(origNode));
-    nodesToTest.add(origNode);
+  @NotNull
+  protected SContainmentLink getSmodelAttributeRole() {
+    return MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+  }
 
-    return nodesToTest;
+  private boolean isNodeAttribute(SNode sNode) {
+    boolean conceptMatches = sNode.getConcept().isSubConceptOf(getNodeAttributeConcept());
+    return conceptMatches && getSmodelAttributeRole().equals(sNode.getContainmentLink());
+  }
+
+  protected boolean collectNodesAndRules(SNode node, List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules) {
+    for (SNode nodeOrAttr : myTypechecking.nodesToApplyRulesTo(node)) {
+      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
+      if (rules != null && !rules.isEmpty()) {
+        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
+
+        // check if the last rule applicable to an attribute supercedes the rules that may follow (last one wins)
+        // this has no effect if we're looking at the attributed node
+        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
+        if (lastPair.o1.supercedesAttributed(nodeOrAttr, lastPair.o2)) {
+          break;
+        }
+      }
+    }
+
+    return !nodesAndRules.isEmpty();
   }
 
   public SNode getType(SNode node) {
@@ -213,7 +224,7 @@ import java.util.Set;
 
   private void drainQueue(boolean forceChildrenCheck, SNode targetNode, AccessTracking accessTracking) {
     for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
-      if (myFullyCheckedNodes.contains(sNode)) {
+      if (myFullyCheckedNodes.contains(sNode) || !TypeSystemUtil.shouldApplyTypeSystemRules(sNode)) {
         continue;
       }
       Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
@@ -224,21 +235,29 @@ import java.util.Set;
         if (candidate == null || myFullyCheckedNodes.contains(candidate)) continue;
         myQueue.add(candidate);
       }
-      if (!myPartlyCheckedNodes.contains(sNode)) {
-        accessTracking.installReadListeners();
-        boolean typeAffected = false;
-        try {
-          myNodes.add(sNode);
-          typeAffected = applyRulesToNode(sNode);
-        } finally {
-          accessTracking.removeReadListeners();
-        }
-        accessTracking.postProcess(sNode, typeAffected);
+      if (isNodeAttribute(sNode)) {
+        // attributes are processed together with the attributed nodes
+        myQueue.add(sNode.getParent());
+
+      } else if (!myPartlyCheckedNodes.contains(sNode)) {
+        applyRulesAndTrackAccess(accessTracking, sNode);
         myPartlyCheckedNodes.add(sNode);
       }
       myFullyCheckedNodes.add(sNode);
       if (typeCalculated(targetNode) != null) return;
     }
+  }
+
+  private void applyRulesAndTrackAccess(AccessTracking accessTracking, SNode sNode) {
+    accessTracking.installReadListeners();
+    boolean typeAffected = false;
+    try {
+      myNodes.add(sNode);
+      typeAffected = applyRulesToNode(sNode);
+    } finally {
+      accessTracking.removeReadListeners();
+    }
+    accessTracking.postProcess(sNode, typeAffected);
   }
 
   protected SNode typeCalculated(SNode initialNode) {
@@ -304,4 +323,24 @@ import java.util.Set;
 
     protected void postProcess(SNode sNode, boolean typeAffected){}
   }
+
+  public TypeSubstitution lookupSubstitution(SNode origNode, TypeCheckingContext typeCheckingContext) {
+    for (SNode ruleNode : myTypechecking.nodesToApplyRulesTo(origNode)) {
+      for (Pair<SubstituteType_Runtime, IsApplicableStatus> rule_status : substituteTypeRules(ruleNode)) {
+        if(rule_status.o2.isApplicable()) {
+          TypeSubstitution subs = rule_status.o1.substitution(ruleNode, origNode, typeCheckingContext, rule_status.o2);
+
+          if (subs != null && subs.isValid()) {
+            return subs;
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  private List<Pair<SubstituteType_Runtime, IsApplicableStatus>> substituteTypeRules(SNode test) {
+    return TypeChecker.getInstance().getRulesManager().getSubstituteTypeRules(test);
+  }
+
 }

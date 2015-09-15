@@ -100,7 +100,6 @@ public class JavaToMps_Test extends BaseTransformationTest {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      // <node> 
     }
     public void test_LittleSource() throws Exception {
       this.addNodeById("4795297196607520929");

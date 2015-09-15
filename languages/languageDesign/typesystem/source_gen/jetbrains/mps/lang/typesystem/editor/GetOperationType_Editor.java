@@ -89,7 +89,7 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }
@@ -132,7 +132,7 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftOperandType" + ">";
+      return "<no leftOperandType>";
     }
 
   }
@@ -175,7 +175,7 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rightOperandType" + ">";
+      return "<no rightOperandType>";
     }
 
   }

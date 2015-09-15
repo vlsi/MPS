@@ -75,7 +75,7 @@ public class MessageComponent implements ConceptEditorComponent {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "message" + ">";
+      return "<no message>";
     }
 
   }

@@ -41,6 +41,7 @@ import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -53,7 +54,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -213,19 +213,20 @@ public class CellExplorerView extends BaseProjectTool {
     }
 
     @Override
+    protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+      // myCurrentEditor could not be null, otherwise we won't get to CellTreeNode.init()
+      super.doInit(node, new ModelReadRunnable(myCurrentEditor.getEditorContext().getRepository().getModelAccess(), nodeInitRunnable));
+    }
+
+    @Override
     protected MPSTreeNode rebuild() {
       if (myCurrentEditor == null || myCurrentEditor.getRootCell() == null) {
-        return new TextTreeNode("No editor selected") {
-          {
-            setIcon(CellExplorer.CellExplorer);
-          }
-        };
+        TextTreeNode rv = new TextTreeNode("No editor selected");
+        rv.setIcon(CellExplorer.CellExplorer);
+        return rv;
       } else {
-        TextTreeNode root = new TextTreeNode("CELLS") {
-          {
-            setIcon(CellExplorer.CellExplorer);
-          }
-        };
+        TextTreeNode root = new TextTreeNode("CELLS");
+        root.setIcon(CellExplorer.CellExplorer);
         root.add(new CellTreeNode(myCurrentEditor.getRootCell()));
         return root;
       }
@@ -388,16 +389,9 @@ public class CellExplorerView extends BaseProjectTool {
           if (keyMapAction.getDescriptionText() != null && keyMapAction.getDescriptionText().length() != 0) {
             label += " (" + keyMapAction.getDescriptionText() + ")";
           }
-          add(new TextTreeNode(label) {
-            {
-              setIcon(CellExplorer.CellActionKey);
-            }
-
-            @Override
-            public boolean isLeaf() {
-              return true;
-            }
-          });
+          TextTreeNode n = new TextTreeNode(label);
+          n.setIcon(CellExplorer.CellActionKey);
+          add(n);
         }
       }
       setIcon(CellExplorer.CellKeyMap);

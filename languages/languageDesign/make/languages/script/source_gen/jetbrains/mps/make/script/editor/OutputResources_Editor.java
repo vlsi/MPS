@@ -69,7 +69,7 @@ public class OutputResources_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resource" + ">";
+      return "<no resource>";
     }
 
   }

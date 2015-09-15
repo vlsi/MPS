@@ -63,7 +63,7 @@ public class ConnectionEndBLQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "targetNode" + ">";
+      return "<no targetNode>";
     }
 
   }
@@ -107,7 +107,7 @@ public class ConnectionEndBLQuery_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pointID" + ">";
+      return "<no pointID>";
     }
 
   }

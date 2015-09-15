@@ -74,7 +74,7 @@ public class NavigatableNodeStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "functionNode" + ">";
+      return "<no functionNode>";
     }
 
   }

@@ -110,7 +110,7 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
     }
 
     protected String getNoTargetText() {
-      return "<no " + "container" + ">";
+      return "<no container>";
     }
 
   }

@@ -333,7 +333,7 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "objectGetter" + ">";
+      return "<no objectGetter>";
     }
 
   }

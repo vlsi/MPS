@@ -80,7 +80,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "amount" + ">";
+      return "<no amount>";
     }
 
   }
@@ -120,7 +120,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "currency" + ">";
+      return "<no currency>";
     }
 
   }

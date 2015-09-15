@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import javax.swing.JComponent;
 import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class ExecutionTool extends MultiTuple._3<JComponent, ProcessListener, _FunctionTypes._void_P0_E0> {
   public ExecutionTool() {
@@ -32,9 +31,5 @@ public class ExecutionTool extends MultiTuple._3<JComponent, ProcessListener, _F
   }
   public _FunctionTypes._void_P0_E0 dispose() {
     return super._2();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public ExecutionTool assignFrom(Tuples._3<JComponent, ProcessListener, _FunctionTypes._void_P0_E0> from) {
-    return (ExecutionTool) super.assign(from);
   }
 }

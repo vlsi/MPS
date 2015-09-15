@@ -403,7 +403,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       if (d instanceof ModuleData) {
         SetSequence.fromSet(extracted).addElement((ModuleData) d);
       } else if (d instanceof NamespaceData) {
-        // <node> 
       }
     }
   }

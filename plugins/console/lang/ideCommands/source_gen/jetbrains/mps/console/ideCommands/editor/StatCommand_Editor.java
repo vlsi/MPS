@@ -61,7 +61,7 @@ public class StatCommand_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "target" + ">";
+      return "<no target>";
     }
 
   }

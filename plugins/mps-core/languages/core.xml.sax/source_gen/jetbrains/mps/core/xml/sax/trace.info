@@ -3,7 +3,7 @@
   <root>
     <file name="Language.java">
       <unit at="52,21,52,56" name="jetbrains.mps.core.xml.sax.Language$1" />
-      <unit at="24,0,77,0" name="jetbrains.mps.core.xml.sax.Language" />
+      <unit at="24,0,75,0" name="jetbrains.mps.core.xml.sax.Language" />
     </file>
   </root>
 </debug-info>

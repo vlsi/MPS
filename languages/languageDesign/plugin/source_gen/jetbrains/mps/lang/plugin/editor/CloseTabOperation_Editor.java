@@ -89,7 +89,7 @@ public class CloseTabOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "componentExpression" + ">";
+      return "<no componentExpression>";
     }
 
   }

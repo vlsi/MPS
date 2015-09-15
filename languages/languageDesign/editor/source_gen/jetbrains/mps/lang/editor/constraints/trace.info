@@ -15,7 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,95,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,98,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104840151">
@@ -1053,6 +1053,49 @@
       <unit id="4510086454767559154" at="39,19,51,9" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$2" />
       <unit id="4510086454767559154" at="31,128,53,5" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$1" />
       <unit id="4510086454767559154" at="24,0,58,0" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/5374238436954737026">
+    <file name="CellModel_NextEditor_Constraints.java">
+      <node id="5374238436954737026" at="16,45,17,98" concept="12" />
+      <node id="5374238436954737026" at="20,43,21,16" concept="7" />
+      <node id="5374238436954737026" at="24,200,25,96" concept="6" />
+      <node id="5374238436954737026" at="25,96,26,0" concept="9" />
+      <node id="5374238436954737026" at="27,51,28,67" concept="2" />
+      <node id="5374238436954737026" at="29,5,30,0" concept="9" />
+      <node id="5374238436954737026" at="30,0,31,18" concept="7" />
+      <node id="5374238436954737649" at="33,148,34,445" concept="7" />
+      <node id="5374238436954737026" at="36,0,37,0" concept="10" trace="canBeChildBreakingPoint" />
+      <node id="5374238436954737026" at="16,0,19,0" concept="1" trace="CellModel_NextEditor_Constraints#()V" />
+      <node id="5374238436954737026" at="26,0,29,5" concept="4" />
+      <node id="5374238436954737026" at="33,0,36,0" concept="11" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="5374238436954737026" at="19,0,23,0" concept="5" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="5374238436954737026" at="23,0,33,0" concept="5" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="5374238436954737026" at="16,45,17,98" />
+      <scope id="5374238436954737026" at="20,43,21,16" />
+      <scope id="5374238436954737026" at="27,51,28,67" />
+      <scope id="5374238436954737028" at="33,148,34,445" />
+      <scope id="5374238436954737026" at="16,0,19,0" />
+      <scope id="5374238436954737026" at="33,0,36,0">
+        <var name="childConcept" id="5374238436954737026" />
+        <var name="link" id="5374238436954737026" />
+        <var name="node" id="5374238436954737026" />
+        <var name="operationContext" id="5374238436954737026" />
+        <var name="parentNode" id="5374238436954737026" />
+      </scope>
+      <scope id="5374238436954737026" at="19,0,23,0" />
+      <scope id="5374238436954737026" at="24,200,31,18">
+        <var name="result" id="5374238436954737026" />
+      </scope>
+      <scope id="5374238436954737026" at="23,0,33,0">
+        <var name="checkingNodeContext" id="5374238436954737026" />
+        <var name="childConcept" id="5374238436954737026" />
+        <var name="link" id="5374238436954737026" />
+        <var name="node" id="5374238436954737026" />
+        <var name="operationContext" id="5374238436954737026" />
+        <var name="parentNode" id="5374238436954737026" />
+      </scope>
+      <unit id="5374238436954737026" at="15,0,38,0" name="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/5944657839017577715">

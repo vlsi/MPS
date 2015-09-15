@@ -498,7 +498,7 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "actions" + ">";
+      return "<no actions>";
     }
 
   }

@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" file="RuleOperandEditor.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.EventObject" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JTable" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="javax.swing.event.ChangeEvent" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.EditOperandDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
-    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="com.intellij.util.ui.AbstractTableCellEditor" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" file="RuleTypeEditor.java">
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.awt.event.KeyListener" />

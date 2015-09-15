@@ -75,7 +75,7 @@ public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "exceptionType" + ">";
+      return "<no exceptionType>";
     }
 
   }

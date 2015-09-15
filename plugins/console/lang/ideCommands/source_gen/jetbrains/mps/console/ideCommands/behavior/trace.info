@@ -28,7 +28,7 @@
       <unit at="8,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,60,0" name="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,62,0" name="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CallActionExpression_BehaviorDescriptor.java">
       <unit at="11,0,40,0" name="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
@@ -80,6 +80,9 @@
     </file>
     <file name="ShowBrokenReferences_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
+    </file>
+    <file name="ShowExpression_BehaviorDescriptor.java">
+      <unit at="11,0,40,0" name="jetbrains.mps.console.ideCommands.behavior.ShowExpression_BehaviorDescriptor" />
     </file>
     <file name="ShowGenPlan_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
@@ -363,6 +366,28 @@
       <unit id="3894227536043377004" at="34,19,78,9" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_Behavior$2" />
       <unit id="3894227536043377004" at="32,50,80,5" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_Behavior$1" />
       <unit id="3894227536041893272" at="25,0,112,0" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/4225915845891288151">
+    <file name="ShowExpression_Behavior.java">
+      <node id="4225915845891288167" at="11,100,12,16" concept="10" />
+      <node id="7006261637496577698" at="14,94,15,87" concept="10" />
+      <node id="4225915845891288151" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4225915845891288151" at="11,0,14,0" concept="12" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="4225915845891288151" at="14,0,17,0" concept="12" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="4225915845891288153" at="9,43,9,43" />
+      <scope id="4225915845891288157" at="11,100,12,16" />
+      <scope id="7006261637496568945" at="14,94,15,87" />
+      <scope id="4225915845891288151" at="9,0,11,0">
+        <var name="thisNode" id="4225915845891288151" />
+      </scope>
+      <scope id="4225915845891288151" at="11,0,14,0">
+        <var name="thisConcept" id="4225915845891288151" />
+      </scope>
+      <scope id="4225915845891288151" at="14,0,17,0">
+        <var name="thisConcept" id="4225915845891288151" />
+      </scope>
+      <unit id="4225915845891288151" at="8,0,18,0" name="jetbrains.mps.console.ideCommands.behavior.ShowExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5207260697411458160">

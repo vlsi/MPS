@@ -61,7 +61,7 @@ public class ShowBrokenReferences_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "target" + ">";
+      return "<no target>";
     }
 
   }

@@ -70,7 +70,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "throwable" + ">";
+      return "<no throwable>";
     }
 
   }

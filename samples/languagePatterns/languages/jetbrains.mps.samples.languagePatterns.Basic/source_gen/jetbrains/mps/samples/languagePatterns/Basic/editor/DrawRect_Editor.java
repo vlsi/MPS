@@ -74,7 +74,7 @@ public class DrawRect_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "lineStyle" + ">";
+      return "<no lineStyle>";
     }
 
   }

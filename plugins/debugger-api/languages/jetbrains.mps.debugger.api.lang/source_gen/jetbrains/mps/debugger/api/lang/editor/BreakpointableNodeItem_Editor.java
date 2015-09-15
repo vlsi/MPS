@@ -179,7 +179,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isApplicable" + ">";
+      return "<no isApplicable>";
     }
 
   }
@@ -243,7 +243,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isApplicableBreakpoint" + ">";
+      return "<no isApplicableBreakpoint>";
     }
 
   }
@@ -297,7 +297,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "createBreakpoint" + ">";
+      return "<no createBreakpoint>";
     }
 
   }

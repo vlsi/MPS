@@ -93,7 +93,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementType" + ">";
+      return "<no elementType>";
     }
 
   }
@@ -285,7 +285,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementType" + ">";
+      return "<no elementType>";
     }
 
   }

@@ -83,7 +83,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementType" + ">";
+      return "<no elementType>";
     }
 
   }

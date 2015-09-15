@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Map;
@@ -29,6 +30,10 @@ import java.util.Map;
  * This class is for creating temporary models.
  * This is useful when one wants to write some code for further passing it to IDE instead of storing as source code.
  * Temporary models should not be shown in project tree, find usages dialog, hierarchy view and all other views
+ * <p/>
+ * Temporary model is {@link org.jetbrains.mps.openapi.model.EditableSModel}, could be modified, and dispatches change
+ * notifications. It's not possible to save temporary model as its data source is void.
+ * For the time being, there's a hack that the model doesn't report its changed state {@link EditableSModel#isChanged()}.
  */
 public class TemporaryModels {
   private static TemporaryModels ourInstance = new TemporaryModels();

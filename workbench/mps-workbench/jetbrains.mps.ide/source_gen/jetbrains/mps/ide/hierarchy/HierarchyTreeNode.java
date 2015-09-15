@@ -21,6 +21,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     myNodeRef = declaration.getReference();
     myHierarchyTree = tree;
     setNodeIdentifier(calculateNodeIdentifier());
+    setToggleClickCount(-1);
   }
   @Override
   protected void doUpdatePresentation() {
@@ -47,10 +48,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
 
     return model.getReference().getModelName();
   }
-  @Override
-  public int getToggleClickCount() {
-    return -1;
-  }
   public SNode getNode() {
     return myNode;
   }
@@ -70,15 +67,5 @@ public class HierarchyTreeNode extends MPSTreeNode {
       name = getNode().getName();
     }
     return (name == null ? "no name" : name);
-  }
-  @Override
-  public void doubleClick() {
-    if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
-      return;
-    }
-    AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView != null) {
-      hierarchyView.openNode(myNodeRef);
-    }
   }
 }

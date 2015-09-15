@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,12,0" name="jetbrains.mps.baseLanguage.logging.DFABuilders" />
+    </file>
     <file name="Language.java">
       <unit at="53,21,53,56" name="jetbrains.mps.baseLanguage.logging.Language$1" />
       <unit at="59,21,59,58" name="jetbrains.mps.baseLanguage.logging.Language$2" />
-      <unit at="25,0,78,0" name="jetbrains.mps.baseLanguage.logging.Language" />
+      <unit at="25,0,76,0" name="jetbrains.mps.baseLanguage.logging.Language" />
     </file>
   </root>
 </debug-info>

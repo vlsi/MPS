@@ -62,7 +62,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expr" + ">";
+      return "<no expr>";
     }
 
   }
@@ -105,7 +105,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "regexp" + ">";
+      return "<no regexp>";
     }
 
   }

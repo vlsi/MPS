@@ -76,7 +76,7 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "insertedNode" + ">";
+      return "<no insertedNode>";
     }
 
   }

@@ -11,7 +11,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor" file="Flow_Editor.java">
     <classNode dependClassName="java.awt.Color" />

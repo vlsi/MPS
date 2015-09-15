@@ -84,7 +84,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "path" + ">";
+      return "<no path>";
     }
 
   }
@@ -140,7 +140,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "customLocation" + ">";
+      return "<no customLocation>";
     }
 
   }

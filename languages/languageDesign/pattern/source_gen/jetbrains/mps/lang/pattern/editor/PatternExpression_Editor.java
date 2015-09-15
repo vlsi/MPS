@@ -83,7 +83,7 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "patternNode" + ">";
+      return "<no patternNode>";
     }
 
   }

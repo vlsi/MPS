@@ -58,7 +58,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,476,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,478,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
       <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
@@ -302,6 +302,9 @@
     </file>
     <file name="CellModel_ModelAccess_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_BehaviorDescriptor" />
+    </file>
+    <file name="CellModel_NextEditor_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.editor.behavior.CellModel_NextEditor_BehaviorDescriptor" />
     </file>
     <file name="CellModel_NonEmptyProperty_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_BehaviorDescriptor" />
@@ -5340,6 +5343,22 @@
       </scope>
       <scope id="5452844340287051363" at="16,0,22,0" />
       <unit id="5452844340287051360" at="10,0,23,0" name="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_oldText_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/5741364803064633505">
+    <file name="CellModel_NextEditor_Behavior.java">
+      <node id="5741364803064633916" at="10,83,11,16" concept="12" />
+      <node id="5741364803064633505" at="8,0,10,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5741364803064633505" at="10,0,13,0" concept="15" trace="virtual_isCellIdInitialized_1229948571177#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="5741364803064633507" at="8,43,8,43" />
+      <scope id="5741364803064633514" at="10,83,11,16" />
+      <scope id="5741364803064633505" at="8,0,10,0">
+        <var name="thisNode" id="5741364803064633505" />
+      </scope>
+      <scope id="5741364803064633505" at="10,0,13,0">
+        <var name="thisNode" id="5741364803064633505" />
+      </scope>
+      <unit id="5741364803064633505" at="7,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_NextEditor_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/5944657839039098923">

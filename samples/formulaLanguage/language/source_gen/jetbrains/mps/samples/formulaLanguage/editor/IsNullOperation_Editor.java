@@ -68,7 +68,7 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftOperand" + ">";
+      return "<no leftOperand>";
     }
 
   }

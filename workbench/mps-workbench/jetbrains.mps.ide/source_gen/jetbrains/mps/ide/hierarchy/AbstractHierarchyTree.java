@@ -4,9 +4,14 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+import javax.swing.Icon;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
@@ -14,8 +19,7 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import java.util.HashSet;
-import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -24,22 +28,48 @@ import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class AbstractHierarchyTree extends MPSTree {
-  protected AbstractHierarchyView myHierarchyView;
-  protected SNode myHierarchyNode;
-  protected String myConceptFqName;
+  private AbstractHierarchyView myHierarchyView;
+  private SNode myHierarchyNode;
   protected boolean myIsParentHierarchy;
   protected boolean myOnlyInOneModel;
   protected boolean myShowGeneratorModels;
-  public AbstractHierarchyTree(AbstractHierarchyView hierarchyView, String aConceptFqName, boolean isParentHierarchy) {
-    myHierarchyView = hierarchyView;
-    myConceptFqName = aConceptFqName;
-    myIsParentHierarchy = isParentHierarchy;
+  private final SRepository myRepostitory;
+  private HierarchyTreeNode myTreeNode;
+
+  public AbstractHierarchyTree(SRepository repostitory) {
+    myRepostitory = repostitory;
+  }
+
+  /**
+   * Tree shall not depend on hierarchy view, and all uses of myHierarchyView/getHierarchyView() shall get refactored and removed.
+   */
+  public void setHierarchyView(AbstractHierarchyView hv) {
+    myHierarchyView = hv;
+  }
+
+  /**
+   * Change text and icon of current root, if any. Only reasonable use is part of tree rebuild
+   */
+  public void setRootNodeText(String text, Icon icon) {
+    if (getRootNode() instanceof TextTreeNode) {
+      TextTreeNode rv = ((TextTreeNode) getRootNode());
+      rv.setText(text);
+      rv.setIcon(icon);
+      if (getModel() instanceof DefaultTreeModel) {
+        ((DefaultTreeModel) getModel()).nodeChanged(rv);
+      }
+    }
   }
 
   @Nullable
   public AbstractHierarchyView getHierarchyView() {
     return myHierarchyView;
   }
+
+  public void setHierarchyNode(SNode modelNode) {
+    myHierarchyNode = modelNode;
+  }
+
   public boolean overridesNodeIdentifierCalculation() {
     return false;
   }
@@ -72,12 +102,18 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       rebuildNow();
     }
   }
+
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable runnable) {
+    super.doInit(node, new ModelReadRunnable(myRepostitory.getModelAccess(), runnable));
+  }
+
   @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
-      return new AbstractHierarchyTree.RootTextTreeNode(noNodeString());
+      return new TextTreeNode(noNodeString());
     }
-    return ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
+    return new ModelAccessHelper(myRepostitory.getModelAccess()).runReadAction(new Computable<MPSTreeNode>() {
       @Override
       public MPSTreeNode compute() {
         return rebuildParentHierarchy();
@@ -162,30 +198,31 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       }
       parentTreeNode = hierarchyTreeNode;
     }
-    String text = "Hierarchy";
-    if (myHierarchyView != null) {
-      myHierarchyView.myTreeNode = hierarchyTreeNode;
-      assert myHierarchyView.myTreeNode != null;
-      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyView.myTreeNode.calculateNodeIdentifier()) + "</b></font>";
+    myTreeNode = hierarchyTreeNode;
+    MPSTreeNode topRootNode = new TextTreeNode("Hierarchy");
+    topRootNode.add(rootNode);
+    return topRootNode;
+  }
+
+  /*package*/ HierarchyTreeNode getActiveTreeNode() {
+    // I've got no idea what's the need behind this, and 'active' is just a quess here. 
+    // I merely moved this field from HierarchyView, where it's read, here, where it's modified. 
+    return myTreeNode;
+  }
+
+  @Override
+  protected void doubleClick(@NotNull MPSTreeNode node) {
+    if (node instanceof HierarchyTreeNode && myHierarchyView != null) {
+      myHierarchyView.openNode(((HierarchyTreeNode) node).getNodeReference());
+    } else {
+      super.doubleClick(node);
     }
-    TextTreeNode textRootNode = new AbstractHierarchyTree.RootTextTreeNode(text);
-    textRootNode.add(rootNode);
-    return textRootNode;
   }
-  public boolean doubleClick(HierarchyTreeNode hierarchyTreeNode) {
-    return false;
-  }
+
   private boolean isInGeneratorModel(SNode n) {
     return SNodeOperations.getModel(n) != null && SModelStereotype.isGeneratorModel(SNodeOperations.getModel(n));
   }
-  protected class RootTextTreeNode extends TextTreeNode {
-    public RootTextTreeNode(String s) {
-      super(s);
-      if (myHierarchyView != null) {
-        setIcon(myHierarchyView.getIcon());
-      }
-    }
-  }
+
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
     if (!(treeNode instanceof HierarchyTreeNode)) {

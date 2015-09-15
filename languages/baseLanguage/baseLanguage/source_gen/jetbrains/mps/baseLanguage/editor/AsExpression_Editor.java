@@ -60,7 +60,7 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -112,7 +112,7 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "classifierType" + ">";
+      return "<no classifierType>";
     }
 
   }

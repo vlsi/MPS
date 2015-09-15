@@ -203,7 +203,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "matrix" + ">";
+      return "<no matrix>";
     }
 
   }
@@ -265,7 +265,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "vector" + ">";
+      return "<no vector>";
     }
 
   }

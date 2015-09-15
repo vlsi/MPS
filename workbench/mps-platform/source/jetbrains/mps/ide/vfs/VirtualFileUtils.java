@@ -16,9 +16,10 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VFileProperty;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import com.intellij.util.Processor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -53,13 +54,13 @@ public class VirtualFileUtils {
   }
 
   public static void refreshSynchronouslyRecursively(VirtualFile file) {
-    if (file.is(VFileProperty.SPECIAL) || file.is(VFileProperty.SYMLINK)) {
-      return;
-    }
-    file.refresh(false, false);
-    for (VirtualFile child : file.getChildren()) {
-      refreshSynchronouslyRecursively(child);
-    }
+    VfsUtilCore.processFilesRecursively(file, new Processor<VirtualFile>() {
+      @Override
+      public boolean process(VirtualFile virtualFile) {
+        virtualFile.refresh(false, false);
+        return true;
+      }
+    });
   }
 
   /**

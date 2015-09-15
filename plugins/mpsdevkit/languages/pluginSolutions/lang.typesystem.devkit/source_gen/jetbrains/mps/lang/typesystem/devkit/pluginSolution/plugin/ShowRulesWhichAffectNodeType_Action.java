@@ -11,13 +11,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.typesystem.uiActions.AffectingRulesFinder;
@@ -54,6 +53,13 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
@@ -61,7 +67,7 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
     final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SearchScope scope = ((AbstractModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getModule()).getScope();
+        SearchScope scope = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getScope();
         query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), scope);
       }
     });

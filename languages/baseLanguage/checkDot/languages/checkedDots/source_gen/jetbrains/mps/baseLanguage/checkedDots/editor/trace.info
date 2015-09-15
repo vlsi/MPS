@@ -41,7 +41,7 @@
       <node id="4079382982702596668" at="61,54,62,44" concept="2" />
       <node id="4079382982702596668" at="62,44,63,40" concept="2" />
       <node id="4079382982702596668" at="63,40,64,24" concept="7" />
-      <node id="4079382982702596668" at="67,40,68,38" concept="7" />
+      <node id="4079382982702596668" at="67,40,68,28" concept="7" />
       <node id="4079382982702596672" at="72,88,73,88" concept="6" />
       <node id="4079382982702596672" at="73,88,74,47" concept="2" />
       <node id="4079382982702596672" at="74,47,75,34" concept="6" />
@@ -65,7 +65,7 @@
       <node id="4079382982702596668" at="110,54,111,46" concept="2" />
       <node id="4079382982702596668" at="111,46,112,40" concept="2" />
       <node id="4079382982702596668" at="112,40,113,24" concept="7" />
-      <node id="4079382982702596668" at="116,40,117,40" concept="7" />
+      <node id="4079382982702596668" at="116,40,117,30" concept="7" />
       <node id="4079382982702596668" at="25,0,28,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4079382982702596668" at="43,0,46,0" concept="1" trace="operandSingleRoleHandler_6ihim1_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4079382982702596668" at="52,137,55,7" concept="4" />
@@ -90,11 +90,11 @@
       <scope id="4079382982702596668" at="34,81,35,80" />
       <scope id="4079382982702596668" at="43,121,44,49" />
       <scope id="4079382982702596668" at="53,41,54,38" />
-      <scope id="4079382982702596668" at="67,40,68,38" />
+      <scope id="4079382982702596668" at="67,40,68,28" />
       <scope id="4079382982702596668" at="88,123,89,49" />
       <scope id="4079382982702596668" at="98,41,99,40" />
       <scope id="4079382982702596668" at="101,17,102,98" />
-      <scope id="4079382982702596668" at="116,40,117,40" />
+      <scope id="4079382982702596668" at="116,40,117,30" />
       <scope id="4079382982702596668" at="38,87,40,33">
         <var name="provider" id="4079382982702596668" />
       </scope>

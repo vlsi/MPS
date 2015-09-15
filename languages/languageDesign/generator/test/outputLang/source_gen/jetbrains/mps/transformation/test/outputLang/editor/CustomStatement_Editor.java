@@ -91,7 +91,7 @@ public class CustomStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inner" + ">";
+      return "<no inner>";
     }
 
   }

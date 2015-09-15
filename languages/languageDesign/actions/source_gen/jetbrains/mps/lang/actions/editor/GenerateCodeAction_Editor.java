@@ -129,7 +129,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isApplicable" + ">";
+      return "<no isApplicable>";
     }
 
   }
@@ -232,7 +232,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "getActionUI" + ">";
+      return "<no getActionUI>";
     }
 
   }
@@ -281,7 +281,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "executeSmartAction" + ">";
+      return "<no executeSmartAction>";
     }
 
   }

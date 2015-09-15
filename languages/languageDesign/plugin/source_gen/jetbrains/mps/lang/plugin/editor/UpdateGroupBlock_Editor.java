@@ -59,7 +59,7 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "updateFunction" + ">";
+      return "<no updateFunction>";
     }
 
   }

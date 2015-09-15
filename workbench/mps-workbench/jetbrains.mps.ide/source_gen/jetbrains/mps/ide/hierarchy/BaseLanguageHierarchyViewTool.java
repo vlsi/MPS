@@ -4,6 +4,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
@@ -22,13 +23,15 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
   }
   @Override
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree tree = new BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree(this, "jetbrains.mps.baseLanguage.structure.Classifier", isParentHierarchy);
+    BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree tree = new BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree(getMPSProject().getRepository(), isParentHierarchy);
+    tree.setHierarchyView(this);
     TreeHighlighterExtension.attachHighlighters(tree, getProject());
     return tree;
   }
   private static class BaseLanguageHierarchyTree extends AbstractHierarchyTree {
-    public BaseLanguageHierarchyTree(AbstractHierarchyView abstractHierarchyView, String aClass, boolean isParentHierarchy) {
-      super(abstractHierarchyView, aClass, isParentHierarchy);
+    private BaseLanguageHierarchyTree(SRepository repo, boolean isParentHierarchy) {
+      super(repo);
+      setParentHierarchy(isParentHierarchy);
     }
     @Override
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {

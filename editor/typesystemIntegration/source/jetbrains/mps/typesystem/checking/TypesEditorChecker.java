@@ -31,7 +31,8 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
   private static final Logger LOG = LogManager.getLogger(TypesEditorChecker.class);
 
   @Override
-  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages, Cancellable cancellable) {
+  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode,
+      final Set<EditorMessage> messages, Cancellable cancellable, final boolean applyQuickFixes) {
     if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
 
     ((IncrementalTypecheckingContext)context).runTypeCheckingAction(new Runnable() {
@@ -50,7 +51,7 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages, true);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, true, applyQuickFixes);
       }
     });
   }

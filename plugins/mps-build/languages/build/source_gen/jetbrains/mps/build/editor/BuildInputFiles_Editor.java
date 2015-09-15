@@ -110,7 +110,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dir" + ">";
+      return "<no dir>";
     }
 
   }

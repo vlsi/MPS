@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.typesystem.checking;
 
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Cancellable;
 import org.apache.log4j.LogManager;
@@ -42,7 +40,8 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
   }
 
   @Override
-  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages, final Cancellable cancellable) {
+  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode,
+      final Set<EditorMessage> messages, final Cancellable cancellable, final boolean applyQuickFixes) {
     if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
 
     if(cancellable.isCancelled()) {
@@ -70,7 +69,7 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages, false);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, false, applyQuickFixes);
       }
     });
   }

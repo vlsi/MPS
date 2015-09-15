@@ -70,7 +70,7 @@ public class LanguageDescriptor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "language" + ">";
+      return "<no language>";
     }
 
   }

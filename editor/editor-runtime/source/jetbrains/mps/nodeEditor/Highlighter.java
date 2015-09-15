@@ -47,12 +47,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -67,6 +69,7 @@ import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -374,15 +377,26 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return;
     }
 
+    List<Pair<EditorComponent, Boolean>> input = new ArrayList<Pair<EditorComponent, Boolean>>();
+    HashSet<SNodePointer> visited = new HashSet<SNodePointer>();
+    for (EditorComponent ecomp : allEditorComponents) {
+      SNodePointer pointer = new SNodePointer(ecomp.getNodeForTypechecking());
+      input.add(new Pair<EditorComponent, Boolean>(ecomp, !visited.contains(pointer)));
+      visited.add(pointer);
+    }
+
     final boolean[] isUpdated = {false};
-    for (final EditorComponent editorComponent : allEditorComponents) {
+    for (Pair<EditorComponent, Boolean> pair : input) {
+      final EditorComponent editorComponent = pair.o1;
+      final Boolean applyQuickFixes = pair.o2;
+
       if (myStopThread || myCancellable.isCancelled()) {
         return;
       }
       TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), new Runnable() {
         @Override
         public void run() {
-          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false, essentialOnly)) {
+          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false, essentialOnly, applyQuickFixes)) {
             isUpdated[0] = true;
           }
         }
@@ -398,7 +412,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       TypeContextManager.getInstance().runTypecheckingAction(myInspectorTool.getInspector().getTypecheckingContextOwner(), new Runnable() {
         @Override
         public void run() {
-          updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly);
+          updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly, false);
         }
       });
     }
@@ -447,7 +461,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers,
-      final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly) {
+      final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly, final boolean applyQuickFixes) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -490,7 +504,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           myCheckedOnceEditors.add(component);
         }
 
-        return updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages);
+        return updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages, applyQuickFixes);
       }
     });
   }
@@ -528,7 +542,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce,
-      List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
+      List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
     if (editor == null || editor.getRootCell() == null) return false;
 
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
@@ -553,7 +567,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             IOperationContext operationContext = editor.getOperationContext();
             if (operationContext.isValid()) {
               try {
-                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable));
+                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable, applyQuickFixes));
                 return checker.areMessagesChangedProtected();
               } catch (IndexNotReadyException ex) {
                 highlightManager.clearForOwner(checker, true);

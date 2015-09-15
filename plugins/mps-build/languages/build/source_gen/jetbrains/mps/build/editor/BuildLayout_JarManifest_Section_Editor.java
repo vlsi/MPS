@@ -80,7 +80,7 @@ public class BuildLayout_JarManifest_Section_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "name" + ">";
+      return "<no name>";
     }
 
   }

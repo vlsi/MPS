@@ -27,7 +27,7 @@ public class RenameModule_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule;
+    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule && !(((SModule) MapSequence.fromMap(_params).get("module")).isPackaged()) && !(((SModule) MapSequence.fromMap(_params).get("module")).isReadOnly());
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

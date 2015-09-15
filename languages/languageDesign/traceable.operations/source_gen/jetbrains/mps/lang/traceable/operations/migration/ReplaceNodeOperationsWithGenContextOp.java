@@ -59,7 +59,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_operand"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_operand"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }
@@ -92,7 +92,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_args"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_args"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }
@@ -116,28 +116,28 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_q6klpg_a0a0a0f = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression").equals(nodeToMatch_q6klpg_a0a0a0f.getConcept()))) {
+        SNode nodeToMatch_q6klpg_a0a0f = nodeToMatch;
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression").equals(nodeToMatch_q6klpg_a0a0f.getConcept()))) {
           return false;
         }
         {
           SContainmentLink childRole_q6klpg_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0a0a0f, childRole_q6klpg_, 1))) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0a0f, childRole_q6klpg_, 1))) {
             return false;
           }
           {
-            SNode childVar_q6klpg_a0a0a0a5 = IterableUtil.get(nodeToMatch_q6klpg_a0a0a0f.getChildren(childRole_q6klpg_), 0);
-            this.patternVar_operand = childVar_q6klpg_a0a0a0a5;
+            SNode childVar_q6klpg_a0a0a5 = IterableUtil.get(nodeToMatch_q6klpg_a0a0f.getChildren(childRole_q6klpg_), 0);
+            this.patternVar_operand = childVar_q6klpg_a0a0a5;
           }
         }
         {
           SContainmentLink childRole_q6klpg__0 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0a0a0f, childRole_q6klpg__0, 1))) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0a0f, childRole_q6klpg__0, 1))) {
             return false;
           }
           {
-            SNode childVar_q6klpg_a0a0a0a5_0 = IterableUtil.get(nodeToMatch_q6klpg_a0a0a0f.getChildren(childRole_q6klpg__0), 0);
-            this.patternVar_operation = childVar_q6klpg_a0a0a0a5_0;
+            SNode childVar_q6klpg_a0a0a5_0 = IterableUtil.get(nodeToMatch_q6klpg_a0a0f.getChildren(childRole_q6klpg__0), 0);
+            this.patternVar_operation = childVar_q6klpg_a0a0a5_0;
           }
         }
       }
@@ -173,18 +173,18 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_q6klpg_a0a0b0f = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation").equals(nodeToMatch_q6klpg_a0a0b0f.getConcept()))) {
+        SNode nodeToMatch_q6klpg_a0b0f = nodeToMatch;
+        if (!(MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation").equals(nodeToMatch_q6klpg_a0b0f.getConcept()))) {
           return false;
         }
         {
           SContainmentLink childRole_q6klpg__1 = MetaAdapterFactory.getContainmentLink(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, 0x242191b44da0af0cL, "argument");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0a0b0f, childRole_q6klpg__1, 1))) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_q6klpg_a0b0f, childRole_q6klpg__1, 1))) {
             return false;
           }
           {
-            SNode childVar_q6klpg_a0a0a1a5 = IterableUtil.get(nodeToMatch_q6klpg_a0a0b0f.getChildren(childRole_q6klpg__1), 0);
-            this.patternVar_args = childVar_q6klpg_a0a0a1a5;
+            SNode childVar_q6klpg_a0a1a5 = IterableUtil.get(nodeToMatch_q6klpg_a0b0f.getChildren(childRole_q6klpg__1), 0);
+            this.patternVar_args = childVar_q6klpg_a0a1a5;
           }
         }
       }
@@ -207,7 +207,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  private static SNode createDotExpression_q6klpg_a0a0a0a0f(Object p0) {
+  private static SNode createDotExpression_q6klpg_a0a0a0f(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     {
@@ -221,7 +221,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     }
     return n1;
   }
-  private static SNode createDotExpression_q6klpg_a0a0a0b0f(Object p0) {
+  private static SNode createDotExpression_q6klpg_a0a0b0f(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     {

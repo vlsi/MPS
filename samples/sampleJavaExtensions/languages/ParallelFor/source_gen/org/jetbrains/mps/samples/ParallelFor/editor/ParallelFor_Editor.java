@@ -103,7 +103,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "loopVariable" + ">";
+      return "<no loopVariable>";
     }
 
   }
@@ -146,7 +146,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "inputSequence" + ">";
+      return "<no inputSequence>";
     }
 
   }
@@ -206,7 +206,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "threadPool" + ">";
+      return "<no threadPool>";
     }
 
   }
@@ -272,7 +272,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

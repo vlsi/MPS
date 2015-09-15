@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -34,8 +35,7 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
       return;
     }
     final Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
-    // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
-    importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
+    importedLanguages.addAll(new SLanguageHierarchy(SModelOperations.getAllLanguageImports(SNodeOperations.getModel(root))).getExtended());
 
     // need to recurse the tree, to report missing language once per sub-tree (starting from the first node with missing language encountered) 
     // Iterative alternative would be more complicated, and there are no utility methods in the rules nor we support inner classes, hence the trick with Runnable 

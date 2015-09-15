@@ -37,6 +37,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.editor.resolver.EditorResolverComponent</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.ValidEditorDescriptorsCache</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

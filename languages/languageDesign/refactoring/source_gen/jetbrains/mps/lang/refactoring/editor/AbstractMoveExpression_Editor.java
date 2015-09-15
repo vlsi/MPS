@@ -70,7 +70,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "whatToMove" + ">";
+      return "<no whatToMove>";
     }
 
   }
@@ -113,7 +113,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "destination" + ">";
+      return "<no destination>";
     }
 
   }

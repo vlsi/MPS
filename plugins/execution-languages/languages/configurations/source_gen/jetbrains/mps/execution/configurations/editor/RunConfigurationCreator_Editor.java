@@ -194,7 +194,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "configurationName" + ">";
+      return "<no configurationName>";
     }
 
   }

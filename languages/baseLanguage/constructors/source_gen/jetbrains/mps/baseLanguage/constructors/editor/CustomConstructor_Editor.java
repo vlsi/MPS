@@ -156,7 +156,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "arguments" + ">";
+      return "<no arguments>";
     }
 
   }
@@ -215,7 +215,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "returnType" + ">";
+      return "<no returnType>";
     }
 
   }

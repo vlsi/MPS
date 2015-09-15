@@ -94,7 +94,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromIndex" + ">";
+      return "<no fromIndex>";
     }
 
   }
@@ -138,7 +138,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "upToIndex" + ">";
+      return "<no upToIndex>";
     }
 
   }

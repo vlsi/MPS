@@ -73,7 +73,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "base" + ">";
+      return "<no base>";
     }
 
   }
@@ -111,7 +111,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "exponent" + ">";
+      return "<no exponent>";
     }
 
   }

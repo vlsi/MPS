@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class NodesDescriptor extends MultiTuple._2<SAbstractConcept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> {
   public NodesDescriptor() {
@@ -26,9 +25,5 @@ public class NodesDescriptor extends MultiTuple._2<SAbstractConcept, _FunctionTy
   }
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> filter() {
     return super._1();
-  }
-  @SuppressWarnings(value = "unchecked")
-  public NodesDescriptor assignFrom(Tuples._2<SAbstractConcept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> from) {
-    return (NodesDescriptor) super.assign(from);
   }
 }

@@ -95,7 +95,7 @@ public class FoldLeftOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "seed" + ">";
+      return "<no seed>";
     }
 
   }
@@ -141,7 +141,7 @@ public class FoldLeftOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "comb" + ">";
+      return "<no comb>";
     }
 
   }

@@ -24,7 +24,6 @@ public class NamedBoxFigure extends BoxFigure {
   }
   public NamedBoxFigure(NamedBoxFigure.NamedBoxFigureMapperFactory factory) {
     CellView cellView = new CellView();
-    // <node> 
     myCell.textColor().set(Color.GRAY);
     myCell.text().set("<<No text>>");
     cellView.cell.set(myCell);
@@ -53,7 +52,8 @@ public class NamedBoxFigure extends BoxFigure {
         private Registration myRegistration;
         public void set(Boolean editable) {
           if (editable) {
-            myRegistration = getSource().myCell.addTrait(TextEditing.textEditing());
+            NamedBoxFigure source = getSource();
+            myRegistration = source.myCell.addTrait(TextEditing.textEditing());
           } else if (myRegistration != null) {
             myRegistration.remove();
             myRegistration = null;

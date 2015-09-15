@@ -116,13 +116,14 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ProjectStatisticsTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowBrokenReferences_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowGenPlan_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.StatCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.SubtreeStatisticsTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.editor.GlobalStatisticTarget_Editor" file="GlobalStatisticTarget_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -260,6 +261,21 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.editor.ShowBrokenReferences_Editor" file="ShowBrokenReferences_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.editor.ShowExpression_Editor" file="ShowExpression_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />

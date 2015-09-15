@@ -12,23 +12,23 @@
     </file>
   </root>
   <root nodeRef="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)/6905339732004138486">
-    <file name="Extension_GeneratorCache6905339732004138486_.java">
-      <node id="6905339732004138486" at="11,57,12,52" concept="5" />
+    <file name="Extension_GeneratorCache_.java">
+      <node id="6905339732004138486" at="11,38,12,52" concept="5" />
       <node id="1162302692985202025" at="15,54,16,18" concept="3" />
       <node id="8181622299284464455" at="18,59,19,120" concept="4" />
       <node id="8181622299284464193" at="19,120,20,18" concept="3" />
       <node id="6905339732004138985" at="21,5,22,60" concept="3" />
-      <node id="6905339732004138486" at="11,0,14,0" concept="0" trace="Extension_GeneratorCache6905339732004138486_#()V" />
+      <node id="6905339732004138486" at="11,0,14,0" concept="0" trace="Extension_GeneratorCache_#()V" />
       <node id="1162302692985198019" at="14,41,17,5" concept="1" />
       <node id="8181622299284447810" at="17,5,21,5" concept="1" />
       <node id="6905339732004138486" at="14,0,24,0" concept="2" trace="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
-      <scope id="6905339732004138486" at="11,57,12,52" />
+      <scope id="6905339732004138486" at="11,38,12,52" />
       <scope id="1162302692985198020" at="15,54,16,18" />
       <scope id="8181622299284447813" at="18,59,20,18" />
       <scope id="6905339732004138486" at="11,0,14,0" />
       <scope id="6905339732004138486" at="14,41,22,60" />
       <scope id="6905339732004138486" at="14,0,24,0" />
-      <unit id="6905339732004138486" at="10,0,25,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
+      <unit id="6905339732004138486" at="10,0,25,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" />
     </file>
   </root>
 </debug-info>

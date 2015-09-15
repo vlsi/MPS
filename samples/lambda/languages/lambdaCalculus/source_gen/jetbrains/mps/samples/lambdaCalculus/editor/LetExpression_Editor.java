@@ -68,7 +68,7 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "variable" + ">";
+      return "<no variable>";
     }
 
   }
@@ -108,7 +108,7 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "value" + ">";
+      return "<no value>";
     }
 
   }
@@ -148,7 +148,7 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }

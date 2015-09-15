@@ -208,7 +208,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "component" + ">";
+      return "<no component>";
     }
 
   }
@@ -405,7 +405,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resetBlock" + ">";
+      return "<no resetBlock>";
     }
 
   }
@@ -448,7 +448,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "commitBlock" + ">";
+      return "<no commitBlock>";
     }
 
   }
@@ -491,7 +491,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "isModifiedBlock" + ">";
+      return "<no isModifiedBlock>";
     }
 
   }

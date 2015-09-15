@@ -93,7 +93,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "elementsToSkip" + ">";
+      return "<no elementsToSkip>";
     }
 
   }

@@ -763,7 +763,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="node&lt;AbstractConceptDeclaration&gt;" />
-    <property role="TrG5h" value="SConceptType" />
+    <property role="TrG5h" value="ConceptNodeType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
     <property role="34LRSv" value="conceptNode&lt; &gt;" />
@@ -1832,7 +1832,9 @@
     </node>
   </node>
   <node concept="1TIwiD" id="59YAasRsvgM">
-    <property role="TrG5h" value="ConceptSwitchStatementCase" />
+    <property role="TrG5h" value="SubconceptCase" />
+    <property role="3GE5qa" value="conceptSwitch" />
+    <property role="34LRSv" value="subconcept of" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gVKbmvf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1846,6 +1848,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="PrWs8" id="5ffMBka$9Mp" role="PzmwI">
+      <ref role="PrY4T" node="5ffMBka$9Mm" resolve="IConceptSwitchCase" />
+    </node>
   </node>
   <node concept="1TIwiD" id="59YAasRsvgH">
     <property role="R5$K7" value="false" />
@@ -1853,6 +1858,7 @@
     <property role="TrG5h" value="ConceptSwitchStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="concept switch" />
+    <property role="3GE5qa" value="conceptSwitch" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="59YAasRsvgK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1864,7 +1870,12 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="case" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="59YAasRsvgM" resolve="ConceptSwitchStatementCase" />
+      <ref role="20lvS9" node="5ffMBka$9Mm" resolve="IConceptSwitchCase" />
+    </node>
+    <node concept="1TJgyj" id="5ffMBkaCcrg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="defaultBlock" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
   </node>
   <node concept="1TIwiD" id="1_vO5tEMrH9">
@@ -2042,7 +2053,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="concept type" />
-    <property role="TrG5h" value="SConceptTypeSConcept" />
+    <property role="TrG5h" value="SConceptType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
     <property role="34LRSv" value="concept&lt; &gt;" />
@@ -2149,6 +2160,38 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5ffMBka$9L$">
+    <property role="3GE5qa" value="conceptSwitch" />
+    <property role="TrG5h" value="ExactConceptCase" />
+    <property role="34LRSv" value="exact concept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5ffMBka$9NN" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gNgn60t" resolve="ConceptReference" />
+    </node>
+    <node concept="1TJgyj" id="5ffMBka$9NO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="5ffMBka$9Mn" role="PzmwI">
+      <ref role="PrY4T" node="5ffMBka$9Mm" resolve="IConceptSwitchCase" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5ffMBka$9Mm">
+    <property role="3GE5qa" value="conceptSwitch" />
+    <property role="TrG5h" value="IConceptSwitchCase" />
+  </node>
+  <node concept="1TIwiD" id="4o40NPkYE0z">
+    <property role="3GE5qa" value="operation.node" />
+    <property role="TrG5h" value="Node_PointerOperation" />
+    <property role="34LRSv" value="pointer" />
+    <property role="R4oN_" value="persistable pointer to a node" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
 </model>
 

@@ -6,7 +6,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import java.awt.Color;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,44 +28,39 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   }
   @Override
   protected void doInit() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          SNode node = (SNode) getUserObject();
-          List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
-          Collections.sort(descendants, new Comparator<SNode>() {
-            @Override
-            public int compare(SNode o1, SNode o2) {
-              return ("" + o1.getPresentation()).compareTo(o2.getPresentation());
-            }
-          });
-          Set<SNode> visited = new HashSet<SNode>(myVisited);
-          visited.add(node);
-          for (SNode descendant : descendants) {
-            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, myHierarchyTree, visited);
-            add(childHierarchyTreeNode);
-          }
-        } catch (CircularHierarchyException ex) {
-          SNode errorNode = (SNode) ex.getRepeatedObject();
-          final String message = ex.getMessage();
-          HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree) {
-            @Override
-            protected void doUpdatePresentation() {
-              super.doUpdatePresentation();
-              setIcon(Icons.ERROR_ICON);
-              setColor(Color.RED);
-            }
-            @Override
-            protected String calculateAdditionalText() {
-              return message;
-            }
-          };
-          add(errorTreeNode);
+    try {
+      SNode node = (SNode) getUserObject();
+      List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
+      Collections.sort(descendants, new Comparator<SNode>() {
+        @Override
+        public int compare(SNode o1, SNode o2) {
+          return ("" + o1.getPresentation()).compareTo(o2.getPresentation());
         }
-        myInitialized = true;
+      });
+      Set<SNode> visited = new HashSet<SNode>(myVisited);
+      visited.add(node);
+      for (SNode descendant : descendants) {
+        ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, myHierarchyTree, visited);
+        add(childHierarchyTreeNode);
       }
-    });
+    } catch (CircularHierarchyException ex) {
+      SNode errorNode = (SNode) ex.getRepeatedObject();
+      final String message = ex.getMessage();
+      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree) {
+        @Override
+        protected void doUpdatePresentation() {
+          super.doUpdatePresentation();
+          setIcon(Icons.ERROR_ICON);
+          setColor(Color.RED);
+        }
+        @Override
+        protected String calculateAdditionalText() {
+          return message;
+        }
+      };
+      add(errorTreeNode);
+    }
+    myInitialized = true;
   }
   @Override
   public boolean isLeaf() {
@@ -82,11 +76,9 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   }
   public String calculateText() {
     String name = super.toString();
-    AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView != null) {
-      if (this == hierarchyView.myTreeNode) {
-        name = StringUtil.escapeXml(name);
-      }
+    HierarchyTreeNode hierarchyNode = myHierarchyTree.getActiveTreeNode();
+    if (hierarchyNode == this) {
+      name = StringUtil.escapeXml(name);
     }
     return name;
   }

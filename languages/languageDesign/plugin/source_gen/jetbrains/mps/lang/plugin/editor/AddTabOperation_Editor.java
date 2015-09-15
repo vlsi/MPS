@@ -79,7 +79,7 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "tab" + ">";
+      return "<no tab>";
     }
 
   }

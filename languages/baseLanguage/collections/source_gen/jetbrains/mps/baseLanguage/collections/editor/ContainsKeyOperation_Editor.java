@@ -83,7 +83,7 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "key" + ">";
+      return "<no key>";
     }
 
   }

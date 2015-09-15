@@ -95,7 +95,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "containerName" + ">";
+      return "<no containerName>";
     }
 
   }

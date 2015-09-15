@@ -39,7 +39,7 @@ public class LanguageTableCellRenderer extends StateTableCellRenderer<UsedLangsT
 
   @Override
   protected Icon getIcon(UsedLangsTableModel.Import cellValue, UsedLangsTableModel.Import cellElement) {
-    return cellValue.myLanguage != null ? IdeIcons.PROJECT_LANGUAGE_ICON : IdeIcons.DEVKIT_ICON;
+    return cellValue.myLanguage != null ? IdeIcons.LANGUAGE_ICON : IdeIcons.DEVKIT_ICON;
   }
 
   @Override

@@ -63,7 +63,7 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "prolog" + ">";
+      return "<no prolog>";
     }
 
   }
@@ -97,7 +97,7 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rootElement" + ">";
+      return "<no rootElement>";
     }
 
   }

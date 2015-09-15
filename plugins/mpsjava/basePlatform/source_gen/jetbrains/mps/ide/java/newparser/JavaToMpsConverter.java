@@ -28,7 +28,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.extapi.model.EditableSModelBase;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -66,7 +66,6 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.FilePerRootModelPersistence;
 import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -147,7 +146,7 @@ public class JavaToMpsConverter {
 
     int rootCount = 0;
 
-    // now we attach the models and try to resolve      
+    // now we attach the models and try to resolve 
 
     runCommand("roots creation pass", new Runnable() {
       public void run() {
@@ -174,7 +173,7 @@ public class JavaToMpsConverter {
             ListSequence.fromList(mySuccessfulFiles).addSequence(ListSequence.fromList(MapSequence.fromMap(filesPerPackage).get(pakage)));
             ListSequence.fromList(myAttachedRoots).addSequence(SetSequence.fromSet(roots));
 
-            ((EditableSModelBase) model).save();
+            ((EditableSModel) model).save();
             ListSequence.fromList(myModels).addElement(model);
           }
 

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -23,6 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface SubstituteType_Runtime extends Rule_Runtime {
 
-  SNode substitution(SNode ruleNode, SNode termType, TypeCheckingContext typeCheckingContext, IsApplicableStatus applicableStatus);
+  TypeSubstitution substitution(SNode ruleNode, SNode termType, TypeCheckingContext typeCheckingContext, IsApplicableStatus applicableStatus);
 
 }

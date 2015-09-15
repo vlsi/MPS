@@ -215,7 +215,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "messageTarget" + ">";
+      return "<no messageTarget>";
     }
 
   }
@@ -332,7 +332,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "foreignMessageSource" + ">";
+      return "<no foreignMessageSource>";
     }
 
   }

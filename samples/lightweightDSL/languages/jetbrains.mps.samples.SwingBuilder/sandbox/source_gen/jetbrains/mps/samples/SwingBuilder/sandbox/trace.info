@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance" />
+  <concept fqn="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/5575318041730326030">
+    <file name="MyConverter.java">
+      <node id="5575318041730326276" at="7,55,8,16" concept="8" />
+      <node id="5575318041730326037" at="7,0,10,0" concept="1" trace="translate#(ZZ)Ljava/lang/String;" />
+      <scope id="5575318041730326041" at="7,55,8,16" />
+      <scope id="5575318041730326037" at="7,0,10,0">
+        <var name="flag" id="5575318041730334112" />
+        <var name="from" id="5575318041730326043" />
+      </scope>
+      <unit id="5575318041730326030" at="6,0,13,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.MyConverter" />
+    </file>
+  </root>
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/8724345312461270267">
+    <file name="SwingDSLDemo.java">
+      <node id="8445921194413050320" at="17,0,18,0" concept="0" trace="logicalProperty" />
+      <node id="8445921194412437811" at="19,5,20,34" concept="7" />
+      <node id="8445921194412437811" at="20,34,21,40" concept="3" />
+      <node id="8445921194412437811" at="21,40,22,35" concept="3" />
+      <node id="5340361359451508447" at="23,7,24,49" concept="7" />
+      <node id="8445921194412437811" at="24,49,25,21" concept="3" />
+      <node id="8445921194412437811" at="27,7,28,32" concept="7" />
+      <node id="8445921194412437811" at="28,32,29,42" concept="3" />
+      <node id="5340361359451510275" at="30,9,31,49" concept="7" />
+      <node id="8445921194412437811" at="31,49,32,19" concept="3" />
+      <node id="8445921194412437811" at="32,19,33,0" concept="9" />
+      <node id="8445921194412437811" at="35,9,36,52" concept="7" />
+      <node id="8445921194412437811" at="36,52,37,31" concept="3" />
+      <node id="8445921194412437811" at="39,57,40,43" concept="3" />
+      <node id="8445921194412437811" at="42,13,43,23" concept="3" />
+      <node id="8445921194412437811" at="43,23,44,0" concept="9" />
+      <node id="8445921194412687625" at="46,9,47,53" concept="7" />
+      <node id="8445921194412437811" at="47,53,48,19" concept="3" />
+      <node id="8445921194412437811" at="48,19,49,0" concept="9" />
+      <node id="8445921194412437811" at="50,9,51,21" concept="3" />
+      <node id="8445921194412437811" at="53,7,54,47" concept="7" />
+      <node id="8445921194412437811" at="56,55,57,22" concept="3" />
+      <node id="8445921194412437811" at="59,11,60,26" concept="3" />
+      <node id="8445921194412437811" at="61,7,62,29" concept="3" />
+      <node id="8445921194412437811" at="62,29,63,19" concept="3" />
+      <node id="5340361359451519143" at="67,31,68,18" concept="8" />
+      <node id="8445921194413051403" at="70,26,71,41" concept="3" />
+      <node id="5340361359451525714" at="71,41,72,95" concept="3" />
+      <node id="5340361359451534171" at="75,0,76,0" concept="4" trace="fieldValue" />
+      <node id="5340361359451866789" at="78,42,79,23" concept="3" />
+      <node id="8445921194412437811" at="39,0,42,0" concept="6" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="8445921194412437811" at="56,0,59,0" concept="6" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="5340361359451519102" at="67,0,70,0" concept="6" trace="buildTitle#()Ljava/lang/String;" />
+      <node id="5340361359451864473" at="78,0,81,0" concept="10" trace="main#([Ljava/lang/String;)V" />
+      <node id="8445921194412437811" at="22,35,26,7" concept="2" />
+      <node id="5340361359451525645" at="70,0,74,0" concept="6" trace="clicked#()V" />
+      <node id="8445921194412437811" at="29,42,34,9" concept="2" />
+      <node id="8445921194412437811" at="37,31,42,13" concept="3" />
+      <node id="8445921194412437811" at="45,9,50,9" concept="2" />
+      <node id="8445921194412437811" at="54,47,59,11" concept="3" />
+      <node id="8445921194412437811" at="52,7,61,7" concept="2" />
+      <node id="8445921194412437811" at="34,9,45,9" concept="2" />
+      <node id="8445921194412437811" at="26,7,52,7" concept="2" />
+      <node id="8445921194412437811" at="18,3,64,5" concept="2" />
+      <scope id="8445921194412437811" at="39,57,40,43" />
+      <scope id="8445921194412437811" at="56,55,57,22" />
+      <scope id="5340361359451519105" at="67,31,68,18" />
+      <scope id="5340361359451864479" at="78,42,79,23" />
+      <scope id="8445921194412437811" at="23,7,25,21">
+        <var name="c" id="5340361359451508447" />
+      </scope>
+      <scope id="5340361359451525648" at="70,26,72,95" />
+      <scope id="8445921194412437811" at="30,9,33,0">
+        <var name="c" id="5340361359451510275" />
+      </scope>
+      <scope id="8445921194412437811" at="39,0,42,0">
+        <var name="p0" id="8445921194412437811" />
+      </scope>
+      <scope id="8445921194412437811" at="46,9,49,0">
+        <var name="c" id="8445921194412687625" />
+      </scope>
+      <scope id="8445921194412437811" at="56,0,59,0">
+        <var name="p0" id="8445921194412437811" />
+      </scope>
+      <scope id="5340361359451519102" at="67,0,70,0" />
+      <scope id="5340361359451864473" at="78,0,81,0">
+        <var name="args" id="5340361359451864474" />
+      </scope>
+      <scope id="5340361359451525645" at="70,0,74,0" />
+      <scope id="8445921194412437811" at="53,7,60,26">
+        <var name="button" id="8445921194412437811" />
+      </scope>
+      <scope id="8445921194412437811" at="35,9,44,0">
+        <var name="field" id="8445921194412437811" />
+      </scope>
+      <scope id="8445921194412437811" at="27,7,51,21">
+        <var name="p" id="8445921194412437811" />
+      </scope>
+      <scope id="8445921194412437811" at="19,5,63,19">
+        <var name="frame" id="8445921194412437811" />
+      </scope>
+      <scope id="8445921194412437810" at="18,3,64,5" />
+      <unit id="8445921194412437811" at="38,38,42,11" name="jetbrains.mps.samples.SwingBuilder.sandbox.SwingDSLDemo$1" />
+      <unit id="8445921194412437811" at="55,37,59,9" name="jetbrains.mps.samples.SwingBuilder.sandbox.SwingDSLDemo$2" />
+      <unit id="8724345312461270267" at="16,0,82,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.SwingDSLDemo" />
+    </file>
+  </root>
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/941086956891042798">
+    <file name="BigValues.java">
+      <node id="941086956891062047" at="8,36,9,22" concept="8" />
+      <node id="941086956891042798" at="12,24,13,19" concept="8" />
+      <node id="941086956891042798" at="14,12,15,31" concept="8" />
+      <node id="941086956891042798" at="14,10,16,5" concept="2" />
+      <node id="941086956891042801" at="8,0,11,0" concept="1" trace="accept#(I)Z" />
+      <node id="941086956891042798" at="11,40,16,5" concept="5" />
+      <node id="941086956891042798" at="11,0,18,0" concept="6" trace="transformValue#(I)I" />
+      <scope id="941086956891042805" at="8,36,9,22" />
+      <scope id="941086956891042798" at="12,24,13,19" />
+      <scope id="941086956891042798" at="14,12,15,31" />
+      <scope id="941086956891042801" at="8,0,11,0">
+        <var name="value" id="941086956891042807" />
+      </scope>
+      <scope id="941086956891042798" at="11,40,16,5" />
+      <scope id="941086956891042798" at="11,0,18,0">
+        <var name="value" id="941086956891042798" />
+      </scope>
+      <unit id="941086956891042798" at="7,0,20,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.BigValues" />
+    </file>
+  </root>
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/941086956891063915">
+    <file name="Duplicate.java">
+      <node id="941086956891063947" at="8,29,9,21" concept="8" />
+      <node id="941086956891063915" at="12,40,13,22" concept="8" />
+      <node id="941086956891063918" at="8,0,11,0" concept="1" trace="map#(I)I" />
+      <node id="941086956891063915" at="12,0,15,0" concept="6" trace="transformValue#(I)I" />
+      <scope id="941086956891063922" at="8,29,9,21" />
+      <scope id="941086956891063915" at="12,40,13,22" />
+      <scope id="941086956891063918" at="8,0,11,0">
+        <var name="value" id="941086956891063924" />
+      </scope>
+      <scope id="941086956891063915" at="12,0,15,0">
+        <var name="value" id="941086956891063915" />
+      </scope>
+      <unit id="941086956891063915" at="7,0,17,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.Duplicate" />
+    </file>
+  </root>
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/941086956891066045">
+    <file name="Square.java">
+      <node id="941086956891066077" at="8,29,9,25" concept="8" />
+      <node id="941086956891066045" at="12,40,13,22" concept="8" />
+      <node id="941086956891066048" at="8,0,11,0" concept="1" trace="map#(I)I" />
+      <node id="941086956891066045" at="12,0,15,0" concept="6" trace="transformValue#(I)I" />
+      <scope id="941086956891066052" at="8,29,9,25" />
+      <scope id="941086956891066045" at="12,40,13,22" />
+      <scope id="941086956891066048" at="8,0,11,0">
+        <var name="value" id="941086956891066054" />
+      </scope>
+      <scope id="941086956891066045" at="12,0,15,0">
+        <var name="value" id="941086956891066045" />
+      </scope>
+      <unit id="941086956891066045" at="7,0,17,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.Square" />
+    </file>
+  </root>
+  <root nodeRef="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)/941086956891203925">
+    <file name="Demo.java">
+      <node id="941086956891204596" at="13,34,14,98" concept="8" />
+      <node id="941086956891203952" at="16,50,17,97" concept="7" />
+      <node id="941086956891203952" at="17,97,18,65" concept="3" />
+      <node id="941086956891203952" at="18,65,19,68" concept="3" />
+      <node id="941086956891203952" at="19,68,20,68" concept="3" />
+      <node id="941086956891203952" at="20,68,21,24" concept="8" />
+      <node id="941086956891203925" at="24,22,25,35" concept="7" />
+      <node id="941086956891203925" at="25,35,26,52" concept="3" />
+      <node id="941086956891203925" at="26,52,27,88" concept="7" />
+      <node id="941086956891203925" at="27,88,28,65" concept="7" />
+      <node id="941086956891203925" at="30,44,31,65" concept="7" />
+      <node id="941086956891203925" at="33,58,34,66" concept="3" />
+      <node id="941086956891203925" at="35,51,36,21" concept="8" />
+      <node id="941086956891203925" at="40,47,41,71" concept="3" />
+      <node id="941086956891203925" at="44,7,45,61" concept="3" />
+      <node id="941086956891203925" at="48,42,49,21" concept="3" />
+      <node id="941086956891203928" at="13,0,16,0" concept="1" trace="getData#()Ljava/util/List;" />
+      <node id="941086956891203925" at="34,66,37,13" concept="5" />
+      <node id="941086956891203925" at="39,11,42,9" concept="5" />
+      <node id="941086956891203925" at="48,0,51,0" concept="10" trace="main#([Ljava/lang/String;)V" />
+      <node id="941086956891203925" at="33,0,39,0" concept="6" trace="visit#(Ljetbrains/mps/samples/LightweightDSL/plugin/transformRuntime/PipelineElement;)V" />
+      <node id="941086956891203952" at="16,0,23,0" concept="6" trace="getTransformers#()Ljava/util/List;" />
+      <node id="941086956891203925" at="31,65,39,11" concept="3" />
+      <node id="941086956891203925" at="30,0,44,0" concept="6" trace="visit#(Ljava/lang/Integer;)V" />
+      <node id="941086956891203925" at="28,65,44,7" concept="3" />
+      <node id="941086956891203925" at="24,0,47,0" concept="6" trace="run#()V" />
+      <scope id="941086956891203932" at="13,34,14,98" />
+      <scope id="941086956891203925" at="35,51,36,21" />
+      <scope id="941086956891203925" at="40,47,41,71" />
+      <scope id="941086956891203925" at="48,42,49,21" />
+      <scope id="941086956891203928" at="13,0,16,0" />
+      <scope id="941086956891203925" at="48,0,51,0">
+        <var name="args" id="941086956891203925" />
+      </scope>
+      <scope id="941086956891203925" at="33,58,37,13" />
+      <scope id="941086956891203952" at="16,50,21,24">
+        <var name="transformers" id="941086956891203952" />
+      </scope>
+      <scope id="941086956891203925" at="33,0,39,0">
+        <var name="transformer" id="941086956891203925" />
+      </scope>
+      <scope id="941086956891203952" at="16,0,23,0" />
+      <scope id="941086956891203925" at="30,44,42,9">
+        <var name="piece" id="941086956891203925" />
+      </scope>
+      <scope id="941086956891203925" at="30,0,44,0">
+        <var name="dataPiece" id="941086956891203925" />
+      </scope>
+      <scope id="941086956891203925" at="24,22,45,61">
+        <var name="data" id="941086956891203925" />
+        <var name="processedData" id="941086956891203925" />
+        <var name="transformers" id="941086956891203925" />
+      </scope>
+      <scope id="941086956891203925" at="24,0,47,0" />
+      <unit id="941086956891203925" at="32,57,39,9" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo$2" />
+      <unit id="941086956891203925" at="29,45,44,5" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo$1" />
+      <unit id="941086956891203925" at="12,0,54,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo" />
+    </file>
+  </root>
+</debug-info>
+

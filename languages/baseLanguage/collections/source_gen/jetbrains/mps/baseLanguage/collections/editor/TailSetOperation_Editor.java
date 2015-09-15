@@ -91,7 +91,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "fromElement" + ">";
+      return "<no fromElement>";
     }
 
   }

@@ -102,7 +102,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
     Pair<Integer, String> pp = p;
-    // <node> 
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }
@@ -166,6 +165,12 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("<42>", sample.getSample());
     ISample s = sample;
     Assert.assertEquals("<42>", s.getSample());
+  }
+  public void test_indexAccess() throws Exception {
+    IntPair pair = new IntPair(42, 24);
+    Tuples._2<Integer, Integer> ipair = pair;
+    Assert.assertSame(42, pair._0());
+    Assert.assertSame(24, (int) ipair._1());
   }
   public NamedTuples_Test() {
   }

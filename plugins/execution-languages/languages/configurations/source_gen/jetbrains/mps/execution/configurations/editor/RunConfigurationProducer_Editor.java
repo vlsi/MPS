@@ -97,7 +97,7 @@ public class RunConfigurationProducer_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "configuration" + ">";
+      return "<no configuration>";
     }
 
   }

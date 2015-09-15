@@ -34,6 +34,7 @@ import java.io.Reader;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import java.util.regex.Pattern;
@@ -105,6 +106,15 @@ public class FileUtil {
         return new ZipOutputStream(fos);
       }
     }.pack(dir, to);
+  }
+
+  public static void zip(Map<String, File> entries, File to) {
+    new Packer() {
+      @Override
+      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
+        return new ZipOutputStream(fos);
+      }
+    }.pack(entries, to);
   }
 
   public static void copyDir(File what, File to) {
@@ -579,34 +589,64 @@ public class FileUtil {
       }
     }
 
+    public void pack(Map<String, File> entries, File to) {
+      FileOutputStream fos = null;
+      ZipOutputStream out = null;
+
+      try {
+        fos = new FileOutputStream(to);
+        out = createDeflaterStream(fos);
+        for (String key : entries.keySet()) {
+          addZipEntry(out, key, entries.get(key));
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      } finally {
+        try {
+          if (out != null) {
+            out.close();
+          }
+          if (fos != null) {
+            fos.close();
+          }
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
     protected abstract ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception;
+
+    private static void addZipEntry(ZipOutputStream out, String path, File file) {
+      ZipEntry entry = new ZipEntry(path);
+      entry.setTime(file.lastModified());
+      FileInputStream is = null;
+      try {
+        out.putNextEntry(entry);
+        if (file.isFile()) {
+          is = new FileInputStream(file);
+          byte[] bytes = ReadUtil.read(is);
+          out.write(bytes);
+        }
+        out.closeEntry();
+      } catch (IOException e) {
+        e.printStackTrace();
+      } finally {
+        if (is != null) {
+          try {
+            is.close();
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+    }
 
     private static void _zip(File base, String prefix, ZipOutputStream out) {
       File current = new File(base.getPath() + File.separator + prefix).getAbsoluteFile();
 
       if (prefix.length() > 0) {
-        ZipEntry entry = new ZipEntry(prefix);
-        entry.setTime(current.lastModified());
-        FileInputStream is = null;
-        try {
-          out.putNextEntry(entry);
-          if (current.isFile()) {
-            is = new FileInputStream(current);
-            byte[] bytes = ReadUtil.read(is);
-            out.write(bytes);
-          }
-          out.closeEntry();
-        } catch (IOException e) {
-          e.printStackTrace();
-        } finally {
-          if (is != null) {
-            try {
-              is.close();
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
-          }
-        }
+        addZipEntry(out, prefix, current);
       }
 
       if (current.isDirectory()) {

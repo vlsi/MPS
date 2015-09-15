@@ -458,7 +458,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "canBeRoot" + ">";
+      return "<no canBeRoot>";
     }
 
   }
@@ -662,7 +662,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "canBeAncestor" + ">";
+      return "<no canBeAncestor>";
     }
 
   }
@@ -788,7 +788,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "alternativeIcon" + ">";
+      return "<no alternativeIcon>";
     }
 
   }

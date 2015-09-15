@@ -100,7 +100,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "term" + ">";
+      return "<no term>";
     }
 
   }

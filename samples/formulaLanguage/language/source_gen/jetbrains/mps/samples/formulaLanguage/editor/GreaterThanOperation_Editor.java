@@ -67,7 +67,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "leftOperand" + ">";
+      return "<no leftOperand>";
     }
 
   }
@@ -120,7 +120,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "rightOperand" + ">";
+      return "<no rightOperand>";
     }
 
   }

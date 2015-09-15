@@ -88,7 +88,7 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     }
 
     protected String getNoTargetText() {
-      return "<no " + "body" + ">";
+      return "<no body>";
     }
 
   }

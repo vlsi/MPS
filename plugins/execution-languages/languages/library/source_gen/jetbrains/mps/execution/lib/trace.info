@@ -9,6 +9,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -17,130 +19,133 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381089">
     <file name="ExecutionTool.java">
-      <node id="1977878056377381089" at="12,26,13,12" concept="11" />
-      <node id="1977878056377381089" at="15,108,16,40" concept="11" />
-      <node id="1977878056377381089" at="18,49,19,27" concept="8" />
-      <node id="1977878056377381089" at="21,58,22,27" concept="8" />
-      <node id="1977878056377381089" at="24,79,25,27" concept="8" />
-      <node id="1977878056377381089" at="27,33,28,22" concept="8" />
-      <node id="1977878056377381089" at="30,37,31,22" concept="8" />
-      <node id="1977878056377381089" at="33,47,34,22" concept="8" />
-      <node id="1977878056377381089" at="37,108,38,46" concept="8" />
-      <node id="1977878056377381089" at="12,0,15,0" concept="1" trace="ExecutionTool#()V" />
-      <node id="1977878056377381089" at="15,0,18,0" concept="1" trace="ExecutionTool#(Ljavax/swing/JComponent;Lcom/intellij/execution/process/ProcessListener;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-      <node id="1977878056377381089" at="18,0,21,0" concept="6" trace="component#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
-      <node id="1977878056377381089" at="21,0,24,0" concept="6" trace="listener#(Lcom/intellij/execution/process/ProcessListener;)Lcom/intellij/execution/process/ProcessListener;" />
-      <node id="1977878056377381089" at="24,0,27,0" concept="6" trace="dispose#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
-      <node id="1977878056377381089" at="27,0,30,0" concept="6" trace="component#()Ljavax/swing/JComponent;" />
-      <node id="1977878056377381089" at="30,0,33,0" concept="6" trace="listener#()Lcom/intellij/execution/process/ProcessListener;" />
-      <node id="1977878056377381089" at="33,0,36,0" concept="6" trace="dispose#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
-      <node id="1977878056377381089" at="36,0,40,0" concept="6" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/execution/lib/ExecutionTool;" />
-      <scope id="1977878056377381089" at="12,26,13,12" />
-      <scope id="1977878056377381089" at="15,108,16,40" />
-      <scope id="1977878056377381089" at="18,49,19,27" />
-      <scope id="1977878056377381089" at="21,58,22,27" />
-      <scope id="1977878056377381089" at="24,79,25,27" />
-      <scope id="1977878056377381089" at="27,33,28,22" />
-      <scope id="1977878056377381089" at="30,37,31,22" />
-      <scope id="1977878056377381089" at="33,47,34,22" />
-      <scope id="1977878056377381089" at="37,108,38,46" />
-      <scope id="1977878056377381089" at="12,0,15,0" />
-      <scope id="1977878056377381089" at="15,0,18,0">
+      <node id="1977878056377381089" at="11,26,12,12" concept="13" />
+      <node id="1977878056377381089" at="14,108,15,40" concept="13" />
+      <node id="1977878056377381089" at="17,49,18,27" concept="8" />
+      <node id="1977878056377381089" at="20,58,21,27" concept="8" />
+      <node id="1977878056377381089" at="23,79,24,27" concept="8" />
+      <node id="1977878056377381089" at="26,33,27,22" concept="8" />
+      <node id="1977878056377381089" at="29,37,30,22" concept="8" />
+      <node id="1977878056377381089" at="32,47,33,22" concept="8" />
+      <node id="1977878056377381089" at="11,0,14,0" concept="1" trace="ExecutionTool#()V" />
+      <node id="1977878056377381089" at="14,0,17,0" concept="1" trace="ExecutionTool#(Ljavax/swing/JComponent;Lcom/intellij/execution/process/ProcessListener;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+      <node id="1977878056377381089" at="17,0,20,0" concept="6" trace="component#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
+      <node id="1977878056377381089" at="20,0,23,0" concept="6" trace="listener#(Lcom/intellij/execution/process/ProcessListener;)Lcom/intellij/execution/process/ProcessListener;" />
+      <node id="1977878056377381089" at="23,0,26,0" concept="6" trace="dispose#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+      <node id="1977878056377381089" at="26,0,29,0" concept="6" trace="component#()Ljavax/swing/JComponent;" />
+      <node id="1977878056377381089" at="29,0,32,0" concept="6" trace="listener#()Lcom/intellij/execution/process/ProcessListener;" />
+      <node id="1977878056377381089" at="32,0,35,0" concept="6" trace="dispose#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+      <scope id="1977878056377381089" at="11,26,12,12" />
+      <scope id="1977878056377381089" at="14,108,15,40" />
+      <scope id="1977878056377381089" at="17,49,18,27" />
+      <scope id="1977878056377381089" at="20,58,21,27" />
+      <scope id="1977878056377381089" at="23,79,24,27" />
+      <scope id="1977878056377381089" at="26,33,27,22" />
+      <scope id="1977878056377381089" at="29,37,30,22" />
+      <scope id="1977878056377381089" at="32,47,33,22" />
+      <scope id="1977878056377381089" at="11,0,14,0" />
+      <scope id="1977878056377381089" at="14,0,17,0">
         <var name="component" id="1977878056377381089" />
         <var name="dispose" id="1977878056377381089" />
         <var name="listener" id="1977878056377381089" />
       </scope>
-      <scope id="1977878056377381089" at="18,0,21,0">
+      <scope id="1977878056377381089" at="17,0,20,0">
         <var name="value" id="1977878056377381089" />
       </scope>
-      <scope id="1977878056377381089" at="21,0,24,0">
+      <scope id="1977878056377381089" at="20,0,23,0">
         <var name="value" id="1977878056377381089" />
       </scope>
-      <scope id="1977878056377381089" at="24,0,27,0">
+      <scope id="1977878056377381089" at="23,0,26,0">
         <var name="value" id="1977878056377381089" />
       </scope>
-      <scope id="1977878056377381089" at="27,0,30,0" />
-      <scope id="1977878056377381089" at="30,0,33,0" />
-      <scope id="1977878056377381089" at="33,0,36,0" />
-      <scope id="1977878056377381089" at="36,0,40,0">
-        <var name="from" id="1977878056377381089" />
-      </scope>
-      <unit id="1977878056377381089" at="11,0,41,0" name="jetbrains.mps.execution.lib.ExecutionTool" />
+      <scope id="1977878056377381089" at="26,0,29,0" />
+      <scope id="1977878056377381089" at="29,0,32,0" />
+      <scope id="1977878056377381089" at="32,0,35,0" />
+      <unit id="1977878056377381089" at="10,0,36,0" name="jetbrains.mps.execution.lib.ExecutionTool" />
     </file>
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/5133679254727507894">
     <file name="PointerUtils.java">
-      <node id="5133679254727507895" at="21,0,22,0" concept="9" trace="POINTER_SEPARATOR" />
-      <node id="5133679254727507911" at="24,65,25,18" concept="8" />
-      <node id="5133679254727507913" at="26,5,27,60" concept="7" />
-      <node id="5133679254727507921" at="27,60,28,48" concept="8" />
-      <node id="5133679254727507934" at="30,79,31,64" concept="7" />
-      <node id="5133679254727507943" at="33,25,34,229" concept="2" />
-      <node id="5133679254727507969" at="36,7,37,23" concept="8" />
-      <node id="5133679254727507986" at="41,38,42,66" concept="8" />
-      <node id="5133679254727508000" at="46,70,47,90" concept="8" />
-      <node id="5647974406689069127" at="49,93,50,87" concept="7" />
-      <node id="5647974406689070782" at="51,40,52,70" concept="2" />
-      <node id="5647974406689101983" at="53,5,54,16" concept="8" />
-      <node id="5133679254727507906" at="23,75,26,5" concept="5" />
-      <node id="5133679254727507941" at="33,0,36,0" concept="6" trace="run#()V" />
-      <node id="5133679254727507984" at="41,0,44,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="5133679254727507998" at="46,0,49,0" concept="10" trace="nodeToCloneableList#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/execution/lib/ClonableList;" />
-      <node id="5647974406689069019" at="50,87,53,5" concept="4" />
-      <node id="5133679254727507937" at="31,64,36,7" concept="2" />
-      <node id="5133679254727507978" at="39,78,44,25" concept="8" />
-      <node id="5133679254727507975" at="39,0,46,0" concept="10" trace="nodesToCloneableList#(Ljava/util/List;)Ljetbrains/mps/execution/lib/ClonableList;" />
-      <node id="5647974406689059575" at="49,0,56,0" concept="10" trace="clonableListToNodes#(Ljetbrains/mps/execution/lib/ClonableList;)Ljava/util/List;" />
-      <node id="5133679254727507899" at="22,0,30,0" concept="10" trace="stringToPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5133679254727507931" at="30,0,39,0" concept="10" trace="pointerToString#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
-      <scope id="5133679254727507910" at="24,65,25,18" />
-      <scope id="5133679254727507942" at="33,25,34,229" />
-      <scope id="5133679254727507985" at="41,38,42,66" />
-      <scope id="5133679254727507999" at="46,70,47,90" />
-      <scope id="5647974406689069022" at="51,40,52,70" />
-      <scope id="5133679254727507941" at="33,0,36,0" />
-      <scope id="5133679254727507984" at="41,0,44,0">
-        <var name="it" id="5133679254727507984" />
+      <node id="5133679254727507895" at="19,0,20,0" concept="11" trace="POINTER_SEPARATOR" />
+      <node id="5133679254727507911" at="22,65,23,18" concept="8" />
+      <node id="1829004152491411232" at="24,5,25,0" concept="10" />
+      <node id="1829004152491413180" at="25,0,26,55" concept="7" />
+      <node id="1829004152491421099" at="27,21,28,16" concept="8" />
+      <node id="1829004152491422142" at="29,5,30,78" concept="8" />
+      <node id="1829004152491417233" at="35,71,36,100" concept="9" />
+      <node id="1829004152491418356" at="36,100,37,69" concept="9" />
+      <node id="1829004152491367750" at="38,55,39,62" concept="7" />
+      <node id="1829004152491367770" at="39,62,40,50" concept="8" />
+      <node id="1829004152491378417" at="41,5,42,16" concept="8" />
+      <node id="1829004152491428351" at="44,73,45,61" concept="8" />
+      <node id="5133679254727507986" at="49,38,50,76" concept="8" />
+      <node id="5133679254727508000" at="54,70,55,100" concept="8" />
+      <node id="5647974406689069127" at="57,93,58,87" concept="7" />
+      <node id="5647974406689070782" at="59,40,60,70" concept="2" />
+      <node id="5647974406689101983" at="61,5,62,16" concept="8" />
+      <node id="5133679254727507906" at="21,70,24,5" concept="5" />
+      <node id="1829004152491419600" at="26,55,29,5" concept="5" />
+      <node id="5133679254727507931" at="44,0,47,0" concept="12" trace="pointerToString#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
+      <node id="5133679254727507984" at="49,0,52,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5133679254727507998" at="54,0,57,0" concept="12" trace="nodeToCloneableList#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/execution/lib/ClonableList;" />
+      <node id="5647974406689069019" at="58,87,61,5" concept="4" />
+      <node id="1829004152491368576" at="37,69,41,5" concept="5" />
+      <node id="5133679254727507978" at="47,78,52,25" concept="8" />
+      <node id="5133679254727507975" at="47,0,54,0" concept="12" trace="nodesToCloneableList#(Ljava/util/List;)Ljetbrains/mps/execution/lib/ClonableList;" />
+      <node id="5647974406689059575" at="57,0,64,0" concept="12" trace="clonableListToNodes#(Ljetbrains/mps/execution/lib/ClonableList;)Ljava/util/List;" />
+      <node id="1829004152491367244" at="33,0,44,0" concept="12" trace="tryLegacyFormat#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5133679254727507899" at="20,0,32,0" concept="12" trace="stringToPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <scope id="5133679254727507910" at="22,65,23,18" />
+      <scope id="1829004152491419602" at="27,21,28,16" />
+      <scope id="5133679254727507933" at="44,73,45,61" />
+      <scope id="5133679254727507985" at="49,38,50,76" />
+      <scope id="5133679254727507999" at="54,70,55,100" />
+      <scope id="5647974406689069022" at="59,40,60,70" />
+      <scope id="1829004152491368578" at="38,55,40,50">
+        <var name="split" id="1829004152491367751" />
       </scope>
-      <scope id="5133679254727507998" at="46,0,49,0">
-        <var name="node" id="5133679254727508009" />
-      </scope>
-      <scope id="5647974406689069019" at="50,87,53,5">
-        <var name="string" id="5647974406689069020" />
-      </scope>
-      <scope id="5133679254727507905" at="23,75,28,48">
-        <var name="split" id="5133679254727507914" />
-      </scope>
-      <scope id="5133679254727507977" at="39,78,44,25" />
-      <scope id="5647974406689059578" at="49,93,54,16">
-        <var name="list" id="5647974406689069130" />
-      </scope>
-      <scope id="5133679254727507933" at="30,79,37,23">
-        <var name="value" id="5133679254727507935" />
-      </scope>
-      <scope id="5133679254727507975" at="39,0,46,0">
-        <var name="nodes" id="5133679254727507996" />
-      </scope>
-      <scope id="5647974406689059575" at="49,0,56,0">
-        <var name="clonableList" id="5647974406689060915" />
-      </scope>
-      <scope id="5133679254727507899" at="22,0,30,0">
-        <var name="pointerString" id="5133679254727507901" />
-      </scope>
-      <scope id="5133679254727507931" at="30,0,39,0">
+      <scope id="5133679254727507931" at="44,0,47,0">
         <var name="pointer" id="5133679254727507972" />
       </scope>
-      <unit id="5133679254727507941" at="32,45,36,5" name="jetbrains.mps.execution.lib.PointerUtils$1" />
-      <unit id="5133679254727507984" at="40,76,44,5" name="jetbrains.mps.execution.lib.PointerUtils$2" />
-      <unit id="5133679254727507894" at="20,0,57,0" name="jetbrains.mps.execution.lib.PointerUtils" />
+      <scope id="5133679254727507984" at="49,0,52,0">
+        <var name="it" id="5133679254727507984" />
+      </scope>
+      <scope id="5133679254727507998" at="54,0,57,0">
+        <var name="node" id="5133679254727508009" />
+      </scope>
+      <scope id="5647974406689069019" at="58,87,61,5">
+        <var name="string" id="5647974406689069020" />
+      </scope>
+      <scope id="5133679254727507977" at="47,78,52,25" />
+      <scope id="5647974406689059578" at="57,93,62,16">
+        <var name="list" id="5647974406689069130" />
+      </scope>
+      <scope id="1829004152491367247" at="35,71,42,16" />
+      <scope id="5133679254727507975" at="47,0,54,0">
+        <var name="nodes" id="5133679254727507996" />
+      </scope>
+      <scope id="5647974406689059575" at="57,0,64,0">
+        <var name="clonableList" id="5647974406689060915" />
+      </scope>
+      <scope id="5133679254727507905" at="21,70,30,78">
+        <var name="rv" id="1829004152491413181" />
+      </scope>
+      <scope id="1829004152491367244" at="33,0,44,0">
+        <var name="pointerString" id="1829004152491367735" />
+      </scope>
+      <scope id="5133679254727507899" at="20,0,32,0">
+        <var name="pointerString" id="5133679254727507901" />
+      </scope>
+      <unit id="5133679254727507984" at="48,76,52,5" name="jetbrains.mps.execution.lib.PointerUtils$1" />
+      <unit id="5133679254727507894" at="18,0,65,0" name="jetbrains.mps.execution.lib.PointerUtils" />
     </file>
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/5133679254727508012">
     <file name="ClonableList.java">
       <node id="5133679254727508013" at="12,0,13,0" concept="3" trace="myData" />
-      <node id="5133679254727508021" at="13,25,14,52" concept="12" />
+      <node id="5133679254727508021" at="13,25,14,52" concept="14" />
       <node id="5133679254727508032" at="16,38,17,19" concept="2" />
-      <node id="5133679254727508042" at="19,41,20,67" concept="12" />
+      <node id="5133679254727508042" at="19,41,20,67" concept="14" />
       <node id="5133679254727508053" at="23,27,24,59" concept="8" />
       <node id="5133679254727508066" at="27,21,28,49" concept="8" />
       <node id="5133679254727508077" at="31,30,32,64" concept="8" />
@@ -206,9 +211,9 @@
       <node id="2034046503361606661" at="35,27,36,33" concept="7" />
       <node id="2034046503361606672" at="37,29,38,55" concept="2" />
       <node id="2034046503361606678" at="39,49,40,51" concept="2" />
-      <node id="6072045827976707180" at="44,46,45,61" concept="13" />
+      <node id="6072045827976707180" at="44,46,45,61" concept="15" />
       <node id="8278380780105768314" at="50,76,51,57" concept="2" />
-      <node id="8278380780105768314" at="55,26,56,81" concept="13" />
+      <node id="8278380780105768314" at="55,26,56,81" concept="15" />
       <node id="8278380780105768314" at="57,5,58,83" concept="2" />
       <node id="8278380780105768314" at="60,29,61,28" concept="8" />
       <node id="8278380780105768314" at="63,30,64,29" concept="8" />
@@ -242,7 +247,7 @@
       <node id="8278380780105768314" at="128,57,129,72" concept="8" />
       <node id="8278380780105768314" at="132,29,133,31" concept="2" />
       <node id="8278380780105768314" at="134,5,135,22" concept="8" />
-      <node id="8278380780105768314" at="137,0,138,0" concept="9" trace="LOG" />
+      <node id="8278380780105768314" at="137,0,138,0" concept="11" trace="LOG" />
       <node id="8278380780105768326" at="139,36,140,74" concept="8" />
       <node id="8278380780105768326" at="141,5,142,16" concept="8" />
       <node id="6072045827976707179" at="144,55,145,43" concept="8" />
@@ -262,20 +267,20 @@
       <node id="8278380780105768314" at="128,0,131,0" concept="6" trace="getEditor#()Ljetbrains/mps/execution/lib/NodeByConcept_Configuration_Editor;" />
       <node id="8278380780105768314" at="131,70,134,5" concept="5" />
       <node id="8278380780105768326" at="138,74,141,5" concept="5" />
-      <node id="6072045827976707179" at="144,0,147,0" concept="10" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="6072045827976707179" at="144,0,147,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="8278380780105768314" at="49,0,53,0" concept="6" trace="writeExternal#(Lorg/jdom/Element;)V" />
       <node id="8278380780105768314" at="72,0,76,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8278380780105768314" at="118,0,122,0" concept="1" trace="NodeByConcept_Configuration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
       <node id="2034046503361606667" at="36,33,41,11" concept="5" />
       <node id="8278380780105768314" at="76,0,82,0" concept="6" trace="getNodePointer#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="8278380780105768314" at="131,0,137,0" concept="6" trace="getEditorEx#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
-      <node id="8278380780105768326" at="138,0,144,0" concept="10" trace="check_h3hwcn_a0a0#(Ljetbrains/mps/smodel/SNodePointer;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8278380780105768326" at="138,0,144,0" concept="12" trace="check_h3hwcn_a0a0#(Ljetbrains/mps/smodel/SNodePointer;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8278380780105768314" at="53,0,60,0" concept="6" trace="readExternal#(Lorg/jdom/Element;)V" />
       <node id="8278380780105768367" at="82,45,89,5" concept="5" />
       <node id="8278380780105768314" at="110,0,117,0" concept="6" trace="clone#()Ljava/lang/Object;" />
       <node id="670386341911211689" at="35,0,43,0" concept="6" trace="run#()V" />
       <node id="8278380780105768314" at="82,0,91,0" concept="6" trace="setNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8278380780105768314" at="93,45,102,5" concept="14" />
+      <node id="8278380780105768314" at="93,45,102,5" concept="16" />
       <node id="670386341911211687" at="33,74,43,9" concept="2" />
       <node id="8278380780105768314" at="91,0,105,0" concept="6" trace="clone#()Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;" />
       <node id="8278380780105768314" at="31,73,47,5" concept="0" />
@@ -386,7 +391,7 @@
       <node id="8278380780105768314" at="26,108,31,7" concept="0" />
       <node id="670386341911209319" at="33,80,38,7" concept="2" />
       <node id="8278380780105768314" at="33,80,38,7" concept="0" />
-      <node id="8278380780105768314" at="42,155,47,7" concept="11" />
+      <node id="8278380780105768314" at="42,155,47,7" concept="13" />
       <node id="8278380780105768314" at="19,0,26,0" concept="6" trace="createEditor#()Ljetbrains/mps/execution/lib/ui/NodeByConceptChooser;" />
       <node id="8278380780105768314" at="26,0,33,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;)V" />
       <node id="8278380780105768314" at="33,0,40,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;)V" />
@@ -428,9 +433,9 @@
       <node id="2034046503361585549" at="39,27,40,33" concept="7" />
       <node id="2034046503361585560" at="41,29,42,55" concept="2" />
       <node id="2034046503361585566" at="43,40,44,51" concept="2" />
-      <node id="6072045827976707263" at="48,46,49,61" concept="13" />
+      <node id="6072045827976707263" at="48,46,49,61" concept="15" />
       <node id="8278380780105899265" at="54,76,55,57" concept="2" />
-      <node id="8278380780105899265" at="59,26,60,81" concept="13" />
+      <node id="8278380780105899265" at="59,26,60,81" concept="15" />
       <node id="8278380780105899265" at="61,5,62,83" concept="2" />
       <node id="8278380780105899265" at="64,29,65,28" concept="8" />
       <node id="8278380780105899265" at="67,30,68,29" concept="8" />
@@ -469,7 +474,7 @@
       <node id="8278380780105899265" at="151,65,152,69" concept="8" />
       <node id="8278380780105899265" at="155,29,156,31" concept="2" />
       <node id="8278380780105899265" at="157,5,158,22" concept="8" />
-      <node id="8278380780105899265" at="160,0,161,0" concept="9" trace="LOG" />
+      <node id="8278380780105899265" at="160,0,161,0" concept="11" trace="LOG" />
       <node id="6072045827976707267" at="161,55,162,43" concept="8" />
       <node id="8278380780105899265" at="33,0,35,0" concept="3" trace="myState" />
       <node id="8278380780105899417" at="108,16,110,11" concept="0" />
@@ -489,7 +494,7 @@
       <node id="8278380780105899265" at="148,0,151,0" concept="6" trace="createCloneTemplate#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;" />
       <node id="8278380780105899265" at="151,0,154,0" concept="6" trace="getEditor#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration_Editor;" />
       <node id="8278380780105899265" at="154,78,157,5" concept="5" />
-      <node id="6072045827976707267" at="161,0,164,0" concept="10" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="6072045827976707267" at="161,0,164,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="8278380780105899265" at="53,0,57,0" concept="6" trace="writeExternal#(Lorg/jdom/Element;)V" />
       <node id="2034046503361585555" at="40,33,45,11" concept="5" />
       <node id="8278380780105899407" at="105,86,110,11" concept="5" />
@@ -502,7 +507,7 @@
       <node id="670386341911664119" at="39,0,47,0" concept="6" trace="run#()V" />
       <node id="8278380780105899265" at="76,0,84,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8278380780105899265" at="91,0,100,0" concept="6" trace="setNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8278380780105899265" at="118,53,127,5" concept="14" />
+      <node id="8278380780105899265" at="118,53,127,5" concept="16" />
       <node id="670386341911664117" at="37,74,47,9" concept="2" />
       <node id="8278380780105899389" at="102,0,114,0" concept="6" trace="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
       <node id="8278380780105899383" at="100,45,114,15" concept="8" />
@@ -625,7 +630,7 @@
       <node id="8278380780105899265" at="22,116,27,7" concept="0" />
       <node id="670386341911665067" at="29,88,34,7" concept="2" />
       <node id="8278380780105899265" at="29,88,34,7" concept="0" />
-      <node id="8278380780105899265" at="37,90,42,7" concept="11" />
+      <node id="8278380780105899265" at="37,90,42,7" concept="13" />
       <node id="8278380780105899265" at="22,0,29,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
       <node id="8278380780105899265" at="29,0,36,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
       <node id="8278380780105899265" at="37,0,45,0" concept="1" trace="NodeBySeveralConcepts_Configuration_Editor#(Ljava/util/List;)V" />
@@ -661,44 +666,38 @@
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8510735242381192690">
     <file name="NodesDescriptor.java">
-      <node id="8510735242381192690" at="12,28,13,12" concept="11" />
-      <node id="8510735242381192690" at="15,123,16,27" concept="11" />
-      <node id="8510735242381192690" at="18,59,19,27" concept="8" />
-      <node id="8510735242381192690" at="21,150,22,27" concept="8" />
-      <node id="8510735242381192690" at="24,37,25,22" concept="8" />
-      <node id="8510735242381192690" at="27,82,28,22" concept="8" />
-      <node id="8510735242381192690" at="31,135,32,48" concept="8" />
-      <node id="8510735242381192690" at="12,0,15,0" concept="1" trace="NodesDescriptor#()V" />
-      <node id="8510735242381192690" at="15,0,18,0" concept="1" trace="NodesDescriptor#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
-      <node id="8510735242381192690" at="18,0,21,0" concept="6" trace="concept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="8510735242381192690" at="21,0,24,0" concept="6" trace="filter#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
-      <node id="8510735242381192690" at="24,0,27,0" concept="6" trace="concept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="8510735242381192690" at="27,0,30,0" concept="6" trace="filter#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
-      <node id="8510735242381192690" at="30,0,34,0" concept="6" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/execution/lib/NodesDescriptor;" />
-      <scope id="8510735242381192690" at="12,28,13,12" />
-      <scope id="8510735242381192690" at="15,123,16,27" />
-      <scope id="8510735242381192690" at="18,59,19,27" />
-      <scope id="8510735242381192690" at="21,150,22,27" />
-      <scope id="8510735242381192690" at="24,37,25,22" />
-      <scope id="8510735242381192690" at="27,82,28,22" />
-      <scope id="8510735242381192690" at="31,135,32,48" />
-      <scope id="8510735242381192690" at="12,0,15,0" />
-      <scope id="8510735242381192690" at="15,0,18,0">
+      <node id="8510735242381192690" at="11,28,12,12" concept="13" />
+      <node id="8510735242381192690" at="14,123,15,27" concept="13" />
+      <node id="8510735242381192690" at="17,59,18,27" concept="8" />
+      <node id="8510735242381192690" at="20,150,21,27" concept="8" />
+      <node id="8510735242381192690" at="23,37,24,22" concept="8" />
+      <node id="8510735242381192690" at="26,82,27,22" concept="8" />
+      <node id="8510735242381192690" at="11,0,14,0" concept="1" trace="NodesDescriptor#()V" />
+      <node id="8510735242381192690" at="14,0,17,0" concept="1" trace="NodesDescriptor#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
+      <node id="8510735242381192690" at="17,0,20,0" concept="6" trace="concept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8510735242381192690" at="20,0,23,0" concept="6" trace="filter#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
+      <node id="8510735242381192690" at="23,0,26,0" concept="6" trace="concept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8510735242381192690" at="26,0,29,0" concept="6" trace="filter#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
+      <scope id="8510735242381192690" at="11,28,12,12" />
+      <scope id="8510735242381192690" at="14,123,15,27" />
+      <scope id="8510735242381192690" at="17,59,18,27" />
+      <scope id="8510735242381192690" at="20,150,21,27" />
+      <scope id="8510735242381192690" at="23,37,24,22" />
+      <scope id="8510735242381192690" at="26,82,27,22" />
+      <scope id="8510735242381192690" at="11,0,14,0" />
+      <scope id="8510735242381192690" at="14,0,17,0">
         <var name="concept" id="8510735242381192690" />
         <var name="filter" id="8510735242381192690" />
       </scope>
-      <scope id="8510735242381192690" at="18,0,21,0">
+      <scope id="8510735242381192690" at="17,0,20,0">
         <var name="value" id="8510735242381192690" />
       </scope>
-      <scope id="8510735242381192690" at="21,0,24,0">
+      <scope id="8510735242381192690" at="20,0,23,0">
         <var name="value" id="8510735242381192690" />
       </scope>
-      <scope id="8510735242381192690" at="24,0,27,0" />
-      <scope id="8510735242381192690" at="27,0,30,0" />
-      <scope id="8510735242381192690" at="30,0,34,0">
-        <var name="from" id="8510735242381192690" />
-      </scope>
-      <unit id="8510735242381192690" at="11,0,35,0" name="jetbrains.mps.execution.lib.NodesDescriptor" />
+      <scope id="8510735242381192690" at="23,0,26,0" />
+      <scope id="8510735242381192690" at="26,0,29,0" />
+      <unit id="8510735242381192690" at="10,0,30,0" name="jetbrains.mps.execution.lib.NodesDescriptor" />
     </file>
   </root>
 </debug-info>

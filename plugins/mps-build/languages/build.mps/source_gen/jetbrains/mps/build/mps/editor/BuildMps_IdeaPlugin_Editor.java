@@ -124,7 +124,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "pluginXml" + ">";
+      return "<no pluginXml>";
     }
 
   }
@@ -198,7 +198,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "name" + ">";
+      return "<no name>";
     }
 
   }
@@ -244,7 +244,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "containerName" + ">";
+      return "<no containerName>";
     }
 
   }
@@ -291,7 +291,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "description" + ">";
+      return "<no description>";
     }
 
   }
@@ -337,7 +337,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "version" + ">";
+      return "<no version>";
     }
 
   }

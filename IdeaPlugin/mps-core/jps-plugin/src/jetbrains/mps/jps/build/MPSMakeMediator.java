@@ -62,7 +62,6 @@ import java.util.concurrent.Future;
  * User: fyodor
  * Date: 12/19/12
  * TODO Something with {@link ReducedMakeFacetConfiguration#getFileHashes()}. It is possible to persist any caches by a jps mechanism.
- * TODO Merge it with {@link jetbrains.mps.tool.builder.make.ReducedGenerationWorker}
  */
 public class MPSMakeMediator {
   @NonNls

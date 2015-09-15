@@ -27,6 +27,8 @@ import java.util.HashSet;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.net.URL;
+import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
@@ -150,11 +152,23 @@ public class JUnit_Command {
         }
       }
     });
-    return SetSequence.fromSet(uniqueModules).translate(new ITranslator2<SModule, String>() {
+    List<String> classpath = SetSequence.fromSet(uniqueModules).translate(new ITranslator2<SModule, String>() {
       public Iterable<String> translate(SModule it) {
         return Java_Command.getClasspath(it);
       }
-    }).distinct().toListSequence();
+    }).toListSequence();
+    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
+    return classpath;
+  }
+  private static List<String> collectFromLibFolder() {
+    List<URL> urls = ListSequence.fromList(new ArrayList<URL>());
+    ClassloaderUtil.addIDEALibraries(urls);
+    List<String> list = ListSequence.fromList(urls).select(new ISelector<URL, String>() {
+      public String select(URL it) {
+        return it.getPath();
+      }
+    }).toListSequence();
+    return list;
   }
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {

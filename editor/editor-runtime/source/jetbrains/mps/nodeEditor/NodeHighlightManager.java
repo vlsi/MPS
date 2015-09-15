@@ -78,6 +78,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private volatile boolean myRebuildIconRenderersCacheFlag = false;
+  private boolean myDisposed = false;
 
   public NodeHighlightManager(@NotNull EditorComponent editor) {
     myEditor = editor;
@@ -310,6 +311,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
+        if (myDisposed) {
+          return;
+        }
         refreshMessagesCache();
         refreshLeftHighlighterMessages();
         myEditor.getExternalComponent().repaint();
@@ -394,6 +398,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     assert ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread() : "dispose() should be called from EDT only";
+    myDisposed = true;
     ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     myEditor.removeRebuildListener(myRebuildListener);
   }

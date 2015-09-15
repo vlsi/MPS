@@ -2,17 +2,17 @@
 <model ref="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -40,6 +40,7 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -572,7 +573,39 @@
     <node concept="3aamgX" id="hYHPNsr" role="3acgRq">
       <ref role="30HIoZ" to="2omo:hX17ltF" resolve="NodeParameter" />
       <node concept="j$656" id="hYHPSNV" role="1lVwrX">
-        <ref role="v9R2y" node="hYHPw$7" resolve="reduce_NodeParameter" />
+        <ref role="v9R2y" node="hYHPw$7" resolve="reduce_NodeParameter_fromContext" />
+      </node>
+      <node concept="30G5F_" id="$P$7g1ESgm" role="30HLyM">
+        <node concept="3clFbS" id="$P$7g1ESgn" role="2VODD2">
+          <node concept="3clFbF" id="$P$7g1ET6j" role="3cqZAp">
+            <node concept="2OqwBi" id="$P$7g1ETcw" role="3clFbG">
+              <node concept="30H73N" id="$P$7g1ET6i" role="2Oq$k0" />
+              <node concept="2qgKlT" id="$P$7g1FtGf" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:hEwJh7s" resolve="getFromParameterObject" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="$P$7g1ETAj" role="3acgRq">
+      <ref role="30HIoZ" to="2omo:hX17ltF" resolve="NodeParameter" />
+      <node concept="j$656" id="$P$7g1ETZW" role="1lVwrX">
+        <ref role="v9R2y" node="$P$7g1ETYP" resolve="reduce_NodeParameter" />
+      </node>
+      <node concept="30G5F_" id="$P$7g1ETAl" role="30HLyM">
+        <node concept="3clFbS" id="$P$7g1ETAm" role="2VODD2">
+          <node concept="3clFbF" id="$P$7g1FsBV" role="3cqZAp">
+            <node concept="3fqX7Q" id="$P$7g1FsBP" role="3clFbG">
+              <node concept="2OqwBi" id="$P$7g1FsHe" role="3fr31v">
+                <node concept="30H73N" id="$P$7g1FsHf" role="2Oq$k0" />
+                <node concept="2qgKlT" id="$P$7g1Fueq" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:hEwJh7s" resolve="getFromParameterObject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3aamgX" id="5NT4nYgHgKu" role="3acgRq">
@@ -1217,6 +1250,11 @@
       <node concept="1W57fq" id="21YnEOmbxHa" role="lGtFl">
         <node concept="3IZrLx" id="21YnEOmbxHb" role="3IZSJc">
           <node concept="3clFbS" id="21YnEOmbxHc" role="2VODD2">
+            <node concept="3SKdUt" id="$P$7g1FHh9" role="3cqZAp">
+              <node concept="3SKdUq" id="$P$7g1FHht" role="3SKWNk">
+                <property role="3SKdUp" value="TODO: not used/delete?" />
+              </node>
+            </node>
             <node concept="3clFbF" id="21YnEOmby1X" role="3cqZAp">
               <node concept="1Wc70l" id="63SDtv05R6o" role="3clFbG">
                 <node concept="2OqwBi" id="63SDtv05R6H" role="3uHU7w">
@@ -1392,6 +1430,11 @@
       <node concept="1W57fq" id="5dTOjvb4c0G" role="lGtFl">
         <node concept="3IZrLx" id="5dTOjvb4c0I" role="3IZSJc">
           <node concept="3clFbS" id="5dTOjvb4c0K" role="2VODD2">
+            <node concept="3SKdUt" id="$P$7g1FHvA" role="3cqZAp">
+              <node concept="3SKdUq" id="$P$7g1FHEl" role="3SKWNk">
+                <property role="3SKdUp" value="TODO: not used/delete?" />
+              </node>
+            </node>
             <node concept="3clFbF" id="5dTOjvb4ff7" role="3cqZAp">
               <node concept="1Wc70l" id="5dTOjvb4ff9" role="3clFbG">
                 <node concept="2OqwBi" id="5dTOjvb4ffa" role="3uHU7w">
@@ -2151,7 +2194,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="hYHPw$7">
-    <property role="TrG5h" value="reduce_NodeParameter" />
+    <property role="TrG5h" value="reduce_NodeParameter_fromContext" />
     <ref role="3gUMe" to="2omo:hX17ltF" resolve="NodeParameter" />
     <node concept="312cEu" id="hYHP$i9" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -3941,6 +3984,34 @@
           <node concept="3uibUv" id="3LSFvQrMFw3" role="1tU5fm">
             <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="$P$7g1ETYP">
+    <property role="TrG5h" value="reduce_NodeParameter" />
+    <ref role="3gUMe" to="2omo:hX17ltF" resolve="NodeParameter" />
+    <node concept="312cEu" id="$P$7g1ETYQ" role="13RCb5">
+      <property role="TrG5h" value="A" />
+      <node concept="3Tm1VV" id="$P$7g1ETYR" role="1B3o_S" />
+      <node concept="3clFbW" id="$P$7g1ETYS" role="jymVt">
+        <node concept="3cqZAl" id="$P$7g1ETYT" role="3clF45" />
+        <node concept="3Tm1VV" id="$P$7g1ETYU" role="1B3o_S" />
+        <node concept="3clFbS" id="$P$7g1ETYV" role="3clF47">
+          <node concept="3cpWs8" id="$P$7g1EUC1" role="3cqZAp">
+            <node concept="3cpWsn" id="$P$7g1EUC7" role="3cpWs9">
+              <property role="TrG5h" value="n" />
+              <node concept="3Tqbb2" id="$P$7g1EUCp" role="1tU5fm" />
+              <node concept="37vLTw" id="$P$7g1EUCX" role="33vP2m">
+                <ref role="3cqZAo" node="$P$7g1ETZ1" resolve="node" />
+                <node concept="raruj" id="$P$7g1EUD8" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="$P$7g1ETZ1" role="3clF46">
+          <property role="TrG5h" value="node" />
+          <node concept="3Tqbb2" id="$P$7g1EU_Z" role="1tU5fm" />
         </node>
       </node>
     </node>

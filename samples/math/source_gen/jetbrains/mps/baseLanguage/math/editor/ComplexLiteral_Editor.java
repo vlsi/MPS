@@ -59,7 +59,7 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "real" + ">";
+      return "<no real>";
     }
 
   }
@@ -99,7 +99,7 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "imag" + ">";
+      return "<no imag>";
     }
 
   }

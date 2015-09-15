@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
@@ -29,6 +28,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * @author simon
  */
+
+@Deprecated
 public class DefaultCommentEditor extends DefaultNodeEditor {
   private ConceptEditor myEditor;
   public DefaultCommentEditor(ConceptEditor editor) {
@@ -37,7 +38,7 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
   @Override
   public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     editorContext.getCellFactory().pushCellContext();
-    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_COMMENT_HINT);
+    editorContext.getCellFactory().removeCellContextHints("jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment");
     EditorCell mainCell = myEditor.createEditorCell(editorContext, node);
     editorContext.getCellFactory().popCellContext();
     EditorCell_Collection result = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, node);
@@ -46,6 +47,7 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
     result.addEditorCell(createCommentConstantCell(editorContext, node, true));
     result.addEditorCell(mainCell);
     result.addEditorCell(createCommentConstantCell(editorContext, node, false));
+    result.setCellId("main_comment_collection");
     return result;
   }
 
@@ -54,6 +56,7 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
     StyleImpl style = new StyleImpl();
     style.set(left ? StyleAttributes.PUNCTUATION_RIGHT : StyleAttributes.PUNCTUATION_LEFT, 0, true);
     cell.getStyle().putAll(style, 0);
+    cell.setCellId(left ? "left_comment_constant" : "right_comment_constant");
     return cell;
   }
 

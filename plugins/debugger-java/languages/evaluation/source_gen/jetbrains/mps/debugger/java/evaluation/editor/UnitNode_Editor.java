@@ -56,7 +56,7 @@ public class UnitNode_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "debuggedType" + ">";
+      return "<no debuggedType>";
     }
 
   }

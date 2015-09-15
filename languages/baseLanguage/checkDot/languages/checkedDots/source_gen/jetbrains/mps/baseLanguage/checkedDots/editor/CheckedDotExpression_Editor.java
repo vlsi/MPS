@@ -65,7 +65,7 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operand" + ">";
+      return "<no operand>";
     }
 
   }
@@ -114,7 +114,7 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }

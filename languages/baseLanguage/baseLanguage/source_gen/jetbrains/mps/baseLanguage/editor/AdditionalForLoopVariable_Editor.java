@@ -95,7 +95,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializer" + ">";
+      return "<no initializer>";
     }
 
   }

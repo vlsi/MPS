@@ -122,7 +122,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "bound" + ">";
+      return "<no bound>";
     }
 
   }

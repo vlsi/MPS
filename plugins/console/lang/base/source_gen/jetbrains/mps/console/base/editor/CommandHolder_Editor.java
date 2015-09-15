@@ -77,7 +77,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "command" + ">";
+      return "<no command>";
     }
 
   }

@@ -84,7 +84,7 @@ public class ConsoleCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "project" + ">";
+      return "<no project>";
     }
 
   }
@@ -127,7 +127,7 @@ public class ConsoleCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "viewer" + ">";
+      return "<no viewer>";
     }
 
   }

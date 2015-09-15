@@ -66,7 +66,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "createdType" + ">";
+      return "<no createdType>";
     }
 
   }
@@ -109,7 +109,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "prototypeNode" + ">";
+      return "<no prototypeNode>";
     }
 
   }

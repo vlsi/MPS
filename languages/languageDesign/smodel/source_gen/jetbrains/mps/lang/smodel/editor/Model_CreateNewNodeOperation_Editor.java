@@ -167,7 +167,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "prototypeNode" + ">";
+      return "<no prototypeNode>";
     }
 
   }
@@ -225,7 +225,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "nodeId" + ">";
+      return "<no nodeId>";
     }
 
   }

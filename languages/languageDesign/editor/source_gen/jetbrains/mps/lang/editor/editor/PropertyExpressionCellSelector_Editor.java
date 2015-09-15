@@ -107,7 +107,7 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "propertyDeclaration" + ">";
+      return "<no propertyDeclaration>";
     }
 
   }

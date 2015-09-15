@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.customAspect.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.customAspect.constraints)/5386558680326427073">
+    <file name="AspectMethodDescriptor_Constraints.java">
+      <node id="5386558680326427073" at="29,47,30,98" concept="7" />
+      <node id="5386558680326427073" at="33,98,34,135" concept="4" />
+      <node id="5386558680326427073" at="37,44,38,20" concept="5" />
+      <node id="5386558680326427073" at="45,63,46,58" concept="5" />
+      <node id="5386558680326460606" at="52,69,53,351" concept="5" />
+      <node id="5386558680326427073" at="59,7,60,22" concept="5" />
+      <node id="5386558680326427073" at="62,0,63,0" concept="6" trace="breakingNode_10kavj_a0a0a0a0a1a0b0a1a1" />
+      <node id="5386558680326427073" at="29,0,32,0" concept="1" trace="AspectMethodDescriptor_Constraints#()V" />
+      <node id="5386558680326427073" at="36,0,40,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="5386558680326427073" at="44,0,48,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5386558680326437147" at="51,0,55,0" concept="3" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5386558680326427073" at="49,122,55,14" concept="0" />
+      <node id="5386558680326436343" at="49,122,55,14" concept="5" />
+      <node id="5386558680326427073" at="48,0,57,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5386558680326427073" at="42,56,57,10" concept="5" />
+      <node id="5386558680326427073" at="40,0,59,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="5386558680326427073" at="34,135,59,7" concept="2" />
+      <node id="5386558680326427073" at="32,0,62,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <scope id="5386558680326427073" at="29,47,30,98" />
+      <scope id="5386558680326427073" at="37,44,38,20" />
+      <scope id="5386558680326427073" at="45,63,46,58" />
+      <scope id="5386558680326437155" at="52,69,53,351" />
+      <scope id="5386558680326427073" at="29,0,32,0" />
+      <scope id="5386558680326427073" at="36,0,40,0" />
+      <scope id="5386558680326427073" at="44,0,48,0" />
+      <scope id="5386558680326437147" at="51,0,55,0">
+        <var name="target" id="5386558680326437150" />
+      </scope>
+      <scope id="5386558680326427073" at="49,122,55,14" />
+      <scope id="5386558680326436317" at="49,122,55,14" />
+      <scope id="5386558680326427073" at="48,0,57,0">
+        <var name="_context" id="5386558680326427073" />
+        <var name="operationContext" id="5386558680326427073" />
+      </scope>
+      <scope id="5386558680326427073" at="42,56,57,10" />
+      <scope id="5386558680326427073" at="40,0,59,0" />
+      <scope id="5386558680326427073" at="33,98,60,22">
+        <var name="references" id="5386558680326427073" />
+      </scope>
+      <scope id="5386558680326427073" at="32,0,62,0" />
+      <unit id="5386558680326437135" at="50,23,55,13" name="jetbrains.mps.lang.customAspect.constraints.AspectMethodDescriptor_Constraints$3" />
+      <unit id="5386558680326427073" at="43,19,57,9" name="jetbrains.mps.lang.customAspect.constraints.AspectMethodDescriptor_Constraints$2" />
+      <unit id="5386558680326427073" at="35,128,59,5" name="jetbrains.mps.lang.customAspect.constraints.AspectMethodDescriptor_Constraints$1" />
+      <unit id="5386558680326427073" at="28,0,64,0" name="jetbrains.mps.lang.customAspect.constraints.AspectMethodDescriptor_Constraints" />
+    </file>
+  </root>
+</debug-info>
+

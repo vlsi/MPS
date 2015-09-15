@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collection;
+import java.util.Set;
 
 /**
  * User: shatalin
@@ -24,7 +29,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface EditorCellFactory {
   EditorCell createEditorCell(SNode node, boolean isInspector);
 
+  EditorCell createEditorCell(SNode node, boolean isInspector, @NotNull Class<? extends ConceptEditor> excludedEditor);
+
   EditorCell createEditorComponentCell(SNode node, String editorComponentId);
+
 
   /**
    * Retrieve current EditorCellContext

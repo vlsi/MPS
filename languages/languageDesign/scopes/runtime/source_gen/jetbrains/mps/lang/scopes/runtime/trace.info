@@ -209,24 +209,23 @@
       <node id="3050821798734713817" at="10,52,11,17" concept="12" />
       <node id="3050821798734713823" at="13,41,14,16" concept="12" />
       <node id="5910513706165665409" at="18,57,19,26" concept="9" />
-      <node id="5910513706165665454" at="19,26,20,14" concept="9" />
-      <node id="5910513706165665412" at="20,14,21,28" concept="8" />
+      <node id="5910513706165665412" at="19,26,20,28" concept="8" />
       <node id="8461667031990116146" at="10,0,13,0" concept="1" trace="NamedElementsScope#(Ljava/lang/Iterable;)V" />
       <node id="3700100223624419737" at="13,0,16,0" concept="1" trace="NamedElementsScope#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3050821798734713831" at="16,0,23,0" concept="6" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3050821798734713831" at="16,0,22,0" concept="6" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8461667031990116149" at="10,52,11,17" />
       <scope id="3700100223624419740" at="13,41,14,16" />
+      <scope id="3050821798734713838" at="18,57,20,28" />
       <scope id="8461667031990116146" at="10,0,13,0">
         <var name="nodes" id="8461667031990116156" />
       </scope>
       <scope id="3700100223624419737" at="13,0,16,0">
         <var name="node" id="3700100223624419741" />
       </scope>
-      <scope id="3050821798734713838" at="18,57,21,28" />
-      <scope id="3050821798734713831" at="16,0,23,0">
+      <scope id="3050821798734713831" at="16,0,22,0">
         <var name="target" id="3050821798734713833" />
       </scope>
-      <unit id="3700100223624419714" at="9,0,24,0" name="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
+      <unit id="3700100223624419714" at="9,0,23,0" name="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
     </file>
   </root>
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/3700100223624426201">

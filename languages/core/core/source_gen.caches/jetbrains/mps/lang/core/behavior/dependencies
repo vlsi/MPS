@@ -21,10 +21,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" file="BaseCommentAttribute_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" file="BaseCommentAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" file="BaseConcept_Behavior.java">
@@ -170,6 +181,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" file="IDontApplyTypesystemRules_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" file="IDontSubstituteByDefault_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" file="IMetaLevelChanger_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -194,6 +206,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" file="IResolveInfo_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" file="ISkipConstraintsChecking_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" file="IStubForAnotherConcept_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,11 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
 
   public static final String TYPE = "default";
 
+  /**
+   * @deprecated technically, the method is ok, if you know exactly which node id you parse. marked deprecated to get uses noticed
+   * and replaced with {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createNodeId(String)}
+   */
+  @Deprecated
   public static SNodeId fromString(String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {
       return new Foreign(idString);

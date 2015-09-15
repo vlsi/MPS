@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -132,8 +133,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     Iterator<SNode> it = resultList.iterator();
     while (it.hasNext()) {
       SNode next = it.next();
-      if (next.isInstanceOfConcept(containmentLink.getTargetConcept()))
-      if (!filter(next)) {
+      SNode nodeToFilter = next;
+      if (CommentUtil.isComment(next)) {
+        nodeToFilter = CommentUtil.getCommentedNode(next);
+      }
+      if (!filter(nodeToFilter)) {
         it.remove();
       }
     }

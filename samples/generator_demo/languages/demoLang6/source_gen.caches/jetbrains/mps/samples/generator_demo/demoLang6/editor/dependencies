@@ -24,7 +24,7 @@
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Button_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Label_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.generator_demo.demoLang6.editor.Label_Editor" file="Label_Editor.java">
     <classNode dependClassName="java.lang.Class" />

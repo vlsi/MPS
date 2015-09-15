@@ -35,9 +35,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import java.util.Iterator;
 
 public class MethodResolveUtil {
   public MethodResolveUtil() {
@@ -107,9 +104,6 @@ public class MethodResolveUtil {
   }
 
 
-  public static List<SNode> selectByParmCount(List<SNode> methods, List<SNode> actualArgs) {
-    return selectByParmCountReportNoGoodMethodNode(methods, actualArgs).o1;
-  }
   public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
@@ -193,9 +187,6 @@ public class MethodResolveUtil {
   }
   private static boolean hasEqualsFQName(SModel model1, SModel model2) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(model1).equals(jetbrains.mps.util.SNodeOperations.getModelLongName(model2));
-  }
-  public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
-    return MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, candidates, actualArgs, typeByTypeVar).o1;
   }
   public static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     Map<SNode, SNode> nodesAndTypes = new HashMap<SNode, SNode>();
@@ -293,28 +284,6 @@ public class MethodResolveUtil {
       }
     }
     return result;
-  }
-  /**
-   * Use this method in baseLanguage.scopes module
-   */
-  @Deprecated
-  public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, List<SNode> typeParameters) {
-    Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
-      typeByTypeVar.put(elem.key(), elem.value());
-    }
-    Iterator<SNode> typeParms = ListSequence.fromList(typeParameters).iterator();
-    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration")))) {
-      if (!(typeParms.hasNext())) {
-        break;
-      }
-      SNode typeParm = SNodeOperations.as(typeParms.next(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
-      if ((typeParm == null) || SLinkOperations.getTarget(SNodeOperations.as(typeParm, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")) == typeVar) {
-        continue;
-      }
-      MapSequence.fromMap(typeByTypeVar).put(typeVar, SNodeOperations.cast(typeParm, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
-    }
-    return typeByTypeVar;
   }
   private static boolean eq_zegw12_a0a0a0a0a1a0a0e0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

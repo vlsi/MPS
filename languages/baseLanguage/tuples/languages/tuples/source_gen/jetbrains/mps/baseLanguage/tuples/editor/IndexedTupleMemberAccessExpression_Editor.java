@@ -63,7 +63,7 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "tuple" + ">";
+      return "<no tuple>";
     }
 
   }
@@ -106,7 +106,7 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "index" + ">";
+      return "<no index>";
     }
 
   }

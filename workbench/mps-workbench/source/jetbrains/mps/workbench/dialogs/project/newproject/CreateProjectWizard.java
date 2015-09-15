@@ -45,6 +45,7 @@ import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.dialogs.project.newproject.PathField.PathChangedListner;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,17 +56,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
@@ -273,20 +272,34 @@ public class CreateProjectWizard extends DialogWrapper {
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myProjectPath = new PathField();
-    myProjectPath.addPropertyChangeListener("path", new PropertyChangeListener() {
+    myProjectPath.addPathChangedListner(new PathChangedListner() {
       @Override
-      public void propertyChange(PropertyChangeEvent evt) {
-        String newProjectPath = (String) evt.getNewValue();
-        fireProjectPathChanged(newProjectPath);
-        checkProjectPath(newProjectPath);
+      public void firePathChanged(String newValue) {
+        //If path changed need to update specific module settings
+        fireProjectPathChanged(newValue);
+        checkProjectPath(newValue);
       }
     });
-    myProjectName.addCaretListener(new CaretListener() {
+
+    //Change project path if project name changed
+    myProjectName.addFocusListener(new FocusAdapter() {
+      private String value = myProjectName.getText();
       @Override
-      public void caretUpdate(CaretEvent e) {
-        updateProjectPath();
+      public void focusGained(FocusEvent e) {
+        super.focusGained(e);
+        value = myProjectName.getText();
+      }
+
+      @Override
+      public void focusLost(FocusEvent e) {
+        super.focusLost(e);
+        //Only need to update if name changed
+        if(!value.equals(myProjectName.getText())) {
+          updateProjectPath();
+        }
       }
     });
+
     updateProjectPath();
     myProjectPanel.add(myProjectPath,
         new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));

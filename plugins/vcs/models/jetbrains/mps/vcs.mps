@@ -5,10 +5,10 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -2025,34 +2025,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="38_6U8fKvyB" role="jymVt">
-      <property role="TrG5h" value="getInstance" />
-      <node concept="3Tm1VV" id="38_6U8fKvyC" role="1B3o_S" />
-      <node concept="3uibUv" id="38_6U8fKvyD" role="3clF45">
-        <ref role="3uigEE" node="38_6U8fKvwW" resolve="MPSVcsProjectConfiguration" />
-      </node>
-      <node concept="37vLTG" id="38_6U8fKvyE" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="38_6U8fKvyF" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="38_6U8fKvyG" role="3clF47">
-        <node concept="3cpWs6" id="38_6U8fKvyH" role="3cqZAp">
-          <node concept="2OqwBi" id="38_6U8fKvyI" role="3cqZAk">
-            <node concept="37vLTw" id="2BHiRxgmal4" role="2Oq$k0">
-              <ref role="3cqZAo" node="38_6U8fKvyE" resolve="project" />
-            </node>
-            <node concept="liA8E" id="38_6U8fKvyK" role="2OqNvi">
-              <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-              <node concept="3VsKOn" id="38_6U8fKvyL" role="37wK5m">
-                <ref role="3VsUkX" node="38_6U8fKvwW" resolve="MPSVcsProjectConfiguration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="312cEu" id="38_6U8fKvx1" role="jymVt">
       <property role="TrG5h" value="MyState" />
       <node concept="3Tm1VV" id="38_6U8fKvx2" role="1B3o_S" />
@@ -2529,6 +2501,21 @@
               </node>
               <node concept="Xl_RD" id="n3g0Q5nSc4" role="37wK5m">
                 <property role="Xl_RC" value="persistence" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmqPo" role="37wK5m">
+                <property role="Xl_RC" value="platform" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmrSI" role="37wK5m">
+                <property role="Xl_RC" value="components" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmx$K" role="37wK5m">
+                <property role="Xl_RC" value="migration-runtime" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmAyA" role="37wK5m">
+                <property role="Xl_RC" value="textgen" />
+              </node>
+              <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
+                <property role="Xl_RC" value="java-stub" />
               </node>
             </node>
           </node>

@@ -3,9 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,7 +12,6 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -136,6 +133,11 @@
         <property role="YLQ7P" value="Used to point to Dependency, which has been deprecated for few years now. Link left not to break a model with children here, if any" />
         <property role="YLPcu" value="3.3" />
       </node>
+    </node>
+    <node concept="1TJgyj" id="6lCixFI9LG8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="supercedesFun" />
+      <ref role="20lvS9" node="6lCixFI9ig3" resolve="SupersedeConceptFunction" />
     </node>
     <node concept="PrWs8" id="3SW4jvYrbIJ" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
@@ -1903,29 +1905,28 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${module}/icons/substitute.png" />
     <ref role="1TJDcQ" node="h5YuPLN" resolve="AbstractRule" />
+    <node concept="1TJgyj" id="6mxDMAOhqV0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
     <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="2EOQLmJ9gll" resolve="SubstituteTypeRuleFunction" />
+      <node concept="asaX9" id="4x8Jh$mQC7I" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="5zzawu2JakF" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
+    <node concept="PrWs8" id="6mxDMAOk6bE" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
     <node concept="PrWs8" id="5zzawu2JS8A" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="2EOQLmJ9gll">
-    <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="2EOQLmJ9owp">
-    <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
-    <property role="34LRSv" value="originalNode" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="1y5tROjsd_V">
     <property role="3GE5qa" value="definition.conceptFunction" />
@@ -1940,6 +1941,24 @@
     <node concept="PrWs8" id="25idkGdk027" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6lCixFI9ig3">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SupersedeConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9gll">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="4x8Jh$mQ$5M" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9owp">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
+    <property role="34LRSv" value="originalNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="4x8Jh$mQ$5O" role="lGtFl" />
   </node>
 </model>
 

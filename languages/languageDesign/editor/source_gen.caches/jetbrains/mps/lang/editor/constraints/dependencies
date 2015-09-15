@@ -178,6 +178,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints" file="CellModel_NextEditor_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints" file="CellModel_Property_Constraints.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -403,6 +415,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponent_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints" />

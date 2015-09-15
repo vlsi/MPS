@@ -70,7 +70,7 @@ public class BuildMps_ModuleTestSource_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "folder" + ">";
+      return "<no folder>";
     }
 
   }

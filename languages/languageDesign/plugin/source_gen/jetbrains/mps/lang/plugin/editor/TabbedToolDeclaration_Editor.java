@@ -346,7 +346,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toolIcon" + ">";
+      return "<no toolIcon>";
     }
 
   }
@@ -479,7 +479,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toolInitBlock" + ">";
+      return "<no toolInitBlock>";
     }
 
   }
@@ -519,7 +519,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "toolDisposeBlock" + ">";
+      return "<no toolDisposeBlock>";
     }
 
   }

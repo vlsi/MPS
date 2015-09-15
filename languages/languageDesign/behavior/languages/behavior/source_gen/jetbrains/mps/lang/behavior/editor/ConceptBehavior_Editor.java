@@ -181,7 +181,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "constructor" + ">";
+      return "<no constructor>";
     }
 
   }

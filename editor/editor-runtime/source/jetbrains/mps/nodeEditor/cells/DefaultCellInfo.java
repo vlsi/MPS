@@ -44,7 +44,11 @@ public class DefaultCellInfo implements CellInfo {
       @Override
       public void run() {
         SNode node = cell.getSNode();
-        myNodeReference = (node == null || node.getModel() == null) ? null : node.getReference();
+        if (node == null || node.getModel() == null) {
+          myNodeReference = null;
+        } else {
+          myNodeReference = node.getReference();
+        }
       }
     });
 
@@ -71,8 +75,9 @@ public class DefaultCellInfo implements CellInfo {
     e.setAttribute(CELL_NUMBER, "" + myCellNumber);
     e.setAttribute(IS_IN_LIST, "" + myIsInList);
     Element nodeElement = new Element(NODE);
-    assert myNodeReference != null;
-    nodeElement.setAttribute(NODE_REFERENCE, myNodeReference.toString());
+    if (myNodeReference != null) {
+      nodeElement.setAttribute(NODE_REFERENCE, myNodeReference.toString());
+    }
     e.addContent(nodeElement);
     if (myParentInfo instanceof DefaultCellInfo) {
       Element parentElement = new Element(PARENT);

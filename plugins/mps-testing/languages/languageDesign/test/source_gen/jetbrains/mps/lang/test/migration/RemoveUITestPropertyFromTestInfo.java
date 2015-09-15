@@ -27,46 +27,48 @@ public class RemoveUITestPropertyFromTestInfo extends MigrationScriptBase {
     return "Remove the obsolete uiTest property from TestInfo concepts";
   }
   public SNode execute(SModule m) {
-    final GeneratedMatchingPattern pattern = new RemoveUITestPropertyFromTestInfo.Pattern_vbjplg_a0a0a1();
-    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return pattern.match(it);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode n) {
-        return true;
-      }
-    }).sort(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
-      }
-    }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode nodeToMigrate) {
-        pattern.match(nodeToMigrate);
-        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
-          public SNode compute() {
-            return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-              public SNode invoke(SNode node) {
-                node.setProperty("uiTest", null);
-                return node;
-              }
-            }.invoke(nodeToMigrate);
-          }
-        }, null);
-      }
-    });
+    {
+      final GeneratedMatchingPattern pattern = new RemoveUITestPropertyFromTestInfo.Pattern_vbjplg_a0a0a0a1();
+      Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode n) {
+          return true;
+        }
+      }).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
+        }
+      }, false).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode nodeToMigrate) {
+          pattern.match(nodeToMigrate);
+          applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+            public SNode compute() {
+              return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
+                public SNode invoke(SNode node) {
+                  node.setProperty("uiTest", null);
+                  return node;
+                }
+              }.invoke(nodeToMigrate);
+            }
+          }, null);
+        }
+      });
+    }
     return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test"), 0);
   }
 
-  public static class Pattern_vbjplg_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_vbjplg_a0a0a1() {
+  public static class Pattern_vbjplg_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_vbjplg_a0a0a0a1() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo");

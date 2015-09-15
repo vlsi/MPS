@@ -34,7 +34,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public int getVersion() {
-    return 0;
+    return 1;
   }
 
   public SLanguageId getId() {
@@ -74,8 +74,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-
-
     return super.createAspect(aspectClass);
   }
 }

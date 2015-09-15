@@ -117,7 +117,7 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "handler" + ">";
+      return "<no handler>";
     }
 
   }

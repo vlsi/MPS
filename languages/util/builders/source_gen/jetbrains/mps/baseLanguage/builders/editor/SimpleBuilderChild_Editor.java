@@ -161,7 +161,7 @@ public class SimpleBuilderChild_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "attachStatement" + ">";
+      return "<no attachStatement>";
     }
 
   }

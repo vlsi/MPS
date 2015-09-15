@@ -7,6 +7,7 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -24,7 +25,7 @@ public class GeneratedCommand_Behavior {
   public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        final SModel model = context.getConsoleTab().getConsoleModel();
+        final SModel model = ((BaseConsoleTab) context.getOutputWindow()).getConsoleModel();
         boolean result = ConsoleUtil.make(context.getProject(), model);
         if (!(result)) {
           return;
@@ -33,7 +34,7 @@ public class GeneratedCommand_Behavior {
           public void run() {
             try {
               SModule module = model.getModule();
-              String name = ConsoleUtil.getGeneratedModelName(context);
+              String name = model.getModelName() + ".Main";
               Class<?> aClass = ClassLoaderManager.getInstance().getClass(module, name);
               if (aClass == null) {
                 throw new ClassNotFoundException("No class " + name + " for module " + module);

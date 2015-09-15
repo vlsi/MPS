@@ -136,8 +136,8 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
         }
       } catch (Throwable e) {
         LOG.error("Exception while behavior descriptor creating " + concept, e);
+        descriptor = new IllegalBHDescriptor(concept);
       }
-      assert descriptor != null;
       myBHDescriptors.put(concept, descriptor);
       return descriptor;
     } finally {

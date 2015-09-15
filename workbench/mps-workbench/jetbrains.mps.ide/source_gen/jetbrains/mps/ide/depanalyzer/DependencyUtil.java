@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class DependencyUtil {
   private boolean myNeedRuntime;
@@ -293,10 +292,6 @@ public class DependencyUtil {
     }
     public DependencyUtil.Role role() {
       return super._1();
-    }
-    @SuppressWarnings(value = "unchecked")
-    public DependencyUtil.Dependency assignFrom(Tuples._2<SModuleReference, DependencyUtil.Role> from) {
-      return (DependencyUtil.Dependency) super.assign(from);
     }
   }
   private static Set<SModuleReference> check_he47wm_b0b0h4a6(LanguageDescriptor checkedDotOperand) {

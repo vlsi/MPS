@@ -68,7 +68,7 @@ public class SideTransformVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "type" + ">";
+      return "<no type>";
     }
 
   }
@@ -134,7 +134,7 @@ public class SideTransformVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "initializerBlock" + ">";
+      return "<no initializerBlock>";
     }
 
   }

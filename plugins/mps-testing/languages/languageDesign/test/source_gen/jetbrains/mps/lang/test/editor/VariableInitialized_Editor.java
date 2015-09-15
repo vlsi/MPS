@@ -82,7 +82,7 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "var" + ">";
+      return "<no var>";
     }
 
   }

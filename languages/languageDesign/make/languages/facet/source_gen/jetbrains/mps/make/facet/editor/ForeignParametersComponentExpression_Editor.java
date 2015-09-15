@@ -67,7 +67,7 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "expression" + ">";
+      return "<no expression>";
     }
 
   }
@@ -110,7 +110,7 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "operation" + ">";
+      return "<no operation>";
     }
 
   }
@@ -168,7 +168,7 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     }
 
     protected String getNoTargetText() {
-      return "<no " + "resource" + ">";
+      return "<no resource>";
     }
 
   }

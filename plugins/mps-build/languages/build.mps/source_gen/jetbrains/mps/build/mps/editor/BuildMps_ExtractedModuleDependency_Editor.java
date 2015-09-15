@@ -70,7 +70,7 @@ public class BuildMps_ExtractedModuleDependency_Editor extends DefaultNodeEditor
     }
 
     protected String getNoTargetText() {
-      return "<no " + "dependency" + ">";
+      return "<no dependency>";
     }
 
   }

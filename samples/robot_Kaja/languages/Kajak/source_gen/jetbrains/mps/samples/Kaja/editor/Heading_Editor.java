@@ -68,7 +68,7 @@ public class Heading_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "direction" + ">";
+      return "<no direction>";
     }
 
   }

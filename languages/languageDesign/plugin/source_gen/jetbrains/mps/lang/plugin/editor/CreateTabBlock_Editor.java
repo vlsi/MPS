@@ -91,7 +91,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "conceptsBlock" + ">";
+      return "<no conceptsBlock>";
     }
 
   }
@@ -125,7 +125,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     }
 
     protected String getNoTargetText() {
-      return "<no " + "createBlock" + ">";
+      return "<no createBlock>";
     }
 
   }
