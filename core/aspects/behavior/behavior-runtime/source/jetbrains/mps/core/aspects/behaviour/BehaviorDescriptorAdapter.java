@@ -59,7 +59,6 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
   }
 
   public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
-    boolean isStatic = (node == null);
     @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, parameters);
     if (method == null) {
       throwNoSuchMethod(methodName);

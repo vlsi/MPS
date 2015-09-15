@@ -90,25 +90,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     Object[] parameters = new Object[0];
     NodeOrConcept nodeOrConcept = NodeOrConcept.create(node);
     String constructorName = BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME;
-    for (SAbstractConcept ancestor : getConstructingOrder()) {
-      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(ancestor);
-      if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
-        InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
-        if (legacyDescriptor.hasOwnMethod(constructorName)) {
-          legacyDescriptor.invokeOwn(nodeOrConcept, constructorName, parameters);
-        }
-      } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
-        BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
-        if (!(behaviorDescriptor instanceof BehaviorDescriptorAdapter)) {
-          throw new IllegalStateException("Could not get legacy behavior descriptor + " + behaviorDescriptor +
-              "; unable to resolve the constructor");
-        }
-        BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
-        if (behaviorDescriptorAdapter.hasOwnMethod(constructorName, parameters)) {
-          behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), constructorName, parameters);
-        }
-      }
-    }
+    invokeMethodOrConstructor(nodeOrConcept, constructorName, getConstructingOrder(), false, parameters);
   }
 
   private Iterable<SAbstractConcept> getConstructingOrder() {
@@ -144,31 +126,42 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
    * and {@link jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
    */
   protected <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
-    return genericInvoke(nodeOrConcept, methodName, myAncestors, parameters);
+    return invokeMethodOrConstructor(nodeOrConcept, methodName, myAncestors, true, parameters);
   }
 
-  private <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors, Object[] parameters) {
+  /**
+   * common method for constructors invocation and method invocation
+   */
+  private <T> T invokeMethodOrConstructor(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors,
+      boolean methodInvocation, Object[] parameters) {
     for (SAbstractConcept ancestor : ancestors) {
-      BHDescriptor bhDescriptor = ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(ancestor);
+      BHDescriptor bhDescriptor = getBehaviorRegistry().getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
         InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
         if (legacyDescriptor.hasOwnMethod(methodName)) {
-          return (T) legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
+          T result = (T) legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
+          if (methodInvocation) {
+            return result;
+          }
         }
       } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
         BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
         if (!(behaviorDescriptor instanceof BehaviorDescriptorAdapter)) {
           throw new IllegalStateException("Could not get legacy behavior descriptor + " + behaviorDescriptor +
-              "; unable to resolve the method '" + methodName + "'");
+              "; unable to resolve method '" + methodName + "'");
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
-        boolean isStatic = (nodeOrConcept.getNode() == null);
         if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters)) {
-          return (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
+          T result = (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
+          if (methodInvocation) {
+            return result;
+          }
         }
       }
     }
-    throwNoSuchMethod(methodName);
+    if (methodInvocation) {
+      throwNoSuchMethod(methodName);
+    }
     return null;
   }
 
