@@ -173,7 +173,7 @@ public class ConvertIntention extends IntentionsFactory {
     return "convert intention";
   }
 
-  public Iterable<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext) {
+  public Collection<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext) {
     Collection<NodeTransformer> result = CollectionSequence.fromCollection(new ArrayList<NodeTransformer>());
     String id = getClass().getName();
     CollectionSequence.fromCollection(result).addElement(new BaseNodeTransformer(this, node, editorContext, ConvertIntention.this.getKind(), id, implementationNode) {

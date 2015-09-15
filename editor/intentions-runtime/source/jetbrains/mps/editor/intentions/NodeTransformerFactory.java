@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
+
 /**
  * This factory produces a set of transformers and defines applicability rules for them depending on current context.
  * The current context consists of node we try to apply transforms to, currently selected node and editor context.
@@ -40,8 +42,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public interface NodeTransformerFactory {
   /**
    * For a context in which factory is applicable, returns tree transformers to show to the user
+   * Should be invoked with read access aquired
    */
-  Iterable<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext);
+  Collection<NodeTransformer> getTreeTransformers(SNode node, SNode child, EditorContext editorContext);
 
   /**
    * This factory is only applicable to instances of this concept

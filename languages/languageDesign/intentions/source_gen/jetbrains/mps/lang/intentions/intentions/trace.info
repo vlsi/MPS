@@ -86,7 +86,7 @@
       <node id="7271443492838111790" at="168,0,169,327" concept="2" />
       <node id="7271443492838111799" at="169,327,170,79" concept="2" />
       <node id="7271443492838110748" at="172,70,173,31" concept="8" />
-      <node id="7271443492838023362" at="176,110,177,109" concept="7" />
+      <node id="7271443492838023362" at="176,112,177,109" concept="7" />
       <node id="7271443492838023362" at="177,109,178,37" concept="7" />
       <node id="7271443492838023362" at="180,71,181,59" concept="2" />
       <node id="7271443492838023362" at="183,80,184,70" concept="8" />
@@ -135,7 +135,7 @@
       <node id="7271443492838111673" at="189,0,199,0" concept="11" trace="_quotation_createNode_lf8yx8_a0a0a2a51a8#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7271443492838023362" at="108,0,119,0" concept="6" trace="resolveReference#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7271443492838163913" at="90,66,102,5" concept="0" />
-      <node id="7271443492838023362" at="176,0,189,0" concept="6" trace="getTreeTransformers#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="7271443492838023362" at="176,0,189,0" concept="6" trace="getTreeTransformers#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="7271443492838023362" at="90,0,108,0" concept="6" trace="resolveChildFilterRefernce#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7271443492838023362" at="119,0,172,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="7271443492838023362" at="37,29,37,29" />
@@ -237,7 +237,7 @@
         <var name="node" id="7271443492838164022" />
         <var name="root" id="7271443492838164020" />
       </scope>
-      <scope id="7271443492838023362" at="176,110,187,18">
+      <scope id="7271443492838023362" at="176,112,187,18">
         <var name="id" id="7271443492838023362" />
         <var name="result" id="7271443492838023362" />
       </scope>
