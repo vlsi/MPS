@@ -683,7 +683,6 @@
   <node concept="312cEu" id="6h71hRDS6Lm">
     <property role="TrG5h" value="IntentionsDescriptor" />
     <property role="1EXbeo" value="true" />
-    <property role="3GE5qa" value="old" />
     <node concept="312cEg" id="7ZU0Lz4JDI8" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -906,7 +905,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5q68DczImby" role="3cqZAp" />
         <node concept="3KaCP$" id="1M8MwyYdF6" role="3cqZAp">
           <node concept="3clFbS" id="1M8MwyYdF8" role="3Kb1Dw">
             <node concept="3cpWs6" id="1M8MwyYdH_" role="3cqZAp">
@@ -1014,11 +1012,6 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3SKdUt" id="1wwM2ppDoBN" role="3cqZAp">
-                        <node concept="3SKdUq" id="1wwM2ppDp6X" role="3SKWNk">
-                          <property role="3SKdUp" value="base intentions" />
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="3pZGE0vtC$B" role="3cqZAp">
                         <node concept="37vLTI" id="3pZGE0vtCVZ" role="3clFbG">
                           <node concept="AH0OO" id="3pZGE0vtCLv" role="37vLTJ">
@@ -1082,11 +1075,6 @@
                               </node>
                             </node>
                           </node>
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="1wwM2ppDpBo" role="3cqZAp">
-                        <node concept="3SKdUq" id="1wwM2ppDq6$" role="3SKWNk">
-                          <property role="3SKdUp" value="classlike intentions" />
                         </node>
                       </node>
                       <node concept="3clFbF" id="1wwM2ppB5Rf" role="3cqZAp">
@@ -1178,7 +1166,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="1wwM2ppAE18" role="3cqZAp" />
                   <node concept="3cpWs6" id="3pZGE0vtxnX" role="3cqZAp">
                     <node concept="2YIFZM" id="3pZGE0vtyVD" role="3cqZAk">
                       <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
@@ -1463,11 +1450,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="1wwM2pp_Gmk" role="3cqZAp">
-          <node concept="3SKdUq" id="1wwM2pp_H8a" role="3SKWNk">
-            <property role="3SKdUp" value="classlike intentions" />
           </node>
         </node>
         <node concept="3clFbF" id="7Okl0NV9a8S" role="3cqZAp">
