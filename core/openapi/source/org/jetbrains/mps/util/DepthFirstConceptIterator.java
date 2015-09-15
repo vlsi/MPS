@@ -20,9 +20,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * Traverse hierarchy of {@link org.jetbrains.mps.openapi.language.SConcept SConcepts} for a given concept (inclusive), visiting super-concepts first
@@ -41,7 +41,7 @@ import java.util.Queue;
 public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
   private final SAbstractConcept myStart;
   private SConcept myCurrent; // super-concepts hierarchy or null once all super-concepts are over
-  private final Queue<SInterfaceConcept> myInterfaceQueue = new LinkedList<SInterfaceConcept>();
+  private final Deque<SInterfaceConcept> myInterfaces = new ArrayDeque<SInterfaceConcept>();
 
   public DepthFirstConceptIterator(@NotNull SAbstractConcept start) {
     myStart = start;
@@ -49,13 +49,13 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
   }
   @Override
   public boolean hasNext() {
-    return myCurrent != null || !myInterfaceQueue.isEmpty();
+    return myCurrent != null || !myInterfaces.isEmpty();
   }
 
   @Override
   public SAbstractConcept next() {
     if (myCurrent == null) {
-      final SInterfaceConcept rv = myInterfaceQueue.poll();
+      final SInterfaceConcept rv = myInterfaces.removeFirst();
       queue(rv.getSuperInterfaces());
       return rv;
     } else {
@@ -73,9 +73,9 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
 
   private void queue(Iterable<SInterfaceConcept> superInterfaces) {
     if (superInterfaces != null) {
-      //myInterfaceQueue.addAll(IterableUtil.asList(superInterfaces));    IterableUtil shall move out from kernel module to some utility location
+      //myInterfaces.addAll(IterableUtil.asList(superInterfaces));    IterableUtil shall move out from kernel module to some utility location
       for (SInterfaceConcept ic : superInterfaces) {
-        myInterfaceQueue.add(ic);
+        myInterfaces.add(ic);
       }
     }
   }
@@ -87,10 +87,10 @@ public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, It
   }
 
   private void reset() {
-    myInterfaceQueue.clear();
+    myInterfaces.clear();
     if (myStart instanceof SInterfaceConcept) {
       myCurrent = null;
-      myInterfaceQueue.add((SInterfaceConcept) myStart);
+      myInterfaces.add((SInterfaceConcept) myStart);
     } else {
       myCurrent = (SConcept) myStart;
     }
