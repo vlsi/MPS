@@ -9,9 +9,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
 
@@ -19,7 +17,7 @@ public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
    * Shared between workbench action and plugin MoveContributor
    */
   @Override
-  public void execute(MPSProject project, final SNode target, final MoveRefactoringRunnable runnable) {
+  public void execute(final MPSProject project, final SNode target, final MoveRefactoringRunnable runnable) {
     final SNode whereToMove;
     whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
       @Override
@@ -31,15 +29,13 @@ public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
     if (whereToMove == null) {
       return;
     }
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    project.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode node = ((SNode) target);
-        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(target, project.getRepository()))) {
           return;
         }
-        jetbrains.mps.smodel.SNode node1 = ((jetbrains.mps.smodel.SNode) whereToMove);
-        if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(whereToMove, project.getRepository()))) {
           return;
         }
 

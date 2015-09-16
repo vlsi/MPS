@@ -6,15 +6,14 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.awt.Frame;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
@@ -36,13 +35,6 @@ public class OptimizeProjectImports_Action extends BaseAction {
       return false;
     }
     {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
@@ -62,10 +54,11 @@ public class OptimizeProjectImports_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<String> report = new Wrappers._T<String>();
 
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    repo.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         report.value = new OptimizeImportsHelper().optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
-        MPSModuleRepository.getInstance().saveAll();
+        repo.saveAll();
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });

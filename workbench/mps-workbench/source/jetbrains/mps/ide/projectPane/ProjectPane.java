@@ -54,7 +54,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
@@ -152,7 +151,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     super.removeListeners();
     myConnection.disconnect();
     myConnection = null;
-    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
+    getMPSProject().getRepository().removeRepositoryListener(myRepositoryListener);
   }
 
   @Override
@@ -161,7 +160,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     assert myConnection == null; // double initialization
     myConnection = getProject().getMessageBus().connect();
     myConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, myEditorListener);
-    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    getMPSProject().getRepository().addRepositoryListener(myRepositoryListener);
   }
 
   @Hack

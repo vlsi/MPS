@@ -14,11 +14,10 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.ui.Messages;
 
 public class OptimizeModuleImports_Action extends BaseAction {
@@ -64,7 +63,8 @@ public class OptimizeModuleImports_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<String> report = new Wrappers._T<String>("");
 
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    repo.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         OptimizeImportsHelper helper = new OptimizeImportsHelper();
         for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
@@ -75,8 +75,7 @@ public class OptimizeModuleImports_Action extends BaseAction {
           }
         }
 
-        SModelRepository.getInstance().saveAll();
-        MPSModuleRepository.getInstance().saveAll();
+        repo.saveAll();
       }
     });
     Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());

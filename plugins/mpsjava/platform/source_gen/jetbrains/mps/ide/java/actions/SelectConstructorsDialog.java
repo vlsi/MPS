@@ -4,16 +4,15 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.ide.util.GroupedNodesChooser;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SelectConstructorsDialog extends GroupedNodesChooser {
-  public SelectConstructorsDialog(SNodeReference[] ctors, Project project) {
-    super(ctors, false, true, ProjectHelper.toIdeaProject(project));
+  public SelectConstructorsDialog(SNodeReference[] ctors, MPSProject mpsProject) {
+    super(ctors, false, true, mpsProject.getProject());
   }
   @Override
   protected String getText(SNode node) {
