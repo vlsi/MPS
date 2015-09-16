@@ -394,44 +394,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1587916991969835891">
     <file name="GenerateConceptId_QuickFix.java">
-      <node id="1587916991969835891" at="19,39,20,134" concept="16" />
-      <node id="1587916991969836249" at="22,44,23,25" concept="12" />
-      <node id="1587916991969913406" at="27,39,28,174" concept="12" />
-      <node id="1587916991969892415" at="30,8,31,0" concept="14" />
-      <node id="1587916991969927915" at="31,0,32,48" concept="13" />
-      <node id="1587916991969847328" at="32,48,33,22" concept="11" />
-      <node id="1587916991969847994" at="34,8,35,83" concept="6" />
-      <node id="1587916991969923241" at="36,65,37,22" concept="6" />
-      <node id="1587916991969925940" at="39,29,40,0" concept="14" />
-      <node id="1587916991969838612" at="40,0,41,230" concept="6" />
-      <node id="1587916991969835891" at="19,0,22,0" concept="3" trace="GenerateConceptId_QuickFix#()V" />
-      <node id="1587916991969835891" at="22,0,25,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1587916991969913404" at="27,0,30,0" concept="10" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
-      <node id="1587916991969917167" at="35,83,38,7" concept="9" />
-      <node id="1587916991969913392" at="25,35,30,8" concept="11" />
-      <node id="1587916991969847148" at="33,22,39,29" concept="5" />
-      <node id="1587916991969835891" at="25,0,43,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1587916991969835891" at="19,39,20,134" />
-      <scope id="1587916991969835923" at="22,44,23,25" />
-      <scope id="1587916991969913405" at="27,39,28,174" />
-      <scope id="1587916991969917169" at="36,65,37,22" />
-      <scope id="1587916991969835891" at="19,0,22,0" />
-      <scope id="1587916991969835891" at="22,0,25,0">
+      <node id="1587916991969835891" at="14,39,15,134" concept="16" />
+      <node id="1587916991969836249" at="17,44,18,25" concept="12" />
+      <node id="1587916991969838612" at="20,35,21,329" concept="6" />
+      <node id="1587916991969835891" at="14,0,17,0" concept="3" trace="GenerateConceptId_QuickFix#()V" />
+      <node id="1587916991969835891" at="17,0,20,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1587916991969835891" at="20,0,23,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1587916991969835891" at="14,39,15,134" />
+      <scope id="1587916991969835923" at="17,44,18,25" />
+      <scope id="1587916991969835893" at="20,35,21,329" />
+      <scope id="1587916991969835891" at="14,0,17,0" />
+      <scope id="1587916991969835891" at="17,0,20,0">
         <var name="node" id="1587916991969835891" />
       </scope>
-      <scope id="1587916991969913404" at="27,0,30,0">
-        <var name="it" id="1587916991969913404" />
-      </scope>
-      <scope id="1587916991969847150" at="34,8,38,7" />
-      <scope id="1587916991969835893" at="25,35,41,230">
-        <var name="existingIds" id="1587916991969913393" />
-        <var name="generated" id="1587916991969847331" />
-      </scope>
-      <scope id="1587916991969835891" at="25,0,43,0">
+      <scope id="1587916991969835891" at="20,0,23,0">
         <var name="node" id="1587916991969835891" />
       </scope>
-      <unit id="1587916991969913404" at="26,386,30,5" name="jetbrains.mps.lang.structure.typesystem.GenerateConceptId_QuickFix$1" />
-      <unit id="1587916991969835891" at="18,0,44,0" name="jetbrains.mps.lang.structure.typesystem.GenerateConceptId_QuickFix" />
+      <unit id="1587916991969835891" at="13,0,24,0" name="jetbrains.mps.lang.structure.typesystem.GenerateConceptId_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/2854075155749507956">

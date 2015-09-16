@@ -5,15 +5,10 @@ package jetbrains.mps.lang.structure.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.structure.util.ConceptIdUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
   public GenerateConceptId_QuickFix() {
@@ -23,21 +18,6 @@ public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
     return "generate id";
   }
   public void execute(SNode node) {
-    Set<Integer> existingIds = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0])), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).select(new ISelector<SNode, Integer>() {
-      public Integer select(SNode it) {
-        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"));
-      }
-    }));
-
-    // generate random int that is not yet used 
-    int generated = 0;
-    do {
-      generated = Math.round(((float) (Math.random() * (Integer.MAX_VALUE - 10))));
-      if (SetSequence.fromSet(existingIds).contains(generated)) {
-        generated = 0;
-      }
-    } while (generated == 0);
-
-    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (generated));
+    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0])))));
   }
 }
