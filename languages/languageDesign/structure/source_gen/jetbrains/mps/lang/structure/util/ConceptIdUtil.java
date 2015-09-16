@@ -22,9 +22,13 @@ public class ConceptIdUtil {
     }));
     while (true) {
       int generated = Math.round(((float) (Math.random() * (Integer.MAX_VALUE - 10))));
-      if (!(SetSequence.fromSet(existingIds).contains(generated))) {
-        return generated;
+      if (generated == 0) {
+        continue;
       }
+      if (SetSequence.fromSet(existingIds).contains(generated)) {
+        continue;
+      }
+      return generated;
     }
   }
 }
