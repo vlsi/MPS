@@ -35,7 +35,7 @@ public class CopyConceptIdsFromNodeIds extends MigrationScriptBase {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(SNodeOperations.getModel(it))));
+          SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(it, SNodeOperations.getModel(it))));
         }
       });
     }

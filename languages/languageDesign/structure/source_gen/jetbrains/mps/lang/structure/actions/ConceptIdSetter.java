@@ -21,7 +21,7 @@ public class ConceptIdSetter {
         }
         return;
       }
-      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(model)));
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(newNode, model)));
     }
   }
   protected static Logger LOG = LogManager.getLogger(ConceptIdSetter.class);
