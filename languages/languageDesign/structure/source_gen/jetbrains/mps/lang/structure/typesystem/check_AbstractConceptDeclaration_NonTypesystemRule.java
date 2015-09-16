@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_AbstractConceptDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,7 +22,12 @@ public class check_AbstractConceptDeclaration_NonTypesystemRule extends Abstract
     if (SPropertyOperations.getInteger(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId")) == 0) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Concept id is not defined. Please run \"add concept ids\" migration or invoke Migrations->3.3->Add Concept Ids", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1587916991969781666", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Concept id is not defined.\n" + "Please run \"add concept ids\" migration or invoke Migrations->3.3->Add Concept Ids.\n" + "If this concept was created manually, invoke the \"generate id\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1587916991969781666", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptId_QuickFix", false);
+          intentionProvider.putArgument("c", acd);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }
