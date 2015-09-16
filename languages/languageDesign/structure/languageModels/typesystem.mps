@@ -3285,5 +3285,39 @@
       </node>
     </node>
   </node>
+  <node concept="18kY7G" id="1o9qxtfa_BN">
+    <property role="TrG5h" value="check_AbstractConceptDeclaration" />
+    <node concept="3clFbS" id="1o9qxtfa_BO" role="18ibNy">
+      <node concept="3clFbJ" id="1o9qxtfa_CH" role="3cqZAp">
+        <node concept="3clFbS" id="1o9qxtfa_CI" role="3clFbx">
+          <node concept="2MkqsV" id="1o9qxtfaAuy" role="3cqZAp">
+            <node concept="1YBJjd" id="1o9qxtfaAuI" role="2OEOjV">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="Xl_RD" id="1o9qxtfaAva" role="2MkJ7o">
+              <property role="Xl_RC" value="Concept id is not defined. Please run \&quot;add concept ids\&quot; migration or invoke Migrations-&gt;3.3-&gt;Add Concept Ids" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbC" id="1o9qxtfaAsM" role="3clFbw">
+          <node concept="3cmrfG" id="1o9qxtfaAtL" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="1o9qxtfa_Gx" role="3uHU7B">
+            <node concept="1YBJjd" id="1o9qxtfa_CW" role="2Oq$k0">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="3TrcHB" id="1o9qxtfa_Nl" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1o9qxtfa_BQ" role="1YuTPh">
+      <property role="TrG5h" value="acd" />
+      <ref role="1YaFvo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
 </model>
 
