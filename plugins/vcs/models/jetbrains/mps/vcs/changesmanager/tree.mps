@@ -2626,19 +2626,13 @@
         </node>
         <node concept="3clFbJ" id="1OS8OtPz6y9" role="3cqZAp">
           <node concept="3clFbS" id="1OS8OtPz6ya" role="3clFbx">
-            <node concept="3SKdUt" id="tk8S9S$k90" role="3cqZAp">
-              <node concept="3SKdUq" id="tk8S9S$kaU" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME shall use getProjectRepository(), however could not until its getModules() would return meaningful set of modules" />
-              </node>
-            </node>
             <node concept="3clFbF" id="tk8S9S$fIa" role="3cqZAp">
               <node concept="2OqwBi" id="tk8S9S$jNq" role="3clFbG">
                 <node concept="2ShNRf" id="tk8S9S$fI6" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$jMv" role="2ShVmc">
                     <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                    <node concept="2YIFZM" id="tk8S9S$k5s" role="37wK5m">
-                      <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                      <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                    <node concept="1rXfSq" id="7CX_2aIME$O" role="37wK5m">
+                      <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
                     <node concept="37vLTw" id="tk8S9S$jYe" role="37wK5m">
                       <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
@@ -2748,9 +2742,8 @@
                 <node concept="2ShNRf" id="tk8S9S$mG2" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$mG3" role="2ShVmc">
                     <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                    <node concept="2YIFZM" id="tk8S9S$mG4" role="37wK5m">
-                      <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                      <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                    <node concept="1rXfSq" id="7CX_2aIMECy" role="37wK5m">
+                      <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
                     <node concept="37vLTw" id="tk8S9S$mG5" role="37wK5m">
                       <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />

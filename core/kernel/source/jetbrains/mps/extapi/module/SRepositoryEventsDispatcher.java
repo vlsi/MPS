@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.extapi.module;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -24,18 +22,19 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * This class dispatches repository events to SRepositoryListener clients
  */
 public class SRepositoryEventsDispatcher {
-  private static final Logger LOG = LogManager.getLogger(SRepositoryEventsDispatcher.class);
-
   private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+
+  // AtomicInteger is not to guard against registration from parallel threads, rather a convenient way to have modifiable Integer
+  private final ConcurrentHashMap<SRepositoryListener, AtomicInteger> myListenerCount = new ConcurrentHashMap<SRepositoryListener, AtomicInteger>();
 
   private final SRepository myRepository;
 
@@ -44,6 +43,11 @@ public class SRepositoryEventsDispatcher {
   }
 
   public final void addRepositoryListener(SRepositoryListener listener) {
+    myListenerCount.putIfAbsent(listener, new AtomicInteger(0));
+    if (myListenerCount.get(listener).incrementAndGet() != 1) {
+      // It's not the first time this listener is attached to the repository
+      return;
+    }
     myListeners.add(listener);
     if (listener instanceof SRepositoryAttachListener) {
       myRepository.getModelAccess().checkReadAccess();
@@ -52,6 +56,12 @@ public class SRepositoryEventsDispatcher {
   }
 
   public final void removeRepositoryListener(SRepositoryListener listener) {
+    AtomicInteger lc = myListenerCount.get(listener);
+    if (lc == null || lc.decrementAndGet() != 0) {
+      // either already removed, or registered more than once, wait until the last one is removed
+      return;
+    }
+    myListenerCount.remove(listener);
     if (listener instanceof SRepositoryAttachListener) {
       myRepository.getModelAccess().checkReadAccess();
       ((SRepositoryAttachListener) listener).stopListening(myRepository);

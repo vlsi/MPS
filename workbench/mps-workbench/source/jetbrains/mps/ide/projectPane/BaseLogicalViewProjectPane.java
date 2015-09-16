@@ -221,8 +221,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     mpsProject.getModelAccess().removeCommandListener(myRepositoryListener);
-    // FIXME replace with ProjectRepository once it's capable to send notifications about modules added/removed
-    new RepoListenerRegistrar(/*mpsProject.getRepository()*/ MPSModuleRepository.getInstance(), myRepositoryListener).detach();
+    new RepoListenerRegistrar(mpsProject.getRepository(), myRepositoryListener).detach();
     if (IMakeService.INSTANCE.hasMakeService()) {
       IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
     }
@@ -232,8 +231,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   protected void addListeners() {
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-    // FIXME replace with ProjectRepository once it's capable to send notifications about modules added/removed
-    new RepoListenerRegistrar(/*mpsProject.getRepository()*/ MPSModuleRepository.getInstance(), myRepositoryListener).attach();
+    new RepoListenerRegistrar(mpsProject.getRepository(), myRepositoryListener).attach();
     mpsProject.getModelAccess().addCommandListener(myRepositoryListener);
     if (IMakeService.INSTANCE.hasMakeService()) {
       IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
