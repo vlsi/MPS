@@ -21,18 +21,24 @@ public class ConceptIdUtil {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"));
       }
     }));
-    int generated = 0;
-    if (c instanceof jetbrains.mps.smodel.SNode) {
-      SNodeId id = ((jetbrains.mps.smodel.SNode) c).getNodeId();
-      if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
-        generated = ((int) ((jetbrains.mps.smodel.SNodeId.Regular) id).getId());
-      }
-    }
+    int generated = ConceptIdUtil.getNewId(c);
     while (true) {
       if (generated != 0 && !(SetSequence.fromSet(existingIds).contains(generated))) {
         return generated;
       }
       generated = ((int) (Math.random() * Integer.MAX_VALUE));
     }
+  }
+
+  public static int getNewId(SNode c) {
+    int generated = 0;
+    if (c instanceof jetbrains.mps.smodel.SNode) {
+      SNodeId id = ((jetbrains.mps.smodel.SNode) c).getNodeId();
+      if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
+        long longId = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
+        generated = ((int) longId) + ((int) (longId / Integer.MAX_VALUE));
+      }
+    }
+    return generated;
   }
 }
