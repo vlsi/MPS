@@ -105,7 +105,7 @@ final class GenerationTracerTree extends MPSTree {
       if (myNode == null) {
         return;
       }
-      SNode node = myNode.resolve(MPSModuleRepository.getInstance());
+      SNode node = myNode.resolve(myProject.getRepository());
       if (node == null) {
         return;
       }

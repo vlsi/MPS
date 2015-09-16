@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ public class GeneratorPrioritiesTree {
   private CheckedTreeNodeEx myRootNode;
   private CheckboxTree myCheckboxTree;
 
+  // FIXME isRight = !isLeft, depGenerators used only when isRight - bloody sh!t. Why not initTree is package local, so that caller could configure this Tree(?!) as needed?
   public GeneratorPrioritiesTree(@NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
     myRootNode = new CheckedTreeNodeEx(null, "Generators", createRootIcon());
     final boolean isRight = !isLeft;
@@ -276,7 +277,7 @@ public class GeneratorPrioritiesTree {
     SNodeReference mapConfigRef = (SNodeReference) mapConfigNode.getUserObject();
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.setModelUID(mapConfigRef.getModelReference().toString());
-    result.setNodeID(mapConfigRef.resolve(MPSModuleRepository.getInstance()).getNodeId().toString()); // XXX Would appreciate SNodeReference.getNodeId()
+    result.setNodeID(mapConfigRef.getNodeId().toString());
     return result;
   }
 

@@ -629,8 +629,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeHighlightManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -701,8 +699,6 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

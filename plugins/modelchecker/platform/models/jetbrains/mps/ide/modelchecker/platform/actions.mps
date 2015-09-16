@@ -404,7 +404,6 @@
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
-      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -5571,9 +5570,10 @@
         </node>
         <node concept="3clFbH" id="3etVqSRK$7p" role="3cqZAp" />
         <node concept="2Gpval" id="3etVqSRK$7q" role="3cqZAp">
-          <node concept="2OqwBi" id="3etVqSRK$7r" role="2GsD0m">
-            <node concept="2SmgA7" id="3etVqSRK$7s" role="2OqNvi" />
-            <node concept="37vLTw" id="2BHiRxgkWrj" role="2Oq$k0">
+          <node concept="2YIFZM" id="PIFYWx4kHZ" role="2GsD0m">
+            <ref role="37wK5l" to="mhbf:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SModel):java.lang.Iterable" resolve="getDescendants" />
+            <ref role="1Pybhc" to="mhbf:~SNodeUtil" resolve="SNodeUtil" />
+            <node concept="37vLTw" id="PIFYWx4l5K" role="37wK5m">
               <ref role="3cqZAo" node="3etVqSRK$ab" resolve="model" />
             </node>
           </node>
@@ -5741,9 +5741,13 @@
                       </node>
                       <node concept="liA8E" id="12UuKQubZ5n" role="2OqNvi">
                         <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                        <node concept="2YIFZM" id="12UuKQubZ5o" role="37wK5m">
-                          <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                          <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                        <node concept="2OqwBi" id="PIFYWx4oBc" role="37wK5m">
+                          <node concept="37vLTw" id="PIFYWx4ogk" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7SNXUnYXb2c" resolve="myProject" />
+                          </node>
+                          <node concept="liA8E" id="PIFYWx4p4e" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -5830,9 +5834,13 @@
                               </node>
                               <node concept="liA8E" id="12UuKQucKM6" role="2OqNvi">
                                 <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                                <node concept="2YIFZM" id="12UuKQucKM7" role="37wK5m">
-                                  <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                                  <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                                <node concept="2OqwBi" id="PIFYWx4q5K" role="37wK5m">
+                                  <node concept="37vLTw" id="PIFYWx4pIS" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7SNXUnYXb2c" resolve="myProject" />
+                                  </node>
+                                  <node concept="liA8E" id="PIFYWx4qyM" role="2OqNvi">
+                                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
