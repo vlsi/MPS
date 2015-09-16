@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -120,13 +121,13 @@ public class BHTestRef_Test extends TestCase {
   }
   public void test_thisStaticBehaviorCall() throws Exception {
     SNode nodeC = createC_cc8y9n_a0a0q0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.getConcept(nodeC), SMethodTrimmedId.create("foo", MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), "5mnatV0hxLf"))));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeC)), SMethodTrimmedId.create("foo", MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), "5mnatV0hxLf"))));
   }
   public void test_simpleVirtualStaticBehaviorCall() throws Exception {
     SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, ((Object) BHFacade.invokeReflective(conceptC, SMethodTrimmedId.create("virtual", null, "47lrFSh1$Ca"))));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, ((Object) BHFacade.invokeReflective(SNodeOperations.asSConcept(conceptC), SMethodTrimmedId.create("virtual", null, "47lrFSh1$Ca"))));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, ((Object) BHFacade.invokeReflective(conceptC, SMethodTrimmedId.create("virtual", null, "47lrFSh1$Ca"))));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, ((Object) BHFacade.invokeReflective(SNodeOperations.asSConcept(conceptC), SMethodTrimmedId.create("virtual", null, "47lrFSh1$Ca"))));
   }
   public void test_superBehaviorCall() throws Exception {
     SNode nodeD = createD_cc8y9n_a0a0s0();
@@ -142,7 +143,7 @@ public class BHTestRef_Test extends TestCase {
   }
   public void test_superStaticBehaviorCall() throws Exception {
     SNode nodeE = createE_cc8y9n_a0a0v0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.getConcept(nodeE), SMethodTrimmedId.create("foo", MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E"), "5mnatV0hyuN"))));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeE)), SMethodTrimmedId.create("foo", MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E"), "5mnatV0hyuN"))));
   }
   public void test_oldApiBehaviorCall() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0w0();
@@ -152,7 +153,7 @@ public class BHTestRef_Test extends TestCase {
   public void test_oldApiBehaviorStaticCall() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0x0();
     Object[] params = {};
-    Assert.assertSame(((Object) BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodTrimmedId.create("staticVirtualMethod", null, "5mnatV0hATt"))), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
+    Assert.assertSame(((Object) BHFacade.invokeReflective(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA)), SMethodTrimmedId.create("staticVirtualMethod", null, "5mnatV0hATt"))), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
   }
   public void test_oldApiBehaviorCallNonVirtual() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0y0();
@@ -163,7 +164,7 @@ public class BHTestRef_Test extends TestCase {
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {
     SNode nodeA = createB_cc8y9n_a0a0z0();
     Object[] params = {};
-    Assert.assertSame(((Integer) BHFacade.invokeReflective(SNodeOperations.getConcept(nodeA), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
+    Assert.assertSame(((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA)), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
   }
   public void test_primitiveMethodReturnType() throws Exception {
     SNode nodeB = createB_cc8y9n_a0a0ab0();
@@ -207,6 +208,21 @@ public class BHTestRef_Test extends TestCase {
     SNode node3 = createE_cc8y9n_a0a0hb0();
     Assert.assertSame(2, ((Integer) BHFacade.invokeReflective(node3, SMethodTrimmedId.create("foo", null, "12MCENn4RcU"))));
     Assert.assertSame(1, ((Integer) BHFacade.invokeReflective(node3, SMethodTrimmedId.create("foo", null, "12MCENn4Rd5"))));
+  }
+  public void test_conceptNodeConstruction() throws Exception {
+    myProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode();
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(node), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode()), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
+        SNode aNode;
+        aNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
+        aNode = SNodeOperations.getNode("r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(BHL2.structure)", "7688460527007456349");
+        SNode nodeA = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A")));
+        SNode conceptNodeA = SNodeOperations.getConceptDeclaration(nodeA);
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(conceptNodeA), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
+      }
+    });
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());

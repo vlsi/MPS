@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import BHL7.behavior.H_BehaviorDescriptor;
 import BHL7.behavior.I2_BehaviorDescriptor;
 import BHL7.behavior.I3_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -128,13 +129,13 @@ public class BHTest_Test extends TestCase {
   }
   public void test_thisStaticBehaviorCall() throws Exception {
     SNode nodeC = createC_a2wy8c_a0a0q0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, C_BehaviorDescriptor.foo_id5mnatV0hxLf.invokeStatic(SNodeOperations.getConcept(nodeC)));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, C_BehaviorDescriptor.foo_id5mnatV0hxLf.invokeStatic(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeC))));
   }
   public void test_simpleVirtualStaticBehaviorCall() throws Exception {
     SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
-    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(conceptC));
+    Assert.assertSame(TestResults.POLYMORPHIC_PARENT, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(SNodeOperations.asSConcept(conceptC)));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
-    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(conceptC));
+    Assert.assertSame(TestResults.POLYMORPHIC_CHILD, C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(SNodeOperations.asSConcept(conceptC)));
   }
   public void test_superBehaviorCall() throws Exception {
     SNode nodeD = createD_a2wy8c_a0a0s0();
@@ -150,7 +151,7 @@ public class BHTest_Test extends TestCase {
   }
   public void test_superStaticBehaviorCall() throws Exception {
     SNode nodeE = createE_a2wy8c_a0a0v0();
-    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, E_BehaviorDescriptor.foo_id5mnatV0hyuN.invokeStatic(SNodeOperations.getConcept(nodeE)));
+    Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, E_BehaviorDescriptor.foo_id5mnatV0hyuN.invokeStatic(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeE))));
   }
   public void test_oldApiBehaviorCall() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0w0();
@@ -160,7 +161,7 @@ public class BHTest_Test extends TestCase {
   public void test_oldApiBehaviorStaticCall() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0x0();
     Object[] params = {};
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticVirtualMethod_id5mnatV0hATt.invokeStatic(SNodeOperations.getConcept(nodeA)), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
+    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticVirtualMethod_id5mnatV0hATt.invokeStatic(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA))), BehaviorReflection.invokeVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "virtual_staticVirtualMethod_6167444251392503389", params));
   }
   public void test_oldApiBehaviorCallNonVirtual() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0y0();
@@ -171,7 +172,7 @@ public class BHTest_Test extends TestCase {
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0z0();
     Object[] params = {};
-    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.getConcept(nodeA)), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
+    Assert.assertSame(BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeA))), BehaviorReflection.invokeNonVirtualStatic(Object.class, SNodeOperations.getConcept(nodeA), "call_staticMethod_6167444251392503213", params));
   }
   public void test_primitiveMethodReturnType() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0ab0();
@@ -215,6 +216,21 @@ public class BHTest_Test extends TestCase {
     SNode node3 = createE_a2wy8c_a0a0hb0();
     Assert.assertSame(2, I3_BehaviorDescriptor.foo_id12MCENn4RcU.invoke(node3));
     Assert.assertSame(1, I3_BehaviorDescriptor.foo_id12MCENn4Rd5.invoke(node3));
+  }
+  public void test_conceptNodeConstruction() throws Exception {
+    myProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode();
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.asSConcept(node)));
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode())));
+        SNode aNode;
+        aNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
+        aNode = SNodeOperations.getNode("r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)", "6167444251392503100");
+        SNode nodeA = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A")));
+        SNode conceptNodeA = SNodeOperations.getConceptDeclaration(nodeA);
+        Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, BHL7.behavior.A_BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invokeStatic(SNodeOperations.asSConcept(conceptNodeA)));
+      }
+    });
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
