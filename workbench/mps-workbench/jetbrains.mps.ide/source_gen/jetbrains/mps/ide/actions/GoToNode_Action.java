@@ -7,19 +7,18 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToNode_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Node;
   public GoToNode_Action() {
     super("Go to Source Node", "go to source node", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -31,15 +30,13 @@ public class GoToNode_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("operationContext", p);
+      SNode p = event.getData(MPSDataKeys.SOURCE_NODE);
       if (p == null) {
         return false;
       }
     }
     {
-      SNode p = event.getData(MPSDataKeys.SOURCE_NODE);
-      MapSequence.fromMap(_params).put("source", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
@@ -48,6 +45,6 @@ public class GoToNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((SNode) MapSequence.fromMap(_params).get("source")), false, true);
+    new EditorNavigator(event.getData(MPSCommonDataKeys.MPS_PROJECT)).shallFocus(false).shallSelect(true).open(event.getData(MPSDataKeys.SOURCE_NODE).getReference());
   }
 }
