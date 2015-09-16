@@ -434,7 +434,7 @@
     </language>
   </registry>
   <node concept="bUwia" id="hP3lrB6">
-    <property role="TrG5h" value="behavior" />
+    <property role="TrG5h" value="mc_behavior" />
     <node concept="2rT7sh" id="1HtRHZzzo$0" role="2rTMjI">
       <property role="TrG5h" value="BHClass" />
       <ref role="2rTdP9" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
@@ -1556,7 +1556,7 @@
     </node>
   </node>
   <node concept="jVnub" id="22P$f14BHut">
-    <property role="TrG5h" value="Type" />
+    <property role="TrG5h" value="switch_ClassFromType" />
     <node concept="3aamgX" id="22P$f14BMpZ" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:g7uibYu" resolve="ClassifierType" />
@@ -1766,7 +1766,7 @@
                           <ref role="37wK5l" to="manl:~SJavaCompoundTypeImpl.&lt;init&gt;(java.lang.Class)" resolve="SJavaCompoundTypeImpl" />
                           <node concept="10Nm6u" id="22P$f14CnX4" role="37wK5m">
                             <node concept="1sPUBX" id="22P$f14Cqxj" role="lGtFl">
-                              <ref role="v9R2y" node="22P$f14BHut" resolve="Type" />
+                              <ref role="v9R2y" node="22P$f14BHut" resolve="switch_ClassFromType" />
                               <node concept="3NFfHV" id="22P$f14Cw4Y" role="1sPUBK">
                                 <node concept="3clFbS" id="22P$f14Cw4Z" role="2VODD2">
                                   <node concept="3clFbF" id="22P$f14Cy$N" role="3cqZAp">
@@ -2090,7 +2090,7 @@
                   </node>
                 </node>
                 <node concept="1sPUBX" id="504Ybz_gM4u" role="lGtFl">
-                  <ref role="v9R2y" node="22P$f14BHut" resolve="Type" />
+                  <ref role="v9R2y" node="22P$f14BHut" resolve="switch_ClassFromType" />
                   <node concept="3NFfHV" id="504Ybz_gMfB" role="1sPUBK">
                     <node concept="3clFbS" id="504Ybz_gMfC" role="2VODD2">
                       <node concept="3clFbF" id="504Ybz_gOKs" role="3cqZAp">

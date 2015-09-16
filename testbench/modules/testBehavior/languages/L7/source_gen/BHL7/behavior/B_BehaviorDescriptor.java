@@ -36,16 +36,16 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Object virtualMethod(@Nullable SNode __thisNode__) {
+  public static Object virtualMethod_id5mnatV0hAPC(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  public static Object staticVirtualMethod(@Nullable SNode __thisNode__) {
+  public static Object staticVirtualMethod_id5mnatV0hATt() {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  public static Integer primitiveReturnValue(@Nullable SNode __thisNode__) {
+  public static Integer primitiveReturnValue_id4Rfm9LCctz9(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Class<Integer> genericReturnValue(@Nullable SNode __thisNode__) {
+  public static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@Nullable SNode __thisNode__) {
     return Integer.class;
   }
 
@@ -53,6 +53,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -65,13 +66,13 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) virtualMethod(node);
+        return (T) virtualMethod_id5mnatV0hAPC(node);
       case 1:
-        return (T) staticVirtualMethod(node);
+        return (T) staticVirtualMethod_id5mnatV0hATt();
       case 2:
-        return (T) primitiveReturnValue(node);
+        return (T) primitiveReturnValue_id4Rfm9LCctz9(node);
       case 3:
-        return (T) genericReturnValue(node);
+        return (T) genericReturnValue_id4Rfm9LCcu90(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

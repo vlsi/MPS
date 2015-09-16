@@ -16,12 +16,10 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
@@ -37,13 +35,13 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
-    return BehaviorReflection.invokeNonVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C")), "call_bar_6167444251392482410", new Object[]{});
+  public static Integer foo_id5mnatV0hxLf() {
+    return C_BehaviorDescriptor.bar_id5mnatV0hxLE.invokeStatic(CONCEPT);
   }
-  public static Integer bar(@Nullable SNode __thisNode__) {
+  public static Integer bar_id5mnatV0hxLE() {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object virtual(@Nullable SNode __thisNode__) {
+  public static Object virtual_id47lrFSh1$Ca() {
     return TestResults.POLYMORPHIC_PARENT;
   }
 
@@ -51,6 +49,7 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -63,11 +62,11 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0hxLf();
       case 1:
-        return (T) bar(node);
+        return (T) bar_id5mnatV0hxLE();
       case 2:
-        return (T) virtual(node);
+        return (T) virtual_id47lrFSh1$Ca();
       default:
         throw new BHMethodNotFoundException(method);
     }

@@ -37,19 +37,19 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer nonVirtualMethod(@Nullable SNode __thisNode__) {
+  public static Integer nonVirtualMethod_id5mnatV0hAPp(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object virtualMethod(@Nullable SNode __thisNode__) {
+  public static Object virtualMethod_id5mnatV0hAPC(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  public static Integer staticMethod(@Nullable SNode __thisNode__) {
+  public static Integer staticMethod_id5mnatV0hAQH() {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object staticVirtualMethod(@Nullable SNode __thisNode__) {
+  public static Object staticVirtualMethod_id5mnatV0hATt() {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  public static Void justVoidReturnTypeMethod(@Nullable SNode __thisNode__) {
+  public static Void justVoidReturnTypeMethod_id5mnatV0hB9t(@Nullable SNode __thisNode__) {
     return null;
   }
 
@@ -57,6 +57,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -69,15 +70,15 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) nonVirtualMethod(node);
+        return (T) nonVirtualMethod_id5mnatV0hAPp(node);
       case 1:
-        return (T) virtualMethod(node);
+        return (T) virtualMethod_id5mnatV0hAPC(node);
       case 2:
-        return (T) staticMethod(node);
+        return (T) staticMethod_id5mnatV0hAQH();
       case 3:
-        return (T) staticVirtualMethod(node);
+        return (T) staticVirtualMethod_id5mnatV0hATt();
       case 4:
-        return (T) justVoidReturnTypeMethod(node);
+        return (T) justVoidReturnTypeMethod_id5mnatV0hB9t(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

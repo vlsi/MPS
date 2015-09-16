@@ -27,17 +27,17 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Integer> argTypeResolve_id1hQsMcvxKQo = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1hQsMcvxKQo").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.class)));
-  public static final SMethod<Integer> argTypeResolve_id1hQsMcvxKXP = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve_1").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1hQsMcvxKXP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
+  public static final SMethod<Integer> argTypeResolve_id1hQsMcvxKXP = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("argTypeResolve").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1hQsMcvxKXP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id1hQsMcvxKQo, argTypeResolve_id1hQsMcvxKXP);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer argTypeResolve(@Nullable SNode __thisNode__, Integer a) {
+  public static Integer argTypeResolve_id1hQsMcvxKQo(@Nullable SNode __thisNode__, Integer a) {
     return TestResults.SPECIFIED_RETURN_VALUE;
   }
-  public static Integer argTypeResolve_1(@Nullable SNode __thisNode__, Object o) {
+  public static Integer argTypeResolve_id1hQsMcvxKXP(@Nullable SNode __thisNode__, Object o) {
     return TestResults.NOT_SPECIFIED_RETURN_VALUE;
   }
 
@@ -45,6 +45,7 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -57,9 +58,9 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) argTypeResolve(node, (Integer) parameters[0]);
+        return (T) argTypeResolve_id1hQsMcvxKQo(node, (Integer) parameters[0]);
       case 1:
-        return (T) argTypeResolve_1(node, (Object) parameters[0]);
+        return (T) argTypeResolve_id1hQsMcvxKXP(node, (Object) parameters[0]);
       default:
         throw new BHMethodNotFoundException(method);
     }

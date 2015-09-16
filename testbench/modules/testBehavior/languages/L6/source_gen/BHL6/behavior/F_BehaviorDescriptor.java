@@ -16,10 +16,10 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class F_BehaviorDescriptor extends BaseBHDescriptor {
@@ -33,7 +33,7 @@ public final class F_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Object foo(@Nullable SNode __thisNode__) {
+  public static Object foo_id5mnatV0h_el() {
     return TestResults.POLYMORPHIC_PARENT;
   }
 
@@ -41,6 +41,7 @@ public final class F_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -53,7 +54,7 @@ public final class F_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0h_el();
       default:
         throw new BHMethodNotFoundException(method);
     }

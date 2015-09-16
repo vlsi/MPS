@@ -32,7 +32,7 @@ public final class I_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
+  public static Integer foo_id5jWiLvujMjC(@Nullable SNode __thisNode__) {
     return 1;
   }
 
@@ -40,6 +40,7 @@ public final class I_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -52,7 +53,7 @@ public final class I_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5jWiLvujMjC(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

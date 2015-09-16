@@ -27,17 +27,17 @@ public final class H_BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Integer> foo_id3DBjXYFZcwm = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3DBjXYFZcwm").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo_id3DBjXYFZcwx = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo_1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3DBjXYFZcwx").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id3DBjXYFZcwx = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3DBjXYFZcwx").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id3DBjXYFZcwm, foo_id3DBjXYFZcwx);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
+  public static Integer foo_id3DBjXYFZcwm(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Integer foo_1(@Nullable SNode __thisNode__) {
+  public static Integer foo_id3DBjXYFZcwx(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE + 1;
   }
 
@@ -45,6 +45,7 @@ public final class H_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -57,9 +58,9 @@ public final class H_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id3DBjXYFZcwm(node);
       case 1:
-        return (T) foo_1(node);
+        return (T) foo_id3DBjXYFZcwx(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -36,13 +35,13 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar(__thisNode__);
+  public static Integer foo_id5mnatV0hwr3(@Nullable SNode __thisNode__) {
+    return A_BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
   }
-  public static Integer bar(@Nullable SNode __thisNode__) {
-    return BehaviorReflection.invokeNonVirtual(Integer.TYPE, __thisNode__, "BHL6.structure.A", "call_bar2_7808537626115736451", new Object[]{});
+  public static Integer bar_id5mnatV0hwrh(@Nullable SNode __thisNode__) {
+    return A_BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
   }
-  private static Integer bar2(@Nullable SNode __thisNode__) {
+  private static Integer bar2_id6LtvT_VTCe3(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
 
@@ -50,6 +49,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -62,11 +62,11 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0hwr3(node);
       case 1:
-        return (T) bar(node);
+        return (T) bar_id5mnatV0hwrh(node);
       case 2:
-        return (T) bar2(node);
+        return (T) bar2_id6LtvT_VTCe3(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

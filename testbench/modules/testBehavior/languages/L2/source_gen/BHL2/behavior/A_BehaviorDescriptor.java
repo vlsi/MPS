@@ -34,10 +34,10 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Object foo(@Nullable SNode __thisNode__) {
+  public static Object foo_id6EMTxOPT5LT(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  protected static Object foo2(@Nullable SNode __thisNode__) {
+  protected static Object foo2_id4hDSxB1Zrx8(@Nullable SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
 
@@ -45,6 +45,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -57,9 +58,9 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id6EMTxOPT5LT(node);
       case 1:
-        return (T) foo2(node);
+        return (T) foo2_id4hDSxB1Zrx8(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

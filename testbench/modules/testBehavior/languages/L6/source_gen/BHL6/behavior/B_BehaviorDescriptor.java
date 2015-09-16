@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -32,32 +31,37 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> bar1_id5jWiLvujSC6 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSC6").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo1_id5jWiLvujSmw = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSmw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo2_id5jWiLvujSzJ = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSzJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo3_id4RMBeRWcio1 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.class)).name("foo3").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcio1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
-    return BehaviorReflection.invokeNonVirtual(Integer.TYPE, __thisNode__, "BHL6.structure.B", "call_bar_6167444251392479236", new Object[]{});
+  public static Integer foo_id5mnatV0hwZQ(@Nullable SNode __thisNode__) {
+    return B_BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
   }
-  public static Integer bar(@Nullable SNode __thisNode__) {
+  public static Integer bar_id5mnatV0hx04(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Integer bar1(@Nullable SNode __thisNode__) {
+  public static Integer bar1_id5jWiLvujSC6(@Nullable SNode __thisNode__) {
     return TestResults.INCORRECT_RETURN_VALUE;
   }
-  public static Integer foo1(@Nullable SNode __thisNode__) {
+  public static Integer foo1_id5jWiLvujSmw(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Integer foo2(@Nullable SNode __thisNode__) {
-    return BehaviorReflection.invokeVirtual(Integer.TYPE, __thisNode__, "virtual_bar1_6123852159203117574", new Object[]{});
+  public static Integer foo2_id5jWiLvujSzJ(@Nullable SNode __thisNode__) {
+    return B_BehaviorDescriptor.bar1_id5jWiLvujSC6.invoke(__thisNode__);
+  }
+  public static Integer foo3_id4RMBeRWcio1(@Nullable SNode __thisNode__) {
+    return Integer.valueOf(1);
   }
 
   /*package*/ B_BehaviorDescriptor() {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -70,15 +74,17 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0hwZQ(node);
       case 1:
-        return (T) bar(node);
+        return (T) bar_id5mnatV0hx04(node);
       case 2:
-        return (T) bar1(node);
+        return (T) bar1_id5jWiLvujSC6(node);
       case 3:
-        return (T) foo1(node);
+        return (T) foo1_id5jWiLvujSmw(node);
       case 4:
-        return (T) foo2(node);
+        return (T) foo2_id5jWiLvujSzJ(node);
+      case 5:
+        return (T) foo3_id4RMBeRWcio1(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

@@ -16,11 +16,11 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.behaviour.BHFacade;
 import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class E_BehaviorDescriptor extends BaseBHDescriptor {
@@ -35,10 +35,10 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(null, C_BehaviorDescriptor.foo_id5mnatV0hxLf);
+  public static Integer foo_id5mnatV0hyuN() {
+    return ((Integer) BHFacade.invokeSpecial(null, C_BehaviorDescriptor.foo_id5mnatV0hxLf));
   }
-  public static Object virtual(@Nullable SNode __thisNode__) {
+  public static Object virtual_id47lrFSh1$Ca() {
     return TestResults.POLYMORPHIC_CHILD;
   }
 
@@ -46,6 +46,7 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -58,9 +59,9 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0hyuN();
       case 1:
-        return (T) virtual(node);
+        return (T) virtual_id47lrFSh1$Ca();
       default:
         throw new BHMethodNotFoundException(method);
     }

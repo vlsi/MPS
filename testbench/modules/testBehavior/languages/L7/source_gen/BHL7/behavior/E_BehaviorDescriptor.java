@@ -26,17 +26,17 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Integer> foo_id12MCENn4Rd5 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("12MCENn4Rd5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> foo_id12MCENn4RcU = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo_1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("12MCENn4RcU").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id12MCENn4RcU = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("12MCENn4RcU").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id12MCENn4Rd5, foo_id12MCENn4RcU);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
+  public static Integer foo_id12MCENn4Rd5(@Nullable SNode __thisNode__) {
     return 1;
   }
-  public static Integer foo_1(@Nullable SNode __thisNode__) {
+  public static Integer foo_id12MCENn4RcU(@Nullable SNode __thisNode__) {
     return 2;
   }
 
@@ -44,6 +44,7 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -56,9 +57,9 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id12MCENn4Rd5(node);
       case 1:
-        return (T) foo_1(node);
+        return (T) foo_id12MCENn4RcU(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

@@ -33,7 +33,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Object foo(@Nullable SNode __thisNode__) {
+  public static Object foo_id6EMTxOPT7e1(@Nullable SNode __thisNode__) {
     return TestResults.NON_VIRTUAL_PARENT;
   }
 
@@ -41,6 +41,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -53,7 +54,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id6EMTxOPT7e1(node);
       default:
         throw new BHMethodNotFoundException(method);
     }

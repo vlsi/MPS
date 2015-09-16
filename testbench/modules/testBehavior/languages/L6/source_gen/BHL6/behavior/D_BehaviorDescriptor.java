@@ -31,29 +31,35 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> foo1_id5jWiLvujSmw = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSmw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo2_id5jWiLvujSzJ = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSzJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> bar1_id5jWiLvujSC6 = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSC6").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> bar2_id4RMBeRWcir8 = new SMethodBuilder(new SJavaCompoundTypeImpl(Void.class)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcir8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8);
 
   public static void ___init___(SNode __thisNode__) {
   }
 
-  public static Integer foo(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo_id5mnatV0hwZQ);
+  public static Integer foo_id5mnatV0hyg4(@Nullable SNode __thisNode__) {
+    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo_id5mnatV0hwZQ));
   }
-  public static Integer foo1(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo1_id5jWiLvujSmw);
+  public static Integer foo1_id5jWiLvujSmw(@Nullable SNode __thisNode__) {
+    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo1_id5jWiLvujSmw));
   }
-  public static Integer foo2(@Nullable SNode __thisNode__) {
-    return BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo2_id5jWiLvujSzJ);
+  public static Integer foo2_id5jWiLvujSzJ(@Nullable SNode __thisNode__) {
+    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo2_id5jWiLvujSzJ));
   }
-  public static Integer bar1(@Nullable SNode __thisNode__) {
+  public static Integer bar1_id5jWiLvujSC6(@Nullable SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  public static Void bar2_id4RMBeRWcir8(@Nullable SNode __thisNode__) {
+    ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo3_id4RMBeRWcio1)).byteValue();
+    return null;
   }
 
   /*package*/ D_BehaviorDescriptor() {
     super(REGISTRY);
   }
 
+  @Override
   protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
     ___init___(node);
   }
@@ -66,13 +72,15 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo(node);
+        return (T) foo_id5mnatV0hyg4(node);
       case 1:
-        return (T) foo1(node);
+        return (T) foo1_id5jWiLvujSmw(node);
       case 2:
-        return (T) foo2(node);
+        return (T) foo2_id5jWiLvujSzJ(node);
       case 3:
-        return (T) bar1(node);
+        return (T) bar1_id5jWiLvujSC6(node);
+      case 4:
+        return (T) bar2_id4RMBeRWcir8(node);
       default:
         throw new BHMethodNotFoundException(method);
     }
