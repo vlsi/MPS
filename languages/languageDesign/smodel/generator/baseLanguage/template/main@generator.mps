@@ -11342,8 +11342,8 @@
     </node>
     <node concept="3aamgX" id="tb1xa55Krf" role="3acgRq">
       <ref role="30HIoZ" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
-      <node concept="j$656" id="3P1A7RTez90" role="1lVwrX">
-        <ref role="v9R2y" node="51PUiXhil_y" resolve="reduce_ConceptMethodCall" />
+      <node concept="j$656" id="6AJ2L5OMBvR" role="1lVwrX">
+        <ref role="v9R2y" node="2up2FNsZNoA" resolve="reduce_ConceptMethodCallOld" />
       </node>
     </node>
     <node concept="3aamgX" id="54LPR8Ot4n5" role="3acgRq">
