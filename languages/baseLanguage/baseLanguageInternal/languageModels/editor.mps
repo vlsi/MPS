@@ -1853,5 +1853,31 @@
       <node concept="l2Vlx" id="3f9chO0eDvG" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="78MdKhpRXtT">
+    <ref role="1XX52x" to="tp68:78MdKhpRWcg" resolve="InternalTypedStaticFieldReference" />
+    <node concept="3EZMnI" id="78MdKhpRXtV" role="2wV5jI">
+      <node concept="3F0ifn" id="78MdKhpRXum" role="3EZMnx">
+        <property role="3F0ifm" value="[" />
+      </node>
+      <node concept="3F1sOY" id="78MdKhpRXv6" role="3EZMnx">
+        <ref role="1NtTu8" to="tp68:78MdKhpRXuQ" />
+      </node>
+      <node concept="3F0ifn" id="78MdKhpRXua" role="3EZMnx">
+        <property role="3F0ifm" value="]" />
+      </node>
+      <node concept="3F0A7n" id="78MdKhpRXtW" role="3EZMnx">
+        <ref role="1k5W1q" node="hO5y1ec" resolve="InternalName" />
+        <ref role="1NtTu8" to="tp68:h5n_eBL" resolve="fqClassName" />
+      </node>
+      <node concept="3F0ifn" id="78MdKhpRXtX" role="3EZMnx">
+        <property role="3F0ifm" value="." />
+      </node>
+      <node concept="3F0A7n" id="78MdKhpRXtY" role="3EZMnx">
+        <ref role="1k5W1q" node="hO5y1ec" resolve="InternalName" />
+        <ref role="1NtTu8" to="tp68:h5n_iYQ" resolve="fieldName" />
+      </node>
+      <node concept="l2Vlx" id="78MdKhpRXtZ" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

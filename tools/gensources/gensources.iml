@@ -1131,6 +1131,6 @@
     <orderEntry type="module" module-name="debugger-java-runtime" />
     <orderEntry type="module" module-name="scripts-runtime" />
     <orderEntry type="module" module-name="dataflow-rt" />
+    <orderEntry type="module" module-name="behavior-api" />
   </component>
 </module>
-

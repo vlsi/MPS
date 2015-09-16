@@ -12,10 +12,7 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -170,31 +167,27 @@
     </node>
   </node>
   <node concept="1TIwiD" id="zUeTq_2vS9">
-    <property role="TrG5h" value="InternalConceptDeclarationReference" />
+    <property role="TrG5h" value="InternalBehaviorReference" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="zUeTq_2vSa" role="1TKVEi">
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="concept" />
+      <property role="20kJfa" value="behavior" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <ref role="20lvS9" node="hP3h7Gq" resolve="ConceptBehavior" />
     </node>
     <node concept="PrWs8" id="1653mnvB6ep" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="asaX9" id="6pZ_jf9OR_N" role="lGtFl">
-      <property role="YLPcu" value="3.2" />
-      <property role="YLQ7P" value="Used to be an auxilary concept to generate two classes from one concept's behavior" />
-    </node>
   </node>
   <node concept="1TIwiD" id="zUeTq_2vSb">
     <property role="19KtqR" value="true" />
-    <property role="TrG5h" value="InternalConceptDeclarationsHolder" />
+    <property role="TrG5h" value="InternalBehaviorDeclarationsHolder" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="zUeTq_2vSc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="concept" />
+      <property role="20kJfa" value="behavior" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="zUeTq_2vS9" resolve="InternalConceptDeclarationReference" />
+      <ref role="20lvS9" node="zUeTq_2vS9" resolve="InternalBehaviorReference" />
     </node>
     <node concept="PrWs8" id="zUeTq_2zBY" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -202,7 +195,6 @@
     <node concept="PrWs8" id="1653mnvAlOe" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="asaX9" id="1YPFSpKo_Vw" role="lGtFl" />
   </node>
 </model>
 

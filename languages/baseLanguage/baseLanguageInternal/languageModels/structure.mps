@@ -551,5 +551,20 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="78MdKhpRWcg">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="internal typed static field reference" />
+    <property role="TrG5h" value="InternalTypedStaticFieldReference" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="_typed static field reference" />
+    <ref role="1TJDcQ" node="h5n$iV1" resolve="InternalStaticFieldReference" />
+    <node concept="1TJgyj" id="78MdKhpRXuQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="returnType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
 </model>
 

@@ -1210,5 +1210,33 @@
       <ref role="1YaFvo" to="tp68:h6eloLH" resolve="InternalClassifierType" />
     </node>
   </node>
+  <node concept="1YbPZF" id="78MdKhpRWU5">
+    <property role="TrG5h" value="typeof_InternalTypedStaticFieldReference" />
+    <node concept="3clFbS" id="78MdKhpRWU6" role="18ibNy">
+      <node concept="1Z5TYs" id="78MdKhpRYkd" role="3cqZAp">
+        <node concept="mw_s8" id="78MdKhpRYkv" role="1ZfhKB">
+          <node concept="2OqwBi" id="78MdKhpRYmE" role="mwGJk">
+            <node concept="1YBJjd" id="78MdKhpRYkt" role="2Oq$k0">
+              <ref role="1YBMHb" node="78MdKhpRWU8" resolve="node" />
+            </node>
+            <node concept="3TrEf2" id="78MdKhpRYrP" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp68:78MdKhpRXuQ" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="78MdKhpRYkg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="78MdKhpRYiw" role="mwGJk">
+            <node concept="1YBJjd" id="78MdKhpRYiy" role="1Z2MuG">
+              <ref role="1YBMHb" node="78MdKhpRWU8" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="78MdKhpRWU8" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tp68:78MdKhpRWcg" resolve="InternalTypedStaticFieldReference" />
+    </node>
+  </node>
 </model>
 
