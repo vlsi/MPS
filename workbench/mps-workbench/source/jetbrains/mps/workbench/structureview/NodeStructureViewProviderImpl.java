@@ -20,9 +20,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.NodeStructureViewProvider;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,24 +35,23 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   public NodeStructureViewProviderImpl() {
   }
 
-  public StructureViewBuilder create(Project project, SNodeReference np) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+  public StructureViewBuilder create(MPSProject mpsProject, SNodeReference np) {
     mpsProject.getModelAccess().checkReadAccess();
 
-    List<RelationDescriptor> tabs = project.getComponent(ProjectPluginManager.class).getTabDescriptors();
+    List<RelationDescriptor> tabs = mpsProject.getProject().getComponent(ProjectPluginManager.class).getTabDescriptors();
     SNode node = np.resolve(mpsProject.getRepository());
 
     for (RelationDescriptor tab : tabs) {
       SNode baseNode = tab.getBaseNode(node);
       if (baseNode != null && baseNode.getName() != null) {
-        return new NodeStructureViewBuilder(project, baseNode.getReference());
+        return new NodeStructureViewBuilder(mpsProject, baseNode.getReference());
       }
     }
 
     for (RelationDescriptor tab : tabs) {
       List<SNode> nodes = tab.getNodes(node);
       if (!nodes.isEmpty()) {
-        return new NodeStructureViewBuilder(project, new jetbrains.mps.smodel.SNodePointer(node));
+        return new NodeStructureViewBuilder(mpsProject, new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
 
@@ -62,7 +61,7 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   @Override
   public StructureViewBuilder getStructureViewBuilder(@NotNull MPSNodeVirtualFile file, @NotNull Project project) {
     SNodeReference nodePointer = file.getSNodePointer();
-    return create(project, nodePointer);
+    return create(project.getComponent(MPSProject.class), nodePointer);
   }
 
   @Override

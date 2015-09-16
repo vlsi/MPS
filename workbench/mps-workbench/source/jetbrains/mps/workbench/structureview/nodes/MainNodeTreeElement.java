@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,9 @@
 package jetbrains.mps.workbench.structureview.nodes;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -28,9 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainNodeTreeElement extends NodeTreeElement {
-  private Project myProject;
+  private MPSProject myProject;
 
-  public MainNodeTreeElement(Project project, SNodeReference node) {
+  public MainNodeTreeElement(MPSProject project, SNodeReference node) {
     super(node);
     myProject = project;
   }
@@ -44,12 +42,11 @@ public class MainNodeTreeElement extends NodeTreeElement {
   @Override
   public TreeElement[] getChildren() {
     final List<TreeElement> result = new ArrayList<TreeElement>();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
-        for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject, node)) {
+        SNode node = myNode.resolve(myProject.getRepository());
+        for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
           for (SNode aspectNode : tab.getNodes(node)) {
             SNode baseNode = tab.getBaseNode(aspectNode);
             boolean bijection = (baseNode == node || baseNode == null);

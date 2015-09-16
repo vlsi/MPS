@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,20 +19,27 @@ import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Comparator;
 
 public class AspectNodeSorter implements Sorter {
 
+  private final MPSProject myProject;
+
+  public AspectNodeSorter(MPSProject project) {
+    myProject = project;
+  }
+
   @Override
   public Comparator getComparator() {
-    return new EditorTabComparator();
+    return new EditorTabComparator(myProject.getRepository());
   }
 
   @Override
@@ -53,6 +60,12 @@ public class AspectNodeSorter implements Sorter {
   }
 
   private static class EditorTabComparator implements Comparator {
+    private final SRepository myRepo;
+
+    public EditorTabComparator(SRepository repository) {
+      myRepo = repository;
+    }
+
     @Override
     public int compare(Object o1, Object o2) {
       if (!(o1 instanceof AspectTreeElement || o2 instanceof AspectTreeElement)) return 0;
@@ -74,11 +87,11 @@ public class AspectNodeSorter implements Sorter {
 
       if (r1 != 0) return r1;
 
-      return ModelAccess.instance().runReadAction(new Computable<Integer>() {
+      return new ModelAccessHelper(myRepo).runReadAction(new Computable<Integer>() {
         @Override
         public Integer compute() {
-          SNode n1 = ate1.getValue().resolve(MPSModuleRepository.getInstance());
-          SNode n2 = ate2.getValue().resolve(MPSModuleRepository.getInstance());
+          SNode n1 = ate1.getValue().resolve(myRepo);
+          SNode n2 = ate2.getValue().resolve(myRepo);
 
           if (n1 == null || n2 == null) return 0;
 
