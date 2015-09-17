@@ -584,6 +584,7 @@
     <property role="TrG5h" value="InternalTypedStaticFieldReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_typed static field reference" />
+    <property role="1pbfSe" value="871237100" />
     <ref role="1TJDcQ" node="h5n$iV1" resolve="InternalStaticFieldReference" />
     <node concept="1TJgyj" id="78MdKhpRXuQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
