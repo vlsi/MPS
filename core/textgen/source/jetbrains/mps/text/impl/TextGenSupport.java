@@ -51,8 +51,7 @@ public final class TextGenSupport implements TextArea {
 
   public TextGenSupport(@NotNull TextGenContext context) {
     myContext = context;
-    final TextGenBuffer buffer = ((TextGenTransitionContext) context).getLegacyBuffer();
-    myTraceInfoCollector = TraceInfoGenerationUtil.getTraceInfoCollector(buffer);
+    myTraceInfoCollector = TraceInfoGenerationUtil.getTraceInfoCollector((TextGenTransitionContext) context);
   }
 
   public boolean needPositions() {
@@ -155,8 +154,7 @@ public final class TextGenSupport implements TextArea {
   }
 
   private void doAppendNode(SNode node) {
-    final TextGenBuffer buffer = getLegacyBuffer();
-    TextGenRegistry.getInstance().getTextGenDescriptor(node).generateText(new TextGenTransitionContext(node, buffer));
+    ((TextGenTransitionContext) myContext).generateText(node);
   }
 
   private boolean useAttributesToOverrideOrder() {

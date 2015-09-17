@@ -18,6 +18,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.text.TextMark;
+import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -71,44 +72,40 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createPositionInfo(SNodeTextGen nodeTextGen, SNode node) {
-    final TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
-    buffer.getRealBuffer().pushMark();
+    nodeTextGen.getContext().getBuffer().pushMark();
   }
 
   public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
 
-    final TextMark m = buffer.getRealBuffer().popMark();
+    final TextMark m = nodeTextGen.getContext().getBuffer().popMark();
     TraceablePositionInfo info = tic.createTracePosition(m, node);
     info.setPropertyString(propertyString);
   }
 
   public static void createScopeInfo(SNodeTextGen nodeTextGen, SNode node) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
 
-    buffer.getRealBuffer().pushMark();
+    nodeTextGen.getContext().getBuffer().pushMark();
   }
 
   public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node, List<SNode> vars) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
 
-    final TextMark m = buffer.getRealBuffer().popMark();
+    final TextMark m = nodeTextGen.getContext().getBuffer().popMark();
     ScopePositionInfo info = tic.createScopePosition(m, node);
     for (SNode var : vars) {
       if (var != null) {
@@ -118,23 +115,21 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createUnitInfo(SNodeTextGen nodeTextGen, SNode node) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
 
-    buffer.getRealBuffer().pushMark();
+    nodeTextGen.getContext().getBuffer().pushMark();
   }
 
   public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node, String unitName) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    final TraceInfoCollector tic = getTraceInfoCollector(nodeTextGen.getContext());
     if (tic == null) {
       return;
     }
 
-    final TextMark m = buffer.getRealBuffer().popMark();
+    final TextMark m = nodeTextGen.getContext().getBuffer().popMark();
     UnitPositionInfo info = tic.createUnitPosition(m, node);
     info.setUnitName(unitName);
 
@@ -156,7 +151,7 @@ public class TraceInfoGenerationUtil {
   }
 
   @Nullable
-  public static TraceInfoCollector getTraceInfoCollector(TextGenBuffer buffer) {
-    return (TraceInfoCollector) buffer.getUserObject(TraceInfoCollector.class);
+  public static TraceInfoCollector getTraceInfoCollector(TextGenTransitionContext ctx) {
+    return (TraceInfoCollector) ctx.getLegacyBuffer().getUserObject(TraceInfoCollector.class);
   }
 }

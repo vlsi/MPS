@@ -15,21 +15,11 @@
  */
 package jetbrains.mps.text;
 
-import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.text.rt.TextGenContext;
-import jetbrains.mps.text.rt.TextGenDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
-
 /**
- * React to missing textgen for a concept.
+ * Facility to describe layout of TextBuffer, i.e. areas and
  * @author Artem Tikhomirov
+ * @since 3.3
  */
-public class MissingTextGenDescriptor implements TextGenDescriptor {
-  @Override
-  public void generateText(TextGenContext context) {
-    TextGenSupport tgs = new TextGenSupport(context);
-    SNode node = context.getPrimaryInput();
-    tgs.append("<!TextGen not found for '" + node.getConcept() + "'!>");
-    tgs.reportError("No textgen for " + node.getConcept());
-  }
+public class BufferLayoutBuilder {
+
 }

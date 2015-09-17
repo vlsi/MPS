@@ -84,6 +84,15 @@ public final class TextGenBuffer {
     selectPart(DEFAULT);
   }
 
+  /**
+   * INTENDED FOR TRANSITION PERIOD ONLY, DO NOT USE
+   */
+  TextGenBuffer(boolean fakePositionSupport, TextBuffer buffer) {
+    myFakePositionSupport = fakePositionSupport;
+    myChunkFactory = null; // it's unexpected for clients of this TextGenBuffer (merely user object holder) to ask #getBufferText(int)
+    myBuffer = buffer;
+  }
+
   /*package*/ BufferSnapshot getTextSnapshot() {
     if (getTopBufferLength() > 0) {
       // FIXME newlines to separate top from bottom done right, instead of this hack
@@ -95,8 +104,7 @@ public final class TextGenBuffer {
     return myBuffer.snapshot(myBuffer.newLayout());
   }
 
-  // though this is implementation-specific method, technically we need it public to access from the package with new API
-  public TextBuffer getRealBuffer() {
+  /*package*/ TextBuffer getRealBuffer() {
     return myBuffer;
   }
 

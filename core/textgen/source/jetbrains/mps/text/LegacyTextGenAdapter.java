@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.text;
 
-import jetbrains.mps.text.impl.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textGen.SNodeTextGen;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,14 +36,13 @@ public class LegacyTextGenAdapter implements TextGenDescriptor {
 
   @Override
   public void generateText(TextGenContext context) {
-    TextGenTransitionContext tc = (TextGenTransitionContext) context;
     final SNodeTextGen textGen = getInstance();
-    textGen.setBuffer(tc.getLegacyBuffer());
+    textGen.setContext(context);
     try {
-      textGen.setSNode(tc.getPrimaryInput());
-      textGen.doGenerateText(tc.getPrimaryInput());
+      textGen.setSNode(context.getPrimaryInput());
+      textGen.doGenerateText(context.getPrimaryInput());
     } catch (Exception e) {
-      tc.getLegacyBuffer().foundError("failed to generate text for " + SNodeOperations.getDebugText(tc.getPrimaryInput()), tc.getPrimaryInput(), e);
+      new TextGenSupport(context).reportError(String.format("failed to generate text: %s", e.toString()));
     }
   }
 

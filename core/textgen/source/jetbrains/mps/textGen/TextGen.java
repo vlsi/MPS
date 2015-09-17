@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
@@ -97,19 +98,33 @@ public class TextGen {
     }
   }
 
-  public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
-    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
-    buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
+  public static TextGenBuffer newUserObjectHolder(SNode node, boolean withDebugInfo, TextBuffer trueBuffer) {
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, trueBuffer);
+    populateTextGenCompatibilityObjects(buffer, node);
+    return buffer;
+  }
+
+  private static void populateTextGenCompatibilityObjects(TextGenBuffer buffer, SNode node) {
+    // BL-specific object, BL shall manage itself
+    buffer.putUserObject(PACKAGE_NAME, NameUtil.getModelLongName(node.getModel()));
+    // shall get replaced with TextUnit#getStartNode()
     buffer.putUserObject(ROOT_NODE, node);
     buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
+  }
+
+  public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
+    populateTextGenCompatibilityObjects(buffer, node);
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
+      // TODO TraceInfoCollector may be part of TextGenTransitionContext, but I shall deal with that along with DEPENDENCY/EXTENDS set
       TraceInfoGenerationUtil.setTraceInfoCollector(buffer, tic);
     } else {
       tic = null;
     }
 
+    // XXX node is not null here, could instantiate TextGenSupport directly
     appendNodeText(buffer, node);
 
     // position info
@@ -161,13 +176,13 @@ public class TextGen {
       return;
     }
 
-    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer));
+    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer, buffer.getRealBuffer()));
     tgs.appendNode(node);
   }
 
   // helper stuff
   @NotNull
-  /*package*/ static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
     return TextGenRegistry.getInstance().getTextGenDescriptor(node);
   }
 

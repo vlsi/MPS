@@ -23,6 +23,13 @@ import org.jetbrains.mps.openapi.model.SNode;
  * FIXME WORK IN PROGRESS
  * Everything {@link TextGenDescriptor} shall know about outer world.
  *
+ * Client code shall make no assumptions about context being the same for any time period greater than single
+ * {@link TextGenDescriptor#generateText(TextGenContext)} call. Nested descriptors may receive brand new context instance.
+ *
+ * TODO likely shall expose TextUnit? Or it's part of TextBuffer? Technically, I'd like to keep TextBuffer independent from TextUnit.
+ * OTOH, why can't I use TextGenContext without TextUnit? It's in use with TextGenDescriptor#generateText(),
+ * which is proper place to invoke getTextUnit, but still, not 100% sure.
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */
