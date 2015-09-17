@@ -2,7 +2,7 @@
 <model ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -24,6 +24,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -60,6 +61,7 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Module" />
+    <property role="1pbfSe" value="24677077" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5xDtKQA7vSF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -126,6 +128,7 @@
   <node concept="1TIwiD" id="5xDtKQA7vSv">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Language" />
+    <property role="1pbfSe" value="24677076" />
     <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBC8a" role="1TKVEl">
       <property role="TrG5h" value="genPath" />
@@ -180,6 +183,7 @@
   <node concept="1TIwiD" id="5xDtKQA7vSw">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Solution" />
+    <property role="1pbfSe" value="24677075" />
     <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBCDI" role="1TKVEl">
       <property role="TrG5h" value="outputPath" />
@@ -196,6 +200,7 @@
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSx">
     <property role="TrG5h" value="Generator" />
+    <property role="1pbfSe" value="24677074" />
     <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBCD4" role="1TKVEl">
       <property role="TrG5h" value="generatorUID" />
@@ -224,6 +229,7 @@
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSB">
     <property role="TrG5h" value="ModelReference" />
+    <property role="1pbfSe" value="24677068" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5xDtKQA7vSH" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
@@ -240,6 +246,7 @@
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSC">
     <property role="TrG5h" value="ModuleDependency" />
+    <property role="1pbfSe" value="24677067" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5xDtKQA7vSD" role="1TKVEl">
       <property role="TrG5h" value="reexport" />
@@ -255,6 +262,7 @@
   <node concept="1TIwiD" id="5xDtKQA7vSJ">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="DevKit" />
+    <property role="1pbfSe" value="24677060" />
     <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyj" id="62I8Pi7P1t_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -286,6 +294,7 @@
   <node concept="1TIwiD" id="5xDtKQA7vSS">
     <property role="TrG5h" value="MappingPriorityRule" />
     <property role="3GE5qa" value="generator" />
+    <property role="1pbfSe" value="24677051" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2n3WChplKbH" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -337,6 +346,7 @@
   </node>
   <node concept="1TIwiD" id="1AZH1sZHi4c">
     <property role="TrG5h" value="ModuleReference" />
+    <property role="1pbfSe" value="1500828963" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1AZH1sZHi4d" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
@@ -349,6 +359,7 @@
   </node>
   <node concept="1TIwiD" id="1AZH1sZHigy">
     <property role="TrG5h" value="StubEntry" />
+    <property role="1pbfSe" value="1500829753" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1AZH1sZHigz" role="1TKVEl">
       <property role="TrG5h" value="path" />
@@ -357,6 +368,7 @@
   </node>
   <node concept="1TIwiD" id="1AZH1sZHigA">
     <property role="TrG5h" value="ModelRoot" />
+    <property role="1pbfSe" value="1500829757" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1sy7yx9lxYo" role="1TKVEl">
       <property role="TrG5h" value="type" />
@@ -372,6 +384,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MappingConfigRefBase" />
     <property role="3GE5qa" value="generator" />
+    <property role="1pbfSe" value="2132339089" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2n3WChplfsf">
@@ -380,6 +393,7 @@
     <property role="TrG5h" value="MappingConfigRefAllGlobal" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="all global" />
+    <property role="1pbfSe" value="2132339091" />
     <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
   </node>
   <node concept="1TIwiD" id="2n3WChplKbk">
@@ -388,6 +402,7 @@
     <property role="TrG5h" value="MappingConfigRefAllLocal" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="all local" />
+    <property role="1pbfSe" value="2132473176" />
     <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
   </node>
   <node concept="1TIwiD" id="2n3WChplKcb">
@@ -396,6 +411,7 @@
     <property role="TrG5h" value="MappingConfigRefSet" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="set" />
+    <property role="1pbfSe" value="2132473231" />
     <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyj" id="2n3WChplKcc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -410,6 +426,7 @@
     <property role="TrG5h" value="MappingConfigNormalRef" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="ref" />
+    <property role="1pbfSe" value="2132482555" />
     <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyi" id="2n3WChplMtS" role="1TKVEl">
       <property role="TrG5h" value="modelUID" />
@@ -423,6 +440,7 @@
   <node concept="1TIwiD" id="2n3WChplMvx">
     <property role="TrG5h" value="MappingConfigExternalRef" />
     <property role="3GE5qa" value="generator" />
+    <property role="1pbfSe" value="2132482661" />
     <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyj" id="2n3WChplMvz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -437,6 +455,7 @@
   </node>
   <node concept="1TIwiD" id="eY0iPzBvY7">
     <property role="TrG5h" value="StubSolution" />
+    <property role="1pbfSe" value="1734082740" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="eY0iPzBvY8" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
@@ -449,6 +468,7 @@
   </node>
   <node concept="1TIwiD" id="eY0iPzBvYR">
     <property role="TrG5h" value="SourcePath" />
+    <property role="1pbfSe" value="1734082788" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="eY0iPzBvYS" role="1TKVEl">
       <property role="TrG5h" value="value" />

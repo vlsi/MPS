@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -10,6 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -38,6 +39,7 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/primitive.png" />
     <property role="TrG5h" value="PrimitiveTypeDescriptor" />
+    <property role="1pbfSe" value="372579618" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gRDMI7g" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -51,6 +53,7 @@
   </node>
   <node concept="1TIwiD" id="gRDMZzC">
     <property role="TrG5h" value="PrimitiveTypeRef" />
+    <property role="1pbfSe" value="372508171" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gRDMZzB" role="1TKVEi">
       <property role="20kJfa" value="descriptor" />

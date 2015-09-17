@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -15,6 +15,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -52,6 +53,7 @@
   </registry>
   <node concept="1TIwiD" id="h3s$Bie">
     <property role="TrG5h" value="TestMethod" />
+    <property role="1pbfSe" value="594381410" />
     <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="PrWs8" id="hGBlm77" role="PzmwI">
       <ref role="PrY4T" node="hGBgSCX" resolve="ITestMethod" />
@@ -65,6 +67,7 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/testClass.png" />
     <property role="TrG5h" value="BTestCase" />
+    <property role="1pbfSe" value="594220493" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="hGB4ykN" role="PzmwI">
       <ref role="PrY4T" node="hGB2rPm" resolve="ITestCase" />
@@ -95,6 +98,7 @@
   </node>
   <node concept="1TIwiD" id="h3s_got">
     <property role="TrG5h" value="TestMethodList" />
+    <property role="1pbfSe" value="594213075" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h3s_gou" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -110,6 +114,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert equals" />
+    <property role="1pbfSe" value="547973806" />
     <ref role="1TJDcQ" node="7jPoEeD$ZOX" resolve="BinaryAssert" />
   </node>
   <node concept="1TIwiD" id="h3vwNi3">
@@ -119,6 +124,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert true" />
+    <property role="1pbfSe" value="545049197" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3vwVM7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -137,6 +143,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert false" />
+    <property role="1pbfSe" value="542237160" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3vFAPs" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -155,6 +162,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert same (&quot;==&quot;)" />
+    <property role="1pbfSe" value="540336045" />
     <ref role="1TJDcQ" node="7jPoEeD$ZOX" resolve="BinaryAssert" />
   </node>
   <node concept="1TIwiD" id="h3xETia">
@@ -164,6 +172,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="fail" />
+    <property role="1pbfSe" value="508848742" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="PrWs8" id="h3_9nVU" role="PzmwI">
       <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
@@ -176,6 +185,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert is null" />
+    <property role="1pbfSe" value="497894495" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3ykUcf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -194,6 +204,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert throws" />
+    <property role="1pbfSe" value="456201924" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3$Olsu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -217,6 +228,7 @@
     <property role="TrG5h" value="Message" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="message" />
+    <property role="1pbfSe" value="452571233" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h3_1ByX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -228,6 +240,7 @@
   <node concept="PlHQZ" id="h3_9g$o">
     <property role="TrG5h" value="MessageHolder" />
     <property role="3GE5qa" value="assert" />
+    <property role="1pbfSe" value="450557400" />
     <node concept="1TJgyj" id="h3_9lvq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="message" />
@@ -238,10 +251,12 @@
   <node concept="PlHQZ" id="hG8C14p">
     <property role="TrG5h" value="ITestable" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="144708148" />
   </node>
   <node concept="PlHQZ" id="hGB2rPm">
     <property role="TrG5h" value="ITestCase" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="654950001" />
     <node concept="1TJgyi" id="5$NvszvZwQt" role="1TKVEl">
       <property role="TrG5h" value="canNotRunInProcess" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
@@ -256,6 +271,7 @@
   <node concept="PlHQZ" id="hGBgSCX">
     <property role="TrG5h" value="ITestMethod" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="658738008" />
     <node concept="PrWs8" id="hGBgSCY" role="PrDN$">
       <ref role="PrY4T" node="hG8C14p" resolve="ITestable" />
     </node>
@@ -267,6 +283,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert is not null" />
+    <property role="1pbfSe" value="828183708" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="692cUnf6I3T" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -284,6 +301,7 @@
     <property role="TrG5h" value="BinaryAssert" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
+    <property role="1pbfSe" value="512319456" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="7jPoEeD$ZP4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -307,6 +325,7 @@
     <property role="TrG5h" value="BeforeTest" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="beforeTest" />
+    <property role="1pbfSe" value="1956111520" />
     <ref role="1TJDcQ" node="79C96s2bXIU" resolve="PrepareMethod" />
   </node>
   <node concept="1TIwiD" id="79C96s2bXft">
@@ -315,6 +334,7 @@
     <property role="TrG5h" value="AfterTest" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="afterTest" />
+    <property role="1pbfSe" value="1956116548" />
     <ref role="1TJDcQ" node="79C96s2bXIU" resolve="PrepareMethod" />
   </node>
   <node concept="1TIwiD" id="79C96s2bXIU">
@@ -322,6 +342,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PrepareMethod" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1956118561" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>

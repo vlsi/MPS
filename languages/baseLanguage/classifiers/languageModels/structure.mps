@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,6 +17,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
@@ -49,6 +50,7 @@
   </registry>
   <node concept="PlHQZ" id="hyWqMFP">
     <property role="TrG5h" value="IClassifier" />
+    <property role="1pbfSe" value="1133827059" />
     <node concept="PrWs8" id="1mVpzgBPPDq" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -58,12 +60,14 @@
   </node>
   <node concept="PlHQZ" id="hyWqYN0">
     <property role="TrG5h" value="IMember" />
+    <property role="1pbfSe" value="1133777448" />
     <node concept="PrWs8" id="hyXeAyj" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="PlHQZ" id="hyWrxye">
     <property role="TrG5h" value="IClassifierPart" />
+    <property role="1pbfSe" value="1133635162" />
   </node>
   <node concept="1TIwiD" id="hyWthE1">
     <property role="R5$K7" value="false" />
@@ -72,6 +76,7 @@
     <property role="TrG5h" value="ThisClassifierExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="this" />
+    <property role="1pbfSe" value="1133175911" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hJ2nkJ3" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -88,12 +93,14 @@
     <property role="TrG5h" value="BaseClassifierType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Types" />
+    <property role="1pbfSe" value="1132996259" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="hyWukbY">
     <property role="TrG5h" value="DefaultClassifierType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Types" />
+    <property role="1pbfSe" value="1132903402" />
     <ref role="1TJDcQ" node="hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="hyWumMg" role="1TKVEi">
       <property role="20kJfa" value="classifier" />
@@ -103,6 +110,7 @@
   </node>
   <node concept="PlHQZ" id="hyWEnem">
     <property role="TrG5h" value="IMemberOperation" />
+    <property role="1pbfSe" value="1129745234" />
     <node concept="1TJgyj" id="hyWH_vG" role="1TKVEi">
       <property role="20kJfa" value="member" />
       <property role="20lbJX" value="1" />
@@ -115,6 +123,7 @@
   <node concept="1TIwiD" id="hyXrIf3">
     <property role="TrG5h" value="DefaultClassifierMethodDeclaration" />
     <property role="3GE5qa" value="Methods" />
+    <property role="1pbfSe" value="1116805925" />
     <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="PrWs8" id="hyXt$QK" role="PzmwI">
       <ref role="PrY4T" node="hyWqYN0" resolve="IMember" />
@@ -127,6 +136,7 @@
     <property role="TrG5h" value="DefaultClassifierMethodCallOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Methods" />
+    <property role="1pbfSe" value="1116659903" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hyXxRup" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -147,6 +157,7 @@
   <node concept="1TIwiD" id="hEBZ0aj">
     <property role="TrG5h" value="DefaultClassifierFieldDeclaration" />
     <property role="3GE5qa" value="Fields" />
+    <property role="1pbfSe" value="1476656211" />
     <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     <node concept="PrWs8" id="hEBZ0ak" role="PzmwI">
       <ref role="PrY4T" node="hyWqYN0" resolve="IMember" />
@@ -156,6 +167,7 @@
     <property role="TrG5h" value="DefaultClassifierFieldAccessOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Fields" />
+    <property role="1pbfSe" value="1476626806" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hEBZ7lM" role="PzmwI">
       <ref role="PrY4T" node="hyWEnem" resolve="IMemberOperation" />
@@ -174,11 +186,13 @@
     <property role="TrG5h" value="SuperClassifierExpresson" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="super" />
+    <property role="1pbfSe" value="1957705367" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="T8OkJR9I_B">
     <property role="TrG5h" value="DefaultClassifier" />
     <property role="3GE5qa" value="Base" />
+    <property role="1pbfSe" value="91208370" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="T8OkJR9I_C" role="PzmwI">
       <ref role="PrY4T" node="hyWqMFP" resolve="IClassifier" />

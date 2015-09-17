@@ -2,9 +2,9 @@
 <model ref="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -22,6 +22,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -61,6 +62,7 @@
     <property role="TrG5h" value="BreakpointCreator" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="breakpoint creators" />
+    <property role="1pbfSe" value="1397739964" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="16yMc0kzA8N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -72,6 +74,7 @@
   <node concept="1TIwiD" id="2JguE20RV$R">
     <property role="TrG5h" value="BreakpointableNodeItem" />
     <property role="3GE5qa" value="breakpoints" />
+    <property role="1pbfSe" value="1397738537" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2JguE20RV$S" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -111,6 +114,7 @@
     <property role="TrG5h" value="ConceptFunction_CreateBreakpoint" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
+    <property role="1pbfSe" value="1397738534" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="16yMc0kzAac">
@@ -120,6 +124,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="project" />
+    <property role="1pbfSe" value="640756556" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="16yMc0kzAag">
@@ -129,11 +134,13 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="debuggableNode" />
+    <property role="1pbfSe" value="640756560" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="51oHb9yZXnu">
     <property role="TrG5h" value="ConceptDeclarationReference" />
     <property role="3GE5qa" value="breakpoints" />
+    <property role="1pbfSe" value="1286042992" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="51oHb9yZXnv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -149,6 +156,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger type" />
+    <property role="1pbfSe" value="140854667" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyi" id="2eCkIB4f4lH" role="1TKVEl">
       <property role="TrG5h" value="name" />
@@ -162,6 +170,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger" />
+    <property role="1pbfSe" value="140859737" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="Xiy0zT4H5l" role="1TKVEl">
       <property role="TrG5h" value="debuggerName" />
@@ -175,6 +184,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="create breakpoint" />
+    <property role="1pbfSe" value="404480558" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2eCkIB4eWFE" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
@@ -207,11 +217,13 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="get debugger settings" />
+    <property role="1pbfSe" value="2123198717" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="5P5ty4$bhrP">
     <property role="TrG5h" value="DebuggerConfiguration" />
     <property role="3GE5qa" value="settings" />
+    <property role="1pbfSe" value="2123199210" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5P5ty4$bhzw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -233,6 +245,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="isApplicable" />
+    <property role="1pbfSe" value="44154572" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="7_Oswe9bkNd">
@@ -242,6 +255,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="concept" />
+    <property role="1pbfSe" value="44154576" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="2GmwjaankH$">
@@ -251,6 +265,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="isApplicable" />
+    <property role="1pbfSe" value="1250702186" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>

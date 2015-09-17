@@ -2,7 +2,7 @@
 <model ref="r:f03fbd24-52ae-4ae3-8913-228f5120a390(jetbrains.mps.samples.SwingBuilder.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,6 +17,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -51,6 +52,7 @@
     <property role="TrG5h" value="SwingBuilderMember" />
     <property role="34LRSv" value="UI Builder" />
     <property role="3GE5qa" value="swing" />
+    <property role="1pbfSe" value="194048987" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4CsL_MEkBkZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -69,6 +71,7 @@
     <property role="TrG5h" value="Frame" />
     <property role="34LRSv" value="frame" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193923486" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4CsL_MEl7DJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -88,12 +91,14 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193923470" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4CsL_MEl30z">
     <property role="TrG5h" value="Label" />
     <property role="34LRSv" value="label" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193923457" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
     <node concept="1TJgyi" id="4CsL_MEl30K" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -104,6 +109,7 @@
     <property role="TrG5h" value="Panel" />
     <property role="34LRSv" value="panel" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193923441" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
     <node concept="1TJgyi" id="3tiTA5Idd4X" role="1TKVEl">
       <property role="TrG5h" value="vertical" />
@@ -120,6 +126,7 @@
     <property role="TrG5h" value="Button" />
     <property role="34LRSv" value="button" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193923425" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
     <node concept="1TJgyj" id="4CsL_MEl8p1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -136,6 +143,7 @@
     <property role="TrG5h" value="EmptyComponent" />
     <property role="34LRSv" value="&lt;empty&gt;" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193913731" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
     <node concept="PrWs8" id="4CsL_MEl5oI" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -145,6 +153,7 @@
     <property role="TrG5h" value="TextField" />
     <property role="34LRSv" value="text field" />
     <property role="3GE5qa" value="swing.component" />
+    <property role="1pbfSe" value="193898121" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
     <node concept="1TJgyj" id="4CsL_MEl9cC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -158,6 +167,7 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Filter" />
     <property role="3GE5qa" value="transform" />
+    <property role="1pbfSe" value="179730950" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="OfqpBCexNj" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
@@ -168,6 +178,7 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Map" />
     <property role="3GE5qa" value="transform" />
+    <property role="1pbfSe" value="179730642" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="OfqpBCexQm" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
@@ -178,6 +189,7 @@
     <property role="TrG5h" value="Pipeline" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Pipeline" />
+    <property role="1pbfSe" value="179730446" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="OfqpBCfHnb" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
@@ -190,6 +202,7 @@
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="Transformers" />
     <property role="34LRSv" value="transformers" />
+    <property role="1pbfSe" value="179730415" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="OfqpBCexU8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -207,6 +220,7 @@
   <node concept="1TIwiD" id="OfqpBCexUa">
     <property role="3GE5qa" value="transform" />
     <property role="TrG5h" value="ElementReference" />
+    <property role="1pbfSe" value="179730397" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="OfqpBCexUb" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -219,6 +233,7 @@
     <property role="TrG5h" value="SourceDataType" />
     <property role="34LRSv" value="source data type" />
     <property role="3GE5qa" value="dependentDataType" />
+    <property role="1pbfSe" value="2004423022" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4PvwzwV9QLr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -237,6 +252,7 @@
     <property role="TrG5h" value="TargetDataType" />
     <property role="34LRSv" value="target data type" />
     <property role="3GE5qa" value="dependentDataType" />
+    <property role="1pbfSe" value="2004421059" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4PvwzwV9Rg6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -256,6 +272,7 @@
     <property role="TrG5h" value="Converter" />
     <property role="34LRSv" value="Converter" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="2004363145" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="4PvwzwVa5p0" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />

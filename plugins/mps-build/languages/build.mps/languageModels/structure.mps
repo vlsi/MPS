@@ -2,7 +2,7 @@
 <model ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
@@ -28,6 +28,7 @@
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -65,6 +66,7 @@
     <property role="TrG5h" value="BuildMps_Module" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="module" />
+    <property role="1pbfSe" value="870727588" />
     <ref role="1TJDcQ" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     <node concept="1TJgyi" id="1jjYQYSiGok" role="1TKVEl">
       <property role="TrG5h" value="doNotCompile" />
@@ -93,17 +95,20 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_ModuleDependency" />
     <property role="3GE5qa" value="Project.Deps" />
+    <property role="1pbfSe" value="870561273" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4zCbl23d1OJ">
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_ModuleSource" />
     <property role="3GE5qa" value="Project.Sources" />
+    <property role="1pbfSe" value="870561153" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4zCbl23db4q">
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnModule" />
     <property role="3GE5qa" value="Project.Deps" />
+    <property role="1pbfSe" value="870523286" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyi" id="4zCbl23d1N1" role="1TKVEl">
       <property role="TrG5h" value="reexport" />
@@ -119,6 +124,7 @@
   <node concept="1TIwiD" id="4zCbl23dbRE">
     <property role="TrG5h" value="BuildMps_ModuleJavaSource" />
     <property role="3GE5qa" value="Project.Sources" />
+    <property role="1pbfSe" value="870520006" />
     <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
     <node concept="PrWs8" id="1653mnvB2Ve" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -138,6 +144,7 @@
     <property role="TrG5h" value="BuildMps_Solution" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="solution" />
+    <property role="1pbfSe" value="1921448072" />
     <ref role="1TJDcQ" node="4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1TJgyi" id="eYcmk9RcI2" role="1TKVEl">
       <property role="TrG5h" value="sourcesKind" />
@@ -148,6 +155,7 @@
     <property role="TrG5h" value="BuildMps_Language" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="language" />
+    <property role="1pbfSe" value="1921448073" />
     <ref role="1TJDcQ" node="4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1TJgyj" id="2L4pT56gVS$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -166,12 +174,14 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_ModuleRuntime" />
     <property role="3GE5qa" value="Project.Runtime" />
+    <property role="1pbfSe" value="1921511816" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2L4pT56gXbi">
     <property role="TrG5h" value="BuildMps_ModuleDependencyUseLanguage" />
     <property role="3GE5qa" value="Project.Deps" />
     <property role="34LRSv" value="use &lt;{language}&gt;" />
+    <property role="1pbfSe" value="1921530467" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="2L4pT56gXbj" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -184,6 +194,7 @@
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnJavaModule" />
     <property role="3GE5qa" value="Project.Deps" />
     <property role="34LRSv" value="&lt;{module}&gt;" />
+    <property role="1pbfSe" value="1921536140" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyi" id="2L4pT56gYzW" role="1TKVEl">
       <property role="TrG5h" value="reexport" />
@@ -200,6 +211,7 @@
     <property role="TrG5h" value="BuildMps_ModuleSolutionRuntime" />
     <property role="3GE5qa" value="Project.Runtime" />
     <property role="34LRSv" value="solution &lt;{solution}&gt;" />
+    <property role="1pbfSe" value="1921588852" />
     <ref role="1TJDcQ" node="2L4pT56gSBR" resolve="BuildMps_ModuleRuntime" />
     <node concept="1TJgyj" id="2L4pT56hbr$" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -212,6 +224,7 @@
     <property role="TrG5h" value="BuildMps_ModuleDependencyExtendLanguage" />
     <property role="3GE5qa" value="Project.Deps" />
     <property role="34LRSv" value="extends &lt;{language}&gt;" />
+    <property role="1pbfSe" value="1753626670" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="3HwLahs6gcK" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -224,6 +237,7 @@
     <property role="TrG5h" value="BuildMps_ModuleJarRuntime" />
     <property role="3GE5qa" value="Project.Runtime" />
     <property role="34LRSv" value="jar" />
+    <property role="1pbfSe" value="1753617100" />
     <ref role="1TJDcQ" node="2L4pT56gSBR" resolve="BuildMps_ModuleRuntime" />
     <node concept="asaX9" id="4xPRg7rCqhj" role="lGtFl" />
     <node concept="1TJgyj" id="3HwLahs6iyk" role="1TKVEi">
@@ -242,6 +256,7 @@
     <property role="TrG5h" value="BuildMps_ModuleModelRoot" />
     <property role="3GE5qa" value="Project.Sources" />
     <property role="34LRSv" value="model root" />
+    <property role="1pbfSe" value="1753603852" />
     <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
     <node concept="1TJgyj" id="3HwLahs6lLi" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -254,6 +269,7 @@
     <property role="TrG5h" value="BuildMps_ModuleDependencyJar" />
     <property role="3GE5qa" value="Project.Deps" />
     <property role="34LRSv" value="jar" />
+    <property role="1pbfSe" value="1753595203" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="3HwLahs6nSq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -271,6 +287,7 @@
     <property role="TrG5h" value="BuildMps_DevKit" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="devkit" />
+    <property role="1pbfSe" value="95811306" />
     <ref role="1TJDcQ" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     <node concept="1TJgyj" id="hS0KzPOz52" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -288,6 +305,7 @@
   <node concept="1TIwiD" id="hS0KzPOz4U">
     <property role="TrG5h" value="BuildMps_DevKitRef" />
     <property role="3GE5qa" value="Project.DevKit" />
+    <property role="1pbfSe" value="95800254" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hS0KzPOz4V" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -300,12 +318,14 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_DevKitExport" />
     <property role="3GE5qa" value="Project.DevKit" />
+    <property role="1pbfSe" value="95800245" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="hS0KzPODPE">
     <property role="TrG5h" value="BuildMps_DevKitExportLanguage" />
     <property role="3GE5qa" value="Project.DevKit" />
     <property role="34LRSv" value="language &lt;{language}&gt;" />
+    <property role="1pbfSe" value="95772558" />
     <ref role="1TJDcQ" node="hS0KzPOz53" resolve="BuildMps_DevKitExport" />
     <node concept="1TJgyj" id="hS0KzPODPN" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -317,6 +337,7 @@
   <node concept="1TIwiD" id="hS0KzPODPU">
     <property role="TrG5h" value="BuildMps_DevKitExportSolution" />
     <property role="3GE5qa" value="Project.DevKit" />
+    <property role="1pbfSe" value="95772542" />
     <ref role="1TJDcQ" node="hS0KzPOz53" resolve="BuildMps_DevKitExport" />
     <node concept="1TJgyj" id="hS0KzPODPV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -329,6 +350,7 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_AbstractModule" />
     <property role="3GE5qa" value="Project" />
+    <property role="1pbfSe" value="95734029" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
     <node concept="PrWs8" id="hS0KzPONfH" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -351,6 +373,7 @@
   <node concept="1TIwiD" id="hS0KzPPrL9">
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnDevKit" />
     <property role="3GE5qa" value="Project.Deps" />
+    <property role="1pbfSe" value="95568047" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="hS0KzPPrLa" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -363,6 +386,7 @@
     <property role="TrG5h" value="BuildMps_Group" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="mps group" />
+    <property role="1pbfSe" value="854071476" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
     <node concept="1TJgyj" id="1jjYQYSgYJu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -378,6 +402,7 @@
     <property role="TrG5h" value="BuildMpsLayout_ModuleSources" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="sources of" />
+    <property role="1pbfSe" value="180512506" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyi" id="41K1b4v5By6" role="1TKVEl">
       <property role="TrG5h" value="modelsOnly" />
@@ -402,6 +427,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Project.Deps" />
     <property role="34LRSv" value="(extracted)" />
+    <property role="1pbfSe" value="2118848740" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="6iXh2SsXUFJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -415,6 +441,7 @@
     <property role="TrG5h" value="BuildMpsLayout_FolderWithSources" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="folder with sources of" />
+    <property role="1pbfSe" value="1940185901" />
     <ref role="1TJDcQ" node="1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
     <node concept="PrWs8" id="5bqm540KDky" role="PzmwI">
       <ref role="PrY4T" to="3ior:5bqm540K$G7" resolve="BuildLayout_InJarNode" />
@@ -424,6 +451,7 @@
     <property role="TrG5h" value="BuildMpsLayout_ModuleJars" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="module" />
+    <property role="1pbfSe" value="841814518" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyi" id="6R_3WZ3kzt2" role="1TKVEl">
       <property role="TrG5h" value="stripImplementation" />
@@ -446,6 +474,7 @@
     <property role="R4oN_" value="adds MPS capabilities (packaging, generation) to the project" />
     <property role="TrG5h" value="BuildMPSPlugin" />
     <property role="34LRSv" value="mps" />
+    <property role="1pbfSe" value="752715656" />
     <ref role="1TJDcQ" to="3ior:5KZfyKsUo6u" resolve="BuildPlugin" />
     <node concept="PrWs8" id="27eOSzOUT_O" role="PzmwI">
       <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />
@@ -455,6 +484,7 @@
     <property role="TrG5h" value="BuildMpsLayout_ModuleXml" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="module descriptor of" />
+    <property role="1pbfSe" value="1455654786" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="3LQl9buGsTT" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -472,6 +502,7 @@
   <node concept="1TIwiD" id="3LQl9buGqe4">
     <property role="TrG5h" value="BuildMpsLayout_ModuleXml_CustomJarLocation" />
     <property role="3GE5qa" value="Layout" />
+    <property role="1pbfSe" value="455604246" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3LQl9buGqe6" role="1TKVEl">
       <property role="TrG5h" value="packagedLocation" />
@@ -489,6 +520,7 @@
     <property role="TrG5h" value="BuildMps_Branding" />
     <property role="3GE5qa" value="Project.Branding" />
     <property role="34LRSv" value="idea branding" />
+    <property role="1pbfSe" value="1943377822" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
     <node concept="1TJgyj" id="5j4USBYFOGk" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -667,6 +699,7 @@
     <property role="TrG5h" value="BuildMps_BrandingUpdateSite" />
     <property role="3GE5qa" value="Project.Branding" />
     <property role="34LRSv" value="update website" />
+    <property role="1pbfSe" value="1943489816" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5j4USBYGpQS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -691,6 +724,7 @@
     <property role="TrG5h" value="BuildMps_BrandingHelp" />
     <property role="3GE5qa" value="Project.Branding" />
     <property role="34LRSv" value="help" />
+    <property role="1pbfSe" value="1943489817" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="ohKnhBYC6m" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -715,6 +749,7 @@
     <property role="TrG5h" value="BuildMpsLayout_Plugin" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="plugin" />
+    <property role="1pbfSe" value="1452957975" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
     <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">
       <property role="TrG5h" value="stripImplementation" />
@@ -738,6 +773,7 @@
     <property role="TrG5h" value="BuildMps_IdeaPlugin" />
     <property role="3GE5qa" value="Project.Plugin" />
     <property role="34LRSv" value="idea plugin" />
+    <property role="1pbfSe" value="1452957969" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
     <node concept="1TJgyj" id="5HVSRHdUrJd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -805,6 +841,7 @@
   <node concept="1TIwiD" id="5HVSRHdUrJj">
     <property role="TrG5h" value="BuildMps_IdeaPluginDependency" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="1452957874" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5HVSRHdUrJU" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -816,6 +853,7 @@
   <node concept="1TIwiD" id="5HVSRHdUrJs">
     <property role="TrG5h" value="BuildMps_IdeaPluginModule" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="1452957865" />
     <ref role="1TJDcQ" node="5HVSRHdUrJF" resolve="BuildMps_IdeaPluginContent" />
     <node concept="1TJgyi" id="3vXGXT8bfbv" role="1TKVEl">
       <property role="TrG5h" value="customPackaging" />
@@ -832,6 +870,7 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BuildMps_IdeaPluginContent" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="1452957850" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="Az7Fb" id="5HVSRHdUzhW">
@@ -842,6 +881,7 @@
   <node concept="1TIwiD" id="5HVSRHdUL81">
     <property role="TrG5h" value="BuildMps_IdeaPluginGroup" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="1452870276" />
     <ref role="1TJDcQ" node="5HVSRHdUrJF" resolve="BuildMps_IdeaPluginContent" />
     <node concept="1TJgyj" id="3vXGXT8byGJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -860,6 +900,7 @@
     <property role="TrG5h" value="BuildMpsLayout_PluginDescriptor" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="plugin descriptor of" />
+    <property role="1pbfSe" value="1452661001" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="5HVSRHdV$dX" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -871,6 +912,7 @@
   <node concept="1TIwiD" id="3vXGXT8byGB">
     <property role="TrG5h" value="BuildMps_IdeaPluginGroupCustomModule" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="2144608507" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3vXGXT8byGC" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -882,6 +924,7 @@
   <node concept="1TIwiD" id="6MNA4JYmRbj">
     <property role="TrG5h" value="BuildMps_IdeaPluginVendor" />
     <property role="3GE5qa" value="Project.Plugin" />
+    <property role="1pbfSe" value="1796147998" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6MNA4JYmRbl" role="1TKVEl">
       <property role="TrG5h" value="url" />
@@ -902,6 +945,7 @@
     <property role="TrG5h" value="BuildMpsAspect" />
     <property role="3GE5qa" value="Aspect" />
     <property role="34LRSv" value="mps settings" />
+    <property role="1pbfSe" value="574795873" />
     <ref role="1TJDcQ" to="3ior:34DbxDwRlgt" resolve="BuildAspect" />
     <node concept="1TJgyi" id="5D0zVz80B2W" role="1TKVEl">
       <property role="TrG5h" value="bootstrap" />
@@ -927,6 +971,7 @@
   <node concept="1TIwiD" id="4j_Rh$ItR9u">
     <property role="TrG5h" value="GeneratorInternal_BuildSourcePath" />
     <property role="3GE5qa" value="GeneratorInternal" />
+    <property role="1pbfSe" value="1935495031" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4j_Rh$ItR9v" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -938,6 +983,7 @@
   <node concept="1TIwiD" id="4j_Rh$ItR7f">
     <property role="TrG5h" value="GeneratorInternal_BuildMps_Module" />
     <property role="3GE5qa" value="GeneratorInternal" />
+    <property role="1pbfSe" value="1935494888" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4j_Rh$ItR7g" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -949,6 +995,7 @@
   <node concept="1TIwiD" id="QkG2t1bKw$">
     <property role="TrG5h" value="GeneratorInternal_String" />
     <property role="3GE5qa" value="GeneratorInternal" />
+    <property role="1pbfSe" value="1321449547" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="QkG2t1bKwB" role="1TKVEl">
       <property role="TrG5h" value="path" />
@@ -959,6 +1006,7 @@
     <property role="TrG5h" value="BuildLayout_ToBinaryCopyProcessor" />
     <property role="3GE5qa" value="Layout" />
     <property role="34LRSv" value="convert *.mps into *.mpb (binary format)" />
+    <property role="1pbfSe" value="1879189021" />
     <ref role="1TJDcQ" to="3ior:19QsrPt4Eb2" resolve="BuildLayout_CopyProcessor" />
     <node concept="1TJgyi" id="6R_3WZ2ZFMa" role="1TKVEl">
       <property role="TrG5h" value="stripImplementation" />
@@ -969,6 +1017,7 @@
     <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_Generator" />
     <property role="34LRSv" value="generator" />
+    <property role="1pbfSe" value="2059688241" />
     <ref role="1TJDcQ" node="4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1TJgyj" id="Kfbl0tIRdc" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -984,6 +1033,7 @@
     <property role="TrG5h" value="BuildMps_ModuleTestSource" />
     <property role="3GE5qa" value="Project.Sources" />
     <property role="34LRSv" value="test source" />
+    <property role="1pbfSe" value="769989589" />
     <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
     <node concept="1TJgyi" id="6ogfLD6kzx1" role="1TKVEl">
       <property role="TrG5h" value="isGenerated" />
@@ -1021,6 +1071,7 @@
     <property role="3GE5qa" value="Project" />
     <property role="TrG5h" value="BuildMps_GeneratorOptions" />
     <property role="34LRSv" value="generator options" />
+    <property role="1pbfSe" value="1760439973" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
     <node concept="1TJgyi" id="3Iy_$1rrR8c" role="1TKVEl">
       <property role="TrG5h" value="strict" />
@@ -1054,6 +1105,7 @@
     <property role="3GE5qa" value="Project.Branding" />
     <property role="TrG5h" value="BuildMps_BrandingStats" />
     <property role="34LRSv" value="statistics service" />
+    <property role="1pbfSe" value="796982109" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="FnaIS$Exan" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1072,6 +1124,7 @@
     <property role="3GE5qa" value="Project.Branding" />
     <property role="TrG5h" value="BuildMps_BrandingCompany" />
     <property role="34LRSv" value="company information" />
+    <property role="1pbfSe" value="797126342" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="FnaIS$F0fx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

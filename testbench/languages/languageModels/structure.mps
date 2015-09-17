@@ -2,7 +2,7 @@
 <model ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
@@ -12,6 +12,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -45,6 +46,7 @@
   <node concept="1TIwiD" id="3U1VhSFTRMP">
     <property role="TrG5h" value="ModuleSuite" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1785293267" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="173Z5qAOsM8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -64,6 +66,7 @@
   </node>
   <node concept="1TIwiD" id="3U1VhSFTRMR">
     <property role="TrG5h" value="TestCaseRef" />
+    <property role="1pbfSe" value="1785293269" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3U1VhSFTRN0" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -77,6 +80,7 @@
   </node>
   <node concept="1TIwiD" id="3U1VhSFTRMS">
     <property role="TrG5h" value="JUnit4TestCaseRef" />
+    <property role="1pbfSe" value="1785293270" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3U1VhSFTRN1" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -90,6 +94,7 @@
   </node>
   <node concept="1TIwiD" id="3U1VhSFTRMT">
     <property role="TrG5h" value="JUnit3TestCaseRef" />
+    <property role="1pbfSe" value="1785293271" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="173Z5qAOgIZ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -103,6 +108,7 @@
   </node>
   <node concept="PlHQZ" id="3U1VhSFTRMU">
     <property role="TrG5h" value="ITestRef" />
+    <property role="1pbfSe" value="1785293272" />
     <node concept="1TJgyi" id="7tF7F0nXrLu" role="1TKVEl">
       <property role="TrG5h" value="muted" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
@@ -110,6 +116,7 @@
   </node>
   <node concept="1TIwiD" id="173Z5qAOsJs">
     <property role="TrG5h" value="SolutionRef" />
+    <property role="1pbfSe" value="1198143438" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="173Z5qAOsJt" role="1TKVEl">
       <property role="TrG5h" value="moduleFQName" />
@@ -125,6 +132,7 @@
   </node>
   <node concept="PlHQZ" id="173Z5qAOtuz">
     <property role="TrG5h" value="IModuleRef" />
+    <property role="1pbfSe" value="1198140423" />
     <node concept="PrWs8" id="59Sq3i1kbkJ" role="PrDN$">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>

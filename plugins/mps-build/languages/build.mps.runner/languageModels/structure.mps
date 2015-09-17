@@ -2,7 +2,7 @@
 <model ref="r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -15,6 +15,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -41,11 +42,13 @@
     <property role="TrG5h" value="BuildSolutionRunnerPlugin" />
     <property role="34LRSv" value="mps-runner" />
     <property role="R4oN_" value="adds ability to run MPS code after build" />
+    <property role="1pbfSe" value="1453931882" />
     <ref role="1TJDcQ" to="3ior:5KZfyKsUo6u" resolve="BuildPlugin" />
   </node>
   <node concept="1TIwiD" id="3BExUgsK89Y">
     <property role="TrG5h" value="BuildSolutionRunnerAspect" />
     <property role="34LRSv" value="run code" />
+    <property role="1pbfSe" value="1454049826" />
     <ref role="1TJDcQ" to="3ior:34DbxDwRlgt" resolve="BuildAspect" />
     <node concept="1TJgyj" id="5iKxrmkn6qh" role="1TKVEi">
       <property role="20lmBu" value="reference" />

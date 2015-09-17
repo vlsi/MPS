@@ -2,7 +2,7 @@
 <model ref="r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,6 +12,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -45,6 +46,7 @@
   <node concept="1TIwiD" id="5pu6noS52gF">
     <property role="TrG5h" value="ComponentSet" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1905115743" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6sC7QXwR9qu" role="1TKVEl">
       <property role="TrG5h" value="query" />
@@ -62,6 +64,7 @@
   </node>
   <node concept="1TIwiD" id="5pu6noS5f54">
     <property role="TrG5h" value="Component" />
+    <property role="1pbfSe" value="1905063238" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5pu6noS6XHd" role="1TKVEl">
       <property role="TrG5h" value="x" />
@@ -108,6 +111,7 @@
   <node concept="1TIwiD" id="5pu6noS6R6w">
     <property role="TrG5h" value="Dependency" />
     <property role="34LRSv" value="depends on" />
+    <property role="1pbfSe" value="1904637162" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5pu6noS6Rpk" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -119,6 +123,7 @@
   <node concept="1TIwiD" id="5pu6noS6Y55">
     <property role="TrG5h" value="OutPort" />
     <property role="3GE5qa" value="" />
+    <property role="1pbfSe" value="1904608581" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="74C6il$gx0s" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -127,6 +132,7 @@
   <node concept="1TIwiD" id="5pu6noS6Y5A">
     <property role="TrG5h" value="InPort" />
     <property role="3GE5qa" value="" />
+    <property role="1pbfSe" value="1904608548" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="74C6il$gx0a" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

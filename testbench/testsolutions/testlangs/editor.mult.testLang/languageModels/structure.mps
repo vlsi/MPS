@@ -2,7 +2,7 @@
 <model ref="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,6 +20,7 @@
         <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -50,6 +51,7 @@
   <node concept="1TIwiD" id="5LszKvI9YWl">
     <property role="TrG5h" value="MultipleEditorsTestRoot" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1250197020" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6EI1ZZqOi41" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
@@ -98,6 +100,7 @@
   </node>
   <node concept="1TIwiD" id="5LszKvI9Zn1">
     <property role="TrG5h" value="MultipleEditorsTestChild" />
+    <property role="1pbfSe" value="1250198728" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5LszKvIa2Y_" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
@@ -134,6 +137,7 @@
   <node concept="1TIwiD" id="6k6gsLyh_XG">
     <property role="TrG5h" value="MultipleEditorsTestRefNodeListRoot" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="951279304" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4R_sg7X6NAA" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
@@ -171,6 +175,7 @@
   <node concept="1TIwiD" id="55my_QKN3DT">
     <property role="TrG5h" value="MultipleEditorsTestRefNodeRoot" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="35833046" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1G6ITli8lks" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
@@ -207,6 +212,7 @@
   </node>
   <node concept="1TIwiD" id="7rR2ExFim4d">
     <property role="TrG5h" value="MultipleEditorsTestMostSpecificChild" />
+    <property role="1pbfSe" value="499094603" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7rR2ExFim_b" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
@@ -231,6 +237,7 @@
   <node concept="1TIwiD" id="7rR2ExFilOw">
     <property role="TrG5h" value="MultipleEditorsTestMostSpecificRoot" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="499095608" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7rR2ExFim6p" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -242,6 +249,7 @@
   <node concept="1TIwiD" id="13zGF__x7Wj">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentRoot" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1986539980" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="13zGF__xe2Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -270,6 +278,7 @@
   </node>
   <node concept="1TIwiD" id="13zGF__xdDT">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild" />
+    <property role="1pbfSe" value="1986563378" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="13zGF__xifj" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
@@ -293,6 +302,7 @@
   </node>
   <node concept="1TIwiD" id="5$r4uFHYyxC">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChildSubconcept" />
+    <property role="1pbfSe" value="1192573522" />
     <ref role="1TJDcQ" node="13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="1TJgyi" id="5$r4uFHZydY" role="1TKVEl">
       <property role="TrG5h" value="subconceptProperty" />

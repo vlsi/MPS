@@ -2,7 +2,7 @@
 <model ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -29,6 +29,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -67,6 +68,7 @@
   </registry>
   <node concept="1TIwiD" id="O$iR4J$g0r">
     <property role="TrG5h" value="PersistentConfigurationMethod" />
+    <property role="1pbfSe" value="1018514316" />
     <ref role="1TJDcQ" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g0s">
@@ -76,6 +78,7 @@
     <property role="TrG5h" value="PersistentConfigurationType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="configuration" />
+    <property role="1pbfSe" value="1018514317" />
     <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="O$iR4J$g0t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -86,6 +89,7 @@
   </node>
   <node concept="1TIwiD" id="O$iR4J$g0w">
     <property role="TrG5h" value="PersistentConfiguration" />
+    <property role="1pbfSe" value="1018514321" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g0x" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -126,6 +130,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="template configuration" />
+    <property role="1pbfSe" value="1018514542" />
     <ref role="1TJDcQ" node="O$iR4J$g0s" resolve="PersistentConfigurationType" />
     <node concept="1TJgyj" id="O$iR4J$g3Y" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -139,6 +144,7 @@
     <property role="TrG5h" value="TemplateParameterReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
+    <property role="1pbfSe" value="1018514546" />
     <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="1TJgyj" id="O$iR4J$g42" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -154,6 +160,7 @@
     <property role="TrG5h" value="ReportConfigurationErrorStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="report error" />
+    <property role="1pbfSe" value="1018514548" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="O$iR4J$g45" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -168,6 +175,7 @@
     <property role="TrG5h" value="CreateEditor_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="create" />
+    <property role="1pbfSe" value="1018514551" />
     <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4b">
@@ -176,6 +184,7 @@
     <property role="TrG5h" value="Dispose_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="dispose" />
+    <property role="1pbfSe" value="1018514556" />
     <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4e">
@@ -185,6 +194,7 @@
     <property role="TrG5h" value="PersistentPropertyReferenceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="properties" />
+    <property role="1pbfSe" value="1018514559" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4f" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -203,6 +213,7 @@
     <property role="TrG5h" value="PersistentConfigurationTemplate" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="persistent configuration template" />
+    <property role="1pbfSe" value="1018514564" />
     <ref role="1TJDcQ" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
     <node concept="1TJgyj" id="O$iR4J$g4l" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -215,6 +226,7 @@
     <property role="TrG5h" value="PersistentConfigurationTemplateInitializer" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
+    <property role="1pbfSe" value="1018514567" />
     <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="O$iR4J$g4n" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -232,6 +244,7 @@
   <node concept="1TIwiD" id="O$iR4J$g4p">
     <property role="TrG5h" value="PersistentPropertyDeclaration" />
     <property role="3GE5qa" value="properties" />
+    <property role="1pbfSe" value="1018514570" />
     <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4q">
@@ -240,6 +253,7 @@
     <property role="TrG5h" value="TemplateParameter" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="template parameter" />
+    <property role="1pbfSe" value="1018514571" />
     <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4s">
@@ -249,6 +263,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="editor" />
+    <property role="1pbfSe" value="1018514573" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="O$iR4J$g4t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -261,6 +276,7 @@
     <property role="TrG5h" value="CheckProperitesOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="properties" />
+    <property role="1pbfSe" value="1018514576" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="O$iR4J$g4w" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
@@ -276,6 +292,7 @@
   <node concept="PlHQZ" id="O$iR4J$g4y">
     <property role="TrG5h" value="IPersistentPropertyHolder" />
     <property role="3GE5qa" value="properties" />
+    <property role="1pbfSe" value="1018514579" />
     <node concept="1TJgyj" id="O$iR4J$g4z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="persistentProperty" />
@@ -292,6 +309,7 @@
     <property role="TrG5h" value="CheckProperties_Function" />
     <property role="3GE5qa" value="properties" />
     <property role="34LRSv" value="check" />
+    <property role="1pbfSe" value="1018514582" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="O$iR4J$g4A" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWqYN0" resolve="IMember" />
@@ -303,6 +321,7 @@
     <property role="TrG5h" value="ApplyTo_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="apply to" />
+    <property role="1pbfSe" value="1018514586" />
     <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4H">
@@ -310,12 +329,14 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="EditorOperationDeclaration" />
     <property role="3GE5qa" value="editor" />
+    <property role="1pbfSe" value="1018514590" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4I">
     <property role="TrG5h" value="EditorOperationCall" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
+    <property role="1pbfSe" value="1018514591" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -336,12 +357,14 @@
   <node concept="1TIwiD" id="O$iR4J$g4M">
     <property role="TrG5h" value="EditorPropertyDeclaration" />
     <property role="3GE5qa" value="editor" />
+    <property role="1pbfSe" value="1018514595" />
     <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4N">
     <property role="TrG5h" value="EditorPropertyReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
+    <property role="1pbfSe" value="1018514596" />
     <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="1TJgyj" id="O$iR4J$g4O" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -357,6 +380,7 @@
     <property role="TrG5h" value="ResetFrom_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="reset from" />
+    <property role="1pbfSe" value="1018514599" />
     <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4U">
@@ -366,6 +390,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="editor" />
+    <property role="1pbfSe" value="1018514603" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="O$iR4J$g4V" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -377,6 +402,7 @@
   <node concept="1TIwiD" id="O$iR4J$g4X">
     <property role="TrG5h" value="SettingsEditor" />
     <property role="3GE5qa" value="editor" />
+    <property role="1pbfSe" value="1018514606" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -415,10 +441,12 @@
     <property role="TrG5h" value="Configuration_Parameter" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="configuration" />
+    <property role="1pbfSe" value="1018515201" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="PlHQZ" id="O$iR4JBsUh">
     <property role="TrG5h" value="PersistentConfigurationAssistent" />
+    <property role="1pbfSe" value="1019353602" />
     <node concept="1TJgyj" id="O$iR4JBsUi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="configuration" />
@@ -432,6 +460,7 @@
     <property role="TrG5h" value="GetEditorOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="editor" />
+    <property role="1pbfSe" value="797395334" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4DPUXm60GEA" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
@@ -444,6 +473,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor.ui" />
     <property role="34LRSv" value="grid bag constraints" />
+    <property role="1pbfSe" value="1542165310" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="2n8I3DYiVia" role="1TKVEl">
       <property role="TrG5h" value="constraintsKind" />
@@ -463,6 +493,7 @@
   </node>
   <node concept="1TIwiD" id="7YdSxSAfPwp">
     <property role="TrG5h" value="DeprecatedAnnotation" />
+    <property role="1pbfSe" value="1513276873" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="7YdSxSAfPwr" role="1TKVEl">
       <property role="TrG5h" value="since" />

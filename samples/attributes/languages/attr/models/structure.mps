@@ -2,7 +2,7 @@
 <model ref="r:e99786b4-cb81-48f5-ad96-d9e0d7c7aa3c(jetbrains.mps.samples.attribute.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -22,6 +22,7 @@
         <child id="7588428831955550186" name="multiple" index="HhnKV" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -56,6 +57,7 @@
   <node concept="1TIwiD" id="6fYGsMY855h">
     <property role="TrG5h" value="CommentAttribute" />
     <property role="3GE5qa" value="pure-textgen" />
+    <property role="1pbfSe" value="572457757" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="6fYGsMY855o" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -74,16 +76,19 @@
     <property role="TrG5h" value="HandlerAsRoot" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="pure-textgen" />
+    <property role="1pbfSe" value="1160172974" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
   <node concept="1TIwiD" id="3fG6dkheOJs">
     <property role="TrG5h" value="HandlerAsChild" />
     <property role="3GE5qa" value="pure-textgen" />
+    <property role="1pbfSe" value="1160209585" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
   <node concept="1TIwiD" id="70B0YGk0hRj">
     <property role="TrG5h" value="CommentAttribute2" />
     <property role="3GE5qa" value="generator-processed" />
+    <property role="1pbfSe" value="2077744706" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="70B0YGk0iGO" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -98,6 +103,7 @@
     <property role="TrG5h" value="SubConceptToTransform" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="generator-processed" />
+    <property role="1pbfSe" value="2077689534" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyj" id="70B0YGk0BJ7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -109,6 +115,7 @@
   <node concept="1TIwiD" id="70B0YGk0BJ6">
     <property role="TrG5h" value="SubConceptToTransformNested" />
     <property role="3GE5qa" value="generator-processed" />
+    <property role="1pbfSe" value="2077655119" />
     <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
   </node>
 </model>

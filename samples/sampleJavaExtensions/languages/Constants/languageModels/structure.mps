@@ -2,7 +2,7 @@
 <model ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -12,6 +12,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -43,6 +44,7 @@
   <node concept="1TIwiD" id="1iYrdV1xxgn">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Constants" />
+    <property role="1pbfSe" value="700153611" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1iYrdV1xxgC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -59,6 +61,7 @@
   </node>
   <node concept="1TIwiD" id="1iYrdV1xxgp">
     <property role="TrG5h" value="Constant" />
+    <property role="1pbfSe" value="700153609" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1J7HMiRRGnx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -73,6 +76,7 @@
   <node concept="1TIwiD" id="3tw0l3Pakp_">
     <property role="TrG5h" value="ConstantReference" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="747194293" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="3tw0l3PakpA" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -84,6 +88,7 @@
   <node concept="1TIwiD" id="2lb0lXX1H4v">
     <property role="TrG5h" value="DistantConstantReference" />
     <property role="34LRSv" value="distant" />
+    <property role="1pbfSe" value="1571696002" />
     <ref role="1TJDcQ" node="3tw0l3Pakp_" resolve="ConstantReference" />
     <node concept="1TJgyj" id="2lb0lXX1H8n" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -94,6 +99,7 @@
   </node>
   <node concept="1TIwiD" id="2lb0lXX3Md_">
     <property role="TrG5h" value="ConstantReferenceKeeper" />
+    <property role="1pbfSe" value="1571150652" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2lb0lXX3MdC" role="1TKVEl">
       <property role="TrG5h" value="constantName" />
@@ -102,6 +108,7 @@
   </node>
   <node concept="1TIwiD" id="2lb0lXX3TWw">
     <property role="TrG5h" value="GeneratedClassKeeper" />
+    <property role="1pbfSe" value="1571118977" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="52kk7oFV9vS" role="1TKVEl">
       <property role="TrG5h" value="className" />
