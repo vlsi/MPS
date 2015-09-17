@@ -12,7 +12,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/docs/apidocs" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/src/commons-codec-1.8-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/test" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/contrib" />
@@ -22,6 +21,7 @@
       <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3.1-src.jar!/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/commons-codec-1.9-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
