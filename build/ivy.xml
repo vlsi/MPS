@@ -486,6 +486,9 @@
     <dependency org="lib" name="xercesImpl.jar" rev="${idea.platform.version}">
       <artifact name="xercesImpl.jar" ext="jar"/>
     </dependency>
+    <dependency org="lib" name="xml-apis.jar" rev="${idea.platform.version}">
+      <artifact name="xml-apis.jar" ext="jar"/>
+    </dependency>
     <dependency org="lib" name="xmlrpc-2.0.jar" rev="${idea.platform.version}">
       <artifact name="xmlrpc-2.0.jar" ext="jar"/>
     </dependency>
