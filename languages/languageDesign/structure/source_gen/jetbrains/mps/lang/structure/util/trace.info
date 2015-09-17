@@ -18,7 +18,7 @@
       <node id="3873562224355180053" at="37,63,38,74" concept="3" />
       <node id="3873562224355180062" at="38,74,39,58" concept="0" />
       <node id="3873562224355180084" at="41,5,42,21" concept="4" />
-      <node id="2841134663537950322" at="45,50,46,90" concept="4" />
+      <node id="2841134663537950322" at="45,50,46,55" concept="4" />
       <node id="1587916991969913404" at="20,0,23,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
       <node id="1587916991970206206" at="25,18,28,7" concept="1" />
       <node id="2841134663537951742" at="45,0,48,0" concept="5" trace="getNewIdByOldId#(J)I" />
@@ -30,7 +30,7 @@
       <node id="1587916991969989692" at="18,0,32,0" concept="5" trace="generate#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)I" />
       <scope id="1587916991969913405" at="20,39,21,174" />
       <scope id="1587916991970206208" at="26,86,27,25" />
-      <scope id="2841134663537948926" at="45,50,46,90" />
+      <scope id="2841134663537948926" at="45,50,46,55" />
       <scope id="3873562224355180052" at="37,63,39,58">
         <var name="longId" id="3873562224355180054" />
       </scope>

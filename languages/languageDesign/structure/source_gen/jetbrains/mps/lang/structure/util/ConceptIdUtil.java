@@ -43,6 +43,6 @@ public class ConceptIdUtil {
   }
 
   public static int getNewIdByOldId(long longId) {
-    return Math.abs(((int) longId) + ((int) (longId / (((long) Integer.MAX_VALUE) + 1))));
+    return Math.abs(((int) (longId + (longId >> 32))));
   }
 }
