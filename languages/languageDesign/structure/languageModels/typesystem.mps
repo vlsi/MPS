@@ -3287,7 +3287,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="1o9qxtfa_BN">
-    <property role="TrG5h" value="check_AbstractConceptDeclaration" />
+    <property role="TrG5h" value="check_AbstractConceptDeclaration_Id" />
     <node concept="3clFbS" id="1o9qxtfa_BO" role="18ibNy">
       <node concept="3clFbJ" id="1o9qxtfa_CH" role="3cqZAp">
         <node concept="3clFbS" id="1o9qxtfa_CI" role="3clFbx">
@@ -3314,7 +3314,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="1o9qxtfaLrx" role="3uHU7w">
-                <property role="Xl_RC" value="If this concept was created manually, invoke the \&quot;generate id\&quot; intention on it" />
+                <property role="Xl_RC" value="If this concept was created manually, invoke the \&quot;Generate ID\&quot; intention on it" />
               </node>
             </node>
           </node>
@@ -3328,6 +3328,50 @@
               <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
             </node>
             <node concept="3TrcHB" id="1o9qxtfa_Nl" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="2tHJeLFfLra" role="3cqZAp" />
+      <node concept="3clFbJ" id="2tHJeLFfLs_" role="3cqZAp">
+        <node concept="3clFbS" id="2tHJeLFfLsB" role="3clFbx">
+          <node concept="2MkqsV" id="2tHJeLFfMsW" role="3cqZAp">
+            <node concept="3Cnw8n" id="2tHJeLFfMsX" role="2OEOjU">
+              <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptId" />
+              <node concept="3CnSsL" id="2tHJeLFfMsY" role="3Coj4f">
+                <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
+                <node concept="1YBJjd" id="2tHJeLFfMsZ" role="3CoRuB">
+                  <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                </node>
+              </node>
+            </node>
+            <node concept="1YBJjd" id="2tHJeLFfMt0" role="2OEOjV">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="3cpWs3" id="2tHJeLFfMt1" role="2MkJ7o">
+              <node concept="Xl_RD" id="2tHJeLFfMt3" role="3uHU7B">
+                <property role="Xl_RC" value="Concept id is not equal to expected.\n" />
+              </node>
+              <node concept="Xl_RD" id="2tHJeLFfMt5" role="3uHU7w">
+                <property role="Xl_RC" value="Fix this by applying \&quot;Generate ID\&quot; intention" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3y3z36" id="2tHJeLFfMos" role="3clFbw">
+          <node concept="2YIFZM" id="2tHJeLFfMrc" role="3uHU7w">
+            <ref role="37wK5l" to="twe9:3n1E57I3ZSW" resolve="getNewId" />
+            <ref role="1Pybhc" to="twe9:1o9qxtfbpaa" resolve="ConceptIdUtil" />
+            <node concept="1YBJjd" id="2tHJeLFfMs2" role="37wK5m">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2tHJeLFfLwF" role="3uHU7B">
+            <node concept="1YBJjd" id="2tHJeLFfLt6" role="2Oq$k0">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="3TrcHB" id="2tHJeLFfLJ2" role="2OqNvi">
               <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
             </node>
           </node>
@@ -3380,7 +3424,7 @@
       <node concept="3clFbS" id="1o9qxtfaNIj" role="2VODD2">
         <node concept="3clFbF" id="1o9qxtfaNNp" role="3cqZAp">
           <node concept="Xl_RD" id="1o9qxtfaNNo" role="3clFbG">
-            <property role="Xl_RC" value="generate id" />
+            <property role="Xl_RC" value="Generate ID" />
           </node>
         </node>
       </node>

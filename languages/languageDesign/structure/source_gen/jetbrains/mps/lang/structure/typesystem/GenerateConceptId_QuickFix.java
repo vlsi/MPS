@@ -15,7 +15,7 @@ public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
     super(new SNodePointer("r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1587916991969835891"));
   }
   public String getDescription(SNode node) {
-    return "generate id";
+    return "Generate ID";
   }
   public void execute(SNode node) {
     SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0])))));

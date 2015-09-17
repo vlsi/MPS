@@ -347,49 +347,66 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1587916991969778163">
-    <file name="check_AbstractConceptDeclaration_NonTypesystemRule.java">
-      <node id="1587916991969781666" at="23,7,24,60" concept="11" />
-      <node id="1587916991969781666" at="24,60,25,420" concept="11" />
-      <node id="1587916991969781666" at="26,9,27,153" concept="11" />
-      <node id="1587916991969781666" at="27,153,28,50" concept="6" />
-      <node id="1587916991969781666" at="28,50,29,71" concept="6" />
-      <node id="1587916991969778163" at="34,50,35,168" concept="12" />
-      <node id="1587916991969778163" at="37,68,38,102" concept="1" />
-      <node id="1587916991969778163" at="37,68,38,102" concept="12" />
-      <node id="1587916991969778163" at="40,30,41,17" concept="12" />
-      <node id="1587916991969778163" at="19,0,21,0" concept="3" trace="check_AbstractConceptDeclaration_NonTypesystemRule#()V" />
-      <node id="1587916991969778163" at="34,0,37,0" concept="10" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1587916991969778163" at="37,0,40,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1587916991969778163" at="40,0,43,0" concept="10" trace="overrides#()Z" />
-      <node id="1587916991969781666" at="25,420,30,9" concept="1" />
-      <node id="1587916991969781666" at="22,175,31,7" concept="1" />
-      <node id="1587916991969778221" at="21,116,32,5" concept="9" />
-      <node id="1587916991969778163" at="21,0,34,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="1587916991969778163" at="19,63,19,63" />
-      <scope id="1587916991969778163" at="34,50,35,168" />
-      <scope id="1587916991969778163" at="37,68,38,102" />
-      <scope id="1587916991969778163" at="40,30,41,17" />
-      <scope id="1587916991969778163" at="19,0,21,0" />
-      <scope id="1587916991969781666" at="26,9,29,71">
+    <file name="check_AbstractConceptDeclaration_Id_NonTypesystemRule.java">
+      <node id="1587916991969781666" at="24,7,25,60" concept="11" />
+      <node id="1587916991969781666" at="25,60,26,420" concept="11" />
+      <node id="1587916991969781666" at="27,9,28,153" concept="11" />
+      <node id="1587916991969781666" at="28,153,29,50" concept="6" />
+      <node id="1587916991969781666" at="29,50,30,71" concept="6" />
+      <node id="2841134663538251466" at="33,5,34,0" concept="14" />
+      <node id="2841134663538255676" at="36,7,37,60" concept="11" />
+      <node id="2841134663538255676" at="37,60,38,305" concept="11" />
+      <node id="2841134663538255676" at="39,9,40,153" concept="11" />
+      <node id="2841134663538255676" at="40,153,41,50" concept="6" />
+      <node id="2841134663538255676" at="41,50,42,71" concept="6" />
+      <node id="1587916991969778163" at="47,50,48,168" concept="12" />
+      <node id="1587916991969778163" at="50,68,51,102" concept="1" />
+      <node id="1587916991969778163" at="50,68,51,102" concept="12" />
+      <node id="1587916991969778163" at="53,30,54,17" concept="12" />
+      <node id="1587916991969778163" at="20,0,22,0" concept="3" trace="check_AbstractConceptDeclaration_Id_NonTypesystemRule#()V" />
+      <node id="1587916991969778163" at="47,0,50,0" concept="10" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1587916991969778163" at="50,0,53,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1587916991969778163" at="53,0,56,0" concept="10" trace="overrides#()Z" />
+      <node id="1587916991969781666" at="26,420,31,9" concept="1" />
+      <node id="2841134663538255676" at="38,305,43,9" concept="1" />
+      <node id="1587916991969781666" at="23,175,32,7" concept="1" />
+      <node id="2841134663538255676" at="35,201,44,7" concept="1" />
+      <node id="1587916991969778221" at="22,116,33,5" concept="9" />
+      <node id="2841134663538251557" at="34,0,45,5" concept="9" />
+      <node id="1587916991969778163" at="22,0,47,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1587916991969778163" at="20,66,20,66" />
+      <scope id="1587916991969778163" at="47,50,48,168" />
+      <scope id="1587916991969778163" at="50,68,51,102" />
+      <scope id="1587916991969778163" at="53,30,54,17" />
+      <scope id="1587916991969778163" at="20,0,22,0" />
+      <scope id="1587916991969781666" at="27,9,30,71">
         <var name="intentionProvider" id="1587916991969781666" />
       </scope>
-      <scope id="1587916991969778163" at="34,0,37,0" />
-      <scope id="1587916991969778163" at="37,0,40,0">
+      <scope id="2841134663538255676" at="39,9,42,71">
+        <var name="intentionProvider" id="2841134663538255676" />
+      </scope>
+      <scope id="1587916991969778163" at="47,0,50,0" />
+      <scope id="1587916991969778163" at="50,0,53,0">
         <var name="argument" id="1587916991969778163" />
       </scope>
-      <scope id="1587916991969778163" at="40,0,43,0" />
-      <scope id="1587916991969781666" at="23,7,30,9">
+      <scope id="1587916991969778163" at="53,0,56,0" />
+      <scope id="1587916991969781666" at="24,7,31,9">
         <var name="_reporter_2309309498" id="1587916991969781666" />
         <var name="errorTarget" id="1587916991969781666" />
       </scope>
-      <scope id="1587916991969778222" at="22,175,31,7" />
-      <scope id="1587916991969778164" at="21,116,32,5" />
-      <scope id="1587916991969778163" at="21,0,34,0">
+      <scope id="2841134663538255676" at="36,7,43,9">
+        <var name="_reporter_2309309498" id="2841134663538255676" />
+        <var name="errorTarget" id="2841134663538255676" />
+      </scope>
+      <scope id="1587916991969778222" at="23,175,32,7" />
+      <scope id="2841134663538251559" at="35,201,44,7" />
+      <scope id="1587916991969778164" at="22,116,45,5" />
+      <scope id="1587916991969778163" at="22,0,47,0">
         <var name="acd" id="1587916991969778163" />
         <var name="status" id="1587916991969778163" />
         <var name="typeCheckingContext" id="1587916991969778163" />
       </scope>
-      <unit id="1587916991969778163" at="18,0,44,0" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_NonTypesystemRule" />
+      <unit id="1587916991969778163" at="19,0,57,0" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Id_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1587916991969835891">
