@@ -26,9 +26,10 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "BHL1.structure.I1");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Object> foo_id7Ts2tYwvl$V = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Ts2tYwvl$V").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> bar_id6sCTYS3h6cj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6sCTYS3h6cj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> foo_id7Ts2tYwvl$V = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Ts2tYwvl$V").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id7Ts2tYwvl$V);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(bar_id6sCTYS3h6cj, foo_id7Ts2tYwvl$V);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -53,7 +54,7 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(method);
     }
     switch (methodIndex) {
-      case 0:
+      case 1:
         return (T) foo_id7Ts2tYwvl$V(node);
       default:
         throw new BHMethodNotFoundException(method);

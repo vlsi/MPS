@@ -48,6 +48,7 @@
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -64,6 +65,14 @@
   </registry>
   <node concept="13h7C7" id="7Ts2tYwvl$S">
     <ref role="13h7C2" to="8jon:7Ts2tYwvl$v" resolve="I1" />
+    <node concept="13i0hz" id="6sCTYS3h6cj" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="bar" />
+      <node concept="3Tm1VV" id="6sCTYS3h6ck" role="1B3o_S" />
+      <node concept="3clFbS" id="6sCTYS3h6cl" role="3clF47" />
+      <node concept="3cqZAl" id="6sCTYS3h6cx" role="3clF45" />
+    </node>
     <node concept="13i0hz" id="7Ts2tYwvl$V" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="true" />
@@ -89,6 +98,15 @@
     <ref role="13h7C2" to="8jon:7Ts2tYwvl$u" resolve="A1" />
     <node concept="13hLZK" id="6EMTxOPT3pG" role="13h7CW">
       <node concept="3clFbS" id="6EMTxOPT3pH" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6sCTYS3h6cP" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="bar" />
+      <ref role="13i0hy" node="6sCTYS3h6cj" resolve="bar" />
+      <node concept="3Tm1VV" id="6sCTYS3h6cQ" role="1B3o_S" />
+      <node concept="3clFbS" id="6sCTYS3h6cT" role="3clF47" />
+      <node concept="3cqZAl" id="6sCTYS3h6cU" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="5jWiLvujMj_">
