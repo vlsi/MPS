@@ -495,6 +495,13 @@
     <dependency org="lib" name="xstream-1.4.3.jar" rev="${idea.platform.version}">
       <artifact name="xstream-1.4.3.jar" ext="jar"/>
     </dependency>
+    <!--Kotlin-->
+    <dependency org="lib" name="kotlin-reflect.jar" rev="${idea.platform.version}">
+      <artifact name="kotlin-reflect.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="kotlin-runtime.jar" rev="${idea.platform.version}">
+      <artifact name="kotlin-runtime.jar" ext="jar"/>
+    </dependency>
 
     <!--
     lib
