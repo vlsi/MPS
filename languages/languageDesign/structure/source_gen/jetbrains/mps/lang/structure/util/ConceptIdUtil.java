@@ -36,9 +36,13 @@ public class ConceptIdUtil {
       SNodeId id = ((jetbrains.mps.smodel.SNode) c).getNodeId();
       if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
         long longId = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
-        generated = ((int) longId) + ((int) (longId / Integer.MAX_VALUE));
+        generated = ConceptIdUtil.getNewIdByOldId(longId);
       }
     }
     return generated;
+  }
+
+  public static int getNewIdByOldId(long longId) {
+    return Math.abs(((int) longId) + ((int) (longId / (((long) Integer.MAX_VALUE) + 1))));
   }
 }
