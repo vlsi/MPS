@@ -62,7 +62,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
-      throw new BHMethodNotFoundException(method);
+      throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
@@ -74,7 +74,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
       case 3:
         return (T) genericReturnValue_id4Rfm9LCcu90(node);
       default:
-        throw new BHMethodNotFoundException(method);
+        throw new BHMethodNotFoundException(this, method);
     }
   }
 

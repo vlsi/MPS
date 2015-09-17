@@ -1167,6 +1167,106 @@
           </node>
         </node>
       </node>
+      <node concept="3s$Bmu" id="1olXtyGAL5r" role="3s_gse">
+        <property role="3s$Bm0" value="superBehaviorOneArgumentNullCall" />
+        <node concept="3cqZAl" id="1olXtyGAL5s" role="3clF45" />
+        <node concept="3Tm1VV" id="1olXtyGAL5t" role="1B3o_S" />
+        <node concept="3clFbS" id="1olXtyGAL5u" role="3clF47">
+          <node concept="3SKdUt" id="1olXtyGALGp" role="3cqZAp">
+            <node concept="3SKdUq" id="1olXtyGALHr" role="3SKWNk">
+              <property role="3SKdUp" value="against wrong varargs treatment" />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="1olXtyGAL5v" role="3cqZAp">
+            <node concept="3cpWsn" id="1olXtyGAL5w" role="3cpWs9">
+              <property role="TrG5h" value="nodeB" />
+              <node concept="3Tqbb2" id="1olXtyGAL5x" role="1tU5fm">
+                <ref role="ehGHo" to="3cc8:5mnatV0hwZq" resolve="B" />
+              </node>
+              <node concept="2pJPEk" id="1olXtyGAL5y" role="33vP2m">
+                <node concept="2pJPED" id="1olXtyGAL5z" role="2pJPEn">
+                  <ref role="2pJxaS" to="3cc8:5mnatV0hyfC" resolve="D" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="1olXtyGAL5$" role="3cqZAp">
+            <node concept="2OqwBi" id="1olXtyGAL5_" role="3tpDZA">
+              <node concept="37vLTw" id="1olXtyGAL5A" role="2Oq$k0">
+                <ref role="3cqZAo" node="1olXtyGAL5w" resolve="nodeB" />
+              </node>
+              <node concept="2qgKlT" id="1olXtyGALM4" role="2OqNvi">
+                <ref role="37wK5l" to="ugot:1olXtyGAKpB" resolve="foo4" />
+              </node>
+            </node>
+            <node concept="10M0yZ" id="1olXtyGAL5C" role="3tpDZB">
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3s$Bmu" id="1olXtyGALlz" role="3s_gse">
+        <property role="3s$Bm0" value="superPrivateMethodVirtualCall" />
+        <node concept="3cqZAl" id="1olXtyGALl$" role="3clF45" />
+        <node concept="3Tm1VV" id="1olXtyGALl_" role="1B3o_S" />
+        <node concept="3clFbS" id="1olXtyGALlA" role="3clF47">
+          <node concept="3cpWs8" id="1olXtyGALlB" role="3cqZAp">
+            <node concept="3cpWsn" id="1olXtyGALlC" role="3cpWs9">
+              <property role="TrG5h" value="nodeB" />
+              <node concept="3Tqbb2" id="1olXtyGALlD" role="1tU5fm">
+                <ref role="ehGHo" to="3cc8:5mnatV0hwZq" resolve="B" />
+              </node>
+              <node concept="2pJPEk" id="1olXtyGALlE" role="33vP2m">
+                <node concept="2pJPED" id="7Ag792982uG" role="2pJPEn">
+                  <ref role="2pJxaS" to="3cc8:5mnatV0hwZq" resolve="B" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="7Ag792982lm" role="3cqZAp">
+            <node concept="2OqwBi" id="7Ag792982ln" role="3tpDZA">
+              <node concept="37vLTw" id="7Ag792982lo" role="2Oq$k0">
+                <ref role="3cqZAo" node="1olXtyGALlC" resolve="nodeB" />
+              </node>
+              <node concept="2qgKlT" id="7Ag792982lp" role="2OqNvi">
+                <ref role="37wK5l" to="ugot:1olXtyGAKsY" resolve="foo5" />
+              </node>
+            </node>
+            <node concept="10M0yZ" id="7Ag792982lq" role="3tpDZB">
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="7Ag792982jo" role="3cqZAp">
+            <node concept="3cpWsn" id="7Ag792982jp" role="3cpWs9">
+              <property role="TrG5h" value="nodeD" />
+              <node concept="3Tqbb2" id="7Ag792982jq" role="1tU5fm">
+                <ref role="ehGHo" to="3cc8:5mnatV0hyfC" resolve="D" />
+              </node>
+              <node concept="2pJPEk" id="7Ag792982jr" role="33vP2m">
+                <node concept="2pJPED" id="7Ag792982js" role="2pJPEn">
+                  <ref role="2pJxaS" to="3cc8:5mnatV0hyfC" resolve="D" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="1olXtyGALlG" role="3cqZAp">
+            <node concept="2OqwBi" id="1olXtyGALlH" role="3tpDZA">
+              <node concept="37vLTw" id="7Ag792982AK" role="2Oq$k0">
+                <ref role="3cqZAo" node="7Ag792982jp" resolve="nodeD" />
+              </node>
+              <node concept="2qgKlT" id="7Ag792982EZ" role="2OqNvi">
+                <ref role="37wK5l" to="ugot:1olXtyGAKsY" resolve="foo5" />
+              </node>
+            </node>
+            <node concept="10M0yZ" id="1olXtyGALlK" role="3tpDZB">
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3s$Bmu" id="5mnatV0hz6L" role="3s_gse">
         <property role="3s$Bm0" value="superStaticBehaviorCall" />
         <node concept="3cqZAl" id="5mnatV0hz6N" role="3clF45" />

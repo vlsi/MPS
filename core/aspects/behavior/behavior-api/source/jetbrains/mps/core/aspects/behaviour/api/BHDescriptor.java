@@ -56,7 +56,7 @@ public interface BHDescriptor {
 
   /**
    * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
-   * E.g. used when calling 'super' method from the behavior.
+   * E.g. used when calling 'super' method from the behavior or calling a private method
    */
   <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 

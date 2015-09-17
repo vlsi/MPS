@@ -41,11 +41,7 @@ public final class BHFacade {
   }
 
   public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    SAbstractConcept concept = method.getConcept();
-    if (node != null && !node.getConcept().isSubConceptOf(concept)) {
-      return (T) method.getReturnType().getDefaultValue();
-    }
-    return BHFacade.invokeSpecial0(node, method, parameters);
+    return method.invokeSpecial(node, parameters);
   }
 
   public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
@@ -87,7 +83,7 @@ public final class BHFacade {
     SAbstractConcept concept = method.getConcept();
     assert node == null || node.getConcept().isSubConceptOf(concept);
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.invoke(node, method, parameters);
+    return bhDescriptor.invokeSpecial(node, method, parameters);
   }
 
   /**

@@ -32,8 +32,11 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> foo1_id5jWiLvujSmw = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSmw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo2_id5jWiLvujSzJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSzJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo3_id4RMBeRWcio1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("foo3").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcio1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  private static final SMethod<Integer> privateMethod_id1olXtyGAKnt = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("privateMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("1olXtyGAKnt").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
+  public static final SMethod<Integer> foo4_id1olXtyGAKpB = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo4").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKpB").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo5_id1olXtyGAKsY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo5").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKsY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1, privateMethod_id1olXtyGAKnt, foo4_id1olXtyGAKpB, foo5_id1olXtyGAKsY);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -56,6 +59,15 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   private static Integer foo3_id4RMBeRWcio1(@NotNull SNode __thisNode__) {
     return Integer.valueOf(1);
   }
+  private static Integer privateMethod_id1olXtyGAKnt(@NotNull SNode __thisNode__, Object obj) {
+    return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  private static Integer foo4_id1olXtyGAKpB(@NotNull SNode __thisNode__) {
+    return B_BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null);
+  }
+  private static Integer foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
+    return B_BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null);
+  }
 
   /*package*/ B_BehaviorDescriptor() {
     super(REGISTRY);
@@ -70,7 +82,7 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
-      throw new BHMethodNotFoundException(method);
+      throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
@@ -85,8 +97,14 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
         return (T) foo2_id5jWiLvujSzJ(node);
       case 5:
         return (T) foo3_id4RMBeRWcio1(node);
+      case 6:
+        return (T) privateMethod_id1olXtyGAKnt(node, (Object) parameters[0]);
+      case 7:
+        return (T) foo4_id1olXtyGAKpB(node);
+      case 8:
+        return (T) foo5_id1olXtyGAKsY(node);
       default:
-        throw new BHMethodNotFoundException(method);
+        throw new BHMethodNotFoundException(this, method);
     }
   }
 

@@ -102,7 +102,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   @Override
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (!myInvocationMap.containsKey(method)) {
-      throw new BHMethodNotFoundException(method);
+      throw new BHMethodNotFoundException(this, method);
     }
     String methodName = myInvocationMap.get(method).getName();
     if (node == null) {

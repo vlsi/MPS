@@ -65,7 +65,7 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
     }
     if (method instanceof SConstructor) {
       assert node != null;
-      myDescriptor.initNode(node, (SConstructor) method);
+      myDescriptor.initNode(node, (SConstructor) method, new Object[0]);
       return null;
     } else if (method instanceof SMethod) {
       return myDescriptor.invokeOwn(node, (SMethod<?>) method, parameters);

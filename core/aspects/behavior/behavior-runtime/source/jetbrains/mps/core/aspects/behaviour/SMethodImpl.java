@@ -124,6 +124,9 @@ public final class SMethodImpl<T> implements SMethod<T> {
     if (node == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    if (myMethodModifiers.isPrivate()) {
+      return invokeSpecial(node, parameters);
+    }
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(node.getConcept());
     return bhDescriptor.invoke(node, this, parameters);
   }
@@ -133,8 +136,17 @@ public final class SMethodImpl<T> implements SMethod<T> {
     if (concept == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    if (myMethodModifiers.isPrivate()) {
+      return invokeSpecial(null, parameters);
+    }
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concept);
     return bhDescriptor.invoke(null, this, parameters);
+  }
+
+  @Override
+  public T invokeSpecial(@Nullable SNode node, Object... parameters) {
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
+    return bhDescriptor.invokeSpecial(node, this, parameters);
   }
 
   @NotNull

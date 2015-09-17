@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BHFacade;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -32,26 +31,30 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> foo2_id5jWiLvujSzJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSzJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> bar1_id5jWiLvujSC6 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSC6").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Void> bar2_id4RMBeRWcir8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcir8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo5_id1olXtyGAKsY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo5").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKsY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8, foo5_id1olXtyGAKsY);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   private static Integer foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
-    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo_id5mnatV0hwZQ));
+    return ((Integer) B_BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__));
   }
   private static Integer foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
-    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo1_id5jWiLvujSmw));
+    return ((Integer) B_BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__));
   }
   private static Integer foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
-    return ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo2_id5jWiLvujSzJ));
+    return ((Integer) B_BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__));
   }
   private static Integer bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   private static void bar2_id4RMBeRWcir8(@NotNull SNode __thisNode__) {
-    ((Integer) BHFacade.invokeSpecial(__thisNode__, B_BehaviorDescriptor.foo3_id4RMBeRWcio1)).byteValue();
+    ((Integer) B_BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__)).byteValue();
+  }
+  private static Integer foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
+    return ((Integer) B_BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__));
   }
 
   /*package*/ D_BehaviorDescriptor() {
@@ -67,7 +70,7 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
-      throw new BHMethodNotFoundException(method);
+      throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
@@ -81,8 +84,10 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
       case 4:
         bar2_id4RMBeRWcir8(node);
         return null;
+      case 5:
+        return (T) foo5_id1olXtyGAKsY(node);
       default:
-        throw new BHMethodNotFoundException(method);
+        throw new BHMethodNotFoundException(this, method);
     }
   }
 

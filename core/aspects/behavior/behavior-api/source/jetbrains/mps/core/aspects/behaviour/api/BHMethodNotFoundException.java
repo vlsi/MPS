@@ -21,8 +21,8 @@ import org.jetbrains.annotations.NotNull;
 * Created by apyshkin on 09/09/15.
 */
 public final class BHMethodNotFoundException extends RuntimeException {
-  public BHMethodNotFoundException(@NotNull SMethod method) {
-    super("The method '" + method + "' could not be found");
+  public BHMethodNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
+    super("The method '" + method + "' could not be found within the '" + descriptor + "'.");
   }
 
   public BHMethodNotFoundException(String msg) {

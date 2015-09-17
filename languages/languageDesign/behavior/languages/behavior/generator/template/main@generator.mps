@@ -78,6 +78,7 @@
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -2689,7 +2690,8 @@
             <node concept="YS8fn" id="rmbZrdamGx" role="3cqZAp">
               <node concept="2ShNRf" id="rmbZrdamH0" role="YScLw">
                 <node concept="1pGfFk" id="rmbZrdan2i" role="2ShVmc">
-                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
+                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.BHDescriptor,jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
+                  <node concept="Xjq3P" id="1olXtyGAysq" role="37wK5m" />
                   <node concept="37vLTw" id="rmbZrdan3d" role="37wK5m">
                     <ref role="3cqZAo" node="6pZ_jf9SAym" resolve="method" />
                   </node>
@@ -3027,7 +3029,8 @@
             <node concept="YS8fn" id="rmbZrddfrs" role="3cqZAp">
               <node concept="2ShNRf" id="rmbZrddfrQ" role="YScLw">
                 <node concept="1pGfFk" id="rmbZrddfL8" role="2ShVmc">
-                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
+                  <ref role="37wK5l" to="9r19:~BHMethodNotFoundException.&lt;init&gt;(jetbrains.mps.core.aspects.behaviour.api.BHDescriptor,jetbrains.mps.core.aspects.behaviour.api.SMethod)" resolve="BHMethodNotFoundException" />
+                  <node concept="Xjq3P" id="1olXtyGB16t" role="37wK5m" />
                   <node concept="37vLTw" id="rmbZrddfM0" role="37wK5m">
                     <ref role="3cqZAo" node="6pZ_jf9SAym" resolve="method" />
                   </node>
