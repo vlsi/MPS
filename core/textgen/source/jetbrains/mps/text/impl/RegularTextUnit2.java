@@ -48,6 +48,7 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
   private final Charset myEncoding;
   private Status myState = Status.Undefined;
   private String myOutcome;
+  private BufferLayoutConfiguration myLayoutBuilder;
 
   // CompatibilityTextUnit stuff
   private TraceInfoCollector myTraceCollector;
@@ -58,6 +59,11 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
     myStartNode = root;
     myFilename = filename;
     myEncoding = encoding;
+    myLayoutBuilder = new BufferLayoutConfiguration();
+  }
+
+  public void setBufferLayout(@NotNull BufferLayoutConfiguration cfg) {
+    myLayoutBuilder = cfg;
   }
 
   @NotNull
@@ -81,7 +87,7 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
 
     myTraceCollector = new TraceInfoCollector();
     TextBuffer trueBuffer = new TextBufferImpl();
-    prepareBuffer(trueBuffer);
+    myLayoutBuilder.prepareBuffer(trueBuffer);
     // trueBuffer shall have active area so that in case there's legacy TextGen dumping through TextGenBuffer,
     // output get into true buffer rather than get lost.
     TextGenBuffer legacyBuffer = TextGen.newUserObjectHolder(getStartNode(), true, trueBuffer);
@@ -95,7 +101,7 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
     TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(myStartNode, legacyBuffer, trueBuffer));
     tgs.appendNode(myStartNode);
 
-    final BufferSnapshot textSnapshot = prepareSnapshot(trueBuffer);
+    final BufferSnapshot textSnapshot = myLayoutBuilder.prepareSnapshot(trueBuffer);
     myTraceCollector.populatePositions(textSnapshot);
 
     // Mimic TextGen.getUserObjectCollection()
@@ -117,24 +123,14 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
     }
   }
 
-  protected void prepareBuffer(@NotNull TextBuffer buffer) {
-    // no-op. may prepare initial active area.
-    // in case of simple layout, may declare all areas here at once (no need for overridden #prepareSnapshot() then)
-  }
-
-  @NotNull
-  protected BufferSnapshot prepareSnapshot(@NotNull TextBuffer buffer) {
-    return buffer.snapshot(buffer.newLayout());
-  }
-
   @Override
   public byte[] getBytes() {
-    return myOutcome.getBytes(myEncoding == null ? FileUtil.DEFAULT_CHARSET : myEncoding);
+    return myOutcome.getBytes(getEncoding());
   }
 
   @Override
   public Charset getEncoding() {
-    return myEncoding;
+    return myEncoding == null ? FileUtil.DEFAULT_CHARSET : myEncoding;
   }
 
   @Override

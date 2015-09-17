@@ -25,7 +25,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.AttributedNodePart_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,76,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,80,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BufferParameter_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
@@ -78,6 +78,9 @@
     <file name="LanguageTextGenDeclaration_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
     </file>
+    <file name="LayoutPart_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.textGen.behavior.LayoutPart_BehaviorDescriptor" />
+    </file>
     <file name="NewLineAppendPart_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
     </file>
@@ -101,6 +104,9 @@
     </file>
     <file name="StubOperationDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TextUnitLayout_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" />
     </file>
     <file name="UtilityMethodCall_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />

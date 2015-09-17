@@ -142,6 +142,10 @@ public class TextBufferImpl implements TextBuffer {
     for (Entry<TextMark, TextAreaToken> e : realLayout.mySubstitutions.entrySet()) {
       LiveLocation loc = marker2liveLocation.get(e.getKey());
       StringBuilder target = textMap.get(chunk2token.get(loc.getTextArea()));
+      // FIXME what if there's optional TextArea, which is not necessarily filled with any data, but layout
+      // tells to get its content substituted to particular location (i.e. TextArea("fields") in class without any fields
+      // but with predefined location where field, if any, shall go? Next line means all TextAreas shall be made known to the buffer
+      // which is not quite convenient
       StringBuilder replacement = textMap.get(e.getValue());
       loc.replaceText(target, replacement);
       consumedChunks.add(e.getValue());

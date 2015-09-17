@@ -74,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.IndentPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.LayoutPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
@@ -81,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UtilityMethodDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_BehaviorDescriptor" />
@@ -322,6 +324,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.behavior.LayoutPart_BehaviorDescriptor" file="LayoutPart_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" file="NewLineAppendPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -408,6 +420,12 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" file="TextUnitLayout_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_Behavior" file="UtilityMethodCall_Behavior.java">
