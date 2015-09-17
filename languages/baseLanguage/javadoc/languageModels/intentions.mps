@@ -27,6 +27,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="serg" ref="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="bzl4" ref="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
@@ -2354,20 +2355,6 @@
       <node concept="3clFbS" id="7gdCoen32KZ" role="2VODD2">
         <node concept="3clFbF" id="7gdCoen32LY" role="3cqZAp">
           <node concept="1Wc70l" id="7gdCoen3791" role="3clFbG">
-            <node concept="3fqX7Q" id="7gdCoen38dW" role="3uHU7w">
-              <node concept="2OqwBi" id="7gdCoen38dY" role="3fr31v">
-                <node concept="1PxgMI" id="7gdCoen38dZ" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
-                  <node concept="2OqwBi" id="7gdCoen38e0" role="1PxMeX">
-                    <node concept="2Sf5sV" id="7gdCoen38e1" role="2Oq$k0" />
-                    <node concept="1mfA1w" id="7gdCoen38e2" role="2OqNvi" />
-                  </node>
-                </node>
-                <node concept="3TrcHB" id="6Va_BJeTDzt" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpee:hOIEky$" resolve="isDeprecated" />
-                </node>
-              </node>
-            </node>
             <node concept="2OqwBi" id="7gdCoen32VB" role="3uHU7B">
               <node concept="2OqwBi" id="7gdCoen36I4" role="2Oq$k0">
                 <node concept="2Sf5sV" id="7gdCoen32LX" role="2Oq$k0" />
@@ -2377,6 +2364,18 @@
                 <node concept="chp4Y" id="7gdCoen36XZ" role="cj9EA">
                   <ref role="cht4Q" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
                 </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7gdCoen38dY" role="3uHU7w">
+              <node concept="1PxgMI" id="7gdCoen38dZ" role="2Oq$k0">
+                <ref role="1PxNhF" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
+                <node concept="2OqwBi" id="7gdCoen38e0" role="1PxMeX">
+                  <node concept="2Sf5sV" id="7gdCoen38e1" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="7gdCoen38e2" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="3yvWaPHRgjj" role="2OqNvi">
+                <ref role="37wK5l" to="tpcu:hOwoPtR" resolve="isDeprecated" />
               </node>
             </node>
           </node>

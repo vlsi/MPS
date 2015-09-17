@@ -2688,6 +2688,10 @@
     <node concept="1TJgyi" id="hOIEky$" role="1TKVEl">
       <property role="TrG5h" value="isDeprecated" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="asaX9" id="5u2GAt806ms" role="lGtFl">
+        <property role="YLPcu" value="3.3" />
+        <property role="YLQ7P" value="BaseLanguage elements are now considerred deprecated solely based on the presence of the @Deprecated annotation on them" />
+      </node>
     </node>
     <node concept="PrWs8" id="hOIEijf" role="PrDN$">
       <ref role="PrY4T" to="tpck:hOwnYed" resolve="IDeprecatable" />
