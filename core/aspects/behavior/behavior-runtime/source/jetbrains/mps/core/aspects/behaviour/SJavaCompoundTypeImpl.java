@@ -21,17 +21,42 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A type backed by java class.
  *
  */
 public class SJavaCompoundTypeImpl implements SJavaCompoundType {
+  private static final Map<Class, Class> PRIMITIVE_TO_BOXED_TYPE = new HashMap<Class, Class>();
+
+  static {
+    PRIMITIVE_TO_BOXED_TYPE.put(Character.TYPE, Character.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Byte.TYPE, Byte.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Short.TYPE, Short.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Integer.TYPE, Integer.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Long.TYPE, Long.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Float.TYPE, Float.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Double.TYPE, Double.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Boolean.TYPE, Boolean.class);
+    PRIMITIVE_TO_BOXED_TYPE.put(Void.TYPE, Void.class);
+  }
+
   private final Class<?> myType;
 
   public SJavaCompoundTypeImpl(@NotNull Class<?> type) {
-    myType = type;
+    myType = box(type);
+    assert !myType.isPrimitive();
+  }
+
+  @NotNull
+  private Class<?> box(Class<?> type) {
+    if (!type.isPrimitive()) {
+      return type;
+    }
+    return PRIMITIVE_TO_BOXED_TYPE.get(type);
   }
 
   @Nullable

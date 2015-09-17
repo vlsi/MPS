@@ -45,7 +45,7 @@ public class SParameterImpl implements SParameter {
 
   @Override
   public String toString() {
-    return "SParameterImpl:" + getName() + ":" + getType();
+    return "SPrm:" + getName() + ":" + getType();
   }
 
   @Override

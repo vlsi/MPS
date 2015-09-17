@@ -29,6 +29,9 @@ public final class DefaultValuesHolder {
   private static final Map<Class, Object> DEFAULT_VALUE = new HashMap<Class, Object>();
 
   static {
+    DEFAULT_VALUE.put(Character.class, (char) 0);
+    DEFAULT_VALUE.put(char.class, (char) 0);
+
     DEFAULT_VALUE.put(Byte.class, (byte) 0);
     DEFAULT_VALUE.put(byte.class, (byte) 0);
 
