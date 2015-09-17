@@ -177,6 +177,17 @@
       </node>
       <node concept="3Tm1VV" id="1YPFSpKnL_G" role="1B3o_S" />
     </node>
+    <node concept="Wx3nA" id="7rdthmpG3Vk" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="BEHAVIOR_ASPECT_DESCRIPTOR_SUFFIX" />
+      <property role="3TUv4t" value="false" />
+      <node concept="17QB3L" id="7rdthmpG3Vl" role="1tU5fm" />
+      <node concept="Xl_RD" id="7rdthmpG3Vm" role="33vP2m">
+        <property role="Xl_RC" value="BehaviorAspectDescriptor" />
+      </node>
+      <node concept="3Tm1VV" id="7rdthmpG3Vn" role="1B3o_S" />
+    </node>
     <node concept="Wx3nA" id="1YPFSpKnY5S" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />

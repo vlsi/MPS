@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -24,7 +24,7 @@ public final class C5_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, 0x3f852a67e913151eL, "b"), "" + (true));
   }
 

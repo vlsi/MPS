@@ -15,9 +15,9 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -32,16 +32,16 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hxLf, bar_id5mnatV0hxLE, virtual_id47lrFSh1$Ca);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer foo_id5mnatV0hxLf() {
+  private static Integer foo_id5mnatV0hxLf() {
     return C_BehaviorDescriptor.bar_id5mnatV0hxLE.invokeStatic(CONCEPT);
   }
-  public static Integer bar_id5mnatV0hxLE() {
+  private static Integer bar_id5mnatV0hxLE() {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object virtual_id47lrFSh1$Ca() {
+  private static Object virtual_id47lrFSh1$Ca() {
     return TestResults.POLYMORPHIC_PARENT;
   }
 

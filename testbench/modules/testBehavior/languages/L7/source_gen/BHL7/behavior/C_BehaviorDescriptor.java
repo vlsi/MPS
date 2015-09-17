@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
@@ -31,13 +31,13 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(argTypeResolve_id1hQsMcvxKQo, argTypeResolve_id1hQsMcvxKXP);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer argTypeResolve_id1hQsMcvxKQo(@Nullable SNode __thisNode__, Integer a) {
+  private static Integer argTypeResolve_id1hQsMcvxKQo(@NotNull SNode __thisNode__, Integer a) {
     return TestResults.SPECIFIED_RETURN_VALUE;
   }
-  public static Integer argTypeResolve_id1hQsMcvxKXP(@Nullable SNode __thisNode__, Object o) {
+  private static Integer argTypeResolve_id1hQsMcvxKXP(@NotNull SNode __thisNode__, Object o) {
     return TestResults.NOT_SPECIFIED_RETURN_VALUE;
   }
 

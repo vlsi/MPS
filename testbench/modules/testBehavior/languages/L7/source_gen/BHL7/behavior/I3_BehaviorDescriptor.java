@@ -15,8 +15,8 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -30,7 +30,7 @@ public final class I3_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id12MCENn4RcU, foo_id12MCENn4Rd5);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
 

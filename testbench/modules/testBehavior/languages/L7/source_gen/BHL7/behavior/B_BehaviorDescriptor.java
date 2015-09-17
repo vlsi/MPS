@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
@@ -33,19 +33,19 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_id5mnatV0hAPC, staticVirtualMethod_id5mnatV0hATt, primitiveReturnValue_id4Rfm9LCctz9, genericReturnValue_id4Rfm9LCcu90);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Object virtualMethod_id5mnatV0hAPC(@Nullable SNode __thisNode__) {
+  private static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  public static Object staticVirtualMethod_id5mnatV0hATt() {
+  private static Object staticVirtualMethod_id5mnatV0hATt() {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  public static Integer primitiveReturnValue_id4Rfm9LCctz9(@Nullable SNode __thisNode__) {
+  private static Integer primitiveReturnValue_id4Rfm9LCctz9(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@Nullable SNode __thisNode__) {
+  private static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@NotNull SNode __thisNode__) {
     return Integer.class;
   }
 

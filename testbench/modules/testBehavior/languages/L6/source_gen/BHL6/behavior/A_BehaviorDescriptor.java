@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
@@ -32,16 +32,16 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwr3, bar_id5mnatV0hwrh, bar2_id6LtvT_VTCe3);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer foo_id5mnatV0hwr3(@Nullable SNode __thisNode__) {
+  private static Integer foo_id5mnatV0hwr3(@NotNull SNode __thisNode__) {
     return A_BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
   }
-  public static Integer bar_id5mnatV0hwrh(@Nullable SNode __thisNode__) {
+  private static Integer bar_id5mnatV0hwrh(@NotNull SNode __thisNode__) {
     return A_BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
   }
-  private static Integer bar2_id6LtvT_VTCe3(@Nullable SNode __thisNode__) {
+  private static Integer bar2_id6LtvT_VTCe3(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
 

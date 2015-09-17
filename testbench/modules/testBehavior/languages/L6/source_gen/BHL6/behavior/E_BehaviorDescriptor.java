@@ -15,10 +15,10 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BHFacade;
 import UtilSolution.util.TestResults;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -32,13 +32,13 @@ public final class E_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyuN, virtual_id47lrFSh1$Ca);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer foo_id5mnatV0hyuN() {
+  private static Integer foo_id5mnatV0hyuN() {
     return ((Integer) BHFacade.invokeSpecial(null, C_BehaviorDescriptor.foo_id5mnatV0hxLf));
   }
-  public static Object virtual_id47lrFSh1$Ca() {
+  private static Object virtual_id47lrFSh1$Ca() {
     return TestResults.POLYMORPHIC_CHILD;
   }
 

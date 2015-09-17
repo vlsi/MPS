@@ -24,7 +24,7 @@
       <node id="7688460527007456374" at="30,0,31,0" concept="6" trace="foo2_id4hDSxB1Zrx8" />
       <node id="7688460527007456374" at="32,0,33,0" concept="6" trace="BH_METHODS" />
       <node id="7688460527007456565" at="37,72,38,42" concept="5" />
-      <node id="4929719867390408798" at="40,76,41,42" concept="5" />
+      <node id="4929719867390408798" at="40,73,41,42" concept="5" />
       <node id="7688460527007456374" at="44,38,45,20" concept="8" />
       <node id="7688460527007456374" at="49,102,50,21" concept="1" />
       <node id="7688460527007456374" at="54,101,55,49" concept="4" />
@@ -44,9 +44,9 @@
       <node id="7688460527007456374" at="75,0,80,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7688460527007456374" at="58,5,66,5" concept="9" />
       <node id="7688460527007456374" at="53,0,68,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;null)null" />
-      <scope id="7688460527007456374" at="34,53,34,53" />
+      <scope id="7688460527007456374" at="34,63,34,63" />
       <scope id="7688460527007456374" at="37,72,38,42" />
-      <scope id="7688460527007456374" at="40,76,41,42" />
+      <scope id="7688460527007456374" at="40,73,41,42" />
       <scope id="7688460527007456374" at="44,38,45,20" />
       <scope id="7688460527007456374" at="49,102,50,21" />
       <scope id="7688460527007456374" at="56,26,57,50" />
@@ -111,7 +111,7 @@
       <node id="7688460527007457406" at="75,0,80,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7688460527007457406" at="58,5,66,5" concept="9" />
       <node id="7688460527007457406" at="53,0,68,0" concept="3" trace="invokeOwn#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;null)null" />
-      <scope id="7688460527007457406" at="34,53,34,53" />
+      <scope id="7688460527007457406" at="34,63,34,63" />
       <scope id="7688460527007457406" at="37,72,38,41" />
       <scope id="7688460527007457406" at="40,73,41,41" />
       <scope id="7688460527007457406" at="44,38,45,20" />

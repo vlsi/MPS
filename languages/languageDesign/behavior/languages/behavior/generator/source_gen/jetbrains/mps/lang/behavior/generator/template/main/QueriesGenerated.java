@@ -111,6 +111,7 @@ public class QueriesGenerated {
     return ((Integer) _context.getVariable("cv:paramCounter"));
   }
   public static Object propertyMacro_GetPropertyValue_1971977265034502291(final PropertyMacroContext _context) {
+    _context.showInformationMessage(_context.getNode(), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + Constants.BEHAVIOR_DESCRIPTOR_SUFFIX;
   }
   public static Object referenceMacro_GetReferent_5722502787474238079(final ReferenceMacroContext _context) {
@@ -123,8 +124,8 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5722502787474200239(final ReferenceMacroContext _context) {
     return Constants.THIS_NODE_VARIABLE_NAME;
   }
-  public static Object referenceMacro_GetReferent_5630687994792738878(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BHClassContructor");
+  public static Object referenceMacro_GetReferent_8560627202334867188(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BHClassConstructor");
   }
   public static Object referenceMacro_GetReferent_889763606519191691(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BHDescriptorField");
@@ -283,7 +284,7 @@ public class QueriesGenerated {
     });
   }
   public static Object insertMacro_varValue_7385785963572954184(final TemplateQueryContext _context) {
-    SModel bhModel = _context.getOriginalInputModel();
+    SModel bhModel = _context.getInputModel();
     return ListSequence.fromList(SModelOperations.nodes(bhModel, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).sort(new ISelector<SNode, Long>() {
       public Long select(SNode it) {
         return MetaIdByDeclaration.getConceptId(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"))).getIdValue();

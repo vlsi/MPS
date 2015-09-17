@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
@@ -31,26 +31,28 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> staticMethod_id5mnatV0hAQH = new SMethodBuilder(new SJavaCompoundTypeImpl(Integer.TYPE)).name("staticMethod").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hAQH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Object> staticVirtualMethod_id5mnatV0hATt = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("staticVirtualMethod").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hATt").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Void> justVoidReturnTypeMethod_id5mnatV0hB9t = new SMethodBuilder(new SJavaCompoundTypeImpl(Void.class)).name("justVoidReturnTypeMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hB9t").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> justVoidReturnTypeMethod2_id4XEqvthVyKi = new SMethodBuilder(new SJavaCompoundTypeImpl(Void.class)).name("justVoidReturnTypeMethod2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XEqvthVyKi").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_id5mnatV0hAPp, virtualMethod_id5mnatV0hAPC, staticMethod_id5mnatV0hAQH, staticVirtualMethod_id5mnatV0hATt, justVoidReturnTypeMethod_id5mnatV0hB9t);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_id5mnatV0hAPp, virtualMethod_id5mnatV0hAPC, staticMethod_id5mnatV0hAQH, staticVirtualMethod_id5mnatV0hATt, justVoidReturnTypeMethod_id5mnatV0hB9t, justVoidReturnTypeMethod2_id4XEqvthVyKi);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer nonVirtualMethod_id5mnatV0hAPp(@Nullable SNode __thisNode__) {
+  private static Integer nonVirtualMethod_id5mnatV0hAPp(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object virtualMethod_id5mnatV0hAPC(@Nullable SNode __thisNode__) {
+  private static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  public static Integer staticMethod_id5mnatV0hAQH() {
+  private static Integer staticMethod_id5mnatV0hAQH() {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Object staticVirtualMethod_id5mnatV0hATt() {
+  private static Object staticVirtualMethod_id5mnatV0hATt() {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  public static Void justVoidReturnTypeMethod_id5mnatV0hB9t(@Nullable SNode __thisNode__) {
-    return null;
+  private static void justVoidReturnTypeMethod_id5mnatV0hB9t(@NotNull SNode __thisNode__) {
+  }
+  private static void justVoidReturnTypeMethod2_id4XEqvthVyKi(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ A_BehaviorDescriptor() {
@@ -78,7 +80,11 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
       case 3:
         return (T) staticVirtualMethod_id5mnatV0hATt();
       case 4:
-        return (T) justVoidReturnTypeMethod_id5mnatV0hB9t(node);
+        justVoidReturnTypeMethod_id5mnatV0hB9t(node);
+        return null;
+      case 5:
+        justVoidReturnTypeMethod2_id4XEqvthVyKi(node);
+        return null;
       default:
         throw new BHMethodNotFoundException(method);
     }

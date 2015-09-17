@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class B_BehaviorDescriptor extends BaseBHDescriptor {
@@ -35,25 +35,25 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer foo_id5mnatV0hwZQ(@Nullable SNode __thisNode__) {
+  private static Integer foo_id5mnatV0hwZQ(@NotNull SNode __thisNode__) {
     return B_BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
   }
-  public static Integer bar_id5mnatV0hx04(@Nullable SNode __thisNode__) {
+  private static Integer bar_id5mnatV0hx04(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Integer bar1_id5jWiLvujSC6(@Nullable SNode __thisNode__) {
+  private static Integer bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.INCORRECT_RETURN_VALUE;
   }
-  public static Integer foo1_id5jWiLvujSmw(@Nullable SNode __thisNode__) {
+  private static Integer foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  public static Integer foo2_id5jWiLvujSzJ(@Nullable SNode __thisNode__) {
+  private static Integer foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
     return B_BehaviorDescriptor.bar1_id5jWiLvujSC6.invoke(__thisNode__);
   }
-  public static Integer foo3_id4RMBeRWcio1(@Nullable SNode __thisNode__) {
+  private static Integer foo3_id4RMBeRWcio1(@NotNull SNode __thisNode__) {
     return Integer.valueOf(1);
   }
 

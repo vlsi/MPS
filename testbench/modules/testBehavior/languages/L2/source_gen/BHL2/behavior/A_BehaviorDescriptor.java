@@ -15,11 +15,11 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
-import UtilSolution.util.TestResults;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
@@ -27,17 +27,17 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Object> foo_id6EMTxOPT5LT = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EMTxOPT5LT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  protected static final SMethod<Object> foo2_id4hDSxB1Zrx8 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("4hDSxB1Zrx8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> foo2_id4hDSxB1Zrx8 = new SMethodBuilder(new SJavaCompoundTypeImpl(Object.class)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("4hDSxB1Zrx8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id6EMTxOPT5LT, foo2_id4hDSxB1Zrx8);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Object foo_id6EMTxOPT5LT(@Nullable SNode __thisNode__) {
+  private static Object foo_id6EMTxOPT5LT(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  protected static Object foo2_id4hDSxB1Zrx8(@Nullable SNode __thisNode__) {
+  private static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
 

@@ -15,10 +15,10 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class G_BehaviorDescriptor extends BaseBHDescriptor {
@@ -30,13 +30,13 @@ public final class G_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5ivDaCiFPaC, foo_id7lSf34kYg5f);
 
-  public static void ___init___(SNode __thisNode__) {
+  private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  public static Integer foo_id5ivDaCiFPaC(@Nullable SNode __thisNode__) {
+  private static Integer foo_id5ivDaCiFPaC(@NotNull SNode __thisNode__) {
     return 2;
   }
-  public static Integer foo_id7lSf34kYg5f(@Nullable SNode __thisNode__) {
+  private static Integer foo_id7lSf34kYg5f(@NotNull SNode __thisNode__) {
     return 3;
   }
 
