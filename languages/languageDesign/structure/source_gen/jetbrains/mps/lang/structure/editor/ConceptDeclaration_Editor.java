@@ -831,14 +831,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_ueqr71_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("conceptId");
-    provider.setNoTargetText("<no URL>");
-    provider.setAllowsEmptyTarget(true);
+    provider.setNoTargetText("<no id>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_conceptId");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_Url(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
