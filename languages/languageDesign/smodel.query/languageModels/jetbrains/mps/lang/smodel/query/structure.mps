@@ -2,7 +2,7 @@
 <model ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -16,6 +16,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
@@ -49,6 +50,7 @@
     <property role="TrG5h" value="UsagesExpression" />
     <property role="34LRSv" value="#usages" />
     <property role="R4oN_" value="direct references to a node in scope" />
+    <property role="1pbfSe" value="1733089355" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="1TJgyj" id="7mV0m3L$trG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -62,6 +64,7 @@
     <property role="TrG5h" value="InstancesExpression" />
     <property role="34LRSv" value="#instances" />
     <property role="R4oN_" value="instances of a concept in scope" />
+    <property role="1pbfSe" value="588324800" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="1TJgyj" id="6H$fNdLyE4e" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -75,6 +78,7 @@
     <property role="TrG5h" value="NodesExpression" />
     <property role="34LRSv" value="#nodes" />
     <property role="R4oN_" value="all nodes in scope" />
+    <property role="1pbfSe" value="1349066078" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5uXC5_72l2X">
@@ -82,6 +86,7 @@
     <property role="TrG5h" value="ReferencesExpression" />
     <property role="34LRSv" value="#references" />
     <property role="R4oN_" value="all references in scope" />
+    <property role="1pbfSe" value="1631129322" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5X1VVpPJEGH">
@@ -89,6 +94,7 @@
     <property role="TrG5h" value="ModelsExpression" />
     <property role="34LRSv" value="#models" />
     <property role="R4oN_" value="all models in scope" />
+    <property role="1pbfSe" value="721380637" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="5X1VVpPN29y">
@@ -96,6 +102,7 @@
     <property role="TrG5h" value="ModulesExpression" />
     <property role="34LRSv" value="#modules" />
     <property role="R4oN_" value="all modules in scope" />
+    <property role="1pbfSe" value="720498152" />
     <ref role="1TJDcQ" node="3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q2UNX">
@@ -103,6 +110,7 @@
     <property role="TrG5h" value="QueryExpression" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1311641314" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="64VftqErCnv" role="PzmwI">
       <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
@@ -119,12 +127,14 @@
     <property role="TrG5h" value="QueryParameter" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1311641066" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q5HRT">
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="QueryParameterList" />
     <property role="34LRSv" value="&lt; .. &gt;" />
+    <property role="1pbfSe" value="1310907878" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3J6h25QCAaA" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -138,6 +148,7 @@
     <property role="TrG5h" value="QueryParameterIncludeReadOnly" />
     <property role="34LRSv" value="r/o+" />
     <property role="R4oN_" value="include read only" />
+    <property role="1pbfSe" value="1310773081" />
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eOJ">
@@ -145,6 +156,7 @@
     <property role="TrG5h" value="QueryParameterScope" />
     <property role="34LRSv" value="scope" />
     <property role="R4oN_" value="used search scope" />
+    <property role="1pbfSe" value="1310772912" />
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="1TJgyj" id="3J6h25QeYY9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -157,6 +169,7 @@
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="GlobalScope" />
     <property role="34LRSv" value="global" />
+    <property role="1pbfSe" value="1308548765" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25QeHPb">
@@ -164,12 +177,14 @@
     <property role="TrG5h" value="ScopeParameter" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1308548756" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ModulesScope" />
     <property role="34LRSv" value="modules" />
+    <property role="1pbfSe" value="1172525987" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="1TJgyj" id="31Tct3TiJtC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -182,6 +197,7 @@
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ModelScope" />
     <property role="34LRSv" value="models" />
+    <property role="1pbfSe" value="701200926" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="1TJgyj" id="31Tct3Tk$xf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -195,6 +211,7 @@
     <property role="TrG5h" value="CustomScope" />
     <property role="34LRSv" value="custom" />
     <property role="R4oN_" value="? extends SearchScope" />
+    <property role="1pbfSe" value="704554905" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="1TJgyj" id="31Tct3Txpke" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -206,6 +223,7 @@
   <node concept="PlHQZ" id="64VftqErqMg">
     <property role="3GE5qa" value="help" />
     <property role="TrG5h" value="ExpressionHelpProvider" />
+    <property role="1pbfSe" value="195619430" />
     <node concept="PrWs8" id="64VftqErqMh" role="PrDN$">
       <ref role="PrY4T" node="qgIopN3HO7" resolve="HelpProvider" />
     </node>
@@ -213,6 +231,7 @@
   <node concept="PlHQZ" id="59iQg8ryQK3">
     <property role="TrG5h" value="OperationHelpProvider" />
     <property role="3GE5qa" value="help" />
+    <property role="1pbfSe" value="1843283205" />
     <node concept="PrWs8" id="59iQg8ryQMx" role="PrDN$">
       <ref role="PrY4T" node="qgIopN3HO7" resolve="HelpProvider" />
     </node>
@@ -220,11 +239,13 @@
   <node concept="PlHQZ" id="qgIopN3HO7">
     <property role="TrG5h" value="HelpProvider" />
     <property role="3GE5qa" value="help" />
+    <property role="1pbfSe" value="2040501901" />
   </node>
   <node concept="1TIwiD" id="3F2FyKbNNqb">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithStatement" />
     <property role="34LRSv" value="with" />
+    <property role="1pbfSe" value="1183966391" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="3F2FyKbNNqc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

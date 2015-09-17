@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -22,6 +22,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -59,6 +60,7 @@
   <node concept="PlHQZ" id="hqc44pm">
     <property role="TrG5h" value="AbstractAntiquotation" />
     <property role="3GE5qa" value="quotation" />
+    <property role="1pbfSe" value="1945090196" />
     <node concept="1TJgyi" id="5CeLOEbPqUM" role="1TKVEl">
       <property role="TrG5h" value="label" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -82,6 +84,7 @@
   <node concept="1TIwiD" id="hqc44po">
     <property role="TrG5h" value="Antiquotation" />
     <property role="3GE5qa" value="quotation" />
+    <property role="1pbfSe" value="1945090194" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhj" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -100,6 +103,7 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&lt;quotation&gt;" />
     <property role="3GE5qa" value="container" />
+    <property role="1pbfSe" value="1945090193" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hqc44pq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -127,6 +131,7 @@
   <node concept="1TIwiD" id="hqc44pt">
     <property role="TrG5h" value="ReferenceAntiquotation" />
     <property role="3GE5qa" value="quotation" />
+    <property role="1pbfSe" value="1945090189" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhm" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -141,6 +146,7 @@
   <node concept="1TIwiD" id="hqc44pu">
     <property role="TrG5h" value="ListAntiquotation" />
     <property role="3GE5qa" value="quotation" />
+    <property role="1pbfSe" value="1945090188" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhk" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -155,6 +161,7 @@
   <node concept="1TIwiD" id="hqEMmm7">
     <property role="TrG5h" value="PropertyAntiquotation" />
     <property role="3GE5qa" value="quotation" />
+    <property role="1pbfSe" value="1429641571" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhl" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -170,6 +177,7 @@
     <property role="TrG5h" value="NodeBuilderInitProperty" />
     <property role="3GE5qa" value="builder" />
     <property role="34LRSv" value="&lt;{property}&gt;" />
+    <property role="1pbfSe" value="499127086" />
     <ref role="1TJDcQ" node="4IP40Bi2KcT" resolve="NodeBuilderInitPart" />
     <node concept="1TJgyj" id="4IP40Bi2KcA" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -183,6 +191,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="builder" />
     <property role="34LRSv" value="[list]" />
+    <property role="1pbfSe" value="691084926" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="76efOMRCHWN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -196,6 +205,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="container" />
     <property role="34LRSv" value="&lt;light quotation&gt;" />
+    <property role="1pbfSe" value="499079846" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4IP40Bi2$Eu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -215,6 +225,7 @@
   <node concept="1TIwiD" id="4IP40Bi38Sq">
     <property role="TrG5h" value="NodeBuilderInitLink" />
     <property role="3GE5qa" value="builder" />
+    <property role="1pbfSe" value="499228195" />
     <ref role="1TJDcQ" node="4IP40Bi2KcT" resolve="NodeBuilderInitPart" />
     <node concept="1TJgyj" id="4IP40Bi38Ss" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -230,6 +241,7 @@
     <property role="TrG5h" value="NodeBuilderRef" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="builder" />
+    <property role="1pbfSe" value="690960863" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="76efOMRCfEl" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -243,6 +255,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="builder" />
     <property role="34LRSv" value="#" />
+    <property role="1pbfSe" value="691098234" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="76efOMRCLcK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -255,6 +268,7 @@
     <property role="TrG5h" value="NodeBuilderNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="builder" />
+    <property role="1pbfSe" value="499079849" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4IP40Bi2KcV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -276,6 +290,7 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="NodeBuilderInitPart" />
     <property role="3GE5qa" value="builder" />
+    <property role="1pbfSe" value="499127106" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4IP40Bi2KcQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -287,6 +302,7 @@
   <node concept="1TIwiD" id="7hIo0WbQAv7">
     <property role="TrG5h" value="GeneratorInternal_PropertyDescriptor" />
     <property role="3GE5qa" value="quotation.generation" />
+    <property role="1pbfSe" value="2142713898" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7hIo0WbQDUr" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -305,6 +321,7 @@
   <node concept="1TIwiD" id="2jfSSa$vTsX">
     <property role="TrG5h" value="GeneratorInternal_ReferenceDescriptor" />
     <property role="3GE5qa" value="quotation.generation" />
+    <property role="1pbfSe" value="917538113" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2jfSSa$vTsZ" role="1TKVEl">
       <property role="TrG5h" value="targetNodeId" />
@@ -327,6 +344,7 @@
   <node concept="1TIwiD" id="1Lb1CYjFf8C">
     <property role="TrG5h" value="GeneratorInternal_InternalReferenceHolder" />
     <property role="3GE5qa" value="quotation.generation" />
+    <property role="1pbfSe" value="1342703433" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1Lb1CYjFf8D" role="1TKVEi">
       <property role="20lmBu" value="reference" />

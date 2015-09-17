@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -10,6 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -40,6 +41,7 @@
   <node concept="1TIwiD" id="hqVFaSW">
     <property role="TrG5h" value="StateMachine" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1146310830" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr11S1x" role="1TKVEi">
       <property role="20kJfa" value="startState" />
@@ -68,6 +70,7 @@
   </node>
   <node concept="1TIwiD" id="hqWQG$u">
     <property role="TrG5h" value="Event" />
+    <property role="1pbfSe" value="1126512076" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="hqWQMWG" role="1TKVEl">
       <property role="TrG5h" value="eventName" />
@@ -83,6 +86,7 @@
   </node>
   <node concept="1TIwiD" id="hqWVo8n">
     <property role="TrG5h" value="State" />
+    <property role="1pbfSe" value="1125285075" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr15Sar" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -100,6 +104,7 @@
   </node>
   <node concept="1TIwiD" id="hr14JSE">
     <property role="TrG5h" value="Transition" />
+    <property role="1pbfSe" value="1055719616" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr14QoW" role="1TKVEi">
       <property role="20kJfa" value="trigger" />
@@ -115,6 +120,7 @@
   <node concept="1TIwiD" id="hr1uxx_">
     <property role="TrG5h" value="StateMachineTest" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1048962693" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr1P$7t" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -133,6 +139,7 @@
   </node>
   <node concept="1TIwiD" id="hr1OEYa">
     <property role="TrG5h" value="StateMachineTestMethod" />
+    <property role="1pbfSe" value="1043156832" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr20vOZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -152,6 +159,7 @@
   </node>
   <node concept="1TIwiD" id="hr20l$N">
     <property role="TrG5h" value="HandleEvent" />
+    <property role="1pbfSe" value="1040098743" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hr20na8" role="1TKVEi">
       <property role="20kJfa" value="event" />

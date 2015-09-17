@@ -2,7 +2,7 @@
 <model ref="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -15,6 +15,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -50,6 +51,7 @@
     <property role="TrG5h" value="TypeExtension" />
     <property role="3GE5qa" value="topLevel" />
     <property role="34LRSv" value="type extension" />
+    <property role="1pbfSe" value="1155500250" />
     <ref role="1TJDcQ" node="6XkcKt_ivkp" resolve="BaseExtensionMethodContainer" />
     <node concept="1TJgyj" id="1DaIGCE_pNY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -61,6 +63,7 @@
   <node concept="1TIwiD" id="1m3OroNmkwV">
     <property role="TrG5h" value="ExtensionMethodCall" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1222449649" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1m3OroNmkwW" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -78,6 +81,7 @@
   </node>
   <node concept="1TIwiD" id="1m3OroNpuvT">
     <property role="TrG5h" value="ExtensionMethodDeclaration" />
+    <property role="1pbfSe" value="1223276975" />
     <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="PrWs8" id="7Efh19_rOdG" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
@@ -94,6 +98,7 @@
     <property role="TrG5h" value="ThisExtensionExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="this" />
+    <property role="1pbfSe" value="1013415847" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="6XkcKt_cJmj">
@@ -103,6 +108,7 @@
     <property role="TrG5h" value="SimpleExtensionMethodsContainer" />
     <property role="3GE5qa" value="topLevel" />
     <property role="34LRSv" value="Simple Extension Method Container" />
+    <property role="1pbfSe" value="729339750" />
     <ref role="1TJDcQ" node="6XkcKt_ivkp" resolve="BaseExtensionMethodContainer" />
   </node>
   <node concept="1TIwiD" id="6XkcKt_ivkp">
@@ -110,6 +116,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseExtensionMethodContainer" />
     <property role="3GE5qa" value="topLevel" />
+    <property role="1pbfSe" value="727832544" />
     <ref role="1TJDcQ" to="tpee:g96eOhU" resolve="GenericDeclaration" />
     <node concept="PrWs8" id="6XkcKt_ivkq" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9B3isZ" resolve="IVisible" />
@@ -133,6 +140,7 @@
   <node concept="1TIwiD" id="1HybphbJvJ7">
     <property role="TrG5h" value="ExtensionStaticFieldReference" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1730160987" />
     <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="1TJgyj" id="1v5QYNcnuLX" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -144,6 +152,7 @@
   </node>
   <node concept="1TIwiD" id="1HybphbKaZR">
     <property role="TrG5h" value="ExtensionStaticFieldDeclaration" />
+    <property role="1pbfSe" value="1730338187" />
     <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="6EBM_lhyT5K">
@@ -152,6 +161,7 @@
     <property role="R4oN_" value="local extended method call" />
     <property role="TrG5h" value="LocalExtendedMethodCall" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1137484859" />
     <ref role="1TJDcQ" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
     <node concept="1TJgyj" id="6EBM_lhyT5L" role="1TKVEi">
       <property role="20lmBu" value="reference" />

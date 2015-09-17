@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -15,6 +15,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -53,6 +54,7 @@
     <property role="TrG5h" value="InternalStaticMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_static method call" />
+    <property role="1pbfSe" value="1464446196" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="h72Mpb2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -88,6 +90,7 @@
     <property role="TrG5h" value="InternalStaticFieldReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_static field reference" />
+    <property role="1pbfSe" value="1469132754" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="h5n_eBL" role="1TKVEl">
       <property role="TrG5h" value="fqClassName" />
@@ -105,6 +108,7 @@
     <property role="TrG5h" value="InternalNewExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_new" />
+    <property role="1pbfSe" value="1470329982" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="halIh_z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -135,6 +139,7 @@
     <property role="TrG5h" value="InternalPartialInstanceMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_method call" />
+    <property role="1pbfSe" value="1768094585" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="h5Dpdt7" role="1TKVEl">
       <property role="TrG5h" value="methodName" />
@@ -169,6 +174,7 @@
     <property role="TrG5h" value="InternalClassExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_&lt;type&gt;.class" />
+    <property role="1pbfSe" value="1952547726" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="h5Ooz1y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -183,6 +189,7 @@
     <property role="TrG5h" value="InternalClassifierType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_classifier type" />
+    <property role="1pbfSe" value="1906995842" />
     <ref role="1TJDcQ" to="tpee:g7uibYu" resolve="ClassifierType" />
     <node concept="1TJgyi" id="h6ely4F" role="1TKVEl">
       <property role="TrG5h" value="fqClassName" />
@@ -196,6 +203,7 @@
     <property role="TrG5h" value="InternalVariableReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_&lt;variable reference&gt;" />
+    <property role="1pbfSe" value="77876477" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="h7VnrL9" role="1TKVEl">
       <property role="TrG5h" value="name" />
@@ -214,6 +222,7 @@
     <property role="TrG5h" value="InternalPartialFieldReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_field reference" />
+    <property role="1pbfSe" value="768968777" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="h8HP_1l" role="1TKVEl">
       <property role="TrG5h" value="fieldName" />
@@ -243,6 +252,7 @@
   <node concept="1TIwiD" id="htzuhxA">
     <property role="TrG5h" value="TypeHintExpression" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1668880765" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="htzuj6W" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -263,6 +273,7 @@
     <property role="TrG5h" value="InternalThisExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_this" />
+    <property role="1pbfSe" value="247322316" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="i1dyn0M">
@@ -270,6 +281,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExtractToConstantExpression" />
     <property role="34LRSv" value="extract to constant" />
+    <property role="1pbfSe" value="1300853074" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="i1dyqFq" role="1TKVEl">
       <property role="TrG5h" value="fieldName" />
@@ -292,6 +304,7 @@
     <property role="TrG5h" value="ExtractStatementListExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="extract statements" />
+    <property role="1pbfSe" value="1567781086" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2LtJ7HQbXNT" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -312,6 +325,7 @@
   <node concept="1TIwiD" id="2LtJ7HQdhb9">
     <property role="TrG5h" value="ExtractStatementListInnerExpression" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1567436988" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2LtJ7HQdhba" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -329,6 +343,7 @@
     <property role="TrG5h" value="ExtractStaticMethodExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="extract static method" />
+    <property role="1pbfSe" value="1163001020" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="7$O4Ks7U6ej" role="1TKVEl">
       <property role="TrG5h" value="makeUnique" />
@@ -353,6 +368,7 @@
     <property role="R4oN_" value="extract static method invocation" />
     <property role="TrG5h" value="ExtractStaticMethod_CallExpression" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1162767846" />
     <ref role="1TJDcQ" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
     <node concept="1TJgyj" id="7H3c2f3q6_O" role="1TKVEi">
       <property role="20kJfa" value="staticMethodDeclaration" />
@@ -367,6 +383,7 @@
     <property role="TrG5h" value="ExtractStaticInnerClassExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="extract static inner class" />
+    <property role="1pbfSe" value="1299730692" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="6HzP3h7923A" role="1TKVEl">
       <property role="TrG5h" value="makeUnique" />
@@ -392,15 +409,18 @@
   <node concept="1TIwiD" id="53cdeWkj961">
     <property role="TrG5h" value="ExtractStaticInnerClassCreator" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1696122480" />
     <ref role="1TJDcQ" to="tpee:hDpGfJe" resolve="ClassCreator" />
   </node>
   <node concept="1TIwiD" id="O1IQUb7d_U">
     <property role="TrG5h" value="ExtractStaticInnerClassConcept" />
+    <property role="1pbfSe" value="1742826264" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
   <node concept="1TIwiD" id="5ys$QFNspL">
     <property role="TrG5h" value="ExtractToConstantRefExpression" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1389348674" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5ys$QFNspM" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -417,6 +437,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="weak" />
     <property role="34LRSv" value="class name" />
+    <property role="1pbfSe" value="582034305" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7C0CEuCG83r" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -434,6 +455,7 @@
     <property role="TrG5h" value="InternalAnonymousClassCreator" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_anonymous class" />
+    <property role="1pbfSe" value="1913659094" />
     <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="2XVui9ut6$v" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -447,6 +469,7 @@
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="_anonymous class" />
     <property role="TrG5h" value="InternalAnonymousClass" />
+    <property role="1pbfSe" value="1913659093" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyi" id="2XVui9ut6z_" role="1TKVEl">
       <property role="TrG5h" value="fqClassName" />
@@ -484,6 +507,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="weak" />
     <property role="34LRSv" value="constant value" />
+    <property role="1pbfSe" value="1906885837" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="1o0vq_SlFQp" role="1TKVEl">
       <property role="TrG5h" value="className" />
@@ -502,6 +526,7 @@
     <property role="TrG5h" value="InternalSuperMethodCallOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_super method call" />
+    <property role="1pbfSe" value="872663280" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="3f9chO0eDvo" role="1TKVEl">
       <property role="TrG5h" value="methodName" />
@@ -527,6 +552,7 @@
     <property role="TrG5h" value="InternalClassCreator" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="_class" />
+    <property role="1pbfSe" value="1043069684" />
     <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="X6WsgITg$P" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

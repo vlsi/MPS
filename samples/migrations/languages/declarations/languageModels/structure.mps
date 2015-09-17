@@ -2,7 +2,7 @@
 <model ref="r:8ded2ed4-9c33-4e5f-8484-5e54968f4d4e(declarations.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -13,6 +13,7 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
@@ -46,6 +47,7 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="old component" />
     <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1271883542" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6FZb119crGB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -61,15 +63,18 @@
   <node concept="PlHQZ" id="6FZb119crGA">
     <property role="TrG5h" value="OldComponentMember" />
     <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1271863498" />
     <node concept="asaX9" id="6FZb119cDPS" role="lGtFl" />
   </node>
   <node concept="PlHQZ" id="6FZb119cEo2">
     <property role="TrG5h" value="NewComponentMember" />
+    <property role="1pbfSe" value="1271803374" />
   </node>
   <node concept="1TIwiD" id="6FZb119cDPL">
     <property role="TrG5h" value="NewComponent" />
     <property role="34LRSv" value="new component" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1271805567" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6FZb119cDPO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

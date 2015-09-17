@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports />
@@ -35,6 +35,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -84,6 +85,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseConcept" />
+    <property role="1pbfSe" value="49275746" />
     <node concept="1TJgyj" id="4uZwTti3__2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="smodelAttribute" />
@@ -105,6 +107,7 @@
   </node>
   <node concept="PlHQZ" id="h0TrEE$">
     <property role="TrG5h" value="INamedConcept" />
+    <property role="1pbfSe" value="963554228" />
     <node concept="1TJgyi" id="h0TrG11" role="1TKVEl">
       <property role="TrG5h" value="name" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
@@ -112,6 +115,7 @@
   </node>
   <node concept="PlHQZ" id="hqLv6T6">
     <property role="TrG5h" value="IResolveInfo" />
+    <property role="1pbfSe" value="1317245092" />
     <node concept="1TJgyi" id="hqLvdgl" role="1TKVEl">
       <property role="TrG5h" value="resolveInfo" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
@@ -119,19 +123,24 @@
   </node>
   <node concept="PlHQZ" id="hLJPP0O">
     <property role="TrG5h" value="IWrapper" />
+    <property role="1pbfSe" value="1876382032" />
   </node>
   <node concept="PlHQZ" id="hOwnYed">
     <property role="TrG5h" value="IDeprecatable" />
+    <property role="1pbfSe" value="543155370" />
   </node>
   <node concept="PlHQZ" id="hWu5dyl">
     <property role="TrG5h" value="IContainer" />
+    <property role="1pbfSe" value="504682932" />
   </node>
   <node concept="PlHQZ" id="hYa1RjM">
     <property role="TrG5h" value="IType" />
     <property role="3GE5qa" value="types" />
+    <property role="1pbfSe" value="1979222511" />
   </node>
   <node concept="PlHQZ" id="bc0iGlxbOU">
     <property role="TrG5h" value="IMetaLevelChanger" />
+    <property role="1pbfSe" value="407944805" />
     <node concept="asaX9" id="70UXEPd7_Wd" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="4H9z7u7GMNF">
@@ -139,6 +148,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScope" />
     <property role="3GE5qa" value="export" />
+    <property role="1pbfSe" value="755189406" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="1PH8wrDFZav" role="PzmwI">
       <ref role="PrY4T" node="19gBtYEAf4C" resolve="InterfacePart" />
@@ -156,6 +166,7 @@
     <property role="TrG5h" value="ExportScopePublic" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(public)" />
+    <property role="1pbfSe" value="880934341" />
     <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="24uvON" id="3ye0wbzmDhi" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeP5" role="lGtFl">
@@ -168,6 +179,7 @@
     <property role="TrG5h" value="ExportScopeNamespace" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(namespace)" />
+    <property role="1pbfSe" value="880934340" />
     <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="1TJgyi" id="2erkSmBSEUT" role="1TKVEl">
       <property role="TrG5h" value="namespace" />
@@ -184,6 +196,7 @@
     <property role="TrG5h" value="ExportScopeModule" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(module)" />
+    <property role="1pbfSe" value="880934337" />
     <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="24uvON" id="3ye0wbzmDhg" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeQ2" role="lGtFl">
@@ -196,6 +209,7 @@
     <property role="MwhBj" value="${module}/icons/annotationLink.png" />
     <property role="TrG5h" value="Attribute" />
     <property role="3GE5qa" value="attributes" />
+    <property role="1pbfSe" value="1714561840" />
     <ref role="1TJDcQ" node="gw2VY9q" resolve="BaseConcept" />
     <node concept="M6xJ_" id="6_gUeuqOeS6" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -209,6 +223,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LinkAttribute" />
     <property role="3GE5qa" value="attributes" />
+    <property role="1pbfSe" value="927565655" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkk" role="1TKVEl">
       <property role="TrG5h" value="linkRole" />
@@ -230,6 +245,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeAttribute" />
     <property role="3GE5qa" value="attributes" />
+    <property role="1pbfSe" value="927565658" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="M6xJ_" id="6_gUeuqOePG" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -240,6 +256,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertyAttribute" />
     <property role="3GE5qa" value="attributes" />
+    <property role="1pbfSe" value="927565660" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
       <property role="TrG5h" value="propertyName" />
@@ -258,22 +275,27 @@
   </node>
   <node concept="PlHQZ" id="3fifI_xCcJN">
     <property role="TrG5h" value="ScopeProvider" />
+    <property role="1pbfSe" value="1787622692" />
   </node>
   <node concept="PlHQZ" id="U99cpalq9J">
     <property role="TrG5h" value="IAntisuppressErrors" />
     <property role="3GE5qa" value="types" />
+    <property role="1pbfSe" value="1490994997" />
   </node>
   <node concept="PlHQZ" id="2WmWrdnSpX2">
     <property role="TrG5h" value="ICanSuppressErrors" />
     <property role="3GE5qa" value="types" />
+    <property role="1pbfSe" value="2030530315" />
   </node>
   <node concept="PlHQZ" id="2WmWrdnSpX3">
     <property role="TrG5h" value="ISuppressErrors" />
     <property role="3GE5qa" value="types" />
+    <property role="1pbfSe" value="2030530314" />
   </node>
   <node concept="1TIwiD" id="3EoG9lZUeni">
     <property role="TrG5h" value="SuppressErrorsAnnotation" />
     <property role="3GE5qa" value="types" />
+    <property role="1pbfSe" value="1165912473" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="2zn6YdLtwWg" role="PzmwI">
       <ref role="PrY4T" node="2WmWrdnSpX3" resolve="ISuppressErrors" />
@@ -287,30 +309,37 @@
   </node>
   <node concept="PlHQZ" id="1_TrU5E6oyb">
     <property role="TrG5h" value="IDontSubstituteByDefault" />
+    <property role="1pbfSe" value="2087520212" />
   </node>
   <node concept="PlHQZ" id="2UAn0GTuXmY">
     <property role="TrG5h" value="ScopeFacade" />
+    <property role="1pbfSe" value="1747071433" />
   </node>
   <node concept="PlHQZ" id="19gBtYEv0ln">
     <property role="TrG5h" value="ImplementationPart" />
+    <property role="1pbfSe" value="1127439562" />
     <node concept="PrWs8" id="19gBtYEv4$q" role="PrDN$">
       <ref role="PrY4T" node="2UAn0GTuXmY" resolve="ScopeFacade" />
     </node>
   </node>
   <node concept="PlHQZ" id="19gBtYEvilR">
     <property role="TrG5h" value="ImplementationContainer" />
+    <property role="1pbfSe" value="1127365802" />
   </node>
   <node concept="PlHQZ" id="19gBtYEAf4C">
     <property role="TrG5h" value="InterfacePart" />
+    <property role="1pbfSe" value="1125544185" />
   </node>
   <node concept="PlHQZ" id="64$4ecGX64Q">
     <property role="TrG5h" value="ImplementationWithStubPart" />
+    <property role="1pbfSe" value="1911000551" />
     <node concept="PrWs8" id="64$4ecGX64R" role="PrDN$">
       <ref role="PrY4T" node="19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
   </node>
   <node concept="PlHQZ" id="8AYOKVCAP5">
     <property role="TrG5h" value="IStubForAnotherConcept" />
+    <property role="1pbfSe" value="1036609681" />
     <node concept="PrWs8" id="4SdtvCa$cju" role="PrDN$">
       <ref role="PrY4T" node="19gBtYEAf4C" resolve="InterfacePart" />
     </node>
@@ -318,6 +347,7 @@
   <node concept="1TIwiD" id="Fg1jLUUh_d">
     <property role="TrG5h" value="SideTransformInfo" />
     <property role="3GE5qa" value="attributes.editing" />
+    <property role="1pbfSe" value="2051465591" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="Fg1jLUVycx" role="1TKVEl">
       <property role="TrG5h" value="side" />
@@ -357,6 +387,7 @@
   <node concept="1TIwiD" id="3Rc6kd0K$RF">
     <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="BaseCommentAttribute" />
+    <property role="1pbfSe" value="2123261742" />
     <ref role="1TJDcQ" node="BpxLfMhSxq" resolve="ChildAttribute" />
     <node concept="1TJgyj" id="2ETBKOyieyt" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -386,6 +417,7 @@
   <node concept="1TIwiD" id="BpxLfMhSxq">
     <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="ChildAttribute" />
+    <property role="1pbfSe" value="64942227" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="BpxLfMirm5" role="1TKVEl">
       <property role="TrG5h" value="linkRole" />
@@ -402,9 +434,11 @@
   </node>
   <node concept="PlHQZ" id="53J1IcJV913">
     <property role="TrG5h" value="ISkipConstraintsChecking" />
+    <property role="1pbfSe" value="2133092570" />
   </node>
   <node concept="PlHQZ" id="1V3wYmOJsDm">
     <property role="TrG5h" value="IDontApplyTypesystemRules" />
+    <property role="1pbfSe" value="746500549" />
   </node>
 </model>
 

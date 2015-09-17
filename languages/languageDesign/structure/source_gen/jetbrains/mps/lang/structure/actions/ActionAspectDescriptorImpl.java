@@ -16,15 +16,17 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
-          return Collections.<NodeFactory>singletonList(new STRL_node_factories.NodeFactory_1163111194508());
+          return Collections.<NodeFactory>singletonList(new ConceptIdSetter.NodeFactory_1587916991970085434());
         case 1:
-          return Collections.<NodeFactory>singletonList(new DeclarationFactories.NodeFactory_850862791448416028());
+          return Collections.<NodeFactory>singletonList(new STRL_node_factories.NodeFactory_1163111194508());
         case 2:
+          return Collections.<NodeFactory>singletonList(new DeclarationFactories.NodeFactory_850862791448416028());
+        case 3:
           return Collections.<NodeFactory>singletonList(new DeclarationFactories.NodeFactory_850862791450337452());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ConceptDeclaration", "LinkDeclaration", "PropertyDeclaration"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractConceptDeclaration", "ConceptDeclaration", "LinkDeclaration", "PropertyDeclaration"};
 }

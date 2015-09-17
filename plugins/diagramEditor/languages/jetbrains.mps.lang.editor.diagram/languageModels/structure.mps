@@ -2,7 +2,7 @@
 <model ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,6 +18,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -50,6 +51,7 @@
   <node concept="1TIwiD" id="WK6Z46CMrx">
     <property role="TrG5h" value="CellModel_DiagramNode" />
     <property role="34LRSv" value="diagram node" />
+    <property role="1pbfSe" value="366166738" />
     <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="WK6Z46CMBp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -85,11 +87,13 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="figureRefs" />
+    <property role="1pbfSe" value="366167495" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="WK6Z46D_nb">
     <property role="TrG5h" value="ExternalFigureReference" />
     <property role="3GE5qa" value="figureRefs" />
+    <property role="1pbfSe" value="366375356" />
     <ref role="1TJDcQ" node="WK6Z46CMBm" resolve="AbstractFigureReference" />
     <node concept="1TJgyj" id="WK6Z46D_sj" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -102,6 +106,7 @@
     <property role="TrG5h" value="FigureParameterMapping" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="366474168" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="fQU43XQ2jt" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -119,6 +124,7 @@
   <node concept="1TIwiD" id="5u6$4zsyvJR">
     <property role="TrG5h" value="CellModel_Diagram" />
     <property role="34LRSv" value="diagram" />
+    <property role="1pbfSe" value="873499711" />
     <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="4DjPfGLDF0c" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -153,6 +159,7 @@
   <node concept="1TIwiD" id="5yk3CzNVRj9">
     <property role="TrG5h" value="CellModel_DiagramConnector" />
     <property role="34LRSv" value="diagram connector" />
+    <property role="1pbfSe" value="1283687249" />
     <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="13JDji_2I5Z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -176,6 +183,7 @@
   <node concept="1TIwiD" id="4H19mAw_rje">
     <property role="TrG5h" value="AttributedFigureReference" />
     <property role="3GE5qa" value="figureRefs" />
+    <property role="1pbfSe" value="338240969" />
     <ref role="1TJDcQ" node="WK6Z46CMBm" resolve="AbstractFigureReference" />
     <node concept="1TJgyj" id="4H19mAwT311" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -187,10 +195,12 @@
   <node concept="1TIwiD" id="2NgG6tkGBSJ">
     <property role="TrG5h" value="ThisEditorNodeExpression" />
     <property role="34LRSv" value="this" />
+    <property role="1pbfSe" value="2122109290" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="13JDji_21tH">
     <property role="TrG5h" value="ConnectionEndBLQuery" />
+    <property role="1pbfSe" value="1242055519" />
     <ref role="1TJDcQ" node="2n3OqIjvuB0" resolve="ConnectionEnd" />
     <node concept="1TJgyj" id="13JDji_2j_$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -209,16 +219,19 @@
     <property role="TrG5h" value="ConnectionEnd" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1186874517" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4DjPfGLDERh">
     <property role="TrG5h" value="DiagramElement" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="2080015052" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4DjPfGLEISL">
     <property role="TrG5h" value="DiagramElementBLQuery" />
+    <property role="1pbfSe" value="2080293676" />
     <ref role="1TJDcQ" node="4DjPfGLDERh" resolve="DiagramElement" />
     <node concept="1TJgyj" id="4DjPfGLEITp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -230,6 +243,7 @@
   <node concept="1TIwiD" id="fQU43X4wa2">
     <property role="TrG5h" value="CellModel_DiagramPort" />
     <property role="34LRSv" value="diagram port" />
+    <property role="1pbfSe" value="17361602" />
     <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyi" id="fQU43X4BkZ" role="1TKVEl">
       <property role="TrG5h" value="input" />
@@ -245,6 +259,7 @@
   <node concept="1TIwiD" id="fQU43XxJyI">
     <property role="TrG5h" value="AbstractArgument" />
     <property role="R5$K7" value="true" />
+    <property role="1pbfSe" value="25026798" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="fQU43XxJyO" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -252,6 +267,7 @@
   </node>
   <node concept="1TIwiD" id="fQU43XxJzR">
     <property role="TrG5h" value="BLQueryArgument" />
+    <property role="1pbfSe" value="25026871" />
     <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
     <node concept="1TJgyj" id="fQU43XxJzS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -262,6 +278,7 @@
   </node>
   <node concept="1TIwiD" id="fQU43XxJAR">
     <property role="TrG5h" value="LinkArgument" />
+    <property role="1pbfSe" value="25027063" />
     <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
     <node concept="1TJgyj" id="fQU43XLauB" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -272,6 +289,7 @@
   </node>
   <node concept="1TIwiD" id="fQU43XL8M5">
     <property role="TrG5h" value="PropertyArgument" />
+    <property role="1pbfSe" value="29062341" />
     <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
     <node concept="1TJgyj" id="fQU43XLcUk" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -283,6 +301,7 @@
   <node concept="1TIwiD" id="7rLMM2Utp6a">
     <property role="TrG5h" value="DiagramElementsCreation" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="828857514" />
     <ref role="1TJDcQ" node="18ftwC4enam" resolve="AbstractDiagramCreation" />
     <node concept="1TJgyj" id="7rLMM2UtMrx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -294,29 +313,34 @@
   <node concept="1TIwiD" id="7rLMM2UtMrR">
     <property role="TrG5h" value="DiagramElementCreationHandler" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="828961303" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="7rLMM2UuwVn">
     <property role="TrG5h" value="YFunctionParameter" />
     <property role="34LRSv" value="y" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="829151735" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="7rLMM2UuwVu">
     <property role="TrG5h" value="NodeFunctionParameter" />
     <property role="34LRSv" value="node" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="829151742" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="7rLMM2UuwVy">
     <property role="TrG5h" value="XFunctionParameter" />
     <property role="34LRSv" value="x" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="829151746" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="ObbTRzsg14">
     <property role="TrG5h" value="DiagramConnectorCreation" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260296735" />
     <ref role="1TJDcQ" node="18ftwC4enam" resolve="AbstractDiagramCreation" />
     <node concept="1TJgyj" id="ObbTRzsg17" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -334,41 +358,48 @@
   <node concept="1TIwiD" id="ObbTRzsg1W">
     <property role="TrG5h" value="DiagramConnectorCreationHandler" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260296679" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="ObbTRzsmde">
     <property role="TrG5h" value="DiagramConnectorCanCreateHandler" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260271381" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="ObbTRzs$Pp">
     <property role="TrG5h" value="FromNodeFunctionParameter" />
     <property role="34LRSv" value="from" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260211466" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="ObbTRzs$Pu">
     <property role="TrG5h" value="ToNodeFunctionParameter" />
     <property role="34LRSv" value="to" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260211461" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="ObbTRzs$Pz">
     <property role="TrG5h" value="FromIdFunctionParameter" />
     <property role="34LRSv" value="fromId" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260211456" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="ObbTRzs$PC">
     <property role="TrG5h" value="ToIdFunctionParameter" />
     <property role="34LRSv" value="toId" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="260211451" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="5JruEV1dOnD">
     <property role="3GE5qa" value="Palette" />
     <property role="TrG5h" value="CreationActionReference" />
     <property role="34LRSv" value="creation" />
+    <property role="1pbfSe" value="487768215" />
     <ref role="1TJDcQ" node="tdMhUur7Q2" resolve="ActionReference" />
     <node concept="1TJgyi" id="3NXJmdrmJUd" role="1TKVEl">
       <property role="TrG5h" value="iconPath" />
@@ -385,6 +416,7 @@
     <property role="3GE5qa" value="Palette" />
     <property role="TrG5h" value="CustomElementReference" />
     <property role="34LRSv" value="custom" />
+    <property role="1pbfSe" value="487768214" />
     <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
     <node concept="1TJgyj" id="5JruEV1fJfI" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -397,6 +429,7 @@
     <property role="TrG5h" value="ActionReference" />
     <property role="3GE5qa" value="Palette" />
     <property role="R5$K7" value="true" />
+    <property role="1pbfSe" value="1514518880" />
     <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
   </node>
   <node concept="1TIwiD" id="18ftwC4enam">
@@ -404,6 +437,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="creation" />
+    <property role="1pbfSe" value="373876896" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="18ftwC4erGL" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -424,6 +458,7 @@
     <property role="TrG5h" value="ActionGroup" />
     <property role="3GE5qa" value="Palette" />
     <property role="34LRSv" value="group" />
+    <property role="1pbfSe" value="1514518879" />
     <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
     <node concept="1TJgyj" id="tdMhUurD_B" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -435,6 +470,7 @@
   <node concept="1TIwiD" id="tdMhUur7Q4">
     <property role="TrG5h" value="Palette" />
     <property role="3GE5qa" value="Palette" />
+    <property role="1pbfSe" value="1514518878" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="tdMhUurwkU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -447,12 +483,14 @@
     <property role="TrG5h" value="PaletteElement" />
     <property role="3GE5qa" value="Palette" />
     <property role="R5$K7" value="true" />
+    <property role="1pbfSe" value="1514518877" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="tdMhUur7Q6">
     <property role="TrG5h" value="Separator" />
     <property role="3GE5qa" value="Palette" />
     <property role="34LRSv" value="separator" />
+    <property role="1pbfSe" value="1514518876" />
     <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
     <node concept="1TJgyi" id="2_vgca2bThp" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -461,18 +499,22 @@
   </node>
   <node concept="1TIwiD" id="CzpafHKHdQ">
     <property role="TrG5h" value="StubCellModel_Diagram" />
+    <property role="1pbfSe" value="135907303" />
     <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
   </node>
   <node concept="1TIwiD" id="CzpafHKRE2">
     <property role="TrG5h" value="StubCellModel_DiagramConnector" />
+    <property role="1pbfSe" value="135864539" />
     <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
   </node>
   <node concept="1TIwiD" id="CzpafHKREB">
     <property role="TrG5h" value="StubCellModel_DiagramNode" />
+    <property role="1pbfSe" value="135864502" />
     <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
   </node>
   <node concept="1TIwiD" id="CzpafHKRFc">
     <property role="TrG5h" value="StubCellModel_DiagramPort" />
+    <property role="1pbfSe" value="135864465" />
     <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
   </node>
 </model>
