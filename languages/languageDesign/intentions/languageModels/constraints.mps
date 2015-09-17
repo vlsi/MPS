@@ -60,8 +60,14 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="hQOgExi">
+    <property role="3GE5qa" value="old" />
     <ref role="1M2myG" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
     <node concept="2NXJUA" id="hQOgHAO" role="2NY200">
       <node concept="3clFbS" id="hQOgHAP" role="2VODD2">
@@ -90,6 +96,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5rGvd38DcHu">
+    <property role="3GE5qa" value="new" />
     <ref role="1M2myG" to="tp3j:2c3oNEsfAwl" resolve="SurroundWithIntentionDeclaration" />
     <node concept="2NXJUA" id="5rGvd38DcHw" role="2NY200">
       <node concept="3clFbS" id="5rGvd38DcHx" role="2VODD2">

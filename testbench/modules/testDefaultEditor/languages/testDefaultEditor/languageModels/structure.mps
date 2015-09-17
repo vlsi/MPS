@@ -2,7 +2,7 @@
 <model ref="r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,6 +20,7 @@
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -53,6 +54,7 @@
   <node concept="1TIwiD" id="O7qdvf4Jsz">
     <property role="TrG5h" value="Company" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="602251270" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4KyX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -66,6 +68,7 @@
   </node>
   <node concept="1TIwiD" id="O7qdvf4Jui">
     <property role="TrG5h" value="Team" />
+    <property role="1pbfSe" value="602251159" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="O7qdvf4M_6" role="1TKVEl">
       <property role="TrG5h" value="isOpenSource" />
@@ -83,6 +86,7 @@
   </node>
   <node concept="1TIwiD" id="O7qdvf4M$T">
     <property role="TrG5h" value="Developer" />
+    <property role="1pbfSe" value="602238448" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4VTX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -128,6 +132,7 @@
   </node>
   <node concept="1TIwiD" id="O7qdvf4VTU">
     <property role="TrG5h" value="Friend" />
+    <property role="1pbfSe" value="602200239" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4VTV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -138,6 +143,7 @@
   </node>
   <node concept="1TIwiD" id="5dui9YboEXB">
     <property role="TrG5h" value="DummyMethod" />
+    <property role="1pbfSe" value="557778938" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5dui9YboEYz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -148,6 +154,7 @@
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaT$">
     <property role="TrG5h" value="DefaultPropertyAttribute" />
+    <property role="1pbfSe" value="524380503" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaU_" role="lGtFl">
       <property role="Hh88m" value="propAttr" />
@@ -158,6 +165,7 @@
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaUR">
     <property role="TrG5h" value="DefaultReferenceAttribute" />
+    <property role="1pbfSe" value="524380420" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaUS" role="lGtFl">
       <property role="Hh88m" value="refAttr" />
@@ -168,6 +176,7 @@
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaVx">
     <property role="TrG5h" value="DefaultNodeAttribute" />
+    <property role="1pbfSe" value="524380378" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaVy" role="lGtFl">
       <property role="Hh88m" value="nodeAttr" />

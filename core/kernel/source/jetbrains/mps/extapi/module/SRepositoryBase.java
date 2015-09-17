@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,12 +45,12 @@ public abstract class SRepositoryBase implements SRepository {
   }
 
   @Override
-  public final void addRepositoryListener(SRepositoryListener listener) {
+  public /*final*/ void addRepositoryListener(SRepositoryListener listener) {
     myEventsDispatcher.addRepositoryListener(listener);
   }
 
   @Override
-  public final void removeRepositoryListener(SRepositoryListener listener) {
+  public /*final*/ void removeRepositoryListener(SRepositoryListener listener) {
     myEventsDispatcher.removeRepositoryListener(listener);
   }
 

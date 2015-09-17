@@ -2,7 +2,7 @@
 <model ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,6 +20,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -54,6 +55,7 @@
   <node concept="1TIwiD" id="2PMNsNJsb26">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="LanguageAspectDescriptor" />
+    <property role="1pbfSe" value="484671058" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="UBgfI9gdyY" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
@@ -63,6 +65,7 @@
     <property role="TrG5h" value="SimpleLanguageAspectDescriptor" />
     <property role="3GE5qa" value="simple" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="544102723" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2Y$EcRKMr2k" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -92,12 +95,14 @@
   <node concept="1TIwiD" id="2Y$EcRKMsxU">
     <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="LanguageReference" />
+    <property role="1pbfSe" value="544108871" />
     <ref role="1TJDcQ" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
   </node>
   <node concept="1TIwiD" id="5KGdJjE3jGJ">
     <property role="3GE5qa" value="simple.gen.trivial" />
     <property role="TrG5h" value="GenerationDescriptor_Class" />
     <property role="34LRSv" value="generate descriptor instantiation only" />
+    <property role="1pbfSe" value="1178169891" />
     <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="5$xTughlvvt" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -111,6 +116,7 @@
     <property role="TrG5h" value="GenerationDescriptor" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="2114878715" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7NyVmB7TXSN" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -126,6 +132,7 @@
     <property role="3GE5qa" value="simple.gen.byInterface" />
     <property role="TrG5h" value="GenerationDescriptor_ByInterface" />
     <property role="34LRSv" value="descriptor generator" />
+    <property role="1pbfSe" value="379266753" />
     <ref role="1TJDcQ" node="5LFbgO_x_nS" resolve="GenerationDescriptor" />
     <node concept="1TJgyj" id="4F0TDiuCZaH" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -137,6 +144,7 @@
   <node concept="1TIwiD" id="4F0TDiuCZaK">
     <property role="3GE5qa" value="simple.gen.byInterface" />
     <property role="TrG5h" value="AspectMethodDescriptor" />
+    <property role="1pbfSe" value="379266748" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4F0TDiuCZaO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -158,6 +166,7 @@
   </node>
   <node concept="PlHQZ" id="7Jfx5bwQG39">
     <property role="TrG5h" value="IAspectConcept" />
+    <property role="1pbfSe" value="1554662683" />
   </node>
 </model>
 

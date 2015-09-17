@@ -41,7 +41,6 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
-import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -51,7 +50,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -102,8 +101,7 @@ public class UsagesView implements IExternalizeable {
   public UsagesView(Project mpsProject, ViewOptions defaultOptions) {
     this(mpsProject, defaultOptions, new DataTreeChangesNotifier());
     myOwnChangeTracker = true;
-    // FIXME ProjectRepository.getModules() doesn't give actual modules yet.
-    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).attach();
+    new RepoListenerRegistrar(mpsProject.getRepository(), myChangeTracker).attach();
   }
 
   public UsagesView(Project mpsProject, ViewOptions defaultOptions, DataTreeChangesNotifier changeTracker) {
@@ -126,7 +124,7 @@ public class UsagesView implements IExternalizeable {
   public void dispose() {
     myTreeComponent.dispose();
     if (myOwnChangeTracker) {
-      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).detach();
+      new RepoListenerRegistrar(myProject.getRepository(), myChangeTracker).detach();
     }
     myChangeTracker = null;
   }

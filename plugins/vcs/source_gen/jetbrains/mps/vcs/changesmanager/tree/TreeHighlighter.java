@@ -16,7 +16,6 @@ import com.intellij.util.ui.update.MergingUpdateQueue;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -92,8 +91,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     myTree.addTreeNodeListener(myTreeNodeListener);
     FileStatusManager.getInstance(myRegistry.getProject()).addFileStatusListener(myFileStatusListener);
     if (myGlobalModelListener != null) {
-      // FIXME shall use getProjectRepository(), however could not until its getModules() would return meaningful set of modules 
-      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myGlobalModelListener).attach();
+      new RepoListenerRegistrar(getProjectRepository(), myGlobalModelListener).attach();
     }
 
     getProjectRepository().getModelAccess().runReadInEDT(new Runnable() {
@@ -112,7 +110,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     myInitialized = false;
 
     if (myGlobalModelListener != null) {
-      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myGlobalModelListener).detach();
+      new RepoListenerRegistrar(getProjectRepository(), myGlobalModelListener).detach();
     }
     FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);

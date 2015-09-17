@@ -20,5 +20,5 @@ package jetbrains.mps.intentions;
  * FIXME update generated code to use this class
  * @author Artem Tikhomirov
  */
-public abstract class BaseIntentionFactory implements IntentionFactory {
+public abstract class OldBaseIntentionFactory implements IntentionFactory {
 }

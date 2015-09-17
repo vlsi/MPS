@@ -3145,10 +3145,10 @@
                       <node concept="10QFUN" id="6m1MVDkVd2U" role="3cqZAk">
                         <node concept="2ShNRf" id="6m1MVDkVd2V" role="10QFUP">
                           <node concept="1pGfFk" id="6m1MVDkVd2W" role="2ShVmc">
-                            <ref role="37wK5l" to="3nps:~BookmarkManager.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.nodeEditor.Highlighter)" resolve="BookmarkManager" />
+                            <ref role="37wK5l" to="3nps:~BookmarkManager.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.nodeEditor.Highlighter)" resolve="BookmarkManager" />
                             <node concept="10M0yZ" id="6m1MVDkVd2X" role="37wK5m">
                               <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-                              <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
+                              <ref role="3cqZAo" node="6m1MVDkVd34" resolve="ourMPSProject" />
                             </node>
                             <node concept="10Nm6u" id="6m1MVDkVd2Y" role="37wK5m" />
                           </node>

@@ -2,7 +2,7 @@
 <model ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -18,6 +18,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -51,6 +52,7 @@
   </registry>
   <node concept="1TIwiD" id="5SJpJa5_6F9">
     <property role="TrG5h" value="XmlDocument" />
+    <property role="1pbfSe" value="473706053" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5M4a$b5ikxO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -68,6 +70,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlContent" />
+    <property role="1pbfSe" value="567112365" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1Qs9WekVZ4Z" role="PzmwI">
       <ref role="PrY4T" node="1Qs9WekVZ4Y" resolve="XmlPart" />
@@ -77,10 +80,12 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlBaseElement" />
+    <property role="1pbfSe" value="567112367" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
   </node>
   <node concept="1TIwiD" id="5M4a$b5ikxL">
     <property role="TrG5h" value="XmlProlog" />
+    <property role="1pbfSe" value="567112371" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6A8NbxeeX3A" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -95,6 +100,7 @@
     <property role="R4oN_" value="processing instruction" />
     <property role="TrG5h" value="XmlProcessingInstruction" />
     <property role="34LRSv" value="&lt;?" />
+    <property role="1pbfSe" value="567112375" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyi" id="5M4a$b5ikxQ" role="1TKVEl">
       <property role="TrG5h" value="target" />
@@ -114,6 +120,7 @@
     <property role="TrG5h" value="XmlComment" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&lt;!--" />
+    <property role="1pbfSe" value="567112378" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyj" id="1q3yNZeAYLR" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -130,6 +137,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlCDATA" />
     <property role="34LRSv" value="&lt;![CDATA" />
+    <property role="1pbfSe" value="567112380" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyi" id="1q3yNZeAMoN" role="1TKVEl">
       <property role="TrG5h" value="content" />
@@ -141,6 +149,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlElement" />
     <property role="34LRSv" value="&lt;element/&gt;" />
+    <property role="1pbfSe" value="567229172" />
     <ref role="1TJDcQ" node="5M4a$b5ikxH" resolve="XmlBaseElement" />
     <node concept="1TJgyi" id="5M4a$b5iL2Q" role="1TKVEl">
       <property role="TrG5h" value="tagName" />
@@ -170,6 +179,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlBaseAttribute" />
+    <property role="1pbfSe" value="567229173" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5M4a$b5iSRN">
@@ -177,6 +187,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlAttribute" />
     <property role="34LRSv" value="attribute" />
+    <property role="1pbfSe" value="567261237" />
     <ref role="1TJDcQ" node="5M4a$b5iL2N" resolve="XmlBaseAttribute" />
     <node concept="1TJgyj" id="5M4a$b5jfOu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -198,6 +209,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlFile" />
     <property role="34LRSv" value="xml file" />
+    <property role="1pbfSe" value="567328514" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5M4a$b5j9j1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -217,6 +229,7 @@
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="attribute value" />
     <property role="TrG5h" value="XmlValuePart" />
+    <property role="1pbfSe" value="567355230" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5M4a$b5jfOv">
@@ -225,6 +238,7 @@
     <property role="R4oN_" value="attribute value contains of text and entity references" />
     <property role="TrG5h" value="XmlTextValue" />
     <property role="34LRSv" value="text" />
+    <property role="1pbfSe" value="567355233" />
     <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
     <node concept="1TJgyi" id="5M4a$b5jfOw" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -240,6 +254,7 @@
     <property role="R4oN_" value="entity reference" />
     <property role="TrG5h" value="XmlEntityRefValue" />
     <property role="34LRSv" value="&amp;" />
+    <property role="1pbfSe" value="567355235" />
     <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
     <node concept="1TJgyi" id="5M4a$b5jg9o" role="1TKVEl">
       <property role="TrG5h" value="entityName" />
@@ -256,6 +271,7 @@
     <property role="TrG5h" value="XmlText" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="text" />
+    <property role="1pbfSe" value="451006382" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyi" id="1q3yNZeAEDC" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -268,6 +284,7 @@
   <node concept="1TIwiD" id="1q3yNZeAYLu">
     <property role="TrG5h" value="XmlCommentLine" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="450922595" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1q3yNZeAYLv" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -280,6 +297,7 @@
     <property role="R4oN_" value="entity reference" />
     <property role="TrG5h" value="XmlEntityRef" />
     <property role="34LRSv" value="&amp;" />
+    <property role="1pbfSe" value="450889076" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyi" id="1q3yNZeB6Yf" role="1TKVEl">
       <property role="TrG5h" value="entityName" />
@@ -293,6 +311,7 @@
     <property role="TrG5h" value="XmlCharRef" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&amp;#" />
+    <property role="1pbfSe" value="2059247830" />
     <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyi" id="2EZ251fZDy7" role="1TKVEl">
       <property role="TrG5h" value="charCode" />
@@ -306,6 +325,7 @@
     <property role="TrG5h" value="XmlCharRefValue" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&amp;#" />
+    <property role="1pbfSe" value="2059264078" />
     <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
     <node concept="1TJgyi" id="2EZ251fZHw6" role="1TKVEl">
       <property role="TrG5h" value="charCode" />
@@ -321,10 +341,12 @@
     <property role="R4oN_" value="concatenates two values without spaces" />
     <property role="TrG5h" value="XmlNoSpaceValue" />
     <property role="34LRSv" value="&lt;-no space-&gt;" />
+    <property role="1pbfSe" value="2059474572" />
     <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
   </node>
   <node concept="PlHQZ" id="6A8NbxeeX3_">
     <property role="TrG5h" value="XmlPrologElement" />
+    <property role="1pbfSe" value="1211851363" />
     <node concept="PrWs8" id="1Qs9WekVZ7b" role="PrDN$">
       <ref role="PrY4T" node="1Qs9WekVZ4Y" resolve="XmlPart" />
     </node>
@@ -332,6 +354,7 @@
   <node concept="1TIwiD" id="6A8NbxeffEC">
     <property role="TrG5h" value="XmlWhitespace" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="1211775136" />
     <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
     <node concept="1TJgyi" id="4ygopINZTHj" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -350,6 +373,7 @@
     <property role="R4oN_" value="xml declaration" />
     <property role="TrG5h" value="XmlDeclaration" />
     <property role="34LRSv" value="&lt;?xml" />
+    <property role="1pbfSe" value="57519863" />
     <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
     <node concept="PrWs8" id="4ygopIO0uXJ" role="PzmwI">
       <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
@@ -373,11 +397,13 @@
   </node>
   <node concept="PlHQZ" id="1Qs9WekVZ4Y">
     <property role="TrG5h" value="XmlPart" />
+    <property role="1pbfSe" value="1299441407" />
   </node>
   <node concept="1TIwiD" id="1Qs9WekW8u8">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="XmlBasePrologElement" />
+    <property role="1pbfSe" value="1299402933" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1Qs9WekW8u9" role="PzmwI">
       <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
@@ -389,6 +415,7 @@
     <property role="R4oN_" value="xml doctype declaration" />
     <property role="TrG5h" value="XmlDoctypeDeclaration" />
     <property role="34LRSv" value="&lt;!DOCTYPE" />
+    <property role="1pbfSe" value="1299173794" />
     <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
     <node concept="PrWs8" id="1Qs9WekX0qs" role="PzmwI">
       <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
@@ -405,6 +432,7 @@
   </node>
   <node concept="1TIwiD" id="1Qs9WekXwcZ">
     <property role="TrG5h" value="XmlExternalId" />
+    <property role="1pbfSe" value="1299043582" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1Qs9WekXwd3" role="1TKVEl">
       <property role="TrG5h" value="publicId" />

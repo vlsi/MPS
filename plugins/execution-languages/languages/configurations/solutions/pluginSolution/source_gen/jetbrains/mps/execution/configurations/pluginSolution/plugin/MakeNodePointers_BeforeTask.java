@@ -9,21 +9,23 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.IListSequence;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
@@ -49,9 +51,9 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
     }
     public boolean execute(Project project, ExecutionEnvironment environment) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-      List<SModel> models = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<IListSequence<SModel>>() {
-        public IListSequence<SModel> compute() {
-          return ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
+      List<IResource> resources = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
+        public List<IResource> compute() {
+          Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
             public boolean accept(SNodeReference it) {
               return it != null;
             }
@@ -64,17 +66,22 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
             public boolean accept(SModel it) {
               return ModelGenerationStatusManager.getInstance().generationRequired(it);
             }
-          }).toListSequence();
+          });
+          if (Sequence.fromIterable(models).isEmpty()) {
+            return null;
+          }
+          List<IResource> list = ListSequence.fromListWithValues(new ArrayList<IResource>(), new ModelsToResources(models).resources(false));
+          return list;
         }
       });
 
-      if (ListSequence.fromList(models).isEmpty()) {
+      if (ListSequence.fromList(resources).isEmpty()) {
         return true;
       }
 
       MakeSession session = new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(models).resources(false));
+        Future<IResult> future = IMakeService.INSTANCE.get().make(session, resources);
         IResult result = null;
         try {
           result = future.get();

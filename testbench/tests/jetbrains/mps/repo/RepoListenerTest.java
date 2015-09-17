@@ -126,31 +126,34 @@ public class RepoListenerTest extends CoreMpsTest {
     l1.checkStarted(1); // MPSModuleRepository.INSTANCE
     l1.checkStopped(0);
     createProject();
-    l1.checkStarted(2); // global + project repo
+    // project repo mimics global repo now, listener is attached only once, hence we observe events of 1 repository instead of 2.
+    final int distinctRepositories = 1; // FIXME =2 once ProjectRepository is distinct from global (or there's no global?)
+//    l1.checkStarted(2); // global + project repo
+    l1.checkStarted(distinctRepositories);
     l1.checkStopped(0);
     //
     final AttachRepoListener l2 = new AttachRepoListener();
     SRepositoryRegistry.getInstance().addGlobalListener(l2);
-    l1.checkStarted(2);
+    l1.checkStarted(distinctRepositories);
     l1.checkStopped(0);
-    l2.checkStarted(2); // == that of l1 starts to the date, == amount of our available repositories
+    l2.checkStarted(distinctRepositories); // == that of l1 starts to the date, == amount of our available repositories
     l2.checkStopped(0);
     SRepositoryRegistry.getInstance().removeGlobalListener(l2);
-    l1.checkStarted(2);
+    l1.checkStarted(distinctRepositories);
     l1.checkStopped(0); // l1 is not notified on l2 removal
-    l2.checkStarted(2);
-    l2.checkStopped(2); // l2 is removed from both available repositories, global+project
+    l2.checkStarted(distinctRepositories);
+    l2.checkStopped(distinctRepositories); // l2 is removed from both available repositories, global+project
     //
     closeProject();
-    l1.checkStarted(2);
-    l1.checkStopped(1); // project repo is gone, 1 notification
-    l2.checkStarted(2); // l2 is detached, shall not get any further notifications
-    l2.checkStopped(2);
+    l1.checkStarted(distinctRepositories);
+    l1.checkStopped(distinctRepositories-1); // project repo is gone, 1 notification
+    l2.checkStarted(distinctRepositories); // l2 is detached, shall not get any further notifications
+    l2.checkStopped(distinctRepositories); // --"--
     SRepositoryRegistry.getInstance().removeGlobalListener(l1);
-    l1.checkStarted(2);
-    l1.checkStopped(2); // notified for global repo
-    l2.checkStarted(2); // l2 is detached, shall not get any further notifications
-    l2.checkStopped(2);
+    l1.checkStarted(distinctRepositories);
+    l1.checkStopped(distinctRepositories); // notified for global repo
+    l2.checkStarted(distinctRepositories); // l2 is detached, shall not get any further notifications
+    l2.checkStopped(distinctRepositories); // --"--
   }
 
   /**
@@ -161,8 +164,7 @@ public class RepoListenerTest extends CoreMpsTest {
     final Project project = createProject();
     final AttachRepoListener l = new AttachRepoListener();
     final SRepositoryExt repository = (SRepositoryExt) project.getRepository();
-    attach(MPSModuleRepository.getInstance(), l);
-//    attach(project.getRepository(), l);  FIXME shall use project repository
+    attach(project.getRepository(), l);
     l.checkModuleEvents(0, 0, 0);
     final BaseMPSModuleOwner moduleOwner = new BaseMPSModuleOwner();
     //
@@ -171,8 +173,7 @@ public class RepoListenerTest extends CoreMpsTest {
     new RemoveModule(repository, solution, moduleOwner).execute();
     l.checkModuleEvents(1, 1, 1);
     //
-//    detach(project.getRepository(), l); FIXME shall use project repository
-    detach(MPSModuleRepository.getInstance(), l);
+    detach(project.getRepository(), l);
     l.checkModuleEvents(1, 1, 1);
     closeProject();
   }
@@ -187,8 +188,7 @@ public class RepoListenerTest extends CoreMpsTest {
     final Project project = createProject();
     final ContentAdapter l = new ContentAdapter();
     final SRepositoryExt repository = (SRepositoryExt) project.getRepository();
-    attach(MPSModuleRepository.getInstance(), l);
-//    attach(project.getRepository(), l);  FIXME shall use project repository
+    attach(project.getRepository(), l);
     final BaseMPSModuleOwner moduleOwner = new BaseMPSModuleOwner();
     //
     final Solution solution = new CreateSolution(repository, moduleOwner).execute();

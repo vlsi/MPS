@@ -8,13 +8,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -25,7 +20,7 @@ public class EditGivenNode_Action extends BaseAction {
     this.targetNode = targetNode_par;
     this.text = text_par;
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -41,15 +36,7 @@ public class EditGivenNode_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
@@ -58,7 +45,7 @@ public class EditGivenNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).resolve(MPSModuleRepository.getInstance()), true, true);
+    new EditorNavigator(event.getData(MPSCommonDataKeys.MPS_PROJECT)).shallFocus(true).shallSelect(true).open(EditGivenNode_Action.this.targetNode);
   }
   @NotNull
   public String getActionId() {
@@ -72,7 +59,7 @@ public class EditGivenNode_Action extends BaseAction {
     return res.toString();
   }
   public static String targetNode_State(SNodeReference object) {
-    return ((SNodePointer) object).toString();
+    return object.toString();
   }
   public static String text_State(String object) {
     return "";

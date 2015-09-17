@@ -2,7 +2,7 @@
 <model ref="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -24,6 +24,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -57,6 +58,7 @@
   <node concept="1TIwiD" id="2Pif5TcL5t6">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Script" />
+    <property role="1pbfSe" value="2048299940" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2Pif5TcL5tc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -82,24 +84,28 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractCommand" />
     <property role="3GE5qa" value="command" />
+    <property role="1pbfSe" value="2048299944" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2Pif5TcL5ty">
     <property role="TrG5h" value="Step" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="step" />
+    <property role="1pbfSe" value="2048299968" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
   </node>
   <node concept="1TIwiD" id="2RDssu5V9Yb">
     <property role="TrG5h" value="LeftTurn" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="turnLeft" />
+    <property role="1pbfSe" value="1277816494" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
   </node>
   <node concept="1TIwiD" id="2RDssu5V9YY">
     <property role="TrG5h" value="IfStatement" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="if" />
+    <property role="1pbfSe" value="1277816443" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5V9Z0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -125,18 +131,21 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LogicalExpression" />
     <property role="3GE5qa" value="Logical" />
+    <property role="1pbfSe" value="1277816440" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2RDssu5Va0G">
     <property role="TrG5h" value="IsWall" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="wall ahead" />
+    <property role="1pbfSe" value="1277816333" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
   </node>
   <node concept="1TIwiD" id="2RDssu5VbyK">
     <property role="TrG5h" value="Not" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="not" />
+    <property role="1pbfSe" value="1277810057" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
     <node concept="1TJgyj" id="2RDssu5VbyN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -149,6 +158,7 @@
     <property role="TrG5h" value="Repeat" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="repeat" />
+    <property role="1pbfSe" value="1277803757" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5Vd5f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -165,6 +175,7 @@
     <property role="TrG5h" value="While" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="while" />
+    <property role="1pbfSe" value="1277796697" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5VeNy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -184,36 +195,42 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Direction" />
     <property role="3GE5qa" value="direction" />
+    <property role="1pbfSe" value="1277788416" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2RDssu5VgOV">
     <property role="TrG5h" value="North" />
     <property role="3GE5qa" value="direction" />
     <property role="34LRSv" value="north" />
+    <property role="1pbfSe" value="1277788414" />
     <ref role="1TJDcQ" node="2RDssu5VgOT" resolve="Direction" />
   </node>
   <node concept="1TIwiD" id="2RDssu5VgP1">
     <property role="TrG5h" value="East" />
     <property role="3GE5qa" value="direction" />
     <property role="34LRSv" value="east" />
+    <property role="1pbfSe" value="1277788408" />
     <ref role="1TJDcQ" node="2RDssu5VgOT" resolve="Direction" />
   </node>
   <node concept="1TIwiD" id="2RDssu5VgPb">
     <property role="TrG5h" value="South" />
     <property role="3GE5qa" value="direction" />
     <property role="34LRSv" value="south" />
+    <property role="1pbfSe" value="1277788398" />
     <ref role="1TJDcQ" node="2RDssu5VgOT" resolve="Direction" />
   </node>
   <node concept="1TIwiD" id="2RDssu5ViKW">
     <property role="TrG5h" value="West" />
     <property role="3GE5qa" value="direction" />
     <property role="34LRSv" value="west" />
+    <property role="1pbfSe" value="1277780477" />
     <ref role="1TJDcQ" node="2RDssu5VgOT" resolve="Direction" />
   </node>
   <node concept="1TIwiD" id="2RDssu5ViL1">
     <property role="TrG5h" value="Heading" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="heading" />
+    <property role="1pbfSe" value="1277780472" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
     <node concept="1TJgyj" id="2RDssu5ViL2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -226,6 +243,7 @@
     <property role="TrG5h" value="RoutineDefinition" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="routine" />
+    <property role="1pbfSe" value="1277763264" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5VmXW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -240,6 +258,7 @@
   <node concept="1TIwiD" id="2RDssu5VmYi">
     <property role="TrG5h" value="RoutineCall" />
     <property role="3GE5qa" value="command" />
+    <property role="1pbfSe" value="1277763239" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5Vufc" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -254,6 +273,7 @@
     <property role="TrG5h" value="EmptyLine" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="&lt;empty&gt;" />
+    <property role="1pbfSe" value="1277723683" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="PrWs8" id="5mewTwNsroE" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -262,6 +282,7 @@
   <node concept="1TIwiD" id="2RDssu5W6CZ">
     <property role="TrG5h" value="CommandList" />
     <property role="3GE5qa" value="command" />
+    <property role="1pbfSe" value="1277567994" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="2RDssu5W6D0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -277,24 +298,28 @@
     <property role="TrG5h" value="Drop" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="drop" />
+    <property role="1pbfSe" value="1826438606" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
   </node>
   <node concept="1TIwiD" id="5z_BEsjY5Wt">
     <property role="TrG5h" value="Pick" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="pick" />
+    <property role="1pbfSe" value="1826487748" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
   </node>
   <node concept="1TIwiD" id="5z_BEsjY9ZA">
     <property role="TrG5h" value="IsMark" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="mark" />
+    <property role="1pbfSe" value="1826504333" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
   </node>
   <node concept="1TIwiD" id="5z_BEsjYyH3">
     <property role="TrG5h" value="CommentLine" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="#" />
+    <property role="1pbfSe" value="1826605546" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyi" id="5z_BEsjYyH5" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -305,11 +330,13 @@
     <property role="TrG5h" value="IsFull" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="full" />
+    <property role="1pbfSe" value="2137504818" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
   </node>
   <node concept="1TIwiD" id="3NWQyev6tcm">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Library" />
+    <property role="1pbfSe" value="602493639" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3NWQyev6tcn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -325,6 +352,7 @@
     <property role="TrG5h" value="Require" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="require" />
+    <property role="1pbfSe" value="602477972" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyj" id="3NWQyev6x1a" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -337,6 +365,7 @@
     <property role="TrG5h" value="TraceMessage" />
     <property role="3GE5qa" value="command" />
     <property role="34LRSv" value="trace" />
+    <property role="1pbfSe" value="725218527" />
     <ref role="1TJDcQ" node="2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyi" id="2MeG3eCdPFJ" role="1TKVEl">
       <property role="TrG5h" value="message" />
@@ -369,6 +398,7 @@
     <property role="TrG5h" value="Looking" />
     <property role="3GE5qa" value="Logical" />
     <property role="34LRSv" value="looking" />
+    <property role="1pbfSe" value="2053073114" />
     <ref role="1TJDcQ" node="2RDssu5V9Z1" resolve="LogicalExpression" />
     <node concept="1TJgyi" id="67X5IgzCS13" role="1TKVEl">
       <property role="TrG5h" value="direction" />

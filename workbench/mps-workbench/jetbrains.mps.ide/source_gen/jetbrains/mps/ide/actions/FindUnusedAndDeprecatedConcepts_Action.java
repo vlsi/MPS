@@ -11,23 +11,36 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.util.DepthFirstConceptIterator;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.ArrayList;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.util.DepthFirstConceptIterator;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import com.intellij.openapi.progress.ProgressManager;
 
 public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -63,28 +76,76 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
-    InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("ideaProject")), new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode node) {
-        for (SAbstractConcept c : new DepthFirstConceptIterator(node.getConcept())) {
-          SetSequence.fromSet(usedConcepts).addElement(c.getQualifiedName());
-        }
-      }
-    });
 
-    List<SNodeReference> concepts = ListSequence.fromList(InternalActionsUtils.getAllConcepts()).where(new IWhereFilter<SNodeReference>() {
-      public boolean accept(final SNodeReference it) {
-        final Wrappers._boolean isOk = new Wrappers._boolean(false);
-        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            SNode concept = SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-            isOk.value = (concept != null) && (BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
+    final List<SNodeReference> conceptsToShow = ListSequence.fromList(new ArrayList<SNodeReference>());
+
+    Task.Modal modal = new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), event.getPresentation().getText(), true) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+
+        List<SNodeReference> concepts = new ModelAccessHelper(((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess()).runReadAction(new Computable<List<SNodeReference>>() {
+          public List<SNodeReference> compute() {
+            Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+            int totalWork = Sequence.fromIterable(modules).count() * 2;
+            // iterate all modules: 1/2, + 1/8 + 1/4 + 1/8 
+            monitor.start("Find unused  and deprecated concepts", totalWork);
+            ModelDependencyScanner scanner = new ModelDependencyScanner().usedConcepts(true).usedLanguages(false).crossModelReferences(false);
+            for (SModule module : modules) {
+              monitor.step(String.format("Look up concepts in use: %s...", NameUtil.compactNamespace(module.getModuleName())));
+              for (SModel m : module.getModels()) {
+                if (monitor.isCanceled()) {
+                  return null;
+                }
+                scanner.walk(m);
+              }
+              monitor.advance(1);
+            }
+            monitor.step("Complete concept hierarchy...");
+            final HashSet<String> conceptsInUse = new HashSet<String>();
+            for (SConcept inUse : scanner.getConcepts()) {
+              // could use concept<>.super-concepts/all<+> here, but resort to code that has been there for a while 
+              for (SAbstractConcept c : new DepthFirstConceptIterator(inUse)) {
+                conceptsInUse.add(c.getQualifiedName());
+              }
+              if (monitor.isCanceled()) {
+                return null;
+              }
+            }
+            monitor.advance(totalWork / 8);
+
+            monitor.step("Look up concept declarations...");
+            Iterable<SearchResult<Object>> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults();
+            if (monitor.isCanceled()) {
+              return null;
+            }
+            monitor.advance(totalWork / 4);
+
+            monitor.step("Filter unused and deprecated...");
+            // FIXME why it's not a dedicated IFinder that takes AbstractConceptDeclaration instances as search query and nodes/models as scope? 
+            Iterable<SNode> allConcepts = SNodeOperations.ofConcept(Sequence.fromIterable(searchResults).select(new ISelector<SearchResult<Object>, Object>() {
+              public Object select(SearchResult<Object> it) {
+                return it.getObject();
+              }
+            }).ofType(SNode.class), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+            List<SNodeReference> rv = Sequence.fromIterable(allConcepts).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode concept) {
+                return BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(conceptsInUse.contains(NameUtil.nodeFQName(concept)));
+              }
+            }).select(new ISelector<SNode, SNodeReference>() {
+              public SNodeReference select(SNode it) {
+                return SNodeOperations.getPointer(it);
+              }
+            }).toListSequence();
+            monitor.done();
+            return rv;
           }
         });
-        return isOk.value;
+        ListSequence.fromList(conceptsToShow).addSequence(ListSequence.fromList(concepts));
       }
-    }).toListSequence();
+    };
+    ProgressManager.getInstance().run(modal);
 
-    InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("ideaProject")), concepts);
+    InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("ideaProject")), conceptsToShow);
   }
 }

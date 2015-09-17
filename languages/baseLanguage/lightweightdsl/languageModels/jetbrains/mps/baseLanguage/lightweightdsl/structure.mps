@@ -2,7 +2,7 @@
 <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -29,6 +29,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -64,6 +65,7 @@
   <node concept="1TIwiD" id="3geGFOI0X5k">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="MethodInstance" />
+    <property role="1pbfSe" value="1645380625" />
     <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="1TJgyj" id="14fCAVcxkR" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -82,6 +84,7 @@
     <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="DependentTypeDescriptor" />
     <property role="34LRSv" value="deptype" />
+    <property role="1pbfSe" value="1645380633" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="3geGFOI0X5t" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -94,6 +97,7 @@
     <property role="TrG5h" value="DSLDescriptor" />
     <property role="3GE5qa" value="" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1645380637" />
     <node concept="1TJgyj" id="1_lSsE3TuQi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="preferredConcept" />
@@ -117,6 +121,7 @@
   <node concept="1TIwiD" id="3geGFOI0X5$">
     <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="ParameterDescriptor" />
+    <property role="1pbfSe" value="1645380641" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1LJzqOWhdE6" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -137,6 +142,7 @@
     <property role="3GE5qa" value="member.methodDescriptor" />
     <property role="TrG5h" value="MethodDescriptor" />
     <property role="34LRSv" value="method" />
+    <property role="1pbfSe" value="1645380644" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3geGFOI0X5C" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -160,6 +166,7 @@
   <node concept="1TIwiD" id="3geGFOI0X5F">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="DependentTypeInstance" />
+    <property role="1pbfSe" value="1645380648" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="3geGFOI0X5G" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -180,6 +187,7 @@
   <node concept="1TIwiD" id="36gOZBLMF3a">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="DSLAnnotation" />
+    <property role="1pbfSe" value="593200323" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyj" id="36gOZBLMG9R" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -200,11 +208,13 @@
   <node concept="PlHQZ" id="2WSWNq1TGnY">
     <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="MemberModifier" />
+    <property role="1pbfSe" value="1323321036" />
   </node>
   <node concept="1TIwiD" id="2WSWNq1TGom">
     <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="RequiredModifier" />
     <property role="34LRSv" value="required" />
+    <property role="1pbfSe" value="1323321012" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2WSWNq1TGon" role="PzmwI">
       <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
@@ -216,6 +226,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="34LRSv" value="property" />
+    <property role="1pbfSe" value="1221455663" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4ubqdNOGnoZ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -233,6 +244,7 @@
   <node concept="PlHQZ" id="7aMlq14vYj7">
     <property role="TrG5h" value="DSLClassMember" />
     <property role="3GE5qa" value="member" />
+    <property role="1pbfSe" value="1221445017" />
     <node concept="1TJgyj" id="2WSWNq1TGlC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="modifier" />
@@ -244,6 +256,7 @@
     <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="PlaceholderModifier" />
     <property role="34LRSv" value="placeholder" />
+    <property role="1pbfSe" value="1221417783" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7aMlq14w51l" role="1TKVEl">
       <property role="TrG5h" value="caption" />
@@ -257,6 +270,7 @@
     <property role="3GE5qa" value="member.customDescriptor" />
     <property role="TrG5h" value="CustomMemberDescriptor" />
     <property role="34LRSv" value="custom member" />
+    <property role="1pbfSe" value="1221414084" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7aMlq14w5Qv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -274,6 +288,7 @@
   <node concept="1TIwiD" id="5BD$AU43nQM">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="MemberPlaceholder" />
+    <property role="1pbfSe" value="571011040" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5BD$AU43nQP" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -300,6 +315,7 @@
     <property role="TrG5h" value="PropertyInstance" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="571006017" />
     <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     <node concept="1TJgyj" id="7s$_UJMTR_D" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -317,10 +333,12 @@
   <node concept="PlHQZ" id="5BD$AU43p5T">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="MemberInstance" />
+    <property role="1pbfSe" value="571005977" />
   </node>
   <node concept="1TIwiD" id="5BD$AU440O4">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="StringPropertyInstance" />
+    <property role="1pbfSe" value="570843278" />
     <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="PropertyInstance" />
     <node concept="1TJgyi" id="5BD$AU440O5" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -330,6 +348,7 @@
   <node concept="1TIwiD" id="5BD$AU440V3">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="BooleanPropertyInstance" />
+    <property role="1pbfSe" value="570842831" />
     <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="PropertyInstance" />
     <node concept="1TJgyi" id="5BD$AU440V4" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -339,6 +358,7 @@
   <node concept="1TIwiD" id="5BD$AU440V5">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="IntegerPropertyInstance" />
+    <property role="1pbfSe" value="570842829" />
     <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="PropertyInstance" />
     <node concept="1TJgyi" id="5BD$AU440V6" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -349,6 +369,7 @@
     <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="EmptyMemberDescriptor" />
     <property role="34LRSv" value="empty line" />
+    <property role="1pbfSe" value="1697371650" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="536fTXa3uEm" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="DSLClassMember" />
@@ -358,6 +379,7 @@
     <property role="3GE5qa" value="DEPRECATED" />
     <property role="TrG5h" value="GenerateModifier" />
     <property role="34LRSv" value="generate" />
+    <property role="1pbfSe" value="250317624" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="asaX9" id="6zkSwmUG6Et" role="lGtFl" />
     <node concept="1TJgyi" id="3m06JgscQVS" role="1TKVEl">
@@ -375,6 +397,7 @@
     <property role="3GE5qa" value="member.modifier" />
     <property role="TrG5h" value="MultipleModifier" />
     <property role="34LRSv" value="multiple" />
+    <property role="1pbfSe" value="1281789338" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1QReUKIFP7J" role="1TKVEl">
       <property role="TrG5h" value="name" />
@@ -387,10 +410,12 @@
   <node concept="PlHQZ" id="UBgfI9exfH">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="AutoInitDSLClass" />
+    <property role="1pbfSe" value="1746840344" />
   </node>
   <node concept="1TIwiD" id="7GXvAHO00L4">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="MethodParameterInstance" />
+    <property role="1pbfSe" value="281179473" />
     <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     <node concept="1TJgyj" id="7GXvAHO0cwL" role="1TKVEi">
       <property role="20lmBu" value="reference" />

@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.editor.intentions.NodeTransformerFactoryToIntentionFactoryAdapter;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -16,7 +17,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
 
   public IntentionsDescriptor() {
     myId2Index = new long[1];
-    myId2Index[0] = 0x2303633a9c3cc675L;
+    myId2Index[0] = 0x115b81b652bL;
   }
 
   @Override
@@ -25,10 +26,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
     switch (index) {
       case 0:
-        // Concept: BaseIntentionDeclaration 
+        // Concept: IntentionDeclaration 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new MakeSurroundWith_Intention();
+          myIntentions0[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
         }
         return Arrays.asList(myIntentions0);
       default:
@@ -40,7 +41,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
     IntentionFactory[] rv = new IntentionFactory[1];
-    rv[0] = new MakeSurroundWith_Intention();
+    rv[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new ConvertIntention());
     return Arrays.asList(rv);
   }
 }

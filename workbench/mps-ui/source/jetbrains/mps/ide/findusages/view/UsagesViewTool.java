@@ -51,7 +51,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
@@ -105,8 +104,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void register(UsageViewData viewData) {
     if (myUsageViewsData.isEmpty()) {
-      // FIXME need ProjectRepository.getModules() to give non-empty set; meanwhile, resort to MPSModuleRepository
-      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).attach();
+      new RepoListenerRegistrar(ProjectHelper.getProjectRepository(getProject()), myChangeTracker).attach();
     }
     myUsageViewsData.add(viewData);
   }
@@ -115,7 +113,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   protected void onRemove(int index) {
     myUsageViewsData.remove(index);
     if (myUsageViewsData.isEmpty()) {
-      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).detach();
+      new RepoListenerRegistrar(ProjectHelper.getProjectRepository(getProject()), myChangeTracker).detach();
     }
   }
 

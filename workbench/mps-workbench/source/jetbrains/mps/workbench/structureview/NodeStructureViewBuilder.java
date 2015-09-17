@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,16 @@
  */
 package jetbrains.mps.workbench.structureview;
 
-import com.intellij.ide.structureView.*;
-import com.intellij.ide.util.treeView.smartTree.*;
+import com.intellij.ide.structureView.FileEditorPositionListener;
+import com.intellij.ide.structureView.ModelListener;
+import com.intellij.ide.structureView.StructureViewModel;
+import com.intellij.ide.structureView.StructureViewTreeElement;
+import com.intellij.ide.structureView.TreeBasedStructureViewBuilder;
+import com.intellij.ide.util.treeView.smartTree.Filter;
+import com.intellij.ide.util.treeView.smartTree.Grouper;
+import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.structureview.adds.AspectGrouper;
 import jetbrains.mps.workbench.structureview.adds.AspectNodeSorter;
 import jetbrains.mps.workbench.structureview.adds.AspectSorter;
@@ -27,12 +32,13 @@ import jetbrains.mps.workbench.structureview.adds.NonBijecttionalFilter;
 import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
-  private Project myProject;
+  private MPSProject myProject;
   private SNodeReference myNode;
 
-  public NodeStructureViewBuilder(Project project, SNodeReference node) {
+  public NodeStructureViewBuilder(MPSProject project, SNodeReference node) {
     myProject = project;
     myNode = node;
   }
@@ -92,7 +98,7 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
       @Override
       @NotNull
       public Sorter[] getSorters() {
-        return new Sorter[]{new AspectSorter(), new AspectNodeSorter()};
+        return new Sorter[]{new AspectSorter(), new AspectNodeSorter(myProject)};
       }
 
       @Override

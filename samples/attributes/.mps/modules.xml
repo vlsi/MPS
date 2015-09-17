@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/attr/jetbrains.mps.samples.attribute.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/sandbox/jetbrains.mps.samples.attribute.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

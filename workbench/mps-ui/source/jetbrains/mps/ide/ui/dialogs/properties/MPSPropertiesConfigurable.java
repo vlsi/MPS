@@ -55,7 +55,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -194,7 +193,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       @Override
       public void run() {
         //see MPS-18743
-        MPSModuleRepository.getInstance().saveAll();
+        myProject.getRepository().saveAll();
         for (Tab tab : myTabs) {
           tab.apply();
         }
@@ -229,19 +228,16 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   protected void save() {}
 
   /**
-   * FIXME [SRepository] ProjectRepository.getModules() gives empty list of modules at the moment,
-   * and I have no other way to access all visible modules but to use global MPSModuleRepository
+   * All modules visible in the current project
    */
   protected final Iterable<SModule> getProjectModules() {
-    //return myProject.getRepository().getModules();
-
     // wrap into Iterable to ensure lazy construction of module sequence.
     // getModules operation requires read access, but I don't see a reason to
     // move creation of conditional sequence into a read runnable.
     return new Iterable<SModule>() {
       @Override
       public Iterator<SModule> iterator() {
-        return MPSModuleRepository.getInstance().getModules().iterator();
+        return myProject.getRepository().getModules().iterator();
       }
     };
   }

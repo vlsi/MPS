@@ -17,17 +17,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -93,11 +91,12 @@ public class ChangeMethodSignature_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<SNode> baseMethod = new Wrappers._T<SNode>();
     final Wrappers._T<String> message = new Wrappers._T<String>("");
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    ModelAccess modelAccess = repo.getModelAccess();
 
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().saveAll();
+        repo.saveAll();
         baseMethod.value = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("method")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
         if (baseMethod.value != null) {
           message.value = "Method " + ((SNode) MapSequence.fromMap(_params).get("method")).getPresentation() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".\n";
@@ -113,7 +112,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
       methodToRefactor = ((SNode) MapSequence.fromMap(_params).get("method"));
     }
 
-    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), methodToRefactor, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), methodToRefactor, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     dialog.show();
     final List<ChangeMethodSignatureRefactoring> myRefactorings = dialog.getAllRefactorings();
     if (ListSequence.fromList(myRefactorings).isEmpty()) {
@@ -121,12 +120,10 @@ public class ChangeMethodSignature_Action extends BaseAction {
     }
     modelAccess.runReadInEDT(new Runnable() {
       public void run() {
-        SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("method")));
-        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("method")), repo))) {
           return;
         }
-        SNode node1 = ((SNode) methodToRefactor);
-        if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(methodToRefactor, repo))) {
           return;
         }
 

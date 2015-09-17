@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)/1587916991969989258">
+    <file name="ConceptIdUtil.java">
+      <node id="1587916991969913406" at="20,39,21,174" concept="4" />
+      <node id="1587916991970000915" at="23,8,24,46" concept="3" />
+      <node id="1587916991969998777" at="26,86,27,25" concept="4" />
+      <node id="1587916991970237835" at="28,7,29,62" concept="0" />
+      <node id="3873562224355180097" at="33,39,34,22" concept="3" />
+      <node id="3873562224355180041" at="35,50,36,64" concept="3" />
+      <node id="3873562224355180053" at="37,63,38,74" concept="3" />
+      <node id="3873562224355180062" at="38,74,39,58" concept="0" />
+      <node id="3873562224355180084" at="41,5,42,21" concept="4" />
+      <node id="2841134663537950322" at="45,50,46,55" concept="4" />
+      <node id="1587916991969913404" at="20,0,23,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
+      <node id="1587916991970206206" at="25,18,28,7" concept="1" />
+      <node id="2841134663537951742" at="45,0,48,0" concept="5" trace="getNewIdByOldId#(J)I" />
+      <node id="3873562224355180051" at="36,64,40,7" concept="1" />
+      <node id="1587916991969913392" at="18,49,23,8" concept="3" />
+      <node id="1587916991970003613" at="24,46,30,5" concept="6" />
+      <node id="3873562224355180039" at="34,22,41,5" concept="1" />
+      <node id="3873562224355180092" at="33,0,44,0" concept="5" trace="getNewId#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <node id="1587916991969989692" at="18,0,32,0" concept="5" trace="generate#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)I" />
+      <scope id="1587916991969913405" at="20,39,21,174" />
+      <scope id="1587916991970206208" at="26,86,27,25" />
+      <scope id="2841134663537948926" at="45,50,46,55" />
+      <scope id="3873562224355180052" at="37,63,39,58">
+        <var name="longId" id="3873562224355180054" />
+      </scope>
+      <scope id="1587916991969913404" at="20,0,23,0">
+        <var name="it" id="1587916991969913404" />
+      </scope>
+      <scope id="2841134663537951742" at="45,0,48,0">
+        <var name="longId" id="2841134663537950342" />
+      </scope>
+      <scope id="1587916991970003615" at="25,18,29,62" />
+      <scope id="3873562224355180040" at="35,50,40,7">
+        <var name="id" id="3873562224355180042" />
+      </scope>
+      <scope id="3873562224355180036" at="33,39,42,21">
+        <var name="generated" id="3873562224355180096" />
+      </scope>
+      <scope id="3873562224355180092" at="33,0,44,0">
+        <var name="c" id="3873562224355180086" />
+      </scope>
+      <scope id="1587916991969989698" at="18,49,30,5">
+        <var name="existingIds" id="1587916991969913393" />
+        <var name="generated" id="1587916991970000916" />
+      </scope>
+      <scope id="1587916991969989692" at="18,0,32,0">
+        <var name="c" id="1587916991970239540" />
+        <var name="m" id="1587916991969989693" />
+      </scope>
+      <unit id="1587916991969913404" at="19,303,23,5" name="jetbrains.mps.lang.structure.util.ConceptIdUtil$1" />
+      <unit id="1587916991969989258" at="17,0,49,0" name="jetbrains.mps.lang.structure.util.ConceptIdUtil" />
+    </file>
+  </root>
+</debug-info>
+

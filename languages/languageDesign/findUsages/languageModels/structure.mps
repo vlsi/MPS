@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,6 +20,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -59,12 +60,14 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="find" />
+    <property role="1pbfSe" value="1251386466" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hqPqlEd">
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/usagesFinder.png" />
     <property role="TrG5h" value="FinderDeclaration" />
+    <property role="1pbfSe" value="1251386461" />
     <ref role="1TJDcQ" node="hJgKnWi" resolve="AbstractFinderDeclaration" />
     <node concept="1TJgyi" id="hr9L4KS" role="1TKVEl">
       <property role="TrG5h" value="description" />
@@ -104,6 +107,7 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="isApplicable" />
+    <property role="1pbfSe" value="1251386454" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hr9LhY2">
@@ -114,6 +118,7 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node" />
+    <property role="1pbfSe" value="909827944" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6e5" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -126,6 +131,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="add result" />
+    <property role="1pbfSe" value="1946461451" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="htO1k2z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -141,6 +147,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="add node" />
+    <property role="1pbfSe" value="1946686833" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="htO26cB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -156,6 +163,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="execute" />
+    <property role="1pbfSe" value="688068327" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hzmZew4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -186,6 +194,7 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="getCategory" />
+    <property role="1pbfSe" value="424587954" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hzAHsKp">
@@ -195,6 +204,7 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="getSearchedNodes" />
+    <property role="1pbfSe" value="424293071" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="h$fgBI3">
@@ -204,6 +214,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="check cancelled status" />
+    <property role="1pbfSe" value="256015516" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
   </node>
   <node concept="1TIwiD" id="hGQTw5h">
@@ -213,12 +224,14 @@
     <property role="3GE5qa" value="Methods" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="isVisible" />
+    <property role="1pbfSe" value="921043564" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hJgKnWi">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractFinderDeclaration" />
+    <property role="1pbfSe" value="792625107" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hJgKJ91" role="1TKVEi">
       <property role="20kJfa" value="forConcept" />
@@ -255,6 +268,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="execute finders" />
+    <property role="1pbfSe" value="1411628653" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5xq1uvO4jkY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -281,6 +295,7 @@
   </node>
   <node concept="1TIwiD" id="1JlDhgSjx_v">
     <property role="TrG5h" value="FinderReference" />
+    <property role="1pbfSe" value="1411628659" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6gUevv0xDDg" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -296,6 +311,7 @@
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="make result provider" />
+    <property role="1pbfSe" value="1281633976" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5xq1uvO2yzi" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -308,6 +324,7 @@
     <property role="TrG5h" value="IsUsedByDefault" />
     <property role="3GE5qa" value="Methods" />
     <property role="34LRSv" value="isUsedByDefault" />
+    <property role="1pbfSe" value="2029626915" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>

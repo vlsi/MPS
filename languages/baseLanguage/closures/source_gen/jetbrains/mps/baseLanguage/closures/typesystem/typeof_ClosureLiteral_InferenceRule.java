@@ -43,7 +43,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         }
         ListSequence.fromList(paramTypes).addElement(typeCheckingContext.getRepresentative(pt_typevar_1221579075465));
       } else if ((SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")) != null)) {
-        ListSequence.fromList(paramTypes).addElement(SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
+        ListSequence.fromList(paramTypes).addElement(typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1733014656714855622", true));
       }
     }
     List<SNode> allRets = ListSequence.fromList(new ArrayList<SNode>());

@@ -2,21 +2,21 @@
 <model ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -56,24 +56,32 @@
     <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
     <property role="TrG5h" value="IntentionDeclaration" />
     <property role="34LRSv" value="Intention" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1206163904" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
   </node>
   <node concept="1TIwiD" id="hmS6ZEB">
     <property role="TrG5h" value="DescriptionBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="description" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1206125636" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSaL3P">
     <property role="TrG5h" value="IsApplicableBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="isApplicable" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1205136886" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSbjrp">
     <property role="TrG5h" value="ExecuteBlock" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="execute" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1204996114" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hmSf5oI">
@@ -81,6 +89,8 @@
     <property role="TrG5h" value="ConceptFunctionParameter_node" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1204005053" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6gD" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -89,8 +99,9 @@
   <node concept="1TIwiD" id="i38Bcsp">
     <property role="TrG5h" value="QueryBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="parameter" />
+    <property role="1pbfSe" value="929249223" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="1TJgyj" id="i3ddBrI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -102,8 +113,9 @@
     <property role="R4oN_" value="intention parameter" />
     <property role="TrG5h" value="IntentionParameter" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="parameter" />
+    <property role="1pbfSe" value="922920677" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="1653mnvB5X4" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -112,8 +124,9 @@
   <node concept="1TIwiD" id="i3dkpKH">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ParameterizedIntentionDeclaration" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="Parameterized Intention" />
+    <property role="1pbfSe" value="850289331" />
     <ref role="1TJDcQ" node="hmS6QkF" resolve="IntentionDeclaration" />
     <node concept="1TJgyj" id="i3dlsyr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -135,13 +148,15 @@
   </node>
   <node concept="PlHQZ" id="38RcvkhOs6o">
     <property role="TrG5h" value="ChildFilterBlock" />
-    <property role="3GE5qa" value="childfilter" />
+    <property role="3GE5qa" value="old.childfilter" />
+    <property role="1pbfSe" value="1141437325" />
   </node>
   <node concept="1TIwiD" id="38RcvkhOs6V">
     <property role="TrG5h" value="ChildFilterFunction" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="childfilter" />
+    <property role="3GE5qa" value="old.childfilter" />
     <property role="34LRSv" value="child filter function" />
+    <property role="1pbfSe" value="1141437360" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="38RcvkhOs6W" role="PzmwI">
       <ref role="PrY4T" node="38RcvkhOs6o" resolve="ChildFilterBlock" />
@@ -152,6 +167,8 @@
     <property role="TrG5h" value="ConceptFunctionParameter_childNode" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="childNode" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1141438789" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOP3" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -159,8 +176,10 @@
   </node>
   <node concept="1TIwiD" id="2c3oNEsfcpP">
     <property role="TrG5h" value="BaseIntentionDeclaration" />
+    <property role="3GE5qa" value="old" />
+    <property role="1pbfSe" value="1086314065" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1LJzqOWhXNd" role="PzmwI">
+    <node concept="PrWs8" id="74KP_fVapze" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="2c3oNEsfcpR" role="PzmwI">
@@ -214,21 +233,87 @@
     <property role="MwhBj" value="${language_descriptor}/icons/surroundWithIntention.png" />
     <property role="TrG5h" value="SurroundWithIntentionDeclaration" />
     <property role="34LRSv" value="Surround-With Intention" />
+    <property role="3GE5qa" value="new" />
+    <property role="1pbfSe" value="1086207153" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
   </node>
   <node concept="1TIwiD" id="1$_U1xaW3xx">
     <property role="TrG5h" value="ParameterizedDescriptionBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="description" />
+    <property role="1pbfSe" value="1679171705" />
     <ref role="1TJDcQ" node="hmS6ZEB" resolve="DescriptionBlock" />
   </node>
   <node concept="1TIwiD" id="1$_U1xaWL3H">
     <property role="TrG5h" value="ParameterizedExecuteBlock" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="parameterized" />
+    <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="execute" />
+    <property role="1pbfSe" value="1679358213" />
     <ref role="1TJDcQ" node="hmSbjrp" resolve="ExecuteBlock" />
+  </node>
+  <node concept="1TIwiD" id="77ZFhhOGiCb">
+    <property role="TrG5h" value="Intention" />
+    <property role="3GE5qa" value="new" />
+    <property role="19KtqR" value="true" />
+    <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
+    <property role="1pbfSe" value="424618209" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="PrWs8" id="6yt8uwrpgn_" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+    </node>
+    <node concept="PrWs8" id="74KP_fVapyQ" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1TJgyj" id="4d05DgImtx" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="forConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5_2vHPPt4pL" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="priority" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6q8H2OTpOHU">
+    <property role="TrG5h" value="Parameter" />
+    <property role="3GE5qa" value="new.parameter" />
+    <property role="1pbfSe" value="1611661401" />
+    <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+    <node concept="PrWs8" id="6q8H2OTpOHV" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+    <node concept="1TJgyj" id="6q8H2OTpOYg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4jgyS0Z9lVZ">
+    <property role="TrG5h" value="ForConceptMethodParameter" />
+    <property role="3GE5qa" value="new.parameter" />
+    <property role="1pbfSe" value="2081035649" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="5_2vHPPt4ol">
+    <property role="TrG5h" value="ErrorIntentionPriority" />
+    <property role="34LRSv" value="error" />
+    <property role="3GE5qa" value="new.priority" />
+    <property role="1pbfSe" value="826882830" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5_2vHPPt4oo" role="PzmwI">
+      <ref role="PrY4T" node="5_2vHPPt4on" resolve="IntentionPriority" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5_2vHPPt4on">
+    <property role="TrG5h" value="IntentionPriority" />
+    <property role="3GE5qa" value="new.priority" />
+    <property role="1pbfSe" value="826882828" />
   </node>
 </model>
 

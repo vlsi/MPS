@@ -24,12 +24,23 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 /**
- * evgeny, 5/9/13
+ * Repository with modules visible in MPS {@link Project project}.
  *
- * currently delegates everything to the ugly singleton {@link MPSModuleRepository}.
- * TODO: the common editable parent class for the repository must be extracted from the {@link MPSModuleRepository}
+ * IMPORTANT!
+ * For the time being, all modules available in this MPS instance are exposed through this repository, although
+ * as we move forward with multiple projects story, this convention shall change. Likely, we'll expose modules of
+ * the project and all its imports/libraries (and won't expose modules of other opened projects), though this is not
+ * yet final.
+ *
+ * Currently delegates almost everything to the ugly singleton {@link MPSModuleRepository}. Keeps own list of
+ * listeners and sends out own notifications about modules added/removed
+ * (i.e. module added to the global repository triggers moduleAdded for for both global and
+ * each project repository
  */
 public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
   private final Project myProject;
@@ -83,5 +94,30 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   @Override
   public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
     getRootRepository().unregisterModule(module, owner);
+  }
+
+  @Override
+  public void addRepositoryListener(SRepositoryListener listener) {
+    /*
+     * Provisional code to deal with transition scenario, when project repository mimics global MPSModuleRepository.
+     * Al long as modules are manipulated through the global repository, it's the one to send out notifications about modules added/removed.
+     * However, we strive to attach repo listeners to a proper repository. Thus, we forward attach/detach to the repository where events originate from.
+     *
+     * We could have had done this with re-dispatch mechanism (keep listeners of each repo separately, attach dedicated root repo listener to re-dispatch
+     * add/remove events), but that leads to more complicated code. fire* methods are not overridden here as MPSModuleRepository is their only client, and it
+     * doesn't send these for anything but itself.
+     *
+     * We shall take extra care with global repository listeners, to ensure they are not registered twice when attaching to global+project repo (and not unregistered
+     * unexpectedly when detached from one of the repositories). Now we need to keep counter for repository listeners.
+     * Generally, we shall avoid global listeners.
+     *
+     * XXX once repositories are independent, remove this code and mark methods in super as 'final' back.
+     */
+    getRootRepository().addRepositoryListener(listener);
+  }
+
+  @Override
+  public void removeRepositoryListener(SRepositoryListener listener) {
+    getRootRepository().removeRepositoryListener(listener);
   }
 }

@@ -2,7 +2,7 @@
 <model ref="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -14,6 +14,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -51,11 +52,13 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Builder" />
+    <property role="1pbfSe" value="742089396" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="67LR$5LOFWe">
     <property role="TrG5h" value="BuilderCreator" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="742089393" />
     <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="PrWs8" id="6L7f8C86EBY" role="PzmwI">
       <ref role="PrY4T" node="6L7f8C86EB$" resolve="BuilderContainer" />
@@ -67,6 +70,7 @@
   <node concept="1TIwiD" id="67LR$5LOFWz">
     <property role="TrG5h" value="BuilderStatement" />
     <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="742089372" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="PrWs8" id="6L7f8C86ECd" role="PzmwI">
       <ref role="PrY4T" node="6L7f8C86EB$" resolve="BuilderContainer" />
@@ -78,12 +82,14 @@
     <property role="TrG5h" value="ResultExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="result" />
+    <property role="1pbfSe" value="1824706997" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI6xSV">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="SimpleBuilders" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="1824624218" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6k$kQGI6xSW" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -103,6 +109,7 @@
   <node concept="1TIwiD" id="6k$kQGI7jkU">
     <property role="TrG5h" value="SimpleBuilderChild" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="1824421723" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6k$kQGI7jkV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -124,6 +131,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
     <property role="34LRSv" value="parent" />
+    <property role="1pbfSe" value="1824421721" />
     <ref role="1TJDcQ" node="6k$kQGI7jl0" resolve="SimpleBuilderExpression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jkY">
@@ -133,6 +141,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
     <property role="34LRSv" value="child" />
+    <property role="1pbfSe" value="1824421719" />
     <ref role="1TJDcQ" node="6k$kQGI7jl0" resolve="SimpleBuilderExpression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jl0">
@@ -141,11 +150,13 @@
     <property role="TrG5h" value="SimpleBuilderExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
+    <property role="1pbfSe" value="1824421717" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI6xSS">
     <property role="TrG5h" value="SimpleBuilderDeclaration" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="1824624221" />
     <ref role="1TJDcQ" node="5rdgdYBzjmL" resolve="BaseSimpleBuilderDeclaration" />
     <node concept="PrWs8" id="6k$kQGI6xST" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -201,6 +212,7 @@
   <node concept="1TIwiD" id="6k$kQGI9c2U">
     <property role="TrG5h" value="SimpleBuilder" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="1823927259" />
     <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="6k$kQGI9c2V" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -218,6 +230,7 @@
   <node concept="1TIwiD" id="4Hc0vRp0g_o">
     <property role="TrG5h" value="SimpleBuilderParameter" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="609028949" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4Hc0vRp0g_p" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -233,6 +246,7 @@
     <property role="TrG5h" value="SimpleBuilderParameterReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="609132257" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4Hc0vRp0DN_" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -247,6 +261,7 @@
     <property role="TrG5h" value="AsBuilderStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="as builder" />
+    <property role="1pbfSe" value="1952488102" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="6L7f8C86lSv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -263,6 +278,7 @@
   </node>
   <node concept="PlHQZ" id="6L7f8C86EB$">
     <property role="TrG5h" value="BuilderContainer" />
+    <property role="1pbfSe" value="1952573038" />
     <node concept="1TJgyj" id="4ak9ytIbIbS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="builder" />
@@ -279,6 +295,7 @@
   <node concept="1TIwiD" id="2kIZjjSDoV7">
     <property role="TrG5h" value="BeanPropertyBuilder" />
     <property role="3GE5qa" value="bean" />
+    <property role="1pbfSe" value="500468731" />
     <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="2kIZjjSDoV8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -299,6 +316,7 @@
     <property role="TrG5h" value="BeanBuilder" />
     <property role="3GE5qa" value="bean" />
     <property role="34LRSv" value="builder for" />
+    <property role="1pbfSe" value="278563612" />
     <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="5M3yimiSuJ0" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -314,6 +332,7 @@
   <node concept="1TIwiD" id="4Fc1szn8tck">
     <property role="TrG5h" value="AsTypeBuilder" />
     <property role="3GE5qa" value="bean" />
+    <property role="1pbfSe" value="569235676" />
     <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="4Fc1szn8tcl" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -328,6 +347,7 @@
   <node concept="1TIwiD" id="4Fc1szna73E">
     <property role="TrG5h" value="SimpleBuilderProperty" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="569669298" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4Fc1szna8Cm" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -351,6 +371,7 @@
     <property role="TrG5h" value="SimpleBuilderPropertyExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
+    <property role="1pbfSe" value="569921194" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznb5TK">
@@ -360,6 +381,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
     <property role="34LRSv" value="parent" />
+    <property role="1pbfSe" value="569926712" />
     <ref role="1TJDcQ" node="4Fc1sznb4zy" resolve="SimpleBuilderPropertyExpression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznb5Ua">
@@ -369,11 +391,13 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
     <property role="34LRSv" value="value" />
+    <property role="1pbfSe" value="569926738" />
     <ref role="1TJDcQ" node="4Fc1sznb4zy" resolve="SimpleBuilderPropertyExpression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznbG1v">
     <property role="TrG5h" value="SimpleBuilderPropertyBuilder" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="570082855" />
     <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="4Fc1sznbG1w" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -393,11 +417,13 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseSimpleBuilderDeclaration" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="27625840" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5rdgdYBzsFN">
     <property role="TrG5h" value="SimpleBuilderExtensionDeclaration" />
     <property role="3GE5qa" value="simple" />
+    <property role="1pbfSe" value="27587630" />
     <ref role="1TJDcQ" node="5rdgdYBzjmL" resolve="BaseSimpleBuilderDeclaration" />
     <node concept="1TJgyj" id="5rdgdYBzsFO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

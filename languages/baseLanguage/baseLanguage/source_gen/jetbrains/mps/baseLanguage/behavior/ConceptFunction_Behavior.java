@@ -26,6 +26,11 @@ public class ConceptFunction_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return null;
   }
+  public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    // afaik, tells RulesFunction_BaseLanguage that it's not possible to augment list of checked exceptions 
+    // thrown from this function 
+    return false;
+  }
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }

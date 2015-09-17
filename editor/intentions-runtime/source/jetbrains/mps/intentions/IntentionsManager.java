@@ -33,6 +33,7 @@ import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.Language;
@@ -155,7 +156,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           @Override
           public Set<Pair<IntentionExecutable, SNode>> compute() {
             // Hiding intentions with same IntentionDescriptor
-            // important then currently selected element and it's parent has same intention
+            // important when currently selected element and it's parent has same intention
             final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
             Filter filter = new Filter(query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
               @Override
@@ -538,5 +539,21 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
       return rv;
     }
+  }
+
+  public IntentionExecutable getIntentionById(SNode node, Editor editor, String id) {
+    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+    query.setCurrentNodeOnly(true);
+    Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
+    List<IntentionExecutable> result = new ArrayList<IntentionExecutable>();
+    for (Pair<IntentionExecutable, SNode> intention : intentions) {
+      if (intention.o1.getDescriptor().getPersistentStateKey().equals(id)) {
+        result.add(intention.o1);
+      }
+    }
+
+    assert result.size() == 1;
+
+    return result.get(0);
   }
 }

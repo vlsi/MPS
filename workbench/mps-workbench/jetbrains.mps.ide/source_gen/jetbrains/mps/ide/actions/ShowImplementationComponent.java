@@ -45,7 +45,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class ShowImplementationComponent extends JPanel {
@@ -229,7 +228,7 @@ public class ShowImplementationComponent extends JPanel {
           if (selectedIndex < 0) {
             return;
           }
-          SNode selectedNode = myImplNodes.get(selectedIndex).myOriginalNodePointer.resolve(MPSModuleRepository.getInstance());
+          SNode selectedNode = myImplNodes.get(selectedIndex).myOriginalNodePointer.resolve(myProject.getRepository());
           if (selectedNode == null) {
             return;
           }

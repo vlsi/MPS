@@ -75,7 +75,6 @@ public class ModelProblemsChecker extends EditorCheckerAdapter {
 
   public ModelProblemsChecker(@NotNull SRepository projectRepo) {
     myProjectRepo = projectRepo;
-    // FIXME replace with projectRepo once it's capable to send events
     new RepoListenerRegistrar(projectRepo, myListener).attach();
   }
 

@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -2279,12 +2279,9 @@
                       <ref role="3cqZAo" node="hLFMmXZ" resolve="paramTypes" />
                     </node>
                     <node concept="TSZUe" id="i05w1Li" role="2OqNvi">
-                      <node concept="2OqwBi" id="i05w1Lj" role="25WWJ7">
-                        <node concept="37vLTw" id="3GM_nagTv79" role="2Oq$k0">
+                      <node concept="1Z2H0r" id="1wcTUnW2dj6" role="25WWJ7">
+                        <node concept="37vLTw" id="1wcTUnW2dj8" role="1Z2MuG">
                           <ref role="3cqZAo" node="hLFMmYB" resolve="param" />
-                        </node>
-                        <node concept="3TrEf2" id="i05w1Ll" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
                         </node>
                       </node>
                     </node>

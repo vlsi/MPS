@@ -13,13 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -64,13 +62,6 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
       MapSequence.fromMap(_params).put("models", p);
       if (p == null) {
@@ -94,14 +85,14 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
         return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
       }
     });
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
 
     final ModelFactory binaryFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
 
-    modelAccess.runWriteAction(new Runnable() {
+    repo.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         // see MPS-18743 
-        MPSModuleRepository.getInstance().saveAll();
+        repo.saveAll();
 
         for (SModel smodel : Sequence.fromIterable(seq)) {
           IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();

@@ -2,7 +2,7 @@
 <model ref="r:b8c93b44-499b-404a-a011-c0847b38eb58(jetbrains.mps.traceInfo.testWeavingGenerated.data.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -10,6 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -36,6 +37,7 @@
   <node concept="1TIwiD" id="5nqBR0spcFc">
     <property role="TrG5h" value="RootConcept" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1916758588" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0spfep" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -67,6 +69,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0spfeq">
     <property role="TrG5h" value="ChildConceptWeaveEach" />
+    <property role="1pbfSe" value="1916769034" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0spfer" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -74,6 +77,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0spfes">
     <property role="TrG5h" value="ChildConceptWeave" />
+    <property role="1pbfSe" value="1916769036" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0spfet" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -81,6 +85,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0sq15p">
     <property role="TrG5h" value="ChildConceptWeaveMany" />
+    <property role="1pbfSe" value="1916973257" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0sq15q" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -88,6 +93,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0sq15z">
     <property role="TrG5h" value="ChildConceptWeaveEachMany" />
+    <property role="1pbfSe" value="1916973267" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0sq15$" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
