@@ -23,8 +23,13 @@
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
+      <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -44,6 +49,9 @@
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -53,6 +61,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -61,6 +72,23 @@
   </registry>
   <node concept="13h7C7" id="6EMTxOPT5LQ">
     <ref role="13h7C2" to="9x1z:6EMTxOPT5Lt" resolve="A" />
+    <node concept="13i0hz" id="7zO8mNAVlna" role="13h7CS">
+      <property role="TrG5h" value="nonVirtual" />
+      <node concept="3Tm1VV" id="7zO8mNAVlnb" role="1B3o_S" />
+      <node concept="3clFbS" id="7zO8mNAVlnc" role="3clF47">
+        <node concept="3cpWs6" id="7zO8mNAVln$" role="3cqZAp">
+          <node concept="2OqwBi" id="7zO8mNAVlph" role="3cqZAk">
+            <node concept="13iPFW" id="7zO8mNAVlnG" role="2Oq$k0" />
+            <node concept="2qgKlT" id="7zO8mNAVluq" role="2OqNvi">
+              <ref role="37wK5l" node="6EMTxOPT5LT" resolve="foo" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="7zO8mNAVlnu" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+    </node>
     <node concept="13i0hz" id="6EMTxOPT5LT" role="13h7CS">
       <property role="TrG5h" value="foo" />
       <property role="13i0it" value="true" />

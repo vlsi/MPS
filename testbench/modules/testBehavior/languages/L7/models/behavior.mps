@@ -33,6 +33,8 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534513062" name="jetbrains.mps.baseLanguage.structure.DoubleType" flags="in" index="10P55v" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -209,6 +211,31 @@
             <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="7zO8mNAVjjo" role="13h7CS">
+      <property role="TrG5h" value="primitiveParameter" />
+      <node concept="3Tm1VV" id="7zO8mNAVjjp" role="1B3o_S" />
+      <node concept="3clFbS" id="7zO8mNAVjjq" role="3clF47">
+        <node concept="3cpWs6" id="7zO8mNAVjjZ" role="3cqZAp">
+          <node concept="10M0yZ" id="7zO8mNAVjk0" role="3cqZAk">
+            <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+            <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="7zO8mNAVjjW" role="3clF45" />
+      <node concept="37vLTG" id="7zO8mNAVjkE" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <node concept="10Oyi0" id="7zO8mNAVjkD" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7zO8mNAVjkS" role="3clF46">
+        <property role="TrG5h" value="b" />
+        <node concept="10P_77" id="7zO8mNAVjla" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7zO8mNAVjlh" role="3clF46">
+        <property role="TrG5h" value="d" />
+        <node concept="10P55v" id="7zO8mNAVjlz" role="1tU5fm" />
       </node>
     </node>
     <node concept="13i0hz" id="4Rfm9LCcu90" role="13h7CS">

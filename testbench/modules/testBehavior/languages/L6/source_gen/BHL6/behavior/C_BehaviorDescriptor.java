@@ -29,8 +29,9 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> foo_id5mnatV0hxLf = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hxLf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> bar_id5mnatV0hxLE = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hxLE").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Object> virtual_id47lrFSh1$Ca = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("virtual").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("47lrFSh1$Ca").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> nonVirtual_id7zO8mNAVkj1 = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("nonVirtual").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7zO8mNAVkj1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hxLf, bar_id5mnatV0hxLE, virtual_id47lrFSh1$Ca);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hxLf, bar_id5mnatV0hxLE, virtual_id47lrFSh1$Ca, nonVirtual_id7zO8mNAVkj1);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -43,6 +44,9 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Object virtual_id47lrFSh1$Ca() {
     return TestResults.POLYMORPHIC_PARENT;
+  }
+  private static Object nonVirtual_id7zO8mNAVkj1() {
+    return C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(CONCEPT);
   }
 
   /*package*/ C_BehaviorDescriptor() {
@@ -67,6 +71,8 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
         return (T) bar_id5mnatV0hxLE();
       case 2:
         return (T) virtual_id47lrFSh1$Ca();
+      case 3:
+        return (T) nonVirtual_id7zO8mNAVkj1();
       default:
         throw new BHMethodNotFoundException(this, method);
     }
