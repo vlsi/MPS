@@ -146,6 +146,12 @@
       <node concept="3cqZAl" id="5mnatV0hBa3" role="3clF45" />
       <node concept="3clFbS" id="5mnatV0hB9w" role="3clF47" />
     </node>
+    <node concept="13i0hz" id="4XEqvthVyKi" role="13h7CS">
+      <property role="TrG5h" value="justVoidReturnTypeMethod2" />
+      <node concept="3Tm1VV" id="4XEqvthVyKj" role="1B3o_S" />
+      <node concept="3cqZAl" id="4XEqvthVyKk" role="3clF45" />
+      <node concept="3clFbS" id="4XEqvthVyKl" role="3clF47" />
+    </node>
     <node concept="13hLZK" id="5mnatV0hAPn" role="13h7CW">
       <node concept="3clFbS" id="5mnatV0hAPo" role="2VODD2" />
     </node>
