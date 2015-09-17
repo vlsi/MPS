@@ -17,6 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.structure.util.ConceptIdUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
@@ -71,6 +72,7 @@ public final class CreateReferenceConcept_Intention extends IntentionDescriptorB
       // structure 
       SNode concept = _quotation_createNode_vn7eng_a0b0a(NameUtil.decapitalize(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), node, SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Reference");
       SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
+      SPropertyOperations.set(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(concept, SNodeOperations.getModel(concept))));
       SPropertyOperations.set(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
       SNode link = ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).first();
 
@@ -79,7 +81,7 @@ public final class CreateReferenceConcept_Intention extends IntentionDescriptorB
       SModel editorModel = LanguageAspect.EDITOR.get(language);
 
       // editor 
-      SNode editor = _quotation_createNode_vn7eng_a0l0a(concept, link);
+      SNode editor = _quotation_createNode_vn7eng_a0m0a(concept, link);
       SModelOperations.addRootNode(editorModel, editor);
       SPropertyOperations.set(editor, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
 
@@ -96,6 +98,7 @@ public final class CreateReferenceConcept_Intention extends IntentionDescriptorB
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "0");
     SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (String) parameter_3);
     quotedNode_4.setReference(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"), SReference.create(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"), quotedNode_4, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("1068431790191")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), null, null, false);
@@ -106,7 +109,7 @@ public final class CreateReferenceConcept_Intention extends IntentionDescriptorB
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"), quotedNode_5);
     return quotedNode_4;
   }
-  private static SNode _quotation_createNode_vn7eng_a0l0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_vn7eng_a0m0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
