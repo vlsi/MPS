@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.behavior.generator.template.util.BehaviorNameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -28,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Generated
@@ -41,10 +41,7 @@ public class QueriesGenerated {
     SNode superBehavior = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), superConcept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.BEHAVIOR}), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
     return BehaviorNameUtil.getName(superBehavior);
   }
-  public static Object propertyMacro_GetPropertyValue_889763606519149184(final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(_context.getOriginalInputModel()) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + Constants.BEHAVIOR_DESCRIPTOR_SUFFIX;
-  }
-  public static Object propertyMacro_GetPropertyValue_889763606519169608(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5630687994792687407(final PropertyMacroContext _context) {
     return "my" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + Constants.BEHAVIOR_DESCRIPTOR_SUFFIX;
   }
   public static Object propertyMacro_GetPropertyValue_9221686591909509537(final PropertyMacroContext _context) {
@@ -125,6 +122,9 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_5722502787474200239(final ReferenceMacroContext _context) {
     return Constants.THIS_NODE_VARIABLE_NAME;
+  }
+  public static Object referenceMacro_GetReferent_5630687994792738878(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BHClassContructor");
   }
   public static Object referenceMacro_GetReferent_889763606519191691(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BHDescriptorField");
@@ -229,7 +229,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2447504182559734230(final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
-  public static Iterable<SNode> sourceNodesQuery_889763606519150908(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5630687994792687400(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("var:ConceptBehaviors"));
   }
   public static Iterable<SNode> sourceNodesQuery_9221686591909527442(final SourceSubstituteMacroNodesContext _context) {
