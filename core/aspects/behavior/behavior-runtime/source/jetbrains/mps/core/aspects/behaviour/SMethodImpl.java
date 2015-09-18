@@ -132,21 +132,33 @@ public final class SMethodImpl<T> implements SMethod<T> {
   }
 
   @Override
-  public T invokeStatic(@Nullable SAbstractConcept concept, Object... parameters) {
+  public T invoke(@Nullable SAbstractConcept concept, Object... parameters) {
     if (concept == null) {
       return (T) getReturnType().getDefaultValue();
     }
     if (myMethodModifiers.isPrivate()) {
-      return invokeSpecial(null, parameters);
+      return invokeSpecial(concept, parameters);
     }
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(concept);
-    return bhDescriptor.invoke(null, this, parameters);
+    return bhDescriptor.invoke(concept, this, parameters);
   }
 
   @Override
   public T invokeSpecial(@Nullable SNode node, Object... parameters) {
+    if (node == null) {
+      return (T) getReturnType().getDefaultValue();
+    }
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
     return bhDescriptor.invokeSpecial(node, this, parameters);
+  }
+
+  @Override
+  public T invokeSpecial(@Nullable SAbstractConcept concept, Object... parameters) {
+    if (concept == null) {
+      return (T) getReturnType().getDefaultValue();
+    }
+    BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
+    return bhDescriptor.invokeSpecial(concept, this, parameters);
   }
 
   @NotNull

@@ -7,8 +7,8 @@ public class Constants {
   public static String BEHAVIOR_DESCRIPTOR_SUFFIX = "_BehaviorDescriptor";
   public static String BEHAVIOR_ASPECT_DESCRIPTOR_SUFFIX = "BehaviorAspectDescriptor";
   public static String THIS_NODE_VARIABLE_NAME = "__thisNode__";
+  public static String THIS_CONCEPT_VARIABLE_NAME = "__thisConcept__";
   public static String INVOKE_METHOD_NAME = "invoke";
-  public static String INVOKE_STATIC_METHOD_NAME = "invokeStatic";
   public static String INVOKE_SPECIAL_METHOD_NAME = "invokeSpecial";
   public static String INVOKE_REFLECTIVE_METHOD_NAME = "invokeReflective";
 }

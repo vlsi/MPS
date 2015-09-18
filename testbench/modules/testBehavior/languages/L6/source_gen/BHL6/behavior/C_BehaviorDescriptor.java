@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class C_BehaviorDescriptor extends BaseBHDescriptor {
@@ -36,17 +35,17 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Integer foo_id5mnatV0hxLf() {
-    return C_BehaviorDescriptor.bar_id5mnatV0hxLE.invokeStatic(CONCEPT);
+  private static Integer foo_id5mnatV0hxLf(@NotNull SAbstractConcept __thisConcept__) {
+    return C_BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__);
   }
-  private static Integer bar_id5mnatV0hxLE() {
+  private static Integer bar_id5mnatV0hxLE(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Object virtual_id47lrFSh1$Ca() {
+  private static Object virtual_id47lrFSh1$Ca(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static Object nonVirtual_id7zO8mNAVkj1() {
-    return C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invokeStatic(CONCEPT);
+  private static Object nonVirtual_id7zO8mNAVkj1(@NotNull SAbstractConcept __thisConcept__) {
+    return C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(__thisConcept__);
   }
 
   /*package*/ C_BehaviorDescriptor() {
@@ -59,20 +58,32 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    int methodIndex = BH_METHODS.indexOf(method);
+    if (methodIndex < 0) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    switch (methodIndex) {
+      default:
+        throw new BHMethodNotFoundException(this, method);
+    }
+  }
+
+  @Override
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo_id5mnatV0hxLf();
+        return (T) foo_id5mnatV0hxLf(concept);
       case 1:
-        return (T) bar_id5mnatV0hxLE();
+        return (T) bar_id5mnatV0hxLE(concept);
       case 2:
-        return (T) virtual_id47lrFSh1$Ca();
+        return (T) virtual_id47lrFSh1$Ca(concept);
       case 3:
-        return (T) nonVirtual_id7zO8mNAVkj1();
+        return (T) nonVirtual_id7zO8mNAVkj1(concept);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

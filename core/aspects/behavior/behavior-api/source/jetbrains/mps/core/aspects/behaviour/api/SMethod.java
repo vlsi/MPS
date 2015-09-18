@@ -48,12 +48,17 @@ public interface SMethod<T> extends SExecutable {
   /**
    * invokes the method in the case it is static (trying to resolve the right method on runtime if it is virtual)
    */
-  T invokeStatic(@Nullable SAbstractConcept concept, Object... parameters);
+  T invoke(@Nullable SAbstractConcept concept, Object... parameters);
 
   /**
    * invokes private or super method (no dynamic method resolve)
    */
   T invokeSpecial(@Nullable SNode node, Object... parameters);
+
+  /**
+   * invokes private or super method (no dynamic method resolve)
+   */
+  T invokeSpecial(@Nullable SAbstractConcept concept, Object... parameters);
 
   /**
    * @return true iff the method has a virtual modifier

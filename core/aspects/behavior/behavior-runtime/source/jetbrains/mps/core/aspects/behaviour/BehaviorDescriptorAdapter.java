@@ -58,17 +58,22 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
     return genericInvoke(NodeOrConcept.create(concept), methodName, parameters);
   }
 
-  public Object invokeOwn(@Nullable SNode node, String methodName, Object[] parameters) {
+  public Object invokeOwn(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
     @Nullable SExecutable method = SMethodLegacyAdapter.createFromLegacy(myDescriptor, methodName, parameters);
     if (method == null) {
       throwNoSuchMethod(methodName);
     }
     if (method instanceof SConstructor) {
+      SNode node = nodeOrConcept.getNode();
       assert node != null;
       myDescriptor.initNode(node, (SConstructor) method, new Object[0]);
       return null;
     } else if (method instanceof SMethod) {
-      return myDescriptor.invokeOwn(node, (SMethod<?>) method, parameters);
+      if (!((SMethod) method).isStatic()) {
+        return myDescriptor.invokeOwn(nodeOrConcept.getNode(), (SMethod<?>) method, parameters);
+      } else {
+        return myDescriptor.invokeOwn(nodeOrConcept.getConcept(), (SMethod<?>) method, parameters);
+      }
     }
     throw new IllegalArgumentException("Unknown instance of SExecutable : " + method);
   }

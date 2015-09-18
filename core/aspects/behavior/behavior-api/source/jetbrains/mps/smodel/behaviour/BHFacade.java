@@ -40,18 +40,6 @@ public final class BHFacade {
     return constructor.newNode(model, parameters);
   }
 
-  public static <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    return method.invokeSpecial(node, parameters);
-  }
-
-  public static <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    return method.invoke(node, parameters);
-  }
-
-  public static <T> T invokeStatic(@Nullable SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
-    return method.invokeStatic(concept, parameters);
-  }
-
   /**
    * reflective api
    */
@@ -71,19 +59,12 @@ public final class BHFacade {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
-    return bhDescriptor.invoke(null, method, parameters);
+    return bhDescriptor.invoke(concept, method, parameters);
   }
 
   @NotNull
   private static BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
     return ConceptRegistry.getInstance().getBehaviorRegistry().getBHDescriptor(concept);
-  }
-
-  private static <T> T invokeSpecial0(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    SAbstractConcept concept = method.getConcept();
-    assert node == null || node.getConcept().isSubConceptOf(concept);
-    BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    return bhDescriptor.invokeSpecial(node, method, parameters);
   }
 
   /**

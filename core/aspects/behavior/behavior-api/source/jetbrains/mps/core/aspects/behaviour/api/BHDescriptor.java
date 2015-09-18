@@ -50,15 +50,25 @@ public interface BHDescriptor {
 
   /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)
-   * node == null <=> it is the static call
    */
-  <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters);
+
+  /**
+   * invokes a static method (trying to resolve the right method on runtime if it is virtual)
+   */
+  <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
    * E.g. used when calling 'super' method from the behavior or calling a private method
    */
-  <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
+  <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters);
+
+  /**
+   * invokes a method without dynamic binding (not trying to resolve the right method on runtime if it is virtual)
+   * E.g. used when calling 'super' method from the behavior or calling a private method
+   */
+  <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * Returns list of {@link SMethod} objects reflecting all the methods (from private to public)

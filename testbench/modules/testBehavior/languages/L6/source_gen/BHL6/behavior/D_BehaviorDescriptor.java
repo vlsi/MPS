@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class D_BehaviorDescriptor extends BaseBHDescriptor {
@@ -39,22 +38,22 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Integer foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
-    return ((Integer) B_BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__));
+    return B_BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
   }
   private static Integer foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
-    return ((Integer) B_BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__));
+    return B_BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__);
   }
   private static Integer foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
-    return ((Integer) B_BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__));
+    return B_BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__);
   }
   private static Integer bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   private static void bar2_id4RMBeRWcir8(@NotNull SNode __thisNode__) {
-    ((Integer) B_BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__)).byteValue();
+    B_BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();
   }
   private static Integer foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
-    return ((Integer) B_BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__));
+    return B_BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
   }
 
   /*package*/ D_BehaviorDescriptor() {
@@ -67,7 +66,7 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -86,6 +85,18 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
         return null;
       case 5:
         return (T) foo5_id1olXtyGAKsY(node);
+      default:
+        throw new BHMethodNotFoundException(this, method);
+    }
+  }
+
+  @Override
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    int methodIndex = BH_METHODS.indexOf(method);
+    if (methodIndex < 0) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    switch (methodIndex) {
       default:
         throw new BHMethodNotFoundException(this, method);
     }

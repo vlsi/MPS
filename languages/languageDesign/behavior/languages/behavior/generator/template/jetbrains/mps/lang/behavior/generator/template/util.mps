@@ -199,6 +199,17 @@
       </node>
       <node concept="3Tm1VV" id="1YPFSpKnY5V" role="1B3o_S" />
     </node>
+    <node concept="Wx3nA" id="5WXskL2fyTw" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="THIS_CONCEPT_VARIABLE_NAME" />
+      <property role="3TUv4t" value="false" />
+      <node concept="17QB3L" id="5WXskL2fyTx" role="1tU5fm" />
+      <node concept="Xl_RD" id="5WXskL2fyTy" role="33vP2m">
+        <property role="Xl_RC" value="__thisConcept__" />
+      </node>
+      <node concept="3Tm1VV" id="5WXskL2fyTz" role="1B3o_S" />
+    </node>
     <node concept="Wx3nA" id="1YPFSpKsYEW" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
@@ -209,17 +220,6 @@
         <property role="Xl_RC" value="invoke" />
       </node>
       <node concept="3Tm1VV" id="1YPFSpKsYEZ" role="1B3o_S" />
-    </node>
-    <node concept="Wx3nA" id="UlYvySZJAu" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="INVOKE_STATIC_METHOD_NAME" />
-      <property role="3TUv4t" value="false" />
-      <node concept="17QB3L" id="UlYvySZJAv" role="1tU5fm" />
-      <node concept="Xl_RD" id="UlYvySZJAw" role="33vP2m">
-        <property role="Xl_RC" value="invokeStatic" />
-      </node>
-      <node concept="3Tm1VV" id="UlYvySZJAx" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="tb1xa53BCM" role="jymVt">
       <property role="2dlcS1" value="false" />

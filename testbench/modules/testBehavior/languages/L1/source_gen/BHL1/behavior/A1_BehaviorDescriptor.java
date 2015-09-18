@@ -18,7 +18,6 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
@@ -45,7 +44,7 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -54,6 +53,18 @@ public final class A1_BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         bar_id6sCTYS3h6cj(node);
         return null;
+      default:
+        throw new BHMethodNotFoundException(this, method);
+    }
+  }
+
+  @Override
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    int methodIndex = BH_METHODS.indexOf(method);
+    if (methodIndex < 0) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    switch (methodIndex) {
       default:
         throw new BHMethodNotFoundException(this, method);
     }

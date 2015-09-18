@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
@@ -48,7 +47,7 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -56,6 +55,18 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 1:
         return (T) foo_id7Ts2tYwvl$V(node);
+      default:
+        throw new BHMethodNotFoundException(this, method);
+    }
+  }
+
+  @Override
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    int methodIndex = BH_METHODS.indexOf(method);
+    if (methodIndex < 0) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    switch (methodIndex) {
       default:
         throw new BHMethodNotFoundException(this, method);
     }

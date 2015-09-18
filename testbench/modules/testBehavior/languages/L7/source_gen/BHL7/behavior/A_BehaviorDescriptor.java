@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A_BehaviorDescriptor extends BaseBHDescriptor {
@@ -44,10 +43,10 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   private static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static Integer staticMethod_id5mnatV0hAQH() {
+  private static Integer staticMethod_id5mnatV0hAQH(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Object staticVirtualMethod_id5mnatV0hATt() {
+  private static Object staticVirtualMethod_id5mnatV0hATt(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
   private static void justVoidReturnTypeMethod_id5mnatV0hB9t(@NotNull SNode __thisNode__) {
@@ -65,7 +64,7 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -75,16 +74,28 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
         return (T) nonVirtualMethod_id5mnatV0hAPp(node);
       case 1:
         return (T) virtualMethod_id5mnatV0hAPC(node);
-      case 2:
-        return (T) staticMethod_id5mnatV0hAQH();
-      case 3:
-        return (T) staticVirtualMethod_id5mnatV0hATt();
       case 4:
         justVoidReturnTypeMethod_id5mnatV0hB9t(node);
         return null;
       case 5:
         justVoidReturnTypeMethod2_id4XEqvthVyKi(node);
         return null;
+      default:
+        throw new BHMethodNotFoundException(this, method);
+    }
+  }
+
+  @Override
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    int methodIndex = BH_METHODS.indexOf(method);
+    if (methodIndex < 0) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    switch (methodIndex) {
+      case 2:
+        return (T) staticMethod_id5mnatV0hAQH(concept);
+      case 3:
+        return (T) staticVirtualMethod_id5mnatV0hATt(concept);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

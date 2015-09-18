@@ -129,7 +129,7 @@ public class BHTestRef_Test extends TestCase {
     SNode nodeC = createC_cc8y9n_a0a0r0();
     Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((Integer) BHFacade.invokeReflective(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeC)), SMethodTrimmedId.create("foo", MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), "5mnatV0hxLf"))));
   }
-  public void test_virtualStaticBehaviorCall() throws Exception {
+  public void test_virtualStaticBehaviorCall1() throws Exception {
     SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
     Assert.assertSame(TestResults.POLYMORPHIC_PARENT, ((Object) BHFacade.invokeReflective(SNodeOperations.asSConcept(conceptC), SMethodTrimmedId.create("virtual", null, "47lrFSh1$Ca"))));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");

@@ -100,20 +100,25 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object... parameters) {
     if (!myInvocationMap.containsKey(method)) {
       throw new BHMethodNotFoundException(this, method);
     }
     String methodName = myInvocationMap.get(method).getName();
-    if (node == null) {
-      return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(getConcept()), methodName, parameters);
-    } else {
-      return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), methodName, parameters);
-    }
+    return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), methodName, parameters);
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... parameters) {
+  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object... parameters) {
+    if (!myInvocationMap.containsKey(method)) {
+      throw new BHMethodNotFoundException(this, method);
+    }
+    String methodName = myInvocationMap.get(method).getName();
+    return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(concept), methodName, parameters);
+  }
+
+  @Override
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object... parameters) {
     if (parameters.length > 0) {
       throw new IllegalArgumentException("The default constructor has no parameters");
     }

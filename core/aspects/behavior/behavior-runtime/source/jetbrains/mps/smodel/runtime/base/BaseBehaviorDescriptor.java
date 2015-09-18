@@ -152,7 +152,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
         if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters)) {
-          T result = (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept.getNode(), methodName, parameters);
+          T result = (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept, methodName, parameters);
           if (methodInvocation) {
             return result;
           }
@@ -188,6 +188,10 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 
     public SNode getNode() {
       return myNode;
+    }
+
+    public SAbstractConcept getConcept() {
+      return myAbstractConcept;
     }
 
     public static NodeOrConcept create(@NotNull SNode node) {

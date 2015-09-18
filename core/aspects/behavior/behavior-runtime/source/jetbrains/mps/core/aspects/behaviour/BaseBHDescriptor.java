@@ -32,8 +32,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -131,9 +129,10 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public final <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public final <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
-    if (node != null) checkForConcept(node.getConcept());
+    checkNotStatic(method);
+    checkForConcept(node.getConcept());
 
     Object[] newParameters = getParametersArray(parameters);
     if (method.isVirtual()) {
@@ -143,15 +142,23 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private void checkForConcept(@NotNull SAbstractConcept concept) {
-    if (!concept.isSubConceptOf(myConcept)) {
-      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not subconcept of " + myConcept);
+  @Override
+  public final <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    checkInitialized();
+    checkStatic(method);
+    checkForConcept(concept);
+
+    Object[] newParameters = getParametersArray(parameters);
+    if (method.isVirtual()) {
+      return invokeVirtual(concept, method, newParameters);
+    } else {
+      return invokeSpecial(concept, method, parameters);
     }
   }
 
-  private <T> void checkForNPE(SNode node, SMethod<T> method) {
-    if (node == null && !method.isStatic()) {
-      throw new BHNullPointerException();
+  private void checkForConcept(@NotNull SAbstractConcept concept) {
+    if (!concept.isSubConceptOf(myConcept)) {
+      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not subconcept of " + myConcept);
     }
   }
 
@@ -169,11 +176,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public <T> T invokeSpecial(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  public <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
+    checkNotStatic(method);
     @NotNull Object[] parametersArray = getParametersArray(parameters);
-    if (node != null) checkForConcept(node.getConcept());
-    checkForNPE(node, method);
+    checkForConcept(node.getConcept());
     checkParameters(method, parametersArray);
 
     if (method.getModifiers().isPrivate()) {
@@ -194,8 +201,56 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     throw new BHMethodNotFoundException(this, method);
   }
 
+  @Override
+  public <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+    checkInitialized();
+    checkStatic(method);
+    @NotNull Object[] parametersArray = getParametersArray(parameters);
+    checkForConcept(concept);
+    checkParameters(method, parametersArray);
+
+    if (method.getModifiers().isPrivate()) {
+      return invokeOwn(concept, method, parametersArray);
+    }
+    Iterable<SAbstractConcept> ancestors = myAncestorCache.getAncestorsVirtualInvocationOrder();
+    for (SAbstractConcept ancestor : ancestors) {
+      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
+      if (bhDescriptor instanceof BaseBHDescriptor) {
+        BaseBHDescriptor bhDescriptor1 = (BaseBHDescriptor) bhDescriptor;
+        if (bhDescriptor1.hasDeclaredMethod(method)) {
+          return bhDescriptor1.invokeOwn(concept, method, parametersArray);
+        }
+      } else {
+        throw new IllegalStateException("Unknown behavior descriptor in the '" + concept + "' ancestor tree : '" + bhDescriptor + "'");
+      }
+    }
+    throw new BHMethodNotFoundException(this, method);
+  }
+
+  private <T> void checkStatic(@NotNull SMethod<T> method) {
+    if (!method.isStatic()) {
+      throw new IllegalArgumentException("Method must be static");
+    }
+  }
+
+  private <T> void checkNotStatic(@NotNull SMethod<T> method) {
+    if (method.isStatic()) {
+      throw new IllegalArgumentException("Method must be static");
+    }
+  }
+
   private <T> T invokeVirtual(SNode node, SMethod<T> method, @NotNull Object[] parameters) {
-    checkForNPE(node, method);
+    BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
+    return baseBHDescriptor.invokeOwn(node, method, parameters);
+  }
+
+  private <T> T invokeVirtual(SAbstractConcept concept, SMethod<T> method, @NotNull Object[] parameters) {
+    BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
+    return baseBHDescriptor.invokeOwn(concept, method, parameters);
+  }
+
+  @NotNull
+  private <T> BaseBHDescriptor commonInvokeVirtual(SMethod<T> method, @NotNull Object[] parameters) {
     checkParameters(method, parameters);
 
     BHDescriptor bhDescriptor = myVTable.get(method);
@@ -203,8 +258,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     assert bhDescriptor instanceof BaseBHDescriptor;
-    BaseBHDescriptor baseBHDescriptor = (BaseBHDescriptor) bhDescriptor;
-    return baseBHDescriptor.invokeOwn(node, method, parameters);
+    return (BaseBHDescriptor) bhDescriptor;
   }
 
   @Nullable
@@ -256,12 +310,19 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   /**
    * invokes a method without dynamic resolution
-   * node == null <=> the method is static
    *
    * @generated : switch by the method; direct invocation in each case
    * @throws BHMethodNotFoundException if the method has not been found
    **/
-  protected abstract <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters);
+  protected abstract <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters);
+
+  /**
+   * invokes a static method without dynamic resolution
+   *
+   * @generated : switch by the method; direct invocation in each case
+   * @throws BHMethodNotFoundException if the method has not been found
+   **/
+  protected abstract <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters);
 
   /**
    * @return true iff the method exists (constructor is not a method here)
@@ -293,9 +354,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         }
       }
     }
-  }
-
-  private class BHNullPointerException extends NullPointerException {
   }
 
   private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {

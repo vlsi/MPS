@@ -100,7 +100,7 @@
       <node id="8715627930483296542" at="125,42,126,263" concept="1" />
       <node id="8715627930483296553" at="128,62,129,42" concept="4" />
       <node id="8715627930483296558" at="129,42,130,319" concept="1" />
-      <node id="8715627930483296571" at="132,65,133,145" concept="4" />
+      <node id="8715627930483296571" at="132,66,133,145" concept="4" />
       <node id="8715627930483296575" at="133,145,134,187" concept="1" />
       <node id="8715627930483296580" at="134,187,135,128" concept="1" />
       <node id="8715627930483296584" at="135,128,136,186" concept="1" />
@@ -369,7 +369,7 @@
       <node id="8715627930483296412" at="85,62,91,7" concept="1" />
       <node id="8715627930483296439" at="94,64,100,7" concept="1" />
       <node id="8715627930483296496" at="112,68,118,7" concept="1" />
-      <node id="8715627930483296567" at="132,0,138,0" concept="3" trace="test_virtualStaticBehaviorCall#()V" />
+      <node id="8715627930483296567" at="132,0,138,0" concept="3" trace="test_virtualStaticBehaviorCall1#()V" />
       <node id="8715627930483244812" at="138,0,144,0" concept="3" trace="test_virtualStaticBehaviorCall2#()V" />
       <node id="8715627930483296663" at="161,0,167,0" concept="3" trace="test_superPrivateMethodVirtualCall#()V" />
       <node id="6707632958010768264" at="181,0,187,0" concept="3" trace="test_oldApiBehaviorCallNonVirtual#()V" />
@@ -696,7 +696,7 @@
       <scope id="8715627930483296517" at="120,0,124,0" />
       <scope id="8715627930483296533" at="124,0,128,0" />
       <scope id="8715627930483296549" at="128,0,132,0" />
-      <scope id="8715627930483296570" at="132,65,136,186">
+      <scope id="8715627930483296570" at="132,66,136,186">
         <var name="conceptC" id="8715627930483296572" />
       </scope>
       <scope id="8715627930483244815" at="138,66,142,297">
