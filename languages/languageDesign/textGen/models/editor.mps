@@ -42,6 +42,7 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
       <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz">
         <child id="1164824815888" name="cellMenuPart" index="OY2wv" />
       </concept>
@@ -1322,6 +1323,46 @@
         </node>
       </node>
       <node concept="l2Vlx" id="i0Navwk" role="2iSdaV" />
+    </node>
+    <node concept="3EZMnI" id="2I4qoeAarE0" role="6VMZX">
+      <node concept="3EZMnI" id="2I4qoeAarE7" role="3EZMnx">
+        <node concept="VPM3Z" id="2I4qoeAarE9" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2I4qoeAarEx" role="3EZMnx">
+          <property role="3F0ifm" value="destination text area" />
+        </node>
+        <node concept="3F0ifn" id="2I4qoeAasNc" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
+        <node concept="1iCGBv" id="2I4qoeAarEk" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;actual&gt;" />
+          <ref role="1NtTu8" to="2omo:2I4qoeAaJ74" />
+          <node concept="1sVBvm" id="2I4qoeAarEm" role="1sWHZn">
+            <node concept="3F0A7n" id="2I4qoeAarEu" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="2I4qoeAarEc" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="2I4qoeAarFK" role="3EZMnx">
+        <node concept="VPM3Z" id="2I4qoeAarFL" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2I4qoeAarFM" role="3EZMnx" />
+        <node concept="2iRfu4" id="2I4qoeAarFQ" role="2iSdaV" />
+        <node concept="3F0ifn" id="2I4qoeAarGo" role="3EZMnx" />
+        <node concept="3F0ifn" id="2I4qoeAasNz" role="3EZMnx">
+          <property role="3F0ifm" value="redirect output to the identified text area" />
+          <ref role="1k5W1q" to="tpco:3VARyd8XcQs" resolve="Comment" />
+          <node concept="VPM3Z" id="2I4qoeAatfD" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+      </node>
+      <node concept="2EHx9g" id="2I4qoeAarEB" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="i0v0iiu">

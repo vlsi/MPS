@@ -185,6 +185,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_4710719082913199467(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, 0x12015341f3eL, "withIndent"));
   }
+  public static boolean ifMacro_Condition_3135747254706207524(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x120153077caL, 0x2b846983a62af1c4L, "textArea")) != null);
+  }
+  public static boolean ifMacro_Condition_3135747254706212715(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x120153077caL, 0x2b846983a62af1c4L, "textArea")) != null);
+  }
   public static boolean ifMacro_Condition_4710719082913168506(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent"));
   }
@@ -227,6 +233,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_4710719082913202717(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, 0x120152c1030L, "value"));
+  }
+  public static SNode sourceNodeQuery_3135747254706218420(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x120153077caL, 0x2b846983a62af1c4L, "textArea"));
   }
   public static SNode sourceNodeQuery_4710719082913181675(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x120152e6dcfL, "list"));

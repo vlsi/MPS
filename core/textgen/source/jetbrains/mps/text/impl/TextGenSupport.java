@@ -17,7 +17,9 @@ package jetbrains.mps.text.impl;
 
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.text.BasicToken;
 import jetbrains.mps.text.TextArea;
+import jetbrains.mps.text.TextAreaToken;
 import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGen;
@@ -219,6 +221,19 @@ public final class TextGenSupport implements TextArea {
   @ToRemove(version = 3.3)
   public TextGenBuffer getLegacyBuffer() {
     return ((TextGenTransitionContext) myContext).getLegacyBuffer();
+  }
+
+  /**
+   * Similar to {@link jetbrains.mps.text.TextBuffer#pushTextArea(TextAreaToken)}, except that
+   * lang.textgen.LayoutPart -> TextAreaToken conversion is hidden here.
+   * This is provisional code, to get some freedom to change implementation before the new TextGen API settles down
+   */
+  public void pushTextArea(@NotNull Object textAreaIdentity) {
+    myContext.getBuffer().pushTextArea(new BasicToken(textAreaIdentity));
+  }
+
+  public void popTextArea() {
+    myContext.getBuffer().popTextArea();
   }
 
   ////////////

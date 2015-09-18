@@ -2424,6 +2424,52 @@
         <node concept="3cqZAl" id="hZiwWrD" role="3clF45" />
         <node concept="3Tm1VV" id="hZiwWrE" role="1B3o_S" />
         <node concept="3clFbS" id="hZiwWrF" role="3clF47">
+          <node concept="3clFbF" id="2I4qoeAaRsS" role="3cqZAp">
+            <node concept="2OqwBi" id="2I4qoeAaRDR" role="3clFbG">
+              <node concept="37vLTw" id="2I4qoeAaRsQ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2I4qoeAaRm2" resolve="tgs" />
+              </node>
+              <node concept="liA8E" id="2I4qoeAaRFw" role="2OqNvi">
+                <ref role="37wK5l" to="kpbf:~TextGenSupport.pushTextArea(java.lang.Object):void" resolve="pushTextArea" />
+                <node concept="3cmrfG" id="2I4qoeAaU1k" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                  <node concept="5jKBG" id="2I4qoeAaU49" role="lGtFl">
+                    <ref role="v9R2y" node="RqKTrXU$0e" resolve="reduce_LayoutPartIdentity" />
+                    <node concept="3NFfHV" id="2I4qoeAaUmO" role="5jGum">
+                      <node concept="3clFbS" id="2I4qoeAaUmP" role="2VODD2">
+                        <node concept="3clFbF" id="2I4qoeAaUI4" role="3cqZAp">
+                          <node concept="2OqwBi" id="2I4qoeAaULv" role="3clFbG">
+                            <node concept="30H73N" id="2I4qoeAaUI3" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2I4qoeAaUSE" role="2OqNvi">
+                              <ref role="3Tt5mk" to="2omo:2I4qoeAaJ74" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="raruj" id="2I4qoeAaRG6" role="lGtFl" />
+            <node concept="1W57fq" id="2I4qoeAaRGy" role="lGtFl">
+              <node concept="3IZrLx" id="2I4qoeAaRG$" role="3IZSJc">
+                <node concept="3clFbS" id="2I4qoeAaRGA" role="2VODD2">
+                  <node concept="3clFbF" id="2I4qoeAaRUR" role="3cqZAp">
+                    <node concept="2OqwBi" id="2I4qoeAaSwY" role="3clFbG">
+                      <node concept="2OqwBi" id="2I4qoeAaS0J" role="2Oq$k0">
+                        <node concept="30H73N" id="2I4qoeAaRUQ" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="2I4qoeAaSck" role="2OqNvi">
+                          <ref role="3Tt5mk" to="2omo:2I4qoeAaJ74" />
+                        </node>
+                      </node>
+                      <node concept="3x8VRR" id="2I4qoeAaSI9" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="i0uWY3Z" role="3cqZAp">
             <node concept="10Nm6u" id="i0uWY40" role="3clFbG" />
             <node concept="raruj" id="3$Ute5ySIT6" role="lGtFl" />
@@ -2444,6 +2490,40 @@
             <node concept="1sPUBX" id="1WfddY$XHMz" role="lGtFl">
               <ref role="v9R2y" node="hZik$0t" resolve="switch_AppendPart" />
             </node>
+          </node>
+          <node concept="3clFbF" id="2I4qoeAaSXz" role="3cqZAp">
+            <node concept="2OqwBi" id="2I4qoeAaSX$" role="3clFbG">
+              <node concept="37vLTw" id="2I4qoeAaSXA" role="2Oq$k0">
+                <ref role="3cqZAo" node="2I4qoeAaRm2" resolve="tgs" />
+              </node>
+              <node concept="liA8E" id="2I4qoeAaSXC" role="2OqNvi">
+                <ref role="37wK5l" to="kpbf:~TextGenSupport.popTextArea():void" resolve="popTextArea" />
+              </node>
+            </node>
+            <node concept="raruj" id="2I4qoeAaSXD" role="lGtFl" />
+            <node concept="1W57fq" id="2I4qoeAaSXE" role="lGtFl">
+              <node concept="3IZrLx" id="2I4qoeAaSXF" role="3IZSJc">
+                <node concept="3clFbS" id="2I4qoeAaSXG" role="2VODD2">
+                  <node concept="3clFbF" id="2I4qoeAaSXH" role="3cqZAp">
+                    <node concept="2OqwBi" id="2I4qoeAaSXI" role="3clFbG">
+                      <node concept="2OqwBi" id="2I4qoeAaSXJ" role="2Oq$k0">
+                        <node concept="30H73N" id="2I4qoeAaSXK" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="2I4qoeAaSXL" role="2OqNvi">
+                          <ref role="3Tt5mk" to="2omo:2I4qoeAaJ74" />
+                        </node>
+                      </node>
+                      <node concept="3x8VRR" id="2I4qoeAaSXM" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="2I4qoeAaRm2" role="3clF46">
+          <property role="TrG5h" value="tgs" />
+          <node concept="3uibUv" id="2I4qoeAaTWw" role="1tU5fm">
+            <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
           </node>
         </node>
       </node>
