@@ -58,7 +58,7 @@ public class TextUnitLayout_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_uxbq20_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("active");
-    provider.setNoTargetText("<no active>");
+    provider.setNoTargetText("none");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TextUnitLayout_Editor._Inline_uxbq20_a1a0());
     editorCell = provider.createEditorCell(editorContext);

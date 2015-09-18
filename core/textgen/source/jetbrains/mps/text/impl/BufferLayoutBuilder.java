@@ -93,7 +93,12 @@ public class BufferLayoutBuilder {
         // FIXME these two are temporary for compatibility, remove once BL is fine with layout
         buffer.pushTextArea(new BasicToken(TextGenBuffer.TOP)).popTextArea();
         buffer.pushTextArea(new BasicToken(TextGenBuffer.DEFAULT));
-        // keep DEFAULT as active area
+
+        if (myInitial != null) {
+          buffer.popTextArea();
+          buffer.pushTextArea(myInitial);
+        }
+        // else keep DEFAULT as active area
       }
 
       @NotNull
