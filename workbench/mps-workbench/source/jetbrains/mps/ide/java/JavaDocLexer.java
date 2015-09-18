@@ -20,6 +20,6 @@ import com.intellij.lexer.MergingLexerAdapter;
 public class JavaDocLexer extends MergingLexerAdapter {
 
   public JavaDocLexer() {
-    super(new JavaDocLexer(), new JavaDocTokenTypes().spaceCommentsTokenSet());
+    super(new JavaLexer(), new JavaDocTokenTypes().spaceCommentsTokenSet());
   }
 }
