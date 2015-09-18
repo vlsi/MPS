@@ -21,6 +21,9 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.checkers.ErrorReportUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ModelCheckerIssueFinder implements IFinder {
   private final List<SpecificChecker> myExtraCheckers;
@@ -62,7 +65,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     monitor.start("Checking", work);
 
     try {
-      SearchResults<ModelCheckerIssue> rv = new SearchResults<ModelCheckerIssue>();
+      final SearchResults<ModelCheckerIssue> rv = new SearchResults<ModelCheckerIssue>();
       if (!(ListSequence.fromList(modules).isEmpty())) {
         ModuleChecker moduleChecker = new ModuleChecker();
         for (SModule module : ListSequence.fromList(modules)) {
@@ -84,6 +87,23 @@ public class ModelCheckerIssueFinder implements IFinder {
         }
       }
       rv.addAll(modelChecker.getSearchResults());
+
+      // filter out suppressed 
+      List<SearchResult<ModelCheckerIssue>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+      for (SearchResult<ModelCheckerIssue> result : ListSequence.fromList(rv.getSearchResults())) {
+        if (result.getObject() instanceof ModelCheckerIssue.NodeIssue) {
+          ModelCheckerIssue.NodeIssue mci = (ModelCheckerIssue.NodeIssue) result.getObject();
+          if (!(ErrorReportUtil.shouldReportError(mci.getNode()))) {
+            ListSequence.fromList(toRemove).addElement(result);
+          }
+        }
+      }
+      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
+        public void visit(SearchResult<ModelCheckerIssue> it) {
+          rv.remove(it);
+        }
+      });
+
       return rv;
     } finally {
       monitor.done();
