@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public ReferenceMacro_BehaviorDescriptor() {
   }
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ReferenceMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode node) {
+    return ReferenceMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, node);
   }
   @Override
   public String getConceptFqName() {

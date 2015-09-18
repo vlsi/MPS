@@ -2686,25 +2686,19 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5580940619725340902">
     <file name="ReferenceMacro_Behavior.java">
-      <node id="3772633333666212097" at="17,187,18,19" concept="10" />
-      <node id="3772633333666215845" at="20,508,21,19" concept="10" />
-      <node id="3772633333666218382" at="22,5,23,16" concept="10" />
-      <node id="5580940619725340902" at="14,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3772633333666192901" at="16,91,19,5" concept="7" />
-      <node id="3772633333666215843" at="19,5,22,5" concept="7" />
-      <node id="5580940619725340902" at="16,0,25,0" concept="13" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5580940619725340904" at="14,43,14,43" />
-      <scope id="3772633333666192904" at="17,187,18,19" />
-      <scope id="3772633333666215844" at="20,508,21,19" />
-      <scope id="5580940619725340902" at="14,0,16,0">
+      <node id="8377797410824260195" at="11,90,12,55" concept="10" />
+      <node id="5580940619725340902" at="9,0,11,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5580940619725340902" at="11,0,14,0" concept="13" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="5580940619725340904" at="9,43,9,43" />
+      <scope id="5580940619725340907" at="11,90,12,55" />
+      <scope id="5580940619725340902" at="9,0,11,0">
         <var name="thisNode" id="5580940619725340902" />
       </scope>
-      <scope id="5580940619725340907" at="16,91,23,16" />
-      <scope id="5580940619725340902" at="16,0,25,0">
-        <var name="child" id="5580940619725340908" />
+      <scope id="5580940619725340902" at="11,0,14,0">
+        <var name="node" id="5580940619725340908" />
         <var name="thisNode" id="5580940619725340902" />
       </scope>
-      <unit id="5580940619725340902" at="13,0,26,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
+      <unit id="5580940619725340902" at="8,0,15,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6255346656297357649">
