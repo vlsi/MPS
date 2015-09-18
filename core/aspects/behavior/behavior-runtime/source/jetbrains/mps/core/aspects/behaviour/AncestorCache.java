@@ -24,8 +24,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
-* Created by apyshkin on 09/09/15.
-*/
+ * including the concept
+ * Created by apyshkin on 09/09/15.
+ */
 class AncestorCache {
   private final List<SAbstractConcept> myLinearization;
   private final List<SAbstractConcept> myConstructorAncestors;
@@ -45,7 +46,7 @@ class AncestorCache {
     return myConstructorAncestors;
   }
 
-  public List<SAbstractConcept> getAncestorsVirtualInvocationOrder() {
+  public List<SAbstractConcept> getAncestorsInvocationOrder() {
     return Collections.unmodifiableList(myLinearization);
   }
 }

@@ -46,7 +46,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     myMethods = fillOwnMethods(conceptFqName);
   }
 
-  public Object invokeOwn(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
+  public Object invokeSpecial(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
     Method method = myMethods.get(methodName);
     if (method == null) {
       throwNoSuchMethod(methodName);

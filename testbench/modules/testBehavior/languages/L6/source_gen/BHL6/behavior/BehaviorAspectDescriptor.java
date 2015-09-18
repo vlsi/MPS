@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myH_BehaviorDescriptor = new H_BehaviorDescriptor();
   private final BHDescriptor myA_BehaviorDescriptor = new A_BehaviorDescriptor();
   private final BHDescriptor myB_BehaviorDescriptor = new B_BehaviorDescriptor();
   private final BHDescriptor myC_BehaviorDescriptor = new C_BehaviorDescriptor();
@@ -23,14 +24,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[7];
-    myConceptBehaviorIds[0] = 0x559729dec04606a7L;
-    myConceptBehaviorIds[1] = 0x559729dec0460fdaL;
-    myConceptBehaviorIds[2] = 0x559729dec0461c33L;
-    myConceptBehaviorIds[3] = 0x559729dec04623e8L;
-    myConceptBehaviorIds[4] = 0x559729dec0462797L;
-    myConceptBehaviorIds[5] = 0x559729dec0465379L;
-    myConceptBehaviorIds[6] = 0x559729dec0465442L;
+    myConceptBehaviorIds = new long[8];
+    myConceptBehaviorIds[0] = 0x1206f7d464a22147L;
+    myConceptBehaviorIds[1] = 0x559729dec04606a7L;
+    myConceptBehaviorIds[2] = 0x559729dec0460fdaL;
+    myConceptBehaviorIds[3] = 0x559729dec0461c33L;
+    myConceptBehaviorIds[4] = 0x559729dec04623e8L;
+    myConceptBehaviorIds[5] = 0x559729dec0462797L;
+    myConceptBehaviorIds[6] = 0x559729dec0465379L;
+    myConceptBehaviorIds[7] = 0x559729dec0465442L;
   }
 
   @Deprecated
@@ -45,18 +47,20 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myA_BehaviorDescriptor;
+        return myH_BehaviorDescriptor;
       case 1:
-        return myB_BehaviorDescriptor;
+        return myA_BehaviorDescriptor;
       case 2:
-        return myC_BehaviorDescriptor;
+        return myB_BehaviorDescriptor;
       case 3:
-        return myD_BehaviorDescriptor;
+        return myC_BehaviorDescriptor;
       case 4:
-        return myE_BehaviorDescriptor;
+        return myD_BehaviorDescriptor;
       case 5:
-        return myF_BehaviorDescriptor;
+        return myE_BehaviorDescriptor;
       case 6:
+        return myF_BehaviorDescriptor;
+      case 7:
         return myG_BehaviorDescriptor;
       default:
         return null;

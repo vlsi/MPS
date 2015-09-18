@@ -139,7 +139,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
         InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
         if (legacyDescriptor.hasOwnMethod(methodName)) {
-          T result = (T) legacyDescriptor.invokeOwn(nodeOrConcept, methodName, parameters);
+          T result = (T) legacyDescriptor.invokeSpecial(nodeOrConcept, methodName, parameters);
           if (methodInvocation) {
             return result;
           }
@@ -191,7 +191,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     }
 
     public SAbstractConcept getConcept() {
-      return myAbstractConcept;
+      return myNode != null ? myNode.getConcept() : myAbstractConcept;
     }
 
     public static NodeOrConcept create(@NotNull SNode node) {

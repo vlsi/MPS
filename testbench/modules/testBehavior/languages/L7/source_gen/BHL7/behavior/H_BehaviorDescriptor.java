@@ -45,12 +45,12 @@ public final class H_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -66,7 +66,7 @@ public final class H_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

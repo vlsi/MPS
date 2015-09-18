@@ -70,9 +70,9 @@ public final class BehaviorDescriptorAdapter extends BaseBehaviorDescriptor {
       return null;
     } else if (method instanceof SMethod) {
       if (!((SMethod) method).isStatic()) {
-        return myDescriptor.invokeOwn(nodeOrConcept.getNode(), (SMethod<?>) method, parameters);
+        return myDescriptor.invokeSpecial(nodeOrConcept.getNode(), (SMethod<?>) method, parameters);
       } else {
-        return myDescriptor.invokeOwn(nodeOrConcept.getConcept(), (SMethod<?>) method, parameters);
+        return myDescriptor.invokeSpecial(nodeOrConcept.getConcept(), (SMethod<?>) method, parameters);
       }
     }
     throw new IllegalArgumentException("Unknown instance of SExecutable : " + method);

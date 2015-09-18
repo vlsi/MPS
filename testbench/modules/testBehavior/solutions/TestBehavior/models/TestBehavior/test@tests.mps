@@ -1386,6 +1386,67 @@
           </node>
         </node>
       </node>
+      <node concept="3s$Bmu" id="186XXh$Cx1B" role="3s_gse">
+        <property role="3s$Bm0" value="superResolving" />
+        <node concept="3cqZAl" id="186XXh$Cx1C" role="3clF45" />
+        <node concept="3Tm1VV" id="186XXh$Cx1D" role="1B3o_S" />
+        <node concept="3clFbS" id="186XXh$Cx1E" role="3clF47">
+          <node concept="3cpWs8" id="186XXh$C$Vp" role="3cqZAp">
+            <node concept="3cpWsn" id="186XXh$C$Vs" role="3cpWs9">
+              <property role="TrG5h" value="nodeB" />
+              <node concept="3Tqbb2" id="186XXh$C$Vo" role="1tU5fm">
+                <ref role="ehGHo" to="3cc8:5mnatV0hwZq" resolve="B" />
+              </node>
+              <node concept="2pJPEk" id="186XXh$C$WO" role="33vP2m">
+                <node concept="2pJPED" id="186XXh$C$X1" role="2pJPEn">
+                  <ref role="2pJxaS" to="3cc8:186XXh$Cy57" resolve="H" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="186XXh$C_7a" role="3cqZAp">
+            <node concept="10M0yZ" id="186XXh$C_8Z" role="3tpDZB">
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+            </node>
+            <node concept="2OqwBi" id="186XXh$C_dt" role="3tpDZA">
+              <node concept="37vLTw" id="186XXh$C_bv" role="2Oq$k0">
+                <ref role="3cqZAo" node="186XXh$C$Vs" resolve="nodeB" />
+              </node>
+              <node concept="2qgKlT" id="186XXh$C_j7" role="2OqNvi">
+                <ref role="37wK5l" to="ugot:186XXh$CxOf" resolve="foo6" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="186XXh$C_pX" role="3cqZAp">
+            <node concept="3cpWsn" id="186XXh$C_pY" role="3cpWs9">
+              <property role="TrG5h" value="nodeD" />
+              <node concept="3Tqbb2" id="186XXh$C_pZ" role="1tU5fm">
+                <ref role="ehGHo" to="3cc8:5mnatV0hyfC" resolve="D" />
+              </node>
+              <node concept="2pJPEk" id="186XXh$C_q0" role="33vP2m">
+                <node concept="2pJPED" id="186XXh$C_q1" role="2pJPEn">
+                  <ref role="2pJxaS" to="3cc8:186XXh$Cy57" resolve="H" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="186XXh$C_q2" role="3cqZAp">
+            <node concept="10M0yZ" id="186XXh$C_q3" role="3tpDZB">
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+              <ref role="3cqZAo" to="ynox:6EMTxOPT5U5" resolve="POLYMORPHIC_CHILD" />
+            </node>
+            <node concept="2OqwBi" id="186XXh$C_q4" role="3tpDZA">
+              <node concept="37vLTw" id="186XXh$C_q5" role="2Oq$k0">
+                <ref role="3cqZAo" node="186XXh$C_pY" resolve="nodeD" />
+              </node>
+              <node concept="2qgKlT" id="186XXh$C_q6" role="2OqNvi">
+                <ref role="37wK5l" to="ugot:186XXh$CxOf" resolve="foo6" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3s$Bmu" id="5mnatV0hz6L" role="3s_gse">
         <property role="3s$Bm0" value="superStaticBehaviorCall" />
         <node concept="3cqZAl" id="5mnatV0hz6N" role="3clF45" />

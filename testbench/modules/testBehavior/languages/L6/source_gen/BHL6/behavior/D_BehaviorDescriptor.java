@@ -31,8 +31,9 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> bar1_id5jWiLvujSC6 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar1").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujSC6").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Void> bar2_id4RMBeRWcir8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcir8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> foo5_id1olXtyGAKsY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo5").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKsY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> foo6_id186XXh$CxOf = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo6").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("186XXh$CxOf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8, foo5_id1olXtyGAKsY);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8, foo5_id1olXtyGAKsY, foo6_id186XXh$CxOf);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -55,18 +56,21 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   private static Integer foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
     return B_BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
   }
+  private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+    return TestResults.POLYMORPHIC_CHILD;
+  }
 
   /*package*/ D_BehaviorDescriptor() {
     super(REGISTRY);
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, Object... objects) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -85,13 +89,15 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
         return null;
       case 5:
         return (T) foo5_id1olXtyGAKsY(node);
+      case 6:
+        return (T) foo6_id186XXh$CxOf(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

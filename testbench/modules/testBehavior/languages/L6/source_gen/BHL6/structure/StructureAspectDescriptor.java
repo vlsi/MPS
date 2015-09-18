@@ -19,16 +19,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptE = new ConceptDescriptorBuilder("BHL6.structure.E", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L)).super_("BHL6.structure.C").super_(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L)).parents("BHL6.structure.C").parentIds(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L)).create();
   /*package*/ final ConceptDescriptor myConceptF = new ConceptDescriptorBuilder("BHL6.structure.F", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
   /*package*/ final ConceptDescriptor myConceptG = new ConceptDescriptorBuilder("BHL6.structure.G", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465442L)).super_("BHL6.structure.F").super_(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L)).parents("BHL6.structure.F").parentIds(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L)).create();
+  /*package*/ final ConceptDescriptor myConceptH = new ConceptDescriptorBuilder("BHL6.structure.H", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x1206f7d464a22147L)).super_("BHL6.structure.D").super_(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L)).parents("BHL6.structure.D").parentIds(MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG);
+    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
         return myConceptA;
       case 1:
@@ -43,9 +44,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptF;
       case 6:
         return myConceptG;
+      case 7:
+        return myConceptH;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"BHL6.structure.A", "BHL6.structure.B", "BHL6.structure.C", "BHL6.structure.D", "BHL6.structure.E", "BHL6.structure.F", "BHL6.structure.G"};
+  private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"BHL6.structure.A", "BHL6.structure.B", "BHL6.structure.C", "BHL6.structure.D", "BHL6.structure.E", "BHL6.structure.F", "BHL6.structure.G", "BHL6.structure.H"};
 }

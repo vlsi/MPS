@@ -17,26 +17,25 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class G_BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465442L, "BHL6.structure.G");
+public final class H_BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x1206f7d464a22147L, "BHL6.structure.H");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Object> foo_id5mnatV0h_el = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0h_el").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Object> foo6_id186XXh$CxOf = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo6").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("186XXh$CxOf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0h_el);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo6_id186XXh$CxOf);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id5mnatV0h_el(@NotNull SAbstractConcept __thisConcept__) {
-    return TestResults.POLYMORPHIC_CHILD;
+  private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+    return D_BehaviorDescriptor.foo6_id186XXh$CxOf.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ G_BehaviorDescriptor() {
+  /*package*/ H_BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -52,6 +51,8 @@ public final class G_BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) foo6_id186XXh$CxOf(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -64,8 +65,6 @@ public final class G_BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 0:
-        return (T) foo_id5mnatV0h_el(concept);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

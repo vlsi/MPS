@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.NodeOrConcept;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -100,21 +99,22 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (!myInvocationMap.containsKey(method)) {
       throw new BHMethodNotFoundException(this, method);
     }
     String methodName = myInvocationMap.get(method).getName();
-    return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), methodName, parameters);
+    return (T) myLegacyDescriptor.invokeSpecial(NodeOrConcept.create(node), methodName, parameters);
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
     if (!myInvocationMap.containsKey(method)) {
       throw new BHMethodNotFoundException(this, method);
     }
+
     String methodName = myInvocationMap.get(method).getName();
-    return (T) myLegacyDescriptor.invokeOwn(NodeOrConcept.create(concept), methodName, parameters);
+    return (T) myLegacyDescriptor.invokeSpecial(NodeOrConcept.create(concept), methodName, parameters);
   }
 
   @Override
@@ -122,7 +122,7 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
     if (parameters.length > 0) {
       throw new IllegalArgumentException("The default constructor has no parameters");
     }
-    myLegacyDescriptor.invokeOwn(NodeOrConcept.create(node), BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME, parameters);
+    myLegacyDescriptor.invokeSpecial(NodeOrConcept.create(node), BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME, parameters);
   }
 
   @NotNull

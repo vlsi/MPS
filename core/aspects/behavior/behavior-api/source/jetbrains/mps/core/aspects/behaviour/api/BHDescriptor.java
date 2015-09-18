@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour.api;
 
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -30,7 +31,7 @@ import java.util.List;
  * Intended not to be used directly since the generated behavior descriptors tend to become
  * invalid due to the module reload.
  *
- * The proper way is to use a special behavior facade {@link jetbrains.mps.smodel.behaviour.BHFacade}.
+ * The proper way is to use a special behavior facade {@link BHReflection}.
  *
  * @see SMethod
  *

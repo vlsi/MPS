@@ -53,13 +53,13 @@ public final class EmptyBHDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object... parameters) {
     // TODO review contract; see MPS-22391
     return null;
   }
 
   @Override
-  protected <T> T invokeOwn(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object... parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object... parameters) {
     // TODO review contract; see MPS-22391
     return null;
   }

@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Obsolete API for the generated behavior calls
  *
  * @deprecated
- * @see BHFacade
+ * @see BHReflection
  */
 @ToRemove(version = 3.3)
 @Deprecated

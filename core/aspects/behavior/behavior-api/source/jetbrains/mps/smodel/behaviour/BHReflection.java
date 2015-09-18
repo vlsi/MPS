@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  *
  * Created by apyshkin on 7/15/15.
  */
-public final class BHFacade {
+public final class BHReflection {
   @NotNull
   public static SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
     return constructor.newNode(model, parameters);
@@ -43,7 +43,7 @@ public final class BHFacade {
   /**
    * reflective api
    */
-  public static Object invokeReflective(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invoke(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
     SConcept concept = node.getConcept();
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
@@ -53,13 +53,34 @@ public final class BHFacade {
     return bhDescriptor.invoke(node, method, parameters);
   }
 
-  public static Object invokeReflective(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invoke(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
     return bhDescriptor.invoke(concept, method, parameters);
+  }
+
+  /**
+   * invokes a method specifically in the concreteConcept behavior.
+   */
+  public static Object invokeSpecial(@NotNull SNode node, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId);
+    }
+    return bhDescriptor.invokeSpecial(node, method, parameters);
+  }
+
+  public static Object invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
+    SMethod<?> method = bhDescriptor.getMethod(methodId);
+    if (method == null) {
+      throw new BHNoSuchMethodException(methodId);
+    }
+    return bhDescriptor.invokeSpecial(concept, method, parameters);
   }
 
   @NotNull
