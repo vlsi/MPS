@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="BHL2.behavior.A_Behavior" file="A_Behavior.java">
+    <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="BHL2.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
@@ -21,6 +27,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL2.behavior.B_Behavior" file="B_Behavior.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL2.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />

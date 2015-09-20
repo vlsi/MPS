@@ -17,6 +17,9 @@
     </file>
   </root>
   <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)/7688460527007471058">
+    <file name="I_Behavior.java">
+      <unit id="7688460527007471058" at="10,0,13,0" name="BHL4.behavior.I_Behavior" />
+    </file>
     <file name="I_BehaviorDescriptor.java">
       <node id="7688460527007471058" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007471058" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -91,6 +94,9 @@
     </file>
   </root>
   <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)/7688460527007472020">
+    <file name="I1_Behavior.java">
+      <unit id="7688460527007472020" at="10,0,13,0" name="BHL4.behavior.I1_Behavior" />
+    </file>
     <file name="I1_BehaviorDescriptor.java">
       <node id="7688460527007472020" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007472020" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -165,6 +171,9 @@
     </file>
   </root>
   <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)/7688460527007472112">
+    <file name="I2_Behavior.java">
+      <unit id="7688460527007472112" at="10,0,13,0" name="BHL4.behavior.I2_Behavior" />
+    </file>
     <file name="I2_BehaviorDescriptor.java">
       <node id="7688460527007472112" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007472112" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -239,6 +248,9 @@
     </file>
   </root>
   <root nodeRef="r:e73a8882-1348-4cf4-beed-84a174b963cd(BHL4.behavior)/7688460527007475860">
+    <file name="C1_Behavior.java">
+      <unit id="7688460527007475860" at="10,0,13,0" name="BHL4.behavior.C1_Behavior" />
+    </file>
     <file name="C1_BehaviorDescriptor.java">
       <node id="7688460527007475860" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="7688460527007475860" at="26,0,27,0" concept="6" trace="REGISTRY" />
