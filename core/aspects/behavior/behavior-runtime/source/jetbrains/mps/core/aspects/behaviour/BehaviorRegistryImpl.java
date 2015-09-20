@@ -116,9 +116,8 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
             behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
           }
           if (behaviorAspect == null) {
-            return new IllegalBHDescriptor(concept);
-          }
-          if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
+            descriptor = new EmptyBHDescriptor(this, concept);
+          } else if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
             SConceptId conceptId = ((SAbstractConceptAdapter) concept).getId();
             descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(conceptId);
             if (descriptor == null) {
