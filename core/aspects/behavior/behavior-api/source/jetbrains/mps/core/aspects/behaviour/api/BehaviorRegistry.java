@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.language.CoreAspectRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ *
+ */
 public interface BehaviorRegistry extends CoreAspectRegistry {
   @NotNull
   MethodResolutionOrder getMRO();

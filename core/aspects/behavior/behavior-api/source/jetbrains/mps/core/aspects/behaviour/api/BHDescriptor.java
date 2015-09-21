@@ -28,10 +28,9 @@ import java.util.List;
  * Behavior descriptor interface. Each {@link org.jetbrains.mps.openapi.language.SAbstractConcept} has such a descriptor (one-one relation).
  * It contains the behavioral part of the {@link SAbstractConcept} api.
  * Here one can get and invoke methods, specific to the given {@link SAbstractConcept}
- * Intended not to be used directly since the generated behavior descriptors tend to become
- * invalid due to the module reload.
  *
- * The proper way is to use a special behavior facade {@link BHReflection}.
+ * Not intended to be used directly, since the behavior methods must be called via {@link SMethod} or via the reflective
+ * mechanism {@link BHReflection}
  *
  * @see SMethod
  *

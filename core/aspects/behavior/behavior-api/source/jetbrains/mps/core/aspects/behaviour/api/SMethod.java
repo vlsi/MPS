@@ -20,13 +20,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * FIXME documentation
  * Represents a behavior method for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
  * It has a {@link SMethodId} which uniquely identifies the instance of {@link SMethod}.
- * One needs to think of SMethod as of pair <SAbstractConcept, SMethodId>, that is the concept which has this
- * method available and the id of the method which is an equivalent of the method's signature.
+ *
+ * The supposed way to call behavior methods is as follows.
+ * If it is possible to get SMethod directly (from the generated fields of {@link BHDescriptor}) then one needs to
+ * take the method from there and invoke it via {@link #invoke} or {@link #invokeSpecial} or others.
+ *
+ * If it is not possible then one needs to get method by reflection from the {@link BHDescriptor} (via #getMethod).
+ * Currently there are handy invocation methods in the
+ * {@link jetbrains.mps.smodel.behaviour.BHReflection} facade.
  *
  * T -- java runtime return type (for compile-time checking)
+ *
+ * @see BHDescriptor
  */
 public interface SMethod<T> extends SExecutable {
   /**

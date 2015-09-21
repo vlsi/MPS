@@ -169,9 +169,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
     List<SParameter> sParameters = method.getParameters();
     for (int i = 0; i < sParameters.size(); ++i) {
-      Class<?> aClass = (parameters[i] == null ? Object.class : parameters[i].getClass());
-      if (!sParameters.get(i).getType().isAssignableFrom(new SJavaCompoundTypeImpl(aClass))) {
-        throw new BHArgumentsDoNotMatch(parameters, sParameters, i);
+      if (parameters[i] != null) {
+        Class<?> aClass = parameters[i].getClass();
+        if (!sParameters.get(i).getType().isAssignableFrom(new SJavaCompoundTypeImpl(aClass))) {
+          throw new BHArgumentsDoNotMatch(method, parameters, sParameters, i);
+        }
       }
     }
   }
@@ -370,8 +372,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private class BHArgumentsDoNotMatch extends RuntimeException {
-    public BHArgumentsDoNotMatch(Object[] parameters, List<SParameter> sParameters, int i) {
-      super(parameters[i] + " does not match " + sParameters.get(i));
+    public BHArgumentsDoNotMatch(SMethod<?> method, Object[] parameters, List<SParameter> sParameters, int i) {
+      super(parameters[i] + " does not match " + sParameters.get(i) + " while calling " + method + " in the " + BaseBHDescriptor.this + " descirptor");
     }
   }
 

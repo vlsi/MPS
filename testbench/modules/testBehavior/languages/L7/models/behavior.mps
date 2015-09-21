@@ -238,6 +238,25 @@
         <node concept="10P55v" id="7zO8mNAVjlz" role="1tU5fm" />
       </node>
     </node>
+    <node concept="13i0hz" id="4Tk5Y39EB1$" role="13h7CS">
+      <property role="TrG5h" value="nonPrimitiveParameter" />
+      <node concept="3Tm1VV" id="4Tk5Y39EB1_" role="1B3o_S" />
+      <node concept="3clFbS" id="4Tk5Y39EB1A" role="3clF47">
+        <node concept="3cpWs6" id="4Tk5Y39EB2v" role="3cqZAp">
+          <node concept="10M0yZ" id="4Tk5Y39EB2H" role="3cqZAk">
+            <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+            <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="4Tk5Y39EB2h" role="3clF45" />
+      <node concept="37vLTG" id="4Tk5Y39EB2l" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <node concept="3uibUv" id="4Tk5Y39EB2k" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="4Rfm9LCcu90" role="13h7CS">
       <property role="TrG5h" value="genericReturnValue" />
       <node concept="3Tm1VV" id="4Rfm9LCcu91" role="1B3o_S" />

@@ -18,8 +18,8 @@ package jetbrains.mps.core.aspects.behaviour.api;
 import org.jetbrains.annotations.NotNull;
 
 /**
-* Created by apyshkin on 09/09/15.
-*/
+ * Thrown whenever the method could not be found via the specific BHDescriptor
+ */
 public final class BHMethodNotFoundException extends RuntimeException {
   public BHMethodNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
     super("The method '" + method + "' could not be found within the '" + descriptor + "'.");
