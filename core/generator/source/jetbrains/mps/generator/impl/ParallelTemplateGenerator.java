@@ -159,6 +159,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   @Override
   protected void registerRoot(GeneratedRootDescriptor rd) {
+    // FIXME chances are GRD for a root mapping rule doesn't list templateNode/rule, e.g. when rule had failed and we copied root instead
     RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(rd.myInputNode, rd.myTemplateNode));
     if (task == null) {
       getLogger().error(rd.myTemplateNode, "internal: cannot find task for generated root", GeneratorUtil.describe(rd.myInputNode, "input node"));
