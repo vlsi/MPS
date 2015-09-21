@@ -2075,6 +2075,31 @@
             </node>
           </node>
           <node concept="3clFbS" id="6se4BTU1$eV" role="2LFqv$">
+            <node concept="3SKdUt" id="6WWPJLIERUY" role="3cqZAp">
+              <node concept="3SKdUq" id="6WWPJLIESlC" role="3SKWNk">
+                <property role="3SKdUp" value="todo here should be processor-based architecture, like in other checkers" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="5SHhrNLGPvT" role="3cqZAp">
+              <node concept="3fqX7Q" id="5SHhrNLGPvU" role="3clFbw">
+                <node concept="2YIFZM" id="5SHhrNLGPvV" role="3fr31v">
+                  <ref role="37wK5l" to="wsw7:5TGjZPCODy5" resolve="shouldReportError" />
+                  <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
+                  <node concept="2OqwBi" id="6WWPJLIEOhv" role="37wK5m">
+                    <node concept="37vLTw" id="6WWPJLIEOdo" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6se4BTU1$eT" resolve="errorReporter" />
+                    </node>
+                    <node concept="liA8E" id="6WWPJLIEOm0" role="2OqNvi">
+                      <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="5SHhrNLGPvX" role="3clFbx">
+                <node concept="3N13vt" id="6WWPJLIER$7" role="3cqZAp" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="6WWPJLIEM$V" role="3cqZAp" />
             <node concept="3cpWs8" id="1rlD583ji$w" role="3cqZAp">
               <node concept="3cpWsn" id="1rlD583ji$x" role="3cpWs9">
                 <property role="TrG5h" value="nodeWithError" />
