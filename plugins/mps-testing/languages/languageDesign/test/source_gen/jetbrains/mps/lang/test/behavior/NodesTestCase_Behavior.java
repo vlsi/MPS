@@ -41,7 +41,4 @@ public class NodesTestCase_Behavior {
   public static boolean call_needsWriteAction_6339244025081193722(SNode thisNode) {
     return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction")));
   }
-  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ListSequence.fromList(SNodeOperations.getNodeAncestors(child, null, true)).intersect(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c37cc6L, "nodesToCheck")))).isNotEmpty();
-  }
 }

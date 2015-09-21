@@ -105,7 +105,7 @@
         <reference id="1210674534086" name="declaration" index="3xOPvv" />
       </concept>
       <concept id="1215075719096" name="jetbrains.mps.lang.test.structure.CheckNodeForErrors" flags="nn" index="3Ca1qy" />
-      <concept id="8101092317677916964" name="jetbrains.mps.lang.test.structure.UntypedExprecssion" flags="ng" index="3JI$YI" />
+      <concept id="8101092317677916964" name="jetbrains.mps.lang.test.structure.UntypedExpression" flags="ng" index="3JI$YI" />
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -21352,9 +21352,9 @@
                 <node concept="3cmrfG" id="2m0N162ymqx" role="33vP2m">
                   <property role="3cmrfH" value="1" />
                 </node>
-                <node concept="7CXmI" id="2m0N162zqvk" role="lGtFl">
-                  <node concept="8bhQy" id="2m0N162zqvu" role="7EUXB" />
-                </node>
+              </node>
+              <node concept="7CXmI" id="3efgZvcIsWr" role="lGtFl">
+                <node concept="8bhQy" id="3efgZvcIsWF" role="7EUXB" />
               </node>
             </node>
           </node>
