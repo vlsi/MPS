@@ -29,9 +29,10 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Object> staticVirtualMethod_id5mnatV0hATt = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("staticVirtualMethod").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hATt").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> primitiveReturnValue_id4Rfm9LCctz9 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("primitiveReturnValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Rfm9LCctz9").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Integer> primitiveParameter_id7zO8mNAVjjo = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("primitiveParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7zO8mNAVjjo").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.TYPE, Boolean.TYPE, Double.TYPE)));
+  public static final SMethod<Integer> nonPrimitiveParameter_id4Tk5Y39EB1$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("nonPrimitiveParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Tk5Y39EB1$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.class)));
   public static final SMethod<Class<Integer>> genericReturnValue_id4Rfm9LCcu90 = new SMethodBuilder<Class<Integer>>(new SJavaCompoundTypeImpl(Class.class)).name("genericReturnValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Rfm9LCcu90").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_id5mnatV0hAPC, staticVirtualMethod_id5mnatV0hATt, primitiveReturnValue_id4Rfm9LCctz9, primitiveParameter_id7zO8mNAVjjo, genericReturnValue_id4Rfm9LCcu90);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(virtualMethod_id5mnatV0hAPC, staticVirtualMethod_id5mnatV0hATt, primitiveReturnValue_id4Rfm9LCctz9, primitiveParameter_id7zO8mNAVjjo, nonPrimitiveParameter_id4Tk5Y39EB1$, genericReturnValue_id4Rfm9LCcu90);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -46,6 +47,9 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   private static Integer primitiveParameter_id7zO8mNAVjjo(@NotNull SNode __thisNode__, int a, boolean b, double d) {
+    return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  private static Integer nonPrimitiveParameter_id4Tk5Y39EB1$(@NotNull SNode __thisNode__, Integer a) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   private static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@NotNull SNode __thisNode__) {
@@ -75,6 +79,8 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
       case 3:
         return (T) primitiveParameter_id7zO8mNAVjjo(node, (Integer) parameters[0], (Boolean) parameters[1], (Double) parameters[2]);
       case 4:
+        return (T) nonPrimitiveParameter_id4Tk5Y39EB1$(node, (Integer) parameters[0]);
+      case 5:
         return (T) genericReturnValue_id4Rfm9LCcu90(node);
       default:
         throw new BHMethodNotFoundException(this, method);

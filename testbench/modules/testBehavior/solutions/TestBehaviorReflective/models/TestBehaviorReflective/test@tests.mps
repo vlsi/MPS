@@ -1823,6 +1823,41 @@
           </node>
         </node>
       </node>
+      <node concept="3s$Bmu" id="4Tk5Y39EAFJ" role="3s_gse">
+        <property role="3s$Bm0" value="nonPrimitiveNullParameterPass" />
+        <node concept="3cqZAl" id="4Tk5Y39EAFK" role="3clF45" />
+        <node concept="3Tm1VV" id="4Tk5Y39EAFL" role="1B3o_S" />
+        <node concept="3clFbS" id="4Tk5Y39EAFM" role="3clF47">
+          <node concept="3cpWs8" id="4Tk5Y39EAFN" role="3cqZAp">
+            <node concept="3cpWsn" id="4Tk5Y39EAFO" role="3cpWs9">
+              <property role="TrG5h" value="nodeB" />
+              <node concept="3Tqbb2" id="4Tk5Y39EAFP" role="1tU5fm">
+                <ref role="ehGHo" to="n871:5mnatV0hAOX" resolve="B" />
+              </node>
+              <node concept="2pJPEk" id="4Tk5Y39EAFQ" role="33vP2m">
+                <node concept="2pJPED" id="4Tk5Y39EAFR" role="2pJPEn">
+                  <ref role="2pJxaS" to="n871:5mnatV0hAOX" resolve="B" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vMLTj" id="4Tk5Y39EAFS" role="3cqZAp">
+            <node concept="2OqwBi" id="4Tk5Y39EAFT" role="3tpDZA">
+              <node concept="37vLTw" id="4Tk5Y39EAFU" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Tk5Y39EAFO" resolve="nodeB" />
+              </node>
+              <node concept="2qgKlT" id="4Tk5Y39EAFV" role="2OqNvi">
+                <ref role="37wK5l" to="5a2:4Tk5Y39EB1$" resolve="nonPrimitiveParameter" />
+                <node concept="10Nm6u" id="4Tk5Y39EBek" role="37wK5m" />
+              </node>
+            </node>
+            <node concept="10M0yZ" id="4Tk5Y39EAFZ" role="3tpDZB">
+              <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3s$Bmu" id="ohnDtS$xYM" role="3s_gse">
         <property role="3s$Bm0" value="genericMethodReturnType" />
         <node concept="3cqZAl" id="ohnDtS$xYO" role="3clF45" />

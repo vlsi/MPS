@@ -17,6 +17,9 @@ public class B_Behavior {
   public static int call_primitiveParameter_8715627930483242200(SNode __thisNode__, int a, boolean b, double d) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
+  public static int call_nonPrimitiveParameter_5644162487225577572(SNode __thisNode__, Integer a) {
+    return TestResults.DEFAULT_RETURN_VALUE;
+  }
   public static Class<Integer> call_genericReturnValue_5606797489885798976(SNode __thisNode__) {
     return Integer.class;
   }
