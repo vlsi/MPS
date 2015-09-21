@@ -125,21 +125,21 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
    * adding this functionality in order to have {@link jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor}
    * and {@link jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
    */
-  protected <T> T genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
+  protected Object genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
     return invokeMethodOrConstructor(nodeOrConcept, methodName, myAncestors, true, parameters);
   }
 
   /**
    * common method for constructors invocation and method invocation
    */
-  private <T> T invokeMethodOrConstructor(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors,
+  private Object invokeMethodOrConstructor(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors,
       boolean methodInvocation, Object[] parameters) {
     for (SAbstractConcept ancestor : ancestors) {
       BHDescriptor bhDescriptor = getBehaviorRegistry().getBHDescriptor(ancestor);
       if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
         InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
         if (legacyDescriptor.hasOwnMethod(methodName)) {
-          T result = (T) legacyDescriptor.invokeSpecial(nodeOrConcept, methodName, parameters);
+          Object result = legacyDescriptor.invokeSpecial(nodeOrConcept, methodName, parameters);
           if (methodInvocation) {
             return result;
           }
@@ -152,7 +152,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         }
         BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
         if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters)) {
-          T result = (T) behaviorDescriptorAdapter.invokeOwn(nodeOrConcept, methodName, parameters);
+          Object result = behaviorDescriptorAdapter.invokeOwn(nodeOrConcept, methodName, parameters);
           if (methodInvocation) {
             return result;
           }
