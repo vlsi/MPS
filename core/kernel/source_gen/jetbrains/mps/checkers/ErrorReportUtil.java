@@ -6,12 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ErrorReportUtil {
   public ErrorReportUtil() {
@@ -26,11 +27,9 @@ public class ErrorReportUtil {
     }
     SNode current = node;
     while (current != null) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(current, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors")), "virtual_suppress_3393165121846091591", new Object[]{node})) {
-        return false;
-      }
-      // annotation can suppress errors in parent, but not in other annotations on the same level 
-      if (!(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"))) && Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(AttributeOperations.getAttributeList(current, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"))).any(new IWhereFilter<SNode>() {
+      Iterable<SNode> possibleSuppressors = ListSequence.fromList(AttributeOperations.getAttributeList(current, new IAttributeDescriptor.AllAttributes())).union(Sequence.fromIterable(Sequence.<SNode>singleton(current)));
+
+      if (Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(possibleSuppressors, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
           return BehaviorReflection.invokeVirtual(Boolean.TYPE, attr, "virtual_suppress_3393165121846091591", new Object[]{node});
         }
@@ -40,6 +39,7 @@ public class ErrorReportUtil {
       if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xe8924c64a55a26fL, "jetbrains.mps.lang.core.structure.IAntisuppressErrors"))) {
         return true;
       }
+
       current = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(current);
     }
     return true;

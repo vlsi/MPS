@@ -54,47 +54,48 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/6803901086853929087">
     <file name="ErrorReportUtil.java">
-      <node id="414045414354340895" at="19,61,20,35" concept="8" />
-      <node id="414045414354373753" at="21,24,22,19" concept="9" />
-      <node id="6803901086853929119" at="24,92,25,19" concept="9" />
-      <node id="6631111943583857195" at="26,5,27,25" concept="8" />
-      <node id="6631111943583857281" at="29,603,30,21" concept="9" />
-      <node id="4011863064659575445" at="31,7,32,98" concept="10" />
-      <node id="6631111943583880218" at="34,43,35,130" concept="9" />
-      <node id="6631111943583880240" at="37,11,38,21" concept="9" />
-      <node id="1047408822409602302" at="40,259,41,20" concept="9" />
-      <node id="6631111943583857224" at="42,7,43,101" concept="3" />
+      <node id="414045414354340895" at="20,61,21,35" concept="8" />
+      <node id="414045414354373753" at="22,24,23,19" concept="9" />
+      <node id="6803901086853929119" at="25,92,26,19" concept="9" />
+      <node id="6631111943583857195" at="27,5,28,25" concept="8" />
+      <node id="8015517816488552125" at="29,29,30,220" concept="8" />
+      <node id="8015517816488631941" at="30,220,31,0" concept="11" />
+      <node id="6631111943583880218" at="33,43,34,130" concept="9" />
+      <node id="6631111943583880240" at="36,11,37,21" concept="9" />
+      <node id="1047408822409602302" at="39,259,40,20" concept="9" />
+      <node id="8015517816488632380" at="41,7,42,0" concept="11" />
+      <node id="6631111943583857224" at="42,0,43,101" concept="3" />
       <node id="6803901086853929121" at="44,5,45,16" concept="9" />
-      <node id="6803901086853929089" at="17,0,19,0" concept="1" trace="ErrorReportUtil#()V" />
-      <node id="414045414354372315" at="20,35,23,5" concept="6" />
-      <node id="6803901086853929109" at="23,5,26,5" concept="6" />
-      <node id="6631111943583857251" at="28,29,31,7" concept="6" />
-      <node id="6631111943583880214" at="34,0,37,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1047408822409602300" at="39,7,42,7" concept="6" />
-      <node id="6631111943583880195" at="32,98,39,7" concept="6" />
-      <node id="6631111943583857203" at="27,25,44,5" concept="15" />
-      <node id="6803901086853929093" at="19,0,47,0" concept="13" trace="shouldReportError#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="6803901086853929092" at="17,28,17,28" />
-      <scope id="414045414354372318" at="21,24,22,19" />
-      <scope id="6803901086853929118" at="24,92,25,19" />
-      <scope id="6631111943583857252" at="29,603,30,21" />
-      <scope id="6631111943583880215" at="34,43,35,130" />
-      <scope id="6631111943583880196" at="37,11,38,21" />
-      <scope id="1047408822409602301" at="40,259,41,20" />
-      <scope id="6803901086853929089" at="17,0,19,0" />
-      <scope id="6631111943583880214" at="34,0,37,0">
+      <node id="6803901086853929089" at="18,0,20,0" concept="1" trace="ErrorReportUtil#()V" />
+      <node id="414045414354372315" at="21,35,24,5" concept="6" />
+      <node id="6803901086853929109" at="24,5,27,5" concept="6" />
+      <node id="6631111943583880214" at="33,0,36,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1047408822409602300" at="38,7,41,7" concept="6" />
+      <node id="6631111943583880195" at="31,0,38,7" concept="6" />
+      <node id="6631111943583857203" at="28,25,44,5" concept="15" />
+      <node id="6803901086853929093" at="20,0,47,0" concept="13" trace="shouldReportError#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6803901086853929092" at="18,28,18,28" />
+      <scope id="414045414354372318" at="22,24,23,19" />
+      <scope id="6803901086853929118" at="25,92,26,19" />
+      <scope id="6631111943583880215" at="33,43,34,130" />
+      <scope id="6631111943583880196" at="36,11,37,21" />
+      <scope id="1047408822409602301" at="39,259,40,20" />
+      <scope id="6803901086853929089" at="18,0,20,0" />
+      <scope id="6631111943583880214" at="33,0,36,0">
         <var name="attr" id="6631111943583880214" />
       </scope>
-      <scope id="6631111943583857205" at="28,29,43,101" />
-      <scope id="6803901086853929098" at="19,61,45,16">
+      <scope id="6631111943583857205" at="29,29,43,101">
+        <var name="possibleSuppressors" id="8015517816488552126" />
+      </scope>
+      <scope id="6803901086853929098" at="20,61,45,16">
         <var name="current" id="6631111943583857196" />
         <var name="model" id="414045414354340896" />
       </scope>
-      <scope id="6803901086853929093" at="19,0,47,0">
+      <scope id="6803901086853929093" at="20,0,47,0">
         <var name="node" id="6803901086853929096" />
       </scope>
-      <unit id="6631111943583880214" at="33,597,37,7" name="jetbrains.mps.checkers.ErrorReportUtil$1" />
-      <unit id="6803901086853929087" at="16,0,48,0" name="jetbrains.mps.checkers.ErrorReportUtil" />
+      <unit id="6631111943583880214" at="32,294,36,7" name="jetbrains.mps.checkers.ErrorReportUtil$1" />
+      <unit id="6803901086853929087" at="17,0,48,0" name="jetbrains.mps.checkers.ErrorReportUtil" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718154">
