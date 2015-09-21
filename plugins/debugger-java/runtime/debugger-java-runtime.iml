@@ -36,5 +36,6 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="behavior-runtime" />
   </component>
 </module>
