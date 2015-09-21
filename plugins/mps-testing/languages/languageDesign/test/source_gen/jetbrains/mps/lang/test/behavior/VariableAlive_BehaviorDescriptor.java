@@ -7,6 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class VariableAlive_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
   public VariableAlive_BehaviorDescriptor() {
   }
+  public boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return VariableAlive_Behavior.virtual_expectsErrorsInside_3715262949175178440(thisNode);
+  }
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return VariableAlive_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }

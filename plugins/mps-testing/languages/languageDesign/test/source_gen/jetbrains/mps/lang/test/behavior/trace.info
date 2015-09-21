@@ -44,13 +44,13 @@
       <unit at="7,0,18,0" name="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />
     </file>
     <file name="CheckDataFlowOperation_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
     </file>
     <file name="CheckNodeDataflow_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.test.behavior.CheckNodeDataflow_BehaviorDescriptor" />
     </file>
     <file name="CheckNodeForErrorMessagesOperation_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_BehaviorDescriptor" />
+      <unit at="7,0,27,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_BehaviorDescriptor" />
     </file>
     <file name="CheckNodeForErrors_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrors_BehaviorDescriptor" />
@@ -101,7 +101,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.ModelExpression_BehaviorDescriptor" />
     </file>
     <file name="NodeCheckOperation_BehaviorDescriptor.java">
-      <unit at="11,0,33,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
+      <unit at="11,0,36,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodeConstraintsErrorCheckOperation_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_BehaviorDescriptor" />
@@ -113,16 +113,16 @@
       <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodeExpectedTypeCheckOperation_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodeOperationsContainer_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor" />
     </file>
     <file name="NodePropertiesContainer_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.NodePropertiesContainer_BehaviorDescriptor" />
     </file>
     <file name="NodeReachable_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_BehaviorDescriptor" />
     </file>
     <file name="NodeRuleCheckOperation_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" />
@@ -131,7 +131,7 @@
       <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeTypeCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodeTypeSetCheckOperation_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodeTypeSystemErrorCheckOperation_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemErrorCheckOperation_BehaviorDescriptor" />
@@ -206,10 +206,10 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.UntypedExpression_BehaviorDescriptor" />
     </file>
     <file name="VariableAlive_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_BehaviorDescriptor" />
     </file>
     <file name="VariableInitialized_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_BehaviorDescriptor" />
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_BehaviorDescriptor" />
     </file>
     <file name="WarningStatementReference_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.test.behavior.WarningStatementReference_BehaviorDescriptor" />
@@ -250,11 +250,13 @@
       <node id="1217511392668" at="27,74,28,120" concept="10" />
       <node id="7691029917082523705" at="30,81,31,230" concept="9" />
       <node id="2912288420882529761" at="31,230,32,48" concept="10" />
+      <node id="3715262949175178978" at="34,89,35,16" concept="10" />
       <node id="1215601170868" at="12,0,14,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8578280453511147778" at="17,10,19,5" concept="1" />
       <node id="1215601170868" at="21,0,24,0" concept="12" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1215601170868" at="24,0,27,0" concept="12" trace="virtual_getTestCase_1216134500045#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1215601170868" at="27,0,30,0" concept="12" trace="virtual_getTestName_1216136419751#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1215601170868" at="34,0,37,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1215601170868" at="30,0,34,0" concept="12" trace="call_getAnnotatedNode_2912288420882528229#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8578280453511147759" at="14,67,19,5" concept="7" />
       <node id="1215601170868" at="14,0,21,0" concept="12" trace="call_getName_1217435265700#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -264,6 +266,7 @@
       <scope id="3310779261129403121" at="21,88,22,16" />
       <scope id="1217511339212" at="24,73,25,207" />
       <scope id="1217511379744" at="27,74,28,120" />
+      <scope id="3715262949175178443" at="34,89,35,16" />
       <scope id="1215601170868" at="12,0,14,0">
         <var name="thisNode" id="1215601170868" />
       </scope>
@@ -279,6 +282,9 @@
       <scope id="1215601170868" at="27,0,30,0">
         <var name="thisNode" id="1215601170868" />
       </scope>
+      <scope id="1215601170868" at="34,0,37,0">
+        <var name="thisNode" id="1215601170868" />
+      </scope>
       <scope id="1215601170868" at="30,0,34,0">
         <var name="thisNode" id="1215601170868" />
       </scope>
@@ -286,7 +292,7 @@
       <scope id="1215601170868" at="14,0,21,0">
         <var name="thisNode" id="1215601170868" />
       </scope>
-      <unit id="1215601170868" at="11,0,35,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_Behavior" />
+      <unit id="1215601170868" at="11,0,38,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1215607133327">
@@ -296,13 +302,16 @@
       <node id="7842290789182228927" at="16,37,17,388" concept="4" />
       <node id="501631557342735916" at="19,83,20,32" concept="10" />
       <node id="4217372445146000141" at="22,78,23,121" concept="10" />
+      <node id="3715262949175191415" at="25,89,26,17" concept="10" />
       <node id="1215607133327" at="12,0,14,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1215607133327" at="19,0,22,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1215607133327" at="22,0,25,0" concept="12" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1215607133327" at="25,0,28,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1215607133327" at="14,0,19,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1215607133329" at="12,43,12,43" />
       <scope id="8578280453511506073" at="19,83,20,32" />
       <scope id="4217372445145986915" at="22,78,23,121" />
+      <scope id="3715262949175191414" at="25,89,26,17" />
       <scope id="1215607133327" at="12,0,14,0">
         <var name="thisNode" id="1215607133327" />
       </scope>
@@ -316,23 +325,29 @@
       <scope id="1215607133327" at="22,0,25,0">
         <var name="thisNode" id="1215607133327" />
       </scope>
+      <scope id="1215607133327" at="25,0,28,0">
+        <var name="thisNode" id="1215607133327" />
+      </scope>
       <scope id="1215607133327" at="14,0,19,0">
         <var name="node" id="245688835340925419" />
         <var name="thisNode" id="1215607133327" />
       </scope>
-      <unit id="1215607133327" at="11,0,26,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_Behavior" />
+      <unit id="1215607133327" at="11,0,29,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1215611890874">
     <file name="CheckDataFlowOperation_Behavior.java">
       <node id="2581682347020966134" at="11,85,12,48" concept="4" />
       <node id="1217435388052" at="14,83,15,27" concept="10" />
+      <node id="3715262949175191286" at="17,89,18,17" concept="10" />
       <node id="1215611890874" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1215611890874" at="11,0,14,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1215611890874" at="14,0,17,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1215611890874" at="17,0,20,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1215611890876" at="9,43,9,43" />
       <scope id="1215611899255" at="11,85,12,48" />
       <scope id="8578280453511503074" at="14,83,15,27" />
+      <scope id="3715262949175191004" at="17,89,18,17" />
       <scope id="1215611890874" at="9,0,11,0">
         <var name="thisNode" id="1215611890874" />
       </scope>
@@ -343,7 +358,10 @@
       <scope id="1215611890874" at="14,0,17,0">
         <var name="thisNode" id="1215611890874" />
       </scope>
-      <unit id="1215611890874" at="8,0,18,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_Behavior" />
+      <scope id="1215611890874" at="17,0,20,0">
+        <var name="thisNode" id="1215611890874" />
+      </scope>
+      <unit id="1215611890874" at="8,0,21,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1217250493536">
@@ -512,27 +530,40 @@
       <node id="2893471348148264502" at="27,209,28,210" concept="9" />
       <node id="2893471348148265888" at="29,140,30,131" concept="4" />
       <node id="2893471348147560235" at="32,5,33,216" concept="4" />
+      <node id="3715262949175168824" at="37,39,38,133" concept="10" />
       <node id="1262430001741703830" at="15,0,17,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5587533744543549877" at="19,0,22,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2893471348148265070" at="28,210,31,7" concept="7" />
+      <node id="3715262949175158615" at="37,0,40,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5587533744543419282" at="17,88,22,7" concept="4" />
+      <node id="3715262949175148305" at="35,91,40,7" concept="10" />
       <node id="2893471348148261672" at="26,61,32,5" concept="7" />
       <node id="1262430001741703830" at="17,0,24,0" concept="12" trace="call_detachAllErrorOperations_5587533744543326483#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741703830" at="35,0,42,0" concept="12" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1262430001741703830" at="24,0,35,0" concept="12" trace="call_createNodeAndAttachReference_428590876657265140#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/IErrorReporter;)V" />
       <scope id="1262430001741703832" at="15,43,15,43" />
       <scope id="5587533744543549878" at="19,39,20,201" />
       <scope id="2893471348148265073" at="29,140,30,131" />
+      <scope id="3715262949175158616" at="37,39,38,133" />
       <scope id="1262430001741703830" at="15,0,17,0">
         <var name="thisNode" id="1262430001741703830" />
       </scope>
       <scope id="5587533744543549877" at="19,0,22,0">
         <var name="it" id="5587533744543549877" />
       </scope>
+      <scope id="3715262949175158615" at="37,0,40,0">
+        <var name="it" id="3715262949175158615" />
+      </scope>
       <scope id="2893471348148261675" at="27,209,31,7">
         <var name="node" id="2893471348148264505" />
       </scope>
       <scope id="5587533744543326486" at="17,88,22,7" />
+      <scope id="3715262949175123619" at="35,91,40,7" />
       <scope id="1262430001741703830" at="17,0,24,0">
+        <var name="thisNode" id="1262430001741703830" />
+      </scope>
+      <scope id="1262430001741703830" at="35,0,42,0">
+        <var name="child" id="3715262949175123620" />
         <var name="thisNode" id="1262430001741703830" />
       </scope>
       <scope id="428590876657265143" at="24,133,33,216">
@@ -545,7 +576,8 @@
         <var name="thisNode" id="1262430001741703830" />
       </scope>
       <unit id="5587533744543549877" at="18,212,22,5" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior$1" />
-      <unit id="1262430001741703830" at="14,0,36,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior" />
+      <unit id="3715262949175158615" at="36,211,40,5" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior$2" />
+      <unit id="1262430001741703830" at="14,0,43,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741717278">
@@ -674,12 +706,15 @@
     <file name="NodeReachable_Behavior.java">
       <node id="6039012657053774965" at="13,85,14,237" concept="4" />
       <node id="2754172450389427126" at="16,83,17,32" concept="10" />
+      <node id="3715262949175191622" at="19,89,20,17" concept="10" />
       <node id="2754172450389427103" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389427103" at="13,0,16,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389427103" at="16,0,19,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2754172450389427103" at="19,0,22,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="2754172450389427105" at="11,43,11,43" />
       <scope id="2702384151998373449" at="13,85,14,237" />
       <scope id="8578280453511512380" at="16,83,17,32" />
+      <scope id="3715262949175191621" at="19,89,20,17" />
       <scope id="2754172450389427103" at="11,0,13,0">
         <var name="thisNode" id="2754172450389427103" />
       </scope>
@@ -690,7 +725,10 @@
       <scope id="2754172450389427103" at="16,0,19,0">
         <var name="thisNode" id="2754172450389427103" />
       </scope>
-      <unit id="2754172450389427103" at="10,0,20,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_Behavior" />
+      <scope id="2754172450389427103" at="19,0,22,0">
+        <var name="thisNode" id="2754172450389427103" />
+      </scope>
+      <unit id="2754172450389427103" at="10,0,23,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389427819">
@@ -700,14 +738,17 @@
       <node id="2912288420887325637" at="21,116,22,366" concept="9" />
       <node id="2912288420887325644" at="22,366,23,80" concept="4" />
       <node id="2754172450389427842" at="28,83,29,35" concept="10" />
+      <node id="3715262949175192064" at="31,89,32,17" concept="10" />
       <node id="2754172450389427819" at="14,0,16,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389427819" at="28,0,31,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2754172450389427819" at="31,0,34,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2912288420887325621" at="19,63,24,9" concept="7" />
       <node id="2912288420887325615" at="19,0,26,0" concept="8" trace="checkOperation#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
       <node id="2581682347019826490" at="17,37,26,7" concept="4" />
       <node id="2754172450389427819" at="16,0,28,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="2754172450389427821" at="14,43,14,43" />
       <scope id="8578280453511607694" at="28,83,29,35" />
+      <scope id="3715262949175192063" at="31,89,32,17" />
       <scope id="2754172450389427819" at="14,0,16,0">
         <var name="thisNode" id="2754172450389427819" />
       </scope>
@@ -716,6 +757,9 @@
         <var name="type2" id="2912288420887325638" />
       </scope>
       <scope id="2754172450389427819" at="28,0,31,0">
+        <var name="thisNode" id="2754172450389427819" />
+      </scope>
+      <scope id="2754172450389427819" at="31,0,34,0">
         <var name="thisNode" id="2754172450389427819" />
       </scope>
       <scope id="2912288420887325620" at="19,63,24,9" />
@@ -730,7 +774,7 @@
         <var name="thisNode" id="2754172450389427819" />
       </scope>
       <unit id="2912288420887325613" at="18,58,26,5" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_Behavior$1" />
-      <unit id="2754172450389427819" at="13,0,32,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_Behavior" />
+      <unit id="2754172450389427819" at="13,0,35,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389428163">
@@ -742,8 +786,10 @@
       <node id="2912288420887216730" at="26,29,27,20" concept="2" />
       <node id="2912288420887216741" at="29,11,30,468" concept="4" />
       <node id="2754172450389428186" at="35,83,36,30" concept="10" />
+      <node id="3715262949175194866" at="38,89,39,17" concept="10" />
       <node id="2754172450389428163" at="15,0,17,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389428163" at="35,0,38,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2754172450389428163" at="38,0,41,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2912288420887216724" at="24,379,28,13" concept="7" />
       <node id="2912288420887216722" at="23,34,29,11" concept="6" />
       <node id="2912288420887216709" at="20,63,31,9" concept="7" />
@@ -752,11 +798,15 @@
       <node id="2754172450389428163" at="17,0,35,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="2754172450389428165" at="15,43,15,43" />
       <scope id="8578280453511609213" at="35,83,36,30" />
+      <scope id="3715262949175194865" at="38,89,39,17" />
       <scope id="2754172450389428163" at="15,0,17,0">
         <var name="thisNode" id="2754172450389428163" />
       </scope>
       <scope id="2912288420887216725" at="25,56,27,20" />
       <scope id="2754172450389428163" at="35,0,38,0">
+        <var name="thisNode" id="2754172450389428163" />
+      </scope>
+      <scope id="2754172450389428163" at="38,0,41,0">
         <var name="thisNode" id="2754172450389428163" />
       </scope>
       <scope id="2912288420887216723" at="24,379,28,13" />
@@ -779,7 +829,7 @@
         <var name="thisNode" id="2754172450389428163" />
       </scope>
       <unit id="2912288420887216701" at="19,58,33,5" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_Behavior$1" />
-      <unit id="2754172450389428163" at="14,0,39,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_Behavior" />
+      <unit id="2754172450389428163" at="14,0,42,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389429364">
@@ -841,12 +891,15 @@
     <file name="VariableInitialized_Behavior.java">
       <node id="6039012657053772343" at="13,85,14,237" concept="4" />
       <node id="2754172450389432086" at="16,83,17,42" concept="10" />
+      <node id="3715262949175197456" at="19,89,20,17" concept="10" />
       <node id="2754172450389432063" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389432063" at="13,0,16,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389432063" at="16,0,19,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2754172450389432063" at="19,0,22,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="2754172450389432065" at="11,43,11,43" />
       <scope id="1215601182158" at="13,85,14,237" />
       <scope id="8578280453511620735" at="16,83,17,42" />
+      <scope id="3715262949175197455" at="19,89,20,17" />
       <scope id="2754172450389432063" at="11,0,13,0">
         <var name="thisNode" id="2754172450389432063" />
       </scope>
@@ -857,19 +910,25 @@
       <scope id="2754172450389432063" at="16,0,19,0">
         <var name="thisNode" id="2754172450389432063" />
       </scope>
-      <unit id="2754172450389432063" at="10,0,20,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_Behavior" />
+      <scope id="2754172450389432063" at="19,0,22,0">
+        <var name="thisNode" id="2754172450389432063" />
+      </scope>
+      <unit id="2754172450389432063" at="10,0,23,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389650566">
     <file name="VariableAlive_Behavior.java">
       <node id="6039012657053774060" at="13,85,14,237" concept="4" />
       <node id="2754172450389650589" at="16,83,17,36" concept="10" />
+      <node id="3715262949175197352" at="19,89,20,17" concept="10" />
       <node id="2754172450389650566" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389650566" at="13,0,16,0" concept="12" trace="virtual_perform_245688835340859348#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2754172450389650566" at="16,0,19,0" concept="12" trace="virtual_getDefaultName_8578280453511146306#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2754172450389650566" at="19,0,22,0" concept="12" trace="virtual_expectsErrorsInside_3715262949175178440#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="2754172450389650568" at="11,43,11,43" />
       <scope id="2702384151998371511" at="13,85,14,237" />
       <scope id="8578280453511619479" at="16,83,17,36" />
+      <scope id="3715262949175197351" at="19,89,20,17" />
       <scope id="2754172450389650566" at="11,0,13,0">
         <var name="thisNode" id="2754172450389650566" />
       </scope>
@@ -880,7 +939,10 @@
       <scope id="2754172450389650566" at="16,0,19,0">
         <var name="thisNode" id="2754172450389650566" />
       </scope>
-      <unit id="2754172450389650566" at="10,0,20,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_Behavior" />
+      <scope id="2754172450389650566" at="19,0,22,0">
+        <var name="thisNode" id="2754172450389650566" />
+      </scope>
+      <unit id="2754172450389650566" at="10,0,23,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2893471348147804005">

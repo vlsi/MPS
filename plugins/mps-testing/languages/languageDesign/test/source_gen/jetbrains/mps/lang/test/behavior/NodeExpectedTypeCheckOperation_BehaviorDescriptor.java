@@ -7,6 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodeExpectedTypeCheckOperation_BehaviorDescriptor extends NodeTypeCheckOperation_BehaviorDescriptor {
   public NodeExpectedTypeCheckOperation_BehaviorDescriptor() {
   }
+  public boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return NodeExpectedTypeCheckOperation_Behavior.virtual_expectsErrorsInside_3715262949175178440(thisNode);
+  }
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return NodeExpectedTypeCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }

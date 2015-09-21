@@ -22,4 +22,7 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
   }
+  public static boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return false;
+  }
 }

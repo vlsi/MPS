@@ -11,6 +11,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public NodeCheckOperation_BehaviorDescriptor() {
   }
+  public boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return NodeCheckOperation_Behavior.virtual_expectsErrorsInside_3715262949175178440(thisNode);
+  }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

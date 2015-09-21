@@ -31,4 +31,7 @@ public class NodeCheckOperation_Behavior {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     return SNodeOperations.getParent(container);
   }
+  public static boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return true;
+  }
 }

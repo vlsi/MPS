@@ -32,4 +32,11 @@ public class NodeOperationsContainer_Behavior {
     }
     ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))).addElement(newNode);
   }
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_expectsErrorsInside_3715262949175178440", new Object[]{});
+      }
+    });
+  }
 }

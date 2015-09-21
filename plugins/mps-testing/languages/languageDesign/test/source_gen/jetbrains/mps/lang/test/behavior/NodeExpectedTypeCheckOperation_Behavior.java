@@ -28,4 +28,7 @@ public class NodeExpectedTypeCheckOperation_Behavior {
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeExpectedTypeCheck";
   }
+  public static boolean virtual_expectsErrorsInside_3715262949175178440(SNode thisNode) {
+    return false;
+  }
 }
