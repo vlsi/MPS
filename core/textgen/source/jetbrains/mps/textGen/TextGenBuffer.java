@@ -97,14 +97,18 @@ public final class TextGenBuffer {
     if (getTopBufferLength() > 0) {
       // FIXME newlines to separate top from bottom done right, instead of this hack
       selectPart(TOP);
-      // mimin two newlines added in getText()
+      // mimic two newlines added in getText()
       myBuffer.area().newLine().newLine();
       selectPart(DEFAULT);
     }
     return myBuffer.snapshot(myBuffer.newLayout());
   }
 
-  /*package*/ TextBuffer getRealBuffer() {
+
+  /*
+   * FIXME shall be package-local, but there's no other way to access TextBuffer (or TextGenContext) in BL.ImportsContext
+   */
+  public TextBuffer getRealBuffer() {
     return myBuffer;
   }
 
