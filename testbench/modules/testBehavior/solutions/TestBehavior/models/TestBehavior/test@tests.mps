@@ -8,9 +8,9 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="43359135-f67c-4a3d-9fdd-a3d7dba50995" name="BHL1" version="0" />
   </languages>
   <imports>
-    <import index="8jon" ref="r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)" />
     <import index="ynox" ref="r:d5b954f8-51a0-4e5e-8222-e5ceaabb7619(UtilSolution.util)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="9x1z" ref="r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(BHL2.structure)" />
@@ -25,8 +25,8 @@
     <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
     <import index="3cc8" ref="r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)" />
     <import index="n871" ref="r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)" />
-    <import index="jbip" ref="r:d7fa4265-2db2-475e-a521-ccd734907efd(TestBehaviorReflective.test@tests)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="8jon" ref="r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" implicit="true" />
     <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" implicit="true" />
@@ -239,23 +239,23 @@
           <node concept="3cpWs8" id="5ZuOEs_PvKG" role="3cqZAp">
             <node concept="3cpWsn" id="5ZuOEs_PvKH" role="3cpWs9">
               <property role="TrG5h" value="nodeA" />
-              <node concept="3Tqbb2" id="5ZuOEs_PvKI" role="1tU5fm">
-                <ref role="ehGHo" to="8jon:5jWiLvujMjb" resolve="A" />
-              </node>
               <node concept="2pJPEk" id="5ZuOEs_PvKJ" role="33vP2m">
                 <node concept="2pJPED" id="5ZuOEs_PvKK" role="2pJPEn">
                   <ref role="2pJxaS" to="8jon:5jWiLvujMjb" resolve="A" />
                 </node>
               </node>
+              <node concept="3Tqbb2" id="5ZuOEs_PvKI" role="1tU5fm">
+                <ref role="ehGHo" to="8jon:5jWiLvujMjb" resolve="A" />
+              </node>
             </node>
           </node>
           <node concept="3vMLTj" id="5ZuOEs_PvKL" role="3cqZAp">
             <node concept="2OqwBi" id="5ZuOEs_PvKM" role="3tpDZA">
-              <node concept="37vLTw" id="5ZuOEs_PvKN" role="2Oq$k0">
-                <ref role="3cqZAo" node="5ZuOEs_PvKH" resolve="nodeA" />
-              </node>
               <node concept="2qgKlT" id="5ZuOEs_PvKO" role="2OqNvi">
                 <ref role="37wK5l" to="4uhy:5jWiLvujMjC" resolve="foo" />
+              </node>
+              <node concept="37vLTw" id="5ZuOEs_PvKN" role="2Oq$k0">
+                <ref role="3cqZAo" node="5ZuOEs_PvKH" resolve="nodeA" />
               </node>
             </node>
             <node concept="10M0yZ" id="5ZuOEs_PvKP" role="3tpDZB">
@@ -273,13 +273,13 @@
           <node concept="3cpWs8" id="5jWiLvujMLx" role="3cqZAp">
             <node concept="3cpWsn" id="5jWiLvujMLy" role="3cpWs9">
               <property role="TrG5h" value="nodeI" />
-              <node concept="3Tqbb2" id="5jWiLvujMLz" role="1tU5fm">
-                <ref role="ehGHo" to="8jon:5jWiLvujMjc" resolve="I" />
-              </node>
               <node concept="2pJPEk" id="5jWiLvujML$" role="33vP2m">
                 <node concept="2pJPED" id="5jWiLvujMPl" role="2pJPEn">
                   <ref role="2pJxaS" to="8jon:5jWiLvujMjb" resolve="A" />
                 </node>
+              </node>
+              <node concept="3Tqbb2" id="5jWiLvujMLz" role="1tU5fm">
+                <ref role="ehGHo" to="8jon:5jWiLvujMjc" resolve="I" />
               </node>
             </node>
           </node>
@@ -307,13 +307,13 @@
           <node concept="3cpWs8" id="6EMTxOPT3yX" role="3cqZAp">
             <node concept="3cpWsn" id="6EMTxOPT3z0" role="3cpWs9">
               <property role="TrG5h" value="nodeI1" />
-              <node concept="3Tqbb2" id="6EMTxOPT3yW" role="1tU5fm">
-                <ref role="ehGHo" to="8jon:7Ts2tYwvl$v" resolve="I1" />
-              </node>
               <node concept="2pJPEk" id="6EMTxOPT3zX" role="33vP2m">
                 <node concept="2pJPED" id="6EMTxOPT3$o" role="2pJPEn">
                   <ref role="2pJxaS" to="8jon:7Ts2tYwvl$u" resolve="A1" />
                 </node>
+              </node>
+              <node concept="3Tqbb2" id="6EMTxOPT3yW" role="1tU5fm">
+                <ref role="ehGHo" to="8jon:7Ts2tYwvl$v" resolve="I1" />
               </node>
             </node>
           </node>

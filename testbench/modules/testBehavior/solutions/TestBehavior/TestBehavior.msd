@@ -23,6 +23,7 @@
     <dependency reexport="false">beff1186-d062-491c-bb4e-4c63c5bc07f4(TestBehaviorReflective)</dependency>
   </dependencies>
   <languageVersions>
+    <language id="43359135-f67c-4a3d-9fdd-a3d7dba50995" fqName="BHL1" version="0" />
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="2" />
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <language id="fd392034-7849-419d-9071-12563d152375" fqName="jetbrains.mps.baseLanguage.closures" version="0" />

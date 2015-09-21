@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.behavior.runtime" uuid="d936855b-48da-4812-a8a0-2bfddd633ac4" compileInMPS="true">
+<solution name="jetbrains.mps.lang.behavior.runtime" uuid="d936855b-48da-4812-a8a0-2bfddd633ac4" compileInMPS="false">
   <models>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
-    </modelRoot>
-    <modelRoot contentPath="${mps_home}/core/aspects/behavior/behavior-runtime" type="java_classes">
+    <modelRoot contentPath="${module}" type="default" />
+    <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="classes" />
     </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/aspects/behavior/behavior-runtime/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
