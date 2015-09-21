@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -22,7 +22,7 @@ public class check_OrderConstraints_NonTypesystemRule extends AbstractNonTypesys
     if ((SNodeOperations.getParent(c) == null)) {
       return;
     }
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, c, "virtual_presents_1499919975383879508", new Object[]{SNodeOperations.getNodeAncestor(c, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false)})) {
+    if (OrderConstraints_BehaviorDescriptor.presents_id1jgMklchcXk.invoke(c, SNodeOperations.getNodeAncestor(c, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false))) {
       return;
     }
     {

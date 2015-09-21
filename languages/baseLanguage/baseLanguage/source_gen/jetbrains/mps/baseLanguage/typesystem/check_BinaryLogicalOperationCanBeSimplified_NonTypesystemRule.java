@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -34,8 +34,8 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     SModule module = SNodeOperations.getModel(binaryOperation).getModule();
 
     // Both sides could be eliminated 
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, binaryOperation, "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
-      Object binaryValue = BehaviorReflection.invokeVirtual(Object.class, binaryOperation, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
+    if (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(binaryOperation)) {
+      Object binaryValue = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(binaryOperation, module);
       if (binaryValue != null && binaryValue instanceof Boolean) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -51,8 +51,8 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
       }
     }
 
-    Object leftValue = (BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, left, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
-    Object rightValue = (BehaviorReflection.invokeVirtual(Boolean.TYPE, right, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, right, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
+    Object leftValue = (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(left) ? Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(left, module) : null);
+    Object rightValue = (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(right) ? Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(right, module) : null);
 
     if (leftValue != null && leftValue instanceof Boolean) {
       value = (Boolean) leftValue;

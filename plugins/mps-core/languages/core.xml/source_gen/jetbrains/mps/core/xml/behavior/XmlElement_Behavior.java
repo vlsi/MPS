@@ -8,12 +8,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class XmlElement_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean call_isMultiline_8886258982030574875(SNode thisNode) {
+  public static boolean call_isMultiline_8886258982030574875(SNode __thisNode__) {
     boolean multiline = false;
-    for (SNode n : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"))) {
+    for (SNode n : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"))) {
       if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486dL, "jetbrains.mps.core.xml.structure.XmlBaseElement"))) {
         multiline = true;
       } else if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, "jetbrains.mps.core.xml.structure.XmlComment"))) {

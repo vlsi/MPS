@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +31,7 @@ public class typeof_GetAccessor_InferenceRule extends AbstractInferenceRule_Runt
     }
 
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(getAccessor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, 0x11800267618L, "statementList")));
-    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getAccessor, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    SNode expectedRetType = IMethodLike_BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(getAccessor);
 
     // should return subtypes of the 'expected type' 
     for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
@@ -52,7 +52,7 @@ public class typeof_GetAccessor_InferenceRule extends AbstractInferenceRule_Runt
       }
     }
     // last expression statement can serve as return statement 
-    SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getAccessor, "virtual_getLastStatement_1239354409446", new Object[]{});
+    SNode lastStatement = IMethodLike_BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(getAccessor);
     if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4285773203933582401", true);
       if (!(typeCheckingContext.isSingleTypeComputation())) {

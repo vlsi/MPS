@@ -11,30 +11,33 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class SimpleBuilders_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean call_isDescendant_5199967550912479710(SNode thisNode, SNode b) {
-    if (thisNode == b) {
+  public static boolean call_isDescendant_5199967550912479710(SNode __thisNode__, SNode b) {
+    if (__thisNode__ == b) {
       return true;
     }
-    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")) == null)) {
+    if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")) == null)) {
       return false;
     }
-    return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
+    return SimpleBuilders_BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
   }
-  public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
+  public static List<SNode> call_getDescendands_5199967550912479741(SNode __thisNode__, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
-      if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {
+      if (SimpleBuilders_BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(sb, __thisNode__)) {
         ListSequence.fromList(result).addElement(sb);
       }
     }
     return result;
   }
-  public static List<SNode> call_getAncestors_6211769134875410554(SNode thisNode) {
+  public static List<SNode> call_getAncestors_6211769134875410554(SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode current = thisNode;
+    SNode current = __thisNode__;
     while (current != null) {
       ListSequence.fromList(result).addElement(current);
       current = SLinkOperations.getTarget(current, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder"));

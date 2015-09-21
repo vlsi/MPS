@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior;
+import jetbrains.mps.execution.configurations.behavior.RunConfiguration_BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_RunConfiguration_NonTypesystemRule extends AbstractNonTypesys
   public check_RunConfiguration_NonTypesystemRule() {
   }
   public void applyRule(final SNode runConfiguration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((RunConfiguration_Behavior.call_getExecutor_3754890006475713427(runConfiguration) == null)) {
+    if ((RunConfiguration_BehaviorDescriptor.getExecutor_id3gs394eDyIj.invoke(runConfiguration) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(runConfiguration, "Run configuration should define an executor", "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2535050848643223624", null, errorTarget);

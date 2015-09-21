@@ -8,12 +8,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import javax.swing.JPanel;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Canvas_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static void call_interpret_1082824515535528722(SNode thisNode) {
-    JFrame frame = new JFrame("Preview: " + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    final JPanel panel = PreviewFactory.createPanel(thisNode);
+  public static void call_interpret_1082824515535528722(SNode __thisNode__) {
+    JFrame frame = new JFrame("Preview: " + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    final JPanel panel = PreviewFactory.createPanel(__thisNode__);
     frame.add(panel);
     frame.setVisible(true);
     frame.pack();

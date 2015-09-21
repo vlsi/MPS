@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -34,7 +34,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
       return;
     }
     {
-      Iterator<SNode> initializer_it = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticInitializers_3136320261464948039", new Object[]{})).iterator();
+      Iterator<SNode> initializer_it = Sequence.fromIterable(ClassConcept_BehaviorDescriptor.staticInitializers_id2I6sE$IuBP7.invoke(classifier)).iterator();
       SNode initializer_var;
       while (initializer_it.hasNext()) {
         initializer_var = initializer_it.next();

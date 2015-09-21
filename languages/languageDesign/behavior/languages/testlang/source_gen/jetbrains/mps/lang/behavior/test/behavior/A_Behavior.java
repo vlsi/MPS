@@ -4,39 +4,31 @@ package jetbrains.mps.lang.behavior.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class A_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_nonVirtualMethod_4731970554577184968(SNode thisNode, String in, int dummy) {
+  public static String call_nonVirtualMethod_4731970554577184968(SNode __thisNode__, String in, int dummy) {
     return "A";
   }
-  public static String virtual_virtualMethod_4731970554577185009(SNode thisNode, String in, int dummy) {
-    return "A";
-  }
-  public static String virtual_finalVirtualMethod_4731970554577187301(SNode thisNode, String in, int dummy) {
+  public static String call_staticMethod_4731970554577185180(SAbstractConcept __thisConcept__, String in, int dummy) {
     return in;
   }
-  public static String call_staticMethod_4731970554577185180(SAbstractConcept thisConcept, String in, int dummy) {
-    return in;
-  }
-  public static String virtual_staticVirtualMethod_4731970554577185580(SAbstractConcept thisConcept, String in, int dummy) {
-    return in;
-  }
-  public static void call_doInvokeAll_4731970554577188128(SNode thisNode) {
-    A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "", 0);
-    A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "", 0);
+  public static void call_doInvokeAll_4731970554577188128(SNode __thisNode__) {
+    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
+    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
     // 
-    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"", 0});
-    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"", 0});
+    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
+    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
     // 
-    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
-    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
+    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
+    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
     // 
-    A_Behavior.call_staticMethod_4731970554577185180(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
+    A_BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
     // 
-    A_Behavior.virtual_staticVirtualMethod_4731970554577185580(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
+    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
   }
 }

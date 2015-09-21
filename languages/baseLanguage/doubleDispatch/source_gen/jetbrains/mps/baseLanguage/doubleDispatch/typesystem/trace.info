@@ -352,10 +352,10 @@
       <node id="8480956156621497712" at="81,195,82,335" concept="11" />
       <node id="8480956156621507036" at="84,9,85,21" concept="11" />
       <node id="8480956156621527164" at="88,189,89,19" concept="11" />
-      <node id="8480956156621545508" at="90,5,91,239" concept="11" />
+      <node id="8480956156621545508" at="90,5,91,159" concept="11" />
       <node id="8480956156621604265" at="94,5,95,28" concept="10" />
       <node id="8480956156621614743" at="96,190,97,182" concept="11" />
-      <node id="8480956156621637062" at="99,5,100,131" concept="11" />
+      <node id="8480956156621637062" at="99,5,100,91" concept="11" />
       <node id="6855443792548949289" at="28,0,31,0" concept="9" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6855443792548949237" at="34,35,37,5" concept="8" />
       <node id="3166734731696195894" at="40,0,43,5" concept="8" />
@@ -406,7 +406,7 @@
       <scope id="7139749370073150625" at="68,25,73,7" />
       <scope id="6855443792548949264" at="24,49,31,7" />
       <scope id="8480956156621482490" at="78,190,85,21" />
-      <scope id="8480956156621588162" at="93,39,100,131" />
+      <scope id="8480956156621588162" at="93,39,100,91" />
       <scope id="7139749370073150622" at="67,0,75,0" />
       <scope id="6855443792548949261" at="24,0,33,0">
         <var name="pattern" id="6855443792548949304" />
@@ -423,7 +423,7 @@
         <var name="ths_it" id="7139749370073304961" />
         <var name="ths_var" id="7139749370073304961" />
       </scope>
-      <scope id="8480956156621454577" at="75,54,91,239" />
+      <scope id="8480956156621454577" at="75,54,91,159" />
       <scope id="8480956156621454574" at="75,0,93,0">
         <var name="typ1" id="8480956156621466960" />
         <var name="typ2" id="8480956156621469442" />
@@ -529,8 +529,8 @@
       <scope id="35825318245998312" at="23,0,54,0">
         <var name="classToCheck" id="35825318246001444" />
       </scope>
-      <unit id="3166734731675080686" at="31,113,35,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector$1" />
-      <unit id="3166734731696544948" at="46,127,50,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector$2" />
+      <unit id="3166734731675080686" at="31,119,35,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector$1" />
+      <unit id="3166734731696544948" at="46,133,50,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector$2" />
       <unit id="6855443792548949309" at="18,0,74,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector" />
     </file>
   </root>
@@ -787,8 +787,8 @@
         <var name="status" id="6855443792548952024" />
         <var name="typeCheckingContext" id="6855443792548952024" />
       </scope>
-      <unit id="6855443792549032754" at="25,134,29,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$1" />
-      <unit id="3166734731694412398" at="30,134,34,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$2" />
+      <unit id="6855443792549032754" at="25,140,29,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$1" />
+      <unit id="3166734731694412398" at="30,140,34,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule$2" />
       <unit id="6855443792548952024" at="21,0,68,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule" />
     </file>
   </root>

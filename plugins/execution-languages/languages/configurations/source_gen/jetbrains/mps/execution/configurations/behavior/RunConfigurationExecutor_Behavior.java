@@ -13,23 +13,26 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class RunConfigurationExecutor_Behavior {
-  public static void init(SNode thisNode) {
+  public static boolean call_isDebuggable_442015021861764808(SNode __thisNode__) {
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor_BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
   }
-  public static boolean call_isDebuggable_442015021861764808(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(thisNode) && SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
+  public static boolean call_canBeSimple_6226796386650277682(SNode __thisNode__) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), _quotation_createNode_wnz9gp_b0a0a1());
   }
-  public static boolean call_canBeSimple_6226796386650277682(SNode thisNode) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), _quotation_createNode_wnz9gp_b0a0a1());
-  }
-  public static boolean call_isSimple_6226796386650421097(SNode thisNode) {
-    return RunConfigurationExecutor_Behavior.call_canBeSimple_6226796386650277682(thisNode) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
+  public static boolean call_isSimple_6226796386650421097(SNode __thisNode__) {
+    return RunConfigurationExecutor_BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   @Nullable
-  public static SNode call_getCommand_6226796386650434672(SNode thisNode) {
+  public static SNode call_getCommand_6226796386650434672(SNode __thisNode__) {
     {
       IMatchingPattern pattern_wnz9gp_a0d = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.CommandProcessType");
-      SNode coercedNode_wnz9gp_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), pattern_wnz9gp_a0d);
+      SNode coercedNode_wnz9gp_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), pattern_wnz9gp_a0d);
       if (coercedNode_wnz9gp_a0d != null) {
         if ((SLinkOperations.getTarget(coercedNode_wnz9gp_a0d, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, 0x87f99370d7e1ea4L, "commandDeclaration")) != null)) {
           return SLinkOperations.getTarget(coercedNode_wnz9gp_a0d, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, 0x87f99370d7e1ea4L, "commandDeclaration"));

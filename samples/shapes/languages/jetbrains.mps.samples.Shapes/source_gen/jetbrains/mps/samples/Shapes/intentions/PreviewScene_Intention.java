@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior;
+import jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class PreviewScene_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -48,7 +48,7 @@ public final class PreviewScene_Intention extends IntentionDescriptorBase implem
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      Canvas_Behavior.call_interpret_1082824515535528722(node);
+      Canvas_BehaviorDescriptor.interpret_idW6XMzE_6ci.invoke(node);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

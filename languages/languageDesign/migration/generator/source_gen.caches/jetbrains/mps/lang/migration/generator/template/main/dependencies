@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.MigrationsCheckUtil" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

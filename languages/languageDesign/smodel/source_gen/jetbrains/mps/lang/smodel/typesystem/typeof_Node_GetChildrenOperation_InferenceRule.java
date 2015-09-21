@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior;
+import jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -19,7 +19,7 @@ public class typeof_Node_GetChildrenOperation_InferenceRule extends AbstractInfe
   public typeof_Node_GetChildrenOperation_InferenceRule() {
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode linkQualifier = Node_GetChildrenOperation_Behavior.call_getLinkQualifier_3476105411552591984(operation);
+    SNode linkQualifier = Node_GetChildrenOperation_BehaviorDescriptor.getLinkQualifier_id30XARhxpW1K.invoke(operation);
     if ((linkQualifier != null)) {
       final SNode qualifierType_typevar_5815925154348901252 = typeCheckingContext.createNewRuntimeTypesVariable();
       {

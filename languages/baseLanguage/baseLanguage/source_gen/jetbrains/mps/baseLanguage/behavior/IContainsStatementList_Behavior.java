@@ -8,20 +8,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class IContainsStatementList_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getStatementList_1237545932619(SNode thisNode) {
-    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
+  public static SNode call_getStatementList_1237545932619(SNode __thisNode__) {
+    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
       }
     }).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
-  }
-  public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return false;
-  }
-  public static boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
-    return StatementList_Behavior.call_isOneLiner_1237538811451(IContainsStatementList_Behavior.call_getStatementList_1237545932619(thisNode));
   }
 }

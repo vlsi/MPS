@@ -2,10 +2,7 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.samples.theSimplestLanguage.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="TheSimplestConcept_BehaviorDescriptor.java">
-      <unit at="12,0,29,0" name="jetbrains.mps.samples.theSimplestLanguage.behavior.TheSimplestConcept_BehaviorDescriptor" />
+      <unit at="14,0,38,0" name="jetbrains.mps.samples.theSimplestLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

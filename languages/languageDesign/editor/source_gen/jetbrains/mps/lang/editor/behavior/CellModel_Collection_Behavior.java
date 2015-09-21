@@ -7,81 +7,49 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class CellModel_Collection_Behavior {
-  public static void init(SNode thisNode) {
+  public static boolean call_isVertical_1237380214915(SNode __thisNode__) {
+    return (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical")) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dd4cbeL, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
   }
-  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
-      return "[/";
-    } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
-      return "[-";
-    } else {
-      return "[>";
-    }
+  public static boolean call_isVerticalGrid_1239872947848(SNode __thisNode__) {
+    return (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff251aL, "gridLayout")) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120aab61370L, "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
   }
-  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
-      return "/]";
-    } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
-      return "-]";
-    } else {
-      return "<]";
-    }
+  public static boolean call_isHorizontal_1237380252717(SNode __thisNode__) {
+    return (!(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical"))) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dcf685L, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
   }
-  public static boolean call_isVertical_1237380214915(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical")) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dd4cbeL, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
+  public static boolean call_isIndentLayout_1237380273398(SNode __thisNode__) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
   }
-  public static boolean call_isVerticalGrid_1239872947848(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff251aL, "gridLayout")) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120aab61370L, "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
+  public static boolean call_isFoldingEnabled_1822203275565710635(SNode __thisNode__) {
+    return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10e3893660fL, "usesFolding")) || (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x78de9e36d994f770L, "usesFoldingCondition")) != null);
   }
-  public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
-    return (!(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical"))) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dcf685L, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
-  }
-  public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
-  }
-  public static boolean call_isFoldingEnabled_1822203275565710635(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10e3893660fL, "usesFolding")) || (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x78de9e36d994f770L, "usesFoldingCondition")) != null);
-  }
-  public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
-    if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
+  public static boolean call_isVerticalIndent_1237451001939(SNode __thisNode__) {
+    if (!(CellModel_Collection_BehaviorDescriptor.isIndentLayout_idi0pB9jQ.invoke(__thisNode__))) {
       return false;
     }
-    if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(thisNode)) {
+    if (EditorCellModel_BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(__thisNode__)) {
       return true;
     }
-    for (SNode model : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))) {
-      if (EditorCellModel_Behavior.call_isNewLine_1237383076236(model) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(model) || EditorCellModel_Behavior.call_isOnNewLine_1237385424172(model)) {
+    for (SNode model : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))) {
+      if (EditorCellModel_BehaviorDescriptor.isNewLine_idi0pLPAc.invoke(model) || EditorCellModel_BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(model) || EditorCellModel_BehaviorDescriptor.isOnNewLine_idi0pUMOG.invoke(model)) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(SNodeOperations.cast(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection")))) {
+      if (SNodeOperations.isInstanceOf(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && CellModel_Collection_BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(SNodeOperations.cast(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection")))) {
         return true;
       }
     }
     return false;
   }
-  public static boolean virtual_shellBeSynchronized_4500758155551546553(final SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, it);
-      }
-    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x6b2f47204d99c5f5L, "foldedCellModel")));
+  public static boolean call_shellBeSynchronized_4500758155551647684(SNode __thisNode__, SNode childCell) {
+    return childCell != null && SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && Synchronizeable_BehaviorDescriptor.shellBeSynchronized_id3TPTV99_TMT.invoke(SNodeOperations.cast(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
   }
-  public static boolean call_shellBeSynchronized_4500758155551647684(SNode thisNode, SNode childCell) {
-    return childCell != null && SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
-  }
-  public static boolean virtual_canBeSynchronized_4052492221165595783(final SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).all(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, it);
-      }
-    }) && CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x6b2f47204d99c5f5L, "foldedCellModel")));
-  }
-  public static boolean call_canBeSynchronized_4052492221165827676(SNode thisNode, SNode childCell) {
-    return childCell == null || (SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")), "virtual_canBeSynchronized_4052492221165595783", new Object[]{}));
+  public static boolean call_canBeSynchronized_4052492221165827676(SNode __thisNode__, SNode childCell) {
+    return childCell == null || (SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && Synchronizeable_BehaviorDescriptor.canBeSynchronized_id3wXm3h1AYM7.invoke(SNodeOperations.cast(childCell, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"))));
   }
 }

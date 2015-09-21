@@ -4,22 +4,22 @@ package jetbrains.mps.testbench.suite.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
+import jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor;
 
 @Generated
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final PropertyMacroContext _context) {
-    String fqn = BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_fqClassName_2956932267233324537", new Object[]{});
+    String fqn = ITestRef_BehaviorDescriptor.fqClassName_id2$98zG5liRT.invoke(_context.getNode());
     if ((fqn == null || fqn.length() == 0)) {
       _context.showErrorMessage(_context.getNode(), "no class name");
       return "NO CLASS NAME";
@@ -27,22 +27,22 @@ public class QueriesGenerated {
     return fqn;
   }
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final PropertyMacroContext _context) {
-    String tns = IterableUtils.join(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), _context.getNode(), "virtual_testNames_4089647634160960707", new Object[]{})), ",");
+    String tns = IterableUtils.join(Sequence.fromIterable(ITestRef_BehaviorDescriptor.testNames_id3z1mdFUF$j3.invoke(_context.getNode())), ",");
     if ((tns == null || tns.length() == 0)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }
     return tns;
   }
   public static Object propertyMacro_GetPropertyValue_4089647634160960602(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
+    return IModuleRef_BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"))).toString();
   }
   public static Object propertyMacro_GetPropertyValue_2956932267233340150(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Iterable<SNode> sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
-    return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
+    return ModuleSuite_BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_4089647634161018289(final SourceSubstituteMacroNodesContext _context) {
-    return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
+    return ModuleSuite_BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
 }

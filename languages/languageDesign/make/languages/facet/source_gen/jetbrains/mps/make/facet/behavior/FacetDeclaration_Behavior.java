@@ -13,18 +13,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class FacetDeclaration_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static Iterable<SNode> call_allExtends_7854369758457864780(SNode thisNode) {
+  public static Iterable<SNode> call_allExtends_7854369758457864780(SNode __thisNode__) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
+    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), __thisNode__);
     while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
@@ -38,9 +40,9 @@ public class FacetDeclaration_Behavior {
     }
     return result;
   }
-  public static Iterable<SNode> call_allRelated_8351679702044331818(SNode thisNode) {
+  public static Iterable<SNode> call_allRelated_8351679702044331818(SNode __thisNode__) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
+    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), __thisNode__);
     while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
@@ -59,10 +61,7 @@ public class FacetDeclaration_Behavior {
     }
     return result;
   }
-  public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
-  }
-  public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+  public static String call_getFacetFqName_1919086248986828221(SNode __thisNode__) {
+    return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SModelOperations.getModuleStub(SNodeOperations.getModel(__thisNode__))) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 }

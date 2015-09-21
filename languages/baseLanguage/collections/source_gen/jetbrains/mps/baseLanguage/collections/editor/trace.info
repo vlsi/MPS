@@ -1872,7 +1872,7 @@
       <node id="1184766078651" at="56,82,57,94" concept="7" />
       <node id="1184766078651" at="58,10,59,22" concept="7" />
       <node id="1184772415114" at="64,115,65,78" concept="6" />
-      <node id="1184772415123" at="66,217,67,415" concept="2" />
+      <node id="1184772415123" at="66,217,67,336" concept="2" />
       <node id="1184772415139" at="68,7,69,23" concept="7" />
       <node id="1184772415111" at="62,0,64,0" concept="1" trace="ForEachVariable_name_postfixCellMenu_ufuydf_a0a0#()V" />
       <node id="1184766078651" at="31,0,34,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1884,7 +1884,7 @@
       <scope id="1184772415111" at="62,63,62,63" />
       <scope id="1184766078651" at="31,79,32,63" />
       <scope id="1184766078651" at="41,79,42,81" />
-      <scope id="1184772415122" at="66,217,67,415" />
+      <scope id="1184772415122" at="66,217,67,336" />
       <scope id="1184766078651" at="55,35,57,94">
         <var name="manager" id="1184766078651" />
       </scope>
@@ -13576,7 +13576,7 @@
       <node id="9042586985346099741" at="56,82,57,94" concept="7" />
       <node id="9042586985346099741" at="58,10,59,22" concept="7" />
       <node id="9042586985346099750" at="64,115,65,78" concept="6" />
-      <node id="9042586985346099759" at="66,217,67,415" concept="2" />
+      <node id="9042586985346099759" at="66,217,67,336" concept="2" />
       <node id="9042586985346099775" at="68,7,69,23" concept="7" />
       <node id="9042586985346099747" at="62,0,64,0" concept="1" trace="MultiForEachVariable_name_postfixCellMenu_bqabhr_a0a0#()V" />
       <node id="9042586985346099741" at="31,0,34,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -13588,7 +13588,7 @@
       <scope id="9042586985346099747" at="62,68,62,68" />
       <scope id="9042586985346099741" at="31,79,32,63" />
       <scope id="9042586985346099741" at="41,79,42,81" />
-      <scope id="9042586985346099758" at="66,217,67,415" />
+      <scope id="9042586985346099758" at="66,217,67,336" />
       <scope id="9042586985346099741" at="55,35,57,94">
         <var name="manager" id="9042586985346099741" />
       </scope>

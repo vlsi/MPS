@@ -29,7 +29,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -122,7 +123,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     SetSequence.fromSet(messages).addElement(new SubclassedClassifierEditorMessage(container, this, superClassifierTooltip.toString(), isInterface));
 
     Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), container, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode method : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(container, SMethodTrimmedId.create("methods", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "4_LVZ3pBKCn")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return OverridingMethodsFinder.canBeOverriden(it);
       }
@@ -169,7 +170,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         }
         SNode overridenMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_hasSameSignature_1213877350435", new Object[]{derivedClassifierMethod});
+            return ((Boolean) BHReflection.invoke(it, SMethodTrimmedId.create("hasSameSignature", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "hEwIB0z"), derivedClassifierMethod));
           }
         });
         if (overridenMethod != null) {
@@ -255,13 +256,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
       return getEnumConstantPresentation(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")));
     }
-    return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
+    return ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
   }
   private String getClassifierPresentation(SNode classifier) {
-    return BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
+    return ((String) BHReflection.invoke(classifier, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
   private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
-    return BehaviorReflection.invokeVirtual(String.class, enumConstantDeclaration, "virtual_getFqName_1213877404258", new Object[]{});
+    return ((String) BHReflection.invoke(enumConstantDeclaration, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
   private static boolean isParameterType(SNode type) {
     SNode parent = SNodeOperations.getParent(type);

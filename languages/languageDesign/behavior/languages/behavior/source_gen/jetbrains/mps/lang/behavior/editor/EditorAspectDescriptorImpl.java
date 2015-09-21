@@ -20,9 +20,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConceptMethodDeclaration_Editor()));
       case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalBehaviorDeclarationsHolder_Editor()));
       case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationsHolder_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalBehaviorReference_Editor()));
       case 5:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LocalBehaviorMethodCall_Editor()));
       case 6:
@@ -39,5 +39,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalBehaviorDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.InternalBehaviorReference", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 }

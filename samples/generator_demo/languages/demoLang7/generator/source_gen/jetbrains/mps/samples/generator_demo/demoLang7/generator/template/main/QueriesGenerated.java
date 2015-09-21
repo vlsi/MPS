@@ -15,7 +15,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 @Generated
@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
   public static SNode templateFragment_ContextNodeQuery_3618324829955554612(final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(demoApp)).where(new IWhereFilter<SNode>() {
+    SNode method = Sequence.fromIterable(ClassConcept_BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(demoApp)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("addContent");
       }
@@ -71,7 +71,7 @@ public class QueriesGenerated {
   }
   public static SNode templateFragment_ContextNodeQuery_3618324829955828392(final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(demoApp)).where(new IWhereFilter<SNode>() {
+    SNode method = Sequence.fromIterable(ClassConcept_BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(demoApp)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("addContent");
       }

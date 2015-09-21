@@ -8,38 +8,38 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class PersistentPropertyDeclaration_Behavior {
-  public static void init(SNode thisNode) {
+  public static boolean call_isTemplate_946964771156066860(SNode __thisNode__) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_ex141d_b0a0a0());
   }
-  public static boolean call_isTemplate_946964771156066860(SNode thisNode) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_ex141d_b0a0a0());
-  }
-  public static String call_getAccessorName_946964771156066871(SNode thisNode) {
-    String name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+  public static String call_getAccessorName_946964771156066871(SNode __thisNode__) {
+    String name = PersistentPropertyDeclaration_BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
-  public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    return true;
+  public static String call_getTypeFqName_946964771156066903(SNode __thisNode__) {
+    SNode template = PersistentPropertyDeclaration_BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
+    return IGeneratedToClass_BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(template);
   }
-  public static String call_getTypeFqName_946964771156066903(SNode thisNode) {
-    SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
-    return BehaviorReflection.invokeVirtual(String.class, template, "virtual_getFullName_946964771156905503", new Object[]{});
+  public static String call_getTypeEditorFqName_946964771156066917(SNode __thisNode__) {
+    SNode template = PersistentPropertyDeclaration_BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
+    return PersistentConfiguration_BehaviorDescriptor.getFullEditorName_idO$iR4J$g2V.invoke(template);
   }
-  public static String call_getTypeEditorFqName_946964771156066917(SNode thisNode) {
-    SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
-    return PersistentConfiguration_Behavior.call_getFullEditorName_946964771156066491(template);
+  public static SNode call_getTemplate_946964771156066964(SNode __thisNode__) {
+    assert PersistentPropertyDeclaration_BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(__thisNode__);
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")), true), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration"));
   }
-  public static SNode call_getTemplate_946964771156066964(SNode thisNode) {
-    assert PersistentPropertyDeclaration_Behavior.call_isTemplate_946964771156066860(thisNode);
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")), true), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration"));
-  }
-  public static String call_addMyPrefix_6314556899428615272(SAbstractConcept thisConcept, String name) {
+  public static String call_addMyPrefix_6314556899428615272(SAbstractConcept __thisConcept__, String name) {
     String prefix = "my";
     if (name.length() > 2) {
       if (!(name.startsWith(prefix))) {
@@ -50,15 +50,15 @@ public class PersistentPropertyDeclaration_Behavior {
     }
     return name;
   }
-  public static String call_removeMyPrefixInternal_946964771156066931(SAbstractConcept thisConcept, String name) {
+  public static String call_removeMyPrefixInternal_946964771156066931(SAbstractConcept __thisConcept__, String name) {
     String prefix = "my";
     if (name.startsWith(prefix) && name.length() > 2) {
       name = name.substring(prefix.length());
     }
     return name;
   }
-  public static String call_removeMyPrefix_946964771156066836(SAbstractConcept thisConcept, String name) {
-    name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
+  public static String call_removeMyPrefix_946964771156066836(SAbstractConcept __thisConcept__, String name) {
+    name = PersistentPropertyDeclaration_BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
   private static SNode createTemplatePersistentConfigurationType_ex141d_b0a0a0() {

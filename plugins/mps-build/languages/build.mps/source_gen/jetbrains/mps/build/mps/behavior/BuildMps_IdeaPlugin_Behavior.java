@@ -6,16 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class BuildMps_IdeaPlugin_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    if ("containerName".equals(role)) {
-      return !((propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\")));
-    }
-    return !(propertyValue.contains("$"));
-  }
-  public static SNode call_getProject_1224588814562002122(SNode thisNode) {
-    return SNodeOperations.as(SNodeOperations.getContainingRoot(thisNode), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+  public static SNode call_getProject_1224588814562002122(SNode __thisNode__) {
+    return SNodeOperations.as(SNodeOperations.getContainingRoot(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
   }
 }

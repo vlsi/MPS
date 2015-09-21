@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -49,7 +49,7 @@ public class DeleteTagsAndHandleDeprecationOnAttributedNode {
           SNodeOperations.deleteNode(it);
         }
       });
-      if (BaseDocComment_Behavior.call_hasTags_4948473272651019109(commented)) {
+      if (BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(commented)) {
         SelectionUtil.selectCell(editorContext, ListSequence.fromList(SLinkOperations.getChildren(commented, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).last(), SelectionManager.FIRST_EDITABLE_CELL);
       } else {
         SelectionUtil.selectCell(editorContext, commented, SelectionManager.FIRST_EDITABLE_CELL);
@@ -82,7 +82,7 @@ public class DeleteTagsAndHandleDeprecationOnAttributedNode {
           SNodeOperations.deleteNode(it);
         }
       });
-      if (BaseDocComment_Behavior.call_hasTags_4948473272651019109(commented)) {
+      if (BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(commented)) {
         SelectionUtil.selectCell(editorContext, ListSequence.fromList(SLinkOperations.getChildren(commented, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).last(), SelectionManager.FIRST_EDITABLE_CELL);
       } else {
         SelectionUtil.selectCell(editorContext, commented, SelectionManager.FIRST_EDITABLE_CELL);

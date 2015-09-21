@@ -6,17 +6,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class ActionStatement_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getActionPattern_111677556049506425(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"))) {
-      return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"));
+  public static SNode call_getActionPattern_111677556049506425(SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"))) {
+      return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"));
     }
     return null;
   }
-  public static SNode call_getNode_111677556049506460(SNode thisNode) {
-    SNode action = ActionStatement_Behavior.call_getActionPattern_111677556049506425(thisNode);
+  public static SNode call_getNode_111677556049506460(SNode __thisNode__) {
+    SNode action = ActionStatement_BehaviorDescriptor.getActionPattern_id6cKyl1HJ1T.invoke(__thisNode__);
     if (action != null) {
       return SNodeOperations.getParent(action);
     }

@@ -9,7 +9,8 @@ import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -47,12 +48,12 @@ public abstract class IntroduceVariableRefactoring {
       List<String> expectedNames = ListSequence.fromList(new ArrayList<String>());
       String expectedVariableName = null;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
-        expectedVariableName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_getVariableExpectedName_1213877519781", new Object[]{});
+        expectedVariableName = ((String) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SMethodTrimmedId.create("getVariableExpectedName", null, "hEwJgm_")));
       }
       if (expectedVariableName != null) {
         ListSequence.fromList(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }
-      List<String> variableSuffixes = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), myExpressionType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+      List<String> variableSuffixes = ((List<String>) BHReflection.invoke(myExpressionType, SMethodTrimmedId.create("getVariableSuffixes", null, "hEwIzNo")));
       if (variableSuffixes != null) {
         ListSequence.fromList(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
       }
@@ -70,7 +71,7 @@ public abstract class IntroduceVariableRefactoring {
   private SNode getExpressionType(SNode node) {
     SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")), true);
     if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL, "jetbrains.mps.baseLanguage.structure.IInternalType"))) {
-      expressionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expressionType, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL, "jetbrains.mps.baseLanguage.structure.IInternalType")), "virtual_getPublicType_1213877443338", new Object[]{});
+      expressionType = ((SNode) BHReflection.invoke(SNodeOperations.cast(expressionType, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL, "jetbrains.mps.baseLanguage.structure.IInternalType")), SMethodTrimmedId.create("getPublicType", null, "hEwIXGa")));
     }
     if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode exprClassifier = SLinkOperations.getTarget(SNodeOperations.cast(expressionType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

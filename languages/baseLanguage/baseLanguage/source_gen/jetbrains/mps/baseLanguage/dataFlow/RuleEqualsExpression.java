@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.baseLanguage.behavior.NextProgramPoint;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleEqualsExpression implements DataFlowConstructor {
@@ -31,7 +31,7 @@ public class RuleEqualsExpression implements DataFlowConstructor {
     if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))))) {
       return;
     }
-    NextProgramPoint point = BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{node, true});
+    NextProgramPoint point = IConditional_BehaviorDescriptor.getNextProgramPoint_id3F8BxGibk8h.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), node, true);
     if (point != null) {
       if (point.willJump()) {
         {
@@ -60,7 +60,7 @@ public class RuleEqualsExpression implements DataFlowConstructor {
         }
       }
     }
-    point = BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{node, false});
+    point = IConditional_BehaviorDescriptor.getNextProgramPoint_id3F8BxGibk8h.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), node, false);
     if (point != null) {
       if (point.willJump()) {
         {

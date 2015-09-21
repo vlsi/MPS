@@ -4,7 +4,7 @@ package jetbrains.mps.lang.constraints.generator.baseLanguage.template.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -14,7 +14,7 @@ public class QueriesUtil {
   public QueriesUtil() {
   }
   public static SNode get_registerSelf_body(SNode clazz) {
-    SNode regiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
+    SNode regiserSelfMethod = Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "registerSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
@@ -22,7 +22,7 @@ public class QueriesUtil {
     return SLinkOperations.getTarget(regiserSelfMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
   }
   public static SNode get_unRegisterSelf_body(SNode clazz) {
-    SNode unRegiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
+    SNode unRegiserSelfMethod = Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "unRegisterSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }

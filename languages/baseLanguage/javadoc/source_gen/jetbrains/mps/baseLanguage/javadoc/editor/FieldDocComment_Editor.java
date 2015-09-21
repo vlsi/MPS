@@ -26,8 +26,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -213,10 +212,10 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean _StyleParameter_QueryFunction_c4imx1_a0d0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node);
+    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_c4imx1_a1d0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node);
+    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private EditorCell createCollection_c4imx1_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -244,7 +243,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_c4imx1_a4a(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return !(BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createConstant_c4imx1_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -501,7 +500,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_c4imx1_a1f0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node) || !(BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createAttributedNodeCell_c4imx1_g0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);

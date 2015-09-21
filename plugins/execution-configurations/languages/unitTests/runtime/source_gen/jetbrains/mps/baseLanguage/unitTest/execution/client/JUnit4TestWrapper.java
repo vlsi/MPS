@@ -6,10 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -30,7 +31,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
     SNode node = getNode();
-    Iterable<SNode> nodes = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes = Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(((SNode) BHReflection.invoke(node, SMethodTrimmedId.create("getThisType", null, "6r77ob2UWbY"))), SMethodTrimmedId.create("getMembers", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb7f7eL, "jetbrains.mps.baseLanguage.structure.IClassifierType"), "6r77ob2V1Fr")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       }
@@ -54,7 +55,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
       return false;
     }
-    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), clazz, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {
+    for (SNode method : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(clazz, SMethodTrimmedId.create("methods", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "4_LVZ3pBKCn"))))) {
       if (JUnit4MethodWrapper.isJUnit4TestMethod(method)) {
         return true;
       }
@@ -63,7 +64,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   }
   private static String check_rdmqn1_a0a2(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
+      return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     }
     return null;
   }

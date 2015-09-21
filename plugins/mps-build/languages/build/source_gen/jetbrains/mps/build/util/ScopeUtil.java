@@ -17,14 +17,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor;
 
 public class ScopeUtil {
   public ScopeUtil() {
@@ -82,7 +84,7 @@ public class ScopeUtil {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return BehaviorReflection.invokeVirtual(Scope.class, it, "virtual_getScope_3734116213129936182", new Object[]{concept, child});
+        return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(it, concept, child);
       }
     });
   }
@@ -125,7 +127,7 @@ public class ScopeUtil {
     private Iterable<SNode> getAllNodes() {
       Iterable<SNode> seq = Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isFile_1368030936106753986", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isFolder_1368030936106753980", new Object[]{});
+          return BuildLayout_Node_BehaviorDescriptor.isFile_id1bWeed$oPZ2.invoke(it) || BuildLayout_Node_BehaviorDescriptor.isFolder_id1bWeed$oPYW.invoke(it);
         }
       });
       if (includeLayoutRoots) {
@@ -180,7 +182,7 @@ public class ScopeUtil {
       if ((parent != null)) {
         appendName(parent, sb);
       }
-      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
+      BuildLayout_PathElement_BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
     }
   }
   public static abstract class TransformingScope extends Scope {

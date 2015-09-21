@@ -10,8 +10,9 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -44,7 +45,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
     }
-    return SetSequence.fromSetWithValues(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{}));
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), ((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getImmediateSuperconcepts", null, "hMuxyK2"))));
   }
   @Override
   protected SNode getParent(SNode node) {
@@ -97,7 +98,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     });
     Sequence.fromIterable(concepts).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode child) {
-        List<SNode> immediate = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), child, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
+        List<SNode> immediate = ((List<SNode>) BHReflection.invoke(child, SMethodTrimmedId.create("getImmediateSuperconcepts", null, "hMuxyK2")));
         ListSequence.fromList(immediate).visitAll(new IVisitor<SNode>() {
           public void visit(SNode parent) {
             Set<SNode> desc = MapSequence.fromMap(myDescendantsCache).get(parent);

@@ -7,12 +7,13 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassConcept_TextGen extends TextGenDescriptorBase {
@@ -23,7 +24,7 @@ public class ClassConcept_TextGen extends TextGenDescriptorBase {
     BaseLanguageTextGen.fileHeader(ctx.getPrimaryInput(), ctx);
     BaseLanguageTextGen.annotations(ctx.getPrimaryInput(), ctx);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), ctx);
-    if (Classifier_Behavior.call_isInner_521412098689998677(ctx.getPrimaryInput()) && BehaviorReflection.invokeVirtual(Boolean.TYPE, ctx.getPrimaryInput(), "virtual_isStatic_7405920559687241224", new Object[]{})) {
+    if (Classifier_BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(ctx.getPrimaryInput()) && IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(ctx.getPrimaryInput())) {
       tgs.append("static ");
     }
     if (SPropertyOperations.getBoolean(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
@@ -56,7 +57,7 @@ public class ClassConcept_TextGen extends TextGenDescriptorBase {
     BaseClassConceptTextGen.membersWithBrackets(ctx.getPrimaryInput(), true, ctx);
     tgs.newLine();
     if (tgs.needPositions()) {
-      tgs.fillUnitInfo(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}));
+      tgs.fillUnitInfo(UnitConcept_BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
     }
   }
   public String getExtension(SNode node) {

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,10 +20,10 @@ public class check_FigureParameterAttribute_NonTypesystemRule extends AbstractNo
   public check_FigureParameterAttribute_NonTypesystemRule() {
   }
   public void applyRule(final SNode figureParameterAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(FigureParameterAttribute_BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(figureParameterAttribute), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "Non-public member specified as @FigureParemter", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9026300686792786362", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(FigureParameterAttribute_BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(figureParameterAttribute), "Non-public member specified as @FigureParemter", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9026300686792786362", null, errorTarget);
       }
     }
   }

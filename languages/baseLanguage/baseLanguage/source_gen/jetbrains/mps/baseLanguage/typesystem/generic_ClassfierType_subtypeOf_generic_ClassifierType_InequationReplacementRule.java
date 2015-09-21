@@ -11,13 +11,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -40,7 +41,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       IMatchingPattern pattern_e5spwb_c0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_e5spwb_c0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_c0a);
       if (coercedNode_e5spwb_c0a != null) {
-        if (!((BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(coercedNode_e5spwb_c0a, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))})))) {
+        if (!((Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SLinkOperations.getTarget(coercedNode_e5spwb_c0a, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))))) {
           return false;
         }
         if (SLinkOperations.getTarget(coercedNode_e5spwb_c0a, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))) {
@@ -68,11 +69,11 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       if (coercedNode_e5spwb_a0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
         Map<SNode, SNode> subsRight = MapSequence.fromMap(new HashMap<SNode, SNode>());
-        BehaviorReflection.invokeVirtual(Void.class, coercedNode_e5spwb_a0, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsLeft});
-        BehaviorReflection.invokeVirtual(Void.class, supertype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsRight});
+        IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(coercedNode_e5spwb_a0, subsLeft);
+        IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(supertype, subsRight);
         MapSequence.fromMap(subsLeft).putAll(subsRight);
-        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_BehaviorDescriptor.expandGenerics_id3zZky3wFPhu.invoke(coercedNode_e5spwb_a0, subsLeft), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_BehaviorDescriptor.expandGenerics_id3zZky3wFPhu.invoke(supertype, subsRight), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctLeftExp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctRightExp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
@@ -169,11 +170,11 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       if (coercedNode_e5spwb_a0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
         Map<SNode, SNode> subsRight = MapSequence.fromMap(new HashMap<SNode, SNode>());
-        BehaviorReflection.invokeVirtual(Void.class, coercedNode_e5spwb_a0, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsLeft});
-        BehaviorReflection.invokeVirtual(Void.class, supertype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsRight});
+        IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(coercedNode_e5spwb_a0, subsLeft);
+        IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(supertype, subsRight);
         MapSequence.fromMap(subsLeft).putAll(subsRight);
-        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_BehaviorDescriptor.expandGenerics_id3zZky3wFPhu.invoke(coercedNode_e5spwb_a0, subsLeft), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_BehaviorDescriptor.expandGenerics_id3zZky3wFPhu.invoke(supertype, subsRight), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctLeftExp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctRightExp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();

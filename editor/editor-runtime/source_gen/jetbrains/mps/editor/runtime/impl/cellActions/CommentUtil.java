@@ -5,12 +5,13 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Iterator;
@@ -30,7 +31,7 @@ public class CommentUtil {
   public static SNode commentOut(@NotNull SNode node) {
     SNode parent = SNodeOperations.getParent(node);
     if (parent == null) {
-      throw new IllegalArgumentException("Node to comment has no parent. Node: " + BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{}) + " Node id: " + node.getNodeId());
+      throw new IllegalArgumentException("Node to comment has no parent. Node: " + ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + node.getNodeId());
     }
     SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
@@ -52,9 +53,9 @@ public class CommentUtil {
   public static SNode uncomment(@NotNull SNode attribute) {
     SNode parent = SNodeOperations.getParent(attribute);
     if (parent == null) {
-      throw new IllegalArgumentException("Node to uncomment has no parent. Node: " + BehaviorReflection.invokeVirtual(String.class, attribute, "virtual_getPresentation_1213877396640", new Object[]{}) + " Node id: " + attribute.getNodeId());
+      throw new IllegalArgumentException("Node to uncomment has no parent. Node: " + ((String) BHReflection.invoke(attribute, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + attribute.getNodeId());
     }
-    SContainmentLink containmentLink = BehaviorReflection.invokeNonVirtual(SContainmentLink.class, attribute, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_getLink_709746936026609871", new Object[]{});
+    SContainmentLink containmentLink = ((SContainmentLink) BHReflection.invoke(attribute, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
     SNode commentedNode = SLinkOperations.getTarget(attribute, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"));
     if (containmentLink != null) {
       if (!(containmentLink.isMultiple())) {
@@ -79,7 +80,7 @@ public class CommentUtil {
   private static SNode createAndInsertNewComment(SNode parent, SContainmentLink containmentLink, SNode anchor) {
     SNode newComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
     insertInProperPlace(parent, anchor, containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment);
-    BehaviorReflection.invokeNonVirtual(Void.class, newComment, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_setLink_709746936026609906", new Object[]{containmentLink});
+    BHReflection.invoke(newComment, SMethodTrimmedId.create("setLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzM"), containmentLink);
     SLinkOperations.setTarget(newComment, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), anchor);
     return newComment;
   }

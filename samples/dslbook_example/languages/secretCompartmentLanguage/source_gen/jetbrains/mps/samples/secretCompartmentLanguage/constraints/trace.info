@@ -51,8 +51,8 @@
       <node id="1213107435908" at="20,88,21,123" concept="4" />
       <node id="1213107435908" at="24,37,25,20" concept="5" />
       <node id="1213107435908" at="28,42,29,37" concept="4" />
-      <node id="1213107435908" at="29,37,30,110" concept="0" />
-      <node id="1213107435912" at="29,37,30,110" concept="5" />
+      <node id="1213107435908" at="29,37,30,118" concept="0" />
+      <node id="1213107435912" at="29,37,30,118" concept="5" />
       <node id="1213107435908" at="32,7,33,22" concept="5" />
       <node id="1213107435908" at="16,0,19,0" concept="1" trace="StateMachineTest_Constraints#()V" />
       <node id="1213107435908" at="23,0,27,0" concept="3" trace="hasOwnGetter#()Z" />
@@ -61,8 +61,8 @@
       <node id="1213107435908" at="19,0,35,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
       <scope id="1213107435908" at="16,41,17,93" />
       <scope id="1213107435908" at="24,37,25,20" />
-      <scope id="1213107435911" at="29,37,30,110" />
-      <scope id="1213107435908" at="28,42,30,110">
+      <scope id="1213107435911" at="29,37,30,118" />
+      <scope id="1213107435908" at="28,42,30,118">
         <var name="propertyName" id="1213107435908" />
       </scope>
       <scope id="1213107435908" at="16,0,19,0" />

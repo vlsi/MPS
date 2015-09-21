@@ -9,7 +9,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor;
 
 @MPSLaunch
 public class CommentCanBeUnreachable_Test extends BaseTransformationTest {
@@ -27,11 +27,11 @@ public class CommentCanBeUnreachable_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_NodeUnusedVariableWarningCheck6923385624928604784() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928604784"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451227675")});
+      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451227675"));
     }
     public void test_ErrorMessagesCheck1226936244308() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1226936244308"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1226936071520")});
+      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1226936071520"));
     }
   }
 }

@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -44,7 +44,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ydtnyj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ConceptFunction_Behavior.call_getHeader_2866018809101862250(node);
+        return ConceptFunction_BehaviorDescriptor.getHeader_id2v69eKc6GlE.invoke(node);
       }
       public void setText(String s) {
       }

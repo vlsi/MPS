@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -15,12 +14,15 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class AbstractNodeRefExpression_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode thisNode) {
+  public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode __thisNode__) {
     List<SNode> thisList = new ArrayList<SNode>();
-    ListSequence.fromList(thisList).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{}));
+    ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression_BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
     Iterable<SNode> children = thisList;
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     while (Sequence.fromIterable(children).isNotEmpty()) {

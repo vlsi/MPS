@@ -16,7 +16,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -55,7 +55,7 @@ public class ConceptFunctionAliased_Component implements ConceptEditorComponent 
   private EditorCell createReadOnlyModelAccessor_ohhbpy_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ConceptFunction_Behavior.call_getHeaderForAliasedEditor_2866018809101869089(node);
+        return ConceptFunction_BehaviorDescriptor.getHeaderForAliasedEditor_id2v69eKc6I0x.invoke(node);
       }
       public void setText(String s) {
       }

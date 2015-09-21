@@ -18,7 +18,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public final class RuleUtil {
   public static final SConcept concept_NodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro");
@@ -391,7 +392,7 @@ public final class RuleUtil {
     return SLinkOperations.getTarget(mapping, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x6cab949e66d5b3bbL, "condition"));
   }
   public static String getVarMacro_Name(SNode macro) {
-    return BehaviorReflection.invokeNonVirtual(String.class, macro, "jetbrains.mps.lang.generator.structure.VarMacro", "call_getName_2721957369897649366", new Object[]{});
+    return ((String) BHReflection.invoke(macro, SMethodTrimmedId.create("getName", MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro"), "2n6lsTIwojm")));
   }
   public static SNode getVarMacro_Query(SNode macro) {
     return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, 0x45991daad6a644d4L, "value"));

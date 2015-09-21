@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class complete_Path extends AbstractCellMenuComponent {
@@ -23,7 +23,7 @@ public class complete_Path extends AbstractCellMenuComponent {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> allP = ListSequence.fromList(new ArrayList<String>());
-      BehaviorReflection.invokeVirtual(String.class, node, "virtual_getRelativePath_5481553824944787371", new Object[]{});
+      BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(node);
       return allP;
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {

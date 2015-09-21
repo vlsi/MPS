@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.build.util.Context;
@@ -19,9 +19,9 @@ public class ModuleLoader {
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
     SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
 
-    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
+    String moduleFilePath = BuildSourcePath_BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext()));
     if (moduleFilePath == null) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())}) + ")", originalModule, null);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BuildSourcePath_BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())) + ")", originalModule, null);
       return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
 

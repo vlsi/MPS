@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,7 +16,7 @@ public class ChangeExpectedType_QuickFix extends QuickFix_Runtime {
     super(new SNodePointer("r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4017912752406060665"));
   }
   public String getDescription(SNode node) {
-    return "Change type of " + BehaviorReflection.invokeVirtual(String.class, ((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "virtual_getPresentation_1213877396640", new Object[]{}) + " to " + BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])), "virtual_getPresentation_1213877396640", new Object[]{});
+    return "Change type of " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0])) + " to " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])));
   }
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {

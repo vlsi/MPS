@@ -17,16 +17,19 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class StyleClass_Behavior {
-  public static void init(SNode thisNode) {
+  public static boolean call_hasCycles_7417001528577667349(SNode __thisNode__) {
+    return StyleClass_BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
   }
-  public static boolean call_hasCycles_7417001528577667349(SNode thisNode) {
-    return StyleClass_Behavior.call_getPriority_1938068300780663696(thisNode) == -1;
-  }
-  public static int call_getPriority_1938068300780663696(SNode thisNode) {
+  public static int call_getPriority_1938068300780663696(SNode __thisNode__) {
     Map<SNode, Integer> priorities = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
-    List<SNode> extendsTree = ListSequence.fromListAndArray(new LinkedList<SNode>(), thisNode);
+    List<SNode> extendsTree = ListSequence.fromListAndArray(new LinkedList<SNode>(), __thisNode__);
     boolean down = true;
 
     List<Integer> childNums = ListSequence.fromList(new LinkedList<Integer>());
@@ -65,18 +68,18 @@ public class StyleClass_Behavior {
         }
       }
     }
-    return MapSequence.fromMap(priorities).get(thisNode);
+    return MapSequence.fromMap(priorities).get(__thisNode__);
   }
-  public static boolean call_hasApplyCycles_2491174914184428685(SNode thisNode) {
+  public static boolean call_hasApplyCycles_2491174914184428685(SNode __thisNode__) {
     List<SNode> dependencies = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> adding = ListSequence.fromListAndArray(new ArrayList<SNode>(), thisNode);
+    List<SNode> adding = ListSequence.fromListAndArray(new ArrayList<SNode>(), __thisNode__);
     while (ListSequence.fromList(adding).isNotEmpty()) {
       if (ListSequence.fromList(dependencies).intersect(ListSequence.fromList(adding)).isNotEmpty()) {
         return true;
       }
       ListSequence.fromList(dependencies).addSequence(ListSequence.fromList(adding));
       adding = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(adding).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
+        public Iterable<SNode> translate(final SNode it) {
           return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
         }
       }), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"))).select(new ISelector<SNode, SNode>() {

@@ -32,12 +32,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -424,7 +424,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")))).isNotEmpty();
+    return Sequence.fromIterable(Classifier_BehaviorDescriptor.members_id1hodSy8nQmC.invoke(node)).subtract(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")))).isNotEmpty();
   }
   private EditorCell createConstant_msf9u8_a2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -505,7 +505,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a3c1a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer")) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer")) != null && Sequence.fromIterable(ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(node)).isNotEmpty();
   }
   private EditorCell createCollection_msf9u8_e2b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -519,7 +519,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a4c1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+    return Sequence.fromIterable(ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(node)).isNotEmpty();
   }
   private EditorCell createRefNodeList_msf9u8_a4c1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AnonymousClass_Editor.fieldListHandler_msf9u8_a4c1a(node, "field", editorContext);
@@ -587,7 +587,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a5c1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+    return Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(node)).isNotEmpty();
   }
   private EditorCell createCollection_msf9u8_g2b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -601,7 +601,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a6c1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
+    return Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(node)).isNotEmpty();
   }
   private EditorCell createRefNodeList_msf9u8_a6c1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AnonymousClass_Editor.methodListHandler_msf9u8_a6c1a(node, "method", editorContext);
@@ -670,7 +670,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext) {
-    return !((Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer")) != null));
+    return !((Sequence.fromIterable(ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(node)).isNotEmpty() && Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(node)).isNotEmpty() && SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer")) != null));
   }
   private EditorCell createConstant_msf9u8_a7c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");

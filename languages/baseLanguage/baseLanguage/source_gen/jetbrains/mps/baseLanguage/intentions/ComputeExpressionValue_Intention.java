@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.baseLanguage.typesystem.ExpressionPresentationUtil;
@@ -38,12 +38,12 @@ public final class ComputeExpressionValue_Intention extends IntentionDescriptorB
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode parent = SNodeOperations.getParent(node);
-    if ((parent == null) || !(SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) || BehaviorReflection.invokeVirtual(Object.class, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(parent).getModule()}) == null) {
+    if ((parent == null) || !(SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) || !(Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")))) || Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SNodeOperations.getModel(parent).getModule()) == null) {
       return false;
     }
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_constant_1262430001741498050", new Object[]{}))) {
+    if (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(node) && !(Expression_BehaviorDescriptor.constant_id1653mnvAgr2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node))))) {
 
-      Object v = BehaviorReflection.invokeVirtual(Object.class, node, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(node).getModule()});
+      Object v = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(node, SNodeOperations.getModel(node).getModule());
       return v != null && (v instanceof Number || v instanceof Boolean || v instanceof String || v instanceof Character);
     }
     return false;
@@ -63,12 +63,12 @@ public final class ComputeExpressionValue_Intention extends IntentionDescriptorB
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      Object v = BehaviorReflection.invokeVirtual(Object.class, node, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(node).getModule()});
+      Object v = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(node, SNodeOperations.getModel(node).getModule());
       return "Replace expression " + ExpressionPresentationUtil.getExpressionPresentation(node) + " with compile-time value \"" + v.toString() + "\"";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      Object value = BehaviorReflection.invokeVirtual(Object.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))).getModule()});
+      Object value = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SNodeOperations.getModel(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))).getModule());
       if (value instanceof Boolean) {
         SNode v = SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")));
         SPropertyOperations.set(v, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (((Boolean) value).booleanValue()));

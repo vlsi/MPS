@@ -7,21 +7,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class CellMenuPart_Abstract_Behavior {
-  public static void init(SNode thisNode) {
+  public static SNode call_getEditedFeature_1219409924597(SNode __thisNode__) {
+    return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
   }
-  public static SNode call_getEditedFeature_1219409924597(SNode thisNode) {
-    return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
-  }
-  public static SNode call_getEditedLink_1219409839992(SNode thisNode) {
-    SNode editedFeature = CellMenuPart_Abstract_Behavior.call_getEditedFeature_1219409924597(thisNode);
+  public static SNode call_getEditedLink_1219409839992(SNode __thisNode__) {
+    SNode editedFeature = CellMenuPart_Abstract_BehaviorDescriptor.getEditedFeature_idhJEvH7P.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return SNodeOperations.cast(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
     }
     return null;
   }
-  public static SNode call_getEditedAggregationLink_1219409809074(SNode thisNode) {
-    SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(thisNode);
+  public static SNode call_getEditedAggregationLink_1219409809074(SNode __thisNode__) {
+    SNode editedLink = CellMenuPart_Abstract_BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(__thisNode__);
     if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
       return editedLink;
     }

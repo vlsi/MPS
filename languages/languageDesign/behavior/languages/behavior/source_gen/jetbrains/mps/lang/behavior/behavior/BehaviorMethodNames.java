@@ -6,22 +6,33 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * 
+ * 
+ * @deprecated obsolete api
+ */
+@Deprecated
 public class BehaviorMethodNames {
+  @Deprecated
   private BehaviorMethodNames() {
   }
+
   public static String getDeclarationName(SNode method) {
-    SNode baseMethod = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(method);
+    SNode baseMethod = ConceptMethodDeclaration_BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(method);
     String prefix = (((baseMethod != null) ? "virtual" : "call")) + "_";
     return prefix + getMethodName(((baseMethod != null) ? baseMethod : method));
   }
+
   @Deprecated
   public static String getCallerMethodName(SNode method) {
     return "call_" + getMethodName(method);
   }
+
   @Deprecated
   public static String getSuperCallerMethodName(SNode method) {
     return "callSuper_" + getMethodName(method);
   }
+
   private static String getMethodName(SNode method) {
     return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + method.getNodeId().toString();
   }

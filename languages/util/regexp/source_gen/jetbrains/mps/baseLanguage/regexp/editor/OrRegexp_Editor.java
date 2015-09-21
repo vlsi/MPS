@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
+import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -49,7 +49,7 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
+    return OrRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDXU.invoke(node);
   }
   private EditorCell createRefNode_36u1b4_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new OrRegexp_Editor.leftSingleRoleHandler_36u1b4_b0(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left"), editorContext);
@@ -139,6 +139,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
+    return OrRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDXU.invoke(node);
   }
 }

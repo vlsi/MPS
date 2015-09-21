@@ -5,18 +5,14 @@ package jetbrains.mps.lang.editor.figures.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class FigureParameterAttributeField_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode virtual_getParameterMember_5422656561931910498(SNode thisNode) {
-    return FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(thisNode);
-  }
-  public static SNode call_getFieldDeclaration_7911346875269141454(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
-  }
-  public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
-    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(thisNode), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+  public static SNode call_getFieldDeclaration_7911346875269141454(SNode __thisNode__) {
+    return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
   }
 }

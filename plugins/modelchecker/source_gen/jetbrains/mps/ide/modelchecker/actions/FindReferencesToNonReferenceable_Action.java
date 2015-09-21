@@ -28,7 +28,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -100,7 +101,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
                   total.value++;
                   if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null))) {
                     referenceable.value++;
-                    String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
+                    String cname = ((String) BHReflection.invoke(ccp, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
                     if (MapSequence.fromMap(used).containsKey(cname)) {
                       MapSequence.fromMap(used).put(cname, MapSequence.fromMap(used).get(cname) + 1);
                     } else {

@@ -5,37 +5,24 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Builder_Behavior {
-  public static void init(SNode thisNode) {
+  public static SNode call_getContextBuilder_7057666463730306577(SNode __thisNode__) {
+    return Builder_BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(__thisNode__));
   }
-  public static SNode call_getContextBuilder_7057666463730306577(SNode thisNode) {
-    return Builder_Behavior.call_getContextBuilder_7057666463730366732(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(thisNode));
-  }
-  public static boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_leaf_1262430001741498370", new Object[]{});
-  }
-  public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return null;
-  }
-  public static SNode virtual_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), childBuilder, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{thisNode, parentRef, childRef});
-  }
-  public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    throw new UnsupportedOperationException();
-  }
-  public static boolean virtual_leaf_1262430001741498370(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept thisConcept, SNode context) {
+  public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept __thisConcept__, SNode context) {
     return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getInterfaceConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isLeaf_932644095877881871", new Object[]{}));
+        return !(BuilderContainer_BehaviorDescriptor.isLeaf_idNLqHO$EE0f.invoke(it));
       }
     }), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder"));
   }

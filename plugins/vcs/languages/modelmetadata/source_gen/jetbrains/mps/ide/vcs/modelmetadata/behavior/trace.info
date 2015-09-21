@@ -2,16 +2,7 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ModelReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModelReference_BehaviorDescriptor" />
-    </file>
-    <file name="Model_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModuleReference_BehaviorDescriptor" />
+      <unit at="14,0,38,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

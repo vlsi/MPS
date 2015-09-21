@@ -526,7 +526,7 @@
       <node id="1083172239067" at="168,61,169,40" concept="4" />
       <node id="1083172239067" at="169,40,170,34" concept="4" />
       <node id="1083172239067" at="170,34,171,22" concept="10" />
-      <node id="1212082243294" at="173,97,174,311" concept="10" />
+      <node id="1212082243294" at="173,97,174,319" concept="10" />
       <node id="1083172239067" at="28,0,31,0" concept="8" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1083172239067" at="35,79,38,5" concept="0" />
       <node id="1083172239067" at="35,79,38,5" concept="7" />
@@ -558,7 +558,7 @@
       <scope id="1083172239067" at="54,82,55,82" />
       <scope id="1083172239067" at="55,82,56,82" />
       <scope id="1197591831893" at="59,97,60,425" />
-      <scope id="1162585619941" at="173,97,174,311" />
+      <scope id="1162585619941" at="173,97,174,319" />
       <scope id="1197591806188" at="88,35,90,94">
         <var name="manager" id="1197591806188" />
       </scope>

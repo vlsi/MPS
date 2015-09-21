@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -97,7 +97,7 @@ public class MoveConcepts extends MoveNodesDefault {
       public void run() {
         hasGenerator.value = ListSequence.fromList(conceptsToMove).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode node) {
-            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)).isNotEmpty();
+            return ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.findGeneratorFragments_id5zMz2aJEI4B.invoke(node)).isNotEmpty();
           }
         });
       }

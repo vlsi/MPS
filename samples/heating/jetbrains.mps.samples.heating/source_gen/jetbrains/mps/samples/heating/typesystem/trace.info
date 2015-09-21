@@ -140,7 +140,7 @@
       <node id="4664795093170882120" at="48,62,49,261" concept="5" />
       <node id="4664795093170882120" at="50,11,51,149" concept="5" />
       <node id="4664795093170882120" at="51,149,52,73" concept="2" />
-      <node id="935069066463779322" at="56,5,57,89" concept="5" />
+      <node id="935069066463779322" at="56,5,57,95" concept="5" />
       <node id="935069066463792184" at="59,7,60,60" concept="5" />
       <node id="935069066463792184" at="60,60,61,288" concept="5" />
       <node id="935069066463792184" at="62,9,63,147" concept="5" />
@@ -162,7 +162,7 @@
       <node id="4664795093170882120" at="46,669,54,9" concept="0" />
       <node id="935069066463792184" at="58,705,66,7" concept="0" />
       <node id="4664795093170876739" at="45,7,55,7" concept="3" />
-      <node id="935069066463777926" at="57,89,67,5" concept="3" />
+      <node id="935069066463777926" at="57,95,67,5" concept="3" />
       <node id="2978080762093912501" at="24,117,35,5" concept="3" />
       <node id="5063359128233240213" at="36,218,56,5" concept="3" />
       <node id="5063359128233238129" at="24,0,69,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />

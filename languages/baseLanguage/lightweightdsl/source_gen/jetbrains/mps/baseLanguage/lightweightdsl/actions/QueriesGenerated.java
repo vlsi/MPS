@@ -16,10 +16,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
@@ -42,12 +42,12 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (item), "virtual_findPlaceholders_6909536935410952255", new Object[]{SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))})).visitAll(new IVisitor<SNode>() {
+                Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.findPlaceholders_id5ZzANK5B6wZ.invoke((item), SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))).visitAll(new IVisitor<SNode>() {
                   public void visit(SNode it) {
                     SNodeOperations.deleteNode(it);
                   }
                 });
-                return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
+                return ((SNode) DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke((item)));
               }
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -76,12 +76,12 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (item), "virtual_findPlaceholders_6909536935410952255", new Object[]{SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))})).visitAll(new IVisitor<SNode>() {
+                Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.findPlaceholders_id5ZzANK5B6wZ.invoke((item), SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))).visitAll(new IVisitor<SNode>() {
                   public void visit(SNode it) {
                     SNodeOperations.deleteNode(it);
                   }
                 });
-                return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
+                return ((SNode) DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke((item)));
               }
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -110,15 +110,15 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (item), "virtual_findPlaceholders_6909536935410952255", new Object[]{SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))})).visitAll(new IVisitor<SNode>() {
+                Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.findPlaceholders_id5ZzANK5B6wZ.invoke((item), SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))).visitAll(new IVisitor<SNode>() {
                   public void visit(SNode it) {
                     SNodeOperations.deleteNode(it);
                   }
                 });
-                return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
+                return ((SNode) DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke((item)));
               }
               public String getMatchingText(String pattern) {
-                return AbstractConceptDeclaration_Behavior.call_getPresentation_2450081617266859256(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
+                return AbstractConceptDeclaration_BehaviorDescriptor.getPresentation_id280s3ZNTXNS.invoke(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);

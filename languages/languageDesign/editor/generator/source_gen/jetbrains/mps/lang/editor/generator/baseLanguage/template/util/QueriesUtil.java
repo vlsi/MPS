@@ -18,8 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesUtil {
@@ -116,13 +116,13 @@ __switch__:
     if (cellModel_refCell == null) {
       return false;
     }
-    for (SNode parentCollection = EditorCellModel_Behavior.call_getParentCollectionCell_9186828658634887710(cellModel_refCell); parentCollection != null; parentCollection = EditorCellModel_Behavior.call_getParentCollectionCell_9186828658634887710(parentCollection)) {
+    for (SNode parentCollection = EditorCellModel_BehaviorDescriptor.getParentCollectionCell_id7XYaZQUjT8u.invoke(cellModel_refCell); parentCollection != null; parentCollection = EditorCellModel_BehaviorDescriptor.getParentCollectionCell_id7XYaZQUjT8u.invoke(parentCollection)) {
       if (ListSequence.fromList(SLinkOperations.getChildren(parentCollection, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).count() > 1) {
         return false;
       }
     }
 
-    if (!(LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(SLinkOperations.getTarget(cellModel_refCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"))))) {
+    if (!(LinkDeclaration_BehaviorDescriptor.isAtLeastOneCardinality_id2VYdUfnkjmB.invoke(SLinkOperations.getTarget(cellModel_refCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"))))) {
       return false;
     }
 

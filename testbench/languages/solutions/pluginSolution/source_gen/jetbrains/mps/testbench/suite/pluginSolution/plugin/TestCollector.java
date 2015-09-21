@@ -19,9 +19,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 /*package*/ class TestCollector {
   public TestCollector() {
@@ -85,7 +84,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
             public boolean accept(SNode cann) {
               return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")) == ignoreAnn;
             }
-          })) && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
+          })) && Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(cls)).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode m) {
               return SLinkOperations.getChildren(m, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));
             }
@@ -136,7 +135,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
             public boolean accept(SNode cann) {
               return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")) == ignoreAnn;
             }
-          })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0e0b4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))});
+          })) && Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(cls, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0e0b4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
         }
       }).toListSequence();
       ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {

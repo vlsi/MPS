@@ -12,7 +12,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
+import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -59,7 +59,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zeg0q_a0a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
+    return UnaryRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createRefNode_zeg0q_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new AtLeastNTimesRegexp_Editor.regexpSingleRoleHandler_zeg0q_b0(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), editorContext);
@@ -105,7 +105,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zeg0q_a2a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
+    return UnaryRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createConstant_zeg0q_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");

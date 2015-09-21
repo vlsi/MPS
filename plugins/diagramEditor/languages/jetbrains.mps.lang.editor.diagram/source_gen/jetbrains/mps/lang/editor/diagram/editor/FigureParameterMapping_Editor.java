@@ -17,11 +17,11 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior;
+import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,13 +67,13 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_3uf681_a0a0(EditorContext editorContext, SNode node) {
-    return FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(node);
+    return FigureParameterMapping_BehaviorDescriptor.getParameterDeclaration_id3$rM_t_1zAw.invoke(node);
   }
   public static class FigureParameterMapping_generic_cellMenu_3uf681_a0a0 extends AbstractCellMenuPart_Generic_Group {
     public FigureParameterMapping_generic_cellMenu_3uf681_a0a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(FigureParameterMapping_Behavior.call_getDiagramNodeCell_1491555030355957123(node), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
+      return AbstractFigureReference_BehaviorDescriptor.getFigureParameterNames_id1iN4mn3lWCq.invoke(SLinkOperations.getTarget(FigureParameterMapping_BehaviorDescriptor.getDiagramNodeCell_id1iN4mn3k5m3.invoke(node), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")));
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);

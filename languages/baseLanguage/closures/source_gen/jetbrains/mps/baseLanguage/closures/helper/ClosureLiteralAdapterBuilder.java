@@ -14,8 +14,8 @@ import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor;
 
 public class ClosureLiteralAdapterBuilder {
   private TemplateQueryContext genContext;
@@ -74,9 +74,9 @@ public class ClosureLiteralAdapterBuilder {
     });
   }
   private SNode getAdapterClassFunctionType(SNode cls) {
-    for (SNode md : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
+    for (SNode md : Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(cls)) {
       if (SNodeOperations.isInstanceOf(md, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"))) {
-        return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(md, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration")));
+        return FunctionMethodDeclaration_BehaviorDescriptor.functionType_id2uAWGxT6YKz.invoke(SNodeOperations.cast(md, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration")));
       }
     }
     return null;

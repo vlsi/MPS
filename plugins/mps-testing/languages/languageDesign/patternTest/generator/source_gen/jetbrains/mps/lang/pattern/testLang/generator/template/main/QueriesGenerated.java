@@ -4,7 +4,7 @@ package jetbrains.mps.lang.pattern.testLang.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior;
+import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -19,7 +19,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_815823070325289644(final PropertyMacroContext _context) {
-    return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
+    return PatternTest_BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_602731281382637730(final PropertyMacroContext _context) {
     return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
@@ -28,7 +28,7 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_602731281382637757(final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode()) + "$TestBody";
+    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + PatternTest_BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(_context.getNode()) + "$TestBody";
   }
   public static Object propertyMacro_GetPropertyValue_602731281382637766(final PropertyMacroContext _context) {
     return "test" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

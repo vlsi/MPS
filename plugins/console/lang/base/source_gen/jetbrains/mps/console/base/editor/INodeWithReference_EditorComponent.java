@@ -8,7 +8,7 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -21,6 +21,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -44,7 +45,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
+    return IActionHolder_BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
   }
   private EditorCell createRefCell_clzyhh_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
@@ -91,7 +92,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
   private EditorCell createReadOnlyModelAccessor_clzyhh_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
+        return INodeWithReference_BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
       }
       public void setText(String s) {
       }

@@ -8,8 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -35,7 +34,7 @@ public abstract class DocCommentTextGen {
     }
 
     // A separator between text and tags 
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || BaseDocComment_Behavior.call_hasTags_4948473272651019109(node)) {
+    if (!(BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node)) || BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node)) {
       tgs.newLine();
       DocCommentTextGen.javadocIndent(ctx);
     }

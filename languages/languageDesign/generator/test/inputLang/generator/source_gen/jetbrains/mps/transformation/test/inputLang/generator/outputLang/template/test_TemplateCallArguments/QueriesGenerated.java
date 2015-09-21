@@ -5,7 +5,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,7 +26,7 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("text"));
   }
   public static Object templateArgumentQuery_6736062018948525024(final TemplateArgumentContext _context) {
-    return ((String) _context.getVariable("text")) + BehaviorReflection.invokeVirtual(String.class, ((SNode) _context.getVariable("element")), "virtual_getPresentation_1213877396640", new Object[]{});
+    return ((String) _context.getVariable("text")) + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("element")));
   }
   public static Object templateArgumentQuery_6736062018948578444(final TemplateArgumentContext _context) {
     return ((Integer) _context.getVariable("value")) * 2;
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     }).isNotEmpty();
   }
   public static Object insertMacro_varValue_6736062018948583815(final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, ((SNode) _context.getVariable("element")), "virtual_getPresentation_1213877396640", new Object[]{}) + "- as VarMacro";
+    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("element"))) + "- as VarMacro";
   }
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);

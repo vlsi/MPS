@@ -14,7 +14,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IfStatement_BehaviorDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class ConvertElseToElseIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -55,7 +55,7 @@ public final class ConvertElseToElseIf_Intention extends IntentionDescriptorBase
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
+      IfStatement_BehaviorDescriptor.convertElseToElseIf_idhIdhuD7.invoke(node);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

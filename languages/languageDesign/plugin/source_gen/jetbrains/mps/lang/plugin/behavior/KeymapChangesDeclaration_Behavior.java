@@ -8,13 +8,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.SNodeOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class KeymapChangesDeclaration_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getGeneratedName_6277721878946468943(SNode __thisNode__) {
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_KeymapChanges";
   }
-  public static String call_getGeneratedName_6277721878946468943(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_KeymapChanges";
-  }
-  public static String call_getGeneratedClassFQName_6277721878946468954(SNode thisNode) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + KeymapChangesDeclaration_Behavior.call_getGeneratedName_6277721878946468943(thisNode);
+  public static String call_getGeneratedClassFQName_6277721878946468954(SNode __thisNode__) {
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + KeymapChangesDeclaration_BehaviorDescriptor.getGeneratedName_id5suWGB1jlhf.invoke(__thisNode__);
   }
 }

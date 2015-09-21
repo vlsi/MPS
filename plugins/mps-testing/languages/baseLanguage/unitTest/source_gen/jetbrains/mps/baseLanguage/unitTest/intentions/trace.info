@@ -35,7 +35,7 @@
       <node id="1571838961922885104" at="72,687,73,633" concept="2" />
       <node id="2230548360390286967" at="76,180,77,760" concept="2" />
       <node id="1571838961922885174" at="78,16,79,241" concept="2" />
-      <node id="1571838961922885224" at="82,110,83,239" concept="2" />
+      <node id="1571838961922885224" at="82,116,83,239" concept="2" />
       <node id="2230548360390192818" at="87,48,88,63" concept="8" />
       <node id="2230548360390284900" at="91,63,92,63" concept="7" />
       <node id="2230548360390284900" at="92,63,93,30" concept="7" />
@@ -79,7 +79,7 @@
       <node id="2230548360390192818" at="86,0,90,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="2230548360390286986" at="113,165,117,5" concept="0" />
       <node id="2230548360390286986" at="113,165,117,5" concept="0" />
-      <node id="2230548360390286819" at="75,105,80,9" concept="5" />
+      <node id="2230548360390286819" at="75,111,80,9" concept="5" />
       <node id="2230548360390192818" at="54,0,60,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="2230548360390192818" at="40,0,47,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2230548360390286806" at="74,7,81,7" concept="4" />
@@ -100,7 +100,7 @@
       <scope id="1571838961922885132" at="72,687,73,633" />
       <scope id="2230548360390286821" at="76,180,77,760" />
       <scope id="1571838961922885173" at="78,16,79,241" />
-      <scope id="1571838961922885214" at="82,110,83,239" />
+      <scope id="1571838961922885214" at="82,116,83,239" />
       <scope id="2230548360390192818" at="87,48,88,63" />
       <scope id="2230548360390286986" at="115,31,116,184" />
       <scope id="2230548360390192818" at="61,0,63,0" />
@@ -125,7 +125,7 @@
       </scope>
       <scope id="2230548360390192818" at="86,0,90,0" />
       <scope id="2230548360390286986" at="113,165,117,5" />
-      <scope id="2230548360390286809" at="75,105,80,9" />
+      <scope id="2230548360390286809" at="75,111,80,9" />
       <scope id="2230548360390284900" at="91,63,96,24">
         <var name="facade" id="2230548360390284900" />
         <var name="quotedNode_1" id="2230548360390284900" />

@@ -6,10 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class SymbolClassPart_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_validateChar_8173814113624732613(SNode thisNode, String s) {
+  public static String call_validateChar_8173814113624732613(SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
     int i = 0;
     char c = s.charAt(i);
@@ -26,7 +29,7 @@ public class SymbolClassPart_Behavior {
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+          if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
             return null;
           }
           sb.append(c);
@@ -66,8 +69,8 @@ public class SymbolClassPart_Behavior {
     }
     return sb.toString();
   }
-  public static String call_escapeChar_8173814113624637238(SNode thisNode, String s) {
-    String res = SymbolClassPart_Behavior.call_validateChar_8173814113624732613(thisNode, s);
+  public static String call_escapeChar_8173814113624637238(SNode __thisNode__, String s) {
+    String res = SymbolClassPart_BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
     if (res == null) {
       if (s.equals("\\")) {
         return "\\\\";

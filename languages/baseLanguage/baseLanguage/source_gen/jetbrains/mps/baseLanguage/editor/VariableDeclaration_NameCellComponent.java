@@ -20,13 +20,14 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -65,7 +66,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
   private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext) {
     boolean condition = SNodeOperations.getConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))) != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"))) {
-      return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
+      return condition && !(Type_BehaviorDescriptor.hasMissingParameters_id32KZwowVoMu.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
     } else {
       return condition;
     }
@@ -77,11 +78,11 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
       if (nodeType != null) {
-        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+        List<String> names = Type_BehaviorDescriptor.getVariableSuffixes_idhEwIzNo.invoke(nodeType);
         Project project = operationContext.getProject();
         for (String name : names) {
-          String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});
-          String suffix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSuffix_3012473318495499856", new Object[]{project});
+          String prefix = VariableDeclaration_BehaviorDescriptor.getPrefix_id2Bet8mWh2lw.invoke(node, project);
+          String suffix = VariableDeclaration_BehaviorDescriptor.getSuffix_id2Bet8mWh3pg.invoke(node, project);
           String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
           ListSequence.fromList(result).addElement(prefix + mainName + suffix);
         }

@@ -19,7 +19,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -84,7 +84,7 @@ public class QueriesGenerated {
             Iterable<SNode> classes = SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
             return Sequence.fromIterable(classes).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode it) {
-                return ClassConcept_Behavior.call_staticMethods_5292274854859435867(it);
+                return ClassConcept_BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -109,7 +109,7 @@ public class QueriesGenerated {
                 return getMatchingText(pattern);
               }
               public String getDescriptionText(String pattern) {
-                return "custom control statement using " + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
+                return "custom control statement using " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke((item));
               }
             });
           }
@@ -122,7 +122,7 @@ public class QueriesGenerated {
     Iterable<SNode> classes = SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     return Sequence.fromIterable(classes).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ClassConcept_Behavior.call_staticMethods_5292274854859435867(it);
+        return ClassConcept_BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

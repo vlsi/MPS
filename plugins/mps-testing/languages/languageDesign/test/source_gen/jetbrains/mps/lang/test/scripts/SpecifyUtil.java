@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
+import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -29,11 +29,11 @@ public class SpecifyUtil {
   public static void fillContainerWithRuleMessages(SNode node) {
     SNode operationsContainer = SpecifyUtil.getOperationsContainer(node);
     assert (operationsContainer != null);
-    NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(operationsContainer);
+    NodeOperationsContainer_BehaviorDescriptor.detachAllErrorOperations_id4QaU5oI0Q4j.invoke(operationsContainer);
     Iterable<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
     for (IErrorReporter reporter : reporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter);
-      NodeOperationsContainer_Behavior.call_createNodeAndAttachReference_428590876657265140(operationsContainer, ruleNode, reporter);
+      NodeOperationsContainer_BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);
     }
     new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixAllDependencies();

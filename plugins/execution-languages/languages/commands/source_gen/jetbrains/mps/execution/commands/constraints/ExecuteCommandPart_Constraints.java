@@ -13,14 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
+import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -42,7 +42,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDeprecated_1224609060727", new Object[]{}));
+            return !(IDeprecatable_BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(it));
           }
         });
       }
@@ -63,7 +63,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return check_kwfdao_a0a0a(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(node));
+        return check_kwfdao_a0a0a(ExecuteCommandPart_BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(node));
       }
     });
     properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), this) {
@@ -75,7 +75,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         {
-          List<SNode> requiredParameters = ExecuteCommandPart_Behavior.call_getRequiredParameters_6129022259108621289(node);
+          List<SNode> requiredParameters = ExecuteCommandPart_BehaviorDescriptor.getRequiredParameters_id5keEkmeCqJD.invoke(node);
           if (ListSequence.fromList(requiredParameters).isEmpty()) {
             return "()";
           }

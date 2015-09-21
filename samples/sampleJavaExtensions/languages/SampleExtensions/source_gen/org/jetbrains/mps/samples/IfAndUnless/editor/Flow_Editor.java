@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -45,7 +45,7 @@ public class Flow_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_gc1fin_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), "virtual_getTitle_1262430001741498056", new Object[]{});
+        return Flow_BehaviorDescriptor.getTitle_id1653mnvAgr8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)));
       }
       public void setText(String s) {
       }

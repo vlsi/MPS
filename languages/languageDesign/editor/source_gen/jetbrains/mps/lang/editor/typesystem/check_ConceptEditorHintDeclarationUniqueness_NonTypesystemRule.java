@@ -18,7 +18,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior;
+import jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -37,7 +37,7 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptEditorHintDeclaration, "Editor hint with such ID was already defined in this language: " + ConceptEditorHintDeclaration_Behavior.call_getQualifiedName_5944657839039104991(hintDeclarartion), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "5944657839032566761", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptEditorHintDeclaration, "Editor hint with such ID was already defined in this language: " + ConceptEditorHintDeclaration_BehaviorDescriptor.getQualifiedName_id59ZEGVRaGvv.invoke(hintDeclarartion), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "5944657839032566761", null, errorTarget);
         }
       }
     }

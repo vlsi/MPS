@@ -5,38 +5,30 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.ArrayList;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Regexp_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getTopLevelRegexp_1223362823237(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
-      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
+  public static SNode call_getTopLevelRegexp_1223362823237(SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
+      return Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
     }
-    return thisNode;
+    return __thisNode__;
   }
-  public static String virtual_toString_1213877429451(SNode thisNode) {
-    return Regexp_Behavior.call_escape_1353467374624660231(thisNode, BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{new ArrayList<SNode>()}));
-  }
-  public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
-  }
-  public static String call_par_1222433790846(SNode thisNode, String s) {
+  public static String call_par_1222433790846(SNode __thisNode__, String s) {
     return "(?:" + s + ")";
   }
-  public static boolean call_checkStringForUnicode_1222857160881(SNode thisNode, String s) {
+  public static boolean call_checkStringForUnicode_1222857160881(SNode __thisNode__, String s) {
     return s.startsWith("\\u");
   }
-  public static String call_quote_1222857178958(SNode thisNode, char ch) {
+  public static String call_quote_1222857178958(SNode __thisNode__, char ch) {
     return Pattern.quote("" + ch);
   }
-  public static String call_escape_1353467374624660231(SNode thisNode, String s) {
+  public static String call_escape_1353467374624660231(SNode __thisNode__, String s) {
     if (s == null || s.indexOf('\\') == -1) {
       return s;
     }
@@ -49,16 +41,5 @@ public class Regexp_Behavior {
       sb.append(c);
     }
     return sb.toString();
-  }
-  public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
-    return false;
-  }
-  public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(thisNode))) {
-      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")), "virtual_isValid_4759120547781297301", new Object[]{}))) {
-        return false;
-      }
-    }
-    return true;
   }
 }

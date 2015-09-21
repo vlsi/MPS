@@ -12,26 +12,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Analyzer_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getAnalyzerRunnerName_178770917832626025(SNode __thisNode__) {
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "AnalyzerRunner";
   }
-  public static String call_getAnalyzerRunnerName_178770917832626025(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "AnalyzerRunner";
-  }
-  public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode thisNode) {
-    String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
+  public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode __thisNode__) {
+    String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__));
     if (longName.equals("")) {
-      return Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(thisNode);
+      return Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
     }
-    return longName + "." + Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(thisNode);
+    return longName + "." + Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
   }
-  public static String call_getAnalyzerName_178770917832626046(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
+  public static String call_getAnalyzerName_178770917832626046(SNode __thisNode__) {
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
   }
-  public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
+  public static List<SNode> call_getRules_4130591939054429267(SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
-      if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer")) == thisNode) {
+    for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
+      if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer")) == __thisNode__) {
         ListSequence.fromList(result).addElement(rule);
       }
     }

@@ -1,119 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AttractsFocusBlock_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,74,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BinaryExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BinaryExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BracesBlock_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesBlock_BehaviorDescriptor" />
-    </file>
-    <file name="BracesStubBlock_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesStubBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ClassReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ClassReference_BehaviorDescriptor" />
-    </file>
-    <file name="Composition_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.Composition_BehaviorDescriptor" />
-    </file>
-    <file name="DelTestAbstractChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestAbstractChild_BehaviorDescriptor" />
-    </file>
-    <file name="DelTestChild1_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChild1_BehaviorDescriptor" />
-    </file>
-    <file name="DelTestChildContainer_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildContainer_BehaviorDescriptor" />
-    </file>
-    <file name="DelTestRoot_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestRoot_BehaviorDescriptor" />
-    </file>
-    <file name="IBaseTestBlock_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
-    </file>
-    <file name="InspectorBlock_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />
-    </file>
-    <file name="IntegerLiteral_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IntegerLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="NonEmptyProperty_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NonEmptyProperty_BehaviorDescriptor" />
-    </file>
-    <file name="NotEditableVaraileReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NotEditableVaraileReference_BehaviorDescriptor" />
-    </file>
-    <file name="PlusExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.PlusExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceAnnotataion_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
-    </file>
-    <file name="SideTranformWrapper_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="SimplePropertyAttribute_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="SimplePropertyContainer_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyContainer_BehaviorDescriptor" />
-    </file>
-    <file name="StubBlock_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
-    </file>
-    <file name="SubstMiddlewareChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstMiddlewareChild_BehaviorDescriptor" />
-    </file>
-    <file name="SubstTestAbstractChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestAbstractChild_BehaviorDescriptor" />
-    </file>
-    <file name="SubstTestBooleanPropertyChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestBooleanPropertyChild_BehaviorDescriptor" />
-    </file>
-    <file name="SubstTestEnumPropertyChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestEnumPropertyChild_BehaviorDescriptor" />
-    </file>
-    <file name="SubstTestRoot_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestRoot_BehaviorDescriptor" />
-    </file>
-    <file name="TestBlockList_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
-    </file>
-    <file name="VariableDeclarationBlock_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
-    </file>
-    <file name="VariableDeclarationReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationReference_BehaviorDescriptor" />
-    </file>
-    <file name="VerticalLayoutBlockList_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VerticalLayoutBlockList_BehaviorDescriptor" />
+      <unit at="14,0,46,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)/1262430001741704766">
     <file name="ReferenceAnnotataion_Behavior.java">
-      <node id="1262430001741704766" at="8,0,10,0" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1262430001741704768" at="8,43,8,43" />
-      <scope id="1262430001741704766" at="8,0,10,0">
-        <var name="thisNode" id="1262430001741704766" />
+      <unit id="1262430001741704766" at="10,0,13,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_Behavior" />
+    </file>
+    <file name="ReferenceAnnotataion_BehaviorDescriptor.java">
+      <node id="1262430001741704766" at="19,0,20,0" concept="6" trace="CONCEPT" />
+      <node id="1262430001741704766" at="20,0,21,0" concept="6" trace="REGISTRY" />
+      <node id="1262430001741704766" at="23,0,24,0" concept="6" trace="BH_METHODS" />
+      <node id="1262430001741704766" at="29,57,30,20" concept="8" />
+      <node id="1262430001741704766" at="34,108,35,21" concept="1" />
+      <node id="1262430001741704766" at="39,113,40,49" concept="4" />
+      <node id="1262430001741704766" at="41,26,42,56" concept="10" />
+      <node id="1262430001741704766" at="45,14,46,58" concept="10" />
+      <node id="1262430001741704766" at="51,127,52,49" concept="4" />
+      <node id="1262430001741704766" at="53,26,54,56" concept="10" />
+      <node id="1262430001741704766" at="57,14,58,58" concept="10" />
+      <node id="1262430001741704766" at="64,48,65,22" concept="5" />
+      <node id="1262430001741704766" at="70,40,71,19" concept="5" />
+      <node id="1262430001741704766" at="25,0,27,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741704766" at="29,0,32,0" concept="0" trace="ReferenceAnnotataion_BehaviorDescriptor#()V" />
+      <node id="1262430001741704766" at="40,49,43,5" concept="2" />
+      <node id="1262430001741704766" at="52,49,55,5" concept="2" />
+      <node id="1262430001741704766" at="33,0,37,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1262430001741704766" at="43,5,47,5" concept="9" />
+      <node id="1262430001741704766" at="55,5,59,5" concept="9" />
+      <node id="1262430001741704766" at="62,0,67,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1262430001741704766" at="68,0,73,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1262430001741704766" at="38,0,49,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1262430001741704766" at="50,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1262430001741704766" at="25,63,25,63" />
+      <scope id="1262430001741704766" at="29,57,30,20" />
+      <scope id="1262430001741704766" at="34,108,35,21" />
+      <scope id="1262430001741704766" at="41,26,42,56" />
+      <scope id="1262430001741704766" at="45,14,46,58" />
+      <scope id="1262430001741704766" at="53,26,54,56" />
+      <scope id="1262430001741704766" at="57,14,58,58" />
+      <scope id="1262430001741704766" at="64,48,65,22" />
+      <scope id="1262430001741704766" at="70,40,71,19" />
+      <scope id="1262430001741704766" at="25,0,27,0">
+        <var name="__thisNode__" id="1262430001741704766" />
       </scope>
-      <unit id="1262430001741704766" at="7,0,11,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_Behavior" />
+      <scope id="1262430001741704766" at="29,0,32,0" />
+      <scope id="1262430001741704766" at="33,0,37,0">
+        <var name="array" id="1262430001741704766" />
+        <var name="constructor" id="1262430001741704766" />
+        <var name="node" id="1262430001741704766" />
+      </scope>
+      <scope id="1262430001741704766" at="62,0,67,0" />
+      <scope id="1262430001741704766" at="68,0,73,0" />
+      <scope id="1262430001741704766" at="39,113,47,5">
+        <var name="methodIndex" id="1262430001741704766" />
+      </scope>
+      <scope id="1262430001741704766" at="51,127,59,5">
+        <var name="methodIndex" id="1262430001741704766" />
+      </scope>
+      <scope id="1262430001741704766" at="38,0,49,0">
+        <var name="method" id="1262430001741704766" />
+        <var name="node" id="1262430001741704766" />
+        <var name="parameters" id="1262430001741704766" />
+      </scope>
+      <scope id="1262430001741704766" at="50,0,61,0">
+        <var name="concept" id="1262430001741704766" />
+        <var name="method" id="1262430001741704766" />
+        <var name="parameters" id="1262430001741704766" />
+      </scope>
+      <unit id="1262430001741704766" at="18,0,74,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)/6956295981009368164">
     <file name="AttractsFocusBlock_Behavior.java">
-      <node id="6956295981009368164" at="8,0,10,0" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6956295981009368166" at="8,43,8,43" />
-      <scope id="6956295981009368164" at="8,0,10,0">
-        <var name="thisNode" id="6956295981009368164" />
+      <unit id="6956295981009368164" at="10,0,13,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_Behavior" />
+    </file>
+    <file name="AttractsFocusBlock_BehaviorDescriptor.java">
+      <node id="6956295981009368164" at="19,0,20,0" concept="6" trace="CONCEPT" />
+      <node id="6956295981009368164" at="20,0,21,0" concept="6" trace="REGISTRY" />
+      <node id="6956295981009368164" at="23,0,24,0" concept="6" trace="BH_METHODS" />
+      <node id="6956295981009368164" at="29,55,30,20" concept="8" />
+      <node id="6956295981009368164" at="34,108,35,21" concept="1" />
+      <node id="6956295981009368164" at="39,113,40,49" concept="4" />
+      <node id="6956295981009368164" at="41,26,42,56" concept="10" />
+      <node id="6956295981009368164" at="45,14,46,58" concept="10" />
+      <node id="6956295981009368164" at="51,127,52,49" concept="4" />
+      <node id="6956295981009368164" at="53,26,54,56" concept="10" />
+      <node id="6956295981009368164" at="57,14,58,58" concept="10" />
+      <node id="6956295981009368164" at="64,48,65,22" concept="5" />
+      <node id="6956295981009368164" at="70,40,71,19" concept="5" />
+      <node id="6956295981009368164" at="25,0,27,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6956295981009368164" at="29,0,32,0" concept="0" trace="AttractsFocusBlock_BehaviorDescriptor#()V" />
+      <node id="6956295981009368164" at="40,49,43,5" concept="2" />
+      <node id="6956295981009368164" at="52,49,55,5" concept="2" />
+      <node id="6956295981009368164" at="33,0,37,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="6956295981009368164" at="43,5,47,5" concept="9" />
+      <node id="6956295981009368164" at="55,5,59,5" concept="9" />
+      <node id="6956295981009368164" at="62,0,67,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="6956295981009368164" at="68,0,73,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6956295981009368164" at="38,0,49,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="6956295981009368164" at="50,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="6956295981009368164" at="25,63,25,63" />
+      <scope id="6956295981009368164" at="29,55,30,20" />
+      <scope id="6956295981009368164" at="34,108,35,21" />
+      <scope id="6956295981009368164" at="41,26,42,56" />
+      <scope id="6956295981009368164" at="45,14,46,58" />
+      <scope id="6956295981009368164" at="53,26,54,56" />
+      <scope id="6956295981009368164" at="57,14,58,58" />
+      <scope id="6956295981009368164" at="64,48,65,22" />
+      <scope id="6956295981009368164" at="70,40,71,19" />
+      <scope id="6956295981009368164" at="25,0,27,0">
+        <var name="__thisNode__" id="6956295981009368164" />
       </scope>
-      <unit id="6956295981009368164" at="7,0,11,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_Behavior" />
+      <scope id="6956295981009368164" at="29,0,32,0" />
+      <scope id="6956295981009368164" at="33,0,37,0">
+        <var name="array" id="6956295981009368164" />
+        <var name="constructor" id="6956295981009368164" />
+        <var name="node" id="6956295981009368164" />
+      </scope>
+      <scope id="6956295981009368164" at="62,0,67,0" />
+      <scope id="6956295981009368164" at="68,0,73,0" />
+      <scope id="6956295981009368164" at="39,113,47,5">
+        <var name="methodIndex" id="6956295981009368164" />
+      </scope>
+      <scope id="6956295981009368164" at="51,127,59,5">
+        <var name="methodIndex" id="6956295981009368164" />
+      </scope>
+      <scope id="6956295981009368164" at="38,0,49,0">
+        <var name="method" id="6956295981009368164" />
+        <var name="node" id="6956295981009368164" />
+        <var name="parameters" id="6956295981009368164" />
+      </scope>
+      <scope id="6956295981009368164" at="50,0,61,0">
+        <var name="concept" id="6956295981009368164" />
+        <var name="method" id="6956295981009368164" />
+        <var name="parameters" id="6956295981009368164" />
+      </scope>
+      <unit id="6956295981009368164" at="18,0,74,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

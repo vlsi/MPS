@@ -4,46 +4,46 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IClassifier_BehaviorDescriptor;
 
 public class Members {
   private Members() {
     // todo: extension methods? 
   }
   public static Iterable<SNode> visibleInstanceFields(SNode classifierType, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
       }
     });
   }
   public static Iterable<SNode> visibleStaticFields(SNode classifier, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
       }
     });
   }
   public static Iterable<SNode> visibleInstanceMethods(SNode classifierType, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       }
     });
   }
   public static Iterable<SNode> visibleStaticMethods(SNode classifier, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       }
     });
   }
   public static Iterable<SNode> visibleEnumConstants(SNode classifier) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
       }

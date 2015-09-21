@@ -7,22 +7,17 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.checkedName.PropertyReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class EditorTab_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getGeneratedName_3743831881070611776(SNode __thisNode__) {
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_TabDescriptor";
   }
-  public static String call_getGeneratedName_3743831881070611776(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_TabDescriptor";
-  }
-  public static String call_getGeneratedClassFQName_3743831881070611787(SNode thisNode) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + EditorTab_Behavior.call_getGeneratedName_3743831881070611776(thisNode);
-  }
-  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
-    return props;
+  public static String call_getGeneratedClassFQName_3743831881070611787(SNode __thisNode__) {
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + EditorTab_BehaviorDescriptor.getGeneratedName_id3fOKOapZKP0.invoke(__thisNode__);
   }
 }

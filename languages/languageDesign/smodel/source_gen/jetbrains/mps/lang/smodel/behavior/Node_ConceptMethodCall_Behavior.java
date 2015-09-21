@@ -7,20 +7,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Node_ConceptMethodCall_Behavior {
-  public static void init(SNode thisNode) {
+  public static boolean call_isVirtualMethodCall_1213877437823(SNode __thisNode__) {
+    return (Node_ConceptMethodCall_BehaviorDescriptor.getVirtualMethodDeclaration_idhEwIWm8.invoke(__thisNode__) != null);
   }
-  public static boolean call_isVirtualMethodCall_1213877437823(SNode thisNode) {
-    return (Node_ConceptMethodCall_Behavior.call_getVirtualMethodDeclaration_1213877437832(thisNode) != null);
+  public static boolean call_isSuperMethodCall_1521124695248146659(SNode __thisNode__) {
+    return SNodeOperations.isInstanceOf(SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
-  public static boolean call_isSuperMethodCall_1521124695248146659(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
-  }
-  public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
-    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+  public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode __thisNode__) {
+    SNode methodDeclaration = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     if ((SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) != null)) {
       return SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"));
     } else
@@ -29,28 +30,5 @@ public class Node_ConceptMethodCall_Behavior {
     } else {
       return null;
     }
-  }
-  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    String variableExpectedName;
-    variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-    if (variableExpectedName.startsWith("get")) {
-      variableExpectedName = variableExpectedName.substring(3);
-    } else
-    if (variableExpectedName.startsWith("is")) {
-      variableExpectedName = variableExpectedName.substring(2);
-    }
-    return NameUtil.decapitalize(variableExpectedName);
-  }
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
-    return true;
-  }
-  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
-    return true;
-  }
-  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
-    return true;
-  }
-  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
-    return true;
   }
 }

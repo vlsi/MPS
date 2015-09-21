@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import testAnnotatedType.behavior.PresenceCondition_Behavior;
+import testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,7 +18,7 @@ public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRu
   public typeof_OverrideAnnotation_InferenceRule() {
   }
   public void applyRule(final SNode overrideAnnotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")))) {
+    if (PresenceCondition_BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")))) {
       {
         SNode _nodeToCheck_1029348928467 = SNodeOperations.getParent(overrideAnnotation);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d8c6e16f-e698-4fc4-9c7f-4a279bcfaaf0(testOverridingType.typesystem)", "2401040147804524711", 0, null);
@@ -36,6 +36,6 @@ public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRu
     return false;
   }
   public boolean supercedesAttributed(final SNode overrideAnnotation, IsApplicableStatus status) {
-    return PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
+    return PresenceCondition_BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(overrideAnnotation, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
   }
 }

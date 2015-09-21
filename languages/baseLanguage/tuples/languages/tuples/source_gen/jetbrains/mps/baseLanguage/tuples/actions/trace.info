@@ -59,7 +59,7 @@
         <var name="newNode" id="1239567483800" />
         <var name="sampleNode" id="1239567483800" />
       </scope>
-      <unit id="2912004279740771246" at="18,308,22,7" name="jetbrains.mps.baseLanguage.tuples.actions.tupleLiteral_init$1" />
+      <unit id="2912004279740771246" at="18,314,22,7" name="jetbrains.mps.baseLanguage.tuples.actions.tupleLiteral_init$1" />
       <unit id="1239567483800" at="16,0,27,0" name="jetbrains.mps.baseLanguage.tuples.actions.tupleLiteral_init$NodeFactory_1239567483800" />
       <unit id="1239567468054" at="15,0,28,0" name="jetbrains.mps.baseLanguage.tuples.actions.tupleLiteral_init" />
     </file>
@@ -123,7 +123,7 @@
       <node id="6880792723344957662" at="85,48,86,79" concept="6" />
       <node id="6880792723345007013" at="96,50,97,73" concept="6" />
       <node id="2974980382103303985" at="101,63,102,186" concept="6" />
-      <node id="6880792723344970897" at="106,61,107,148" concept="6" />
+      <node id="6880792723344970897" at="106,61,107,108" concept="6" />
       <node id="6880792723344953334" at="109,68,110,48" concept="6" />
       <node id="6880792723344953334" at="116,5,117,18" concept="6" />
       <node id="6880792723345007014" at="216,85,217,63" concept="5" />
@@ -175,7 +175,7 @@
       <scope id="6880792723344957659" at="85,48,86,79" />
       <scope id="6880792723345007009" at="96,50,97,73" />
       <scope id="2974980382103303984" at="101,63,102,186" />
-      <scope id="6880792723344970896" at="106,61,107,148" />
+      <scope id="6880792723344970896" at="106,61,107,108" />
       <scope id="6880792723344953334" at="109,68,110,48" />
       <scope id="6880792723345003463" at="235,33,236,189" />
       <scope id="6880792723345007014" at="221,209,223,162" />
@@ -253,7 +253,7 @@
       </scope>
       <unit id="6880792723344957658" at="84,271,88,13" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$4" />
       <unit id="6880792723345007008" at="95,89,99,17" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$5" />
-      <unit id="2974980382103303983" at="100,187,104,17" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$5" />
+      <unit id="2974980382103303983" at="100,193,104,17" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$5" />
       <unit id="6880792723344953334" at="82,42,90,9" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$3" />
       <unit id="6880792723344953334" at="93,57,112,13" name="jetbrains.mps.baseLanguage.tuples.actions.QueriesGenerated$4" />
     </file>
@@ -265,7 +265,7 @@
       <node id="6880792723345030575" at="122,199,123,62" concept="5" />
       <node id="6880792723345030597" at="128,48,129,79" concept="6" />
       <node id="6880792723345030614" at="137,98,138,68" concept="6" />
-      <node id="6880792723345030607" at="140,61,141,145" concept="6" />
+      <node id="6880792723345030607" at="140,61,141,105" concept="6" />
       <node id="6880792723345030575" at="143,68,144,48" concept="6" />
       <node id="6880792723345030575" at="150,5,151,18" concept="6" />
       <node id="6880792723345030615" at="241,81,242,63" concept="5" />
@@ -292,7 +292,7 @@
       <node id="6880792723345030575" at="119,0,153,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Type_6880792723345030575#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="6880792723345030596" at="128,48,129,79" />
       <scope id="6880792723345030584" at="137,98,138,68" />
-      <scope id="6880792723345030606" at="140,61,141,145" />
+      <scope id="6880792723345030606" at="140,61,141,105" />
       <scope id="6880792723345030575" at="143,68,144,48" />
       <scope id="6880792723345030615" at="243,30,245,199" />
       <scope id="6880792723345030595" at="128,0,131,0">

@@ -4,26 +4,19 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class MatchParensRegexp_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    ListSequence.fromList(vars).addElement(thisNode);
-    return "(" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, 0x111797ac579L, "regexp")), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
-  }
-  public static int call_getIndex_1223361984345(SNode thisNode) {
-    SNode parens = thisNode;
+  public static int call_getIndex_1223361984345(SNode __thisNode__) {
+    SNode parens = __thisNode__;
     List<SNode> parensList = new ArrayList<SNode>();
-    BehaviorReflection.invokeVirtual(String.class, Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), "virtual_getString_1222432436326", new Object[]{parensList});
+    Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(__thisNode__), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
-  }
-  public static SNode virtual_getValue_1224857430232(SNode thisNode) {
-    throw new UnsupportedOperationException();
   }
 }

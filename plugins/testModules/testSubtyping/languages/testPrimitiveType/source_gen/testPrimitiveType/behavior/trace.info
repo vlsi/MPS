@@ -2,10 +2,7 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="testPrimitiveType.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="TypeWithProperties_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="testPrimitiveType.behavior.TypeWithProperties_BehaviorDescriptor" />
+      <unit at="14,0,38,0" name="testPrimitiveType.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

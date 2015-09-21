@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
+import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -19,8 +19,8 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
   public typeof_SuperNodeExpression_InferenceRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode superConcept = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(nodeToCheck);
-    if (SuperNodeExpression_Behavior.call_isSuperMethodStatic_5212852298298945349(nodeToCheck)) {
+    SNode superConcept = SuperNodeExpression_BehaviorDescriptor.getSuperConcept_id6tsH5JaReJu.invoke(nodeToCheck);
+    if (SuperNodeExpression_BehaviorDescriptor.isEnclosingMethodStatic_id4xnLoJyFYX5.invoke(nodeToCheck)) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "5527038142169120625", 0, null);

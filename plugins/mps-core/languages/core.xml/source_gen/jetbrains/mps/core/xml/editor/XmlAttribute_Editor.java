@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.core.xml.behavior.XmlBaseAttribute_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -49,7 +49,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_1uorir_a0(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMultiline_3080189811177259788", new Object[]{});
+    return XmlBaseAttribute_BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(node);
   }
   private EditorCell createCollection_1uorir_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

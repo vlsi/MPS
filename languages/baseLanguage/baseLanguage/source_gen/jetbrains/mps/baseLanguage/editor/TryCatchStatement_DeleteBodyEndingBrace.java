@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -32,7 +32,7 @@ public class TryCatchStatement_DeleteBodyEndingBrace {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).count() >= 1) {
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
         ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.insertPrevSiblingChild(node, it);
@@ -54,7 +54,7 @@ public class TryCatchStatement_DeleteBodyEndingBrace {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).count() >= 1) {
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
         ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.insertPrevSiblingChild(node, it);

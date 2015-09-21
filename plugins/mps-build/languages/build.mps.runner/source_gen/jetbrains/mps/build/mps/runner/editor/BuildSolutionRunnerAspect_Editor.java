@@ -22,8 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -102,7 +101,7 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xi87ym_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")) != null) ? BuildSolutionRunnerAspect_Behavior.call_getFQClassName_1350734474211110544(node) + "." + BehaviorReflection.invokeVirtual(String.class, node, "virtual_getMethodName_1350734474210955274", new Object[]{}) + "()" : "<not available>"));
+        return (((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")) != null) ? BuildSolutionRunnerAspect_BehaviorDescriptor.getFQClassName_id1aYLt$9eyUg.invoke(node) + "." + BuildSolutionRunnerAspect_BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(node) + "()" : "<not available>"));
       }
       public void setText(String s) {
       }
@@ -144,7 +143,7 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xi87ym_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getMethodName_1350734474210955274", new Object[]{}) + "()";
+        return BuildSolutionRunnerAspect_BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(node) + "()";
       }
       public void setText(String s) {
       }
@@ -166,7 +165,7 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xi87ym_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getClassName_1350734474210951475", new Object[]{});
+        return BuildSolutionRunnerAspect_BehaviorDescriptor.getClassName_id1aYLt$9dW4N.invoke(node);
       }
       public void setText(String s) {
       }

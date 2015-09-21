@@ -4,10 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class IYetUnresolved_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_findClass_5230012391932867419(SNode thisNode, SNode from, String className) {
+  public static SNode call_findClass_5230012391932867419(SNode __thisNode__, SNode from, String className) {
     // FIXME remove this: it's here only to give idea-compiled solutions access to language classes 
     return ResolveUnknownUtil.findClass(from, className);
   }

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -34,7 +34,7 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     styledText.append("(");
     SNode selectedNode = editorContext.getSelectedNode();
 
-    List<String> definedParameters = ListSequence.fromListWithValues(new LinkedList<String>(), BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}));
+    List<String> definedParameters = ListSequence.fromListWithValues(new LinkedList<String>(), AbstractFigureReference_BehaviorDescriptor.getFigureParameterNames_id1iN4mn3lWCq.invoke(parameterObject));
     Set<String> specifiedParameters = SetSequence.fromSet(new HashSet<String>());
 
     for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a7d7b2L, "parameters")))) {

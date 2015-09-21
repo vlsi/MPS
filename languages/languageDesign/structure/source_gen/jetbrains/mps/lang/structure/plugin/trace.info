@@ -16,8 +16,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4853505765036703346">
     <file name="RefactoringRuntime.java">
       <node id="4853505765033726315" at="26,107,27,203" concept="4" />
-      <node id="4853505765033726337" at="29,39,30,99" concept="5" />
-      <node id="4853505765033726349" at="33,35,34,85" concept="0" />
+      <node id="4853505765033726337" at="29,39,30,105" concept="5" />
+      <node id="4853505765033726349" at="33,35,34,91" concept="0" />
       <node id="4853505765033726356" at="36,7,37,0" concept="6" />
       <node id="4853505765033726357" at="37,0,38,45" concept="4" />
       <node id="4853505765033726364" at="38,45,39,37" concept="0" />
@@ -26,8 +26,8 @@
       <node id="4853505765032841876" at="45,57,46,30" concept="0" />
       <node id="4853505765032841881" at="46,30,47,36" concept="0" />
       <node id="2870965692426517823" at="51,123,52,203" concept="4" />
-      <node id="2870965692426517845" at="54,39,55,91" concept="5" />
-      <node id="2870965692426517857" at="58,35,59,77" concept="0" />
+      <node id="2870965692426517845" at="54,39,55,97" concept="5" />
+      <node id="2870965692426517857" at="58,35,59,83" concept="0" />
       <node id="2870965692426517864" at="61,7,62,0" concept="6" />
       <node id="2870965692426517865" at="62,0,63,61" concept="4" />
       <node id="2870965692426517872" at="63,61,64,54" concept="0" />
@@ -62,10 +62,10 @@
       <node id="4853505765035392526" at="26,0,42,0" concept="7" trace="changePropertyInstance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
       <node id="4853505765035354594" at="51,0,67,0" concept="7" trace="changeReferenceLinkInstances#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
       <node id="7217668918201205170" at="68,0,90,0" concept="7" trace="replaceWithNewConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4853505765033726336" at="29,39,30,99" />
-      <scope id="4853505765033726348" at="33,35,34,85" />
-      <scope id="2870965692426517844" at="54,39,55,91" />
-      <scope id="2870965692426517856" at="58,35,59,77" />
+      <scope id="4853505765033726336" at="29,39,30,105" />
+      <scope id="4853505765033726348" at="33,35,34,91" />
+      <scope id="2870965692426517844" at="54,39,55,97" />
+      <scope id="2870965692426517856" at="58,35,59,83" />
       <scope id="7217668918201234014" at="72,72,73,60" />
       <scope id="7217668918201234029" at="75,72,76,73" />
       <scope id="1601710079321015368" at="84,149,85,121" />

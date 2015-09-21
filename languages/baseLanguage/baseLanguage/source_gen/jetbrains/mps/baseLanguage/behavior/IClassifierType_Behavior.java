@@ -7,7 +7,6 @@ import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -21,18 +20,21 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class IClassifierType_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static Iterable<SNode> call_getMembers_7405920559687277275(final SNode thisNode) {
-    if (thisNode == null) {
+  public static Iterable<SNode> call_getMembers_7405920559687277275(final SNode __thisNode__) {
+    if (__thisNode__ == null) {
       // todo: this in virtual methods cannot be null but in non-virtual can be. think about it 
       return Collections.emptyList();
     }
 
     // this cache is safe, more complicated caches - think about it 
-    Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassifier_7405920559687237513", new Object[]{}), new ArrayList<SNode>());
-    for (SNode typeParameter : BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) {
+    Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__), new ArrayList<SNode>());
+    for (SNode typeParameter : IClassifierType_BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(__thisNode__)) {
       if (SNodeOperations.isInstanceOf(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
         ListSequence.fromList(cacheKey._1()).addElement(SLinkOperations.getTarget(SNodeOperations.cast(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
       } else {
@@ -43,7 +45,7 @@ public class IClassifierType_Behavior {
     return RepositoryStateCacheUtils.getFromCache("IClassifierType_Behavior", cacheKey, new _FunctionTypes._return_P0_E0<ISequence<SNode>>() {
       public ISequence<SNode> invoke() {
         MembersPopulatingContext scope = new MembersPopulatingContext();
-        IClassifierType_Behavior.call_populateMembers_7405920559687241253(thisNode, scope, thisNode);
+        IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(__thisNode__, scope, __thisNode__);
         return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
@@ -52,22 +54,22 @@ public class IClassifierType_Behavior {
       }
     });
   }
-  public static Iterable<SNode> call_getVisibleMembers_6145907390641297279(final SNode thisNode, final SNode contextNode) {
-    return Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisNode)).where(new IWhereFilter<SNode>() {
+  public static Iterable<SNode> call_getVisibleMembers_6145907390641297279(final SNode __thisNode__, final SNode contextNode) {
+    return Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVisible_6145907390641297352", new Object[]{thisNode, contextNode});
+        return IClassifierMember_BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);
       }
     });
   }
-  public static void call_populateMembers_7405920559687241253(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    SNode thisClassifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassifier_7405920559687237513", new Object[]{});
+  public static void call_populateMembers_7405920559687241253(SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
+    SNode thisClassifier = IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__);
 
     if ((thisClassifier != null)) {
-      if (context.enterClassifierInternal(thisNode)) {
+      if (context.enterClassifierInternal(__thisNode__)) {
         try {
-          BehaviorReflection.invokeVirtual(Void.class, thisClassifier, "virtual_populateMembers_7405920559687241403", new Object[]{context, classifier});
+          IClassifier_BehaviorDescriptor.populateMembers_id6r77ob2USUV.invoke(thisClassifier, context, classifier);
         } finally {
-          context.exitClassifierInternal(thisNode);
+          context.exitClassifierInternal(__thisNode__);
         }
       }
     }

@@ -6,31 +6,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class IOperation_Behavior {
-  public static void init(SNode thisNode) {
+  public static SNode call_getOperand_1213877410070(SNode __thisNode__) {
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
   }
-  public static SNode call_getOperand_1213877410070(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
-  }
-  public static SNode call_getDotExpression_1224687669172(SNode thisNode) {
-    return SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-  }
-  public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(thisNode)), "virtual_lvalue_1262430001741498364", new Object[]{});
-  }
-  public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return false;
-  }
-  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return null;
-  }
-  public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
-    return true;
-  }
-  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
-    return false;
+  public static SNode call_getDotExpression_1224687669172(SNode __thisNode__) {
+    return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
 }

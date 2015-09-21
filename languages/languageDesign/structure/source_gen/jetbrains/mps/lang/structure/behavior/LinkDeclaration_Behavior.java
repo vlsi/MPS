@@ -7,30 +7,30 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class LinkDeclaration_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getGenuineLink_1213877254523(SNode thisNode) {
-    if (thisNode == null) {
+  public static SNode call_getGenuineLink_1213877254523(SNode __thisNode__) {
+    if (__thisNode__ == null) {
       return null;
     }
-    return SModelUtil.getGenuineLinkDeclaration(thisNode);
+    return SModelUtil.getGenuineLinkDeclaration(__thisNode__);
   }
-  public static String call_getGenuineRole_1213877254542(SNode thisNode) {
-    if (thisNode == null) {
+  public static String call_getGenuineRole_1213877254542(SNode __thisNode__) {
+    if (__thisNode__ == null) {
       return null;
     }
-    return SModelUtil.getGenuineLinkRole(thisNode);
+    return SModelUtil.getGenuineLinkRole(__thisNode__);
   }
-  public static boolean call_isSingular_1213877254557(SNode thisNode) {
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(thisNode);
+  public static boolean call_isSingular_1213877254557(SNode __thisNode__) {
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(__thisNode__);
     return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
   }
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-  }
-  public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode thisNode) {
-    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(thisNode);
+  public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode __thisNode__) {
+    SNode genuineLink = LinkDeclaration_BehaviorDescriptor.getGenuineLink_idhEwIf_V.invoke(__thisNode__);
     return SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
   }
 }

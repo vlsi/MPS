@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,7 +19,7 @@ public class check_FigureParameterAttributeField_NonTypesystemRule extends Abstr
   public check_FigureParameterAttributeField_NonTypesystemRule() {
   }
   public void applyRule(final SNode fieldAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), fieldAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)", "~Property")))) {
+    if (!(Utils.isSupportedParameterType(FigureParameter_BehaviorDescriptor.getParameterType_idiZqVFYvBew.invoke(fieldAttribute), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)", "~Property")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fieldAttribute, "Unsupported attributed field type, jetbrains.jetpad.model.property.Property expected.", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "6568183682644076223", null, errorTarget);

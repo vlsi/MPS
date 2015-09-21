@@ -34,7 +34,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -130,7 +130,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     }
     public String getMatchingText_internal(SNode parameterObject) {
       SNode errorStatement = parameterObject;
-      return BehaviorReflection.invokeVirtual(String.class, errorStatement, "virtual_getName_1597542831856389237", new Object[]{});
+      return MessageStatement_BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(errorStatement);
     }
   }
   private EditorCell createNonEmptyProperty_kzyi6r_c0(EditorContext editorContext, SNode node) {

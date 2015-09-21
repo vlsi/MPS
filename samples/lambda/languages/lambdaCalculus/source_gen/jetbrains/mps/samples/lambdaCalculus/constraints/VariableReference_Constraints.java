@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -45,7 +45,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
             List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner_BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(node)));
             }
             return result;
           }

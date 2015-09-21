@@ -5,9 +5,6 @@ package jetbrains.mps.execution.commands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.NonNls;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -15,38 +12,30 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class CommandDeclaration_Behavior {
-  public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x75aadb0d4e61a576L, "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration"))));
+  public static boolean call_isDebuggable_856705193941282102(SNode __thisNode__) {
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x5b66ff7a6627d632L, "debuggerConfiguration")) != null);
   }
-  public static boolean call_isDebuggable_856705193941282102(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x5b66ff7a6627d632L, "debuggerConfiguration")) != null);
-  }
-  @NonNls
-  public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
-    return "Command";
-  }
-  public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return createCommandType_5aznw1_a0a2(thisNode);
-  }
-  public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
+  public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode __thisNode__) {
     // we get all parameters generated into fields and select a list with uniquie names 
-    final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration_BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(it);
+        return CommandParameterDeclaration_BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(it);
       }
     }).distinct();
     return Sequence.fromIterable(fieldNames).translate(new ITranslator2<String, SNode>() {
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(decl), it);
+            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0b(CommandParameterDeclaration_BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -56,18 +45,18 @@ public class CommandDeclaration_Behavior {
       }
     }).toListSequence();
   }
-  public static List<SNode> call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(SNode thisNode) {
-    final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
+  public static List<SNode> call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(SNode __thisNode__) {
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration_BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(it);
+        return CommandParameterDeclaration_BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(it);
       }
     }).distinct();
     return Sequence.fromIterable(fieldNames).translate(new ITranslator2<String, SNode>() {
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(decl), it);
+            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0c(CommandParameterDeclaration_BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -77,36 +66,30 @@ public class CommandDeclaration_Behavior {
       }
     }).toListSequence();
   }
-  public static Iterable<SNode> call_getFieldParameters_3754131050835964275(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x550ea9458ea107beL, "executePart"))).translate(new ITranslator2<SNode, SNode>() {
+  public static Iterable<SNode> call_getFieldParameters_3754131050835964275(SNode __thisNode__) {
+    return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x550ea9458ea107beL, "executePart"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(ExecuteCommandPart_BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(it)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_generateField_8478830098674441876", new Object[]{});
+            return CommandParameterDeclaration_BehaviorDescriptor.generateField_id7mEQKPeolUk.invoke(it);
           }
         });
       }
     });
   }
-  public static String call_getCreateProcessMethodName_856705193941282090(SAbstractConcept thisConcept) {
+  public static String call_getCreateProcessMethodName_856705193941282090(SAbstractConcept __thisConcept__) {
     return "createProcess";
   }
-  public static String call_getGetDebuggerMethodName_856705193941282096(SAbstractConcept thisConcept) {
+  public static String call_getGetDebuggerMethodName_856705193941282096(SAbstractConcept __thisConcept__) {
     return "getDebugger";
   }
-  public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept thisConcept) {
+  public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept __thisConcept__) {
     return "getDebuggerConfiguration";
   }
-  private static SNode createCommandType_5aznw1_a0a2(Object p0) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, "jetbrains.mps.execution.commands.structure.CommandType"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), (SNode) p0);
-    return n1;
-  }
-  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
+  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(Object a, Object b) {
+  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -4,25 +4,20 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class StyleAttributeDeclaration_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getModuleName_3982520150138520052(SNode __thisNode__) {
+    return SNodeOperations.getModel(__thisNode__).getModule().getModuleName();
   }
-  public static String call_getModuleName_3982520150138520052(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getModule().getModuleName();
-  }
-  public static SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, 0x3744c0f9ea545afbL, "defaultValue"));
-  }
-  public static SNode virtual_getType_7677730757102475082(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, 0x3744c0f9ea53826eL, "valueType"));
-  }
-  public static SNode call_getClassifierType_6029276237639807717(SNode thisNode) {
-    return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_7677730757102475082", new Object[]{}), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
+  public static SNode call_getClassifierType_6029276237639807717(SNode __thisNode__) {
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(StyleAttributeDeclaration_BehaviorDescriptor.getType_id6EcLR7UbLta.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
   }
 }

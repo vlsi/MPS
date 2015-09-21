@@ -24,10 +24,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -97,14 +97,14 @@ public class QueriesGenerated {
                     return _quotation_createNode_zhyrwg_a0a0a0a0a0a(cmp);
                   }
                 };
-                return _quotation_createNode_zhyrwg_a1a0a0a(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132((item))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+                return _quotation_createNode_zhyrwg_a1a0a0a(ListSequence.fromList(NamedTupleDeclaration_BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke((item))).reversedList().translate(new ITranslator2<SNode, SNode>() {
                   public Iterable<SNode> translate(SNode ntd) {
                     return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
                   }
                 }).select(toRef).toListSequence(), (item));
               }
               public String getMatchingText(String pattern) {
-                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " literal";
+                return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke((item)) + " literal";
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -138,7 +138,7 @@ public class QueriesGenerated {
                 return _quotation_createNode_n0gwsk_a0a0a0a((item));
               }
               public String getMatchingText(String pattern) {
-                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " type";
+                return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke((item)) + " type";
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);

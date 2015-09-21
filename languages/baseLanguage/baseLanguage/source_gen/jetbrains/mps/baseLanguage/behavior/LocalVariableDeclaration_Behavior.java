@@ -5,34 +5,20 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
-import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class LocalVariableDeclaration_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    SNode parent = SNodeOperations.getParent(thisNode);
-    return SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"));
-  }
-  public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    SNode ref = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")));
-    SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), thisNode);
-    return ref;
-  }
-  public static boolean call_isVariableReferencedInClosures_1229352990212(SNode thisNode) {
-    SNode container = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
+  public static boolean call_isVariableReferencedInClosures_1229352990212(SNode __thisNode__) {
+    SNode container = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
     {
       Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(container, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -42,7 +28,7 @@ public class LocalVariableDeclaration_Behavior {
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (SLinkOperations.getTarget(ref_var, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")) == thisNode) {
+        if (SLinkOperations.getTarget(ref_var, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")) == __thisNode__) {
           SNode referenceContainer = SNodeOperations.getNodeAncestor(ref_var, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
           if (referenceContainer != container && SNodeOperations.isInstanceOf(referenceContainer, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
             return true;
@@ -51,43 +37,5 @@ public class LocalVariableDeclaration_Behavior {
       }
     }
     return false;
-  }
-  public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
-    if (settings == null) {
-      return "";
-    }
-    return (settings.getLocalVariablePrefix() == null ? "" : settings.getLocalVariablePrefix());
-  }
-  public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
-    if (settings == null) {
-      return "";
-    }
-    return (settings.getLocalVariableSuffix() == null ? "" : settings.getLocalVariableSuffix());
-  }
-  public static SNode virtual_getValue_1224857430232(SNode thisNode) {
-    throw new UnsupportedOperationException();
-  }
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
-      if (ScopeUtils.comeFrom("initializer", thisNode, child)) {
-        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
-      } else {
-        return ScopeUtils.lazyParentScope(thisNode, kind);
-      }
-    }
-    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  }
-  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
-      if (role.equals("initializer")) {
-        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
-      } else {
-        return ScopeUtils.lazyParentScope(thisNode, kind);
-      }
-    }
-
-    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
 }

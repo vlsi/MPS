@@ -2,10 +2,7 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="L1.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="C1_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="L1.behavior.C1_BehaviorDescriptor" />
+      <unit at="14,0,38,0" name="L1.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

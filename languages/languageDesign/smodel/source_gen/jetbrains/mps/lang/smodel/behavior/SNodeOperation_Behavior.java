@@ -8,81 +8,42 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class SNodeOperation_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
-    SNode parent = SNodeOperations.getParent(thisNode);
+  public static SNode call_getLeftExpression_1213877508894(SNode __thisNode__) {
+    SNode parent = SNodeOperations.getParent(__thisNode__);
     return SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
   }
-  public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
+  public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode __thisNode__) {
+    SNode leftExpression = SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__);
     if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
   }
-  public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
+  public static SNode call_getLeftExpressionOperation_1213877508946(SNode __thisNode__) {
+    SNode leftExpression = SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__);
     if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
   }
-  public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
+  public static SNode call_getParameter_1213877508972(SNode __thisNode__, final SNode parameterConcept) {
+    return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(parameterConcept));
       }
     }).first();
   }
-  public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return true;
-  }
-  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
-    return variableExpectedName;
-  }
-  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
-    return false;
-  }
-  @Deprecated
-  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
-    return false;
-  }
-  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
-    return ListSequence.fromList(new ArrayList<SNode>());
-  }
-  public static SNode call_getLeftNodeConcept_1213877508847(SAbstractConcept thisConcept, SNode parent) {
+  public static SNode call_getLeftNodeConcept_1213877508847(SAbstractConcept __thisConcept__, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
     SNode result = SModelLanguageUtil.getConcept(operand);
     if ((result != null)) {

@@ -34,7 +34,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -107,7 +107,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
             public String combine(String a, String b) {
               return a + " & " + b;
             }
-          }))) + ") was already defined in: " + BehaviorReflection.invokeVirtual(String.class, duplicatingEditorDecl, "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6246554009626560906", null, errorTarget);
+          }))) + ") was already defined in: " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(duplicatingEditorDecl), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6246554009626560906", null, errorTarget);
         }
       }
     }

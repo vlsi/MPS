@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -27,7 +27,7 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
     Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(propertyAttribute)).getProperties();
     SProperty existingProperty = Sequence.fromIterable(properties).findFirst(new IWhereFilter<SProperty>() {
       public boolean accept(SProperty it) {
-        return eq_6m4pt_a0a0a0a0a0a1a1(it, PropertyAttribute_Behavior.call_getProperty_1341860900488756504(propertyAttribute));
+        return eq_6m4pt_a0a0a0a0a0a1a1(it, PropertyAttribute_BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
       }
     });
     if (existingProperty == null) {

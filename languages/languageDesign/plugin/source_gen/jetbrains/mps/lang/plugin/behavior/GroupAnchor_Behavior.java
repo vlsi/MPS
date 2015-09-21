@@ -8,13 +8,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class GroupAnchor_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getId_1213877276567(SNode __thisNode__) {
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static String call_getId_1213877276567(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-  }
-  public static String call_getActionId_5495648829643890225(SNode thisNode) {
-    return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"))) + GroupAnchor_Behavior.call_getId_1213877276567(thisNode);
+  public static String call_getActionId_5495648829643890225(SNode __thisNode__) {
+    return ActionGroupDeclaration_BehaviorDescriptor.getGeneratedName_idhEwJa82.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"))) + GroupAnchor_BehaviorDescriptor.getId_idhEwIkYn.invoke(__thisNode__);
   }
 }

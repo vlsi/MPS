@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
@@ -45,14 +46,14 @@ public class ExpressionPresentationUtil {
     }
 
     if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
-      return "new " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), "virtual_getPresentation_1213877396640", new Object[]{});
+      return "new " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")));
     }
 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), "virtual_constant_1262430001741498050", new Object[]{})) {
-      return BehaviorReflection.invokeVirtual(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(expression).getModule()}) + "";
+    if (Expression_BehaviorDescriptor.constant_id1653mnvAgr2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)))) {
+      return Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expression, SNodeOperations.getModel(expression).getModule()) + "";
     }
 
-    return BehaviorReflection.invokeVirtual(String.class, expression, "virtual_getPresentation_1213877396640", new Object[]{});
+    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(expression);
   }
   public static String getOperationPresentation(@Nullable SNode operation) {
     if (operation == null) {
@@ -68,7 +69,7 @@ public class ExpressionPresentationUtil {
         }
       }) + ")";
     }
-    return BehaviorReflection.invokeVirtual(String.class, operation, "virtual_getPresentation_1213877396640", new Object[]{});
+    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(operation);
   }
 
   private static boolean isNotEmptyString(String str) {

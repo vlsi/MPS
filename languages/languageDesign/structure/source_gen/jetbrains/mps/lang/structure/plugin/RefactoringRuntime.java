@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -27,11 +27,11 @@ public class RefactoringRuntime {
     Iterable<SNode> children = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(children, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
+        return PropertyAttribute_BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it).equals(oldProp);
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
+        PropertyAttribute_BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(it, newProp);
       }
     });
 
@@ -52,11 +52,11 @@ public class RefactoringRuntime {
     Iterable<SNode> children = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(children, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return LinkAttribute_Behavior.call_getLink_1341860900489573894(it).equals(oldLink);
+        return LinkAttribute_BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it).equals(oldLink);
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        LinkAttribute_Behavior.call_setLink_7714691473529772139(it, newLink);
+        LinkAttribute_BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(it, newLink);
       }
     });
 

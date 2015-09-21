@@ -6,7 +6,7 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,7 +24,7 @@ public class CompositeWithParentScope {
     return ((element != null) ? from(new NamedElementsScope(element), node, kind) : parentScope(node, kind));
   }
   public static Scope fromLink(SNode link, SNode node, SNode kind) {
-    return from(new SimpleRoleScope(node, link, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(kind), "virtual_getFqName_1213877404258", new Object[]{})) {
+    return from(new SimpleRoleScope(node, link, INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.asNode(kind))) {
       @Override
       public String getName(SNode child) {
         return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

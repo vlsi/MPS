@@ -213,7 +213,7 @@
         <var name="references" id="1331913329176292217" />
       </scope>
       <scope id="1331913329176292217" at="54,0,84,0" />
-      <unit id="9034802358628519915" at="69,479,73,13" name="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
+      <unit id="9034802358628519915" at="69,418,73,13" name="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
       <unit id="1331913329176292217" at="41,119,51,5" name="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$1" />
       <unit id="1331913329176292217" at="65,19,79,9" name="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$3" />
       <unit id="1331913329176292217" at="57,128,81,5" name="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$2" />
@@ -232,7 +232,7 @@
       <node id="1576845966386891452" at="53,98,54,135" concept="6" />
       <node id="1576845966386891452" at="57,44,58,20" concept="7" />
       <node id="9034802358628290949" at="65,142,66,212" concept="6" />
-      <node id="9034802358628290988" at="66,212,67,503" concept="7" />
+      <node id="9034802358628290988" at="66,212,67,442" concept="7" />
       <node id="1576845966386891452" at="70,63,71,58" concept="7" />
       <node id="1576845966386891452" at="75,7,76,22" concept="7" />
       <node id="1576845966386891452" at="78,0,79,0" concept="9" trace="breakingNode_rduypo_a0a1a0a0a1a0b0a1a2" />
@@ -256,7 +256,7 @@
       <scope id="1576845966386891452" at="45,42,47,337">
         <var name="propertyName" id="1576845966386891452" />
       </scope>
-      <scope id="9034802358628290363" at="65,142,67,503">
+      <scope id="9034802358628290363" at="65,142,67,442">
         <var name="expr" id="9034802358628290950" />
       </scope>
       <scope id="1576845966386891452" at="33,0,36,0" />

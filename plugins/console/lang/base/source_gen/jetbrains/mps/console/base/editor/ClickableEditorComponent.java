@@ -16,7 +16,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ClickableEditorComponent implements ConceptEditorComponent {
@@ -47,13 +47,13 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_k1kh9z_a0a(EditorContext editorContext, SNode node) {
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{})) {
+    if (IActionHolder_BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node)) {
       return MPSColors.DARK_BLUE;
     } else {
       return MPSColors.GRAY;
     }
   }
   private static boolean _StyleParameter_QueryFunction_k1kh9z_a1a(EditorContext editorContext, SNode node) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
+    return IActionHolder_BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
   }
 }

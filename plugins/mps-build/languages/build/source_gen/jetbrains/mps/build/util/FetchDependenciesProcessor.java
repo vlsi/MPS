@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -30,7 +30,7 @@ public class FetchDependenciesProcessor {
     artifacts.collect();
     UnpackHelper helper = new UnpackHelper(artifacts, genContext);
     for (SNode dep : SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L, "jetbrains.mps.build.structure.BuildExternalDependency"), false, new SAbstractConcept[]{})) {
-      BehaviorReflection.invokeVirtual(Void.class, dep, "virtual_fetchDependencies_5908258303322131137", new Object[]{artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper)});
+      BuildExternalDependency_BehaviorDescriptor.fetchDependencies_id57YmpYyL8F1.invoke(dep, artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper));
     }
     helper.eval();
 

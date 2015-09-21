@@ -14,7 +14,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -52,11 +52,11 @@ public final class SetWithIndent_Intention extends IntentionDescriptorBase imple
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Append " + ((BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{}) ? "without" : "with")) + " Indent";
+      return "Append " + ((AbstractAppendPart_BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node) ? "without" : "with")) + " Indent";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      boolean indent = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{});
+      boolean indent = AbstractAppendPart_BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node);
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"))) {
         SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent"), "" + (!(indent)));
       } else {

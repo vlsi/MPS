@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.build.behavior.BuildString_Behavior;
+import jetbrains.mps.build.behavior.BuildString_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildLayout_Jar_BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,14 +21,14 @@ public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesyst
   public check_BuildLayout_Jar_NonTypesystemRule() {
   }
   public void applyRule(final SNode jarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
-    if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{})))) {
+    String approxName = BuildString_BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
+    if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(BuildLayout_Jar_BehaviorDescriptor.getExpectedExtension_id62K_yvYRytT.invoke(jarArchive)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), "should end with `" + BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{}) + "'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), "should end with `" + BuildLayout_Jar_BehaviorDescriptor.getExpectedExtension_id62K_yvYRytT.invoke(jarArchive) + "'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.build.typesystem.fixContainerName_QuickFix", false);
-          intentionProvider.putArgument("newExtension", BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{}));
+          intentionProvider.putArgument("newExtension", BuildLayout_Jar_BehaviorDescriptor.getExpectedExtension_id62K_yvYRytT.invoke(jarArchive));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

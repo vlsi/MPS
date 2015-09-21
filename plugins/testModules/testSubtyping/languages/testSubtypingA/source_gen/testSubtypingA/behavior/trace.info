@@ -1,29 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="testSubtypingA.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="WrapperType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="testSubtypingA.behavior.WrapperType_BehaviorDescriptor" />
+      <unit at="14,0,42,0" name="testSubtypingA.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9c0cad77-7f20-4fb1-84ed-cb5159082ca7(testSubtypingA.behavior)/2078093584693144862">
     <file name="WrapperType_Behavior.java">
-      <node id="2078093584693186290" at="15,78,16,506" concept="0" />
-      <node id="2078093584693144862" at="13,0,15,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2078093584693144862" at="15,0,18,0" concept="1" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="2078093584693144864" at="13,43,13,43" />
-      <scope id="2078093584693184952" at="15,78,16,506" />
-      <scope id="2078093584693144862" at="13,0,15,0">
-        <var name="thisNode" id="2078093584693144862" />
+      <unit id="2078093584693144862" at="10,0,13,0" name="testSubtypingA.behavior.WrapperType_Behavior" />
+    </file>
+    <file name="WrapperType_BehaviorDescriptor.java">
+      <node id="2078093584693144862" at="28,0,29,0" concept="6" trace="CONCEPT" />
+      <node id="2078093584693144862" at="29,0,30,0" concept="6" trace="REGISTRY" />
+      <node id="2078093584693144862" at="31,0,32,0" concept="6" trace="getPresentation_idhEwIMiw" />
+      <node id="2078093584693144862" at="33,0,34,0" concept="6" trace="BH_METHODS" />
+      <node id="2078093584693186290" at="38,80,39,474" concept="5" />
+      <node id="2078093584693144862" at="42,48,43,20" concept="8" />
+      <node id="2078093584693144862" at="47,108,48,21" concept="1" />
+      <node id="2078093584693144862" at="52,113,53,49" concept="4" />
+      <node id="2078093584693144862" at="54,26,55,56" concept="10" />
+      <node id="2078093584693144862" at="58,13,59,51" concept="5" />
+      <node id="2078093584693144862" at="60,14,61,58" concept="10" />
+      <node id="2078093584693144862" at="66,127,67,49" concept="4" />
+      <node id="2078093584693144862" at="68,26,69,56" concept="10" />
+      <node id="2078093584693144862" at="72,14,73,58" concept="10" />
+      <node id="2078093584693144862" at="79,48,80,22" concept="5" />
+      <node id="2078093584693144862" at="85,40,86,19" concept="5" />
+      <node id="2078093584693144862" at="35,0,37,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2078093584693144862" at="38,0,41,0" concept="7" trace="getPresentation_idhEwIMiw#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2078093584693144862" at="42,0,45,0" concept="0" trace="WrapperType_BehaviorDescriptor#()V" />
+      <node id="2078093584693144862" at="53,49,56,5" concept="2" />
+      <node id="2078093584693144862" at="67,49,70,5" concept="2" />
+      <node id="2078093584693144862" at="46,0,50,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="2078093584693144862" at="70,5,74,5" concept="9" />
+      <node id="2078093584693144862" at="77,0,82,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="2078093584693144862" at="83,0,88,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="2078093584693144862" at="56,5,62,5" concept="9" />
+      <node id="2078093584693144862" at="65,0,76,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="2078093584693144862" at="51,0,64,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="2078093584693144862" at="35,63,35,63" />
+      <scope id="2078093584693144862" at="38,80,39,474" />
+      <scope id="2078093584693144862" at="42,48,43,20" />
+      <scope id="2078093584693144862" at="47,108,48,21" />
+      <scope id="2078093584693144862" at="54,26,55,56" />
+      <scope id="2078093584693144862" at="58,13,59,51" />
+      <scope id="2078093584693144862" at="60,14,61,58" />
+      <scope id="2078093584693144862" at="68,26,69,56" />
+      <scope id="2078093584693144862" at="72,14,73,58" />
+      <scope id="2078093584693144862" at="79,48,80,22" />
+      <scope id="2078093584693144862" at="85,40,86,19" />
+      <scope id="2078093584693144862" at="35,0,37,0">
+        <var name="__thisNode__" id="2078093584693144862" />
       </scope>
-      <scope id="2078093584693144862" at="15,0,18,0">
-        <var name="thisNode" id="2078093584693144862" />
+      <scope id="2078093584693144862" at="38,0,41,0">
+        <var name="__thisNode__" id="2078093584693144862" />
       </scope>
-      <unit id="2078093584693144862" at="12,0,19,0" name="testSubtypingA.behavior.WrapperType_Behavior" />
+      <scope id="2078093584693144862" at="42,0,45,0" />
+      <scope id="2078093584693144862" at="46,0,50,0">
+        <var name="array" id="2078093584693144862" />
+        <var name="constructor" id="2078093584693144862" />
+        <var name="node" id="2078093584693144862" />
+      </scope>
+      <scope id="2078093584693144862" at="77,0,82,0" />
+      <scope id="2078093584693144862" at="83,0,88,0" />
+      <scope id="2078093584693144862" at="66,127,74,5">
+        <var name="methodIndex" id="2078093584693144862" />
+      </scope>
+      <scope id="2078093584693144862" at="52,113,62,5">
+        <var name="methodIndex" id="2078093584693144862" />
+      </scope>
+      <scope id="2078093584693144862" at="65,0,76,0">
+        <var name="concept" id="2078093584693144862" />
+        <var name="method" id="2078093584693144862" />
+        <var name="parameters" id="2078093584693144862" />
+      </scope>
+      <scope id="2078093584693144862" at="51,0,64,0">
+        <var name="method" id="2078093584693144862" />
+        <var name="node" id="2078093584693144862" />
+        <var name="parameters" id="2078093584693144862" />
+      </scope>
+      <unit id="2078093584693144862" at="27,0,89,0" name="testSubtypingA.behavior.WrapperType_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

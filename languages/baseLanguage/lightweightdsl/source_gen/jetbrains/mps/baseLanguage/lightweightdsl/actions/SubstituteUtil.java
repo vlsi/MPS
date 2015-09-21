@@ -9,10 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_Behavior;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
 
 public class SubstituteUtil {
   public static Iterable<SNode> getMembers2Substitute(SAbstractConcept memberConcept, SNode node) {
@@ -26,12 +25,12 @@ public class SubstituteUtil {
       return Collections.emptyList();
     }
 
-    return Sequence.fromIterable(SNodeOperations.ofConcept(DSLDescriptor_Behavior.call_getClassLikeMembers_2641476927088039443(descr), SNodeOperations.asSConcept(memberConcept))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(DSLDescriptor_BehaviorDescriptor.getClassLikeMembers_id2iCqkkxuhoj.invoke(descr), SNodeOperations.asSConcept(memberConcept))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode md) {
-        if (DSLClassMember_Behavior.call_isMultiple_2141245758541890151(md)) {
+        if (DSLClassMember_BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(md)) {
           return true;
         }
-        return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_find_2603987804376013077", new Object[]{classNode})).isEmpty();
+        return Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(md, classNode)).isEmpty();
       }
     });
   }
@@ -47,6 +46,6 @@ public class SubstituteUtil {
       return Collections.emptyList();
     }
 
-    return SNodeOperations.ofConcept(DSLDescriptor_Behavior.call_getClassLikeMembers_2641476927088039443(descr), SNodeOperations.asSConcept(memberConcept));
+    return SNodeOperations.ofConcept(DSLDescriptor_BehaviorDescriptor.getClassLikeMembers_id2iCqkkxuhoj.invoke(descr), SNodeOperations.asSConcept(memberConcept));
   }
 }

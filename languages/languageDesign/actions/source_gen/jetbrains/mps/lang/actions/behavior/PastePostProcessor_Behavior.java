@@ -7,11 +7,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class PastePostProcessor_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_getClassName_5457641811177522085(SNode thisNode) {
-    SNode parent = (SNode) SNodeOperations.getParent(thisNode);
-    return SPropertyOperations.getString(parent, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_PastePostProcessor_" + SNodeOperations.getIndexInParent(thisNode);
+  public static String call_getClassName_5457641811177522085(SNode __thisNode__) {
+    SNode parent = (SNode) SNodeOperations.getParent(__thisNode__);
+    return SPropertyOperations.getString(parent, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_PastePostProcessor_" + SNodeOperations.getIndexInParent(__thisNode__);
   }
 }

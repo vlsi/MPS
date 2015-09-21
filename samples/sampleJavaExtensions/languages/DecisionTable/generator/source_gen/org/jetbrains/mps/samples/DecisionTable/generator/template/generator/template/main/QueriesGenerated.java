@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior;
+import org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -58,16 +58,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1582L, "expectedType"));
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938168918(final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
+    return SetSequence.fromSet(DecisionTable_BehaviorDescriptor.referencedLVDs_id3mtcPBWFCmw.invoke(_context.getNode())).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938168959(final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
+    return SetSequence.fromSet(DecisionTable_BehaviorDescriptor.referencedParams_id3mtcPBWFDo3.invoke(_context.getNode())).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938155488(final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
+    return SetSequence.fromSet(DecisionTable_BehaviorDescriptor.referencedLVDs_id3mtcPBWFCmw.invoke(_context.getNode())).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938159683(final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
+    return SetSequence.fromSet(DecisionTable_BehaviorDescriptor.referencedParams_id3mtcPBWFDo3.invoke(_context.getNode())).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938171067(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> rowHeaders = SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"), false, false), MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1585L, "rowHeaders"));

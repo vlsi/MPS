@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
+import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -53,11 +53,11 @@ public final class ChangeOrientationList_Intention extends IntentionDescriptorBa
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node) ? "Make Horizontal" : "Make Vertical");
+      return (CellModel_ListWithRole_BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node) ? "Make Horizontal" : "Make Vertical");
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node)) {
+      if (CellModel_ListWithRole_BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node)) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dcf685L, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")), null));
       } else {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dd4cbeL, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")), null));

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
+import jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -49,7 +49,7 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(it)).contains(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))));
+                return !(Sequence.fromIterable(FacetDeclaration_BehaviorDescriptor.allExtends_id6O0kUTrsU9c.invoke(it)).contains(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))));
               }
             });
           }

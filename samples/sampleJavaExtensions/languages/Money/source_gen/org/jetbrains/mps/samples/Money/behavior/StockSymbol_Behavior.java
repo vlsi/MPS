@@ -5,10 +5,13 @@ package org.jetbrains.mps.samples.Money.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.samples.money.runtime.StockPriceDownloader;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class StockSymbol_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean call_isValidSymbol_4001135958235787610(SNode thisNode, String symbol) {
+  public static boolean call_isValidSymbol_4001135958235787610(SNode __thisNode__, String symbol) {
     if ((symbol == null || symbol.length() == 0)) {
       return false;
     }

@@ -558,7 +558,7 @@
   </root>
   <root nodeRef="r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)/3741392693834244501">
     <file name="check_MissingTextGenBlock_NonTypesystemRule.java">
-      <node id="3741392693834275311" at="23,103,24,93" concept="8" />
+      <node id="3741392693834275311" at="23,109,24,93" concept="8" />
       <node id="3741392693834274548" at="24,93,25,15" concept="7" />
       <node id="3741392693834267247" at="27,7,28,60" concept="6" />
       <node id="3741392693834267247" at="28,60,29,250" concept="6" />
@@ -579,7 +579,7 @@
       <scope id="3741392693834244501" at="36,68,37,102" />
       <scope id="3741392693834244501" at="39,30,40,17" />
       <scope id="3741392693834244501" at="19,0,21,0" />
-      <scope id="3741392693834271649" at="23,103,25,15" />
+      <scope id="3741392693834271649" at="23,109,25,15" />
       <scope id="3741392693834267247" at="27,7,29,250">
         <var name="_reporter_2309309498" id="3741392693834267247" />
         <var name="errorTarget" id="3741392693834267247" />

@@ -7,13 +7,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class AnnotationMethodDeclaration_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return false;
-  }
-  public static boolean call_isGoodReturnType_6624237184120289968(SNode thisNode, SNode type) {
+  public static boolean call_isGoodReturnType_6624237184120289968(SNode __thisNode__, SNode type) {
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       return false;
     }
@@ -23,7 +23,7 @@ public class AnnotationMethodDeclaration_Behavior {
         // nested array types are prohibited 
         return false;
       }
-      return AnnotationMethodDeclaration_Behavior.call_isGoodReturnType_6624237184120289968(thisNode, componentType);
+      return AnnotationMethodDeclaration_BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(__thisNode__, componentType);
     }
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

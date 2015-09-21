@@ -5,20 +5,14 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class DependentTypeInstance_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getMyType_9097849371504546165(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")) == null ? null : DependentTypeDescriptor_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"))));
-  }
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode);
-    if ((myType != null)) {
-      return BehaviorReflection.invokeVirtual(String.class, myType, "virtual_getPresentation_1213877396640", new Object[]{});
-    } else {
-      return "DependentType";
-    }
+  public static SNode call_getMyType_9097849371504546165(SNode __thisNode__) {
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")) == null ? null : DependentTypeDescriptor_BehaviorDescriptor.getType_id3geGFOI14GE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl")), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"))));
   }
 }

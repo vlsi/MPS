@@ -6,90 +6,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class EnumClass_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_findConstantByName_1213877267258(SNode thisNode, String name) {
-    for (SNode constant : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))) {
+  public static SNode call_findConstantByName_1213877267258(SNode __thisNode__, String name) {
+    for (SNode constant : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))) {
       if (name.equalsIgnoreCase(SPropertyOperations.getString(constant, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
         return constant;
       }
     }
     return null;
-  }
-  public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return _quotation_createNode_nbdilp_a0a1();
-  }
-  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
-    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
-    if (!(ListSequence.fromList(extended).contains(enumType))) {
-      // todo: WTF??? 
-      ListSequence.fromList(extended).addElement(enumType);
-    }
-    return extended;
-  }
-  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))));
-    return members;
-  }
-  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    // enums always have static operations: valueOf and values 
-    return true;
-  }
-  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    List<SNode> methodsToImplement = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
-    final List<SNode> ownMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"), "virtual_getOwnMethods_1906502351318572840", new Object[]{});
-    Iterable<SNode> remaining = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode toBeImplemented) {
-        return !(ListSequence.fromList(ownMethods).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode own) {
-            return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, own, "virtual_isAbstract_1232982539764", new Object[]{})) && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(toBeImplemented, own);
-          }
-        }));
-      }
-    });
-    return Sequence.fromIterable(remaining).toListSequence();
-  }
-  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    final List<SNode> methodsToOverride = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
-    Iterable<SNode> ownMethods = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"), "virtual_getOwnMethods_1906502351318572840", new Object[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        SNode v = SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
-        return (v != null) && !(SNodeOperations.isInstanceOf(v, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) && !(SPropertyOperations.getBoolean(SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal")));
-      }
-    });
-    Iterable<SNode> allToBeAdded = Sequence.fromIterable(ownMethods).where(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode own) {
-        return !(ListSequence.fromList(methodsToOverride).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode toBeOverriden) {
-            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(own, toBeOverriden);
-          }
-        }));
-      }
-    });
-    return ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(allToBeAdded));
-  }
-  private static SNode _quotation_createNode_nbdilp_a0a1() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()"), facade.createNodeId("~Enum")));
-    return quotedNode_1;
   }
 }

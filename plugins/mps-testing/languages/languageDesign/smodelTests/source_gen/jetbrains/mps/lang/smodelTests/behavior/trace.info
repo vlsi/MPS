@@ -1,37 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.lang.smodelTests.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ChildSubConcept_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.smodelTests.behavior.ChildSubConcept_BehaviorDescriptor" />
-    </file>
-    <file name="Child_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.smodelTests.behavior.Child_BehaviorDescriptor" />
-    </file>
-    <file name="GrandChild_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.smodelTests.behavior.GrandChild_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceContainerSubConcept_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.smodelTests.behavior.ReferenceContainerSubConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceContainer_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.smodelTests.behavior.ReferenceContainer_BehaviorDescriptor" />
-    </file>
-    <file name="Root_BehaviorDescriptor.java">
-      <unit at="11,0,22,0" name="jetbrains.mps.lang.smodelTests.behavior.Root_BehaviorDescriptor" />
+      <unit at="14,0,42,0" name="jetbrains.mps.lang.smodelTests.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ac876e9f-bc45-4a96-ab5c-97ae696a2dba(jetbrains.mps.lang.smodelTests.behavior)/4900430935921348065">
     <file name="Root_Behavior.java">
-      <node id="4900430935921348065" at="8,0,10,0" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4900430935921348067" at="8,43,8,43" />
-      <scope id="4900430935921348065" at="8,0,10,0">
-        <var name="thisNode" id="4900430935921348065" />
+      <unit id="4900430935921348065" at="10,0,13,0" name="jetbrains.mps.lang.smodelTests.behavior.Root_Behavior" />
+    </file>
+    <file name="Root_BehaviorDescriptor.java">
+      <node id="4900430935921348065" at="19,0,20,0" concept="6" trace="CONCEPT" />
+      <node id="4900430935921348065" at="20,0,21,0" concept="6" trace="REGISTRY" />
+      <node id="4900430935921348065" at="23,0,24,0" concept="6" trace="BH_METHODS" />
+      <node id="4900430935921348065" at="29,41,30,20" concept="8" />
+      <node id="4900430935921348065" at="34,108,35,21" concept="1" />
+      <node id="4900430935921348065" at="39,113,40,49" concept="4" />
+      <node id="4900430935921348065" at="41,26,42,56" concept="10" />
+      <node id="4900430935921348065" at="45,14,46,58" concept="10" />
+      <node id="4900430935921348065" at="51,127,52,49" concept="4" />
+      <node id="4900430935921348065" at="53,26,54,56" concept="10" />
+      <node id="4900430935921348065" at="57,14,58,58" concept="10" />
+      <node id="4900430935921348065" at="64,48,65,22" concept="5" />
+      <node id="4900430935921348065" at="70,40,71,19" concept="5" />
+      <node id="4900430935921348065" at="25,0,27,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4900430935921348065" at="29,0,32,0" concept="0" trace="Root_BehaviorDescriptor#()V" />
+      <node id="4900430935921348065" at="40,49,43,5" concept="2" />
+      <node id="4900430935921348065" at="52,49,55,5" concept="2" />
+      <node id="4900430935921348065" at="33,0,37,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="4900430935921348065" at="43,5,47,5" concept="9" />
+      <node id="4900430935921348065" at="55,5,59,5" concept="9" />
+      <node id="4900430935921348065" at="62,0,67,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="4900430935921348065" at="68,0,73,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4900430935921348065" at="38,0,49,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="4900430935921348065" at="50,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="4900430935921348065" at="25,63,25,63" />
+      <scope id="4900430935921348065" at="29,41,30,20" />
+      <scope id="4900430935921348065" at="34,108,35,21" />
+      <scope id="4900430935921348065" at="41,26,42,56" />
+      <scope id="4900430935921348065" at="45,14,46,58" />
+      <scope id="4900430935921348065" at="53,26,54,56" />
+      <scope id="4900430935921348065" at="57,14,58,58" />
+      <scope id="4900430935921348065" at="64,48,65,22" />
+      <scope id="4900430935921348065" at="70,40,71,19" />
+      <scope id="4900430935921348065" at="25,0,27,0">
+        <var name="__thisNode__" id="4900430935921348065" />
       </scope>
-      <unit id="4900430935921348065" at="7,0,11,0" name="jetbrains.mps.lang.smodelTests.behavior.Root_Behavior" />
+      <scope id="4900430935921348065" at="29,0,32,0" />
+      <scope id="4900430935921348065" at="33,0,37,0">
+        <var name="array" id="4900430935921348065" />
+        <var name="constructor" id="4900430935921348065" />
+        <var name="node" id="4900430935921348065" />
+      </scope>
+      <scope id="4900430935921348065" at="62,0,67,0" />
+      <scope id="4900430935921348065" at="68,0,73,0" />
+      <scope id="4900430935921348065" at="39,113,47,5">
+        <var name="methodIndex" id="4900430935921348065" />
+      </scope>
+      <scope id="4900430935921348065" at="51,127,59,5">
+        <var name="methodIndex" id="4900430935921348065" />
+      </scope>
+      <scope id="4900430935921348065" at="38,0,49,0">
+        <var name="method" id="4900430935921348065" />
+        <var name="node" id="4900430935921348065" />
+        <var name="parameters" id="4900430935921348065" />
+      </scope>
+      <scope id="4900430935921348065" at="50,0,61,0">
+        <var name="concept" id="4900430935921348065" />
+        <var name="method" id="4900430935921348065" />
+        <var name="parameters" id="4900430935921348065" />
+      </scope>
+      <unit id="4900430935921348065" at="18,0,74,0" name="jetbrains.mps.lang.smodelTests.behavior.Root_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

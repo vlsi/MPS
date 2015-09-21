@@ -19,7 +19,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -91,7 +91,7 @@ public class ModuleLoaderUtils {
           return path;
         }
 
-        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
+        String localPath = BuildSourcePath_BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(found, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext()));
         if (localPath == null) {
           if (genContext != null) {
             genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");

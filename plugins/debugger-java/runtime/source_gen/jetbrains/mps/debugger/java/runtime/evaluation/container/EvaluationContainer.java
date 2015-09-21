@@ -30,9 +30,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -110,7 +111,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), "virtual_getCode_317191294093624551", new Object[]{}));
+        return PresentationUtil.getPresentation(((SNode) BHReflection.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))));
       }
     });
   }
@@ -139,7 +140,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     myNode = evaluatorNode.getReference();
 
     // todo: variables 
-    new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
+    new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(((SNode) BHReflection.invoke(evaluatorNode, SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))), nodesToImport);
 
     SModelOperations.validateLanguagesAndImports(containerModel, true, true);
     ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7da4580f9d754603L, 0x816251a896d78375L), "jetbrains.mps.debugger.java.evaluation"));

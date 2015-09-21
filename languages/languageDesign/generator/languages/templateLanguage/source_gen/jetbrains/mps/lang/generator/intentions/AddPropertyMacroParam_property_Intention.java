@@ -15,13 +15,13 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -72,7 +72,7 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)))).where(new IWhereFilter<SNode>() {
+    SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return propertyName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
@@ -81,7 +81,7 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
       return result;
     }
     SNode property = SLinkOperations.getTarget(propertyDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
-    for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(sourceNodeConcept))) {
+    for (SNode propertySource : AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SNodeOperations.asNode(sourceNodeConcept))) {
       if (property == SLinkOperations.getTarget(propertySource, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"))) {
         ListSequence.fromList(result).addElement(propertySource);
       }
@@ -95,7 +95,7 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Property Macro: node." + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " (property)";
+      return "Add Property Macro: node." + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(myParameter) + " (property)";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

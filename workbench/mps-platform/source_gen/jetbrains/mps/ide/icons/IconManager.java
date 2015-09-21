@@ -21,7 +21,8 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.util.PlatformIcons;
 import com.intellij.ui.RowIcon;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -121,9 +122,9 @@ public final class IconManager {
     RowIcon result = new RowIcon(2);
     result.setIcon(mainIcon, 0);
     if (!(withoutAdditional)) {
-      result.setIcon(BehaviorReflection.invokeVirtual(Icon.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{}), 1);
+      result.setIcon(((Icon) BHReflection.invoke(node, SMethodTrimmedId.create("getAdditionalIcon", null, "4mxbjAOAE$e"))), 1);
     }
-    List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+    List<Icon> markIcons = ((List<Icon>) BHReflection.invoke(node, SMethodTrimmedId.create("getMarkIcons", null, "3pOfV45ExLD")));
     if (markIcons != null) {
       LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
       layeredIcon.setIcon(result, 0);

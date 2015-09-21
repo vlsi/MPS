@@ -5,30 +5,23 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class NodeCheckOperation_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_getName_1217435265700(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).length() == 0) {
-      return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultName_8578280453511146306", new Object[]{});
+  public static String call_getName_1217435265700(SNode __thisNode__) {
+    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).length() == 0) {
+      return NodeCheckOperation_BehaviorDescriptor.getDefaultName_id7scb9XJdmH2.invoke(__thisNode__);
     } else {
-      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
   }
-  public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return true;
-  }
-  public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
-    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), false, false);
-  }
-  public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + NodeCheckOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getNodeId().toString();
-  }
-  public static SNode call_getAnnotatedNode_2912288420882528229(SNode thisNode) {
-    SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+  public static SNode call_getAnnotatedNode_2912288420882528229(SNode __thisNode__) {
+    SNode container = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     return SNodeOperations.getParent(container);
   }
 }

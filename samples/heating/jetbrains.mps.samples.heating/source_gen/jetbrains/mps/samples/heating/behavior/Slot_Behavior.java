@@ -12,11 +12,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Slot_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getCustomizedSlot_935069066463578518(final SNode thisNode) {
-    SNode dailyPlan = SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"));
+  public static SNode call_getCustomizedSlot_935069066463578518(final SNode __thisNode__) {
+    SNode dailyPlan = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"));
     if (dailyPlan == null) {
       return null;
     }
@@ -31,13 +34,13 @@ public class Slot_Behavior {
       }
       found = ListSequence.fromList(SLinkOperations.getChildren(dailyPlan, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) == SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"));
+          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) == SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"));
         }
       });
     }
     return found;
   }
-  public static boolean call_isCustomizing_935069066463662362(SNode thisNode) {
-    return (Slot_Behavior.call_getCustomizedSlot_935069066463578518(thisNode) != null);
+  public static boolean call_isCustomizing_935069066463662362(SNode __thisNode__) {
+    return (Slot_BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(__thisNode__) != null);
   }
 }

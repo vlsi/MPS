@@ -5,26 +5,14 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class Node_GetChildrenOperation_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getLinkQualifier_3476105411552591984(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(thisNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier").getDeclarationNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
-  }
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
-    return true;
-  }
-  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
-    return true;
-  }
-  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.lang.smodel.structure.SNodeOperation", "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "5168775467716640652"));
-    return result;
+  public static SNode call_getLinkQualifier_3476105411552591984(SNode __thisNode__) {
+    return SNodeOperations.cast(SNodeOperation_BehaviorDescriptor.getParameter_idhEwJdHG.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier").getDeclarationNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
   }
 }

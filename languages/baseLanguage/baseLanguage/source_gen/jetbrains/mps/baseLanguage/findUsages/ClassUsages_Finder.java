@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 
 public class ClassUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder");
@@ -44,7 +44,7 @@ public class ClassUsages_Finder extends GeneratedFinder {
       for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
         ListSequence.fromList(_results).addElement(result);
       }
-      for (SNode constructor : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(node))) {
+      for (SNode constructor : Sequence.fromIterable(ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(node))) {
         for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, monitor.subTask(1)))) {
           ListSequence.fromList(_results).addElement(result);
         }
@@ -56,7 +56,7 @@ public class ClassUsages_Finder extends GeneratedFinder {
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
-    for (SNode constructor : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(node))) {
+    for (SNode constructor : Sequence.fromIterable(ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(node))) {
       ListSequence.fromList(_results).addElement(constructor);
     }
   }

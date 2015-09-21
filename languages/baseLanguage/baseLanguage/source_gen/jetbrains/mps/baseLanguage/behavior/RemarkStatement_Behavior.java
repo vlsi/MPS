@@ -6,11 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class RemarkStatement_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static boolean call_isTodo_1213877427548(SNode thisNode) {
-    String v = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"));
+  public static boolean call_isTodo_1213877427548(SNode __thisNode__) {
+    String v = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"));
     boolean isToDo = false;
     if (v != null) {
       isToDo = v.startsWith("TODO:") || v.startsWith("FIX:") || v.startsWith("todo:");

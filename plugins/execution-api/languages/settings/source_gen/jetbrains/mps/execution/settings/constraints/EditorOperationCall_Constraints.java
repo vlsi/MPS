@@ -23,10 +23,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import java.util.List;
-import jetbrains.mps.execution.settings.behavior.SettingsEditor_Behavior;
+import jetbrains.mps.execution.settings.behavior.SettingsEditor_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -53,10 +53,10 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
             if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")) == null)) {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
-            List<SNode> operations = SettingsEditor_Behavior.call_getDeclaredOperations_946964771156067031(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")), MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, 0xd244b712f910021L, "editor")));
+            List<SNode> operations = SettingsEditor_BehaviorDescriptor.getDeclaredOperations_idO$iR4J$gbn.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")), MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, 0xd244b712f910021L, "editor")));
             return ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return ((SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
+                return ((SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (EditorOperationDeclaration_BehaviorDescriptor.getJavaMethod_idO$iR4J$gaJ.invoke(it) != null) : (EditorOperationDeclaration_BehaviorDescriptor.getPublicJavaMethod_idbkrofm9Fgz.invoke(it) != null));
               }
             });
           }

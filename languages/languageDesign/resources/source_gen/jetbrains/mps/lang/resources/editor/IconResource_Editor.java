@@ -18,7 +18,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
+import jetbrains.mps.lang.resources.behavior.IconResource_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
@@ -108,7 +108,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext) {
-    return IconResource_Behavior.call_isValid_8974276187400030063(node);
+    return IconResource_BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node);
   }
   private EditorCell createCollection_79r3b6_a0a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -234,7 +234,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
-    return (IconResource_Behavior.call_isValid_8974276187400030063(node) ? Color.BLACK : Color.RED);
+    return (IconResource_BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node) ? Color.BLACK : Color.RED);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

@@ -14,10 +14,11 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
@@ -182,7 +183,7 @@ public class VisibleArtifacts {
     }
     for (SNode artifact : this.getArtifacts()) {
       assert !(SNodeOperations.getModel(artifact).getModule() instanceof TransientModelsModule);
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, artifact, "virtual_exports_6547494638219603457", new Object[]{id})) {
+      if (BuildLayout_Node_BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
         dependenciesHelper.artifacts().put(id, artifact);
         return artifact;
       }
@@ -199,18 +200,18 @@ public class VisibleArtifacts {
     StringBuilder suffix = new StringBuilder();
     SNode current = SNodeOperations.as(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     if (current != null) {
-      suffix.append("/").append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
-      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
+      suffix.append("/").append(BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
+      current = SNodeOperations.as(BuildSourcePath_BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     }
     SNode containingRoot = SNodeOperations.getContainingRoot(path);
     while (current != null) {
-      result = findArtifact(new LocalSourcePathArtifact(containingRoot, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getRelativePath_5481553824944787371", new Object[]{}), true));
+      result = findArtifact(new LocalSourcePathArtifact(containingRoot, BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(current), true));
       if (result != null) {
         return MultiTuple.<SNode,String>from(result, suffix.toString());
       }
 
-      suffix.insert(0, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getLastSegment_1368030936106771141", new Object[]{null})).insert(0, "/");
-      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
+      suffix.insert(0, BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(current, null)).insert(0, "/");
+      current = SNodeOperations.as(BuildSourcePath_BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     }
 
     return MultiTuple.<SNode,String>from((SNode) null, (String) null);

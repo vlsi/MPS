@@ -10,8 +10,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)/1241010420895">
     <file name="TupleDeclarationUtil.java">
-      <node id="8911874220955530338" at="12,63,13,136" concept="5" />
-      <node id="8911874220955530346" at="13,136,14,152" concept="5" />
+      <node id="8911874220955530338" at="12,63,13,98" concept="5" />
+      <node id="8911874220955530346" at="13,98,14,152" concept="5" />
       <node id="8911874220955530359" at="15,47,16,82" concept="6" />
       <node id="8911874220955530380" at="17,5,18,18" concept="6" />
       <node id="1241010420897" at="10,0,12,0" concept="0" trace="TupleDeclarationUtil#()V" />

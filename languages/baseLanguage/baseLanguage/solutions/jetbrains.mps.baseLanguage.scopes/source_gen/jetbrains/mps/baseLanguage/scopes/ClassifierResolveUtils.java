@@ -33,7 +33,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Tokens_BehaviorDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -41,7 +41,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -298,7 +298,7 @@ public class ClassifierResolveUtils {
           return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand")));
         }
       })) {
-        if (!(token.equals(Tokens_Behavior.call_lastToken_1296023605440030462(imp)))) {
+        if (!(token.equals(Tokens_BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(imp)))) {
           continue;
         }
 
@@ -566,7 +566,7 @@ public class ClassifierResolveUtils {
           continue;
         }
 
-        Iterable<SNode> neededMembers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> neededMembers = ListSequence.fromList(IMemberContainer_BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.getConceptDeclaration(it) == neededConcept;
           }
@@ -575,8 +575,8 @@ public class ClassifierResolveUtils {
 
       } else {
 
-        final String memberName = Tokens_Behavior.call_lastToken_1296023605440030462(imp);
-        String className = Tokens_Behavior.call_withoutLastToken_6148840541591441572(imp);
+        final String memberName = Tokens_BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(imp);
+        String className = Tokens_BehaviorDescriptor.withoutLastToken_id5ll4uk6512$.invoke(imp);
 
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(models, className);
 
@@ -586,7 +586,7 @@ public class ClassifierResolveUtils {
         }
 
         // or findAll instead of findFirst ? 
-        SNode neededMember = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+        SNode neededMember = ListSequence.fromList(IMemberContainer_BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.getConceptDeclaration(it) == neededConcept;
           }
@@ -613,7 +613,7 @@ public class ClassifierResolveUtils {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand")));
       }
     })) {
-      if (Tokens_Behavior.call_lastToken_1296023605440030462(singleTypeImp).equals(name)) {
+      if (Tokens_BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(singleTypeImp).equals(name)) {
         return true;
       }
     }

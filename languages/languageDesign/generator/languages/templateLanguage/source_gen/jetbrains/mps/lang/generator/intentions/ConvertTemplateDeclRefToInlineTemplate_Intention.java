@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
+import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
@@ -63,7 +63,7 @@ public final class ConvertTemplateDeclRefToInlineTemplate_Intention extends Inte
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> TFs = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), true, new SAbstractConcept[]{});
+      List<SNode> TFs = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_BehaviorDescriptor.getTemplate_idQzR6ThtRo7.invoke(node), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), true, new SAbstractConcept[]{});
       if (ListSequence.fromList(TFs).isEmpty()) {
         JOptionPane.showMessageDialog(null, "No fragments found");
         return;
@@ -73,7 +73,7 @@ public final class ConvertTemplateDeclRefToInlineTemplate_Intention extends Inte
         return;
       }
       // ------ 
-      SNode oldTemplate = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node);
+      SNode oldTemplate = TemplateDeclarationReference_BehaviorDescriptor.getTemplate_idQzR6ThtRo7.invoke(node);
       SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
       SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment")));
       SNodeOperations.deleteNode(TFtoDelete);

@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -29,7 +29,7 @@ public class DeleteDocTag {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode candidate = ((SNodeOperations.getNextSibling(node) != null) ? SNodeOperations.getNextSibling(node) : ((SNodeOperations.getPrevSibling(node) != null) ? SNodeOperations.getPrevSibling(node) : SNodeOperations.getParent(node)));
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), false, false), "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+        IBLDeprecatable_BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), false, false));
       } else {
         SNodeOperations.deleteNode(node);
       }
@@ -49,7 +49,7 @@ public class DeleteDocTag {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode candidate = ((SNodeOperations.getPrevSibling(node) != null) ? SNodeOperations.getPrevSibling(node) : ((SNodeOperations.getNextSibling(node) != null) ? SNodeOperations.getNextSibling(node) : SNodeOperations.getParent(node)));
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), false, false), "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+        IBLDeprecatable_BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), false, false));
       } else {
         SNodeOperations.deleteNode(node);
       }

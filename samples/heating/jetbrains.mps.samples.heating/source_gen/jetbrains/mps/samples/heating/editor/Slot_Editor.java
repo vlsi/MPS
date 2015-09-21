@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.samples.heating.behavior.Slot_Behavior;
+import jetbrains.mps.samples.heating.behavior.Slot_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -50,7 +50,7 @@ public class Slot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_sjf1bb_a0a(SNode node, EditorContext editorContext) {
-    return Slot_Behavior.call_isCustomizing_935069066463662362(node);
+    return Slot_BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(node);
   }
   private EditorCell createConstant_sjf1bb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "At");

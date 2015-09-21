@@ -13,7 +13,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -57,12 +57,12 @@ public class TypeMatcher {
     }
     while (!(ListSequence.fromList(queue).isEmpty())) {
       SNode candidate = ListSequence.fromList(queue).removeElementAt(0);
-      if (!(SetSequence.fromSet(visited).contains(BehaviorReflection.invokeVirtual(String.class, candidate, "virtual_getPresentation_1213877396640", new Object[]{})))) {
+      if (!(SetSequence.fromSet(visited).contains(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(candidate)))) {
         if (isTypeMatching(absType, candidate)) {
           matchType(absType, candidate);
           return;
         }
-        SetSequence.fromSet(visited).addElement(BehaviorReflection.invokeVirtual(String.class, candidate, "virtual_getPresentation_1213877396640", new Object[]{}));
+        SetSequence.fromSet(visited).addElement(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(candidate));
         for (SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
           ListSequence.fromList(queue).addElement(superType);
         }

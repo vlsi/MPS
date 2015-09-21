@@ -4,25 +4,17 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+/**
+ * will be removed after 3.3
+ * need to support the legacy static direct method calls
+ */
+@Deprecated
 public class SymbolClassRegexp_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
-  }
-  public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, 0x11179171739L, "part"))) + "]";
-  }
-  public static String call_partsToString_1222857748873(SNode thisNode, List<SNode> parts) {
+  public static String call_partsToString_1222857748873(SNode __thisNode__, List<SNode> parts) {
     StringBuilder result = new StringBuilder();
     for (SNode part : parts) {
-      result.append(BehaviorReflection.invokeVirtual(String.class, part, "virtual_getRepresentation_8173814113624650482", new Object[]{}));
+      result.append(SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
     }
     return result.toString();
   }
