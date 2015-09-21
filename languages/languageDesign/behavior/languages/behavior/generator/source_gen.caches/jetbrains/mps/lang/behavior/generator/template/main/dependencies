@@ -22,8 +22,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.util.BehaviorNameUtil" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -37,6 +37,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
@@ -51,8 +52,9 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<List<SNode>> getAllSuperBehaviors_id1$X$vL9L8i8 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllSuperBehaviors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1$X$vL9L8i8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<SNode> getBaseConcept_id2hxg_BDjKM8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getBaseConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2hxg_BDjKM8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Void> setBaseConcept_id5r_35Ihc58c = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setBaseConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5r_35Ihc58c").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<String> getBehaviorFqName_id66HNO1XTVFW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBehaviorFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("66HNO1XTVFW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMembers_idhEwJjl2, getExtractMethodRefactoringProcessor_idhLwHWdT, getMethodsToOverride_id4GM03FJm3zL, getMethodsToImplement_id4GM03FJm5q2, getAllSuperBehaviors_id1$X$vL9L8i8, getBaseConcept_id2hxg_BDjKM8, setBaseConcept_id5r_35Ihc58c);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMembers_idhEwJjl2, getExtractMethodRefactoringProcessor_idhLwHWdT, getMethodsToOverride_id4GM03FJm3zL, getMethodsToImplement_id4GM03FJm5q2, getAllSuperBehaviors_id1$X$vL9L8i8, getBaseConcept_id2hxg_BDjKM8, setBaseConcept_id5r_35Ihc58c, getBehaviorFqName_id66HNO1XTVFW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -164,6 +166,9 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
   private static void setBaseConcept_id5r_35Ihc58c(@NotNull SNode __thisNode__, SNode baseConcept) {
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"), baseConcept);
   }
+  private static String getBehaviorFqName_id66HNO1XTVFW(@NotNull SNode __thisNode__) {
+    return NameUtil.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_BehaviorDescriptor";
+  }
 
   /*package*/ ConceptBehavior_BehaviorDescriptor() {
     super(REGISTRY);
@@ -196,6 +201,8 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
       case 6:
         setBaseConcept_id5r_35Ihc58c(node, (SNode) parameters[0]);
         return null;
+      case 7:
+        return (T) getBehaviorFqName_id66HNO1XTVFW(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

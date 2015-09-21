@@ -8,21 +8,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/6133874814783454797">
-    <file name="BehaviorNameUtil.java">
-      <node id="6133874814783457177" at="16,48,17,423" concept="6" />
-      <node id="6133874814783454847" at="13,0,15,0" concept="0" trace="BehaviorNameUtil#()V" />
-      <node id="6133874814783454871" at="16,0,19,0" concept="8" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6133874814783454850" at="13,30,13,30" />
-      <scope id="6133874814783454874" at="16,48,17,423" />
-      <scope id="6133874814783454847" at="13,0,15,0" />
-      <scope id="6133874814783454871" at="16,0,19,0">
-        <var name="behavior" id="6133874814783454887" />
-      </scope>
-      <unit id="6133874814783454797" at="12,0,20,0" name="jetbrains.mps.lang.behavior.generator.template.util.BehaviorNameUtil" />
-    </file>
-  </root>
   <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/7082824793308696454">
     <file name="MethodNameHelper.java">
       <node id="66188535716407265" at="16,0,17,0" concept="2" trace="myMethodDecl" />

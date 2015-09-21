@@ -14,7 +14,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor;
-import jetbrains.mps.lang.behavior.generator.template.util.BehaviorNameUtil;
+import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.SDefaultConstructorImpl;
@@ -56,7 +56,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_8228699960986687947(final PropertyMacroContext _context) {
     SNode behavior = ConceptMethodDeclaration_BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
-    return BehaviorNameUtil.getName(behavior);
+    return ConceptBehavior_BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_8228699960986694365(final PropertyMacroContext _context) {
     return new MethodNameHelper(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))).getGeneratedString();

@@ -1467,12 +1467,13 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs6" id="78MdKhpSwXv" role="3cqZAp">
-                        <node concept="2YIFZM" id="5kvTEkRTcvl" role="3cqZAk">
-                          <ref role="37wK5l" to="u65r:5kvTEkRSvUn" resolve="getName" />
-                          <ref role="1Pybhc" to="u65r:5kvTEkRSvTd" resolve="BehaviorNameUtil" />
-                          <node concept="37vLTw" id="5kvTEkRTcOx" role="37wK5m">
+                      <node concept="3cpWs6" id="66HNO1XUkOX" role="3cqZAp">
+                        <node concept="2OqwBi" id="66HNO1XUkOY" role="3cqZAk">
+                          <node concept="37vLTw" id="66HNO1XUkOZ" role="2Oq$k0">
                             <ref role="3cqZAo" node="78MdKhpSwXo" resolve="behavior" />
+                          </node>
+                          <node concept="2qgKlT" id="66HNO1XUkP0" role="2OqNvi">
+                            <ref role="37wK5l" to="csvn:66HNO1XTVFW" resolve="getBehaviorFqName" />
                           </node>
                         </node>
                       </node>

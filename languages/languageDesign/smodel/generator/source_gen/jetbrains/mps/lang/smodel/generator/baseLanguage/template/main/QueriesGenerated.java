@@ -33,7 +33,7 @@ import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor;
-import jetbrains.mps.lang.behavior.generator.template.util.BehaviorNameUtil;
+import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -739,7 +739,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_8560627202335076760(final PropertyMacroContext _context) {
     SNode behavior = ConceptMethodDeclaration_BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
-    return BehaviorNameUtil.getName(behavior);
+    return ConceptBehavior_BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_8560627202335076774(final PropertyMacroContext _context) {
     return new MethodNameHelper(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))).getGeneratedString();
@@ -762,7 +762,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_6862765979525657623(final PropertyMacroContext _context) {
     SNode behavior = ConceptMethodDeclaration_BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
-    return BehaviorNameUtil.getName(behavior);
+    return ConceptBehavior_BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_6862765979525657637(final PropertyMacroContext _context) {
     return new MethodNameHelper(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))).getGeneratedString();
@@ -770,7 +770,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6417869169768444799(final PropertyMacroContext _context) {
     SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
     SNode behavior = ConceptMethodDeclaration_BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(methodDeclaration);
-    return BehaviorNameUtil.getName(behavior);
+    return ConceptBehavior_BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_6417869169768444816(final PropertyMacroContext _context) {
     SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());

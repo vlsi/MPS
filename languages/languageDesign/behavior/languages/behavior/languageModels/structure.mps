@@ -173,37 +173,5 @@
       <ref role="20ksaX" to="tpee:fz7wK6H" />
     </node>
   </node>
-  <node concept="1TIwiD" id="zUeTq_2vS9">
-    <property role="TrG5h" value="InternalBehaviorReference" />
-    <property role="1pbfSe" value="1375454817" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="zUeTq_2vSa" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="behavior" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="hP3h7Gq" resolve="ConceptBehavior" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB6ep" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="zUeTq_2vSb">
-    <property role="19KtqR" value="true" />
-    <property role="TrG5h" value="InternalBehaviorDeclarationsHolder" />
-    <property role="1pbfSe" value="1375454815" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="zUeTq_2vSc" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="behavior" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="zUeTq_2vS9" resolve="InternalBehaviorReference" />
-    </node>
-    <node concept="PrWs8" id="zUeTq_2zBY" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAlOe" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
 </model>
 
