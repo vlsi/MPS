@@ -24,6 +24,9 @@
     <classNode dependClassName="jetbrains.mps.samples.attribute.textGen.CommentAttribute_TextGen" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.text.TextUnit" />
+    <classNode dependClassName="jetbrains.mps.text.impl.BufferLayoutBuilder" />
+    <classNode dependClassName="jetbrains.mps.text.impl.RegularTextUnit2" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
