@@ -1287,5 +1287,37 @@
       </node>
     </node>
   </node>
+  <node concept="3_zdsH" id="26BvmMtUyFu">
+    <property role="3GE5qa" value="sequence.closures" />
+    <ref role="3_znuS" to="tp2q:1kw0gpBx89y" resolve="FoldLeftOperation" />
+    <node concept="3__wT9" id="26BvmMtUyFv" role="3_A6iZ">
+      <node concept="3clFbS" id="26BvmMtUyFw" role="2VODD2">
+        <node concept="3AgYrR" id="26BvmMtWG20" role="3cqZAp">
+          <node concept="2OqwBi" id="26BvmMtWG6g" role="3Ah4Yx">
+            <node concept="3__QtB" id="26BvmMtWG3S" role="2Oq$k0" />
+            <node concept="3TrEf2" id="26BvmMtWGju" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp2q:1kw0gpBxej$" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3_zdsH" id="26BvmMtWOaI">
+    <property role="3GE5qa" value="sequence.closures" />
+    <ref role="3_znuS" to="tp2q:1kw0gpBxek7" resolve="FoldRightOperation" />
+    <node concept="3__wT9" id="26BvmMtWOaJ" role="3_A6iZ">
+      <node concept="3clFbS" id="26BvmMtWOaK" role="2VODD2">
+        <node concept="3AgYrR" id="26BvmMtWObm" role="3cqZAp">
+          <node concept="2OqwBi" id="26BvmMtWOdV" role="3Ah4Yx">
+            <node concept="3__QtB" id="26BvmMtWObB" role="2Oq$k0" />
+            <node concept="3TrEf2" id="26BvmMtWOBX" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp2q:1kw0gpBxek9" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
