@@ -3835,6 +3835,10 @@
     <jar destfile="${build.tmp}/antTasks/mps-tool.jar">
       <fileset dir="${build.tmp}/java/out/mps-tool" />
     </jar>
+    <jar destfile="${build.tmp}/antTasks/mps-behavior.jar">
+      <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
+      <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
+    </jar>
     <jar destfile="${build.tmp}/antTasks/ant/lib/ant-mps.jar">
       <fileset dir="${build.tmp}/java/out/ant-mps" />
     </jar>

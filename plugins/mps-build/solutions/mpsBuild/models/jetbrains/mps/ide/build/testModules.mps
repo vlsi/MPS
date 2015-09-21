@@ -130,8 +130,8 @@
   </registry>
   <node concept="1l3spW" id="4hSyTIBHo2K">
     <property role="2DA0ip" value="../../../../" />
-    <property role="turDy" value="AllTestModules.xml" />
-    <property role="TrG5h" value="AllTestModules" />
+    <property role="turDy" value="allTestModules.xml" />
+    <property role="TrG5h" value="allTestModules" />
     <property role="3GE5qa" value="generated" />
     <node concept="2_Ic$z" id="4hSyTIBHo2L" role="3989C9">
       <property role="2_Ic$$" value="true" />
