@@ -115,17 +115,19 @@ public class TextGen {
   public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     populateTextGenCompatibilityObjects(buffer, node);
+
+    TextGenTransitionContext tgContext = new TextGenTransitionContext(node, buffer, buffer.getRealBuffer());
+
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
       // TODO TraceInfoCollector may be part of TextGenTransitionContext, but I shall deal with that along with DEPENDENCY/EXTENDS set
-      TraceInfoGenerationUtil.setTraceInfoCollector(buffer, tic);
+      TraceInfoGenerationUtil.setTraceInfoCollector(tgContext, tic);
     } else {
       tic = null;
     }
 
-    // XXX node is not null here, could instantiate TextGenSupport directly
-    appendNodeText(buffer, node);
+    new TextGenSupport(tgContext).appendNode(node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
@@ -168,16 +170,6 @@ public class TextGen {
   @ToRemove(version = 3.3)
   public static void enableNodeAttributes(boolean enable) {
     ourEnabledNodeAttributes = enable;
-  }
-
-  private static void appendNodeText(TextGenBuffer buffer, SNode node) {
-    if (node == null) {
-      buffer.append("???");
-      return;
-    }
-
-    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer, buffer.getRealBuffer()));
-    tgs.appendNode(node);
   }
 
   // helper stuff

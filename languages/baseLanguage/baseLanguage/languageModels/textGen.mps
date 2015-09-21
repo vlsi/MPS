@@ -19,6 +19,7 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
     <import index="tpcz" ref="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -46,6 +47,7 @@
       </concept>
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -277,12 +279,14 @@
         <property id="1237306361677" name="withIndent" index="ldcpH" />
       </concept>
       <concept id="1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" flags="nn" index="lc7rE">
+        <reference id="3135747254706172356" name="textArea" index="2dFDx7" />
         <child id="1237306115446" name="part" index="lcghm" />
       </concept>
       <concept id="1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" flags="ig" index="WtQ9Q">
         <reference id="1233670257997" name="conceptDeclaration" index="WuzLi" />
         <child id="1233749296504" name="textGenBlock" index="11c4hB" />
         <child id="7991274449437422201" name="extension" index="33IsuW" />
+        <child id="3147320813467893228" name="layout" index="3znZDQ" />
       </concept>
       <concept id="1233748055915" name="jetbrains.mps.lang.textGen.structure.NodeParameter" flags="nn" index="117lpO" />
       <concept id="1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" flags="in" index="11bSqf" />
@@ -301,6 +305,11 @@
       </concept>
       <concept id="1236188139846" name="jetbrains.mps.lang.textGen.structure.WithIndentOperation" flags="nn" index="3izx1p">
         <child id="1236188238861" name="list" index="3izTki" />
+      </concept>
+      <concept id="3147320813467893194" name="jetbrains.mps.lang.textGen.structure.LayoutPart" flags="ng" index="3znZDg" />
+      <concept id="3147320813467893193" name="jetbrains.mps.lang.textGen.structure.TextUnitLayout" flags="ng" index="3znZDj">
+        <reference id="3147320813467893197" name="active" index="3znZDn" />
+        <child id="3147320813467893195" name="parts" index="3znZDh" />
       </concept>
       <concept id="1234351783410" name="jetbrains.mps.lang.textGen.structure.BufferParameter" flags="nn" index="1_6nNH" />
       <concept id="1234524838116" name="jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration" flags="ng" index="1JqxBV" />
@@ -397,6 +406,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1983,23 +1999,8 @@
             <ref role="3cqZAo" node="1aKcY0Lrred" resolve="topClassifier" />
           </node>
           <node concept="3clFbS" id="hXZX2lL" role="3clFbx">
-            <node concept="3cpWs8" id="hXZXdKT" role="3cqZAp">
-              <node concept="3cpWsn" id="hXZXdKU" role="3cpWs9">
-                <property role="TrG5h" value="wasPart" />
-                <node concept="10Oyi0" id="hXZXdKV" role="1tU5fm" />
-                <node concept="2OqwBi" id="hXZXg0i" role="33vP2m">
-                  <node concept="1_6nNH" id="hXZXfR0" role="2Oq$k0" />
-                  <node concept="liA8E" id="hXZXgNC" role="2OqNvi">
-                    <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-                    <node concept="10M0yZ" id="hXZXi3I" role="37wK5m">
-                      <ref role="3cqZAo" to="yy4t:~TextGenBuffer.TOP" resolve="TOP" />
-                      <ref role="1PxDUh" to="yy4t:~TextGenBuffer" resolve="TextGenBuffer" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="lc7rE" id="i0uAwxl" role="3cqZAp">
+              <ref role="2dFDx7" node="3DQwDJfhrW5" resolve="HEADER" />
               <node concept="l9hG8" id="i0uAwxn" role="lcghm">
                 <node concept="3cpWs3" id="hXZXtBa" role="lb14g">
                   <node concept="Xl_RD" id="hXZXtOa" role="3uHU7w">
@@ -2024,17 +2025,11 @@
                 <property role="lacIc" value="/*Generated by MPS */" />
               </node>
               <node concept="l8MVK" id="i0uAwxE" role="lcghm" />
+              <node concept="l8MVK" id="VHxsw3orpd" role="lcghm" />
             </node>
-            <node concept="3clFbF" id="hXZXJCi" role="3cqZAp">
-              <node concept="2OqwBi" id="hXZXJN3" role="3clFbG">
-                <node concept="1_6nNH" id="hXZXJCj" role="2Oq$k0" />
-                <node concept="liA8E" id="hXZXKfs" role="2OqNvi">
-                  <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-                  <node concept="37vLTw" id="3GM_nagTtYb" role="37wK5m">
-                    <ref role="3cqZAo" node="hXZXdKU" resolve="wasPart" />
-                  </node>
-                </node>
-              </node>
+            <node concept="lc7rE" id="v0458vuV4P" role="3cqZAp">
+              <ref role="2dFDx7" node="6iQNTbBmlDm" resolve="SEPARATOR" />
+              <node concept="l8MVK" id="v0458vuV5b" role="lcghm" />
             </node>
           </node>
         </node>
@@ -2578,6 +2573,21 @@
             <property role="Xl_RC" value="java" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3znZDj" id="3DQwDJfhrW4" role="3znZDQ">
+      <ref role="3znZDn" node="3DQwDJfhrW7" resolve="BODY" />
+      <node concept="3znZDg" id="3DQwDJfhrW5" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrW6" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="6iQNTbBmlDm" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrW7" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
       </node>
     </node>
   </node>
@@ -3939,6 +3949,21 @@
         </node>
       </node>
     </node>
+    <node concept="3znZDj" id="3DQwDJfhrGn" role="3znZDQ">
+      <ref role="3znZDn" node="3DQwDJfhrGq" resolve="BODY" />
+      <node concept="3znZDg" id="3DQwDJfhrGo" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrGp" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="6iQNTbBmlUw" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrGq" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
+      </node>
+    </node>
   </node>
   <node concept="1bsvg0" id="hY5gBe$">
     <property role="TrG5h" value="GenericDeclarationTextGen2" />
@@ -4890,6 +4915,21 @@
             <property role="Xl_RC" value="java" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3znZDj" id="3DQwDJfhrv8" role="3znZDQ">
+      <ref role="3znZDn" node="3DQwDJfhrvb" resolve="BODY" />
+      <node concept="3znZDg" id="3DQwDJfhrv9" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrva" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="6iQNTbBmmls" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrvb" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
       </node>
     </node>
   </node>
@@ -7931,6 +7971,21 @@
         </node>
       </node>
     </node>
+    <node concept="3znZDj" id="3DQwDJfhqNZ" role="3znZDQ">
+      <ref role="3znZDn" node="3DQwDJfhqO2" resolve="BODY" />
+      <node concept="3znZDg" id="3DQwDJfhqO0" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhqO1" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="6iQNTbBmm7f" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhqO2" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
+      </node>
+    </node>
   </node>
   <node concept="WtQ9Q" id="hYRTqPm">
     <property role="3GE5qa" value="classifiers.members" />
@@ -10371,6 +10426,7 @@
         <ref role="3uigEE" node="3XLHuwza2_b" resolve="ContextClassifiersInRoot" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6iQNTbBmspb" role="jymVt" />
     <node concept="3clFbW" id="5kChkJ6qdlB" role="jymVt">
       <node concept="3cqZAl" id="5kChkJ6qdlC" role="3clF45" />
       <node concept="3Tm6S6" id="5kChkJ6qHHS" role="1B3o_S" />
@@ -10992,93 +11048,125 @@
       <node concept="3cqZAl" id="3bI5ETjeTQD" role="3clF45" />
       <node concept="3Tm6S6" id="3bI5ETjeTQG" role="1B3o_S" />
       <node concept="3clFbS" id="3bI5ETjeTQF" role="3clF47">
-        <node concept="3cpWs8" id="3bI5ETjeTQO" role="3cqZAp">
-          <node concept="3cpWsn" id="3bI5ETjeTQP" role="3cpWs9">
-            <property role="TrG5h" value="currPartId" />
-            <node concept="10Oyi0" id="3bI5ETjeTQQ" role="1tU5fm" />
-            <node concept="2OqwBi" id="3bI5ETjeTQR" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxeuvK1" role="2Oq$k0">
-                <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
-              </node>
-              <node concept="liA8E" id="3bI5ETjeTQT" role="2OqNvi">
-                <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-                <node concept="10M0yZ" id="3bI5ETjeTQU" role="37wK5m">
-                  <ref role="1PxDUh" to="yy4t:~TextGenBuffer" resolve="TextGenBuffer" />
-                  <ref role="3cqZAo" to="yy4t:~TextGenBuffer.TOP" resolve="TOP" />
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="VHxsw3oxxU" role="3cqZAp">
+          <node concept="3SKdUq" id="VHxsw3oxy3" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME shall be simple append statement, once we manage to pass TextGenContext here instead of legacy TextGenBuffer:" />
           </node>
         </node>
-        <node concept="3clFbH" id="3bI5ETjeTX$" role="3cqZAp" />
-        <node concept="3clFbF" id="3bI5ETjeTRb" role="3cqZAp">
-          <node concept="2OqwBi" id="3bI5ETjeTUC" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuv1K" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
+        <node concept="1X3_iC" id="VHxsw3oxy5" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="lc7rE" id="VHxsw3ocmy" role="8Wnug">
+            <ref role="2dFDx7" node="3DQwDJfhrW6" resolve="IMPORTS" />
+            <node concept="la8eA" id="VHxsw3ocsq" role="lcghm">
+              <property role="lacIc" value="import " />
             </node>
-            <node concept="liA8E" id="3bI5ETjeTUH" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="2OqwBi" id="3bI5ETjeTV3" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxeuoLz" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
-                </node>
-                <node concept="liA8E" id="3bI5ETjeTV9" role="2OqNvi">
-                  <ref role="37wK5l" to="yy4t:~TextGenBuffer.getLineSeparator():java.lang.String" resolve="getLineSeparator" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bI5ETjeTVb" role="3cqZAp">
-          <node concept="2OqwBi" id="3bI5ETjeTVx" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeu_8x" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
-            </node>
-            <node concept="liA8E" id="3bI5ETjeTVB" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="Xl_RD" id="3bI5ETjeTVC" role="37wK5m">
-                <property role="Xl_RC" value="import " />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bI5ETjeTWD" role="3cqZAp">
-          <node concept="2OqwBi" id="3bI5ETjeTWZ" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuXf7" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
-            </node>
-            <node concept="liA8E" id="3bI5ETjeTX4" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="37vLTw" id="2BHiRxghiCt" role="37wK5m">
+            <node concept="l9hG8" id="VHxsw3ocFi" role="lcghm">
+              <node concept="37vLTw" id="VHxsw3ocJp" role="lb14g">
                 <ref role="3cqZAo" node="3bI5ETjeTQH" resolve="fqName" />
               </node>
             </node>
+            <node concept="la8eA" id="VHxsw3ocCI" role="lcghm">
+              <property role="lacIc" value=";" />
+            </node>
+            <node concept="l8MVK" id="VHxsw3ocTZ" role="lcghm" />
           </node>
         </node>
-        <node concept="3clFbF" id="3bI5ETjeTX7" role="3cqZAp">
-          <node concept="2OqwBi" id="3bI5ETjeTXt" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeup0Y" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
+        <node concept="3cpWs8" id="VHxsw3oxVX" role="3cqZAp">
+          <node concept="3cpWsn" id="VHxsw3oxVY" role="3cpWs9">
+            <property role="TrG5h" value="tb" />
+            <node concept="3uibUv" id="VHxsw3oxVV" role="1tU5fm">
+              <ref role="3uigEE" to="ao3:~TextBuffer" resolve="TextBuffer" />
             </node>
-            <node concept="liA8E" id="3bI5ETjeTXy" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="Xl_RD" id="3bI5ETjeTXz" role="37wK5m">
-                <property role="Xl_RC" value=";" />
+            <node concept="2OqwBi" id="VHxsw3oxVZ" role="33vP2m">
+              <node concept="37vLTw" id="VHxsw3oxW0" role="2Oq$k0">
+                <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
+              </node>
+              <node concept="liA8E" id="VHxsw3oxW1" role="2OqNvi">
+                <ref role="37wK5l" to="yy4t:~TextGenBuffer.getRealBuffer():jetbrains.mps.text.TextBuffer" resolve="getRealBuffer" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="3bI5ETjeTX_" role="3cqZAp" />
-        <node concept="3clFbF" id="3bI5ETjeTR3" role="3cqZAp">
-          <node concept="2OqwBi" id="3bI5ETjeTR4" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuKki" role="2Oq$k0">
-              <ref role="3cqZAo" node="7lG0I2ma03v" resolve="buffer" />
+        <node concept="3SKdUt" id="VHxsw3oxYQ" role="3cqZAp">
+          <node concept="3SKdUq" id="VHxsw3oxZt" role="3SKWNk">
+            <property role="3SKdUp" value="For the time being, this hack (with explicit knowledge how to identify layout areas), ensures imports are directed into proper area" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="VHxsw3oy0I" role="3cqZAp">
+          <node concept="3SKdUq" id="VHxsw3oy1w" role="3SKWNk">
+            <property role="3SKdUp" value="In fact, instead of append done here (and passing of TextGenContext), this class shall be refactored to answer both name and import stmt," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="VHxsw3oy2N" role="3cqZAp">
+          <node concept="3SKdUq" id="VHxsw3oy3u" role="3SKWNk">
+            <property role="3SKdUp" value="and external code (caller) shall perform the append operation" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="VHxsw3oxSk" role="3cqZAp">
+          <node concept="2OqwBi" id="VHxsw3oy4q" role="3clFbG">
+            <node concept="37vLTw" id="VHxsw3oxW2" role="2Oq$k0">
+              <ref role="3cqZAo" node="VHxsw3oxVY" resolve="tb" />
             </node>
-            <node concept="liA8E" id="3bI5ETjeTR6" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-              <node concept="37vLTw" id="3GM_nagTr3l" role="37wK5m">
-                <ref role="3cqZAo" node="3bI5ETjeTQP" resolve="currPartId" />
+            <node concept="liA8E" id="VHxsw3oy5P" role="2OqNvi">
+              <ref role="37wK5l" to="ao3:~TextBuffer.pushTextArea(jetbrains.mps.text.TextAreaToken):jetbrains.mps.text.TextBuffer" resolve="pushTextArea" />
+              <node concept="2ShNRf" id="VHxsw3oyac" role="37wK5m">
+                <node concept="1pGfFk" id="VHxsw3oAq5" role="2ShVmc">
+                  <ref role="37wK5l" to="ao3:~BasicToken.&lt;init&gt;(java.lang.Object)" resolve="BasicToken" />
+                  <node concept="Xl_RD" id="VHxsw3oAr9" role="37wK5m">
+                    <property role="Xl_RC" value="IMPORTS" />
+                  </node>
+                </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="VHxsw3oAJy" role="3cqZAp">
+          <node concept="2OqwBi" id="VHxsw3oCXp" role="3clFbG">
+            <node concept="2OqwBi" id="VHxsw3oCEI" role="2Oq$k0">
+              <node concept="2OqwBi" id="VHxsw3oCxl" role="2Oq$k0">
+                <node concept="2OqwBi" id="VHxsw3oARc" role="2Oq$k0">
+                  <node concept="2OqwBi" id="VHxsw3oALW" role="2Oq$k0">
+                    <node concept="37vLTw" id="VHxsw3oAJw" role="2Oq$k0">
+                      <ref role="3cqZAo" node="VHxsw3oxVY" resolve="tb" />
+                    </node>
+                    <node concept="liA8E" id="VHxsw3oAQx" role="2OqNvi">
+                      <ref role="37wK5l" to="ao3:~TextBuffer.area():jetbrains.mps.text.TextArea" resolve="area" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="VHxsw3oATB" role="2OqNvi">
+                    <ref role="37wK5l" to="ao3:~TextArea.append(java.lang.CharSequence):jetbrains.mps.text.TextArea" resolve="append" />
+                    <node concept="Xl_RD" id="VHxsw3oAZe" role="37wK5m">
+                      <property role="Xl_RC" value="import " />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="VHxsw3oCAQ" role="2OqNvi">
+                  <ref role="37wK5l" to="ao3:~TextArea.append(java.lang.CharSequence):jetbrains.mps.text.TextArea" resolve="append" />
+                  <node concept="37vLTw" id="VHxsw3oCD3" role="37wK5m">
+                    <ref role="3cqZAo" node="3bI5ETjeTQH" resolve="fqName" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="VHxsw3oCKG" role="2OqNvi">
+                <ref role="37wK5l" to="ao3:~TextArea.append(java.lang.CharSequence):jetbrains.mps.text.TextArea" resolve="append" />
+                <node concept="Xl_RD" id="VHxsw3oCM_" role="37wK5m">
+                  <property role="Xl_RC" value=";" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="VHxsw3oD3F" role="2OqNvi">
+              <ref role="37wK5l" to="ao3:~TextArea.newLine():jetbrains.mps.text.TextArea" resolve="newLine" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="VHxsw3oB4P" role="3cqZAp">
+          <node concept="2OqwBi" id="VHxsw3oB8n" role="3clFbG">
+            <node concept="37vLTw" id="VHxsw3oB4N" role="2Oq$k0">
+              <ref role="3cqZAo" node="VHxsw3oxVY" resolve="tb" />
+            </node>
+            <node concept="liA8E" id="VHxsw3oBcg" role="2OqNvi">
+              <ref role="37wK5l" to="ao3:~TextBuffer.popTextArea():jetbrains.mps.text.TextBuffer" resolve="popTextArea" />
             </node>
           </node>
         </node>

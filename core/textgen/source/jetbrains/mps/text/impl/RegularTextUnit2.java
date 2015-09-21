@@ -21,6 +21,7 @@ import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
@@ -98,7 +99,10 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
     legacyBuffer.putUserObject(TextGen.DEPENDENCY, dependenciesSet);
     legacyBuffer.putUserObject(TextGen.EXTENDS, extendsSet);
 
-    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(myStartNode, legacyBuffer, trueBuffer));
+    TextGenTransitionContext tgContext = new TextGenTransitionContext(myStartNode, legacyBuffer, trueBuffer);
+    TraceInfoGenerationUtil.setTraceInfoCollector(tgContext, myTraceCollector);
+
+    TextGenSupport tgs = new TextGenSupport(tgContext);
     tgs.appendNode(myStartNode);
 
     final BufferSnapshot textSnapshot = myLayoutBuilder.prepareSnapshot(trueBuffer);
@@ -111,9 +115,10 @@ public class RegularTextUnit2 implements TextUnit, CompatibilityTextUnit {
     dependenciesSet.remove(null);
     myDependencies = new ArrayList<String>(dependenciesSet);
     extendsSet.remove(nodeFQName);
+    extendsSet.remove(null); // registerExtendsRelation(singleton(classifier.extends)) yields null for classes without superclass
     myExtends = new ArrayList<String>(extendsSet);
     Collections.sort(myDependencies);
-    Collections.singleton(myExtends);
+    Collections.sort(myExtends);
 
     myOutcome = textSnapshot.getText().toString();
     if (legacyBuffer.hasErrors()) {

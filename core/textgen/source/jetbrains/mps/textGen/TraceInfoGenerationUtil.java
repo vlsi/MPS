@@ -146,8 +146,8 @@ public class TraceInfoGenerationUtil {
   }
 
   @ToRemove(version = 3.3)
-  /*package*/ static void setTraceInfoCollector(TextGenBuffer buffer, TraceInfoCollector tic) {
-    buffer.putUserObject(TraceInfoCollector.class, tic);
+  public static void setTraceInfoCollector(TextGenTransitionContext ctx, TraceInfoCollector tic) {
+    ctx.getLegacyBuffer().putUserObject(TraceInfoCollector.class, tic);
   }
 
   @Nullable

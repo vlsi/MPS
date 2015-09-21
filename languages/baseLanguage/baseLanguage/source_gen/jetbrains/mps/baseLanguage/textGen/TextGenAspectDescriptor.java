@@ -11,6 +11,9 @@ import java.util.Arrays;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.text.TextUnit;
+import jetbrains.mps.text.impl.BufferLayoutBuilder;
+import jetbrains.mps.text.impl.RegularTextUnit2;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
@@ -450,25 +453,25 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"))) {
         String fname = getFileName_Annotation(root);
         String ext = getFileExtension_Annotation(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        outline.registerTextUnit(createTextUnit0((ext == null ? fname : (fname + '.' + ext)), root));
         continue;
       }
       if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         String fname = getFileName_ClassConcept(root);
         String ext = getFileExtension_ClassConcept(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        outline.registerTextUnit(createTextUnit1((ext == null ? fname : (fname + '.' + ext)), root));
         continue;
       }
       if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         String fname = getFileName_Interface(root);
         String ext = getFileExtension_Interface(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        outline.registerTextUnit(createTextUnit2((ext == null ? fname : (fname + '.' + ext)), root));
         continue;
       }
       if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         String fname = getFileName_EnumClass(root);
         String ext = getFileExtension_EnumClass(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        outline.registerTextUnit(createTextUnit3((ext == null ? fname : (fname + '.' + ext)), root));
         continue;
       }
     }
@@ -496,5 +499,49 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   }
   private static String getFileExtension_EnumClass(SNode node) {
     return "java";
+  }
+  private static TextUnit createTextUnit0(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("HEADER");
+    lb.add("IMPORTS");
+    lb.add("SEPARATOR");
+    lb.add("BODY");
+    lb.activate("BODY");
+    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
+  }
+  private static TextUnit createTextUnit1(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("HEADER");
+    lb.add("IMPORTS");
+    lb.add("SEPARATOR");
+    lb.add("BODY");
+    lb.activate("BODY");
+    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
+  }
+  private static TextUnit createTextUnit2(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("HEADER");
+    lb.add("IMPORTS");
+    lb.add("SEPARATOR");
+    lb.add("BODY");
+    lb.activate("BODY");
+    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
+  }
+  private static TextUnit createTextUnit3(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("HEADER");
+    lb.add("IMPORTS");
+    lb.add("SEPARATOR");
+    lb.add("BODY");
+    lb.activate("BODY");
+    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
   }
 }

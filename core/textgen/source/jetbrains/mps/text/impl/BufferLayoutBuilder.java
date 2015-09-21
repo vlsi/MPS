@@ -90,15 +90,12 @@ public class BufferLayoutBuilder {
             myLayout.replace(childAreaLocationMark, p.getKey());
           }
         }
-        // FIXME these two are temporary for compatibility, remove once BL is fine with layout
-        buffer.pushTextArea(new BasicToken(TextGenBuffer.TOP)).popTextArea();
-        buffer.pushTextArea(new BasicToken(TextGenBuffer.DEFAULT));
 
         if (myInitial != null) {
-          buffer.popTextArea();
           buffer.pushTextArea(myInitial);
         }
-        // else keep DEFAULT as active area
+        // Generally, myInitial shall be always set (we demand TextUnitLayout.active != null)
+        // though chances are this BLB would be in use directly, not through TextGen's generator, and in this case we keep global, top-most area as active
       }
 
       @NotNull
