@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -82,8 +83,14 @@ public class TestsErrorsChecker {
         return true;
       }
     });
-    TestsErrorsChecker.modelErrorsHolder.set(myRoot, result);
-    return result;
+
+    Set<IErrorReporter> res = SetSequence.fromSetWithValues(new HashSet<IErrorReporter>(), SetSequence.fromSet(result).where(new IWhereFilter<IErrorReporter>() {
+      public boolean accept(IErrorReporter it) {
+        return !(ErrorReportUtil.manuallySuppressed(it.getSNode()));
+      }
+    }));
+    TestsErrorsChecker.modelErrorsHolder.set(myRoot, res);
+    return res;
   }
 
   private static class ModelErrorsHolder<T> {
