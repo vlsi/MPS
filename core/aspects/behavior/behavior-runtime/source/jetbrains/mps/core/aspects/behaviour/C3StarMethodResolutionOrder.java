@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.core.aspects.behaviour;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -173,6 +174,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
       for (SAbstractConcept superInt : ((SInterfaceConcept) concept).getSuperInterfaces()) {
         immediateParents.add(superInt);
       }
+      immediateParents.add(SNodeUtil.concept_BaseConcept); // hook for editor (interfaces are instances of base concept as well)
     } else if (concept instanceof SConcept) {
       SConcept superConcept = ((SConcept) concept).getSuperConcept();
       if (superConcept != null) {
@@ -185,12 +187,11 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
     return immediateParents;
   }
 
-  private static enum KeepingLocalOrder {
+  private enum KeepingLocalOrder {
     KEEPING_LOCAL_ORDER,
     NOT_KEEPING_LOCAL_ORDER;
     public boolean preserveOrder() {
       return this == KEEPING_LOCAL_ORDER;
     }
-
   }
 }
