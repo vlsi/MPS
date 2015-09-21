@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.checking;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -111,6 +112,8 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
       });
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
+        if (!ErrorReportUtil.shouldReportError(errorReporter.getSNode())) return;
+
         MessageStatus status = errorReporter.getMessageStatus();
         String errorString = errorReporter.reportError();
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(

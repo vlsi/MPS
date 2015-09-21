@@ -1421,6 +1421,26 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="7X3$Ctw4p6w" role="2LFqv$">
+                          <node concept="3clFbJ" id="71GR8EvOX30" role="3cqZAp">
+                            <node concept="3clFbS" id="71GR8EvOX32" role="3clFbx">
+                              <node concept="3N13vt" id="71GR8EvOYoF" role="3cqZAp" />
+                            </node>
+                            <node concept="3fqX7Q" id="71GR8EvOXgO" role="3clFbw">
+                              <node concept="2YIFZM" id="71GR8EvOXCe" role="3fr31v">
+                                <ref role="37wK5l" to="wsw7:5TGjZPCODy5" resolve="shouldReportError" />
+                                <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
+                                <node concept="2OqwBi" id="71GR8EvOXZG" role="37wK5m">
+                                  <node concept="37vLTw" id="71GR8EvOXO7" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7X3$Ctw4p7m" resolve="reporter" />
+                                  </node>
+                                  <node concept="liA8E" id="71GR8EvOYck" role="2OqNvi">
+                                    <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="71GR8EvOYMj" role="3cqZAp" />
                           <node concept="3clFbJ" id="7X3$Ctw4p6x" role="3cqZAp">
                             <node concept="2OqwBi" id="7X3$Ctw4p6y" role="3clFbw">
                               <node concept="2OqwBi" id="7X3$Ctw4qCO" role="2Oq$k0">

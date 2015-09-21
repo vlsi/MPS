@@ -130,20 +130,11 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   }
 
   private void putError(SNode node, IErrorReporter reporter) {
-    if (!ErrorReportUtil.shouldReportError(node)) return;
     getTypeErrorComponent().addError(node, reporter);
   }
 
   private ITypeErrorComponent getTypeErrorComponent() {
     return myTypeErrorComponent != null ? myTypeErrorComponent : getTypecheckingComponent();
-  }
-
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    if (nodeWithError != null) {
-      SimpleErrorReporter errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-      putError(nodeWithError, errorReporter);
-    }
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {

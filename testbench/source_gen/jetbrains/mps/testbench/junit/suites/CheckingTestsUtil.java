@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -41,6 +42,10 @@ public class CheckingTestsUtil {
               errors.add(e.getMessage());
             }
             for (IErrorReporter reporter : errorReporters) {
+              if (!(ErrorReportUtil.shouldReportError(reporter.getSNode()))) {
+                continue;
+              }
+
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
                 if (reporter.reportError().startsWith("a class should have")) {
                   continue;
