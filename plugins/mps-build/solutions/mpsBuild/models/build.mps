@@ -2183,6 +2183,12 @@
               <property role="3MwjfP" value="mps-behavior.jar" />
             </node>
           </node>
+          <node concept="Saw0i" id="4PUqnAly_ye" role="39821P">
+            <ref role="Saw0g" node="6e4RFSGTIz7" resolve="mps-behavior-api" />
+          </node>
+          <node concept="Saw0i" id="4PUqnAlyA_B" role="39821P">
+            <ref role="Saw0g" node="6e4RFSGTAMz" resolve="mps-behavior-runtime" />
+          </node>
         </node>
         <node concept="3981dx" id="3zjMY$964$p" role="39821P">
           <node concept="Saw0i" id="1nB28rXfiB" role="39821P">
@@ -2493,6 +2499,9 @@
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZu" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
+          </node>
+          <node concept="L2wRC" id="4PUqnAly$uc" role="39821P">
+            <ref role="L2wRA" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZI" role="39821P">
             <ref role="L2wRA" node="4cWf37BbAnE" resolve="jetbrains.mps.lang.checkedName" />
