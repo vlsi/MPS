@@ -115,6 +115,11 @@ public class ClassLoaderManager implements CoreComponent {
 
   private static ClassLoaderManager INSTANCE;
 
+  /**
+   * It can be get
+   * @return
+   */
+  @Deprecated
   public static ClassLoaderManager getInstance() {
     return INSTANCE;
   }

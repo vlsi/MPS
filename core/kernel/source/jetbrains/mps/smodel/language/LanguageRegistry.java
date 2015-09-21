@@ -150,7 +150,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     // shall serve as an indicator we failed to maintain binary compatibility between releases
     try {
       final Class<?> rtClass = l.getOwnClass(rtClassName);
-      if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
+      if (LanguageRuntime.class.isAssignableFrom(rtClass)) {
         return ((Class<LanguageRuntime>) rtClass).newInstance();
       }
       return new InterpretedLanguageRuntime(l);

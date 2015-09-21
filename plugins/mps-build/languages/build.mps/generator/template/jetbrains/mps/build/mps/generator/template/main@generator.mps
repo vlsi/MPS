@@ -10987,6 +10987,26 @@
             <node concept="2Vbh7Z" id="5mxyaMf$njU" role="2VaTZU">
               <node concept="2pNNFK" id="5mxyaMf$njV" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="54ow4Xiv0Rb" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="54ow4Xiv0Rc" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="54ow4Xiv0Rd" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-behavior-api" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="54ow4Xiv0SE" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="54ow4Xiv0SF" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="54ow4Xiv0SG" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-behavior-runtime" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="2pNNFK" id="5mxyaMf$njW" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="fileset" />
@@ -11147,37 +11167,6 @@
                   <property role="2pNUuO" value="destfile" />
                   <node concept="2pMdtt" id="g0fHFWroM3" role="2pMdts">
                     <property role="2pMdty" value="${build.tmp}/antTasks/mps-tool.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2Vbh7Z" id="7KS3I2Fezy1" role="2VaTZU">
-              <node concept="2pNNFK" id="7KS3I2Fezy2" role="2Vbh7K">
-                <property role="2pNNFO" value="jar" />
-                <node concept="2pNNFK" id="7KS3I2Fezy3" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="7KS3I2Fezy4" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="7KS3I2Fezy5" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-behavior-runtime" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNNFK" id="7KS3I2FezzH" role="3o6s8t">
-                  <property role="qg3DV" value="true" />
-                  <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="7KS3I2FezzI" role="2pNNFR">
-                    <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="7KS3I2FezzJ" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-behavior-api" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNUuL" id="7KS3I2Fezy6" role="2pNNFR">
-                  <property role="2pNUuO" value="destfile" />
-                  <node concept="2pMdtt" id="7KS3I2Fezy7" role="2pMdts">
-                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-behavior.jar" />
                   </node>
                 </node>
               </node>
