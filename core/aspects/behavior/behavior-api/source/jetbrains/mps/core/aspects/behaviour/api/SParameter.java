@@ -18,8 +18,6 @@ import org.jetbrains.mps.openapi.language.SNamedElement;
 
 /**
  * Represents a parameter of {@link SMethod}
- *
- * Created by apyshkin on 07/09/15.
  */
 public interface SParameter extends SNamedElement, STypedElement {
 }

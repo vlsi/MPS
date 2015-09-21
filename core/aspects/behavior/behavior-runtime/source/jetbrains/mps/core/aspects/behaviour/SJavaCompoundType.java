@@ -21,8 +21,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a type which internally uses the java class
  * Intended to represent the compound type (not primitive and not enumeration)
- *
- * Created by apyshkin on 08/09/15.
  */
 public interface SJavaCompoundType extends SAbstractType {
   @NotNull

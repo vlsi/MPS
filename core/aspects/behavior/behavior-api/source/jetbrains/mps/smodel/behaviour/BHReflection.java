@@ -28,11 +28,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Behavior Facade.
+ * Behavior Reflcetion Facade.
  * API for the generated behavior code. Intended to replace {@link jetbrains.mps.smodel.behaviour.BehaviorReflection} calls
- * The non-reflective API is null-safe
- *
- * Created by apyshkin on 7/15/15.
+ * The API is null-safe
  */
 public final class BHReflection {
   @NotNull
@@ -40,9 +38,6 @@ public final class BHReflection {
     return constructor.newNode(model, parameters);
   }
 
-  /**
-   * reflective api
-   */
   public static Object invoke(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
     SConcept concept = node.getConcept();
     BHDescriptor bhDescriptor = getBHDescriptor(concept);

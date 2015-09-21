@@ -32,13 +32,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 /**
- * SMethod is a behavior method handle abstraction.
- *
- *           NOTES:
- *           We need baseName___* format for the name field to support the identically named behavior methods.
- *
- */
-/**
  * As for 3.2 -- we still have the behavior language which allows several methods with identical signature.
  * Moreover it urges us to point to the overridden method explicitly.
  *

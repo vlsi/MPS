@@ -14,14 +14,11 @@ package jetbrains.mps.core.aspects.behaviour.api;/*
  * limitations under the License.
  */
 
-import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * This interface must be implemented by the entities which has type.
- *
  */
 public interface STypedElement {
-  @NotNull
-  SAbstractType getType();
+  @NotNull SAbstractType getType();
 }

@@ -20,7 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- *
+ * Behavior Registry is a registry which stores a mapping between concepts and behavior descriptors.
+ * One should not bother to use it directly cause there is an {@link SMethod} and {@link jetbrains.mps.smodel.behaviour.BHReflection}
+ * mechanisms to invoke a behavior method
  */
 public interface BehaviorRegistry extends CoreAspectRegistry {
   @NotNull

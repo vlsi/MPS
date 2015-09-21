@@ -17,6 +17,7 @@ package jetbrains.mps.core.aspects.behaviour.api;/*
 /**
  * The interface is the descriptor of the exception, which might be presented in the
  * method/constructor declaration.
+ * Currently not used
  */
 public interface SThrowable extends STypedElement {
 }

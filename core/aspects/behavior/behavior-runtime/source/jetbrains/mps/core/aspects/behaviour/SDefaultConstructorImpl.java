@@ -31,6 +31,7 @@ import java.util.List;
 
 /**
  * A simple implementation of constructor (no params)
+ * It is a current implementation of behavior constructors
  */
 public final class SDefaultConstructorImpl implements SConstructor {
   public final static String DEFAULT_CONSTRUCTOR_NAME = "___init___"; // used in the generator

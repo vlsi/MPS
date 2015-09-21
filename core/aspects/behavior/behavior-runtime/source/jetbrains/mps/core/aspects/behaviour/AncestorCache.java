@@ -24,8 +24,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * including the concept
- * Created by apyshkin on 09/09/15.
+ * The cache of all concept hierarchy (including the concept itself)
  */
 class AncestorCache {
   private final List<SAbstractConcept> myLinearization;

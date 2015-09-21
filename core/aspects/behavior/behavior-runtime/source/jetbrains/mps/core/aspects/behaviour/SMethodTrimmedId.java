@@ -28,9 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * Represents a handle which uniquely identifies {@link SMethod} within the concept (including all the ancestors).
- * This implementation is based on the transformed id of the method node (in the behavior aspect of the concept)
- *
- * Created by apyshkin on 11/09/15.
+ * This implementation is based on the NodeId of the method node (in the behavior aspect of the concept)
  */
 @Immutable
 public final class SMethodTrimmedId implements SMethodId {

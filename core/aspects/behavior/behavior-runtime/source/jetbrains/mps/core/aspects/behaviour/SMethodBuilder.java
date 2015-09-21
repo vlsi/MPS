@@ -26,9 +26,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Standard builder for SMethod
- *
- * Created by apyshkin on 05/08/15.
+ * Standard builder for SMethod.
+ * Used in the generated behavior descriptors.
  */
 public final class SMethodBuilder<T> {
   private String myName;

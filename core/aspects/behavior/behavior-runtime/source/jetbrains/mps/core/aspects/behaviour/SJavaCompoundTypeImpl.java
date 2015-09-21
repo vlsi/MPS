@@ -27,7 +27,6 @@ import java.util.Map;
 
 /**
  * A type backed by java class.
- *
  */
 public class SJavaCompoundTypeImpl implements SJavaCompoundType {
   private static final Map<Class, Class> PRIMITIVE_TO_BOXED_TYPE = new HashMap<Class, Class>();
