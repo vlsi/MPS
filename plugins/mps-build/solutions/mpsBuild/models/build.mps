@@ -897,6 +897,14 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="3A27KL0TKsc" resolve="mps-project" />
       </node>
+      <node concept="nCB5N" id="7KS3I2FchYJ" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="6e4RFSGTIz7" resolve="mps-behavior-api" />
+      </node>
+      <node concept="nCB5N" id="7KS3I2FbDPR" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="6e4RFSGTAMz" resolve="mps-behavior-runtime" />
+      </node>
     </node>
     <node concept="398b33" id="5StVQ8qcIGg" role="3989C9">
       <property role="TrG5h" value="mps-core-components" />
@@ -2189,6 +2197,19 @@
           <node concept="Saw0i" id="4PUqnAlyA_B" role="39821P">
             <ref role="Saw0g" node="6e4RFSGTAMz" resolve="mps-behavior-runtime" />
           </node>
+          <node concept="398223" id="7KS3I2Fb$z4" role="39821P">
+            <node concept="3_J27D" id="7KS3I2Fb$z6" role="Nbhlr">
+              <node concept="3Mxwew" id="7KS3I2Fb$zc" role="3MwsjC">
+                <property role="3MwjfP" value="modules" />
+              </node>
+            </node>
+            <node concept="1bldCd" id="7KS3I2Fb$zu" role="39821P">
+              <ref role="3$exzV" node="7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
+            </node>
+            <node concept="1bldCd" id="7KS3I2FbBc4" role="39821P">
+              <ref role="3$exzV" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
+            </node>
+          </node>
         </node>
         <node concept="3981dx" id="3zjMY$964$p" role="39821P">
           <node concept="Saw0i" id="1nB28rXfiB" role="39821P">
@@ -2496,12 +2517,6 @@
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZt" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L4j" resolve="jetbrains.mps.lang.actions" />
-          </node>
-          <node concept="L2wRC" id="2d0qgmCdfZu" role="39821P">
-            <ref role="L2wRA" node="7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
-          </node>
-          <node concept="L2wRC" id="4PUqnAly$uc" role="39821P">
-            <ref role="L2wRA" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZI" role="39821P">
             <ref role="L2wRA" node="4cWf37BbAnE" resolve="jetbrains.mps.lang.checkedName" />
