@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EditorTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -28,7 +30,8 @@ public class EditorTestCase_Behavior {
     return result;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314b78e4L, "nodeToEdit")) == child || SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314bf3d3L, "result")) == child;
+    Iterable<SNode> toSuppress = ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314b78e4L, "nodeToEdit")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314bf3d3L, "result")));
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(child, null, true)).intersect(Sequence.fromIterable(toSuppress)).isNotEmpty();
   }
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;

@@ -4,12 +4,13 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
 public class OrPattern_BehaviorDescriptor extends Pattern_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {
   public OrPattern_BehaviorDescriptor() {
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return OrPattern_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
   @Override
   public String getConceptFqName() {

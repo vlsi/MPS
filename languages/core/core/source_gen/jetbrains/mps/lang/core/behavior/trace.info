@@ -622,22 +622,19 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/8383079901754093194">
     <file name="BaseCommentAttribute_Behavior.java">
-      <node id="8383079901754096195" at="13,195,14,18" concept="6" />
-      <node id="8383079901754096430" at="15,5,16,17" concept="6" />
-      <node id="8383079901754093194" at="10,0,12,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8383079901754094904" at="12,91,15,5" concept="3" />
-      <node id="8383079901754093194" at="12,0,18,0" concept="9" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="8383079901754093196" at="10,43,10,43" />
-      <scope id="8383079901754094905" at="13,195,14,18" />
-      <scope id="8383079901754093194" at="10,0,12,0">
+      <node id="8015517816488676229" at="14,91,15,272" concept="6" />
+      <node id="8383079901754093194" at="12,0,14,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8383079901754093194" at="14,0,17,0" concept="9" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="8383079901754093196" at="12,43,12,43" />
+      <scope id="8383079901754093205" at="14,91,15,272" />
+      <scope id="8383079901754093194" at="12,0,14,0">
         <var name="thisNode" id="8383079901754093194" />
       </scope>
-      <scope id="8383079901754093205" at="12,91,16,17" />
-      <scope id="8383079901754093194" at="12,0,18,0">
+      <scope id="8383079901754093194" at="14,0,17,0">
         <var name="child" id="8383079901754093206" />
         <var name="thisNode" id="8383079901754093194" />
       </scope>
-      <unit id="8383079901754093194" at="9,0,19,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
+      <unit id="8383079901754093194" at="11,0,18,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
     </file>
   </root>
 </debug-info>
