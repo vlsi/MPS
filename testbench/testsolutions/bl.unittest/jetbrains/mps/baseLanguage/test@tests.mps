@@ -10575,16 +10575,6 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="4KzAAUtsV8c" role="3cqZAp">
-            <node concept="3cpWsn" id="4KzAAUtsV8d" role="3cpWs9">
-              <property role="TrG5h" value="b" />
-              <node concept="10Oyi0" id="4KzAAUtsV8e" role="1tU5fm" />
-              <node concept="Xl_RD" id="4KzAAUtsV8g" role="33vP2m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-            <node concept="15s5l7" id="4KzAAUtsV8h" role="lGtFl" />
-          </node>
           <node concept="3clFbF" id="4KzAAUtsV8j" role="3cqZAp">
             <node concept="2OqwBi" id="4KzAAUtsVnh" role="3clFbG">
               <node concept="10M0yZ" id="4KzAAUtsV8k" role="2Oq$k0">
