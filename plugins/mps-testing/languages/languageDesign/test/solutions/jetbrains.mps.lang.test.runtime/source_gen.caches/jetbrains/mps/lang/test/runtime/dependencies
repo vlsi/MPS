@@ -259,7 +259,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.validation.NodeValidationProblem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />

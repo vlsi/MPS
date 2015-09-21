@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
@@ -73,7 +72,7 @@ public class TestsErrorsChecker {
     final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new LanguageChecker().getErrors(myRoot, null)));
-    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new SuppressingAwareProcessorDecorator(new Processor<ValidationProblem>() {
+    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<ValidationProblem>() {
       public boolean process(ValidationProblem vp) {
         if (!((vp instanceof NodeValidationProblem))) {
           return true;
@@ -82,7 +81,7 @@ public class TestsErrorsChecker {
         SetSequence.fromSet(result).addElement(new SimpleErrorReporter(node, vp.getMessage(), null, null));
         return true;
       }
-    }));
+    });
     TestsErrorsChecker.modelErrorsHolder.set(myRoot, result);
     return result;
   }
