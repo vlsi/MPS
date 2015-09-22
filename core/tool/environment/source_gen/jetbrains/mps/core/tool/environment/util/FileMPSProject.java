@@ -58,6 +58,10 @@ public class FileMPSProject extends Project {
     super.projectClosed();
   }
 
+  /**
+   * 
+   * @deprecated 
+   */
   @Deprecated
   @Override
   public <T> T getComponent(Class<T> cls) {

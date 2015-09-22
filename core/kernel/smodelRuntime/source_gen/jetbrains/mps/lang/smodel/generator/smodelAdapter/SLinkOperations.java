@@ -12,6 +12,10 @@ import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
+/**
+ * 
+ * @deprecated 
+ */
 @Deprecated
 public class SLinkOperations {
   @Deprecated
