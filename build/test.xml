@@ -25,6 +25,37 @@
     <unzip src="${mps.zip}" dest="${build.tmp}"/>
   </target>
 
+  <target name="check-project-structure" depends="unpack">
+    <mkdir dir="${build.tmp}/buildtests.tmp"/>
+    <path id="tests.classpath">
+      <fileset dir="${mps_build_home}/lib">
+        <include name="**/*.jar"/>
+      </fileset>
+      <path path="${mps_build_home}/lib/mps-backend.jar"/>
+      <path path="${mps_build_home}/lib/jdom.jar"/>
+    </path>
+    <jar destfile="${mps_build_home}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${build.tmp}/buildtests.tmp"/>
+    </jar>
+    <delete dir="${build.tmp}/buildtests.tmp"/>
+
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Dmps.junit.modules.root=."/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1200m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
+      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+      <test name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure"/>
+      <formatter type="xml"/>
+      <classpath>
+        <fileset dir="${mps_build_home}/lib">
+          <include name="*.jar"/>
+        </fileset>
+      </classpath>
+    </junit>
+  </target>
+
   <target name="module-tests" depends="unpack">
     <ant antfile="build/tests/mpsTestModules.xml" inheritAll="true" useNativeBasedir="true">
       <target name="build"/>
@@ -88,5 +119,5 @@
     </ant>
   </target>
 
-  <target name="default" depends="module-tests"/>
+  <target name="default" depends="check-project-structure, module-tests"/>
 </project>
