@@ -3954,10 +3954,10 @@
     <jar destfile="${build.tmp}/antTasks/mps-openapi.jar">
       <fileset dir="${build.tmp}/java/out/mps-openapi" />
     </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-behavior-api.jar">
+    <jar destfile="${build.tmp}/antTasks/jetbrains.mps.lang.behavior.api.jar">
       <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
     </jar>
-    <jar destfile="${build.tmp}/antTasks/mps-behavior-runtime.jar">
+    <jar destfile="${build.tmp}/antTasks/jetbrains.mps.lang.behavior.runtime.jar">
       <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-core.jar">

@@ -11000,7 +11000,7 @@
                 <node concept="2pNUuL" id="7$zBrXAvXf3" role="2pNNFR">
                   <property role="2pNUuO" value="destfile" />
                   <node concept="2pMdtt" id="7$zBrXAvXf4" role="2pMdts">
-                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-behavior-api.jar" />
+                    <property role="2pMdty" value="${build.tmp}/antTasks/jetbrains.mps.lang.behavior.api.jar" />
                   </node>
                 </node>
               </node>
@@ -11021,7 +11021,7 @@
                 <node concept="2pNUuL" id="7$zBrXAvXgP" role="2pNNFR">
                   <property role="2pNUuO" value="destfile" />
                   <node concept="2pMdtt" id="7$zBrXAvXgQ" role="2pMdts">
-                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-behavior-runtime.jar" />
+                    <property role="2pMdty" value="${build.tmp}/antTasks/jetbrains.mps.lang.behavior.runtime.jar" />
                   </node>
                 </node>
               </node>
