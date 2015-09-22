@@ -37,7 +37,6 @@ public class PathManager {
   private static final String JAR_DELIMITER = "!";
   private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
-  private static final String MODULES_PREFIX = "!/modules";
 
   private static final String PROTOCOL_DELIMITER = ":";
   private static final String PLUGINS_PATH = "plugins";
@@ -141,7 +140,7 @@ public class PathManager {
     if (libDir.exists() && libDir.isDirectory()) {
       List<String> paths = new ArrayList<String>();
       for (File jar : libDir.listFiles(MPS_JARS)) {
-        paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
+        paths.add(jar.getAbsolutePath());
       }
       if (paths.size() > 0) {
         return Collections.unmodifiableCollection(paths);

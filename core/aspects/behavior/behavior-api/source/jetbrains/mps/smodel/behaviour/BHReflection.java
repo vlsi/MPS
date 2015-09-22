@@ -45,7 +45,7 @@ public final class BHReflection {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
-    return bhDescriptor.invoke(node, method, parameters);
+    return method.invoke(node, parameters);
   }
 
   public static Object invoke(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
@@ -54,28 +54,28 @@ public final class BHReflection {
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
-    return bhDescriptor.invoke(concept, method, parameters);
+    return method.invoke(concept, parameters);
   }
 
   /**
    * invokes a method specifically in the concreteConcept behavior.
    */
-  public static Object invokeSpecial(@NotNull SNode node, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invokeSpecial(@Nullable SNode node, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
-    return bhDescriptor.invokeSpecial(node, method, parameters);
+    return method.invokeSpecial(node, parameters);
   }
 
-  public static Object invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invokeSpecial(@Nullable SAbstractConcept concept, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
       throw new BHNoSuchMethodException(methodId);
     }
-    return bhDescriptor.invokeSpecial(concept, method, parameters);
+    return method.invokeSpecial(concept, parameters);
   }
 
   @NotNull

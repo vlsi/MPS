@@ -105,7 +105,6 @@ public final class ModulesMiner {
   @Deprecated
   @ToRemove(version = 3.3)
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
-    // I assume invocations of this method
     if (excludes != null) {
       myExcludes.addAll(excludes);
     }
@@ -121,6 +120,7 @@ public final class ModulesMiner {
   private boolean needProcess(IFile file) {
     return !FileSystem.getInstance().isFileIgnored(file.getName()) && !myExcludes.contains(file);
   }
+
 
   private void readModuleDescriptors(IFile file) {
     if (!needProcess(file)) {
@@ -158,9 +158,7 @@ public final class ModulesMiner {
 
     // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
     // if this is just good old plain directory, we check every file in it
-
     if (file.getPath().endsWith(JAR + JAR_SEPARATOR)) {
-
       IFile moduleXml = file.getDescendant(META_INF).getDescendant(MODULE_XML);
       if (moduleXml.exists() && !moduleXml.isDirectory()) {
         ModuleDescriptor moduleDescriptor = loadModuleDescriptor(moduleXml);
@@ -173,9 +171,7 @@ public final class ModulesMiner {
           readModuleDescriptorsFromFolder(dirInJar);
         }
       }
-
     } else {
-
       // first, we read from files
       // this way all modules roots, sources/classes folders are in excludes and we do not even go into them
       List<IFile> children = file.getChildren();
@@ -192,7 +188,6 @@ public final class ModulesMiner {
       for (IFile child : folders) {
         readModuleDescriptorsFromFolder(child);
       }
-
     }
   }
 

@@ -39,8 +39,9 @@
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="project" exported="" />
     <orderEntry type="module" module-name="components" exported="" />
-    <orderEntry type="module" module-name="behavior-api" />
-    <orderEntry type="module" module-name="behavior-runtime" />
+    <orderEntry type="module" module-name="behavior-api" exported="" />
+    <orderEntry type="module" module-name="behavior-runtime" exported="" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="behavior-legacy-api" exported="" />
   </component>
 </module>
