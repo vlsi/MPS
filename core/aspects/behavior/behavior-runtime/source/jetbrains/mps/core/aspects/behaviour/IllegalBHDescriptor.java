@@ -19,15 +19,20 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 public final class IllegalBHDescriptor implements BHDescriptor {
+  private static final Logger LOG = LogManager.getLogger(IllegalBHDescriptor.class);
+
   private final SAbstractConcept myConcept;
 
   public IllegalBHDescriptor(@NotNull SAbstractConcept concept) {
@@ -37,50 +42,72 @@ public final class IllegalBHDescriptor implements BHDescriptor {
   @NotNull
   @Override
   public SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
-    throw new UnsupportedOperationException();
+    throwException();
+    return null;
   }
 
   @Override
   public <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    throw new UnsupportedOperationException();
+    throwException();
+    return null;
   }
 
   @Override
   public <T> T invoke(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
-    throw new UnsupportedOperationException();
+    throwException();
+    return null;
   }
 
   @Override
   public <T> T invokeSpecial(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
-    throw new UnsupportedOperationException();
+    throwException();
+    return null;
   }
 
   @Override
   public <T> T invokeSpecial(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters) {
-    throw new UnsupportedOperationException();
+    throwException();
+    return null;
   }
 
   @NotNull
   @Override
   public List<SMethod<?>> getMethods() {
-    throw new UnsupportedOperationException();
+    reportWarn();
+    return Collections.emptyList();
   }
 
   @NotNull
   @Override
   public List<SMethod<?>> getDeclaredMethods() {
-    throw new UnsupportedOperationException();
+    reportWarn();
+    return Collections.emptyList();
   }
 
   @Nullable
   @Override
   public SMethod<?> getMethod(@NotNull SMethodId methodId) {
-    throw new UnsupportedOperationException();
+    reportWarn();
+    return null;
   }
 
   @NotNull
   @Override
   public SAbstractConcept getConcept() {
     return myConcept;
+  }
+
+  private void reportWarn() {
+    LOG.warn("IllegalBehaviorDescriptor was created for the concept " + myConcept + " which operates null-safe in this context.");
+  }
+
+  private void throwException() {
+    throw new IllegalBehaviorException(myConcept);
+  }
+
+  private static class IllegalBehaviorException extends RuntimeException {
+    public IllegalBehaviorException(SAbstractConcept concept) {
+      super("IllegalBehaviorDescriptor was created for the concept " + concept + " and which does not support the requested operation.");
+    }
   }
 }
