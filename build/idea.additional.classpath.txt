@@ -1,10 +1,11 @@
 :openapi
 core/openapi/classes
 :aspects
-:core
-core/analyzers/classes
-core/aspects/behavior/behavior-api/classes
 core/aspects/behavior/behavior-runtime/classes
+core/aspects/behavior/behavior-api/classes
+:core
+core/aspects/behavior/behavior-legacy-api/classes
+core/analyzers/classes
 core/components/classes
 core/platform/classes
 core/kernel/classes

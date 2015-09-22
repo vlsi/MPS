@@ -11,5 +11,6 @@
   <dependency className="jetbrains.mps.ide.build.tests.mpsJava" file="mpsJava.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsPackaged" file="mpsPackaged.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsSModel" file="mpsSModel.xml" />
+  <dependency className="jetbrains.mps.ide.build.tests.mpsTestModules" file="mpsTestModules.xml" />
 </dependenciesRoot>
 
