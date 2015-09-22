@@ -1694,9 +1694,10 @@
       <node concept="3Tm6S6" id="5ICuv4IMcn7" role="1B3o_S" />
       <node concept="3uibUv" id="5ICuv4IMcn8" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3qTvmN" id="7WTijIAQMBK" role="11_B2D" />
       </node>
       <node concept="2AHcQZ" id="5uM03Adt1uK" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="5uM03AdsSL9" role="jymVt" />
