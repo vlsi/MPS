@@ -1238,6 +1238,29 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="2ZOO3bS4NGh" role="jymVt">
+      <property role="TrG5h" value="createScope" />
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="2ZOO3bS4NGi" role="3clF47">
+        <node concept="3cpWs6" id="2ZOO3bS4NYM" role="3cqZAp">
+          <node concept="37vLTw" id="2ZOO3bS4O1A" role="3cqZAk">
+            <ref role="3cqZAo" node="2ZOO3bS4NGp" resolve="searchScope" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2ZOO3bS4NGn" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+      </node>
+      <node concept="3Tm1VV" id="2ZOO3bS4NGo" role="1B3o_S" />
+      <node concept="37vLTG" id="2ZOO3bS4NGp" role="3clF46">
+        <property role="TrG5h" value="searchScope" />
+        <node concept="3uibUv" id="2ZOO3bS4NTL" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="ntTX465uAL" role="jymVt" />
     <node concept="3Tm1VV" id="hpHLh7Fj1_" role="1B3o_S" />
   </node>
