@@ -12,6 +12,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesBuilderBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" file="MoveNodesDefault.java">
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />

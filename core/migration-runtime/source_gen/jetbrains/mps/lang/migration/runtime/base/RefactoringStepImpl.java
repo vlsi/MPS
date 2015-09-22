@@ -6,14 +6,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Project;
-import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefactoringStepImpl implements RefactoringStep {
   private String myCaption;
@@ -39,22 +31,5 @@ public class RefactoringStepImpl implements RefactoringStep {
     for (RefactoringPart part : ListSequence.fromList(myParts)) {
       part.execute(module);
     }
-  }
-  public Runnable getExecute(final Project project) {
-    final Map<RefactoringPart, Iterable<SNodeReference>> affectedNodes = MapSequence.fromMap(new HashMap<RefactoringPart, Iterable<SNodeReference>>());
-    for (RefactoringPart part : ListSequence.fromList(myParts)) {
-      MapSequence.fromMap(affectedNodes).put(part, part.getAffectedNodes(project.getScope(), project.getRepository()));
-    }
-    return new Runnable() {
-      public void run() {
-        for (RefactoringPart part : ListSequence.fromList(myParts)) {
-          part.execute(Sequence.fromIterable(MapSequence.fromMap(affectedNodes).get(part)).select(new ISelector<SNodeReference, SNode>() {
-            public SNode select(SNodeReference it) {
-              return it.resolve(project.getRepository());
-            }
-          }));
-        }
-      }
-    };
   }
 }

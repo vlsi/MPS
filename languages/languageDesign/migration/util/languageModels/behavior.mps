@@ -7,6 +7,9 @@
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16,6 +19,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -42,6 +46,9 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
+        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -126,18 +133,6 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -165,7 +160,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -721,27 +715,42 @@
       <property role="TrG5h" value="getImplementation" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
+      <property role="IEkAT" value="false" />
       <ref role="13i0hy" node="4uVwhQyQ01H" resolve="getImplementation" />
       <node concept="3Tm1VV" id="4uVwhQyQ2ux" role="1B3o_S" />
       <node concept="3clFbS" id="4uVwhQyQ2u$" role="3clF47">
         <node concept="3clFbF" id="4uVwhQyQi6F" role="3cqZAp">
           <node concept="2ShNRf" id="4uVwhQyQi6D" role="3clFbG">
             <node concept="1pGfFk" id="4uVwhQyQihI" role="2ShVmc">
-              <ref role="37wK5l" to="6f4m:4uVwhQyQhvm" resolve="MoveNodePart" />
-              <node concept="13iPFW" id="4uVwhQyQihX" role="37wK5m" />
+              <ref role="37wK5l" to="6f4m:5TeDeYjkcZB" resolve="MoveNodePart" />
+              <node concept="2OqwBi" id="5TeDeYjlseW" role="37wK5m">
+                <node concept="2OqwBi" id="5TeDeYjk2Ia" role="2Oq$k0">
+                  <node concept="13iPFW" id="4uVwhQyQihX" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="5TeDeYjls67" role="2OqNvi">
+                    <ref role="3Tt5mk" to="gqi5:6szrkDod3Ol" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="5TeDeYjlsm6" role="2OqNvi">
+                  <ref role="37wK5l" node="4uVwhQyQbdz" resolve="getNodeReference" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5TeDeYjlsHK" role="37wK5m">
+                <node concept="2OqwBi" id="5TeDeYjlsrh" role="2Oq$k0">
+                  <node concept="13iPFW" id="5TeDeYjlsoS" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="5TeDeYjls$E" role="2OqNvi">
+                    <ref role="3Tt5mk" to="gqi5:6szrkDod3On" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="5TeDeYjlsPY" role="2OqNvi">
+                  <ref role="37wK5l" node="4uVwhQyQbdz" resolve="getNodeReference" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="4uVwhQyQ2u_" role="3clF45">
         <ref role="3uigEE" to="6f4m:4uVwhQyPI7d" resolve="RefactoringPart" />
-      </node>
-      <node concept="P$JXv" id="3pibKp8sxt6" role="lGtFl">
-        <node concept="TZ5HA" id="3pibKp8sxt7" role="TZ5H$">
-          <node concept="1dT_AC" id="3pibKp8sxt8" role="1dT_Ay">
-            <property role="1dT_AB" value="when calling getImplemetation(), 'toNode' field can be yet not initialized, so its initialization should affect returned object" />
-          </node>
-        </node>
       </node>
     </node>
   </node>

@@ -29,7 +29,13 @@ public interface MoveNodesBuilder {
   public void commit(Runnable callback);
 
 
-  public static class CompositeBuilder implements MoveNodesBuilder {
+  public static abstract class MoveNodesBuilderBase implements MoveNodesBuilder {
+    public void moveNode(SNode from, SNode to) {
+      moveNode(from).setTarget(to);
+    }
+  }
+
+  public static class CompositeBuilder extends MoveNodesBuilder.MoveNodesBuilderBase {
     private MoveNodesBuilder myFirst;
     private MoveNodesBuilder mySecond;
 
@@ -46,9 +52,6 @@ public interface MoveNodesBuilder {
     public CompositeBuilder(MoveNodesBuilder first, MoveNodesBuilder second) {
       myFirst = first;
       mySecond = second;
-    }
-    public void moveNode(SNode from, SNode to) {
-      myFirst.moveNode(from, to);
     }
     public MoveNodesBuilder.IncompleteMoveNode moveNode(SNode from) {
       final MoveNodesBuilder.IncompleteMoveNode firstIncomplete = myFirst.moveNode(from);

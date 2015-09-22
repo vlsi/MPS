@@ -5,11 +5,15 @@ package jetbrains.mps.lang.migration.util.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 import jetbrains.mps.lang.migration.runtime.base.MoveNodePart;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MoveNode_Behavior {
   public static void init(SNode thisNode) {
   }
   public static RefactoringPart virtual_getImplementation_5168866961623875693(SNode thisNode) {
-    return new MoveNodePart(thisNode);
+    return new MoveNodePart(BehaviorReflection.invokeVirtual(SNodeReference.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_getNodeReference_5168866961623921507", new Object[]{}), BehaviorReflection.invokeVirtual(SNodeReference.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), "virtual_getNodeReference_5168866961623921507", new Object[]{}));
   }
 }

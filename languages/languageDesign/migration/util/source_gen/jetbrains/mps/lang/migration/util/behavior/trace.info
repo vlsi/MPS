@@ -209,18 +209,18 @@
   </root>
   <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/5168866961623885725">
     <file name="MoveNode_Behavior.java">
-      <node id="5168866961623949739" at="12,95,13,38" concept="4" />
-      <node id="5168866961623885725" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5168866961623885725" at="12,0,15,0" concept="5" trace="virtual_getImplementation_5168866961623875693#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/runtime/base/RefactoringPart;" />
-      <scope id="5168866961623885727" at="10,43,10,43" />
-      <scope id="5168866961623885732" at="12,95,13,38" />
-      <scope id="5168866961623885725" at="10,0,12,0">
+      <node id="5168866961623949739" at="16,95,17,610" concept="4" />
+      <node id="5168866961623885725" at="14,0,16,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5168866961623885725" at="16,0,19,0" concept="5" trace="virtual_getImplementation_5168866961623875693#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/runtime/base/RefactoringPart;" />
+      <scope id="5168866961623885727" at="14,43,14,43" />
+      <scope id="5168866961623885732" at="16,95,17,610" />
+      <scope id="5168866961623885725" at="14,0,16,0">
         <var name="thisNode" id="5168866961623885725" />
       </scope>
-      <scope id="5168866961623885725" at="12,0,15,0">
+      <scope id="5168866961623885725" at="16,0,19,0">
         <var name="thisNode" id="5168866961623885725" />
       </scope>
-      <unit id="5168866961623885725" at="9,0,16,0" name="jetbrains.mps.lang.migration.util.behavior.MoveNode_Behavior" />
+      <unit id="5168866961623885725" at="13,0,20,0" name="jetbrains.mps.lang.migration.util.behavior.MoveNode_Behavior" />
     </file>
   </root>
   <root nodeRef="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)/7431903976166009836">
