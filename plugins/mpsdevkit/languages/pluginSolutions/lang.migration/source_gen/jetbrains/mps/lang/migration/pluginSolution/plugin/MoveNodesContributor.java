@@ -6,5 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public interface MoveNodesContributor {
+  /**
+   * 
+   * 
+   * @param moveNodeItem 'toNode' child can be null
+   */
   public void adjustMoveNodesItem(SNode moveNodeItem, SRepository repository);
 }

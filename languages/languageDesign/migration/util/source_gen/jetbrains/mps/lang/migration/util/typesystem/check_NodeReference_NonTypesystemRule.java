@@ -12,11 +12,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_NodeReference_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -28,7 +27,7 @@ public class check_NodeReference_NonTypesystemRule extends AbstractNonTypesystem
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeReference, "Invalid node reference", "9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)", "112372100253050975", null, errorTarget);
     }
-    SNode target = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeReference, "virtual_tryToFindNode_7431903976166009863", new Object[]{MPSModuleRepository.getInstance()});
+    SNode target = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeReference, "virtual_tryToFindNode_7431903976166009863", new Object[]{SNodeOperations.getModel(nodeReference).getModule().getRepository()});
     if ((target != null)) {
       if (!(eq_g9nlrm_a0a0a3a1(SPropertyOperations.getString(nodeReference, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")), BehaviorReflection.invokeVirtual(String.class, target, "virtual_getPresentation_1213877396640", new Object[]{})))) {
         MessageTarget errorTarget = new NodeMessageTarget();

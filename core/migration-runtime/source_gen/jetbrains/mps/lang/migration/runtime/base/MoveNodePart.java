@@ -4,41 +4,75 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.query.QueryExecutionContext;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.query.CommandUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.query.QueryExecutionContext;
+import jetbrains.mps.smodel.query.CommandUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MoveNodePart implements RefactoringPart {
   private SNode myInfo;
   public MoveNodePart(SNode info) {
     myInfo = SNodeOperations.copyNode(info);
   }
-  public void execute(final SModule module) {
+
+  public Iterable<SNodeReference> getAffectedNodes(final SearchScope searchScope, SRepository repository) {
+    Iterable<SReference> references;
+    SNode targetFromNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_tryToFindNode_7431903976166009863", new Object[]{repository});
     {
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return CommandUtil.createScope(module);
+          return CommandUtil.createScope(searchScope);
         }
       };
-      Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
-          return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_isSameTarget_7431903976166009839", new Object[]{it});
-        }
-      }).visitAll(new IVisitor<SReference>() {
-        public void visit(SReference it) {
-          updateUsage(it, BehaviorReflection.invokeVirtual(SNodeReference.class, SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), "virtual_getNodeReference_5168866961623921507", new Object[]{}));
-        }
-      });
+      if (targetFromNode != null) {
+        references = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), targetFromNode);
+      } else {
+        references = CommandUtil.references(CommandUtil.createConsoleScope(null, false, context));
+      }
     }
+    return Sequence.fromIterable(references).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_isSameTarget_7431903976166009839", new Object[]{it});
+      }
+    }).select(new ISelector<SReference, SNodeReference>() {
+      public SNodeReference select(SReference it) {
+        return it.getSourceNode().getReference();
+      }
+    }).toListSequence();
+  }
+  public void execute(final SModule module) {
+    execute(Sequence.fromIterable(getAffectedNodes(new ModulesScope(module), module.getRepository())).select(new ISelector<SNodeReference, SNode>() {
+      public SNode select(SNodeReference it) {
+        return it.resolve(module.getRepository());
+      }
+    }));
+  }
+  public void execute(Iterable<SNode> nodes) {
+    Sequence.fromIterable(nodes).translate(new ITranslator2<SNode, SReference>() {
+      public Iterable<SReference> translate(SNode it) {
+        return SNodeOperations.getReferences(it);
+      }
+    }).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_isSameTarget_7431903976166009839", new Object[]{it});
+      }
+    }).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference it) {
+        updateUsage(it, BehaviorReflection.invokeVirtual(SNodeReference.class, SLinkOperations.getTarget(myInfo, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), "virtual_getNodeReference_5168866961623921507", new Object[]{}));
+      }
+    });
   }
   public void updateUsage(SReference usage, SNodeReference newReference) {
     usage.getSourceNode().setReference(usage.getLink(), jetbrains.mps.smodel.SReference.create(usage.getLink(), usage.getSourceNode(), newReference.getModelReference(), newReference.getNodeId()));

@@ -101,7 +101,7 @@
     <node concept="1TJgyj" id="6szrkDod3On" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="toNode" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="2GZlO$G5$zc" resolve="AbstractNodeReference" />
     </node>
     <node concept="1TJgyj" id="2GZlO$G5_Lp" role="1TKVEi">
@@ -127,9 +127,6 @@
     <property role="TrG5h" value="RefactoringStep" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="4uVwhQyPPvQ" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
     <node concept="1TJgyj" id="4uVwhQyPCRg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
@@ -145,6 +142,9 @@
       <property role="20kJfa" value="part" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="2GZlO$G5z5o" resolve="RefactoringPart" />
+    </node>
+    <node concept="PrWs8" id="4uVwhQyPPvQ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="4uVwhQyFcjr" role="PzmwI">
       <ref role="PrY4T" node="4uVwhQyFcjm" resolve="IMigrationUnit" />

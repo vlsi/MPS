@@ -23,16 +23,15 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import java.util.Map;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -105,73 +104,48 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           return;
         }
 
-        final Set<SReference> refUsages = findUsages(project, nodesToMove);
+        Set<SReference> refUsages = findUsages(project, nodesToMove);
         SearchResults<SNode> searchResults = nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
           public SNode select(SReference it) {
             return it.getSourceNode();
           }
         }), "reference");
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
-          public void invoke(final Set<SNode> included) {
-            Iterable<MoveNodesBuilder> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveNodesBuilder.MoveNodesBuilderProvider>("jetbrains.mps.ide.platform.MoveNodesBuilder").getObjects()).select(new ISelector<MoveNodesBuilder.MoveNodesBuilderProvider, MoveNodesBuilder>() {
+          public void invoke(Set<SNode> included) {
+            final MoveNodesBuilder moveNodesBuilder = Sequence.fromIterable(new ExtensionPoint<MoveNodesBuilder.MoveNodesBuilderProvider>("jetbrains.mps.ide.platform.MoveNodesBuilder").getObjects()).select(new ISelector<MoveNodesBuilder.MoveNodesBuilderProvider, MoveNodesBuilder>() {
               public MoveNodesBuilder select(MoveNodesBuilder.MoveNodesBuilderProvider it) {
-                return it.createMoveNodesBuilder(currentModel.value.getModule());
+                return it.createMoveNodesBuilder(currentModel.value.getModule(), project);
               }
             }).where(new IWhereFilter<MoveNodesBuilder>() {
               public boolean accept(MoveNodesBuilder it) {
                 return it != null;
               }
-            }).toListSequence();
-            Map<SReference, SNode> usagesMap = classifyUsages(SetSequence.fromSet(refUsages).where(new IWhereFilter<SReference>() {
-              public boolean accept(SReference it) {
-                return SetSequence.fromSet(included).contains(it.getSourceNode());
+            }).foldLeft((MoveNodesBuilder) null, new ILeftCombinator<MoveNodesBuilder, MoveNodesBuilder>() {
+              public MoveNodesBuilder combine(MoveNodesBuilder s, MoveNodesBuilder it) {
+                return MoveNodesBuilder.CompositeBuilder.compose(s, it);
               }
-            }));
-            List<List<MoveNodesBuilder.NodeReference>> oldNodeRefs = ListSequence.fromList(new ArrayList<List<MoveNodesBuilder.NodeReference>>());
-            for (final MoveNodesBuilder builder : Sequence.fromIterable(moveNodesBuilders)) {
-              ListSequence.fromList(oldNodeRefs).addElement(ListSequence.fromList(nodesToMove).select(new ISelector<SNode, MoveNodesBuilder.NodeReference>() {
-                public MoveNodesBuilder.NodeReference select(SNode it) {
-                  return builder.createReference(it);
-                }
-              }).toListSequence());
-            }
-            newLocation.insertNodes(nodesToMove);
-            List<List<MoveNodesBuilder.NodeReference>> newNodeRefs = ListSequence.fromList(new ArrayList<List<MoveNodesBuilder.NodeReference>>());
-            for (final MoveNodesBuilder builder : Sequence.fromIterable(moveNodesBuilders)) {
-              ListSequence.fromList(newNodeRefs).addElement(ListSequence.fromList(nodesToMove).select(new ISelector<SNode, MoveNodesBuilder.NodeReference>() {
-                public MoveNodesBuilder.NodeReference select(SNode it) {
-                  return builder.createReference(it);
-                }
-              }).toListSequence());
-            }
-
-            {
-              Iterator<MoveNodesBuilder> builder_it = Sequence.fromIterable(moveNodesBuilders).iterator();
-              Iterator<List<MoveNodesBuilder.NodeReference>> oldNR_it = ListSequence.fromList(oldNodeRefs).iterator();
-              Iterator<List<MoveNodesBuilder.NodeReference>> newNR_it = ListSequence.fromList(newNodeRefs).iterator();
-              MoveNodesBuilder builder_var;
-              List<MoveNodesBuilder.NodeReference> oldNR_var;
-              List<MoveNodesBuilder.NodeReference> newNR_var;
-              while (builder_it.hasNext() && oldNR_it.hasNext() && newNR_it.hasNext()) {
-                builder_var = builder_it.next();
-                oldNR_var = oldNR_it.next();
-                newNR_var = newNR_it.next();
+            });
+            final List<MoveNodesBuilder.IncompleteMoveNode> incompleteMoveNodes = ListSequence.fromList(nodesToMove).select(new ISelector<SNode, MoveNodesBuilder.IncompleteMoveNode>() {
+              public MoveNodesBuilder.IncompleteMoveNode select(SNode it) {
+                return moveNodesBuilder.moveNode(it);
+              }
+            }).toListSequence();
+            moveNodesBuilder.commit(new Runnable() {
+              public void run() {
+                newLocation.insertNodes(nodesToMove);
                 {
-                  Iterator<MoveNodesBuilder.NodeReference> from_it = ListSequence.fromList(oldNR_var).iterator();
-                  Iterator<MoveNodesBuilder.NodeReference> to_it = ListSequence.fromList(newNR_var).iterator();
-                  MoveNodesBuilder.NodeReference from_var;
-                  MoveNodesBuilder.NodeReference to_var;
-                  while (from_it.hasNext() && to_it.hasNext()) {
-                    from_var = from_it.next();
-                    to_var = to_it.next();
-                    builder_var.moveNode(from_var, to_var);
+                  Iterator<SNode> node_it = ListSequence.fromList(nodesToMove).iterator();
+                  Iterator<MoveNodesBuilder.IncompleteMoveNode> inc_it = ListSequence.fromList(incompleteMoveNodes).iterator();
+                  SNode node_var;
+                  MoveNodesBuilder.IncompleteMoveNode inc_var;
+                  while (node_it.hasNext() && inc_it.hasNext()) {
+                    node_var = node_it.next();
+                    inc_var = inc_it.next();
+                    inc_var.setTarget(node_var);
                   }
                 }
               }
-            }
-            for (IMapping<SReference, SNode> mapping : MapSequence.fromMap(usagesMap)) {
-              updateUsage(mapping.key(), mapping.value());
-            }
+            });
           }
         }, "Move nodes");
       }

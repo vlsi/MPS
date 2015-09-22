@@ -11,6 +11,7 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -150,9 +151,23 @@
             </node>
             <node concept="2qgKlT" id="6szrkDodQYh" role="2OqNvi">
               <ref role="37wK5l" to="nbs9:6szrkDoc2K7" resolve="tryToFindNode" />
-              <node concept="2YIFZM" id="6szrkDodR3W" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+              <node concept="2OqwBi" id="3pibKp8qBEu" role="37wK5m">
+                <node concept="2OqwBi" id="3pibKp8qBvb" role="2Oq$k0">
+                  <node concept="2JrnkZ" id="3pibKp8qBkK" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3pibKp8qAXe" role="2JrQYb">
+                      <node concept="1YBJjd" id="3pibKp8qA$P" role="2Oq$k0">
+                        <ref role="1YBMHb" node="2uZcAeY9SPR" resolve="nodeReference" />
+                      </node>
+                      <node concept="I4A8Y" id="3pibKp8qB8D" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3pibKp8qBB5" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3pibKp8qBMA" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
               </node>
             </node>
           </node>
