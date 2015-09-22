@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/aspects/behavior/behavior-api/behavior-api.iml" filepath="$PROJECT_DIR$/core/aspects/behavior/behavior-api/behavior-api.iml" group="core/aspects/behavior" />
+      <module fileurl="file://$PROJECT_DIR$/core/aspects/behavior/behavior-legacy-api/behavior-legacy-api.iml" filepath="$PROJECT_DIR$/core/aspects/behavior/behavior-legacy-api/behavior-legacy-api.iml" group="core/aspects/behavior" />
       <module fileurl="file://$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/behavior-runtime.iml" filepath="$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/behavior-runtime.iml" group="core/aspects/behavior" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/core/components/components.iml" filepath="$PROJECT_DIR$/core/components/components.iml" group="core" />

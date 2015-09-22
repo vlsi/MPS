@@ -26,12 +26,10 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="u65r" ref="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)" />
     <import index="manl" ref="d936855b-48da-4812-a8a0-2bfddd633ac4/java:jetbrains.mps.core.aspects.behaviour(jetbrains.mps.lang.behavior.runtime/)" />
-    <import index="9r19" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.aspects.behaviour.api(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="q50" ref="d936855b-48da-4812-a8a0-2bfddd633ac4/java:jetbrains.mps.smodel.runtime.interpreted(jetbrains.mps.lang.behavior.runtime/)" />
-    <import index="ze1i" ref="d936855b-48da-4812-a8a0-2bfddd633ac4/java:jetbrains.mps.smodel.runtime(jetbrains.mps.lang.behavior.runtime/)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="q50" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.interpreted(MPS.Core/)" />
+    <import index="9r19" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.core.aspects.behaviour.api(jetbrains.mps.lang.behavior.api/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -798,7 +796,7 @@
       <property role="TrG5h" value="myBHDescriptor" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="4S$eeoaFbsg" role="1B3o_S" />
-      <node concept="3uibUv" id="4S$eeoaFbsh" role="1tU5fm">
+      <node concept="3uibUv" id="2JGfGPSnJUG" role="1tU5fm">
         <ref role="3uigEE" to="9r19:~BHDescriptor" resolve="BHDescriptor" />
       </node>
       <node concept="1WS0z7" id="4S$eeoaFbsB" role="lGtFl">
@@ -1034,7 +1032,7 @@
       <node concept="2AHcQZ" id="6pZ_jf9P8Sd" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
-      <node concept="3uibUv" id="4p6JbxD_y2k" role="3clF45">
+      <node concept="3uibUv" id="2JGfGPSo27a" role="3clF45">
         <ref role="3uigEE" to="ze1i:~BehaviorDescriptor" resolve="BehaviorDescriptor" />
       </node>
       <node concept="3clFbS" id="1MagDVHkvzE" role="3clF47">
@@ -1066,7 +1064,7 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6pZ_jf9P94J" role="1B3o_S" />
-      <node concept="3uibUv" id="2Km$7e2sU5Q" role="3clF45">
+      <node concept="3uibUv" id="2Tl9xCH_sa" role="3clF45">
         <ref role="3uigEE" to="9r19:~BHDescriptor" resolve="BHDescriptor" />
       </node>
       <node concept="37vLTG" id="6pZ_jf9P94M" role="3clF46">
@@ -1670,7 +1668,7 @@
       <property role="TrG5h" value="REGISTRY" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="24JB88KjtCO" role="1B3o_S" />
-      <node concept="3uibUv" id="24JB88Kjwi6" role="1tU5fm">
+      <node concept="3uibUv" id="2Tl9xCHHx$" role="1tU5fm">
         <ref role="3uigEE" to="9r19:~BehaviorRegistry" resolve="BehaviorRegistry" />
       </node>
       <node concept="2OqwBi" id="2Km$7e2tmrZ" role="33vP2m">
