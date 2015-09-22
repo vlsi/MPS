@@ -654,7 +654,7 @@
             </node>
             <node concept="2ShNRf" id="3nWS7UXtcbh" role="33vP2m">
               <node concept="1pGfFk" id="3nWS7UXth8C" role="2ShVmc">
-                <ref role="37wK5l" to="oh7r:2BGPXkEv60R" resolve="FromProjectPathProjectStrategy" />
+                <ref role="37wK5l" to="oh7r:2BGPXkEwfDD" resolve="AntProjectStrategy" />
               </node>
             </node>
           </node>
