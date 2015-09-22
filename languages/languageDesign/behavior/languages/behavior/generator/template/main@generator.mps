@@ -383,6 +383,9 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
+      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
+        <reference id="1171315804605" name="concept" index="2RRcyH" />
+      </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
@@ -448,6 +451,7 @@
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
@@ -457,17 +461,41 @@
       <ref role="2VPoh2" node="1MagDVHkvxR" resolve="BehaviorAspectDescriptor" />
       <node concept="2VP$b9" id="4eYijs7jjFL" role="2VPoh3">
         <node concept="3clFbS" id="4eYijs7jjFF" role="2VODD2">
-          <node concept="3clFbF" id="4eYijs7jjFN" role="3cqZAp">
-            <node concept="2OqwBi" id="4eYijs7jjFD" role="3clFbG">
-              <node concept="Rm8GO" id="4eYijs7jjFH" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+          <node concept="3cpWs8" id="7WTijIAQjxg" role="3cqZAp">
+            <node concept="3cpWsn" id="7WTijIAQjxh" role="3cpWs9">
+              <property role="TrG5h" value="model" />
+              <node concept="H_c77" id="7WTijIAQjxd" role="1tU5fm" />
+              <node concept="2OqwBi" id="7WTijIAQjxi" role="33vP2m">
+                <node concept="1iwH7S" id="7WTijIAQjxj" role="2Oq$k0" />
+                <node concept="1st3f0" id="7WTijIAQjxk" role="2OqNvi" />
               </node>
-              <node concept="liA8E" id="4eYijs7jjF_" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2OqwBi" id="4eYijs7jjFz" role="37wK5m">
-                  <node concept="1iwH7S" id="4eYijs7jjFB" role="2Oq$k0" />
-                  <node concept="1st3f0" id="4eYijs7jjFP" role="2OqNvi" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="4eYijs7jjFN" role="3cqZAp">
+            <node concept="1Wc70l" id="7WTijIAQjK$" role="3clFbG">
+              <node concept="3fqX7Q" id="7WTijIAQpuA" role="3uHU7w">
+                <node concept="2OqwBi" id="7WTijIAQpuC" role="3fr31v">
+                  <node concept="2OqwBi" id="7WTijIAQpuD" role="2Oq$k0">
+                    <node concept="37vLTw" id="7WTijIAQpuE" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7WTijIAQjxh" resolve="model" />
+                    </node>
+                    <node concept="2RRcyG" id="7WTijIAQpuF" role="2OqNvi">
+                      <ref role="2RRcyH" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                    </node>
+                  </node>
+                  <node concept="1v1jN8" id="7WTijIAQpuG" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4eYijs7jjFD" role="3uHU7B">
+                <node concept="Rm8GO" id="4eYijs7jjFH" role="2Oq$k0">
+                  <ref role="Rm8GQ" to="w1kc:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
+                  <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                </node>
+                <node concept="liA8E" id="4eYijs7jjF_" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                  <node concept="37vLTw" id="7WTijIAQjxl" role="37wK5m">
+                    <ref role="3cqZAo" node="7WTijIAQjxh" resolve="model" />
+                  </node>
                 </node>
               </node>
             </node>
