@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
@@ -293,7 +293,7 @@
       </node>
     </node>
     <node concept="3clFbW" id="6gLh390EkrL" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="38la9jYO012" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="38la9jYO014" role="1tU5fm">

@@ -16,9 +16,9 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -31597,7 +31597,7 @@
     <property role="TrG5h" value="InternalActionsUtils" />
     <property role="3GE5qa" value="Menu.MainMenu.ToolsActions" />
     <property role="1EXbeo" value="true" />
-    <property role="IEkAT" value="true" />
+    <property role="IEkAT" value="false" />
     <node concept="3clFbW" id="6rUiV25ZQI2" role="jymVt">
       <node concept="3Tm6S6" id="UiMTdytb_Y" role="1B3o_S" />
       <node concept="3clFbS" id="6rUiV25ZQI5" role="3clF47" />

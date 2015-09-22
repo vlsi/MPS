@@ -1338,7 +1338,7 @@
     </node>
     <node concept="2YIFZL" id="3h9a8EwPwth" role="jymVt">
       <property role="TrG5h" value="simpleRoleScope" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="5TYh2YDXLuM" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -14971,7 +14971,7 @@
       <node concept="3Tm6S6" id="13YBgBBS5XV" role="1B3o_S" />
     </node>
     <node concept="3clFbW" id="13YBgBBS5VT" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="_dGddVG9Ga" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -15514,7 +15514,7 @@
     </node>
     <node concept="2YIFZL" id="13YBgBBS6Uj" role="jymVt">
       <property role="TrG5h" value="forNamedElements" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="_dGddVGar6" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>

@@ -19,8 +19,8 @@
     <use id="4dd3c558-f0fc-4807-bade-5d6bcad6b3f1" name="testSpaceCompletion" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpei" ref="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" />
@@ -1381,7 +1381,7 @@
     <node concept="312cEu" id="hTDB6SE" role="LiRBU">
       <property role="TrG5h" value="Clazz" />
       <node concept="3clFbW" id="R6rVfiq9aa" role="jymVt">
-        <property role="IEkAT" value="true" />
+        <property role="IEkAT" value="false" />
         <node concept="3clFbS" id="R6rVfiq9ab" role="3clF47" />
         <node concept="3Tm1VV" id="R6rVfiq9ac" role="1B3o_S" />
         <node concept="3cqZAl" id="R6rVfiq9ad" role="3clF45" />
@@ -1391,6 +1391,14 @@
           <property role="p6zMq" value="3" />
           <property role="p6zMs" value="3" />
           <property role="LIFWd" value="Constant_uc5iyq_h0a" />
+        </node>
+        <node concept="P$JXv" id="43fjIDSzi8m" role="lGtFl">
+          <node concept="TZ5HI" id="43fjIDSzi8n" role="3nqlJM">
+            <node concept="TZ5HA" id="43fjIDSzi8o" role="3HnX3l" />
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="43fjIDSzi8p" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         </node>
       </node>
       <node concept="3Tm1VV" id="hTDB6SF" role="1B3o_S" />

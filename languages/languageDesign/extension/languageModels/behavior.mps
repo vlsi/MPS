@@ -213,7 +213,7 @@
     <ref role="13h7C2" to="v54s:3f064wGFUBm" resolve="ExtensionPointDeclaration" />
     <node concept="13i0hz" id="5Sg$D5FMgdu" role="13h7CS">
       <property role="TrG5h" value="getObjectClassifierType" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Sg$D5FMgdv" role="1B3o_S" />
       <node concept="3Tqbb2" id="5Sg$D5FMgec" role="3clF45">
         <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
