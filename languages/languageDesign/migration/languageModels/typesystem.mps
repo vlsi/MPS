@@ -15,6 +15,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -224,7 +225,7 @@
               <node concept="2JrnkZ" id="1IkLLL1qAj6" role="2Oq$k0">
                 <node concept="2OqwBi" id="1IkLLL1qAj7" role="2JrQYb">
                   <node concept="1YBJjd" id="1IkLLL1qAj8" role="2Oq$k0">
-                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
                   </node>
                   <node concept="I4A8Y" id="1IkLLL1qAj9" role="2OqNvi" />
                 </node>
@@ -240,7 +241,7 @@
         <node concept="2OqwBi" id="1IkLLL1qCPP" role="3clFbG">
           <node concept="3EllGN" id="1IkLLL1qC_Y" role="2Oq$k0">
             <node concept="1YBJjd" id="1IkLLL1qCBV" role="3ElVtu">
-              <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+              <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
             </node>
             <node concept="37vLTw" id="1IkLLL1qBSL" role="3ElQJh">
               <ref role="3cqZAo" node="1IkLLL1qAj3" resolve="errors" />
@@ -251,7 +252,7 @@
               <node concept="3clFbS" id="1IkLLL1qEkZ" role="1bW5cS">
                 <node concept="2MkqsV" id="1IkLLL1qEo8" role="3cqZAp">
                   <node concept="1YBJjd" id="1IkLLL1qGa3" role="2OEOjV">
-                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
                   </node>
                   <node concept="37vLTw" id="1IkLLL1qECt" role="2MkJ7o">
                     <ref role="3cqZAo" node="1IkLLL1qEl0" resolve="it" />
@@ -268,8 +269,8 @@
       </node>
     </node>
     <node concept="1YaCAy" id="2T7ZPM5bRZf" role="1YuTPh">
-      <property role="TrG5h" value="ms" />
-      <ref role="1YaFvo" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
+      <property role="TrG5h" value="iMigrationUnit" />
+      <ref role="1YaFvo" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
   </node>
   <node concept="Q5z_Y" id="2T7ZPM5dYT_">

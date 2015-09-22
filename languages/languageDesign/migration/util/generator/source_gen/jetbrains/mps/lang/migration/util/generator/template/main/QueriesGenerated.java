@@ -90,7 +90,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"));
   }
   public static Iterable<SNode> sourceNodesQuery_5168866961619033411(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "item"));
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"));
   }
   public static Iterable<SNode> sourceNodesQuery_5168866961619108657(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x2b3f57492c165c59L, "specialization"));
