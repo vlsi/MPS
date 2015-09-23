@@ -40,6 +40,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use .ancestors.contains() in smodel language
    */
   @Deprecated
   public static boolean isAncestor(SNode ancestor, SNode node) {
@@ -54,6 +55,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated there is no full equivalent to this, use SNode.getChildren or node/../.children operations if possible
    */
   @Deprecated
   public static List<SNode> getChildren(SNode node, boolean includeAttributes) {
@@ -67,6 +69,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use node/../.ancestors.where 
    */
   @Deprecated
   public static SNode findParent(SNode node, Condition<SNode> condition) {
@@ -81,6 +84,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated rewrite to SProperty, don't use strings
    */
   @Deprecated
   public static Map<String, String> getProperties(SNode node) {
@@ -93,6 +97,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    * 
+   * @deprecated rewrite to SContainmentLink, don't use by-name roles, use SNode methods 
    */
   @Deprecated
   public static Set<String> getChildRoles(SNode n) {
@@ -105,6 +110,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    * 
+   * @deprecated use SNode.getReferences
    */
   @Deprecated
   public static List<SReference> getReferences(SNode n) {
@@ -117,6 +123,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    * 
+   * @deprecated use SNode.getChildren
    */
   @Deprecated
   public static List<SNode> getChildren(SNode n) {
@@ -125,6 +132,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    * 
+   * @deprecated use either SNode.getReference.select(it->it.role) or SNode.getConcept.getReferenceLinks depending on what you want to get
    */
   @Deprecated
   public static Set<String> getReferenceRoles(SNode n) {
@@ -137,6 +145,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    * 
+   * @deprecated SNode.getParent!=null mostly (if done in "user" code which operates with nodes inside models)
    */
   @Deprecated
   public static boolean isRoot(SNode n) {
@@ -146,6 +155,7 @@ public class SNodeOperations {
    * todo rewrite the code via snode methods
    * @deprecated Use OpenAPI methods directly
    * 
+   * @deprecated use SNode.insertChildBefore/insertChildAfter
    */
   @Deprecated
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
@@ -172,6 +182,7 @@ public class SNodeOperations {
    * Insert a child *after* specified anchor, or to the head of children list if anchor is null
    * todo rewrite the code via snode methods
    * 
+   * @deprecated use SNode.insertChildBefore/insertChildAfter
    */
   @Deprecated
   public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
@@ -180,6 +191,7 @@ public class SNodeOperations {
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    * 
+   * @deprecated use SNode.getName, SNode.getModel or whatever info you really need. 
    */
   @Deprecated
   public static String getDebugText(SNode node) {
@@ -217,6 +229,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use either SNode.getChildren.select(it->it.role) or SNode.getConcept.getContainmentLinks depending on what you want to get
    */
   @Deprecated
   public static Set<SContainmentLink> getChildRoles(SNode n, boolean includeAttributeRoles) {
@@ -230,6 +243,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use node/../.child or SNode.getChildren
    */
   @Deprecated
   public static SNode getChild(SNode node, SContainmentLink role) {
@@ -241,6 +255,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated rewrite using SContainmentLink, don't use by-string roles
    */
   @Deprecated
   public static SNode getChild(SNode node, String role) {
@@ -253,6 +268,7 @@ public class SNodeOperations {
   /**
    * This will be replaced by getting resolve info from a reference in a context containing it
    * 
+   * @deprecated use SNodeUtil.getResolveInfo (note it does not return name in case of !isInstanceOf(IResolveInfo))
    */
   @Deprecated
   public static String getResolveInfo(SNode n) {
@@ -264,6 +280,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use node/../.copy or copy manually
    */
   @Deprecated
   public static void copyProperties(SNode from, final SNode to) {
@@ -273,6 +290,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use SNode.getConcept.getLanguage (+.getSourceModule?)
    */
   @Deprecated
   public static Language getLanguage(SNode node) {
@@ -284,6 +302,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated don't use user objects, store them separately
    */
   @Deprecated
   public static void copyUserObjects(SNode from, final SNode to) {
@@ -293,6 +312,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use SNodeReference.getModelReference().resolve() instead.
    */
   @Deprecated
   public static SModel getModelFromNodeReference(SNodeReference ref) {
@@ -304,6 +324,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated not supposed to be used not in MPS core. Use ref.getTargetNode
    */
   @Deprecated
   public static SNode getTargetNodeSilently(SReference ref) {
@@ -319,6 +340,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated inline
    */
   @Deprecated
   public static String getModelStereotype(SModel model) {
@@ -326,6 +348,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated inline
    */
   @Deprecated
   public static String getModelLongName(SModel model) {
@@ -335,6 +358,7 @@ public class SNodeOperations {
    * Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage.
    * Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway.
    * 
+   * @deprecated If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -344,6 +368,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use model.getRepository!=null
    */
   @Deprecated
   public static boolean isModelDisposed(SModel model) {
@@ -351,6 +376,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated inline
    */
   @Deprecated
   public static int nodesCount(SModel model) {
@@ -358,6 +384,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated use model.getRepository!=null
    */
   @Deprecated
   public static boolean isRegistered(SModel model) {
@@ -365,6 +392,7 @@ public class SNodeOperations {
   }
   /**
    * 
+   * @deprecated not supposed to be used outside of MPS core, inline if you use it
    */
   @Deprecated
   public static boolean isGeneratable(SModel model) {

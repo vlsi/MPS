@@ -25,6 +25,7 @@ public class ModelsScope extends Scope {
   private final Set<SModel> myModels;
   /**
    * 
+   * @deprecated use concept/../ variant, remove after 3.3
    */
   @Deprecated
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, String targetConcept) {

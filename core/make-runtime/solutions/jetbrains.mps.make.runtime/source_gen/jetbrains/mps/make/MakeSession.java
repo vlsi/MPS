@@ -44,6 +44,7 @@ public class MakeSession {
   }
   /**
    * 
+   * @deprecated according to Fedor, obsolete functionality. There are usecases when we can benefit from sticky make session and its explicit shutdown, perhaps shall resurrect.
    */
   @Deprecated
   @ToRemove(version = 3.2)

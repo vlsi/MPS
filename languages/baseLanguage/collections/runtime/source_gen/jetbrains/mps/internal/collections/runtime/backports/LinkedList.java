@@ -8,6 +8,7 @@ import java.util.ListIterator;
 
 /**
  * 
+ * @deprecated use {@link java.util.LinkedList } instead
  */
 @Deprecated
 public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, Serializable {

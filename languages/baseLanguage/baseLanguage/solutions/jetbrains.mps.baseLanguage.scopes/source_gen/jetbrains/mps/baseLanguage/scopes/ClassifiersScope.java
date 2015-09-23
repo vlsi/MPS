@@ -19,6 +19,7 @@ public class ClassifiersScope extends FilteringScope {
   private SModel myModel;
   /**
    * 
+   * @deprecated use concept/../ variant, remove after 3.3
    */
   @Deprecated
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
@@ -35,6 +36,7 @@ public class ClassifiersScope extends FilteringScope {
   }
   /**
    * 
+   * @deprecated use concept/../ variant, remove after 3.3
    */
   @Deprecated
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName) {

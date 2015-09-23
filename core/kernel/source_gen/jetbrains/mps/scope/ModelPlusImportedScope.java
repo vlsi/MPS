@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelOperations;
 public class ModelPlusImportedScope extends ModelsScope {
   /**
    * 
+   * @deprecated use concept/../ variant, remove after 3.3
    */
   @Deprecated
   public ModelPlusImportedScope(SModel model, boolean rootsOnly, String targetConcept) {

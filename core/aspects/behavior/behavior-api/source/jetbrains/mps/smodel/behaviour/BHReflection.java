@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Behavior Reflcetion Facade.
+ * Behavior Reflection Facade.
  * API for the generated behavior code. Intended to replace {@link jetbrains.mps.smodel.behaviour.BehaviorReflection} calls
  * The API is null-safe
  */

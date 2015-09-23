@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 /**
  * 
+ * @deprecated use EnumSPropertySubstituteInfo
  */
 @Deprecated
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {

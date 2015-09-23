@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * 
+ * @deprecated use CellActionDeleteSPropertyOrNode
  */
 @Deprecated
 public class CellAction_DeletePropertyOrNode extends AbstractCellAction {

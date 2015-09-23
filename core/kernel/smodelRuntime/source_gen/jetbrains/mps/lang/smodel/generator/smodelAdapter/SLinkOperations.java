@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * 
+ * @deprecated 
  */
 @Deprecated
 public class SLinkOperations {

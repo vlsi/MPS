@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -79,6 +79,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   /**
    * 
+   * @deprecated use {@link jetbrains.mps.project.structure.ProjectStructureModule#getInstance(SRepository) } instead
    */
   @Deprecated
   @ToRemove(version = 3.3)

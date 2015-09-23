@@ -19,6 +19,7 @@ public interface MigrationScript {
 
   /**
    * 
+   * @deprecated use setDataCollector+execute methods. This was deprecated before 3.2, can be removed after 3.2. Left for compatibility in projects that were already migrated 
    */
   @Nullable
   @Deprecated

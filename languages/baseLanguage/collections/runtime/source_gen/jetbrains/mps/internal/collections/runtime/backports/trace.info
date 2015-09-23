@@ -64,109 +64,109 @@
   </root>
   <root nodeRef="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)/6543581031674032086">
     <file name="LinkedList.java">
-      <node id="6543581031674032118" at="14,0,15,0" concept="7" trace="serialVersionUID" />
-      <node id="6543581031674032132" at="19,43,20,70" concept="6" />
-      <node id="6543581031674032144" at="23,34,24,16" concept="1" />
-      <node id="6543581031674032147" at="24,16,25,16" concept="6" />
-      <node id="6543581031674032155" at="28,33,29,15" concept="1" />
-      <node id="6543581031674032158" at="29,15,30,16" concept="6" />
-      <node id="6543581031674032167" at="34,20,35,18" concept="6" />
-      <node id="6543581031674032169" at="36,5,37,22" concept="6" />
-      <node id="6543581031674032178" at="41,20,42,18" concept="6" />
-      <node id="6543581031674032180" at="43,5,44,21" concept="6" />
-      <node id="6543581031674032186" at="47,24,48,22" concept="6" />
-      <node id="6543581031674032192" at="51,23,52,21" concept="6" />
-      <node id="6543581031674032198" at="55,18,56,25" concept="6" />
-      <node id="6543581031674032206" at="59,25,60,16" concept="1" />
-      <node id="6543581031674032215" at="63,50,64,21" concept="6" />
-      <node id="6543581031674032240" at="69,44,70,20" concept="1" />
-      <node id="6543581031674032244" at="70,20,71,20" concept="6" />
-      <node id="6543581031674032246" at="73,5,74,17" concept="6" />
-      <node id="6543581031674032256" at="76,49,77,46" concept="6" />
-      <node id="6543581031674032099" at="80,0,81,0" concept="2" trace="listIterator" />
-      <node id="6543581031674032269" at="81,61,82,39" concept="1" />
-      <node id="6543581031674032276" at="85,30,86,40" concept="6" />
-      <node id="6543581031674032281" at="89,21,90,37" concept="6" />
-      <node id="6543581031674032286" at="93,26,94,28" concept="1" />
-      <node id="6543581031674032123" at="15,0,18,0" concept="0" trace="LinkedList#()V" />
-      <node id="6543581031674032164" at="33,24,36,5" concept="4" />
-      <node id="6543581031674032175" at="40,23,43,5" concept="4" />
-      <node id="6543581031674032248" at="76,0,79,0" concept="8" trace="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="6543581031674032103" at="81,0,84,0" concept="0" trace="DescendingIterator#(Ljava/util/ListIterator;)V" />
-      <node id="6543581031674032127" at="18,0,22,0" concept="5" trace="descendingIterator#()Ljava/util/Iterator;" />
-      <node id="6543581031674032182" at="46,0,50,0" concept="5" trace="pollFirst#()null" />
-      <node id="6543581031674032188" at="50,0,54,0" concept="5" trace="pollLast#()null" />
-      <node id="6543581031674032194" at="54,0,58,0" concept="5" trace="pop#()null" />
-      <node id="6543581031674032200" at="58,0,62,0" concept="5" trace="push#(null)V" />
-      <node id="6543581031674032209" at="62,0,66,0" concept="5" trace="removeFirstOccurrence#(Ljava/lang/Object;)Z" />
-      <node id="6543581031674032233" at="68,69,72,7" concept="4" />
-      <node id="6543581031674032109" at="84,0,88,0" concept="5" trace="hasNext#()Z" />
-      <node id="6543581031674032112" at="88,0,92,0" concept="5" trace="next#()null" />
-      <node id="6543581031674032115" at="92,0,96,0" concept="5" trace="remove#()V" />
-      <node id="6543581031674032138" at="22,0,27,0" concept="5" trace="offerFirst#(null)Z" />
-      <node id="6543581031674032149" at="27,0,32,0" concept="5" trace="offerLast#(null)Z" />
-      <node id="6543581031674032224" at="67,49,73,5" concept="3" />
-      <node id="6543581031674032160" at="32,0,39,0" concept="5" trace="peekFirst#()null" />
-      <node id="6543581031674032171" at="39,0,46,0" concept="5" trace="peekLast#()null" />
-      <node id="6543581031674032218" at="66,0,76,0" concept="5" trace="removeLastOccurrence#(Ljava/lang/Object;)Z" />
-      <scope id="6543581031674032126" at="16,23,16,23" />
-      <scope id="6543581031674032131" at="19,43,20,70" />
-      <scope id="6543581031674032166" at="34,20,35,18" />
-      <scope id="6543581031674032177" at="41,20,42,18" />
-      <scope id="6543581031674032185" at="47,24,48,22" />
-      <scope id="6543581031674032191" at="51,23,52,21" />
-      <scope id="6543581031674032197" at="55,18,56,25" />
-      <scope id="6543581031674032205" at="59,25,60,16" />
-      <scope id="6543581031674032214" at="63,50,64,21" />
-      <scope id="6543581031674032255" at="76,49,77,46" />
-      <scope id="6543581031674032268" at="81,61,82,39" />
-      <scope id="6543581031674032275" at="85,30,86,40" />
-      <scope id="6543581031674032280" at="89,21,90,37" />
-      <scope id="6543581031674032285" at="93,26,94,28" />
-      <scope id="6543581031674032143" at="23,34,25,16" />
-      <scope id="6543581031674032154" at="28,33,30,16" />
-      <scope id="6543581031674032239" at="69,44,71,20" />
-      <scope id="6543581031674032123" at="15,0,18,0" />
-      <scope id="6543581031674032248" at="76,0,79,0">
+      <node id="6543581031674032118" at="15,0,16,0" concept="7" trace="serialVersionUID" />
+      <node id="6543581031674032132" at="20,43,21,70" concept="6" />
+      <node id="6543581031674032144" at="24,34,25,16" concept="1" />
+      <node id="6543581031674032147" at="25,16,26,16" concept="6" />
+      <node id="6543581031674032155" at="29,33,30,15" concept="1" />
+      <node id="6543581031674032158" at="30,15,31,16" concept="6" />
+      <node id="6543581031674032167" at="35,20,36,18" concept="6" />
+      <node id="6543581031674032169" at="37,5,38,22" concept="6" />
+      <node id="6543581031674032178" at="42,20,43,18" concept="6" />
+      <node id="6543581031674032180" at="44,5,45,21" concept="6" />
+      <node id="6543581031674032186" at="48,24,49,22" concept="6" />
+      <node id="6543581031674032192" at="52,23,53,21" concept="6" />
+      <node id="6543581031674032198" at="56,18,57,25" concept="6" />
+      <node id="6543581031674032206" at="60,25,61,16" concept="1" />
+      <node id="6543581031674032215" at="64,50,65,21" concept="6" />
+      <node id="6543581031674032240" at="70,44,71,20" concept="1" />
+      <node id="6543581031674032244" at="71,20,72,20" concept="6" />
+      <node id="6543581031674032246" at="74,5,75,17" concept="6" />
+      <node id="6543581031674032256" at="77,49,78,46" concept="6" />
+      <node id="6543581031674032099" at="81,0,82,0" concept="2" trace="listIterator" />
+      <node id="6543581031674032269" at="82,61,83,39" concept="1" />
+      <node id="6543581031674032276" at="86,30,87,40" concept="6" />
+      <node id="6543581031674032281" at="90,21,91,37" concept="6" />
+      <node id="6543581031674032286" at="94,26,95,28" concept="1" />
+      <node id="6543581031674032123" at="16,0,19,0" concept="0" trace="LinkedList#()V" />
+      <node id="6543581031674032164" at="34,24,37,5" concept="4" />
+      <node id="6543581031674032175" at="41,23,44,5" concept="4" />
+      <node id="6543581031674032248" at="77,0,80,0" concept="8" trace="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6543581031674032103" at="82,0,85,0" concept="0" trace="DescendingIterator#(Ljava/util/ListIterator;)V" />
+      <node id="6543581031674032127" at="19,0,23,0" concept="5" trace="descendingIterator#()Ljava/util/Iterator;" />
+      <node id="6543581031674032182" at="47,0,51,0" concept="5" trace="pollFirst#()null" />
+      <node id="6543581031674032188" at="51,0,55,0" concept="5" trace="pollLast#()null" />
+      <node id="6543581031674032194" at="55,0,59,0" concept="5" trace="pop#()null" />
+      <node id="6543581031674032200" at="59,0,63,0" concept="5" trace="push#(null)V" />
+      <node id="6543581031674032209" at="63,0,67,0" concept="5" trace="removeFirstOccurrence#(Ljava/lang/Object;)Z" />
+      <node id="6543581031674032233" at="69,69,73,7" concept="4" />
+      <node id="6543581031674032109" at="85,0,89,0" concept="5" trace="hasNext#()Z" />
+      <node id="6543581031674032112" at="89,0,93,0" concept="5" trace="next#()null" />
+      <node id="6543581031674032115" at="93,0,97,0" concept="5" trace="remove#()V" />
+      <node id="6543581031674032138" at="23,0,28,0" concept="5" trace="offerFirst#(null)Z" />
+      <node id="6543581031674032149" at="28,0,33,0" concept="5" trace="offerLast#(null)Z" />
+      <node id="6543581031674032224" at="68,49,74,5" concept="3" />
+      <node id="6543581031674032160" at="33,0,40,0" concept="5" trace="peekFirst#()null" />
+      <node id="6543581031674032171" at="40,0,47,0" concept="5" trace="peekLast#()null" />
+      <node id="6543581031674032218" at="67,0,77,0" concept="5" trace="removeLastOccurrence#(Ljava/lang/Object;)Z" />
+      <scope id="6543581031674032126" at="17,23,17,23" />
+      <scope id="6543581031674032131" at="20,43,21,70" />
+      <scope id="6543581031674032166" at="35,20,36,18" />
+      <scope id="6543581031674032177" at="42,20,43,18" />
+      <scope id="6543581031674032185" at="48,24,49,22" />
+      <scope id="6543581031674032191" at="52,23,53,21" />
+      <scope id="6543581031674032197" at="56,18,57,25" />
+      <scope id="6543581031674032205" at="60,25,61,16" />
+      <scope id="6543581031674032214" at="64,50,65,21" />
+      <scope id="6543581031674032255" at="77,49,78,46" />
+      <scope id="6543581031674032268" at="82,61,83,39" />
+      <scope id="6543581031674032275" at="86,30,87,40" />
+      <scope id="6543581031674032280" at="90,21,91,37" />
+      <scope id="6543581031674032285" at="94,26,95,28" />
+      <scope id="6543581031674032143" at="24,34,26,16" />
+      <scope id="6543581031674032154" at="29,33,31,16" />
+      <scope id="6543581031674032239" at="70,44,72,20" />
+      <scope id="6543581031674032123" at="16,0,19,0" />
+      <scope id="6543581031674032248" at="77,0,80,0">
         <var name="a" id="6543581031674032251" />
         <var name="b" id="6543581031674032253" />
       </scope>
-      <scope id="6543581031674032103" at="81,0,84,0">
+      <scope id="6543581031674032103" at="82,0,85,0">
         <var name="listIterator" id="6543581031674032106" />
       </scope>
-      <scope id="6543581031674032127" at="18,0,22,0" />
-      <scope id="6543581031674032163" at="33,24,37,22" />
-      <scope id="6543581031674032174" at="40,23,44,21" />
-      <scope id="6543581031674032182" at="46,0,50,0" />
-      <scope id="6543581031674032188" at="50,0,54,0" />
-      <scope id="6543581031674032194" at="54,0,58,0" />
-      <scope id="6543581031674032200" at="58,0,62,0">
+      <scope id="6543581031674032127" at="19,0,23,0" />
+      <scope id="6543581031674032163" at="34,24,38,22" />
+      <scope id="6543581031674032174" at="41,23,45,21" />
+      <scope id="6543581031674032182" at="47,0,51,0" />
+      <scope id="6543581031674032188" at="51,0,55,0" />
+      <scope id="6543581031674032194" at="55,0,59,0" />
+      <scope id="6543581031674032200" at="59,0,63,0">
         <var name="t" id="6543581031674032203" />
       </scope>
-      <scope id="6543581031674032209" at="62,0,66,0">
+      <scope id="6543581031674032209" at="63,0,67,0">
         <var name="o" id="6543581031674032212" />
       </scope>
-      <scope id="6543581031674032232" at="68,69,72,7" />
-      <scope id="6543581031674032109" at="84,0,88,0" />
-      <scope id="6543581031674032112" at="88,0,92,0" />
-      <scope id="6543581031674032115" at="92,0,96,0" />
-      <scope id="6543581031674032138" at="22,0,27,0">
+      <scope id="6543581031674032232" at="69,69,73,7" />
+      <scope id="6543581031674032109" at="85,0,89,0" />
+      <scope id="6543581031674032112" at="89,0,93,0" />
+      <scope id="6543581031674032115" at="93,0,97,0" />
+      <scope id="6543581031674032138" at="23,0,28,0">
         <var name="t" id="6543581031674032141" />
       </scope>
-      <scope id="6543581031674032149" at="27,0,32,0">
+      <scope id="6543581031674032149" at="28,0,33,0">
         <var name="t" id="6543581031674032152" />
       </scope>
-      <scope id="6543581031674032224" at="67,49,73,5">
+      <scope id="6543581031674032224" at="68,49,74,5">
         <var name="li" id="6543581031674032228" />
       </scope>
-      <scope id="6543581031674032160" at="32,0,39,0" />
-      <scope id="6543581031674032171" at="39,0,46,0" />
-      <scope id="6543581031674032223" at="67,49,74,17" />
-      <scope id="6543581031674032218" at="66,0,76,0">
+      <scope id="6543581031674032160" at="33,0,40,0" />
+      <scope id="6543581031674032171" at="40,0,47,0" />
+      <scope id="6543581031674032223" at="68,49,75,17" />
+      <scope id="6543581031674032218" at="67,0,77,0">
         <var name="o" id="6543581031674032221" />
       </scope>
-      <unit id="6543581031674032094" at="79,0,97,0" name="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
-      <unit id="6543581031674032086" at="12,0,98,0" name="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+      <unit id="6543581031674032094" at="80,0,98,0" name="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
+      <unit id="6543581031674032086" at="13,0,99,0" name="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     </file>
   </root>
 </debug-info>

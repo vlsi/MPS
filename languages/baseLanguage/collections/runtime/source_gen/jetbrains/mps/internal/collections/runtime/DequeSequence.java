@@ -149,6 +149,7 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
+   * @deprecated 
    * @return compatibility collection
    */
   @Override
@@ -163,6 +164,7 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
+   * @deprecated regenerate to get rid of this method The method will be removed after 3.3
    */
   @Deprecated
   public static <U> IDequeSequence<U> fromDeque(Deque<U> deque) {
@@ -207,6 +209,7 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
+   * @deprecated regenerate to get rid of this method The method will be removed after 3.3
    */
   @Deprecated
   public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
@@ -250,6 +253,7 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
   }
   /**
    * 
+   * @deprecated regenerate to get rid of this method. The method will be removed after 3.3
    */
   @Deprecated
   public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
