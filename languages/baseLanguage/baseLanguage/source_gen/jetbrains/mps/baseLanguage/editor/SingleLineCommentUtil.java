@@ -30,9 +30,8 @@ public class SingleLineCommentUtil {
     int indexInParent = SNodeOperations.getIndexInParent(node);
     if ((rightPart != null && rightPart.length() > 0) || ListSequence.fromList(SLinkOperations.getChildren(firstComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).count() > indexInParent + 1) {
       SNode secondComment = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")), null);
+      SNodeOperations.insertNextSiblingChild(firstComment, secondComment);
       if ((rightPart != null && rightPart.length() > 0)) {
-        SNodeOperations.insertNextSiblingChild(firstComment, secondComment);
-
         SNode secondTextPart = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart")), null);
         ListSequence.fromList(SLinkOperations.getChildren(secondComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).addElement(secondTextPart);
 
