@@ -4,16 +4,10 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot contentPath="${mps_home}/plugins/modelchecker" type="java_classes">
-      <sourceRoot location="classes" />
-    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.ide.modelchecker" type="ideaPlugin" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/modelchecker/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">a381759b-acec-4e2e-8745-7bf905520fca(jetbrains.mps.ide.modelchecker.platform)</dependency>

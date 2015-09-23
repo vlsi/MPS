@@ -104,7 +104,9 @@ public class VCSPersistenceSupport {
     // places where this incompatibility with older version introduced new bugs 
     // Actually, these places must be fixed (see e.g. MPS-22503). Still, we  
     // leave error here till 3.4 or later to minimize the number of real issues [MM] 
-    LOG.error("unsupported version requested " + version, new Throwable());
+    if (version < 4) {
+      LOG.error("unsupported version requested " + version, new Throwable());
+    }
 
     if (version == 4) {
       return new ModelPersistence4();

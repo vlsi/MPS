@@ -27,9 +27,11 @@ import javax.swing.Icon;
  */
 public interface NodeTransformer {
   /**
-   * After this transformer was created and before it is executed, models can change.
-   * This method is guaranteed to be invoked before execute() method.
-   * If it returns false, transformer is not executed.
+   * After this transformer was created and before it is used, models can already change.
+   * This method is guaranteed to be invoked right before other methods as final check guard.
+   * If it returns false, transformer is no more valid and other methods are not called.
+   * The only exception from this rule is when the method was invoked in the same read-action
+   * where it was created by a factory (this means, factories should not produce "expired" transformers)
    */
   boolean isExpired();
 
@@ -39,7 +41,7 @@ public interface NodeTransformer {
   void execute();
 
   /**
-   * Returns user-readable description of this transformation
+   * Returns user-readable description of this transformation.
    */
   String getDescription();
 
