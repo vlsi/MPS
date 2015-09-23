@@ -14,7 +14,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.search.GlobalSearchScope;
 
@@ -59,7 +60,7 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
   }
 
   private PsiClass findPsiClass(SNode claz, Project project) {
-    String classFqName = BehaviorReflection.invokeVirtual(String.class, claz, "virtual_getFqName_1213877404258", new Object[]{});
+    String classFqName = ((String) BHReflection.invoke(claz, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     return JavaPsiFacade.getInstance(project).findClass(classFqName, GlobalSearchScope.allScope(project));
   }
 }

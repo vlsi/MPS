@@ -13,70 +13,70 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/1264383190525067829">
     <file name="ClassStubPsiMapper.java">
-      <node id="1264383190525598801" at="22,52,23,45" concept="3" />
-      <node id="1264383190525623187" at="23,45,24,57" concept="8" />
-      <node id="1264383190525624593" at="27,69,28,45" concept="3" />
-      <node id="1264383190525624597" at="28,45,29,0" concept="10" />
-      <node id="1855001631467839931" at="29,0,30,27" concept="7" />
-      <node id="1264383190525626047" at="31,65,32,18" concept="8" />
-      <node id="1264383190525626059" at="33,5,34,0" concept="10" />
-      <node id="1855001631468001314" at="34,0,35,89" concept="9" />
-      <node id="1855001631468001305" at="35,89,36,0" concept="10" />
-      <node id="1855001631467824231" at="37,185,38,203" concept="8" />
-      <node id="1855001631467987025" at="38,203,39,0" concept="10" />
-      <node id="1855001631467386594" at="40,197,41,408" concept="7" />
-      <node id="1855001631467862667" at="42,29,43,20" concept="8" />
-      <node id="1855001631467859981" at="44,7,45,47" concept="7" />
-      <node id="1855001631467898086" at="45,47,46,345" concept="7" />
-      <node id="1855001631467969365" at="48,51,49,23" concept="8" />
-      <node id="1855001631467987026" at="51,7,52,0" concept="10" />
-      <node id="1855001631467972401" at="53,202,54,101" concept="9" />
-      <node id="1855001631467972412" at="54,101,55,49" concept="9" />
-      <node id="2831825197766875590" at="56,5,57,0" concept="10" />
-      <node id="1855001631467833113" at="57,0,58,16" concept="8" />
-      <node id="1264383190525724194" at="61,62,62,129" concept="7" />
-      <node id="1264383190525740029" at="62,129,63,106" concept="8" />
-      <node id="1264383190525624615" at="30,27,33,5" concept="5" />
-      <node id="1855001631467859996" at="41,408,44,7" concept="5" />
-      <node id="1855001631467898072" at="47,37,50,9" concept="5" />
-      <node id="1264383190525598337" at="22,0,26,0" concept="6" trace="hasCorrespondingPsi#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="1855001631467386604" at="61,0,65,0" concept="6" trace="findPsiClass#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiClass;" />
-      <node id="1855001631467898047" at="46,345,51,7" concept="4" />
-      <node id="1855001631467274399" at="36,0,56,5" concept="5" />
-      <node id="1264383190525598346" at="27,0,60,0" concept="6" trace="getPsiElement#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiElement;" />
-      <scope id="1264383190525624618" at="31,65,32,18" />
-      <scope id="1855001631467859999" at="42,29,43,20" />
-      <scope id="1855001631467898073" at="48,51,49,23" />
-      <scope id="1264383190525598343" at="22,52,24,57" />
-      <scope id="1855001631467274402" at="37,185,39,0" />
-      <scope id="1855001631467969400" at="53,202,55,49" />
-      <scope id="1855001631467386607" at="61,62,63,106">
+      <node id="1264383190525598801" at="23,52,24,45" concept="3" />
+      <node id="1264383190525623187" at="24,45,25,57" concept="8" />
+      <node id="1264383190525624593" at="28,69,29,45" concept="3" />
+      <node id="1264383190525624597" at="29,45,30,0" concept="10" />
+      <node id="1855001631467839931" at="30,0,31,27" concept="7" />
+      <node id="1264383190525626047" at="32,65,33,18" concept="8" />
+      <node id="1264383190525626059" at="34,5,35,0" concept="10" />
+      <node id="1855001631468001314" at="35,0,36,89" concept="9" />
+      <node id="1855001631468001305" at="36,89,37,0" concept="10" />
+      <node id="1855001631467824231" at="38,185,39,203" concept="8" />
+      <node id="1855001631467987025" at="39,203,40,0" concept="10" />
+      <node id="1855001631467386594" at="41,197,42,408" concept="7" />
+      <node id="1855001631467862667" at="43,29,44,20" concept="8" />
+      <node id="1855001631467859981" at="45,7,46,47" concept="7" />
+      <node id="1855001631467898086" at="46,47,47,345" concept="7" />
+      <node id="1855001631467969365" at="49,51,50,23" concept="8" />
+      <node id="1855001631467987026" at="52,7,53,0" concept="10" />
+      <node id="1855001631467972401" at="54,202,55,101" concept="9" />
+      <node id="1855001631467972412" at="55,101,56,49" concept="9" />
+      <node id="2831825197766875590" at="57,5,58,0" concept="10" />
+      <node id="1855001631467833113" at="58,0,59,16" concept="8" />
+      <node id="1264383190525724194" at="62,62,63,117" concept="7" />
+      <node id="1264383190525740029" at="63,117,64,106" concept="8" />
+      <node id="1264383190525624615" at="31,27,34,5" concept="5" />
+      <node id="1855001631467859996" at="42,408,45,7" concept="5" />
+      <node id="1855001631467898072" at="48,37,51,9" concept="5" />
+      <node id="1264383190525598337" at="23,0,27,0" concept="6" trace="hasCorrespondingPsi#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="1855001631467386604" at="62,0,66,0" concept="6" trace="findPsiClass#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiClass;" />
+      <node id="1855001631467898047" at="47,345,52,7" concept="4" />
+      <node id="1855001631467274399" at="37,0,57,5" concept="5" />
+      <node id="1264383190525598346" at="28,0,61,0" concept="6" trace="getPsiElement#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiElement;" />
+      <scope id="1264383190525624618" at="32,65,33,18" />
+      <scope id="1855001631467859999" at="43,29,44,20" />
+      <scope id="1855001631467898073" at="49,51,50,23" />
+      <scope id="1264383190525598343" at="23,52,25,57" />
+      <scope id="1855001631467274402" at="38,185,40,0" />
+      <scope id="1855001631467969400" at="54,202,56,49" />
+      <scope id="1855001631467386607" at="62,62,64,106">
         <var name="classFqName" id="1264383190525724197" />
       </scope>
-      <scope id="1855001631467898053" at="47,37,50,9" />
-      <scope id="1264383190525598337" at="22,0,26,0">
+      <scope id="1855001631467898053" at="48,37,51,9" />
+      <scope id="1264383190525598337" at="23,0,27,0">
         <var name="model" id="1264383190525598340" />
       </scope>
-      <scope id="1855001631467386604" at="61,0,65,0">
+      <scope id="1855001631467386604" at="62,0,66,0">
         <var name="claz" id="1855001631467386609" />
         <var name="project" id="1855001631467408535" />
       </scope>
-      <scope id="1855001631467898047" at="46,345,51,7">
+      <scope id="1855001631467898047" at="47,345,52,7">
         <var name="field" id="1855001631467898049" />
       </scope>
-      <scope id="1855001631467382608" at="40,197,52,0">
+      <scope id="1855001631467382608" at="41,197,53,0">
         <var name="expectedName" id="1855001631467898089" />
         <var name="fields" id="1855001631467859982" />
         <var name="psiClass" id="1855001631467386595" />
       </scope>
-      <scope id="1264383190525598354" at="27,69,58,16">
+      <scope id="1264383190525598354" at="28,69,59,16">
         <var name="node" id="1855001631467839934" />
       </scope>
-      <scope id="1264383190525598346" at="27,0,60,0">
+      <scope id="1264383190525598346" at="28,0,61,0">
         <var name="nodeParam" id="1264383190525598349" />
         <var name="project" id="1264383190525598351" />
       </scope>
-      <unit id="1264383190525067829" at="21,0,66,0" name="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper" />
+      <unit id="1264383190525067829" at="22,0,67,0" name="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper" />
     </file>
   </root>
   <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/2601455755478036261">
