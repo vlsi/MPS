@@ -162,7 +162,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="17QB3L" id="6pZ_jf9QLm2" role="1tU5fm" />
       <node concept="Xl_RD" id="6pZ_jf9QLm_" role="33vP2m">
-        <property role="Xl_RC" value="_BehaviorDescriptor" />
+        <property role="Xl_RC" value="__BehaviorDescriptor" />
       </node>
       <node concept="3Tm1VV" id="1YPFSpKnL_G" role="1B3o_S" />
     </node>

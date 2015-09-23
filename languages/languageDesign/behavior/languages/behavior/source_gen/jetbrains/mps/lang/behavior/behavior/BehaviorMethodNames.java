@@ -6,14 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-/**
- * 
- * 
- * @deprecated obsolete api
- */
-@Deprecated
 public class BehaviorMethodNames {
-  @Deprecated
+  public static String BEHAVIOR_DESCRIPTOR_SUFFIX = "__BehaviorDescriptor";
+
   private BehaviorMethodNames() {
   }
 

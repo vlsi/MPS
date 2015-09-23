@@ -167,7 +167,7 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"), baseConcept);
   }
   private static String getBehaviorFqName_id66HNO1XTVFW(@NotNull SNode __thisNode__) {
-    return NameUtil.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_BehaviorDescriptor";
+    return NameUtil.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + BehaviorMethodNames.BEHAVIOR_DESCRIPTOR_SUFFIX;
   }
 
   /*package*/ ConceptBehavior_BehaviorDescriptor() {
