@@ -59,6 +59,9 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
   @NotNull
   protected Project makeOnFirstTimeOpened(@NotNull Project project) {
     MPSCompilationResult result = makeAllInCreatedEnvironment(project);
+    if (!(result.isOk())) {
+      throw new IllegalStateException("Cannot proceed with compilation errors");
+    }
     try {
       Set<SModule> changedModules = result.getChangedModules();
       if (result.isReloadingNeeded()) {

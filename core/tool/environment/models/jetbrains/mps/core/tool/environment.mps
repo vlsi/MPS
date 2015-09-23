@@ -4763,6 +4763,30 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="6TXAd2x_b26" role="3cqZAp">
+          <node concept="3clFbS" id="6TXAd2x_b28" role="3clFbx">
+            <node concept="YS8fn" id="6TXAd2x_bPU" role="3cqZAp">
+              <node concept="2ShNRf" id="6TXAd2x_bRI" role="YScLw">
+                <node concept="1pGfFk" id="6TXAd2x_hQN" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="6TXAd2x_hS$" role="37wK5m">
+                    <property role="Xl_RC" value="Cannot proceed with compilation errors" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6TXAd2x_bl2" role="3clFbw">
+            <node concept="2OqwBi" id="6TXAd2x_bl4" role="3fr31v">
+              <node concept="37vLTw" id="6TXAd2x_bl5" role="2Oq$k0">
+                <ref role="3cqZAo" node="3IZXeSR$wwc" resolve="result" />
+              </node>
+              <node concept="liA8E" id="6TXAd2x_bl6" role="2OqNvi">
+                <ref role="37wK5l" to="vqh0:~MPSCompilationResult.isOk():boolean" resolve="isOk" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="SfApY" id="6jVPebMM_iD" role="3cqZAp">
           <node concept="3clFbS" id="6jVPebMM_iE" role="SfCbr">
             <node concept="3cpWs8" id="6rYSYZkPH2s" role="3cqZAp">
