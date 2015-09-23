@@ -6,8 +6,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -259,12 +259,16 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
+      <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
   <node concept="13h7C7" id="hEwIMii">
@@ -1944,29 +1948,24 @@
       <ref role="13i0hy" node="2WmWrdnSpX7" resolve="suppress" />
       <node concept="3Tm1VV" id="7hmFG5jLeUe" role="1B3o_S" />
       <node concept="3clFbS" id="7hmFG5jLeUl" role="3clF47">
-        <node concept="3clFbJ" id="7hmFG5jLfkS" role="3cqZAp">
-          <node concept="3clFbS" id="7hmFG5jLfkT" role="3clFbx">
-            <node concept="3cpWs6" id="7hmFG5jLfD3" role="3cqZAp">
-              <node concept="3clFbT" id="7hmFG5jLfD_" role="3cqZAk">
-                <property role="3clFbU" value="true" />
+        <node concept="3clFbF" id="6WWPJLIBOI5" role="3cqZAp">
+          <node concept="2OqwBi" id="6WWPJLIBM1Y" role="3clFbG">
+            <node concept="2OqwBi" id="6WWPJLIBLmc" role="2Oq$k0">
+              <node concept="37vLTw" id="7hmFG5jLfl4" role="2Oq$k0">
+                <ref role="3cqZAo" node="7hmFG5jLeUm" resolve="child" />
+              </node>
+              <node concept="z$bX8" id="6WWPJLIBLqA" role="2OqNvi">
+                <node concept="1xIGOp" id="6WWPJLIBOyI" role="1xVPHs" />
               </node>
             </node>
-          </node>
-          <node concept="3clFbC" id="7hmFG5jLfm3" role="3clFbw">
-            <node concept="2OqwBi" id="7hmFG5jLfpR" role="3uHU7w">
-              <node concept="13iPFW" id="7hmFG5jLfmk" role="2Oq$k0" />
-              <node concept="3TrEf2" id="7hmFG5jLfBC" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+            <node concept="3JPx81" id="6WWPJLIBNtB" role="2OqNvi">
+              <node concept="2OqwBi" id="7hmFG5jLfpR" role="25WWJ7">
+                <node concept="13iPFW" id="7hmFG5jLfmk" role="2Oq$k0" />
+                <node concept="3TrEf2" id="7hmFG5jLfBC" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+                </node>
               </node>
             </node>
-            <node concept="37vLTw" id="7hmFG5jLfl4" role="3uHU7B">
-              <ref role="3cqZAo" node="7hmFG5jLeUm" resolve="child" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7hmFG5jLfGI" role="3cqZAp">
-          <node concept="3clFbT" id="7hmFG5jLfIX" role="3cqZAk">
-            <property role="3clFbU" value="false" />
           </node>
         </node>
       </node>

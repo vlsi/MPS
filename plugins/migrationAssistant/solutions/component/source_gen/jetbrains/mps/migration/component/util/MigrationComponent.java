@@ -214,7 +214,14 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }).select(new ISelector<MigrationScriptReference, String>() {
       public String select(MigrationScriptReference it) {
-        return fetchScript(it).getCaption() + "  [" + NameUtil.compactNamespace(it.getLanguage().getQualifiedName()) + "]";
+        MigrationScript script = fetchScript(it);
+        String langNameShrinked = NameUtil.compactNamespace(it.getLanguage().getQualifiedName());
+
+        if (script == null) {
+          return "<missing script>: language:" + langNameShrinked + ", version:" + it.getFromVersion();
+        }
+
+        return script.getCaption() + "  [" + langNameShrinked + "]";
       }
     });
     return SetSequence.fromSetWithValues(new HashSet<String>(), names);

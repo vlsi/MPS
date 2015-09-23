@@ -22,7 +22,6 @@ public abstract class SimpleRoleScope extends Scope {
   private final SAbstractConcept concept;
   /**
    * 
-   * @deprecated use SContainmentLink variant
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -38,7 +37,6 @@ public abstract class SimpleRoleScope extends Scope {
   }
   /**
    * 
-   * @deprecated use SContainmentLink variant
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -110,7 +108,6 @@ public abstract class SimpleRoleScope extends Scope {
   public abstract String getName(SNode child);
   /**
    * 
-   * @deprecated use SContainmentLink variant, to remove after 3.3
    */
   @Deprecated
   public static SimpleRoleScope forNamedElements(SNode node, SNode linkDeclaration) {

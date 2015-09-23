@@ -6,7 +6,7 @@ import jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.PathManager;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -47,8 +47,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
   private final String languagesUtilPath;
   public AspectDependenciesChecker(@NotNull Project mpsProject) {
     myProject = mpsProject;
-    this.coreModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Core");
-    this.editorModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Editor");
+    this.coreModule = PersistenceFacade.getInstance().createModuleReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)").resolve(mpsProject.getRepository());
+    this.editorModule = PersistenceFacade.getInstance().createModuleReference("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)").resolve(mpsProject.getRepository());
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
   @Override

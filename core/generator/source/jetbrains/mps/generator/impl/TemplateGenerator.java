@@ -47,6 +47,7 @@ import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -333,6 +334,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
+      reportDismissRuleException(ex, rule);
     } catch (TemplateProcessingFailureException ex) {
       getLogger().error(rule.getRuleNode(), String.format("couldn't create root node: %s", ex.getMessage()), ex.asProblemDescription());
     } catch (GenerationCanceledException ex) {
@@ -397,6 +399,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
+      reportDismissRuleException(e, rule);
       if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getParent() == null) {
         final FullCopyFacility copyFacility = new FullCopyFacility(env);
         copyFacility.copyRootInputNode(inputNode);
@@ -573,6 +576,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   @NotNull
   /*package*/ GenerationTrace getTrace() {
     return myNewTrace;
+  }
+
+  /*package*/ void reportDismissRuleException(@NotNull DismissTopMappingRuleException ex, @NotNull TemplateRule rule) {
+    if (!ex.isLoggingNeeded()) {
+      return;
+    }
+    SNodeReference ruleNode = rule.getRuleNode();
+    String messageText = String.format("-- rule dismissed: %s", ex.getMessage() == null ? "<no message>" : ex.getMessage());
+    if (ex.isInfo()) {
+      getLogger().info(ruleNode, messageText);
+    } else if (ex.isWarning()) {
+      getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+    } else {
+      getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+    }
   }
 
   DelayedChanges getDelayedChanges() {

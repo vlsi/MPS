@@ -18,13 +18,11 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
   public HighlightCellDependencies_Action() {
-    super("Higlighted Cell's Dependent Nodes", "", ICON);
+    super("Highlighted Cell's Dependent Nodes", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -70,8 +68,9 @@ public class HighlightCellDependencies_Action extends BaseAction {
     Set<SNodeReference> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     if (copyOfRefTargets != null) {
       for (SNodeReference nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
-        if (((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()) != null) {
-          highlightManager.mark(((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()), HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
+        SNode tgt = nodePointer.resolve(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().getRepository());
+        if (tgt != null) {
+          highlightManager.mark(tgt, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }
     }

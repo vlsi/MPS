@@ -8,14 +8,23 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
+import java.util.Collection;
+import javax.swing.Action;
 import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
+import java.awt.event.ActionEvent;
+import javax.swing.JPopupMenu;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,12 +49,6 @@ public class GoToRules_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
       if (p == null) {
         return false;
@@ -60,10 +63,33 @@ public class GoToRules_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    GoToRulesHelper.go(event.getData(MPSCommonDataKeys.FRAME), event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(MPSCommonDataKeys.NODE));
+    Collection<Action> actions = GoToRulesHelper.getRuleNavigateActions(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE));
+    if (actions.isEmpty()) {
+      return;
+    }
+    if (actions.size() == 1) {
+      actions.iterator().next().actionPerformed(new ActionEvent(GoToRules_Action.this, ActionEvent.ACTION_PERFORMED, null));
+      return;
+    }
+    JPopupMenu m = new JPopupMenu();
+    m.setBackground(Color.WHITE);
+    JLabel label = new JLabel((actions.isEmpty() ? "No Rules" : "Rules :"), SwingConstants.CENTER);
+    label.setBorder(new EmptyBorder(0, 20, 0, 0));
+    label.setBackground(Color.LIGHT_GRAY);
+    m.add(label);
+    for (Action a : CollectionSequence.fromCollection(actions)) {
+      m.add(a).setBackground(Color.WHITE);
+    }
+    m.show(event.getData(MPSCommonDataKeys.FRAME), event.getData(MPSEditorDataKeys.EDITOR_CELL).getX(), event.getData(MPSEditorDataKeys.EDITOR_CELL).getY());
   }
 }

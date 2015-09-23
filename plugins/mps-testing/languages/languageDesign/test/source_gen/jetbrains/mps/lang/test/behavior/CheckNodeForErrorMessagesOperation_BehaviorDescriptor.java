@@ -30,8 +30,9 @@ public final class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends
   public static final SMethod<Void> perform_iddCRb6FLnvk = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("dCRb6FLnvk").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
   public static final SMethod<String> getDefaultName_id7scb9XJdmH2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7scb9XJdmH2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> expectsErrorsInside_id3efgZvcKrj8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("expectsErrorsInside").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3efgZvcKrj8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(perform_iddCRb6FLnvk, getDefaultName_id7scb9XJdmH2, getPresentation_idhEwIMiw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(perform_iddCRb6FLnvk, getDefaultName_id7scb9XJdmH2, getPresentation_idhEwIMiw, expectsErrorsInside_id3efgZvcKrj8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -46,6 +47,9 @@ public final class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends
   }
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     return ITestMethod_BehaviorDescriptor.getTestName_idhGBohAB.invoke(__thisNode__);
+  }
+  private static Boolean expectsErrorsInside_id3efgZvcKrj8(@NotNull SNode __thisNode__) {
+    return false;
   }
 
   /*package*/ CheckNodeForErrorMessagesOperation_BehaviorDescriptor() {
@@ -71,6 +75,8 @@ public final class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends
         return (T) getDefaultName_id7scb9XJdmH2(node);
       case 2:
         return (T) getPresentation_idhEwIMiw(node);
+      case 3:
+        return (T) expectsErrorsInside_id3efgZvcKrj8(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

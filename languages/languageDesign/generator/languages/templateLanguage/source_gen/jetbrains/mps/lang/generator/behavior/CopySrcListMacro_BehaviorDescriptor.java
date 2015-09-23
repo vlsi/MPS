@@ -20,10 +20,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -37,9 +33,8 @@ public final class CopySrcListMacro_BehaviorDescriptor extends BaseBHDescriptor 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getInputNodeTypeInsideOfMacro_idhEwIosJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getInputNodeTypeInsideOfMacro").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIosJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> suppress_id2WmWrdnSpX7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("suppress").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WmWrdnSpX7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInputNodeTypeInsideOfMacro_idhEwIosJ, suppress_id2WmWrdnSpX7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInputNodeTypeInsideOfMacro_idhEwIosJ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -47,7 +42,7 @@ public final class CopySrcListMacro_BehaviorDescriptor extends BaseBHDescriptor 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery")));
     {
-      GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro_BehaviorDescriptor.Pattern_z09ggw_a0a0a1a01();
+      GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro_BehaviorDescriptor.Pattern_z09ggw_a0a0a1a9();
       SNode coercedNode_26ny8p_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_26ny8p_b0a);
       if (coercedNode_26ny8p_b0a != null) {
         return ((SNode) pattern_26ny8p_b0a.getFieldValue("patternVar_concept"));
@@ -55,16 +50,6 @@ public final class CopySrcListMacro_BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
     return null;
-  }
-  private static Boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
-    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery")) == child) {
-      return false;
-    }
-    if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")) && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(__thisNode__), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")))) {
-      return false;
-    }
-    return true;
-
   }
 
   /*package*/ CopySrcListMacro_BehaviorDescriptor() {
@@ -85,8 +70,6 @@ public final class CopySrcListMacro_BehaviorDescriptor extends BaseBHDescriptor 
     switch (methodIndex) {
       case 0:
         return (T) getInputNodeTypeInsideOfMacro_idhEwIosJ(node);
-      case 1:
-        return (T) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]);
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -115,9 +98,9 @@ public final class CopySrcListMacro_BehaviorDescriptor extends BaseBHDescriptor 
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_z09ggw_a0a0a1a01 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_z09ggw_a0a0a1a9 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_z09ggw_a0a0a1a01() {
+    public Pattern_z09ggw_a0a0a1a9() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");

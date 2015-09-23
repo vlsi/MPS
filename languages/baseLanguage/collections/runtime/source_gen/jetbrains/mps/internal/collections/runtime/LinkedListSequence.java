@@ -215,7 +215,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
   }
   /**
    * 
-   * @deprecated use {@link jetbrains.mps.internal.collections.runtime.LinkedListSequence#fromLinkedListNew(java.util.Deque<U>) }
    */
   @Deprecated
   public static <U> ILinkedListSequence<U> fromLinkedList(Deque<U> list) {
@@ -261,7 +260,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
   }
   /**
    * 
-   * @deprecated 
    */
   @Deprecated
   public static <U> ILinkedListSequence<U> fromListAndArray(LinkedList<U> list, U... array) {
@@ -304,7 +302,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
   }
   /**
    * 
-   * @deprecated use {@link jetbrains.mps.internal.collections.runtime.LinkedListSequence#fromListWithValuesNew(java.util.LinkedList<U>, Iterable<? extends U>) }
    */
   @Deprecated
   public static <U> ILinkedListSequence<U> fromListWithValues(LinkedList<U> list, Iterable<? extends U> it) {

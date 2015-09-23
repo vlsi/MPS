@@ -85,6 +85,11 @@
       <property role="20kJfa" value="filename" />
       <ref role="20lvS9" node="2wXN29P0Ie" resolve="FilenameFunction" />
     </node>
+    <node concept="1TJgyj" id="2IHxTF8WBRG" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="layout" />
+      <ref role="20lvS9" node="2IHxTF8WBR9" resolve="TextUnitLayout" />
+    </node>
     <node concept="1TJgyj" id="hWWuzPd" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />
@@ -409,6 +414,11 @@
     <property role="34LRSv" value="append" />
     <property role="1pbfSe" value="355498218" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="1TJgyj" id="2I4qoeAaJ74" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="textArea" />
+      <ref role="20lvS9" node="2IHxTF8WBRa" resolve="LayoutPart" />
+    </node>
     <node concept="1TJgyj" id="i0lcglQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="part" />
@@ -520,6 +530,42 @@
     <property role="R4oN_" value="append indentation" />
     <property role="1pbfSe" value="666674585" />
     <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
+  </node>
+  <node concept="1TIwiD" id="2IHxTF8WBR9">
+    <property role="1pbfSe" value="190839453" />
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="TextUnitLayout" />
+    <property role="34LRSv" value="unit layout" />
+    <property role="R4oN_" value="outline named text areas outcome unit consists of" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2IHxTF8WBRb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parts" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="2IHxTF8WBRa" resolve="LayoutPart" />
+    </node>
+    <node concept="1TJgyj" id="2IHxTF8WBRd" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="active" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2IHxTF8WBRa" resolve="LayoutPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2IHxTF8WBRa">
+    <property role="1pbfSe" value="190839452" />
+    <property role="TrG5h" value="LayoutPart" />
+    <property role="34LRSv" value="text area" />
+    <property role="R4oN_" value="area within text unit layout" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2IHxTF8WBRi" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nested" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2IHxTF8WBRa" resolve="LayoutPart" />
+    </node>
+    <node concept="PrWs8" id="2IHxTF8WBRg" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

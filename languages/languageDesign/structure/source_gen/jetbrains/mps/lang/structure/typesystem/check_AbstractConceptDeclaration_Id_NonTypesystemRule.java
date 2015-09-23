@@ -30,9 +30,7 @@ public class check_AbstractConceptDeclaration_Id_NonTypesystemRule extends Abstr
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-    }
-
-    if (SPropertyOperations.getInteger(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId")) != ConceptIdUtil.getNewId(acd)) {
+    } else if (SPropertyOperations.getInteger(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId")) != ConceptIdUtil.getNewId(acd)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Concept id is not equal to expected.\n" + "Fix this by applying \"Generate ID\" intention", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2841134663538255676", null, errorTarget);

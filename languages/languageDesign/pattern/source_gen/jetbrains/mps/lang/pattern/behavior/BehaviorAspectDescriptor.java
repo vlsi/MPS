@@ -18,21 +18,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myPatternVariableDeclaration_BehaviorDescriptor = new PatternVariableDeclaration_BehaviorDescriptor();
   private final BHDescriptor myPropertyPatternVariableDeclaration_BehaviorDescriptor = new PropertyPatternVariableDeclaration_BehaviorDescriptor();
   private final BHDescriptor myLinkPatternVariableDeclaration_BehaviorDescriptor = new LinkPatternVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myOrPattern_BehaviorDescriptor = new OrPattern_BehaviorDescriptor();
   private final BHDescriptor myActionStatement_BehaviorDescriptor = new ActionStatement_BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[8];
+    myConceptBehaviorIds = new long[7];
     myConceptBehaviorIds[0] = 0x108a9cb478dL;
     myConceptBehaviorIds[1] = 0x108a9cb478fL;
     myConceptBehaviorIds[2] = 0x108a9cb4791L;
     myConceptBehaviorIds[3] = 0x108a9cb4793L;
     myConceptBehaviorIds[4] = 0x108a9cb4795L;
     myConceptBehaviorIds[5] = 0x108d36d955aL;
-    myConceptBehaviorIds[6] = 0x27f758f8bc6aaa84L;
-    myConceptBehaviorIds[7] = 0x3d3ef1fc1815d960L;
+    myConceptBehaviorIds[6] = 0x3d3ef1fc1815d960L;
   }
 
   @Deprecated
@@ -59,8 +57,6 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 5:
         return myLinkPatternVariableDeclaration_BehaviorDescriptor;
       case 6:
-        return myOrPattern_BehaviorDescriptor;
-      case 7:
         return myActionStatement_BehaviorDescriptor;
       default:
         return null;

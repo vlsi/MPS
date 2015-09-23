@@ -33,8 +33,9 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
   public static final SMethod<SNode> getTestCase_idhGBgWVd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTestCase").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBgWVd").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<String> getTestName_idhGBohAB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBohAB").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<SNode> getAnnotatedNode_id2xExIeabVv_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getAnnotatedNode").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xExIeabVv_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> expectsErrorsInside_id3efgZvcKrj8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("expectsErrorsInside").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3efgZvcKrj8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getName_idhHOMYE$, getDefaultName_id7scb9XJdmH2, perform_iddCRb6FLnvk, isMpsStartRequired_id2RMg39tmiFh, getTestCase_idhGBgWVd, getTestName_idhGBohAB, getAnnotatedNode_id2xExIeabVv_);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getName_idhHOMYE$, getDefaultName_id7scb9XJdmH2, perform_iddCRb6FLnvk, isMpsStartRequired_id2RMg39tmiFh, getTestCase_idhGBgWVd, getTestName_idhGBohAB, getAnnotatedNode_id2xExIeabVv_, expectsErrorsInside_id3efgZvcKrj8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -58,6 +59,9 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
   private static SNode getAnnotatedNode_id2xExIeabVv_(@NotNull SNode __thisNode__) {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     return SNodeOperations.getParent(container);
+  }
+  private static Boolean expectsErrorsInside_id3efgZvcKrj8(@NotNull SNode __thisNode__) {
+    return true;
   }
 
   /*package*/ NodeCheckOperation_BehaviorDescriptor() {
@@ -86,6 +90,8 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
         return (T) getTestName_idhGBohAB(node);
       case 6:
         return (T) getAnnotatedNode_id2xExIeabVv_(node);
+      case 7:
+        return (T) expectsErrorsInside_id3efgZvcKrj8(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

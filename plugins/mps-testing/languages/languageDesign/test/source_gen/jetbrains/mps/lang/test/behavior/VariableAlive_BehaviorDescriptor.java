@@ -28,8 +28,9 @@ public final class VariableAlive_BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<Void> perform_iddCRb6FLnvk = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("dCRb6FLnvk").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
   public static final SMethod<String> getDefaultName_id7scb9XJdmH2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7scb9XJdmH2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> expectsErrorsInside_id3efgZvcKrj8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("expectsErrorsInside").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3efgZvcKrj8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(perform_iddCRb6FLnvk, getDefaultName_id7scb9XJdmH2);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(perform_iddCRb6FLnvk, getDefaultName_id7scb9XJdmH2, expectsErrorsInside_id3efgZvcKrj8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -39,6 +40,9 @@ public final class VariableAlive_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static String getDefaultName_id7scb9XJdmH2(@NotNull SNode __thisNode__) {
     return "NodeVariableAliveCheck";
+  }
+  private static Boolean expectsErrorsInside_id3efgZvcKrj8(@NotNull SNode __thisNode__) {
+    return false;
   }
 
   /*package*/ VariableAlive_BehaviorDescriptor() {
@@ -62,6 +66,8 @@ public final class VariableAlive_BehaviorDescriptor extends BaseBHDescriptor {
         return null;
       case 1:
         return (T) getDefaultName_id7scb9XJdmH2(node);
+      case 2:
+        return (T) expectsErrorsInside_id3efgZvcKrj8(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

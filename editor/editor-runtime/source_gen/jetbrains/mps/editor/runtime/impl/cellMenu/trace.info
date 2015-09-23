@@ -71,68 +71,68 @@
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/4391314372875337327">
     <file name="EnumPropertySubstituteInfo.java">
-      <node id="4391314372875405367" at="28,0,29,0" concept="3" trace="myNode" />
-      <node id="4391314372875405371" at="29,0,30,0" concept="3" trace="myPropertyDeclaration" />
-      <node id="4391314372875405365" at="31,105,32,25" concept="12" />
-      <node id="4391314372875405376" at="32,25,33,18" concept="2" />
-      <node id="4391314372875405383" at="33,18,34,48" concept="2" />
-      <node id="4391314372875430617" at="37,52,38,203" concept="7" />
-      <node id="4391314372875424942" at="38,203,39,287" concept="7" />
-      <node id="4391314372875510386" at="43,55,44,191" concept="8" />
-      <node id="4391314372875510404" at="47,93,48,199" concept="7" />
-      <node id="4391314372875510411" at="48,199,49,38" concept="0" />
-      <node id="4391314372875510423" at="49,38,50,244" concept="2" />
-      <node id="3056131523063466461" at="50,244,51,0" concept="10" />
-      <node id="3056131523063489071" at="52,38,53,91" concept="9" />
-      <node id="3056131523063489453" at="53,91,54,40" concept="2" />
-      <node id="3056131523063563680" at="54,40,55,70" concept="7" />
-      <node id="3056131523063581891" at="56,109,57,70" concept="7" />
-      <node id="3056131523063583094" at="57,70,58,25" concept="2" />
-      <node id="4391314372875510419" at="60,11,61,22" concept="8" />
-      <node id="4391314372875424941" at="64,5,65,0" concept="10" />
-      <node id="4391314372875430609" at="65,0,66,19" concept="8" />
-      <node id="4391314372875510233" at="42,0,46,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="3056131523063571638" at="55,70,59,13" concept="5" />
-      <node id="4391314372875337329" at="30,0,36,0" concept="1" trace="EnumPropertySubstituteInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="3056131523063487739" at="51,0,60,11" concept="5" />
-      <node id="4391314372875510222" at="46,0,63,0" concept="6" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4391314372875510209" at="40,210,63,9" concept="2" />
-      <node id="4391314372875515996" at="39,287,64,5" concept="4" />
-      <node id="4391314372875424931" at="36,0,68,0" concept="6" trace="createActions#()Ljava/util/List;" />
-      <scope id="4391314372875510238" at="43,55,44,191" />
-      <scope id="3056131523063571640" at="56,109,58,25">
+      <node id="4391314372875405367" at="27,0,28,0" concept="3" trace="myNode" />
+      <node id="4391314372875405371" at="28,0,29,0" concept="3" trace="myPropertyDeclaration" />
+      <node id="4391314372875405365" at="30,105,31,25" concept="12" />
+      <node id="4391314372875405376" at="31,25,32,18" concept="2" />
+      <node id="4391314372875405383" at="32,18,33,48" concept="2" />
+      <node id="4391314372875430617" at="36,52,37,203" concept="7" />
+      <node id="4391314372875424942" at="37,203,38,287" concept="7" />
+      <node id="4391314372875510386" at="42,55,43,191" concept="8" />
+      <node id="4391314372875510404" at="46,93,47,199" concept="7" />
+      <node id="4391314372875510411" at="47,199,48,38" concept="0" />
+      <node id="4391314372875510423" at="48,38,49,244" concept="2" />
+      <node id="3056131523063466461" at="49,244,50,0" concept="10" />
+      <node id="3056131523063489071" at="51,38,52,91" concept="9" />
+      <node id="3056131523063489453" at="52,91,53,40" concept="2" />
+      <node id="3056131523063563680" at="53,40,54,70" concept="7" />
+      <node id="3056131523063581891" at="55,109,56,70" concept="7" />
+      <node id="3056131523063583094" at="56,70,57,25" concept="2" />
+      <node id="4391314372875510419" at="59,11,60,22" concept="8" />
+      <node id="4391314372875424941" at="63,5,64,0" concept="10" />
+      <node id="4391314372875430609" at="64,0,65,19" concept="8" />
+      <node id="4391314372875510233" at="41,0,45,0" concept="6" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3056131523063571638" at="54,70,58,13" concept="5" />
+      <node id="4391314372875337329" at="29,0,35,0" concept="1" trace="EnumPropertySubstituteInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="3056131523063487739" at="50,0,59,11" concept="5" />
+      <node id="4391314372875510222" at="45,0,62,0" concept="6" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4391314372875510209" at="39,210,62,9" concept="2" />
+      <node id="4391314372875515996" at="38,287,63,5" concept="4" />
+      <node id="4391314372875424931" at="35,0,67,0" concept="6" trace="createActions#()Ljava/util/List;" />
+      <scope id="4391314372875510238" at="42,55,43,191" />
+      <scope id="3056131523063571640" at="55,109,57,25">
         <var name="cell" id="3056131523063581892" />
       </scope>
-      <scope id="4391314372875337332" at="31,105,34,48" />
-      <scope id="4391314372875510233" at="42,0,46,0">
+      <scope id="4391314372875337332" at="30,105,33,48" />
+      <scope id="4391314372875510233" at="41,0,45,0">
         <var name="pattern" id="4391314372875510236" />
       </scope>
-      <scope id="4391314372875337329" at="30,0,36,0">
+      <scope id="4391314372875337329" at="29,0,35,0">
         <var name="editorContext" id="4391314372875347594" />
         <var name="node" id="4391314372875347588" />
         <var name="propertyDeclaration" id="4391314372875347591" />
       </scope>
-      <scope id="3056131523063487741" at="52,38,59,13">
+      <scope id="3056131523063487741" at="51,38,58,13">
         <var name="selectedCell" id="3056131523063563681" />
       </scope>
-      <scope id="4391314372875510227" at="47,93,61,22">
+      <scope id="4391314372875510227" at="46,93,60,22">
         <var name="propertyName" id="4391314372875510405" />
       </scope>
-      <scope id="4391314372875510222" at="46,0,63,0">
+      <scope id="4391314372875510222" at="45,0,62,0">
         <var name="editorContext" id="2457764533250410852" />
         <var name="pattern" id="4391314372875510395" />
       </scope>
-      <scope id="4391314372875510203" at="40,210,63,9" />
-      <scope id="4391314372875515996" at="39,287,64,5">
+      <scope id="4391314372875510203" at="39,210,62,9" />
+      <scope id="4391314372875515996" at="38,287,63,5">
         <var name="enumMemberDeclaration" id="4391314372875516052" />
       </scope>
-      <scope id="4391314372875424935" at="37,52,66,19">
+      <scope id="4391314372875424935" at="36,52,65,19">
         <var name="actions" id="4391314372875424943" />
         <var name="enumDataType" id="4391314372875430618" />
       </scope>
-      <scope id="4391314372875424931" at="36,0,68,0" />
-      <unit id="4391314372875510220" at="41,52,63,7" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
-      <unit id="4391314372875337327" at="26,0,69,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
+      <scope id="4391314372875424931" at="35,0,67,0" />
+      <unit id="4391314372875510220" at="40,52,62,7" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
+      <unit id="4391314372875337327" at="25,0,68,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
     </file>
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/7279038390441828524">

@@ -7,8 +7,8 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -2320,7 +2320,7 @@
     </node>
     <node concept="13i0hz" id="6Ito2ECxcpP" role="13h7CS">
       <property role="TrG5h" value="findAllAspects" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6Ito2ECxcpQ" role="1B3o_S" />
       <node concept="2I9FWS" id="6Ito2ECxcqj" role="3clF45" />
       <node concept="3clFbS" id="6Ito2ECxcpS" role="3clF47">
@@ -3399,7 +3399,7 @@
     </node>
     <node concept="13i0hz" id="6spw4TQeyqh" role="13h7CS">
       <property role="TrG5h" value="isDefaultSubstitutable" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6spw4TQeyrg" role="1B3o_S" />
       <node concept="10P_77" id="6spw4TQeyqj" role="3clF45" />
       <node concept="3clFbS" id="6spw4TQeyqk" role="3clF47">
@@ -4745,7 +4745,7 @@
     <node concept="13i0hz" id="6NcFj35FbEV" role="13h7CS">
       <property role="TrG5h" value="isApplicable" />
       <property role="13i0it" value="true" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6NcFj35FbEW" role="1B3o_S" />
       <node concept="10P_77" id="6NcFj35Feng" role="3clF45" />
       <node concept="3clFbS" id="6NcFj35FbEY" role="3clF47">

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 
 /**
  * 
- * @deprecated use jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor
  */
 @Deprecated
 public abstract class DataFlowConstructor {

@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.text;
 
-import jetbrains.mps.text.impl.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.rt.TextGenDescriptor;
-import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -29,10 +27,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MissingTextGenDescriptor implements TextGenDescriptor {
   @Override
   public void generateText(TextGenContext context) {
-    TextGenTransitionContext tc = (TextGenTransitionContext) context;
-    TextGenBuffer buffer = tc.getLegacyBuffer();
-    SNode node = tc.getPrimaryInput();
-    buffer.append("<!TextGen not found for '" + node.getConcept() + "'!>");
-    buffer.foundError("No textgen for " + node.getConcept() + " in " + SNodeOperations.getDebugText(node), node, null);
+    TextGenSupport tgs = new TextGenSupport(context);
+    SNode node = context.getPrimaryInput();
+    tgs.append("<!TextGen not found for '" + node.getConcept() + "'!>");
+    tgs.reportError("No textgen for " + node.getConcept());
   }
 }

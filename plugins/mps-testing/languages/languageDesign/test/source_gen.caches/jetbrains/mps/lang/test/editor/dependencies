@@ -250,6 +250,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TestNodeReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TestNode_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TypeKeyStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.UntypedExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableAlive_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableInitialized_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
@@ -1099,6 +1100,15 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.editor.UntypedExpression_Editor" file="UntypedExpression_Editor.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

@@ -351,17 +351,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             }
           } catch (DismissTopMappingRuleException ex) {
             // it's ok, just continue with a next applicable rule, if any
-            if (ex.isLoggingNeeded() && reductionRule != null) {
-              SNodeReference ruleNode = reductionRule.getRuleNode();
-              String messageText = String.format("-- dismissed reduction rule: %s", ex.getMessage() == null ? "<no message>" : ex.getMessage());
-              if (ex.isInfo()) {
-                getLogger().info(ruleNode, messageText);
-              } else if (ex.isWarning()) {
-                getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
-              } else {
-                getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
-              }
-            }
+            generator.reportDismissRuleException(ex, reductionRule);
           } finally {
             myReductionTrack.leave();
           }

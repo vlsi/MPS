@@ -23237,26 +23237,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="rFwcinAATT" role="3cqZAp">
-          <node concept="37vLTI" id="rFwcinAAU0" role="3clFbG">
-            <node concept="2OqwBi" id="rFwcinAAU4" role="37vLTx">
-              <node concept="QwW4i" id="rFwcinAAU3" role="2Oq$k0">
-                <ref role="QwW4h" node="rFwcinA$rC" resolve="staticField" />
-              </node>
-              <node concept="3TrcHB" id="rFwcinAAU8" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:hOIEky$" resolve="isDeprecated" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="rFwcinAATV" role="37vLTJ">
-              <node concept="37vLTw" id="3GM_nagTrq_" role="2Oq$k0">
-                <ref role="3cqZAo" node="rFwcinA_OI" resolve="fieldDeclaration" />
-              </node>
-              <node concept="3TrcHB" id="rFwcinAATZ" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:hOIEky$" resolve="isDeprecated" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="rFwcinB8Bm" role="3cqZAp">
           <node concept="2OqwBi" id="rFwcinB8Bt" role="3clFbG">
             <node concept="2OqwBi" id="rFwcinB8Bo" role="2Oq$k0">
@@ -23557,26 +23537,6 @@
                 <node concept="3Tsc0h" id="rFwcinC3_n" role="2OqNvi">
                   <ref role="3TtcxE" to="tpee:gWSfm_9" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="rFwcinC2aa" role="3cqZAp">
-          <node concept="37vLTI" id="rFwcinC2ab" role="3clFbG">
-            <node concept="2OqwBi" id="rFwcinC2ac" role="37vLTx">
-              <node concept="QwW4i" id="rFwcinC2ad" role="2Oq$k0">
-                <ref role="QwW4h" node="rFwcinC29d" resolve="staticMethod" />
-              </node>
-              <node concept="3TrcHB" id="rFwcinC2ae" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:hOIEky$" resolve="isDeprecated" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="rFwcinC2af" role="37vLTJ">
-              <node concept="37vLTw" id="3GM_nagT_zw" role="2Oq$k0">
-                <ref role="3cqZAo" node="rFwcinC29k" resolve="methodDeclaration" />
-              </node>
-              <node concept="3TrcHB" id="rFwcinC2ah" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:hOIEky$" resolve="isDeprecated" />
               </node>
             </node>
           </node>
@@ -56043,39 +56003,6 @@
     <node concept="1YaCAy" id="22ZR0LkS57k" role="1YuTPh">
       <property role="TrG5h" value="fieldReferenceOperation" />
       <ref role="1YaFvo" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
-    </node>
-  </node>
-  <node concept="18kY7G" id="7UfLy9aMJ2H">
-    <property role="TrG5h" value="check_IBLDeprecatable" />
-    <node concept="3clFbS" id="7UfLy9aMJ2I" role="18ibNy">
-      <node concept="3clFbJ" id="7UfLy9aMJv4" role="3cqZAp">
-        <node concept="3clFbS" id="7UfLy9aMJv5" role="3clFbx">
-          <node concept="2MkqsV" id="7UfLy9aNqNM" role="3cqZAp">
-            <node concept="1YBJjd" id="7UfLy9aNqPt" role="2OEOjV">
-              <ref role="1YBMHb" node="7UfLy9aMJ2K" resolve="iblDeprecatable" />
-            </node>
-            <node concept="Xl_RD" id="7UfLy9aNqNY" role="2MkJ7o">
-              <property role="Xl_RC" value="The method is marked as deprecated, but the javadoc @deprecated tag is missing" />
-            </node>
-            <node concept="3Cnw8n" id="7UfLy9aSs0f" role="2OEOjU">
-              <property role="ARO6o" value="true" />
-              <ref role="QpYPw" node="7UfLy9aQFdw" resolve="RemoveInvisibleDeprecation" />
-            </node>
-          </node>
-        </node>
-        <node concept="2OqwBi" id="7UfLy9aMJwY" role="3clFbw">
-          <node concept="1YBJjd" id="7UfLy9aMJvg" role="2Oq$k0">
-            <ref role="1YBMHb" node="7UfLy9aMJ2K" resolve="iblDeprecatable" />
-          </node>
-          <node concept="2qgKlT" id="7UfLy9aNqML" role="2OqNvi">
-            <ref role="37wK5l" to="tpek:7UfLy9aMMC2" resolve="isInvisiblyDeprecated" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="7UfLy9aMJ2K" role="1YuTPh">
-      <property role="TrG5h" value="iblDeprecatable" />
-      <ref role="1YaFvo" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
     </node>
   </node>
   <node concept="Q5z_Y" id="7UfLy9aQFdw">

@@ -21,7 +21,6 @@ public class ModelsToResources {
   private final Iterable<SModel> models;
   /**
    * 
-   * @deprecated use cons without IOperationContext
    */
   @Deprecated
   public ModelsToResources(IOperationContext context, Iterable<SModel> models) {

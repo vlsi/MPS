@@ -28,7 +28,7 @@
       <node id="3309033097909944470" at="13,0,14,0" concept="5" trace="requiresData#()Ljava/lang/Iterable;" />
       <node id="6816167251982661632" at="15,0,16,0" concept="5" trace="setDataCollector#(Ljetbrains/mps/lang/migration/runtime/base/DataCollector;)V" />
       <node id="6816167251982659896" at="16,0,18,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3309033097909944462" at="24,0,27,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/DataCollector;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3309033097909944462" at="23,0,26,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/DataCollector;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3309033097909944448" at="10,0,11,0" />
       <scope id="5387853834547921604" at="11,0,12,0" />
       <scope id="2521103492728904287" at="12,0,13,0" />
@@ -39,11 +39,11 @@
       <scope id="6816167251982659896" at="16,0,18,0">
         <var name="module" id="6816167251982659897" />
       </scope>
-      <scope id="3309033097909944462" at="24,0,27,0">
+      <scope id="3309033097909944462" at="23,0,26,0">
         <var name="dataCollector" id="3309033097909944465" />
         <var name="moduleToMigrate" id="3309033097909944463" />
       </scope>
-      <unit id="3309033097909944447" at="9,0,28,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
+      <unit id="3309033097909944447" at="9,0,27,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     </file>
   </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/3309033097910028738">

@@ -42,6 +42,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import java.util.ArrayList;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
@@ -266,6 +267,11 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     boolean runQuickFixes = shouldRunQuickFixs(model, inspector);
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
+      // todo here should be processor-based architecture, like in other checkers 
+      if (!(ErrorReportUtil.shouldReportError(errorReporter.getSNode()))) {
+        continue;
+      }
+
       SNode nodeWithError = errorReporter.getSNode();
       if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeWithError, null, true)).contains(editedNode))) {
         // in inspector skipping all messages for invisible nodes 

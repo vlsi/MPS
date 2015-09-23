@@ -26,7 +26,6 @@ import org.junit.Assume;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class CheckProjectStructure extends BaseCheckModulesTest {
   public CheckProjectStructure(SModule module) {
@@ -192,9 +191,6 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   }
 
   private Collection<SModel> extractModels(boolean includeDontGenerate) {
-    Collection<SModel> models = new ModelsExtractor(myModule, includeDontGenerate).includingGenerators().getModels();
-    // todo this was made because cardinalities check fail. This hack should be removed 
-    models.remove(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.test@tests"));
-    return models;
+    return new ModelsExtractor(myModule, includeDontGenerate).includingGenerators().getModels();
   }
 }

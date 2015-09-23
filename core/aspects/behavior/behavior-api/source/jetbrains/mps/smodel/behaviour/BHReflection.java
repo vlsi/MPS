@@ -43,7 +43,7 @@ public final class BHReflection {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
-      throw new BHNoSuchMethodException(methodId);
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
     return method.invoke(node, parameters);
   }
@@ -52,7 +52,7 @@ public final class BHReflection {
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
-      throw new BHNoSuchMethodException(methodId);
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
     return method.invoke(concept, parameters);
   }
@@ -64,7 +64,7 @@ public final class BHReflection {
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
-      throw new BHNoSuchMethodException(methodId);
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
     return method.invokeSpecial(node, parameters);
   }
@@ -73,7 +73,7 @@ public final class BHReflection {
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
-      throw new BHNoSuchMethodException(methodId);
+      throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
     return method.invokeSpecial(concept, parameters);
   }
@@ -87,8 +87,8 @@ public final class BHReflection {
    * We have it extending the RuntimeException opposed to java {@link java.lang.NoSuchMethodException}
    */
   private static class BHNoSuchMethodException extends RuntimeException {
-    public BHNoSuchMethodException(@NotNull SMethodId methodId) {
-      super("SMethod with id '" + methodId + "' could not be found");
+    public BHNoSuchMethodException(@NotNull SMethodId methodId, BHDescriptor descriptor) {
+      super("SMethod with id '" + methodId + "' could not be found within the " + descriptor + " behavior descriptor");
     }
   }
 }

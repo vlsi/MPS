@@ -7,7 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DFABuilders.java">
-      <unit at="8,0,70,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.DFABuilders" />
+      <unit at="8,0,72,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.DFABuilders" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/1207060282352">
@@ -549,6 +549,36 @@
         <var name="operationContext" id="1241094395647" />
       </scope>
       <unit id="1241094395647" at="12,0,20,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.InsertElementOperation_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2425044829821610718">
+    <file name="FoldLeftOperation_DataFlow.java">
+      <node id="2425044829822173312" at="15,102,16,218" concept="1" />
+      <node id="2425044829821610718" at="13,0,15,0" concept="0" trace="FoldLeftOperation_DataFlow#()V" />
+      <node id="2425044829821610718" at="15,0,18,0" concept="4" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="2425044829821610718" at="13,39,13,39" />
+      <scope id="2425044829821610720" at="15,102,16,218" />
+      <scope id="2425044829821610718" at="13,0,15,0" />
+      <scope id="2425044829821610718" at="15,0,18,0">
+        <var name="_context" id="2425044829821610718" />
+        <var name="operationContext" id="2425044829821610718" />
+      </scope>
+      <unit id="2425044829821610718" at="12,0,19,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldLeftOperation_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2425044829822206638">
+    <file name="FoldRightOperation_DataFlow.java">
+      <node id="2425044829822206678" at="15,102,16,218" concept="1" />
+      <node id="2425044829822206638" at="13,0,15,0" concept="0" trace="FoldRightOperation_DataFlow#()V" />
+      <node id="2425044829822206638" at="15,0,18,0" concept="4" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="2425044829822206638" at="13,40,13,40" />
+      <scope id="2425044829822206640" at="15,102,16,218" />
+      <scope id="2425044829822206638" at="13,0,15,0" />
+      <scope id="2425044829822206638" at="15,0,18,0">
+        <var name="_context" id="2425044829822206638" />
+        <var name="operationContext" id="2425044829822206638" />
+      </scope>
+      <unit id="2425044829822206638" at="12,0,19,0" name="jetbrains.mps.baseLanguage.collections.dataFlow.FoldRightOperation_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/2516462576967508990">

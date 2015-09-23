@@ -19,6 +19,7 @@ import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
+import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,17 +32,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 @ToRemove(version = 3.3)
 public final class TextGenTransitionContext implements TextGenContext {
   private final SNode myInput;
-  private final TextGenBuffer myBuffer;
+  // we keep legacy buffer (a) for code that uses it directly and (b) to keep user objects we don't yet know how to handle otherwise
+  private final TextGenBuffer myLegacyBuffer;
+  private final TextBuffer myBuffer;
 
-  public TextGenTransitionContext(@NotNull SNode input, @NotNull TextGenBuffer buffer) {
+  public TextGenTransitionContext(@NotNull SNode input, @NotNull TextGenBuffer legacyBuffer, @NotNull TextBuffer buffer) {
     myInput = input;
+    myLegacyBuffer = legacyBuffer;
     myBuffer = buffer;
   }
 
   @NotNull
   @Override
   public TextBuffer getBuffer() {
-    return myBuffer.getRealBuffer();
+    return myBuffer;
   }
 
   @Override
@@ -50,11 +54,19 @@ public final class TextGenTransitionContext implements TextGenContext {
   }
 
   public TextGenBuffer getLegacyBuffer() {
-    return myBuffer;
+    return myLegacyBuffer;
   }
 
   /*package*/ boolean getCompatibilityOption_EnableAttributes() {
-    final Object value = myBuffer.getUserObject(TextGen.COMPATIBILITY_USE_ATTRIBUTES);
+    final Object value = myLegacyBuffer.getUserObject(TextGen.COMPATIBILITY_USE_ATTRIBUTES);
     return value instanceof Boolean && ((Boolean) value);
+  }
+
+  /**
+   * invoke descriptor for the given node, no attribute processing done.
+   */
+  public void generateText(@NotNull SNode newInput) {
+    TextGenTransitionContext ctx = newInput == myInput ? this : new TextGenTransitionContext(newInput, myLegacyBuffer, myBuffer);
+    TextGenRegistry.getInstance().getTextGenDescriptor(newInput).generateText(ctx);
   }
 }

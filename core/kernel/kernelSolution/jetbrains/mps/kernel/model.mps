@@ -7,8 +7,8 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1165,7 +1165,7 @@
     </node>
     <node concept="2YIFZL" id="i1dxEXv" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="i1dxNcD" role="3clF45" />
       <node concept="3Tm1VV" id="i1dxEXx" role="1B3o_S" />
       <node concept="3clFbS" id="i1dxEXy" role="3clF47">
@@ -1331,7 +1331,7 @@
     </node>
     <node concept="2YIFZL" id="49NWpd$b1vI" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="49NWpd$b1vM" role="3clF45" />
       <node concept="3Tm1VV" id="49NWpd$b1vK" role="1B3o_S" />
       <node concept="3clFbS" id="49NWpd$b1vL" role="3clF47">
@@ -1412,7 +1412,7 @@
     </node>
     <node concept="2YIFZL" id="6CIjHcu$EU8" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="6CIjHcu$EUc" role="3clF45" />
       <node concept="3Tm1VV" id="6CIjHcu$EUa" role="1B3o_S" />
       <node concept="3clFbS" id="6CIjHcu$EUb" role="3clF47">

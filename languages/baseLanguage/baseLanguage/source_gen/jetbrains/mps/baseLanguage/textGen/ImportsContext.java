@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.text.TextBuffer;
+import jetbrains.mps.text.BasicToken;
 import jetbrains.mps.textGen.TextGen;
 
 public class ImportsContext {
@@ -23,6 +25,7 @@ public class ImportsContext {
   private final Set<String> packageSimpleNames;
   private final Map<String, String> bindings;
   private ContextClassifiersInRoot contextClassifiers;
+
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
     this.packageName = SModelStereotype.withoutStereotype(SNodeOperations.getModel(rootNode).getReference().getModelName());
@@ -92,14 +95,14 @@ public class ImportsContext {
     return className;
   }
   private void addImport(String fqName) {
-    int currPartId = buffer.selectPart(TextGenBuffer.TOP);
-
-    buffer.append(buffer.getLineSeparator());
-    buffer.append("import ");
-    buffer.append(fqName);
-    buffer.append(";");
-
-    buffer.selectPart(currPartId);
+    // FIXME shall be simple append statement, once we manage to pass TextGenContext here instead of legacy TextGenBuffer: 
+    TextBuffer tb = buffer.getRealBuffer();
+    // For the time being, this hack (with explicit knowledge how to identify layout areas), ensures imports are directed into proper area 
+    // In fact, instead of append done here (and passing of TextGenContext), this class shall be refactored to answer both name and import stmt, 
+    // and external code (caller) shall perform the append operation 
+    tb.pushTextArea(new BasicToken("IMPORTS"));
+    tb.area().append("import ").append(fqName).append(";").newLine();
+    tb.popTextArea();
   }
   public static ImportsContext getInstance(TextGenBuffer buffer) {
     ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);

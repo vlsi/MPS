@@ -36,10 +36,16 @@
       <concept id="1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" flags="ig" index="WtQ9Q">
         <reference id="1233670257997" name="conceptDeclaration" index="WuzLi" />
         <child id="1233749296504" name="textGenBlock" index="11c4hB" />
+        <child id="3147320813467893228" name="layout" index="3znZDQ" />
       </concept>
       <concept id="1233748055915" name="jetbrains.mps.lang.textGen.structure.NodeParameter" flags="nn" index="117lpO" />
       <concept id="1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" flags="in" index="11bSqf" />
       <concept id="8937790975493363649" name="jetbrains.mps.lang.textGen.structure.AttributedNodePart" flags="ng" index="3mW3T8" />
+      <concept id="3147320813467893194" name="jetbrains.mps.lang.textGen.structure.LayoutPart" flags="ng" index="3znZDg" />
+      <concept id="3147320813467893193" name="jetbrains.mps.lang.textGen.structure.TextUnitLayout" flags="ng" index="3znZDj">
+        <reference id="3147320813467893197" name="active" index="3znZDn" />
+        <child id="3147320813467893195" name="parts" index="3znZDh" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -50,6 +56,9 @@
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
       <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
         <property id="779128492853935960" name="anchorTag" index="1K8rD$" />
@@ -93,6 +102,21 @@
   <node concept="WtQ9Q" id="3fG6dkhfgJf">
     <property role="3GE5qa" value="pure-textgen" />
     <ref role="WuzLi" to="t1gd:3fG6dkheFNp" resolve="HandlerAsRoot" />
+    <node concept="3znZDj" id="3DQwDJfhrGn" role="3znZDQ">
+      <ref role="3znZDn" node="3DQwDJfhrGq" resolve="BODY" />
+      <node concept="3znZDg" id="3DQwDJfhrGo" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrGp" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="6iQNTbBmlUw" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="3DQwDJfhrGq" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
+      </node>
+    </node>
   </node>
   <node concept="WtQ9Q" id="70B0YGk0iEE">
     <property role="3GE5qa" value="generator-processed" />

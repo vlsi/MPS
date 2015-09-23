@@ -152,9 +152,6 @@ public class LanguageErrorsComponent {
     addError(errorNode, errorString, ruleNode, messageTarget, null);
   }
   public void addError(SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
-    if (!(ErrorReportUtil.shouldReportError(errorNode))) {
-      return;
-    }
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, ruleNode, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
       reporter.setIntentionProvider(intentionProvider);

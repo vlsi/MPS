@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -405,9 +405,6 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
     </node>
-    <node concept="PrWs8" id="2zn6YdLtwWf" role="PzmwI">
-      <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
-    </node>
   </node>
   <node concept="1TIwiD" id="geb32N7">
     <property role="R5$K7" value="false" />
@@ -427,9 +424,6 @@
       <property role="20kJfa" value="sourceNodesQuery" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
-    </node>
-    <node concept="PrWs8" id="2zn6YdLtEBU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
   </node>
   <node concept="1TIwiD" id="ghW57bu">
@@ -765,6 +759,9 @@
     <ref role="1TJDcQ" node="fP7Vmt2" resolve="NodeMacro" />
     <node concept="M6xJ_" id="6_gUeuqOeSW" role="lGtFl">
       <property role="Hh88m" value="" />
+    </node>
+    <node concept="PrWs8" id="6WWPJLICnVK" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
   </node>
   <node concept="1TIwiD" id="gZJmXo3">

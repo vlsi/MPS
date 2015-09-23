@@ -117,7 +117,6 @@ public class SModelUtil {
   }
   /**
    * 
-   * @deprecated use SConcept.isSubConceptOf
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -138,7 +137,6 @@ public class SModelUtil {
   }
   /**
    * 
-   * @deprecated use SConcept.isSubConceptOf
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -152,7 +150,6 @@ public class SModelUtil {
   }
   /**
    * 
-   * @deprecated use SConcept.isSubConceptOf
    */
   @Deprecated
   @ToRemove(version = 3.3)

@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1022,7 +1022,7 @@
       <node concept="3Tm6S6" id="7ipADkTevTD" role="1B3o_S" />
     </node>
     <node concept="3clFbW" id="7ipADkTevTG" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="1pnkBUIVoXI" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -1172,7 +1172,7 @@
       </node>
     </node>
     <node concept="3clFbW" id="7ipADkTevUg" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="5TYh2YDX_tZ" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -1795,7 +1795,7 @@
     </node>
     <node concept="2YIFZL" id="379IfaV6Tee" role="jymVt">
       <property role="TrG5h" value="forNamedElements" />
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="6t3ylNOzDNZ" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -2934,7 +2934,7 @@
       <ref role="3uigEE" node="VXQuBhO0U" resolve="ModelsScope" />
     </node>
     <node concept="3clFbW" id="7ipADkTfyJc" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="4k9eBec$R4h" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4432,7 +4432,7 @@
       </node>
     </node>
     <node concept="3clFbW" id="VXQuBi1M2" role="jymVt">
-      <property role="IEkAT" value="true" />
+      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="4k9eBec$CgY" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>

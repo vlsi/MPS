@@ -49,20 +49,24 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules())).where(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return FindWrongAspectDependencies_Action.this.needsProcessing(it, event);
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
+      public void run() {
+        List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules())).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return FindWrongAspectDependencies_Action.this.needsProcessing(it, event);
+          }
+        }).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule it) {
+            return it.getModels();
+          }
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel md) {
+            return SModelStereotype.isUserModel(md);
+          }
+        }));
+        ModelCheckerTool.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(event.getData(MPSCommonDataKeys.MPS_PROJECT)));
       }
-    }).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel md) {
-        return SModelStereotype.isUserModel(md);
-      }
-    }));
-    ModelCheckerTool.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+    });
   }
   /*package*/ boolean needsProcessing(SModule module, final AnActionEvent event) {
     if (module instanceof Language) {
