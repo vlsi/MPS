@@ -163,6 +163,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -3119,21 +3122,31 @@
       <node concept="30G5F_" id="7OwVP6ZZ2oi" role="30HLyM">
         <node concept="3clFbS" id="7OwVP6ZZ2oj" role="2VODD2">
           <node concept="3cpWs6" id="7OwVP6ZZ36v" role="3cqZAp">
-            <node concept="22lmx$" id="7OwVP6ZZ41R" role="3cqZAk">
-              <node concept="2YIFZM" id="7OwVP6ZZ4eD" role="3uHU7w">
-                <ref role="37wK5l" to="k6zk:_QrTcSDuIU" resolve="needProjectPlugin" />
-                <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
-                <node concept="2OqwBi" id="7OwVP6ZZa0n" role="37wK5m">
-                  <node concept="1iwH7S" id="7OwVP6ZZa0o" role="2Oq$k0" />
-                  <node concept="1r8y6K" id="7OwVP6ZZa0p" role="2OqNvi" />
+            <node concept="1Wc70l" id="5WVtmyU$rHU" role="3cqZAk">
+              <node concept="2OqwBi" id="5WVtmyU$rSO" role="3uHU7B">
+                <node concept="30H73N" id="5WVtmyU$rO6" role="2Oq$k0" />
+                <node concept="3TrcHB" id="5WVtmyU$s1i" role="2OqNvi">
+                  <ref role="3TsBF5" to="tgbt:5WVtmyUzYGf" resolve="needInitConfig" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="7OwVP6ZZ3jN" role="3uHU7B">
-                <ref role="37wK5l" to="k6zk:_QrTcSDuIA" resolve="needAppPlugin" />
-                <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
-                <node concept="2OqwBi" id="7OwVP6ZZ9Uo" role="37wK5m">
-                  <node concept="1iwH7S" id="7OwVP6ZZ9Up" role="2Oq$k0" />
-                  <node concept="1r8y6K" id="7OwVP6ZZ9Uq" role="2OqNvi" />
+              <node concept="1eOMI4" id="5WVtmyU$snz" role="3uHU7w">
+                <node concept="22lmx$" id="7OwVP6ZZ41R" role="1eOMHV">
+                  <node concept="2YIFZM" id="7OwVP6ZZ3jN" role="3uHU7B">
+                    <ref role="37wK5l" to="k6zk:_QrTcSDuIA" resolve="needAppPlugin" />
+                    <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
+                    <node concept="2OqwBi" id="7OwVP6ZZ9Uo" role="37wK5m">
+                      <node concept="1iwH7S" id="7OwVP6ZZ9Up" role="2Oq$k0" />
+                      <node concept="1r8y6K" id="7OwVP6ZZ9Uq" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="7OwVP6ZZ4eD" role="3uHU7w">
+                    <ref role="37wK5l" to="k6zk:_QrTcSDuIU" resolve="needProjectPlugin" />
+                    <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
+                    <node concept="2OqwBi" id="7OwVP6ZZa0n" role="37wK5m">
+                      <node concept="1iwH7S" id="7OwVP6ZZa0o" role="2Oq$k0" />
+                      <node concept="1r8y6K" id="7OwVP6ZZa0p" role="2OqNvi" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
