@@ -221,28 +221,17 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" file="VCSModelActions_ActionGroup.java">

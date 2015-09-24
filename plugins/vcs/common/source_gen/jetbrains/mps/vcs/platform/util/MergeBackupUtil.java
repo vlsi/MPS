@@ -36,8 +36,19 @@ public class MergeBackupUtil {
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmpDir = FileUtil.createTmpDir();
     MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.ORIGINAL].getDocument().getText().getBytes(FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
-    MergeBackupUtil.writeContentsToFile(contents[MergeConstants.CURRENT], file, tmpDir, MergeVersion.MINE.getSuffix());
-    MergeBackupUtil.writeContentsToFile(contents[MergeConstants.LAST_REVISION], file, tmpDir, MergeVersion.REPOSITORY.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.CURRENT].getBytes(), file.getName(), tmpDir, MergeVersion.MINE.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.LAST_REVISION].getBytes(), file.getName(), tmpDir, MergeVersion.REPOSITORY.getSuffix());
+    File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
+    zipfile.getParentFile().mkdirs();
+    FileUtil.zip(tmpDir, zipfile);
+    FileUtil.delete(tmpDir);
+    return zipfile;
+  }
+  public static File zipModel(byte[][] contents, VirtualFile file) throws IOException {
+    File tmpDir = FileUtil.createTmpDir();
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.ORIGINAL], file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.CURRENT], file.getName(), tmpDir, MergeVersion.MINE.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.LAST_REVISION], file.getName(), tmpDir, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmpDir, zipfile);
