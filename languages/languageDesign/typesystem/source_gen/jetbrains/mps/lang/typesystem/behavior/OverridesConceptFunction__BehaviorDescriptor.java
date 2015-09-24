@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class OverridesConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class OverridesConceptFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1885777d1370d97bL, "jetbrains.mps.lang.typesystem.structure.OverridesConceptFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class OverridesConceptFunction_BehaviorDescriptor extends BaseBHDes
     return _quotation_createNode_b5kzt8_a0a0();
   }
 
-  /*package*/ OverridesConceptFunction_BehaviorDescriptor() {
+  /*package*/ OverridesConceptFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

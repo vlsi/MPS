@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeConstraintsErrorCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeConstraintsErrorCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class NodeConstraintsErrorCheckOperation_BehaviorDescriptor extends
     return new NodeRuleReference(reference).getType() == RuleType.CONSTRAINTS;
   }
   private static void attachReference_id2wBFdLy8qmn(@NotNull SNode __thisNode__, SNode reference) {
-    assert IReferenceAttachable_BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(__thisNode__, reference);
+    assert IReferenceAttachable__BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(__thisNode__, reference);
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, 0x73a7cdcfbacafee1L, "errorRef"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4af0d67L, "jetbrains.mps.lang.test.structure.UnknownRuleReference"))));
     SLinkOperations.setTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, 0x73a7cdcfbacafee1L, "errorRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), reference);
   }
@@ -48,7 +48,7 @@ public final class NodeConstraintsErrorCheckOperation_BehaviorDescriptor extends
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, 0x73a7cdcfbacafee1L, "errorRef"));
   }
 
-  /*package*/ NodeConstraintsErrorCheckOperation_BehaviorDescriptor() {
+  /*package*/ NodeConstraintsErrorCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

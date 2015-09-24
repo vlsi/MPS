@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CellActionMapDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellActionMapDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class CellActionMapDeclaration_BehaviorDescriptor extends BaseBHDes
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d00L, "applicableConcept"), baseConcept);
   }
 
-  /*package*/ CellActionMapDeclaration_BehaviorDescriptor() {
+  /*package*/ CellActionMapDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

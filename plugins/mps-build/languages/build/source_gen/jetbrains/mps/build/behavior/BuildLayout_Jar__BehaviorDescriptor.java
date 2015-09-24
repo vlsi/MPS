@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class BuildLayout_Jar_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class BuildLayout_Jar_BehaviorDescriptor extends BaseBHDescriptor {
   private static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.contentLocations().get(parent);
-    String zipLocation = parentLocation + "/" + BuildString_BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
+    String zipLocation = parentLocation + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
     helper.locations().put(__thisNode__, zipLocation);
 
     if (helper.isContentRequired(__thisNode__)) {
@@ -74,7 +74,7 @@ public final class BuildLayout_Jar_BehaviorDescriptor extends BaseBHDescriptor {
           }
         });
       } else {
-        return BuildLayout_Jar_BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, __thisNode__, object);
+        return BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, __thisNode__, object);
       }
     }
     return false;
@@ -82,19 +82,19 @@ public final class BuildLayout_Jar_BehaviorDescriptor extends BaseBHDescriptor {
   private static Boolean scanInJarNodes_id5bqm540K$Gi(@NotNull final SNode __thisNode__, SNode container, final Object object) {
     if (ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BuildLayout_InJarNode_BehaviorDescriptor.reexportsFromJar_id5bqm540K$Gb.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), object);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BuildLayout_InJarNode__BehaviorDescriptor.reexportsFromJar_id5bqm540K$Gb.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), object);
       }
     })) {
       return true;
     }
     return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) && BuildLayout_Jar_BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), object);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) && BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), object);
       }
     });
   }
   private static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
-    return BuildString_BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
+    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
   }
   private static String getFileSetExtension_id5zIo$W4pFTK(@NotNull SNode __thisNode__) {
     return "zipfileset";
@@ -109,7 +109,7 @@ public final class BuildLayout_Jar_BehaviorDescriptor extends BaseBHDescriptor {
     return ".jar";
   }
 
-  /*package*/ BuildLayout_Jar_BehaviorDescriptor() {
+  /*package*/ BuildLayout_Jar__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

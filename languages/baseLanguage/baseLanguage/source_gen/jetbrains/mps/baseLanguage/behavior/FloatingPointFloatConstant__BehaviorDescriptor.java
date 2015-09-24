@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FloatingPointFloatConstant_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FloatingPointFloatConstant__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class FloatingPointFloatConstant_BehaviorDescriptor extends BaseBHD
     return true;
   }
 
-  /*package*/ FloatingPointFloatConstant_BehaviorDescriptor() {
+  /*package*/ FloatingPointFloatConstant__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

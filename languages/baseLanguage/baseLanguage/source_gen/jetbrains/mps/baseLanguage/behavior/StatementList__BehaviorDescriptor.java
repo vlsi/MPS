@@ -31,7 +31,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StatementList_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,13 +59,13 @@ public final class StatementList_BehaviorDescriptor extends BaseBHDescriptor {
     SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L, "jetbrains.mps.baseLanguage.structure.IVariableReference"), false, new SAbstractConcept[]{})));
     for (SNode ref : reference) {
       boolean statementsContainsVar = false;
-      for (SNode parent : SNodeOperations.getNodeAncestors(IVariableReference_BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref), null, false)) {
+      for (SNode parent : SNodeOperations.getNodeAncestors(IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref), null, false)) {
         if (parent == SNodeOperations.getParent(__thisNode__)) {
           statementsContainsVar = true;
         }
       }
       if (!(statementsContainsVar)) {
-        SetSequence.fromSet(declarations).addElement(IVariableReference_BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref));
+        SetSequence.fromSet(declarations).addElement(IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref));
       }
     }
     return declarations;
@@ -75,10 +75,10 @@ public final class StatementList_BehaviorDescriptor extends BaseBHDescriptor {
       return false;
     }
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"));
-    if (!(IContainsStatementList_BehaviorDescriptor.isStatementListCompactable_idi0zvp2S.invoke(parent))) {
+    if (!(IContainsStatementList__BehaviorDescriptor.isStatementListCompactable_idi0zvp2S.invoke(parent))) {
       return false;
     }
-    return IContainsStatementList_BehaviorDescriptor.isStatementListCompact_idi0zxZ6o.invoke(parent);
+    return IContainsStatementList__BehaviorDescriptor.isStatementListCompact_idi0zxZ6o.invoke(parent);
   }
   private static Boolean isOneLiner_idi0z3USV(@NotNull SNode __thisNode__) {
     if (ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count() > 1) {
@@ -100,12 +100,12 @@ public final class StatementList_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Set<SNode> uncaughtThrowables_id2SVUfbZ9Qq1(@NotNull SNode __thisNode__, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    StatementList_BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(__thisNode__, result, ignoreMayBeThrowables);
+    StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(__thisNode__, result, ignoreMayBeThrowables);
     return result;
   }
   private static void collectUncaughtThrowables_id4Gt7ANIVHca(@NotNull SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")))) {
-      Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(statement, throwables, ignoreMayBeThrowables);
+      Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(statement, throwables, ignoreMayBeThrowables);
     }
   }
   private static SNode getFirstStatement_id4GU1DgEHJ2u(@NotNull SNode __thisNode__) {
@@ -158,18 +158,18 @@ public final class StatementList_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      return Scopes.forVariables(kind, StatementList_BehaviorDescriptor.getLocalVariableDeclarations_id3tkxRydYUUs.invoke(__thisNode__, child), ScopeUtils.lazyParentScope(__thisNode__, kind));
+      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id3tkxRydYUUs.invoke(__thisNode__, child), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
     return null;
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      return Scopes.forVariables(kind, StatementList_BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, role, index), ScopeUtils.lazyParentScope(__thisNode__, kind));
+      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, role, index), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
     return null;
   }
 
-  /*package*/ StatementList_BehaviorDescriptor() {
+  /*package*/ StatementList__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

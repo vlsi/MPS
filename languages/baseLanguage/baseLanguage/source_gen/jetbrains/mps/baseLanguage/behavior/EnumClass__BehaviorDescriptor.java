@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -58,8 +58,8 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_nbdilp_a0a1();
   }
   private static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull SNode __thisNode__) {
-    List<SNode> extended = ClassConcept_BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invokeSpecial(__thisNode__);
-    SNode enumType = Classifier_BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
+    List<SNode> extended = ClassConcept__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invokeSpecial(__thisNode__);
+    SNode enumType = Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
       ListSequence.fromList(extended).addElement(enumType);
@@ -67,7 +67,7 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
     return extended;
   }
   private static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
-    List<SNode> members = Classifier_BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
+    List<SNode> members = Classifier__BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))));
     return members;
   }
@@ -76,13 +76,13 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static List<SNode> getMethodsToImplement_id4GM03FJm5q2(@NotNull SNode __thisNode__) {
-    List<SNode> methodsToImplement = ClassConcept_BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invokeSpecial(__thisNode__);
-    final List<SNode> ownMethods = Classifier_BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
+    List<SNode> methodsToImplement = ClassConcept__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invokeSpecial(__thisNode__);
+    final List<SNode> ownMethods = Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"));
     Iterable<SNode> remaining = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode toBeImplemented) {
         return !(ListSequence.fromList(ownMethods).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode own) {
-            return !(BaseMethodDeclaration_BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(own)) && BaseMethodDeclaration_BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(toBeImplemented, own);
+            return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(own)) && BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(toBeImplemented, own);
           }
         }));
       }
@@ -90,8 +90,8 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
     return Sequence.fromIterable(remaining).toListSequence();
   }
   private static List<SNode> getMethodsToOverride_id4GM03FJm3zL(@NotNull SNode __thisNode__) {
-    final List<SNode> methodsToOverride = ClassConcept_BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invokeSpecial(__thisNode__);
-    Iterable<SNode> ownMethods = ListSequence.fromList(Classifier_BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"))).where(new IWhereFilter<SNode>() {
+    final List<SNode> methodsToOverride = ClassConcept__BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invokeSpecial(__thisNode__);
+    Iterable<SNode> ownMethods = ListSequence.fromList(Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Enum"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       }
@@ -105,7 +105,7 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
       public boolean accept(final SNode own) {
         return !(ListSequence.fromList(methodsToOverride).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode toBeOverriden) {
-            return BaseMethodDeclaration_BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(own, toBeOverriden);
+            return BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(own, toBeOverriden);
           }
         }));
       }
@@ -113,7 +113,7 @@ public final class EnumClass_BehaviorDescriptor extends BaseBHDescriptor {
     return ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(allToBeAdded));
   }
 
-  /*package*/ EnumClass_BehaviorDescriptor() {
+  /*package*/ EnumClass__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

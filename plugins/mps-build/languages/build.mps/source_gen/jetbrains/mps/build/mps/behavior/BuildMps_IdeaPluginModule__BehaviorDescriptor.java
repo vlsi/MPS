@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_IdeaPluginModule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_IdeaPluginModule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,10 +40,10 @@ public final class BuildMps_IdeaPluginModule_BehaviorDescriptor extends BaseBHDe
         return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target")) == node;
       }
     }
-    return BuildMps_IdeaPluginContent_BehaviorDescriptor.exports_id5FtnUVJQES1.invokeSpecial(__thisNode__, object);
+    return BuildMps_IdeaPluginContent__BehaviorDescriptor.exports_id5FtnUVJQES1.invokeSpecial(__thisNode__, object);
   }
 
-  /*package*/ BuildMps_IdeaPluginModule_BehaviorDescriptor() {
+  /*package*/ BuildMps_IdeaPluginModule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -8,15 +8,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProcessor {
@@ -27,7 +27,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
     if (ListSequence.fromList(SNodeOperations.getNodeAncestors(pastedNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(ClassifierMember_BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(it));
+        return !(ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(it));
       }
     }).isEmpty()) {
       return;
@@ -48,12 +48,12 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
         // Collecting possible classConcepts (this. targets) 
         List<SNode> possibleClassConcepts = new ArrayList<SNode>();
-        for (SNode clazz = containingClass; clazz != null; clazz = (IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(clazz) ? null : SNodeOperations.getNodeAncestor(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false))) {
+        for (SNode clazz = containingClass; clazz != null; clazz = (IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(clazz) ? null : SNodeOperations.getNodeAncestor(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false))) {
           ListSequence.fromList(possibleClassConcepts).addElement(clazz);
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(nextClassConcept), pastedNode)).where(new IWhereFilter<SNode>() {
+          if (Sequence.fromIterable(Members.visibleInstanceFields(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(nextClassConcept), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(resolveInfo);
             }

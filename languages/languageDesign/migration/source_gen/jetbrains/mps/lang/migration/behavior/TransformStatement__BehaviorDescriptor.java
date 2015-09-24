@@ -25,7 +25,7 @@ import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TransformStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TransformStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,7 +55,7 @@ public final class TransformStatement_BehaviorDescriptor extends BaseBHDescripto
     return null;
   }
 
-  /*package*/ TransformStatement_BehaviorDescriptor() {
+  /*package*/ TransformStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

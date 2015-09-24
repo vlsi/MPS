@@ -11,31 +11,31 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class C_Behavior {
   public static void call_doInvokeAll_4731970554577271015(SNode __thisNode__) {
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSpecial(__thisNode__, 0);
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSpecial(__thisNode__, "", 0);
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invokeSpecial(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invokeSpecial(__thisNode__, "from A", 0);
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSpecial(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSpecial(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSpecial(__thisNode__, 0);
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSpecial(__thisNode__, "", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invokeSpecial(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invokeSpecial(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSpecial(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSpecial(__thisNode__, "from A", 0);
     // 
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
     // 
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
     // staticAbstractVirtualMethod() 
     // staticVirtualAbstractFromInterfaceConcept() FIXME possible to declare static abstract virtual method in iface, 
     // implement it here (override), but impossible to invoke 
     // 
-    I_BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
-    I_BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
-    I_BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
-    I_BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
+    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
+    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
+    I__BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
+    I__BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
   }
 }

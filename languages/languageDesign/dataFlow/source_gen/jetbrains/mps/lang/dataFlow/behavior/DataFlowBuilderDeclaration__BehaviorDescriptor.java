@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DataFlowBuilderDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DataFlowBuilderDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class DataFlowBuilderDeclaration_BehaviorDescriptor extends BaseBHD
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration"), baseConcept);
   }
 
-  /*package*/ DataFlowBuilderDeclaration_BehaviorDescriptor() {
+  /*package*/ DataFlowBuilderDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

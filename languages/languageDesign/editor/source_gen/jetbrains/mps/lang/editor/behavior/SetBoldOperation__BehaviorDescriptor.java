@@ -23,7 +23,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class SetBoldOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SetBoldOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,12 +39,12 @@ public final class SetBoldOperation_BehaviorDescriptor extends BaseBHDescriptor 
     return "setBold";
   }
   private static List<SNode> getOperationArgumentType_id5GZRL5t2d36(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = AbstractStyledTextOperation_BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invokeSpecial(__thisConcept__);
+    List<SNode> result = AbstractStyledTextOperation__BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(_quotation_createNode_s26y4o_a0a1a1());
     return result;
   }
 
-  /*package*/ SetBoldOperation_BehaviorDescriptor() {
+  /*package*/ SetBoldOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

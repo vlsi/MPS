@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -51,9 +51,9 @@ public class ActionParameter_NameCellComponent implements ConceptEditorComponent
     }
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
-      SNode nodeType = ActionParameter_BehaviorDescriptor.getType_id112RIkggjzD.invoke(node);
+      SNode nodeType = ActionParameter__BehaviorDescriptor.getType_id112RIkggjzD.invoke(node);
       if (nodeType != null) {
-        result = Type_BehaviorDescriptor.getVariableSuffixes_idhEwIzNo.invoke(nodeType);
+        result = Type__BehaviorDescriptor.getVariableSuffixes_idhEwIzNo.invoke(nodeType);
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }

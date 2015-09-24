@@ -18,13 +18,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnrestrictedFunctionType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnrestrictedFunctionType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,10 +43,10 @@ public final class UnrestrictedFunctionType_BehaviorDescriptor extends BaseBHDes
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4e013cL, "parameterType"))) {
-      sb.append(sep).append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pt));
+      sb.append(sep).append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pt));
       sep = ",";
     }
-    sb.append("==>").append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, 0x11eda2b270fL, "terminateType"))));
+    sb.append("==>").append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, 0x11eda2b270fL, "terminateType"))));
     return sb.append("}").toString();
   }
   private static String getRuntimeClassName_idhTXTW9V(@NotNull SNode __thisNode__) {
@@ -54,18 +54,18 @@ public final class UnrestrictedFunctionType_BehaviorDescriptor extends BaseBHDes
   }
   private static String getRuntimeSignature_idhEwIOjZ(@NotNull SNode __thisNode__) {
     StringBuilder sb = new StringBuilder();
-    if ((FunctionType_BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__) != null)) {
+    if ((FunctionType__BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__) != null)) {
       sb.append("_return");
     } else {
       sb.append("_void");
     }
-    if ((FunctionType_BehaviorDescriptor.getTerminateType_idhVqPOyZ.invoke(__thisNode__) != null)) {
+    if ((FunctionType__BehaviorDescriptor.getTerminateType_idhVqPOyZ.invoke(__thisNode__) != null)) {
       sb.append("_terminate");
     } else {
       sb.append("_void");
     }
     sb.append("_P").append(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4e013cL, "parameterType"))).count());
-    sb.append("_E").append(ListSequence.fromList(FunctionType_BehaviorDescriptor.getNormalizedThrowsTypes_id2ZrgyPlTDZP.invoke(__thisNode__)).count());
+    sb.append("_E").append(ListSequence.fromList(FunctionType__BehaviorDescriptor.getNormalizedThrowsTypes_id2ZrgyPlTDZP.invoke(__thisNode__)).count());
     return sb.toString();
   }
   private static String getRuntimeAdapterClassName_idhUQ$n8M(@NotNull SNode __thisNode__) {
@@ -80,7 +80,7 @@ public final class UnrestrictedFunctionType_BehaviorDescriptor extends BaseBHDes
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) ? tt : null);
   }
 
-  /*package*/ UnrestrictedFunctionType_BehaviorDescriptor() {
+  /*package*/ UnrestrictedFunctionType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

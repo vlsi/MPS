@@ -31,7 +31,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class MethodDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MethodDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,10 +50,10 @@ public final class MethodDescriptor_BehaviorDescriptor extends BaseBHDescriptor 
     SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))));
     ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, 0x340eb2bd2e03d168L, "param"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ParameterDescriptor_BehaviorDescriptor.create_id2h59CdJp99Y.invoke(it, method);
+        return ParameterDescriptor__BehaviorDescriptor.create_id2h59CdJp99Y.invoke(it, method);
       }
     }));
-    SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), (SNodeOperations.isInstanceOf(MethodDescriptor_BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")) ? DependentTypeDescriptor_BehaviorDescriptor.create_id2h59CdJp8nr.invoke(SNodeOperations.cast(MethodDescriptor_BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")), method) : SNodeOperations.copyNode(MethodDescriptor_BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__))));
+    SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), (SNodeOperations.isInstanceOf(MethodDescriptor__BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")) ? DependentTypeDescriptor__BehaviorDescriptor.create_id2h59CdJp8nr.invoke(SNodeOperations.cast(MethodDescriptor__BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor")), method) : SNodeOperations.copyNode(MethodDescriptor__BehaviorDescriptor.getReturnType_id3m06Jgso0l8.invoke(__thisNode__))));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, 0x443e89bb321537L, "decl"), __thisNode__);
     return method;
   }
@@ -72,7 +72,7 @@ public final class MethodDescriptor_BehaviorDescriptor extends BaseBHDescriptor 
     });
   }
 
-  /*package*/ MethodDescriptor_BehaviorDescriptor() {
+  /*package*/ MethodDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

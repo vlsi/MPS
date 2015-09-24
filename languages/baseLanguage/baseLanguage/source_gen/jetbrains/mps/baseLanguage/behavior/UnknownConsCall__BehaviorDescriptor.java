@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnknownConsCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnknownConsCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, "jetbrains.mps.baseLanguage.structure.UnknownConsCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class UnknownConsCall_BehaviorDescriptor extends BaseBHDescriptor {
     return ResolveUnknownUtil.resolveConsCall(__thisNode__);
   }
 
-  /*package*/ UnknownConsCall_BehaviorDescriptor() {
+  /*package*/ UnknownConsCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

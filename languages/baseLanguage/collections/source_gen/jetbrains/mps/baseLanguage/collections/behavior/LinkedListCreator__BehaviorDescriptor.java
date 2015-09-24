@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class LinkedListCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LinkedListCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daf69a138L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class LinkedListCreator_BehaviorDescriptor extends BaseBHDescriptor
     return _quotation_createNode_rsqk7y_a0a0(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType")));
   }
   private static List<SNode> getAvailableFor_id2D1PBM_bxHF(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = AbstractContainerCreator_BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
+    List<SNode> result = AbstractContainerCreator__BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151688443754"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "3357971920378033937"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "5686963296372475025"));
@@ -53,7 +53,7 @@ public final class LinkedListCreator_BehaviorDescriptor extends BaseBHDescriptor
     return result;
   }
 
-  /*package*/ LinkedListCreator_BehaviorDescriptor() {
+  /*package*/ LinkedListCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

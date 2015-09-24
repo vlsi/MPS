@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MappingConfigNormalRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MappingConfigNormalRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class MappingConfigNormalRef_BehaviorDescriptor extends BaseBHDescr
     return true;
   }
 
-  /*package*/ MappingConfigNormalRef_BehaviorDescriptor() {
+  /*package*/ MappingConfigNormalRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

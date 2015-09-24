@@ -20,16 +20,16 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BaseIntentionDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BaseIntentionDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class BaseIntentionDeclaration_BehaviorDescriptor extends BaseBHDes
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Intention";
   }
   private static String getConceptName_id5rGvd38DcHW(@NotNull SNode __thisNode__) {
-    return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept")));
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept")));
   }
   @Deprecated
   private static Boolean isParameterized_id5rGvd38DcI6(@NotNull SNode __thisNode__) {
@@ -58,10 +58,10 @@ public final class BaseIntentionDeclaration_BehaviorDescriptor extends BaseBHDes
     return false;
   }
   private static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
-    return ICheckedNamePolicy_BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invokeSpecial(__thisNode__);
+    return ICheckedNamePolicy__BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invokeSpecial(__thisNode__);
   }
   private static SNode getDescendantToCheck_id4cWf37B8oXJ(@NotNull SNode __thisNode__) {
-    if (!(ConceptFunction_BehaviorDescriptor.isReturnOnly_id3fUxpI1uWGM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0a9L, "descriptionFunction"))))) {
+    if (!(ConceptFunction__BehaviorDescriptor.isReturnOnly_id3fUxpI1uWGM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0a9L, "descriptionFunction"))))) {
       return null;
     }
     SNode stmt = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0a9L, "descriptionFunction")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first();
@@ -83,7 +83,7 @@ public final class BaseIntentionDeclaration_BehaviorDescriptor extends BaseBHDes
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept"), baseConcept);
   }
 
-  /*package*/ BaseIntentionDeclaration_BehaviorDescriptor() {
+  /*package*/ BaseIntentionDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

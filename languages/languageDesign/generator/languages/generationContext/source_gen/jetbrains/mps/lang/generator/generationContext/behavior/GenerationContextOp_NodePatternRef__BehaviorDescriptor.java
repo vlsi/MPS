@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GenerationContextOp_NodePatternRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GenerationContextOp_NodePatternRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class GenerationContextOp_NodePatternRef_BehaviorDescriptor extends
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, 0x3fb2d847d55fdcd5L, "patternVarDecl"), null);
   }
 
-  /*package*/ GenerationContextOp_NodePatternRef_BehaviorDescriptor() {
+  /*package*/ GenerationContextOp_NodePatternRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

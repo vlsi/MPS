@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.IterableUtil;
@@ -29,7 +29,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SubtreeStatisticsTarget_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SubtreeStatisticsTarget__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class SubtreeStatisticsTarget_BehaviorDescriptor extends BaseBHDesc
   }
 
   private static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
-    SNode targetNode = AbstractNodeRefExpression_BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, 0x1cf75b72b0b396c6L, "target")));
+    SNode targetNode = AbstractNodeRefExpression__BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, 0x1cf75b72b0b396c6L, "target")));
     List<SNode> subNodes = SNodeOperations.getNodeDescendants(targetNode, null, false, new SAbstractConcept[]{});
     int references = 0;
     int properties = 0;
@@ -61,7 +61,7 @@ public final class SubtreeStatisticsTarget_BehaviorDescriptor extends BaseBHDesc
     return SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, 0x1cf75b72b0b396c6L, "target")), null, false, new SAbstractConcept[]{});
   }
 
-  /*package*/ SubtreeStatisticsTarget_BehaviorDescriptor() {
+  /*package*/ SubtreeStatisticsTarget__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

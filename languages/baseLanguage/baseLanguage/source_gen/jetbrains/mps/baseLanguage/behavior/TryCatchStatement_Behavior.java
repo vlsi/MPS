@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class TryCatchStatement_Behavior {
   public static void call_collectUncatchedThrowables_4313092516462065508(SAbstractConcept __thisConcept__, Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
     Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet<SNode>());
-    StatementList_BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(body, thrownsFromBody, ignoreMayBeThrowables);
+    StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(body, thrownsFromBody, ignoreMayBeThrowables);
 
     // remove what we have catched 
     for (SNode caatch : ListSequence.fromList(catchClause)) {
@@ -42,7 +42,7 @@ public class TryCatchStatement_Behavior {
 
     // now collect what was thrown in catch blocks 
     for (SNode caatch : ListSequence.fromList(catchClause)) {
-      StatementList_BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(SLinkOperations.getTarget(caatch, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f2L, "catchBody")), throwables, ignoreMayBeThrowables);
+      StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(SLinkOperations.getTarget(caatch, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f2L, "catchBody")), throwables, ignoreMayBeThrowables);
     }
   }
   private static SNode _quotation_createNode_1bi1ep_a0a1a2a4a2(Object parameter_1) {

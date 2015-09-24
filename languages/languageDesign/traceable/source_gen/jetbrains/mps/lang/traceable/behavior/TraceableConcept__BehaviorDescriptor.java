@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TraceableConcept_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TraceableConcept__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class TraceableConcept_BehaviorDescriptor extends BaseBHDescriptor 
     return null;
   }
 
-  /*package*/ TraceableConcept_BehaviorDescriptor() {
+  /*package*/ TraceableConcept__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

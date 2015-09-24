@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BaseLineCell_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BaseLineCell__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class BaseLineCell_BehaviorDescriptor extends BaseBHDescriptor {
     return StyleAttributes.BASE_LINE_CELL;
   }
 
-  /*package*/ BaseLineCell_BehaviorDescriptor() {
+  /*package*/ BaseLineCell__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

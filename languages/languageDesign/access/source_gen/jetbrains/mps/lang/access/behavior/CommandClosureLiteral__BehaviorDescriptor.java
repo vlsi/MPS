@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CommandClosureLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CommandClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20dL, "jetbrains.mps.lang.access.structure.CommandClosureLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class CommandClosureLiteral_BehaviorDescriptor extends BaseBHDescri
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20cL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"));
   }
 
-  /*package*/ CommandClosureLiteral_BehaviorDescriptor() {
+  /*package*/ CommandClosureLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

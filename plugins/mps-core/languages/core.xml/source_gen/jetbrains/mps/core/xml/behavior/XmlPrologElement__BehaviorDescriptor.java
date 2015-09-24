@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlPrologElement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlPrologElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class XmlPrologElement_BehaviorDescriptor extends BaseBHDescriptor 
     return false;
   }
 
-  /*package*/ XmlPrologElement_BehaviorDescriptor() {
+  /*package*/ XmlPrologElement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ThisConstructorInvocation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ThisConstructorInvocation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class ThisConstructorInvocation_BehaviorDescriptor extends BaseBHDe
 
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     SNode classConcept = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
-    return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
   }
 
-  /*package*/ ThisConstructorInvocation_BehaviorDescriptor() {
+  /*package*/ ThisConstructorInvocation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

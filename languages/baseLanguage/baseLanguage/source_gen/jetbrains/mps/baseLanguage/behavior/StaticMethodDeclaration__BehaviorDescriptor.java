@@ -35,7 +35,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class StaticMethodDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StaticMethodDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -54,7 +54,7 @@ public final class StaticMethodDeclaration_BehaviorDescriptor extends BaseBHDesc
   }
 
   private static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseMethodDeclaration_BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseMethodDeclaration__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
@@ -72,7 +72,7 @@ public final class StaticMethodDeclaration_BehaviorDescriptor extends BaseBHDesc
     });
   }
   private static List<SNode> getChildrenToDisplayIntention_id3vsDNFqJVhw(@NotNull SNode __thisNode__) {
-    List<SNode> result = BaseMethodDeclaration_BehaviorDescriptor.getChildrenToDisplayIntention_id3vsDNFqJVhw.invokeSpecial(__thisNode__);
+    List<SNode> result = BaseMethodDeclaration__BehaviorDescriptor.getChildrenToDisplayIntention_id3vsDNFqJVhw.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")));
     return result;
   }
@@ -80,7 +80,7 @@ public final class StaticMethodDeclaration_BehaviorDescriptor extends BaseBHDesc
     return true;
   }
   private static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return IVisible_BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
+    return IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
   }
   private static void populateMember_id6r77ob2UW9O(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
     if (!((context.isElementVisible(__thisNode__)))) {
@@ -94,7 +94,7 @@ public final class StaticMethodDeclaration_BehaviorDescriptor extends BaseBHDesc
     return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"));
   }
 
-  /*package*/ StaticMethodDeclaration_BehaviorDescriptor() {
+  /*package*/ StaticMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class NodeCheckOperation_Behavior {
   public static String call_getName_1217435265700(SNode __thisNode__) {
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).length() == 0) {
-      return NodeCheckOperation_BehaviorDescriptor.getDefaultName_id7scb9XJdmH2.invoke(__thisNode__);
+      return NodeCheckOperation__BehaviorDescriptor.getDefaultName_id7scb9XJdmH2.invoke(__thisNode__);
     } else {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }

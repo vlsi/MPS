@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class TestMethod_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TestMethod__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc92748eL, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -56,7 +56,7 @@ public final class TestMethod_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
 
-  /*package*/ TestMethod_BehaviorDescriptor() {
+  /*package*/ TestMethod__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL, "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDe
     return _quotation_createNode_1zzllr_a0a0();
   }
 
-  /*package*/ ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor() {
+  /*package*/ ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

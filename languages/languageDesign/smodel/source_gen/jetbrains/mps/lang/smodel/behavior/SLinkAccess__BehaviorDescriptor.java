@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SLinkAccess_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SLinkAccess__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -65,7 +65,7 @@ public final class SLinkAccess_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ SLinkAccess_BehaviorDescriptor() {
+  /*package*/ SLinkAccess__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

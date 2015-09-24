@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SymbolClassRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SymbolClassRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,20 +37,20 @@ public final class SymbolClassRegexp_BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
-    return SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(__thisNode__);
+    return SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(__thisNode__);
   }
   private static String getRepresentation_id75Jea4IEZbM(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + SymbolClassRegexp_BehaviorDescriptor.partsToString_idhMS0769.invoke(__thisNode__, SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, 0x11179171739L, "part"))) + "]";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + SymbolClassRegexp__BehaviorDescriptor.partsToString_idhMS0769.invoke(__thisNode__, SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, 0x11179171739L, "part"))) + "]";
   }
   private static String partsToString_idhMS0769(@NotNull SNode __thisNode__, List<SNode> parts) {
     StringBuilder result = new StringBuilder();
     for (SNode part : parts) {
-      result.append(SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
+      result.append(SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
     }
     return result.toString();
   }
 
-  /*package*/ SymbolClassRegexp_BehaviorDescriptor() {
+  /*package*/ SymbolClassRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

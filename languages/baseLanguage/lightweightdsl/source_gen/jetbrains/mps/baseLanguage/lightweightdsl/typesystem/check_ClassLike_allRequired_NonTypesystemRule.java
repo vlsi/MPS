@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -27,8 +27,8 @@ public class check_ClassLike_allRequired_NonTypesystemRule extends AbstractNonTy
     }
 
     for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(DSLDescriptorUtil.getDescriptor(classLike), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
-      if (DSLClassMember_BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(memberDescriptor)) {
-        if (!(Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike)).isNotEmpty())) {
+      if (DSLClassMember__BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(memberDescriptor)) {
+        if (!(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike)).isNotEmpty())) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classLike, "Member '" + memberDescriptor + "' is required", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.typesystem)", "2603987804377015590", null, errorTarget);
         }

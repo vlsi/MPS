@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class BuilderBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuilderBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class BuilderBlock_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)", "1206442747519"));
     return result;
   }
@@ -50,7 +50,7 @@ public final class BuilderBlock_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_65kp3z_a0a2();
   }
 
-  /*package*/ BuilderBlock_BehaviorDescriptor() {
+  /*package*/ BuilderBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EmptyMemberDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EmptyMemberDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x50c63f9f4a0dea5fL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class EmptyMemberDescriptor_BehaviorDescriptor extends BaseBHDescri
   }
 
   private static SNode createForClass_id5BD$AU437jJ(@NotNull SNode __thisNode__, SNode cls) {
-    return DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__);
+    return DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__);
   }
   private static SNode create_id7ay_HjIOVVe(@NotNull SNode __thisNode__) {
     return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")));
@@ -49,7 +49,7 @@ public final class EmptyMemberDescriptor_BehaviorDescriptor extends BaseBHDescri
     return "empty line";
   }
 
-  /*package*/ EmptyMemberDescriptor_BehaviorDescriptor() {
+  /*package*/ EmptyMemberDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

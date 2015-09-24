@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LinkedHashSetCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LinkedHashSetCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2b5bbfdL, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,13 +38,13 @@ public final class LinkedHashSetCreator_BehaviorDescriptor extends BaseBHDescrip
     return true;
   }
   private static List<SNode> getAvailableFor_id2D1PBM_bxHF(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = HashSetCreator_BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
+    List<SNode> result = HashSetCreator__BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1226511727824"));
     return result;
   }
 
-  /*package*/ LinkedHashSetCreator_BehaviorDescriptor() {
+  /*package*/ LinkedHashSetCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

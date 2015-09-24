@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class HTMLElement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class HTMLElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,7 +52,7 @@ public final class HTMLElement_BehaviorDescriptor extends BaseBHDescriptor {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
       }
       SNodeOperations.deleteNode(__thisNode__);
-      CommentLine_BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
+      CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
       return new NodeCaretPair(prev, caret);
     } else {
       //  Merging first line 
@@ -64,7 +64,7 @@ public final class HTMLElement_BehaviorDescriptor extends BaseBHDescriptor {
         nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index - 1);
         caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index - 1), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
       }
-      CommentLine_BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
+      CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
 
       //  Merging other lines 
       SNode lastElementLine = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).last();
@@ -79,7 +79,7 @@ public final class HTMLElement_BehaviorDescriptor extends BaseBHDescriptor {
           nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index - 1);
           caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index - 1), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
         }
-        CommentLine_BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
+        CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
       } else {
         //  Merging last line parts 
         index = ListSequence.fromList(SLinkOperations.getChildren(lastElementLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() - 1;
@@ -91,13 +91,13 @@ public final class HTMLElement_BehaviorDescriptor extends BaseBHDescriptor {
           nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(lastElementLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index);
           caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(lastElementLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")), MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text")).length();
         }
-        CommentLine_BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(lastElementLine, index);
+        CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(lastElementLine, index);
       }
     }
     return new NodeCaretPair(nodeToSelect, caret);
   }
 
-  /*package*/ HTMLElement_BehaviorDescriptor() {
+  /*package*/ HTMLElement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

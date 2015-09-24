@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ReplaceBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReplaceBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef80054L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ReplaceBlock_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_tprwlo_a0a0();
   }
 
-  /*package*/ ReplaceBlock_BehaviorDescriptor() {
+  /*package*/ ReplaceBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

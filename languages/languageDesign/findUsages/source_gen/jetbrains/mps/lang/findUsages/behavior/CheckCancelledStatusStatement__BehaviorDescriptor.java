@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CheckCancelledStatusStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CheckCancelledStatusStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class CheckCancelledStatusStatement_BehaviorDescriptor extends Base
   }
 
 
-  /*package*/ CheckCancelledStatusStatement_BehaviorDescriptor() {
+  /*package*/ CheckCancelledStatusStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

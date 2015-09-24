@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class NodeMacro_Behavior {
   public static SNode call_getPreviousNodeMacro_1213877290823(SNode __thisNode__) {
-    return NodeMacro_BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, __thisNode__, SNodeOperations.getParent(__thisNode__));
+    return NodeMacro__BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, __thisNode__, SNodeOperations.getParent(__thisNode__));
   }
   public static SNode call_getEnclosingMacro_1213877290834(SNode __thisNode__, SNode currentMacro, SNode currentNode) {
     if (currentNode == null) {
@@ -36,7 +36,7 @@ public class NodeMacro_Behavior {
     if (result != null) {
       return result;
     }
-    return NodeMacro_BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, null, SNodeOperations.getParent(currentNode));
+    return NodeMacro__BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, null, SNodeOperations.getParent(currentNode));
   }
   public static SNode call_getInputNodeTypeFromEnvironment_1213877290892(SNode __thisNode__) {
     SNode ancestor = SNodeOperations.getNodeAncestorWhereConceptInList(__thisNode__, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule")}, false, false);

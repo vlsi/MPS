@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConstantStringAppendPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstantStringAppendPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ConstantStringAppendPart_BehaviorDescriptor extends BaseBHDes
     return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent"));
   }
 
-  /*package*/ ConstantStringAppendPart_BehaviorDescriptor() {
+  /*package*/ ConstantStringAppendPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

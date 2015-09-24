@@ -27,7 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SimpleBuilder_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SimpleBuilder__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,8 +50,8 @@ public final class SimpleBuilder_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static List<SNode> getPossibleChildren_id7LSrDTXb8f8(@NotNull SNode __thisNode__, SModel model) {
     List<SNode> builders = new ArrayList<SNode>();
-    for (SNode child : SimpleBuilderDeclaration_BehaviorDescriptor.getChildren_id3jPK7hzSvxE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), model)) {
-      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_BehaviorDescriptor.getDescendants_id3jPK7hzRzcY.invoke(SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1d353bL, "child")), model)).where(new IWhereFilter<SNode>() {
+    for (SNode child : SimpleBuilderDeclaration__BehaviorDescriptor.getChildren_id3jPK7hzSvxE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), model)) {
+      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration__BehaviorDescriptor.getDescendants_id3jPK7hzRzcY.invoke(SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1d353bL, "child")), model)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x34f5c07463deaa83L, "isAbstract")));
         }
@@ -79,8 +79,8 @@ public final class SimpleBuilder_BehaviorDescriptor extends BaseBHDescriptor {
 
     if (SNodeOperations.isInstanceOf(childBuilder, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"))) {
       SNode simpleBuilder = SNodeOperations.cast(childBuilder, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"));
-      for (SNode child : SimpleBuilderDeclaration_BehaviorDescriptor.getChildren_id3jPK7hzSvxE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), SNodeOperations.getModel(__thisNode__))) {
-        if (SimpleBuilderDeclaration_BehaviorDescriptor.isDescendant_id3jPK7hzRvLl.invoke(SLinkOperations.getTarget(simpleBuilder, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1d353bL, "child")))) {
+      for (SNode child : SimpleBuilderDeclaration__BehaviorDescriptor.getChildren_id3jPK7hzSvxE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), SNodeOperations.getModel(__thisNode__))) {
+        if (SimpleBuilderDeclaration__BehaviorDescriptor.isDescendant_id3jPK7hzRvLl.invoke(SLinkOperations.getTarget(simpleBuilder, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, 0x6524536b2e24c0bbL, "declaration")), SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1d353bL, "child")))) {
           SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(child, MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, 0x6524536b2e1dac5bL, "attachStatement")));
           for (SNode parent : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353cL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"), false, new SAbstractConcept[]{})) {
             SNodeOperations.replaceWithAnother(parent, SNodeOperations.copyNode(parentRef));
@@ -93,10 +93,10 @@ public final class SimpleBuilder_BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
 
-    return Builder_BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invokeSpecial(__thisNode__, childBuilder, parentRef, childRef);
+    return Builder__BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invokeSpecial(__thisNode__, childBuilder, parentRef, childRef);
   }
 
-  /*package*/ SimpleBuilder_BehaviorDescriptor() {
+  /*package*/ SimpleBuilder__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

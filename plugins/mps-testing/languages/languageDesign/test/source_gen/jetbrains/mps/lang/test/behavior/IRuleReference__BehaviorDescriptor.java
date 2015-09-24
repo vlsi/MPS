@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IRuleReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IRuleReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, "jetbrains.mps.lang.test.structure.IRuleReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class IRuleReference_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ IRuleReference_BehaviorDescriptor() {
+  /*package*/ IRuleReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

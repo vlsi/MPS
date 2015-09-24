@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class EvaluatorConcept_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EvaluatorConcept__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,7 +52,7 @@ public final class EvaluatorConcept_BehaviorDescriptor extends BaseBHDescriptor 
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x10093bb8b0669700L, "evaluatedStatements"));
   }
 
-  /*package*/ EvaluatorConcept_BehaviorDescriptor() {
+  /*package*/ EvaluatorConcept__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

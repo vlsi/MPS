@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BwfMacroListImport_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BwfMacroListImport__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5a7e1dc16b0ca24fL, "jetbrains.mps.build.workflow.structure.BwfMacroListImport");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class BwfMacroListImport_BehaviorDescriptor extends BaseBHDescripto
     return 30;
   }
 
-  /*package*/ BwfMacroListImport_BehaviorDescriptor() {
+  /*package*/ BwfMacroListImport__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

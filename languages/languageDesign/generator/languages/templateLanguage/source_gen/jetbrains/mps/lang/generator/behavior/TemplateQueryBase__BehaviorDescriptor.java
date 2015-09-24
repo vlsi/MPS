@@ -22,7 +22,7 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TemplateQueryBase_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TemplateQueryBase__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11b4d0ca830L, "jetbrains.mps.lang.generator.structure.TemplateQueryBase");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class TemplateQueryBase_BehaviorDescriptor extends BaseBHDescriptor
     return new EmptyScope();
   }
 
-  /*package*/ TemplateQueryBase_BehaviorDescriptor() {
+  /*package*/ TemplateQueryBase__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

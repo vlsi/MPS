@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.figures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -19,8 +19,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class ExternalViewFigureParameter_Behavior {
   public static SNode call_getParameterMethod_5422656561935120433(SNode __thisNode__) {
-    final String methodName = ExternalViewFigureParameter_BehaviorDescriptor.getGetterName_id3g73hQq7brf.invoke(__thisNode__);
-    return ListSequence.fromList(IMemberContainer_BehaviorDescriptor.getMembers_idhEwJjl2.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure")), MetaAdapterFactory.getReferenceLink(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, 0x1e3b9cbb9f7493f7L, "classifier")))).where(new IWhereFilter<SNode>() {
+    final String methodName = ExternalViewFigureParameter__BehaviorDescriptor.getGetterName_id3g73hQq7brf.invoke(__thisNode__);
+    return ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure")), MetaAdapterFactory.getReferenceLink(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, 0x1e3b9cbb9f7493f7L, "classifier")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       }
@@ -35,7 +35,7 @@ public class ExternalViewFigureParameter_Behavior {
     });
   }
   public static String call_getGetterName_3748979635600013007(SNode __thisNode__) {
-    return "get" + ExternalViewFigureParameter_BehaviorDescriptor.getSuffix_id3g73hQq82yQ.invoke(__thisNode__);
+    return "get" + ExternalViewFigureParameter__BehaviorDescriptor.getSuffix_id3g73hQq82yQ.invoke(__thisNode__);
   }
   public static String call_getSuffix_3748979635600238774(SNode __thisNode__) {
     String prefix = "my";

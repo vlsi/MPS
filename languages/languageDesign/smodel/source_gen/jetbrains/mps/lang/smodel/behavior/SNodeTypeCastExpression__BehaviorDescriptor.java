@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class SNodeTypeCastExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SNodeTypeCastExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class SNodeTypeCastExpression_BehaviorDescriptor extends BaseBHDesc
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression"), expr);
   }
 
-  /*package*/ SNodeTypeCastExpression_BehaviorDescriptor() {
+  /*package*/ SNodeTypeCastExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

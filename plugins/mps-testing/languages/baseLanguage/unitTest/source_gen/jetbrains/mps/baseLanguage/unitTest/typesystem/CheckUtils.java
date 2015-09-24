@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.unitTest.typesystem;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -18,7 +18,7 @@ public class CheckUtils {
 
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
     SModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
-    if (ITestable_BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testCase) || ITestCase_BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(testCase)) {
+    if (ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testCase) || ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(testCase)) {
       return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
     } else {
       return true;

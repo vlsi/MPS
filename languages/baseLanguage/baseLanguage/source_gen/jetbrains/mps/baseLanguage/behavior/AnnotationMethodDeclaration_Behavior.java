@@ -23,7 +23,7 @@ public class AnnotationMethodDeclaration_Behavior {
         // nested array types are prohibited 
         return false;
       }
-      return AnnotationMethodDeclaration_BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(__thisNode__, componentType);
+      return AnnotationMethodDeclaration__BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(__thisNode__, componentType);
     }
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

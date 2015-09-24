@@ -12,21 +12,21 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myStartProcessHandlerStatement_BehaviorDescriptor = new StartProcessHandlerStatement_BehaviorDescriptor();
-  private final BHDescriptor myConsoleType_BehaviorDescriptor = new ConsoleType_BehaviorDescriptor();
-  private final BHDescriptor myRunConfiguration_BehaviorDescriptor = new RunConfiguration_BehaviorDescriptor();
-  private final BHDescriptor myRunConfigurationKind_BehaviorDescriptor = new RunConfigurationKind_BehaviorDescriptor();
-  private final BHDescriptor myAbstractRunConfigurationExecutor_BehaviorDescriptor = new AbstractRunConfigurationExecutor_BehaviorDescriptor();
-  private final BHDescriptor myExecuteBeforeTask_ConceptFunction_BehaviorDescriptor = new ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myRunConfigurationProducer_BehaviorDescriptor = new RunConfigurationProducer_BehaviorDescriptor();
-  private final BHDescriptor myRunConfigurationProducerPart_BehaviorDescriptor = new RunConfigurationProducerPart_BehaviorDescriptor();
-  private final BHDescriptor myCreate_ConceptFunction_BehaviorDescriptor = new Create_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myExecuteConfiguration_Function_BehaviorDescriptor = new ExecuteConfiguration_Function_BehaviorDescriptor();
-  private final BHDescriptor myBeforeTaskParameter_BehaviorDescriptor = new BeforeTaskParameter_BehaviorDescriptor();
-  private final BHDescriptor myBeforeTaskParameterReference_BehaviorDescriptor = new BeforeTaskParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myBeforeTask_BehaviorDescriptor = new BeforeTask_BehaviorDescriptor();
-  private final BHDescriptor myRunConfigurationExecutor_BehaviorDescriptor = new RunConfigurationExecutor_BehaviorDescriptor();
-  private final BHDescriptor myConfigurationFromExecutorReference_BehaviorDescriptor = new ConfigurationFromExecutorReference_BehaviorDescriptor();
+  private final BHDescriptor myStartProcessHandlerStatement__BehaviorDescriptor = new StartProcessHandlerStatement__BehaviorDescriptor();
+  private final BHDescriptor myConsoleType__BehaviorDescriptor = new ConsoleType__BehaviorDescriptor();
+  private final BHDescriptor myRunConfiguration__BehaviorDescriptor = new RunConfiguration__BehaviorDescriptor();
+  private final BHDescriptor myRunConfigurationKind__BehaviorDescriptor = new RunConfigurationKind__BehaviorDescriptor();
+  private final BHDescriptor myAbstractRunConfigurationExecutor__BehaviorDescriptor = new AbstractRunConfigurationExecutor__BehaviorDescriptor();
+  private final BHDescriptor myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor = new ExecuteBeforeTask_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myRunConfigurationProducer__BehaviorDescriptor = new RunConfigurationProducer__BehaviorDescriptor();
+  private final BHDescriptor myRunConfigurationProducerPart__BehaviorDescriptor = new RunConfigurationProducerPart__BehaviorDescriptor();
+  private final BHDescriptor myCreate_ConceptFunction__BehaviorDescriptor = new Create_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myExecuteConfiguration_Function__BehaviorDescriptor = new ExecuteConfiguration_Function__BehaviorDescriptor();
+  private final BHDescriptor myBeforeTaskParameter__BehaviorDescriptor = new BeforeTaskParameter__BehaviorDescriptor();
+  private final BHDescriptor myBeforeTaskParameterReference__BehaviorDescriptor = new BeforeTaskParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myBeforeTask__BehaviorDescriptor = new BeforeTask__BehaviorDescriptor();
+  private final BHDescriptor myRunConfigurationExecutor__BehaviorDescriptor = new RunConfigurationExecutor__BehaviorDescriptor();
+  private final BHDescriptor myConfigurationFromExecutorReference__BehaviorDescriptor = new ConfigurationFromExecutorReference__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -61,35 +61,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myStartProcessHandlerStatement_BehaviorDescriptor;
+        return myStartProcessHandlerStatement__BehaviorDescriptor;
       case 1:
-        return myConsoleType_BehaviorDescriptor;
+        return myConsoleType__BehaviorDescriptor;
       case 2:
-        return myRunConfiguration_BehaviorDescriptor;
+        return myRunConfiguration__BehaviorDescriptor;
       case 3:
-        return myRunConfigurationKind_BehaviorDescriptor;
+        return myRunConfigurationKind__BehaviorDescriptor;
       case 4:
-        return myAbstractRunConfigurationExecutor_BehaviorDescriptor;
+        return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
       case 5:
-        return myExecuteBeforeTask_ConceptFunction_BehaviorDescriptor;
+        return myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor;
       case 6:
-        return myRunConfigurationProducer_BehaviorDescriptor;
+        return myRunConfigurationProducer__BehaviorDescriptor;
       case 7:
-        return myRunConfigurationProducerPart_BehaviorDescriptor;
+        return myRunConfigurationProducerPart__BehaviorDescriptor;
       case 8:
-        return myCreate_ConceptFunction_BehaviorDescriptor;
+        return myCreate_ConceptFunction__BehaviorDescriptor;
       case 9:
-        return myExecuteConfiguration_Function_BehaviorDescriptor;
+        return myExecuteConfiguration_Function__BehaviorDescriptor;
       case 10:
-        return myBeforeTaskParameter_BehaviorDescriptor;
+        return myBeforeTaskParameter__BehaviorDescriptor;
       case 11:
-        return myBeforeTaskParameterReference_BehaviorDescriptor;
+        return myBeforeTaskParameterReference__BehaviorDescriptor;
       case 12:
-        return myBeforeTask_BehaviorDescriptor;
+        return myBeforeTask__BehaviorDescriptor;
       case 13:
-        return myRunConfigurationExecutor_BehaviorDescriptor;
+        return myRunConfigurationExecutor__BehaviorDescriptor;
       case 14:
-        return myConfigurationFromExecutorReference_BehaviorDescriptor;
+        return myConfigurationFromExecutorReference__BehaviorDescriptor;
       default:
         return null;
     }

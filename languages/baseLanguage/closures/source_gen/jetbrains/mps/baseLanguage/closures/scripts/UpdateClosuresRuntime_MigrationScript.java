@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -45,7 +45,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_void");
           }
@@ -112,7 +112,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_return");
           }
@@ -182,7 +182,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_return_terminate");
           }
@@ -254,7 +254,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_void_terminate");
           }
@@ -297,7 +297,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
@@ -337,7 +337,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_return_void");
           }
@@ -380,7 +380,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
@@ -420,7 +420,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("_void_void");
           }
@@ -461,7 +461,7 @@ public final class UpdateClosuresRuntime_MigrationScript extends BaseMigrationSc
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }

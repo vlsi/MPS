@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class SuperMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SuperMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class SuperMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SNode getInstanceType_id6WzWPTX2vuB(@NotNull SNode __thisNode__) {
-    SNode concept = ClassConcept_BehaviorDescriptor.getContextClass_id6WzWPTX2$6q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), __thisNode__);
+    SNode concept = ClassConcept__BehaviorDescriptor.getContextClass_id6WzWPTX2$6q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), __thisNode__);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))) {
       ListSequence.fromList(typeVarRefs).addElement(_quotation_createNode_ypylvf_a0a0a2a0(tvd));
@@ -48,7 +48,7 @@ public final class SuperMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_ypylvf_a3a0(typeVarRefs, concept);
   }
 
-  /*package*/ SuperMethodCall_BehaviorDescriptor() {
+  /*package*/ SuperMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

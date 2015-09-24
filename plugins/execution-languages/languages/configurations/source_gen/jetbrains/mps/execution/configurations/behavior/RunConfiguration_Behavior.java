@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 
 /**
  * will be removed after 3.3
@@ -33,7 +33,7 @@ public class RunConfiguration_Behavior {
     return neq_g3syr7_a0b0b(SNodeOperations.getModel(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind"))), SNodeOperations.getModel(__thisNode__));
   }
   public static String call_getGeneratedFactoryName_2256484787298832736(SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_Factory";
+    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_Factory";
   }
   private static boolean neq_g3syr7_a0b0b(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

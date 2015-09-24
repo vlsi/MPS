@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor extends
     return true;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1203001236505"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1147468365020"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "6738154313879680265"));
@@ -53,7 +53,7 @@ public final class ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor extends
     return _quotation_createNode_3sojbo_a0a2();
   }
 
-  /*package*/ ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor() {
+  /*package*/ ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

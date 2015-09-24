@@ -29,7 +29,7 @@ public class DSLDescriptor_Behavior {
       return;
     }
     try {
-      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor_BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(__thisNode__);
+      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(__thisNode__);
       SModule classModule = __thisNode__.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {

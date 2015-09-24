@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,16 +32,16 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && LanguageAspect.FIND_USAGES.is(model);
   }
   public static Object propertyMacro_GetPropertyValue_4192433084863763942(final PropertyMacroContext _context) {
-    return FinderDeclaration_BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder")));
+    return FinderDeclaration__BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder")));
   }
   public static Object propertyMacro_GetPropertyValue_6366407517031517851(final PropertyMacroContext _context) {
-    return FinderDeclaration_BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder")));
+    return FinderDeclaration__BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder")));
   }
   public static Object propertyMacro_GetPropertyValue_1197207280707(final PropertyMacroContext _context) {
-    return FinderDeclaration_BehaviorDescriptor.getGeneratedClassName_idhEwIc4_.invoke(_context.getNode());
+    return FinderDeclaration__BehaviorDescriptor.getGeneratedClassName_idhEwIc4_.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_817124385502523105(final PropertyMacroContext _context) {
-    return FinderDeclaration_BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(_context.getNode());
+    return FinderDeclaration__BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1202839664536(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, 0x116c9c44c38L, "description"));
@@ -53,7 +53,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, 0x11bd0c21635L, "findFunction")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"), false, new SAbstractConcept[]{})).count();
   }
   public static Object propertyMacro_GetPropertyValue_5097877160789321859(final PropertyMacroContext _context) {
-    return FinderDeclaration_BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x118d6fce808L, "finder")));
+    return FinderDeclaration__BehaviorDescriptor.getGeneratedClassLongName_idhEwIc4S.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x118d6fce808L, "finder")));
   }
   public static Object propertyMacro_GetPropertyValue_7991477654791693978(final PropertyMacroContext _context) {
     SNode module = SModelOperations.getModuleStub(_context.getOriginalInputModel());

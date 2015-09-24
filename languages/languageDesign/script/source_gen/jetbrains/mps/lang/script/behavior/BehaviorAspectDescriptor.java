@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myMigrationScriptPart_Instance_Predicate_BehaviorDescriptor = new MigrationScriptPart_Instance_Predicate_BehaviorDescriptor();
-  private final BHDescriptor myMigrationScriptPart_Instance_Updater_BehaviorDescriptor = new MigrationScriptPart_Instance_Updater_BehaviorDescriptor();
-  private final BHDescriptor myPullUpMethod_BehaviorDescriptor = new PullUpMethod_BehaviorDescriptor();
-  private final BHDescriptor myDirectMethodSpecification_BehaviorDescriptor = new DirectMethodSpecification_BehaviorDescriptor();
-  private final BHDescriptor myFQNameMethodSpecification_BehaviorDescriptor = new FQNameMethodSpecification_BehaviorDescriptor();
-  private final BHDescriptor myAbstractMethodSpecification_BehaviorDescriptor = new AbstractMethodSpecification_BehaviorDescriptor();
-  private final BHDescriptor myAbstractClassifierSpecification_BehaviorDescriptor = new AbstractClassifierSpecification_BehaviorDescriptor();
-  private final BHDescriptor myDirectClassifierSpecification_BehaviorDescriptor = new DirectClassifierSpecification_BehaviorDescriptor();
-  private final BHDescriptor myFQNameClassifierSpecification_BehaviorDescriptor = new FQNameClassifierSpecification_BehaviorDescriptor();
+  private final BHDescriptor myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor = new MigrationScriptPart_Instance_Predicate__BehaviorDescriptor();
+  private final BHDescriptor myMigrationScriptPart_Instance_Updater__BehaviorDescriptor = new MigrationScriptPart_Instance_Updater__BehaviorDescriptor();
+  private final BHDescriptor myPullUpMethod__BehaviorDescriptor = new PullUpMethod__BehaviorDescriptor();
+  private final BHDescriptor myDirectMethodSpecification__BehaviorDescriptor = new DirectMethodSpecification__BehaviorDescriptor();
+  private final BHDescriptor myFQNameMethodSpecification__BehaviorDescriptor = new FQNameMethodSpecification__BehaviorDescriptor();
+  private final BHDescriptor myAbstractMethodSpecification__BehaviorDescriptor = new AbstractMethodSpecification__BehaviorDescriptor();
+  private final BHDescriptor myAbstractClassifierSpecification__BehaviorDescriptor = new AbstractClassifierSpecification__BehaviorDescriptor();
+  private final BHDescriptor myDirectClassifierSpecification__BehaviorDescriptor = new DirectClassifierSpecification__BehaviorDescriptor();
+  private final BHDescriptor myFQNameClassifierSpecification__BehaviorDescriptor = new FQNameClassifierSpecification__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -49,23 +49,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myMigrationScriptPart_Instance_Predicate_BehaviorDescriptor;
+        return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
       case 1:
-        return myMigrationScriptPart_Instance_Updater_BehaviorDescriptor;
+        return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
       case 2:
-        return myPullUpMethod_BehaviorDescriptor;
+        return myPullUpMethod__BehaviorDescriptor;
       case 3:
-        return myDirectMethodSpecification_BehaviorDescriptor;
+        return myDirectMethodSpecification__BehaviorDescriptor;
       case 4:
-        return myFQNameMethodSpecification_BehaviorDescriptor;
+        return myFQNameMethodSpecification__BehaviorDescriptor;
       case 5:
-        return myAbstractMethodSpecification_BehaviorDescriptor;
+        return myAbstractMethodSpecification__BehaviorDescriptor;
       case 6:
-        return myAbstractClassifierSpecification_BehaviorDescriptor;
+        return myAbstractClassifierSpecification__BehaviorDescriptor;
       case 7:
-        return myDirectClassifierSpecification_BehaviorDescriptor;
+        return myDirectClassifierSpecification__BehaviorDescriptor;
       case 8:
-        return myFQNameClassifierSpecification_BehaviorDescriptor;
+        return myFQNameClassifierSpecification__BehaviorDescriptor;
       default:
         return null;
     }

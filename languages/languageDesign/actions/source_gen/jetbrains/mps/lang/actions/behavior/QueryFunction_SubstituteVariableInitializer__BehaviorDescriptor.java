@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_SubstituteVariableInitializer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1129d121a7cL, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -54,7 +54,7 @@ public final class QueryFunction_SubstituteVariableInitializer_BehaviorDescripto
     return result;
   }
 
-  /*package*/ QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor() {
+  /*package*/ QueryFunction_SubstituteVariableInitializer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

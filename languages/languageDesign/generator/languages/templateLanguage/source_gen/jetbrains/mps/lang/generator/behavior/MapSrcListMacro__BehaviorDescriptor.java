@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
-public final class MapSrcListMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MapSrcListMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class MapSrcListMacro_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_wn5chh_a0a = new MapSrcListMacro_BehaviorDescriptor.Pattern_s14oyl_a0a0a0a9();
+      GeneratedMatchingPattern pattern_wn5chh_a0a = new MapSrcListMacro__BehaviorDescriptor.Pattern_s14oyl_a0a0a0a9();
       SNode coercedNode_wn5chh_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11003977640L, "sourceNodesQuery"))), pattern_wn5chh_a0a);
       if (coercedNode_wn5chh_a0a != null) {
         return ((SNode) pattern_wn5chh_a0a.getFieldValue("patternVar_concept"));
@@ -51,7 +51,7 @@ public final class MapSrcListMacro_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ MapSrcListMacro_BehaviorDescriptor() {
+  /*package*/ MapSrcListMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

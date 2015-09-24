@@ -13,6 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class UnaryRegexp_Behavior {
   public static boolean call_inParentheses_1353467374623956744(SNode __thisNode__) {
-    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")) != null ? Regexp_BehaviorDescriptor.needParentheses_id1b8uQvZynii.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"))) : true);
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")) != null ? Regexp__BehaviorDescriptor.needParentheses_id1b8uQvZynii.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"))) : true);
   }
 }

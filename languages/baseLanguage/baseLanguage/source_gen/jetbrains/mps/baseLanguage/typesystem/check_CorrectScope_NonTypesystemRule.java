@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ThisExpression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ThisExpression__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,7 +24,7 @@ public class check_CorrectScope_NonTypesystemRule extends AbstractNonTypesystemR
     if ((SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")) == null)) {
       return;
     }
-    if (!(ListSequence.fromList(ThisExpression_BehaviorDescriptor.getPossibleClassifiers_idhGcjiYt.invoke(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"))))) {
+    if (!(ListSequence.fromList(ThisExpression__BehaviorDescriptor.getPossibleClassifiers_idhGcjiYt.invoke(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "Can't access " + SPropertyOperations.getString(SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4539702814067113826", null, errorTarget);

@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class IApplicableToDeque_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IApplicableToDeque__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefbL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToDeque");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class IApplicableToDeque_BehaviorDescriptor extends BaseBHDescripto
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_rqpdx6_a0a0a0());
   }
 
-  /*package*/ IApplicableToDeque_BehaviorDescriptor() {
+  /*package*/ IApplicableToDeque__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

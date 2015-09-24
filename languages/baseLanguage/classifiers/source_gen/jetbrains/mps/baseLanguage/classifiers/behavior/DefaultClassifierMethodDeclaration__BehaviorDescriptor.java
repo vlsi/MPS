@@ -19,13 +19,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IVisible__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DefaultClassifierMethodDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DefaultClassifierMethodDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,15 +46,15 @@ public final class DefaultClassifierMethodDeclaration_BehaviorDescriptor extends
     return true;
   }
   private static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return IVisible_BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
+    return IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
   }
   private static List<SNode> getOperationConcept_id2D1PBM_bxJ5(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IMember_BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
+    List<SNode> result = IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)", "1205769149993"));
     return result;
   }
 
-  /*package*/ DefaultClassifierMethodDeclaration_BehaviorDescriptor() {
+  /*package*/ DefaultClassifierMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

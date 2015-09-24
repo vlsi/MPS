@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TransposeOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TransposeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x7418107bdc9576d4L, "jetbrains.mps.baseLanguage.math.structure.TransposeOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class TransposeOperation_BehaviorDescriptor extends BaseBHDescripto
     return "T";
   }
 
-  /*package*/ TransposeOperation_BehaviorDescriptor() {
+  /*package*/ TransposeOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

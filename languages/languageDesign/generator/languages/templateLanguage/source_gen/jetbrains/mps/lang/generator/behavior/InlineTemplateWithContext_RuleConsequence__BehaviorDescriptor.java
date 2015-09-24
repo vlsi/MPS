@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor 
     return null;
   }
 
-  /*package*/ InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor() {
+  /*package*/ InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

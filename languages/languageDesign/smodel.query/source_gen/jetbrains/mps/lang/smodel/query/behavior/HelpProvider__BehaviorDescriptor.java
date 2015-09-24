@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class HelpProvider_BehaviorDescriptor extends BaseBHDescriptor {
+public final class HelpProvider__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -56,10 +56,10 @@ public final class HelpProvider_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
   private static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    return HelpProvider_BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(__thisConcept__);
+    return HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(__thisConcept__);
   }
 
-  /*package*/ HelpProvider_BehaviorDescriptor() {
+  /*package*/ HelpProvider__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ElsifClause_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ElsifClause__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class ElsifClause_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
   }
   private static void convertToElseClause_idhIdko9K(@NotNull SNode __thisNode__) {
-    SNode ifStatement = ElsifClause_BehaviorDescriptor.getIfStatement_idhEwIDu9.invoke(__thisNode__);
+    SNode ifStatement = ElsifClause__BehaviorDescriptor.getIfStatement_idhEwIDu9.invoke(__thisNode__);
     SNode elseStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement")));
     SLinkOperations.setTarget(elseStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements"), SNodeOperations.copyNode(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList"))));
     SNodeOperations.deleteNode(__thisNode__);
@@ -61,7 +61,7 @@ public final class ElsifClause_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
-  /*package*/ ElsifClause_BehaviorDescriptor() {
+  /*package*/ ElsifClause__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

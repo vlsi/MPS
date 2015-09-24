@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractConsoleScript_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractConsoleScript__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6d9L, "jetbrains.mps.console.scripts.structure.AbstractConsoleScript");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class AbstractConsoleScript_BehaviorDescriptor extends BaseBHDescri
   }
 
 
-  /*package*/ AbstractConsoleScript_BehaviorDescriptor() {
+  /*package*/ AbstractConsoleScript__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

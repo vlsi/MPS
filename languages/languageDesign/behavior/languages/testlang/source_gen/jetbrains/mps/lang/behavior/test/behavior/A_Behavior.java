@@ -18,17 +18,17 @@ public class A_Behavior {
     return in;
   }
   public static void call_doInvokeAll_4731970554577188128(SNode __thisNode__) {
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
+    A__BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
     // 
-    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
+    A__BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
   }
 }

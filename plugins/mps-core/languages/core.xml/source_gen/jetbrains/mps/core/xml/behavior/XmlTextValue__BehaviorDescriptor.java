@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlTextValue_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlTextValue__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,12 +52,12 @@ public final class XmlTextValue_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean hasNewLineAfter_id2EZ251g0bSd(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"))) && (SNodeOperations.getNextSibling(__thisNode__) != null)) {
-      return !(XmlValuePart_BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(__thisNode__));
+      return !(XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(__thisNode__));
     }
     return false;
   }
 
-  /*package*/ XmlTextValue_BehaviorDescriptor() {
+  /*package*/ XmlTextValue__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -30,7 +30,7 @@ public class StringLiteralRegexp_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+            if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
               return null;
             }
             sb.append(c);

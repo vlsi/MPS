@@ -11,7 +11,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -36,7 +36,7 @@ public final class ConvertToReturnStatement_Intention extends IntentionDescripto
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ExpressionStatement_BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(node);
+    return ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

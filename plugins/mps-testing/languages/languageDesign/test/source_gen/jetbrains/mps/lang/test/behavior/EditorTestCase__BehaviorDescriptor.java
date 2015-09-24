@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EditorTestCase_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -64,7 +64,7 @@ public final class EditorTestCase_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ EditorTestCase_BehaviorDescriptor() {
+  /*package*/ EditorTestCase__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

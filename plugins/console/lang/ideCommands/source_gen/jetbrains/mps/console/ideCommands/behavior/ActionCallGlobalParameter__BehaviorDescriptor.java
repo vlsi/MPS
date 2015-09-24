@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ActionCallGlobalParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ActionCallGlobalParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ActionCallGlobalParameter_BehaviorDescriptor extends BaseBHDe
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, 0x4d7759afce9587aaL, "declaration"));
   }
 
-  /*package*/ ActionCallGlobalParameter_BehaviorDescriptor() {
+  /*package*/ ActionCallGlobalParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

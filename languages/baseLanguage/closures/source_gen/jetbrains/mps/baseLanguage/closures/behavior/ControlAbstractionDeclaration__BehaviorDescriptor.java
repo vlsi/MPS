@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ControlAbstractionDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ControlAbstractionDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class ControlAbstractionDeclaration_BehaviorDescriptor extends Base
   }
 
 
-  /*package*/ ControlAbstractionDeclaration_BehaviorDescriptor() {
+  /*package*/ ControlAbstractionDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

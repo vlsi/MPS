@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnmarshalFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnmarshalFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41ba9L, "jetbrains.mps.lang.generator.structure.UnmarshalFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class UnmarshalFunction_BehaviorDescriptor extends BaseBHDescriptor
     return list;
   }
 
-  /*package*/ UnmarshalFunction_BehaviorDescriptor() {
+  /*package*/ UnmarshalFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

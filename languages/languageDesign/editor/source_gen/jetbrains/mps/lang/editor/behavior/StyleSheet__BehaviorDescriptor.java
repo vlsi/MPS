@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StyleSheet_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StyleSheet__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,13 +40,13 @@ public final class StyleSheet_BehaviorDescriptor extends BaseBHDescriptor {
     if (namespace.length() > 0) {
       namespace = namespace + ".";
     }
-    return namespace + StyleSheet_BehaviorDescriptor.getClassName_idhEwJfly.invoke(__thisNode__);
+    return namespace + StyleSheet__BehaviorDescriptor.getClassName_idhEwJfly.invoke(__thisNode__);
   }
   private static String getClassName_idhEwJfly(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_StyleSheet";
   }
 
-  /*package*/ StyleSheet_BehaviorDescriptor() {
+  /*package*/ StyleSheet__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class VoidType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class VoidType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class VoidType_BehaviorDescriptor extends BaseBHDescriptor {
     return "V";
   }
 
-  /*package*/ VoidType_BehaviorDescriptor() {
+  /*package*/ VoidType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

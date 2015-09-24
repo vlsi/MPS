@@ -19,12 +19,12 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -76,17 +76,17 @@ public class RunTestInMPS_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_BehaviorDescriptor.getTestSet_idhGB2z8L.invoke(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")))).toListSequence());
+    SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase__BehaviorDescriptor.getTestSet_idhGB2z8L.invoke(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")))).toListSequence());
     for (SNode test : SetSequence.fromSet(tests)) {
       RunTestInMPS_Action.this.runTest(test, _params);
     }
   }
   /*package*/ void runTest(final SNode test, final Map<String, Object> _params) {
     try {
-      final String className = ITestCase_BehaviorDescriptor.getClassName_idhGBnqtL.invoke(ITestMethod_BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(test));
-      final String testName = ITestMethod_BehaviorDescriptor.getTestName_idhGBohAB.invoke(test);
+      final String className = ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(ITestMethod__BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(test));
+      final String testName = ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(test);
       System.out.println("Test " + className + "." + testName);
-      final Class c = ClassLoaderManager.getInstance().getClass(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ITestCase_BehaviorDescriptor.getClassName_idhGBnqtL.invoke(ITestMethod_BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(test)));
+      final Class c = ClassLoaderManager.getInstance().getClass(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(ITestMethod__BehaviorDescriptor.getTestCase_idhGBgWVd.invoke(test)));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
       Constructor ctor = c.getConstructor(Project.class, SModel.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
@@ -94,7 +94,7 @@ public class RunTestInMPS_Action extends BaseAction {
         @Override
         public void run() {
           try {
-            meth.invoke(testClass, className + "$" + NodesTestCase_BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode())), testName, true);
+            meth.invoke(testClass, className + "$" + NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode())), testName, true);
           } catch (Throwable e) {
             e.printStackTrace();
           }

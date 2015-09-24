@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
 
   private static String getName_idhHOMYE$(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).length() == 0) {
-      return NodeCheckOperation_BehaviorDescriptor.getDefaultName_id7scb9XJdmH2.invoke(__thisNode__);
+      return NodeCheckOperation__BehaviorDescriptor.getDefaultName_id7scb9XJdmH2.invoke(__thisNode__);
     } else {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
@@ -54,7 +54,7 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), false, false);
   }
   private static String getTestName_idhGBohAB(@NotNull SNode __thisNode__) {
-    return "test_" + NodeCheckOperation_BehaviorDescriptor.getName_idhHOMYE$.invoke(__thisNode__) + __thisNode__.getNodeId().toString();
+    return "test_" + NodeCheckOperation__BehaviorDescriptor.getName_idhHOMYE$.invoke(__thisNode__) + __thisNode__.getNodeId().toString();
   }
   private static SNode getAnnotatedNode_id2xExIeabVv_(@NotNull SNode __thisNode__) {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
@@ -64,7 +64,7 @@ public final class NodeCheckOperation_BehaviorDescriptor extends BaseBHDescripto
     return true;
   }
 
-  /*package*/ NodeCheckOperation_BehaviorDescriptor() {
+  /*package*/ NodeCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

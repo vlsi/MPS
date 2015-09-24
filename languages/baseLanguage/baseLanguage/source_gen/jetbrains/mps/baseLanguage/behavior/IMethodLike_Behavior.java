@@ -28,7 +28,7 @@ public class IMethodLike_Behavior {
       if (ListSequence.fromList(SLinkOperations.getChildren(innerStatementList, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).isEmpty()) {
         return lastStatement;
       } else {
-        return IMethodLike_BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, innerStatementList);
+        return IMethodLike__BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, innerStatementList);
       }
     }
     return lastStatement;

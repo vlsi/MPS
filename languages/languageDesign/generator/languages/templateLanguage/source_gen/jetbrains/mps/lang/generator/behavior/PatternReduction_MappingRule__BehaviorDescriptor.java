@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PatternReduction_MappingRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PatternReduction_MappingRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class PatternReduction_MappingRule_BehaviorDescriptor extends BaseB
     return null;
   }
 
-  /*package*/ PatternReduction_MappingRule_BehaviorDescriptor() {
+  /*package*/ PatternReduction_MappingRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

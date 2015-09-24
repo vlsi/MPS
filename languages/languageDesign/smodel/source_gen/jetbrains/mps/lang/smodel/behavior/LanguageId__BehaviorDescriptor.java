@@ -24,7 +24,7 @@ import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LanguageId_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LanguageId__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class LanguageId_BehaviorDescriptor extends BaseBHDescriptor {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace"), language.getQualifiedName());
   }
 
-  /*package*/ LanguageId_BehaviorDescriptor() {
+  /*package*/ LanguageId__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

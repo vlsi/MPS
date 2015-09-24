@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LowLevelVariable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LowLevelVariable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -28,7 +28,7 @@ public final class LowLevelVariable_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ LowLevelVariable_BehaviorDescriptor() {
+  /*package*/ LowLevelVariable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

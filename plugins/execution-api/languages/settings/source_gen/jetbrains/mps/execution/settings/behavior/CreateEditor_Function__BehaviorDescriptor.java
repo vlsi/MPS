@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class CreateEditor_Function_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CreateEditor_Function__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910106L, "jetbrains.mps.execution.settings.structure.CreateEditor_Function");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,10 +38,10 @@ public final class CreateEditor_Function_BehaviorDescriptor extends BaseBHDescri
   }
 
   private static SNode getJavaMethod_idO$iR4J$gaJ(@NotNull SNode __thisNode__) {
-    return EditorOperationDeclaration_BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "createEditor");
+    return EditorOperationDeclaration__BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "createEditor");
   }
   private static SNode getPublicJavaMethod_idbkrofm9Fgz(@NotNull SNode __thisNode__) {
-    return EditorOperationDeclaration_BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "getComponent");
+    return EditorOperationDeclaration__BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "getComponent");
   }
   private static Boolean showName_id1653mnvAgry(@NotNull SAbstractConcept __thisConcept__) {
     return true;
@@ -50,7 +50,7 @@ public final class CreateEditor_Function_BehaviorDescriptor extends BaseBHDescri
     return _quotation_createNode_ajrw81_a0a3();
   }
 
-  /*package*/ CreateEditor_Function_BehaviorDescriptor() {
+  /*package*/ CreateEditor_Function__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractNodeWarningCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractNodeWarningCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf1ec9L, "jetbrains.mps.lang.test.structure.AbstractNodeWarningCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,10 +36,10 @@ public final class AbstractNodeWarningCheckOperation_BehaviorDescriptor extends 
 
   private static String getDefaultName_id7scb9XJdmH2(@NotNull SNode __thisNode__) {
     String warningName;
-    if ((IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
+    if ((IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
       warningName = "Warning";
     } else {
-      warningName = IRuleReference_BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__));
+      warningName = IRuleReference__BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__));
     }
     return "Node" + warningName + "Check";
   }
@@ -47,13 +47,13 @@ public final class AbstractNodeWarningCheckOperation_BehaviorDescriptor extends 
     PerformUtil.checkNodeHasWarning(__thisNode__);
   }
   private static SNode getReferencedRuleNode_id2wBFdLy8qmt(@NotNull SNode __thisNode__) {
-    if ((IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
+    if ((IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
       return null;
     }
-    return SLinkOperations.getTarget(IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));
+    return SLinkOperations.getTarget(IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));
   }
 
-  /*package*/ AbstractNodeWarningCheckOperation_BehaviorDescriptor() {
+  /*package*/ AbstractNodeWarningCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

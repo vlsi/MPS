@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ExecuteSmartActionFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExecuteSmartActionFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f52c18fL, "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class ExecuteSmartActionFunction_BehaviorDescriptor extends BaseBHD
     return _quotation_createNode_jkiduv_a0a1();
   }
 
-  /*package*/ ExecuteSmartActionFunction_BehaviorDescriptor() {
+  /*package*/ ExecuteSmartActionFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

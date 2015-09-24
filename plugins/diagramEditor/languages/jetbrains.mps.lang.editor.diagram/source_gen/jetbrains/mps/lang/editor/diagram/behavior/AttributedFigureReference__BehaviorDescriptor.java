@@ -18,17 +18,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AttributedFigureReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AttributedFigureReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,21 +41,21 @@ public final class AttributedFigureReference_BehaviorDescriptor extends BaseBHDe
   }
 
   private static List<String> getFigureParameterNames_id1iN4mn3lWCq(@NotNull SNode __thisNode__) {
-    return Sequence.fromIterable(FigureAttribute_BehaviorDescriptor.getPrameterAttributes_id4H19mAwT3wD.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, 0x4b412569a0e43041L, "figureAttribute")))).select(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(FigureAttribute__BehaviorDescriptor.getPrameterAttributes_id4H19mAwT3wD.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, 0x4b412569a0e43041L, "figureAttribute")))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(FigureParameterAttribute_BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        return SPropertyOperations.getString(SNodeOperations.cast(FigureParameterAttribute__BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }).toListSequence();
   }
   private static SNode getFigureParameter_id1iN4mn3oxt8(@NotNull SNode __thisNode__, final String name) {
-    return Sequence.fromIterable(FigureAttribute_BehaviorDescriptor.getPrameterAttributes_id4H19mAwT3wD.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, 0x4b412569a0e43041L, "figureAttribute")))).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(FigureAttribute__BehaviorDescriptor.getPrameterAttributes_id4H19mAwT3wD.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, 0x4b412569a0e43041L, "figureAttribute")))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_aj6ls0_a0a0a0a0a0a0l(SPropertyOperations.getString(SNodeOperations.cast(FigureParameterAttribute_BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+        return eq_aj6ls0_a0a0a0a0a0a0l(SPropertyOperations.getString(SNodeOperations.cast(FigureParameterAttribute__BehaviorDescriptor.getParameterMember_id4H19mAwT7Py.invoke(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
       }
     });
   }
 
-  /*package*/ AttributedFigureReference_BehaviorDescriptor() {
+  /*package*/ AttributedFigureReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

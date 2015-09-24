@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunctionParameter_smartReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunctionParameter_smartReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ConstraintFunctionParameter_smartReference_BehaviorDescriptor
     return _quotation_createNode_i2g6v6_a0a0();
   }
 
-  /*package*/ ConstraintFunctionParameter_smartReference_BehaviorDescriptor() {
+  /*package*/ ConstraintFunctionParameter_smartReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeRuleCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3bc62fcd9b027d04L, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class NodeRuleCheckOperation_BehaviorDescriptor extends BaseBHDescr
     if (Sequence.fromIterable(errorReporters).isEmpty()) {
       return false;
     }
-    SNode referencedRuleNode = IReferenceAttachable_BehaviorDescriptor.getReferencedRuleNode_id2wBFdLy8qmt.invoke(__thisNode__);
+    SNode referencedRuleNode = IReferenceAttachable__BehaviorDescriptor.getReferencedRuleNode_id2wBFdLy8qmt.invoke(__thisNode__);
     if ((referencedRuleNode == null)) {
       return true;
     }
@@ -51,7 +51,7 @@ public final class NodeRuleCheckOperation_BehaviorDescriptor extends BaseBHDescr
     return false;
   }
 
-  /*package*/ NodeRuleCheckOperation_BehaviorDescriptor() {
+  /*package*/ NodeRuleCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

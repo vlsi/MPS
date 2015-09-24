@@ -17,7 +17,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2b1681328a5d4b64L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor ext
     return true;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "8751745335399632077"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "1270798772176052880"));
     return result;
@@ -51,7 +51,7 @@ public final class ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor ext
     return _quotation_createNode_9uj0f0_a0a2();
   }
 
-  /*package*/ ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor() {
+  /*package*/ ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

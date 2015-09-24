@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class MpsStartupScript_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, "jetbrains.mps.build.startup.structure.MpsStartupScript");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class MpsStartupScript_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   private static String getDefaultVmoptions_id54lRqzvuHDj(@NotNull SNode __thisNode__, boolean is64bit) {
-    return trim_z28c44_a0a0p(Sequence.fromIterable(MpsStartupScript_BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
+    return trim_z28c44_a0a0p(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented")));
       }
@@ -59,7 +59,7 @@ public final class MpsStartupScript_BehaviorDescriptor extends BaseBHDescriptor 
     }));
   }
   private static Iterable<SNode> getCommentedOptions_id54lRqzvvwVL(@NotNull SNode __thisNode__, boolean is64bit) {
-    return Sequence.fromIterable(MpsStartupScript_BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented"));
       }
@@ -69,7 +69,7 @@ public final class MpsStartupScript_BehaviorDescriptor extends BaseBHDescriptor 
     return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x2560aecfb4da3f5bL, "vmOptions64")) : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b3442664L, "vmOptions")))), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"));
   }
   private static Iterable<SNode> getDefaultVmOptionsLines_id2lwFGYOXBOk(@NotNull SNode __thisNode__, boolean is64bit) {
-    return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript_BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(__thisNode__, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(__thisNode__, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return (it != null && it.length() > 0);
       }
@@ -80,16 +80,16 @@ public final class MpsStartupScript_BehaviorDescriptor extends BaseBHDescriptor 
     });
   }
   private static String getPathToVmOptionsFile_id54lRqzvvwXi(@NotNull SNode __thisNode__, boolean is64bit) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript_BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, is64bit);
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript__BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, is64bit);
   }
   private static String getVmOptionsFileName_id2lwFGYOYlNP(@NotNull SNode __thisNode__, boolean is64bit) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript_BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
   }
   private static String getVmOptionsExtension_id54lRqzvvwXR(@NotNull SNode __thisNode__) {
     return "vmoptions";
   }
 
-  /*package*/ MpsStartupScript_BehaviorDescriptor() {
+  /*package*/ MpsStartupScript__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

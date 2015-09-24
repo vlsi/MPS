@@ -29,11 +29,11 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LocalVariableDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LocalVariableDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -106,7 +106,7 @@ public final class LocalVariableDeclaration_BehaviorDescriptor extends BaseBHDes
         return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
@@ -117,10 +117,10 @@ public final class LocalVariableDeclaration_BehaviorDescriptor extends BaseBHDes
       }
     }
 
-    return ScopeProvider_BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, index);
+    return ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, index);
   }
 
-  /*package*/ LocalVariableDeclaration_BehaviorDescriptor() {
+  /*package*/ LocalVariableDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

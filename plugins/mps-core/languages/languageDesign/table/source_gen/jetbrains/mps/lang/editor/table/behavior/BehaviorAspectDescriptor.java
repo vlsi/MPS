@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myCellModel_HierarchycalTable_BehaviorDescriptor = new CellModel_HierarchycalTable_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_TableModel_BehaviorDescriptor = new QueryFunction_TableModel_BehaviorDescriptor();
+  private final BHDescriptor myCellModel_HierarchycalTable__BehaviorDescriptor = new CellModel_HierarchycalTable__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_TableModel__BehaviorDescriptor = new QueryFunction_TableModel__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -35,9 +35,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myCellModel_HierarchycalTable_BehaviorDescriptor;
+        return myCellModel_HierarchycalTable__BehaviorDescriptor;
       case 1:
-        return myQueryFunction_TableModel_BehaviorDescriptor;
+        return myQueryFunction_TableModel__BehaviorDescriptor;
       default:
         return null;
     }

@@ -19,7 +19,7 @@ import jetbrains.mps.scope.Scope;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 
-public final class ClosureLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class ClosureLiteral_BehaviorDescriptor extends BaseBHDescriptor {
     StringBuilder sb = new StringBuilder("{");
     String sep = " ";
     for (SNode pd : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))) {
-      sb.append(sep).append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pd));
+      sb.append(sep).append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pd));
       sep = ", ";
     }
     return sb.append(" => <body> }").toString();
@@ -97,7 +97,7 @@ public final class ClosureLiteral_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ ClosureLiteral_BehaviorDescriptor() {
+  /*package*/ ClosureLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

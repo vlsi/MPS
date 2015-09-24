@@ -24,14 +24,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ExecuteCommandPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExecuteCommandPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,19 +49,19 @@ public final class ExecuteCommandPart_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static List<SNode> getParameters_id5keEkmeCqHW(@NotNull SNode __thisNode__) {
-    if (CommandDeclaration_BehaviorDescriptor.isDebuggable_idJzCdmU6yOQ.invoke(ExecuteCommandPart_BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__))) {
+    if (CommandDeclaration__BehaviorDescriptor.isDebuggable_idJzCdmU6yOQ.invoke(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__))) {
       return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, 0x550ea9458ea107adL, "parameterDeclaration"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
         }
-      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter"))))).toListSequence();
+      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter"))))).toListSequence();
     }
     return SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, 0x550ea9458ea107adL, "parameterDeclaration"));
   }
   private static List<SNode> getRequiredParameters_id5keEkmeCqJD(@NotNull SNode __thisNode__) {
-    return ListSequence.fromList(ExecuteCommandPart_BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(ExecuteCommandPart__BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return CommandParameterDeclaration_BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(it);
+        return CommandParameterDeclaration__BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(it);
       }
     }).toListSequence();
   }
@@ -78,10 +78,10 @@ public final class ExecuteCommandPart_BehaviorDescriptor extends BaseBHDescripto
     return createJoinType_qal9w4_a0a5();
   }
   private static String getSuffix_id3gpm$NHlLhJ(@NotNull SNode __thisNode__) {
-    return "_" + IGeneratedToClass_BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), __thisNode__.getNodeId().toString());
+    return "_" + IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), __thisNode__.getNodeId().toString());
   }
 
-  /*package*/ ExecuteCommandPart_BehaviorDescriptor() {
+  /*package*/ ExecuteCommandPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

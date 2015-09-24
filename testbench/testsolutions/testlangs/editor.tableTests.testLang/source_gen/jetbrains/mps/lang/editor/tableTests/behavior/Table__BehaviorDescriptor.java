@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Table_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Table__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, "jetbrains.mps.lang.editor.tableTests.structure.Table");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,9 +35,9 @@ public final class Table_BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInitialColumnCount_id1653mnvAgqE, getInitialRowCount_id1653mnvAgrI);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    for (int i = 0; i < Table_BehaviorDescriptor.getInitialRowCount_id1653mnvAgrI.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); i++) {
+    for (int i = 0; i < Table__BehaviorDescriptor.getInitialRowCount_id1653mnvAgrI.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); i++) {
       SNode row = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, "jetbrains.mps.lang.editor.tableTests.structure.Row")));
-      for (int j = 0; j < Table_BehaviorDescriptor.getInitialColumnCount_id1653mnvAgqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); j++) {
+      for (int j = 0; j < Table__BehaviorDescriptor.getInitialColumnCount_id1653mnvAgqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); j++) {
         SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
         SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "$" + i + " " + j + "$");
         ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells"))).addElement(dataCell);
@@ -53,7 +53,7 @@ public final class Table_BehaviorDescriptor extends BaseBHDescriptor {
     return 5;
   }
 
-  /*package*/ Table_BehaviorDescriptor() {
+  /*package*/ Table__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

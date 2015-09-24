@@ -25,7 +25,7 @@ import jetbrains.mps.build.util.FileSetUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_File__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, "jetbrains.mps.build.structure.BuildLayout_File");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   private static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
-    return BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), null);
+    return BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), null);
   }
   private static Boolean isFile_id1bWeed$oPZ2(@NotNull SNode __thisNode__) {
     return true;
@@ -52,13 +52,13 @@ public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor 
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")) && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(__thisNode__)) {
         SNode required = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
-        return eq_mnlny_a0b0b0a0q(BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
+        return eq_mnlny_a0b0b0a0q(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
       }
     }
     if (artifactId instanceof LocalSourcePathArtifact) {
       LocalSourcePathArtifact art = (LocalSourcePathArtifact) artifactId;
       if (!(art.isFolder()) && art.getRoot() == SNodeOperations.getContainingRoot(__thisNode__)) {
-        return eq_mnlny_a0a0b0b0q(art.getSourcePath(), BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
+        return eq_mnlny_a0a0b0b0q(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
       }
     }
     return false;
@@ -68,7 +68,7 @@ public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor 
     String parentLocation = helper.contentLocations().get(parent);
     SNode path = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"));
     if (path != null) {
-      String lastSegment = BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, helper.getMacroHelper());
+      String lastSegment = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, helper.getMacroHelper());
       if (lastSegment != null) {
         String fileLocation = parentLocation + "/" + lastSegment;
         helper.locations().put(__thisNode__, fileLocation);
@@ -77,7 +77,7 @@ public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor 
   }
   private static void appendName_id1bWeed$ownT(@NotNull SNode __thisNode__, SNode parent, StringBuilder sb) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")) != null)) {
-      String lastSegment = BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), null);
+      String lastSegment = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), null);
       if (lastSegment != null) {
         if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
           sb.append("/");
@@ -88,10 +88,10 @@ public final class BuildLayout_File_BehaviorDescriptor extends BaseBHDescriptor 
   }
   private static Boolean canHaveFilemode_id7UAfeVQUccL(@NotNull SNode __thisNode__) {
     SNode filesetLayoutContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")));
-    return (filesetLayoutContainer != null) && BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.hasFileModeAttribute_id5zIo$W4pFU5.invoke(filesetLayoutContainer);
+    return (filesetLayoutContainer != null) && BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor.hasFileModeAttribute_id5zIo$W4pFU5.invoke(filesetLayoutContainer);
   }
 
-  /*package*/ BuildLayout_File_BehaviorDescriptor() {
+  /*package*/ BuildLayout_File__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LanguageReferenceExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LanguageReferenceExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3dc174aL, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class LanguageReferenceExpression_BehaviorDescriptor extends BaseBH
     return result;
   }
 
-  /*package*/ LanguageReferenceExpression_BehaviorDescriptor() {
+  /*package*/ LanguageReferenceExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

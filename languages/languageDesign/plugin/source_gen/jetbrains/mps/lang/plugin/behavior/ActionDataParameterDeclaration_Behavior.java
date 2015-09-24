@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -47,11 +47,11 @@ public class ActionDataParameterDeclaration_Behavior {
   public static List<SNode> call_getDataKeys_1866752856967082411(SAbstractConcept __thisConcept__, SModel model) {
     return ListSequence.fromList(SModelOperations.rootsIncludingImported(model, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(it, SLinkOperations.getTarget(_quotation_createNode_6xp2og_a0a0a0a0a0a0a4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+        return Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(it, SLinkOperations.getTarget(_quotation_createNode_6xp2og_a0a0a0a0a0a0a4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return Classifier_BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(it);
+        return Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(it);
       }
     }).toListSequence();
   }

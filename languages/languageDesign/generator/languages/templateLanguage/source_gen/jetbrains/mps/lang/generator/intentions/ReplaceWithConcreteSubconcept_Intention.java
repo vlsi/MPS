@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -73,7 +73,7 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Replace with instance of  " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(myParameter) + " concept";
+      return "Replace with instance of  " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(myParameter) + " concept";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

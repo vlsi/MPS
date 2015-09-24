@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Root_MappingRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Root_MappingRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class Root_MappingRule_BehaviorDescriptor extends BaseBHDescriptor 
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x10fd54746ddL, "template")));
   }
 
-  /*package*/ Root_MappingRule_BehaviorDescriptor() {
+  /*package*/ Root_MappingRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

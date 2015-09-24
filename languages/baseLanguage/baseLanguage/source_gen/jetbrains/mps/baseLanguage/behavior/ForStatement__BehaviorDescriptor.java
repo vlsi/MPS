@@ -28,7 +28,7 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ForStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ForStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -62,7 +62,7 @@ public final class ForStatement_BehaviorDescriptor extends BaseBHDescriptor {
       }
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
-    return AbstractForStatement_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return AbstractForStatement__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static NextProgramPoint getNextProgramPoint_id3F8BxGibk8h(@NotNull SNode __thisNode__, @NotNull SNode child, boolean value) {
     if (child != SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, 0x10a69819132L, "condition"))) {
@@ -79,7 +79,7 @@ public final class ForStatement_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
-  /*package*/ ForStatement_BehaviorDescriptor() {
+  /*package*/ ForStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

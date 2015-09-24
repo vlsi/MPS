@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_IdeaPluginContent_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_IdeaPluginContent__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbebL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class BuildMps_IdeaPluginContent_BehaviorDescriptor extends BaseBHD
     return false;
   }
 
-  /*package*/ BuildMps_IdeaPluginContent_BehaviorDescriptor() {
+  /*package*/ BuildMps_IdeaPluginContent__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

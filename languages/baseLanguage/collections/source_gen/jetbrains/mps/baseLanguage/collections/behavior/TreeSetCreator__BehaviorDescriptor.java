@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class TreeSetCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TreeSetCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,13 +44,13 @@ public final class TreeSetCreator_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_529210_a0a0(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType")));
   }
   private static Boolean canHaveParameter_id1XyaNs207wP(@NotNull SNode __thisNode__) {
-    return AbstractContainerCreator_BehaviorDescriptor.canHaveParameter_id1XyaNs207wP.invokeSpecial(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator")) == null);
+    return AbstractContainerCreator__BehaviorDescriptor.canHaveParameter_id1XyaNs207wP.invokeSpecial(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator")) == null);
   }
   private static Boolean hasInitSize_id1653mnvAgtY(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
   private static List<SNode> getAvailableFor_id2D1PBM_bxHF(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = HashSetCreator_BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
+    List<SNode> result = HashSetCreator__BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1226511727824"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "7125221305512719026"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1240247491866"));
@@ -58,7 +58,7 @@ public final class TreeSetCreator_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
 
-  /*package*/ TreeSetCreator_BehaviorDescriptor() {
+  /*package*/ TreeSetCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

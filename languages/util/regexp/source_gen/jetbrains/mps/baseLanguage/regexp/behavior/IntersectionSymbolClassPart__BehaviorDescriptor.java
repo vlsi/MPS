@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IntersectionSymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IntersectionSymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class IntersectionSymbolClassPart_BehaviorDescriptor extends BaseBH
   }
 
   private static String getRepresentation_id75Jea4IEZbM(@NotNull SNode __thisNode__) {
-    return SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e34d8eL, "left"))) + "&&" + SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e2e56cL, "right")));
+    return SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e34d8eL, "left"))) + "&&" + SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e2e56cL, "right")));
   }
 
-  /*package*/ IntersectionSymbolClassPart_BehaviorDescriptor() {
+  /*package*/ IntersectionSymbolClassPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

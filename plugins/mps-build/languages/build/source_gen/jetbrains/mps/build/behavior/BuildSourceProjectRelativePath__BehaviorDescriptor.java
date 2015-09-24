@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSourceProjectRelativePath_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSourceProjectRelativePath__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,14 +34,14 @@ public final class BuildSourceProjectRelativePath_BehaviorDescriptor extends Bas
   }
 
   private static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
-    String tail = BuildRelativePath_BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(__thisNode__);
+    String tail = BuildRelativePath__BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(__thisNode__);
     return ((tail == null || tail.length() == 0) ? "${basedir}" : "${basedir}/" + tail);
   }
   private static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
     return context.getBasePath_Local(__thisNode__);
   }
 
-  /*package*/ BuildSourceProjectRelativePath_BehaviorDescriptor() {
+  /*package*/ BuildSourceProjectRelativePath__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -20,7 +20,7 @@ import jetbrains.mps.project.Project;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,7 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class VariableDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class VariableDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class VariableDeclaration_BehaviorDescriptor extends BaseBHDescript
   }
 
   private static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"))) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     }
@@ -86,7 +86,7 @@ public final class VariableDeclaration_BehaviorDescriptor extends BaseBHDescript
     return null;
   }
 
-  /*package*/ VariableDeclaration_BehaviorDescriptor() {
+  /*package*/ VariableDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

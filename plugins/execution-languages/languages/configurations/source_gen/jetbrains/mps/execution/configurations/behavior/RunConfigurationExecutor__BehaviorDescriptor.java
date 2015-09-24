@@ -28,7 +28,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class RunConfigurationExecutor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RunConfigurationExecutor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,13 +43,13 @@ public final class RunConfigurationExecutor_BehaviorDescriptor extends BaseBHDes
   }
 
   private static Boolean isDebuggable_idoym_8btfV8(@NotNull SNode __thisNode__) {
-    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor_BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
   }
   private static Boolean canBeSimple_id5pE1_aqYssM(@NotNull SNode __thisNode__) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), _quotation_createNode_wnz9gp_b0a0a1());
   }
   private static Boolean isSimple_id5pE1_aqYZtD(@NotNull SNode __thisNode__) {
-    return RunConfigurationExecutor_BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
+    return RunConfigurationExecutor__BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   @Nullable
   private static SNode getCommand_id5pE1_aqZ2LK(@NotNull SNode __thisNode__) {
@@ -66,7 +66,7 @@ public final class RunConfigurationExecutor_BehaviorDescriptor extends BaseBHDes
     return null;
   }
 
-  /*package*/ RunConfigurationExecutor_BehaviorDescriptor() {
+  /*package*/ RunConfigurationExecutor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

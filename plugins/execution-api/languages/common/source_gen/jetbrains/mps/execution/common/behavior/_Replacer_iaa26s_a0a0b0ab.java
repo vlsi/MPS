@@ -9,9 +9,9 @@ public class _Replacer_iaa26s_a0a0b0ab implements Replacer {
   public String replace(Matcher matcher) {
     return matcher.group(1) + matcher.group(2).toUpperCase();
   }
-  /*package*/ IGeneratedToClass_BehaviorDescriptor _enclosingClass;
+  /*package*/ IGeneratedToClass__BehaviorDescriptor _enclosingClass;
   /*package*/ Object _closureContext;
-  public _Replacer_iaa26s_a0a0b0ab(IGeneratedToClass_BehaviorDescriptor enclosingClass, Object closureContext) {
+  public _Replacer_iaa26s_a0a0b0ab(IGeneratedToClass__BehaviorDescriptor enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }

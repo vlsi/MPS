@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myExecuteAfterDeclaration_BehaviorDescriptor = new ExecuteAfterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myRequiredDataDeclaration_BehaviorDescriptor = new RequiredDataDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDataDependency_BehaviorDescriptor = new DataDependency_BehaviorDescriptor();
-  private final BHDescriptor myTransformStatement_BehaviorDescriptor = new TransformStatement_BehaviorDescriptor();
-  private final BHDescriptor myProducedDataDeclaration_BehaviorDescriptor = new ProducedDataDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDataDependencyReference_BehaviorDescriptor = new DataDependencyReference_BehaviorDescriptor();
-  private final BHDescriptor myMigrationScript_BehaviorDescriptor = new MigrationScript_BehaviorDescriptor();
+  private final BHDescriptor myExecuteAfterDeclaration__BehaviorDescriptor = new ExecuteAfterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myRequiredDataDeclaration__BehaviorDescriptor = new RequiredDataDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDataDependency__BehaviorDescriptor = new DataDependency__BehaviorDescriptor();
+  private final BHDescriptor myTransformStatement__BehaviorDescriptor = new TransformStatement__BehaviorDescriptor();
+  private final BHDescriptor myProducedDataDeclaration__BehaviorDescriptor = new ProducedDataDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDataDependencyReference__BehaviorDescriptor = new DataDependencyReference__BehaviorDescriptor();
+  private final BHDescriptor myMigrationScript__BehaviorDescriptor = new MigrationScript__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -45,19 +45,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myExecuteAfterDeclaration_BehaviorDescriptor;
+        return myExecuteAfterDeclaration__BehaviorDescriptor;
       case 1:
-        return myRequiredDataDeclaration_BehaviorDescriptor;
+        return myRequiredDataDeclaration__BehaviorDescriptor;
       case 2:
-        return myDataDependency_BehaviorDescriptor;
+        return myDataDependency__BehaviorDescriptor;
       case 3:
-        return myTransformStatement_BehaviorDescriptor;
+        return myTransformStatement__BehaviorDescriptor;
       case 4:
-        return myProducedDataDeclaration_BehaviorDescriptor;
+        return myProducedDataDeclaration__BehaviorDescriptor;
       case 5:
-        return myDataDependencyReference_BehaviorDescriptor;
+        return myDataDependencyReference__BehaviorDescriptor;
       case 6:
-        return myMigrationScript_BehaviorDescriptor;
+        return myMigrationScript__BehaviorDescriptor;
       default:
         return null;
     }

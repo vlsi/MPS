@@ -28,7 +28,7 @@ import java.util.Map;
 
 /**
  * The difference between this and {@link InterpretedBehaviorDescriptor} is only that
- * this implementation uses the generated virtual methods from the *_BehaviorDescriptor classes.
+ * this implementation uses the generated virtual methods from the *__BehaviorDescriptor classes.
  *
  * Thus we exploiting java inheritance instead of traversing the concept hierarchy.
  *

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GenerationContextOp_TransientObjectAccess_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GenerationContextOp_TransientObjectAccess__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b90242983L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class GenerationContextOp_TransientObjectAccess_BehaviorDescriptor 
     return true;
   }
 
-  /*package*/ GenerationContextOp_TransientObjectAccess_BehaviorDescriptor() {
+  /*package*/ GenerationContextOp_TransientObjectAccess__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

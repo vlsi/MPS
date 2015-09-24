@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ApplicationPluginDisposeBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ApplicationPluginDisposeBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class ApplicationPluginDisposeBlock_BehaviorDescriptor extends Base
     return _quotation_createNode_io2bgw_a0a1();
   }
 
-  /*package*/ ApplicationPluginDisposeBlock_BehaviorDescriptor() {
+  /*package*/ ApplicationPluginDisposeBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

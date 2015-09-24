@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myOutlook_BehaviorDescriptor = new Outlook_BehaviorDescriptor();
+  private final BHDescriptor myOutlook__BehaviorDescriptor = new Outlook__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -33,7 +33,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myOutlook_BehaviorDescriptor;
+        return myOutlook__BehaviorDescriptor;
       default:
         return null;
     }

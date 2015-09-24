@@ -19,12 +19,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractRunConfigurationExecutor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractRunConfigurationExecutor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,13 +44,13 @@ public final class AbstractRunConfigurationExecutor_BehaviorDescriptor extends B
   }
   @NonNls
   private static String getSuffix_idO$iR4JBsSb(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration"))) + "_RunProfileState";
+    return IGeneratedToClass__BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration"))) + "_RunProfileState";
   }
   private static String getGeneratedClassName_idO$iR4JBsSg(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSG.invoke(__thisNode__, SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSG.invoke(__thisNode__, SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 
-  /*package*/ AbstractRunConfigurationExecutor_BehaviorDescriptor() {
+  /*package*/ AbstractRunConfigurationExecutor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

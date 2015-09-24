@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ConstraintFunction_ReferentSearchScope_Presentation_BehaviorD
   }
 
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "3906442776579549644"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "4590747232508808445"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "6768994795311967741"));
@@ -48,7 +48,7 @@ public final class ConstraintFunction_ReferentSearchScope_Presentation_BehaviorD
     return _quotation_createNode_fpe947_a0a1();
   }
 
-  /*package*/ ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor() {
+  /*package*/ ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

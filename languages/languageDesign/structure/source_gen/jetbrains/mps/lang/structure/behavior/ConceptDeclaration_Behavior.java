@@ -30,7 +30,7 @@ public class ConceptDeclaration_Behavior {
     SNode concept = __thisNode__;
     while ((concept != null) && !(SetSequence.fromSet(extendedConcepts).contains(concept))) {
       SetSequence.fromSet(extendedConcepts).addElement(concept);
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration_BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))));
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))));
       concept = ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) != null) ? SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
     }
 
@@ -44,7 +44,7 @@ public class ConceptDeclaration_Behavior {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
       }
     })) {
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration_BehaviorDescriptor.getAllMethodsInPriorityOrder_id7TwdR6lloGH.invoke(interfaceConcept)));
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration__BehaviorDescriptor.getAllMethodsInPriorityOrder_id7TwdR6lloGH.invoke(interfaceConcept)));
     }
 
     return methods;

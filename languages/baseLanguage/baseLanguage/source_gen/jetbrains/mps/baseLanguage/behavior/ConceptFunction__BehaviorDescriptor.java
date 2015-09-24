@@ -23,14 +23,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -58,7 +58,7 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean usesParameterObjectFor_idhEwIGRw(@NotNull SNode __thisNode__, SNode parameter) {
-    return ConceptFunction_BehaviorDescriptor.usesParameterObject_id1653mnvAgq0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return ConceptFunction__BehaviorDescriptor.usesParameterObject_id1653mnvAgq0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   private static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return null;
@@ -75,7 +75,7 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
   }
   private static SNode getExpectedRetType_idi2fhBNC(@NotNull SNode __thisNode__) {
-    return ConceptFunction_BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(__thisNode__);
+    return ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(__thisNode__);
   }
   private static SNode getBody_idi2fhZ_m(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -85,11 +85,11 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
     return (List<SNode>) result;
   }
   private static Boolean isReturnOnly_id3fUxpI1uWGM(@NotNull SNode __thisNode__) {
-    if (!(StatementList_BehaviorDescriptor.isOneLiner_idi0z3USV.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))))) {
+    if (!(StatementList__BehaviorDescriptor.isOneLiner_idi0z3USV.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))))) {
       return false;
     }
     SNode stmt = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first();
@@ -103,18 +103,18 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
     // by default 'alias' is not shown. 
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
-    if (ConceptFunction_BehaviorDescriptor.showName_id1653mnvAgry.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
-      result.append(ConceptFunction_BehaviorDescriptor.getName_idhGVcmek.invoke(__thisNode__));
+    if (ConceptFunction__BehaviorDescriptor.showName_id1653mnvAgry.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
+      result.append(ConceptFunction__BehaviorDescriptor.getName_idhGVcmek.invoke(__thisNode__));
     }
-    return ConceptFunction_BehaviorDescriptor.appendHeader_id2v69eKc6I52.invoke(__thisNode__, result);
+    return ConceptFunction__BehaviorDescriptor.appendHeader_id2v69eKc6I52.invoke(__thisNode__, result);
   }
   private static String getHeaderForAliasedEditor_id2v69eKc6I0x(@NotNull SNode __thisNode__) {
     StringBuilder result = new StringBuilder();
-    return ConceptFunction_BehaviorDescriptor.appendHeader_id2v69eKc6I52.invoke(__thisNode__, result);
+    return ConceptFunction__BehaviorDescriptor.appendHeader_id2v69eKc6I52.invoke(__thisNode__, result);
   }
   private static String appendHeader_id2v69eKc6I52(@NotNull SNode __thisNode__, StringBuilder result) {
     result.append("(");
-    List<SNode> parameters = ConceptFunction_BehaviorDescriptor.getParameters_idhEwIGRM.invoke(__thisNode__);
+    List<SNode> parameters = ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(__thisNode__);
     boolean isFirst = true;
     for (SNode cfp : parameters) {
       if (!(isFirst)) {
@@ -124,21 +124,21 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
       result.append(SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
     }
     result.append(")->");
-    SNode expectedReturnType = ConceptFunction_BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(__thisNode__);
+    SNode expectedReturnType = ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(__thisNode__);
     if (expectedReturnType == null) {
       result.append("void");
     } else {
-      result.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(expectedReturnType));
+      result.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(expectedReturnType));
     }
-    if (ListSequence.fromList(IMethodLike_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(__thisNode__)).isNotEmpty()) {
+    if (ListSequence.fromList(IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(__thisNode__)).isNotEmpty()) {
       result.append(" throws ");
       boolean isFirstThrowable = true;
-      for (SNode throwableType : IMethodLike_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(__thisNode__)) {
+      for (SNode throwableType : IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(__thisNode__)) {
         if (!(isFirstThrowable)) {
           result.append(", ");
         }
         isFirstThrowable = false;
-        result.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(throwableType));
+        result.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(throwableType));
       }
     }
     return result.toString();
@@ -166,7 +166,7 @@ public final class ConceptFunction_BehaviorDescriptor extends BaseBHDescriptor {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 
-  /*package*/ ConceptFunction_BehaviorDescriptor() {
+  /*package*/ ConceptFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

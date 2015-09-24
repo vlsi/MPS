@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AutoDeletableStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AutoDeletableStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class AutoDeletableStyleClassItem_BehaviorDescriptor extends BaseBH
     return StyleAttributes.AUTO_DELETABLE;
   }
 
-  /*package*/ AutoDeletableStyleClassItem_BehaviorDescriptor() {
+  /*package*/ AutoDeletableStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

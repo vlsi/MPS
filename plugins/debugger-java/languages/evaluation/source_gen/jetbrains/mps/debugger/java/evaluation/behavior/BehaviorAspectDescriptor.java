@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myEvaluator_BehaviorDescriptor = new Evaluator_BehaviorDescriptor();
-  private final BHDescriptor myDebuggedType_BehaviorDescriptor = new DebuggedType_BehaviorDescriptor();
-  private final BHDescriptor myToEvaluateAnnotation_BehaviorDescriptor = new ToEvaluateAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myUnprocessedAnnotation_BehaviorDescriptor = new UnprocessedAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myEvaluatorConcept_BehaviorDescriptor = new EvaluatorConcept_BehaviorDescriptor();
-  private final BHDescriptor myLowLevelVariable_BehaviorDescriptor = new LowLevelVariable_BehaviorDescriptor();
-  private final BHDescriptor myEvaluatorsSuperMethodCall_BehaviorDescriptor = new EvaluatorsSuperMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myDoNotTransformAnnotation_BehaviorDescriptor = new DoNotTransformAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myIEvaluatorConcept_BehaviorDescriptor = new IEvaluatorConcept_BehaviorDescriptor();
+  private final BHDescriptor myEvaluator__BehaviorDescriptor = new Evaluator__BehaviorDescriptor();
+  private final BHDescriptor myDebuggedType__BehaviorDescriptor = new DebuggedType__BehaviorDescriptor();
+  private final BHDescriptor myToEvaluateAnnotation__BehaviorDescriptor = new ToEvaluateAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myUnprocessedAnnotation__BehaviorDescriptor = new UnprocessedAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myEvaluatorConcept__BehaviorDescriptor = new EvaluatorConcept__BehaviorDescriptor();
+  private final BHDescriptor myLowLevelVariable__BehaviorDescriptor = new LowLevelVariable__BehaviorDescriptor();
+  private final BHDescriptor myEvaluatorsSuperMethodCall__BehaviorDescriptor = new EvaluatorsSuperMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myDoNotTransformAnnotation__BehaviorDescriptor = new DoNotTransformAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myIEvaluatorConcept__BehaviorDescriptor = new IEvaluatorConcept__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -49,23 +49,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myEvaluator_BehaviorDescriptor;
+        return myEvaluator__BehaviorDescriptor;
       case 1:
-        return myDebuggedType_BehaviorDescriptor;
+        return myDebuggedType__BehaviorDescriptor;
       case 2:
-        return myToEvaluateAnnotation_BehaviorDescriptor;
+        return myToEvaluateAnnotation__BehaviorDescriptor;
       case 3:
-        return myUnprocessedAnnotation_BehaviorDescriptor;
+        return myUnprocessedAnnotation__BehaviorDescriptor;
       case 4:
-        return myEvaluatorConcept_BehaviorDescriptor;
+        return myEvaluatorConcept__BehaviorDescriptor;
       case 5:
-        return myLowLevelVariable_BehaviorDescriptor;
+        return myLowLevelVariable__BehaviorDescriptor;
       case 6:
-        return myEvaluatorsSuperMethodCall_BehaviorDescriptor;
+        return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
       case 7:
-        return myDoNotTransformAnnotation_BehaviorDescriptor;
+        return myDoNotTransformAnnotation__BehaviorDescriptor;
       case 8:
-        return myIEvaluatorConcept_BehaviorDescriptor;
+        return myIEvaluatorConcept__BehaviorDescriptor;
       default:
         return null;
     }

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IValidIdentifier_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IValidIdentifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL, "jetbrains.mps.baseLanguage.structure.IValidIdentifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class IValidIdentifier_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ IValidIdentifier_BehaviorDescriptor() {
+  /*package*/ IValidIdentifier__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

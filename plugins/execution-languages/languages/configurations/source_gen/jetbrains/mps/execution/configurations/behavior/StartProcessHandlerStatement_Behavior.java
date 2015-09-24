@@ -17,13 +17,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class StartProcessHandlerStatement_Behavior {
   public static SNode call_getComponent_1594211126127708543(SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "component");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "component");
   }
   public static SNode call_getDispose_1594211126127708769(SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose");
   }
   public static SNode call_getListener_1594211126127708805(SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener");
   }
   public static SNode call_getComponentByName_1594211126127708848(SNode __thisNode__, final String name) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, 0x161fc6929dcff3a0L, "tool")) == null)) {

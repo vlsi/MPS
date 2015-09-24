@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SettingsEditor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SettingsEditor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class SettingsEditor_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), false, new SAbstractConcept[]{});
   }
 
-  /*package*/ SettingsEditor_BehaviorDescriptor() {
+  /*package*/ SettingsEditor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

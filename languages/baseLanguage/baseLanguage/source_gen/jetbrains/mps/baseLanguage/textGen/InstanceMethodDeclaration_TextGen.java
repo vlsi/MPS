@@ -12,9 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
-import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
-import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.ScopeConcept__BehaviorDescriptor;
 
 public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
   @Override
@@ -68,7 +68,7 @@ public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || BaseMethodDeclaration_BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(ctx.getPrimaryInput())) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(ctx.getPrimaryInput())) {
       tgs.append(";");
       tgs.newLine();
     } else {
@@ -88,8 +88,8 @@ public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
       tgs.newLine();
     }
     if (tgs.needPositions()) {
-      tgs.fillPositionInfo(TraceableConcept_BehaviorDescriptor.getTraceableProperty_id4pl5GY7LKmH.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept"))));
-      tgs.fillScopeInfo(ScopeConcept_BehaviorDescriptor.getScopeVariables_id4pl5GY7LKmA.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept"))));
+      tgs.fillPositionInfo(TraceableConcept__BehaviorDescriptor.getTraceableProperty_id4pl5GY7LKmH.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept"))));
+      tgs.fillScopeInfo(ScopeConcept__BehaviorDescriptor.getScopeVariables_id4pl5GY7LKmA.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept"))));
     }
   }
 }

@@ -23,7 +23,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PatternTest_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PatternTest__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, "jetbrains.mps.lang.pattern.testLang.structure.PatternTest");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class PatternTest_BehaviorDescriptor extends BaseBHDescriptor {
     return methods;
   }
   private static String getClassName_idhGBnqtL(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(__thisNode__.getModel()) + "." + PatternTest_BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(__thisNode__.getModel()) + "." + PatternTest__BehaviorDescriptor.getPatternTestName_idlS$o0er$H8.invoke(__thisNode__);
   }
   private static List<SNode> getTestMethods_id1RfJDyhAUar(@NotNull SNode __thisNode__) {
     List<SNode> methods = new ArrayList<SNode>();
@@ -66,7 +66,7 @@ public final class PatternTest_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ PatternTest_BehaviorDescriptor() {
+  /*package*/ PatternTest__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

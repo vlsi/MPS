@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public final class IncludeMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IncludeMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, "jetbrains.mps.lang.generator.structure.IncludeMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,17 +38,17 @@ public final class IncludeMacro_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro_BehaviorDescriptor.Pattern_8rqv9a_a0a0a0a9();
+      GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro__BehaviorDescriptor.Pattern_8rqv9a_a0a0a0a9();
       SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, 0x11621abebb5L, "sourceNodeQuery"))), pattern_wfrqja_a0a);
       if (coercedNode_wfrqja_a0a != null) {
         return ((SNode) pattern_wfrqja_a0a.getFieldValue("patternVar_concept"));
       } else {
       }
     }
-    return NodeMacro_BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
+    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ IncludeMacro_BehaviorDescriptor() {
+  /*package*/ IncludeMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

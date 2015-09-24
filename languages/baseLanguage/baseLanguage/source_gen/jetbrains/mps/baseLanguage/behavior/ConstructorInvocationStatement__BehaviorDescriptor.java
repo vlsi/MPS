@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class ConstructorInvocationStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstructorInvocationStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x121119ae5ffL, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,14 +52,14 @@ public final class ConstructorInvocationStatement_BehaviorDescriptor extends Bas
     return _quotation_createNode_teq92u_a3a0(typeVarRefs, concept);
   }
   private static Map<SNode, SNode> getTypesByTypeVars_idJfLh5LDMrj(@NotNull SNode __thisNode__) {
-    SNode instanceType = IMethodCall_BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
+    SNode instanceType = IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
     if ((SLinkOperations.getTarget(instanceType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == null)) {
       return Collections.emptyMap();
     }
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getChildren(instanceType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter")));
   }
 
-  /*package*/ ConstructorInvocationStatement_BehaviorDescriptor() {
+  /*package*/ ConstructorInvocationStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

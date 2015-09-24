@@ -16,7 +16,7 @@ public class ReplaceRegexpOperation_Behavior {
     StringBuilder sb = new StringBuilder();
     for (SNode rep : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1923d18bL, "replacement"))) {
       if ((rep != null)) {
-        sb.append(Replacement_BehaviorDescriptor.toString_id3iI_KKpaF_p.invoke(rep, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))));
+        sb.append(Replacement__BehaviorDescriptor.toString_id3iI_KKpaF_p.invoke(rep, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))));
       }
     }
     return sb.toString();

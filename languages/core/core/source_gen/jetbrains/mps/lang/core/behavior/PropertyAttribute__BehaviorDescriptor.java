@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PropertyAttribute_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PropertyAttribute__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class PropertyAttribute_BehaviorDescriptor extends BaseBHDescriptor
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), MetaIdHelper.getProperty(metaProperty).serialize());
   }
 
-  /*package*/ PropertyAttribute_BehaviorDescriptor() {
+  /*package*/ PropertyAttribute__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -35,7 +35,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TypeVariableReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,13 +57,13 @@ public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescri
       return SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
     if (decl != null) {
-      return "@" + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(decl);
+      return "@" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(decl);
     }
     return "?typevar_ref?";
   }
   private static SNode getErasure_idB1mAlA38Mq(@NotNull SNode __thisNode__) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")) != null)) {
-      return Type_BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")));
+      return Type__BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")));
     }
     return _quotation_createNode_6i211a_a1a1();
   }
@@ -72,7 +72,7 @@ public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescri
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(__thisNode__))) {
       SetSequence.fromSet(visitedTypeVariableReferences).addElement(__thisNode__);
       SNode upperBoundType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType")));
-      SLinkOperations.setTarget(upperBoundType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound"), Type_BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(bound, visitedTypeVariableReferences));
+      SLinkOperations.setTarget(upperBoundType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound"), Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(bound, visitedTypeVariableReferences));
       SetSequence.fromSet(visitedTypeVariableReferences).removeElement(__thisNode__);
       return upperBoundType;
     } else {
@@ -87,7 +87,7 @@ public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescri
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), __thisNode__);
     } else {
-      IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invokeSpecial(__thisNode__, substitutions);
+      IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invokeSpecial(__thisNode__, substitutions);
     }
   }
   private static SNode expandGenerics_id3$PgO9fYTB5(@NotNull final SNode __thisNode__, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
@@ -102,7 +102,7 @@ public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescri
       SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
       if (SNodeOperations.isInstanceOf(exp, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
         ListSequence.fromList(expTrace).addElement(__thisNode__);
-        exp = IGenericType_BehaviorDescriptor.expandGenerics_id3$PgO9fYTB5.invoke(SNodeOperations.cast(exp, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType")), substitutions, expTrace);
+        exp = IGenericType__BehaviorDescriptor.expandGenerics_id3$PgO9fYTB5.invoke(SNodeOperations.cast(exp, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType")), substitutions, expTrace);
       }
       return exp;
     }
@@ -129,15 +129,15 @@ public final class TypeVariableReference_BehaviorDescriptor extends BaseBHDescri
     }
 
     if (myResolvedType != __thisNode__ || resolvedT != t) {
-      return Type_BehaviorDescriptor.isSupersetOf_id7PgshREdQKp.invoke(myResolvedType, resolvedT, substitutions);
+      return Type__BehaviorDescriptor.isSupersetOf_id7PgshREdQKp.invoke(myResolvedType, resolvedT, substitutions);
     } else {
-      boolean supersetOf = Type_BehaviorDescriptor.isSupersetOf_idhKBOZqh.invoke(myResolvedType, resolvedT);
+      boolean supersetOf = Type__BehaviorDescriptor.isSupersetOf_idhKBOZqh.invoke(myResolvedType, resolvedT);
       return supersetOf;
     }
 
   }
 
-  /*package*/ TypeVariableReference_BehaviorDescriptor() {
+  /*package*/ TypeVariableReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

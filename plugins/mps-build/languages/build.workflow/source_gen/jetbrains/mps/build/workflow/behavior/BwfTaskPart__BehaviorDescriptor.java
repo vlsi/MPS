@@ -21,12 +21,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BwfTaskPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BwfTaskPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class BwfTaskPart_BehaviorDescriptor extends BaseBHDescriptor {
       SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(__thisNode__, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1baL, "subTasks"));
       CompositeScope scope = new CompositeScope(currentSubtaskScope);
       if (task != null) {
-        scope.addScope(ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(task, kind, null));
+        scope.addScope(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(task, kind, null));
       }
       if (task == null || SNodeOperations.getParent(task) != SNodeOperations.getParent(__thisNode__)) {
         for (SNode n : SNodeOperations.getAllSiblings(__thisNode__, false)) {
@@ -57,7 +57,7 @@ public final class BwfTaskPart_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ BwfTaskPart_BehaviorDescriptor() {
+  /*package*/ BwfTaskPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

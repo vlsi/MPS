@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IBinaryLike_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IBinaryLike__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class IBinaryLike_BehaviorDescriptor extends BaseBHDescriptor {
     // Do not climb up into a disconnected parent, e.g. into Ternary from the ifTrue branch 
     // Only syntactically left or right children may include their parents in their parent path 
     List<SNode> leafAncestors = SNodeOperations.getNodeAncestors(leaf, null, true);
-    return ListSequence.fromList(leafAncestors).contains(IBinaryLike_BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(__thisNode__)) || ListSequence.fromList(leafAncestors).contains(IBinaryLike_BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(__thisNode__));
+    return ListSequence.fromList(leafAncestors).contains(IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(__thisNode__)) || ListSequence.fromList(leafAncestors).contains(IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(__thisNode__));
   }
   private static void setSyntacticallyLeftSideExpression_id1wHCnsn58ZK(@NotNull SNode __thisNode__, SNode expr) {
     throw new UnsupportedOperationException("This expression cannot have its left child set: " + SNodeOperations.getConceptDeclaration(__thisNode__));
@@ -56,7 +56,7 @@ public final class IBinaryLike_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ IBinaryLike_BehaviorDescriptor() {
+  /*package*/ IBinaryLike__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

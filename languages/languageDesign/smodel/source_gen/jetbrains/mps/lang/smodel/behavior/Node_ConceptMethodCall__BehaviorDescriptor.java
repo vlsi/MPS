@@ -24,7 +24,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Node_ConceptMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Node_ConceptMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,10 +43,10 @@ public final class Node_ConceptMethodCall_BehaviorDescriptor extends BaseBHDescr
   }
 
   private static Boolean isVirtualMethodCall_idhEwIWlZ(@NotNull SNode __thisNode__) {
-    return (Node_ConceptMethodCall_BehaviorDescriptor.getVirtualMethodDeclaration_idhEwIWm8.invoke(__thisNode__) != null);
+    return (Node_ConceptMethodCall__BehaviorDescriptor.getVirtualMethodDeclaration_idhEwIWm8.invoke(__thisNode__) != null);
   }
   private static Boolean isSuperMethodCall_id1ks7HBvlL3z(@NotNull SNode __thisNode__) {
-    return SNodeOperations.isInstanceOf(SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
+    return SNodeOperations.isInstanceOf(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
   private static SNode getVirtualMethodDeclaration_idhEwIWm8(@NotNull SNode __thisNode__) {
     SNode methodDeclaration = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
@@ -83,7 +83,7 @@ public final class Node_ConceptMethodCall_BehaviorDescriptor extends BaseBHDescr
     return true;
   }
 
-  /*package*/ Node_ConceptMethodCall_BehaviorDescriptor() {
+  /*package*/ Node_ConceptMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -24,9 +24,9 @@ public class Analyzer_Behavior {
   public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode __thisNode__) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__));
     if (longName.equals("")) {
-      return Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
+      return Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
     }
-    return longName + "." + Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
+    return longName + "." + Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
   }
   public static String call_getAnalyzerName_178770917832626046(SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UsagesExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UsagesExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d6ebL, "jetbrains.mps.lang.smodel.query.structure.UsagesExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,13 +39,13 @@ public final class UsagesExpression_BehaviorDescriptor extends BaseBHDescriptor 
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope").getDeclarationNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly").getDeclarationNode());
   }
   private static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
-    return QueryExpression_BehaviorDescriptor.getHelpPage_id64VftqEen2L.invokeSpecial(__thisConcept__) + "\nImplementation of this command uses the IDE indexes to speed up execution";
+    return QueryExpression__BehaviorDescriptor.getHelpPage_id64VftqEen2L.invokeSpecial(__thisConcept__) + "\nImplementation of this command uses the IDE indexes to speed up execution";
   }
   private static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    return QueryExpression_BehaviorDescriptor.getDisplayString_id5YxQmqOFZEf.invokeSpecial(__thisConcept__) + "(node)";
+    return QueryExpression__BehaviorDescriptor.getDisplayString_id5YxQmqOFZEf.invokeSpecial(__thisConcept__) + "(node)";
   }
 
-  /*package*/ UsagesExpression_BehaviorDescriptor() {
+  /*package*/ UsagesExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

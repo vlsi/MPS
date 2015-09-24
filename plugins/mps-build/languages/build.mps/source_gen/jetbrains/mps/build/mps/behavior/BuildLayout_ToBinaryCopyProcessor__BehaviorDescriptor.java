@@ -23,7 +23,7 @@ import java.util.Collections;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor extends 
     return Collections.emptyMap();
   }
 
-  /*package*/ BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor() {
+  /*package*/ BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

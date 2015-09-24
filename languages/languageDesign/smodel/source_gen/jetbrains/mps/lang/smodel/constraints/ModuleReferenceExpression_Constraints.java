@@ -11,7 +11,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression__BehaviorDescriptor;
 
 public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescriptor {
   public ModuleReferenceExpression_Constraints() {
@@ -29,7 +29,7 @@ public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescri
       public Object getValue(SNode node) {
         String propertyName = "name";
         {
-          SModule module = ModuleReferenceExpression_BehaviorDescriptor.getModule_id3wj3sjzQUV1.invoke(node);
+          SModule module = ModuleReferenceExpression__BehaviorDescriptor.getModule_id3wj3sjzQUV1.invoke(node);
           if (module == null) {
             return null;
           }

@@ -19,12 +19,12 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PersistentPropertyDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PersistentPropertyDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44cfd36L, "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,12 +40,12 @@ public final class PersistentPropertyDeclaration_BehaviorDescriptor extends Base
     return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")));
   }
   private static List<SNode> getOperationConcept_id2D1PBM_bxJ5(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IMember_BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
+    List<SNode> result = IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1210180874794"));
     return result;
   }
 
-  /*package*/ PersistentPropertyDeclaration_BehaviorDescriptor() {
+  /*package*/ PersistentPropertyDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

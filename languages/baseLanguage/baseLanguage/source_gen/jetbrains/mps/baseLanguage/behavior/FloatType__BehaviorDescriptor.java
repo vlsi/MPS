@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class FloatType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FloatType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d327fdL, "jetbrains.mps.baseLanguage.structure.FloatType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class FloatType_BehaviorDescriptor extends BaseBHDescriptor {
     return "F";
   }
 
-  /*package*/ FloatType_BehaviorDescriptor() {
+  /*package*/ FloatType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

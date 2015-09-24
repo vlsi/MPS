@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeOperationsContainer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeOperationsContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,8 +50,8 @@ public final class NodeOperationsContainer_BehaviorDescriptor extends BaseBHDesc
     SNode newNode = factory.createNodeFromRuleMsg(reference);
     if (SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2827acdc621ed3acL, "jetbrains.mps.lang.test.structure.IReferenceAttachable"))) {
       SNode node = SNodeOperations.cast(newNode, MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2827acdc621ed3acL, "jetbrains.mps.lang.test.structure.IReferenceAttachable"));
-      if (IReferenceAttachable_BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(node, reference)) {
-        IReferenceAttachable_BehaviorDescriptor.attachReference_id2wBFdLy8qmn.invoke(node, reference);
+      if (IReferenceAttachable__BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(node, reference)) {
+        IReferenceAttachable__BehaviorDescriptor.attachReference_id2wBFdLy8qmn.invoke(node, reference);
       }
     }
     ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))).addElement(newNode);
@@ -59,12 +59,12 @@ public final class NodeOperationsContainer_BehaviorDescriptor extends BaseBHDesc
   private static Boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return NodeCheckOperation_BehaviorDescriptor.expectsErrorsInside_id3efgZvcKrj8.invoke(it);
+        return NodeCheckOperation__BehaviorDescriptor.expectsErrorsInside_id3efgZvcKrj8.invoke(it);
       }
     });
   }
 
-  /*package*/ NodeOperationsContainer_BehaviorDescriptor() {
+  /*package*/ NodeOperationsContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

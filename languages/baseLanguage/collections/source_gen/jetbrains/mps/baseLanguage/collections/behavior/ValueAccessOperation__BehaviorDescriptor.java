@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ValueAccessOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ValueAccessOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ec6b83L, "jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class ValueAccessOperation_BehaviorDescriptor extends BaseBHDescrip
     return true;
   }
 
-  /*package*/ ValueAccessOperation_BehaviorDescriptor() {
+  /*package*/ ValueAccessOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

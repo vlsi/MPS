@@ -18,6 +18,6 @@ public class EditorTab_Behavior {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_TabDescriptor";
   }
   public static String call_getGeneratedClassFQName_3743831881070611787(SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + EditorTab_BehaviorDescriptor.getGeneratedName_id3fOKOapZKP0.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + EditorTab__BehaviorDescriptor.getGeneratedName_id3fOKOapZKP0.invoke(__thisNode__);
   }
 }

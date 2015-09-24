@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Statement__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ReportConfigurationErrorStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReportConfigurationErrorStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,11 +39,11 @@ public final class ReportConfigurationErrorStatement_BehaviorDescriptor extends 
   }
 
   private static void collectUncaughtMethodThrowables_id4Gt7ANIVH8f(@NotNull SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invokeSpecial(__thisNode__, throwables, ignoreMayBeThrowables);
+    Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invokeSpecial(__thisNode__, throwables, ignoreMayBeThrowables);
     SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(_quotation_createNode_3gtax0_a0a0b0a(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
   }
 
-  /*package*/ ReportConfigurationErrorStatement_BehaviorDescriptor() {
+  /*package*/ ReportConfigurationErrorStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

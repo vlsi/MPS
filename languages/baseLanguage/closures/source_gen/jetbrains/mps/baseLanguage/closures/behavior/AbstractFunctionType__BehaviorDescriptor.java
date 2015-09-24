@@ -18,11 +18,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractFunctionType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractFunctionType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,14 +37,14 @@ public final class AbstractFunctionType_BehaviorDescriptor extends BaseBHDescrip
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, 0x4de23a15f719357eL, "parameterType"))) {
-      sb.append(sep).append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pt));
+      sb.append(sep).append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pt));
       sep = ",";
     }
-    sb.append("~~>").append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, 0x4de23a15f719357fL, "resultType"))));
+    sb.append("~~>").append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, 0x4de23a15f719357fL, "resultType"))));
     return sb.append("}").toString();
   }
 
-  /*package*/ AbstractFunctionType_BehaviorDescriptor() {
+  /*package*/ AbstractFunctionType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

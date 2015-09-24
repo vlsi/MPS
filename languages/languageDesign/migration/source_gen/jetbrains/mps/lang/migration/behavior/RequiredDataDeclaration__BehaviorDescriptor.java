@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RequiredDataDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RequiredDataDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class RequiredDataDeclaration_BehaviorDescriptor extends BaseBHDesc
     return SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "4144229974054260078");
   }
 
-  /*package*/ RequiredDataDeclaration_BehaviorDescriptor() {
+  /*package*/ RequiredDataDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

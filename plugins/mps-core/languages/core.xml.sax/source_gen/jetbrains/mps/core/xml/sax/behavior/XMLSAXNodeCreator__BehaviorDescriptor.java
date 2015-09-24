@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class XMLSAXNodeCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXNodeCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2efL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class XMLSAXNodeCreator_BehaviorDescriptor extends BaseBHDescriptor
 
   private static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     SNode rule = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false);
-    return XMLSAXNodeRule_BehaviorDescriptor.getType_id1XGsQcRHufH.invoke(rule);
+    return XMLSAXNodeRule__BehaviorDescriptor.getType_id1XGsQcRHufH.invoke(rule);
   }
   private static Boolean showName_id1653mnvAgry(@NotNull SAbstractConcept __thisConcept__) {
     return true;
@@ -59,15 +59,15 @@ public final class XMLSAXNodeCreator_BehaviorDescriptor extends BaseBHDescriptor
       }
       return SimpleRoleScope.forNamedElements(node, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2f4L, "attrs"));
     }
-    return ConceptFunction_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ConceptFunction__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_uorgh9_a0a0a1a3())));
     return result;
   }
 
-  /*package*/ XMLSAXNodeCreator_BehaviorDescriptor() {
+  /*package*/ XMLSAXNodeCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

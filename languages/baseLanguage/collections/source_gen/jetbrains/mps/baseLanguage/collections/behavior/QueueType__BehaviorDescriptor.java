@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class QueueType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueueType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf74491L, "jetbrains.mps.baseLanguage.collections.structure.QueueType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -54,7 +54,7 @@ public final class QueueType_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ QueueType_BehaviorDescriptor() {
+  /*package*/ QueueType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

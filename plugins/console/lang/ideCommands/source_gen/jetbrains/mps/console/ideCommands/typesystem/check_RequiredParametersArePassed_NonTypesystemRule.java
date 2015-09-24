@@ -13,13 +13,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor;
-import jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter__BehaviorDescriptor;
+import jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_RequiredParametersArePassed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -36,19 +36,19 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ActionParameter_BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(it);
+        return ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(it);
       }
     });
     Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getChildren(callAction, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587afL, "parameter"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ActionCallParameter_BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(it);
+        return ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(it);
       }
     });
     Iterable<SNode> missed = Sequence.fromIterable(requiredParameters).subtract(Sequence.fromIterable(passedParameters));
     if (Sequence.fromIterable(missed).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callAction, "Parameter " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(Sequence.fromIterable(missed).first()) + " is required", "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "5582028874769074319", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callAction, "Parameter " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(Sequence.fromIterable(missed).first()) + " is required", "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "5582028874769074319", null, errorTarget);
       }
     }
   }

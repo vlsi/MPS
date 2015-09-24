@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IConceptAspect_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IConceptAspect__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,9 +45,9 @@ public final class IConceptAspect_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static List<SNode> getBaseConceptCollection_id4$$3zrO3UBG(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode node = IConceptAspect_BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
+    SNode node = IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
     if ((node != null)) {
-      ListSequence.fromList(result).addElement(IConceptAspect_BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__));
+      ListSequence.fromList(result).addElement(IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__));
     }
     return result;
   }
@@ -59,10 +59,10 @@ public final class IConceptAspect_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static Boolean canBeAppliedToNode_id7IH442d05tK(@NotNull SAbstractConcept __thisConcept__, SNode candidate) {
-    return IConceptAspect_BehaviorDescriptor.isApplicable_id6NcFj35FbEV.invoke(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(__thisConcept__.getDeclarationNode())), candidate);
+    return IConceptAspect__BehaviorDescriptor.isApplicable_id6NcFj35FbEV.invoke(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(__thisConcept__.getDeclarationNode())), candidate);
   }
 
-  /*package*/ IConceptAspect_BehaviorDescriptor() {
+  /*package*/ IConceptAspect__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BaseConcept_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -74,7 +74,7 @@ public final class BaseConcept_BehaviorDescriptor extends BaseBHDescriptor {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   private static String getDetailedPresentation_id22G2W3WJ92t(@NotNull SNode __thisNode__) {
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__);
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__);
   }
   private static Integer getMetaLevel_id3t0v3yFOD1A(@NotNull SNode __thisNode__) {
     if (jetbrains.mps.util.SNodeOperations.isRoot(__thisNode__)) {
@@ -82,7 +82,7 @@ public final class BaseConcept_BehaviorDescriptor extends BaseBHDescriptor {
     }
     int metalevel = 0;
     for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
-      metalevel += IMetaLevelChanger_BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(metaLevelChanger);
+      metalevel += IMetaLevelChanger__BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(metaLevelChanger);
     }
     return metalevel;
   }
@@ -90,7 +90,7 @@ public final class BaseConcept_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ BaseConcept_BehaviorDescriptor() {
+  /*package*/ BaseConcept__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

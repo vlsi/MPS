@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3326068L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavio
     return true;
   }
 
-  /*package*/ ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor() {
+  /*package*/ ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -17,13 +17,13 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ControlAbstractionContainer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ControlAbstractionContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ControlAbstractionContainer_BehaviorDescriptor extends BaseBH
   }
 
   private static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
-    List<SNode> members = Classifier_BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
+    List<SNode> members = Classifier__BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, 0x11e49eb4129L, "controlAbstraction"))));
     return members;
   }
@@ -44,7 +44,7 @@ public final class ControlAbstractionContainer_BehaviorDescriptor extends BaseBH
     return true;
   }
 
-  /*package*/ ControlAbstractionContainer_BehaviorDescriptor() {
+  /*package*/ ControlAbstractionContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

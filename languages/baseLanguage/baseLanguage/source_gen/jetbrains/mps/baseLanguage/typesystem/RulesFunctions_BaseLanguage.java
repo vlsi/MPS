@@ -20,20 +20,20 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike__BehaviorDescriptor;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
@@ -411,7 +411,7 @@ __switch__:
           {
             SNode _nodeToCheck_1029348928467 = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) ListSequence.fromList(nodes).first(), (SNode) TypeVariableDeclaration_BehaviorDescriptor.getConcreteUpperBound_id3LgQEacCviw.invoke(tvd), false, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) ListSequence.fromList(nodes).first(), (SNode) TypeVariableDeclaration__BehaviorDescriptor.getConcreteUpperBound_id3LgQEacCviw.invoke(tvd), false, true, _info_12389875345);
           }
         }
       }
@@ -533,14 +533,14 @@ __switch__:
         continue;
       }
       if (erasureSignature == null) {
-        erasureSignature = BaseMethodDeclaration_BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(ownMethod);
+        erasureSignature = BaseMethodDeclaration__BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(ownMethod);
       }
-      String namesakeErasureSignature = BaseMethodDeclaration_BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(namesake);
+      String namesakeErasureSignature = BaseMethodDeclaration__BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(namesake);
       if (namesakeErasureSignature.equals(erasureSignature)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.getNodeAncestor(namesake, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false)) + "." + SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3115327157609989939", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.getNodeAncestor(namesake, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false)) + "." + SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3115327157609989939", null, errorTarget);
         }
         break;
       }
@@ -607,13 +607,13 @@ __switch__:
                 }
               }
             } else {
-              if (ListSequence.fromList(ancSLs).contains(IMethodLike_BehaviorDescriptor.getBody_idi2fhZ_m.invoke(SNodeOperations.as(anc, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"))))) {
+              if (ListSequence.fromList(ancSLs).contains(IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(SNodeOperations.as(anc, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"))))) {
                 SNode methodLike = SNodeOperations.cast(anc, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"));
-                supportsCheckedExceptions = IMethodLike_BehaviorDescriptor.supportsCheckedExceptions_id7orZYjMoFMH.invoke(methodLike);
-                if (IMethodLike_BehaviorDescriptor.implicitThrows_id4kX30tnJ9kz.invoke(methodLike)) {
+                supportsCheckedExceptions = IMethodLike__BehaviorDescriptor.supportsCheckedExceptions_id7orZYjMoFMH.invoke(methodLike);
+                if (IMethodLike__BehaviorDescriptor.implicitThrows_id4kX30tnJ9kz.invoke(methodLike)) {
                   ListSequence.fromList(throwTypes).clear();
                 } else {
-                  for (final SNode thr : IMethodLike_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(methodLike)) {
+                  for (final SNode thr : IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(methodLike)) {
                     ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                       public boolean accept(SNode tt) {
                         return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);

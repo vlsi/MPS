@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IContainsStatementList_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IContainsStatementList__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,10 +47,10 @@ public final class IContainsStatementList_BehaviorDescriptor extends BaseBHDescr
     return false;
   }
   private static Boolean isStatementListCompact_idi0zxZ6o(@NotNull SNode __thisNode__) {
-    return StatementList_BehaviorDescriptor.isOneLiner_idi0z3USV.invoke(IContainsStatementList_BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(__thisNode__));
+    return StatementList__BehaviorDescriptor.isOneLiner_idi0z3USV.invoke(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(__thisNode__));
   }
 
-  /*package*/ IContainsStatementList_BehaviorDescriptor() {
+  /*package*/ IContainsStatementList__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

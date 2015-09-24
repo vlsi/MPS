@@ -24,11 +24,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XMLSAXChildRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -62,7 +62,7 @@ public final class XMLSAXChildRule_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (child != null && child.getRoleInParent().equals("actualArgument")) {
-      Scope argumentsScope = XMLSAXChildRule_BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
+      Scope argumentsScope = XMLSAXChildRule__BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
       if (argumentsScope != null) {
         return argumentsScope;
       }
@@ -75,19 +75,19 @@ public final class XMLSAXChildRule_BehaviorDescriptor extends BaseBHDescriptor {
         }
       }
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
     if (role.equals("actualArgument")) {
-      Scope argumentsScope = XMLSAXChildRule_BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
+      Scope argumentsScope = XMLSAXChildRule__BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
       if (argumentsScope != null) {
         return argumentsScope;
       }
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, index);
+    return ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, index);
   }
 
-  /*package*/ XMLSAXChildRule_BehaviorDescriptor() {
+  /*package*/ XMLSAXChildRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

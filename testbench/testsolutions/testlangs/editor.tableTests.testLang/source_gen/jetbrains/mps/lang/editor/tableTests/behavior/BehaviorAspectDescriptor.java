@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myStateMachine_BehaviorDescriptor = new StateMachine_BehaviorDescriptor();
-  private final BHDescriptor myTable_BehaviorDescriptor = new Table_BehaviorDescriptor();
-  private final BHDescriptor myLightWeightDecisionTable_BehaviorDescriptor = new LightWeightDecisionTable_BehaviorDescriptor();
-  private final BHDescriptor myAbstractStateMachineElement_BehaviorDescriptor = new AbstractStateMachineElement_BehaviorDescriptor();
-  private final BHDescriptor myHierarchycalTable_BehaviorDescriptor = new HierarchycalTable_BehaviorDescriptor();
+  private final BHDescriptor myStateMachine__BehaviorDescriptor = new StateMachine__BehaviorDescriptor();
+  private final BHDescriptor myTable__BehaviorDescriptor = new Table__BehaviorDescriptor();
+  private final BHDescriptor myLightWeightDecisionTable__BehaviorDescriptor = new LightWeightDecisionTable__BehaviorDescriptor();
+  private final BHDescriptor myAbstractStateMachineElement__BehaviorDescriptor = new AbstractStateMachineElement__BehaviorDescriptor();
+  private final BHDescriptor myHierarchycalTable__BehaviorDescriptor = new HierarchycalTable__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -41,15 +41,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myStateMachine_BehaviorDescriptor;
+        return myStateMachine__BehaviorDescriptor;
       case 1:
-        return myTable_BehaviorDescriptor;
+        return myTable__BehaviorDescriptor;
       case 2:
-        return myLightWeightDecisionTable_BehaviorDescriptor;
+        return myLightWeightDecisionTable__BehaviorDescriptor;
       case 3:
-        return myAbstractStateMachineElement_BehaviorDescriptor;
+        return myAbstractStateMachineElement__BehaviorDescriptor;
       case 4:
-        return myHierarchycalTable_BehaviorDescriptor;
+        return myHierarchycalTable__BehaviorDescriptor;
       default:
         return null;
     }

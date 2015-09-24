@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InlineTagCommentLinePart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InlineTagCommentLinePart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class InlineTagCommentLinePart_BehaviorDescriptor extends BaseBHDes
     int index = SNodeOperations.getIndexInParent(__thisNode__);
     SNode line = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
     SNodeOperations.deleteNode(__thisNode__);
-    NodeCaretPair pair = CommentLine_BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
+    NodeCaretPair pair = CommentLine__BehaviorDescriptor.tryMergeToRight_idooaTF_3fF3.invoke(line, index - 1);
     if (pair == null) {
       return new NodeCaretPair(ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index), 0);
     } else {
@@ -47,7 +47,7 @@ public final class InlineTagCommentLinePart_BehaviorDescriptor extends BaseBHDes
     }
   }
 
-  /*package*/ InlineTagCommentLinePart_BehaviorDescriptor() {
+  /*package*/ InlineTagCommentLinePart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

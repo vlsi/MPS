@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class HashMapCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class HashMapCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class HashMapCreator_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ HashMapCreator_BehaviorDescriptor() {
+  /*package*/ HashMapCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -19,9 +19,9 @@ public class typeof_RemoveFirstElementOperation_InferenceRule extends AbstractIn
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode elementType_typevar_1227026150601 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = IOperation_BehaviorDescriptor.getOperand_idhEwIP$m.invoke(op);
+      SNode _nodeToCheck_1029348928467 = IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(op);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120475", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) IApplicableToNothing_BehaviorDescriptor.expectedOperandType_id5xvLnyYzY1Q.invoke(op, typeCheckingContext.getRepresentative(elementType_typevar_1227026150601)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227026150610", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) IApplicableToNothing__BehaviorDescriptor.expectedOperandType_id5xvLnyYzY1Q.invoke(op, typeCheckingContext.getRepresentative(elementType_typevar_1227026150601)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227026150610", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

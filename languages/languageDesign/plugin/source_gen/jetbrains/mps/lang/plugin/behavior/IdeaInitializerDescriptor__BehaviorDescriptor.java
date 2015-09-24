@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IdeaInitializerDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IdeaInitializerDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L, "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class IdeaInitializerDescriptor_BehaviorDescriptor extends BaseBHDe
   }
 
   private static String getGeneratedFileName_id3uUnGg98wJc(@NotNull SNode __thisNode__) {
-    return IdeaInitializerDescriptor_BehaviorDescriptor.getGeneratedFileShortName_id3uUnGg98M$X.invoke(__thisNode__) + "." + IdeaInitializerDescriptor_BehaviorDescriptor.getGeneratesFileExtension_id3uUnGg98M_4.invoke(__thisNode__);
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratedFileShortName_id3uUnGg98M$X.invoke(__thisNode__) + "." + IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratesFileExtension_id3uUnGg98M_4.invoke(__thisNode__);
   }
   private static String getGeneratedFileShortName_id3uUnGg98M$X(@NotNull SNode __thisNode__) {
     return "plugin";
@@ -47,7 +47,7 @@ public final class IdeaInitializerDescriptor_BehaviorDescriptor extends BaseBHDe
     return "libraries";
   }
 
-  /*package*/ IdeaInitializerDescriptor_BehaviorDescriptor() {
+  /*package*/ IdeaInitializerDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

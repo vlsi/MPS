@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MathSymbol_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MathSymbol__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class MathSymbol_BehaviorDescriptor extends BaseBHDescriptor {
     }
     SNode ms = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), false, false);
     if (ms != null) {
-      MathSymbol_BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, __thisNode__, indices);
+      MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, __thisNode__, indices);
     }
   }
   private static List<SNode> getEmptyIndexList_idi0Okz4g(@NotNull SNode __thisNode__) {
@@ -54,7 +54,7 @@ public final class MathSymbol_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ MathSymbol_BehaviorDescriptor() {
+  /*package*/ MathSymbol__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

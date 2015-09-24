@@ -7,12 +7,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class DispatchMethodCollector {
@@ -28,7 +28,7 @@ public class DispatchMethodCollector {
 
     while ((clas != null)) {
       startNewClass(clas);
-      for (SNode m : Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(clas)).where(new IWhereFilter<SNode>() {
+      for (SNode m : Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(clas)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return DispatchUtil.isReadyMethod(it);
         }
@@ -43,7 +43,7 @@ public class DispatchMethodCollector {
     }
 
     // Now static methods. They're simpler. No need to take superclasses into account 
-    for (SNode m : Sequence.fromIterable(ClassConcept_BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(classToCheck)).where(new IWhereFilter<SNode>() {
+    for (SNode m : Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(classToCheck)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return DispatchUtil.isReadyMethod(it);
       }

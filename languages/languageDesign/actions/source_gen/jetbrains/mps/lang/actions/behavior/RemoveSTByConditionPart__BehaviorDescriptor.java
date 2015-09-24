@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RemoveSTByConditionPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RemoveSTByConditionPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class RemoveSTByConditionPart_BehaviorDescriptor extends BaseBHDesc
     return "removeSideTransformActionsByCondition_" + __thisNode__.getNodeId().toString();
   }
 
-  /*package*/ RemoveSTByConditionPart_BehaviorDescriptor() {
+  /*package*/ RemoveSTByConditionPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

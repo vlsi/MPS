@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MatchVariableReferenceRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MatchVariableReferenceRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class MatchVariableReferenceRegexp_BehaviorDescriptor extends BaseB
     return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, 0x1118e0a5335L, "match"))) + 1);
   }
 
-  /*package*/ MatchVariableReferenceRegexp_BehaviorDescriptor() {
+  /*package*/ MatchVariableReferenceRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

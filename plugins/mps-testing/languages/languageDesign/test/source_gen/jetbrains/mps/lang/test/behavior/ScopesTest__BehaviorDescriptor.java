@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ScopesTest_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ScopesTest__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class ScopesTest_BehaviorDescriptor extends BaseBHDescriptor {
     return Sequence.fromIterable(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"))) == null) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")));
   }
 
-  /*package*/ ScopesTest_BehaviorDescriptor() {
+  /*package*/ ScopesTest__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IIncompleteParen_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IIncompleteParen__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, "jetbrains.mps.baseLanguage.structure.IIncompleteParen");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class IIncompleteParen_BehaviorDescriptor extends BaseBHDescriptor 
     return SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, 0xede3fe8510255eeL, "count")) == 1;
   }
 
-  /*package*/ IIncompleteParen_BehaviorDescriptor() {
+  /*package*/ IIncompleteParen__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

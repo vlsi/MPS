@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FigureParameterAttribute_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FigureParameterAttribute__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a0c593e1L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class FigureParameterAttribute_BehaviorDescriptor extends BaseBHDes
   }
 
 
-  /*package*/ FigureParameterAttribute_BehaviorDescriptor() {
+  /*package*/ FigureParameterAttribute__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

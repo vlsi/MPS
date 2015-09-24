@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlProlog_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlProlog__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, "jetbrains.mps.core.xml.structure.XmlProlog");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class XmlProlog_BehaviorDescriptor extends BaseBHDescriptor {
   private static Boolean isInValidPosition_id1Qs9WekWY$K(@NotNull SNode __thisNode__, SNode element) {
     SNode declaration = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, 0x6988ccb84e3bd0e6L, "elements"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return XmlPrologElement_BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)));
+        return XmlPrologElement__BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)));
       }
     });
     if (declaration == null) {
@@ -47,7 +47,7 @@ public final class XmlProlog_BehaviorDescriptor extends BaseBHDescriptor {
     return !(ListSequence.fromList(SNodeOperations.getPrevSiblings(declaration, false)).contains(element));
   }
 
-  /*package*/ XmlProlog_BehaviorDescriptor() {
+  /*package*/ XmlProlog__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

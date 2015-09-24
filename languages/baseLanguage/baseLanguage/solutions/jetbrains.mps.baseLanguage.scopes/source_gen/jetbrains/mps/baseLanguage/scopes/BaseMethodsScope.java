@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -108,7 +108,7 @@ public abstract class BaseMethodsScope extends Scope {
 
     Map<String, Set<SNode>> groups = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
-      for (SNode method : Sequence.fromIterable(Classifier_BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(extendedClassifier, classifier, kind).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+      for (SNode method : Sequence.fromIterable(Classifier__BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(extendedClassifier, classifier, kind).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(kind));
         }

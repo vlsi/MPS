@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Analyzer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Analyzer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,9 +46,9 @@ public final class Analyzer_BehaviorDescriptor extends BaseBHDescriptor {
   private static String getAnalyzerRunnerFqName_id9V7Nft_vlj(@NotNull SNode __thisNode__) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__));
     if (longName.equals("")) {
-      return Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
+      return Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
     }
-    return longName + "." + Analyzer_BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
+    return longName + "." + Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
   }
   private static String getAnalyzerName_id9V7Nft_oXY(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
@@ -63,7 +63,7 @@ public final class Analyzer_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
 
-  /*package*/ Analyzer_BehaviorDescriptor() {
+  /*package*/ Analyzer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

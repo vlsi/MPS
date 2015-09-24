@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ParameterizedShortcutChange_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ParameterizedShortcutChange__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e096c3aL, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ParameterizedShortcutChange_BehaviorDescriptor extends BaseBH
     return _quotation_createNode_hegoi9_a0a0();
   }
 
-  /*package*/ ParameterizedShortcutChange_BehaviorDescriptor() {
+  /*package*/ ParameterizedShortcutChange__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

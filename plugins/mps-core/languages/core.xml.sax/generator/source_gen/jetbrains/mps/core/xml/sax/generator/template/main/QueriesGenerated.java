@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule_BehaviorDescriptor;
+import jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -57,10 +57,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_4720003541480476186(final PropertyMacroContext _context) {
-    return XMLSAXChildRule_BehaviorDescriptor.getTagName_id1XGsQcRHuf0.invoke(_context.getNode());
+    return XMLSAXChildRule__BehaviorDescriptor.getTagName_id1XGsQcRHuf0.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_2264311582634171962(final PropertyMacroContext _context) {
-    return XMLSAXChildRule_BehaviorDescriptor.getTagName_id1XGsQcRHuf0.invoke(_context.getNode());
+    return XMLSAXChildRule__BehaviorDescriptor.getTagName_id1XGsQcRHuf0.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4720003541484956176(final PropertyMacroContext _context) {
     return "check" + ((isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2daL, "tagName"))) ? SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2daL, "tagName")) : SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL, "rule")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) + "_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x4180d2369beda765L, "condition"))).getNodeId();

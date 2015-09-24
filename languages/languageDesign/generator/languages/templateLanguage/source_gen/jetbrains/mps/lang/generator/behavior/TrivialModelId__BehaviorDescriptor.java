@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TrivialModelId_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TrivialModelId__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, "jetbrains.mps.lang.generator.structure.TrivialModelId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class TrivialModelId_BehaviorDescriptor extends BaseBHDescriptor {
     return rv;
   }
 
-  /*package*/ TrivialModelId_BehaviorDescriptor() {
+  /*package*/ TrivialModelId__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

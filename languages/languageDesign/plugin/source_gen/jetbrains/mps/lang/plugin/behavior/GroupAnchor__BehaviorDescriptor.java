@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GroupAnchor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GroupAnchor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11840f36089L, "jetbrains.mps.lang.plugin.structure.GroupAnchor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,10 +39,10 @@ public final class GroupAnchor_BehaviorDescriptor extends BaseBHDescriptor {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   private static String getActionId_id4L4tRTddLSL(@NotNull SNode __thisNode__) {
-    return ActionGroupDeclaration_BehaviorDescriptor.getGeneratedName_idhEwJa82.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"))) + GroupAnchor_BehaviorDescriptor.getId_idhEwIkYn.invoke(__thisNode__);
+    return ActionGroupDeclaration__BehaviorDescriptor.getGeneratedName_idhEwJa82.invoke(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"))) + GroupAnchor__BehaviorDescriptor.getId_idhEwIkYn.invoke(__thisNode__);
   }
 
-  /*package*/ GroupAnchor_BehaviorDescriptor() {
+  /*package*/ GroupAnchor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

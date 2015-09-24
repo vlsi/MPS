@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class FunctionMethodDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FunctionMethodDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class FunctionMethodDeclaration_BehaviorDescriptor extends BaseBHDe
     return false;
   }
 
-  /*package*/ FunctionMethodDeclaration_BehaviorDescriptor() {
+  /*package*/ FunctionMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

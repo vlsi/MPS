@@ -31,7 +31,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
-public final class ExportScope_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,14 +47,14 @@ public final class ExportScope_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean checkExport_id2erkSmBSDLR(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
-    SNode exp = ExportScope_BehaviorDescriptor.getExportScope_id3ye0wbzmGx_.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
-    return namespace == null || (((exp == null) ? ExportScope_BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), isConcept, node, namespace) : ExportScope_BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
+    SNode exp = ExportScope__BehaviorDescriptor.getExportScope_id3ye0wbzmGx_.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
+    return namespace == null || (((exp == null) ? ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), isConcept, node, namespace) : ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
   }
   private static Boolean checkExportDefault_id7auzIIk9gg7(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
     /*
-      return (isConcept ? true : namespace.equals(ExportScope_BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node)));
+      return (isConcept ? true : namespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node)));
     */
-    String targetNamespace = ExportScope_BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
+    String targetNamespace = ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
       return true;
     }
@@ -84,7 +84,7 @@ public final class ExportScope_BehaviorDescriptor extends BaseBHDescriptor {
     return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
   }
 
-  /*package*/ ExportScope_BehaviorDescriptor() {
+  /*package*/ ExportScope__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
-import jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.AbstractModule;
 
@@ -82,7 +82,7 @@ public class Context {
     if ((buildProject == null)) {
       return null;
     }
-    return BuildProject_BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, this);
+    return BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, this);
   }
   public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
     if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {

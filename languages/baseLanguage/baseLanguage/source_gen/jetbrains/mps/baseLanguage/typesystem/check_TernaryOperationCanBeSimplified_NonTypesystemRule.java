@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,8 +28,8 @@ public class check_TernaryOperationCanBeSimplified_NonTypesystemRule extends Abs
     SNode remainingNode;
     Boolean value;
     SModule module = SNodeOperations.getModel(ternaryOperatorExpression).getModule();
-    if (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(condition)) {
-      Object conditionValue = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(condition, module);
+    if (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(condition)) {
+      Object conditionValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(condition, module);
       if (conditionValue != null && conditionValue instanceof Boolean) {
         value = (Boolean) conditionValue;
         remainingNode = (value ? left : right);

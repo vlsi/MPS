@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class SymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+          if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
             return null;
           }
           sb.append(c);
@@ -91,7 +91,7 @@ public final class SymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
     return sb.toString();
   }
   private static String escapeChar_id75Jea4IEVWQ(@NotNull SNode __thisNode__, String s) {
-    String res = SymbolClassPart_BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
+    String res = SymbolClassPart__BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
     if (res == null) {
       if (s.equals("\\")) {
         return "\\\\";
@@ -101,7 +101,7 @@ public final class SymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
     return res;
   }
 
-  /*package*/ SymbolClassPart_BehaviorDescriptor() {
+  /*package*/ SymbolClassPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

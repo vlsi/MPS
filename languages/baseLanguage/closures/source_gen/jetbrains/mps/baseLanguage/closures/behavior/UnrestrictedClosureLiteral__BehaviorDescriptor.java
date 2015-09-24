@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class UnrestrictedClosureLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnrestrictedClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class UnrestrictedClosureLiteral_BehaviorDescriptor extends BaseBHD
     return _quotation_createNode_8me3g4_a0a0(paramTypes, termType, returnType, throwsTypes);
   }
 
-  /*package*/ UnrestrictedClosureLiteral_BehaviorDescriptor() {
+  /*package*/ UnrestrictedClosureLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

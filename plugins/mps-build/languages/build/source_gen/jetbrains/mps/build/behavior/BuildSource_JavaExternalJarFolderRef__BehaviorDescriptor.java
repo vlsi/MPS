@@ -24,7 +24,7 @@ import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor exten
     return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")), __thisNode__);
   }
 
-  /*package*/ BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor() {
+  /*package*/ BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -195,7 +195,7 @@ public class QueriesGenerated {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), _context.getSourceNode()));
             }
             public String getMatchingText(String pattern) {
-              return "^" + ExponentialOperation_BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept((item)));
+              return "^" + ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept((item)));
             }
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);

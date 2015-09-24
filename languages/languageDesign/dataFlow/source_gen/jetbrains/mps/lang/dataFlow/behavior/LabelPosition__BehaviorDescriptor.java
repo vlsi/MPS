@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LabelPosition_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LabelPosition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class LabelPosition_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ LabelPosition_BehaviorDescriptor() {
+  /*package*/ LabelPosition__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -17,11 +17,11 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.query.behavior.HelpProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbsractMake_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbsractMake__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, "jetbrains.mps.console.ideCommands.structure.AbsractMake");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,10 +37,10 @@ public final class AbsractMake_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   private static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    return HelpProvider_BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(__thisConcept__);
+    return HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(__thisConcept__);
   }
 
-  /*package*/ AbsractMake_BehaviorDescriptor() {
+  /*package*/ AbsractMake__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

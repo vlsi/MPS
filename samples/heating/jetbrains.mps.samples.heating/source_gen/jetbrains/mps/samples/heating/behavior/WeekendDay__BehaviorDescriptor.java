@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class WeekendDay_BehaviorDescriptor extends BaseBHDescriptor {
+public final class WeekendDay__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68b8faL, "jetbrains.mps.samples.heating.structure.WeekendDay");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class WeekendDay_BehaviorDescriptor extends BaseBHDescriptor {
     return "Weekend days";
   }
 
-  /*package*/ WeekendDay_BehaviorDescriptor() {
+  /*package*/ WeekendDay__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

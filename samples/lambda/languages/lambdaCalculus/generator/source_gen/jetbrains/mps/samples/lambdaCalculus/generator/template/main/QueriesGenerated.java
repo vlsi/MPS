@@ -5,16 +5,16 @@ package jetbrains.mps.samples.lambdaCalculus.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_BehaviorDescriptor;
-import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_BehaviorDescriptor;
+import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression__BehaviorDescriptor;
+import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction__BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -29,19 +29,19 @@ public class QueriesGenerated {
     return (SNodeOperations.getParent(_context.getNode()) == null);
   }
   public static boolean baseMappingRule_Condition_3851847705188473146(final BaseMappingRuleContext _context) {
-    return LambdaExpression_BehaviorDescriptor.hasParameterRefs_id6qD99pUaonP.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.hasParameterRefs_id6qD99pUaonP.invoke(_context.getNode());
   }
   public static boolean baseMappingRule_Condition_3851847705188496572(final BaseMappingRuleContext _context) {
-    return !(LambdaExpression_BehaviorDescriptor.hasParameterRefs_id6qD99pUaonP.invoke(_context.getNode()));
+    return !(LambdaExpression__BehaviorDescriptor.hasParameterRefs_id6qD99pUaonP.invoke(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_5066394162984555366(final BaseMappingRuleContext _context) {
-    return (LambdaApplication_BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(_context.getNode()));
+    return (LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_1823182225212631178(final BaseMappingRuleContext _context) {
-    return !(LambdaApplication_BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(_context.getNode()));
+    return !(LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_1308935328408191088(final BaseMappingRuleContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(_context.getNode()) == null || !(LambdaApplication_BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression_BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(_context.getNode())));
+    return LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(_context.getNode()) == null || !(LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(_context.getNode())));
   }
   public static boolean baseMappingRule_Condition_1745225562807772209(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable"))), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
@@ -77,16 +77,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_2167053794906731150(final PropertyMacroContext _context) {
-    return ListSequence.fromList(LambdaAbstraction_BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(_context.getNode())).count();
+    return ListSequence.fromList(LambdaAbstraction__BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(_context.getNode())).count();
   }
   public static Object propertyMacro_GetPropertyValue_2985097847315916808(final PropertyMacroContext _context) {
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
   }
   public static Object propertyMacro_GetPropertyValue_2167053794906731221(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_199058371937604760(final PropertyMacroContext _context) {
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
   }
   public static Object propertyMacro_GetPropertyValue_2167053794906731228(final PropertyMacroContext _context) {
     return "Function_" + _context.getNode().getNodeId().toString();
@@ -224,13 +224,13 @@ public class QueriesGenerated {
     }
   }
   public static SNode sourceNodeQuery_199058371937620120(final SourceSubstituteMacroNodeContext _context) {
-    return LambdaAbstraction_BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(_context.getNode());
+    return LambdaAbstraction__BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_2167053794906731202(final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
   public static SNode sourceNodeQuery_199058371937626325(final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(LambdaAbstraction_BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(LambdaApplication_BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode())));
+    return TypeChecker.getInstance().getTypeOf(LambdaAbstraction__BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(LambdaApplication__BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode())));
   }
   public static SNode sourceNodeQuery_816130369292752578(final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
@@ -239,43 +239,43 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
   public static SNode sourceNodeQuery_816130369292752650(final SourceSubstituteMacroNodeContext _context) {
-    return LambdaAbstraction_BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(LambdaApplication_BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode()));
+    return LambdaAbstraction__BehaviorDescriptor.getInnerBody_id4pfsEnSN_z2.invoke(LambdaApplication__BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode()));
   }
   public static Iterable<SNode> sourceNodesQuery_199058371937626104(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de1L, "argument"));
   }
   public static Iterable<SNode> sourceNodesQuery_6139750523307920929(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2985097847315884660(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2985097847315908583(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2985097847315916699(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaAbstraction_BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(_context.getNode());
+    return LambdaAbstraction__BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2167053794906731193(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2167053794906731209(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2985097847315884751(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_816130369292752585(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaAbstraction_BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(LambdaApplication_BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode()));
+    return LambdaAbstraction__BehaviorDescriptor.getAllVariables_id4pfsEnSNEj7.invoke(LambdaApplication__BehaviorDescriptor.getLambdaAbstraction_id4khEFTQ$3U7.invoke(_context.getNode()));
   }
   public static Iterable<SNode> sourceNodesQuery_816130369292752622(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_816130369292752673(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaApplication_BehaviorDescriptor.getArguments_id4pfsEnSNDeV.invoke(_context.getNode());
+    return LambdaApplication__BehaviorDescriptor.getArguments_id4pfsEnSNDeV.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_2985097847315884712(final SourceSubstituteMacroNodesContext _context) {
-    return LambdaExpression_BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
+    return LambdaExpression__BehaviorDescriptor.getOuterVariables_id4zrttnsimEk.invoke(_context.getNode());
   }
   private static SNode _quotation_createNode_x583g4_a0a1a64() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

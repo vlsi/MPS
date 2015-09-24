@@ -4,26 +4,26 @@ package jetbrains.mps.baseLanguage.lightweightdsl.editor;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.PlaceholderModifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.PlaceholderModifier__BehaviorDescriptor;
 
 public class EditorUtil {
   public static void substitutePlaceholder(SNode ph) {
-    SNodeOperations.replaceWithAnother(ph, DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(SLinkOperations.getTarget(ph, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl"))));
+    SNodeOperations.replaceWithAnother(ph, DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(SLinkOperations.getTarget(ph, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl"))));
   }
   public static void restorePlaceholder(final SNode mi) {
     final Wrappers._T<SNode> decl = new Wrappers._T<SNode>(null);
     if (SNodeOperations.isInstanceOf(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))) {
-      decl.value = MemberInstance_BehaviorDescriptor.getDeclaration_id7T23sO8vZuR.invoke(SNodeOperations.cast(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance")));
+      decl.value = MemberInstance__BehaviorDescriptor.getDeclaration_id7T23sO8vZuR.invoke(SNodeOperations.cast(mi, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance")));
     } else {
       // custom members 
       decl.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getNodeAncestors(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).findFirst(new IWhereFilter<SNode>() {
@@ -40,17 +40,17 @@ public class EditorUtil {
       return;
     }
 
-    boolean lastInstance = DSLClassMember_BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(decl.value) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))).where(new IWhereFilter<SNode>() {
+    boolean lastInstance = DSLClassMember__BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(decl.value) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return MemberInstance_BehaviorDescriptor.getDeclaration_id7T23sO8vZuR.invoke(it) == decl.value;
+        return MemberInstance__BehaviorDescriptor.getDeclaration_id7T23sO8vZuR.invoke(it) == decl.value;
       }
     }).count() == 1;
     if (lastInstance) {
       return;
     }
 
-    if ((DSLClassMember_BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(decl.value) != null)) {
-      SNodeOperations.replaceWithAnother(mi, PlaceholderModifier_BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember_BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(decl.value)));
+    if ((DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(decl.value) != null)) {
+      SNodeOperations.replaceWithAnother(mi, PlaceholderModifier__BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(decl.value)));
     } else {
       SNodeOperations.deleteNode(mi);
     }

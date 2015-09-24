@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class VariableAlive_BehaviorDescriptor extends BaseBHDescriptor {
+public final class VariableAlive__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b086b4872L, "jetbrains.mps.lang.test.structure.VariableAlive");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class VariableAlive_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ VariableAlive_BehaviorDescriptor() {
+  /*package*/ VariableAlive__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

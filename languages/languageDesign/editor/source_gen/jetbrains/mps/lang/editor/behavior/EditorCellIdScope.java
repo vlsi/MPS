@@ -23,7 +23,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect__BehaviorDescriptor;
 
 public class EditorCellIdScope extends FilteringScope {
   private SAbstractConcept myConceptDeclaration;
@@ -71,6 +71,6 @@ public class EditorCellIdScope extends FilteringScope {
       return true;
     }
     SNode conceptAspect = SNodeOperations.getNodeAncestor(editorCellId, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), false, false);
-    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(myConceptDeclaration), SNodeOperations.asSConcept(SNodeOperations.asSConcept(IConceptAspect_BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(conceptAspect)))));
+    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(myConceptDeclaration), SNodeOperations.asSConcept(SNodeOperations.asSConcept(IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(conceptAspect)))));
   }
 }

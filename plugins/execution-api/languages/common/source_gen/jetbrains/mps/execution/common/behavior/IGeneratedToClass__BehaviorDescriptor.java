@@ -21,13 +21,13 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import java.util.regex.Pattern;
 
-public final class IGeneratedToClass_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IGeneratedToClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,33 +48,33 @@ public final class IGeneratedToClass_BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static String getGeneratedClassName_idO$iR4JBsSg(@NotNull SNode __thisNode__) {
-    String name = IGeneratedToClass_BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(__thisNode__);
-    return IGeneratedToClass_BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSG.invoke(__thisNode__, name);
+    String name = IGeneratedToClass__BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSG.invoke(__thisNode__, name);
   }
   private static String getFullName_idO$iR4JBsSv(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getNamespace_id1XgDflG1h$6.invoke(__thisNode__) + "." + IGeneratedToClass_BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getNamespace_id1XgDflG1h$6.invoke(__thisNode__) + "." + IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__);
   }
   private static String getValidClassName_id2eOtvO7hJjT(@NotNull SNode __thisNode__, @NonNls String name) {
-    return IGeneratedToClass_BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name);
+    return IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name);
   }
   private static String getGeneratedClassName_idO$iR4JBsSG(@NotNull SNode __thisNode__, String name) {
     if ((name == null || name.length() == 0)) {
       return null;
     }
-    return IGeneratedToClass_BehaviorDescriptor.getValidClassName_id2eOtvO7hJjT.invoke(__thisNode__, name) + "_" + IGeneratedToClass_BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getValidClassName_id2eOtvO7hJjT.invoke(__thisNode__, name) + "_" + IGeneratedToClass__BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(__thisNode__);
   }
   private static String getBaseName_id3MnZbusxcPI(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   private static String getNamespace_id1XgDflG1h$6(@NotNull SNode __thisNode__) {
-    return NodeNameUtil.getNamespace(INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
+    return NodeNameUtil.getNamespace(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
   }
   private static String replaceProhibitedSymbol_idO$iR4JBsQI(@NotNull SAbstractConcept __thisConcept__, String name, String symbol) {
     String result = name;
     while (result.contains(symbol)) {
       int index = result.indexOf(symbol);
       result = result.replace(symbol, "");
-      result = IGeneratedToClass_BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), result, index);
+      result = IGeneratedToClass__BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), result, index);
     }
     return result;
   }
@@ -89,10 +89,10 @@ public final class IGeneratedToClass_BehaviorDescriptor extends BaseBHDescriptor
     name = RegexpOperations.replace(name, REGEXP_iaa26s_b0a3a62, new _Replacer_iaa26s_a0a0d0ab(null, null));
     // in the beggining 
     name = RegexpOperations.replace(name, REGEXP_iaa26s_b0a5a62, new _Replacer_iaa26s_a0a0f0ab(null, null));
-    return IGeneratedToClass_BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name, 0);
+    return IGeneratedToClass__BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name, 0);
   }
 
-  /*package*/ IGeneratedToClass_BehaviorDescriptor() {
+  /*package*/ IGeneratedToClass__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

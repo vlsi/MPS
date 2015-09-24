@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InstanceInitializer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InstanceInitializer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class InstanceInitializer_BehaviorDescriptor extends BaseBHDescript
   }
 
   private static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return IVisible_BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
+    return IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
   }
 
-  /*package*/ InstanceInitializer_BehaviorDescriptor() {
+  /*package*/ InstanceInitializer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

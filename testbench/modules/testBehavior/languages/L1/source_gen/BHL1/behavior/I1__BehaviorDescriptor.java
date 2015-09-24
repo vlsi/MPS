@@ -21,7 +21,7 @@ import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
+public final class I1__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "BHL1.structure.I1");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class I1_BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.DEFAULT_METHOD;
   }
 
-  /*package*/ I1_BehaviorDescriptor() {
+  /*package*/ I1__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

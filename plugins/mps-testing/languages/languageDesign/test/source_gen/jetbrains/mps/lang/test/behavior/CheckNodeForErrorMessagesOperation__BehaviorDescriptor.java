@@ -19,11 +19,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CheckNodeForErrorMessagesOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,13 +46,13 @@ public final class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends
     return "ErrorMessagesCheck";
   }
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    return ITestMethod_BehaviorDescriptor.getTestName_idhGBohAB.invoke(__thisNode__);
+    return ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(__thisNode__);
   }
   private static Boolean expectsErrorsInside_id3efgZvcKrj8(@NotNull SNode __thisNode__) {
     return false;
   }
 
-  /*package*/ CheckNodeForErrorMessagesOperation_BehaviorDescriptor() {
+  /*package*/ CheckNodeForErrorMessagesOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

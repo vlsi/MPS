@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DragMouseStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DragMouseStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c55ca0a3L, "jetbrains.mps.lang.test.structure.DragMouseStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class DragMouseStatement_BehaviorDescriptor extends BaseBHDescripto
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c5348f79L, "jetbrains.mps.lang.test.structure.PressMouseStatement"), false, false);
   }
 
-  /*package*/ DragMouseStatement_BehaviorDescriptor() {
+  /*package*/ DragMouseStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

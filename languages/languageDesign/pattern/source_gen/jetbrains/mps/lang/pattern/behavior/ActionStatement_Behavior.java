@@ -19,7 +19,7 @@ public class ActionStatement_Behavior {
     return null;
   }
   public static SNode call_getNode_111677556049506460(SNode __thisNode__) {
-    SNode action = ActionStatement_BehaviorDescriptor.getActionPattern_id6cKyl1HJ1T.invoke(__thisNode__);
+    SNode action = ActionStatement__BehaviorDescriptor.getActionPattern_id6cKyl1HJ1T.invoke(__thisNode__);
     if (action != null) {
       return SNodeOperations.getParent(action);
     }

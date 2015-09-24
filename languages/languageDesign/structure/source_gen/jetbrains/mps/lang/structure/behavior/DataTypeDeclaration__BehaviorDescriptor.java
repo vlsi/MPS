@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class DataTypeDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DataTypeDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class DataTypeDeclaration_BehaviorDescriptor extends BaseBHDescript
   }
   private static Boolean isSimpleString_idhKtFG6a(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isString_idhKtFRO6.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     } else if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"))) {
       return true;
     }
@@ -65,45 +65,45 @@ public final class DataTypeDeclaration_BehaviorDescriptor extends BaseBHDescript
   }
   private static Boolean isSimpleInteger_idhKtGkcn(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
   private static Boolean isSimpleBoolean_idhKtGpIQ(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
   private static Boolean isEnumOfString_idhKtGw8K(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isString_idhKtFRO6.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
   private static Boolean isEnumOfInteger_idhKtGCmu(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
   private static Boolean isEnumOfBoolean_idhKtGHoM(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration_BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
   private static Boolean isSimpleStringOrEnumOfString_idhKtGPCt(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration_BehaviorDescriptor.isEnumOfString_idhKtGw8K.invoke(__thisNode__) || DataTypeDeclaration_BehaviorDescriptor.isSimpleString_idhKtFG6a.invoke(__thisNode__);
+    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfString_idhKtGw8K.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleString_idhKtFG6a.invoke(__thisNode__);
   }
   private static Boolean isSimpleIntegerOrEnumOfInteger_idhKtGTZR(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration_BehaviorDescriptor.isEnumOfInteger_idhKtGCmu.invoke(__thisNode__) || DataTypeDeclaration_BehaviorDescriptor.isSimpleInteger_idhKtGkcn.invoke(__thisNode__);
+    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfInteger_idhKtGCmu.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleInteger_idhKtGkcn.invoke(__thisNode__);
   }
   private static Boolean isSimpleBooleanOrEnumOfBoolean_idhKtGY3g(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration_BehaviorDescriptor.isEnumOfBoolean_idhKtGHoM.invoke(__thisNode__) || DataTypeDeclaration_BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(__thisNode__);
+    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfBoolean_idhKtGHoM.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(__thisNode__);
   }
 
-  /*package*/ DataTypeDeclaration_BehaviorDescriptor() {
+  /*package*/ DataTypeDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

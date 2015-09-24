@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Flow_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Flow__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL, "org.jetbrains.mps.samples.IfAndUnless.structure.Flow");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class Flow_BehaviorDescriptor extends BaseBHDescriptor {
     return "Abstract flow here";
   }
 
-  /*package*/ Flow_BehaviorDescriptor() {
+  /*package*/ Flow__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

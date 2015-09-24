@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -26,14 +26,14 @@ public class typeof_GetExtensionObjectsOperation_InferenceRule extends AbstractI
     final SNode EP_typevar_3999125756866747142 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = IOperation_BehaviorDescriptor.getOperand_idhEwIP$m.invoke(geoo);
+        SNode _nodeToCheck_1029348928467 = IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(geoo);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "3175313036448577342", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "3175313036448577335", true), (SNode) _quotation_createNode_4o3874_a0b0b(typeCheckingContext.getRepresentative(EP_typevar_3999125756866747142)), true, true, _info_12389875345);
       }
     }
 
     {
-      final SNode operandType = typeCheckingContext.typeOf(IOperation_BehaviorDescriptor.getOperand_idhEwIP$m.invoke(geoo), "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "3999125756866734019", true);
+      final SNode operandType = typeCheckingContext.typeOf(IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(geoo), "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "3999125756866734019", true);
       typeCheckingContext.whenConcrete(operandType, new Runnable() {
         public void run() {
           SNode objectType = null;

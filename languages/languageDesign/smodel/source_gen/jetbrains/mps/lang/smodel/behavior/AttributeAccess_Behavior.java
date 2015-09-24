@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SReference;
 @Deprecated
 public class AttributeAccess_Behavior {
   public static SNode call_getAttributeContainerType_6960953357954139822(SNode __thisNode__) {
-    SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__)), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType")), true);
+    SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__)), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType")), true);
     return ((result != null) && (SLinkOperations.getTarget(result, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) == null) ? _quotation_createNode_q663c8_a0b0e() : result);
   }
   private static SNode _quotation_createNode_q663c8_a0b0e() {

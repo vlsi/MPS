@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractForStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractForStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, "jetbrains.mps.baseLanguage.structure.AbstractForStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,10 +45,10 @@ public final class AbstractForStatement_BehaviorDescriptor extends BaseBHDescrip
         return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
     }
-    return AbstractLoopStatement_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return AbstractLoopStatement__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
 
-  /*package*/ AbstractForStatement_BehaviorDescriptor() {
+  /*package*/ AbstractForStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

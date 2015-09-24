@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TemplateFunctionParameter_sourceNode_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TemplateFunctionParameter_sourceNode__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b471fcL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class TemplateFunctionParameter_sourceNode_BehaviorDescriptor exten
     return (SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"), false, false) == null);
   }
 
-  /*package*/ TemplateFunctionParameter_sourceNode_BehaviorDescriptor() {
+  /*package*/ TemplateFunctionParameter_sourceNode__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

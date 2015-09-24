@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CharacterSymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CharacterSymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class CharacterSymbolClassPart_BehaviorDescriptor extends BaseBHDes
   }
 
   private static String getRepresentation_id75Jea4IEZbM(@NotNull SNode __thisNode__) {
-    return SymbolClassPart_BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, 0x111791b0b58L, "character")));
+    return SymbolClassPart__BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, 0x111791b0b58L, "character")));
   }
 
-  /*package*/ CharacterSymbolClassPart_BehaviorDescriptor() {
+  /*package*/ CharacterSymbolClassPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

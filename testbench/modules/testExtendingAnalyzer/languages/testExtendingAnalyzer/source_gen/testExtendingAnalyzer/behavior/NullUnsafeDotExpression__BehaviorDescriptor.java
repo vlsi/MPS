@@ -17,11 +17,11 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.DotExpression__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NullUnsafeDotExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NullUnsafeDotExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557da2eL, "testExtendingAnalyzer.structure.NullUnsafeDotExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,13 +34,13 @@ public final class NullUnsafeDotExpression_BehaviorDescriptor extends BaseBHDesc
   }
 
   private static Boolean isLegalAsStatement_idi26MfYG(@NotNull SNode __thisNode__) {
-    return DotExpression_BehaviorDescriptor.isLegalAsStatement_idi26MfYG.invokeSpecial(__thisNode__);
+    return DotExpression__BehaviorDescriptor.isLegalAsStatement_idi26MfYG.invokeSpecial(__thisNode__);
   }
   private static Boolean allowsNullOperand_id3Yy2P0QQESt(@NotNull SNode __thisNode__) {
-    return DotExpression_BehaviorDescriptor.allowsNullOperand_id3Yy2P0QQESt.invokeSpecial(__thisNode__);
+    return DotExpression__BehaviorDescriptor.allowsNullOperand_id3Yy2P0QQESt.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ NullUnsafeDotExpression_BehaviorDescriptor() {
+  /*package*/ NullUnsafeDotExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

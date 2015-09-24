@@ -12,17 +12,17 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myFindBlock_BehaviorDescriptor = new FindBlock_BehaviorDescriptor();
-  private final BHDescriptor myFinderDeclaration_BehaviorDescriptor = new FinderDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableBlock_BehaviorDescriptor = new IsApplicableBlock_BehaviorDescriptor();
-  private final BHDescriptor myResultStatement_BehaviorDescriptor = new ResultStatement_BehaviorDescriptor();
-  private final BHDescriptor myNodeStatement_BehaviorDescriptor = new NodeStatement_BehaviorDescriptor();
-  private final BHDescriptor myExecuteFinderExpression_BehaviorDescriptor = new ExecuteFinderExpression_BehaviorDescriptor();
-  private final BHDescriptor myCategorizeBlock_BehaviorDescriptor = new CategorizeBlock_BehaviorDescriptor();
-  private final BHDescriptor mySearchedNodesBlock_BehaviorDescriptor = new SearchedNodesBlock_BehaviorDescriptor();
-  private final BHDescriptor myCheckCancelledStatusStatement_BehaviorDescriptor = new CheckCancelledStatusStatement_BehaviorDescriptor();
-  private final BHDescriptor myIsVisibleBlock_BehaviorDescriptor = new IsVisibleBlock_BehaviorDescriptor();
-  private final BHDescriptor myIsUsedByDefault_BehaviorDescriptor = new IsUsedByDefault_BehaviorDescriptor();
+  private final BHDescriptor myFindBlock__BehaviorDescriptor = new FindBlock__BehaviorDescriptor();
+  private final BHDescriptor myFinderDeclaration__BehaviorDescriptor = new FinderDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableBlock__BehaviorDescriptor = new IsApplicableBlock__BehaviorDescriptor();
+  private final BHDescriptor myResultStatement__BehaviorDescriptor = new ResultStatement__BehaviorDescriptor();
+  private final BHDescriptor myNodeStatement__BehaviorDescriptor = new NodeStatement__BehaviorDescriptor();
+  private final BHDescriptor myExecuteFinderExpression__BehaviorDescriptor = new ExecuteFinderExpression__BehaviorDescriptor();
+  private final BHDescriptor myCategorizeBlock__BehaviorDescriptor = new CategorizeBlock__BehaviorDescriptor();
+  private final BHDescriptor mySearchedNodesBlock__BehaviorDescriptor = new SearchedNodesBlock__BehaviorDescriptor();
+  private final BHDescriptor myCheckCancelledStatusStatement__BehaviorDescriptor = new CheckCancelledStatusStatement__BehaviorDescriptor();
+  private final BHDescriptor myIsVisibleBlock__BehaviorDescriptor = new IsVisibleBlock__BehaviorDescriptor();
+  private final BHDescriptor myIsUsedByDefault__BehaviorDescriptor = new IsUsedByDefault__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -53,27 +53,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myFindBlock_BehaviorDescriptor;
+        return myFindBlock__BehaviorDescriptor;
       case 1:
-        return myFinderDeclaration_BehaviorDescriptor;
+        return myFinderDeclaration__BehaviorDescriptor;
       case 2:
-        return myIsApplicableBlock_BehaviorDescriptor;
+        return myIsApplicableBlock__BehaviorDescriptor;
       case 3:
-        return myResultStatement_BehaviorDescriptor;
+        return myResultStatement__BehaviorDescriptor;
       case 4:
-        return myNodeStatement_BehaviorDescriptor;
+        return myNodeStatement__BehaviorDescriptor;
       case 5:
-        return myExecuteFinderExpression_BehaviorDescriptor;
+        return myExecuteFinderExpression__BehaviorDescriptor;
       case 6:
-        return myCategorizeBlock_BehaviorDescriptor;
+        return myCategorizeBlock__BehaviorDescriptor;
       case 7:
-        return mySearchedNodesBlock_BehaviorDescriptor;
+        return mySearchedNodesBlock__BehaviorDescriptor;
       case 8:
-        return myCheckCancelledStatusStatement_BehaviorDescriptor;
+        return myCheckCancelledStatusStatement__BehaviorDescriptor;
       case 9:
-        return myIsVisibleBlock_BehaviorDescriptor;
+        return myIsVisibleBlock__BehaviorDescriptor;
       case 10:
-        return myIsUsedByDefault_BehaviorDescriptor;
+        return myIsUsedByDefault__BehaviorDescriptor;
       default:
         return null;
     }

@@ -19,7 +19,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,12 +44,12 @@ public final class CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor exte
       return null;
     }
     SNode hostMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), false, false);
-    SNode editedLink = CellMenuPart_Abstract_BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(hostMenuPart);
+    SNode editedLink = CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
     return _quotation_createNode_jf8h0a_a4a0(conceptOfChild);
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162497113192"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162498275506"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
@@ -58,7 +58,7 @@ public final class CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor exte
     return result;
   }
 
-  /*package*/ CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor() {
+  /*package*/ CellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

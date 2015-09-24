@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DSLDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DSLDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class DSLDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
       return;
     }
     try {
-      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor_BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(__thisNode__);
+      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(__thisNode__);
       SModule classModule = __thisNode__.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
@@ -73,7 +73,7 @@ public final class DSLDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
 
-  /*package*/ DSLDescriptor_BehaviorDescriptor() {
+  /*package*/ DSLDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -35,7 +35,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public final class GeneratedCommand_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L, "jetbrains.mps.console.base.structure.GeneratedCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -96,7 +96,7 @@ public final class GeneratedCommand_BehaviorDescriptor extends BaseBHDescriptor 
     });
   }
 
-  /*package*/ GeneratedCommand_BehaviorDescriptor() {
+  /*package*/ GeneratedCommand__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -143,5 +143,5 @@ public final class GeneratedCommand_BehaviorDescriptor extends BaseBHDescriptor 
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(GeneratedCommand_BehaviorDescriptor.class);
+  protected static Logger LOG = LogManager.getLogger(GeneratedCommand__BehaviorDescriptor.class);
 }

@@ -28,7 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractLoopStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractLoopStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class AbstractLoopStatement_BehaviorDescriptor extends BaseBHDescri
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
   }
 
-  /*package*/ AbstractLoopStatement_BehaviorDescriptor() {
+  /*package*/ AbstractLoopStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

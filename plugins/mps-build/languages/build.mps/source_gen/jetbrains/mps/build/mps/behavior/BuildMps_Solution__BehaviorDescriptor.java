@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_Solution_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_Solution__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class BuildMps_Solution_BehaviorDescriptor extends BaseBHDescriptor
     return isEmptyString(SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null)) || (SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null).equals("sources and tests") || SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null).equals("sources"));
   }
 
-  /*package*/ BuildMps_Solution_BehaviorDescriptor() {
+  /*package*/ BuildMps_Solution__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

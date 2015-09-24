@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CellMenuPart_Abstract_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellMenuPart_Abstract__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,21 +39,21 @@ public final class CellMenuPart_Abstract_BehaviorDescriptor extends BaseBHDescri
     return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
   }
   private static SNode getEditedLink_idhJEvotS(@NotNull SNode __thisNode__) {
-    SNode editedFeature = CellMenuPart_Abstract_BehaviorDescriptor.getEditedFeature_idhJEvH7P.invoke(__thisNode__);
+    SNode editedFeature = CellMenuPart_Abstract__BehaviorDescriptor.getEditedFeature_idhJEvH7P.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return SNodeOperations.cast(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
     }
     return null;
   }
   private static SNode getEditedAggregationLink_idhJEvgUM(@NotNull SNode __thisNode__) {
-    SNode editedLink = CellMenuPart_Abstract_BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(__thisNode__);
+    SNode editedLink = CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(__thisNode__);
     if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
       return editedLink;
     }
     return null;
   }
 
-  /*package*/ CellMenuPart_Abstract_BehaviorDescriptor() {
+  /*package*/ CellMenuPart_Abstract__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -14,7 +14,7 @@ public class CellMenuUtil {
       return getEditedFeature(SNodeOperations.getParent(node));
     }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"))) {
-      return CellMenuDescriptor_BehaviorDescriptor.getEditedFeature_idhKy3mrJ.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
+      return CellMenuDescriptor__BehaviorDescriptor.getEditedFeature_idhKy3mrJ.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
     }
     return null;
   }

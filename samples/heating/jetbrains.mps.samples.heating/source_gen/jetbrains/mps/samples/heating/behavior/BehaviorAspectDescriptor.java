@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myWeekendDay_BehaviorDescriptor = new WeekendDay_BehaviorDescriptor();
-  private final BHDescriptor myWeekDays_BehaviorDescriptor = new WeekDays_BehaviorDescriptor();
-  private final BHDescriptor mySpecificDay_BehaviorDescriptor = new SpecificDay_BehaviorDescriptor();
-  private final BHDescriptor myDayRange_BehaviorDescriptor = new DayRange_BehaviorDescriptor();
-  private final BHDescriptor myHeatingPlan_BehaviorDescriptor = new HeatingPlan_BehaviorDescriptor();
-  private final BHDescriptor myDailyPlan_BehaviorDescriptor = new DailyPlan_BehaviorDescriptor();
-  private final BHDescriptor mySlot_BehaviorDescriptor = new Slot_BehaviorDescriptor();
+  private final BHDescriptor myWeekendDay__BehaviorDescriptor = new WeekendDay__BehaviorDescriptor();
+  private final BHDescriptor myWeekDays__BehaviorDescriptor = new WeekDays__BehaviorDescriptor();
+  private final BHDescriptor mySpecificDay__BehaviorDescriptor = new SpecificDay__BehaviorDescriptor();
+  private final BHDescriptor myDayRange__BehaviorDescriptor = new DayRange__BehaviorDescriptor();
+  private final BHDescriptor myHeatingPlan__BehaviorDescriptor = new HeatingPlan__BehaviorDescriptor();
+  private final BHDescriptor myDailyPlan__BehaviorDescriptor = new DailyPlan__BehaviorDescriptor();
+  private final BHDescriptor mySlot__BehaviorDescriptor = new Slot__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -45,19 +45,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myWeekendDay_BehaviorDescriptor;
+        return myWeekendDay__BehaviorDescriptor;
       case 1:
-        return myWeekDays_BehaviorDescriptor;
+        return myWeekDays__BehaviorDescriptor;
       case 2:
-        return mySpecificDay_BehaviorDescriptor;
+        return mySpecificDay__BehaviorDescriptor;
       case 3:
-        return myDayRange_BehaviorDescriptor;
+        return myDayRange__BehaviorDescriptor;
       case 4:
-        return myHeatingPlan_BehaviorDescriptor;
+        return myHeatingPlan__BehaviorDescriptor;
       case 5:
-        return myDailyPlan_BehaviorDescriptor;
+        return myDailyPlan__BehaviorDescriptor;
       case 6:
-        return mySlot_BehaviorDescriptor;
+        return mySlot__BehaviorDescriptor;
       default:
         return null;
     }

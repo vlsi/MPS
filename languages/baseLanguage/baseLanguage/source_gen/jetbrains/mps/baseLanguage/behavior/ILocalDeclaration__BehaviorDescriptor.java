@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ILocalDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ILocalDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2d45f01afccba89cL, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,13 +42,13 @@ public final class ILocalDeclaration_BehaviorDescriptor extends BaseBHDescriptor
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (ILocalReference_BehaviorDescriptor.getDeclaration_id2P5W1FWMYZ5.invoke(ref_var) == __thisNode__) {
+        if (ILocalReference__BehaviorDescriptor.getDeclaration_id2P5W1FWMYZ5.invoke(ref_var) == __thisNode__) {
           SNode referenceContainer = SNodeOperations.getNodeAncestor(ref_var, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
           while (referenceContainer != null) {
             if (referenceContainer == container) {
               return false;
             }
-            if (IStatementListContainer_BehaviorDescriptor.isClosure_id2P5W1FWMZPJ.invoke(SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false))) {
+            if (IStatementListContainer__BehaviorDescriptor.isClosure_id2P5W1FWMZPJ.invoke(SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false))) {
               return true;
             }
             referenceContainer = SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
@@ -65,7 +65,7 @@ public final class ILocalDeclaration_BehaviorDescriptor extends BaseBHDescriptor
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (ILocalReference_BehaviorDescriptor.getDeclaration_id2P5W1FWMYZ5.invoke(ref_var) == __thisNode__) {
+        if (ILocalReference__BehaviorDescriptor.getDeclaration_id2P5W1FWMYZ5.invoke(ref_var) == __thisNode__) {
           SNode interrupter = SNodeOperations.getNodeAncestor(ref_var, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7c8556154508e980L, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false);
           if (interrupter == container || ListSequence.fromList(SNodeOperations.getNodeAncestors(interrupter, null, false)).contains(container)) {
             return true;
@@ -76,7 +76,7 @@ public final class ILocalDeclaration_BehaviorDescriptor extends BaseBHDescriptor
     return false;
   }
 
-  /*package*/ ILocalDeclaration_BehaviorDescriptor() {
+  /*package*/ ILocalDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

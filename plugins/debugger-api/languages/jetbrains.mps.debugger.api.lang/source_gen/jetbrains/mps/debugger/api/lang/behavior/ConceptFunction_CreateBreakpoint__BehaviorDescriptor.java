@@ -17,7 +17,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ConceptFunction_CreateBreakpoint_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunction_CreateBreakpoint__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb93aL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class ConceptFunction_CreateBreakpoint_BehaviorDescriptor extends B
   }
 
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "1270798772176052880"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "1270798772176052876"));
     return result;
@@ -50,12 +50,12 @@ public final class ConceptFunction_CreateBreakpoint_BehaviorDescriptor extends B
     return _quotation_createNode_m5jr7m_a0a1();
   }
   private static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_m5jr7m_a0a0a1a2())));
     return result;
   }
 
-  /*package*/ ConceptFunction_CreateBreakpoint_BehaviorDescriptor() {
+  /*package*/ ConceptFunction_CreateBreakpoint__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

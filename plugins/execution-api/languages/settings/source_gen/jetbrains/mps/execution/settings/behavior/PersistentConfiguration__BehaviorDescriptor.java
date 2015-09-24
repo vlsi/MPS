@@ -18,20 +18,20 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember__BehaviorDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PersistentConfiguration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,10 +57,10 @@ public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDesc
     return "Configuration";
   }
   private static String getGeneratedEditorName_idO$iR4J$g2J(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_" + PersistentConfiguration_BehaviorDescriptor.getEditorSuffix_idO$iR4J$g3R.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_" + PersistentConfiguration__BehaviorDescriptor.getEditorSuffix_idO$iR4J$g3R.invoke(__thisNode__);
   }
   private static String getFullEditorName_idO$iR4J$g2V(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(__thisNode__) + "_" + PersistentConfiguration_BehaviorDescriptor.getEditorSuffix_idO$iR4J$g3R.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(__thisNode__) + "_" + PersistentConfiguration__BehaviorDescriptor.getEditorSuffix_idO$iR4J$g3R.invoke(__thisNode__);
   }
   private static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
     return createPersistentConfigurationType_4ves9l_a0a3(__thisNode__);
@@ -68,14 +68,14 @@ public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDesc
   private static List<SNode> getTemplateProperties_idO$iR4J$g3e(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910122L, 0xd244b712f910123L, "persistentProperty"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(it);
+        return PersistentPropertyDeclaration__BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(it);
       }
     }).toListSequence();
   }
   private static List<SNode> getNonTemplateProperties_idO$iR4J$g3y(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910122L, 0xd244b712f910123L, "persistentProperty"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(PersistentPropertyDeclaration_BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(it));
+        return !(PersistentPropertyDeclaration__BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(it));
       }
     }).toListSequence();
   }
@@ -83,11 +83,11 @@ public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDesc
     return "Editor";
   }
   private static List<SNode> getMembers_idhEwJink(@NotNull SNode __thisNode__, SNode contextNode) {
-    List<SNode> allMemebers = IClassifier_BehaviorDescriptor.getMembers_idhEwJink.invokeSpecial(__thisNode__, contextNode);
+    List<SNode> allMemebers = IClassifier__BehaviorDescriptor.getMembers_idhEwJink.invokeSpecial(__thisNode__, contextNode);
     if ((SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001bL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"))) || !(SNodeOperations.isInstanceOf(IMember_BehaviorDescriptor.getVisiblity_idhEwIBC5.invoke(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
+          return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001bL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"))) || !(SNodeOperations.isInstanceOf(IMember__BehaviorDescriptor.getVisiblity_idhEwIBC5.invoke(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
         }
       }).toListSequence();
     }
@@ -104,7 +104,7 @@ public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDesc
     return createPersistentConfigurationType_4ves9l_a2a8(configuration);
   }
   private static List<SNode> getContextPersistentProperties_idO$iR4J$g22(@NotNull SAbstractConcept __thisConcept__, SNode node) {
-    SNode configurationType = PersistentConfiguration_BehaviorDescriptor.getContextPersistentConfigurationType_idO$iR4J$g1l.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration").getDeclarationNode()), node);
+    SNode configurationType = PersistentConfiguration__BehaviorDescriptor.getContextPersistentConfigurationType_idO$iR4J$g1l.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration").getDeclarationNode()), node);
     if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")) == null)) {
       return new ArrayList<SNode>();
     }
@@ -114,7 +114,7 @@ public final class PersistentConfiguration_BehaviorDescriptor extends BaseBHDesc
     return "checkConfiguration";
   }
 
-  /*package*/ PersistentConfiguration_BehaviorDescriptor() {
+  /*package*/ PersistentConfiguration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

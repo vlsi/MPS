@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PunctuationRightStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PunctuationRightStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class PunctuationRightStyleClassItem_BehaviorDescriptor extends Bas
     return StyleAttributes.PUNCTUATION_RIGHT;
   }
 
-  /*package*/ PunctuationRightStyleClassItem_BehaviorDescriptor() {
+  /*package*/ PunctuationRightStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

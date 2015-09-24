@@ -29,7 +29,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CopyPasteHandlers_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CopyPasteHandlers__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -63,7 +63,7 @@ public final class CopyPasteHandlers_BehaviorDescriptor extends BaseBHDescriptor
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }
 
-  /*package*/ CopyPasteHandlers_BehaviorDescriptor() {
+  /*package*/ CopyPasteHandlers__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

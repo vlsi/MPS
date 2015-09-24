@@ -19,7 +19,7 @@ public class StyleSheet_Behavior {
     if (namespace.length() > 0) {
       namespace = namespace + ".";
     }
-    return namespace + StyleSheet_BehaviorDescriptor.getClassName_idhEwJfly.invoke(__thisNode__);
+    return namespace + StyleSheet__BehaviorDescriptor.getClassName_idhEwJfly.invoke(__thisNode__);
   }
   public static String call_getClassName_1213877515618(SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_StyleSheet";

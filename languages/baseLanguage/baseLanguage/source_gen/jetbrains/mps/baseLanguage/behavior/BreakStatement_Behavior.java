@@ -16,14 +16,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class BreakStatement_Behavior {
   public static SNode call_getLoop_1213877377001(SNode __thisNode__) {
-    SNode loopOrSwitch = BreakStatement_BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
+    SNode loopOrSwitch = BreakStatement__BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"))) {
       return SNodeOperations.cast(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
     }
     return null;
   }
   public static SNode call_getSwitch_1213877377021(SNode __thisNode__) {
-    SNode loopOrSwitch = BreakStatement_BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
+    SNode loopOrSwitch = BreakStatement__BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"))) {
       return SNodeOperations.cast(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
     }

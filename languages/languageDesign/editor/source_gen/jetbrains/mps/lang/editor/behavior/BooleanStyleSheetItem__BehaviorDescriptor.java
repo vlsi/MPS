@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BooleanStyleSheetItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BooleanStyleSheetItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class BooleanStyleSheetItem_BehaviorDescriptor extends BaseBHDescri
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(useQuery_idhNn$rq2, getStyleAttribute_id3a0zHG4tjdX);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    StyleAttribute<Boolean> sa = BooleanStyleSheetItem_BehaviorDescriptor.getStyleAttribute_id3a0zHG4tjdX.invoke(__thisNode__);
+    StyleAttribute<Boolean> sa = BooleanStyleSheetItem__BehaviorDescriptor.getStyleAttribute_id3a0zHG4tjdX.invoke(__thisNode__);
     if (sa == null) {
       return;
     }
@@ -43,7 +43,7 @@ public final class BooleanStyleSheetItem_BehaviorDescriptor extends BaseBHDescri
     return true;
   }
 
-  /*package*/ BooleanStyleSheetItem_BehaviorDescriptor() {
+  /*package*/ BooleanStyleSheetItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

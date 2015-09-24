@@ -12,7 +12,7 @@ import UtilSolution.util.TestResults;
 @Deprecated
 public class B_Behavior {
   public static int call_foo_6167444251392479222(SNode __thisNode__) {
-    return B_BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
+    return B__BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
   }
   public static int call_bar_6167444251392479236(SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -24,6 +24,6 @@ public class B_Behavior {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   public static int call_foo4_1591448354302920295(SNode __thisNode__) {
-    return B_BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null);
+    return B__BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null);
   }
 }

@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ClassifierDocComment_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClassifierDocComment__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class ClassifierDocComment_BehaviorDescriptor extends BaseBHDescrip
   }
 
   private static Boolean isTagSectionEmpty_id7lVCwDcz6WN(@NotNull SNode __thisNode__) {
-    return BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invokeSpecial(__thisNode__) && ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, 0x1cb65d9fe66a764eL, "param"))).isEmpty();
+    return BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invokeSpecial(__thisNode__) && ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, 0x1cb65d9fe66a764eL, "param"))).isEmpty();
   }
 
-  /*package*/ ClassifierDocComment_BehaviorDescriptor() {
+  /*package*/ ClassifierDocComment__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

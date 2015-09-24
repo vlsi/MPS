@@ -17,7 +17,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class XMLSAXChildRuleCondition_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXChildRuleCondition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369bed9265L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class XMLSAXChildRuleCondition_BehaviorDescriptor extends BaseBHDes
   }
 
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)", "2264311582634140394"));
     return result;
   }
@@ -49,12 +49,12 @@ public final class XMLSAXChildRuleCondition_BehaviorDescriptor extends BaseBHDes
     return _quotation_createNode_4fh7ct_a0a1();
   }
   private static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_4fh7ct_a0a0a1a2())));
     return result;
   }
 
-  /*package*/ XMLSAXChildRuleCondition_BehaviorDescriptor() {
+  /*package*/ XMLSAXChildRuleCondition__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

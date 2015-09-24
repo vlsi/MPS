@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myTestMethod_BehaviorDescriptor = new TestMethod_BehaviorDescriptor();
-  private final BHDescriptor myBTestCase_BehaviorDescriptor = new BTestCase_BehaviorDescriptor();
-  private final BHDescriptor myITestable_BehaviorDescriptor = new ITestable_BehaviorDescriptor();
-  private final BHDescriptor myITestCase_BehaviorDescriptor = new ITestCase_BehaviorDescriptor();
-  private final BHDescriptor myITestMethod_BehaviorDescriptor = new ITestMethod_BehaviorDescriptor();
-  private final BHDescriptor myBeforeTest_BehaviorDescriptor = new BeforeTest_BehaviorDescriptor();
-  private final BHDescriptor myAfterTest_BehaviorDescriptor = new AfterTest_BehaviorDescriptor();
+  private final BHDescriptor myTestMethod__BehaviorDescriptor = new TestMethod__BehaviorDescriptor();
+  private final BHDescriptor myBTestCase__BehaviorDescriptor = new BTestCase__BehaviorDescriptor();
+  private final BHDescriptor myITestable__BehaviorDescriptor = new ITestable__BehaviorDescriptor();
+  private final BHDescriptor myITestCase__BehaviorDescriptor = new ITestCase__BehaviorDescriptor();
+  private final BHDescriptor myITestMethod__BehaviorDescriptor = new ITestMethod__BehaviorDescriptor();
+  private final BHDescriptor myBeforeTest__BehaviorDescriptor = new BeforeTest__BehaviorDescriptor();
+  private final BHDescriptor myAfterTest__BehaviorDescriptor = new AfterTest__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -45,19 +45,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myTestMethod_BehaviorDescriptor;
+        return myTestMethod__BehaviorDescriptor;
       case 1:
-        return myBTestCase_BehaviorDescriptor;
+        return myBTestCase__BehaviorDescriptor;
       case 2:
-        return myITestable_BehaviorDescriptor;
+        return myITestable__BehaviorDescriptor;
       case 3:
-        return myITestCase_BehaviorDescriptor;
+        return myITestCase__BehaviorDescriptor;
       case 4:
-        return myITestMethod_BehaviorDescriptor;
+        return myITestMethod__BehaviorDescriptor;
       case 5:
-        return myBeforeTest_BehaviorDescriptor;
+        return myBeforeTest__BehaviorDescriptor;
       case 6:
-        return myAfterTest_BehaviorDescriptor;
+        return myAfterTest__BehaviorDescriptor;
       default:
         return null;
     }

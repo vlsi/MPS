@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LocalPropertyReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LocalPropertyReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class LocalPropertyReference_BehaviorDescriptor extends BaseBHDescr
   }
 
   private static Boolean isLValue_idhEwJgmE(@NotNull SNode __thisNode__) {
-    return Property_BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property")));
+    return Property__BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property")));
   }
 
-  /*package*/ LocalPropertyReference_BehaviorDescriptor() {
+  /*package*/ LocalPropertyReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

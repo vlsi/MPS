@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
-public final class BaseToolDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BaseToolDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,7 +52,7 @@ public final class BaseToolDeclaration_BehaviorDescriptor extends BaseBHDescript
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Tool";
   }
   private static String getGeneratedClassFQName_id5FstybB4d8e(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration_BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration__BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
   }
   private static Boolean hasNumber_id5FstybB4d8v(@NotNull SNode __thisNode__) {
     return !(SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), null));
@@ -74,7 +74,7 @@ public final class BaseToolDeclaration_BehaviorDescriptor extends BaseBHDescript
     return new PropertyReference(__thisNode__, "caption");
   }
 
-  /*package*/ BaseToolDeclaration_BehaviorDescriptor() {
+  /*package*/ BaseToolDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

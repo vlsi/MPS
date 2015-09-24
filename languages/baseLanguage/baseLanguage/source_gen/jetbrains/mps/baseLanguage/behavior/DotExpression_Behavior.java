@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 @Deprecated
 public class DotExpression_Behavior {
   public static SNode call_getClassifier_1213877410697(SNode __thisNode__) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression_BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression__BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
   }
   public static SNode call_getOperandType_8871623299328377715(final SNode __thisNode__) {
     return RepositoryStateCacheUtils.getFromCache("DotExpression_Behavior", __thisNode__, new _FunctionTypes._return_P0_E0<SNode>() {

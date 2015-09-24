@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DefaultGeneratorParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DefaultGeneratorParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x75bebc44281efab4L, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class DefaultGeneratorParameter_BehaviorDescriptor extends BaseBHDe
     return SNodeOperations.getModel(__thisNode__).getModelId() + "." + containerName + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 
-  /*package*/ DefaultGeneratorParameter_BehaviorDescriptor() {
+  /*package*/ DefaultGeneratorParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

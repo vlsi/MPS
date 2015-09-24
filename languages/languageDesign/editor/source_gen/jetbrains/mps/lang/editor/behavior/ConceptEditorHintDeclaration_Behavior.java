@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
@@ -18,6 +18,6 @@ public class ConceptEditorHintDeclaration_Behavior {
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"));
   }
   public static String call_getQualifiedName_5944657839039104991(SNode __thisNode__) {
-    return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ConceptEditorHintDeclaration_BehaviorDescriptor.getHintsContainer_id59ZEGVRaGvE.invoke(__thisNode__)) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ConceptEditorHintDeclaration__BehaviorDescriptor.getHintsContainer_id59ZEGVRaGvE.invoke(__thisNode__)) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 }

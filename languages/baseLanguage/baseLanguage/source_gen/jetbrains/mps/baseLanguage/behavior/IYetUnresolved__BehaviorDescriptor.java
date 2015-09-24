@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IYetUnresolved_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IYetUnresolved__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class IYetUnresolved_BehaviorDescriptor extends BaseBHDescriptor {
     return ResolveUnknownUtil.findClass(from, className);
   }
 
-  /*package*/ IYetUnresolved_BehaviorDescriptor() {
+  /*package*/ IYetUnresolved__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

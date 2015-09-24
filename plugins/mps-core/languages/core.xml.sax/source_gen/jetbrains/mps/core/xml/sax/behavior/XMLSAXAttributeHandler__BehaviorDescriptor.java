@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XMLSAXAttributeHandler_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXAttributeHandler__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c1L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,12 +34,12 @@ public final class XMLSAXAttributeHandler_BehaviorDescriptor extends BaseBHDescr
   }
 
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = XMLSAXHandlerFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = XMLSAXHandlerFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)", "3465552206661906222"));
     return result;
   }
 
-  /*package*/ XMLSAXAttributeHandler_BehaviorDescriptor() {
+  /*package*/ XMLSAXAttributeHandler__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

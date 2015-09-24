@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BwfCustomMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BwfCustomMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x365f30e12d6048cL, "jetbrains.mps.build.workflow.structure.BwfCustomMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class BwfCustomMacro_BehaviorDescriptor extends BaseBHDescriptor {
     return 30;
   }
 
-  /*package*/ BwfCustomMacro_BehaviorDescriptor() {
+  /*package*/ BwfCustomMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

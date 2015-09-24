@@ -19,14 +19,14 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class ConceptFunctionParameter_node_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunctionParameter_node__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b3b848fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,11 +42,11 @@ public final class ConceptFunctionParameter_node_BehaviorDescriptor extends Base
       SNode editorTab = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false);
       return _quotation_createNode_luv170_a1a0a0(SLinkOperations.getTarget(editorTab, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")));
     } else {
-      return ConceptFunctionParameter_BehaviorDescriptor.getType_id27DJnJtIQ9C.invokeSpecial(__thisNode__);
+      return ConceptFunctionParameter__BehaviorDescriptor.getType_id27DJnJtIQ9C.invokeSpecial(__thisNode__);
     }
   }
 
-  /*package*/ ConceptFunctionParameter_node_BehaviorDescriptor() {
+  /*package*/ ConceptFunctionParameter_node__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

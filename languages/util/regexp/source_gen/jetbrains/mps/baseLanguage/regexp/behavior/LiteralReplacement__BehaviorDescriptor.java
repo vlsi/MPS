@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LiteralReplacement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LiteralReplacement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,13 +36,13 @@ public final class LiteralReplacement_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static String toString_id3iI_KKpaF_p(@NotNull SNode __thisNode__, SNode search) {
-    return LiteralReplacement_BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")));
+    return LiteralReplacement__BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")));
   }
   private static Boolean isValid_id3iI_KKpaMFg(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")))) {
       return false;
     }
-    return LiteralReplacement_BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text"))) != null;
+    return LiteralReplacement__BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text"))) != null;
   }
   private static String toRegexp_id3iI_KKpaM6i(@NotNull SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
@@ -61,7 +61,7 @@ public final class LiteralReplacement_BehaviorDescriptor extends BaseBHDescripto
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+            if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
               return null;
             }
             sb.append(c);
@@ -104,7 +104,7 @@ public final class LiteralReplacement_BehaviorDescriptor extends BaseBHDescripto
     return sb.toString();
   }
 
-  /*package*/ LiteralReplacement_BehaviorDescriptor() {
+  /*package*/ LiteralReplacement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

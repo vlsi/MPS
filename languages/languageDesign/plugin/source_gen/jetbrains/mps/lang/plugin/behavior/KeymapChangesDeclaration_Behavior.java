@@ -18,6 +18,6 @@ public class KeymapChangesDeclaration_Behavior {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_KeymapChanges";
   }
   public static String call_getGeneratedClassFQName_6277721878946468954(SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + KeymapChangesDeclaration_BehaviorDescriptor.getGeneratedName_id5suWGB1jlhf.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + KeymapChangesDeclaration__BehaviorDescriptor.getGeneratedName_id5suWGB1jlhf.invoke(__thisNode__);
   }
 }

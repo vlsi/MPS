@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeReachable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeReachable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b02f9eeb8L, "jetbrains.mps.lang.test.structure.NodeReachable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class NodeReachable_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ NodeReachable_BehaviorDescriptor() {
+  /*package*/ NodeReachable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

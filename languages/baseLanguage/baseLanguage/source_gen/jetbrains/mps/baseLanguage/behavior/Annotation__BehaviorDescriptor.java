@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Annotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Annotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,12 +36,12 @@ public final class Annotation_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
-    List<SNode> members = Classifier_BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
+    List<SNode> members = Classifier__BehaviorDescriptor.getMembers_idhEwJjl2.invokeSpecial(__thisNode__);
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x101f2cc410bL, "method"))));
     return members;
   }
 
-  /*package*/ Annotation_BehaviorDescriptor() {
+  /*package*/ Annotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

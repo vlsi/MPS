@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PrimDoubleType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PrimDoubleType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09c62e6L, "testAnnotatedType.structure.PrimDoubleType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class PrimDoubleType_BehaviorDescriptor extends BaseBHDescriptor {
     return subs;
   }
 
-  /*package*/ PrimDoubleType_BehaviorDescriptor() {
+  /*package*/ PrimDoubleType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

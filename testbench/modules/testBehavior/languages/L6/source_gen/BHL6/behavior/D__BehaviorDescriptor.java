@@ -21,7 +21,7 @@ import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class D_BehaviorDescriptor extends BaseBHDescriptor {
+public final class D__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L, "BHL6.structure.D");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,28 +39,28 @@ public final class D_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Integer foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
-    return B_BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
+    return B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
   }
   private static Integer foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
-    return B_BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__);
+    return B__BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__);
   }
   private static Integer foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
-    return B_BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__);
+    return B__BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__);
   }
   private static Integer bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
   private static void bar2_id4RMBeRWcir8(@NotNull SNode __thisNode__) {
-    B_BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();
+    B__BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();
   }
   private static Integer foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
-    return B_BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
+    return B__BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
   }
   private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 
-  /*package*/ D_BehaviorDescriptor() {
+  /*package*/ D__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

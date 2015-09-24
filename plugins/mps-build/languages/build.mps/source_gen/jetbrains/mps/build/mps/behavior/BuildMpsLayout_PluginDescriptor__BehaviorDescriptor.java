@@ -21,11 +21,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends Ba
         return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, 0x5b7be37b4dee437dL, "plugin")) == node;
       }
     }
-    return BuildLayout_Node_BehaviorDescriptor.exports_id5FtnUVJQES1.invokeSpecial(__thisNode__, artifactId);
+    return BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invokeSpecial(__thisNode__, artifactId);
   }
   private static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
     if (artifactId instanceof jetbrains.mps.smodel.SNode) {
@@ -58,23 +58,23 @@ public final class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends Ba
         return helper.locations().get(__thisNode__) + "/../..";
       }
     }
-    return BuildLayout_Node_BehaviorDescriptor.location_id6b4RkXS8sT2.invokeSpecial(__thisNode__, helper, artifactId);
+    return BuildLayout_Node__BehaviorDescriptor.location_id6b4RkXS8sT2.invokeSpecial(__thisNode__, helper, artifactId);
   }
   private static void appendName_id1bWeed$ownT(@NotNull SNode __thisNode__, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
-    sb.append(BuildMpsLayout_PluginDescriptor_BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
+    sb.append(BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
   }
   private static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     String parentLocation = helper.contentLocations().get(helper.parent(__thisNode__));
-    helper.locations().put(__thisNode__, parentLocation + "/" + BuildMpsLayout_PluginDescriptor_BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
+    helper.locations().put(__thisNode__, parentLocation + "/" + BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
   }
   private static String pluginXml_idQkG2t1cwfm(@NotNull SAbstractConcept __thisConcept__) {
     return "plugin.xml";
   }
 
-  /*package*/ BuildMpsLayout_PluginDescriptor_BehaviorDescriptor() {
+  /*package*/ BuildMpsLayout_PluginDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

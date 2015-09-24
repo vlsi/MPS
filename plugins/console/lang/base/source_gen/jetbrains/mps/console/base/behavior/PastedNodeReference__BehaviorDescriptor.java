@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PastedNodeReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PastedNodeReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class PastedNodeReference_BehaviorDescriptor extends BaseBHDescript
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
   }
   private static String getText_id5Yox2dUTCkJ(@NotNull SAbstractConcept __thisConcept__, SNode targetNode) {
-    return PastedNodeReference_BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(__thisConcept__, check_mc1kik_a0a0a1(targetNode));
+    return PastedNodeReference__BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(__thisConcept__, check_mc1kik_a0a0a1(targetNode));
   }
   private static String getText_id25MaZwhj0R7(@NotNull SAbstractConcept __thisConcept__, SNodeId targetNodeId) {
     if (targetNodeId == null) {
@@ -53,13 +53,13 @@ public final class PastedNodeReference_BehaviorDescriptor extends BaseBHDescript
   }
   private static String getTextWhenBroken_idigjXyuNrou(@NotNull SNode __thisNode__) {
     SNodeId targetNodeId = __thisNode__.getReference(MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")).getTargetNodeId();
-    return PastedNodeReference_BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)), targetNodeId) + "(deleted node)";
+    return PastedNodeReference__BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)), targetNodeId) + "(deleted node)";
   }
   private static Boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return false;
   }
 
-  /*package*/ PastedNodeReference_BehaviorDescriptor() {
+  /*package*/ PastedNodeReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

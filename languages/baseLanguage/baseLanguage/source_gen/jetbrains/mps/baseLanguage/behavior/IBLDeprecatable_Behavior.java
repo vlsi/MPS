@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor;
 
 /**
  * will be removed after 3.3
@@ -66,7 +66,7 @@ public class IBLDeprecatable_Behavior {
         SNodeOperations.deleteNode(it);
       }
     });
-    if (BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(comment) && !(BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(comment)) && ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isEmpty()) {
+    if (BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(comment) && !(BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(comment)) && ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isEmpty()) {
       SNodeOperations.deleteNode(comment);
     }
   }

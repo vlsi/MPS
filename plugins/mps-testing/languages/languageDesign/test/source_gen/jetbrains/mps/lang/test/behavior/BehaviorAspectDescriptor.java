@@ -12,48 +12,48 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myNodePropertiesContainer_BehaviorDescriptor = new NodePropertiesContainer_BehaviorDescriptor();
-  private final BHDescriptor myNodeErrorCheckOperation_BehaviorDescriptor = new NodeErrorCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeWarningCheckOperation_BehaviorDescriptor = new NodeWarningCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeReachable_BehaviorDescriptor = new NodeReachable_BehaviorDescriptor();
-  private final BHDescriptor myNodeTypeCheckOperation_BehaviorDescriptor = new NodeTypeCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeCheckOperation_BehaviorDescriptor = new NodeCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeOperationsContainer_BehaviorDescriptor = new NodeOperationsContainer_BehaviorDescriptor();
-  private final BHDescriptor myCheckNodeForErrorMessagesOperation_BehaviorDescriptor = new CheckNodeForErrorMessagesOperation_BehaviorDescriptor();
-  private final BHDescriptor myCheckDataFlowOperation_BehaviorDescriptor = new CheckDataFlowOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeUnreachable_BehaviorDescriptor = new NodeUnreachable_BehaviorDescriptor();
-  private final BHDescriptor myVariableInitialized_BehaviorDescriptor = new VariableInitialized_BehaviorDescriptor();
-  private final BHDescriptor myVariableAlive_BehaviorDescriptor = new VariableAlive_BehaviorDescriptor();
-  private final BHDescriptor myNodesTestCase_BehaviorDescriptor = new NodesTestCase_BehaviorDescriptor();
-  private final BHDescriptor myNodesTestMethod_BehaviorDescriptor = new NodesTestMethod_BehaviorDescriptor();
-  private final BHDescriptor myINodeAnnotation_BehaviorDescriptor = new INodeAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myEditorTestCase_BehaviorDescriptor = new EditorTestCase_BehaviorDescriptor();
-  private final BHDescriptor myAnonymousCellAnnotation_BehaviorDescriptor = new AnonymousCellAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myMockAnnotation_BehaviorDescriptor = new MockAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myNodeTypeSetCheckOperation_BehaviorDescriptor = new NodeTypeSetCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myDragMouseStatement_BehaviorDescriptor = new DragMouseStatement_BehaviorDescriptor();
-  private final BHDescriptor myNodeTypeSystemErrorCheckOperation_BehaviorDescriptor = new NodeTypeSystemErrorCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myScopesTest_BehaviorDescriptor = new ScopesTest_BehaviorDescriptor();
-  private final BHDescriptor myActionReference_BehaviorDescriptor = new ActionReference_BehaviorDescriptor();
-  private final BHDescriptor myBootstrapActionReference_BehaviorDescriptor = new BootstrapActionReference_BehaviorDescriptor();
-  private final BHDescriptor myIReferenceAttachable_BehaviorDescriptor = new IReferenceAttachable_BehaviorDescriptor();
-  private final BHDescriptor myMPSActionReference_BehaviorDescriptor = new MPSActionReference_BehaviorDescriptor();
-  private final BHDescriptor myNodeRuleCheckOperation_BehaviorDescriptor = new NodeRuleCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeExpectedTypeCheckOperation_BehaviorDescriptor = new NodeExpectedTypeCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myReportErrorStatementReference_BehaviorDescriptor = new ReportErrorStatementReference_BehaviorDescriptor();
-  private final BHDescriptor myWarningStatementReference_BehaviorDescriptor = new WarningStatementReference_BehaviorDescriptor();
-  private final BHDescriptor myTestInfo_BehaviorDescriptor = new TestInfo_BehaviorDescriptor();
-  private final BHDescriptor myNodeTypeSystemRuleCheckOperation_BehaviorDescriptor = new NodeTypeSystemRuleCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myUnknownRuleReference_BehaviorDescriptor = new UnknownRuleReference_BehaviorDescriptor();
-  private final BHDescriptor myIRuleReference_BehaviorDescriptor = new IRuleReference_BehaviorDescriptor();
-  private final BHDescriptor myNodeUnknownErrorCheckOperation_BehaviorDescriptor = new NodeUnknownErrorCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myAbstractNodeErrorCheckOperation_BehaviorDescriptor = new AbstractNodeErrorCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeConstraintsErrorCheckOperation_BehaviorDescriptor = new NodeConstraintsErrorCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myAbstractNodeWarningCheckOperation_BehaviorDescriptor = new AbstractNodeWarningCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeConstraintsWarningCheckOperation_BehaviorDescriptor = new NodeConstraintsWarningCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeUnknownWarningCheckOperation_BehaviorDescriptor = new NodeUnknownWarningCheckOperation_BehaviorDescriptor();
-  private final BHDescriptor myIChecksRules_BehaviorDescriptor = new IChecksRules_BehaviorDescriptor();
-  private final BHDescriptor myNodeTypeSystemWarningCheckOperation_BehaviorDescriptor = new NodeTypeSystemWarningCheckOperation_BehaviorDescriptor();
+  private final BHDescriptor myNodePropertiesContainer__BehaviorDescriptor = new NodePropertiesContainer__BehaviorDescriptor();
+  private final BHDescriptor myNodeErrorCheckOperation__BehaviorDescriptor = new NodeErrorCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeWarningCheckOperation__BehaviorDescriptor = new NodeWarningCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeReachable__BehaviorDescriptor = new NodeReachable__BehaviorDescriptor();
+  private final BHDescriptor myNodeTypeCheckOperation__BehaviorDescriptor = new NodeTypeCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeCheckOperation__BehaviorDescriptor = new NodeCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeOperationsContainer__BehaviorDescriptor = new NodeOperationsContainer__BehaviorDescriptor();
+  private final BHDescriptor myCheckNodeForErrorMessagesOperation__BehaviorDescriptor = new CheckNodeForErrorMessagesOperation__BehaviorDescriptor();
+  private final BHDescriptor myCheckDataFlowOperation__BehaviorDescriptor = new CheckDataFlowOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeUnreachable__BehaviorDescriptor = new NodeUnreachable__BehaviorDescriptor();
+  private final BHDescriptor myVariableInitialized__BehaviorDescriptor = new VariableInitialized__BehaviorDescriptor();
+  private final BHDescriptor myVariableAlive__BehaviorDescriptor = new VariableAlive__BehaviorDescriptor();
+  private final BHDescriptor myNodesTestCase__BehaviorDescriptor = new NodesTestCase__BehaviorDescriptor();
+  private final BHDescriptor myNodesTestMethod__BehaviorDescriptor = new NodesTestMethod__BehaviorDescriptor();
+  private final BHDescriptor myINodeAnnotation__BehaviorDescriptor = new INodeAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myEditorTestCase__BehaviorDescriptor = new EditorTestCase__BehaviorDescriptor();
+  private final BHDescriptor myAnonymousCellAnnotation__BehaviorDescriptor = new AnonymousCellAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myMockAnnotation__BehaviorDescriptor = new MockAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myNodeTypeSetCheckOperation__BehaviorDescriptor = new NodeTypeSetCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myDragMouseStatement__BehaviorDescriptor = new DragMouseStatement__BehaviorDescriptor();
+  private final BHDescriptor myNodeTypeSystemErrorCheckOperation__BehaviorDescriptor = new NodeTypeSystemErrorCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myScopesTest__BehaviorDescriptor = new ScopesTest__BehaviorDescriptor();
+  private final BHDescriptor myActionReference__BehaviorDescriptor = new ActionReference__BehaviorDescriptor();
+  private final BHDescriptor myBootstrapActionReference__BehaviorDescriptor = new BootstrapActionReference__BehaviorDescriptor();
+  private final BHDescriptor myIReferenceAttachable__BehaviorDescriptor = new IReferenceAttachable__BehaviorDescriptor();
+  private final BHDescriptor myMPSActionReference__BehaviorDescriptor = new MPSActionReference__BehaviorDescriptor();
+  private final BHDescriptor myNodeRuleCheckOperation__BehaviorDescriptor = new NodeRuleCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeExpectedTypeCheckOperation__BehaviorDescriptor = new NodeExpectedTypeCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myReportErrorStatementReference__BehaviorDescriptor = new ReportErrorStatementReference__BehaviorDescriptor();
+  private final BHDescriptor myWarningStatementReference__BehaviorDescriptor = new WarningStatementReference__BehaviorDescriptor();
+  private final BHDescriptor myTestInfo__BehaviorDescriptor = new TestInfo__BehaviorDescriptor();
+  private final BHDescriptor myNodeTypeSystemRuleCheckOperation__BehaviorDescriptor = new NodeTypeSystemRuleCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myUnknownRuleReference__BehaviorDescriptor = new UnknownRuleReference__BehaviorDescriptor();
+  private final BHDescriptor myIRuleReference__BehaviorDescriptor = new IRuleReference__BehaviorDescriptor();
+  private final BHDescriptor myNodeUnknownErrorCheckOperation__BehaviorDescriptor = new NodeUnknownErrorCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myAbstractNodeErrorCheckOperation__BehaviorDescriptor = new AbstractNodeErrorCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeConstraintsErrorCheckOperation__BehaviorDescriptor = new NodeConstraintsErrorCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myAbstractNodeWarningCheckOperation__BehaviorDescriptor = new AbstractNodeWarningCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeConstraintsWarningCheckOperation__BehaviorDescriptor = new NodeConstraintsWarningCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeUnknownWarningCheckOperation__BehaviorDescriptor = new NodeUnknownWarningCheckOperation__BehaviorDescriptor();
+  private final BHDescriptor myIChecksRules__BehaviorDescriptor = new IChecksRules__BehaviorDescriptor();
+  private final BHDescriptor myNodeTypeSystemWarningCheckOperation__BehaviorDescriptor = new NodeTypeSystemWarningCheckOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -115,89 +115,89 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myNodePropertiesContainer_BehaviorDescriptor;
+        return myNodePropertiesContainer__BehaviorDescriptor;
       case 1:
-        return myNodeErrorCheckOperation_BehaviorDescriptor;
+        return myNodeErrorCheckOperation__BehaviorDescriptor;
       case 2:
-        return myNodeWarningCheckOperation_BehaviorDescriptor;
+        return myNodeWarningCheckOperation__BehaviorDescriptor;
       case 3:
-        return myNodeReachable_BehaviorDescriptor;
+        return myNodeReachable__BehaviorDescriptor;
       case 4:
-        return myNodeTypeCheckOperation_BehaviorDescriptor;
+        return myNodeTypeCheckOperation__BehaviorDescriptor;
       case 5:
-        return myNodeCheckOperation_BehaviorDescriptor;
+        return myNodeCheckOperation__BehaviorDescriptor;
       case 6:
-        return myNodeOperationsContainer_BehaviorDescriptor;
+        return myNodeOperationsContainer__BehaviorDescriptor;
       case 7:
-        return myCheckNodeForErrorMessagesOperation_BehaviorDescriptor;
+        return myCheckNodeForErrorMessagesOperation__BehaviorDescriptor;
       case 8:
-        return myCheckDataFlowOperation_BehaviorDescriptor;
+        return myCheckDataFlowOperation__BehaviorDescriptor;
       case 9:
-        return myNodeUnreachable_BehaviorDescriptor;
+        return myNodeUnreachable__BehaviorDescriptor;
       case 10:
-        return myVariableInitialized_BehaviorDescriptor;
+        return myVariableInitialized__BehaviorDescriptor;
       case 11:
-        return myVariableAlive_BehaviorDescriptor;
+        return myVariableAlive__BehaviorDescriptor;
       case 12:
-        return myNodesTestCase_BehaviorDescriptor;
+        return myNodesTestCase__BehaviorDescriptor;
       case 13:
-        return myNodesTestMethod_BehaviorDescriptor;
+        return myNodesTestMethod__BehaviorDescriptor;
       case 14:
-        return myINodeAnnotation_BehaviorDescriptor;
+        return myINodeAnnotation__BehaviorDescriptor;
       case 15:
-        return myEditorTestCase_BehaviorDescriptor;
+        return myEditorTestCase__BehaviorDescriptor;
       case 16:
-        return myAnonymousCellAnnotation_BehaviorDescriptor;
+        return myAnonymousCellAnnotation__BehaviorDescriptor;
       case 17:
-        return myMockAnnotation_BehaviorDescriptor;
+        return myMockAnnotation__BehaviorDescriptor;
       case 18:
-        return myNodeTypeSetCheckOperation_BehaviorDescriptor;
+        return myNodeTypeSetCheckOperation__BehaviorDescriptor;
       case 19:
-        return myDragMouseStatement_BehaviorDescriptor;
+        return myDragMouseStatement__BehaviorDescriptor;
       case 20:
-        return myNodeTypeSystemErrorCheckOperation_BehaviorDescriptor;
+        return myNodeTypeSystemErrorCheckOperation__BehaviorDescriptor;
       case 21:
-        return myScopesTest_BehaviorDescriptor;
+        return myScopesTest__BehaviorDescriptor;
       case 22:
-        return myActionReference_BehaviorDescriptor;
+        return myActionReference__BehaviorDescriptor;
       case 23:
-        return myBootstrapActionReference_BehaviorDescriptor;
+        return myBootstrapActionReference__BehaviorDescriptor;
       case 24:
-        return myIReferenceAttachable_BehaviorDescriptor;
+        return myIReferenceAttachable__BehaviorDescriptor;
       case 25:
-        return myMPSActionReference_BehaviorDescriptor;
+        return myMPSActionReference__BehaviorDescriptor;
       case 26:
-        return myNodeRuleCheckOperation_BehaviorDescriptor;
+        return myNodeRuleCheckOperation__BehaviorDescriptor;
       case 27:
-        return myNodeExpectedTypeCheckOperation_BehaviorDescriptor;
+        return myNodeExpectedTypeCheckOperation__BehaviorDescriptor;
       case 28:
-        return myReportErrorStatementReference_BehaviorDescriptor;
+        return myReportErrorStatementReference__BehaviorDescriptor;
       case 29:
-        return myWarningStatementReference_BehaviorDescriptor;
+        return myWarningStatementReference__BehaviorDescriptor;
       case 30:
-        return myTestInfo_BehaviorDescriptor;
+        return myTestInfo__BehaviorDescriptor;
       case 31:
-        return myNodeTypeSystemRuleCheckOperation_BehaviorDescriptor;
+        return myNodeTypeSystemRuleCheckOperation__BehaviorDescriptor;
       case 32:
-        return myUnknownRuleReference_BehaviorDescriptor;
+        return myUnknownRuleReference__BehaviorDescriptor;
       case 33:
-        return myIRuleReference_BehaviorDescriptor;
+        return myIRuleReference__BehaviorDescriptor;
       case 34:
-        return myNodeUnknownErrorCheckOperation_BehaviorDescriptor;
+        return myNodeUnknownErrorCheckOperation__BehaviorDescriptor;
       case 35:
-        return myAbstractNodeErrorCheckOperation_BehaviorDescriptor;
+        return myAbstractNodeErrorCheckOperation__BehaviorDescriptor;
       case 36:
-        return myNodeConstraintsErrorCheckOperation_BehaviorDescriptor;
+        return myNodeConstraintsErrorCheckOperation__BehaviorDescriptor;
       case 37:
-        return myAbstractNodeWarningCheckOperation_BehaviorDescriptor;
+        return myAbstractNodeWarningCheckOperation__BehaviorDescriptor;
       case 38:
-        return myNodeConstraintsWarningCheckOperation_BehaviorDescriptor;
+        return myNodeConstraintsWarningCheckOperation__BehaviorDescriptor;
       case 39:
-        return myNodeUnknownWarningCheckOperation_BehaviorDescriptor;
+        return myNodeUnknownWarningCheckOperation__BehaviorDescriptor;
       case 40:
-        return myIChecksRules_BehaviorDescriptor;
+        return myIChecksRules__BehaviorDescriptor;
       case 41:
-        return myNodeTypeSystemWarningCheckOperation_BehaviorDescriptor;
+        return myNodeTypeSystemWarningCheckOperation__BehaviorDescriptor;
       default:
         return null;
     }

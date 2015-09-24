@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.datatransfer.CopyPreProcessor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.VariableDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -14,7 +14,7 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference").getDeclarationNode();
   }
   public void preProcesNode(SNode copy, SNode original) {
-    SNode qualifiedReference = VariableDeclaration_BehaviorDescriptor.getQualifiedReference_id3Zg$dTLuqo9.invoke(SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")));
+    SNode qualifiedReference = VariableDeclaration__BehaviorDescriptor.getQualifiedReference_id3Zg$dTLuqo9.invoke(SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")));
     if ((qualifiedReference != null)) {
       SNodeOperations.replaceWithAnother(copy, qualifiedReference);
     }

@@ -24,12 +24,12 @@ public class SimpleBuilders_Behavior {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")) == null)) {
       return false;
     }
-    return SimpleBuilders_BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
+    return SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
   }
   public static List<SNode> call_getDescendands_5199967550912479741(SNode __thisNode__, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
-      if (SimpleBuilders_BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(sb, __thisNode__)) {
+      if (SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(sb, __thisNode__)) {
         ListSequence.fromList(result).addElement(sb);
       }
     }

@@ -24,14 +24,14 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class SNodeType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SNodeType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -76,7 +76,7 @@ public final class SNodeType_BehaviorDescriptor extends BaseBHDescriptor {
     return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) == null);
   }
   private static SNode getErasure_idB1mAlA38Mq(@NotNull SNode __thisNode__) {
-    return Type_BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
+    return Type__BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
   }
   private static SNode getJavaType_idhEwIzO1(@NotNull SNode __thisNode__) {
     return _quotation_createNode_4ouf01_a0a6();
@@ -88,7 +88,7 @@ public final class SNodeType_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ SNodeType_BehaviorDescriptor() {
+  /*package*/ SNodeType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

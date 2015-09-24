@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LocalStaticFieldReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LocalStaticFieldReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class LocalStaticFieldReference_BehaviorDescriptor extends BaseBHDe
     return true;
   }
 
-  /*package*/ LocalStaticFieldReference_BehaviorDescriptor() {
+  /*package*/ LocalStaticFieldReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

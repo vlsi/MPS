@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -130,16 +130,16 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));
   }
   public static Iterable<SNode> sourceNodesQuery_1711796806179938519(final SourceSubstituteMacroNodesContext _context) {
-    return Classifier_BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode());
+    return Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1711796806179939504(final SourceSubstituteMacroNodesContext _context) {
-    return ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode());
+    return ClassConcept__BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1171932074411(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, 0x110dc94e924L, "testMethodList")), MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc95061dL, 0x110dc95061eL, "testMethod"));
   }
   public static Iterable<SNode> sourceNodesQuery_1171985035236(final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(Classifier_BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode())).subtract(Sequence.fromIterable(ClassConcept_BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode()))).subtract(Sequence.fromIterable(Classifier_BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode())));
+    return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode())).subtract(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode()))).subtract(Sequence.fromIterable(Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode())));
   }
   public static Iterable<SNode> sourceNodesQuery_9110034126561076473(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));

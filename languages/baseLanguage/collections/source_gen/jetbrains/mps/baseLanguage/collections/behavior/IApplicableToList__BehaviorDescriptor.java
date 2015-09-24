@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class IApplicableToList_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IApplicableToList__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef8L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToList");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class IApplicableToList_BehaviorDescriptor extends BaseBHDescriptor
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_u4ufxk_a0a0a0());
   }
 
-  /*package*/ IApplicableToList_BehaviorDescriptor() {
+  /*package*/ IApplicableToList__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

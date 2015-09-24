@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class QueryFunction_SideTransform_String_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_SideTransform_String__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112285ab108L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,14 +46,14 @@ public final class QueryFunction_SideTransform_String_BehaviorDescriptor extends
     return true;
   }
   private static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
     if (SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228fddb03L, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"), true, false) == null) {
       ListSequence.fromList(result).removeElement(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecda6bbL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject").getDeclarationNode());
     }
     return result;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177497140107"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177337833147"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
@@ -65,7 +65,7 @@ public final class QueryFunction_SideTransform_String_BehaviorDescriptor extends
     return _quotation_createNode_4cwwa3_a0a3();
   }
 
-  /*package*/ QueryFunction_SideTransform_String_BehaviorDescriptor() {
+  /*package*/ QueryFunction_SideTransform_String__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

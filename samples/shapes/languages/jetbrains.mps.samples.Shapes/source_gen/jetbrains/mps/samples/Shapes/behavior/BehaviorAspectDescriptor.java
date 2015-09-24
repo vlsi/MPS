@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myColorReference_BehaviorDescriptor = new ColorReference_BehaviorDescriptor();
-  private final BHDescriptor myCanvas_BehaviorDescriptor = new Canvas_BehaviorDescriptor();
-  private final BHDescriptor myShape_BehaviorDescriptor = new Shape_BehaviorDescriptor();
-  private final BHDescriptor myCircle_BehaviorDescriptor = new Circle_BehaviorDescriptor();
-  private final BHDescriptor mySquare_BehaviorDescriptor = new Square_BehaviorDescriptor();
+  private final BHDescriptor myColorReference__BehaviorDescriptor = new ColorReference__BehaviorDescriptor();
+  private final BHDescriptor myCanvas__BehaviorDescriptor = new Canvas__BehaviorDescriptor();
+  private final BHDescriptor myShape__BehaviorDescriptor = new Shape__BehaviorDescriptor();
+  private final BHDescriptor myCircle__BehaviorDescriptor = new Circle__BehaviorDescriptor();
+  private final BHDescriptor mySquare__BehaviorDescriptor = new Square__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -41,15 +41,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myColorReference_BehaviorDescriptor;
+        return myColorReference__BehaviorDescriptor;
       case 1:
-        return myCanvas_BehaviorDescriptor;
+        return myCanvas__BehaviorDescriptor;
       case 2:
-        return myShape_BehaviorDescriptor;
+        return myShape__BehaviorDescriptor;
       case 3:
-        return myCircle_BehaviorDescriptor;
+        return myCircle__BehaviorDescriptor;
       case 4:
-        return mySquare_BehaviorDescriptor;
+        return mySquare__BehaviorDescriptor;
       default:
         return null;
     }

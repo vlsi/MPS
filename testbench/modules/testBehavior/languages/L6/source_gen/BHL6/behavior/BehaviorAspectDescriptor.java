@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myH_BehaviorDescriptor = new H_BehaviorDescriptor();
-  private final BHDescriptor myA_BehaviorDescriptor = new A_BehaviorDescriptor();
-  private final BHDescriptor myB_BehaviorDescriptor = new B_BehaviorDescriptor();
-  private final BHDescriptor myC_BehaviorDescriptor = new C_BehaviorDescriptor();
-  private final BHDescriptor myD_BehaviorDescriptor = new D_BehaviorDescriptor();
-  private final BHDescriptor myE_BehaviorDescriptor = new E_BehaviorDescriptor();
-  private final BHDescriptor myF_BehaviorDescriptor = new F_BehaviorDescriptor();
-  private final BHDescriptor myG_BehaviorDescriptor = new G_BehaviorDescriptor();
+  private final BHDescriptor myH__BehaviorDescriptor = new H__BehaviorDescriptor();
+  private final BHDescriptor myA__BehaviorDescriptor = new A__BehaviorDescriptor();
+  private final BHDescriptor myB__BehaviorDescriptor = new B__BehaviorDescriptor();
+  private final BHDescriptor myC__BehaviorDescriptor = new C__BehaviorDescriptor();
+  private final BHDescriptor myD__BehaviorDescriptor = new D__BehaviorDescriptor();
+  private final BHDescriptor myE__BehaviorDescriptor = new E__BehaviorDescriptor();
+  private final BHDescriptor myF__BehaviorDescriptor = new F__BehaviorDescriptor();
+  private final BHDescriptor myG__BehaviorDescriptor = new G__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myH_BehaviorDescriptor;
+        return myH__BehaviorDescriptor;
       case 1:
-        return myA_BehaviorDescriptor;
+        return myA__BehaviorDescriptor;
       case 2:
-        return myB_BehaviorDescriptor;
+        return myB__BehaviorDescriptor;
       case 3:
-        return myC_BehaviorDescriptor;
+        return myC__BehaviorDescriptor;
       case 4:
-        return myD_BehaviorDescriptor;
+        return myD__BehaviorDescriptor;
       case 5:
-        return myE_BehaviorDescriptor;
+        return myE__BehaviorDescriptor;
       case 6:
-        return myF_BehaviorDescriptor;
+        return myF__BehaviorDescriptor;
       case 7:
-        return myG_BehaviorDescriptor;
+        return myG__BehaviorDescriptor;
       default:
         return null;
     }

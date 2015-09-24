@@ -22,7 +22,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Expression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Expression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,10 +49,10 @@ public final class Expression_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   private static Boolean isLValue_idhEwJgmE(@NotNull SNode __thisNode__) {
-    return Expression_BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return Expression__BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   private static Boolean isCompileTimeConstant_idi1LOPRp(@NotNull SNode __thisNode__) {
-    return Expression_BehaviorDescriptor.constant_id1653mnvAgr2.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return Expression__BehaviorDescriptor.constant_id1653mnvAgr2.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   private static Object getCompileTimeConstantValue_idi1LP2xI(@NotNull SNode __thisNode__, SModule module) {
     throw new UnsupportedOperationException();
@@ -61,7 +61,7 @@ public final class Expression_BehaviorDescriptor extends BaseBHDescriptor {
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3bL, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
       return true;
     }
-    return Expression_BehaviorDescriptor.legalAsStatement_id1653mnvAgqK.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return Expression__BehaviorDescriptor.legalAsStatement_id1653mnvAgqK.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   private static Boolean lvalue_id1653mnvAgpj(@NotNull SAbstractConcept __thisConcept__) {
     return false;
@@ -73,10 +73,10 @@ public final class Expression_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   private static Boolean singleValue_id1o8Ht9sES3u(@NotNull SAbstractConcept __thisConcept__) {
-    return Expression_BehaviorDescriptor.constant_id1653mnvAgr2.invoke(__thisConcept__);
+    return Expression__BehaviorDescriptor.constant_id1653mnvAgr2.invoke(__thisConcept__);
   }
 
-  /*package*/ Expression_BehaviorDescriptor() {
+  /*package*/ Expression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

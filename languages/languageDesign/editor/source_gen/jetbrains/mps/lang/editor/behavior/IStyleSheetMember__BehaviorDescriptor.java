@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IStyleSheetMember_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IStyleSheetMember__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class IStyleSheetMember_BehaviorDescriptor extends BaseBHDescriptor
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"));
   }
 
-  /*package*/ IStyleSheetMember_BehaviorDescriptor() {
+  /*package*/ IStyleSheetMember__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

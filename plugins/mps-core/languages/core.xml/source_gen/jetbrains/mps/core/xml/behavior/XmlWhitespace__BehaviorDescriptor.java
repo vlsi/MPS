@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlWhitespace_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlWhitespace__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class XmlWhitespace_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean hasNewLineAfter_id1Qs9WekVZ9E(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) != null)) {
-      return !(XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__));
+      return !(XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__));
     }
     return false;
   }
@@ -65,7 +65,7 @@ public final class XmlWhitespace_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ XmlWhitespace_BehaviorDescriptor() {
+  /*package*/ XmlWhitespace__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

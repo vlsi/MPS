@@ -30,7 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ShowBrokenReferences_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ShowBrokenReferences__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class ShowBrokenReferences_BehaviorDescriptor extends BaseBHDescrip
   }
 
   private static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
-    Iterable<SReference> brokenReferences = Sequence.fromIterable(INodeSetReference_BehaviorDescriptor.getNodes_id4x3U0fq41hN.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, 0x1cf75b72b0ac828dL, "target")), context)).translate(new ITranslator2<SNode, SReference>() {
+    Iterable<SReference> brokenReferences = Sequence.fromIterable(INodeSetReference__BehaviorDescriptor.getNodes_id4x3U0fq41hN.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, 0x1cf75b72b0ac828dL, "target")), context)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
@@ -66,7 +66,7 @@ public final class ShowBrokenReferences_BehaviorDescriptor extends BaseBHDescrip
     }
   }
 
-  /*package*/ ShowBrokenReferences_BehaviorDescriptor() {
+  /*package*/ ShowBrokenReferences__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

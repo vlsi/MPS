@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MappingConfigRefSet_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MappingConfigRefSet__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, "jetbrains.mps.lang.project.structure.MappingConfigRefSet");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,14 +35,14 @@ public final class MappingConfigRefSet_BehaviorDescriptor extends BaseBHDescript
 
   private static Boolean isComplete_id2n3WChplftH(@NotNull SNode __thisNode__) {
     for (SNode r : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, 0x25c3f2845957030cL, "refs")))) {
-      if (!(MappingConfigRefBase_BehaviorDescriptor.isComplete_id2n3WChplftH.invoke(r))) {
+      if (!(MappingConfigRefBase__BehaviorDescriptor.isComplete_id2n3WChplftH.invoke(r))) {
         return false;
       }
     }
     return true;
   }
 
-  /*package*/ MappingConfigRefSet_BehaviorDescriptor() {
+  /*package*/ MappingConfigRefSet__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

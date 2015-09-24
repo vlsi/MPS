@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ConstraintFunctionParameter_containingLink_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunctionParameter_containingLink__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class ConstraintFunctionParameter_containingLink_BehaviorDescriptor
     return _quotation_createNode_dkk9an_a0a0();
   }
 
-  /*package*/ ConstraintFunctionParameter_containingLink_BehaviorDescriptor() {
+  /*package*/ ConstraintFunctionParameter_containingLink__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

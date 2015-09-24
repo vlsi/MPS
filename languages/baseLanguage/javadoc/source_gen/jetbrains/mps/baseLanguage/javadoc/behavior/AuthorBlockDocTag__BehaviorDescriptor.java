@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AuthorBlockDocTag_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AuthorBlockDocTag__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class AuthorBlockDocTag_BehaviorDescriptor extends BaseBHDescriptor
   }
 
 
-  /*package*/ AuthorBlockDocTag_BehaviorDescriptor() {
+  /*package*/ AuthorBlockDocTag__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

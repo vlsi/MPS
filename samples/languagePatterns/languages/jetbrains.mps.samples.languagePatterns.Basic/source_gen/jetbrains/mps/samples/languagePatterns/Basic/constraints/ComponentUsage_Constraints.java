@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_BehaviorDescriptor;
+import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -51,7 +51,7 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return Component_BehaviorDescriptor.fullName_id4Vpsm2KEoLo.invoke(_context.getParameterNode());
+            return Component__BehaviorDescriptor.fullName_id4Vpsm2KEoLo.invoke(_context.getParameterNode());
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

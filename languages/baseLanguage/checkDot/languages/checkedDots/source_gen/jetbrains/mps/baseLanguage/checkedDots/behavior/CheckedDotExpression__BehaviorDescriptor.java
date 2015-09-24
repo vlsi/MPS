@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CheckedDotExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CheckedDotExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -58,7 +58,7 @@ public final class CheckedDotExpression_BehaviorDescriptor extends BaseBHDescrip
     return false;
   }
 
-  /*package*/ CheckedDotExpression_BehaviorDescriptor() {
+  /*package*/ CheckedDotExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

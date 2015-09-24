@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myFilter_BehaviorDescriptor = new Filter_BehaviorDescriptor();
-  private final BHDescriptor myMap_BehaviorDescriptor = new Map_BehaviorDescriptor();
-  private final BHDescriptor myPipeline_BehaviorDescriptor = new Pipeline_BehaviorDescriptor();
-  private final BHDescriptor myTransformers_BehaviorDescriptor = new Transformers_BehaviorDescriptor();
-  private final BHDescriptor mySwingBuilderMember_BehaviorDescriptor = new SwingBuilderMember_BehaviorDescriptor();
-  private final BHDescriptor mySourceDataType_BehaviorDescriptor = new SourceDataType_BehaviorDescriptor();
-  private final BHDescriptor myTargetDataType_BehaviorDescriptor = new TargetDataType_BehaviorDescriptor();
-  private final BHDescriptor myConverter_BehaviorDescriptor = new Converter_BehaviorDescriptor();
+  private final BHDescriptor myFilter__BehaviorDescriptor = new Filter__BehaviorDescriptor();
+  private final BHDescriptor myMap__BehaviorDescriptor = new Map__BehaviorDescriptor();
+  private final BHDescriptor myPipeline__BehaviorDescriptor = new Pipeline__BehaviorDescriptor();
+  private final BHDescriptor myTransformers__BehaviorDescriptor = new Transformers__BehaviorDescriptor();
+  private final BHDescriptor mySwingBuilderMember__BehaviorDescriptor = new SwingBuilderMember__BehaviorDescriptor();
+  private final BHDescriptor mySourceDataType__BehaviorDescriptor = new SourceDataType__BehaviorDescriptor();
+  private final BHDescriptor myTargetDataType__BehaviorDescriptor = new TargetDataType__BehaviorDescriptor();
+  private final BHDescriptor myConverter__BehaviorDescriptor = new Converter__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myFilter_BehaviorDescriptor;
+        return myFilter__BehaviorDescriptor;
       case 1:
-        return myMap_BehaviorDescriptor;
+        return myMap__BehaviorDescriptor;
       case 2:
-        return myPipeline_BehaviorDescriptor;
+        return myPipeline__BehaviorDescriptor;
       case 3:
-        return myTransformers_BehaviorDescriptor;
+        return myTransformers__BehaviorDescriptor;
       case 4:
-        return mySwingBuilderMember_BehaviorDescriptor;
+        return mySwingBuilderMember__BehaviorDescriptor;
       case 5:
-        return mySourceDataType_BehaviorDescriptor;
+        return mySourceDataType__BehaviorDescriptor;
       case 6:
-        return myTargetDataType_BehaviorDescriptor;
+        return myTargetDataType__BehaviorDescriptor;
       case 7:
-        return myConverter_BehaviorDescriptor;
+        return myConverter__BehaviorDescriptor;
       default:
         return null;
     }

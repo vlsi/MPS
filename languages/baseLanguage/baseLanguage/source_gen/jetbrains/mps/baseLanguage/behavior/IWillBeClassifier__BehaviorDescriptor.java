@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class IWillBeClassifier_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IWillBeClassifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ff8b7a0d94242e1L, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class IWillBeClassifier_BehaviorDescriptor extends BaseBHDescriptor
     return SLinkOperations.getTarget(_quotation_createNode_937vih_a0a0b(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
   }
   private static SNode resolve_id3ZSHU3ph184(@NotNull SNode __thisNode__, SModel targetModel) {
-    final String clsName = IWillBeClassifier_BehaviorDescriptor.classifierName_id3ZSHU3pg$b_.invoke(__thisNode__);
+    final String clsName = IWillBeClassifier__BehaviorDescriptor.classifierName_id3ZSHU3pg$b_.invoke(__thisNode__);
     return ListSequence.fromList(SModelOperations.roots(targetModel, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return clsName.equals(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -54,7 +54,7 @@ public final class IWillBeClassifier_BehaviorDescriptor extends BaseBHDescriptor
     });
   }
 
-  /*package*/ IWillBeClassifier_BehaviorDescriptor() {
+  /*package*/ IWillBeClassifier__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

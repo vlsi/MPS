@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LogStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LogStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class LogStatement_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ LogStatement_BehaviorDescriptor() {
+  /*package*/ LogStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

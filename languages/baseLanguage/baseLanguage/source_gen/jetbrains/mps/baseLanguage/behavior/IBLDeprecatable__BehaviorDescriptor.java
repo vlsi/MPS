@@ -25,12 +25,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IBLDeprecatable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IBLDeprecatable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class IBLDeprecatable_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean isDeprecated_idhOwoPtR(@NotNull SNode __thisNode__) {
-    return IBLDeprecatable_BehaviorDescriptor.hasDeprecatedAnnotation_id7UfLy9aMQ9M.invoke(__thisNode__);
+    return IBLDeprecatable__BehaviorDescriptor.hasDeprecatedAnnotation_id7UfLy9aMQ9M.invoke(__thisNode__);
   }
   private static Boolean hasDeprecatedAnnotation_id7UfLy9aMQ9M(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"))) {
@@ -99,7 +99,7 @@ public final class IBLDeprecatable_BehaviorDescriptor extends BaseBHDescriptor {
         SNodeOperations.deleteNode(it);
       }
     });
-    if (BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(comment) && !(BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(comment)) && ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isEmpty()) {
+    if (BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(comment) && !(BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(comment)) && ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isEmpty()) {
       SNodeOperations.deleteNode(comment);
     }
   }
@@ -107,12 +107,12 @@ public final class IBLDeprecatable_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static String getMessage_idhP43_8K(@NotNull SNode __thisNode__) {
     StringBuilder result = new StringBuilder();
-    result.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__));
+    result.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__));
     result.append(" is deprecated");
     return result.toString();
   }
 
-  /*package*/ IBLDeprecatable_BehaviorDescriptor() {
+  /*package*/ IBLDeprecatable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

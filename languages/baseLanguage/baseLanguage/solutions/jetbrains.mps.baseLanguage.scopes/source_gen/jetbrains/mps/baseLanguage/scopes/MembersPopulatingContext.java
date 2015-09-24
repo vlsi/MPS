@@ -10,10 +10,10 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,7 +55,7 @@ public class MembersPopulatingContext {
     return userObjects.containsKey(key);
   }
   public boolean enterClassifierInternal(SNode classifierType) {
-    SNode classifier = IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifierType);
+    SNode classifier = IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifierType);
 
     // recursion preventing 
     if (classifiers.contains(classifier)) {
@@ -64,9 +64,9 @@ public class MembersPopulatingContext {
     classifiers.add(classifier);
 
     // set types variables 
-    Iterable<SNode> typeParams = IClassifierType_BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(classifierType);
+    Iterable<SNode> typeParams = IClassifierType__BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(classifierType);
     if (Sequence.fromIterable(typeParams).isNotEmpty()) {
-      Iterator<SNode> typeVars = Sequence.fromIterable(IClassifier_BehaviorDescriptor.getTypeVariables_id6r77ob2URXZ.invoke(classifier)).iterator();
+      Iterator<SNode> typeVars = Sequence.fromIterable(IClassifier__BehaviorDescriptor.getTypeVariables_id6r77ob2URXZ.invoke(classifier)).iterator();
       for (SNode typeParm : typeParams) {
         if (!(typeVars.hasNext())) {
           break;
@@ -92,7 +92,7 @@ public class MembersPopulatingContext {
     return (model != null ? JavaNameUtil.packageName(model) : "");
   }
   public void exitClassifierInternal(SNode classifier) {
-    assert classifiers.pop() == IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifier);
+    assert classifiers.pop() == IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifier);
   }
   public boolean isPackageProtectedVisible() {
     return isPackageProtectedAvailable;

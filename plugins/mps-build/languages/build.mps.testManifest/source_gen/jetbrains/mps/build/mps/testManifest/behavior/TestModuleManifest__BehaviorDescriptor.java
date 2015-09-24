@@ -35,7 +35,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TestModuleManifest_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TestModuleManifest__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876882L, "jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -75,7 +75,7 @@ public final class TestModuleManifest_BehaviorDescriptor extends BaseBHDescripto
     return result;
   }
 
-  /*package*/ TestModuleManifest_BehaviorDescriptor() {
+  /*package*/ TestModuleManifest__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

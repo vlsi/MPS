@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -118,7 +118,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2v2794_a0c0(SNode node, EditorContext editorContext) {
-    return CellModel_ListWithRole_BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node);
+    return CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node);
   }
   private EditorCell createCollection_2v2794_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -277,7 +277,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2v2794_a1b0c0(SNode node, EditorContext editorContext) {
-    return CellModel_ListWithRole_BehaviorDescriptor.isFoldingEnabled_id3ZqNA5Aj2vG.invoke(node);
+    return CellModel_ListWithRole__BehaviorDescriptor.isFoldingEnabled_id3ZqNA5Aj2vG.invoke(node);
   }
   private EditorCell createCollection_2v2794_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -289,7 +289,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2v2794_a1c0(SNode node, EditorContext editorContext) {
-    return !(CellModel_ListWithRole_BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node));
+    return !(CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node));
   }
   private EditorCell createCollection_2v2794_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);

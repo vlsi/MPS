@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ScopeProvider_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,10 +37,10 @@ public final class ScopeProvider_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, kind, null);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, kind, null);
   }
 
-  /*package*/ ScopeProvider_BehaviorDescriptor() {
+  /*package*/ ScopeProvider__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

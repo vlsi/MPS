@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.baseLanguage.behavior.IIncompleteParen_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IIncompleteParen__BehaviorDescriptor;
 
 public class DeleteIncompleteRightParen {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,10 +28,10 @@ public class DeleteIncompleteRightParen {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode paren = AttributeOperations.getAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")));
-      if (IIncompleteParen_BehaviorDescriptor.isSingleParen_idVufYxgmHsD.invoke(paren)) {
+      if (IIncompleteParen__BehaviorDescriptor.isSingleParen_idVufYxgmHsD.invoke(paren)) {
         AttributeOperations.setAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), null);
       } else {
-        IIncompleteParen_BehaviorDescriptor.decreaseCount_idVufYxgmFtR.invoke(paren);
+        IIncompleteParen__BehaviorDescriptor.decreaseCount_idVufYxgmFtR.invoke(paren);
       }
     }
   }
@@ -45,10 +45,10 @@ public class DeleteIncompleteRightParen {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode paren = AttributeOperations.getAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")));
-      if (IIncompleteParen_BehaviorDescriptor.isSingleParen_idVufYxgmHsD.invoke(paren)) {
+      if (IIncompleteParen__BehaviorDescriptor.isSingleParen_idVufYxgmHsD.invoke(paren)) {
         AttributeOperations.setAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), null);
       } else {
-        IIncompleteParen_BehaviorDescriptor.decreaseCount_idVufYxgmFtR.invoke(paren);
+        IIncompleteParen__BehaviorDescriptor.decreaseCount_idVufYxgmFtR.invoke(paren);
       }
     }
   }

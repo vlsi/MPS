@@ -47,7 +47,7 @@ public class StringLiteral_Behavior {
           digitNumber = 0;
         }
       } else if (isUnicodeMode) {
-        if (Character.isDigit(c) || StringLiteral_BehaviorDescriptor.isHexChar_idhLEZYVw.invoke(__thisNode__, c)) {
+        if (Character.isDigit(c) || StringLiteral__BehaviorDescriptor.isHexChar_idhLEZYVw.invoke(__thisNode__, c)) {
           unicodeDigitNumber++;
         } else {
           return false;

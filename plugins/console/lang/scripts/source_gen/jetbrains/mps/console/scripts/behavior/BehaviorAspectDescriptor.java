@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myAbstractConsoleScript_BehaviorDescriptor = new AbstractConsoleScript_BehaviorDescriptor();
-  private final BHDescriptor myConsoleScript_BehaviorDescriptor = new ConsoleScript_BehaviorDescriptor();
-  private final BHDescriptor myRefactorOperation_BehaviorDescriptor = new RefactorOperation_BehaviorDescriptor();
+  private final BHDescriptor myAbstractConsoleScript__BehaviorDescriptor = new AbstractConsoleScript__BehaviorDescriptor();
+  private final BHDescriptor myConsoleScript__BehaviorDescriptor = new ConsoleScript__BehaviorDescriptor();
+  private final BHDescriptor myRefactorOperation__BehaviorDescriptor = new RefactorOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myAbstractConsoleScript_BehaviorDescriptor;
+        return myAbstractConsoleScript__BehaviorDescriptor;
       case 1:
-        return myConsoleScript_BehaviorDescriptor;
+        return myConsoleScript__BehaviorDescriptor;
       case 2:
-        return myRefactorOperation_BehaviorDescriptor;
+        return myRefactorOperation__BehaviorDescriptor;
       default:
         return null;
     }

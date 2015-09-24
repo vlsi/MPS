@@ -17,16 +17,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 
 public class ScopeUtil {
   public ScopeUtil() {
@@ -84,7 +84,7 @@ public class ScopeUtil {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(it, concept, child);
+        return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(it, concept, child);
       }
     });
   }
@@ -127,7 +127,7 @@ public class ScopeUtil {
     private Iterable<SNode> getAllNodes() {
       Iterable<SNode> seq = Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return BuildLayout_Node_BehaviorDescriptor.isFile_id1bWeed$oPZ2.invoke(it) || BuildLayout_Node_BehaviorDescriptor.isFolder_id1bWeed$oPYW.invoke(it);
+          return BuildLayout_Node__BehaviorDescriptor.isFile_id1bWeed$oPZ2.invoke(it) || BuildLayout_Node__BehaviorDescriptor.isFolder_id1bWeed$oPYW.invoke(it);
         }
       });
       if (includeLayoutRoots) {
@@ -182,7 +182,7 @@ public class ScopeUtil {
       if ((parent != null)) {
         appendName(parent, sb);
       }
-      BuildLayout_PathElement_BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
+      BuildLayout_PathElement__BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
     }
   }
   public static abstract class TransformingScope extends Scope {

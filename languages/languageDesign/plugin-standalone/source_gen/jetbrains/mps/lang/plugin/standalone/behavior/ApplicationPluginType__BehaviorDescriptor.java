@@ -17,12 +17,12 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ApplicationPluginType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ApplicationPluginType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class ApplicationPluginType_BehaviorDescriptor extends BaseBHDescri
   }
 
   private static List<SNode> getMembers_idhEwINC$(@NotNull SNode __thisNode__, SNode contextNode) {
-    return IClassifier_BehaviorDescriptor.getMembers_idhEwJink.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, 0x6b059b0986f2051L, "plugin")), contextNode);
+    return IClassifier__BehaviorDescriptor.getMembers_idhEwJink.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, 0x6b059b0986f2051L, "plugin")), contextNode);
   }
 
-  /*package*/ ApplicationPluginType_BehaviorDescriptor() {
+  /*package*/ ApplicationPluginType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

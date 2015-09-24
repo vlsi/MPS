@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildLayout_Node_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_Node__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,7 +59,7 @@ public final class BuildLayout_Node_BehaviorDescriptor extends BaseBHDescriptor 
   }
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     StringBuilder sb = new StringBuilder();
-    BuildLayout_Node_BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), __thisNode__, sb);
+    BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), __thisNode__, sb);
     return sb.toString();
   }
   private static Boolean isFolder_id1bWeed$oPYW(@NotNull SNode __thisNode__) {
@@ -71,12 +71,12 @@ public final class BuildLayout_Node_BehaviorDescriptor extends BaseBHDescriptor 
   private static void appendName_internal_id1bWeed$oEMe(@NotNull SAbstractConcept __thisConcept__, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
     if (parent != null) {
-      BuildLayout_Node_BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), parent, sb);
+      BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), parent, sb);
     }
-    BuildLayout_PathElement_BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
+    BuildLayout_PathElement__BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
   }
 
-  /*package*/ BuildLayout_Node_BehaviorDescriptor() {
+  /*package*/ BuildLayout_Node__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

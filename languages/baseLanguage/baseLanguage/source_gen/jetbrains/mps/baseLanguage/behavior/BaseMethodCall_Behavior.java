@@ -18,7 +18,7 @@ public class BaseMethodCall_Behavior {
   public static Object[] call_getActualArguments_1213877339153(SNode __thisNode__, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
+        return Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
       }
     }).toGenericArray(Object.class);
   }

@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UniformScopeProvider_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UniformScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x299275268ba48780L, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,13 +36,13 @@ public final class UniformScopeProvider_BehaviorDescriptor extends BaseBHDescrip
   }
 
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode context) {
-    return UniformScopeProvider_BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, kind, ScopeProviderContext.childContext(context));
+    return UniformScopeProvider__BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, kind, ScopeProviderContext.childContext(context));
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return UniformScopeProvider_BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, kind, ScopeProviderContext.rolePlusIndexContext(role, index));
+    return UniformScopeProvider__BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, kind, ScopeProviderContext.rolePlusIndexContext(role, index));
   }
 
-  /*package*/ UniformScopeProvider_BehaviorDescriptor() {
+  /*package*/ UniformScopeProvider__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class QueryFunction_StyleParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_StyleParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,17 +45,17 @@ public final class QueryFunction_StyleParameter_BehaviorDescriptor extends BaseB
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext").getDeclarationNode());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a195cc7c5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node").getDeclarationNode());
-    if (QueryFunction_StyleParameter_BehaviorDescriptor.isSeparatorStyleQuery_id6VCLXpKP7HP.invoke(__thisNode__)) {
+    if (QueryFunction_StyleParameter__BehaviorDescriptor.isSeparatorStyleQuery_id6VCLXpKP7HP.invoke(__thisNode__)) {
       ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode").getDeclarationNode());
       ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode").getDeclarationNode());
     }
     return result;
   }
   private static Boolean isSeparatorStyleQuery_id6VCLXpKP7HP(@NotNull SNode __thisNode__) {
-    return QueryFunction_StyleParameter_BehaviorDescriptor.getContainingCellModelRefNodeList_id3Jh9EXLN9Lo.invoke(__thisNode__) != null;
+    return QueryFunction_StyleParameter__BehaviorDescriptor.getContainingCellModelRefNodeList_id3Jh9EXLN9Lo.invoke(__thisNode__) != null;
   }
   private static SNode getContainingCellModelRefNodeList_id3Jh9EXLN9Lo(@NotNull SNode __thisNode__) {
-    SNode styleContainer = StyleClassItem_BehaviorDescriptor.getStyleContainer_id6VCLXpKS8DC.invoke(QueryFunction_StyleParameter_BehaviorDescriptor.getStyleClassItem_id6VCLXpKPLfS.invoke(__thisNode__));
+    SNode styleContainer = StyleClassItem__BehaviorDescriptor.getStyleContainer_id6VCLXpKS8DC.invoke(QueryFunction_StyleParameter__BehaviorDescriptor.getStyleClassItem_id6VCLXpKPLfS.invoke(__thisNode__));
     if (styleContainer == null) {
       return null;
     }
@@ -68,7 +68,7 @@ public final class QueryFunction_StyleParameter_BehaviorDescriptor extends BaseB
     return _quotation_createNode_evejyl_a0a4();
   }
 
-  /*package*/ QueryFunction_StyleParameter_BehaviorDescriptor() {
+  /*package*/ QueryFunction_StyleParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

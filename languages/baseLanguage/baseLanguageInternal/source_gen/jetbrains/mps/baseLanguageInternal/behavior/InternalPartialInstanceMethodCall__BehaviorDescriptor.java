@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InternalPartialInstanceMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InternalPartialInstanceMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class InternalPartialInstanceMethodCall_BehaviorDescriptor extends 
     return true;
   }
 
-  /*package*/ InternalPartialInstanceMethodCall_BehaviorDescriptor() {
+  /*package*/ InternalPartialInstanceMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

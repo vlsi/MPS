@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MovingAverage_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MovingAverage__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, "org.jetbrains.mps.samples.Money.structure.MovingAverage");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class MovingAverage_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ MovingAverage_BehaviorDescriptor() {
+  /*package*/ MovingAverage__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

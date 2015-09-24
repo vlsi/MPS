@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
-public final class BuildSourceArchiveRelativePath_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,21 +57,21 @@ public final class BuildSourceArchiveRelativePath_BehaviorDescriptor extends Bas
 
   @Nullable
   private static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
-    return BuildSourcePath_BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context) + "!";
+    return BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context) + "!";
   }
   private static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     artifacts.needsFetch(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), false, false));
     // and still, ???? 
   }
   private static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
-    return BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"))) + "!/" + BuildCompositePath_BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
+    return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"))) + "!/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
   private static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
-    String unpackPath = BuildSourceArchiveRelativePath_BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context);
+    String unpackPath = BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context);
     if ((unpackPath == null || unpackPath.length() == 0)) {
-      return BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
+      return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
     }
-    return unpackPath + "/" + BuildCompositePath_BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
+    return unpackPath + "/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
   private static String getUnpackPath_id7ro1Zzt$ck7(@NotNull SNode __thisNode__, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
@@ -91,11 +91,11 @@ public final class BuildSourceArchiveRelativePath_BehaviorDescriptor extends Bas
   }
   private static String calculateUnpackPath_idBHdWlMbKE2(@NotNull SNode __thisNode__, Context context) {
     SNode nlayout = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), true, false);
-    return context.getTempPath(__thisNode__, BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context.getMacros(__thisNode__)).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : "default"));
+    return context.getTempPath(__thisNode__, BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context.getMacros(__thisNode__)).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : "default"));
   }
   private static SNode getUnpackTask_id7N6lJotWaNm(@NotNull SNode __thisNode__, Context context) {
-    String archivePath = BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
-    SNode unpackTask = _quotation_createNode_ll2z5f_a0b0g(BuildSourcePath_BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context), BuildSourceArchiveRelativePath_BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context));
+    String archivePath = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
+    SNode unpackTask = _quotation_createNode_ll2z5f_a0b0g(BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context), BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context));
     if (archivePath.endsWith(".jar")) {
       SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "unjar");
     } else if (archivePath.endsWith(".war")) {
@@ -114,7 +114,7 @@ public final class BuildSourceArchiveRelativePath_BehaviorDescriptor extends Bas
     return SLinkOperations.getTarget(_quotation_createNode_ll2z5f_a0a0h(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target"));
   }
 
-  /*package*/ BuildSourceArchiveRelativePath_BehaviorDescriptor() {
+  /*package*/ BuildSourceArchiveRelativePath__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -175,7 +175,7 @@ public final class BuildSourceArchiveRelativePath_BehaviorDescriptor extends Bas
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath_BehaviorDescriptor.class);
+  protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class VariableOwner_BehaviorDescriptor extends BaseBHDescriptor {
+public final class VariableOwner__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class VariableOwner_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ VariableOwner_BehaviorDescriptor() {
+  /*package*/ VariableOwner__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

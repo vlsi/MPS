@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Circle_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Circle__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,15 +35,15 @@ public final class Circle_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static void drawShape_idW6XMzE_hbz(@NotNull SNode __thisNode__, Graphics graphics) {
-    Shape_BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSpecial(__thisNode__, graphics);
+    Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invokeSpecial(__thisNode__, graphics);
     graphics.drawOval(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc199L, "x")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19bL, "y")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
   private static void drawShapeAt_id3u6SZi0POQS(@NotNull SNode __thisNode__, Graphics graphics, int x, int y) {
-    Shape_BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSpecial(__thisNode__, graphics, x, y);
+    Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invokeSpecial(__thisNode__, graphics, x, y);
     graphics.drawOval(x, y, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
 
-  /*package*/ Circle_BehaviorDescriptor() {
+  /*package*/ Circle__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

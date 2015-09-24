@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Node_GetAncestorOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Node_GetAncestorOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110bd4e0067L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class Node_GetAncestorOperation_BehaviorDescriptor extends BaseBHDe
     return true;
   }
   private static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = SNodeOperation_BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invokeSpecial(__thisConcept__);
+    List<SNode> result = SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144100932627"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1154546920561"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144101597970"));
@@ -51,7 +51,7 @@ public final class Node_GetAncestorOperation_BehaviorDescriptor extends BaseBHDe
     return result;
   }
 
-  /*package*/ Node_GetAncestorOperation_BehaviorDescriptor() {
+  /*package*/ Node_GetAncestorOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

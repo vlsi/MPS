@@ -21,6 +21,6 @@ public class HighLevelCustomViewer_Behavior {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_WrapperFactory";
   }
   public static String call_getClassFqName_7570572250661287362(SNode __thisNode__) {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + HighLevelCustomViewer_BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(__thisNode__);
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + HighLevelCustomViewer__BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(__thisNode__);
   }
 }

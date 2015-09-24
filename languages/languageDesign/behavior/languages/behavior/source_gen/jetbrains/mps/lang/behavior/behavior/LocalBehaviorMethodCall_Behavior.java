@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class LocalBehaviorMethodCall_Behavior {
   public static boolean call_isVirtualMethodCall_7148319044498537586(SNode __thisNode__) {
-    return (LocalBehaviorMethodCall_BehaviorDescriptor.getVirtualMethodDeclaration_id6cNV$KGvDlW.invoke(__thisNode__) != null);
+    return (LocalBehaviorMethodCall__BehaviorDescriptor.getVirtualMethodDeclaration_id6cNV$KGvDlW.invoke(__thisNode__) != null);
   }
   public static SNode call_getVirtualMethodDeclaration_7148319044498527612(SNode __thisNode__) {
     SNode methodDeclaration = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));

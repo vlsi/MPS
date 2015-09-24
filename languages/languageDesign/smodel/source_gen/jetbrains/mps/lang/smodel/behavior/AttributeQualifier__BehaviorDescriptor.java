@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AttributeQualifier_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AttributeQualifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL, "jetbrains.mps.lang.smodel.structure.AttributeQualifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,13 +34,13 @@ public final class AttributeQualifier_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static SNode getAttributeContainerType_id5zEkxuKhwBG(@NotNull SNode __thisNode__) {
-    return AttributeAccess_BehaviorDescriptor.getAttributeContainerType_id62qhzb6UOqI.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess")));
+    return AttributeAccess__BehaviorDescriptor.getAttributeContainerType_id62qhzb6UOqI.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess")));
   }
   private static SNode getTargetConcept_id5zEkxuKhyRq(@NotNull SNode __thisNode__) {
     return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute").getDeclarationNode();
   }
 
-  /*package*/ AttributeQualifier_BehaviorDescriptor() {
+  /*package*/ AttributeQualifier__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

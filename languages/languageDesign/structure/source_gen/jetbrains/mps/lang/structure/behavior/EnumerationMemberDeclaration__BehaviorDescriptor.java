@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EnumerationMemberDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumerationMemberDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class EnumerationMemberDeclaration_BehaviorDescriptor extends BaseB
     return "<no external value>";
   }
   private static String getConstantName_idi2Z$rBf(@NotNull SNode __thisNode__) {
-    return NameUtil.toValidIdentifier(EnumerationMemberDeclaration_BehaviorDescriptor.getName_idi2ZRO7Q.invoke(__thisNode__));
+    return NameUtil.toValidIdentifier(EnumerationMemberDeclaration__BehaviorDescriptor.getName_idi2ZRO7Q.invoke(__thisNode__));
   }
   private static String getName_idi2ZRO7Q(@NotNull SNode __thisNode__) {
     SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
@@ -56,7 +56,7 @@ public final class EnumerationMemberDeclaration_BehaviorDescriptor extends BaseB
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0x1158fb58479L, "javaIdentifier"));
   }
 
-  /*package*/ EnumerationMemberDeclaration_BehaviorDescriptor() {
+  /*package*/ EnumerationMemberDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

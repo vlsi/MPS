@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PresenceCondition_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PresenceCondition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L, "testAnnotatedType.structure.PresenceCondition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class PresenceCondition_BehaviorDescriptor extends BaseBHDescriptor
     return Boolean.valueOf(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 
-  /*package*/ PresenceCondition_BehaviorDescriptor() {
+  /*package*/ PresenceCondition__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

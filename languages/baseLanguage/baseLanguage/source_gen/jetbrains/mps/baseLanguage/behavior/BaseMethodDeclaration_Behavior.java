@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Method;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -35,7 +35,7 @@ public class BaseMethodDeclaration_Behavior {
       }
       first = false;
       if (SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")) != null) {
-        result.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+        result.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
       } else {
         result.append("???");
       }
@@ -53,7 +53,7 @@ public class BaseMethodDeclaration_Behavior {
     if (m != null) {
       Method method = null;
       try {
-        method = ReflectionUtil.getMethod(m, SNodeOperations.getParent(__thisNode__), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BaseMethodDeclaration_BehaviorDescriptor.getParameterTypes_idhEwIB0b.invoke(__thisNode__, m));
+        method = ReflectionUtil.getMethod(m, SNodeOperations.getParent(__thisNode__), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BaseMethodDeclaration__BehaviorDescriptor.getParameterTypes_idhEwIB0b.invoke(__thisNode__, m));
       } catch (Throwable t) {
         // do nothing 
       }
@@ -61,24 +61,24 @@ public class BaseMethodDeclaration_Behavior {
         return method;
       }
     }
-    return ReflectionUtil.getMethod(module, SNodeOperations.getParent(__thisNode__), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BaseMethodDeclaration_BehaviorDescriptor.getParameterTypes_idhEwIB0b.invoke(__thisNode__, module));
+    return ReflectionUtil.getMethod(module, SNodeOperations.getParent(__thisNode__), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BaseMethodDeclaration__BehaviorDescriptor.getParameterTypes_idhEwIB0b.invoke(__thisNode__, module));
   }
   public static Class[] call_getParameterTypes_1213877350411(SNode __thisNode__, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
-        return Type_BehaviorDescriptor.getClass_idhEwIzNJ.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), module);
+        return Type__BehaviorDescriptor.getClass_idhEwIzNJ.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), module);
       }
     }).toGenericArray(Class.class);
   }
   public static SNode call_getBaseMethod_5014346297260519893(SNode __thisNode__) {
-    SNode result = BaseMethodDeclaration_BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(__thisNode__);
+    SNode result = BaseMethodDeclaration__BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(__thisNode__);
     if ((result == null)) {
       return null;
     }
-    SNode next = BaseMethodDeclaration_BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(result);
+    SNode next = BaseMethodDeclaration__BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(result);
     while (next != null) {
       result = next;
-      next = BaseMethodDeclaration_BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(result);
+      next = BaseMethodDeclaration__BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(result);
     }
     return result;
   }
@@ -109,10 +109,10 @@ public class BaseMethodDeclaration_Behavior {
       return false;
     }
     if (SNodeOperations.isInstanceOf(checked, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
-      SNode patternMethod = BaseMethodDeclaration_BehaviorDescriptor.getMethodToImplement_id3RE744JWbF.invoke(__thisNode__, SNodeOperations.getNodeAncestor(checked, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false));
-      return BaseMethodDeclaration_BehaviorDescriptor.hasSameParameters_idJuSt8W4$Q2.invoke(patternMethod, checked);
+      SNode patternMethod = BaseMethodDeclaration__BehaviorDescriptor.getMethodToImplement_id3RE744JWbF.invoke(__thisNode__, SNodeOperations.getNodeAncestor(checked, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false));
+      return BaseMethodDeclaration__BehaviorDescriptor.hasSameParameters_idJuSt8W4$Q2.invoke(patternMethod, checked);
     } else {
-      return BaseMethodDeclaration_BehaviorDescriptor.hasSameParameters_idJuSt8W4$Q2.invoke(__thisNode__, checked);
+      return BaseMethodDeclaration__BehaviorDescriptor.hasSameParameters_idJuSt8W4$Q2.invoke(__thisNode__, checked);
     }
   }
   public static String call_getErasureSignature_2830572026628006618(SNode __thisNode__) {
@@ -120,7 +120,7 @@ public class BaseMethodDeclaration_Behavior {
     List<SNode> parameters = SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"));
     for (int i = 0; i < ListSequence.fromList(parameters).count(); i++) {
       SNode param = ListSequence.fromList(parameters).getElement(i);
-      sb.append(Type_BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+      sb.append(Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
       if (i < ListSequence.fromList(parameters).count() - 1) {
         sb.append(",");
       }
@@ -168,7 +168,7 @@ public class BaseMethodDeclaration_Behavior {
   }
   private static String check_tq0gdw_a0a0b0p(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return Type_BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
+      return Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
     }
     return null;
   }
@@ -180,7 +180,7 @@ public class BaseMethodDeclaration_Behavior {
   }
   private static String check_tq0gdw_a0b0b0p(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return Type_BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
+      return Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
     }
     return null;
   }

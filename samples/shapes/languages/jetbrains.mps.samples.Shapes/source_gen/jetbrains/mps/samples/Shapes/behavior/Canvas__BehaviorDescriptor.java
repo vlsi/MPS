@@ -23,7 +23,7 @@ import javax.swing.JPanel;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Canvas_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Canvas__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class Canvas_BehaviorDescriptor extends BaseBHDescriptor {
     frame.pack();
   }
 
-  /*package*/ Canvas_BehaviorDescriptor() {
+  /*package*/ Canvas__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class ConstraintFunction_ReferentSearchScope_Validator_BehaviorDesc
     return SNodeOperations.as(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"));
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "2990203945683059368"));
     return result;
   }
@@ -51,7 +51,7 @@ public final class ConstraintFunction_ReferentSearchScope_Validator_BehaviorDesc
     return _quotation_createNode_cefu43_a0a2();
   }
 
-  /*package*/ ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor() {
+  /*package*/ ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

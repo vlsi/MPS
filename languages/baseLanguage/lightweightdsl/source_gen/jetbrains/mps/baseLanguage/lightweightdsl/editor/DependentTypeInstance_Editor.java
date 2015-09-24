@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -25,7 +25,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_1x58an_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
+        return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
       }
       public void setText(String s) {
       }

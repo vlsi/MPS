@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 
 @MPSLaunch
 public class FloatConstantType_Test extends BaseTransformationTest {
@@ -37,7 +37,7 @@ public class FloatConstantType_Test extends BaseTransformationTest {
     }
     public void test_ErrorMessagesCheck5868639094267614275() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("5868639094267614275"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("5868639094257179249"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("5868639094257179249"));
     }
   }
 }

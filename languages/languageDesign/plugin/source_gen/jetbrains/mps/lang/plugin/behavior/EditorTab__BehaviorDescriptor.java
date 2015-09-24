@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EditorTab_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EditorTab__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,14 +43,14 @@ public final class EditorTab_BehaviorDescriptor extends BaseBHDescriptor {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_TabDescriptor";
   }
   private static String getGeneratedClassFQName_id3fOKOapZKPb(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + EditorTab_BehaviorDescriptor.getGeneratedName_id3fOKOapZKP0.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + EditorTab__BehaviorDescriptor.getGeneratedName_id3fOKOapZKP0.invoke(__thisNode__);
   }
   private static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
     List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
     return props;
   }
 
-  /*package*/ EditorTab_BehaviorDescriptor() {
+  /*package*/ EditorTab__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

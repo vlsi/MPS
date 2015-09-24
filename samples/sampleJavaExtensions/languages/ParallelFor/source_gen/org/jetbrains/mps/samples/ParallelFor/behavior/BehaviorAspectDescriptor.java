@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myThreadSafe_BehaviorDescriptor = new ThreadSafe_BehaviorDescriptor();
-  private final BHDescriptor myNonThreadSafeClass_BehaviorDescriptor = new NonThreadSafeClass_BehaviorDescriptor();
-  private final BHDescriptor myParallelFor_BehaviorDescriptor = new ParallelFor_BehaviorDescriptor();
+  private final BHDescriptor myThreadSafe__BehaviorDescriptor = new ThreadSafe__BehaviorDescriptor();
+  private final BHDescriptor myNonThreadSafeClass__BehaviorDescriptor = new NonThreadSafeClass__BehaviorDescriptor();
+  private final BHDescriptor myParallelFor__BehaviorDescriptor = new ParallelFor__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myThreadSafe_BehaviorDescriptor;
+        return myThreadSafe__BehaviorDescriptor;
       case 1:
-        return myNonThreadSafeClass_BehaviorDescriptor;
+        return myNonThreadSafeClass__BehaviorDescriptor;
       case 2:
-        return myParallelFor_BehaviorDescriptor;
+        return myParallelFor__BehaviorDescriptor;
       default:
         return null;
     }

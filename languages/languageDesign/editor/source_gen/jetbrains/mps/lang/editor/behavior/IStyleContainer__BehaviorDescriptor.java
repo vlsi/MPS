@@ -27,7 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IStyleContainer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IStyleContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class IStyleContainer_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static List<SNode> getClassItems_idhJF5KPu(@NotNull SNode __thisNode__, SNode itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
-    IStyleContainer_BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
+    IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
     return result;
   }
   private static void fillClassItems_id2dDK17997Ii(@NotNull SNode __thisNode__, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
@@ -55,12 +55,12 @@ public final class IStyleContainer_BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
     SetSequence.fromSet(visitedContainers).addElement(__thisNode__);
-    if ((IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__) != null) && !(SetSequence.fromSet(visitedContainers).contains(IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__)))) {
-      IStyleContainer_BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__), classItems, itemConcept, visitedContainers);
+    if ((IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__) != null) && !(SetSequence.fromSet(visitedContainers).contains(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__)))) {
+      IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__), classItems, itemConcept, visitedContainers);
     }
   }
 
-  /*package*/ IStyleContainer_BehaviorDescriptor() {
+  /*package*/ IStyleContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

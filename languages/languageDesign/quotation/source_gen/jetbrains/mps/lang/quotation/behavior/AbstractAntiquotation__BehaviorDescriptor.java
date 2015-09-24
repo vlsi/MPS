@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IMetaLevelChanger__BehaviorDescriptor;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractAntiquotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractAntiquotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,17 +42,17 @@ public final class AbstractAntiquotation_BehaviorDescriptor extends BaseBHDescri
     return 1;
   }
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
-    return AbstractAntiquotation_BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
+    return AbstractAntiquotation__BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
   }
   private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return AbstractAntiquotation_BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
+    return AbstractAntiquotation__BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
   }
   private static Scope getScope_id6SHIBw3Z40z(@NotNull SNode __thisNode__, SNode kind) {
     SNode node = __thisNode__;
     int metaLevelChange = 0;
     while ((node != null)) {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
-        metaLevelChange += IMetaLevelChanger_BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")));
+        metaLevelChange += IMetaLevelChanger__BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")));
       }
       if (metaLevelChange == 0) {
         break;
@@ -65,7 +65,7 @@ public final class AbstractAntiquotation_BehaviorDescriptor extends BaseBHDescri
     return Scope.getScope(Scope.parent(node), node, kind);
   }
 
-  /*package*/ AbstractAntiquotation_BehaviorDescriptor() {
+  /*package*/ AbstractAntiquotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

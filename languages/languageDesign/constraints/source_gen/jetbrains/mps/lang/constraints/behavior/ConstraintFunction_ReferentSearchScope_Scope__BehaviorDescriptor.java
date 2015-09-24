@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescript
     return _quotation_createNode_ipbcnm_a0a0();
   }
 
-  /*package*/ ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor() {
+  /*package*/ ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

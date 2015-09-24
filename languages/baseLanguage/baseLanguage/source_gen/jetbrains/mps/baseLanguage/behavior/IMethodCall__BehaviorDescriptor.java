@@ -37,7 +37,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class IMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,7 +59,7 @@ public final class IMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
   private static Object[] getActualArguments_idhJyuD6_(@NotNull SNode __thisNode__, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
+        return Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
       }
     }).toGenericArray(Object.class);
   }
@@ -71,21 +71,21 @@ public final class IMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
       if (i < ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
         SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i);
         SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
-        SNode instanceType = IMethodCall_BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
+        SNode instanceType = IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
         if ((instanceType == null)) {
           return rawType;
         }
         final SNode methodClassifier = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         {
-          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new IMethodCall_BehaviorDescriptor.Pattern_w71mdo_a0a0a5a2a1a81(methodClassifier);
+          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new IMethodCall__BehaviorDescriptor.Pattern_w71mdo_a0a0a5a2a1a81(methodClassifier);
           SNode coercedNode_fq0410_f0c0b0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0b);
           if (coercedNode_fq0410_f0c0b0b != null) {
             SNode resultType;
             if (SNodeOperations.isInstanceOf(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-              resultType = IMethodCall_BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, SNodeOperations.cast(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), coercedNode_fq0410_f0c0b0b, methodClassifier);
+              resultType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, SNodeOperations.cast(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), coercedNode_fq0410_f0c0b0b, methodClassifier);
             } else {
               for (SNode typeVariableReference : SNodeOperations.getNodeDescendants(rawType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})) {
-                SNode concreteType = IMethodCall_BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, typeVariableReference, coercedNode_fq0410_f0c0b0b, methodClassifier);
+                SNode concreteType = IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN.invoke(__thisNode__, typeVariableReference, coercedNode_fq0410_f0c0b0b, methodClassifier);
                 SNodeOperations.replaceWithAnother(typeVariableReference, concreteType);
               }
               resultType = rawType;
@@ -114,13 +114,13 @@ public final class IMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
     return concreteType;
   }
   private static SNode getTypeAnnotation_idhXbqSv6(@NotNull SNode __thisNode__) {
-    return TypeAnnotable_BehaviorDescriptor.getTypeAnnotation_idhXbqSv6.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
+    return TypeAnnotable__BehaviorDescriptor.getTypeAnnotation_idhXbqSv6.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
   }
   private static SNode getInstanceType_id6WzWPTX2vuB(@NotNull SNode __thisNode__) {
     return null;
   }
   private static Map<SNode, SNode> getTypesByTypeVars_idJfLh5LDMrj(@NotNull SNode __thisNode__) {
-    SNode instanceType = IMethodCall_BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
+    SNode instanceType = IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__);
     HashMap<SNode, SNode> result = new HashMap<SNode, SNode>();
     if ((instanceType == null)) {
       return result;
@@ -137,14 +137,14 @@ public final class IMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {
     SNode methodAnc = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
-    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue")) == __thisNode__ || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == __thisNode__ || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")) == __thisNode__ || ((methodAnc != null) && IMethodLike_BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(methodAnc) == SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue")) == __thisNode__ || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == __thisNode__ || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")) == __thisNode__ || ((methodAnc != null) && IMethodLike__BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(methodAnc) == SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
   }
   private static Boolean useScopesForMethodDeclarationFixer_id3EWPnx1lHq(@NotNull SNode __thisNode__) {
     // todo: use something better here. check usages of getAvailableMethodDeclarations in charisma etc 
     return false;
   }
 
-  /*package*/ IMethodCall_BehaviorDescriptor() {
+  /*package*/ IMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

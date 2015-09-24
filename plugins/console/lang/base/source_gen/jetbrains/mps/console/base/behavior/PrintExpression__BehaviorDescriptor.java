@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PrintExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PrintExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6979f0787b2a9377L, "jetbrains.mps.console.base.structure.PrintExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class PrintExpression_BehaviorDescriptor extends BaseBHDescriptor {
     return "print into the console window";
   }
 
-  /*package*/ PrintExpression_BehaviorDescriptor() {
+  /*package*/ PrintExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

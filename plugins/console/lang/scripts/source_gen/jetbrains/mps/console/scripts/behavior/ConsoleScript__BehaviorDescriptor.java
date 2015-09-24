@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConsoleScript_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConsoleScript__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6deL, "jetbrains.mps.console.scripts.structure.ConsoleScript");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ConsoleScript_BehaviorDescriptor extends BaseBHDescriptor {
     return SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6deL, 0x1811ccc46ac3f6dfL, "command"));
   }
 
-  /*package*/ ConsoleScript_BehaviorDescriptor() {
+  /*package*/ ConsoleScript__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

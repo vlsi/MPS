@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.EmptyScope;
@@ -57,7 +57,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
               }
             }
             if (target == null) {
-              target = BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(_context.getParameterNode());
+              target = BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(_context.getParameterNode());
             }
             return (_context.getSmartReference() ? "import " + target : target);
           }

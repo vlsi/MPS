@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractStateMachineElement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractStateMachineElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6e3eaf7a54e76eeaL, "jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class AbstractStateMachineElement_BehaviorDescriptor extends BaseBH
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, "jetbrains.mps.lang.editor.tableTests.structure.StateMachine"));
   }
 
-  /*package*/ AbstractStateMachineElement_BehaviorDescriptor() {
+  /*package*/ AbstractStateMachineElement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

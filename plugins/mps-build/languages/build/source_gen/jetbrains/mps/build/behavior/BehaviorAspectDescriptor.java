@@ -12,78 +12,78 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBuildLayout_EchoProperties_BehaviorDescriptor = new BuildLayout_EchoProperties_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor = new BuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Import_BehaviorDescriptor = new BuildLayout_Import_BehaviorDescriptor();
-  private final BHDescriptor myBuildExternalDependency_BehaviorDescriptor = new BuildExternalDependency_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_FileSet_BehaviorDescriptor = new BuildLayout_FileSet_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_JarManifest_BehaviorDescriptor = new BuildLayout_JarManifest_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_JarManifest_Attribute_BehaviorDescriptor = new BuildLayout_JarManifest_Attribute_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_CopyProcessor_BehaviorDescriptor = new BuildLayout_CopyProcessor_BehaviorDescriptor();
-  private final BHDescriptor myBuildInputSingleFolder_BehaviorDescriptor = new BuildInputSingleFolder_BehaviorDescriptor();
-  private final BHDescriptor myBuildSourceArchiveRelativePath_BehaviorDescriptor = new BuildSourceArchiveRelativePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_CompileOutputOf_BehaviorDescriptor = new BuildLayout_CompileOutputOf_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Files_BehaviorDescriptor = new BuildLayout_Files_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaContentFolder_BehaviorDescriptor = new BuildSource_JavaContentFolder_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaDependencyModule_BehaviorDescriptor = new BuildSource_JavaDependencyModule_BehaviorDescriptor();
-  private final BHDescriptor myBuildVariableMacroInitValue_BehaviorDescriptor = new BuildVariableMacroInitValue_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_TransparentContainer_BehaviorDescriptor = new BuildLayout_TransparentContainer_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_ExportAsJavaLibrary_BehaviorDescriptor = new BuildLayout_ExportAsJavaLibrary_BehaviorDescriptor();
-  private final BHDescriptor myBuildNamedLayout_BehaviorDescriptor = new BuildNamedLayout_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaCP_BehaviorDescriptor = new BuildSource_JavaCP_BehaviorDescriptor();
-  private final BHDescriptor myBuildVariableMacro_BehaviorDescriptor = new BuildVariableMacro_BehaviorDescriptor();
-  private final BHDescriptor myBuildString_BehaviorDescriptor = new BuildString_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Container_BehaviorDescriptor = new BuildLayout_Container_BehaviorDescriptor();
-  private final BHDescriptor myBuildStringPart_BehaviorDescriptor = new BuildStringPart_BehaviorDescriptor();
-  private final BHDescriptor myBuildVarRefStringPart_BehaviorDescriptor = new BuildVarRefStringPart_BehaviorDescriptor();
-  private final BHDescriptor myBuildTextStringPart_BehaviorDescriptor = new BuildTextStringPart_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaDependencyLibrary_BehaviorDescriptor = new BuildSource_JavaDependencyLibrary_BehaviorDescriptor();
-  private final BHDescriptor myBuildProjectDependency_BehaviorDescriptor = new BuildProjectDependency_BehaviorDescriptor();
-  private final BHDescriptor myBuildInputSingleFile_BehaviorDescriptor = new BuildInputSingleFile_BehaviorDescriptor();
-  private final BHDescriptor myBuildInputFiles_BehaviorDescriptor = new BuildInputFiles_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Copy_BehaviorDescriptor = new BuildLayout_Copy_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor = new BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor();
-  private final BHDescriptor myBuildSourceProjectRelativePath_BehaviorDescriptor = new BuildSourceProjectRelativePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_ImportContent_BehaviorDescriptor = new BuildLayout_ImportContent_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_SingleFile_BehaviorDescriptor = new BuildSource_SingleFile_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaExternalJarRef_BehaviorDescriptor = new BuildSource_JavaExternalJarRef_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaLibraryExternalJar_BehaviorDescriptor = new BuildSource_JavaLibraryExternalJar_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_SingleFolder_BehaviorDescriptor = new BuildSource_SingleFolder_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaExternalJarFolderRef_BehaviorDescriptor = new BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor = new BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor();
-  private final BHDescriptor myBuildProject_BehaviorDescriptor = new BuildProject_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_BehaviorDescriptor = new BuildLayout_BehaviorDescriptor();
-  private final BHDescriptor myBuildMacro_BehaviorDescriptor = new BuildMacro_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_InJarNode_BehaviorDescriptor = new BuildLayout_InJarNode_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaLibrary_BehaviorDescriptor = new BuildSource_JavaLibrary_BehaviorDescriptor();
-  private final BHDescriptor myIWorkflowParticipant_BehaviorDescriptor = new IWorkflowParticipant_BehaviorDescriptor();
-  private final BHDescriptor myBuildPlugin_BehaviorDescriptor = new BuildPlugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildJavaPlugin_BehaviorDescriptor = new BuildJavaPlugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaDependencyExternalJar_BehaviorDescriptor = new BuildSource_JavaDependencyExternalJar_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_War_BehaviorDescriptor = new BuildLayout_War_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_PathElement_BehaviorDescriptor = new BuildLayout_PathElement_BehaviorDescriptor();
-  private final BHDescriptor myBuildExternalLayout_BehaviorDescriptor = new BuildExternalLayout_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_FileStub_BehaviorDescriptor = new BuildLayout_FileStub_BehaviorDescriptor();
-  private final BHDescriptor myBuildExternalLayoutDependency_BehaviorDescriptor = new BuildExternalLayoutDependency_BehaviorDescriptor();
-  private final BHDescriptor myBuildRelativePath_BehaviorDescriptor = new BuildRelativePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_AbstractContainer_BehaviorDescriptor = new BuildLayout_AbstractContainer_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Folder_BehaviorDescriptor = new BuildLayout_Folder_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Node_BehaviorDescriptor = new BuildLayout_Node_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_NamedContainer_BehaviorDescriptor = new BuildLayout_NamedContainer_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Zip_BehaviorDescriptor = new BuildLayout_Zip_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Jar_BehaviorDescriptor = new BuildLayout_Jar_BehaviorDescriptor();
-  private final BHDescriptor myBuildSource_JavaModule_BehaviorDescriptor = new BuildSource_JavaModule_BehaviorDescriptor();
-  private final BHDescriptor myBuildSourcePath_BehaviorDescriptor = new BuildSourcePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildFolderMacro_BehaviorDescriptor = new BuildFolderMacro_BehaviorDescriptor();
-  private final BHDescriptor myBuildSourceMacroRelativePath_BehaviorDescriptor = new BuildSourceMacroRelativePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_EchoXml_BehaviorDescriptor = new BuildLayout_EchoXml_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Filemode_BehaviorDescriptor = new BuildLayout_Filemode_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_Tar_BehaviorDescriptor = new BuildLayout_Tar_BehaviorDescriptor();
-  private final BHDescriptor myBuildCompositePath_BehaviorDescriptor = new BuildCompositePath_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_File_BehaviorDescriptor = new BuildLayout_File_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_CustomCopy_BehaviorDescriptor = new BuildLayout_CustomCopy_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_AbstractCopy_BehaviorDescriptor = new BuildLayout_AbstractCopy_BehaviorDescriptor();
-  private final BHDescriptor myBuildStringContainer_BehaviorDescriptor = new BuildStringContainer_BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_EchoProperties__BehaviorDescriptor = new BuildLayout_EchoProperties__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor = new BuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Import__BehaviorDescriptor = new BuildLayout_Import__BehaviorDescriptor();
+  private final BHDescriptor myBuildExternalDependency__BehaviorDescriptor = new BuildExternalDependency__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_FileSet__BehaviorDescriptor = new BuildLayout_FileSet__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_JarManifest__BehaviorDescriptor = new BuildLayout_JarManifest__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_JarManifest_Attribute__BehaviorDescriptor = new BuildLayout_JarManifest_Attribute__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_CopyProcessor__BehaviorDescriptor = new BuildLayout_CopyProcessor__BehaviorDescriptor();
+  private final BHDescriptor myBuildInputSingleFolder__BehaviorDescriptor = new BuildInputSingleFolder__BehaviorDescriptor();
+  private final BHDescriptor myBuildSourceArchiveRelativePath__BehaviorDescriptor = new BuildSourceArchiveRelativePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_CompileOutputOf__BehaviorDescriptor = new BuildLayout_CompileOutputOf__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Files__BehaviorDescriptor = new BuildLayout_Files__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaContentFolder__BehaviorDescriptor = new BuildSource_JavaContentFolder__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaDependencyModule__BehaviorDescriptor = new BuildSource_JavaDependencyModule__BehaviorDescriptor();
+  private final BHDescriptor myBuildVariableMacroInitValue__BehaviorDescriptor = new BuildVariableMacroInitValue__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_TransparentContainer__BehaviorDescriptor = new BuildLayout_TransparentContainer__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_ExportAsJavaLibrary__BehaviorDescriptor = new BuildLayout_ExportAsJavaLibrary__BehaviorDescriptor();
+  private final BHDescriptor myBuildNamedLayout__BehaviorDescriptor = new BuildNamedLayout__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaCP__BehaviorDescriptor = new BuildSource_JavaCP__BehaviorDescriptor();
+  private final BHDescriptor myBuildVariableMacro__BehaviorDescriptor = new BuildVariableMacro__BehaviorDescriptor();
+  private final BHDescriptor myBuildString__BehaviorDescriptor = new BuildString__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Container__BehaviorDescriptor = new BuildLayout_Container__BehaviorDescriptor();
+  private final BHDescriptor myBuildStringPart__BehaviorDescriptor = new BuildStringPart__BehaviorDescriptor();
+  private final BHDescriptor myBuildVarRefStringPart__BehaviorDescriptor = new BuildVarRefStringPart__BehaviorDescriptor();
+  private final BHDescriptor myBuildTextStringPart__BehaviorDescriptor = new BuildTextStringPart__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaDependencyLibrary__BehaviorDescriptor = new BuildSource_JavaDependencyLibrary__BehaviorDescriptor();
+  private final BHDescriptor myBuildProjectDependency__BehaviorDescriptor = new BuildProjectDependency__BehaviorDescriptor();
+  private final BHDescriptor myBuildInputSingleFile__BehaviorDescriptor = new BuildInputSingleFile__BehaviorDescriptor();
+  private final BHDescriptor myBuildInputFiles__BehaviorDescriptor = new BuildInputFiles__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Copy__BehaviorDescriptor = new BuildLayout_Copy__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor = new BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor();
+  private final BHDescriptor myBuildSourceProjectRelativePath__BehaviorDescriptor = new BuildSourceProjectRelativePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_ImportContent__BehaviorDescriptor = new BuildLayout_ImportContent__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_SingleFile__BehaviorDescriptor = new BuildSource_SingleFile__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaExternalJarRef__BehaviorDescriptor = new BuildSource_JavaExternalJarRef__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaLibraryExternalJar__BehaviorDescriptor = new BuildSource_JavaLibraryExternalJar__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_SingleFolder__BehaviorDescriptor = new BuildSource_SingleFolder__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaExternalJarFolderRef__BehaviorDescriptor = new BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor = new BuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor();
+  private final BHDescriptor myBuildProject__BehaviorDescriptor = new BuildProject__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout__BehaviorDescriptor = new BuildLayout__BehaviorDescriptor();
+  private final BHDescriptor myBuildMacro__BehaviorDescriptor = new BuildMacro__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_InJarNode__BehaviorDescriptor = new BuildLayout_InJarNode__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaLibrary__BehaviorDescriptor = new BuildSource_JavaLibrary__BehaviorDescriptor();
+  private final BHDescriptor myIWorkflowParticipant__BehaviorDescriptor = new IWorkflowParticipant__BehaviorDescriptor();
+  private final BHDescriptor myBuildPlugin__BehaviorDescriptor = new BuildPlugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildJavaPlugin__BehaviorDescriptor = new BuildJavaPlugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaDependencyExternalJar__BehaviorDescriptor = new BuildSource_JavaDependencyExternalJar__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_War__BehaviorDescriptor = new BuildLayout_War__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_PathElement__BehaviorDescriptor = new BuildLayout_PathElement__BehaviorDescriptor();
+  private final BHDescriptor myBuildExternalLayout__BehaviorDescriptor = new BuildExternalLayout__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_FileStub__BehaviorDescriptor = new BuildLayout_FileStub__BehaviorDescriptor();
+  private final BHDescriptor myBuildExternalLayoutDependency__BehaviorDescriptor = new BuildExternalLayoutDependency__BehaviorDescriptor();
+  private final BHDescriptor myBuildRelativePath__BehaviorDescriptor = new BuildRelativePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_AbstractContainer__BehaviorDescriptor = new BuildLayout_AbstractContainer__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Folder__BehaviorDescriptor = new BuildLayout_Folder__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Node__BehaviorDescriptor = new BuildLayout_Node__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_NamedContainer__BehaviorDescriptor = new BuildLayout_NamedContainer__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Zip__BehaviorDescriptor = new BuildLayout_Zip__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Jar__BehaviorDescriptor = new BuildLayout_Jar__BehaviorDescriptor();
+  private final BHDescriptor myBuildSource_JavaModule__BehaviorDescriptor = new BuildSource_JavaModule__BehaviorDescriptor();
+  private final BHDescriptor myBuildSourcePath__BehaviorDescriptor = new BuildSourcePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildFolderMacro__BehaviorDescriptor = new BuildFolderMacro__BehaviorDescriptor();
+  private final BHDescriptor myBuildSourceMacroRelativePath__BehaviorDescriptor = new BuildSourceMacroRelativePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_EchoXml__BehaviorDescriptor = new BuildLayout_EchoXml__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Filemode__BehaviorDescriptor = new BuildLayout_Filemode__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_Tar__BehaviorDescriptor = new BuildLayout_Tar__BehaviorDescriptor();
+  private final BHDescriptor myBuildCompositePath__BehaviorDescriptor = new BuildCompositePath__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_File__BehaviorDescriptor = new BuildLayout_File__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_CustomCopy__BehaviorDescriptor = new BuildLayout_CustomCopy__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_AbstractCopy__BehaviorDescriptor = new BuildLayout_AbstractCopy__BehaviorDescriptor();
+  private final BHDescriptor myBuildStringContainer__BehaviorDescriptor = new BuildStringContainer__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -175,149 +175,149 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBuildLayout_EchoProperties_BehaviorDescriptor;
+        return myBuildLayout_EchoProperties__BehaviorDescriptor;
       case 1:
-        return myBuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor;
+        return myBuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor;
       case 2:
-        return myBuildLayout_Import_BehaviorDescriptor;
+        return myBuildLayout_Import__BehaviorDescriptor;
       case 3:
-        return myBuildExternalDependency_BehaviorDescriptor;
+        return myBuildExternalDependency__BehaviorDescriptor;
       case 4:
-        return myBuildLayout_FileSet_BehaviorDescriptor;
+        return myBuildLayout_FileSet__BehaviorDescriptor;
       case 5:
-        return myBuildLayout_JarManifest_BehaviorDescriptor;
+        return myBuildLayout_JarManifest__BehaviorDescriptor;
       case 6:
-        return myBuildLayout_JarManifest_Attribute_BehaviorDescriptor;
+        return myBuildLayout_JarManifest_Attribute__BehaviorDescriptor;
       case 7:
-        return myBuildLayout_CopyProcessor_BehaviorDescriptor;
+        return myBuildLayout_CopyProcessor__BehaviorDescriptor;
       case 8:
-        return myBuildInputSingleFolder_BehaviorDescriptor;
+        return myBuildInputSingleFolder__BehaviorDescriptor;
       case 9:
-        return myBuildSourceArchiveRelativePath_BehaviorDescriptor;
+        return myBuildSourceArchiveRelativePath__BehaviorDescriptor;
       case 10:
-        return myBuildLayout_CompileOutputOf_BehaviorDescriptor;
+        return myBuildLayout_CompileOutputOf__BehaviorDescriptor;
       case 11:
-        return myBuildLayout_Files_BehaviorDescriptor;
+        return myBuildLayout_Files__BehaviorDescriptor;
       case 12:
-        return myBuildSource_JavaContentFolder_BehaviorDescriptor;
+        return myBuildSource_JavaContentFolder__BehaviorDescriptor;
       case 13:
-        return myBuildSource_JavaDependencyModule_BehaviorDescriptor;
+        return myBuildSource_JavaDependencyModule__BehaviorDescriptor;
       case 14:
-        return myBuildVariableMacroInitValue_BehaviorDescriptor;
+        return myBuildVariableMacroInitValue__BehaviorDescriptor;
       case 15:
-        return myBuildLayout_TransparentContainer_BehaviorDescriptor;
+        return myBuildLayout_TransparentContainer__BehaviorDescriptor;
       case 16:
-        return myBuildLayout_ExportAsJavaLibrary_BehaviorDescriptor;
+        return myBuildLayout_ExportAsJavaLibrary__BehaviorDescriptor;
       case 17:
-        return myBuildNamedLayout_BehaviorDescriptor;
+        return myBuildNamedLayout__BehaviorDescriptor;
       case 18:
-        return myBuildSource_JavaCP_BehaviorDescriptor;
+        return myBuildSource_JavaCP__BehaviorDescriptor;
       case 19:
-        return myBuildVariableMacro_BehaviorDescriptor;
+        return myBuildVariableMacro__BehaviorDescriptor;
       case 20:
-        return myBuildString_BehaviorDescriptor;
+        return myBuildString__BehaviorDescriptor;
       case 21:
-        return myBuildLayout_Container_BehaviorDescriptor;
+        return myBuildLayout_Container__BehaviorDescriptor;
       case 22:
-        return myBuildStringPart_BehaviorDescriptor;
+        return myBuildStringPart__BehaviorDescriptor;
       case 23:
-        return myBuildVarRefStringPart_BehaviorDescriptor;
+        return myBuildVarRefStringPart__BehaviorDescriptor;
       case 24:
-        return myBuildTextStringPart_BehaviorDescriptor;
+        return myBuildTextStringPart__BehaviorDescriptor;
       case 25:
-        return myBuildSource_JavaDependencyLibrary_BehaviorDescriptor;
+        return myBuildSource_JavaDependencyLibrary__BehaviorDescriptor;
       case 26:
-        return myBuildProjectDependency_BehaviorDescriptor;
+        return myBuildProjectDependency__BehaviorDescriptor;
       case 27:
-        return myBuildInputSingleFile_BehaviorDescriptor;
+        return myBuildInputSingleFile__BehaviorDescriptor;
       case 28:
-        return myBuildInputFiles_BehaviorDescriptor;
+        return myBuildInputFiles__BehaviorDescriptor;
       case 29:
-        return myBuildLayout_Copy_BehaviorDescriptor;
+        return myBuildLayout_Copy__BehaviorDescriptor;
       case 30:
-        return myBuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor;
+        return myBuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor;
       case 31:
-        return myBuildSourceProjectRelativePath_BehaviorDescriptor;
+        return myBuildSourceProjectRelativePath__BehaviorDescriptor;
       case 32:
-        return myBuildLayout_ImportContent_BehaviorDescriptor;
+        return myBuildLayout_ImportContent__BehaviorDescriptor;
       case 33:
-        return myBuildSource_SingleFile_BehaviorDescriptor;
+        return myBuildSource_SingleFile__BehaviorDescriptor;
       case 34:
-        return myBuildSource_JavaExternalJarRef_BehaviorDescriptor;
+        return myBuildSource_JavaExternalJarRef__BehaviorDescriptor;
       case 35:
-        return myBuildSource_JavaLibraryExternalJar_BehaviorDescriptor;
+        return myBuildSource_JavaLibraryExternalJar__BehaviorDescriptor;
       case 36:
-        return myBuildSource_SingleFolder_BehaviorDescriptor;
+        return myBuildSource_SingleFolder__BehaviorDescriptor;
       case 37:
-        return myBuildSource_JavaExternalJarFolderRef_BehaviorDescriptor;
+        return myBuildSource_JavaExternalJarFolderRef__BehaviorDescriptor;
       case 38:
-        return myBuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor;
+        return myBuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor;
       case 39:
-        return myBuildProject_BehaviorDescriptor;
+        return myBuildProject__BehaviorDescriptor;
       case 40:
-        return myBuildLayout_BehaviorDescriptor;
+        return myBuildLayout__BehaviorDescriptor;
       case 41:
-        return myBuildMacro_BehaviorDescriptor;
+        return myBuildMacro__BehaviorDescriptor;
       case 42:
-        return myBuildLayout_InJarNode_BehaviorDescriptor;
+        return myBuildLayout_InJarNode__BehaviorDescriptor;
       case 43:
-        return myBuildSource_JavaLibrary_BehaviorDescriptor;
+        return myBuildSource_JavaLibrary__BehaviorDescriptor;
       case 44:
-        return myIWorkflowParticipant_BehaviorDescriptor;
+        return myIWorkflowParticipant__BehaviorDescriptor;
       case 45:
-        return myBuildPlugin_BehaviorDescriptor;
+        return myBuildPlugin__BehaviorDescriptor;
       case 46:
-        return myBuildJavaPlugin_BehaviorDescriptor;
+        return myBuildJavaPlugin__BehaviorDescriptor;
       case 47:
-        return myBuildSource_JavaDependencyExternalJar_BehaviorDescriptor;
+        return myBuildSource_JavaDependencyExternalJar__BehaviorDescriptor;
       case 48:
-        return myBuildLayout_War_BehaviorDescriptor;
+        return myBuildLayout_War__BehaviorDescriptor;
       case 49:
-        return myBuildLayout_PathElement_BehaviorDescriptor;
+        return myBuildLayout_PathElement__BehaviorDescriptor;
       case 50:
-        return myBuildExternalLayout_BehaviorDescriptor;
+        return myBuildExternalLayout__BehaviorDescriptor;
       case 51:
-        return myBuildLayout_FileStub_BehaviorDescriptor;
+        return myBuildLayout_FileStub__BehaviorDescriptor;
       case 52:
-        return myBuildExternalLayoutDependency_BehaviorDescriptor;
+        return myBuildExternalLayoutDependency__BehaviorDescriptor;
       case 53:
-        return myBuildRelativePath_BehaviorDescriptor;
+        return myBuildRelativePath__BehaviorDescriptor;
       case 54:
-        return myBuildLayout_AbstractContainer_BehaviorDescriptor;
+        return myBuildLayout_AbstractContainer__BehaviorDescriptor;
       case 55:
-        return myBuildLayout_Folder_BehaviorDescriptor;
+        return myBuildLayout_Folder__BehaviorDescriptor;
       case 56:
-        return myBuildLayout_Node_BehaviorDescriptor;
+        return myBuildLayout_Node__BehaviorDescriptor;
       case 57:
-        return myBuildLayout_NamedContainer_BehaviorDescriptor;
+        return myBuildLayout_NamedContainer__BehaviorDescriptor;
       case 58:
-        return myBuildLayout_Zip_BehaviorDescriptor;
+        return myBuildLayout_Zip__BehaviorDescriptor;
       case 59:
-        return myBuildLayout_Jar_BehaviorDescriptor;
+        return myBuildLayout_Jar__BehaviorDescriptor;
       case 60:
-        return myBuildSource_JavaModule_BehaviorDescriptor;
+        return myBuildSource_JavaModule__BehaviorDescriptor;
       case 61:
-        return myBuildSourcePath_BehaviorDescriptor;
+        return myBuildSourcePath__BehaviorDescriptor;
       case 62:
-        return myBuildFolderMacro_BehaviorDescriptor;
+        return myBuildFolderMacro__BehaviorDescriptor;
       case 63:
-        return myBuildSourceMacroRelativePath_BehaviorDescriptor;
+        return myBuildSourceMacroRelativePath__BehaviorDescriptor;
       case 64:
-        return myBuildLayout_EchoXml_BehaviorDescriptor;
+        return myBuildLayout_EchoXml__BehaviorDescriptor;
       case 65:
-        return myBuildLayout_Filemode_BehaviorDescriptor;
+        return myBuildLayout_Filemode__BehaviorDescriptor;
       case 66:
-        return myBuildLayout_Tar_BehaviorDescriptor;
+        return myBuildLayout_Tar__BehaviorDescriptor;
       case 67:
-        return myBuildCompositePath_BehaviorDescriptor;
+        return myBuildCompositePath__BehaviorDescriptor;
       case 68:
-        return myBuildLayout_File_BehaviorDescriptor;
+        return myBuildLayout_File__BehaviorDescriptor;
       case 69:
-        return myBuildLayout_CustomCopy_BehaviorDescriptor;
+        return myBuildLayout_CustomCopy__BehaviorDescriptor;
       case 70:
-        return myBuildLayout_AbstractCopy_BehaviorDescriptor;
+        return myBuildLayout_AbstractCopy__BehaviorDescriptor;
       case 71:
-        return myBuildStringContainer_BehaviorDescriptor;
+        return myBuildStringContainer__BehaviorDescriptor;
       default:
         return null;
     }

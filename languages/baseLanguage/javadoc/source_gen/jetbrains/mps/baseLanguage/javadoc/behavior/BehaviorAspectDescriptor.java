@@ -12,16 +12,16 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myClassifierDocComment_BehaviorDescriptor = new ClassifierDocComment_BehaviorDescriptor();
-  private final BHDescriptor myEmptyBlockDocTag_BehaviorDescriptor = new EmptyBlockDocTag_BehaviorDescriptor();
-  private final BHDescriptor myBaseDocComment_BehaviorDescriptor = new BaseDocComment_BehaviorDescriptor();
-  private final BHDescriptor myAuthorBlockDocTag_BehaviorDescriptor = new AuthorBlockDocTag_BehaviorDescriptor();
-  private final BHDescriptor myMethodDocComment_BehaviorDescriptor = new MethodDocComment_BehaviorDescriptor();
-  private final BHDescriptor myHTMLElement_BehaviorDescriptor = new HTMLElement_BehaviorDescriptor();
-  private final BHDescriptor myFieldDocComment_BehaviorDescriptor = new FieldDocComment_BehaviorDescriptor();
-  private final BHDescriptor myCommentLine_BehaviorDescriptor = new CommentLine_BehaviorDescriptor();
-  private final BHDescriptor myCommentLinePart_BehaviorDescriptor = new CommentLinePart_BehaviorDescriptor();
-  private final BHDescriptor myInlineTagCommentLinePart_BehaviorDescriptor = new InlineTagCommentLinePart_BehaviorDescriptor();
+  private final BHDescriptor myClassifierDocComment__BehaviorDescriptor = new ClassifierDocComment__BehaviorDescriptor();
+  private final BHDescriptor myEmptyBlockDocTag__BehaviorDescriptor = new EmptyBlockDocTag__BehaviorDescriptor();
+  private final BHDescriptor myBaseDocComment__BehaviorDescriptor = new BaseDocComment__BehaviorDescriptor();
+  private final BHDescriptor myAuthorBlockDocTag__BehaviorDescriptor = new AuthorBlockDocTag__BehaviorDescriptor();
+  private final BHDescriptor myMethodDocComment__BehaviorDescriptor = new MethodDocComment__BehaviorDescriptor();
+  private final BHDescriptor myHTMLElement__BehaviorDescriptor = new HTMLElement__BehaviorDescriptor();
+  private final BHDescriptor myFieldDocComment__BehaviorDescriptor = new FieldDocComment__BehaviorDescriptor();
+  private final BHDescriptor myCommentLine__BehaviorDescriptor = new CommentLine__BehaviorDescriptor();
+  private final BHDescriptor myCommentLinePart__BehaviorDescriptor = new CommentLinePart__BehaviorDescriptor();
+  private final BHDescriptor myInlineTagCommentLinePart__BehaviorDescriptor = new InlineTagCommentLinePart__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -51,25 +51,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myClassifierDocComment_BehaviorDescriptor;
+        return myClassifierDocComment__BehaviorDescriptor;
       case 1:
-        return myEmptyBlockDocTag_BehaviorDescriptor;
+        return myEmptyBlockDocTag__BehaviorDescriptor;
       case 2:
-        return myBaseDocComment_BehaviorDescriptor;
+        return myBaseDocComment__BehaviorDescriptor;
       case 3:
-        return myAuthorBlockDocTag_BehaviorDescriptor;
+        return myAuthorBlockDocTag__BehaviorDescriptor;
       case 4:
-        return myMethodDocComment_BehaviorDescriptor;
+        return myMethodDocComment__BehaviorDescriptor;
       case 5:
-        return myHTMLElement_BehaviorDescriptor;
+        return myHTMLElement__BehaviorDescriptor;
       case 6:
-        return myFieldDocComment_BehaviorDescriptor;
+        return myFieldDocComment__BehaviorDescriptor;
       case 7:
-        return myCommentLine_BehaviorDescriptor;
+        return myCommentLine__BehaviorDescriptor;
       case 8:
-        return myCommentLinePart_BehaviorDescriptor;
+        return myCommentLinePart__BehaviorDescriptor;
       case 9:
-        return myInlineTagCommentLinePart_BehaviorDescriptor;
+        return myInlineTagCommentLinePart__BehaviorDescriptor;
       default:
         return null;
     }

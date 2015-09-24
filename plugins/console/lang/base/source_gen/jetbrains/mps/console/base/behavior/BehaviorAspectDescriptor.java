@@ -12,24 +12,24 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myCommandHolder_BehaviorDescriptor = new CommandHolder_BehaviorDescriptor();
-  private final BHDescriptor myHelpCommand_BehaviorDescriptor = new HelpCommand_BehaviorDescriptor();
-  private final BHDescriptor myModifiedCommandHistoryItem_BehaviorDescriptor = new ModifiedCommandHistoryItem_BehaviorDescriptor();
-  private final BHDescriptor myProjectExpression_BehaviorDescriptor = new ProjectExpression_BehaviorDescriptor();
-  private final BHDescriptor myNodeWithClosure_BehaviorDescriptor = new NodeWithClosure_BehaviorDescriptor();
-  private final BHDescriptor myInterpretedCommand_BehaviorDescriptor = new InterpretedCommand_BehaviorDescriptor();
-  private final BHDescriptor myGeneratedCommand_BehaviorDescriptor = new GeneratedCommand_BehaviorDescriptor();
-  private final BHDescriptor myNodeReferenceString_BehaviorDescriptor = new NodeReferenceString_BehaviorDescriptor();
-  private final BHDescriptor myNodeReferencePresentation_BehaviorDescriptor = new NodeReferencePresentation_BehaviorDescriptor();
-  private final BHDescriptor myINodeWithReference_BehaviorDescriptor = new INodeWithReference_BehaviorDescriptor();
-  private final BHDescriptor myBLCommand_BehaviorDescriptor = new BLCommand_BehaviorDescriptor();
-  private final BHDescriptor myPastedNodeReference_BehaviorDescriptor = new PastedNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myExceptionHolder_BehaviorDescriptor = new ExceptionHolder_BehaviorDescriptor();
-  private final BHDescriptor myCommand_BehaviorDescriptor = new Command_BehaviorDescriptor();
-  private final BHDescriptor myPrintExpression_BehaviorDescriptor = new PrintExpression_BehaviorDescriptor();
-  private final BHDescriptor myBLExpression_BehaviorDescriptor = new BLExpression_BehaviorDescriptor();
-  private final BHDescriptor myAbstractPrintExpression_BehaviorDescriptor = new AbstractPrintExpression_BehaviorDescriptor();
-  private final BHDescriptor myIActionHolder_BehaviorDescriptor = new IActionHolder_BehaviorDescriptor();
+  private final BHDescriptor myCommandHolder__BehaviorDescriptor = new CommandHolder__BehaviorDescriptor();
+  private final BHDescriptor myHelpCommand__BehaviorDescriptor = new HelpCommand__BehaviorDescriptor();
+  private final BHDescriptor myModifiedCommandHistoryItem__BehaviorDescriptor = new ModifiedCommandHistoryItem__BehaviorDescriptor();
+  private final BHDescriptor myProjectExpression__BehaviorDescriptor = new ProjectExpression__BehaviorDescriptor();
+  private final BHDescriptor myNodeWithClosure__BehaviorDescriptor = new NodeWithClosure__BehaviorDescriptor();
+  private final BHDescriptor myInterpretedCommand__BehaviorDescriptor = new InterpretedCommand__BehaviorDescriptor();
+  private final BHDescriptor myGeneratedCommand__BehaviorDescriptor = new GeneratedCommand__BehaviorDescriptor();
+  private final BHDescriptor myNodeReferenceString__BehaviorDescriptor = new NodeReferenceString__BehaviorDescriptor();
+  private final BHDescriptor myNodeReferencePresentation__BehaviorDescriptor = new NodeReferencePresentation__BehaviorDescriptor();
+  private final BHDescriptor myINodeWithReference__BehaviorDescriptor = new INodeWithReference__BehaviorDescriptor();
+  private final BHDescriptor myBLCommand__BehaviorDescriptor = new BLCommand__BehaviorDescriptor();
+  private final BHDescriptor myPastedNodeReference__BehaviorDescriptor = new PastedNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myExceptionHolder__BehaviorDescriptor = new ExceptionHolder__BehaviorDescriptor();
+  private final BHDescriptor myCommand__BehaviorDescriptor = new Command__BehaviorDescriptor();
+  private final BHDescriptor myPrintExpression__BehaviorDescriptor = new PrintExpression__BehaviorDescriptor();
+  private final BHDescriptor myBLExpression__BehaviorDescriptor = new BLExpression__BehaviorDescriptor();
+  private final BHDescriptor myAbstractPrintExpression__BehaviorDescriptor = new AbstractPrintExpression__BehaviorDescriptor();
+  private final BHDescriptor myIActionHolder__BehaviorDescriptor = new IActionHolder__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -67,41 +67,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myCommandHolder_BehaviorDescriptor;
+        return myCommandHolder__BehaviorDescriptor;
       case 1:
-        return myHelpCommand_BehaviorDescriptor;
+        return myHelpCommand__BehaviorDescriptor;
       case 2:
-        return myModifiedCommandHistoryItem_BehaviorDescriptor;
+        return myModifiedCommandHistoryItem__BehaviorDescriptor;
       case 3:
-        return myProjectExpression_BehaviorDescriptor;
+        return myProjectExpression__BehaviorDescriptor;
       case 4:
-        return myNodeWithClosure_BehaviorDescriptor;
+        return myNodeWithClosure__BehaviorDescriptor;
       case 5:
-        return myInterpretedCommand_BehaviorDescriptor;
+        return myInterpretedCommand__BehaviorDescriptor;
       case 6:
-        return myGeneratedCommand_BehaviorDescriptor;
+        return myGeneratedCommand__BehaviorDescriptor;
       case 7:
-        return myNodeReferenceString_BehaviorDescriptor;
+        return myNodeReferenceString__BehaviorDescriptor;
       case 8:
-        return myNodeReferencePresentation_BehaviorDescriptor;
+        return myNodeReferencePresentation__BehaviorDescriptor;
       case 9:
-        return myINodeWithReference_BehaviorDescriptor;
+        return myINodeWithReference__BehaviorDescriptor;
       case 10:
-        return myBLCommand_BehaviorDescriptor;
+        return myBLCommand__BehaviorDescriptor;
       case 11:
-        return myPastedNodeReference_BehaviorDescriptor;
+        return myPastedNodeReference__BehaviorDescriptor;
       case 12:
-        return myExceptionHolder_BehaviorDescriptor;
+        return myExceptionHolder__BehaviorDescriptor;
       case 13:
-        return myCommand_BehaviorDescriptor;
+        return myCommand__BehaviorDescriptor;
       case 14:
-        return myPrintExpression_BehaviorDescriptor;
+        return myPrintExpression__BehaviorDescriptor;
       case 15:
-        return myBLExpression_BehaviorDescriptor;
+        return myBLExpression__BehaviorDescriptor;
       case 16:
-        return myAbstractPrintExpression_BehaviorDescriptor;
+        return myAbstractPrintExpression__BehaviorDescriptor;
       case 17:
-        return myIActionHolder_BehaviorDescriptor;
+        return myIActionHolder__BehaviorDescriptor;
       default:
         return null;
     }

@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MultipleForeachLoop_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MultipleForeachLoop__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class MultipleForeachLoop_BehaviorDescriptor extends BaseBHDescript
     return null;
   }
 
-  /*package*/ MultipleForeachLoop_BehaviorDescriptor() {
+  /*package*/ MultipleForeachLoop__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

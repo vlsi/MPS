@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SetAccessor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SetAccessor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117bd9ac3d9L, "jetbrains.mps.baseLanguage.structure.SetAccessor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class SetAccessor_BehaviorDescriptor extends BaseBHDescriptor {
     return new ArrayList<SNode>();
   }
 
-  /*package*/ SetAccessor_BehaviorDescriptor() {
+  /*package*/ SetAccessor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

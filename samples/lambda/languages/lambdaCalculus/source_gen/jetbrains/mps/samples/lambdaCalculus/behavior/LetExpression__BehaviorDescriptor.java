@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LetExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LetExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class LetExpression_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
 
-  /*package*/ LetExpression_BehaviorDescriptor() {
+  /*package*/ LetExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

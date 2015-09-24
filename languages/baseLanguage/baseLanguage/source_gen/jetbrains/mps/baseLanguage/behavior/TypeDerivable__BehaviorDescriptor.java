@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TypeDerivable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TypeDerivable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,10 +36,10 @@ public final class TypeDerivable_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   private static SNode deriveType_id3WSxnBOHz6M(@NotNull SNode __thisNode__, SNode expression, SNode link) {
-    return TypeDerivable_BehaviorDescriptor.deriveType_idhEwIVPz.invoke(__thisNode__, expression);
+    return TypeDerivable__BehaviorDescriptor.deriveType_idhEwIVPz.invoke(__thisNode__, expression);
   }
 
-  /*package*/ TypeDerivable_BehaviorDescriptor() {
+  /*package*/ TypeDerivable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

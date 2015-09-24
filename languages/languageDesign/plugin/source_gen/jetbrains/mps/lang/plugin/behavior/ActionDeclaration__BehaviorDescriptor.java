@@ -24,18 +24,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ActionDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ActionDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -54,7 +54,7 @@ public final class ActionDeclaration_BehaviorDescriptor extends BaseBHDescriptor
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Action";
   }
   private static String getGeneratedClassFQName_idhEwIGgK(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + ActionDeclaration_BehaviorDescriptor.getGeneratedName_idhEwIGgA.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + ActionDeclaration__BehaviorDescriptor.getGeneratedName_idhEwIGgA.invoke(__thisNode__);
   }
   private static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
     SNode type = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118c26632a3L, "jetbrains.mps.lang.plugin.structure.ActionType")));
@@ -66,18 +66,18 @@ public final class ActionDeclaration_BehaviorDescriptor extends BaseBHDescriptor
   }
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"))) {
-      SNode baseActionType = IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)", "~BaseAction"));
-      Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(baseActionType)).where(new IWhereFilter<SNode>() {
+      SNode baseActionType = IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)", "~BaseAction"));
+      Iterable<SNode> methods = Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         }
       });
       return Scopes.forMethods(kind, new MethodsScope(baseActionType, methods), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
 
-  /*package*/ ActionDeclaration_BehaviorDescriptor() {
+  /*package*/ ActionDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

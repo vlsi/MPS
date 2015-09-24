@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -19,7 +19,7 @@ public class typeof_CustomMapCreator_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = cmc;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918991", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918988", true), (SNode) CustomMapCreator_BehaviorDescriptor.createType_id1ny5gPbZSFj.invoke(cmc), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918988", true), (SNode) CustomMapCreator__BehaviorDescriptor.createType_id1ny5gPbZSFj.invoke(cmc), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {

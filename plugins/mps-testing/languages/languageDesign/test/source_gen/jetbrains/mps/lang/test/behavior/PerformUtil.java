@@ -16,24 +16,24 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class PerformUtil {
   public static void checkNodeHasError(SNode operation) {
-    final SNode nodeToCheck = NodeCheckOperation_BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
+    final SNode nodeToCheck = NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, MessageStatus.ERROR);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected error message";
 
-    Assert.assertTrue(errorString, IChecksRules_BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
+    Assert.assertTrue(errorString, IChecksRules__BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
   }
 
 
   public static void checkNodeHasWarning(SNode operation) {
-    final SNode nodeToCheck = NodeCheckOperation_BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
+    final SNode nodeToCheck = NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, MessageStatus.WARNING);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected warning message";
 
-    Assert.assertTrue(errorString, IChecksRules_BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
+    Assert.assertTrue(errorString, IChecksRules__BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
   }
 
   public static void checkNodeWithTypeCheckingAction(final SNode node, ITypechecking.Action checkingAction) {

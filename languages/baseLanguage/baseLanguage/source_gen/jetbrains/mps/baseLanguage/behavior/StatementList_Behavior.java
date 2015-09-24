@@ -27,13 +27,13 @@ public class StatementList_Behavior {
     SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L, "jetbrains.mps.baseLanguage.structure.IVariableReference"), false, new SAbstractConcept[]{})));
     for (SNode ref : reference) {
       boolean statementsContainsVar = false;
-      for (SNode parent : SNodeOperations.getNodeAncestors(IVariableReference_BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref), null, false)) {
+      for (SNode parent : SNodeOperations.getNodeAncestors(IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref), null, false)) {
         if (parent == SNodeOperations.getParent(__thisNode__)) {
           statementsContainsVar = true;
         }
       }
       if (!(statementsContainsVar)) {
-        SetSequence.fromSet(declarations).addElement(IVariableReference_BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref));
+        SetSequence.fromSet(declarations).addElement(IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref));
       }
     }
     return declarations;
@@ -43,10 +43,10 @@ public class StatementList_Behavior {
       return false;
     }
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"));
-    if (!(IContainsStatementList_BehaviorDescriptor.isStatementListCompactable_idi0zvp2S.invoke(parent))) {
+    if (!(IContainsStatementList__BehaviorDescriptor.isStatementListCompactable_idi0zvp2S.invoke(parent))) {
       return false;
     }
-    return IContainsStatementList_BehaviorDescriptor.isStatementListCompact_idi0zxZ6o.invoke(parent);
+    return IContainsStatementList__BehaviorDescriptor.isStatementListCompact_idi0zxZ6o.invoke(parent);
   }
   public static boolean call_isOneLiner_1237538811451(SNode __thisNode__) {
     if (ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count() > 1) {
@@ -65,12 +65,12 @@ public class StatementList_Behavior {
   }
   public static Set<SNode> call_uncaughtThrowables_3331512479731115649(SNode __thisNode__, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    StatementList_BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(__thisNode__, result, ignoreMayBeThrowables);
+    StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(__thisNode__, result, ignoreMayBeThrowables);
     return result;
   }
   public static void call_collectUncaughtThrowables_5412515780383134474(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")))) {
-      Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(statement, throwables, ignoreMayBeThrowables);
+      Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(statement, throwables, ignoreMayBeThrowables);
     }
   }
   public static SNode call_getFirstStatement_5420652334935371934(SNode __thisNode__) {

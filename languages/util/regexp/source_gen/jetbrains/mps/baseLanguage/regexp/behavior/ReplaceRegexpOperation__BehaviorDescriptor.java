@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReplaceRegexpOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReplaceRegexpOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,13 +36,13 @@ public final class ReplaceRegexpOperation_BehaviorDescriptor extends BaseBHDescr
     StringBuilder sb = new StringBuilder();
     for (SNode rep : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1923d18bL, "replacement"))) {
       if ((rep != null)) {
-        sb.append(Replacement_BehaviorDescriptor.toString_id3iI_KKpaF_p.invoke(rep, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))));
+        sb.append(Replacement__BehaviorDescriptor.toString_id3iI_KKpaF_p.invoke(rep, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))));
       }
     }
     return sb.toString();
   }
 
-  /*package*/ ReplaceRegexpOperation_BehaviorDescriptor() {
+  /*package*/ ReplaceRegexpOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

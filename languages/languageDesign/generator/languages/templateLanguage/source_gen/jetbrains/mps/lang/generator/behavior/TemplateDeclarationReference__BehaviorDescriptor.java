@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TemplateDeclarationReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TemplateDeclarationReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class TemplateDeclarationReference_BehaviorDescriptor extends BaseB
   }
 
   private static SNode getTemplateType_id6SoPMa83EEL(@NotNull SNode __thisNode__) {
-    SNode contentNode = SLinkOperations.getTarget(TemplateDeclarationReference_BehaviorDescriptor.getTemplate_idQzR6ThtRo7.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"));
+    SNode contentNode = SLinkOperations.getTarget(TemplateDeclarationReference__BehaviorDescriptor.getTemplate_idQzR6ThtRo7.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"));
     if ((contentNode != null)) {
       List<SNode> fragments = SNodeOperations.getNodeDescendants(contentNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SAbstractConcept[]{});
       if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
@@ -49,7 +49,7 @@ public final class TemplateDeclarationReference_BehaviorDescriptor extends BaseB
     return SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
   }
 
-  /*package*/ TemplateDeclarationReference_BehaviorDescriptor() {
+  /*package*/ TemplateDeclarationReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FromNToMTimesRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FromNToMTimesRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,11 +34,11 @@ public final class FromNToMTimesRegexp_BehaviorDescriptor extends BaseBHDescript
   }
 
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
-    String s = Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")), vars);
-    return ((UnaryRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(__thisNode__) ? Regexp_BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s)) + "{" + SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5bf75L, "n")) + "," + SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5ca73L, "m")) + "}";
+    String s = Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")), vars);
+    return ((UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(__thisNode__) ? Regexp__BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s)) + "{" + SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5bf75L, "n")) + "," + SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, 0x1118dc5ca73L, "m")) + "}";
   }
 
-  /*package*/ FromNToMTimesRegexp_BehaviorDescriptor() {
+  /*package*/ FromNToMTimesRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

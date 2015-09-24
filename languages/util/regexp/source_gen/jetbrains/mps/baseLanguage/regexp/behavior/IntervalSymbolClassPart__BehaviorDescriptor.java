@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IntervalSymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IntervalSymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class IntervalSymbolClassPart_BehaviorDescriptor extends BaseBHDesc
   }
 
   private static String getRepresentation_id75Jea4IEZbM(@NotNull SNode __thisNode__) {
-    return SymbolClassPart_BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, 0x1117921931aL, "start"))) + "-" + SymbolClassPart_BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, 0x11179219cfeL, "end")));
+    return SymbolClassPart__BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, 0x1117921931aL, "start"))) + "-" + SymbolClassPart__BehaviorDescriptor.escapeChar_id75Jea4IEVWQ.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, 0x11179219cfeL, "end")));
   }
 
-  /*package*/ IntervalSymbolClassPart_BehaviorDescriptor() {
+  /*package*/ IntervalSymbolClassPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

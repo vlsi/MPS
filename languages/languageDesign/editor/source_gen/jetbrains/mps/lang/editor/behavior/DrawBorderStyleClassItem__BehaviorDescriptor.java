@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DrawBorderStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DrawBorderStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class DrawBorderStyleClassItem_BehaviorDescriptor extends BaseBHDes
     return StyleAttributes.DRAW_BORDER;
   }
 
-  /*package*/ DrawBorderStyleClassItem_BehaviorDescriptor() {
+  /*package*/ DrawBorderStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

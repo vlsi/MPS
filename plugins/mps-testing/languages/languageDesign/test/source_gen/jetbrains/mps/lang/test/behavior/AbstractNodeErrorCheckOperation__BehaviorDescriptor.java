@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractNodeErrorCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractNodeErrorCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a195a9aL, "jetbrains.mps.lang.test.structure.AbstractNodeErrorCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,10 +36,10 @@ public final class AbstractNodeErrorCheckOperation_BehaviorDescriptor extends Ba
 
   private static String getDefaultName_id7scb9XJdmH2(@NotNull SNode __thisNode__) {
     String errorName;
-    if ((IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
+    if ((IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__) == null)) {
       errorName = "Error";
     } else {
-      errorName = IRuleReference_BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__));
+      errorName = IRuleReference__BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__));
     }
     return "Node" + errorName + "Check";
   }
@@ -47,10 +47,10 @@ public final class AbstractNodeErrorCheckOperation_BehaviorDescriptor extends Ba
     PerformUtil.checkNodeHasError(__thisNode__);
   }
   private static SNode getReferencedRuleNode_id2wBFdLy8qmt(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(IReferenceAttachable_BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));
+    return SLinkOperations.getTarget(IReferenceAttachable__BehaviorDescriptor.getReference_id7eBNsYUkslm.invoke(__thisNode__), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));
   }
 
-  /*package*/ AbstractNodeErrorCheckOperation_BehaviorDescriptor() {
+  /*package*/ AbstractNodeErrorCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

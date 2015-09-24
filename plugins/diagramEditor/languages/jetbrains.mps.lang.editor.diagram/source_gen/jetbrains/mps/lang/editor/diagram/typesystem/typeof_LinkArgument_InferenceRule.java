@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -22,7 +22,7 @@ public class typeof_LinkArgument_InferenceRule extends AbstractInferenceRule_Run
   public void applyRule(final SNode linkArgument, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode linkDeclaration = SLinkOperations.getTarget(linkArgument, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, 0x3f6e840fdc4a7a7L, "link"));
     if (linkDeclaration != null) {
-      if (LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
+      if (LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
         {
           SNode _nodeToCheck_1029348928467 = linkArgument;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582167761", 0, null);

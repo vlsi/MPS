@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class PersistentConfigurationTemplate_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PersistentConfigurationTemplate__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class PersistentConfigurationTemplate_BehaviorDescriptor extends Ba
     return createTemplatePersistentConfigurationType_3swbqk_a0a0(__thisNode__);
   }
 
-  /*package*/ PersistentConfigurationTemplate_BehaviorDescriptor() {
+  /*package*/ PersistentConfigurationTemplate__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

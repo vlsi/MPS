@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class AbstractNodeRefExpression_Behavior {
   public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode __thisNode__) {
     List<SNode> thisList = new ArrayList<SNode>();
-    ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression_BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
+    ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression__BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
     Iterable<SNode> children = thisList;
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     while (Sequence.fromIterable(children).isNotEmpty()) {

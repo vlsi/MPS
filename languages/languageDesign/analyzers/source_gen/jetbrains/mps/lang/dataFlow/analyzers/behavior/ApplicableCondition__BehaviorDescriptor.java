@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ApplicableCondition_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ApplicableCondition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919dd6d8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class ApplicableCondition_BehaviorDescriptor extends BaseBHDescript
   }
 
 
-  /*package*/ ApplicableCondition_BehaviorDescriptor() {
+  /*package*/ ApplicableCondition__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

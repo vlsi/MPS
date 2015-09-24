@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SkipStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SkipStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d16b423daL, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class SkipStatement_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ SkipStatement_BehaviorDescriptor() {
+  /*package*/ SkipStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

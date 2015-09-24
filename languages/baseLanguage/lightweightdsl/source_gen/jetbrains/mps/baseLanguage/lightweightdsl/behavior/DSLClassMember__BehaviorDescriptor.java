@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DSLClassMember_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DSLClassMember__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,10 +53,10 @@ public final class DSLClassMember_BehaviorDescriptor extends BaseBHDescriptor {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044804f29L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier"))).first();
   }
   private static SNode createForClass_id5BD$AU437jJ(@NotNull SNode __thisNode__, SNode cls) {
-    if (Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(__thisNode__, cls)).isNotEmpty()) {
+    if (Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(__thisNode__, cls)).isNotEmpty()) {
       return null;
     }
-    return (DSLClassMember_BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(__thisNode__) ? DSLClassMember_BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__) : ((DSLClassMember_BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__) != null) ? PlaceholderModifier_BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember_BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__)) : null));
+    return (DSLClassMember__BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(__thisNode__) ? DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__) : ((DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__) != null) ? PlaceholderModifier__BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__)) : null));
   }
   private static Iterable<SNode> findPlaceholders_id5ZzANK5B6wZ(@NotNull final SNode __thisNode__, SNode cls) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder"))).where(new IWhereFilter<SNode>() {
@@ -72,7 +72,7 @@ public final class DSLClassMember_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.getConcept(__thisNode__).getName();
   }
 
-  /*package*/ DSLClassMember_BehaviorDescriptor() {
+  /*package*/ DSLClassMember__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

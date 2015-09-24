@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSourceMacroRelativePath_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSourceMacroRelativePath__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,14 +36,14 @@ public final class BuildSourceMacroRelativePath_BehaviorDescriptor extends BaseB
   }
 
   private static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
-    return BuildFolderMacro_BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro")), context);
+    return BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro")), context);
   }
   private static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
-    String tail = BuildRelativePath_BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(__thisNode__);
+    String tail = BuildRelativePath__BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(__thisNode__);
     return ((tail == null || tail.length() == 0) ? "${" + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}" : "${" + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/" + tail);
   }
 
-  /*package*/ BuildSourceMacroRelativePath_BehaviorDescriptor() {
+  /*package*/ BuildSourceMacroRelativePath__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

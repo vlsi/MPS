@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.PropertyReference_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.Property_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.PropertyReference__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Property__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +21,7 @@ public class check_PropertyReferenceSetterVisibility_NonTypesystemRule extends A
   public check_PropertyReferenceSetterVisibility_NonTypesystemRule() {
   }
   public void applyRule(final SNode propertyReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(!(PropertyReference_BehaviorDescriptor.isBeingAssigned_id5WTl5xTCF5s.invoke(propertyReference)) || (Property_BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property"))) && Property_BehaviorDescriptor.isSetterVisible_id5WTl5xSBxvj.invoke(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), propertyReference)))) {
+    if (!(!(PropertyReference__BehaviorDescriptor.isBeingAssigned_id5WTl5xTCF5s.invoke(propertyReference)) || (Property__BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property"))) && Property__BehaviorDescriptor.isSetterVisible_id5WTl5xSBxvj.invoke(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(propertyReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), propertyReference)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyReference, "The property setter is out of search scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6861608246233000208", null, errorTarget);
     }

@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class StringPropertyInstance_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StringPropertyInstance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class StringPropertyInstance_BehaviorDescriptor extends BaseBHDescr
     return _quotation_createNode_2ank17_a0a0(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, 0x59e9926e84100d05L, "value")));
   }
 
-  /*package*/ StringPropertyInstance_BehaviorDescriptor() {
+  /*package*/ StringPropertyInstance__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

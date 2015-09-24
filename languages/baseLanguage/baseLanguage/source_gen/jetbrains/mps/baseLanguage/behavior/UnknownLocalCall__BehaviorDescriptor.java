@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnknownLocalCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnknownLocalCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L, "jetbrains.mps.baseLanguage.structure.UnknownLocalCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class UnknownLocalCall_BehaviorDescriptor extends BaseBHDescriptor 
     return ResolveUnknownUtil.resolveLocalCall(__thisNode__);
   }
 
-  /*package*/ UnknownLocalCall_BehaviorDescriptor() {
+  /*package*/ UnknownLocalCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

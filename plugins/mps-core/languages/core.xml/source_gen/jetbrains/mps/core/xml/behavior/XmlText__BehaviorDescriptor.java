@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlText_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlText__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class XmlText_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean hasNewLineAfter_id1Qs9WekVZ9E(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) != null)) {
-      return !(XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__));
+      return !(XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__));
     }
     return false;
   }
@@ -53,7 +53,7 @@ public final class XmlText_BehaviorDescriptor extends BaseBHDescriptor {
     SNode left = SNodeOperations.getPrevSibling(__thisNode__);
     if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"))) {
       SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"));
-      return XmlContent_BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(leftContent))) || isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) == null);
+      return XmlContent__BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(leftContent))) || isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) == null);
     }
     return false;
   }
@@ -61,7 +61,7 @@ public final class XmlText_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ XmlText_BehaviorDescriptor() {
+  /*package*/ XmlText__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

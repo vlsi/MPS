@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BeforeTask_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BeforeTask__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x61a8be33d403b7bfL, "jetbrains.mps.execution.configurations.structure.BeforeTask");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class BeforeTask_BehaviorDescriptor extends BaseBHDescriptor {
     return "BeforeTask";
   }
 
-  /*package*/ BeforeTask_BehaviorDescriptor() {
+  /*package*/ BeforeTask__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

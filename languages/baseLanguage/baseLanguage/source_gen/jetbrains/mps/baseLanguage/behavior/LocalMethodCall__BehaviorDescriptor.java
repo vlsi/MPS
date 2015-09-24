@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LocalMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LocalMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class LocalMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
       public boolean accept(SNode it) {
         return eq_am4i3v_a0a0a0a0a0a1a31(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
-    }).union(Sequence.fromIterable(Members.visibleInstanceMethods(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(wrappingClassifier), __thisNode__)).where(new IWhereFilter<SNode>() {
+    }).union(Sequence.fromIterable(Members.visibleInstanceMethods(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(wrappingClassifier), __thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_am4i3v_a0a0a0a0a0a0b0n(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
@@ -58,7 +58,7 @@ public final class LocalMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
 
   }
 
-  /*package*/ LocalMethodCall_BehaviorDescriptor() {
+  /*package*/ LocalMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

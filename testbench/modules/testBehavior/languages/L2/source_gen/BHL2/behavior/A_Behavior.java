@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class A_Behavior {
   public static Object call_nonVirtual_8715627930483250634(SNode __thisNode__) {
-    return A_BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(__thisNode__);
+    return A__BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(__thisNode__);
   }
 }

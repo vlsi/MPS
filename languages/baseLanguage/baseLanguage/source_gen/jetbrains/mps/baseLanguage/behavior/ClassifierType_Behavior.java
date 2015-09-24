@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 /**
  * will be removed after 3.3
@@ -24,7 +24,7 @@ public class ClassifierType_Behavior {
         if (parmsText.length() > 0) {
           parmsText = parmsText + ",";
         }
-        parmsText = parmsText + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(parm);
+        parmsText = parmsText + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(parm);
       }
       result = result + "<" + parmsText + ">";
     }

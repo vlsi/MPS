@@ -17,13 +17,13 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ApplyTo_Function_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ApplyTo_Function__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910129L, "jetbrains.mps.execution.settings.structure.ApplyTo_Function");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,21 +38,21 @@ public final class ApplyTo_Function_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   private static SNode getJavaMethod_idO$iR4J$gaJ(@NotNull SNode __thisNode__) {
-    return EditorOperationDeclaration_BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "applyEditorTo");
+    return EditorOperationDeclaration__BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "applyEditorTo");
   }
   private static SNode getPublicJavaMethod_idbkrofm9Fgz(@NotNull SNode __thisNode__) {
-    return EditorOperationDeclaration_BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "apply");
+    return EditorOperationDeclaration__BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "apply");
   }
   private static Boolean showName_id1653mnvAgry(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)", "946964771156067216"));
     return result;
   }
 
-  /*package*/ ApplyTo_Function_BehaviorDescriptor() {
+  /*package*/ ApplyTo_Function__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

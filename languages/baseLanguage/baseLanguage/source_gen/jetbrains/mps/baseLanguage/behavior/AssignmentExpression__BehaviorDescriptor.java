@@ -29,7 +29,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class AssignmentExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AssignmentExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -79,7 +79,7 @@ public final class AssignmentExpression_BehaviorDescriptor extends BaseBHDescrip
     return varDeclStmnt;
   }
 
-  /*package*/ AssignmentExpression_BehaviorDescriptor() {
+  /*package*/ AssignmentExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -28,8 +28,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect__BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -41,7 +41,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptBehavior__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -89,9 +89,9 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
     List<SNode> candidates = new ArrayList<SNode>();
     Map<SNode, SNode> concrete = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
-    for (SNode allSuper : ConceptBehavior_BehaviorDescriptor.getAllSuperBehaviors_id1$X$vL9L8i8.invoke(__thisNode__)) {
+    for (SNode allSuper : ConceptBehavior__BehaviorDescriptor.getAllSuperBehaviors_id1$X$vL9L8i8.invoke(__thisNode__)) {
       for (SNode meth : SLinkOperations.getChildren(allSuper, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))) {
-        SNode baseMeth = ConceptMethodDeclaration_BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(meth);
+        SNode baseMeth = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(meth);
         if (baseMeth != null && !(MapSequence.fromMap(concrete).containsKey(baseMeth))) {
           MapSequence.fromMap(concrete).put(baseMeth, meth);
           ListSequence.fromList(candidates).addElement(meth);
@@ -115,11 +115,11 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   private static List<SNode> getMethodsToImplement_id4GM03FJm5q2(@NotNull SNode __thisNode__) {
-    SNode baseNode = IConceptAspect_BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
+    SNode baseNode = IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
     if ((baseNode == null)) {
       return new ArrayList<SNode>();
     }
-    return AbstractConceptDeclaration_BehaviorDescriptor.getNotImplementedConceptMethods_idhEwILIz.invoke(baseNode);
+    return AbstractConceptDeclaration__BehaviorDescriptor.getNotImplementedConceptMethods_idhEwILIz.invoke(baseNode);
   }
   private static List<SNode> getAllSuperBehaviors_id1$X$vL9L8i8(@NotNull SNode __thisNode__) {
     Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
@@ -153,7 +153,7 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode concept : conceptResult) {
-      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
+      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       if (behavior != null) {
         ListSequence.fromList(result).addElement(behavior);
       }
@@ -170,7 +170,7 @@ public final class ConceptBehavior_BehaviorDescriptor extends BaseBHDescriptor {
     return NameUtil.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + BehaviorMethodNames.BEHAVIOR_DESCRIPTOR_SUFFIX;
   }
 
-  /*package*/ ConceptBehavior_BehaviorDescriptor() {
+  /*package*/ ConceptBehavior__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

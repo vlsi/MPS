@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Node_CopyWithTraceOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Node_CopyWithTraceOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL, "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class Node_CopyWithTraceOperation_BehaviorDescriptor extends BaseBH
     return true;
   }
 
-  /*package*/ Node_CopyWithTraceOperation_BehaviorDescriptor() {
+  /*package*/ Node_CopyWithTraceOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myDefaultGeneratorParameter_BehaviorDescriptor = new DefaultGeneratorParameter_BehaviorDescriptor();
+  private final BHDescriptor myDefaultGeneratorParameter__BehaviorDescriptor = new DefaultGeneratorParameter__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -33,7 +33,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myDefaultGeneratorParameter_BehaviorDescriptor;
+        return myDefaultGeneratorParameter__BehaviorDescriptor;
       default:
         return null;
     }

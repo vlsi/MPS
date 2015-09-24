@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ConceptFunctionParameter_Project_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunctionParameter_Project__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa1691a43L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class ConceptFunctionParameter_Project_BehaviorDescriptor extends B
     return _quotation_createNode_mi85nb_a0a0();
   }
 
-  /*package*/ ConceptFunctionParameter_Project_BehaviorDescriptor() {
+  /*package*/ ConceptFunctionParameter_Project__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

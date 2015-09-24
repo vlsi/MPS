@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,9 +26,9 @@ public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends Abstra
     while (SNodeOperations.isInstanceOf(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
       currentExpression = SLinkOperations.getTarget(SNodeOperations.cast(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"));
     }
-    if (Expression_BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(currentExpression)) {
+    if (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(currentExpression)) {
       SModule module = SNodeOperations.getModel(notExpression).getModule();
-      Object value = Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(currentExpression, module);
+      Object value = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(currentExpression, module);
       if (value != null && value instanceof Boolean) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

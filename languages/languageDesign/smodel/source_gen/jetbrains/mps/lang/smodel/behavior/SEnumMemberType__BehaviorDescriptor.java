@@ -25,7 +25,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SEnumMemberType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SEnumMemberType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class SEnumMemberType_BehaviorDescriptor extends BaseBHDescriptor {
     return variableSuffixes;
   }
 
-  /*package*/ SEnumMemberType_BehaviorDescriptor() {
+  /*package*/ SEnumMemberType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

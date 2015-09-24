@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class NodeSubstitutePreconditionFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeSubstitutePreconditionFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10ccb7b7b84L, "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,7 +55,7 @@ public final class NodeSubstitutePreconditionFunction_BehaviorDescriptor extends
     return _quotation_createNode_9lcps2_a0a2();
   }
 
-  /*package*/ NodeSubstitutePreconditionFunction_BehaviorDescriptor() {
+  /*package*/ NodeSubstitutePreconditionFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GenerationContextOp_PatternRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GenerationContextOp_PatternRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40edb6a16L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,7 +33,7 @@ public final class GenerationContextOp_PatternRef_BehaviorDescriptor extends Bas
   }
 
 
-  /*package*/ GenerationContextOp_PatternRef_BehaviorDescriptor() {
+  /*package*/ GenerationContextOp_PatternRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

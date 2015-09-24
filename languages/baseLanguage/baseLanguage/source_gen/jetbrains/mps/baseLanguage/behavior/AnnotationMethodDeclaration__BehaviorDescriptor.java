@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AnnotationMethodDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AnnotationMethodDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class AnnotationMethodDeclaration_BehaviorDescriptor extends BaseBH
         // nested array types are prohibited 
         return false;
       }
-      return AnnotationMethodDeclaration_BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(__thisNode__, componentType);
+      return AnnotationMethodDeclaration__BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(__thisNode__, componentType);
     }
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
@@ -74,7 +74,7 @@ public final class AnnotationMethodDeclaration_BehaviorDescriptor extends BaseBH
     return false;
   }
 
-  /*package*/ AnnotationMethodDeclaration_BehaviorDescriptor() {
+  /*package*/ AnnotationMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ReportExecutionError_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReportExecutionError__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfeL, "jetbrains.mps.execution.commands.structure.ReportExecutionError");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class ReportExecutionError_BehaviorDescriptor extends BaseBHDescrip
     return _quotation_createNode_l0tnuu_a0a0();
   }
 
-  /*package*/ ReportExecutionError_BehaviorDescriptor() {
+  /*package*/ ReportExecutionError__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

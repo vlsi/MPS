@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Make_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Make__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afcebfef23L, "jetbrains.mps.console.ideCommands.structure.Make");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class Make_BehaviorDescriptor extends BaseBHDescriptor {
     return "Makes the models specified as the argument.\nAccepts argument of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments is provided, make is invoked on the whole project.\nAffects only the models that need generation (marked by MPS as `generation required`).\nWith the option <withDependencies> set, the models specified in the argument are generated as well as their dependencies.";
   }
 
-  /*package*/ Make_BehaviorDescriptor() {
+  /*package*/ Make__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SuperConstructorInvocation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SuperConstructorInvocation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class SuperConstructorInvocation_BehaviorDescriptor extends BaseBHD
 
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     SNode classConcept = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
-    SNode superclassType = ClassConcept_BehaviorDescriptor.getSuperclass_idi3H_lLu.invoke(classConcept);
+    SNode superclassType = ClassConcept__BehaviorDescriptor.getSuperclass_idi3H_lLu.invoke(classConcept);
     if ((superclassType == null)) {
       return new ArrayList<SNode>();
     }
@@ -48,10 +48,10 @@ public final class SuperConstructorInvocation_BehaviorDescriptor extends BaseBHD
     }
 
     SNode superclass = SNodeOperations.cast(superClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(superclass);
+    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(superclass);
   }
 
-  /*package*/ SuperConstructorInvocation_BehaviorDescriptor() {
+  /*package*/ SuperConstructorInvocation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

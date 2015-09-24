@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -47,7 +47,7 @@ public class RemoveUsagesOfDeprecatedProperty extends MigrationScriptBase {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          IBLDeprecatable_BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(it);
+          IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(it);
           SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "" + (false));
         }
       });
@@ -66,7 +66,7 @@ public class RemoveUsagesOfDeprecatedProperty extends MigrationScriptBase {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          IBLDeprecatable_BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(it);
+          IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(it);
           SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "" + (false));
         }
       });

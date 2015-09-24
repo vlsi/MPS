@@ -19,12 +19,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StaticInitializer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StaticInitializer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class StaticInitializer_BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
@@ -53,7 +53,7 @@ public final class StaticInitializer_BehaviorDescriptor extends BaseBHDescriptor
     return true;
   }
 
-  /*package*/ StaticInitializer_BehaviorDescriptor() {
+  /*package*/ StaticInitializer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

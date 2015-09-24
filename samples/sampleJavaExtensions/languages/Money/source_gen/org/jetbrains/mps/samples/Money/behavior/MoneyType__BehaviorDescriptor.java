@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MoneyType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MoneyType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913516aL, "org.jetbrains.mps.samples.Money.structure.MoneyType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class MoneyType_BehaviorDescriptor extends BaseBHDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<String>(), "Savings", "Pennies", "Money", "Cash");
   }
 
-  /*package*/ MoneyType_BehaviorDescriptor() {
+  /*package*/ MoneyType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

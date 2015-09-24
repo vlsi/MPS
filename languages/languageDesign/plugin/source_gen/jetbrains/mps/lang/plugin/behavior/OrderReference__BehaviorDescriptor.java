@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class OrderReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class OrderReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, "jetbrains.mps.lang.plugin.structure.OrderReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,13 +34,13 @@ public final class OrderReference_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean presents_id1jgMklchcXk(@NotNull SNode __thisNode__, SNode tab) {
-    return OrderConstraints_BehaviorDescriptor.presents_id1jgMklchcXk.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, 0x22035699bdd79212L, "order")), tab);
+    return OrderConstraints__BehaviorDescriptor.presents_id1jgMklchcXk.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, 0x22035699bdd79212L, "order")), tab);
   }
   private static SNode getOrder_id2CFL3ni7A9T(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, 0x22035699bdd79212L, "order"));
   }
 
-  /*package*/ OrderReference_BehaviorDescriptor() {
+  /*package*/ OrderReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

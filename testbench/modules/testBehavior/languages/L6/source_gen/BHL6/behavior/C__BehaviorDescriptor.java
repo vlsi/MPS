@@ -21,7 +21,7 @@ import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class C_BehaviorDescriptor extends BaseBHDescriptor {
+public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Integer foo_id5mnatV0hxLf(@NotNull SAbstractConcept __thisConcept__) {
-    return C_BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__);
+    return C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__);
   }
   private static Integer bar_id5mnatV0hxLE(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -45,10 +45,10 @@ public final class C_BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.POLYMORPHIC_PARENT;
   }
   private static Object nonVirtual_id7zO8mNAVkj1(@NotNull SAbstractConcept __thisConcept__) {
-    return C_BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(__thisConcept__);
+    return C__BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(__thisConcept__);
   }
 
-  /*package*/ C_BehaviorDescriptor() {
+  /*package*/ C__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

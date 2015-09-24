@@ -23,7 +23,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor;
+import jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor;
 import java.awt.Dimension;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -146,7 +146,7 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
         super.paintComponent(graphics);
         SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            Shape_BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(node, graphics, 10, 10);
+            Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(node, graphics, 10, 10);
           }
         });
       }

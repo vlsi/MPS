@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DeprecatedAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DeprecatedAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class DeprecatedAnnotation_BehaviorDescriptor extends BaseBHDescrip
   }
 
 
-  /*package*/ DeprecatedAnnotation_BehaviorDescriptor() {
+  /*package*/ DeprecatedAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

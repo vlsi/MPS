@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Builder_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Builder__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,16 +43,16 @@ public final class Builder_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SNode getContextBuilder_id67LR$5LPgSh(@NotNull SNode __thisNode__) {
-    return Builder_BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(__thisNode__));
+    return Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(__thisNode__));
   }
   private static Boolean isLeaf_id67LR$5LQnln(@NotNull SNode __thisNode__) {
-    return Builder_BehaviorDescriptor.leaf_id1653mnvAgw2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return Builder__BehaviorDescriptor.leaf_id1653mnvAgw2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   private static SNode getResultType_id67LR$5LQPoF(@NotNull SNode __thisNode__) {
     return null;
   }
   private static SNode getAttachStatement_id6k$kQGI5UZ7(@NotNull SNode __thisNode__, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return Builder_BehaviorDescriptor.getAttachStatementChild_id4ak9ytIaIgr.invoke(childBuilder, __thisNode__, parentRef, childRef);
+    return Builder__BehaviorDescriptor.getAttachStatementChild_id4ak9ytIaIgr.invoke(childBuilder, __thisNode__, parentRef, childRef);
   }
   private static SNode getAttachStatementChild_id4ak9ytIaIgr(@NotNull SNode __thisNode__, SNode parentBuilder, SNode parentRef, SNode childRef) {
     throw new UnsupportedOperationException();
@@ -63,12 +63,12 @@ public final class Builder_BehaviorDescriptor extends BaseBHDescriptor {
   private static SNode getContextBuilder_id67LR$5LPv$c(@NotNull SAbstractConcept __thisConcept__, SNode context) {
     return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getInterfaceConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BuilderContainer_BehaviorDescriptor.isLeaf_idNLqHO$EE0f.invoke(it));
+        return !(BuilderContainer__BehaviorDescriptor.isLeaf_idNLqHO$EE0f.invoke(it));
       }
     }), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder"));
   }
 
-  /*package*/ Builder_BehaviorDescriptor() {
+  /*package*/ Builder__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

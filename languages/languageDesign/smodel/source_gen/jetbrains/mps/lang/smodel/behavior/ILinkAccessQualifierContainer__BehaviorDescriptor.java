@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ILinkAccessQualifierContainer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ILinkAccessQualifierContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312a67f61731e269L, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class ILinkAccessQualifierContainer_BehaviorDescriptor extends Base
   }
 
 
-  /*package*/ ILinkAccessQualifierContainer_BehaviorDescriptor() {
+  /*package*/ ILinkAccessQualifierContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

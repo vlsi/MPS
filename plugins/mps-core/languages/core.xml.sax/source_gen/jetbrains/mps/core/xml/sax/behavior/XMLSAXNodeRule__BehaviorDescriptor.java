@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class XMLSAXNodeRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXNodeRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class XMLSAXNodeRule_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ XMLSAXNodeRule_BehaviorDescriptor() {
+  /*package*/ XMLSAXNodeRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

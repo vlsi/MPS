@@ -26,7 +26,7 @@ import java.util.HashMap;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MoneyLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MoneyLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class MoneyLiteral_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static String getVariableExpectedName_idhEwJgm_(@NotNull SNode __thisNode__) {
-    String text = MoneyLiteral_BehaviorDescriptor.convertAmountAdvanced_idx3u75dl$Hd.invoke(__thisNode__, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount")));
+    String text = MoneyLiteral__BehaviorDescriptor.convertAmountAdvanced_idx3u75dl$Hd.invoke(__thisNode__, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount")));
     text += NameUtil.pluralize(NameUtil.capitalize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x3210b276d14435a8L, "unit")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))));
     return text;
   }
@@ -65,7 +65,7 @@ public final class MoneyLiteral_BehaviorDescriptor extends BaseBHDescriptor {
     return "my" + amount;
   }
 
-  /*package*/ MoneyLiteral_BehaviorDescriptor() {
+  /*package*/ MoneyLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

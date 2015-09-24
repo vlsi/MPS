@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class QueryFunction_SideTransform_Icon_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_SideTransform_Icon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cc7eba9L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class QueryFunction_SideTransform_Icon_BehaviorDescriptor extends B
     return _quotation_createNode_prgbdj_a0a1();
   }
 
-  /*package*/ QueryFunction_SideTransform_Icon_BehaviorDescriptor() {
+  /*package*/ QueryFunction_SideTransform_Icon__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExternalFigureReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExternalFigureReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,7 +52,7 @@ public final class ExternalFigureReference_BehaviorDescriptor extends BaseBHDesc
     });
   }
 
-  /*package*/ ExternalFigureReference_BehaviorDescriptor() {
+  /*package*/ ExternalFigureReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -19,9 +19,9 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,7 +35,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class JUnit3TestCaseRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class JUnit3TestCaseRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,12 +53,12 @@ public final class JUnit3TestCaseRef_BehaviorDescriptor extends BaseBHDescriptor
     return SLinkOperations.getTarget(SNodeOperations.as(testRef, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef")), MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass")) == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass"));
   }
   private static String fqClassName_id2$98zG5liRT(@NotNull SNode __thisNode__) {
-    return UnitConcept_BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass")));
+    return UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass")));
   }
   private static Iterable<String> testNames_id3z1mdFUF$j3(@NotNull SNode __thisNode__) {
     final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_6e9f36_a0a0a2(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"));
 
-    return Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass")))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType")) && SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("test") && !(ListSequence.fromList(SLinkOperations.getChildren(m, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {
@@ -73,11 +73,11 @@ public final class JUnit3TestCaseRef_BehaviorDescriptor extends BaseBHDescriptor
     });
   }
   private static Iterable<SNode> getTestClassesForModule_id1k5vvhzzWoK(@NotNull SAbstractConcept __thisConcept__, SNode module) {
-    return Sequence.fromIterable(ModuleSuite_BehaviorDescriptor.models_id173Z5qAOyPn.invoke(module)).translate(new ITranslator2<SModel, SNode>() {
+    return Sequence.fromIterable(ModuleSuite__BehaviorDescriptor.models_id173Z5qAOyPn.invoke(module)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return ListSequence.fromList(SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(it, SLinkOperations.getTarget(_quotation_createNode_6e9f36_a0a0a0a0a0a0a0a0a3(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+            return Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(it, SLinkOperations.getTarget(_quotation_createNode_6e9f36_a0a0a0a0a0a0a0a0a3(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
           }
         });
       }
@@ -88,7 +88,7 @@ public final class JUnit3TestCaseRef_BehaviorDescriptor extends BaseBHDescriptor
     });
   }
 
-  /*package*/ JUnit3TestCaseRef_BehaviorDescriptor() {
+  /*package*/ JUnit3TestCaseRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

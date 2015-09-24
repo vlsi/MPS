@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildString_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildString__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,12 +37,12 @@ public final class BuildString_BehaviorDescriptor extends BaseBHDescriptor {
   private static String getText_id3NagsOfTioI(@NotNull SNode __thisNode__, MacroHelper helper) {
     StringBuilder sb = new StringBuilder();
     for (SNode n : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")))) {
-      sb.append(BuildStringPart_BehaviorDescriptor.getText_id3NagsOfTq4Y.invoke(n, helper));
+      sb.append(BuildStringPart__BehaviorDescriptor.getText_id3NagsOfTq4Y.invoke(n, helper));
     }
     return sb.toString();
   }
 
-  /*package*/ BuildString_BehaviorDescriptor() {
+  /*package*/ BuildString__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

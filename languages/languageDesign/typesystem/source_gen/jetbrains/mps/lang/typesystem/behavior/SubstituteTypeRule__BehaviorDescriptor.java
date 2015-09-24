@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class SubstituteTypeRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SubstituteTypeRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class SubstituteTypeRule_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static void setBaseConcept_id5r_35Ihc58c(@NotNull SNode __thisNode__, SNode baseConcept) {
-    AbstractRule_BehaviorDescriptor.setBaseConcept_id5r_35Ihc58c.invokeSpecial(__thisNode__, baseConcept);
+    AbstractRule__BehaviorDescriptor.setBaseConcept_id5r_35Ihc58c.invokeSpecial(__thisNode__, baseConcept);
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "substituteType_" + SPropertyOperations.getString(baseConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   @Nullable
@@ -54,7 +54,7 @@ public final class SubstituteTypeRule_BehaviorDescriptor extends BaseBHDescripto
     return null;
   }
 
-  /*package*/ SubstituteTypeRule_BehaviorDescriptor() {
+  /*package*/ SubstituteTypeRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

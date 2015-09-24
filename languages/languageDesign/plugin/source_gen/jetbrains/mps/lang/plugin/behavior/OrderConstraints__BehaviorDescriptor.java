@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class OrderConstraints_BehaviorDescriptor extends BaseBHDescriptor {
+public final class OrderConstraints__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78145L, "jetbrains.mps.lang.plugin.structure.OrderConstraints");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,7 +33,7 @@ public final class OrderConstraints_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ OrderConstraints_BehaviorDescriptor() {
+  /*package*/ OrderConstraints__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

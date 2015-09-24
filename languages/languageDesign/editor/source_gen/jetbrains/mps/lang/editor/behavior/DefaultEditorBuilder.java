@@ -10,12 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -30,7 +30,7 @@ public class DefaultEditorBuilder {
   private SNode conceptDeclaration;
   public DefaultEditorBuilder(@NotNull SNode node) {
     editorNode = node;
-    conceptDeclaration = AbstractComponent_BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(node);
+    conceptDeclaration = AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(node);
   }
   public void buildStatementLike() {
     if (conceptDeclaration == null) {
@@ -43,12 +43,12 @@ public class DefaultEditorBuilder {
       addProperty(nameProperty);
     }
 
-    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     });
-    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
@@ -86,7 +86,7 @@ public class DefaultEditorBuilder {
         addLabel(camelToLabel(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))));
         addPunctuation(":");
         newLine();
-        if (LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
+        if (LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
           addRefNode(linkDeclaration);
         } else {
           addRefNodeList(linkDeclaration, null);
@@ -115,12 +115,12 @@ public class DefaultEditorBuilder {
       addProperty(nameProperty);
     }
 
-    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     });
-    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
@@ -149,14 +149,14 @@ public class DefaultEditorBuilder {
     }
     for (SNode linkDeclaration : ListSequence.fromList(children).sort(new ISelector<SNode, Boolean>() {
       public Boolean select(SNode it) {
-        return LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it);
+        return LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it);
       }
     }, false)) {
       if (!(first)) {
         addPunctuation(",");
       }
       addLabel(camelToLabel(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))));
-      if (LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
+      if (LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
         addPunctuation(":");
         addRefNode(linkDeclaration);
       } else {
@@ -178,13 +178,13 @@ public class DefaultEditorBuilder {
     for (SNode linkDeclaration : Sequence.fromIterable(references)) {
       addLabel(camelToLabel(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))));
       if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-        if (LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
+        if (LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
           addRefNode(linkDeclaration);
         } else {
           addRefNodeList(linkDeclaration, ",");
         }
       } else {
-        if (LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
+        if (LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(linkDeclaration)) {
           addRefCell(linkDeclaration);
         }
       }
@@ -319,7 +319,7 @@ public class DefaultEditorBuilder {
   }
   private SNode getNameProperty(SNode concept) {
     final Map<SNode, Integer> idProperties = MapSequence.fromMap(new HashMap<SNode, Integer>());
-    for (SNode property : ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
+    for (SNode property : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
       if (SNodeOperations.getParent(property) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }
@@ -347,7 +347,7 @@ public class DefaultEditorBuilder {
     if ((concept == null)) {
       return false;
     }
-    for (SNode prop : ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
+    for (SNode prop : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
       if (SNodeOperations.getParent(prop) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }
@@ -355,7 +355,7 @@ public class DefaultEditorBuilder {
     }
 
     int count = 0;
-    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(concept))) {
+    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(concept))) {
       if (SNodeOperations.getParent(link) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }

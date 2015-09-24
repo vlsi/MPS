@@ -33,8 +33,8 @@ public class IClassifierType_Behavior {
     }
 
     // this cache is safe, more complicated caches - think about it 
-    Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__), new ArrayList<SNode>());
-    for (SNode typeParameter : IClassifierType_BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(__thisNode__)) {
+    Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__), new ArrayList<SNode>());
+    for (SNode typeParameter : IClassifierType__BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(__thisNode__)) {
       if (SNodeOperations.isInstanceOf(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
         ListSequence.fromList(cacheKey._1()).addElement(SLinkOperations.getTarget(SNodeOperations.cast(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
       } else {
@@ -45,7 +45,7 @@ public class IClassifierType_Behavior {
     return RepositoryStateCacheUtils.getFromCache("IClassifierType_Behavior", cacheKey, new _FunctionTypes._return_P0_E0<ISequence<SNode>>() {
       public ISequence<SNode> invoke() {
         MembersPopulatingContext scope = new MembersPopulatingContext();
-        IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(__thisNode__, scope, __thisNode__);
+        IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(__thisNode__, scope, __thisNode__);
         return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
@@ -55,19 +55,19 @@ public class IClassifierType_Behavior {
     });
   }
   public static Iterable<SNode> call_getVisibleMembers_6145907390641297279(final SNode __thisNode__, final SNode contextNode) {
-    return Sequence.fromIterable(IClassifierType_BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return IClassifierMember_BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);
+        return IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);
       }
     });
   }
   public static void call_populateMembers_7405920559687241253(SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
-    SNode thisClassifier = IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__);
+    SNode thisClassifier = IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__);
 
     if ((thisClassifier != null)) {
       if (context.enterClassifierInternal(__thisNode__)) {
         try {
-          IClassifier_BehaviorDescriptor.populateMembers_id6r77ob2USUV.invoke(thisClassifier, context, classifier);
+          IClassifier__BehaviorDescriptor.populateMembers_id6r77ob2USUV.invoke(thisClassifier, context, classifier);
         } finally {
           context.exitClassifierInternal(__thisNode__);
         }

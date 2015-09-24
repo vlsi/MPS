@@ -12,74 +12,74 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myPropertyMacro_BehaviorDescriptor = new PropertyMacro_BehaviorDescriptor();
-  private final BHDescriptor myNodeMacro_BehaviorDescriptor = new NodeMacro_BehaviorDescriptor();
-  private final BHDescriptor myReferenceMacro_BehaviorDescriptor = new ReferenceMacro_BehaviorDescriptor();
-  private final BHDescriptor myTemplateDeclaration_BehaviorDescriptor = new TemplateDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfiguration_BehaviorDescriptor = new MappingConfiguration_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFragment_BehaviorDescriptor = new TemplateFragment_BehaviorDescriptor();
-  private final BHDescriptor myTemplateSwitch_BehaviorDescriptor = new TemplateSwitch_BehaviorDescriptor();
-  private final BHDescriptor mySwitchMacro_BehaviorDescriptor = new SwitchMacro_BehaviorDescriptor();
-  private final BHDescriptor myCopySrcNodeMacro_BehaviorDescriptor = new CopySrcNodeMacro_BehaviorDescriptor();
-  private final BHDescriptor myCopySrcListMacro_BehaviorDescriptor = new CopySrcListMacro_BehaviorDescriptor();
-  private final BHDescriptor myIfMacro_BehaviorDescriptor = new IfMacro_BehaviorDescriptor();
-  private final BHDescriptor myLoopMacro_BehaviorDescriptor = new LoopMacro_BehaviorDescriptor();
-  private final BHDescriptor myMapSrcNodeMacro_BehaviorDescriptor = new MapSrcNodeMacro_BehaviorDescriptor();
-  private final BHDescriptor myMapSrcListMacro_BehaviorDescriptor = new MapSrcListMacro_BehaviorDescriptor();
-  private final BHDescriptor myCreateRootRule_BehaviorDescriptor = new CreateRootRule_BehaviorDescriptor();
-  private final BHDescriptor myCreateRootRule_Condition_BehaviorDescriptor = new CreateRootRule_Condition_BehaviorDescriptor();
-  private final BHDescriptor myBaseMappingRule_Condition_BehaviorDescriptor = new BaseMappingRule_Condition_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFunctionParameter_sourceNode_BehaviorDescriptor = new TemplateFunctionParameter_sourceNode_BehaviorDescriptor();
-  private final BHDescriptor myBaseMappingRule_BehaviorDescriptor = new BaseMappingRule_BehaviorDescriptor();
-  private final BHDescriptor myReduction_MappingRule_BehaviorDescriptor = new Reduction_MappingRule_BehaviorDescriptor();
-  private final BHDescriptor myRoot_MappingRule_BehaviorDescriptor = new Root_MappingRule_BehaviorDescriptor();
-  private final BHDescriptor myPropertyMacro_GetPropertyValue_BehaviorDescriptor = new PropertyMacro_GetPropertyValue_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor = new TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor();
-  private final BHDescriptor myReferenceMacro_GetReferent_BehaviorDescriptor = new ReferenceMacro_GetReferent_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFunctionParameter_templateReferent_BehaviorDescriptor = new TemplateFunctionParameter_templateReferent_BehaviorDescriptor();
-  private final BHDescriptor myIfMacro_Condition_BehaviorDescriptor = new IfMacro_Condition_BehaviorDescriptor();
-  private final BHDescriptor mySourceSubstituteMacro_BehaviorDescriptor = new SourceSubstituteMacro_BehaviorDescriptor();
-  private final BHDescriptor mySourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor = new SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor();
-  private final BHDescriptor mySourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor = new SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor();
-  private final BHDescriptor myRuleConsequence_BehaviorDescriptor = new RuleConsequence_BehaviorDescriptor();
-  private final BHDescriptor myTemplateDeclarationReference_BehaviorDescriptor = new TemplateDeclarationReference_BehaviorDescriptor();
-  private final BHDescriptor myRootTemplateAnnotation_BehaviorDescriptor = new RootTemplateAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myMapSrcMacro_MapperFunction_BehaviorDescriptor = new MapSrcMacro_MapperFunction_BehaviorDescriptor();
-  private final BHDescriptor myInlineTemplate_RuleConsequence_BehaviorDescriptor = new InlineTemplate_RuleConsequence_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFragment_ContextNodeQuery_BehaviorDescriptor = new TemplateFragment_ContextNodeQuery_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFunctionParameter_mainContextNode_BehaviorDescriptor = new TemplateFunctionParameter_mainContextNode_BehaviorDescriptor();
-  private final BHDescriptor myWeaving_MappingRule_ContextNodeQuery_BehaviorDescriptor = new Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor();
-  private final BHDescriptor myTemplateFunctionParameter_parentOutputNode_BehaviorDescriptor = new TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor();
-  private final BHDescriptor myIncludeMacro_BehaviorDescriptor = new IncludeMacro_BehaviorDescriptor();
-  private final BHDescriptor myMappingScript_CodeBlock_BehaviorDescriptor = new MappingScript_CodeBlock_BehaviorDescriptor();
-  private final BHDescriptor myTemplateQueryBase_BehaviorDescriptor = new TemplateQueryBase_BehaviorDescriptor();
-  private final BHDescriptor myDropRootRule_Condition_BehaviorDescriptor = new DropRootRule_Condition_BehaviorDescriptor();
-  private final BHDescriptor myMapSrcMacro_PostMapperFunction_BehaviorDescriptor = new MapSrcMacro_PostMapperFunction_BehaviorDescriptor();
-  private final BHDescriptor myIGeneratorParameter_BehaviorDescriptor = new IGeneratorParameter_BehaviorDescriptor();
-  private final BHDescriptor myTemplateSwitchMacro_BehaviorDescriptor = new TemplateSwitchMacro_BehaviorDescriptor();
-  private final BHDescriptor myInsertMacro_BehaviorDescriptor = new InsertMacro_BehaviorDescriptor();
-  private final BHDescriptor myInsertMacro_CreateNodeQuery_BehaviorDescriptor = new InsertMacro_CreateNodeQuery_BehaviorDescriptor();
-  private final BHDescriptor myTemplateCallMacro_BehaviorDescriptor = new TemplateCallMacro_BehaviorDescriptor();
-  private final BHDescriptor myITemplateCall_BehaviorDescriptor = new ITemplateCall_BehaviorDescriptor();
-  private final BHDescriptor myPatternReduction_MappingRule_BehaviorDescriptor = new PatternReduction_MappingRule_BehaviorDescriptor();
-  private final BHDescriptor myWeaveMacro_BehaviorDescriptor = new WeaveMacro_BehaviorDescriptor();
-  private final BHDescriptor myTemplateArgumentQuery_BehaviorDescriptor = new TemplateArgumentQuery_BehaviorDescriptor();
-  private final BHDescriptor myTemplateArgumentPatternVarRefExpression_BehaviorDescriptor = new TemplateArgumentPatternVarRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myTemplateArgumentPatternRef_BehaviorDescriptor = new TemplateArgumentPatternRef_BehaviorDescriptor();
-  private final BHDescriptor myTemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor = new TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myTemplateArgumentLinkPatternRefExpression_BehaviorDescriptor = new TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myVarMacro_BehaviorDescriptor = new VarMacro_BehaviorDescriptor();
-  private final BHDescriptor myVarMacro_ValueQuery_BehaviorDescriptor = new VarMacro_ValueQuery_BehaviorDescriptor();
-  private final BHDescriptor myLabelMacro_BehaviorDescriptor = new LabelMacro_BehaviorDescriptor();
-  private final BHDescriptor myMarshalFunction_BehaviorDescriptor = new MarshalFunction_BehaviorDescriptor();
-  private final BHDescriptor myUnmarshalFunction_BehaviorDescriptor = new UnmarshalFunction_BehaviorDescriptor();
-  private final BHDescriptor myContextVariableProvider_BehaviorDescriptor = new ContextVariableProvider_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfiguration_Condition_BehaviorDescriptor = new MappingConfiguration_Condition_BehaviorDescriptor();
-  private final BHDescriptor myInlineTemplateWithContext_RuleConsequence_BehaviorDescriptor = new InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor();
-  private final BHDescriptor myNodeIdentity_BehaviorDescriptor = new NodeIdentity_BehaviorDescriptor();
-  private final BHDescriptor myTrivialNodeId_BehaviorDescriptor = new TrivialNodeId_BehaviorDescriptor();
-  private final BHDescriptor myModelIdentity_BehaviorDescriptor = new ModelIdentity_BehaviorDescriptor();
-  private final BHDescriptor myTrivialModelId_BehaviorDescriptor = new TrivialModelId_BehaviorDescriptor();
+  private final BHDescriptor myPropertyMacro__BehaviorDescriptor = new PropertyMacro__BehaviorDescriptor();
+  private final BHDescriptor myNodeMacro__BehaviorDescriptor = new NodeMacro__BehaviorDescriptor();
+  private final BHDescriptor myReferenceMacro__BehaviorDescriptor = new ReferenceMacro__BehaviorDescriptor();
+  private final BHDescriptor myTemplateDeclaration__BehaviorDescriptor = new TemplateDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfiguration__BehaviorDescriptor = new MappingConfiguration__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFragment__BehaviorDescriptor = new TemplateFragment__BehaviorDescriptor();
+  private final BHDescriptor myTemplateSwitch__BehaviorDescriptor = new TemplateSwitch__BehaviorDescriptor();
+  private final BHDescriptor mySwitchMacro__BehaviorDescriptor = new SwitchMacro__BehaviorDescriptor();
+  private final BHDescriptor myCopySrcNodeMacro__BehaviorDescriptor = new CopySrcNodeMacro__BehaviorDescriptor();
+  private final BHDescriptor myCopySrcListMacro__BehaviorDescriptor = new CopySrcListMacro__BehaviorDescriptor();
+  private final BHDescriptor myIfMacro__BehaviorDescriptor = new IfMacro__BehaviorDescriptor();
+  private final BHDescriptor myLoopMacro__BehaviorDescriptor = new LoopMacro__BehaviorDescriptor();
+  private final BHDescriptor myMapSrcNodeMacro__BehaviorDescriptor = new MapSrcNodeMacro__BehaviorDescriptor();
+  private final BHDescriptor myMapSrcListMacro__BehaviorDescriptor = new MapSrcListMacro__BehaviorDescriptor();
+  private final BHDescriptor myCreateRootRule__BehaviorDescriptor = new CreateRootRule__BehaviorDescriptor();
+  private final BHDescriptor myCreateRootRule_Condition__BehaviorDescriptor = new CreateRootRule_Condition__BehaviorDescriptor();
+  private final BHDescriptor myBaseMappingRule_Condition__BehaviorDescriptor = new BaseMappingRule_Condition__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_sourceNode__BehaviorDescriptor = new TemplateFunctionParameter_sourceNode__BehaviorDescriptor();
+  private final BHDescriptor myBaseMappingRule__BehaviorDescriptor = new BaseMappingRule__BehaviorDescriptor();
+  private final BHDescriptor myReduction_MappingRule__BehaviorDescriptor = new Reduction_MappingRule__BehaviorDescriptor();
+  private final BHDescriptor myRoot_MappingRule__BehaviorDescriptor = new Root_MappingRule__BehaviorDescriptor();
+  private final BHDescriptor myPropertyMacro_GetPropertyValue__BehaviorDescriptor = new PropertyMacro_GetPropertyValue__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor = new TemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor();
+  private final BHDescriptor myReferenceMacro_GetReferent__BehaviorDescriptor = new ReferenceMacro_GetReferent__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_templateReferent__BehaviorDescriptor = new TemplateFunctionParameter_templateReferent__BehaviorDescriptor();
+  private final BHDescriptor myIfMacro_Condition__BehaviorDescriptor = new IfMacro_Condition__BehaviorDescriptor();
+  private final BHDescriptor mySourceSubstituteMacro__BehaviorDescriptor = new SourceSubstituteMacro__BehaviorDescriptor();
+  private final BHDescriptor mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor = new SourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor();
+  private final BHDescriptor mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor = new SourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor();
+  private final BHDescriptor myRuleConsequence__BehaviorDescriptor = new RuleConsequence__BehaviorDescriptor();
+  private final BHDescriptor myTemplateDeclarationReference__BehaviorDescriptor = new TemplateDeclarationReference__BehaviorDescriptor();
+  private final BHDescriptor myRootTemplateAnnotation__BehaviorDescriptor = new RootTemplateAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myMapSrcMacro_MapperFunction__BehaviorDescriptor = new MapSrcMacro_MapperFunction__BehaviorDescriptor();
+  private final BHDescriptor myInlineTemplate_RuleConsequence__BehaviorDescriptor = new InlineTemplate_RuleConsequence__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFragment_ContextNodeQuery__BehaviorDescriptor = new TemplateFragment_ContextNodeQuery__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor = new TemplateFunctionParameter_mainContextNode__BehaviorDescriptor();
+  private final BHDescriptor myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor = new Weaving_MappingRule_ContextNodeQuery__BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor = new TemplateFunctionParameter_parentOutputNode__BehaviorDescriptor();
+  private final BHDescriptor myIncludeMacro__BehaviorDescriptor = new IncludeMacro__BehaviorDescriptor();
+  private final BHDescriptor myMappingScript_CodeBlock__BehaviorDescriptor = new MappingScript_CodeBlock__BehaviorDescriptor();
+  private final BHDescriptor myTemplateQueryBase__BehaviorDescriptor = new TemplateQueryBase__BehaviorDescriptor();
+  private final BHDescriptor myDropRootRule_Condition__BehaviorDescriptor = new DropRootRule_Condition__BehaviorDescriptor();
+  private final BHDescriptor myMapSrcMacro_PostMapperFunction__BehaviorDescriptor = new MapSrcMacro_PostMapperFunction__BehaviorDescriptor();
+  private final BHDescriptor myIGeneratorParameter__BehaviorDescriptor = new IGeneratorParameter__BehaviorDescriptor();
+  private final BHDescriptor myTemplateSwitchMacro__BehaviorDescriptor = new TemplateSwitchMacro__BehaviorDescriptor();
+  private final BHDescriptor myInsertMacro__BehaviorDescriptor = new InsertMacro__BehaviorDescriptor();
+  private final BHDescriptor myInsertMacro_CreateNodeQuery__BehaviorDescriptor = new InsertMacro_CreateNodeQuery__BehaviorDescriptor();
+  private final BHDescriptor myTemplateCallMacro__BehaviorDescriptor = new TemplateCallMacro__BehaviorDescriptor();
+  private final BHDescriptor myITemplateCall__BehaviorDescriptor = new ITemplateCall__BehaviorDescriptor();
+  private final BHDescriptor myPatternReduction_MappingRule__BehaviorDescriptor = new PatternReduction_MappingRule__BehaviorDescriptor();
+  private final BHDescriptor myWeaveMacro__BehaviorDescriptor = new WeaveMacro__BehaviorDescriptor();
+  private final BHDescriptor myTemplateArgumentQuery__BehaviorDescriptor = new TemplateArgumentQuery__BehaviorDescriptor();
+  private final BHDescriptor myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor = new TemplateArgumentPatternVarRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myTemplateArgumentPatternRef__BehaviorDescriptor = new TemplateArgumentPatternRef__BehaviorDescriptor();
+  private final BHDescriptor myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor = new TemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor = new TemplateArgumentLinkPatternRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myVarMacro__BehaviorDescriptor = new VarMacro__BehaviorDescriptor();
+  private final BHDescriptor myVarMacro_ValueQuery__BehaviorDescriptor = new VarMacro_ValueQuery__BehaviorDescriptor();
+  private final BHDescriptor myLabelMacro__BehaviorDescriptor = new LabelMacro__BehaviorDescriptor();
+  private final BHDescriptor myMarshalFunction__BehaviorDescriptor = new MarshalFunction__BehaviorDescriptor();
+  private final BHDescriptor myUnmarshalFunction__BehaviorDescriptor = new UnmarshalFunction__BehaviorDescriptor();
+  private final BHDescriptor myContextVariableProvider__BehaviorDescriptor = new ContextVariableProvider__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfiguration_Condition__BehaviorDescriptor = new MappingConfiguration_Condition__BehaviorDescriptor();
+  private final BHDescriptor myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor = new InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor();
+  private final BHDescriptor myNodeIdentity__BehaviorDescriptor = new NodeIdentity__BehaviorDescriptor();
+  private final BHDescriptor myTrivialNodeId__BehaviorDescriptor = new TrivialNodeId__BehaviorDescriptor();
+  private final BHDescriptor myModelIdentity__BehaviorDescriptor = new ModelIdentity__BehaviorDescriptor();
+  private final BHDescriptor myTrivialModelId__BehaviorDescriptor = new TrivialModelId__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -167,141 +167,141 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myPropertyMacro_BehaviorDescriptor;
+        return myPropertyMacro__BehaviorDescriptor;
       case 1:
-        return myNodeMacro_BehaviorDescriptor;
+        return myNodeMacro__BehaviorDescriptor;
       case 2:
-        return myReferenceMacro_BehaviorDescriptor;
+        return myReferenceMacro__BehaviorDescriptor;
       case 3:
-        return myTemplateDeclaration_BehaviorDescriptor;
+        return myTemplateDeclaration__BehaviorDescriptor;
       case 4:
-        return myMappingConfiguration_BehaviorDescriptor;
+        return myMappingConfiguration__BehaviorDescriptor;
       case 5:
-        return myTemplateFragment_BehaviorDescriptor;
+        return myTemplateFragment__BehaviorDescriptor;
       case 6:
-        return myTemplateSwitch_BehaviorDescriptor;
+        return myTemplateSwitch__BehaviorDescriptor;
       case 7:
-        return mySwitchMacro_BehaviorDescriptor;
+        return mySwitchMacro__BehaviorDescriptor;
       case 8:
-        return myCopySrcNodeMacro_BehaviorDescriptor;
+        return myCopySrcNodeMacro__BehaviorDescriptor;
       case 9:
-        return myCopySrcListMacro_BehaviorDescriptor;
+        return myCopySrcListMacro__BehaviorDescriptor;
       case 10:
-        return myIfMacro_BehaviorDescriptor;
+        return myIfMacro__BehaviorDescriptor;
       case 11:
-        return myLoopMacro_BehaviorDescriptor;
+        return myLoopMacro__BehaviorDescriptor;
       case 12:
-        return myMapSrcNodeMacro_BehaviorDescriptor;
+        return myMapSrcNodeMacro__BehaviorDescriptor;
       case 13:
-        return myMapSrcListMacro_BehaviorDescriptor;
+        return myMapSrcListMacro__BehaviorDescriptor;
       case 14:
-        return myCreateRootRule_BehaviorDescriptor;
+        return myCreateRootRule__BehaviorDescriptor;
       case 15:
-        return myCreateRootRule_Condition_BehaviorDescriptor;
+        return myCreateRootRule_Condition__BehaviorDescriptor;
       case 16:
-        return myBaseMappingRule_Condition_BehaviorDescriptor;
+        return myBaseMappingRule_Condition__BehaviorDescriptor;
       case 17:
-        return myTemplateFunctionParameter_sourceNode_BehaviorDescriptor;
+        return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
       case 18:
-        return myBaseMappingRule_BehaviorDescriptor;
+        return myBaseMappingRule__BehaviorDescriptor;
       case 19:
-        return myReduction_MappingRule_BehaviorDescriptor;
+        return myReduction_MappingRule__BehaviorDescriptor;
       case 20:
-        return myRoot_MappingRule_BehaviorDescriptor;
+        return myRoot_MappingRule__BehaviorDescriptor;
       case 21:
-        return myPropertyMacro_GetPropertyValue_BehaviorDescriptor;
+        return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
       case 22:
-        return myTemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor;
+        return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
       case 23:
-        return myReferenceMacro_GetReferent_BehaviorDescriptor;
+        return myReferenceMacro_GetReferent__BehaviorDescriptor;
       case 24:
-        return myTemplateFunctionParameter_templateReferent_BehaviorDescriptor;
+        return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
       case 25:
-        return myIfMacro_Condition_BehaviorDescriptor;
+        return myIfMacro_Condition__BehaviorDescriptor;
       case 26:
-        return mySourceSubstituteMacro_BehaviorDescriptor;
+        return mySourceSubstituteMacro__BehaviorDescriptor;
       case 27:
-        return mySourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor;
+        return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
       case 28:
-        return mySourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor;
+        return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
       case 29:
-        return myRuleConsequence_BehaviorDescriptor;
+        return myRuleConsequence__BehaviorDescriptor;
       case 30:
-        return myTemplateDeclarationReference_BehaviorDescriptor;
+        return myTemplateDeclarationReference__BehaviorDescriptor;
       case 31:
-        return myRootTemplateAnnotation_BehaviorDescriptor;
+        return myRootTemplateAnnotation__BehaviorDescriptor;
       case 32:
-        return myMapSrcMacro_MapperFunction_BehaviorDescriptor;
+        return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
       case 33:
-        return myInlineTemplate_RuleConsequence_BehaviorDescriptor;
+        return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
       case 34:
-        return myTemplateFragment_ContextNodeQuery_BehaviorDescriptor;
+        return myTemplateFragment_ContextNodeQuery__BehaviorDescriptor;
       case 35:
-        return myTemplateFunctionParameter_mainContextNode_BehaviorDescriptor;
+        return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
       case 36:
-        return myWeaving_MappingRule_ContextNodeQuery_BehaviorDescriptor;
+        return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
       case 37:
-        return myTemplateFunctionParameter_parentOutputNode_BehaviorDescriptor;
+        return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
       case 38:
-        return myIncludeMacro_BehaviorDescriptor;
+        return myIncludeMacro__BehaviorDescriptor;
       case 39:
-        return myMappingScript_CodeBlock_BehaviorDescriptor;
+        return myMappingScript_CodeBlock__BehaviorDescriptor;
       case 40:
-        return myTemplateQueryBase_BehaviorDescriptor;
+        return myTemplateQueryBase__BehaviorDescriptor;
       case 41:
-        return myDropRootRule_Condition_BehaviorDescriptor;
+        return myDropRootRule_Condition__BehaviorDescriptor;
       case 42:
-        return myMapSrcMacro_PostMapperFunction_BehaviorDescriptor;
+        return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
       case 43:
-        return myIGeneratorParameter_BehaviorDescriptor;
+        return myIGeneratorParameter__BehaviorDescriptor;
       case 44:
-        return myTemplateSwitchMacro_BehaviorDescriptor;
+        return myTemplateSwitchMacro__BehaviorDescriptor;
       case 45:
-        return myInsertMacro_BehaviorDescriptor;
+        return myInsertMacro__BehaviorDescriptor;
       case 46:
-        return myInsertMacro_CreateNodeQuery_BehaviorDescriptor;
+        return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
       case 47:
-        return myTemplateCallMacro_BehaviorDescriptor;
+        return myTemplateCallMacro__BehaviorDescriptor;
       case 48:
-        return myITemplateCall_BehaviorDescriptor;
+        return myITemplateCall__BehaviorDescriptor;
       case 49:
-        return myPatternReduction_MappingRule_BehaviorDescriptor;
+        return myPatternReduction_MappingRule__BehaviorDescriptor;
       case 50:
-        return myWeaveMacro_BehaviorDescriptor;
+        return myWeaveMacro__BehaviorDescriptor;
       case 51:
-        return myTemplateArgumentQuery_BehaviorDescriptor;
+        return myTemplateArgumentQuery__BehaviorDescriptor;
       case 52:
-        return myTemplateArgumentPatternVarRefExpression_BehaviorDescriptor;
+        return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
       case 53:
-        return myTemplateArgumentPatternRef_BehaviorDescriptor;
+        return myTemplateArgumentPatternRef__BehaviorDescriptor;
       case 54:
-        return myTemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor;
+        return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
       case 55:
-        return myTemplateArgumentLinkPatternRefExpression_BehaviorDescriptor;
+        return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
       case 56:
-        return myVarMacro_BehaviorDescriptor;
+        return myVarMacro__BehaviorDescriptor;
       case 57:
-        return myVarMacro_ValueQuery_BehaviorDescriptor;
+        return myVarMacro_ValueQuery__BehaviorDescriptor;
       case 58:
-        return myLabelMacro_BehaviorDescriptor;
+        return myLabelMacro__BehaviorDescriptor;
       case 59:
-        return myMarshalFunction_BehaviorDescriptor;
+        return myMarshalFunction__BehaviorDescriptor;
       case 60:
-        return myUnmarshalFunction_BehaviorDescriptor;
+        return myUnmarshalFunction__BehaviorDescriptor;
       case 61:
-        return myContextVariableProvider_BehaviorDescriptor;
+        return myContextVariableProvider__BehaviorDescriptor;
       case 62:
-        return myMappingConfiguration_Condition_BehaviorDescriptor;
+        return myMappingConfiguration_Condition__BehaviorDescriptor;
       case 63:
-        return myInlineTemplateWithContext_RuleConsequence_BehaviorDescriptor;
+        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
       case 64:
-        return myNodeIdentity_BehaviorDescriptor;
+        return myNodeIdentity__BehaviorDescriptor;
       case 65:
-        return myTrivialNodeId_BehaviorDescriptor;
+        return myTrivialNodeId__BehaviorDescriptor;
       case 66:
-        return myModelIdentity_BehaviorDescriptor;
+        return myModelIdentity__BehaviorDescriptor;
       case 67:
-        return myTrivialModelId_BehaviorDescriptor;
+        return myTrivialModelId__BehaviorDescriptor;
       default:
         return null;
     }

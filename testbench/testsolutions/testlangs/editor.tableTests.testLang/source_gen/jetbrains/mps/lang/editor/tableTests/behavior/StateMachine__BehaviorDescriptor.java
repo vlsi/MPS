@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StateMachine_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StateMachine__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, "jetbrains.mps.lang.editor.tableTests.structure.StateMachine");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class StateMachine_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ StateMachine_BehaviorDescriptor() {
+  /*package*/ StateMachine__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

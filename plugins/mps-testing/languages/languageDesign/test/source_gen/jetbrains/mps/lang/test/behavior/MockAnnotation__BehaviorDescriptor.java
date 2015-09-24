@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MockAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MockAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e6f14cfccL, "jetbrains.mps.lang.test.structure.MockAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class MockAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ MockAnnotation_BehaviorDescriptor() {
+  /*package*/ MockAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

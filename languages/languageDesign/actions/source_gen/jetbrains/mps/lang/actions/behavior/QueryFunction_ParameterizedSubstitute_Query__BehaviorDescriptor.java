@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ece8624L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -69,7 +69,7 @@ public final class QueryFunction_ParameterizedSubstitute_Query_BehaviorDescripto
     return result;
   }
 
-  /*package*/ QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor() {
+  /*package*/ QueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

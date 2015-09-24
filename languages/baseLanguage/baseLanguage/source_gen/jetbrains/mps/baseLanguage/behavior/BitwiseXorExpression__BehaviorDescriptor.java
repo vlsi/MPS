@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BitwiseXorExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BitwiseXorExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef69abL, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class BitwiseXorExpression_BehaviorDescriptor extends BaseBHDescrip
     return 5;
   }
 
-  /*package*/ BitwiseXorExpression_BehaviorDescriptor() {
+  /*package*/ BitwiseXorExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

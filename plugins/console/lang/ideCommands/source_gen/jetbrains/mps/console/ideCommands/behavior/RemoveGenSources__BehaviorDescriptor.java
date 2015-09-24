@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RemoveGenSources_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RemoveGenSources__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a11bL, "jetbrains.mps.console.ideCommands.structure.RemoveGenSources");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class RemoveGenSources_BehaviorDescriptor extends BaseBHDescriptor 
     return "delete the source_gen, source_gen.caches and classes_gen directories";
   }
 
-  /*package*/ RemoveGenSources_BehaviorDescriptor() {
+  /*package*/ RemoveGenSources__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

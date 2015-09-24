@@ -23,7 +23,7 @@ public class MathSymbol_Behavior {
     }
     SNode ms = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), false, false);
     if (ms != null) {
-      MathSymbol_BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, __thisNode__, indices);
+      MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, __thisNode__, indices);
     }
   }
   public static List<SNode> call_getEmptyIndexList_1237828382992(SNode __thisNode__) {

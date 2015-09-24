@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CompactInvokeFunctionExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CompactInvokeFunctionExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class CompactInvokeFunctionExpression_BehaviorDescriptor extends Ba
     return true;
   }
 
-  /*package*/ CompactInvokeFunctionExpression_BehaviorDescriptor() {
+  /*package*/ CompactInvokeFunctionExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

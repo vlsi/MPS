@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSource_JavaLibraryExternalJar_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSource_JavaLibraryExternalJar__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class BuildSource_JavaLibraryExternalJar_BehaviorDescriptor extends
   }
 
   private static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    Tuples._2<SNode, Boolean> artifact = BuildSource_JavaExternalJarRef_BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar")), artifacts);
+    Tuples._2<SNode, Boolean> artifact = BuildSource_JavaExternalJarRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar")), artifacts);
     if (artifact != null) {
       if ((boolean) artifact._1()) {
         builder.addWithContent(artifact._0());
@@ -46,7 +46,7 @@ public final class BuildSource_JavaLibraryExternalJar_BehaviorDescriptor extends
     }
   }
 
-  /*package*/ BuildSource_JavaLibraryExternalJar_BehaviorDescriptor() {
+  /*package*/ BuildSource_JavaLibraryExternalJar__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

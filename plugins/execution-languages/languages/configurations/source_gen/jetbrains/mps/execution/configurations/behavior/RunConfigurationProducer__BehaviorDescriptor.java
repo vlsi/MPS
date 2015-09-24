@@ -17,13 +17,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RunConfigurationProducer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RunConfigurationProducer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class RunConfigurationProducer_BehaviorDescriptor extends BaseBHDes
   }
 
   private static String getDisplayedName_id3MnZbusxbtz(@NotNull SNode __thisNode__) {
-    return IGeneratedToClass_BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(__thisNode__) + " " + IGeneratedToClass_BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(__thisNode__) + " " + IGeneratedToClass__BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(__thisNode__);
   }
   @NonNls
   private static String getSuffix_idO$iR4JBsSb(@NotNull SNode __thisNode__) {
@@ -50,7 +50,7 @@ public final class RunConfigurationProducer_BehaviorDescriptor extends BaseBHDes
     return check_5u07ui_a1a2(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, 0x3c97fcb79c84a8efL, "configuration")), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")));
   }
 
-  /*package*/ RunConfigurationProducer_BehaviorDescriptor() {
+  /*package*/ RunConfigurationProducer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -102,7 +102,7 @@ public final class RunConfigurationProducer_BehaviorDescriptor extends BaseBHDes
   }
   private static String check_5u07ui_a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return IGeneratedToClass_BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(checkedDotOperand);
+      return IGeneratedToClass__BehaviorDescriptor.getBaseName_id3MnZbusxcPI.invoke(checkedDotOperand);
     }
     return null;
   }

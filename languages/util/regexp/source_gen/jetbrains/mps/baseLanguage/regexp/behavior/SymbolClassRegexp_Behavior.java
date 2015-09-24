@@ -14,7 +14,7 @@ public class SymbolClassRegexp_Behavior {
   public static String call_partsToString_1222857748873(SNode __thisNode__, List<SNode> parts) {
     StringBuilder result = new StringBuilder();
     for (SNode part : parts) {
-      result.append(SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
+      result.append(SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
     }
     return result.toString();
   }

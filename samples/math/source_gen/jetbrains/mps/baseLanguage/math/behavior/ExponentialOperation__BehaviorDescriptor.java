@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExponentialOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExponentialOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class ExponentialOperation_BehaviorDescriptor extends BaseBHDescrip
     return result;
   }
 
-  /*package*/ ExponentialOperation_BehaviorDescriptor() {
+  /*package*/ ExponentialOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

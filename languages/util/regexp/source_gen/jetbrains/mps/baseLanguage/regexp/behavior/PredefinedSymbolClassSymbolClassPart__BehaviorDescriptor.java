@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor exten
     return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, 0x111792942ceL, "declaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 
-  /*package*/ PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor() {
+  /*package*/ PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

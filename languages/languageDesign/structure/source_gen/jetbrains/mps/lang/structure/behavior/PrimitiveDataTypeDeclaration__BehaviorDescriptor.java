@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class PrimitiveDataTypeDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PrimitiveDataTypeDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class PrimitiveDataTypeDeclaration_BehaviorDescriptor extends BaseB
     return Primitives.BOOLEAN_TYPE.equals(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 
-  /*package*/ PrimitiveDataTypeDeclaration_BehaviorDescriptor() {
+  /*package*/ PrimitiveDataTypeDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

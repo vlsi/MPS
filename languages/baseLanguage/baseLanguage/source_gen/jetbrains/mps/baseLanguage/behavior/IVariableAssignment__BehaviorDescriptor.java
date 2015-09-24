@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IVariableAssignment_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IVariableAssignment__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11cfb3b82a4L, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class IVariableAssignment_BehaviorDescriptor extends BaseBHDescript
     return true;
   }
 
-  /*package*/ IVariableAssignment_BehaviorDescriptor() {
+  /*package*/ IVariableAssignment__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

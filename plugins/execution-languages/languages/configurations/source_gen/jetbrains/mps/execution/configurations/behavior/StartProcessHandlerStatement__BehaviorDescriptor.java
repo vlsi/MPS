@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StartProcessHandlerStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StartProcessHandlerStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,13 +40,13 @@ public final class StartProcessHandlerStatement_BehaviorDescriptor extends BaseB
   }
 
   private static SNode getComponent_id1ovLDatOk_Z(@NotNull SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "component");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "component");
   }
   private static SNode getDispose_id1ovLDatOkDx(@NotNull SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose");
   }
   private static SNode getListener_id1ovLDatOkE5(@NotNull SNode __thisNode__) {
-    return StartProcessHandlerStatement_BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener");
+    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener");
   }
   private static SNode getComponentByName_id1ovLDatOkEK(@NotNull SNode __thisNode__, final String name) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, 0x161fc6929dcff3a0L, "tool")) == null)) {
@@ -63,7 +63,7 @@ public final class StartProcessHandlerStatement_BehaviorDescriptor extends BaseB
     return null;
   }
 
-  /*package*/ StartProcessHandlerStatement_BehaviorDescriptor() {
+  /*package*/ StartProcessHandlerStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

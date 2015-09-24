@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class QueryFunction_Color_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_Color__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class QueryFunction_Color_BehaviorDescriptor extends BaseBHDescript
     return _quotation_createNode_f41rqu_a0a0();
   }
 
-  /*package*/ QueryFunction_Color_BehaviorDescriptor() {
+  /*package*/ QueryFunction_Color__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

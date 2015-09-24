@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlBasePrologElement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlBasePrologElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L, "jetbrains.mps.core.xml.structure.XmlBasePrologElement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,12 +47,12 @@ public final class XmlBasePrologElement_BehaviorDescriptor extends BaseBHDescrip
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"))) {
       SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"));
       if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText"))) {
-        return XmlPart_BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText")));
+        return XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText")));
       }
       if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace"))) {
-        return XmlPart_BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")));
+        return XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")));
       }
-      return !((XmlPart_BehaviorDescriptor.isTextLike_id1Qs9WekVZ9O.invoke(left) || XmlPart_BehaviorDescriptor.isOneLineBlock_id1Qs9WekVZ7e.invoke(left)));
+      return !((XmlPart__BehaviorDescriptor.isTextLike_id1Qs9WekVZ9O.invoke(left) || XmlPart__BehaviorDescriptor.isOneLineBlock_id1Qs9WekVZ7e.invoke(left)));
     }
     return true;
   }
@@ -60,12 +60,12 @@ public final class XmlBasePrologElement_BehaviorDescriptor extends BaseBHDescrip
     if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"))) {
       SNode right = SNodeOperations.cast(SNodeOperations.getNextSibling(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"));
       if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText"))) {
-        return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText")));
+        return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText")));
       }
       if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace"))) {
-        return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")));
+        return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")));
       }
-      return !(XmlPart_BehaviorDescriptor.isTextLike_id1Qs9WekVZ9O.invoke(right));
+      return !(XmlPart__BehaviorDescriptor.isTextLike_id1Qs9WekVZ9O.invoke(right));
     }
     return true;
   }
@@ -76,7 +76,7 @@ public final class XmlBasePrologElement_BehaviorDescriptor extends BaseBHDescrip
     return false;
   }
 
-  /*package*/ XmlBasePrologElement_BehaviorDescriptor() {
+  /*package*/ XmlBasePrologElement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

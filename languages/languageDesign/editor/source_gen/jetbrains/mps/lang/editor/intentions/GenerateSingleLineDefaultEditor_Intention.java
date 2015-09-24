@@ -11,10 +11,10 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration__BehaviorDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class GenerateSingleLineDefaultEditor_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -34,7 +34,7 @@ public final class GenerateSingleLineDefaultEditor_Intention extends IntentionDe
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return AbstractComponent_BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(node) != null;
+    return AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(node) != null;
   }
   @Override
   public boolean isSurroundWith() {
@@ -55,7 +55,7 @@ public final class GenerateSingleLineDefaultEditor_Intention extends IntentionDe
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      ConceptEditorDeclaration_BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$.invoke(node, false);
+      ConceptEditorDeclaration__BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$.invoke(node, false);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

@@ -29,13 +29,13 @@ public class AnonymousCellAnnotation_Behavior {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
-          editorComponent.value = AnonymousCellAnnotation_BehaviorDescriptor.setupInspector_id4VoD2D0CSEA.invoke(__thisNode__, node, nodeEditorComponent);
+          editorComponent.value = AnonymousCellAnnotation__BehaviorDescriptor.setupInspector_id4VoD2D0CSEA.invoke(__thisNode__, node, nodeEditorComponent);
         }
         cellWithId.value = editorComponent.value.findCellWithId(node, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")));
         if (cellWithId.value == null) {
           throw new RuntimeException("No cell " + __thisNode__);
         }
-        AnonymousCellAnnotation_BehaviorDescriptor.setupCaretAndSelection_id7TYU6fNl1yz.invoke(__thisNode__, cellWithId.value);
+        AnonymousCellAnnotation__BehaviorDescriptor.setupCaretAndSelection_id7TYU6fNl1yz.invoke(__thisNode__, cellWithId.value);
       }
     });
     editorComponent.value.changeSelection(cellWithId.value);
@@ -60,7 +60,7 @@ public class AnonymousCellAnnotation_Behavior {
   public static void call_setupCaretAndSelection_9114978211826243747(SNode __thisNode__, EditorCell cellWithId) {
     if (cellWithId instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cellWithId;
-      label.setCaretPosition(AnonymousCellAnnotation_BehaviorDescriptor.getCaretPosition_id5rZKa_fUlry.invoke(__thisNode__, label));
+      label.setCaretPosition(AnonymousCellAnnotation__BehaviorDescriptor.getCaretPosition_id5rZKa_fUlry.invoke(__thisNode__, label));
       label.setSelectionStart(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc33L, "selectionStart")));
       label.setSelectionEnd(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc35L, "selectionEnd")));
     }

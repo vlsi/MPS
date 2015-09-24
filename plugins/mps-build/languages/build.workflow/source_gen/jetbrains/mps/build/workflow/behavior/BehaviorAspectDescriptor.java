@@ -12,20 +12,20 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBwfCustomMacro_BehaviorDescriptor = new BwfCustomMacro_BehaviorDescriptor();
-  private final BHDescriptor myBwfAntTaskDeclaration_BehaviorDescriptor = new BwfAntTaskDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBwfAntTaskBundleDeclaration_BehaviorDescriptor = new BwfAntTaskBundleDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBwfProject_BehaviorDescriptor = new BwfProject_BehaviorDescriptor();
-  private final BHDescriptor myBwfTask_BehaviorDescriptor = new BwfTask_BehaviorDescriptor();
-  private final BHDescriptor myBwfSubTask_BehaviorDescriptor = new BwfSubTask_BehaviorDescriptor();
-  private final BHDescriptor myBwfProjectPart_BehaviorDescriptor = new BwfProjectPart_BehaviorDescriptor();
-  private final BHDescriptor myBwfTaskPart_BehaviorDescriptor = new BwfTaskPart_BehaviorDescriptor();
-  private final BHDescriptor myBwfJavaModule_BehaviorDescriptor = new BwfJavaModule_BehaviorDescriptor();
-  private final BHDescriptor myBwfJavaModuleReference_BehaviorDescriptor = new BwfJavaModuleReference_BehaviorDescriptor();
-  private final BHDescriptor myBwfMacroListImport_BehaviorDescriptor = new BwfMacroListImport_BehaviorDescriptor();
-  private final BHDescriptor myBwfJavaDependency_BehaviorDescriptor = new BwfJavaDependency_BehaviorDescriptor();
-  private final BHDescriptor myBwfPathDeclaration_BehaviorDescriptor = new BwfPathDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBwfMacro_BehaviorDescriptor = new BwfMacro_BehaviorDescriptor();
+  private final BHDescriptor myBwfCustomMacro__BehaviorDescriptor = new BwfCustomMacro__BehaviorDescriptor();
+  private final BHDescriptor myBwfAntTaskDeclaration__BehaviorDescriptor = new BwfAntTaskDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBwfAntTaskBundleDeclaration__BehaviorDescriptor = new BwfAntTaskBundleDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBwfProject__BehaviorDescriptor = new BwfProject__BehaviorDescriptor();
+  private final BHDescriptor myBwfTask__BehaviorDescriptor = new BwfTask__BehaviorDescriptor();
+  private final BHDescriptor myBwfSubTask__BehaviorDescriptor = new BwfSubTask__BehaviorDescriptor();
+  private final BHDescriptor myBwfProjectPart__BehaviorDescriptor = new BwfProjectPart__BehaviorDescriptor();
+  private final BHDescriptor myBwfTaskPart__BehaviorDescriptor = new BwfTaskPart__BehaviorDescriptor();
+  private final BHDescriptor myBwfJavaModule__BehaviorDescriptor = new BwfJavaModule__BehaviorDescriptor();
+  private final BHDescriptor myBwfJavaModuleReference__BehaviorDescriptor = new BwfJavaModuleReference__BehaviorDescriptor();
+  private final BHDescriptor myBwfMacroListImport__BehaviorDescriptor = new BwfMacroListImport__BehaviorDescriptor();
+  private final BHDescriptor myBwfJavaDependency__BehaviorDescriptor = new BwfJavaDependency__BehaviorDescriptor();
+  private final BHDescriptor myBwfPathDeclaration__BehaviorDescriptor = new BwfPathDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBwfMacro__BehaviorDescriptor = new BwfMacro__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -59,33 +59,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBwfCustomMacro_BehaviorDescriptor;
+        return myBwfCustomMacro__BehaviorDescriptor;
       case 1:
-        return myBwfAntTaskDeclaration_BehaviorDescriptor;
+        return myBwfAntTaskDeclaration__BehaviorDescriptor;
       case 2:
-        return myBwfAntTaskBundleDeclaration_BehaviorDescriptor;
+        return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
       case 3:
-        return myBwfProject_BehaviorDescriptor;
+        return myBwfProject__BehaviorDescriptor;
       case 4:
-        return myBwfTask_BehaviorDescriptor;
+        return myBwfTask__BehaviorDescriptor;
       case 5:
-        return myBwfSubTask_BehaviorDescriptor;
+        return myBwfSubTask__BehaviorDescriptor;
       case 6:
-        return myBwfProjectPart_BehaviorDescriptor;
+        return myBwfProjectPart__BehaviorDescriptor;
       case 7:
-        return myBwfTaskPart_BehaviorDescriptor;
+        return myBwfTaskPart__BehaviorDescriptor;
       case 8:
-        return myBwfJavaModule_BehaviorDescriptor;
+        return myBwfJavaModule__BehaviorDescriptor;
       case 9:
-        return myBwfJavaModuleReference_BehaviorDescriptor;
+        return myBwfJavaModuleReference__BehaviorDescriptor;
       case 10:
-        return myBwfMacroListImport_BehaviorDescriptor;
+        return myBwfMacroListImport__BehaviorDescriptor;
       case 11:
-        return myBwfJavaDependency_BehaviorDescriptor;
+        return myBwfJavaDependency__BehaviorDescriptor;
       case 12:
-        return myBwfPathDeclaration_BehaviorDescriptor;
+        return myBwfPathDeclaration__BehaviorDescriptor;
       case 13:
-        return myBwfMacro_BehaviorDescriptor;
+        return myBwfMacro__BehaviorDescriptor;
       default:
         return null;
     }

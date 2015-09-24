@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class StackType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StackType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5e6446aa46ee5eecL, "jetbrains.mps.baseLanguage.collections.structure.StackType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class StackType_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ StackType_BehaviorDescriptor() {
+  /*package*/ StackType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

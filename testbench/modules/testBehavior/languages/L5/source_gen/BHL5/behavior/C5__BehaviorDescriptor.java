@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class C5_BehaviorDescriptor extends BaseBHDescriptor {
+public final class C5__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, "BHL5.structure.C5");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -28,7 +28,7 @@ public final class C5_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ C5_BehaviorDescriptor() {
+  /*package*/ C5__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

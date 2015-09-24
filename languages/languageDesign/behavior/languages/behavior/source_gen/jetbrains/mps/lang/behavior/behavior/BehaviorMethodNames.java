@@ -13,7 +13,7 @@ public class BehaviorMethodNames {
   }
 
   public static String getDeclarationName(SNode method) {
-    SNode baseMethod = ConceptMethodDeclaration_BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(method);
+    SNode baseMethod = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(method);
     String prefix = (((baseMethod != null) ? "virtual" : "call")) + "_";
     return prefix + getMethodName(((baseMethod != null) ? baseMethod : method));
   }

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class GetComponentBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GetComponentBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aba5b01c0L, "jetbrains.mps.lang.plugin.structure.GetComponentBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class GetComponentBlock_BehaviorDescriptor extends BaseBHDescriptor
     return _quotation_createNode_nspogl_a0a1();
   }
 
-  /*package*/ GetComponentBlock_BehaviorDescriptor() {
+  /*package*/ GetComponentBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

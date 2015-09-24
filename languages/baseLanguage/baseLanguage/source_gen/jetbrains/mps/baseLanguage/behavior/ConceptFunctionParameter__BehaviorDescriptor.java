@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptFunctionParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,20 +43,20 @@ public final class ConceptFunctionParameter_BehaviorDescriptor extends BaseBHDes
   }
 
   private static Boolean getFromParameterObject_idhEwJh7s(@NotNull SNode __thisNode__) {
-    if (!(ConceptFunctionParameter_BehaviorDescriptor.isParameterObjectUsed_idhEwJh7I.invoke(__thisNode__))) {
+    if (!(ConceptFunctionParameter__BehaviorDescriptor.isParameterObjectUsed_idhEwJh7I.invoke(__thisNode__))) {
       return false;
     }
-    return ConceptFunction_BehaviorDescriptor.usesParameterObjectFor_idhEwIGRw.invoke(ConceptFunctionParameter_BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), __thisNode__);
+    return ConceptFunction__BehaviorDescriptor.usesParameterObjectFor_idhEwIGRw.invoke(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), __thisNode__);
   }
   private static Boolean isParameterObjectUsed_idhEwJh7I(@NotNull SNode __thisNode__) {
-    return !(ConceptFunctionParameter_BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+    return !(ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
   }
   private static SNode findConceptFunction_idhEwJh7Q(@NotNull SNode __thisNode__) {
     List<SNode> functions = SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(__thisNode__);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(ConceptFunction_BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
+        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
       }
     }).first();
   }
@@ -76,7 +76,7 @@ public final class ConceptFunctionParameter_BehaviorDescriptor extends BaseBHDes
     return false;
   }
 
-  /*package*/ ConceptFunctionParameter_BehaviorDescriptor() {
+  /*package*/ ConceptFunctionParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

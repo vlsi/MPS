@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ContinueStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ContinueStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,7 +59,7 @@ public final class ContinueStatement_BehaviorDescriptor extends BaseBHDescriptor
     return true;
   }
 
-  /*package*/ ContinueStatement_BehaviorDescriptor() {
+  /*package*/ ContinueStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

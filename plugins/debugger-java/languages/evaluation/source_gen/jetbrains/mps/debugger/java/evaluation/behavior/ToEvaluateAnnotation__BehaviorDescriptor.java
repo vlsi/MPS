@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ToEvaluateAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ToEvaluateAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x4135c73fbe7fc985L, "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class ToEvaluateAnnotation_BehaviorDescriptor extends BaseBHDescrip
   }
 
 
-  /*package*/ ToEvaluateAnnotation_BehaviorDescriptor() {
+  /*package*/ ToEvaluateAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

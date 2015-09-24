@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Outlook_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Outlook__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdc54e1b286b349d2L, 0x9014a76af17af22aL, 0x4dd42fcf00ba54d2L, "jetbrains.mps.make.outlook.structure.Outlook");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class Outlook_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ Outlook_BehaviorDescriptor() {
+  /*package*/ Outlook__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

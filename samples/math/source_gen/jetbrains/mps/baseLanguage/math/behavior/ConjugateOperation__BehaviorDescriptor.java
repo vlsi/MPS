@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConjugateOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConjugateOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e64afe53L, "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class ConjugateOperation_BehaviorDescriptor extends BaseBHDescripto
     return "*";
   }
 
-  /*package*/ ConjugateOperation_BehaviorDescriptor() {
+  /*package*/ ConjugateOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

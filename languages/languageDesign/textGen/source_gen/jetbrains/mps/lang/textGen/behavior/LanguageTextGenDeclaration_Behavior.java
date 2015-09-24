@@ -22,12 +22,12 @@ public class LanguageTextGenDeclaration_Behavior {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(LanguageTextGenDeclaration_BehaviorDescriptor.getApplicableHiddenParameter_id2D1PBM_bxIF.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(LanguageTextGenDeclaration__BehaviorDescriptor.getApplicableHiddenParameter_id2D1PBM_bxIF.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
     return (List<SNode>) result;
   }
   public static List<SNode> call_getAvailableFunctions_1234781318196(SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> list = LanguageTextGenDeclaration_BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, new ArrayList<SNode>(), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
+    List<SNode> list = LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, new ArrayList<SNode>(), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
     for (SNode baseTextGen : list) {
       for (SNode func : SLinkOperations.getChildren(baseTextGen, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f6f8860bdL, "function"))) {
         if (SPropertyOperations.getString(func, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) != null) {
@@ -42,7 +42,7 @@ public class LanguageTextGenDeclaration_Behavior {
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration")))) {
       return list;
     } else {
-      return LanguageTextGenDeclaration_BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
+      return LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
     }
   }
 }

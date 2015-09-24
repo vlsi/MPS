@@ -18,11 +18,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IndexedTupleLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IndexedTupleLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class IndexedTupleLiteral_BehaviorDescriptor extends BaseBHDescript
 
   private static Boolean isLValue_idhEwJgmE(@NotNull SNode __thisNode__) {
     for (SNode mexp : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, 0x1207171832eL, "component"))) {
-      if (!(Expression_BehaviorDescriptor.isLValue_idhEwJgmE.invoke(mexp))) {
+      if (!(Expression__BehaviorDescriptor.isLValue_idhEwJgmE.invoke(mexp))) {
         return false;
       }
     }
@@ -50,7 +50,7 @@ public final class IndexedTupleLiteral_BehaviorDescriptor extends BaseBHDescript
     return "]";
   }
 
-  /*package*/ IndexedTupleLiteral_BehaviorDescriptor() {
+  /*package*/ IndexedTupleLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

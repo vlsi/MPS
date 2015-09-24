@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FQNameClassifierSpecification_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FQNameClassifierSpecification__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class FQNameClassifierSpecification_BehaviorDescriptor extends Base
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, 0x4b6b6d7b2a76ca23L, "smodelReference"));
   }
 
-  /*package*/ FQNameClassifierSpecification_BehaviorDescriptor() {
+  /*package*/ FQNameClassifierSpecification__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

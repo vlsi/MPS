@@ -30,7 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModelStatisticsTarget_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ModelStatisticsTarget__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,12 +45,12 @@ public final class ModelStatisticsTarget_BehaviorDescriptor extends BaseBHDescri
   private static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
     int references = 0;
     int properties = 0;
-    for (SNode node : INodeSetReference_BehaviorDescriptor.getNodes_id4x3U0fq41hN.invoke(__thisNode__, context)) {
+    for (SNode node : INodeSetReference__BehaviorDescriptor.getNodes_id4x3U0fq41hN.invoke(__thisNode__, context)) {
       references += IterableUtil.asCollection(node.getReferences()).size();
       properties += SNodeOperations.getProperties(node).keySet().size();
     }
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
-    SModel model = ModelReference_BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository());
+    SModel model = ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository());
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", ListSequence.fromList(SModelOperations.roots(model, null)).count()));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", (model == null ? 0 : SNodeOperations.nodesCount(model))));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("References", references));
@@ -59,10 +59,10 @@ public final class ModelStatisticsTarget_BehaviorDescriptor extends BaseBHDescri
     return result;
   }
   private static Iterable<SNode> getNodes_id4x3U0fq41hN(@NotNull SNode __thisNode__, ConsoleContext context) {
-    return SModelOperations.nodes(ModelReference_BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository()), null);
+    return SModelOperations.nodes(ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository()), null);
   }
 
-  /*package*/ ModelStatisticsTarget_BehaviorDescriptor() {
+  /*package*/ ModelStatisticsTarget__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

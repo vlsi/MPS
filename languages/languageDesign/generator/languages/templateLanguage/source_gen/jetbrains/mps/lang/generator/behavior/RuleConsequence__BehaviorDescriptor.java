@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RuleConsequence_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RuleConsequence__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class RuleConsequence_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ RuleConsequence_BehaviorDescriptor() {
+  /*package*/ RuleConsequence__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

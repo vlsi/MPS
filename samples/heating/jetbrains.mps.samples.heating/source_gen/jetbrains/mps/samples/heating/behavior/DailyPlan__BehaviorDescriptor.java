@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DailyPlan_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DailyPlan__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class DailyPlan_BehaviorDescriptor extends BaseBHDescriptor {
     });
   }
 
-  /*package*/ DailyPlan_BehaviorDescriptor() {
+  /*package*/ DailyPlan__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

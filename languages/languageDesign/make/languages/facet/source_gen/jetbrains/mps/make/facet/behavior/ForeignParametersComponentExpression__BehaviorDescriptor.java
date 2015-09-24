@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ForeignParametersComponentExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ForeignParametersComponentExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b1L, "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class ForeignParametersComponentExpression_BehaviorDescriptor exten
     return false;
   }
 
-  /*package*/ ForeignParametersComponentExpression_BehaviorDescriptor() {
+  /*package*/ ForeignParametersComponentExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

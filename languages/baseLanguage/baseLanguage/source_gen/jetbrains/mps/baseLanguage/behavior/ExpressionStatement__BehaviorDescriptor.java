@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExpressionStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExpressionStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,12 +37,12 @@ public final class ExpressionStatement_BehaviorDescriptor extends BaseBHDescript
   private static Boolean canServeAsReturn_idi2fkDTg(@NotNull SNode __thisNode__) {
     SNode methodLike = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
     if (SNodeOperations.isInstanceOf(methodLike, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-      if (IStatementListContainer_BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(SNodeOperations.cast(methodLike, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")))) {
+      if (IStatementListContainer__BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(SNodeOperations.cast(methodLike, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")))) {
         return false;
       }
     }
     // no return inside void methods or constructors 
-    SNode retType = IMethodLike_BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(methodLike);
+    SNode retType = IMethodLike__BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(methodLike);
     if (retType == null || SNodeOperations.isInstanceOf(retType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       return false;
     }
@@ -60,7 +60,7 @@ public final class ExpressionStatement_BehaviorDescriptor extends BaseBHDescript
     }
     // 
     // Check our position within IMethodLike 
-    SNode lastStatement = IMethodLike_BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(methodLike);
+    SNode lastStatement = IMethodLike__BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(methodLike);
     // trivial case: this statement is the last one 
     if (lastStatement == __thisNode__) {
       return true;
@@ -86,7 +86,7 @@ public final class ExpressionStatement_BehaviorDescriptor extends BaseBHDescript
     return false;
   }
 
-  /*package*/ ExpressionStatement_BehaviorDescriptor() {
+  /*package*/ ExpressionStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

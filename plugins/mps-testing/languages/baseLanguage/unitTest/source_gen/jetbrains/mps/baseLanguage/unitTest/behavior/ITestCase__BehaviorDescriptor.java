@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ITestCase_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ITestCase__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class ITestCase_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static String getClassName_idhGBnqtL(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(__thisNode__.getModel()) + "." + ITestCase_BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(__thisNode__.getModel()) + "." + ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(__thisNode__);
   }
   private static String getSimpleClassName_idhSQIE8p(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Test";
@@ -52,7 +52,7 @@ public final class ITestCase_BehaviorDescriptor extends BaseBHDescriptor {
     return !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess")));
   }
 
-  /*package*/ ITestCase_BehaviorDescriptor() {
+  /*package*/ ITestCase__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -30,7 +30,7 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.model.SModel;
 
-public final class EnumConstantReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumConstantReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -63,7 +63,7 @@ public final class EnumConstantReference_BehaviorDescriptor extends BaseBHDescri
     return ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass")) != null) ? new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass")))) : new EmptyScope());
   }
 
-  /*package*/ EnumConstantReference_BehaviorDescriptor() {
+  /*package*/ EnumConstantReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

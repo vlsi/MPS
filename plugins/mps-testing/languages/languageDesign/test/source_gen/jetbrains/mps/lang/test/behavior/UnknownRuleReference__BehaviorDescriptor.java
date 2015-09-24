@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnknownRuleReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnknownRuleReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4af0d67L, "jetbrains.mps.lang.test.structure.UnknownRuleReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class UnknownRuleReference_BehaviorDescriptor extends BaseBHDescrip
     return "UnknownRule";
   }
 
-  /*package*/ UnknownRuleReference_BehaviorDescriptor() {
+  /*package*/ UnknownRuleReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DecisionTable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DecisionTable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -75,7 +75,7 @@ public final class DecisionTable_BehaviorDescriptor extends BaseBHDescriptor {
     return params;
   }
 
-  /*package*/ DecisionTable_BehaviorDescriptor() {
+  /*package*/ DecisionTable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

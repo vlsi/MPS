@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class DiagramConnectorCreationHandler_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DiagramConnectorCreationHandler__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class DiagramConnectorCreationHandler_BehaviorDescriptor extends Ba
     return _quotation_createNode_d606ao_a0a1();
   }
 
-  /*package*/ DiagramConnectorCreationHandler_BehaviorDescriptor() {
+  /*package*/ DiagramConnectorCreationHandler__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

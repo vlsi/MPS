@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ICheckedNamePolicy_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ICheckedNamePolicy__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class ICheckedNamePolicy_BehaviorDescriptor extends BaseBHDescripto
 
   private static List<SNode> getDescendantsToCheck_id4cWf37B8oXl(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode dsc = ICheckedNamePolicy_BehaviorDescriptor.getDescendantToCheck_id4cWf37B8oXJ.invoke(__thisNode__);
+    SNode dsc = ICheckedNamePolicy__BehaviorDescriptor.getDescendantToCheck_id4cWf37B8oXJ.invoke(__thisNode__);
     if (dsc != null) {
       ListSequence.fromList(result).addElement(dsc);
     }
@@ -50,7 +50,7 @@ public final class ICheckedNamePolicy_BehaviorDescriptor extends BaseBHDescripto
   }
   private static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
     List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
-    PropertyReference property = ICheckedNamePolicy_BehaviorDescriptor.getPropertyToCheck_id4cWf37B8oYh.invoke(__thisNode__);
+    PropertyReference property = ICheckedNamePolicy__BehaviorDescriptor.getPropertyToCheck_id4cWf37B8oYh.invoke(__thisNode__);
     if (property != null) {
       ListSequence.fromList(result).addElement(property);
     }
@@ -60,7 +60,7 @@ public final class ICheckedNamePolicy_BehaviorDescriptor extends BaseBHDescripto
     return null;
   }
 
-  /*package*/ ICheckedNamePolicy_BehaviorDescriptor() {
+  /*package*/ ICheckedNamePolicy__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

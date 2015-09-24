@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Deprecated
 public class MpsStartupScript_Behavior {
   public static String call_getDefaultVmoptions_5842819808956701267(SNode __thisNode__, boolean is64bit) {
-    return trim_p7akvg_a0a0a(Sequence.fromIterable(MpsStartupScript_BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
+    return trim_p7akvg_a0a0a(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented")));
       }
@@ -33,7 +33,7 @@ public class MpsStartupScript_Behavior {
     }));
   }
   public static Iterable<SNode> call_getCommentedOptions_5842819808956911345(SNode __thisNode__, boolean is64bit) {
-    return Sequence.fromIterable(MpsStartupScript_BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented"));
       }
@@ -43,7 +43,7 @@ public class MpsStartupScript_Behavior {
     return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x2560aecfb4da3f5bL, "vmOptions64")) : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b3442664L, "vmOptions")))), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"));
   }
   public static Iterable<SNode> call_getDefaultVmOptionsLines_2693344784285072660(SNode __thisNode__, boolean is64bit) {
-    return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript_BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(__thisNode__, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(__thisNode__, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return (it != null && it.length() > 0);
       }
@@ -54,10 +54,10 @@ public class MpsStartupScript_Behavior {
     });
   }
   public static String call_getPathToVmOptionsFile_5842819808956911442(SNode __thisNode__, boolean is64bit) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript_BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, is64bit);
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript__BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, is64bit);
   }
   public static String call_getVmOptionsFileName_2693344784285261045(SNode __thisNode__, boolean is64bit) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript_BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(__thisNode__);
   }
   public static String call_getVmOptionsExtension_5842819808956911479(SNode __thisNode__) {
     return "vmoptions";

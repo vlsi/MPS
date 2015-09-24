@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SideTransformVariableReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SideTransformVariableReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL, "jetbrains.mps.lang.actions.structure.SideTransformVariableReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class SideTransformVariableReference_BehaviorDescriptor extends Bas
     return false;
   }
 
-  /*package*/ SideTransformVariableReference_BehaviorDescriptor() {
+  /*package*/ SideTransformVariableReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

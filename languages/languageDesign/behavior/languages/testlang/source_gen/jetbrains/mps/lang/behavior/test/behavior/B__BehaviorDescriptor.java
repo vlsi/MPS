@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class B_BehaviorDescriptor extends BaseBHDescriptor {
+public final class B__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b5eL, "jetbrains.mps.lang.behavior.test.structure.B");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,26 +49,26 @@ public final class B_BehaviorDescriptor extends BaseBHDescriptor {
     return "B";
   }
   private static void doInvokeAll_id46FlynTbJDa(@NotNull SNode __thisNode__) {
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
     // 
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
     // 
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
     // 
-    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "from A", 0);
+    A__BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "from A", 0);
     // 
     // FIXME it's possible to declare static virtual abstract method, but impossible to call it 
     // staticAbstractVirtualMethod() 
   }
 
-  /*package*/ B_BehaviorDescriptor() {
+  /*package*/ B__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RuntimeErrorType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RuntimeErrorType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class RuntimeErrorType_BehaviorDescriptor extends BaseBHDescriptor 
     return "error[" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText")) + "]";
   }
 
-  /*package*/ RuntimeErrorType_BehaviorDescriptor() {
+  /*package*/ RuntimeErrorType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

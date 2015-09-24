@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSource_SingleFile_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSource_SingleFile__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L, "jetbrains.mps.build.structure.BuildSource_SingleFile");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class BuildSource_SingleFile_BehaviorDescriptor extends BaseBHDescr
   }
 
 
-  /*package*/ BuildSource_SingleFile_BehaviorDescriptor() {
+  /*package*/ BuildSource_SingleFile__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

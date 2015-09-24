@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TemplateArgumentPatternVarRefExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TemplateArgumentPatternVarRefExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class TemplateArgumentPatternVarRefExpression_BehaviorDescriptor ex
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, 0x40be82ad503b3ec4L, "patternVarDecl")));
   }
 
-  /*package*/ TemplateArgumentPatternVarRefExpression_BehaviorDescriptor() {
+  /*package*/ TemplateArgumentPatternVarRefExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

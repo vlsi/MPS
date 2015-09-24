@@ -33,7 +33,7 @@ public class PatternExpression_Behavior {
     return variables;
   }
   public static List<SNode> call_getUniqueVariables_4855904478357073018(SNode __thisNode__) {
-    List<SNode> variables = PatternExpression_BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
+    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
     List<SNode> result = new ArrayList<SNode>();
     Set<String> names = new HashSet<String>();
     for (SNode var : variables) {
@@ -45,7 +45,7 @@ public class PatternExpression_Behavior {
     return result;
   }
   public static List<SNode> call_getOwnVariables_8288845019109059987(SNode __thisNode__) {
-    List<SNode> variables = PatternExpression_BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
+    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
       if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")) && SNodeOperations.getParent(var) != __thisNode__))) {

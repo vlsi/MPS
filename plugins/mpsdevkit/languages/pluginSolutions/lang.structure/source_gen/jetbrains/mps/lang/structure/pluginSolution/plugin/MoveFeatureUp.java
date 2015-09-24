@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -119,7 +119,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
           updateReferences(project, usages, feature, newFeature, new _Adapters._return_P0_E0_to__void_P0_E0_adapter(new _FunctionTypes._return_P0_E0<MigrationScriptBuilder>() {
             public MigrationScriptBuilder invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
-              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(targetConcept) + "\""));
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(targetConcept) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);

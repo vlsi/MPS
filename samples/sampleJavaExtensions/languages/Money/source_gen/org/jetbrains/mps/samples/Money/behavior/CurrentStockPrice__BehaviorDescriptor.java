@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CurrentStockPrice_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CurrentStockPrice__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class CurrentStockPrice_BehaviorDescriptor extends BaseBHDescriptor
     return currentPrice;
   }
 
-  /*package*/ CurrentStockPrice_BehaviorDescriptor() {
+  /*package*/ CurrentStockPrice__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

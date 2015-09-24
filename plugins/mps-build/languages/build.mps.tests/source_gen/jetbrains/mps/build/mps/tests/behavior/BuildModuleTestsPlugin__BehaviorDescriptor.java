@@ -19,19 +19,19 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.build.behavior.BuildPlugin_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildPlugin__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class BuildModuleTestsPlugin_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildModuleTestsPlugin__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x37967cbe67d9eca4L, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class BuildModuleTestsPlugin_BehaviorDescriptor extends BaseBHDescr
   }
 
   private static Iterable<SNode> getImportedLibraries_id3zFnP6MwWdL(@NotNull SNode __thisNode__) {
-    BuildPlugin_BehaviorDescriptor.getImportedLibraries_id3zFnP6MwWdL.invokeSpecial(__thisNode__);
+    BuildPlugin__BehaviorDescriptor.getImportedLibraries_id3zFnP6MwWdL.invokeSpecial(__thisNode__);
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_s7wj2j_a0a0b0a(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
   }
   private static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
@@ -53,7 +53,7 @@ public final class BuildModuleTestsPlugin_BehaviorDescriptor extends BaseBHDescr
     // find mps-test.jar 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
     SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-    SNode mpsTestModule = SNodeOperations.as(ScopeProvider_BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", 0).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
+    SNode mpsTestModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", 0).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((mpsTestModule != null)) {
       SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {
@@ -65,7 +65,7 @@ public final class BuildModuleTestsPlugin_BehaviorDescriptor extends BaseBHDescr
     }
   }
 
-  /*package*/ BuildModuleTestsPlugin_BehaviorDescriptor() {
+  /*package*/ BuildModuleTestsPlugin__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

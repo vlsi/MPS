@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -23,7 +23,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
+            return IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
           }
         }).first();
       }
@@ -43,7 +43,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
+            return IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
           }
         }).first();
       }
@@ -66,7 +66,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
+            return IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
           }
         }).first();
       }

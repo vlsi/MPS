@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SuperNodeExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SuperNodeExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -58,11 +58,11 @@ public final class SuperNodeExpression_BehaviorDescriptor extends BaseBHDescript
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false);
   }
   private static Boolean isEnclosingMethodStatic_id4xnLoJyFYX5(@NotNull SNode __thisNode__) {
-    SNode method = SuperNodeExpression_BehaviorDescriptor.getEnclosingMethod_id4MNYYw$1vF5.invoke(__thisNode__);
+    SNode method = SuperNodeExpression__BehaviorDescriptor.getEnclosingMethod_id4MNYYw$1vF5.invoke(__thisNode__);
     return method != null && SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"));
   }
 
-  /*package*/ SuperNodeExpression_BehaviorDescriptor() {
+  /*package*/ SuperNodeExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

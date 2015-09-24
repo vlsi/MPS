@@ -29,11 +29,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StaticMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StaticMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,8 +52,8 @@ public final class StaticMethodCall_BehaviorDescriptor extends BaseBHDescriptor 
     if (module instanceof TransientModelsModule) {
       module = ((TransientModelsModule) module).getOriginalModule();
     }
-    Method method = BaseMethodDeclaration_BehaviorDescriptor.getMethod_idhEwIAZT.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), module);
-    Object[] actualArguments = BaseMethodCall_BehaviorDescriptor.getActualArguments_idhEwI$gh.invoke(__thisNode__, module);
+    Method method = BaseMethodDeclaration__BehaviorDescriptor.getMethod_idhEwIAZT.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), module);
+    Object[] actualArguments = BaseMethodCall__BehaviorDescriptor.getActualArguments_idhEwI$gh.invoke(__thisNode__, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);
   }
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, final String methodName) {
@@ -79,10 +79,10 @@ public final class StaticMethodCall_BehaviorDescriptor extends BaseBHDescriptor 
     }
   }
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"))) + "." + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"))) + "." + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
   }
 
-  /*package*/ StaticMethodCall_BehaviorDescriptor() {
+  /*package*/ StaticMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

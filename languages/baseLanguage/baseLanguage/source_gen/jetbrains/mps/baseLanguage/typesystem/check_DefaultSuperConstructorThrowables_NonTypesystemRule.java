@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration__BehaviorDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -21,8 +21,8 @@ public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends A
   public check_DefaultSuperConstructorThrowables_NonTypesystemRule() {
   }
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ConstructorDeclaration_BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
-      SNode superConstructor = ConstructorDeclaration_BehaviorDescriptor.getSuperDefaultConstructor_id6d19RW5J1tP.invoke(constructorDeclaration);
+    if (ConstructorDeclaration__BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
+      SNode superConstructor = ConstructorDeclaration__BehaviorDescriptor.getSuperDefaultConstructor_id6d19RW5J1tP.invoke(constructorDeclaration);
       if (superConstructor != null) {
         Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
         for (SNode superThrowable : ListSequence.fromList(SLinkOperations.getChildren(superConstructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem")))) {

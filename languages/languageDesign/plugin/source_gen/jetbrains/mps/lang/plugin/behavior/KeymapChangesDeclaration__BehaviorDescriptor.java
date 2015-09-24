@@ -23,7 +23,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class KeymapChangesDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class KeymapChangesDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,10 +39,10 @@ public final class KeymapChangesDeclaration_BehaviorDescriptor extends BaseBHDes
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_KeymapChanges";
   }
   private static String getGeneratedClassFQName_id5suWGB1jlhq(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + KeymapChangesDeclaration_BehaviorDescriptor.getGeneratedName_id5suWGB1jlhf.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + KeymapChangesDeclaration__BehaviorDescriptor.getGeneratedName_id5suWGB1jlhf.invoke(__thisNode__);
   }
 
-  /*package*/ KeymapChangesDeclaration_BehaviorDescriptor() {
+  /*package*/ KeymapChangesDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

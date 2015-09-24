@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModelsExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ModelsExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f41efb675beab2dL, "jetbrains.mps.lang.smodel.query.structure.ModelsExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ModelsExpression_BehaviorDescriptor extends BaseBHDescriptor 
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope").getDeclarationNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly").getDeclarationNode());
   }
 
-  /*package*/ ModelsExpression_BehaviorDescriptor() {
+  /*package*/ ModelsExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

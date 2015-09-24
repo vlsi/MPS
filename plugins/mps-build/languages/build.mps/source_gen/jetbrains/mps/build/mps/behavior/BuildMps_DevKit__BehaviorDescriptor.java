@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_DevKit_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_DevKit__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -56,7 +56,7 @@ public final class BuildMps_DevKit_BehaviorDescriptor extends BaseBHDescriptor {
     }));
   }
 
-  /*package*/ BuildMps_DevKit_BehaviorDescriptor() {
+  /*package*/ BuildMps_DevKit__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

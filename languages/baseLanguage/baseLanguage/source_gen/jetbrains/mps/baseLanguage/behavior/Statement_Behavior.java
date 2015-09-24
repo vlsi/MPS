@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class Statement_Behavior {
   public static Set<SNode> call_uncaughtThrowables_5412515780383108857(SNode __thisNode__, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(__thisNode__, result, ignoreMayBeThrowables);
+    Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(__thisNode__, result, ignoreMayBeThrowables);
     return result;
   }
   public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept __thisConcept__, final Set<SNode> throwables, SNode arg) {

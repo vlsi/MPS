@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 @Deprecated
 public class PastedNodeReference_Behavior {
   public static String call_getText_6888400917983823151(SAbstractConcept __thisConcept__, SNode targetNode) {
-    return PastedNodeReference_BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(__thisConcept__, check_mc1kik_a0a0a1(targetNode));
+    return PastedNodeReference__BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(__thisConcept__, check_mc1kik_a0a0a1(targetNode));
   }
   public static String call_getText_2410037095038717383(SAbstractConcept __thisConcept__, SNodeId targetNodeId) {
     if (targetNodeId == null) {

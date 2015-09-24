@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Dispose_Function_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Dispose_Function__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010bL, "jetbrains.mps.execution.settings.structure.Dispose_Function");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,7 +34,7 @@ public final class Dispose_Function_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   private static SNode getJavaMethod_idO$iR4J$gaJ(@NotNull SNode __thisNode__) {
-    return EditorOperationDeclaration_BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "dispose");
+    return EditorOperationDeclaration__BehaviorDescriptor.getMethodbyName_idO$iR4J$gaP.invoke(__thisNode__, "dispose");
   }
   private static SNode getPublicJavaMethod_idbkrofm9Fgz(@NotNull SNode __thisNode__) {
     return null;
@@ -43,7 +43,7 @@ public final class Dispose_Function_BehaviorDescriptor extends BaseBHDescriptor 
     return true;
   }
 
-  /*package*/ Dispose_Function_BehaviorDescriptor() {
+  /*package*/ Dispose_Function__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

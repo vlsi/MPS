@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSourcePath_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSourcePath__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class BuildSourcePath_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   private static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
-    return BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
+    return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
   }
   private static String getLastSegment_id1bWeed$oUb5(@NotNull SNode __thisNode__, MacroHelper helper) {
     return null;
@@ -55,7 +55,7 @@ public final class BuildSourcePath_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ BuildSourcePath_BehaviorDescriptor() {
+  /*package*/ BuildSourcePath__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

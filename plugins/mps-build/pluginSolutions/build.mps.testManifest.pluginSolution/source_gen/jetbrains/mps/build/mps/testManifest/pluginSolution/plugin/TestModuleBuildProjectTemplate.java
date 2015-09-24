@@ -13,7 +13,7 @@ import java.io.File;
 import org.apache.log4j.Level;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_BehaviorDescriptor;
+import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -56,7 +56,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
-      List<Tuples._3<String, String, String>> triples = TestModuleManifest_BehaviorDescriptor.languagesToInclude_id2R6x4AnylYu.invoke(testManifest, project);
+      List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.languagesToInclude_id2R6x4AnylYu.invoke(testManifest, project);
 
       for (Tuples._3<String, String, String> t : triples) {
         SNode la = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
@@ -90,7 +90,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
-      List<Tuples._3<String, String, String>> triples = TestModuleManifest_BehaviorDescriptor.testModulesToInclude_id7vU6U5026IG.invoke(testManifest, project);
+      List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.testModulesToInclude_id7vU6U5026IG.invoke(testManifest, project);
       for (Tuples._3<String, String, String> t : triples) {
         SNode sol = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());

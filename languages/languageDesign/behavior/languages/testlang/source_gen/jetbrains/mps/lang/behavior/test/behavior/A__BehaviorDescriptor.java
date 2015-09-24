@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class A_BehaviorDescriptor extends BaseBHDescriptor {
+public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,21 +52,21 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
     return in;
   }
   private static void doInvokeAll_id46FlynTbBkw(@NotNull SNode __thisNode__) {
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
     // 
-    A_BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
+    A__BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
     // 
-    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
+    A__BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
   }
 
-  /*package*/ A_BehaviorDescriptor() {
+  /*package*/ A__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,14 +22,14 @@ public class LambdaExpression_Behavior {
       return SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
 
     } else if (SNodeOperations.getParent(__thisNode__) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fc0389L, "jetbrains.mps.samples.lambdaCalculus.structure.Program")))) {
-      return LambdaExpression_BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
+      return LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
     }
     return null;
   }
   public static boolean call_hasParameterRefs_7397484091645986293(SNode __thisNode__) {
     SNode node = __thisNode__;
     node = SNodeOperations.getParent(node);
-    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(VariableOwner_BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")))).contains(SNodeOperations.as(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
+    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")))).contains(SNodeOperations.as(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
       node = SNodeOperations.getParent(node);
     }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) {
@@ -38,14 +38,14 @@ public class LambdaExpression_Behavior {
     if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")))) {
       return false;
     }
-    return LambdaExpression_BehaviorDescriptor.isInFull_id6nQdzuslK0D.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
+    return LambdaExpression__BehaviorDescriptor.isInFull_id6nQdzuslK0D.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
   }
   public static boolean call_isInFull_7347119454575591465(SNode __thisNode__) {
-    SNode appl = LambdaExpression_BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__);
+    SNode appl = LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__);
     if (null == appl) {
       return false;
     }
-    return LambdaApplication_BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression_BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__));
+    return LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__));
   }
   public static List<SNode> call_getOuterVariables_5249919352014727828(SNode __thisNode__) {
     List<SNode> allVar = SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SAbstractConcept[]{});

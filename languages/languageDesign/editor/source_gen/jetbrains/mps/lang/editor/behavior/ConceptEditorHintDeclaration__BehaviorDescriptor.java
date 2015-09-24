@@ -19,11 +19,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptEditorHintDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptEditorHintDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,10 +40,10 @@ public final class ConceptEditorHintDeclaration_BehaviorDescriptor extends BaseB
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"));
   }
   private static String getQualifiedName_id59ZEGVRaGvv(@NotNull SNode __thisNode__) {
-    return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ConceptEditorHintDeclaration_BehaviorDescriptor.getHintsContainer_id59ZEGVRaGvE.invoke(__thisNode__)) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ConceptEditorHintDeclaration__BehaviorDescriptor.getHintsContainer_id59ZEGVRaGvE.invoke(__thisNode__)) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 
-  /*package*/ ConceptEditorHintDeclaration_BehaviorDescriptor() {
+  /*package*/ ConceptEditorHintDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

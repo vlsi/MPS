@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -29,14 +29,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
         return false;
       }
     }
-    SNode lastStmt = IMethodLike_BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(__thisNode__);
+    SNode lastStmt = IMethodLike__BehaviorDescriptor.getLastStatement_idi2fhS7A.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(lastStmt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))), sequenceType);
     }
     return true;
   }
   public static boolean call_isValidatorGenerated_522233044824082130(SNode __thisNode__) {
-    return (ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.getValidator_id2_ZlElkqg42.invoke(__thisNode__) != null) && ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(__thisNode__);
+    return (ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.getValidator_id2_ZlElkqg42.invoke(__thisNode__) != null) && ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(__thisNode__);
   }
   public static SNode call_getValidator_2990203945683058946(SNode __thisNode__) {
     return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope")) ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope")), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, 0x30502bd604b257c2L, "validator")) : (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint")) ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint")), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x30502bd604b5fe45L, "validator")) : null));

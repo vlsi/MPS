@@ -30,7 +30,7 @@ public class LinkDeclaration_Behavior {
     return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
   }
   public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode __thisNode__) {
-    SNode genuineLink = LinkDeclaration_BehaviorDescriptor.getGenuineLink_idhEwIf_V.invoke(__thisNode__);
+    SNode genuineLink = LinkDeclaration__BehaviorDescriptor.getGenuineLink_idhEwIf_V.invoke(__thisNode__);
     return SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
   }
 }

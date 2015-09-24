@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor 
     return SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel")) || SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"));
   }
 
-  /*package*/ TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor() {
+  /*package*/ TextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

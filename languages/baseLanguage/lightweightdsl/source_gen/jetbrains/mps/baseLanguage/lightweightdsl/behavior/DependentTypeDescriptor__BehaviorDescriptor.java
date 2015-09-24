@@ -28,7 +28,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class DependentTypeDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DependentTypeDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,11 +46,11 @@ public final class DependentTypeDescriptor_BehaviorDescriptor extends BaseBHDesc
   }
   private static SNode getType_id3geGFOI14GE(@NotNull SNode __thisNode__, SNode node) {
     try {
-      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor_BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"), false, false));
+      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"), false, false));
       SModule classModule = __thisNode__.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
-        if (m.getName().equals(DependentTypeDescriptor_BehaviorDescriptor.getGeneratedMethodName_id2dmnr4$zcCR.invoke(__thisNode__))) {
+        if (m.getName().equals(DependentTypeDescriptor__BehaviorDescriptor.getGeneratedMethodName_id2dmnr4$zcCR.invoke(__thisNode__))) {
           m.setAccessible(true);
           return ((SNode) m.invoke(null, node));
         }
@@ -69,7 +69,7 @@ public final class DependentTypeDescriptor_BehaviorDescriptor extends BaseBHDesc
     }
   }
 
-  /*package*/ DependentTypeDescriptor_BehaviorDescriptor() {
+  /*package*/ DependentTypeDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

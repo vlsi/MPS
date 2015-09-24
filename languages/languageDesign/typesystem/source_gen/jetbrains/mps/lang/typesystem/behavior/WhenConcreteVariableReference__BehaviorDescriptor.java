@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class WhenConcreteVariableReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class WhenConcreteVariableReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class WhenConcreteVariableReference_BehaviorDescriptor extends Base
   }
 
 
-  /*package*/ WhenConcreteVariableReference_BehaviorDescriptor() {
+  /*package*/ WhenConcreteVariableReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

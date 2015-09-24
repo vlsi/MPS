@@ -28,12 +28,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef__BehaviorDescriptor;
 import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_Module_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,7 +55,7 @@ public final class BuildMps_Module_BehaviorDescriptor extends BaseBHDescriptor {
     List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
       SNode artifact;
-      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__) && BuildMps_Module_BehaviorDescriptor.isCompilable_id6tOCIA6_7jg.invoke(m)) {
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__) && BuildMps_Module__BehaviorDescriptor.isCompilable_id6tOCIA6_7jg.invoke(m)) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if (artifact != null) {
           builder.add(artifact, m);
@@ -69,7 +69,7 @@ public final class BuildMps_Module_BehaviorDescriptor extends BaseBHDescriptor {
         }
       }), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")))) {
         if ((SLinkOperations.getTarget(dep, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x26d578f4b6e3757fL, "customLocation")) != null)) {
-          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(dep, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x26d578f4b6e3757fL, "customLocation")), artifacts);
+          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(dep, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x26d578f4b6e3757fL, "customLocation")), artifacts);
           if (dependencyTarget != null) {
             if ((boolean) dependencyTarget._1()) {
               builder.addWithContent(dependencyTarget._0());
@@ -96,7 +96,7 @@ public final class BuildMps_Module_BehaviorDescriptor extends BaseBHDescriptor {
 
         SNode jarRuntime = SNodeOperations.cast(runtime, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"));
         if ((SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")) != null)) {
-          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")), artifacts);
+          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")), artifacts);
           if (dependencyTarget != null) {
             if ((boolean) dependencyTarget._1()) {
               builder.addWithContent(dependencyTarget._0());
@@ -174,7 +174,7 @@ public final class BuildMps_Module_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
-  /*package*/ BuildMps_Module_BehaviorDescriptor() {
+  /*package*/ BuildMps_Module__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

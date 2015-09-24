@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Reduction_MappingRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Reduction_MappingRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class Reduction_MappingRule_BehaviorDescriptor extends BaseBHDescri
   }
 
   private static SNode getTemplateType_idhEwJbaf(@NotNull SNode __thisNode__) {
-    return RuleConsequence_BehaviorDescriptor.getTemplateType_id6SoPMa83EEL.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, 0x11055ee07edL, "ruleConsequence")));
+    return RuleConsequence__BehaviorDescriptor.getTemplateType_id6SoPMa83EEL.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, 0x11055ee07edL, "ruleConsequence")));
   }
 
-  /*package*/ Reduction_MappingRule_BehaviorDescriptor() {
+  /*package*/ Reduction_MappingRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

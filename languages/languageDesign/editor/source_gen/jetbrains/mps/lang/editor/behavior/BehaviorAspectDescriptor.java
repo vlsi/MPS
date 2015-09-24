@@ -12,136 +12,136 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConceptEditorDeclaration_BehaviorDescriptor = new ConceptEditorDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEditorCellModel_BehaviorDescriptor = new EditorCellModel_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Collection_BehaviorDescriptor = new CellModel_Collection_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Constant_BehaviorDescriptor = new CellModel_Constant_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Property_BehaviorDescriptor = new CellModel_Property_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_RefNode_BehaviorDescriptor = new CellModel_RefNode_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_RefNodeList_BehaviorDescriptor = new CellModel_RefNodeList_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_ModelAccess_BehaviorDescriptor = new CellModel_ModelAccess_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Error_BehaviorDescriptor = new CellModel_Error_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Custom_BehaviorDescriptor = new CellModel_Custom_BehaviorDescriptor();
-  private final BHDescriptor myEditorComponentDeclaration_BehaviorDescriptor = new EditorComponentDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Component_BehaviorDescriptor = new CellModel_Component_BehaviorDescriptor();
-  private final BHDescriptor myBaseEditorComponent_BehaviorDescriptor = new BaseEditorComponent_BehaviorDescriptor();
-  private final BHDescriptor myCellKeyMapDeclaration_BehaviorDescriptor = new CellKeyMapDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_RefCell_BehaviorDescriptor = new CellModel_RefCell_BehaviorDescriptor();
-  private final BHDescriptor myInlineEditorComponent_BehaviorDescriptor = new InlineEditorComponent_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Alternation_BehaviorDescriptor = new CellModel_Alternation_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_AttributedPropertyCell_BehaviorDescriptor = new CellModel_AttributedPropertyCell_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_AttributedLinkCell_BehaviorDescriptor = new CellModel_AttributedLinkCell_BehaviorDescriptor();
-  private final BHDescriptor myCellKeyMap_AbstractFunction_BehaviorDescriptor = new CellKeyMap_AbstractFunction_BehaviorDescriptor();
-  private final BHDescriptor myCellKeyMap_IsApplicableFunction_BehaviorDescriptor = new CellKeyMap_IsApplicableFunction_BehaviorDescriptor();
-  private final BHDescriptor myCellActionMapDeclaration_BehaviorDescriptor = new CellActionMapDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCellActionMap_ExecuteFunction_BehaviorDescriptor = new CellActionMap_ExecuteFunction_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_WithRole_BehaviorDescriptor = new CellModel_WithRole_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_ListWithRole_BehaviorDescriptor = new CellModel_ListWithRole_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_NodeCondition_BehaviorDescriptor = new QueryFunction_NodeCondition_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_AttributedNodeCell_BehaviorDescriptor = new CellModel_AttributedNodeCell_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_PropertyValues_GetValues_BehaviorDescriptor = new CellMenuPart_PropertyValues_GetValues_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor = new CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_AbstractGroup_Query_BehaviorDescriptor = new CellMenuPart_AbstractGroup_Query_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor = new CellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_AbstractGroup_MatchingText_BehaviorDescriptor = new CellMenuPart_AbstractGroup_MatchingText_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_AbstractGroup_DescriptionText_BehaviorDescriptor = new CellMenuPart_AbstractGroup_DescriptionText_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuDescriptor_BehaviorDescriptor = new CellMenuDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_Abstract_BehaviorDescriptor = new CellMenuPart_Abstract_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceNode_CustomNodeConcept_BehaviorDescriptor = new CellMenuPart_ReplaceNode_CustomNodeConcept_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor = new CellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceChild_Group_Create_BehaviorDescriptor = new CellMenuPart_ReplaceChild_Group_Create_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceChild_CustomChildConcept_Query_BehaviorDescriptor = new CellMenuPart_ReplaceChild_CustomChildConcept_Query_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor = new CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_Generic_Group_Handler_BehaviorDescriptor = new CellMenuPart_Generic_Group_Handler_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_Generic_Item_Handler_BehaviorDescriptor = new CellMenuPart_Generic_Item_Handler_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuComponent_BehaviorDescriptor = new CellMenuComponent_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuComponentFeature_Property_BehaviorDescriptor = new CellMenuComponentFeature_Property_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuComponentFeature_Link_BehaviorDescriptor = new CellMenuComponentFeature_Link_BehaviorDescriptor();
-  private final BHDescriptor myAbstractComponent_BehaviorDescriptor = new AbstractComponent_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_JComponent_BehaviorDescriptor = new QueryFunction_JComponent_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_text_BehaviorDescriptor = new ConceptFunctionParameter_text_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ModelAccess_Getter_BehaviorDescriptor = new QueryFunction_ModelAccess_Getter_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ModelAccess_Setter_BehaviorDescriptor = new QueryFunction_ModelAccess_Setter_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ModelAccess_Validator_BehaviorDescriptor = new QueryFunction_ModelAccess_Validator_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_oldText_BehaviorDescriptor = new ConceptFunctionParameter_oldText_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_CellProvider_BehaviorDescriptor = new QueryFunction_CellProvider_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Color_BehaviorDescriptor = new QueryFunction_Color_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_NodeFactory_BehaviorDescriptor = new QueryFunction_NodeFactory_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ImagePath_BehaviorDescriptor = new QueryFunction_ImagePath_BehaviorDescriptor();
-  private final BHDescriptor myCellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor = new CellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_NodeListFilter_BehaviorDescriptor = new QueryFunction_NodeListFilter_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_NonEmptyProperty_BehaviorDescriptor = new CellModel_NonEmptyProperty_BehaviorDescriptor();
-  private final BHDescriptor myStyleSheet_BehaviorDescriptor = new StyleSheet_BehaviorDescriptor();
-  private final BHDescriptor myStyleSheetClass_BehaviorDescriptor = new StyleSheetClass_BehaviorDescriptor();
-  private final BHDescriptor myStyleClassItem_BehaviorDescriptor = new StyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myForegroundColorStyleClassItem_BehaviorDescriptor = new ForegroundColorStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myBooleanStyleSheetItem_BehaviorDescriptor = new BooleanStyleSheetItem_BehaviorDescriptor();
-  private final BHDescriptor myEditableStyleClassItem_BehaviorDescriptor = new EditableStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor mySelectableStyleSheetItem_BehaviorDescriptor = new SelectableStyleSheetItem_BehaviorDescriptor();
-  private final BHDescriptor myAutoDeletableStyleClassItem_BehaviorDescriptor = new AutoDeletableStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myDrawBorderStyleClassItem_BehaviorDescriptor = new DrawBorderStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myForegroundNullColorStyleClassItem_BehaviorDescriptor = new ForegroundNullColorStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Indent_BehaviorDescriptor = new CellModel_Indent_BehaviorDescriptor();
-  private final BHDescriptor myTextBackgroundColorStyleClassItem_BehaviorDescriptor = new TextBackgroundColorStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myTextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor = new TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myPaddingLeftStyleClassItem_BehaviorDescriptor = new PaddingLeftStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myPaddingRightStyleClassItem_BehaviorDescriptor = new PaddingRightStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myFirstPositionAllowedStyleClassItem_BehaviorDescriptor = new FirstPositionAllowedStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myLastPositionAllowedStyleClassItem_BehaviorDescriptor = new LastPositionAllowedStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_TransactionalProperty_BehaviorDescriptor = new CellModel_TransactionalProperty_BehaviorDescriptor();
-  private final BHDescriptor myTransactionalPropertyHandler_BehaviorDescriptor = new TransactionalPropertyHandler_BehaviorDescriptor();
-  private final BHDescriptor myDrawBracketsStyleClassItem_BehaviorDescriptor = new DrawBracketsStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIStyleContainer_BehaviorDescriptor = new IStyleContainer_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_FontStyle_BehaviorDescriptor = new QueryFunction_FontStyle_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Integer_BehaviorDescriptor = new QueryFunction_Integer_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_StyleParameter_BehaviorDescriptor = new QueryFunction_StyleParameter_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Underlined_BehaviorDescriptor = new QueryFunction_Underlined_BehaviorDescriptor();
-  private final BHDescriptor myStrikeOutStyleSheet_BehaviorDescriptor = new StrikeOutStyleSheet_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Boolean_BehaviorDescriptor = new QueryFunction_Boolean_BehaviorDescriptor();
-  private final BHDescriptor myIQueryFunction_Color_BehaviorDescriptor = new IQueryFunction_Color_BehaviorDescriptor();
-  private final BHDescriptor myRGBColor_BehaviorDescriptor = new RGBColor_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_ReadOnlyModelAccessor_BehaviorDescriptor = new CellModel_ReadOnlyModelAccessor_BehaviorDescriptor();
-  private final BHDescriptor myPaddingTopStyleClassItem_BehaviorDescriptor = new PaddingTopStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myPaddingBottomStyleClassItem_BehaviorDescriptor = new PaddingBottomStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myAbstractPaddingStyleClassItem_BehaviorDescriptor = new AbstractPaddingStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myPunctuationLeftStyleClassItem_BehaviorDescriptor = new PunctuationLeftStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myPunctuationRightStyleClassItem_BehaviorDescriptor = new PunctuationRightStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myBaseLineCell_BehaviorDescriptor = new BaseLineCell_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_String_BehaviorDescriptor = new QueryFunction_String_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutIndentStyleClassItem_BehaviorDescriptor = new IndentLayoutIndentStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutNewLineStyleClassItem_BehaviorDescriptor = new IndentLayoutNewLineStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutNewLineChildrenStyleClassItem_BehaviorDescriptor = new IndentLayoutNewLineChildrenStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor = new IndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutNoWrapClassItem_BehaviorDescriptor = new IndentLayoutNoWrapClassItem_BehaviorDescriptor();
-  private final BHDescriptor myAppendTextOperation_BehaviorDescriptor = new AppendTextOperation_BehaviorDescriptor();
-  private final BHDescriptor mySetBoldOperation_BehaviorDescriptor = new SetBoldOperation_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_MethodPresentation_BehaviorDescriptor = new QueryFunction_MethodPresentation_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_parameterObject_BehaviorDescriptor = new ConceptFunctionParameter_parameterObject_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SeparatorText_BehaviorDescriptor = new QueryFunction_SeparatorText_BehaviorDescriptor();
-  private final BHDescriptor myReadOnlyStyleClassItem_BehaviorDescriptor = new ReadOnlyStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ColorComposit_BehaviorDescriptor = new QueryFunction_ColorComposit_BehaviorDescriptor();
-  private final BHDescriptor myIStyleSheetMember_BehaviorDescriptor = new IStyleSheetMember_BehaviorDescriptor();
-  private final BHDescriptor myStyleClass_BehaviorDescriptor = new StyleClass_BehaviorDescriptor();
-  private final BHDescriptor myCellActionMap_CanExecuteFunction_BehaviorDescriptor = new CellActionMap_CanExecuteFunction_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Style_BehaviorDescriptor = new QueryFunction_Style_BehaviorDescriptor();
-  private final BHDescriptor mySelectInEditorOperation_BehaviorDescriptor = new SelectInEditorOperation_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_URL_BehaviorDescriptor = new CellModel_URL_BehaviorDescriptor();
-  private final BHDescriptor myStyleAttributeDeclaration_BehaviorDescriptor = new StyleAttributeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_AttributeStyleParameter_BehaviorDescriptor = new QueryFunction_AttributeStyleParameter_BehaviorDescriptor();
-  private final BHDescriptor myStyleKey_BehaviorDescriptor = new StyleKey_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_StyledText_BehaviorDescriptor = new ConceptFunctionParameter_StyledText_BehaviorDescriptor();
-  private final BHDescriptor myAbstractStyledTextOperation_BehaviorDescriptor = new AbstractStyledTextOperation_BehaviorDescriptor();
-  private final BHDescriptor myConceptEditorHintDeclaration_BehaviorDescriptor = new ConceptEditorHintDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myQueryHintsSpecification_BehaviorDescriptor = new QueryHintsSpecification_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_IsMethodCurrent_BehaviorDescriptor = new QueryFunction_IsMethodCurrent_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SNode_BehaviorDescriptor = new QueryFunction_SNode_BehaviorDescriptor();
-  private final BHDescriptor myDefaultBaseLine_BehaviorDescriptor = new DefaultBaseLine_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParametersList_BehaviorDescriptor = new QueryFunction_ParametersList_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor = new IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myIndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor = new IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor();
-  private final BHDescriptor myScriptKindClassItem_BehaviorDescriptor = new ScriptKindClassItem_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_NextEditor_BehaviorDescriptor = new CellModel_NextEditor_BehaviorDescriptor();
-  private final BHDescriptor mySynchronizeable_BehaviorDescriptor = new Synchronizeable_BehaviorDescriptor();
+  private final BHDescriptor myConceptEditorDeclaration__BehaviorDescriptor = new ConceptEditorDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEditorCellModel__BehaviorDescriptor = new EditorCellModel__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Collection__BehaviorDescriptor = new CellModel_Collection__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Constant__BehaviorDescriptor = new CellModel_Constant__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Property__BehaviorDescriptor = new CellModel_Property__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_RefNode__BehaviorDescriptor = new CellModel_RefNode__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_RefNodeList__BehaviorDescriptor = new CellModel_RefNodeList__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_ModelAccess__BehaviorDescriptor = new CellModel_ModelAccess__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Error__BehaviorDescriptor = new CellModel_Error__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Custom__BehaviorDescriptor = new CellModel_Custom__BehaviorDescriptor();
+  private final BHDescriptor myEditorComponentDeclaration__BehaviorDescriptor = new EditorComponentDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Component__BehaviorDescriptor = new CellModel_Component__BehaviorDescriptor();
+  private final BHDescriptor myBaseEditorComponent__BehaviorDescriptor = new BaseEditorComponent__BehaviorDescriptor();
+  private final BHDescriptor myCellKeyMapDeclaration__BehaviorDescriptor = new CellKeyMapDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_RefCell__BehaviorDescriptor = new CellModel_RefCell__BehaviorDescriptor();
+  private final BHDescriptor myInlineEditorComponent__BehaviorDescriptor = new InlineEditorComponent__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Alternation__BehaviorDescriptor = new CellModel_Alternation__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_AttributedPropertyCell__BehaviorDescriptor = new CellModel_AttributedPropertyCell__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_AttributedLinkCell__BehaviorDescriptor = new CellModel_AttributedLinkCell__BehaviorDescriptor();
+  private final BHDescriptor myCellKeyMap_AbstractFunction__BehaviorDescriptor = new CellKeyMap_AbstractFunction__BehaviorDescriptor();
+  private final BHDescriptor myCellKeyMap_IsApplicableFunction__BehaviorDescriptor = new CellKeyMap_IsApplicableFunction__BehaviorDescriptor();
+  private final BHDescriptor myCellActionMapDeclaration__BehaviorDescriptor = new CellActionMapDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCellActionMap_ExecuteFunction__BehaviorDescriptor = new CellActionMap_ExecuteFunction__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_WithRole__BehaviorDescriptor = new CellModel_WithRole__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_ListWithRole__BehaviorDescriptor = new CellModel_ListWithRole__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_NodeCondition__BehaviorDescriptor = new QueryFunction_NodeCondition__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_AttributedNodeCell__BehaviorDescriptor = new CellModel_AttributedNodeCell__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor = new CellMenuPart_PropertyValues_GetValues__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor = new CellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor = new CellMenuPart_AbstractGroup_Query__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor = new CellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor = new CellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor = new CellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuDescriptor__BehaviorDescriptor = new CellMenuDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_Abstract__BehaviorDescriptor = new CellMenuPart_Abstract__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor = new CellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor = new CellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor = new CellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor = new CellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor = new CellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor = new CellMenuPart_Generic_Group_Handler__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor = new CellMenuPart_Generic_Item_Handler__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuComponent__BehaviorDescriptor = new CellMenuComponent__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuComponentFeature_Property__BehaviorDescriptor = new CellMenuComponentFeature_Property__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuComponentFeature_Link__BehaviorDescriptor = new CellMenuComponentFeature_Link__BehaviorDescriptor();
+  private final BHDescriptor myAbstractComponent__BehaviorDescriptor = new AbstractComponent__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_JComponent__BehaviorDescriptor = new QueryFunction_JComponent__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_text__BehaviorDescriptor = new ConceptFunctionParameter_text__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ModelAccess_Getter__BehaviorDescriptor = new QueryFunction_ModelAccess_Getter__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ModelAccess_Setter__BehaviorDescriptor = new QueryFunction_ModelAccess_Setter__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ModelAccess_Validator__BehaviorDescriptor = new QueryFunction_ModelAccess_Validator__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_oldText__BehaviorDescriptor = new ConceptFunctionParameter_oldText__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_CellProvider__BehaviorDescriptor = new QueryFunction_CellProvider__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Color__BehaviorDescriptor = new QueryFunction_Color__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_NodeFactory__BehaviorDescriptor = new QueryFunction_NodeFactory__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ImagePath__BehaviorDescriptor = new QueryFunction_ImagePath__BehaviorDescriptor();
+  private final BHDescriptor myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor = new CellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_NodeListFilter__BehaviorDescriptor = new QueryFunction_NodeListFilter__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_NonEmptyProperty__BehaviorDescriptor = new CellModel_NonEmptyProperty__BehaviorDescriptor();
+  private final BHDescriptor myStyleSheet__BehaviorDescriptor = new StyleSheet__BehaviorDescriptor();
+  private final BHDescriptor myStyleSheetClass__BehaviorDescriptor = new StyleSheetClass__BehaviorDescriptor();
+  private final BHDescriptor myStyleClassItem__BehaviorDescriptor = new StyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myForegroundColorStyleClassItem__BehaviorDescriptor = new ForegroundColorStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myBooleanStyleSheetItem__BehaviorDescriptor = new BooleanStyleSheetItem__BehaviorDescriptor();
+  private final BHDescriptor myEditableStyleClassItem__BehaviorDescriptor = new EditableStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor mySelectableStyleSheetItem__BehaviorDescriptor = new SelectableStyleSheetItem__BehaviorDescriptor();
+  private final BHDescriptor myAutoDeletableStyleClassItem__BehaviorDescriptor = new AutoDeletableStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myDrawBorderStyleClassItem__BehaviorDescriptor = new DrawBorderStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myForegroundNullColorStyleClassItem__BehaviorDescriptor = new ForegroundNullColorStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Indent__BehaviorDescriptor = new CellModel_Indent__BehaviorDescriptor();
+  private final BHDescriptor myTextBackgroundColorStyleClassItem__BehaviorDescriptor = new TextBackgroundColorStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor = new TextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myPaddingLeftStyleClassItem__BehaviorDescriptor = new PaddingLeftStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myPaddingRightStyleClassItem__BehaviorDescriptor = new PaddingRightStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myFirstPositionAllowedStyleClassItem__BehaviorDescriptor = new FirstPositionAllowedStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myLastPositionAllowedStyleClassItem__BehaviorDescriptor = new LastPositionAllowedStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_TransactionalProperty__BehaviorDescriptor = new CellModel_TransactionalProperty__BehaviorDescriptor();
+  private final BHDescriptor myTransactionalPropertyHandler__BehaviorDescriptor = new TransactionalPropertyHandler__BehaviorDescriptor();
+  private final BHDescriptor myDrawBracketsStyleClassItem__BehaviorDescriptor = new DrawBracketsStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIStyleContainer__BehaviorDescriptor = new IStyleContainer__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_FontStyle__BehaviorDescriptor = new QueryFunction_FontStyle__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Integer__BehaviorDescriptor = new QueryFunction_Integer__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_StyleParameter__BehaviorDescriptor = new QueryFunction_StyleParameter__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Underlined__BehaviorDescriptor = new QueryFunction_Underlined__BehaviorDescriptor();
+  private final BHDescriptor myStrikeOutStyleSheet__BehaviorDescriptor = new StrikeOutStyleSheet__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Boolean__BehaviorDescriptor = new QueryFunction_Boolean__BehaviorDescriptor();
+  private final BHDescriptor myIQueryFunction_Color__BehaviorDescriptor = new IQueryFunction_Color__BehaviorDescriptor();
+  private final BHDescriptor myRGBColor__BehaviorDescriptor = new RGBColor__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor = new CellModel_ReadOnlyModelAccessor__BehaviorDescriptor();
+  private final BHDescriptor myPaddingTopStyleClassItem__BehaviorDescriptor = new PaddingTopStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myPaddingBottomStyleClassItem__BehaviorDescriptor = new PaddingBottomStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myAbstractPaddingStyleClassItem__BehaviorDescriptor = new AbstractPaddingStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myPunctuationLeftStyleClassItem__BehaviorDescriptor = new PunctuationLeftStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myPunctuationRightStyleClassItem__BehaviorDescriptor = new PunctuationRightStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myBaseLineCell__BehaviorDescriptor = new BaseLineCell__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_String__BehaviorDescriptor = new QueryFunction_String__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutIndentStyleClassItem__BehaviorDescriptor = new IndentLayoutIndentStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor = new IndentLayoutNewLineStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor = new IndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor = new IndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutNoWrapClassItem__BehaviorDescriptor = new IndentLayoutNoWrapClassItem__BehaviorDescriptor();
+  private final BHDescriptor myAppendTextOperation__BehaviorDescriptor = new AppendTextOperation__BehaviorDescriptor();
+  private final BHDescriptor mySetBoldOperation__BehaviorDescriptor = new SetBoldOperation__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_MethodPresentation__BehaviorDescriptor = new QueryFunction_MethodPresentation__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_parameterObject__BehaviorDescriptor = new ConceptFunctionParameter_parameterObject__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SeparatorText__BehaviorDescriptor = new QueryFunction_SeparatorText__BehaviorDescriptor();
+  private final BHDescriptor myReadOnlyStyleClassItem__BehaviorDescriptor = new ReadOnlyStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ColorComposit__BehaviorDescriptor = new QueryFunction_ColorComposit__BehaviorDescriptor();
+  private final BHDescriptor myIStyleSheetMember__BehaviorDescriptor = new IStyleSheetMember__BehaviorDescriptor();
+  private final BHDescriptor myStyleClass__BehaviorDescriptor = new StyleClass__BehaviorDescriptor();
+  private final BHDescriptor myCellActionMap_CanExecuteFunction__BehaviorDescriptor = new CellActionMap_CanExecuteFunction__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Style__BehaviorDescriptor = new QueryFunction_Style__BehaviorDescriptor();
+  private final BHDescriptor mySelectInEditorOperation__BehaviorDescriptor = new SelectInEditorOperation__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_URL__BehaviorDescriptor = new CellModel_URL__BehaviorDescriptor();
+  private final BHDescriptor myStyleAttributeDeclaration__BehaviorDescriptor = new StyleAttributeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_AttributeStyleParameter__BehaviorDescriptor = new QueryFunction_AttributeStyleParameter__BehaviorDescriptor();
+  private final BHDescriptor myStyleKey__BehaviorDescriptor = new StyleKey__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_StyledText__BehaviorDescriptor = new ConceptFunctionParameter_StyledText__BehaviorDescriptor();
+  private final BHDescriptor myAbstractStyledTextOperation__BehaviorDescriptor = new AbstractStyledTextOperation__BehaviorDescriptor();
+  private final BHDescriptor myConceptEditorHintDeclaration__BehaviorDescriptor = new ConceptEditorHintDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myQueryHintsSpecification__BehaviorDescriptor = new QueryHintsSpecification__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_IsMethodCurrent__BehaviorDescriptor = new QueryFunction_IsMethodCurrent__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SNode__BehaviorDescriptor = new QueryFunction_SNode__BehaviorDescriptor();
+  private final BHDescriptor myDefaultBaseLine__BehaviorDescriptor = new DefaultBaseLine__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParametersList__BehaviorDescriptor = new QueryFunction_ParametersList__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor();
+  private final BHDescriptor myScriptKindClassItem__BehaviorDescriptor = new ScriptKindClassItem__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_NextEditor__BehaviorDescriptor = new CellModel_NextEditor__BehaviorDescriptor();
+  private final BHDescriptor mySynchronizeable__BehaviorDescriptor = new Synchronizeable__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -291,265 +291,265 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConceptEditorDeclaration_BehaviorDescriptor;
+        return myConceptEditorDeclaration__BehaviorDescriptor;
       case 1:
-        return myEditorCellModel_BehaviorDescriptor;
+        return myEditorCellModel__BehaviorDescriptor;
       case 2:
-        return myCellModel_Collection_BehaviorDescriptor;
+        return myCellModel_Collection__BehaviorDescriptor;
       case 3:
-        return myCellModel_Constant_BehaviorDescriptor;
+        return myCellModel_Constant__BehaviorDescriptor;
       case 4:
-        return myCellModel_Property_BehaviorDescriptor;
+        return myCellModel_Property__BehaviorDescriptor;
       case 5:
-        return myCellModel_RefNode_BehaviorDescriptor;
+        return myCellModel_RefNode__BehaviorDescriptor;
       case 6:
-        return myCellModel_RefNodeList_BehaviorDescriptor;
+        return myCellModel_RefNodeList__BehaviorDescriptor;
       case 7:
-        return myCellModel_ModelAccess_BehaviorDescriptor;
+        return myCellModel_ModelAccess__BehaviorDescriptor;
       case 8:
-        return myCellModel_Error_BehaviorDescriptor;
+        return myCellModel_Error__BehaviorDescriptor;
       case 9:
-        return myCellModel_Custom_BehaviorDescriptor;
+        return myCellModel_Custom__BehaviorDescriptor;
       case 10:
-        return myEditorComponentDeclaration_BehaviorDescriptor;
+        return myEditorComponentDeclaration__BehaviorDescriptor;
       case 11:
-        return myCellModel_Component_BehaviorDescriptor;
+        return myCellModel_Component__BehaviorDescriptor;
       case 12:
-        return myBaseEditorComponent_BehaviorDescriptor;
+        return myBaseEditorComponent__BehaviorDescriptor;
       case 13:
-        return myCellKeyMapDeclaration_BehaviorDescriptor;
+        return myCellKeyMapDeclaration__BehaviorDescriptor;
       case 14:
-        return myCellModel_RefCell_BehaviorDescriptor;
+        return myCellModel_RefCell__BehaviorDescriptor;
       case 15:
-        return myInlineEditorComponent_BehaviorDescriptor;
+        return myInlineEditorComponent__BehaviorDescriptor;
       case 16:
-        return myCellModel_Alternation_BehaviorDescriptor;
+        return myCellModel_Alternation__BehaviorDescriptor;
       case 17:
-        return myCellModel_AttributedPropertyCell_BehaviorDescriptor;
+        return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
       case 18:
-        return myCellModel_AttributedLinkCell_BehaviorDescriptor;
+        return myCellModel_AttributedLinkCell__BehaviorDescriptor;
       case 19:
-        return myCellKeyMap_AbstractFunction_BehaviorDescriptor;
+        return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
       case 20:
-        return myCellKeyMap_IsApplicableFunction_BehaviorDescriptor;
+        return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
       case 21:
-        return myCellActionMapDeclaration_BehaviorDescriptor;
+        return myCellActionMapDeclaration__BehaviorDescriptor;
       case 22:
-        return myCellActionMap_ExecuteFunction_BehaviorDescriptor;
+        return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
       case 23:
-        return myCellModel_WithRole_BehaviorDescriptor;
+        return myCellModel_WithRole__BehaviorDescriptor;
       case 24:
-        return myCellModel_ListWithRole_BehaviorDescriptor;
+        return myCellModel_ListWithRole__BehaviorDescriptor;
       case 25:
-        return myQueryFunction_NodeCondition_BehaviorDescriptor;
+        return myQueryFunction_NodeCondition__BehaviorDescriptor;
       case 26:
-        return myCellModel_AttributedNodeCell_BehaviorDescriptor;
+        return myCellModel_AttributedNodeCell__BehaviorDescriptor;
       case 27:
-        return myCellMenuPart_PropertyValues_GetValues_BehaviorDescriptor;
+        return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
       case 28:
-        return myCellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
       case 29:
-        return myCellMenuPart_AbstractGroup_Query_BehaviorDescriptor;
+        return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
       case 30:
-        return myCellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
       case 31:
-        return myCellMenuPart_AbstractGroup_MatchingText_BehaviorDescriptor;
+        return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
       case 32:
-        return myCellMenuPart_AbstractGroup_DescriptionText_BehaviorDescriptor;
+        return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
       case 33:
-        return myCellMenuDescriptor_BehaviorDescriptor;
+        return myCellMenuDescriptor__BehaviorDescriptor;
       case 34:
-        return myCellMenuPart_Abstract_BehaviorDescriptor;
+        return myCellMenuPart_Abstract__BehaviorDescriptor;
       case 35:
-        return myCellMenuPart_ReplaceNode_CustomNodeConcept_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
       case 36:
-        return myCellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
       case 37:
-        return myCellMenuPart_ReplaceChild_Group_Create_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
       case 38:
-        return myCellMenuPart_ReplaceChild_CustomChildConcept_Query_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
       case 39:
-        return myCellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor;
+        return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
       case 40:
-        return myCellMenuPart_Generic_Group_Handler_BehaviorDescriptor;
+        return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
       case 41:
-        return myCellMenuPart_Generic_Item_Handler_BehaviorDescriptor;
+        return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
       case 42:
-        return myCellMenuComponent_BehaviorDescriptor;
+        return myCellMenuComponent__BehaviorDescriptor;
       case 43:
-        return myCellMenuComponentFeature_Property_BehaviorDescriptor;
+        return myCellMenuComponentFeature_Property__BehaviorDescriptor;
       case 44:
-        return myCellMenuComponentFeature_Link_BehaviorDescriptor;
+        return myCellMenuComponentFeature_Link__BehaviorDescriptor;
       case 45:
-        return myAbstractComponent_BehaviorDescriptor;
+        return myAbstractComponent__BehaviorDescriptor;
       case 46:
-        return myQueryFunction_JComponent_BehaviorDescriptor;
+        return myQueryFunction_JComponent__BehaviorDescriptor;
       case 47:
-        return myConceptFunctionParameter_text_BehaviorDescriptor;
+        return myConceptFunctionParameter_text__BehaviorDescriptor;
       case 48:
-        return myQueryFunction_ModelAccess_Getter_BehaviorDescriptor;
+        return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
       case 49:
-        return myQueryFunction_ModelAccess_Setter_BehaviorDescriptor;
+        return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
       case 50:
-        return myQueryFunction_ModelAccess_Validator_BehaviorDescriptor;
+        return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
       case 51:
-        return myConceptFunctionParameter_oldText_BehaviorDescriptor;
+        return myConceptFunctionParameter_oldText__BehaviorDescriptor;
       case 52:
-        return myQueryFunction_CellProvider_BehaviorDescriptor;
+        return myQueryFunction_CellProvider__BehaviorDescriptor;
       case 53:
-        return myQueryFunction_Color_BehaviorDescriptor;
+        return myQueryFunction_Color__BehaviorDescriptor;
       case 54:
-        return myQueryFunction_NodeFactory_BehaviorDescriptor;
+        return myQueryFunction_NodeFactory__BehaviorDescriptor;
       case 55:
-        return myQueryFunction_ImagePath_BehaviorDescriptor;
+        return myQueryFunction_ImagePath__BehaviorDescriptor;
       case 56:
-        return myCellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor;
+        return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
       case 57:
-        return myQueryFunction_NodeListFilter_BehaviorDescriptor;
+        return myQueryFunction_NodeListFilter__BehaviorDescriptor;
       case 58:
-        return myCellModel_NonEmptyProperty_BehaviorDescriptor;
+        return myCellModel_NonEmptyProperty__BehaviorDescriptor;
       case 59:
-        return myStyleSheet_BehaviorDescriptor;
+        return myStyleSheet__BehaviorDescriptor;
       case 60:
-        return myStyleSheetClass_BehaviorDescriptor;
+        return myStyleSheetClass__BehaviorDescriptor;
       case 61:
-        return myStyleClassItem_BehaviorDescriptor;
+        return myStyleClassItem__BehaviorDescriptor;
       case 62:
-        return myForegroundColorStyleClassItem_BehaviorDescriptor;
+        return myForegroundColorStyleClassItem__BehaviorDescriptor;
       case 63:
-        return myBooleanStyleSheetItem_BehaviorDescriptor;
+        return myBooleanStyleSheetItem__BehaviorDescriptor;
       case 64:
-        return myEditableStyleClassItem_BehaviorDescriptor;
+        return myEditableStyleClassItem__BehaviorDescriptor;
       case 65:
-        return mySelectableStyleSheetItem_BehaviorDescriptor;
+        return mySelectableStyleSheetItem__BehaviorDescriptor;
       case 66:
-        return myAutoDeletableStyleClassItem_BehaviorDescriptor;
+        return myAutoDeletableStyleClassItem__BehaviorDescriptor;
       case 67:
-        return myDrawBorderStyleClassItem_BehaviorDescriptor;
+        return myDrawBorderStyleClassItem__BehaviorDescriptor;
       case 68:
-        return myForegroundNullColorStyleClassItem_BehaviorDescriptor;
+        return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
       case 69:
-        return myCellModel_Indent_BehaviorDescriptor;
+        return myCellModel_Indent__BehaviorDescriptor;
       case 70:
-        return myTextBackgroundColorStyleClassItem_BehaviorDescriptor;
+        return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
       case 71:
-        return myTextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor;
+        return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
       case 72:
-        return myPaddingLeftStyleClassItem_BehaviorDescriptor;
+        return myPaddingLeftStyleClassItem__BehaviorDescriptor;
       case 73:
-        return myPaddingRightStyleClassItem_BehaviorDescriptor;
+        return myPaddingRightStyleClassItem__BehaviorDescriptor;
       case 74:
-        return myFirstPositionAllowedStyleClassItem_BehaviorDescriptor;
+        return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
       case 75:
-        return myLastPositionAllowedStyleClassItem_BehaviorDescriptor;
+        return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
       case 76:
-        return myCellModel_TransactionalProperty_BehaviorDescriptor;
+        return myCellModel_TransactionalProperty__BehaviorDescriptor;
       case 77:
-        return myTransactionalPropertyHandler_BehaviorDescriptor;
+        return myTransactionalPropertyHandler__BehaviorDescriptor;
       case 78:
-        return myDrawBracketsStyleClassItem_BehaviorDescriptor;
+        return myDrawBracketsStyleClassItem__BehaviorDescriptor;
       case 79:
-        return myIStyleContainer_BehaviorDescriptor;
+        return myIStyleContainer__BehaviorDescriptor;
       case 80:
-        return myQueryFunction_FontStyle_BehaviorDescriptor;
+        return myQueryFunction_FontStyle__BehaviorDescriptor;
       case 81:
-        return myQueryFunction_Integer_BehaviorDescriptor;
+        return myQueryFunction_Integer__BehaviorDescriptor;
       case 82:
-        return myQueryFunction_StyleParameter_BehaviorDescriptor;
+        return myQueryFunction_StyleParameter__BehaviorDescriptor;
       case 83:
-        return myQueryFunction_Underlined_BehaviorDescriptor;
+        return myQueryFunction_Underlined__BehaviorDescriptor;
       case 84:
-        return myStrikeOutStyleSheet_BehaviorDescriptor;
+        return myStrikeOutStyleSheet__BehaviorDescriptor;
       case 85:
-        return myQueryFunction_Boolean_BehaviorDescriptor;
+        return myQueryFunction_Boolean__BehaviorDescriptor;
       case 86:
-        return myIQueryFunction_Color_BehaviorDescriptor;
+        return myIQueryFunction_Color__BehaviorDescriptor;
       case 87:
-        return myRGBColor_BehaviorDescriptor;
+        return myRGBColor__BehaviorDescriptor;
       case 88:
-        return myCellModel_ReadOnlyModelAccessor_BehaviorDescriptor;
+        return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
       case 89:
-        return myPaddingTopStyleClassItem_BehaviorDescriptor;
+        return myPaddingTopStyleClassItem__BehaviorDescriptor;
       case 90:
-        return myPaddingBottomStyleClassItem_BehaviorDescriptor;
+        return myPaddingBottomStyleClassItem__BehaviorDescriptor;
       case 91:
-        return myAbstractPaddingStyleClassItem_BehaviorDescriptor;
+        return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
       case 92:
-        return myPunctuationLeftStyleClassItem_BehaviorDescriptor;
+        return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
       case 93:
-        return myPunctuationRightStyleClassItem_BehaviorDescriptor;
+        return myPunctuationRightStyleClassItem__BehaviorDescriptor;
       case 94:
-        return myBaseLineCell_BehaviorDescriptor;
+        return myBaseLineCell__BehaviorDescriptor;
       case 95:
-        return myQueryFunction_String_BehaviorDescriptor;
+        return myQueryFunction_String__BehaviorDescriptor;
       case 96:
-        return myIndentLayoutIndentStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
       case 97:
-        return myIndentLayoutNewLineStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
       case 98:
-        return myIndentLayoutNewLineChildrenStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
       case 99:
-        return myIndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
       case 100:
-        return myIndentLayoutNoWrapClassItem_BehaviorDescriptor;
+        return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
       case 101:
-        return myAppendTextOperation_BehaviorDescriptor;
+        return myAppendTextOperation__BehaviorDescriptor;
       case 102:
-        return mySetBoldOperation_BehaviorDescriptor;
+        return mySetBoldOperation__BehaviorDescriptor;
       case 103:
-        return myQueryFunction_MethodPresentation_BehaviorDescriptor;
+        return myQueryFunction_MethodPresentation__BehaviorDescriptor;
       case 104:
-        return myConceptFunctionParameter_parameterObject_BehaviorDescriptor;
+        return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
       case 105:
-        return myQueryFunction_SeparatorText_BehaviorDescriptor;
+        return myQueryFunction_SeparatorText__BehaviorDescriptor;
       case 106:
-        return myReadOnlyStyleClassItem_BehaviorDescriptor;
+        return myReadOnlyStyleClassItem__BehaviorDescriptor;
       case 107:
-        return myQueryFunction_ColorComposit_BehaviorDescriptor;
+        return myQueryFunction_ColorComposit__BehaviorDescriptor;
       case 108:
-        return myIStyleSheetMember_BehaviorDescriptor;
+        return myIStyleSheetMember__BehaviorDescriptor;
       case 109:
-        return myStyleClass_BehaviorDescriptor;
+        return myStyleClass__BehaviorDescriptor;
       case 110:
-        return myCellActionMap_CanExecuteFunction_BehaviorDescriptor;
+        return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
       case 111:
-        return myQueryFunction_Style_BehaviorDescriptor;
+        return myQueryFunction_Style__BehaviorDescriptor;
       case 112:
-        return mySelectInEditorOperation_BehaviorDescriptor;
+        return mySelectInEditorOperation__BehaviorDescriptor;
       case 113:
-        return myCellModel_URL_BehaviorDescriptor;
+        return myCellModel_URL__BehaviorDescriptor;
       case 114:
-        return myStyleAttributeDeclaration_BehaviorDescriptor;
+        return myStyleAttributeDeclaration__BehaviorDescriptor;
       case 115:
-        return myQueryFunction_AttributeStyleParameter_BehaviorDescriptor;
+        return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
       case 116:
-        return myStyleKey_BehaviorDescriptor;
+        return myStyleKey__BehaviorDescriptor;
       case 117:
-        return myConceptFunctionParameter_StyledText_BehaviorDescriptor;
+        return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
       case 118:
-        return myAbstractStyledTextOperation_BehaviorDescriptor;
+        return myAbstractStyledTextOperation__BehaviorDescriptor;
       case 119:
-        return myConceptEditorHintDeclaration_BehaviorDescriptor;
+        return myConceptEditorHintDeclaration__BehaviorDescriptor;
       case 120:
-        return myQueryHintsSpecification_BehaviorDescriptor;
+        return myQueryHintsSpecification__BehaviorDescriptor;
       case 121:
-        return myQueryFunction_IsMethodCurrent_BehaviorDescriptor;
+        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
       case 122:
-        return myQueryFunction_SNode_BehaviorDescriptor;
+        return myQueryFunction_SNode__BehaviorDescriptor;
       case 123:
-        return myDefaultBaseLine_BehaviorDescriptor;
+        return myDefaultBaseLine__BehaviorDescriptor;
       case 124:
-        return myQueryFunction_ParametersList_BehaviorDescriptor;
+        return myQueryFunction_ParametersList__BehaviorDescriptor;
       case 125:
-        return myIndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
       case 126:
-        return myIndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor;
+        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
       case 127:
-        return myScriptKindClassItem_BehaviorDescriptor;
+        return myScriptKindClassItem__BehaviorDescriptor;
       case 128:
-        return myCellModel_NextEditor_BehaviorDescriptor;
+        return myCellModel_NextEditor__BehaviorDescriptor;
       case 129:
-        return mySynchronizeable_BehaviorDescriptor;
+        return mySynchronizeable__BehaviorDescriptor;
       default:
         return null;
     }

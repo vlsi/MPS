@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class PriorityQueueCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PriorityQueueCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a89009f6cL, "jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,13 +46,13 @@ public final class PriorityQueueCreator_BehaviorDescriptor extends BaseBHDescrip
     return true;
   }
   private static List<SNode> getAvailableFor_id2D1PBM_bxHF(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = AbstractContainerCreator_BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
+    List<SNode> result = AbstractContainerCreator__BehaviorDescriptor.getAvailableFor_id2D1PBM_bxHF.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "5686963296372475025"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));
     return result;
   }
 
-  /*package*/ PriorityQueueCreator_BehaviorDescriptor() {
+  /*package*/ PriorityQueueCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

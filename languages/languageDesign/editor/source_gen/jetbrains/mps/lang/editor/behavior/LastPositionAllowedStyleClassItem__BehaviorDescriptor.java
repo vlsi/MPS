@@ -23,7 +23,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LastPositionAllowedStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LastPositionAllowedStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class LastPositionAllowedStyleClassItem_BehaviorDescriptor extends 
     return StyleAttributes.LAST_POSITION_ALLOWED;
   }
 
-  /*package*/ LastPositionAllowedStyleClassItem_BehaviorDescriptor() {
+  /*package*/ LastPositionAllowedStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

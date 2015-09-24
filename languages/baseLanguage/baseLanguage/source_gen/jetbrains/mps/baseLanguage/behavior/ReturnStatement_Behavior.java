@@ -35,7 +35,7 @@ public class ReturnStatement_Behavior {
   }
   public static SNode call_getReturnJumpTarget_1229351767970(SNode __thisNode__) {
     SNode container = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
-    if (IStatementListContainer_BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(container)) {
+    if (IStatementListContainer__BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(container)) {
       return SLinkOperations.getTarget(SNodeOperations.cast(container, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"));
     }
     return null;

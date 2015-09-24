@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescr
     return _quotation_createNode_izkvz_a0a0();
   }
 
-  /*package*/ CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor() {
+  /*package*/ CellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

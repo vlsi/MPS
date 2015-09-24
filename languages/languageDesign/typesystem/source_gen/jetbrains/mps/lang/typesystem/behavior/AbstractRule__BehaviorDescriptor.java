@@ -20,12 +20,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect__BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,11 +50,11 @@ public final class AbstractRule_BehaviorDescriptor extends BaseBHDescriptor {
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode"), conceptReference);
   }
   private static Boolean isAttributeRule_id6lCixFI9vx1(@NotNull SNode __thisNode__) {
-    SNode baseConcept = IConceptAspect_BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
-    return AbstractConceptDeclaration_BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(baseConcept, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getDeclarationNode());
+    SNode baseConcept = IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__);
+    return AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(baseConcept, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getDeclarationNode());
   }
 
-  /*package*/ AbstractRule_BehaviorDescriptor() {
+  /*package*/ AbstractRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

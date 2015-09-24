@@ -14,7 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 
 public class XmlWhitespace_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -44,9 +44,9 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_2bpkx8_a0a(EditorContext editorContext, SNode node) {
-    return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_2bpkx8_a1a(EditorContext editorContext, SNode node) {
-    return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node) && XmlPart_BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node) && XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

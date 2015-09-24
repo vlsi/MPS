@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class IOperation_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
   private static Boolean isLValue_idhEwIP$w(@NotNull SNode __thisNode__) {
-    return IOperation_BehaviorDescriptor.lvalue_id1653mnvAgvW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
+    return IOperation__BehaviorDescriptor.lvalue_id1653mnvAgvW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
   }
   private static Boolean operandCanBeNull_idhWYZ0eEN6z(@NotNull SNode __thisNode__) {
     return false;
@@ -61,7 +61,7 @@ public final class IOperation_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ IOperation_BehaviorDescriptor() {
+  /*package*/ IOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

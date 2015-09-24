@@ -20,7 +20,7 @@ public class ConceptFunctionParameter_Behavior {
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(__thisNode__);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(ConceptFunction_BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
+        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
       }
     }).first();
   }

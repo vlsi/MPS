@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor;
+import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor;
 
 public class PastedNodeReference_Constraints extends BaseConstraintsDescriptor {
   public PastedNodeReference_Constraints() {
@@ -34,7 +34,7 @@ public class PastedNodeReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return INodeWithReference_BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(_context.getReferenceNode());
+            return INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(_context.getReferenceNode());
           }
         };
       }

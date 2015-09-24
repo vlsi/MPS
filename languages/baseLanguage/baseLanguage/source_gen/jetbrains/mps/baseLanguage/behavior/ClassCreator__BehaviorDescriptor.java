@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ClassCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClassCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -56,13 +56,13 @@ public final class ClassCreator_BehaviorDescriptor extends BaseBHDescriptor {
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     SNode classConcept = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if ((classConcept != null)) {
-      return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+      return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
     }
 
     // special logic for java stubs 
     SReference cRef = SNodeOperations.getReference(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     if (cRef == null) {
-      return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+      return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
     }
 
     SModel targetModel = ((StaticReference) cRef).getTargetSModel();
@@ -77,13 +77,13 @@ public final class ClassCreator_BehaviorDescriptor extends BaseBHDescriptor {
     }
 
 
-    return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
   }
   private static Boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {
-    return IMethodCall_BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__);
+    return IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ ClassCreator_BehaviorDescriptor() {
+  /*package*/ ClassCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

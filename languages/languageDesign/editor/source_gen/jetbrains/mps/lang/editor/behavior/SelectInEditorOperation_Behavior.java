@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 @Deprecated
 public class SelectInEditorOperation_Behavior {
   public static Scope call_getPropertyDeclarationScope_4323500428150818454(SNode __thisNode__, SNode concept) {
-    return new SimpleScope(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept)) {
+    return new SimpleScope(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept)) {
       @Nullable
       public String getReferenceText(@NotNull SNode target) {
         return SPropertyOperations.getString(((SNode) target), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

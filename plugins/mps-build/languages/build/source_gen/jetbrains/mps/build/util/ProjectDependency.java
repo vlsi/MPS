@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -33,7 +33,7 @@ public class ProjectDependency {
     List<SNode> dependencies = ListSequence.fromList(new ArrayList<SNode>());
     dfs(myProject, dependencies, SetSequence.fromSet(new HashSet<SNode>()));
 
-    String basePath = BuildProject_BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(myProject, Context.defaultContext(myGenContext));
+    String basePath = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(myProject, Context.defaultContext(myGenContext));
     if ((basePath == null || basePath.length() == 0)) {
       return this;
     }
@@ -52,7 +52,7 @@ public class ProjectDependency {
   }
   private String calculatePath(SNode node, RelativePathHelper helper) {
     SNode script = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"));
-    String filePath = BuildProject_BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(script, Context.defaultContext(myGenContext));
+    String filePath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(script, Context.defaultContext(myGenContext));
     if (filePath == null) {
       myGenContext.showErrorMessage(script, "no script path for required script " + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       return ".";
@@ -60,12 +60,12 @@ public class ProjectDependency {
     try {
       String relative = helper.makeRelative(filePath);
       if ((relative == null || relative.length() == 0)) {
-        return BuildProject_BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(script);
+        return BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(script);
       }
       if (!(relative.endsWith("/"))) {
         relative += "/";
       }
-      return relative + BuildProject_BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(script);
+      return relative + BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(script);
     } catch (RelativePathHelper.PathException ex) {
       myGenContext.showErrorMessage(node, "cannot calculate relative path: " + ex.getMessage());
       return "????";
@@ -84,7 +84,7 @@ public class ProjectDependency {
   private Iterable<SNode> getImmediateDependencies(SNode project) {
     return ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) == null) && !(BuildProject_BehaviorDescriptor.isPackaged_id3_glsEmok8d.invoke(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), Context.defaultContext(myGenContext)));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) == null) && !(BuildProject__BehaviorDescriptor.isPackaged_id3_glsEmok8d.invoke(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), Context.defaultContext(myGenContext)));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

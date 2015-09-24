@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TypeVarReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TypeVarReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL, "jetbrains.mps.lang.typesystem.structure.TypeVarReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class TypeVarReference_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ TypeVarReference_BehaviorDescriptor() {
+  /*package*/ TypeVarReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

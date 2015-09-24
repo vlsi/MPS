@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MessageStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MessageStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,7 +33,7 @@ public final class MessageStatement_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ MessageStatement_BehaviorDescriptor() {
+  /*package*/ MessageStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

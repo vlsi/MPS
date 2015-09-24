@@ -24,7 +24,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReloadClassesCommand_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReloadClassesCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191dd31L, "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class ReloadClassesCommand_BehaviorDescriptor extends BaseBHDescrip
     return "reload classes of all modules";
   }
 
-  /*package*/ ReloadClassesCommand_BehaviorDescriptor() {
+  /*package*/ ReloadClassesCommand__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

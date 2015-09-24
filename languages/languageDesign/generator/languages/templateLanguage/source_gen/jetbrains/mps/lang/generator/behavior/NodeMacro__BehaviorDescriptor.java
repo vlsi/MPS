@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,15 +42,15 @@ public final class NodeMacro_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
-    SNode prevNodeMacro = NodeMacro_BehaviorDescriptor.getPreviousNodeMacro_idhEwIot7.invoke(__thisNode__);
+    SNode prevNodeMacro = NodeMacro__BehaviorDescriptor.getPreviousNodeMacro_idhEwIot7.invoke(__thisNode__);
     if (prevNodeMacro != null) {
-      return NodeMacro_BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invoke(prevNodeMacro);
+      return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invoke(prevNodeMacro);
     } else {
-      return NodeMacro_BehaviorDescriptor.getInputNodeTypeFromEnvironment_idhEwIouc.invoke(__thisNode__);
+      return NodeMacro__BehaviorDescriptor.getInputNodeTypeFromEnvironment_idhEwIouc.invoke(__thisNode__);
     }
   }
   private static SNode getPreviousNodeMacro_idhEwIot7(@NotNull SNode __thisNode__) {
-    return NodeMacro_BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, __thisNode__, SNodeOperations.getParent(__thisNode__));
+    return NodeMacro__BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, __thisNode__, SNodeOperations.getParent(__thisNode__));
   }
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     StringBuilder builder = new StringBuilder();
@@ -85,7 +85,7 @@ public final class NodeMacro_BehaviorDescriptor extends BaseBHDescriptor {
     if (result != null) {
       return result;
     }
-    return NodeMacro_BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, null, SNodeOperations.getParent(currentNode));
+    return NodeMacro__BehaviorDescriptor.getEnclosingMacro_idhEwIoti.invoke(__thisNode__, null, SNodeOperations.getParent(currentNode));
   }
   private static SNode getInputNodeTypeFromEnvironment_idhEwIouc(@NotNull SNode __thisNode__) {
     SNode ancestor = SNodeOperations.getNodeAncestorWhereConceptInList(__thisNode__, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule")}, false, false);
@@ -103,7 +103,7 @@ public final class NodeMacro_BehaviorDescriptor extends BaseBHDescriptor {
     return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 
-  /*package*/ NodeMacro_BehaviorDescriptor() {
+  /*package*/ NodeMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

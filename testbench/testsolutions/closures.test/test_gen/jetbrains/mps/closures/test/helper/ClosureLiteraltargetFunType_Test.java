@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.closures.behavior.FunctionType__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.helper.Values;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -34,7 +34,7 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
       TemplateQueryContext genContext = this.getContext();
       SNode literal = SNodeOperations.cast(this.getNodeById("6374750171056867612"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
       SNode funtype = SNodeOperations.cast(this.getNodeById("6374750171056867639"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
-      new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType_BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
+      new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType__BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_as9vne_c0a4a0());
     }
     public TemplateQueryContext getContext() {

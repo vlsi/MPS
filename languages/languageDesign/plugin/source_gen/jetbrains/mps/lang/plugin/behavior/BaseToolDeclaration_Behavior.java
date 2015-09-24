@@ -21,7 +21,7 @@ public class BaseToolDeclaration_Behavior {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Tool";
   }
   public static String call_getGeneratedClassFQName_6547237850567463438(SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration_BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration__BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
   }
   public static boolean call_hasNumber_6547237850567463455(SNode __thisNode__) {
     return !(SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), null));

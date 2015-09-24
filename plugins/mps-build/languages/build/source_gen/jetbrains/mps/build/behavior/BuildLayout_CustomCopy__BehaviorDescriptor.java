@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildLayout_CustomCopy_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_CustomCopy__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L, "jetbrains.mps.build.structure.BuildLayout_CustomCopy");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class BuildLayout_CustomCopy_BehaviorDescriptor extends BaseBHDescr
     });
   }
 
-  /*package*/ BuildLayout_CustomCopy_BehaviorDescriptor() {
+  /*package*/ BuildLayout_CustomCopy__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -18,14 +18,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IGenericType__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class WatchableListType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class WatchableListType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x19926b3196c33bb3L, "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,11 +37,11 @@ public final class WatchableListType_BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static void collectGenericSubstitutions_id3zZky3wF74h(@NotNull SNode __thisNode__, Map<SNode, SNode> substitutions) {
-    IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invokeSpecial(__thisNode__, substitutions);
-    IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(createClassifierType_za89pk_a0b0a(), substitutions);
+    IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invokeSpecial(__thisNode__, substitutions);
+    IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(createClassifierType_za89pk_a0b0a(), substitutions);
   }
 
-  /*package*/ WatchableListType_BehaviorDescriptor() {
+  /*package*/ WatchableListType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Antiquotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Antiquotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class Antiquotation_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ Antiquotation_BehaviorDescriptor() {
+  /*package*/ Antiquotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

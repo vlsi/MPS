@@ -25,7 +25,7 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeExpectedTypeCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeExpectedTypeCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3cff387beb174046L, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class NodeExpectedTypeCheckOperation_BehaviorDescriptor extends Bas
     return false;
   }
 
-  /*package*/ NodeExpectedTypeCheckOperation_BehaviorDescriptor() {
+  /*package*/ NodeExpectedTypeCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

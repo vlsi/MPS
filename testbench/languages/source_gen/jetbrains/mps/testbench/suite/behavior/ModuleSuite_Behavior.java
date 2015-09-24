@@ -20,14 +20,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class ModuleSuite_Behavior {
   public static Iterable<SModel> call_models_1280144168199531863(SNode __thisNode__) {
-    SModule m = ModuleSuite_BehaviorDescriptor.module_id7A48itizp2R.invoke(__thisNode__);
+    SModule m = ModuleSuite__BehaviorDescriptor.module_id7A48itizp2R.invoke(__thisNode__);
     if (m == null) {
       return null;
     }
     return m.getModels();
   }
   public static SModule call_module_8756160028287537335(SNode __thisNode__) {
-    SModuleReference moduleReference = IModuleRef_BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")));
+    SModuleReference moduleReference = IModuleRef__BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")));
     if (moduleReference == null) {
       return null;
     }

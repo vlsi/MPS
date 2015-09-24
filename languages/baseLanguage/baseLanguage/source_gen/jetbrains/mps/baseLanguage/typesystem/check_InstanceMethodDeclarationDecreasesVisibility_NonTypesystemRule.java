@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -23,9 +23,9 @@ public class check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRul
   public check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRule() {
   }
   public void applyRule(final SNode instanceMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode nearestOverriddenMethod = BaseMethodDeclaration_BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(instanceMethodDeclaration);
+    SNode nearestOverriddenMethod = BaseMethodDeclaration__BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(instanceMethodDeclaration);
     if ((nearestOverriddenMethod == null)) {
-      nearestOverriddenMethod = InstanceMethodDeclaration_BehaviorDescriptor.getImplementedInterfaceMethod_id7cTWCexFh1W.invoke(instanceMethodDeclaration);
+      nearestOverriddenMethod = InstanceMethodDeclaration__BehaviorDescriptor.getImplementedInterfaceMethod_id7cTWCexFh1W.invoke(instanceMethodDeclaration);
     }
     if ((nearestOverriddenMethod == null)) {
       return;

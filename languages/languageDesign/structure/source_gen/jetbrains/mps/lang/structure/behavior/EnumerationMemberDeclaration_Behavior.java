@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class EnumerationMemberDeclaration_Behavior {
   public static String call_getConstantName_1240164579791(SNode __thisNode__) {
-    return NameUtil.toValidIdentifier(EnumerationMemberDeclaration_BehaviorDescriptor.getName_idi2ZRO7Q.invoke(__thisNode__));
+    return NameUtil.toValidIdentifier(EnumerationMemberDeclaration__BehaviorDescriptor.getName_idi2ZRO7Q.invoke(__thisNode__));
   }
   public static String call_getName_1240169660918(SNode __thisNode__) {
     SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));

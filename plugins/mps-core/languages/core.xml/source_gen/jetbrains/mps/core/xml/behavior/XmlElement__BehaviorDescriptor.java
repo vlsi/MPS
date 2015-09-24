@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlElement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class XmlElement_BehaviorDescriptor extends BaseBHDescriptor {
     return multiline;
   }
 
-  /*package*/ XmlElement_BehaviorDescriptor() {
+  /*package*/ XmlElement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

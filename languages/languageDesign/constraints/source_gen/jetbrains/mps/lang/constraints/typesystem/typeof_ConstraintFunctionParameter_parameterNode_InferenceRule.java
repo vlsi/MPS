@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -33,7 +33,7 @@ public class typeof_ConstraintFunctionParameter_parameterNode_InferenceRule exte
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "6768994795311836990", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "6768994795311836987", true), (SNode) _quotation_createNode_10ia44_a0b0a0a1(NodeDefaultSearchScope_BehaviorDescriptor.getReferentConcept_idhEwIhhr.invoke(defaultScope)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "6768994795311836987", true), (SNode) _quotation_createNode_10ia44_a0b0a0a1(NodeDefaultSearchScope__BehaviorDescriptor.getReferentConcept_idhEwIhhr.invoke(defaultScope)), _info_12389875345);
       }
     } else {
       {

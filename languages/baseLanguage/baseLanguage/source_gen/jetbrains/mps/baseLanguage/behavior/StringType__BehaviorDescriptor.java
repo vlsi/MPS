@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class StringType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StringType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,13 +40,13 @@ public final class StringType_BehaviorDescriptor extends BaseBHDescriptor {
     return "string";
   }
   private static SNode getErasure_idB1mAlA38Mq(@NotNull SNode __thisNode__) {
-    return Type_BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
+    return Type__BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
   }
   private static SNode getJavaType_idhEwIzO1(@NotNull SNode __thisNode__) {
     return _quotation_createNode_h5fjpv_a0a2();
   }
 
-  /*package*/ StringType_BehaviorDescriptor() {
+  /*package*/ StringType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class DequeType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DequeType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e99e9ab97de7711L, "jetbrains.mps.baseLanguage.collections.structure.DequeType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class DequeType_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ DequeType_BehaviorDescriptor() {
+  /*package*/ DequeType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class A_BehaviorDescriptor extends BaseBHDescriptor {
+public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04606a7L, "BHL6.structure.A");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,16 +35,16 @@ public final class A_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Integer foo_id5mnatV0hwr3(@NotNull SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
+    return A__BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
   }
   private static Integer bar_id5mnatV0hwrh(@NotNull SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
+    return A__BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
   }
   private static Integer bar2_id6LtvT_VTCe3(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
 
-  /*package*/ A_BehaviorDescriptor() {
+  /*package*/ A__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

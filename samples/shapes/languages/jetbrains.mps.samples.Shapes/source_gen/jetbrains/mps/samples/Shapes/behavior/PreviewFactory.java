@@ -25,7 +25,7 @@ public final class PreviewFactory {
           public void run() {
             ListSequence.fromList(SLinkOperations.getChildren(thisCanvas, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, 0x51dcaa29974ffa47L, "shapes"))).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                Shape_BehaviorDescriptor.drawShape_idW6XMzE_hbz.invoke(it, graphics);
+                Shape__BehaviorDescriptor.drawShape_idW6XMzE_hbz.invoke(it, graphics);
               }
             });
           }

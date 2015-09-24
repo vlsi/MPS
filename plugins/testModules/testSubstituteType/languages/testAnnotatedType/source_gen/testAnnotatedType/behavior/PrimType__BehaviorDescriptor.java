@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PrimType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PrimType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class PrimType_BehaviorDescriptor extends BaseBHDescriptor {
     return subs;
   }
 
-  /*package*/ PrimType_BehaviorDescriptor() {
+  /*package*/ PrimType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class IStyleContainer_Behavior {
   public static List<SNode> call_getClassItems_1219419901278(SNode __thisNode__, SNode itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
-    IStyleContainer_BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
+    IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
     return result;
   }
   public static void call_fillClassItems_2551781846503685010(SNode __thisNode__, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
@@ -31,8 +31,8 @@ public class IStyleContainer_Behavior {
       }
     }
     SetSequence.fromSet(visitedContainers).addElement(__thisNode__);
-    if ((IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__) != null) && !(SetSequence.fromSet(visitedContainers).contains(IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__)))) {
-      IStyleContainer_BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(IStyleContainer_BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__), classItems, itemConcept, visitedContainers);
+    if ((IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__) != null) && !(SetSequence.fromSet(visitedContainers).contains(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__)))) {
+      IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__), classItems, itemConcept, visitedContainers);
     }
   }
 }

@@ -20,15 +20,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PropertyMacro_GetPropertyValue__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe3afb5ffL, "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends Bas
     SNode propertyMacro = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), false, false);
     SNode dataType = SLinkOperations.getTarget(AttributeOperations.getPropertyDeclaration(propertyMacro), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
     if (dataType != null) {
-      return DataTypeDeclaration_BehaviorDescriptor.toBaseLanguageType_idhEwI9ym.invoke(dataType);
+      return DataTypeDeclaration__BehaviorDescriptor.toBaseLanguageType_idhEwI9ym.invoke(dataType);
     }
     return _quotation_createNode_90g9ox_a3a0();
   }
@@ -53,7 +53,7 @@ public final class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends Bas
     return true;
   }
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "1167756221419"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)", "1216860049635"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "1167169188348"));
@@ -61,7 +61,7 @@ public final class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends Bas
     return result;
   }
 
-  /*package*/ PropertyMacro_GetPropertyValue_BehaviorDescriptor() {
+  /*package*/ PropertyMacro_GetPropertyValue__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

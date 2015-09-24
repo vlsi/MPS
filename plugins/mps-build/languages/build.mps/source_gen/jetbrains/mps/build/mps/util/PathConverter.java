@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.util;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.build.behavior.BuildFolderMacro_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildFolderMacro__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,7 +29,7 @@ public class PathConverter {
   private final Iterable<Tuples._2<String, SNode>> macros;
   private final Iterable<SNode> macrosWithoutPath;
   public PathConverter(SNode project) {
-    String workingDir = BuildProject_BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(project, Context.defaultContext());
+    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(project, Context.defaultContext());
     this.workingDirectory = normalizePath(workingDir, true);
 
     final List<Tuples._2<String, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, SNode>>());
@@ -40,7 +40,7 @@ public class PathConverter {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        String path = normalizePath(BuildFolderMacro_BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")), Context.defaultContext()), true);
+        String path = normalizePath(BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")), Context.defaultContext()), true);
         if (path != null && path.length() > 1) {
           ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
         } else {

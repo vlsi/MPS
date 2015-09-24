@@ -20,7 +20,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class ConceptConstraints_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptConstraints__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,10 +50,10 @@ public final class ConceptConstraints_BehaviorDescriptor extends BaseBHDescripto
   private static SNode getConstraintFunctionBodyUsingInheritance_id4jmriKirjWW(@NotNull SAbstractConcept __thisConcept__, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
-        return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration_BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.CONSTRAINTS), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")));
+        return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.CONSTRAINTS), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")));
       }
     };
-    SNode method = SNodeOperations.cast(AbstractConceptDeclaration_BehaviorDescriptor.computeInHierarchy_id3CiBrVcn5fe.invoke(concept, computePredicate), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
+    SNode method = SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.computeInHierarchy_id3CiBrVcn5fe.invoke(concept, computePredicate), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
     if (method == null) {
       return _quotation_createNode_wrxfmp_a0a2a2();
     } else {
@@ -61,7 +61,7 @@ public final class ConceptConstraints_BehaviorDescriptor extends BaseBHDescripto
     }
   }
 
-  /*package*/ ConceptConstraints_BehaviorDescriptor() {
+  /*package*/ ConceptConstraints__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

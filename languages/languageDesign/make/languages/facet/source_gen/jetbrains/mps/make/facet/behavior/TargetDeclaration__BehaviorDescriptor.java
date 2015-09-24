@@ -19,12 +19,12 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier__BehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TargetDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TargetDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,14 +41,14 @@ public final class TargetDeclaration_BehaviorDescriptor extends BaseBHDescriptor
     return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
   }
   private static String getTargetFqName_idLXloLaM9s9(@NotNull SNode __thisNode__) {
-    String ffqn = FacetDeclaration_BehaviorDescriptor.getFacetFqName_id1ExXGqkc_QX.invoke(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration")));
+    String ffqn = FacetDeclaration__BehaviorDescriptor.getFacetFqName_id1ExXGqkc_QX.invoke(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration")));
     return (ffqn != null ? ffqn + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   private static String classifierName_id3ZSHU3pg$b_(@NotNull SNode __thisNode__) {
-    return IWillBeClassifier_BehaviorDescriptor.classifierName_id3ZSHU3pg$b_.invoke(TargetDeclaration_BehaviorDescriptor.facetDeclaration_id6O0kUTrtki6.invoke(__thisNode__)) + ".Target_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return IWillBeClassifier__BehaviorDescriptor.classifierName_id3ZSHU3pg$b_.invoke(TargetDeclaration__BehaviorDescriptor.facetDeclaration_id6O0kUTrtki6.invoke(__thisNode__)) + ".Target_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 
-  /*package*/ TargetDeclaration_BehaviorDescriptor() {
+  /*package*/ TargetDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

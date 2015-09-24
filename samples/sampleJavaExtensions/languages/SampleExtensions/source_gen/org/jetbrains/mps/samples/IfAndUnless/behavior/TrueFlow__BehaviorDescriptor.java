@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TrueFlow_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TrueFlow__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL, "org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class TrueFlow_BehaviorDescriptor extends BaseBHDescriptor {
     return "do";
   }
 
-  /*package*/ TrueFlow_BehaviorDescriptor() {
+  /*package*/ TrueFlow__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

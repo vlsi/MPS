@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +19,7 @@ public class check_ModuleReferenceExpression_NonTypesystemRule extends AbstractN
   public check_ModuleReferenceExpression_NonTypesystemRule() {
   }
   public void applyRule(final SNode moduleRefExpr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ModuleReferenceExpression_BehaviorDescriptor.getModule_id3wj3sjzQUV1.invoke(moduleRefExpr) == null) {
+    if (ModuleReferenceExpression__BehaviorDescriptor.getModule_id3wj3sjzQUV1.invoke(moduleRefExpr) == null) {
       // XXX CheckedModuleReference does the same with property constraint, what's the right approach? 
       {
         MessageTarget errorTarget = new NodeMessageTarget();

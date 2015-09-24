@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeUnknownErrorCheckOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeUnknownErrorCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class NodeUnknownErrorCheckOperation_BehaviorDescriptor extends Bas
     return new NodeRuleReference(reference).getType() == RuleType.DEFAULT;
   }
   private static void attachReference_id2wBFdLy8qmn(@NotNull SNode __thisNode__, SNode reference) {
-    assert IReferenceAttachable_BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(__thisNode__, reference);
+    assert IReferenceAttachable__BehaviorDescriptor.canAttachReference_id2wBFdLy7HtS.invoke(__thisNode__, reference);
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, 0x73a7cdcfba4e961eL, "errorRef"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4af0d67L, "jetbrains.mps.lang.test.structure.UnknownRuleReference"))));
     SLinkOperations.setTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, 0x73a7cdcfba4e961eL, "errorRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), reference);
   }
@@ -48,7 +48,7 @@ public final class NodeUnknownErrorCheckOperation_BehaviorDescriptor extends Bas
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, 0x73a7cdcfba4e961eL, "errorRef"));
   }
 
-  /*package*/ NodeUnknownErrorCheckOperation_BehaviorDescriptor() {
+  /*package*/ NodeUnknownErrorCheckOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

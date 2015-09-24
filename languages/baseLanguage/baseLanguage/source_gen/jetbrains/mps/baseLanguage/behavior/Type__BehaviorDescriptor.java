@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,7 +41,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -74,7 +74,7 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static List<String> getVariableSuffixes_idhEwIzNo(@NotNull SNode __thisNode__) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (String s : NameUtil.splitByCamels(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__))) {
+    for (String s : NameUtil.splitByCamels(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__))) {
       ListSequence.fromList(result).addElement(s);
     }
     return result;
@@ -83,19 +83,19 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   private static String getErasureSignature_idhEwIzNx(@NotNull SNode __thisNode__) {
-    SNode javaType = Type_BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(__thisNode__);
+    SNode javaType = Type__BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(__thisNode__);
     if ((javaType == null)) {
       return "?no erasure?";
     }
     if (javaType == __thisNode__) {
-      return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(javaType);
+      return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(javaType);
     }
-    return Type_BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(javaType);
+    return Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(javaType);
   }
   private static SNode getErasure_idB1mAlA38Mq(@NotNull SNode __thisNode__) {
     // all 'JavaType's should have getErasure() implemented 
-    SNode javaType = Type_BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
-    return ((javaType == null) ? null : Type_BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(javaType));
+    SNode javaType = Type__BehaviorDescriptor.getJavaType_idhEwIzO1.invoke(__thisNode__);
+    return ((javaType == null) ? null : Type__BehaviorDescriptor.getErasure_idB1mAlA38Mq.invoke(javaType));
   }
   private static Boolean isReifiable_id2soW6EObTNQ(@NotNull SNode __thisNode__) {
     return true;
@@ -114,20 +114,20 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static List<SNode> getAbstractCreators_idhQFCQT0(@NotNull SNode __thisNode__) {
     List<SNode> creators = new ArrayList<SNode>();
-    SNode ac = Type_BehaviorDescriptor.getAbstractCreator_idhEwIzNW.invoke(__thisNode__);
+    SNode ac = Type__BehaviorDescriptor.getAbstractCreator_idhEwIzNW.invoke(__thisNode__);
     if ((ac != null)) {
       ListSequence.fromList(creators).addElement(ac);
     }
     return creators;
   }
   private static List<SNode> getAbstractCreators_id6A07P3f4z36(@NotNull SNode __thisNode__, SModel targetModel) {
-    return Type_BehaviorDescriptor.getAbstractCreators_idhQFCQT0.invoke(__thisNode__);
+    return Type__BehaviorDescriptor.getAbstractCreators_idhQFCQT0.invoke(__thisNode__);
   }
   private static SNode getJavaType_idhEwIzO1(@NotNull SNode __thisNode__) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(__thisNode__, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
   }
   private static Boolean selectOnVariableCreation_idhEwIzO8(@NotNull SNode __thisNode__) {
-    return Type_BehaviorDescriptor.hasMissingParameters_id32KZwowVoMu.invoke(__thisNode__);
+    return Type__BehaviorDescriptor.hasMissingParameters_id32KZwowVoMu.invoke(__thisNode__);
   }
   @Deprecated
   private static SNode getClassExpression_idhEwIzOd(@NotNull SNode __thisNode__) {
@@ -143,7 +143,7 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean isSupersetOf_idhKBOZqh(@NotNull SNode __thisNode__, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0o = new Type_BehaviorDescriptor.Pattern_75htfn_a0a0a0a34(__thisNode__);
+      GeneratedMatchingPattern pattern_smb55n_a0o = new Type__BehaviorDescriptor.Pattern_75htfn_a0a0a0a34(__thisNode__);
       SNode coercedNode_smb55n_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0o);
       if (coercedNode_smb55n_a0o != null) {
         return true;
@@ -160,7 +160,7 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
 
-    return Type_BehaviorDescriptor.isSupersetOf_idhKBOZqh.invoke(__thisNode__, t);
+    return Type__BehaviorDescriptor.isSupersetOf_idhKBOZqh.invoke(__thisNode__, t);
   }
   private static SNode createDefaultTypeExpression_id2UvJdVpqUA4(@NotNull SNode __thisNode__) {
     return null;
@@ -171,7 +171,7 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
   private static SNode getLooseType_id4YTQtEKnnzf(@NotNull SNode __thisNode__, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(__thisNode__);
     for (SNode varRef : SNodeOperations.getNodeDescendants(looseType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})) {
-      SNodeOperations.replaceWithAnother(varRef, Type_BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(varRef, visitedTypes));
+      SNodeOperations.replaceWithAnother(varRef, Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(varRef, visitedTypes));
     }
     return looseType;
   }
@@ -182,7 +182,7 @@ public final class Type_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ Type_BehaviorDescriptor() {
+  /*package*/ Type__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

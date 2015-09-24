@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReadOnlyStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReadOnlyStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class ReadOnlyStyleClassItem_BehaviorDescriptor extends BaseBHDescr
     return StyleAttributes.READ_ONLY;
   }
 
-  /*package*/ ReadOnlyStyleClassItem_BehaviorDescriptor() {
+  /*package*/ ReadOnlyStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

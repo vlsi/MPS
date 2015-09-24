@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class CellKeyMap_IsApplicableFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellKeyMap_IsApplicableFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class CellKeyMap_IsApplicableFunction_BehaviorDescriptor extends Ba
     return _quotation_createNode_r6qtig_a0a0();
   }
 
-  /*package*/ CellKeyMap_IsApplicableFunction_BehaviorDescriptor() {
+  /*package*/ CellKeyMap_IsApplicableFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

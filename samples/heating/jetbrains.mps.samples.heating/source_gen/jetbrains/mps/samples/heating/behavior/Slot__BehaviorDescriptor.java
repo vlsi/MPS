@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Slot_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Slot__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -61,10 +61,10 @@ public final class Slot_BehaviorDescriptor extends BaseBHDescriptor {
     return found;
   }
   private static Boolean isCustomizing_idNU25Mr1t4q(@NotNull SNode __thisNode__) {
-    return (Slot_BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(__thisNode__) != null);
+    return (Slot__BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(__thisNode__) != null);
   }
 
-  /*package*/ Slot_BehaviorDescriptor() {
+  /*package*/ Slot__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

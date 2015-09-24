@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LanguageAspectDescriptor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LanguageAspectDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2d72cdccef70b086L, "jetbrains.mps.lang.customAspect.structure.LanguageAspectDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class LanguageAspectDescriptor_BehaviorDescriptor extends BaseBHDes
     return SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.customAspect.methods)", "293220601665589234");
   }
 
-  /*package*/ LanguageAspectDescriptor_BehaviorDescriptor() {
+  /*package*/ LanguageAspectDescriptor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

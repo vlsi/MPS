@@ -21,18 +21,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SelectInEditorOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SelectInEditorOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,22 +57,22 @@ public final class SelectInEditorOperation_BehaviorDescriptor extends BaseBHDesc
     if (kind == MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration").getDeclarationNode() || kind == MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId").getDeclarationNode()) {
       {
         IMatchingPattern pattern_wbtxu4_a0a0c = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
-        SNode coercedNode_wbtxu4_a0a0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__)), pattern_wbtxu4_a0a0c);
+        SNode coercedNode_wbtxu4_a0a0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__)), pattern_wbtxu4_a0a0c);
         if (coercedNode_wbtxu4_a0a0c != null) {
           if (kind == MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration").getDeclarationNode()) {
-            return SelectInEditorOperation_BehaviorDescriptor.getPropertyDeclarationScope_id3K0abI6bsqm.invoke(__thisNode__, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")));
+            return SelectInEditorOperation__BehaviorDescriptor.getPropertyDeclarationScope_id3K0abI6bsqm.invoke(__thisNode__, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")));
           }
           if (kind == MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId").getDeclarationNode()) {
-            return SelectInEditorOperation_BehaviorDescriptor.getEditorCellIdScope_id3K0abI6bXeJ.invoke(__thisNode__, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")));
+            return SelectInEditorOperation__BehaviorDescriptor.getEditorCellIdScope_id3K0abI6bXeJ.invoke(__thisNode__, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")));
           }
         } else {
         }
       }
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static Scope getPropertyDeclarationScope_id3K0abI6bsqm(@NotNull SNode __thisNode__, SNode concept) {
-    return new SimpleScope(AbstractConceptDeclaration_BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept)) {
+    return new SimpleScope(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept)) {
       @Nullable
       public String getReferenceText(@NotNull SNode target) {
         return SPropertyOperations.getString(((SNode) target), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -83,7 +83,7 @@ public final class SelectInEditorOperation_BehaviorDescriptor extends BaseBHDesc
     return new EditorCellIdScope(SNodeOperations.getModel(__thisNode__), concept);
   }
 
-  /*package*/ SelectInEditorOperation_BehaviorDescriptor() {
+  /*package*/ SelectInEditorOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

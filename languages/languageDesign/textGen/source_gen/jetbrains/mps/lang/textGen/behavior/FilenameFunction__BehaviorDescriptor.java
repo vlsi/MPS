@@ -25,7 +25,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class FilenameFunction_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FilenameFunction__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL, "jetbrains.mps.lang.textGen.structure.FilenameFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class FilenameFunction_BehaviorDescriptor extends BaseBHDescriptor 
     return _quotation_createNode_fevao9_a0a1();
   }
 
-  /*package*/ FilenameFunction_BehaviorDescriptor() {
+  /*package*/ FilenameFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

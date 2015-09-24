@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ThisExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ThisExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class ThisExpression_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static List<SNode> getPossibleClassifiers_idhGcjiYt(@NotNull SNode __thisNode__) {
-    return Classifier_BehaviorDescriptor.getNonStaticContextClassifiers_id5S7J9l$QYtM.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
+    return Classifier__BehaviorDescriptor.getNonStaticContextClassifiers_id5S7J9l$QYtM.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
   }
   private static SNode getContextClassifierMember_id5DIwcw5fPui(@NotNull SNode __thisNode__) {
     SNode classConcept = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
@@ -52,7 +52,7 @@ public final class ThisExpression_BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
-  /*package*/ ThisExpression_BehaviorDescriptor() {
+  /*package*/ ThisExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

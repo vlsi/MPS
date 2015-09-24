@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ParameterizedDescriptionBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ParameterizedDescriptionBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x1925e8184af03861L, "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,12 +34,12 @@ public final class ParameterizedDescriptionBlock_BehaviorDescriptor extends Base
   }
 
   private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = DescriptionBlock_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    List<SNode> result = DescriptionBlock__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)", "1240322627579"));
     return result;
   }
 
-  /*package*/ ParameterizedDescriptionBlock_BehaviorDescriptor() {
+  /*package*/ ParameterizedDescriptionBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

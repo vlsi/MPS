@@ -29,7 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IApplicableToNothing_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,19 +55,19 @@ public final class IApplicableToNothing_BehaviorDescriptor extends BaseBHDescrip
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
+          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
         }
       }).toListSequence();
 
     } else {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing_BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(__thisConcept__)));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(__thisConcept__)));
       implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) thisc), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
+          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
         }
       }).toListSequence();
     }
@@ -75,7 +75,7 @@ public final class IApplicableToNothing_BehaviorDescriptor extends BaseBHDescrip
     for (SNode impl : ListSequence.fromList(implementList)) {
       // casting twice to avoid "not comparable" type error 
       SNode conceptNode = impl;
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing_BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(SNodeOperations.asSConcept(((SNode) conceptNode)))));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(SNodeOperations.asSConcept(((SNode) conceptNode)))));
     }
     return result;
   }
@@ -84,7 +84,7 @@ public final class IApplicableToNothing_BehaviorDescriptor extends BaseBHDescrip
   }
   private static SNode expectedOperandType_id5xvLnyYzY1Q(@NotNull SNode __thisNode__, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType")));
-    for (SNode et : IApplicableToNothing_BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
+    for (SNode et : IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {
@@ -96,7 +96,7 @@ public final class IApplicableToNothing_BehaviorDescriptor extends BaseBHDescrip
     return jt;
   }
 
-  /*package*/ IApplicableToNothing_BehaviorDescriptor() {
+  /*package*/ IApplicableToNothing__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

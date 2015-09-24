@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myProjectPluginDisposeBlock_BehaviorDescriptor = new ProjectPluginDisposeBlock_BehaviorDescriptor();
-  private final BHDescriptor myProjectPluginInitBlock_BehaviorDescriptor = new ProjectPluginInitBlock_BehaviorDescriptor();
-  private final BHDescriptor myApplicationPluginType_BehaviorDescriptor = new ApplicationPluginType_BehaviorDescriptor();
-  private final BHDescriptor myProjectPluginDeclaration_BehaviorDescriptor = new ProjectPluginDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myApplicationPluginDeclaration_BehaviorDescriptor = new ApplicationPluginDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myApplicationPluginDisposeBlock_BehaviorDescriptor = new ApplicationPluginDisposeBlock_BehaviorDescriptor();
-  private final BHDescriptor myApplicationPluginInitBlock_BehaviorDescriptor = new ApplicationPluginInitBlock_BehaviorDescriptor();
-  private final BHDescriptor myProjectPluginType_BehaviorDescriptor = new ProjectPluginType_BehaviorDescriptor();
+  private final BHDescriptor myProjectPluginDisposeBlock__BehaviorDescriptor = new ProjectPluginDisposeBlock__BehaviorDescriptor();
+  private final BHDescriptor myProjectPluginInitBlock__BehaviorDescriptor = new ProjectPluginInitBlock__BehaviorDescriptor();
+  private final BHDescriptor myApplicationPluginType__BehaviorDescriptor = new ApplicationPluginType__BehaviorDescriptor();
+  private final BHDescriptor myProjectPluginDeclaration__BehaviorDescriptor = new ProjectPluginDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myApplicationPluginDeclaration__BehaviorDescriptor = new ApplicationPluginDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myApplicationPluginDisposeBlock__BehaviorDescriptor = new ApplicationPluginDisposeBlock__BehaviorDescriptor();
+  private final BHDescriptor myApplicationPluginInitBlock__BehaviorDescriptor = new ApplicationPluginInitBlock__BehaviorDescriptor();
+  private final BHDescriptor myProjectPluginType__BehaviorDescriptor = new ProjectPluginType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myProjectPluginDisposeBlock_BehaviorDescriptor;
+        return myProjectPluginDisposeBlock__BehaviorDescriptor;
       case 1:
-        return myProjectPluginInitBlock_BehaviorDescriptor;
+        return myProjectPluginInitBlock__BehaviorDescriptor;
       case 2:
-        return myApplicationPluginType_BehaviorDescriptor;
+        return myApplicationPluginType__BehaviorDescriptor;
       case 3:
-        return myProjectPluginDeclaration_BehaviorDescriptor;
+        return myProjectPluginDeclaration__BehaviorDescriptor;
       case 4:
-        return myApplicationPluginDeclaration_BehaviorDescriptor;
+        return myApplicationPluginDeclaration__BehaviorDescriptor;
       case 5:
-        return myApplicationPluginDisposeBlock_BehaviorDescriptor;
+        return myApplicationPluginDisposeBlock__BehaviorDescriptor;
       case 6:
-        return myApplicationPluginInitBlock_BehaviorDescriptor;
+        return myApplicationPluginInitBlock__BehaviorDescriptor;
       case 7:
-        return myProjectPluginType_BehaviorDescriptor;
+        return myProjectPluginType__BehaviorDescriptor;
       default:
         return null;
     }

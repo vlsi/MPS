@@ -28,7 +28,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AnnotationInstance_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AnnotationInstance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,7 +55,7 @@ public final class AnnotationInstance_BehaviorDescriptor extends BaseBHDescripto
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
   }
 
-  /*package*/ AnnotationInstance_BehaviorDescriptor() {
+  /*package*/ AnnotationInstance__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

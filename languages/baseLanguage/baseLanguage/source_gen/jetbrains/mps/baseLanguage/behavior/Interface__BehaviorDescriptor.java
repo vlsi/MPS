@@ -22,7 +22,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
@@ -42,7 +42,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Interface__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -64,17 +64,17 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
   private static Boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, SNode nodeToCompare, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(__thisNode__)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("circular hierarchy in interface " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
+        LOG.error("circular hierarchy in interface " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
       }
       return false;
     }
-    if (Classifier_BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(__thisNode__, nodeToCompare)) {
+    if (Classifier__BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(__thisNode__, nodeToCompare)) {
       return true;
     }
     SetSequence.fromSet(visited).addElement(__thisNode__);
     for (SNode extended : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
       Set<SNode> classifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), visited);
-      if (Classifier_BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(SLinkOperations.getTarget(extended, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), nodeToCompare, classifiers)) {
+      if (Classifier__BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(SLinkOperations.getTarget(extended, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), nodeToCompare, classifiers)) {
         return true;
       }
     }
@@ -83,21 +83,21 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
   private static Boolean checkLoops_id3sXyOQUqKq5(@NotNull SNode __thisNode__, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(__thisNode__)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("circular hierarchy in interface " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
+        LOG.error("circular hierarchy in interface " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
       }
       return false;
     }
     SetSequence.fromSet(visited).addElement(__thisNode__);
     for (SNode extended : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
       Set<SNode> classifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), visited);
-      if (!(Classifier_BehaviorDescriptor.checkLoops_id3sXyOQUqKq5.invoke(SLinkOperations.getTarget(extended, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), classifiers))) {
+      if (!(Classifier__BehaviorDescriptor.checkLoops_id3sXyOQUqKq5.invoke(SLinkOperations.getTarget(extended, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), classifiers))) {
         return false;
       }
     }
     return true;
   }
   private static String getUnitName_id4pl5GY7LKmR(@NotNull SNode __thisNode__) {
-    String fqName = INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
+    String fqName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
     if (SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == null) {
       return fqName;
     }
@@ -120,7 +120,7 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
         }
       }));
     }
-    return Classifier_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return Classifier__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull SNode __thisNode__) {
     Iterable<SNode> extendedClassifiers = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).where(new IWhereFilter<SNode>() {
@@ -129,7 +129,7 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
       }
     });
     if (Sequence.fromIterable(extendedClassifiers).isEmpty()) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), Classifier_BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")));
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")));
     } else {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), extendedClassifiers);
     }
@@ -138,7 +138,7 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(__thisNode__)) {
       if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"))) {
-        IClassifierMember_BehaviorDescriptor.populateMember_id6r77ob2UW9O.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember")), context, classifierType);
+        IClassifierMember__BehaviorDescriptor.populateMember_id6r77ob2UW9O.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember")), context, classifierType);
       }
     }
 
@@ -148,36 +148,36 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
         return (it != null);
       }
     })) {
-      IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(extendedInterface, context, classifierType);
+      IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(extendedInterface, context, classifierType);
     }
 
     // populate Object members in case of classifierType.getClassifier() == this classifier 
-    if (IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifierType) == __thisNode__) {
+    if (IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifierType) == __thisNode__) {
       if ((SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object") != null)) {
-        IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(IClassifier_BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")), context, classifierType);
+        IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")), context, classifierType);
       }
     }
   }
   private static Boolean canBeStatic_id2L7NFMC7$9I(@NotNull SNode __thisNode__) {
-    return Classifier_BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(__thisNode__) && !(IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__));
+    return Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(__thisNode__) && !(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__));
   }
   private static void markDeprecated_id6Va_BJexupi(@NotNull SNode __thisNode__) {
-    IBLDeprecatable_BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invokeSpecial(__thisNode__);
+    IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invokeSpecial(__thisNode__);
     if ((AttributeOperations.getAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) == null)) {
       SNodeFactoryOperations.setNewAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
-    if (!(IBLDeprecatable_BehaviorDescriptor.hasDeprecatedBlockDocTag_id3yvWaPI09DC.invoke(__thisNode__))) {
+    if (!(IBLDeprecatable__BehaviorDescriptor.hasDeprecatedBlockDocTag_id3yvWaPI09DC.invoke(__thisNode__))) {
       SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag")));
     }
     AnnotationUtil.attachAnnotation(__thisNode__, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Deprecated"));
   }
   private static void unmarkDeprecated_id6Va_BJex$aE(@NotNull SNode __thisNode__) {
-    IBLDeprecatable_BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invokeSpecial(__thisNode__);
-    IBLDeprecatable_BehaviorDescriptor.removeDeprecationFromDoc_id63oBH1IM79r.invoke(__thisNode__, AttributeOperations.getAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
+    IBLDeprecatable__BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invokeSpecial(__thisNode__);
+    IBLDeprecatable__BehaviorDescriptor.removeDeprecationFromDoc_id63oBH1IM79r.invoke(__thisNode__, AttributeOperations.getAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
     AnnotationUtil.detachAnnotation(__thisNode__, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Deprecated"));
   }
 
-  /*package*/ Interface_BehaviorDescriptor() {
+  /*package*/ Interface__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -242,5 +242,5 @@ public final class Interface_BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(Interface_BehaviorDescriptor.class);
+  protected static Logger LOG = LogManager.getLogger(Interface__BehaviorDescriptor.class);
 }

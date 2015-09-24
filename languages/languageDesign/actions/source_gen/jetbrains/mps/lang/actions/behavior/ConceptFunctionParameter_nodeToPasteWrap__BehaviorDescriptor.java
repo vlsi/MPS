@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51740034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor e
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, "jetbrains.mps.lang.actions.structure.PasteWrapper"), false, false);
   }
 
-  /*package*/ ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor() {
+  /*package*/ ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

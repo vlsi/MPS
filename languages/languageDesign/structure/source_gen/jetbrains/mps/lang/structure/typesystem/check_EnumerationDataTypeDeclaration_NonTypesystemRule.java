@@ -18,7 +18,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -71,7 +71,7 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
         }
 
         // Report duplicate derived identifiers, be it presentation, internal value or java identifiers 
-        final String memberValidId = EnumerationMemberDeclaration_BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(member);
+        final String memberValidId = EnumerationMemberDeclaration__BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(member);
         if (memberValidId == null) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -80,7 +80,7 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
         } else {
           if (ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(EnumerationMemberDeclaration_BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
+              return eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(EnumerationMemberDeclaration__BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
             }
           }).isNotEmpty()) {
             String msg = (deriveFromExternal ? "presentation value" : (deriveFromInternal ? "internal value" : "java identifier"));

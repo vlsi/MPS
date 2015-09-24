@@ -18,6 +18,6 @@ public class IClassifier_Behavior {
     if (classifier != null) {
       return classifier;
     }
-    return IClassifierPart_BehaviorDescriptor.getMainClassifier_idhEwIfO4.invoke(SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), true, false));
+    return IClassifierPart__BehaviorDescriptor.getMainClassifier_idhEwIfO4.invoke(SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), true, false));
   }
 }

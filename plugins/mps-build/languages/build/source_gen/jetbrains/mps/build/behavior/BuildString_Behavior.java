@@ -17,7 +17,7 @@ public class BuildString_Behavior {
   public static String call_getText_4380385936562005550(SNode __thisNode__, MacroHelper helper) {
     StringBuilder sb = new StringBuilder();
     for (SNode n : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")))) {
-      sb.append(BuildStringPart_BehaviorDescriptor.getText_id3NagsOfTq4Y.invoke(n, helper));
+      sb.append(BuildStringPart__BehaviorDescriptor.getText_id3NagsOfTq4Y.invoke(n, helper));
     }
     return sb.toString();
   }

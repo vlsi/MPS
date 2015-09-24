@@ -31,7 +31,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StyleClass_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StyleClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class StyleClass_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean hasCycles_id6rIuTvxpF4l(@NotNull SNode __thisNode__) {
-    return StyleClass_BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
+    return StyleClass__BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
   }
   private static Integer getPriority_id1F_pHBEuveg(@NotNull SNode __thisNode__) {
     Map<SNode, Integer> priorities = MapSequence.fromMap(new HashMap<SNode, Integer>());
@@ -112,7 +112,7 @@ public final class StyleClass_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ StyleClass_BehaviorDescriptor() {
+  /*package*/ StyleClass__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

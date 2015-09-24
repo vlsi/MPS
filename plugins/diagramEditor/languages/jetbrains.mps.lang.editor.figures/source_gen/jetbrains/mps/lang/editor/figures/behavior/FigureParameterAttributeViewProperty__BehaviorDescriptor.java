@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FigureParameterAttributeViewProperty_BehaviorDescriptor extends BaseBHDescriptor {
+public final class FigureParameterAttributeViewProperty__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x6595651980a1f8ecL, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,16 +36,16 @@ public final class FigureParameterAttributeViewProperty_BehaviorDescriptor exten
   }
 
   private static SNode getParameterMember_id4H19mAwT7Py(@NotNull SNode __thisNode__) {
-    return FigureParameterAttributeViewProperty_BehaviorDescriptor.getStaticFieldDeclaration_id6RaK14zkc88.invoke(__thisNode__);
+    return FigureParameterAttributeViewProperty__BehaviorDescriptor.getStaticFieldDeclaration_id6RaK14zkc88.invoke(__thisNode__);
   }
   private static SNode getStaticFieldDeclaration_id6RaK14zkc88(@NotNull SNode __thisNode__) {
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
   }
   private static SNode getParameterType_idiZqVFYvBew(@NotNull SNode __thisNode__) {
-    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeViewProperty_BehaviorDescriptor.getStaticFieldDeclaration_id6RaK14zkc88.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeViewProperty__BehaviorDescriptor.getStaticFieldDeclaration_id6RaK14zkc88.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
   }
 
-  /*package*/ FigureParameterAttributeViewProperty_BehaviorDescriptor() {
+  /*package*/ FigureParameterAttributeViewProperty__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

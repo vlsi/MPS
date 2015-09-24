@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GreaterThanExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GreaterThanExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,16 +39,16 @@ public final class GreaterThanExpression_BehaviorDescriptor extends BaseBHDescri
     if (leftValue instanceof Number && rightValue instanceof Number) {
       Number a = (Number) leftValue;
       Number b = (Number) rightValue;
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
         return a.doubleValue() > b.doubleValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
         return a.floatValue() > b.floatValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
         return a.longValue() > b.longValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
         return a.intValue() > b.intValue();
       }
     } else if (leftValue instanceof Character && rightValue instanceof Character) {
@@ -57,7 +57,7 @@ public final class GreaterThanExpression_BehaviorDescriptor extends BaseBHDescri
     return null;
   }
 
-  /*package*/ GreaterThanExpression_BehaviorDescriptor() {
+  /*package*/ GreaterThanExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

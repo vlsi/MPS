@@ -22,7 +22,7 @@ import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RefTestMethod_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RefTestMethod__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class RefTestMethod_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ RefTestMethod_BehaviorDescriptor() {
+  /*package*/ RefTestMethod__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

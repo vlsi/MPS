@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BigMaxExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BigMaxExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e16047L, "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class BigMaxExpression_BehaviorDescriptor extends BaseBHDescriptor 
     return "MAX";
   }
 
-  /*package*/ BigMaxExpression_BehaviorDescriptor() {
+  /*package*/ BigMaxExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

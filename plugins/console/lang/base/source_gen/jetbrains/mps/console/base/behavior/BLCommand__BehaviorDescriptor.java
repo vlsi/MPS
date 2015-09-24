@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class BLCommand_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BLCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,7 +59,7 @@ public final class BLCommand_BehaviorDescriptor extends BaseBHDescriptor {
     return "{ <statements> }";
   }
 
-  /*package*/ BLCommand_BehaviorDescriptor() {
+  /*package*/ BLCommand__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

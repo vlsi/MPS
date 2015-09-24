@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ClassLikeMemberPlaceholderMenu extends AbstractCellMenuPart_Generic_Group {
@@ -22,7 +22,7 @@ public class ClassLikeMemberPlaceholderMenu extends AbstractCellMenuPart_Generic
   }
   @Override
   protected String getMatchingText(Object object) {
-    return DSLClassMember_BehaviorDescriptor.getMatchingText_id2nUiI4k7qhh.invoke(((SNode) object));
+    return DSLClassMember__BehaviorDescriptor.getMatchingText_id2nUiI4k7qhh.invoke(((SNode) object));
   }
   protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
     EditorUtil.substitutePlaceholder(((SNode) node));

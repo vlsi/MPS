@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SpecificDay_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SpecificDay__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, "jetbrains.mps.samples.heating.structure.SpecificDay");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class SpecificDay_BehaviorDescriptor extends BaseBHDescriptor {
     return SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, 0x40bcae6c0e6b4ea7L, "day"), "monday");
   }
 
-  /*package*/ SpecificDay_BehaviorDescriptor() {
+  /*package*/ SpecificDay__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

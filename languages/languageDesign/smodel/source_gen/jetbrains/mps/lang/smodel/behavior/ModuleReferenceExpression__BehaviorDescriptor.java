@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModuleReferenceExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ModuleReferenceExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class ModuleReferenceExpression_BehaviorDescriptor extends BaseBHDe
   }
   @NotNull
   private static List<SModule> getVisibleModules_id3wj3sjzSgF$(@NotNull SNode __thisNode__) {
-    return ModuleReferenceExpression_BehaviorDescriptor.getVisibleModules_id3wj3sjzSgFZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
+    return ModuleReferenceExpression__BehaviorDescriptor.getVisibleModules_id3wj3sjzSgFZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
   }
   @NotNull
   private static List<SModule> getVisibleModules_id3wj3sjzSgFZ(@NotNull SAbstractConcept __thisConcept__) {
@@ -60,7 +60,7 @@ public final class ModuleReferenceExpression_BehaviorDescriptor extends BaseBHDe
     return result;
   }
 
-  /*package*/ ModuleReferenceExpression_BehaviorDescriptor() {
+  /*package*/ ModuleReferenceExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

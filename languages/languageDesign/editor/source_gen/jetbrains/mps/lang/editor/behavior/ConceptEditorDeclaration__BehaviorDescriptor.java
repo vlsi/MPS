@@ -18,13 +18,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConceptEditorDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConceptEditorDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class ConceptEditorDeclaration_BehaviorDescriptor extends BaseBHDes
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration"), baseConcept);
   }
   private static Boolean isApplicable_id6NcFj35FbEV(@NotNull SNode __thisNode__, SNode candidate) {
-    List<SNode> createdEditors = AbstractConceptDeclaration_BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(candidate, LanguageAspect.EDITOR);
+    List<SNode> createdEditors = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(candidate, LanguageAspect.EDITOR);
     for (SNode createdEditor : createdEditors) {
       if (SNodeOperations.isInstanceOf(createdEditor, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
         return false;
@@ -61,7 +61,7 @@ public final class ConceptEditorDeclaration_BehaviorDescriptor extends BaseBHDes
     }
   }
 
-  /*package*/ ConceptEditorDeclaration_BehaviorDescriptor() {
+  /*package*/ ConceptEditorDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

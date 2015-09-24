@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IfMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IfMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class IfMacro_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ IfMacro_BehaviorDescriptor() {
+  /*package*/ IfMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

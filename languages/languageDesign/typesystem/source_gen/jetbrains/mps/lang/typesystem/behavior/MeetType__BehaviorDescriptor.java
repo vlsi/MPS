@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IGenericType__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MeetType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MeetType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class MeetType_BehaviorDescriptor extends BaseBHDescriptor {
     StringBuilder sb = new StringBuilder("meet(");
     List<SNode> nodes = SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"));
     for (SNode arg : nodes) {
-      sb.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(arg));
+      sb.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(arg));
       if (SNodeOperations.getIndexInParent(arg) < ListSequence.fromList(nodes).count() - 1) {
         sb.append(" & ");
       }
@@ -53,13 +53,13 @@ public final class MeetType_BehaviorDescriptor extends BaseBHDescriptor {
     SNode copy = SNodeOperations.copyNode(__thisNode__);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(copy, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"))).toListSequence()) {
       if (SNodeOperations.isInstanceOf(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
-        SNodeOperations.replaceWithAnother(arg, IGenericType_BehaviorDescriptor.eraseGenerics_id4qyz6djw13y.invoke(SNodeOperations.cast(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))));
+        SNodeOperations.replaceWithAnother(arg, IGenericType__BehaviorDescriptor.eraseGenerics_id4qyz6djw13y.invoke(SNodeOperations.cast(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))));
       }
     }
     return copy;
   }
 
-  /*package*/ MeetType_BehaviorDescriptor() {
+  /*package*/ MeetType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

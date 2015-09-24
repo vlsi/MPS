@@ -41,6 +41,6 @@ public class Slot_Behavior {
     return found;
   }
   public static boolean call_isCustomizing_935069066463662362(SNode __thisNode__) {
-    return (Slot_BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(__thisNode__) != null);
+    return (Slot__BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(__thisNode__) != null);
   }
 }

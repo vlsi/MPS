@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConceptBehavior_BehaviorDescriptor = new ConceptBehavior_BehaviorDescriptor();
-  private final BHDescriptor myConceptMethodDeclaration_BehaviorDescriptor = new ConceptMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor mySuperNodeExpression_BehaviorDescriptor = new SuperNodeExpression_BehaviorDescriptor();
-  private final BHDescriptor myLocalBehaviorMethodCall_BehaviorDescriptor = new LocalBehaviorMethodCall_BehaviorDescriptor();
+  private final BHDescriptor myConceptBehavior__BehaviorDescriptor = new ConceptBehavior__BehaviorDescriptor();
+  private final BHDescriptor myConceptMethodDeclaration__BehaviorDescriptor = new ConceptMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor mySuperNodeExpression__BehaviorDescriptor = new SuperNodeExpression__BehaviorDescriptor();
+  private final BHDescriptor myLocalBehaviorMethodCall__BehaviorDescriptor = new LocalBehaviorMethodCall__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConceptBehavior_BehaviorDescriptor;
+        return myConceptBehavior__BehaviorDescriptor;
       case 1:
-        return myConceptMethodDeclaration_BehaviorDescriptor;
+        return myConceptMethodDeclaration__BehaviorDescriptor;
       case 2:
-        return mySuperNodeExpression_BehaviorDescriptor;
+        return mySuperNodeExpression__BehaviorDescriptor;
       case 3:
-        return myLocalBehaviorMethodCall_BehaviorDescriptor;
+        return myLocalBehaviorMethodCall__BehaviorDescriptor;
       default:
         return null;
     }

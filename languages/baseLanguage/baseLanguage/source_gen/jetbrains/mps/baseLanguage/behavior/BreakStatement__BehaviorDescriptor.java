@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BreakStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BreakStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,14 +38,14 @@ public final class BreakStatement_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SNode getLoop_idhEwIHvD(@NotNull SNode __thisNode__) {
-    SNode loopOrSwitch = BreakStatement_BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
+    SNode loopOrSwitch = BreakStatement__BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"))) {
       return SNodeOperations.cast(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"));
     }
     return null;
   }
   private static SNode getSwitch_idhEwIHvX(@NotNull SNode __thisNode__) {
-    SNode loopOrSwitch = BreakStatement_BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
+    SNode loopOrSwitch = BreakStatement__BehaviorDescriptor.getLoopOrSwitch_idhEwIHwh.invoke(__thisNode__);
     if (SNodeOperations.isInstanceOf(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"))) {
       return SNodeOperations.cast(loopOrSwitch, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
     }
@@ -98,7 +98,7 @@ public final class BreakStatement_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
 
-  /*package*/ BreakStatement_BehaviorDescriptor() {
+  /*package*/ BreakStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildInputSingleFile_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildInputSingleFile__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,13 +34,13 @@ public final class BuildInputSingleFile_BehaviorDescriptor extends BaseBHDescrip
   }
 
   private static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
-    return BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")), null);
+    return BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")), null);
   }
   private static Boolean isImplicit_id19QsrPuCW11(@NotNull SNode __thisNode__) {
     return true;
   }
 
-  /*package*/ BuildInputSingleFile_BehaviorDescriptor() {
+  /*package*/ BuildInputSingleFile__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

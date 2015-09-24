@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LocalBehaviorMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LocalBehaviorMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class LocalBehaviorMethodCall_BehaviorDescriptor extends BaseBHDesc
   }
 
   private static Boolean isVirtualMethodCall_id6cNV$KGvFLM(@NotNull SNode __thisNode__) {
-    return (LocalBehaviorMethodCall_BehaviorDescriptor.getVirtualMethodDeclaration_id6cNV$KGvDlW.invoke(__thisNode__) != null);
+    return (LocalBehaviorMethodCall__BehaviorDescriptor.getVirtualMethodDeclaration_id6cNV$KGvDlW.invoke(__thisNode__) != null);
   }
   private static SNode getVirtualMethodDeclaration_id6cNV$KGvDlW(@NotNull SNode __thisNode__) {
     SNode methodDeclaration = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
@@ -53,7 +53,7 @@ public final class LocalBehaviorMethodCall_BehaviorDescriptor extends BaseBHDesc
     return true;
   }
 
-  /*package*/ LocalBehaviorMethodCall_BehaviorDescriptor() {
+  /*package*/ LocalBehaviorMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

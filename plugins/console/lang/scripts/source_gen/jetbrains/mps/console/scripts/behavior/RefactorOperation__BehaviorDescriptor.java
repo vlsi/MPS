@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RefactorOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RefactorOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x20fd2063d7de993eL, "jetbrains.mps.console.scripts.structure.RefactorOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class RefactorOperation_BehaviorDescriptor extends BaseBHDescriptor
     return "Operates like the forEach operation, but additionally asks the user to include/exclude nodes before starting the refactoring.\n" + "Refactoring is not applied immediately, but after a random delay due to using Java's invokelater.\nMultiple usages of the command within a single query may result in consistency issues and are discouraged.";
   }
 
-  /*package*/ RefactorOperation_BehaviorDescriptor() {
+  /*package*/ RefactorOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

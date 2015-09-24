@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IMemberContainer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IMemberContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class IMemberContainer_BehaviorDescriptor extends BaseBHDescriptor 
     return new ArrayList<SNode>();
   }
 
-  /*package*/ IMemberContainer_BehaviorDescriptor() {
+  /*package*/ IMemberContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

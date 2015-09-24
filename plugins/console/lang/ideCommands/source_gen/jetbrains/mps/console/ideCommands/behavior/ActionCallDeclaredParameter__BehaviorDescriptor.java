@@ -17,12 +17,12 @@ import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.ActionParameter__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ActionCallDeclaredParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ActionCallDeclaredParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class ActionCallDeclaredParameter_BehaviorDescriptor extends BaseBH
   }
 
   private static SNode getParameterDeclaration_id4PRmqZe_o$D(@NotNull SNode __thisNode__) {
-    return ActionParameter_BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, 0x4d7759afce9587a8L, "declaration")));
+    return ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, 0x4d7759afce9587a8L, "declaration")));
   }
 
-  /*package*/ ActionCallDeclaredParameter_BehaviorDescriptor() {
+  /*package*/ ActionCallDeclaredParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

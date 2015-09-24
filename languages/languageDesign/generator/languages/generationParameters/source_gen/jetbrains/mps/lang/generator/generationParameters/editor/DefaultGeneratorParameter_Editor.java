@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor;
+import jetbrains.mps.lang.generator.behavior.IGeneratorParameter__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -126,7 +126,7 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_95jom2_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IGeneratorParameter_BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(node);
+        return IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(node);
       }
       public void setText(String s) {
       }

@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Statement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Statement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,14 +48,14 @@ public final class Statement_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Set<SNode> uncaughtThrowables_id4Gt7ANIVAVT(@NotNull SNode __thisNode__, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(__thisNode__, result, ignoreMayBeThrowables);
+    Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVH8f.invoke(__thisNode__, result, ignoreMayBeThrowables);
     return result;
   }
   private static void collectUncaughtMethodThrowables_id4Gt7ANIVH8f(@NotNull SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (ignoreMayBeThrowables) {
       return;
     }
-    Statement_BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVBW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")), throwables, __thisNode__);
+    Statement__BehaviorDescriptor.collectUncaughtMethodThrowables_id4Gt7ANIVBW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")), throwables, __thisNode__);
   }
   private static void collectUncaughtMethodThrowables_id4Gt7ANIVBW7(@NotNull SAbstractConcept __thisConcept__, final Set<SNode> throwables, SNode arg) {
     ListSequence.fromList(SNodeOperations.getNodeDescendants(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), false, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SNode>() {
@@ -77,7 +77,7 @@ public final class Statement_BehaviorDescriptor extends BaseBHDescriptor {
     });
   }
 
-  /*package*/ Statement_BehaviorDescriptor() {
+  /*package*/ Statement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

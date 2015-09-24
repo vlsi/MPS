@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Regexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Regexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,12 +46,12 @@ public final class Regexp_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getTopLevelRegexp_idhNm6Oh5(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
-      return Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
+      return Regexp__BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
     }
     return __thisNode__;
   }
   private static String toString_idhEwIUjb(@NotNull SNode __thisNode__) {
-    return Regexp_BehaviorDescriptor.escape_id1b8uQvZ_lG7.invoke(__thisNode__, Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(__thisNode__, new ArrayList<SNode>()));
+    return Regexp__BehaviorDescriptor.escape_id1b8uQvZ_lG7.invoke(__thisNode__, Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(__thisNode__, new ArrayList<SNode>()));
   }
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
@@ -84,14 +84,14 @@ public final class Regexp_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean isValid_id48bMILtL4il(@NotNull SNode __thisNode__) {
     for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(__thisNode__))) {
-      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) && !(Regexp_BehaviorDescriptor.isValid_id48bMILtL4il.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))))) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) && !(Regexp__BehaviorDescriptor.isValid_id48bMILtL4il.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))))) {
         return false;
       }
     }
     return true;
   }
 
-  /*package*/ Regexp_BehaviorDescriptor() {
+  /*package*/ Regexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

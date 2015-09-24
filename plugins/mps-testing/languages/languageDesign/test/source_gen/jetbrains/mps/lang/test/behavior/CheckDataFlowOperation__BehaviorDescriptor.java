@@ -21,7 +21,7 @@ import jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CheckDataFlowOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CheckDataFlowOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b081c90baL, "jetbrains.mps.lang.test.structure.CheckDataFlowOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class CheckDataFlowOperation_BehaviorDescriptor extends BaseBHDescr
     return false;
   }
 
-  /*package*/ CheckDataFlowOperation_BehaviorDescriptor() {
+  /*package*/ CheckDataFlowOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

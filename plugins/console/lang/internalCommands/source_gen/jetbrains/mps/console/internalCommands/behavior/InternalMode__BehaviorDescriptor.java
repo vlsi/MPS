@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InternalMode_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InternalMode__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x7a89354654722219L, "jetbrains.mps.console.internalCommands.structure.InternalMode");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class InternalMode_BehaviorDescriptor extends BaseBHDescriptor {
     return "access the IDE internal mode variable";
   }
 
-  /*package*/ InternalMode_BehaviorDescriptor() {
+  /*package*/ InternalMode__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

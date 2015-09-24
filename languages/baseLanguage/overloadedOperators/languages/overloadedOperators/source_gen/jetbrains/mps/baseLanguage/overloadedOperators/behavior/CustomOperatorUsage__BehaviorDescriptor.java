@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CustomOperatorUsage_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CustomOperatorUsage__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class CustomOperatorUsage_BehaviorDescriptor extends BaseBHDescript
     return result;
   }
 
-  /*package*/ CustomOperatorUsage_BehaviorDescriptor() {
+  /*package*/ CustomOperatorUsage__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

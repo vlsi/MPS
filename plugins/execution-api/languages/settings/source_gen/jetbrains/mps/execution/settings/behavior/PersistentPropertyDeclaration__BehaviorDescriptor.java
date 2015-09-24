@@ -21,14 +21,14 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class PersistentPropertyDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PersistentPropertyDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,22 +51,22 @@ public final class PersistentPropertyDeclaration_BehaviorDescriptor extends Base
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_ex141d_b0a0a0());
   }
   private static String getAccessorName_idO$iR4J$g8R(@NotNull SNode __thisNode__) {
-    String name = PersistentPropertyDeclaration_BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    String name = PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
   private static Boolean isInitializable_idhEwJfMK(@NotNull SNode __thisNode__) {
     return true;
   }
   private static String getTypeFqName_idO$iR4J$g9n(@NotNull SNode __thisNode__) {
-    SNode template = PersistentPropertyDeclaration_BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
-    return IGeneratedToClass_BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(template);
+    SNode template = PersistentPropertyDeclaration__BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(template);
   }
   private static String getTypeEditorFqName_idO$iR4J$g9_(@NotNull SNode __thisNode__) {
-    SNode template = PersistentPropertyDeclaration_BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
-    return PersistentConfiguration_BehaviorDescriptor.getFullEditorName_idO$iR4J$g2V.invoke(template);
+    SNode template = PersistentPropertyDeclaration__BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
+    return PersistentConfiguration__BehaviorDescriptor.getFullEditorName_idO$iR4J$g2V.invoke(template);
   }
   private static SNode getTemplate_idO$iR4J$gak(@NotNull SNode __thisNode__) {
-    assert PersistentPropertyDeclaration_BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(__thisNode__);
+    assert PersistentPropertyDeclaration__BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(__thisNode__);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")), true), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration"));
   }
   private static String addMyPrefix_id5uxO0H8rOhC(@NotNull SAbstractConcept __thisConcept__, String name) {
@@ -88,11 +88,11 @@ public final class PersistentPropertyDeclaration_BehaviorDescriptor extends Base
     return name;
   }
   private static String removeMyPrefix_idO$iR4J$g8k(@NotNull SAbstractConcept __thisConcept__, String name) {
-    name = PersistentPropertyDeclaration_BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
+    name = PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
 
-  /*package*/ PersistentPropertyDeclaration_BehaviorDescriptor() {
+  /*package*/ PersistentPropertyDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

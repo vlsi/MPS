@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
+import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy__BehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,7 +24,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String warningMessage = "Naming policies violated: " + "all words except prepositions, articles and particles should be capitalized";
-    for (SNode s : ICheckedNamePolicy_BehaviorDescriptor.getDescendantsToCheck_id4cWf37B8oXl.invoke(node)) {
+    for (SNode s : ICheckedNamePolicy__BehaviorDescriptor.getDescendantsToCheck_id4cWf37B8oXl.invoke(node)) {
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"))))) {
         String myWarning = warningMessage + ".";
         {
@@ -48,7 +48,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
         }
       }
     }
-    for (PropertyReference p : ICheckedNamePolicy_BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invoke(node)) {
+    for (PropertyReference p : ICheckedNamePolicy__BehaviorDescriptor.getPropertiesToCheck_id4cWf37B8oXP.invoke(node)) {
       if (p.getValue() == null) {
         continue;
       }

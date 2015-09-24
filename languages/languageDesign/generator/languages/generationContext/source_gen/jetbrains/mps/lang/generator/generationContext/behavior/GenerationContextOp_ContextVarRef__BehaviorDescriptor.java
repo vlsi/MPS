@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class GenerationContextOp_ContextVarRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GenerationContextOp_ContextVarRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class GenerationContextOp_ContextVarRef_BehaviorDescriptor extends 
     return (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, 0x671e792f3dbdffa2L, "contextVarName")) == null ? SNodeOperations.getConcept(__thisNode__).getName() : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, 0x671e792f3dbdffa2L, "contextVarName")));
   }
 
-  /*package*/ GenerationContextOp_ContextVarRef_BehaviorDescriptor() {
+  /*package*/ GenerationContextOp_ContextVarRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

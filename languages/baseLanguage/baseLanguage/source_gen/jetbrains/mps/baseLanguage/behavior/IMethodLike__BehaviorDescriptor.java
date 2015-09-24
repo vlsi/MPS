@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IMethodLike_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IMethodLike__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class IMethodLike_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SNode getLastStatement_idi2fhS7A(@NotNull SNode __thisNode__) {
-    return IMethodLike_BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, IMethodLike_BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__));
+    return IMethodLike__BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__));
   }
   private static SNode getLastStatement_id271$s5ipHtv(@NotNull SNode __thisNode__, SNode statementList) {
     List<SNode> statements = new ArrayList<SNode>();
@@ -58,7 +58,7 @@ public final class IMethodLike_BehaviorDescriptor extends BaseBHDescriptor {
       if (ListSequence.fromList(SLinkOperations.getChildren(innerStatementList, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).isEmpty()) {
         return lastStatement;
       } else {
-        return IMethodLike_BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, innerStatementList);
+        return IMethodLike__BehaviorDescriptor.getLastStatement_id271$s5ipHtv.invoke(__thisNode__, innerStatementList);
       }
     }
     return lastStatement;
@@ -70,10 +70,10 @@ public final class IMethodLike_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static Boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
-    return ISuppressErrors_BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && eq_bxda5b_a0a0a0u(child, IMethodLike_BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
+    return ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && eq_bxda5b_a0a0a0u(child, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
   }
 
-  /*package*/ IMethodLike_BehaviorDescriptor() {
+  /*package*/ IMethodLike__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

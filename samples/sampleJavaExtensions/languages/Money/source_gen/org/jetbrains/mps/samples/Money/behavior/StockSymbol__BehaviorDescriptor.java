@@ -21,7 +21,7 @@ import org.jetbrains.mps.samples.money.runtime.StockPriceDownloader;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StockSymbol_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StockSymbol__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, "org.jetbrains.mps.samples.Money.structure.StockSymbol");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class StockSymbol_BehaviorDescriptor extends BaseBHDescriptor {
     return StockPriceDownloader.getInstance().isValidStockSymbol(symbol);
   }
 
-  /*package*/ StockSymbol_BehaviorDescriptor() {
+  /*package*/ StockSymbol__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

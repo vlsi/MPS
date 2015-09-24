@@ -24,8 +24,8 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -53,8 +53,8 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               IMatchingPattern pattern_dyvyal_c0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
               SNode coercedNode_dyvyal_c0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_c0a0);
               if (coercedNode_dyvyal_c0a0 != null) {
-                for (SNode member : ListSequence.fromList(BaseClassifierType_BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_dyvyal_c0a0, _context.getEnclosingNode()))) {
-                  if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTarget())) && IMember_BehaviorDescriptor.canBeReferent_id762MQfghnJQ.invoke(member, _context.getLinkTarget())) {
+                for (SNode member : ListSequence.fromList(BaseClassifierType__BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_dyvyal_c0a0, _context.getEnclosingNode()))) {
+                  if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTarget())) && IMember__BehaviorDescriptor.canBeReferent_id762MQfghnJQ.invoke(member, _context.getLinkTarget())) {
                     ListSequence.fromList(applicableMembers).addElement(member);
                   }
                 }

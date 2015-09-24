@@ -5,7 +5,7 @@ package jetbrains.mps.lang.core.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -14,7 +14,7 @@ public class RemoveUndeclaredPropertyAttribute_QuickFix extends QuickFix_Runtime
     super(new SNodePointer("r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5394253938404408058"));
   }
   public String getDescription(SNode node) {
-    return "Remove invalid property attribute \"" + PropertyAttribute_BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))) + "\"";
+    return "Remove invalid property attribute \"" + PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))) + "\"";
   }
   public void execute(SNode node) {
     SNodeOperations.deleteNode(node);

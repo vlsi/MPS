@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InIntervalExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InIntervalExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483964L, "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class InIntervalExpression_BehaviorDescriptor extends BaseBHDescrip
     return 8;
   }
 
-  /*package*/ InIntervalExpression_BehaviorDescriptor() {
+  /*package*/ InIntervalExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

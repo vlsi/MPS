@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CommentLine_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CommentLine__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -49,7 +49,7 @@ public final class CommentLine_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ CommentLine_BehaviorDescriptor() {
+  /*package*/ CommentLine__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

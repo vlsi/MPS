@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExplicitCommandParameterDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExplicitCommandParameterDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be2L, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,13 +38,13 @@ public final class ExplicitCommandParameterDeclaration_BehaviorDescriptor extend
     return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be2L, 0xbe3a0d5ba1a2be3L, "isRequired"));
   }
   private static Boolean generateField_id7mEQKPeolUk(@NotNull SNode __thisNode__) {
-    return !(CommandParameterDeclaration_BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(__thisNode__));
+    return !(CommandParameterDeclaration__BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(__thisNode__));
   }
   private static Boolean isInitializable_idhEwJfMK(@NotNull SNode __thisNode__) {
-    return !(CommandParameterDeclaration_BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(__thisNode__));
+    return !(CommandParameterDeclaration__BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(__thisNode__));
   }
 
-  /*package*/ ExplicitCommandParameterDeclaration_BehaviorDescriptor() {
+  /*package*/ ExplicitCommandParameterDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

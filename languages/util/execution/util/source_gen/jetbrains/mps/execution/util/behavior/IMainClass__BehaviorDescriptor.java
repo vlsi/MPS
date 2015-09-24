@@ -22,7 +22,7 @@ import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IMainClass_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IMainClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,10 +38,10 @@ public final class IMainClass_BehaviorDescriptor extends BaseBHDescriptor {
     return Sequence.fromIterable(((Iterable<String>) TraceInfo.unitNames(__thisNode__))).first();
   }
   private static Boolean isNodeRunnable_id431DWIovi3C(@NotNull SNode __thisNode__) {
-    return isNotEmptyString(IMainClass_BehaviorDescriptor.getUnitName_id431DWIovi3n.invoke(__thisNode__));
+    return isNotEmptyString(IMainClass__BehaviorDescriptor.getUnitName_id431DWIovi3n.invoke(__thisNode__));
   }
 
-  /*package*/ IMainClass_BehaviorDescriptor() {
+  /*package*/ IMainClass__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

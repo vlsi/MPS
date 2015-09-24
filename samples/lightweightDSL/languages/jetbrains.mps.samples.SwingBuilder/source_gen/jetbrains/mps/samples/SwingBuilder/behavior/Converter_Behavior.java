@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
@@ -16,9 +16,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class Converter_Behavior {
   public static SNode call_getSourceType_5575318041730244800(SNode __thisNode__) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)", "5575318041730181725"), __thisNode__)).first(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b276c5aL, "jetbrains.mps.samples.SwingBuilder.structure.SourceDataType")), MetaAdapterFactory.getContainmentLink(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b276c5aL, 0x4d5f82383b276c5bL, "type")));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)", "5575318041730181725"), __thisNode__)).first(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b276c5aL, "jetbrains.mps.samples.SwingBuilder.structure.SourceDataType")), MetaAdapterFactory.getContainmentLink(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b276c5aL, 0x4d5f82383b276c5bL, "type")));
   }
   public static SNode call_getTargetType_5575318041730246446(SNode __thisNode__) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)", "5575318041730181735"), __thisNode__)).first(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b277405L, "jetbrains.mps.samples.SwingBuilder.structure.TargetDataType")), MetaAdapterFactory.getContainmentLink(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b277405L, 0x4d5f82383b277406L, "type")));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)", "5575318041730181735"), __thisNode__)).first(), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b277405L, "jetbrains.mps.samples.SwingBuilder.structure.TargetDataType")), MetaAdapterFactory.getContainmentLink(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b277405L, 0x4d5f82383b277406L, "type")));
   }
 }

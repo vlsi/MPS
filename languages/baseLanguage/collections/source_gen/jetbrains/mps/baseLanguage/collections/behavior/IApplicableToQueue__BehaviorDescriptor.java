@@ -23,7 +23,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class IApplicableToQueue_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IApplicableToQueue__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefcL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToQueue");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,12 +35,12 @@ public final class IApplicableToQueue_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static List<SNode> getApplicableTypes_id5cL0w3DYzxf(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IApplicableToDeque_BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSpecial(__thisConcept__);
+    List<SNode> result = IApplicableToDeque__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(_quotation_createNode_sbaz2p_a0a1a0());
     return result;
   }
 
-  /*package*/ IApplicableToQueue_BehaviorDescriptor() {
+  /*package*/ IApplicableToQueue__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

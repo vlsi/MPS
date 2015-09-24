@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Quotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Quotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class Quotation_BehaviorDescriptor extends BaseBHDescriptor {
     return -1;
   }
 
-  /*package*/ Quotation_BehaviorDescriptor() {
+  /*package*/ Quotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

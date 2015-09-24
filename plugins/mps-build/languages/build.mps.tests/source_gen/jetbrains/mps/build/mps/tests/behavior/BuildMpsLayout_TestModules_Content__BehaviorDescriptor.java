@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMpsLayout_TestModules_Content_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMpsLayout_TestModules_Content__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class BuildMpsLayout_TestModules_Content_BehaviorDescriptor extends
   }
 
   private static Boolean contains_id3X9rC2XzJi8(@NotNull SNode __thisNode__, SNode module) {
-    return Sequence.fromIterable(BuildMpsLayout_TestModules_Content_BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(__thisNode__)).contains(module);
+    return Sequence.fromIterable(BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(__thisNode__)).contains(module);
   }
 
-  /*package*/ BuildMpsLayout_TestModules_Content_BehaviorDescriptor() {
+  /*package*/ BuildMpsLayout_TestModules_Content__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -12,30 +12,30 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myDoRefactorClause_BehaviorDescriptor = new DoRefactorClause_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_SModel_BehaviorDescriptor = new ConceptFunctionParameter_SModel_BehaviorDescriptor();
-  private final BHDescriptor myAbstractMoveExpression_BehaviorDescriptor = new AbstractMoveExpression_BehaviorDescriptor();
-  private final BHDescriptor myAffectedNodesClause_BehaviorDescriptor = new AffectedNodesClause_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableToModelClause_BehaviorDescriptor = new IsApplicableToModelClause_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Model_BehaviorDescriptor = new ConceptFunctionParameter_Model_BehaviorDescriptor();
-  private final BHDescriptor myGetModelsToUpdateClause_BehaviorDescriptor = new GetModelsToUpdateClause_BehaviorDescriptor();
-  private final BHDescriptor myModelsToGenerateClause_BehaviorDescriptor = new ModelsToGenerateClause_BehaviorDescriptor();
-  private final BHDescriptor myDoWhenDoneClause_BehaviorDescriptor = new DoWhenDoneClause_BehaviorDescriptor();
-  private final BHDescriptor myRefactoringFieldReference_BehaviorDescriptor = new RefactoringFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myInitClause_BehaviorDescriptor = new InitClause_BehaviorDescriptor();
-  private final BHDescriptor myRepositoryOperation_BehaviorDescriptor = new RepositoryOperation_BehaviorDescriptor();
-  private final BHDescriptor myRefactoring_BehaviorDescriptor = new Refactoring_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableToModuleClause_BehaviorDescriptor = new IsApplicableToModuleClause_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableToNodeClause_BehaviorDescriptor = new IsApplicableToNodeClause_BehaviorDescriptor();
-  private final BHDescriptor myContextMemberOperation_BehaviorDescriptor = new ContextMemberOperation_BehaviorDescriptor();
-  private final BHDescriptor myModelDescriptorOperation_BehaviorDescriptor = new ModelDescriptorOperation_BehaviorDescriptor();
-  private final BHDescriptor myModuleOperation_BehaviorDescriptor = new ModuleOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeOperation_BehaviorDescriptor = new NodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodesOperation_BehaviorDescriptor = new NodesOperation_BehaviorDescriptor();
-  private final BHDescriptor myOperationContextOperation_BehaviorDescriptor = new OperationContextOperation_BehaviorDescriptor();
-  private final BHDescriptor myProjectOperation_BehaviorDescriptor = new ProjectOperation_BehaviorDescriptor();
-  private final BHDescriptor myScopeOperation_BehaviorDescriptor = new ScopeOperation_BehaviorDescriptor();
-  private final BHDescriptor myMainProjectOperation_BehaviorDescriptor = new MainProjectOperation_BehaviorDescriptor();
+  private final BHDescriptor myDoRefactorClause__BehaviorDescriptor = new DoRefactorClause__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_SModel__BehaviorDescriptor = new ConceptFunctionParameter_SModel__BehaviorDescriptor();
+  private final BHDescriptor myAbstractMoveExpression__BehaviorDescriptor = new AbstractMoveExpression__BehaviorDescriptor();
+  private final BHDescriptor myAffectedNodesClause__BehaviorDescriptor = new AffectedNodesClause__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableToModelClause__BehaviorDescriptor = new IsApplicableToModelClause__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Model__BehaviorDescriptor = new ConceptFunctionParameter_Model__BehaviorDescriptor();
+  private final BHDescriptor myGetModelsToUpdateClause__BehaviorDescriptor = new GetModelsToUpdateClause__BehaviorDescriptor();
+  private final BHDescriptor myModelsToGenerateClause__BehaviorDescriptor = new ModelsToGenerateClause__BehaviorDescriptor();
+  private final BHDescriptor myDoWhenDoneClause__BehaviorDescriptor = new DoWhenDoneClause__BehaviorDescriptor();
+  private final BHDescriptor myRefactoringFieldReference__BehaviorDescriptor = new RefactoringFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myInitClause__BehaviorDescriptor = new InitClause__BehaviorDescriptor();
+  private final BHDescriptor myRepositoryOperation__BehaviorDescriptor = new RepositoryOperation__BehaviorDescriptor();
+  private final BHDescriptor myRefactoring__BehaviorDescriptor = new Refactoring__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableToModuleClause__BehaviorDescriptor = new IsApplicableToModuleClause__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableToNodeClause__BehaviorDescriptor = new IsApplicableToNodeClause__BehaviorDescriptor();
+  private final BHDescriptor myContextMemberOperation__BehaviorDescriptor = new ContextMemberOperation__BehaviorDescriptor();
+  private final BHDescriptor myModelDescriptorOperation__BehaviorDescriptor = new ModelDescriptorOperation__BehaviorDescriptor();
+  private final BHDescriptor myModuleOperation__BehaviorDescriptor = new ModuleOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeOperation__BehaviorDescriptor = new NodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodesOperation__BehaviorDescriptor = new NodesOperation__BehaviorDescriptor();
+  private final BHDescriptor myOperationContextOperation__BehaviorDescriptor = new OperationContextOperation__BehaviorDescriptor();
+  private final BHDescriptor myProjectOperation__BehaviorDescriptor = new ProjectOperation__BehaviorDescriptor();
+  private final BHDescriptor myScopeOperation__BehaviorDescriptor = new ScopeOperation__BehaviorDescriptor();
+  private final BHDescriptor myMainProjectOperation__BehaviorDescriptor = new MainProjectOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -79,53 +79,53 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myDoRefactorClause_BehaviorDescriptor;
+        return myDoRefactorClause__BehaviorDescriptor;
       case 1:
-        return myConceptFunctionParameter_SModel_BehaviorDescriptor;
+        return myConceptFunctionParameter_SModel__BehaviorDescriptor;
       case 2:
-        return myAbstractMoveExpression_BehaviorDescriptor;
+        return myAbstractMoveExpression__BehaviorDescriptor;
       case 3:
-        return myAffectedNodesClause_BehaviorDescriptor;
+        return myAffectedNodesClause__BehaviorDescriptor;
       case 4:
-        return myIsApplicableToModelClause_BehaviorDescriptor;
+        return myIsApplicableToModelClause__BehaviorDescriptor;
       case 5:
-        return myConceptFunctionParameter_Model_BehaviorDescriptor;
+        return myConceptFunctionParameter_Model__BehaviorDescriptor;
       case 6:
-        return myGetModelsToUpdateClause_BehaviorDescriptor;
+        return myGetModelsToUpdateClause__BehaviorDescriptor;
       case 7:
-        return myModelsToGenerateClause_BehaviorDescriptor;
+        return myModelsToGenerateClause__BehaviorDescriptor;
       case 8:
-        return myDoWhenDoneClause_BehaviorDescriptor;
+        return myDoWhenDoneClause__BehaviorDescriptor;
       case 9:
-        return myRefactoringFieldReference_BehaviorDescriptor;
+        return myRefactoringFieldReference__BehaviorDescriptor;
       case 10:
-        return myInitClause_BehaviorDescriptor;
+        return myInitClause__BehaviorDescriptor;
       case 11:
-        return myRepositoryOperation_BehaviorDescriptor;
+        return myRepositoryOperation__BehaviorDescriptor;
       case 12:
-        return myRefactoring_BehaviorDescriptor;
+        return myRefactoring__BehaviorDescriptor;
       case 13:
-        return myIsApplicableToModuleClause_BehaviorDescriptor;
+        return myIsApplicableToModuleClause__BehaviorDescriptor;
       case 14:
-        return myIsApplicableToNodeClause_BehaviorDescriptor;
+        return myIsApplicableToNodeClause__BehaviorDescriptor;
       case 15:
-        return myContextMemberOperation_BehaviorDescriptor;
+        return myContextMemberOperation__BehaviorDescriptor;
       case 16:
-        return myModelDescriptorOperation_BehaviorDescriptor;
+        return myModelDescriptorOperation__BehaviorDescriptor;
       case 17:
-        return myModuleOperation_BehaviorDescriptor;
+        return myModuleOperation__BehaviorDescriptor;
       case 18:
-        return myNodeOperation_BehaviorDescriptor;
+        return myNodeOperation__BehaviorDescriptor;
       case 19:
-        return myNodesOperation_BehaviorDescriptor;
+        return myNodesOperation__BehaviorDescriptor;
       case 20:
-        return myOperationContextOperation_BehaviorDescriptor;
+        return myOperationContextOperation__BehaviorDescriptor;
       case 21:
-        return myProjectOperation_BehaviorDescriptor;
+        return myProjectOperation__BehaviorDescriptor;
       case 22:
-        return myScopeOperation_BehaviorDescriptor;
+        return myScopeOperation__BehaviorDescriptor;
       case 23:
-        return myMainProjectOperation_BehaviorDescriptor;
+        return myMainProjectOperation__BehaviorDescriptor;
       default:
         return null;
     }

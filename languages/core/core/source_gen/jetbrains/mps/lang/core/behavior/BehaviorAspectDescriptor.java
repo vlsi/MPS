@@ -12,24 +12,24 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBaseConcept_BehaviorDescriptor = new BaseConcept_BehaviorDescriptor();
-  private final BHDescriptor myINamedConcept_BehaviorDescriptor = new INamedConcept_BehaviorDescriptor();
-  private final BHDescriptor myIResolveInfo_BehaviorDescriptor = new IResolveInfo_BehaviorDescriptor();
-  private final BHDescriptor myIDeprecatable_BehaviorDescriptor = new IDeprecatable_BehaviorDescriptor();
-  private final BHDescriptor myIMetaLevelChanger_BehaviorDescriptor = new IMetaLevelChanger_BehaviorDescriptor();
-  private final BHDescriptor myChildAttribute_BehaviorDescriptor = new ChildAttribute_BehaviorDescriptor();
-  private final BHDescriptor myImplementationContainer_BehaviorDescriptor = new ImplementationContainer_BehaviorDescriptor();
-  private final BHDescriptor myExportScopePublic_BehaviorDescriptor = new ExportScopePublic_BehaviorDescriptor();
-  private final BHDescriptor myExportScopeNamespace_BehaviorDescriptor = new ExportScopeNamespace_BehaviorDescriptor();
-  private final BHDescriptor myExportScopeModule_BehaviorDescriptor = new ExportScopeModule_BehaviorDescriptor();
-  private final BHDescriptor myLinkAttribute_BehaviorDescriptor = new LinkAttribute_BehaviorDescriptor();
-  private final BHDescriptor myPropertyAttribute_BehaviorDescriptor = new PropertyAttribute_BehaviorDescriptor();
-  private final BHDescriptor myISuppressErrors_BehaviorDescriptor = new ISuppressErrors_BehaviorDescriptor();
-  private final BHDescriptor myScopeProvider_BehaviorDescriptor = new ScopeProvider_BehaviorDescriptor();
-  private final BHDescriptor mySuppressErrorsAnnotation_BehaviorDescriptor = new SuppressErrorsAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myBaseCommentAttribute_BehaviorDescriptor = new BaseCommentAttribute_BehaviorDescriptor();
-  private final BHDescriptor myAttribute_BehaviorDescriptor = new Attribute_BehaviorDescriptor();
-  private final BHDescriptor myExportScope_BehaviorDescriptor = new ExportScope_BehaviorDescriptor();
+  private final BHDescriptor myBaseConcept__BehaviorDescriptor = new BaseConcept__BehaviorDescriptor();
+  private final BHDescriptor myINamedConcept__BehaviorDescriptor = new INamedConcept__BehaviorDescriptor();
+  private final BHDescriptor myIResolveInfo__BehaviorDescriptor = new IResolveInfo__BehaviorDescriptor();
+  private final BHDescriptor myIDeprecatable__BehaviorDescriptor = new IDeprecatable__BehaviorDescriptor();
+  private final BHDescriptor myIMetaLevelChanger__BehaviorDescriptor = new IMetaLevelChanger__BehaviorDescriptor();
+  private final BHDescriptor myChildAttribute__BehaviorDescriptor = new ChildAttribute__BehaviorDescriptor();
+  private final BHDescriptor myImplementationContainer__BehaviorDescriptor = new ImplementationContainer__BehaviorDescriptor();
+  private final BHDescriptor myExportScopePublic__BehaviorDescriptor = new ExportScopePublic__BehaviorDescriptor();
+  private final BHDescriptor myExportScopeNamespace__BehaviorDescriptor = new ExportScopeNamespace__BehaviorDescriptor();
+  private final BHDescriptor myExportScopeModule__BehaviorDescriptor = new ExportScopeModule__BehaviorDescriptor();
+  private final BHDescriptor myLinkAttribute__BehaviorDescriptor = new LinkAttribute__BehaviorDescriptor();
+  private final BHDescriptor myPropertyAttribute__BehaviorDescriptor = new PropertyAttribute__BehaviorDescriptor();
+  private final BHDescriptor myISuppressErrors__BehaviorDescriptor = new ISuppressErrors__BehaviorDescriptor();
+  private final BHDescriptor myScopeProvider__BehaviorDescriptor = new ScopeProvider__BehaviorDescriptor();
+  private final BHDescriptor mySuppressErrorsAnnotation__BehaviorDescriptor = new SuppressErrorsAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myBaseCommentAttribute__BehaviorDescriptor = new BaseCommentAttribute__BehaviorDescriptor();
+  private final BHDescriptor myAttribute__BehaviorDescriptor = new Attribute__BehaviorDescriptor();
+  private final BHDescriptor myExportScope__BehaviorDescriptor = new ExportScope__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -67,41 +67,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBaseConcept_BehaviorDescriptor;
+        return myBaseConcept__BehaviorDescriptor;
       case 1:
-        return myINamedConcept_BehaviorDescriptor;
+        return myINamedConcept__BehaviorDescriptor;
       case 2:
-        return myIResolveInfo_BehaviorDescriptor;
+        return myIResolveInfo__BehaviorDescriptor;
       case 3:
-        return myIDeprecatable_BehaviorDescriptor;
+        return myIDeprecatable__BehaviorDescriptor;
       case 4:
-        return myIMetaLevelChanger_BehaviorDescriptor;
+        return myIMetaLevelChanger__BehaviorDescriptor;
       case 5:
-        return myChildAttribute_BehaviorDescriptor;
+        return myChildAttribute__BehaviorDescriptor;
       case 6:
-        return myImplementationContainer_BehaviorDescriptor;
+        return myImplementationContainer__BehaviorDescriptor;
       case 7:
-        return myExportScopePublic_BehaviorDescriptor;
+        return myExportScopePublic__BehaviorDescriptor;
       case 8:
-        return myExportScopeNamespace_BehaviorDescriptor;
+        return myExportScopeNamespace__BehaviorDescriptor;
       case 9:
-        return myExportScopeModule_BehaviorDescriptor;
+        return myExportScopeModule__BehaviorDescriptor;
       case 10:
-        return myLinkAttribute_BehaviorDescriptor;
+        return myLinkAttribute__BehaviorDescriptor;
       case 11:
-        return myPropertyAttribute_BehaviorDescriptor;
+        return myPropertyAttribute__BehaviorDescriptor;
       case 12:
-        return myISuppressErrors_BehaviorDescriptor;
+        return myISuppressErrors__BehaviorDescriptor;
       case 13:
-        return myScopeProvider_BehaviorDescriptor;
+        return myScopeProvider__BehaviorDescriptor;
       case 14:
-        return mySuppressErrorsAnnotation_BehaviorDescriptor;
+        return mySuppressErrorsAnnotation__BehaviorDescriptor;
       case 15:
-        return myBaseCommentAttribute_BehaviorDescriptor;
+        return myBaseCommentAttribute__BehaviorDescriptor;
       case 16:
-        return myAttribute_BehaviorDescriptor;
+        return myAttribute__BehaviorDescriptor;
       case 17:
-        return myExportScope_BehaviorDescriptor;
+        return myExportScope__BehaviorDescriptor;
       default:
         return null;
     }

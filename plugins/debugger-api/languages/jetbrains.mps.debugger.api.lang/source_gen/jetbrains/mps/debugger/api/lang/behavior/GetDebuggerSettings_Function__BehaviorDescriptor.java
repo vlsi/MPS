@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class GetDebuggerSettings_Function_BehaviorDescriptor extends BaseBHDescriptor {
+public final class GetDebuggerSettings_Function__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d18e2L, "jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class GetDebuggerSettings_Function_BehaviorDescriptor extends BaseB
     return _quotation_createNode_u7oci2_a0a1();
   }
 
-  /*package*/ GetDebuggerSettings_Function_BehaviorDescriptor() {
+  /*package*/ GetDebuggerSettings_Function__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

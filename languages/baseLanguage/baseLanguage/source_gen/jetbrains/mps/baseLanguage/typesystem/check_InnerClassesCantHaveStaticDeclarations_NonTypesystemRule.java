@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,9 +23,9 @@ public class check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule exte
   public check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule() {
   }
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (Classifier_BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(classConcept) && !(IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classConcept)) && (Sequence.fromIterable(Classifier_BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classConcept)).any(new IWhereFilter<SNode>() {
+    if (Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(classConcept) && !(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classConcept)) && (Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classConcept)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
+        return IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
       }
     }))) {
       {

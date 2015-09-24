@@ -6,7 +6,7 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IMetaLevelChanger__BehaviorDescriptor;
 import jetbrains.mps.scope.EmptyScope;
 
 /**
@@ -20,7 +20,7 @@ public class AbstractAntiquotation_Behavior {
     int metaLevelChange = 0;
     while ((node != null)) {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
-        metaLevelChange += IMetaLevelChanger_BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")));
+        metaLevelChange += IMetaLevelChanger__BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")));
       }
       if (metaLevelChange == 0) {
         break;

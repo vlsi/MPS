@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ParameterizedIntentionDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ParameterizedIntentionDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class ParameterizedIntentionDeclaration_BehaviorDescriptor extends 
     return true;
   }
 
-  /*package*/ ParameterizedIntentionDeclaration_BehaviorDescriptor() {
+  /*package*/ ParameterizedIntentionDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

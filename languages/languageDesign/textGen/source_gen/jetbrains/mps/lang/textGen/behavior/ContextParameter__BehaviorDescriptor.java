@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ContextParameter_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ContextParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL, "jetbrains.mps.lang.textGen.structure.ContextParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class ContextParameter_BehaviorDescriptor extends BaseBHDescriptor 
     return _quotation_createNode_lauxi3_a0a0();
   }
 
-  /*package*/ ContextParameter_BehaviorDescriptor() {
+  /*package*/ ContextParameter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

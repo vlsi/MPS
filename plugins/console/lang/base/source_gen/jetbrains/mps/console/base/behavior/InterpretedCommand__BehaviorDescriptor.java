@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InterpretedCommand_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InterpretedCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L, "jetbrains.mps.console.base.structure.InterpretedCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,13 +38,13 @@ public final class InterpretedCommand_BehaviorDescriptor extends BaseBHDescripto
     beforeCallback.run();
     context.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        InterpretedCommand_BehaviorDescriptor.doExecute_id2SpVAIqougW.invoke(__thisNode__, context, console);
+        InterpretedCommand__BehaviorDescriptor.doExecute_id2SpVAIqougW.invoke(__thisNode__, context, console);
       }
     });
     afterCallback.run();
   }
 
-  /*package*/ InterpretedCommand_BehaviorDescriptor() {
+  /*package*/ InterpretedCommand__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

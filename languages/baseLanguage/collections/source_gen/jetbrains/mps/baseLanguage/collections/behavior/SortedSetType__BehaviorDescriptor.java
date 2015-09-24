@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 
-public final class SortedSetType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SortedSetType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class SortedSetType_BehaviorDescriptor extends BaseBHDescriptor {
     return _quotation_createNode_7p913d_a0a1();
   }
 
-  /*package*/ SortedSetType_BehaviorDescriptor() {
+  /*package*/ SortedSetType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

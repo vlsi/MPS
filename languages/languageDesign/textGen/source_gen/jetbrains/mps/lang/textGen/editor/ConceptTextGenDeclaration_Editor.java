@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
-import jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -183,7 +183,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_9mcqjq_a7a(SNode node, EditorContext editorContext) {
-    return ConceptTextGenDeclaration_BehaviorDescriptor.shallProduceOutputUnit_id3fG6dkhfrk3.invoke(node);
+    return ConceptTextGenDeclaration__BehaviorDescriptor.shallProduceOutputUnit_id3fG6dkhfrk3.invoke(node);
   }
   private EditorCell createCollection_9mcqjq_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

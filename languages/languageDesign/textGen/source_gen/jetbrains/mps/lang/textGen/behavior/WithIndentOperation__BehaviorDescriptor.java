@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class WithIndentOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class WithIndentOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11fd28e1146L, "jetbrains.mps.lang.textGen.structure.WithIndentOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class WithIndentOperation_BehaviorDescriptor extends BaseBHDescript
     return SNodeOperations.isInstanceOf((SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), false, false)), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
   }
 
-  /*package*/ WithIndentOperation_BehaviorDescriptor() {
+  /*package*/ WithIndentOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

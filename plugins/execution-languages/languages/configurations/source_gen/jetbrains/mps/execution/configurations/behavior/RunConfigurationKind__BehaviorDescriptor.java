@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RunConfigurationKind_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RunConfigurationKind__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL, "jetbrains.mps.execution.configurations.structure.RunConfigurationKind");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class RunConfigurationKind_BehaviorDescriptor extends BaseBHDescrip
     return "Kind";
   }
 
-  /*package*/ RunConfigurationKind_BehaviorDescriptor() {
+  /*package*/ RunConfigurationKind__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Node_GetChildrenOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Node_GetChildrenOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110c2e679e7L, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class Node_GetChildrenOperation_BehaviorDescriptor extends BaseBHDe
   }
 
   private static SNode getLinkQualifier_id30XARhxpW1K(@NotNull SNode __thisNode__) {
-    return SNodeOperations.cast(SNodeOperation_BehaviorDescriptor.getParameter_idhEwJdHG.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier").getDeclarationNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
+    return SNodeOperations.cast(SNodeOperation__BehaviorDescriptor.getParameter_idhEwJdHG.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier").getDeclarationNode()), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
   }
   private static Boolean applicableToNode_id1653mnvAgrs(@NotNull SAbstractConcept __thisConcept__) {
     return true;
@@ -46,12 +46,12 @@ public final class Node_GetChildrenOperation_BehaviorDescriptor extends BaseBHDe
     return true;
   }
   private static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = SNodeOperation_BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invokeSpecial(__thisConcept__);
+    List<SNode> result = SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "5168775467716640652"));
     return result;
   }
 
-  /*package*/ Node_GetChildrenOperation_BehaviorDescriptor() {
+  /*package*/ Node_GetChildrenOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

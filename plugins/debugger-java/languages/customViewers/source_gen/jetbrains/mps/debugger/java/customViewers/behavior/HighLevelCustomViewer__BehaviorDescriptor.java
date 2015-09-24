@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class HighLevelCustomViewer_BehaviorDescriptor extends BaseBHDescriptor {
+public final class HighLevelCustomViewer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,10 +43,10 @@ public final class HighLevelCustomViewer_BehaviorDescriptor extends BaseBHDescri
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_WrapperFactory";
   }
   private static String getClassFqName_id6$g4PBN67n2(@NotNull SNode __thisNode__) {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + HighLevelCustomViewer_BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(__thisNode__);
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + HighLevelCustomViewer__BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(__thisNode__);
   }
 
-  /*package*/ HighLevelCustomViewer_BehaviorDescriptor() {
+  /*package*/ HighLevelCustomViewer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

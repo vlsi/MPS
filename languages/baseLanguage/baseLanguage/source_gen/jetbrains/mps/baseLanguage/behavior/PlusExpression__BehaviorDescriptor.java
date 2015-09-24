@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PlusExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PlusExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,8 +37,8 @@ public final class PlusExpression_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     Object result;
-    Object leftExpression = Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), module);
-    Object rightExpression = Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), module);
+    Object leftExpression = Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), module);
+    Object rightExpression = Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), module);
     if (leftExpression instanceof String) {
       result = "" + leftExpression + rightExpression;
     } else {
@@ -52,16 +52,16 @@ public final class PlusExpression_BehaviorDescriptor extends BaseBHDescriptor {
     } else if (leftValue instanceof Number && rightValue instanceof Number) {
       Number a = (Number) leftValue;
       Number b = (Number) rightValue;
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
         return a.doubleValue() + b.doubleValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
         return a.floatValue() + b.floatValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
         return a.longValue() + b.longValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
         return a.intValue() + b.intValue();
       }
     }
@@ -71,7 +71,7 @@ public final class PlusExpression_BehaviorDescriptor extends BaseBHDescriptor {
     return 10;
   }
 
-  /*package*/ PlusExpression_BehaviorDescriptor() {
+  /*package*/ PlusExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MoneyType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MoneyType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144b05194dL, "jetbrains.mps.baseLanguage.money.structure.MoneyType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,7 +38,7 @@ public final class MoneyType_BehaviorDescriptor extends BaseBHDescriptor {
     return creator;
   }
 
-  /*package*/ MoneyType_BehaviorDescriptor() {
+  /*package*/ MoneyType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

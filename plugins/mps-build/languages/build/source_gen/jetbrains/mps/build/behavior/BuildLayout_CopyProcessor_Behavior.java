@@ -30,9 +30,9 @@ public class BuildLayout_CopyProcessor_Behavior {
     String name = "default";
     SNode copyNode = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L, "jetbrains.mps.build.structure.BuildLayout_CustomCopy"));
     if ((copyNode != null)) {
-      name = BuildLayout_CopyProcessor_BehaviorDescriptor.filesetName_id19QsrPvClqt.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(copyNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset")));
+      name = BuildLayout_CopyProcessor__BehaviorDescriptor.filesetName_id19QsrPvClqt.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(copyNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset")));
     }
-    outpath = Context.defaultContext(genContext).getTempPath(__thisNode__, name, "customProcessors", BuildLayout_CopyProcessor_BehaviorDescriptor.getTaskName_id19QsrPtc4wK.invoke(__thisNode__));
+    outpath = Context.defaultContext(genContext).getTempPath(__thisNode__, name, "customProcessors", BuildLayout_CopyProcessor__BehaviorDescriptor.getTaskName_id19QsrPtc4wK.invoke(__thisNode__));
     map.put(__thisNode__, outpath);
     return outpath;
   }
@@ -48,10 +48,10 @@ public class BuildLayout_CopyProcessor_Behavior {
           }
           res.append(name);
         }
-        compositePart = BuildRelativePath_BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), compositePart);
+        compositePart = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), compositePart);
       }
     } else {
-      res.append(BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
+      res.append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
     }
     if (res.length() == 0) {
       res.append("container");
@@ -60,9 +60,9 @@ public class BuildLayout_CopyProcessor_Behavior {
   }
   public static String call_filesetName_1330375798101726877(SAbstractConcept __thisConcept__, SNode fileset) {
     if (SNodeOperations.isInstanceOf(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
-      return BuildLayout_CopyProcessor_BehaviorDescriptor.representativeName_id19QsrPvAva7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(SNodeOperations.cast(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")));
+      return BuildLayout_CopyProcessor__BehaviorDescriptor.representativeName_id19QsrPvAva7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(SNodeOperations.cast(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")));
     } else if (SNodeOperations.isInstanceOf(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"))) {
-      return BuildLayout_CopyProcessor_BehaviorDescriptor.representativeName_id19QsrPvAva7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(SNodeOperations.cast(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir")));
+      return BuildLayout_CopyProcessor__BehaviorDescriptor.representativeName_id19QsrPvAva7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor").getDeclarationNode()), SLinkOperations.getTarget(SNodeOperations.cast(fileset, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir")));
     }
     return "copy";
   }

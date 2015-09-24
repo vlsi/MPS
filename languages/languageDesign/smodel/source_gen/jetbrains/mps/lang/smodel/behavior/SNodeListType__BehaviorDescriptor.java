@@ -25,14 +25,14 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IGenericType__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class SNodeListType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SNodeListType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -83,10 +83,10 @@ public final class SNodeListType_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static void collectGenericSubstitutions_id3zZky3wF74h(@NotNull SNode __thisNode__, Map<SNode, SNode> substitutions) {
-    IGenericType_BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(_quotation_createNode_r176b6_a0a0h(), substitutions);
+    IGenericType__BehaviorDescriptor.collectGenericSubstitutions_id3zZky3wF74h.invoke(_quotation_createNode_r176b6_a0a0h(), substitutions);
   }
 
-  /*package*/ SNodeListType_BehaviorDescriptor() {
+  /*package*/ SNodeListType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

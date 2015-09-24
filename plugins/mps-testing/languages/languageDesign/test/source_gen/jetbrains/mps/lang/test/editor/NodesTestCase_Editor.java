@@ -26,7 +26,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -37,7 +37,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
 
 public class NodesTestCase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -346,7 +346,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_58c6e4_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestCase_BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
+        return ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {
@@ -403,7 +403,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_58c6e4_b1a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return NodesTestCase_BehaviorDescriptor.needsWriteAction_id5vTxdEzuQjU.invoke(node) + "";
+        return NodesTestCase__BehaviorDescriptor.needsWriteAction_id5vTxdEzuQjU.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

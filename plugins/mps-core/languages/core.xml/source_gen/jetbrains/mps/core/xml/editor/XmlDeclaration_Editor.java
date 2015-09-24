@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -44,7 +44,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext) {
-    return XmlPart_BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node);
+    return XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node);
   }
   private EditorCell createConstant_axvdb8_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<?");
@@ -302,7 +302,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext) {
-    return XmlPart_BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node);
+    return XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node);
   }
   private EditorCell createConstant_axvdb8_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");

@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CellModel_HierarchycalTable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellModel_HierarchycalTable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,10 +35,10 @@ public final class CellModel_HierarchycalTable_BehaviorDescriptor extends BaseBH
 
   private static SNode getContainingConceptDeclaration_id5p3TFWLvETA(@NotNull SNode __thisNode__) {
     SNode editorComponent = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false, false);
-    return AbstractComponent_BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent);
+    return AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent);
   }
 
-  /*package*/ CellModel_HierarchycalTable_BehaviorDescriptor() {
+  /*package*/ CellModel_HierarchycalTable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

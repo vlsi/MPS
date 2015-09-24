@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CustomContainerCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CustomContainerCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x127be81db92655b3L, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class CustomContainerCreator_BehaviorDescriptor extends BaseBHDescr
     return res;
   }
 
-  /*package*/ CustomContainerCreator_BehaviorDescriptor() {
+  /*package*/ CustomContainerCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

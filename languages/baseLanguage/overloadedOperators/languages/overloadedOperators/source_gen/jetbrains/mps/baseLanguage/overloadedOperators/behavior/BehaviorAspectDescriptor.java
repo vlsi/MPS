@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myOverloadedBinaryOperator_BehaviorDescriptor = new OverloadedBinaryOperator_BehaviorDescriptor();
-  private final BHDescriptor myCustomOperatorUsage_BehaviorDescriptor = new CustomOperatorUsage_BehaviorDescriptor();
-  private final BHDescriptor myContainerImport_BehaviorDescriptor = new ContainerImport_BehaviorDescriptor();
+  private final BHDescriptor myOverloadedBinaryOperator__BehaviorDescriptor = new OverloadedBinaryOperator__BehaviorDescriptor();
+  private final BHDescriptor myCustomOperatorUsage__BehaviorDescriptor = new CustomOperatorUsage__BehaviorDescriptor();
+  private final BHDescriptor myContainerImport__BehaviorDescriptor = new ContainerImport__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myOverloadedBinaryOperator_BehaviorDescriptor;
+        return myOverloadedBinaryOperator__BehaviorDescriptor;
       case 1:
-        return myCustomOperatorUsage_BehaviorDescriptor;
+        return myCustomOperatorUsage__BehaviorDescriptor;
       case 2:
-        return myContainerImport_BehaviorDescriptor;
+        return myContainerImport__BehaviorDescriptor;
       default:
         return null;
     }

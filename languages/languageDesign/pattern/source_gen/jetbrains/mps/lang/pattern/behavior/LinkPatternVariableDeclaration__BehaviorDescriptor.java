@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LinkPatternVariableDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LinkPatternVariableDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class LinkPatternVariableDeclaration_BehaviorDescriptor extends Bas
   }
 
 
-  /*package*/ LinkPatternVariableDeclaration_BehaviorDescriptor() {
+  /*package*/ LinkPatternVariableDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

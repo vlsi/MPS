@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMps_Language_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMps_Language__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class BuildMps_Language_BehaviorDescriptor extends BaseBHDescriptor
     return null;
   }
 
-  /*package*/ BuildMps_Language_BehaviorDescriptor() {
+  /*package*/ BuildMps_Language__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class IndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor extend
     return StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE;
   }
 
-  /*package*/ IndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor() {
+  /*package*/ IndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

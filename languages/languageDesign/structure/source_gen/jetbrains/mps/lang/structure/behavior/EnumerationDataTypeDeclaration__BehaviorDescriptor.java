@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EnumerationDataTypeDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumerationDataTypeDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class EnumerationDataTypeDeclaration_BehaviorDescriptor extends Bas
 
   private static SNode toBaseLanguageType_idhEwI9ym(@NotNull SNode __thisNode__) {
     SNode memberDataType = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType"));
-    return DataTypeDeclaration_BehaviorDescriptor.toBaseLanguageType_idhEwI9ym.invoke(memberDataType);
+    return DataTypeDeclaration__BehaviorDescriptor.toBaseLanguageType_idhEwI9ym.invoke(memberDataType);
   }
   private static SNode getDefaultMember_idhEwIM$p(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"))) {
@@ -50,7 +50,7 @@ public final class EnumerationDataTypeDeclaration_BehaviorDescriptor extends Bas
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).first();
   }
 
-  /*package*/ EnumerationDataTypeDeclaration_BehaviorDescriptor() {
+  /*package*/ EnumerationDataTypeDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

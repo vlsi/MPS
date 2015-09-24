@@ -24,11 +24,11 @@ public class DependentTypeDescriptor_Behavior {
   }
   public static SNode call_getType_3751132065236798250(SNode __thisNode__, SNode node) {
     try {
-      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor_BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"), false, false));
+      String className = SNodeOperations.getModel(__thisNode__).getModelName() + "." + DSLDescriptor__BehaviorDescriptor.getGeneratedClassName_id2VRROcY7Vt6.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"), false, false));
       SModule classModule = __thisNode__.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
-        if (m.getName().equals(DependentTypeDescriptor_BehaviorDescriptor.getGeneratedMethodName_id2dmnr4$zcCR.invoke(__thisNode__))) {
+        if (m.getName().equals(DependentTypeDescriptor__BehaviorDescriptor.getGeneratedMethodName_id2dmnr4$zcCR.invoke(__thisNode__))) {
           m.setAccessible(true);
           return ((SNode) m.invoke(null, node));
         }

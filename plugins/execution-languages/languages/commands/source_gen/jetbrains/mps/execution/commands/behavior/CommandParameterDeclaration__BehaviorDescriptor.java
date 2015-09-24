@@ -20,12 +20,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CommandParameterDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CommandParameterDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,28 +51,28 @@ public final class CommandParameterDeclaration_BehaviorDescriptor extends BaseBH
     return true;
   }
   private static String getSetterName_id6mJVBGGsi5s(@NotNull SNode __thisNode__) {
-    return "set" + CommandParameterDeclaration_BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5H.invoke(__thisNode__);
+    return "set" + CommandParameterDeclaration__BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5H.invoke(__thisNode__);
   }
   private static String getSetterLongName_id3gpm$NHlR8F(@NotNull SNode __thisNode__) {
-    return CommandParameterDeclaration_BehaviorDescriptor.getSetterName_id6mJVBGGsi5s.invoke(__thisNode__) + "_" + CommandParameterDeclaration_BehaviorDescriptor.getTypeSuffix_id3gpm$NHlXW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
+    return CommandParameterDeclaration__BehaviorDescriptor.getSetterName_id6mJVBGGsi5s.invoke(__thisNode__) + "_" + CommandParameterDeclaration__BehaviorDescriptor.getTypeSuffix_id3gpm$NHlXW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
   }
   private static String getUpperCaseName_id6mJVBGGsi5H(@NotNull SNode __thisNode__) {
-    return CommandParameterDeclaration_BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5Q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return CommandParameterDeclaration__BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5Q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   private static String getFieldName_id6mJVBGGspQq(@NotNull SNode __thisNode__) {
-    return CommandParameterDeclaration_BehaviorDescriptor.getFieldName_id6mJVBGGsi69.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_" + CommandParameterDeclaration_BehaviorDescriptor.getTypeSuffix_id3gpm$NHlXW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
+    return CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGsi69.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_" + CommandParameterDeclaration__BehaviorDescriptor.getTypeSuffix_id3gpm$NHlXW7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
   }
   private static String getFieldName_id6mJVBGGsi69(@NotNull SAbstractConcept __thisConcept__, String name) {
-    return "my" + CommandParameterDeclaration_BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5Q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), name);
+    return "my" + CommandParameterDeclaration__BehaviorDescriptor.getUpperCaseName_id6mJVBGGsi5Q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").getDeclarationNode()), name);
   }
   private static String getTypeSuffix_id3gpm$NHlXW7(@NotNull SAbstractConcept __thisConcept__, SNode type) {
-    return IGeneratedToClass_BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(type));
+    return IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(type));
   }
   private static String getUpperCaseName_id6mJVBGGsi5Q(@NotNull SAbstractConcept __thisConcept__, String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
 
-  /*package*/ CommandParameterDeclaration_BehaviorDescriptor() {
+  /*package*/ CommandParameterDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

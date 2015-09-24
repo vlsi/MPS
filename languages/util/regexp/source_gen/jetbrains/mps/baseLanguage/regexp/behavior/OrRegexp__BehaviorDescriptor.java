@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class OrRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class OrRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0d780L, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,8 +36,8 @@ public final class OrRegexp_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
-    String s = Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left")), vars) + "|" + Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c5a26fL, "right")), vars);
-    return (OrRegexp_BehaviorDescriptor.inParentheses_id1b8uQvZyDXU.invoke(__thisNode__) ? Regexp_BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s);
+    String s = Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left")), vars) + "|" + Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c5a26fL, "right")), vars);
+    return (OrRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDXU.invoke(__thisNode__) ? Regexp__BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s);
   }
   private static Boolean needParentheses_id1b8uQvZynii(@NotNull SNode __thisNode__) {
     return true;
@@ -46,7 +46,7 @@ public final class OrRegexp_BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174bc30e7L, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"));
   }
 
-  /*package*/ OrRegexp_BehaviorDescriptor() {
+  /*package*/ OrRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -26,7 +26,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BaseMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BaseMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c78301acL, "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class BaseMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
   private static Object[] getActualArguments_idhEwI$gh(@NotNull SNode __thisNode__, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
+        return Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
       }
     }).toGenericArray(Object.class);
   }
@@ -66,10 +66,10 @@ public final class BaseMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static Boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {
-    return IMethodCall_BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__);
+    return IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ BaseMethodCall_BehaviorDescriptor() {
+  /*package*/ BaseMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

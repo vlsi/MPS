@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -93,7 +93,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getNodeAncestor(methodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
             SNode anc = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            if (Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(desc, anc)) {
+            if (Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(desc, anc)) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);

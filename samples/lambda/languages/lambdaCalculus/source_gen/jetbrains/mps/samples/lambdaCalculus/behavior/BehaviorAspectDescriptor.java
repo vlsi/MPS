@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myLambdaExpression_BehaviorDescriptor = new LambdaExpression_BehaviorDescriptor();
-  private final BHDescriptor myLambdaAbstraction_BehaviorDescriptor = new LambdaAbstraction_BehaviorDescriptor();
-  private final BHDescriptor myLambdaApplication_BehaviorDescriptor = new LambdaApplication_BehaviorDescriptor();
-  private final BHDescriptor myAbstractionVarRef_BehaviorDescriptor = new AbstractionVarRef_BehaviorDescriptor();
-  private final BHDescriptor myFunctionType_BehaviorDescriptor = new FunctionType_BehaviorDescriptor();
-  private final BHDescriptor myLetExpression_BehaviorDescriptor = new LetExpression_BehaviorDescriptor();
-  private final BHDescriptor myLetRef_BehaviorDescriptor = new LetRef_BehaviorDescriptor();
-  private final BHDescriptor myVariableOwner_BehaviorDescriptor = new VariableOwner_BehaviorDescriptor();
+  private final BHDescriptor myLambdaExpression__BehaviorDescriptor = new LambdaExpression__BehaviorDescriptor();
+  private final BHDescriptor myLambdaAbstraction__BehaviorDescriptor = new LambdaAbstraction__BehaviorDescriptor();
+  private final BHDescriptor myLambdaApplication__BehaviorDescriptor = new LambdaApplication__BehaviorDescriptor();
+  private final BHDescriptor myAbstractionVarRef__BehaviorDescriptor = new AbstractionVarRef__BehaviorDescriptor();
+  private final BHDescriptor myFunctionType__BehaviorDescriptor = new FunctionType__BehaviorDescriptor();
+  private final BHDescriptor myLetExpression__BehaviorDescriptor = new LetExpression__BehaviorDescriptor();
+  private final BHDescriptor myLetRef__BehaviorDescriptor = new LetRef__BehaviorDescriptor();
+  private final BHDescriptor myVariableOwner__BehaviorDescriptor = new VariableOwner__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myLambdaExpression_BehaviorDescriptor;
+        return myLambdaExpression__BehaviorDescriptor;
       case 1:
-        return myLambdaAbstraction_BehaviorDescriptor;
+        return myLambdaAbstraction__BehaviorDescriptor;
       case 2:
-        return myLambdaApplication_BehaviorDescriptor;
+        return myLambdaApplication__BehaviorDescriptor;
       case 3:
-        return myAbstractionVarRef_BehaviorDescriptor;
+        return myAbstractionVarRef__BehaviorDescriptor;
       case 4:
-        return myFunctionType_BehaviorDescriptor;
+        return myFunctionType__BehaviorDescriptor;
       case 5:
-        return myLetExpression_BehaviorDescriptor;
+        return myLetExpression__BehaviorDescriptor;
       case 6:
-        return myLetRef_BehaviorDescriptor;
+        return myLetRef__BehaviorDescriptor;
       case 7:
-        return myVariableOwner_BehaviorDescriptor;
+        return myVariableOwner__BehaviorDescriptor;
       default:
         return null;
     }

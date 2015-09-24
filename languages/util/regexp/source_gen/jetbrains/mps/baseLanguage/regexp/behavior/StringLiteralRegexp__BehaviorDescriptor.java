@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class StringLiteralRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StringLiteralRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,13 +37,13 @@ public final class StringLiteralRegexp_BehaviorDescriptor extends BaseBHDescript
   }
 
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
-    return StringLiteralRegexp_BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text")));
+    return StringLiteralRegexp__BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text")));
   }
   private static Boolean isValid_id48bMILtL4il(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text")))) {
       return false;
     }
-    return StringLiteralRegexp_BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text"))) != null;
+    return StringLiteralRegexp__BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text"))) != null;
   }
   private static String toRegexp_id7eq8FHGGy0G(@NotNull SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
@@ -62,7 +62,7 @@ public final class StringLiteralRegexp_BehaviorDescriptor extends BaseBHDescript
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+            if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
               return null;
             }
             sb.append(c);
@@ -103,7 +103,7 @@ public final class StringLiteralRegexp_BehaviorDescriptor extends BaseBHDescript
     return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
 
-  /*package*/ StringLiteralRegexp_BehaviorDescriptor() {
+  /*package*/ StringLiteralRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TrivialNodeId_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TrivialNodeId__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class TrivialNodeId_BehaviorDescriptor extends BaseBHDescriptor {
     return n.getConcept().getQualifiedName().equals(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64466L, "conceptId"))) && n.getNodeId().toString().equals(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64468L, "nodeId")));
   }
 
-  /*package*/ TrivialNodeId_BehaviorDescriptor() {
+  /*package*/ TrivialNodeId__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

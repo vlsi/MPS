@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd69375a089554L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor extends 
     return _quotation_createNode_oot9fr_a0a0();
   }
 
-  /*package*/ XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor() {
+  /*package*/ XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

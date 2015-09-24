@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class UnicodeCharacterRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class UnicodeCharacterRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class UnicodeCharacterRegexp_BehaviorDescriptor extends BaseBHDescr
     return "\\u" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, 0x1183127443bL, "code"));
   }
 
-  /*package*/ UnicodeCharacterRegexp_BehaviorDescriptor() {
+  /*package*/ UnicodeCharacterRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class QueryExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,10 +40,10 @@ public final class QueryExpression_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
     String result = "Supported parameters:\n";
-    if (Sequence.fromIterable(QueryExpression_BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).contains(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope").getDeclarationNode())) {
+    if (Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).contains(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope").getDeclarationNode())) {
       result += "scope  (default = project)   specifies the boundaries of the lookup operation\n";
     }
-    if (Sequence.fromIterable(QueryExpression_BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).contains(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly").getDeclarationNode())) {
+    if (Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).contains(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly").getDeclarationNode())) {
       result += "r/o+   (default = false)     also search in read-only models\n";
     } else {
       result += "Note: read-only models are included in the search scope\n";
@@ -51,15 +51,15 @@ public final class QueryExpression_BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   private static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {
-    String result = HelpProvider_BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invokeSpecial(__thisConcept__);
-    if (Sequence.fromIterable(QueryExpression_BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).isEmpty()) {
+    String result = HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invokeSpecial(__thisConcept__);
+    if (Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(__thisConcept__)).isEmpty()) {
       return result;
     } else {
       return result + "<parameters>";
     }
   }
 
-  /*package*/ QueryExpression_BehaviorDescriptor() {
+  /*package*/ QueryExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

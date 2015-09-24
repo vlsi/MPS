@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethod
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IExtractMethodAvailable_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IExtractMethodAvailable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c60bb0a14L, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class IExtractMethodAvailable_BehaviorDescriptor extends BaseBHDesc
     return new AbstractExtractMethodRefactoringProcessor(__thisNode__, nodesToExtract);
   }
 
-  /*package*/ IExtractMethodAvailable_BehaviorDescriptor() {
+  /*package*/ IExtractMethodAvailable__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

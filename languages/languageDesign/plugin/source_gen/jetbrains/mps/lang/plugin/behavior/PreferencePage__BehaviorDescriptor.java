@@ -24,7 +24,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PreferencePage_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PreferencePage__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -45,7 +45,7 @@ public final class PreferencePage_BehaviorDescriptor extends BaseBHDescriptor {
     return new PropertyReference(__thisNode__, "name");
   }
 
-  /*package*/ PreferencePage_BehaviorDescriptor() {
+  /*package*/ PreferencePage__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

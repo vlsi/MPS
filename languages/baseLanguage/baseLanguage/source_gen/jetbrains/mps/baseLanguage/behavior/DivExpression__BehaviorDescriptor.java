@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DivExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DivExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xff2bbc13daL, "jetbrains.mps.baseLanguage.structure.DivExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,23 +42,23 @@ public final class DivExpression_BehaviorDescriptor extends BaseBHDescriptor {
       if (b.doubleValue() == 0.0 || b.longValue() == 0) {
         return null;
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Double.class, a, b)) {
         return a.doubleValue() / b.doubleValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Float.class, a, b)) {
         return a.floatValue() / b.floatValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Long.class, a, b)) {
         return a.longValue() / b.longValue();
       }
-      if (BinaryOperation_BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
+      if (BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo.invoke(__thisNode__.getConcept(), Integer.class, a, b)) {
         return a.intValue() / b.intValue();
       }
     }
     return null;
   }
 
-  /*package*/ DivExpression_BehaviorDescriptor() {
+  /*package*/ DivExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NodeWithClosure_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NodeWithClosure__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class NodeWithClosure_BehaviorDescriptor extends BaseBHDescriptor {
     return ClosureHoldingNodeUtil.getInstance().getClosure(__thisNode__) != null;
   }
 
-  /*package*/ NodeWithClosure_BehaviorDescriptor() {
+  /*package*/ NodeWithClosure__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

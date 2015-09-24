@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -24,11 +24,11 @@ import jetbrains.mps.smodel.SReference;
 @Deprecated
 public class JUnit4TestCaseRef_Behavior {
   public static Iterable<SNode> call_getTestClassesForModule_1514755338276096458(SAbstractConcept __thisConcept__, SNode module) {
-    return Sequence.fromIterable(ModuleSuite_BehaviorDescriptor.models_id173Z5qAOyPn.invoke(module)).translate(new ITranslator2<SModel, SNode>() {
+    return Sequence.fromIterable(ModuleSuite__BehaviorDescriptor.models_id173Z5qAOyPn.invoke(module)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return ListSequence.fromList(SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(it)).translate(new ITranslator2<SNode, SNode>() {
+            return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(it)).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode m) {
                 return SLinkOperations.getChildren(m, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));
               }

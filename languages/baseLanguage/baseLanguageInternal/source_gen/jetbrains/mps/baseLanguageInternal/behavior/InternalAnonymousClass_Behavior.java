@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -20,9 +20,9 @@ public class InternalAnonymousClass_Behavior {
   public static String call_getJavaName_3421461530438560397(SNode __thisNode__) {
     SNode ancestor = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, true);
     if ((ancestor == null)) {
-      return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__);
     }
-    return INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ancestor) + "$" + InternalAnonymousClass_BehaviorDescriptor.getIndexInContainingClass_id2XVui9ut6EM.invoke(__thisNode__);
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ancestor) + "$" + InternalAnonymousClass__BehaviorDescriptor.getIndexInContainingClass_id2XVui9ut6EM.invoke(__thisNode__);
   }
   public static int call_getIndexInContainingClass_3421461530438560434(SNode __thisNode__) {
     final SNode ancestor = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);

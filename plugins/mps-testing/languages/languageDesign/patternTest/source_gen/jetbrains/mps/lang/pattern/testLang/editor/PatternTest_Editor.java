@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -498,7 +498,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_kasahx_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestCase_BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
+        return ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

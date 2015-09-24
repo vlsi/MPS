@@ -25,7 +25,7 @@ import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Calculator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Calculator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "jetbrains.mps.calculator.structure.Calculator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -43,7 +43,7 @@ public final class Calculator_BehaviorDescriptor extends BaseBHDescriptor {
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
   }
 
-  /*package*/ Calculator_BehaviorDescriptor() {
+  /*package*/ Calculator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

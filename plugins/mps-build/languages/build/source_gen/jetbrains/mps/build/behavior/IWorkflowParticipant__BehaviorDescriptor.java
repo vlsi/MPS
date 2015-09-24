@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IWorkflowParticipant_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IWorkflowParticipant__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x546bf9ab92fe0b3fL, "jetbrains.mps.build.structure.IWorkflowParticipant");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class IWorkflowParticipant_BehaviorDescriptor extends BaseBHDescrip
   }
 
 
-  /*package*/ IWorkflowParticipant_BehaviorDescriptor() {
+  /*package*/ IWorkflowParticipant__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

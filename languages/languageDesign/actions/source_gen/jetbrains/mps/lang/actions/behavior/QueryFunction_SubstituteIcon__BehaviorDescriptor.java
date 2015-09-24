@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class QueryFunction_SubstituteIcon_BehaviorDescriptor extends BaseBHDescriptor {
+public final class QueryFunction_SubstituteIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cbf9d29L, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -51,7 +51,7 @@ public final class QueryFunction_SubstituteIcon_BehaviorDescriptor extends BaseB
     return _quotation_createNode_18rz8f_a0a1();
   }
 
-  /*package*/ QueryFunction_SubstituteIcon_BehaviorDescriptor() {
+  /*package*/ QueryFunction_SubstituteIcon__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

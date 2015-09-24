@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildSource_JavaDependencyModule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildSource_JavaDependencyModule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class BuildSource_JavaDependencyModule_BehaviorDescriptor extends B
     JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x263ae7d4319896aaL, "module")), SNodeOperations.getParent(__thisNode__), builder);
   }
 
-  /*package*/ BuildSource_JavaDependencyModule_BehaviorDescriptor() {
+  /*package*/ BuildSource_JavaDependencyModule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

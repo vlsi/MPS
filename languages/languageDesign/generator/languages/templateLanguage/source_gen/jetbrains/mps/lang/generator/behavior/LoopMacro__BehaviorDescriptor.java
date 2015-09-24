@@ -39,7 +39,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class LoopMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LoopMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -55,7 +55,7 @@ public final class LoopMacro_BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_cdqxf8_a0a = new LoopMacro_BehaviorDescriptor.Pattern_bt774s_a0a0a0a21();
+      GeneratedMatchingPattern pattern_cdqxf8_a0a = new LoopMacro__BehaviorDescriptor.Pattern_bt774s_a0a0a0a21();
       SNode coercedNode_cdqxf8_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x10fef5e42d7L, "sourceNodesQuery"))), pattern_cdqxf8_a0a);
       if (coercedNode_cdqxf8_a0a != null) {
         return ((SNode) pattern_cdqxf8_a0a.getFieldValue("patternVar_concept"));
@@ -81,14 +81,14 @@ public final class LoopMacro_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
     // child is not under any other macro except this one 
-    return SourceSubstituteMacro_BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && ListSequence.fromList(SNodeOperations.getNodeAncestors(child, null, true)).findFirst(new IWhereFilter<SNode>() {
+    return SourceSubstituteMacro__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && ListSequence.fromList(SNodeOperations.getNodeAncestors(child, null, true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Sequence.fromIterable(SNodeOperations.ofConcept(AttributeOperations.getAttributeList(it, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"))).isNotEmpty();
       }
     }) == SNodeOperations.getParent(__thisNode__);
   }
 
-  /*package*/ LoopMacro_BehaviorDescriptor() {
+  /*package*/ LoopMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

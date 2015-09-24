@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractNodeRefExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractNodeRefExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class AbstractNodeRefExpression_BehaviorDescriptor extends BaseBHDe
 
   private static Iterable<SNode> getPossibleTargetNodes_id4x3U0fpSqvX(@NotNull SNode __thisNode__) {
     List<SNode> thisList = new ArrayList<SNode>();
-    ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression_BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
+    ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression__BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
     Iterable<SNode> children = thisList;
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     while (Sequence.fromIterable(children).isNotEmpty()) {
@@ -69,7 +69,7 @@ public final class AbstractNodeRefExpression_BehaviorDescriptor extends BaseBHDe
     return result;
   }
 
-  /*package*/ AbstractNodeRefExpression_BehaviorDescriptor() {
+  /*package*/ AbstractNodeRefExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

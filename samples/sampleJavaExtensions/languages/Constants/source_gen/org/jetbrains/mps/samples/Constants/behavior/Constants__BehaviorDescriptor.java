@@ -25,7 +25,7 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Constants_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Constants__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861417L, "org.jetbrains.mps.samples.Constants.structure.Constants");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class Constants_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ Constants_BehaviorDescriptor() {
+  /*package*/ Constants__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

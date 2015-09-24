@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CellModel_Component_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellModel_Component__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class CellModel_Component_BehaviorDescriptor extends BaseBHDescript
     return true;
   }
 
-  /*package*/ CellModel_Component_BehaviorDescriptor() {
+  /*package*/ CellModel_Component__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class DiagramElementCreationHandler_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DiagramElementCreationHandler__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -48,7 +48,7 @@ public final class DiagramElementCreationHandler_BehaviorDescriptor extends Base
     return _quotation_createNode_78v23b_a0a1();
   }
 
-  /*package*/ DiagramElementCreationHandler_BehaviorDescriptor() {
+  /*package*/ DiagramElementCreationHandler__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

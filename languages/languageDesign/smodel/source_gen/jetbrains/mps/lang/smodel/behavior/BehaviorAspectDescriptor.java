@@ -12,103 +12,103 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor mySNodeType_BehaviorDescriptor = new SNodeType_BehaviorDescriptor();
-  private final BHDescriptor mySPropertyAccess_BehaviorDescriptor = new SPropertyAccess_BehaviorDescriptor();
-  private final BHDescriptor mySLinkAccess_BehaviorDescriptor = new SLinkAccess_BehaviorDescriptor();
-  private final BHDescriptor mySLinkListAccess_BehaviorDescriptor = new SLinkListAccess_BehaviorDescriptor();
-  private final BHDescriptor mySNodeOperation_BehaviorDescriptor = new SNodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myProperty_SetOperation_BehaviorDescriptor = new Property_SetOperation_BehaviorDescriptor();
-  private final BHDescriptor myEnumMemberReference_BehaviorDescriptor = new EnumMemberReference_BehaviorDescriptor();
-  private final BHDescriptor myLink_SetNewChildOperation_BehaviorDescriptor = new Link_SetNewChildOperation_BehaviorDescriptor();
-  private final BHDescriptor myLinkList_AddNewChildOperation_BehaviorDescriptor = new LinkList_AddNewChildOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetParentOperation_BehaviorDescriptor = new Node_GetParentOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_IsInstanceOfOperation_BehaviorDescriptor = new Node_IsInstanceOfOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_InsertNewNextSiblingOperation_BehaviorDescriptor = new Node_InsertNewNextSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_ReplaceWithNewOperation_BehaviorDescriptor = new Node_ReplaceWithNewOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_ReplaceWithAnotherOperation_BehaviorDescriptor = new Node_ReplaceWithAnotherOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_DeleteOperation_BehaviorDescriptor = new Node_DeleteOperation_BehaviorDescriptor();
-  private final BHDescriptor mySNodeTypeCastExpression_BehaviorDescriptor = new SNodeTypeCastExpression_BehaviorDescriptor();
-  private final BHDescriptor myLink_SetTargetOperation_BehaviorDescriptor = new Link_SetTargetOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_InsertNewPrevSiblingOperation_BehaviorDescriptor = new Node_InsertNewPrevSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_InsertNextSiblingOperation_BehaviorDescriptor = new Node_InsertNextSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_InsertPrevSiblingOperation_BehaviorDescriptor = new Node_InsertPrevSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor mySModelType_BehaviorDescriptor = new SModelType_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetModelOperation_BehaviorDescriptor = new Node_GetModelOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_CreateNewNodeOperation_BehaviorDescriptor = new Model_CreateNewNodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetPrevSiblingOperation_BehaviorDescriptor = new Node_GetPrevSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetNextSiblingOperation_BehaviorDescriptor = new Node_GetNextSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_CopyOperation_BehaviorDescriptor = new Node_CopyOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_IsRoleOperation_BehaviorDescriptor = new Node_IsRoleOperation_BehaviorDescriptor();
-  private final BHDescriptor mySNodeListType_BehaviorDescriptor = new SNodeListType_BehaviorDescriptor();
-  private final BHDescriptor mySemanticDowncastExpression_BehaviorDescriptor = new SemanticDowncastExpression_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetNextSiblingsOperation_BehaviorDescriptor = new Node_GetNextSiblingsOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetPrevSiblingsOperation_BehaviorDescriptor = new Node_GetPrevSiblingsOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetAllSiblingsOperation_BehaviorDescriptor = new Node_GetAllSiblingsOperation_BehaviorDescriptor();
-  private final BHDescriptor myProperty_HasValue_Enum_BehaviorDescriptor = new Property_HasValue_Enum_BehaviorDescriptor();
-  private final BHDescriptor myProperty_HasValue_Simple_BehaviorDescriptor = new Property_HasValue_Simple_BehaviorDescriptor();
-  private final BHDescriptor myModel_CreateNewRootNodeOperation_BehaviorDescriptor = new Model_CreateNewRootNodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetDescendantsOperation_BehaviorDescriptor = new Node_GetDescendantsOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetContainingRootOperation_BehaviorDescriptor = new Node_GetContainingRootOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_RootsOperation_BehaviorDescriptor = new Model_RootsOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_NodesOperation_BehaviorDescriptor = new Model_NodesOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetAncestorOperation_BehaviorDescriptor = new Node_GetAncestorOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetChildrenOperation_BehaviorDescriptor = new Node_GetChildrenOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_IsNullOperation_BehaviorDescriptor = new Node_IsNullOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_IsNotNullOperation_BehaviorDescriptor = new Node_IsNotNullOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetConceptOperation_BehaviorDescriptor = new Node_GetConceptOperation_BehaviorDescriptor();
-  private final BHDescriptor myConcept_IsExactlyOperation_BehaviorDescriptor = new Concept_IsExactlyOperation_BehaviorDescriptor();
-  private final BHDescriptor myConceptNodeType_BehaviorDescriptor = new ConceptNodeType_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetAncestorsOperation_BehaviorDescriptor = new Node_GetAncestorsOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_RootsIncludingImportedOperation_BehaviorDescriptor = new Model_RootsIncludingImportedOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetIndexInParentOperation_BehaviorDescriptor = new Node_GetIndexInParentOperation_BehaviorDescriptor();
-  private final BHDescriptor myConcept_GetDirectSuperConcepts_BehaviorDescriptor = new Concept_GetDirectSuperConcepts_BehaviorDescriptor();
-  private final BHDescriptor myNode_ConceptMethodCall_BehaviorDescriptor = new Node_ConceptMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myConcept_IsSuperConceptOfOperation_BehaviorDescriptor = new Concept_IsSuperConceptOfOperation_BehaviorDescriptor();
-  private final BHDescriptor myConcept_IsSubConceptOfOperation_BehaviorDescriptor = new Concept_IsSubConceptOfOperation_BehaviorDescriptor();
-  private final BHDescriptor myConcept_GetAllSuperConcepts_BehaviorDescriptor = new Concept_GetAllSuperConcepts_BehaviorDescriptor();
-  private final BHDescriptor myConcept_GetHierarchy_BehaviorDescriptor = new Concept_GetHierarchy_BehaviorDescriptor();
-  private final BHDescriptor myConcept_NewInstance_BehaviorDescriptor = new Concept_NewInstance_BehaviorDescriptor();
-  private final BHDescriptor myConcept_GetAllSubConcepts_BehaviorDescriptor = new Concept_GetAllSubConcepts_BehaviorDescriptor();
-  private final BHDescriptor myModel_NodesIncludingImportedOperation_BehaviorDescriptor = new Model_NodesIncludingImportedOperation_BehaviorDescriptor();
-  private final BHDescriptor myLinkRefQualifier_BehaviorDescriptor = new LinkRefQualifier_BehaviorDescriptor();
-  private final BHDescriptor myNode_IsAttributeOperation_BehaviorDescriptor = new Node_IsAttributeOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_AddRootOperation_BehaviorDescriptor = new Model_AddRootOperation_BehaviorDescriptor();
-  private final BHDescriptor myModel_GetLongNameOperation_BehaviorDescriptor = new Model_GetLongNameOperation_BehaviorDescriptor();
-  private final BHDescriptor myProperty_RemoveOperation_BehaviorDescriptor = new Property_RemoveOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeRefExpression_BehaviorDescriptor = new NodeRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetReferentSearchScopeOperation_BehaviorDescriptor = new Node_GetReferentSearchScopeOperation_BehaviorDescriptor();
-  private final BHDescriptor myEqualsStructurallyExpression_BehaviorDescriptor = new EqualsStructurallyExpression_BehaviorDescriptor();
-  private final BHDescriptor myNode_DetachOperation_BehaviorDescriptor = new Node_DetachOperation_BehaviorDescriptor();
-  private final BHDescriptor mySEnumMemberType_BehaviorDescriptor = new SEnumMemberType_BehaviorDescriptor();
-  private final BHDescriptor mySEnumOperation_BehaviorDescriptor = new SEnumOperation_BehaviorDescriptor();
-  private final BHDescriptor myAsSConcept_BehaviorDescriptor = new AsSConcept_BehaviorDescriptor();
-  private final BHDescriptor myModelReferenceExpression_BehaviorDescriptor = new ModelReferenceExpression_BehaviorDescriptor();
-  private final BHDescriptor myChildNodeRefExpression_BehaviorDescriptor = new ChildNodeRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myChildAttributeQualifier_BehaviorDescriptor = new ChildAttributeQualifier_BehaviorDescriptor();
-  private final BHDescriptor myIfInstanceOfVariable_BehaviorDescriptor = new IfInstanceOfVariable_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetContainingRoleOperation_BehaviorDescriptor = new Node_GetContainingRoleOperation_BehaviorDescriptor();
-  private final BHDescriptor myILinkAccessQualifierContainer_BehaviorDescriptor = new ILinkAccessQualifierContainer_BehaviorDescriptor();
-  private final BHDescriptor myLanguageIdentity_BehaviorDescriptor = new LanguageIdentity_BehaviorDescriptor();
-  private final BHDescriptor myLanguageId_BehaviorDescriptor = new LanguageId_BehaviorDescriptor();
-  private final BHDescriptor myAbstractNodeRefExpression_BehaviorDescriptor = new AbstractNodeRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetReferenceOperation_BehaviorDescriptor = new Node_GetReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myILinkAccess_BehaviorDescriptor = new ILinkAccess_BehaviorDescriptor();
-  private final BHDescriptor myModuleReferenceExpression_BehaviorDescriptor = new ModuleReferenceExpression_BehaviorDescriptor();
-  private final BHDescriptor myLanguageReferenceExpression_BehaviorDescriptor = new LanguageReferenceExpression_BehaviorDescriptor();
-  private final BHDescriptor myLanguageRefExpression_BehaviorDescriptor = new LanguageRefExpression_BehaviorDescriptor();
-  private final BHDescriptor myNode_PointerOperation_BehaviorDescriptor = new Node_PointerOperation_BehaviorDescriptor();
-  private final BHDescriptor myOperationParm_LinkQualifier_BehaviorDescriptor = new OperationParm_LinkQualifier_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetContainingLinkOperation_BehaviorDescriptor = new Node_GetContainingLinkOperation_BehaviorDescriptor();
-  private final BHDescriptor myAttributeAccess_BehaviorDescriptor = new AttributeAccess_BehaviorDescriptor();
-  private final BHDescriptor myAttributeQualifier_BehaviorDescriptor = new AttributeQualifier_BehaviorDescriptor();
-  private final BHDescriptor myNodeAttributeQualifier_BehaviorDescriptor = new NodeAttributeQualifier_BehaviorDescriptor();
-  private final BHDescriptor myLinkAttributeQualifier_BehaviorDescriptor = new LinkAttributeQualifier_BehaviorDescriptor();
-  private final BHDescriptor myPropertyAttributeQualifier_BehaviorDescriptor = new PropertyAttributeQualifier_BehaviorDescriptor();
-  private final BHDescriptor mySConceptType_BehaviorDescriptor = new SConceptType_BehaviorDescriptor();
-  private final BHDescriptor myModel_GetModule_BehaviorDescriptor = new Model_GetModule_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetSConceptOperation_BehaviorDescriptor = new Node_GetSConceptOperation_BehaviorDescriptor();
-  private final BHDescriptor myNode_GetReferencesOperation_BehaviorDescriptor = new Node_GetReferencesOperation_BehaviorDescriptor();
-  private final BHDescriptor myAsNodeOperation_BehaviorDescriptor = new AsNodeOperation_BehaviorDescriptor();
+  private final BHDescriptor mySNodeType__BehaviorDescriptor = new SNodeType__BehaviorDescriptor();
+  private final BHDescriptor mySPropertyAccess__BehaviorDescriptor = new SPropertyAccess__BehaviorDescriptor();
+  private final BHDescriptor mySLinkAccess__BehaviorDescriptor = new SLinkAccess__BehaviorDescriptor();
+  private final BHDescriptor mySLinkListAccess__BehaviorDescriptor = new SLinkListAccess__BehaviorDescriptor();
+  private final BHDescriptor mySNodeOperation__BehaviorDescriptor = new SNodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myProperty_SetOperation__BehaviorDescriptor = new Property_SetOperation__BehaviorDescriptor();
+  private final BHDescriptor myEnumMemberReference__BehaviorDescriptor = new EnumMemberReference__BehaviorDescriptor();
+  private final BHDescriptor myLink_SetNewChildOperation__BehaviorDescriptor = new Link_SetNewChildOperation__BehaviorDescriptor();
+  private final BHDescriptor myLinkList_AddNewChildOperation__BehaviorDescriptor = new LinkList_AddNewChildOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetParentOperation__BehaviorDescriptor = new Node_GetParentOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_IsInstanceOfOperation__BehaviorDescriptor = new Node_IsInstanceOfOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_InsertNewNextSiblingOperation__BehaviorDescriptor = new Node_InsertNewNextSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_ReplaceWithNewOperation__BehaviorDescriptor = new Node_ReplaceWithNewOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_ReplaceWithAnotherOperation__BehaviorDescriptor = new Node_ReplaceWithAnotherOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_DeleteOperation__BehaviorDescriptor = new Node_DeleteOperation__BehaviorDescriptor();
+  private final BHDescriptor mySNodeTypeCastExpression__BehaviorDescriptor = new SNodeTypeCastExpression__BehaviorDescriptor();
+  private final BHDescriptor myLink_SetTargetOperation__BehaviorDescriptor = new Link_SetTargetOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor = new Node_InsertNewPrevSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_InsertNextSiblingOperation__BehaviorDescriptor = new Node_InsertNextSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_InsertPrevSiblingOperation__BehaviorDescriptor = new Node_InsertPrevSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor mySModelType__BehaviorDescriptor = new SModelType__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetModelOperation__BehaviorDescriptor = new Node_GetModelOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_CreateNewNodeOperation__BehaviorDescriptor = new Model_CreateNewNodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetPrevSiblingOperation__BehaviorDescriptor = new Node_GetPrevSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetNextSiblingOperation__BehaviorDescriptor = new Node_GetNextSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_CopyOperation__BehaviorDescriptor = new Node_CopyOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_IsRoleOperation__BehaviorDescriptor = new Node_IsRoleOperation__BehaviorDescriptor();
+  private final BHDescriptor mySNodeListType__BehaviorDescriptor = new SNodeListType__BehaviorDescriptor();
+  private final BHDescriptor mySemanticDowncastExpression__BehaviorDescriptor = new SemanticDowncastExpression__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetNextSiblingsOperation__BehaviorDescriptor = new Node_GetNextSiblingsOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetPrevSiblingsOperation__BehaviorDescriptor = new Node_GetPrevSiblingsOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetAllSiblingsOperation__BehaviorDescriptor = new Node_GetAllSiblingsOperation__BehaviorDescriptor();
+  private final BHDescriptor myProperty_HasValue_Enum__BehaviorDescriptor = new Property_HasValue_Enum__BehaviorDescriptor();
+  private final BHDescriptor myProperty_HasValue_Simple__BehaviorDescriptor = new Property_HasValue_Simple__BehaviorDescriptor();
+  private final BHDescriptor myModel_CreateNewRootNodeOperation__BehaviorDescriptor = new Model_CreateNewRootNodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetDescendantsOperation__BehaviorDescriptor = new Node_GetDescendantsOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetContainingRootOperation__BehaviorDescriptor = new Node_GetContainingRootOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_RootsOperation__BehaviorDescriptor = new Model_RootsOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_NodesOperation__BehaviorDescriptor = new Model_NodesOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetAncestorOperation__BehaviorDescriptor = new Node_GetAncestorOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetChildrenOperation__BehaviorDescriptor = new Node_GetChildrenOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_IsNullOperation__BehaviorDescriptor = new Node_IsNullOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_IsNotNullOperation__BehaviorDescriptor = new Node_IsNotNullOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetConceptOperation__BehaviorDescriptor = new Node_GetConceptOperation__BehaviorDescriptor();
+  private final BHDescriptor myConcept_IsExactlyOperation__BehaviorDescriptor = new Concept_IsExactlyOperation__BehaviorDescriptor();
+  private final BHDescriptor myConceptNodeType__BehaviorDescriptor = new ConceptNodeType__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetAncestorsOperation__BehaviorDescriptor = new Node_GetAncestorsOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_RootsIncludingImportedOperation__BehaviorDescriptor = new Model_RootsIncludingImportedOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetIndexInParentOperation__BehaviorDescriptor = new Node_GetIndexInParentOperation__BehaviorDescriptor();
+  private final BHDescriptor myConcept_GetDirectSuperConcepts__BehaviorDescriptor = new Concept_GetDirectSuperConcepts__BehaviorDescriptor();
+  private final BHDescriptor myNode_ConceptMethodCall__BehaviorDescriptor = new Node_ConceptMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myConcept_IsSuperConceptOfOperation__BehaviorDescriptor = new Concept_IsSuperConceptOfOperation__BehaviorDescriptor();
+  private final BHDescriptor myConcept_IsSubConceptOfOperation__BehaviorDescriptor = new Concept_IsSubConceptOfOperation__BehaviorDescriptor();
+  private final BHDescriptor myConcept_GetAllSuperConcepts__BehaviorDescriptor = new Concept_GetAllSuperConcepts__BehaviorDescriptor();
+  private final BHDescriptor myConcept_GetHierarchy__BehaviorDescriptor = new Concept_GetHierarchy__BehaviorDescriptor();
+  private final BHDescriptor myConcept_NewInstance__BehaviorDescriptor = new Concept_NewInstance__BehaviorDescriptor();
+  private final BHDescriptor myConcept_GetAllSubConcepts__BehaviorDescriptor = new Concept_GetAllSubConcepts__BehaviorDescriptor();
+  private final BHDescriptor myModel_NodesIncludingImportedOperation__BehaviorDescriptor = new Model_NodesIncludingImportedOperation__BehaviorDescriptor();
+  private final BHDescriptor myLinkRefQualifier__BehaviorDescriptor = new LinkRefQualifier__BehaviorDescriptor();
+  private final BHDescriptor myNode_IsAttributeOperation__BehaviorDescriptor = new Node_IsAttributeOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_AddRootOperation__BehaviorDescriptor = new Model_AddRootOperation__BehaviorDescriptor();
+  private final BHDescriptor myModel_GetLongNameOperation__BehaviorDescriptor = new Model_GetLongNameOperation__BehaviorDescriptor();
+  private final BHDescriptor myProperty_RemoveOperation__BehaviorDescriptor = new Property_RemoveOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeRefExpression__BehaviorDescriptor = new NodeRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetReferentSearchScopeOperation__BehaviorDescriptor = new Node_GetReferentSearchScopeOperation__BehaviorDescriptor();
+  private final BHDescriptor myEqualsStructurallyExpression__BehaviorDescriptor = new EqualsStructurallyExpression__BehaviorDescriptor();
+  private final BHDescriptor myNode_DetachOperation__BehaviorDescriptor = new Node_DetachOperation__BehaviorDescriptor();
+  private final BHDescriptor mySEnumMemberType__BehaviorDescriptor = new SEnumMemberType__BehaviorDescriptor();
+  private final BHDescriptor mySEnumOperation__BehaviorDescriptor = new SEnumOperation__BehaviorDescriptor();
+  private final BHDescriptor myAsSConcept__BehaviorDescriptor = new AsSConcept__BehaviorDescriptor();
+  private final BHDescriptor myModelReferenceExpression__BehaviorDescriptor = new ModelReferenceExpression__BehaviorDescriptor();
+  private final BHDescriptor myChildNodeRefExpression__BehaviorDescriptor = new ChildNodeRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myChildAttributeQualifier__BehaviorDescriptor = new ChildAttributeQualifier__BehaviorDescriptor();
+  private final BHDescriptor myIfInstanceOfVariable__BehaviorDescriptor = new IfInstanceOfVariable__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetContainingRoleOperation__BehaviorDescriptor = new Node_GetContainingRoleOperation__BehaviorDescriptor();
+  private final BHDescriptor myILinkAccessQualifierContainer__BehaviorDescriptor = new ILinkAccessQualifierContainer__BehaviorDescriptor();
+  private final BHDescriptor myLanguageIdentity__BehaviorDescriptor = new LanguageIdentity__BehaviorDescriptor();
+  private final BHDescriptor myLanguageId__BehaviorDescriptor = new LanguageId__BehaviorDescriptor();
+  private final BHDescriptor myAbstractNodeRefExpression__BehaviorDescriptor = new AbstractNodeRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetReferenceOperation__BehaviorDescriptor = new Node_GetReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myILinkAccess__BehaviorDescriptor = new ILinkAccess__BehaviorDescriptor();
+  private final BHDescriptor myModuleReferenceExpression__BehaviorDescriptor = new ModuleReferenceExpression__BehaviorDescriptor();
+  private final BHDescriptor myLanguageReferenceExpression__BehaviorDescriptor = new LanguageReferenceExpression__BehaviorDescriptor();
+  private final BHDescriptor myLanguageRefExpression__BehaviorDescriptor = new LanguageRefExpression__BehaviorDescriptor();
+  private final BHDescriptor myNode_PointerOperation__BehaviorDescriptor = new Node_PointerOperation__BehaviorDescriptor();
+  private final BHDescriptor myOperationParm_LinkQualifier__BehaviorDescriptor = new OperationParm_LinkQualifier__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetContainingLinkOperation__BehaviorDescriptor = new Node_GetContainingLinkOperation__BehaviorDescriptor();
+  private final BHDescriptor myAttributeAccess__BehaviorDescriptor = new AttributeAccess__BehaviorDescriptor();
+  private final BHDescriptor myAttributeQualifier__BehaviorDescriptor = new AttributeQualifier__BehaviorDescriptor();
+  private final BHDescriptor myNodeAttributeQualifier__BehaviorDescriptor = new NodeAttributeQualifier__BehaviorDescriptor();
+  private final BHDescriptor myLinkAttributeQualifier__BehaviorDescriptor = new LinkAttributeQualifier__BehaviorDescriptor();
+  private final BHDescriptor myPropertyAttributeQualifier__BehaviorDescriptor = new PropertyAttributeQualifier__BehaviorDescriptor();
+  private final BHDescriptor mySConceptType__BehaviorDescriptor = new SConceptType__BehaviorDescriptor();
+  private final BHDescriptor myModel_GetModule__BehaviorDescriptor = new Model_GetModule__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetSConceptOperation__BehaviorDescriptor = new Node_GetSConceptOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_GetReferencesOperation__BehaviorDescriptor = new Node_GetReferencesOperation__BehaviorDescriptor();
+  private final BHDescriptor myAsNodeOperation__BehaviorDescriptor = new AsNodeOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -225,199 +225,199 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return mySNodeType_BehaviorDescriptor;
+        return mySNodeType__BehaviorDescriptor;
       case 1:
-        return mySPropertyAccess_BehaviorDescriptor;
+        return mySPropertyAccess__BehaviorDescriptor;
       case 2:
-        return mySLinkAccess_BehaviorDescriptor;
+        return mySLinkAccess__BehaviorDescriptor;
       case 3:
-        return mySLinkListAccess_BehaviorDescriptor;
+        return mySLinkListAccess__BehaviorDescriptor;
       case 4:
-        return mySNodeOperation_BehaviorDescriptor;
+        return mySNodeOperation__BehaviorDescriptor;
       case 5:
-        return myProperty_SetOperation_BehaviorDescriptor;
+        return myProperty_SetOperation__BehaviorDescriptor;
       case 6:
-        return myEnumMemberReference_BehaviorDescriptor;
+        return myEnumMemberReference__BehaviorDescriptor;
       case 7:
-        return myLink_SetNewChildOperation_BehaviorDescriptor;
+        return myLink_SetNewChildOperation__BehaviorDescriptor;
       case 8:
-        return myLinkList_AddNewChildOperation_BehaviorDescriptor;
+        return myLinkList_AddNewChildOperation__BehaviorDescriptor;
       case 9:
-        return myNode_GetParentOperation_BehaviorDescriptor;
+        return myNode_GetParentOperation__BehaviorDescriptor;
       case 10:
-        return myNode_IsInstanceOfOperation_BehaviorDescriptor;
+        return myNode_IsInstanceOfOperation__BehaviorDescriptor;
       case 11:
-        return myNode_InsertNewNextSiblingOperation_BehaviorDescriptor;
+        return myNode_InsertNewNextSiblingOperation__BehaviorDescriptor;
       case 12:
-        return myNode_ReplaceWithNewOperation_BehaviorDescriptor;
+        return myNode_ReplaceWithNewOperation__BehaviorDescriptor;
       case 13:
-        return myNode_ReplaceWithAnotherOperation_BehaviorDescriptor;
+        return myNode_ReplaceWithAnotherOperation__BehaviorDescriptor;
       case 14:
-        return myNode_DeleteOperation_BehaviorDescriptor;
+        return myNode_DeleteOperation__BehaviorDescriptor;
       case 15:
-        return mySNodeTypeCastExpression_BehaviorDescriptor;
+        return mySNodeTypeCastExpression__BehaviorDescriptor;
       case 16:
-        return myLink_SetTargetOperation_BehaviorDescriptor;
+        return myLink_SetTargetOperation__BehaviorDescriptor;
       case 17:
-        return myNode_InsertNewPrevSiblingOperation_BehaviorDescriptor;
+        return myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor;
       case 18:
-        return myNode_InsertNextSiblingOperation_BehaviorDescriptor;
+        return myNode_InsertNextSiblingOperation__BehaviorDescriptor;
       case 19:
-        return myNode_InsertPrevSiblingOperation_BehaviorDescriptor;
+        return myNode_InsertPrevSiblingOperation__BehaviorDescriptor;
       case 20:
-        return mySModelType_BehaviorDescriptor;
+        return mySModelType__BehaviorDescriptor;
       case 21:
-        return myNode_GetModelOperation_BehaviorDescriptor;
+        return myNode_GetModelOperation__BehaviorDescriptor;
       case 22:
-        return myModel_CreateNewNodeOperation_BehaviorDescriptor;
+        return myModel_CreateNewNodeOperation__BehaviorDescriptor;
       case 23:
-        return myNode_GetPrevSiblingOperation_BehaviorDescriptor;
+        return myNode_GetPrevSiblingOperation__BehaviorDescriptor;
       case 24:
-        return myNode_GetNextSiblingOperation_BehaviorDescriptor;
+        return myNode_GetNextSiblingOperation__BehaviorDescriptor;
       case 25:
-        return myNode_CopyOperation_BehaviorDescriptor;
+        return myNode_CopyOperation__BehaviorDescriptor;
       case 26:
-        return myNode_IsRoleOperation_BehaviorDescriptor;
+        return myNode_IsRoleOperation__BehaviorDescriptor;
       case 27:
-        return mySNodeListType_BehaviorDescriptor;
+        return mySNodeListType__BehaviorDescriptor;
       case 28:
-        return mySemanticDowncastExpression_BehaviorDescriptor;
+        return mySemanticDowncastExpression__BehaviorDescriptor;
       case 29:
-        return myNode_GetNextSiblingsOperation_BehaviorDescriptor;
+        return myNode_GetNextSiblingsOperation__BehaviorDescriptor;
       case 30:
-        return myNode_GetPrevSiblingsOperation_BehaviorDescriptor;
+        return myNode_GetPrevSiblingsOperation__BehaviorDescriptor;
       case 31:
-        return myNode_GetAllSiblingsOperation_BehaviorDescriptor;
+        return myNode_GetAllSiblingsOperation__BehaviorDescriptor;
       case 32:
-        return myProperty_HasValue_Enum_BehaviorDescriptor;
+        return myProperty_HasValue_Enum__BehaviorDescriptor;
       case 33:
-        return myProperty_HasValue_Simple_BehaviorDescriptor;
+        return myProperty_HasValue_Simple__BehaviorDescriptor;
       case 34:
-        return myModel_CreateNewRootNodeOperation_BehaviorDescriptor;
+        return myModel_CreateNewRootNodeOperation__BehaviorDescriptor;
       case 35:
-        return myNode_GetDescendantsOperation_BehaviorDescriptor;
+        return myNode_GetDescendantsOperation__BehaviorDescriptor;
       case 36:
-        return myNode_GetContainingRootOperation_BehaviorDescriptor;
+        return myNode_GetContainingRootOperation__BehaviorDescriptor;
       case 37:
-        return myModel_RootsOperation_BehaviorDescriptor;
+        return myModel_RootsOperation__BehaviorDescriptor;
       case 38:
-        return myModel_NodesOperation_BehaviorDescriptor;
+        return myModel_NodesOperation__BehaviorDescriptor;
       case 39:
-        return myNode_GetAncestorOperation_BehaviorDescriptor;
+        return myNode_GetAncestorOperation__BehaviorDescriptor;
       case 40:
-        return myNode_GetChildrenOperation_BehaviorDescriptor;
+        return myNode_GetChildrenOperation__BehaviorDescriptor;
       case 41:
-        return myNode_IsNullOperation_BehaviorDescriptor;
+        return myNode_IsNullOperation__BehaviorDescriptor;
       case 42:
-        return myNode_IsNotNullOperation_BehaviorDescriptor;
+        return myNode_IsNotNullOperation__BehaviorDescriptor;
       case 43:
-        return myNode_GetConceptOperation_BehaviorDescriptor;
+        return myNode_GetConceptOperation__BehaviorDescriptor;
       case 44:
-        return myConcept_IsExactlyOperation_BehaviorDescriptor;
+        return myConcept_IsExactlyOperation__BehaviorDescriptor;
       case 45:
-        return myConceptNodeType_BehaviorDescriptor;
+        return myConceptNodeType__BehaviorDescriptor;
       case 46:
-        return myNode_GetAncestorsOperation_BehaviorDescriptor;
+        return myNode_GetAncestorsOperation__BehaviorDescriptor;
       case 47:
-        return myModel_RootsIncludingImportedOperation_BehaviorDescriptor;
+        return myModel_RootsIncludingImportedOperation__BehaviorDescriptor;
       case 48:
-        return myNode_GetIndexInParentOperation_BehaviorDescriptor;
+        return myNode_GetIndexInParentOperation__BehaviorDescriptor;
       case 49:
-        return myConcept_GetDirectSuperConcepts_BehaviorDescriptor;
+        return myConcept_GetDirectSuperConcepts__BehaviorDescriptor;
       case 50:
-        return myNode_ConceptMethodCall_BehaviorDescriptor;
+        return myNode_ConceptMethodCall__BehaviorDescriptor;
       case 51:
-        return myConcept_IsSuperConceptOfOperation_BehaviorDescriptor;
+        return myConcept_IsSuperConceptOfOperation__BehaviorDescriptor;
       case 52:
-        return myConcept_IsSubConceptOfOperation_BehaviorDescriptor;
+        return myConcept_IsSubConceptOfOperation__BehaviorDescriptor;
       case 53:
-        return myConcept_GetAllSuperConcepts_BehaviorDescriptor;
+        return myConcept_GetAllSuperConcepts__BehaviorDescriptor;
       case 54:
-        return myConcept_GetHierarchy_BehaviorDescriptor;
+        return myConcept_GetHierarchy__BehaviorDescriptor;
       case 55:
-        return myConcept_NewInstance_BehaviorDescriptor;
+        return myConcept_NewInstance__BehaviorDescriptor;
       case 56:
-        return myConcept_GetAllSubConcepts_BehaviorDescriptor;
+        return myConcept_GetAllSubConcepts__BehaviorDescriptor;
       case 57:
-        return myModel_NodesIncludingImportedOperation_BehaviorDescriptor;
+        return myModel_NodesIncludingImportedOperation__BehaviorDescriptor;
       case 58:
-        return myLinkRefQualifier_BehaviorDescriptor;
+        return myLinkRefQualifier__BehaviorDescriptor;
       case 59:
-        return myNode_IsAttributeOperation_BehaviorDescriptor;
+        return myNode_IsAttributeOperation__BehaviorDescriptor;
       case 60:
-        return myModel_AddRootOperation_BehaviorDescriptor;
+        return myModel_AddRootOperation__BehaviorDescriptor;
       case 61:
-        return myModel_GetLongNameOperation_BehaviorDescriptor;
+        return myModel_GetLongNameOperation__BehaviorDescriptor;
       case 62:
-        return myProperty_RemoveOperation_BehaviorDescriptor;
+        return myProperty_RemoveOperation__BehaviorDescriptor;
       case 63:
-        return myNodeRefExpression_BehaviorDescriptor;
+        return myNodeRefExpression__BehaviorDescriptor;
       case 64:
-        return myNode_GetReferentSearchScopeOperation_BehaviorDescriptor;
+        return myNode_GetReferentSearchScopeOperation__BehaviorDescriptor;
       case 65:
-        return myEqualsStructurallyExpression_BehaviorDescriptor;
+        return myEqualsStructurallyExpression__BehaviorDescriptor;
       case 66:
-        return myNode_DetachOperation_BehaviorDescriptor;
+        return myNode_DetachOperation__BehaviorDescriptor;
       case 67:
-        return mySEnumMemberType_BehaviorDescriptor;
+        return mySEnumMemberType__BehaviorDescriptor;
       case 68:
-        return mySEnumOperation_BehaviorDescriptor;
+        return mySEnumOperation__BehaviorDescriptor;
       case 69:
-        return myAsSConcept_BehaviorDescriptor;
+        return myAsSConcept__BehaviorDescriptor;
       case 70:
-        return myModelReferenceExpression_BehaviorDescriptor;
+        return myModelReferenceExpression__BehaviorDescriptor;
       case 71:
-        return myChildNodeRefExpression_BehaviorDescriptor;
+        return myChildNodeRefExpression__BehaviorDescriptor;
       case 72:
-        return myChildAttributeQualifier_BehaviorDescriptor;
+        return myChildAttributeQualifier__BehaviorDescriptor;
       case 73:
-        return myIfInstanceOfVariable_BehaviorDescriptor;
+        return myIfInstanceOfVariable__BehaviorDescriptor;
       case 74:
-        return myNode_GetContainingRoleOperation_BehaviorDescriptor;
+        return myNode_GetContainingRoleOperation__BehaviorDescriptor;
       case 75:
-        return myILinkAccessQualifierContainer_BehaviorDescriptor;
+        return myILinkAccessQualifierContainer__BehaviorDescriptor;
       case 76:
-        return myLanguageIdentity_BehaviorDescriptor;
+        return myLanguageIdentity__BehaviorDescriptor;
       case 77:
-        return myLanguageId_BehaviorDescriptor;
+        return myLanguageId__BehaviorDescriptor;
       case 78:
-        return myAbstractNodeRefExpression_BehaviorDescriptor;
+        return myAbstractNodeRefExpression__BehaviorDescriptor;
       case 79:
-        return myNode_GetReferenceOperation_BehaviorDescriptor;
+        return myNode_GetReferenceOperation__BehaviorDescriptor;
       case 80:
-        return myILinkAccess_BehaviorDescriptor;
+        return myILinkAccess__BehaviorDescriptor;
       case 81:
-        return myModuleReferenceExpression_BehaviorDescriptor;
+        return myModuleReferenceExpression__BehaviorDescriptor;
       case 82:
-        return myLanguageReferenceExpression_BehaviorDescriptor;
+        return myLanguageReferenceExpression__BehaviorDescriptor;
       case 83:
-        return myLanguageRefExpression_BehaviorDescriptor;
+        return myLanguageRefExpression__BehaviorDescriptor;
       case 84:
-        return myNode_PointerOperation_BehaviorDescriptor;
+        return myNode_PointerOperation__BehaviorDescriptor;
       case 85:
-        return myOperationParm_LinkQualifier_BehaviorDescriptor;
+        return myOperationParm_LinkQualifier__BehaviorDescriptor;
       case 86:
-        return myNode_GetContainingLinkOperation_BehaviorDescriptor;
+        return myNode_GetContainingLinkOperation__BehaviorDescriptor;
       case 87:
-        return myAttributeAccess_BehaviorDescriptor;
+        return myAttributeAccess__BehaviorDescriptor;
       case 88:
-        return myAttributeQualifier_BehaviorDescriptor;
+        return myAttributeQualifier__BehaviorDescriptor;
       case 89:
-        return myNodeAttributeQualifier_BehaviorDescriptor;
+        return myNodeAttributeQualifier__BehaviorDescriptor;
       case 90:
-        return myLinkAttributeQualifier_BehaviorDescriptor;
+        return myLinkAttributeQualifier__BehaviorDescriptor;
       case 91:
-        return myPropertyAttributeQualifier_BehaviorDescriptor;
+        return myPropertyAttributeQualifier__BehaviorDescriptor;
       case 92:
-        return mySConceptType_BehaviorDescriptor;
+        return mySConceptType__BehaviorDescriptor;
       case 93:
-        return myModel_GetModule_BehaviorDescriptor;
+        return myModel_GetModule__BehaviorDescriptor;
       case 94:
-        return myNode_GetSConceptOperation_BehaviorDescriptor;
+        return myNode_GetSConceptOperation__BehaviorDescriptor;
       case 95:
-        return myNode_GetReferencesOperation_BehaviorDescriptor;
+        return myNode_GetReferencesOperation__BehaviorDescriptor;
       case 96:
-        return myAsNodeOperation_BehaviorDescriptor;
+        return myAsNodeOperation__BehaviorDescriptor;
       default:
         return null;
     }

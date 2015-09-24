@@ -26,7 +26,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -37,7 +37,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class ParallelFor_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ParallelFor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -64,7 +64,7 @@ public final class ParallelFor_BehaviorDescriptor extends BaseBHDescriptor {
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
 
-    return AbstractLoopStatement_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return AbstractLoopStatement__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
   private static void collectUncaughtMethodThrowables_id4Gt7ANIVH8f(@NotNull SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
@@ -95,7 +95,7 @@ public final class ParallelFor_BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
 
-  /*package*/ ParallelFor_BehaviorDescriptor() {
+  /*package*/ ParallelFor__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

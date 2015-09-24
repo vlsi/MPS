@@ -26,7 +26,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public final class TemplateCallMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class TemplateCallMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, "jetbrains.mps.lang.generator.structure.TemplateCallMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,20 +40,20 @@ public final class TemplateCallMacro_BehaviorDescriptor extends BaseBHDescriptor
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_4ckpni_a0a = new TemplateCallMacro_BehaviorDescriptor.Pattern_f72veu_a0a0a0a01();
+      GeneratedMatchingPattern pattern_4ckpni_a0a = new TemplateCallMacro__BehaviorDescriptor.Pattern_f72veu_a0a0a0a01();
       SNode coercedNode_4ckpni_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, 0x14f7f8a311b93f35L, "sourceNodeQuery"))), pattern_4ckpni_a0a);
       if (coercedNode_4ckpni_a0a != null) {
         return ((SNode) pattern_4ckpni_a0a.getFieldValue("patternVar_concept"));
       } else {
       }
     }
-    return NodeMacro_BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
+    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
   }
   private static SNode getTemplate_idQzR6ThtTpS(@NotNull SNode __thisNode__) {
     return SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
   }
 
-  /*package*/ TemplateCallMacro_BehaviorDescriptor() {
+  /*package*/ TemplateCallMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

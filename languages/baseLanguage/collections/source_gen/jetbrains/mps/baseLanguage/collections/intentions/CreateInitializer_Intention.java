@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.collections.behavior.HashMapCreator_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.collections.behavior.HashMapCreator__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
@@ -36,7 +36,7 @@ public final class CreateInitializer_Intention extends IntentionDescriptorBase i
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")) == null) && ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")) == null) || !(HashMapCreator_BehaviorDescriptor.hasInitSize_id1653mnvAgqc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)))));
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")) == null) && ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")) == null) || !(HashMapCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgqc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)))));
   }
   @Override
   public boolean isSurroundWith() {

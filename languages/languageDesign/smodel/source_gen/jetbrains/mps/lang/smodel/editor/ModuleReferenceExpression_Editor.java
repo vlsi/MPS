@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -86,7 +86,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     public ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ModuleReferenceExpression_BehaviorDescriptor.getVisibleModules_id3wj3sjzSgF$.invoke(node);
+      return ModuleReferenceExpression__BehaviorDescriptor.getVisibleModules_id3wj3sjzSgF$.invoke(node);
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModule) parameterObject, node, model, operationContext, editorContext);

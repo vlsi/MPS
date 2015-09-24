@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PaddingTopStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PaddingTopStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class PaddingTopStyleClassItem_BehaviorDescriptor extends BaseBHDes
     return false;
   }
 
-  /*package*/ PaddingTopStyleClassItem_BehaviorDescriptor() {
+  /*package*/ PaddingTopStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

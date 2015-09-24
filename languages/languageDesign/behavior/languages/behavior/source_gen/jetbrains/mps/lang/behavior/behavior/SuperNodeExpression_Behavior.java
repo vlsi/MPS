@@ -36,7 +36,7 @@ public class SuperNodeExpression_Behavior {
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false);
   }
   public static boolean call_isEnclosingMethodStatic_5212852298298945349(SNode __thisNode__) {
-    SNode method = SuperNodeExpression_BehaviorDescriptor.getEnclosingMethod_id4MNYYw$1vF5.invoke(__thisNode__);
+    SNode method = SuperNodeExpression__BehaviorDescriptor.getEnclosingMethod_id4MNYYw$1vF5.invoke(__thisNode__);
     return method != null && SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"));
   }
 }

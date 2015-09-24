@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SingleLineComment_BehaviorDescriptor extends BaseBHDescriptor {
+public final class SingleLineComment__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -52,7 +52,7 @@ public final class SingleLineComment_BehaviorDescriptor extends BaseBHDescriptor
     return null;
   }
 
-  /*package*/ SingleLineComment_BehaviorDescriptor() {
+  /*package*/ SingleLineComment__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

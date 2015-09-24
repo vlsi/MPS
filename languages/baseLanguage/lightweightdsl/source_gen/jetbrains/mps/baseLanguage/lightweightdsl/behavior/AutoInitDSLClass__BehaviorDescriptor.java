@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AutoInitDSLClass_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AutoInitDSLClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0xea740fb893a13edL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.AutoInitDSLClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -32,7 +32,7 @@ public final class AutoInitDSLClass_BehaviorDescriptor extends BaseBHDescriptor 
   }
 
 
-  /*package*/ AutoInitDSLClass_BehaviorDescriptor() {
+  /*package*/ AutoInitDSLClass__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

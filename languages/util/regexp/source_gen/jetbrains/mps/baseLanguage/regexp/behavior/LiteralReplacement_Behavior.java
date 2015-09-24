@@ -17,7 +17,7 @@ public class LiteralReplacement_Behavior {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")))) {
       return false;
     }
-    return LiteralReplacement_BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text"))) != null;
+    return LiteralReplacement__BehaviorDescriptor.toRegexp_id3iI_KKpaM6i.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text"))) != null;
   }
   public static String call_toRegexp_3796137614137565586(SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
@@ -36,7 +36,7 @@ public class LiteralReplacement_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+            if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
               return null;
             }
             sb.append(c);

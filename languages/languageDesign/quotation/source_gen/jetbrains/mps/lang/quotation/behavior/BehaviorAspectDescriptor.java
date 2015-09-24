@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myAbstractAntiquotation_BehaviorDescriptor = new AbstractAntiquotation_BehaviorDescriptor();
-  private final BHDescriptor myAntiquotation_BehaviorDescriptor = new Antiquotation_BehaviorDescriptor();
-  private final BHDescriptor myQuotation_BehaviorDescriptor = new Quotation_BehaviorDescriptor();
-  private final BHDescriptor myReferenceAntiquotation_BehaviorDescriptor = new ReferenceAntiquotation_BehaviorDescriptor();
-  private final BHDescriptor myListAntiquotation_BehaviorDescriptor = new ListAntiquotation_BehaviorDescriptor();
-  private final BHDescriptor myPropertyAntiquotation_BehaviorDescriptor = new PropertyAntiquotation_BehaviorDescriptor();
-  private final BHDescriptor myNodeBuilder_BehaviorDescriptor = new NodeBuilder_BehaviorDescriptor();
-  private final BHDescriptor myNodeBuilderNode_BehaviorDescriptor = new NodeBuilderNode_BehaviorDescriptor();
-  private final BHDescriptor myNodeBuilderInitLink_BehaviorDescriptor = new NodeBuilderInitLink_BehaviorDescriptor();
+  private final BHDescriptor myAbstractAntiquotation__BehaviorDescriptor = new AbstractAntiquotation__BehaviorDescriptor();
+  private final BHDescriptor myAntiquotation__BehaviorDescriptor = new Antiquotation__BehaviorDescriptor();
+  private final BHDescriptor myQuotation__BehaviorDescriptor = new Quotation__BehaviorDescriptor();
+  private final BHDescriptor myReferenceAntiquotation__BehaviorDescriptor = new ReferenceAntiquotation__BehaviorDescriptor();
+  private final BHDescriptor myListAntiquotation__BehaviorDescriptor = new ListAntiquotation__BehaviorDescriptor();
+  private final BHDescriptor myPropertyAntiquotation__BehaviorDescriptor = new PropertyAntiquotation__BehaviorDescriptor();
+  private final BHDescriptor myNodeBuilder__BehaviorDescriptor = new NodeBuilder__BehaviorDescriptor();
+  private final BHDescriptor myNodeBuilderNode__BehaviorDescriptor = new NodeBuilderNode__BehaviorDescriptor();
+  private final BHDescriptor myNodeBuilderInitLink__BehaviorDescriptor = new NodeBuilderInitLink__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -49,23 +49,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myAbstractAntiquotation_BehaviorDescriptor;
+        return myAbstractAntiquotation__BehaviorDescriptor;
       case 1:
-        return myAntiquotation_BehaviorDescriptor;
+        return myAntiquotation__BehaviorDescriptor;
       case 2:
-        return myQuotation_BehaviorDescriptor;
+        return myQuotation__BehaviorDescriptor;
       case 3:
-        return myReferenceAntiquotation_BehaviorDescriptor;
+        return myReferenceAntiquotation__BehaviorDescriptor;
       case 4:
-        return myListAntiquotation_BehaviorDescriptor;
+        return myListAntiquotation__BehaviorDescriptor;
       case 5:
-        return myPropertyAntiquotation_BehaviorDescriptor;
+        return myPropertyAntiquotation__BehaviorDescriptor;
       case 6:
-        return myNodeBuilder_BehaviorDescriptor;
+        return myNodeBuilder__BehaviorDescriptor;
       case 7:
-        return myNodeBuilderNode_BehaviorDescriptor;
+        return myNodeBuilderNode__BehaviorDescriptor;
       case 8:
-        return myNodeBuilderInitLink_BehaviorDescriptor;
+        return myNodeBuilderInitLink__BehaviorDescriptor;
       default:
         return null;
     }

@@ -20,13 +20,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 @Deprecated
 public class RunConfigurationExecutor_Behavior {
   public static boolean call_isDebuggable_442015021861764808(SNode __thisNode__) {
-    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor_BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
   }
   public static boolean call_canBeSimple_6226796386650277682(SNode __thisNode__) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), _quotation_createNode_wnz9gp_b0a0a1());
   }
   public static boolean call_isSimple_6226796386650421097(SNode __thisNode__) {
-    return RunConfigurationExecutor_BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
+    return RunConfigurationExecutor__BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   @Nullable
   public static SNode call_getCommand_6226796386650434672(SNode __thisNode__) {

@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
-public final class WeaveMacro_BehaviorDescriptor extends BaseBHDescriptor {
+public final class WeaveMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,17 +42,17 @@ public final class WeaveMacro_BehaviorDescriptor extends BaseBHDescriptor {
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, 0x300c02df884261ebL, "nodesToWeaveQuery")));
     {
-      GeneratedMatchingPattern pattern_bvvctf_b0a = new WeaveMacro_BehaviorDescriptor.Pattern_4ghjwr_a0a0a1a9();
+      GeneratedMatchingPattern pattern_bvvctf_b0a = new WeaveMacro__BehaviorDescriptor.Pattern_4ghjwr_a0a0a1a9();
       SNode coercedNode_bvvctf_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_bvvctf_b0a);
       if (coercedNode_bvvctf_b0a != null) {
         return ((SNode) pattern_bvvctf_b0a.getFieldValue("patternVar_concept"));
       } else {
       }
     }
-    return NodeMacro_BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
+    return NodeMacro__BehaviorDescriptor.getInputNodeTypeInsideOfMacro_idhEwIosJ.invokeSpecial(__thisNode__);
   }
 
-  /*package*/ WeaveMacro_BehaviorDescriptor() {
+  /*package*/ WeaveMacro__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

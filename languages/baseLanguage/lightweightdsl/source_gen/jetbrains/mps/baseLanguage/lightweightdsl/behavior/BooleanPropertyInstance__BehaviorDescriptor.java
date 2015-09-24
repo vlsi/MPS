@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public final class BooleanPropertyInstance_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BooleanPropertyInstance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class BooleanPropertyInstance_BehaviorDescriptor extends BaseBHDesc
     return _quotation_createNode_uhky7j_a0a0(String.valueOf(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"))));
   }
 
-  /*package*/ BooleanPropertyInstance_BehaviorDescriptor() {
+  /*package*/ BooleanPropertyInstance__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

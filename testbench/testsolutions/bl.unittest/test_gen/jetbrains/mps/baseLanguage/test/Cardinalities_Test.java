@@ -9,7 +9,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 
 @MPSLaunch
 public class Cardinalities_Test extends BaseTransformationTest {
@@ -32,15 +32,15 @@ public class Cardinalities_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_NodeErrorCheck1875480895988114782() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1875480895988114782"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895988095647"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895988095647"));
     }
     public void test_NodeErrorCheck1875480895987852095() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1875480895987852095"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895987852074"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895987852074"));
     }
     public void test_NodeErrorCheck1875480895987615991() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1875480895987615991"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895987615784"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1875480895987615784"));
     }
   }
 }

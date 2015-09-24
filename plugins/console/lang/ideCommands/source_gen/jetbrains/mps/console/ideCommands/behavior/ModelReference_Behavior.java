@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
 
 /**
  * will be removed after 3.3
@@ -15,6 +15,6 @@ import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescr
 @Deprecated
 public class ModelReference_Behavior {
   public static SModel call_getModel_7057947030098579394(SNode __thisNode__, SRepository repo) {
-    return new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression_BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(__thisNode__));
+    return new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(__thisNode__));
   }
 }

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ClosureControlStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClosureControlStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class ClosureControlStatement_BehaviorDescriptor extends BaseBHDesc
   }
 
 
-  /*package*/ ClosureControlStatement_BehaviorDescriptor() {
+  /*package*/ ClosureControlStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

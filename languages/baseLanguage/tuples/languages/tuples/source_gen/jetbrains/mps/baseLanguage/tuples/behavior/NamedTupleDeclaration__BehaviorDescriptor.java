@@ -25,15 +25,15 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -62,9 +62,9 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
   }
 
   private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    StringBuilder sb = new StringBuilder(NamedTupleDeclaration_BehaviorDescriptor.getLeftBracket_id1653mnvAgnc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+    StringBuilder sb = new StringBuilder(NamedTupleDeclaration__BehaviorDescriptor.getLeftBracket_id1653mnvAgnc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
     String sep = "";
-    for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(__thisNode__)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+    for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(__thisNode__)).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
       }
@@ -72,7 +72,7 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
       sb.append(sep).append(SPropertyOperations.getString(cmp, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       sep = ", ";
     }
-    return sb.append(NamedTupleDeclaration_BehaviorDescriptor.getRightBracket_id1653mnvAgs3.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).append(" ").append(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))).toString();
+    return sb.append(NamedTupleDeclaration__BehaviorDescriptor.getRightBracket_id1653mnvAgs3.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).append(" ").append(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))).toString();
   }
   private static List<SNode> allExtends_id2ItBWjOSZqc(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
@@ -88,29 +88,29 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")));
     } else {
-      ListSequence.fromList(result).addElement(Classifier_BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")));
+      ListSequence.fromList(result).addElement(Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object")));
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))));
     return result;
   }
   private static Boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, final SNode nodeToCompare, Set<SNode> visited) {
-    if (Classifier_BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"))) {
+    if (Classifier__BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"))) {
       return true;
     }
     if (SetSequence.fromSet(visited).contains(__thisNode__)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("circular hierarchy in class " + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
+        LOG.error("circular hierarchy in class " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
       }
       return false;
     }
-    if (Classifier_BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(__thisNode__, nodeToCompare)) {
+    if (Classifier__BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(__thisNode__, nodeToCompare)) {
       return true;
     }
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")) == null) && ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))).isEmpty()) {
       return false;
     }
     SetSequence.fromSet(visited).addElement(__thisNode__);
-    if (Classifier_BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), nodeToCompare, visited)) {
+    if (Classifier__BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), nodeToCompare, visited)) {
       return true;
     }
     if (SNodeOperations.isInstanceOf(nodeToCompare, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
@@ -120,7 +120,7 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
         }
       }).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode ifc) {
-          return Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(ifc, nodeToCompare);
+          return Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(ifc, nodeToCompare);
         }
       });
     }
@@ -137,13 +137,13 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
   private static void populateMembers_id6r77ob2USUV(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
     for (SNode method : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x101f2cc410bL, "method"))) {
-      IClassifierMember_BehaviorDescriptor.populateMember_id6r77ob2UW9O.invoke(method, context, classifierType);
+      IClassifierMember__BehaviorDescriptor.populateMember_id6r77ob2UW9O.invoke(method, context, classifierType);
     }
 
     // populate super tuple members 
     SNode superTuple = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended"));
     if ((superTuple != null)) {
-      IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(superTuple, context, classifierType);
+      IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(superTuple, context, classifierType);
     }
 
     // populate implemented interfaces members  
@@ -152,10 +152,10 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
         return (it != null);
       }
     })) {
-      IClassifierType_BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(implementedInterface, context, classifierType);
+      IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(implementedInterface, context, classifierType);
     }
 
-    Classifier_BehaviorDescriptor.populateMembers_id6r77ob2USUV.invokeSpecial(__thisNode__, context, classifierType);
+    Classifier__BehaviorDescriptor.populateMembers_id6r77ob2USUV.invokeSpecial(__thisNode__, context, classifierType);
   }
   private static String getLeftBracket_id1653mnvAgnc(@NotNull SAbstractConcept __thisConcept__) {
     return "(";
@@ -164,7 +164,7 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
     return ")";
   }
 
-  /*package*/ NamedTupleDeclaration_BehaviorDescriptor() {
+  /*package*/ NamedTupleDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -225,7 +225,7 @@ public final class NamedTupleDeclaration_BehaviorDescriptor extends BaseBHDescri
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(NamedTupleDeclaration_BehaviorDescriptor.class);
+  protected static Logger LOG = LogManager.getLogger(NamedTupleDeclaration__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

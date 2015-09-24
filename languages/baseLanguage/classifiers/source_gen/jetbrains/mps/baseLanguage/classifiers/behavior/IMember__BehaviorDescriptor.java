@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IMember_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,19 +46,19 @@ public final class IMember_BehaviorDescriptor extends BaseBHDescriptor {
     return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")));
   }
   private static SNode getOperationConcept_idhEwIBCc(@NotNull SNode __thisNode__) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember_BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(__thisNode__) + " concept");
     }
     return memberOperationConcept;
   }
   private static SNode createOperation_idhEwIBCC(@NotNull SNode __thisNode__) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(IMember_BehaviorDescriptor.getOperationConcept_idhEwIBCc.invoke(__thisNode__)));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(IMember__BehaviorDescriptor.getOperationConcept_idhEwIBCc.invoke(__thisNode__)));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"), __thisNode__);
     return result;
   }
   private static SNode getContainer_idhEwIBCW(@NotNull SNode __thisNode__) {
-    return IClassifier_BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
+    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
   }
   private static Boolean canBeReferent_id762MQfghnJQ(@NotNull SNode __thisNode__, SNode referentConcept) {
     return true;
@@ -70,7 +70,7 @@ public final class IMember_BehaviorDescriptor extends BaseBHDescriptor {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 
-  /*package*/ IMember_BehaviorDescriptor() {
+  /*package*/ IMember__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

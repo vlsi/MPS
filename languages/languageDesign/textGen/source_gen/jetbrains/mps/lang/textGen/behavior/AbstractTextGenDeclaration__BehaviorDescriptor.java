@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractTextGenDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractTextGenDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class AbstractTextGenDeclaration_BehaviorDescriptor extends BaseBHD
     return null;
   }
 
-  /*package*/ AbstractTextGenDeclaration_BehaviorDescriptor() {
+  /*package*/ AbstractTextGenDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

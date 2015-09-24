@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class Regexp_Behavior {
   public static SNode call_getTopLevelRegexp_1223362823237(SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
-      return Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
+      return Regexp__BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
     }
     return __thisNode__;
   }

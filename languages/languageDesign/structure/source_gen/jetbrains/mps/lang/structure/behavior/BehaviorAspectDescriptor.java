@@ -12,20 +12,20 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConceptDeclaration_BehaviorDescriptor = new ConceptDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myLinkDeclaration_BehaviorDescriptor = new LinkDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myPropertyDeclaration_BehaviorDescriptor = new PropertyDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDataTypeDeclaration_BehaviorDescriptor = new DataTypeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEnumerationDataTypeDeclaration_BehaviorDescriptor = new EnumerationDataTypeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myConstrainedDataTypeDeclaration_BehaviorDescriptor = new ConstrainedDataTypeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEnumerationMemberDeclaration_BehaviorDescriptor = new EnumerationMemberDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myPrimitiveDataTypeDeclaration_BehaviorDescriptor = new PrimitiveDataTypeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myAbstractConceptDeclaration_BehaviorDescriptor = new AbstractConceptDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myInterfaceConceptDeclaration_BehaviorDescriptor = new InterfaceConceptDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDeprecatedNodeAnnotation_BehaviorDescriptor = new DeprecatedNodeAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myIStructureDeprecatable_BehaviorDescriptor = new IStructureDeprecatable_BehaviorDescriptor();
-  private final BHDescriptor myIConceptAspect_BehaviorDescriptor = new IConceptAspect_BehaviorDescriptor();
-  private final BHDescriptor myAttributeInfo_BehaviorDescriptor = new AttributeInfo_BehaviorDescriptor();
+  private final BHDescriptor myConceptDeclaration__BehaviorDescriptor = new ConceptDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myLinkDeclaration__BehaviorDescriptor = new LinkDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myPropertyDeclaration__BehaviorDescriptor = new PropertyDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDataTypeDeclaration__BehaviorDescriptor = new DataTypeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEnumerationDataTypeDeclaration__BehaviorDescriptor = new EnumerationDataTypeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myConstrainedDataTypeDeclaration__BehaviorDescriptor = new ConstrainedDataTypeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEnumerationMemberDeclaration__BehaviorDescriptor = new EnumerationMemberDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myPrimitiveDataTypeDeclaration__BehaviorDescriptor = new PrimitiveDataTypeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myAbstractConceptDeclaration__BehaviorDescriptor = new AbstractConceptDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myInterfaceConceptDeclaration__BehaviorDescriptor = new InterfaceConceptDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDeprecatedNodeAnnotation__BehaviorDescriptor = new DeprecatedNodeAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myIStructureDeprecatable__BehaviorDescriptor = new IStructureDeprecatable__BehaviorDescriptor();
+  private final BHDescriptor myIConceptAspect__BehaviorDescriptor = new IConceptAspect__BehaviorDescriptor();
+  private final BHDescriptor myAttributeInfo__BehaviorDescriptor = new AttributeInfo__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -59,33 +59,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConceptDeclaration_BehaviorDescriptor;
+        return myConceptDeclaration__BehaviorDescriptor;
       case 1:
-        return myLinkDeclaration_BehaviorDescriptor;
+        return myLinkDeclaration__BehaviorDescriptor;
       case 2:
-        return myPropertyDeclaration_BehaviorDescriptor;
+        return myPropertyDeclaration__BehaviorDescriptor;
       case 3:
-        return myDataTypeDeclaration_BehaviorDescriptor;
+        return myDataTypeDeclaration__BehaviorDescriptor;
       case 4:
-        return myEnumerationDataTypeDeclaration_BehaviorDescriptor;
+        return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
       case 5:
-        return myConstrainedDataTypeDeclaration_BehaviorDescriptor;
+        return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
       case 6:
-        return myEnumerationMemberDeclaration_BehaviorDescriptor;
+        return myEnumerationMemberDeclaration__BehaviorDescriptor;
       case 7:
-        return myPrimitiveDataTypeDeclaration_BehaviorDescriptor;
+        return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
       case 8:
-        return myAbstractConceptDeclaration_BehaviorDescriptor;
+        return myAbstractConceptDeclaration__BehaviorDescriptor;
       case 9:
-        return myInterfaceConceptDeclaration_BehaviorDescriptor;
+        return myInterfaceConceptDeclaration__BehaviorDescriptor;
       case 10:
-        return myDeprecatedNodeAnnotation_BehaviorDescriptor;
+        return myDeprecatedNodeAnnotation__BehaviorDescriptor;
       case 11:
-        return myIStructureDeprecatable_BehaviorDescriptor;
+        return myIStructureDeprecatable__BehaviorDescriptor;
       case 12:
-        return myIConceptAspect_BehaviorDescriptor;
+        return myIConceptAspect__BehaviorDescriptor;
       case 13:
-        return myAttributeInfo_BehaviorDescriptor;
+        return myAttributeInfo__BehaviorDescriptor;
       default:
         return null;
     }

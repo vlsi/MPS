@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildLayout_JarManifest_Attribute_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildLayout_JarManifest_Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,7 +50,7 @@ public final class BuildLayout_JarManifest_Attribute_BehaviorDescriptor extends 
     return MPSColors.DARK_GREEN.darker();
   }
 
-  /*package*/ BuildLayout_JarManifest_Attribute_BehaviorDescriptor() {
+  /*package*/ BuildLayout_JarManifest_Attribute__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

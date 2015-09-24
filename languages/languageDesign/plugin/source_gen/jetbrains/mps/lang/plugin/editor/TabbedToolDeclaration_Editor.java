@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration__BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -243,7 +243,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_txf5qz_a2b1b0(SNode node, EditorContext editorContext) {
-    return BaseToolDeclaration_BehaviorDescriptor.hasNumber_id5FstybB4d8v.invoke(node);
+    return BaseToolDeclaration__BehaviorDescriptor.hasNumber_id5FstybB4d8v.invoke(node);
   }
   private EditorCell createConstant_txf5qz_a2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

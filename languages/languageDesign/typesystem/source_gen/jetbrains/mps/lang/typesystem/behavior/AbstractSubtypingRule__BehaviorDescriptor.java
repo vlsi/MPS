@@ -24,7 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class AbstractSubtypingRule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractSubtypingRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class AbstractSubtypingRule_BehaviorDescriptor extends BaseBHDescri
     return _quotation_createNode_23rmn4_a0a2();
   }
 
-  /*package*/ AbstractSubtypingRule_BehaviorDescriptor() {
+  /*package*/ AbstractSubtypingRule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -28,7 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModuleSuite_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ModuleSuite__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,14 +42,14 @@ public final class ModuleSuite_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Iterable<SModel> models_id173Z5qAOyPn(@NotNull SNode __thisNode__) {
-    SModule m = ModuleSuite_BehaviorDescriptor.module_id7A48itizp2R.invoke(__thisNode__);
+    SModule m = ModuleSuite__BehaviorDescriptor.module_id7A48itizp2R.invoke(__thisNode__);
     if (m == null) {
       return null;
     }
     return m.getModels();
   }
   private static SModule module_id7A48itizp2R(@NotNull SNode __thisNode__) {
-    SModuleReference moduleReference = IModuleRef_BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")));
+    SModuleReference moduleReference = IModuleRef__BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")));
     if (moduleReference == null) {
       return null;
     }
@@ -63,7 +63,7 @@ public final class ModuleSuite_BehaviorDescriptor extends BaseBHDescriptor {
     });
   }
 
-  /*package*/ ModuleSuite_BehaviorDescriptor() {
+  /*package*/ ModuleSuite__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

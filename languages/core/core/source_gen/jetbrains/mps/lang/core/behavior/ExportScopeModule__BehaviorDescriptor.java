@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExportScopeModule_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExportScopeModule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aebaL, "jetbrains.mps.lang.core.structure.ExportScopeModule");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,10 +33,10 @@ public final class ExportScopeModule_BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static Boolean checkExport_id2erkSmBSC_o(@NotNull SNode __thisNode__, String sourceNamespace, SNode targetNode) {
-    return sourceNamespace.equals(ExportScope_BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), targetNode));
+    return sourceNamespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), targetNode));
   }
 
-  /*package*/ ExportScopeModule_BehaviorDescriptor() {
+  /*package*/ ExportScopeModule__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

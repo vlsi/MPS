@@ -25,7 +25,7 @@ import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExceptionHolder_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -47,7 +47,7 @@ public final class ExceptionHolder_BehaviorDescriptor extends BaseBHDescriptor {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")) != null;
   }
 
-  /*package*/ ExceptionHolder_BehaviorDescriptor() {
+  /*package*/ ExceptionHolder__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

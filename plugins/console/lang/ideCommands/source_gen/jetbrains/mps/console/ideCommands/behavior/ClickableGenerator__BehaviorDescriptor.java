@@ -37,7 +37,7 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public final class ClickableGenerator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -124,7 +124,7 @@ __switch__:
     return isNotEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId")));
   }
 
-  /*package*/ ClickableGenerator_BehaviorDescriptor() {
+  /*package*/ ClickableGenerator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

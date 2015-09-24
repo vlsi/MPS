@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class IsApplicableBlock_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IsApplicableBlock__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L, "jetbrains.mps.lang.plugin.structure.IsApplicableBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class IsApplicableBlock_BehaviorDescriptor extends BaseBHDescriptor
     return _quotation_createNode_alktie_a0a1();
   }
 
-  /*package*/ IsApplicableBlock_BehaviorDescriptor() {
+  /*package*/ IsApplicableBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class CharType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CharType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class CharType_BehaviorDescriptor extends BaseBHDescriptor {
     return "C";
   }
 
-  /*package*/ CharType_BehaviorDescriptor() {
+  /*package*/ CharType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

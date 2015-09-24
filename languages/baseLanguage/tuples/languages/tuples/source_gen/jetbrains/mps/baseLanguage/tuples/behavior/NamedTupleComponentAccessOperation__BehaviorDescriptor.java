@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NamedTupleComponentAccessOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NamedTupleComponentAccessOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class NamedTupleComponentAccessOperation_BehaviorDescriptor extends
     return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, 0x1209c84fd08L, "component")), MetaAdapterFactory.getProperty(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x120cda6c3beL, "final")));
   }
 
-  /*package*/ NamedTupleComponentAccessOperation_BehaviorDescriptor() {
+  /*package*/ NamedTupleComponentAccessOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

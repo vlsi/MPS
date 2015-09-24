@@ -15,7 +15,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class XmlContent_Editor extends DefaultNodeEditor {
@@ -44,7 +44,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_91idit_a0a0(EditorContext editorContext, SNode node) {
-    return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
   }
   private EditorCell createConstant_91idit_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -57,6 +57,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext) {
-    return XmlPart_BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+    return XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

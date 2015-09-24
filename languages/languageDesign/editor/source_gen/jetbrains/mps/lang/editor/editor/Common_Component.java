@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -76,7 +76,7 @@ public class Common_Component implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_tf8r10_a0b0(SNode node, EditorContext editorContext) {
-    return !(EditorCellModel_BehaviorDescriptor.isCellIdInitialized_idhTuDsSD.invoke(node));
+    return !(EditorCellModel__BehaviorDescriptor.isCellIdInitialized_idhTuDsSD.invoke(node));
   }
   private EditorCell createConstant_tf8r10_a0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell id");

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DecimalMulExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DecimalMulExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120769754c8L, "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class DecimalMulExpression_BehaviorDescriptor extends BaseBHDescrip
     return 11;
   }
 
-  /*package*/ DecimalMulExpression_BehaviorDescriptor() {
+  /*package*/ DecimalMulExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

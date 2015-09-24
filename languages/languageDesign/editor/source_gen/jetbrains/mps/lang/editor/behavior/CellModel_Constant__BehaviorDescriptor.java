@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CellModel_Constant_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CellModel_Constant__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class CellModel_Constant_BehaviorDescriptor extends BaseBHDescripto
     return false;
   }
 
-  /*package*/ CellModel_Constant_BehaviorDescriptor() {
+  /*package*/ CellModel_Constant__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

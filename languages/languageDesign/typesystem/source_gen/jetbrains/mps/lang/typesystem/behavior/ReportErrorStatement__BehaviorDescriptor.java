@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReportErrorStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReportErrorStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class ReportErrorStatement_BehaviorDescriptor extends BaseBHDescrip
     }
   }
 
-  /*package*/ ReportErrorStatement_BehaviorDescriptor() {
+  /*package*/ ReportErrorStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

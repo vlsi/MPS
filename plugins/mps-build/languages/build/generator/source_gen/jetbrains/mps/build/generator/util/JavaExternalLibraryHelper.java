@@ -7,18 +7,18 @@ import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSource_JavaLibrary__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.build.behavior.BuildSource_SingleFile_BehaviorDescriptor;
-import jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSource_SingleFile__BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSource_SingleFolder__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -37,7 +37,7 @@ public class JavaExternalLibraryHelper {
     List<SNode> artifacts = new ArrayList<SNode>();
     List<SNode> jarContainers = new ArrayList<SNode>();
 
-    if (BuildSource_JavaLibrary_BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(library)) {
+    if (BuildSource_JavaLibrary__BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(library)) {
       for (SNode element : ListSequence.fromList(SLinkOperations.getChildren(library, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")))) {
         SNode jcp = SNodeOperations.as(element, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"));
         if ((jcp == null)) {
@@ -49,7 +49,7 @@ public class JavaExternalLibraryHelper {
           if (jarArtifact != null) {
             ListSequence.fromList(artifacts).addElement(jarArtifact);
           } else {
-            genContext.showErrorMessage(library, "jar `" + BuildSourcePath_BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path")), null) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar `" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path")), null) + "' was not found in the layout");
             return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
         } else if (SNodeOperations.isInstanceOf(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"))) {
@@ -61,7 +61,7 @@ public class JavaExternalLibraryHelper {
           if (artifact != null) {
             ListSequence.fromList(artifacts).addElement(artifact);
           } else {
-            genContext.showErrorMessage(library, "jar file `" + BuildSource_SingleFile_BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(file) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar file `" + BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(file) + "' was not found in the layout");
             return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
 
@@ -74,7 +74,7 @@ public class JavaExternalLibraryHelper {
           if (artifact != null) {
             ListSequence.fromList(jarContainers).addElement(artifact);
           } else {
-            genContext.showErrorMessage(library, "jar folder `" + BuildSource_SingleFolder_BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(folder) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar folder `" + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(folder) + "' was not found in the layout");
             return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
         } else {
@@ -105,7 +105,7 @@ public class JavaExternalLibraryHelper {
     for (SNode pe : ListSequence.fromList(artifacts).distinct()) {
       String val = helper.locations().get(pe);
       if (val == null) {
-        genContext.showErrorMessage(pe, "no location for " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
+        genContext.showErrorMessage(pe, "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));
@@ -115,7 +115,7 @@ public class JavaExternalLibraryHelper {
     for (SNode pe : jarContainers) {
       String val = helper.contentLocations().get(pe);
       if (val == null) {
-        genContext.showErrorMessage(pe, "no content location for " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
+        genContext.showErrorMessage(pe, "no content location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));

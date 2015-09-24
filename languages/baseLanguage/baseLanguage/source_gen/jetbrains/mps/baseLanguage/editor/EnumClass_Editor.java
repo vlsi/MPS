@@ -32,7 +32,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
@@ -305,7 +305,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_y68cfu_a3h0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(Classifier_BehaviorDescriptor.members_id1hodSy8nQmC.invoke(node)).subtract(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")))).isNotEmpty();
+    return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(node)).subtract(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")))).isNotEmpty();
   }
   private EditorCell createConstant_y68cfu_a3h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -429,7 +429,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_y68cfu_a4d7a(SNode node, EditorContext editorContext) {
-    return !(Classifier_BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier_BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
+    return !(Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
   }
   private EditorCell createRefNodeList_y68cfu_f3h0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new EnumClass_Editor.fieldListHandler_y68cfu_f3h0(node, "field", editorContext);

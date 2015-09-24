@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DoNotTransformAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DoNotTransformAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7eed83c2376f34a5L, "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class DoNotTransformAnnotation_BehaviorDescriptor extends BaseBHDes
   }
 
 
-  /*package*/ DoNotTransformAnnotation_BehaviorDescriptor() {
+  /*package*/ DoNotTransformAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

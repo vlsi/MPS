@@ -18,7 +18,7 @@ public class XmlProlog_Behavior {
   public static boolean call_isInValidPosition_2133624044437891376(SNode __thisNode__, SNode element) {
     SNode declaration = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, 0x6988ccb84e3bd0e6L, "elements"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return XmlPrologElement_BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)));
+        return XmlPrologElement__BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)));
       }
     });
     if (declaration == null) {

@@ -14,20 +14,20 @@ public class B_Behavior {
     return "B";
   }
   public static void call_doInvokeAll_4731970554577222218(SNode __thisNode__) {
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    B_BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
     // 
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
     // 
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    B_BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
     // 
-    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "from A", 0);
+    A__BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "from A", 0);
     // 
     // FIXME it's possible to declare static virtual abstract method, but impossible to call it 
     // staticAbstractVirtualMethod() 

@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -20,7 +20,7 @@ public class FigureAttribute_Behavior {
     return SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   public static Iterable<SNode> call_getPrameterAttributes_5422656561931892777(SNode __thisNode__) {
-    return ListSequence.fromList(ClassConcept_BehaviorDescriptor.getAllSuperClassifiers_id4fAeKISQjDi.invoke(FigureAttribute_BehaviorDescriptor.getFigureClass_id4H19mAwT6pg.invoke(__thisNode__))).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(ClassConcept__BehaviorDescriptor.getAllSuperClassifiers_id4fAeKISQjDi.invoke(FigureAttribute__BehaviorDescriptor.getFigureClass_id4H19mAwT6pg.invoke(__thisNode__))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a0c593e1L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), false, new SAbstractConcept[]{});
       }

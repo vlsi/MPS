@@ -22,9 +22,9 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,11 +34,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumConstantDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -62,10 +62,10 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
 
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     SNode enumClass = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
-    return ClassConcept_BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(enumClass);
+    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(enumClass);
   }
   private static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     return markIcons;
@@ -77,11 +77,11 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
     return true;
   }
   private static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return IVisible_BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
+    return IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
   }
   private static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
     SNode containingEnum = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
-    return (containingEnum != null ? EnumConstantDeclaration_BehaviorDescriptor.getEnumConstantDeclarationPresentation_id7AEI0n132aJ.invoke(__thisNode__) + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingEnum) : INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))));
+    return (containingEnum != null ? EnumConstantDeclaration__BehaviorDescriptor.getEnumConstantDeclarationPresentation_id7AEI0n132aJ.invoke(__thisNode__) + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingEnum) : INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))));
   }
   private static String getEnumConstantDeclarationPresentation_id7AEI0n132aJ(@NotNull SNode __thisNode__) {
     return "Enum constant '" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "' in ";
@@ -102,8 +102,8 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
     }
 
     List<SNode> methods = new ArrayList<SNode>();
-    List<SNode> methodsToImplement = IMemberContainer_BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")));
-    ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
+    List<SNode> methodsToImplement = IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")));
+    ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
       }
@@ -112,7 +112,7 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
       public boolean accept(final SNode method) {
         return !(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode constantBelongingMethod) {
-            return BaseMethodDeclaration_BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(constantBelongingMethod, method);
+            return BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(constantBelongingMethod, method);
           }
         }));
       }
@@ -125,8 +125,8 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
     }
 
     List<SNode> methods = new ArrayList<SNode>();
-    List<SNode> methodsToOverride = IMemberContainer_BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")));
-    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
+    List<SNode> methodsToOverride = IMemberContainer__BehaviorDescriptor.getMethodsToOverride_id4GM03FJm3zL.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")));
+    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"))) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
       }
@@ -135,7 +135,7 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
       public boolean accept(final SNode method) {
         return !(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode constantBelongingMethod) {
-            return BaseMethodDeclaration_BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(constantBelongingMethod, method);
+            return BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(constantBelongingMethod, method);
           }
         }));
       }
@@ -144,10 +144,10 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
   }
   private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5bd477669f55a5a4L, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
-      Scope visibleMembers = Classifier_BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), child, kind);
-      Iterable<SNode> methods = Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
+      Scope visibleMembers = Classifier__BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), child, kind);
+      Iterable<SNode> methods = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(BaseMethodDeclaration_BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it)) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
+          return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it)) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
         }
       });
       Scope visibleEumMembers = new ListScope(methods) {
@@ -157,10 +157,10 @@ public final class EnumConstantDeclaration_BehaviorDescriptor extends BaseBHDesc
       };
       return new CompositeScope(visibleMembers, visibleEumMembers);
     }
-    return ScopeProvider_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
 
-  /*package*/ EnumConstantDeclaration_BehaviorDescriptor() {
+  /*package*/ EnumConstantDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

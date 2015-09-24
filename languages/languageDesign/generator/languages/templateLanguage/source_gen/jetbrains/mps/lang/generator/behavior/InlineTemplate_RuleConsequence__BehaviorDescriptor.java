@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InlineTemplate_RuleConsequence_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InlineTemplate_RuleConsequence__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -37,7 +37,7 @@ public final class InlineTemplate_RuleConsequence_BehaviorDescriptor extends Bas
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, 0x112103ebf76L, "templateNode")));
   }
 
-  /*package*/ InlineTemplate_RuleConsequence_BehaviorDescriptor() {
+  /*package*/ InlineTemplate_RuleConsequence__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor;
+import jetbrains.mps.lang.typesystem.behavior.AbstractRule__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +20,7 @@ public class check_SupersedeConceptFunction_NonTypesystemRule extends AbstractNo
   }
   public void applyRule(final SNode sce, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode infRule = SNodeOperations.getNodeAncestor(sce, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), false, false);
-    if (!((infRule != null) && AbstractRule_BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(infRule))) {
+    if (!((infRule != null) && AbstractRule__BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(infRule))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(sce, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "7307171874934109979", null, errorTarget);
     }

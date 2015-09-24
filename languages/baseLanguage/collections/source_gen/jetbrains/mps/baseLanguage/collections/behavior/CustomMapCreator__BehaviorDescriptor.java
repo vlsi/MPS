@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class CustomMapCreator_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CustomMapCreator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -63,7 +63,7 @@ public final class CustomMapCreator_BehaviorDescriptor extends BaseBHDescriptor 
     return false;
   }
 
-  /*package*/ CustomMapCreator_BehaviorDescriptor() {
+  /*package*/ CustomMapCreator__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

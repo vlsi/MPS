@@ -27,7 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PatternExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PatternExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -58,7 +58,7 @@ public final class PatternExpression_BehaviorDescriptor extends BaseBHDescriptor
     return variables;
   }
   private static List<SNode> getUniqueVariables_id4dzCQkRGULU(@NotNull SNode __thisNode__) {
-    List<SNode> variables = PatternExpression_BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
+    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
     List<SNode> result = new ArrayList<SNode>();
     Set<String> names = new HashSet<String>();
     for (SNode var : variables) {
@@ -70,7 +70,7 @@ public final class PatternExpression_BehaviorDescriptor extends BaseBHDescriptor
     return result;
   }
   private static List<SNode> getOwnVariables_id7c7Ta3MgIQj(@NotNull SNode __thisNode__) {
-    List<SNode> variables = PatternExpression_BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
+    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
       if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")) && SNodeOperations.getParent(var) != __thisNode__))) {
@@ -83,7 +83,7 @@ public final class PatternExpression_BehaviorDescriptor extends BaseBHDescriptor
     return false;
   }
 
-  /*package*/ PatternExpression_BehaviorDescriptor() {
+  /*package*/ PatternExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

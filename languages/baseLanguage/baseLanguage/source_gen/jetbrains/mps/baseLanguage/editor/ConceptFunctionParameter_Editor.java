@@ -13,7 +13,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
@@ -36,6 +36,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_q0ga01_a1a(EditorContext editorContext, SNode node) {
-    return IDeprecatable_BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)));
+    return IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)));
   }
 }

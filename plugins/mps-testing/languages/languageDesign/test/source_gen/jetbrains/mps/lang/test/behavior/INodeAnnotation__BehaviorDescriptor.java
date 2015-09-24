@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class INodeAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class INodeAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e0d52da47L, "jetbrains.mps.lang.test.structure.INodeAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class INodeAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ INodeAnnotation_BehaviorDescriptor() {
+  /*package*/ INodeAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

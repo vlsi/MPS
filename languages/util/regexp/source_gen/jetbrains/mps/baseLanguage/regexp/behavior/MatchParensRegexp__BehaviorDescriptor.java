@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MatchParensRegexp_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MatchParensRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -38,19 +38,19 @@ public final class MatchParensRegexp_BehaviorDescriptor extends BaseBHDescriptor
 
   private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
     ListSequence.fromList(vars).addElement(__thisNode__);
-    return "(" + Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, 0x111797ac579L, "regexp")), vars) + ")";
+    return "(" + Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, 0x111797ac579L, "regexp")), vars) + ")";
   }
   private static Integer getIndex_idhNm3Btp(@NotNull SNode __thisNode__) {
     SNode parens = __thisNode__;
     List<SNode> parensList = new ArrayList<SNode>();
-    Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(__thisNode__), parensList);
+    Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(Regexp__BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(__thisNode__), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
   private static SNode getValue_idhOJcizo(@NotNull SNode __thisNode__) {
     throw new UnsupportedOperationException();
   }
 
-  /*package*/ MatchParensRegexp_BehaviorDescriptor() {
+  /*package*/ MatchParensRegexp__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

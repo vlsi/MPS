@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ConsoleModelExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConsoleModelExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x4d7759afcea851bdL, "jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class ConsoleModelExpression_BehaviorDescriptor extends BaseBHDescr
     return "return a model, in which the console commands as well as its history are stored";
   }
 
-  /*package*/ ConsoleModelExpression_BehaviorDescriptor() {
+  /*package*/ ConsoleModelExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

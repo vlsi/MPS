@@ -22,7 +22,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunctionParameter_childNode_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ConstraintFunctionParameter_childNode__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class ConstraintFunctionParameter_childNode_BehaviorDescriptor exte
     return _quotation_createNode_qwy3hb_a0a1();
   }
 
-  /*package*/ ConstraintFunctionParameter_childNode_BehaviorDescriptor() {
+  /*package*/ ConstraintFunctionParameter_childNode__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

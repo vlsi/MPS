@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class Order_BehaviorDescriptor extends BaseBHDescriptor {
+public final class Order__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78147L, "jetbrains.mps.lang.plugin.structure.Order");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -59,7 +59,7 @@ public final class Order_BehaviorDescriptor extends BaseBHDescriptor {
     return __thisNode__;
   }
 
-  /*package*/ Order_BehaviorDescriptor() {
+  /*package*/ Order__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

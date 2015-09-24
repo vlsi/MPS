@@ -7,11 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -19,13 +19,13 @@ public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesyste
   public check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesystemRule() {
   }
   public void applyRule(final SNode validator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode factory = ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor.getSearchScopeFactory_id2_ZlElkqg5e.invoke(validator);
+    SNode factory = ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor.getSearchScopeFactory_id2_ZlElkqg5e.invoke(validator);
     if ((factory == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(validator, "Validator function is not used when no search scope defined", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "2990203945683059246", null, errorTarget);
       }
-    } else if (!(ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(factory))) {
+    } else if (!(ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(factory))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(validator, "Validator function is not used when ISearchScope interface returned as search scope", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "522233044824080428", null, errorTarget);

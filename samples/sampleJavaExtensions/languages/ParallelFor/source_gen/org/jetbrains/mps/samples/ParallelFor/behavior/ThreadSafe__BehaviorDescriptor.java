@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ThreadSafe_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ThreadSafe__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class ThreadSafe_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
 
-  /*package*/ ThreadSafe_BehaviorDescriptor() {
+  /*package*/ ThreadSafe__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

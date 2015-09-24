@@ -29,7 +29,7 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class DotExpression_BehaviorDescriptor extends BaseBHDescriptor {
+public final class DotExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -50,10 +50,10 @@ public final class DotExpression_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static Boolean isLValue_idhEwJgmE(@NotNull SNode __thisNode__) {
-    return IOperation_BehaviorDescriptor.isLValue_idhEwIP$w.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
+    return IOperation__BehaviorDescriptor.isLValue_idhEwIP$w.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
   }
   private static SNode getClassifier_idhEwIPI9(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression_BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression__BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
   }
   private static SNode getOperandType_id7GulAc9z0dN(@NotNull final SNode __thisNode__) {
     return RepositoryStateCacheUtils.getFromCache("DotExpression_Behavior", __thisNode__, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -64,20 +64,20 @@ public final class DotExpression_BehaviorDescriptor extends BaseBHDescriptor {
     });
   }
   private static String getVariableExpectedName_idhEwJgm_(@NotNull SNode __thisNode__) {
-    return IOperation_BehaviorDescriptor.getVariableExpectedName_idhEwIP$B.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
+    return IOperation__BehaviorDescriptor.getVariableExpectedName_idhEwIP$B.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
   }
   private static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
-      Object instance = Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), module);
+      Object instance = Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), module);
       SNode methodCall = SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
-      Method method = BaseMethodDeclaration_BehaviorDescriptor.getMethod_idhEwIAZT.invoke(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), module);
-      Object[] actualArguments = IMethodCall_BehaviorDescriptor.getActualArguments_idhJyuD6_.invoke(methodCall, module);
+      Method method = BaseMethodDeclaration__BehaviorDescriptor.getMethod_idhEwIAZT.invoke(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), module);
+      Object[] actualArguments = IMethodCall__BehaviorDescriptor.getActualArguments_idhJyuD6_.invoke(methodCall, module);
       return ReflectionUtil.invoke(method, instance, actualArguments);
     }
-    return Expression_BehaviorDescriptor.eval_idhEwJgmp.invokeSpecial(__thisNode__, module);
+    return Expression__BehaviorDescriptor.eval_idhEwJgmp.invokeSpecial(__thisNode__, module);
   }
   private static Boolean isLegalAsStatement_idi26MfYG(@NotNull SNode __thisNode__) {
-    return IOperation_BehaviorDescriptor.isDotExpressionLegalAsStatement_idi26OiY_.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
+    return IOperation__BehaviorDescriptor.isDotExpressionLegalAsStatement_idi26OiY_.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
   }
   private static Boolean allowsNullOperand_id3Yy2P0QQESt(@NotNull SNode __thisNode__) {
     return false;
@@ -92,7 +92,7 @@ public final class DotExpression_BehaviorDescriptor extends BaseBHDescriptor {
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), expr);
   }
 
-  /*package*/ DotExpression_BehaviorDescriptor() {
+  /*package*/ DotExpression__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

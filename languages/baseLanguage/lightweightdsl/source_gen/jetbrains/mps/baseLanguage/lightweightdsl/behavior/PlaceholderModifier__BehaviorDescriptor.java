@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PlaceholderModifier_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PlaceholderModifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044804f29L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -42,7 +42,7 @@ public final class PlaceholderModifier_BehaviorDescriptor extends BaseBHDescript
     return result;
   }
 
-  /*package*/ PlaceholderModifier_BehaviorDescriptor() {
+  /*package*/ PlaceholderModifier__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

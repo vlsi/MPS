@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class NamedTupleLiteral_BehaviorDescriptor extends BaseBHDescriptor {
+public final class NamedTupleLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class NamedTupleLiteral_BehaviorDescriptor extends BaseBHDescriptor
     return "(";
   }
 
-  /*package*/ NamedTupleLiteral_BehaviorDescriptor() {
+  /*package*/ NamedTupleLiteral__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

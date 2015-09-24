@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public final class LongType_BehaviorDescriptor extends BaseBHDescriptor {
+public final class LongType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f3L, "jetbrains.mps.baseLanguage.structure.LongType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -46,7 +46,7 @@ public final class LongType_BehaviorDescriptor extends BaseBHDescriptor {
     return "J";
   }
 
-  /*package*/ LongType_BehaviorDescriptor() {
+  /*package*/ LongType__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

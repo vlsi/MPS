@@ -34,7 +34,7 @@ import javax.swing.ImageIcon;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IconResource_BehaviorDescriptor extends BaseBHDescriptor {
+public final class IconResource__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.IconResource");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -92,7 +92,7 @@ public final class IconResource_BehaviorDescriptor extends BaseBHDescriptor {
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 
-  /*package*/ IconResource_BehaviorDescriptor() {
+  /*package*/ IconResource__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

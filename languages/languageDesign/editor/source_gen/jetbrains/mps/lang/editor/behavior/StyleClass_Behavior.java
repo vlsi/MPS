@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 @Deprecated
 public class StyleClass_Behavior {
   public static boolean call_hasCycles_7417001528577667349(SNode __thisNode__) {
-    return StyleClass_BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
+    return StyleClass__BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
   }
   public static int call_getPriority_1938068300780663696(SNode __thisNode__) {
     Map<SNode, Integer> priorities = MapSequence.fromMap(new HashMap<SNode, Integer>());

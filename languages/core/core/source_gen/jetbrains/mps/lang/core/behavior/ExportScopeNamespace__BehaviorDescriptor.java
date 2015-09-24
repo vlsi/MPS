@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExportScopeNamespace_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExportScopeNamespace__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, "jetbrains.mps.lang.core.structure.ExportScopeNamespace");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ExportScopeNamespace_BehaviorDescriptor extends BaseBHDescrip
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, 0x239b5385a7e2aeb9L, "namespace")) == null || sourceNamespace.startsWith(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, 0x239b5385a7e2aeb9L, "namespace")));
   }
 
-  /*package*/ ExportScopeNamespace_BehaviorDescriptor() {
+  /*package*/ ExportScopeNamespace__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

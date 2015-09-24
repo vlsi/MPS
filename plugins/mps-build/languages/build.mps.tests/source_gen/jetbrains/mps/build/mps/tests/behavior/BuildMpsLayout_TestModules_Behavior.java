@@ -17,7 +17,7 @@ public class BuildMpsLayout_TestModules_Behavior {
   public static boolean call_hasModule_4560297596904469365(SNode __thisNode__, final SNode module) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x3f496e80bd8ef370L, "modules"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BuildMpsLayout_TestModules_Content_BehaviorDescriptor.contains_id3X9rC2XzJi8.invoke(it, module);
+        return BuildMpsLayout_TestModules_Content__BehaviorDescriptor.contains_id3X9rC2XzJi8.invoke(it, module);
       }
     }) != null;
   }

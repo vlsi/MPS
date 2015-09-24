@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class InterfaceConceptDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class InterfaceConceptDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -53,7 +53,7 @@ public final class InterfaceConceptDeclaration_BehaviorDescriptor extends BaseBH
   private static List<SNode> getAllMethodsInPriorityOrder_id7TwdR6lloGH(@NotNull SNode __thisNode__) {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
     Set<SNode> concepts = SetSequence.fromSet(new HashSet<SNode>());
-    InterfaceConceptDeclaration_BehaviorDescriptor.collectAllMethodsInPriorityOrder_id3waV7Ya5fRc.invoke(__thisNode__, methods, concepts);
+    InterfaceConceptDeclaration__BehaviorDescriptor.collectAllMethodsInPriorityOrder_id3waV7Ya5fRc.invoke(__thisNode__, methods, concepts);
     return methods;
   }
   private static void collectAllMethodsInPriorityOrder_id3waV7Ya5fRc(@NotNull SNode __thisNode__, List<SNode> methods, Set<SNode> concepts) {
@@ -61,7 +61,7 @@ public final class InterfaceConceptDeclaration_BehaviorDescriptor extends BaseBH
       return;
     }
     SetSequence.fromSet(concepts).addElement(__thisNode__);
-    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration_BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(__thisNode__, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(__thisNode__, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))));
     for (SNode extendsInterface : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc")) != null);
@@ -72,11 +72,11 @@ public final class InterfaceConceptDeclaration_BehaviorDescriptor extends BaseBH
       }
     })) {
       // todo: equal methods in different interfaces check! 
-      InterfaceConceptDeclaration_BehaviorDescriptor.collectAllMethodsInPriorityOrder_id3waV7Ya5fRc.invoke(extendsInterface, methods, concepts);
+      InterfaceConceptDeclaration__BehaviorDescriptor.collectAllMethodsInPriorityOrder_id3waV7Ya5fRc.invoke(extendsInterface, methods, concepts);
     }
   }
 
-  /*package*/ InterfaceConceptDeclaration_BehaviorDescriptor() {
+  /*package*/ InterfaceConceptDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

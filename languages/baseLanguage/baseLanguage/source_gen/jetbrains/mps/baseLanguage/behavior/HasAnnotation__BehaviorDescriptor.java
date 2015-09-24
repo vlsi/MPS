@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class HasAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class HasAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -40,7 +40,7 @@ public final class HasAnnotation_BehaviorDescriptor extends BaseBHDescriptor {
     return new ArrayList<SNode>();
   }
 
-  /*package*/ HasAnnotation_BehaviorDescriptor() {
+  /*package*/ HasAnnotation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

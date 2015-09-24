@@ -13,10 +13,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class QueryFunction_StyleParameter_Behavior {
   public static boolean call_isSeparatorStyleQuery_7991857262598847349(SNode __thisNode__) {
-    return QueryFunction_StyleParameter_BehaviorDescriptor.getContainingCellModelRefNodeList_id3Jh9EXLN9Lo.invoke(__thisNode__) != null;
+    return QueryFunction_StyleParameter__BehaviorDescriptor.getContainingCellModelRefNodeList_id3Jh9EXLN9Lo.invoke(__thisNode__) != null;
   }
   public static SNode call_getContainingCellModelRefNodeList_4310268853340642392(SNode __thisNode__) {
-    SNode styleContainer = StyleClassItem_BehaviorDescriptor.getStyleContainer_id6VCLXpKS8DC.invoke(QueryFunction_StyleParameter_BehaviorDescriptor.getStyleClassItem_id6VCLXpKPLfS.invoke(__thisNode__));
+    SNode styleContainer = StyleClassItem__BehaviorDescriptor.getStyleContainer_id6VCLXpKS8DC.invoke(QueryFunction_StyleParameter__BehaviorDescriptor.getStyleClassItem_id6VCLXpKPLfS.invoke(__thisNode__));
     if (styleContainer == null) {
       return null;
     }

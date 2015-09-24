@@ -24,7 +24,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ExtensionPointDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ExtensionPointDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,7 +44,7 @@ public final class ExtensionPointDeclaration_BehaviorDescriptor extends BaseBHDe
     }
   }
 
-  /*package*/ ExtensionPointDeclaration_BehaviorDescriptor() {
+  /*package*/ ExtensionPointDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

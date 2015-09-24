@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class PaddingLeftStyleClassItem_BehaviorDescriptor extends BaseBHDescriptor {
+public final class PaddingLeftStyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class PaddingLeftStyleClassItem_BehaviorDescriptor extends BaseBHDe
     return SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"));
   }
 
-  /*package*/ PaddingLeftStyleClassItem_BehaviorDescriptor() {
+  /*package*/ PaddingLeftStyleClassItem__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

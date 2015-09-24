@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class BuildMpsLayout_FolderWithSources_BehaviorDescriptor extends BaseBHDescriptor {
+public final class BuildMpsLayout_FolderWithSources__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x1d38569c566c8c91L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class BuildMpsLayout_FolderWithSources_BehaviorDescriptor extends B
     return o == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, 0x177c2feaf3463711L, "module"));
   }
 
-  /*package*/ BuildMpsLayout_FolderWithSources_BehaviorDescriptor() {
+  /*package*/ BuildMpsLayout_FolderWithSources__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

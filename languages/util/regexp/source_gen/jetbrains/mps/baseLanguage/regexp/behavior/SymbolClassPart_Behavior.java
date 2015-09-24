@@ -29,7 +29,7 @@ public class SymbolClassPart_Behavior {
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp_BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+          if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
             return null;
           }
           sb.append(c);
@@ -70,7 +70,7 @@ public class SymbolClassPart_Behavior {
     return sb.toString();
   }
   public static String call_escapeChar_8173814113624637238(SNode __thisNode__, String s) {
-    String res = SymbolClassPart_BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
+    String res = SymbolClassPart__BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
     if (res == null) {
       if (s.equals("\\")) {
         return "\\\\";

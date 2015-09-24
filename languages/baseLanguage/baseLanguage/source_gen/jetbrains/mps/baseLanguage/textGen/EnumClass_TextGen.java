@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
 
 public class EnumClass_TextGen extends TextGenDescriptorBase {
   @Override
@@ -63,7 +63,7 @@ public class EnumClass_TextGen extends TextGenDescriptorBase {
     tgs.append("}");
     tgs.newLine();
     if (tgs.needPositions()) {
-      tgs.fillUnitInfo(UnitConcept_BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
+      tgs.fillUnitInfo(UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
     }
   }
   public String getExtension(SNode node) {

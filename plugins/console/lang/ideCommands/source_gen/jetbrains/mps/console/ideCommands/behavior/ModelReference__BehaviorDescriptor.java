@@ -20,11 +20,11 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModelReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,10 +36,10 @@ public final class ModelReference_BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static SModel getModel_id67MRmR$z8Z2(@NotNull SNode __thisNode__, SRepository repo) {
-    return new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression_BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(__thisNode__));
+    return new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(__thisNode__));
   }
 
-  /*package*/ ModelReference_BehaviorDescriptor() {
+  /*package*/ ModelReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

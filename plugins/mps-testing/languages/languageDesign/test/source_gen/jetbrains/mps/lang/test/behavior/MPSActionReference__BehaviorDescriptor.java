@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.ActionDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MPSActionReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MPSActionReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, "jetbrains.mps.lang.test.structure.MPSActionReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class MPSActionReference_BehaviorDescriptor extends BaseBHDescripto
   }
 
   private static String getActionId_idX8Ly3typOa(@NotNull SNode __thisNode__) {
-    return ActionDeclaration_BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, 0x3ad5e12a687a9317L, "action")));
+    return ActionDeclaration__BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, 0x3ad5e12a687a9317L, "action")));
   }
 
-  /*package*/ MPSActionReference_BehaviorDescriptor() {
+  /*package*/ MPSActionReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

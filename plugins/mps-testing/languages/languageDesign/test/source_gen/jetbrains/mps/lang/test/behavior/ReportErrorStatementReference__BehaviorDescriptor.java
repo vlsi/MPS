@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor;
+import jetbrains.mps.lang.typesystem.behavior.MessageStatement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReportErrorStatementReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ReportErrorStatementReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b19b06dL, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -34,10 +34,10 @@ public final class ReportErrorStatementReference_BehaviorDescriptor extends Base
   }
 
   private static String getName_id6EW1JnOFUIS(@NotNull SNode __thisNode__) {
-    return MessageStatement_BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration")));
+    return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration")));
   }
 
-  /*package*/ ReportErrorStatementReference_BehaviorDescriptor() {
+  /*package*/ ReportErrorStatementReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

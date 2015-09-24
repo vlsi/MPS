@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class RefactoringFieldReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class RefactoringFieldReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL, "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -35,7 +35,7 @@ public final class RefactoringFieldReference_BehaviorDescriptor extends BaseBHDe
     return true;
   }
 
-  /*package*/ RefactoringFieldReference_BehaviorDescriptor() {
+  /*package*/ RefactoringFieldReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

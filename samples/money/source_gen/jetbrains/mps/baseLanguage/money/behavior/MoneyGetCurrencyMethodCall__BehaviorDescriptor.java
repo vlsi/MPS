@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MoneyGetCurrencyMethodCall_BehaviorDescriptor extends BaseBHDescriptor {
+public final class MoneyGetCurrencyMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740c6f9bL, "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class MoneyGetCurrencyMethodCall_BehaviorDescriptor extends BaseBHD
   }
 
 
-  /*package*/ MoneyGetCurrencyMethodCall_BehaviorDescriptor() {
+  /*package*/ MoneyGetCurrencyMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

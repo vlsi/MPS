@@ -12,10 +12,10 @@ import UtilSolution.util.TestResults;
 @Deprecated
 public class A_Behavior {
   public static int call_foo_6167444251392476867(SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
+    return A__BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__);
   }
   public static int call_bar_6167444251392476881(SNode __thisNode__) {
-    return A_BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
+    return A__BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__);
   }
   public static int call_bar2_7808537626115736451(SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;

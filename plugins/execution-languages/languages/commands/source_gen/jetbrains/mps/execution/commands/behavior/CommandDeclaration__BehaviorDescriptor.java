@@ -32,7 +32,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class CommandDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -64,17 +64,17 @@ public final class CommandDeclaration_BehaviorDescriptor extends BaseBHDescripto
   }
   private static List<SNode> getDistinctFieldParameters_id5keEkmeCrcX(@NotNull SNode __thisNode__) {
     // we get all parameters generated into fields and select a list with uniquie names 
-    final Iterable<SNode> parameterDeclarations = CommandDeclaration_BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration__BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return CommandParameterDeclaration_BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(it);
+        return CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(it);
       }
     }).distinct();
     return Sequence.fromIterable(fieldNames).translate(new ITranslator2<String, SNode>() {
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0d0u(CommandParameterDeclaration_BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
+            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0d0u(CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -85,17 +85,17 @@ public final class CommandDeclaration_BehaviorDescriptor extends BaseBHDescripto
     }).toListSequence();
   }
   private static List<SNode> getDistinctByNameAndTypeFieldParameters_id3gpm$NHlR4n(@NotNull SNode __thisNode__) {
-    final Iterable<SNode> parameterDeclarations = CommandDeclaration_BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration__BehaviorDescriptor.getFieldParameters_id3gpm$NHlR5N.invoke(__thisNode__);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return CommandParameterDeclaration_BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(it);
+        return CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(it);
       }
     }).distinct();
     return Sequence.fromIterable(fieldNames).translate(new ITranslator2<String, SNode>() {
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0c0v(CommandParameterDeclaration_BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
+            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0c0v(CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -108,9 +108,9 @@ public final class CommandDeclaration_BehaviorDescriptor extends BaseBHDescripto
   private static Iterable<SNode> getFieldParameters_id3gpm$NHlR5N(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x550ea9458ea107beL, "executePart"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(ExecuteCommandPart_BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(it)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(ExecuteCommandPart__BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(it)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return CommandParameterDeclaration_BehaviorDescriptor.generateField_id7mEQKPeolUk.invoke(it);
+            return CommandParameterDeclaration__BehaviorDescriptor.generateField_id7mEQKPeolUk.invoke(it);
           }
         });
       }
@@ -126,7 +126,7 @@ public final class CommandDeclaration_BehaviorDescriptor extends BaseBHDescripto
     return "getDebuggerConfiguration";
   }
 
-  /*package*/ CommandDeclaration_BehaviorDescriptor() {
+  /*package*/ CommandDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

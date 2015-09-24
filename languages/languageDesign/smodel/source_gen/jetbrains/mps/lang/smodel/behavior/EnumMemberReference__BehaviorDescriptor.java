@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class EnumMemberReference_BehaviorDescriptor extends BaseBHDescriptor {
+public final class EnumMemberReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, "jetbrains.mps.lang.smodel.structure.EnumMemberReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class EnumMemberReference_BehaviorDescriptor extends BaseBHDescript
   }
 
 
-  /*package*/ EnumMemberReference_BehaviorDescriptor() {
+  /*package*/ EnumMemberReference__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

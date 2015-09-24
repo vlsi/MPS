@@ -17,12 +17,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 @Deprecated
 public class Builder_Behavior {
   public static SNode call_getContextBuilder_7057666463730306577(SNode __thisNode__) {
-    return Builder_BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(__thisNode__));
+    return Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder").getDeclarationNode()), SNodeOperations.getParent(__thisNode__));
   }
   public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept __thisConcept__, SNode context) {
     return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getInterfaceConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BuilderContainer_BehaviorDescriptor.isLeaf_idNLqHO$EE0f.invoke(it));
+        return !(BuilderContainer__BehaviorDescriptor.isLeaf_idNLqHO$EE0f.invoke(it));
       }
     }), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder"));
   }

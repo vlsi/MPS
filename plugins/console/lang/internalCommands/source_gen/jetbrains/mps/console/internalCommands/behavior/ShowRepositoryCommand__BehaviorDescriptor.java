@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ShowRepositoryCommand_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ShowRepositoryCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191df0cL, "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -36,7 +36,7 @@ public final class ShowRepositoryCommand_BehaviorDescriptor extends BaseBHDescri
   private static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
   }
 
-  /*package*/ ShowRepositoryCommand_BehaviorDescriptor() {
+  /*package*/ ShowRepositoryCommand__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

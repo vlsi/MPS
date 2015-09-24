@@ -23,7 +23,7 @@ public class ExtensionMethodDeclaration_Behavior {
     }
   }
   public static SNode call_getClassifier_7685333756920241018(SNode __thisNode__) {
-    SNode type = ExtensionMethodDeclaration_BehaviorDescriptor.getThisType_id6XkcKt_eUWM.invoke(__thisNode__);
+    SNode type = ExtensionMethodDeclaration__BehaviorDescriptor.getThisType_id6XkcKt_eUWM.invoke(__thisNode__);
     SNode classifierType;
     if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       classifierType = SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));

@@ -12,207 +12,207 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myClassConcept_BehaviorDescriptor = new ClassConcept_BehaviorDescriptor();
-  private final BHDescriptor myFieldDeclaration_BehaviorDescriptor = new FieldDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myVariableDeclaration_BehaviorDescriptor = new VariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myType_BehaviorDescriptor = new Type_BehaviorDescriptor();
-  private final BHDescriptor myExpression_BehaviorDescriptor = new Expression_BehaviorDescriptor();
-  private final BHDescriptor myParameterDeclaration_BehaviorDescriptor = new ParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myAssignmentExpression_BehaviorDescriptor = new AssignmentExpression_BehaviorDescriptor();
-  private final BHDescriptor myVariableReference_BehaviorDescriptor = new VariableReference_BehaviorDescriptor();
-  private final BHDescriptor myBaseMethodCall_BehaviorDescriptor = new BaseMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myBaseMethodDeclaration_BehaviorDescriptor = new BaseMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myStatementList_BehaviorDescriptor = new StatementList_BehaviorDescriptor();
-  private final BHDescriptor myBooleanConstant_BehaviorDescriptor = new BooleanConstant_BehaviorDescriptor();
-  private final BHDescriptor myConstructorDeclaration_BehaviorDescriptor = new ConstructorDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEqualsExpression_BehaviorDescriptor = new EqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myExpressionStatement_BehaviorDescriptor = new ExpressionStatement_BehaviorDescriptor();
-  private final BHDescriptor myStatement_BehaviorDescriptor = new Statement_BehaviorDescriptor();
-  private final BHDescriptor myIfStatement_BehaviorDescriptor = new IfStatement_BehaviorDescriptor();
-  private final BHDescriptor myInstanceMethodDeclaration_BehaviorDescriptor = new InstanceMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myIntegerConstant_BehaviorDescriptor = new IntegerConstant_BehaviorDescriptor();
-  private final BHDescriptor myLocalVariableDeclaration_BehaviorDescriptor = new LocalVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myLocalVariableDeclarationStatement_BehaviorDescriptor = new LocalVariableDeclarationStatement_BehaviorDescriptor();
-  private final BHDescriptor myLocalVariableReference_BehaviorDescriptor = new LocalVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myLongType_BehaviorDescriptor = new LongType_BehaviorDescriptor();
-  private final BHDescriptor myMinusExpression_BehaviorDescriptor = new MinusExpression_BehaviorDescriptor();
-  private final BHDescriptor myParameterReference_BehaviorDescriptor = new ParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myPlusExpression_BehaviorDescriptor = new PlusExpression_BehaviorDescriptor();
-  private final BHDescriptor myReturnStatement_BehaviorDescriptor = new ReturnStatement_BehaviorDescriptor();
-  private final BHDescriptor myVoidType_BehaviorDescriptor = new VoidType_BehaviorDescriptor();
-  private final BHDescriptor myStaticFieldDeclaration_BehaviorDescriptor = new StaticFieldDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myThisExpression_BehaviorDescriptor = new ThisExpression_BehaviorDescriptor();
-  private final BHDescriptor mySuperConstructorInvocation_BehaviorDescriptor = new SuperConstructorInvocation_BehaviorDescriptor();
-  private final BHDescriptor myStringLiteral_BehaviorDescriptor = new StringLiteral_BehaviorDescriptor();
-  private final BHDescriptor myStaticFieldReference_BehaviorDescriptor = new StaticFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myShortType_BehaviorDescriptor = new ShortType_BehaviorDescriptor();
-  private final BHDescriptor myNullLiteral_BehaviorDescriptor = new NullLiteral_BehaviorDescriptor();
-  private final BHDescriptor myIntegerType_BehaviorDescriptor = new IntegerType_BehaviorDescriptor();
-  private final BHDescriptor myFloatType_BehaviorDescriptor = new FloatType_BehaviorDescriptor();
-  private final BHDescriptor myDoubleType_BehaviorDescriptor = new DoubleType_BehaviorDescriptor();
-  private final BHDescriptor myCharType_BehaviorDescriptor = new CharType_BehaviorDescriptor();
-  private final BHDescriptor myByteType_BehaviorDescriptor = new ByteType_BehaviorDescriptor();
-  private final BHDescriptor myBooleanType_BehaviorDescriptor = new BooleanType_BehaviorDescriptor();
-  private final BHDescriptor myArrayType_BehaviorDescriptor = new ArrayType_BehaviorDescriptor();
-  private final BHDescriptor myCastExpression_BehaviorDescriptor = new CastExpression_BehaviorDescriptor();
-  private final BHDescriptor mySuperMethodCall_BehaviorDescriptor = new SuperMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myNotEqualsExpression_BehaviorDescriptor = new NotEqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myWhileStatement_BehaviorDescriptor = new WhileStatement_BehaviorDescriptor();
-  private final BHDescriptor myParenthesizedExpression_BehaviorDescriptor = new ParenthesizedExpression_BehaviorDescriptor();
-  private final BHDescriptor myAndExpression_BehaviorDescriptor = new AndExpression_BehaviorDescriptor();
-  private final BHDescriptor myOrExpression_BehaviorDescriptor = new OrExpression_BehaviorDescriptor();
-  private final BHDescriptor myStaticMethodCall_BehaviorDescriptor = new StaticMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myStaticMethodDeclaration_BehaviorDescriptor = new StaticMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myGreaterThanExpression_BehaviorDescriptor = new GreaterThanExpression_BehaviorDescriptor();
-  private final BHDescriptor myLessThanExpression_BehaviorDescriptor = new LessThanExpression_BehaviorDescriptor();
-  private final BHDescriptor myNotExpression_BehaviorDescriptor = new NotExpression_BehaviorDescriptor();
-  private final BHDescriptor myBinaryOperation_BehaviorDescriptor = new BinaryOperation_BehaviorDescriptor();
-  private final BHDescriptor myBreakStatement_BehaviorDescriptor = new BreakStatement_BehaviorDescriptor();
-  private final BHDescriptor myContinueStatement_BehaviorDescriptor = new ContinueStatement_BehaviorDescriptor();
-  private final BHDescriptor myBlockStatement_BehaviorDescriptor = new BlockStatement_BehaviorDescriptor();
-  private final BHDescriptor myEnumClass_BehaviorDescriptor = new EnumClass_BehaviorDescriptor();
-  private final BHDescriptor myEnumConstantDeclaration_BehaviorDescriptor = new EnumConstantDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEnumConstantReference_BehaviorDescriptor = new EnumConstantReference_BehaviorDescriptor();
-  private final BHDescriptor myMulExpression_BehaviorDescriptor = new MulExpression_BehaviorDescriptor();
-  private final BHDescriptor myDivExpression_BehaviorDescriptor = new DivExpression_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_BehaviorDescriptor = new ConceptFunctionParameter_BehaviorDescriptor();
-  private final BHDescriptor myClassifier_BehaviorDescriptor = new Classifier_BehaviorDescriptor();
-  private final BHDescriptor myClassifierType_BehaviorDescriptor = new ClassifierType_BehaviorDescriptor();
-  private final BHDescriptor myInterface_BehaviorDescriptor = new Interface_BehaviorDescriptor();
-  private final BHDescriptor myTypeVariableDeclaration_BehaviorDescriptor = new TypeVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myGenericDeclaration_BehaviorDescriptor = new GenericDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myTypeVariableReference_BehaviorDescriptor = new TypeVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myFloatingPointConstant_BehaviorDescriptor = new FloatingPointConstant_BehaviorDescriptor();
-  private final BHDescriptor myClassifierClassExpression_BehaviorDescriptor = new ClassifierClassExpression_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunction_BehaviorDescriptor = new ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myForeachStatement_BehaviorDescriptor = new ForeachStatement_BehaviorDescriptor();
-  private final BHDescriptor myAbstractForStatement_BehaviorDescriptor = new AbstractForStatement_BehaviorDescriptor();
-  private final BHDescriptor myForStatement_BehaviorDescriptor = new ForStatement_BehaviorDescriptor();
-  private final BHDescriptor myGenericNewExpression_BehaviorDescriptor = new GenericNewExpression_BehaviorDescriptor();
-  private final BHDescriptor myClosure_BehaviorDescriptor = new Closure_BehaviorDescriptor();
-  private final BHDescriptor myClosureParameterReference_BehaviorDescriptor = new ClosureParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myGreaterThanOrEqualsExpression_BehaviorDescriptor = new GreaterThanOrEqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myRemExpression_BehaviorDescriptor = new RemExpression_BehaviorDescriptor();
-  private final BHDescriptor myLessThanOrEqualsExpression_BehaviorDescriptor = new LessThanOrEqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myTryStatement_BehaviorDescriptor = new TryStatement_BehaviorDescriptor();
-  private final BHDescriptor myAbstractLoopStatement_BehaviorDescriptor = new AbstractLoopStatement_BehaviorDescriptor();
-  private final BHDescriptor myTernaryOperatorExpression_BehaviorDescriptor = new TernaryOperatorExpression_BehaviorDescriptor();
-  private final BHDescriptor mySwitchStatement_BehaviorDescriptor = new SwitchStatement_BehaviorDescriptor();
-  private final BHDescriptor mySwitchCase_BehaviorDescriptor = new SwitchCase_BehaviorDescriptor();
-  private final BHDescriptor myPrimitiveType_BehaviorDescriptor = new PrimitiveType_BehaviorDescriptor();
-  private final BHDescriptor myTryCatchStatement_BehaviorDescriptor = new TryCatchStatement_BehaviorDescriptor();
-  private final BHDescriptor myCatchClause_BehaviorDescriptor = new CatchClause_BehaviorDescriptor();
-  private final BHDescriptor myThrowStatement_BehaviorDescriptor = new ThrowStatement_BehaviorDescriptor();
-  private final BHDescriptor myRemarkStatement_BehaviorDescriptor = new RemarkStatement_BehaviorDescriptor();
-  private final BHDescriptor mySynchronizedStatement_BehaviorDescriptor = new SynchronizedStatement_BehaviorDescriptor();
-  private final BHDescriptor myAnonymousClass_BehaviorDescriptor = new AnonymousClass_BehaviorDescriptor();
-  private final BHDescriptor myWildCardType_BehaviorDescriptor = new WildCardType_BehaviorDescriptor();
-  private final BHDescriptor myLowerBoundType_BehaviorDescriptor = new LowerBoundType_BehaviorDescriptor();
-  private final BHDescriptor myUpperBoundType_BehaviorDescriptor = new UpperBoundType_BehaviorDescriptor();
-  private final BHDescriptor myLocalStaticFieldReference_BehaviorDescriptor = new LocalStaticFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myLocalStaticMethodCall_BehaviorDescriptor = new LocalStaticMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myArrayAccessExpression_BehaviorDescriptor = new ArrayAccessExpression_BehaviorDescriptor();
-  private final BHDescriptor myCommentedStatementsBlock_BehaviorDescriptor = new CommentedStatementsBlock_BehaviorDescriptor();
-  private final BHDescriptor myDoWhileStatement_BehaviorDescriptor = new DoWhileStatement_BehaviorDescriptor();
-  private final BHDescriptor myClassifierMember_BehaviorDescriptor = new ClassifierMember_BehaviorDescriptor();
-  private final BHDescriptor myIVisible_BehaviorDescriptor = new IVisible_BehaviorDescriptor();
-  private final BHDescriptor myThisConstructorInvocation_BehaviorDescriptor = new ThisConstructorInvocation_BehaviorDescriptor();
-  private final BHDescriptor myHexIntegerLiteral_BehaviorDescriptor = new HexIntegerLiteral_BehaviorDescriptor();
-  private final BHDescriptor myIntegerLiteral_BehaviorDescriptor = new IntegerLiteral_BehaviorDescriptor();
-  private final BHDescriptor myAnnotation_BehaviorDescriptor = new Annotation_BehaviorDescriptor();
-  private final BHDescriptor myAnnotationMethodDeclaration_BehaviorDescriptor = new AnnotationMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myAnnotationInstance_BehaviorDescriptor = new AnnotationInstance_BehaviorDescriptor();
-  private final BHDescriptor myHasAnnotation_BehaviorDescriptor = new HasAnnotation_BehaviorDescriptor();
-  private final BHDescriptor myAnnotationInstanceValue_BehaviorDescriptor = new AnnotationInstanceValue_BehaviorDescriptor();
-  private final BHDescriptor myIMemberContainer_BehaviorDescriptor = new IMemberContainer_BehaviorDescriptor();
-  private final BHDescriptor myDotExpression_BehaviorDescriptor = new DotExpression_BehaviorDescriptor();
-  private final BHDescriptor myIOperation_BehaviorDescriptor = new IOperation_BehaviorDescriptor();
-  private final BHDescriptor myFieldReferenceOperation_BehaviorDescriptor = new FieldReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myIStatementListContainer_BehaviorDescriptor = new IStatementListContainer_BehaviorDescriptor();
-  private final BHDescriptor myCharConstant_BehaviorDescriptor = new CharConstant_BehaviorDescriptor();
-  private final BHDescriptor myTypeDerivable_BehaviorDescriptor = new TypeDerivable_BehaviorDescriptor();
-  private final BHDescriptor myProperty_BehaviorDescriptor = new Property_BehaviorDescriptor();
-  private final BHDescriptor myPropertyImplementation_BehaviorDescriptor = new PropertyImplementation_BehaviorDescriptor();
-  private final BHDescriptor myDefaultPropertyImplementation_BehaviorDescriptor = new DefaultPropertyImplementation_BehaviorDescriptor();
-  private final BHDescriptor myPropertyReference_BehaviorDescriptor = new PropertyReference_BehaviorDescriptor();
-  private final BHDescriptor myCustomPropertyImplementation_BehaviorDescriptor = new CustomPropertyImplementation_BehaviorDescriptor();
-  private final BHDescriptor myGetAccessor_BehaviorDescriptor = new GetAccessor_BehaviorDescriptor();
-  private final BHDescriptor mySetAccessor_BehaviorDescriptor = new SetAccessor_BehaviorDescriptor();
-  private final BHDescriptor myDefaultSetAccessor_BehaviorDescriptor = new DefaultSetAccessor_BehaviorDescriptor();
-  private final BHDescriptor myInstanceMethodCallOperation_BehaviorDescriptor = new InstanceMethodCallOperation_BehaviorDescriptor();
-  private final BHDescriptor myIMethodCall_BehaviorDescriptor = new IMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myIInternalType_BehaviorDescriptor = new IInternalType_BehaviorDescriptor();
-  private final BHDescriptor myElsifClause_BehaviorDescriptor = new ElsifClause_BehaviorDescriptor();
-  private final BHDescriptor myInstanceInitializer_BehaviorDescriptor = new InstanceInitializer_BehaviorDescriptor();
-  private final BHDescriptor myArrayLengthOperation_BehaviorDescriptor = new ArrayLengthOperation_BehaviorDescriptor();
-  private final BHDescriptor myIValidIdentifier_BehaviorDescriptor = new IValidIdentifier_BehaviorDescriptor();
-  private final BHDescriptor myClassCreator_BehaviorDescriptor = new ClassCreator_BehaviorDescriptor();
-  private final BHDescriptor myPostfixIncrementExpression_BehaviorDescriptor = new PostfixIncrementExpression_BehaviorDescriptor();
-  private final BHDescriptor myPostfixDecrementExpression_BehaviorDescriptor = new PostfixDecrementExpression_BehaviorDescriptor();
-  private final BHDescriptor myBaseAssignmentExpression_BehaviorDescriptor = new BaseAssignmentExpression_BehaviorDescriptor();
-  private final BHDescriptor myVariableArityType_BehaviorDescriptor = new VariableArityType_BehaviorDescriptor();
-  private final BHDescriptor myIExtractMethodAvailable_BehaviorDescriptor = new IExtractMethodAvailable_BehaviorDescriptor();
-  private final BHDescriptor myStaticInitializer_BehaviorDescriptor = new StaticInitializer_BehaviorDescriptor();
-  private final BHDescriptor myIStaticContainerForMethods_BehaviorDescriptor = new IStaticContainerForMethods_BehaviorDescriptor();
-  private final BHDescriptor myIVariableAssignment_BehaviorDescriptor = new IVariableAssignment_BehaviorDescriptor();
-  private final BHDescriptor myUsingStatement_BehaviorDescriptor = new UsingStatement_BehaviorDescriptor();
-  private final BHDescriptor myBitwiseAndExpression_BehaviorDescriptor = new BitwiseAndExpression_BehaviorDescriptor();
-  private final BHDescriptor myBitwiseOrExpression_BehaviorDescriptor = new BitwiseOrExpression_BehaviorDescriptor();
-  private final BHDescriptor myBitwiseXorExpression_BehaviorDescriptor = new BitwiseXorExpression_BehaviorDescriptor();
-  private final BHDescriptor myIBLDeprecatable_BehaviorDescriptor = new IBLDeprecatable_BehaviorDescriptor();
-  private final BHDescriptor myStringType_BehaviorDescriptor = new StringType_BehaviorDescriptor();
-  private final BHDescriptor myNPENotEqualsExpression_BehaviorDescriptor = new NPENotEqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myNPEEqualsExpression_BehaviorDescriptor = new NPEEqualsExpression_BehaviorDescriptor();
-  private final BHDescriptor myBaseStringOperation_BehaviorDescriptor = new BaseStringOperation_BehaviorDescriptor();
-  private final BHDescriptor myIParameter_BehaviorDescriptor = new IParameter_BehaviorDescriptor();
-  private final BHDescriptor myShiftLeftExpression_BehaviorDescriptor = new ShiftLeftExpression_BehaviorDescriptor();
-  private final BHDescriptor myShiftRightExpression_BehaviorDescriptor = new ShiftRightExpression_BehaviorDescriptor();
-  private final BHDescriptor myCommentedStatement_BehaviorDescriptor = new CommentedStatement_BehaviorDescriptor();
-  private final BHDescriptor myTypeAnnotable_BehaviorDescriptor = new TypeAnnotable_BehaviorDescriptor();
-  private final BHDescriptor myIContainsStatementList_BehaviorDescriptor = new IContainsStatementList_BehaviorDescriptor();
-  private final BHDescriptor myILocalVariableElement_BehaviorDescriptor = new ILocalVariableElement_BehaviorDescriptor();
-  private final BHDescriptor myILocalVariableElementList_BehaviorDescriptor = new ILocalVariableElementList_BehaviorDescriptor();
-  private final BHDescriptor myIMethodLike_BehaviorDescriptor = new IMethodLike_BehaviorDescriptor();
-  private final BHDescriptor myPrefixIncrementExpression_BehaviorDescriptor = new PrefixIncrementExpression_BehaviorDescriptor();
-  private final BHDescriptor myPrefixDecrementExpression_BehaviorDescriptor = new PrefixDecrementExpression_BehaviorDescriptor();
-  private final BHDescriptor myAbstractUnaryNumberOperation_BehaviorDescriptor = new AbstractUnaryNumberOperation_BehaviorDescriptor();
-  private final BHDescriptor myConstructorInvocationStatement_BehaviorDescriptor = new ConstructorInvocationStatement_BehaviorDescriptor();
-  private final BHDescriptor myShiftRightUnsignedExpression_BehaviorDescriptor = new ShiftRightUnsignedExpression_BehaviorDescriptor();
-  private final BHDescriptor myIVariableReference_BehaviorDescriptor = new IVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myIIncompleteParen_BehaviorDescriptor = new IIncompleteParen_BehaviorDescriptor();
-  private final BHDescriptor myPlaceholderMember_BehaviorDescriptor = new PlaceholderMember_BehaviorDescriptor();
-  private final BHDescriptor myIBinaryLike_BehaviorDescriptor = new IBinaryLike_BehaviorDescriptor();
-  private final BHDescriptor myUnknownLocalCall_BehaviorDescriptor = new UnknownLocalCall_BehaviorDescriptor();
-  private final BHDescriptor myUnknownDotCall_BehaviorDescriptor = new UnknownDotCall_BehaviorDescriptor();
-  private final BHDescriptor myPropertyValueReference_BehaviorDescriptor = new PropertyValueReference_BehaviorDescriptor();
-  private final BHDescriptor myLocalInstanceMethodCall_BehaviorDescriptor = new LocalInstanceMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myILocalDeclaration_BehaviorDescriptor = new ILocalDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myILocalReference_BehaviorDescriptor = new ILocalReference_BehaviorDescriptor();
-  private final BHDescriptor myUnknownNew_BehaviorDescriptor = new UnknownNew_BehaviorDescriptor();
-  private final BHDescriptor myIncompleteMemberDeclaration_BehaviorDescriptor = new IncompleteMemberDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myITryCatchStatement_BehaviorDescriptor = new ITryCatchStatement_BehaviorDescriptor();
-  private final BHDescriptor myIGenericType_BehaviorDescriptor = new IGenericType_BehaviorDescriptor();
-  private final BHDescriptor myIConditional_BehaviorDescriptor = new IConditional_BehaviorDescriptor();
-  private final BHDescriptor myLongLiteral_BehaviorDescriptor = new LongLiteral_BehaviorDescriptor();
-  private final BHDescriptor myCustomSetterPropertyImplementation_BehaviorDescriptor = new CustomSetterPropertyImplementation_BehaviorDescriptor();
-  private final BHDescriptor myIWillBeClassifier_BehaviorDescriptor = new IWillBeClassifier_BehaviorDescriptor();
-  private final BHDescriptor myFloatingPointFloatConstant_BehaviorDescriptor = new FloatingPointFloatConstant_BehaviorDescriptor();
-  private final BHDescriptor myLocalPropertyReference_BehaviorDescriptor = new LocalPropertyReference_BehaviorDescriptor();
-  private final BHDescriptor myJavaImports_BehaviorDescriptor = new JavaImports_BehaviorDescriptor();
-  private final BHDescriptor mySingleLineComment_BehaviorDescriptor = new SingleLineComment_BehaviorDescriptor();
-  private final BHDescriptor myCommentPart_BehaviorDescriptor = new CommentPart_BehaviorDescriptor();
-  private final BHDescriptor myTextCommentPart_BehaviorDescriptor = new TextCommentPart_BehaviorDescriptor();
-  private final BHDescriptor myTokens_BehaviorDescriptor = new Tokens_BehaviorDescriptor();
-  private final BHDescriptor myIClassifier_BehaviorDescriptor = new IClassifier_BehaviorDescriptor();
-  private final BHDescriptor myIClassifierMember_BehaviorDescriptor = new IClassifierMember_BehaviorDescriptor();
-  private final BHDescriptor myIClassifierType_BehaviorDescriptor = new IClassifierType_BehaviorDescriptor();
-  private final BHDescriptor myLocalInstanceFieldReference_BehaviorDescriptor = new LocalInstanceFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myLocalMethodCall_BehaviorDescriptor = new LocalMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myUnaryMinus_BehaviorDescriptor = new UnaryMinus_BehaviorDescriptor();
-  private final BHDescriptor myIYetUnresolved_BehaviorDescriptor = new IYetUnresolved_BehaviorDescriptor();
-  private final BHDescriptor myITypeApplicable_BehaviorDescriptor = new ITypeApplicable_BehaviorDescriptor();
-  private final BHDescriptor myUnknownNameRef_BehaviorDescriptor = new UnknownNameRef_BehaviorDescriptor();
-  private final BHDescriptor myUnknownConsCall_BehaviorDescriptor = new UnknownConsCall_BehaviorDescriptor();
+  private final BHDescriptor myClassConcept__BehaviorDescriptor = new ClassConcept__BehaviorDescriptor();
+  private final BHDescriptor myFieldDeclaration__BehaviorDescriptor = new FieldDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myVariableDeclaration__BehaviorDescriptor = new VariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myType__BehaviorDescriptor = new Type__BehaviorDescriptor();
+  private final BHDescriptor myExpression__BehaviorDescriptor = new Expression__BehaviorDescriptor();
+  private final BHDescriptor myParameterDeclaration__BehaviorDescriptor = new ParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myAssignmentExpression__BehaviorDescriptor = new AssignmentExpression__BehaviorDescriptor();
+  private final BHDescriptor myVariableReference__BehaviorDescriptor = new VariableReference__BehaviorDescriptor();
+  private final BHDescriptor myBaseMethodCall__BehaviorDescriptor = new BaseMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myBaseMethodDeclaration__BehaviorDescriptor = new BaseMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myStatementList__BehaviorDescriptor = new StatementList__BehaviorDescriptor();
+  private final BHDescriptor myBooleanConstant__BehaviorDescriptor = new BooleanConstant__BehaviorDescriptor();
+  private final BHDescriptor myConstructorDeclaration__BehaviorDescriptor = new ConstructorDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEqualsExpression__BehaviorDescriptor = new EqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myExpressionStatement__BehaviorDescriptor = new ExpressionStatement__BehaviorDescriptor();
+  private final BHDescriptor myStatement__BehaviorDescriptor = new Statement__BehaviorDescriptor();
+  private final BHDescriptor myIfStatement__BehaviorDescriptor = new IfStatement__BehaviorDescriptor();
+  private final BHDescriptor myInstanceMethodDeclaration__BehaviorDescriptor = new InstanceMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myIntegerConstant__BehaviorDescriptor = new IntegerConstant__BehaviorDescriptor();
+  private final BHDescriptor myLocalVariableDeclaration__BehaviorDescriptor = new LocalVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myLocalVariableDeclarationStatement__BehaviorDescriptor = new LocalVariableDeclarationStatement__BehaviorDescriptor();
+  private final BHDescriptor myLocalVariableReference__BehaviorDescriptor = new LocalVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myLongType__BehaviorDescriptor = new LongType__BehaviorDescriptor();
+  private final BHDescriptor myMinusExpression__BehaviorDescriptor = new MinusExpression__BehaviorDescriptor();
+  private final BHDescriptor myParameterReference__BehaviorDescriptor = new ParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myPlusExpression__BehaviorDescriptor = new PlusExpression__BehaviorDescriptor();
+  private final BHDescriptor myReturnStatement__BehaviorDescriptor = new ReturnStatement__BehaviorDescriptor();
+  private final BHDescriptor myVoidType__BehaviorDescriptor = new VoidType__BehaviorDescriptor();
+  private final BHDescriptor myStaticFieldDeclaration__BehaviorDescriptor = new StaticFieldDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myThisExpression__BehaviorDescriptor = new ThisExpression__BehaviorDescriptor();
+  private final BHDescriptor mySuperConstructorInvocation__BehaviorDescriptor = new SuperConstructorInvocation__BehaviorDescriptor();
+  private final BHDescriptor myStringLiteral__BehaviorDescriptor = new StringLiteral__BehaviorDescriptor();
+  private final BHDescriptor myStaticFieldReference__BehaviorDescriptor = new StaticFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myShortType__BehaviorDescriptor = new ShortType__BehaviorDescriptor();
+  private final BHDescriptor myNullLiteral__BehaviorDescriptor = new NullLiteral__BehaviorDescriptor();
+  private final BHDescriptor myIntegerType__BehaviorDescriptor = new IntegerType__BehaviorDescriptor();
+  private final BHDescriptor myFloatType__BehaviorDescriptor = new FloatType__BehaviorDescriptor();
+  private final BHDescriptor myDoubleType__BehaviorDescriptor = new DoubleType__BehaviorDescriptor();
+  private final BHDescriptor myCharType__BehaviorDescriptor = new CharType__BehaviorDescriptor();
+  private final BHDescriptor myByteType__BehaviorDescriptor = new ByteType__BehaviorDescriptor();
+  private final BHDescriptor myBooleanType__BehaviorDescriptor = new BooleanType__BehaviorDescriptor();
+  private final BHDescriptor myArrayType__BehaviorDescriptor = new ArrayType__BehaviorDescriptor();
+  private final BHDescriptor myCastExpression__BehaviorDescriptor = new CastExpression__BehaviorDescriptor();
+  private final BHDescriptor mySuperMethodCall__BehaviorDescriptor = new SuperMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myNotEqualsExpression__BehaviorDescriptor = new NotEqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myWhileStatement__BehaviorDescriptor = new WhileStatement__BehaviorDescriptor();
+  private final BHDescriptor myParenthesizedExpression__BehaviorDescriptor = new ParenthesizedExpression__BehaviorDescriptor();
+  private final BHDescriptor myAndExpression__BehaviorDescriptor = new AndExpression__BehaviorDescriptor();
+  private final BHDescriptor myOrExpression__BehaviorDescriptor = new OrExpression__BehaviorDescriptor();
+  private final BHDescriptor myStaticMethodCall__BehaviorDescriptor = new StaticMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myStaticMethodDeclaration__BehaviorDescriptor = new StaticMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myGreaterThanExpression__BehaviorDescriptor = new GreaterThanExpression__BehaviorDescriptor();
+  private final BHDescriptor myLessThanExpression__BehaviorDescriptor = new LessThanExpression__BehaviorDescriptor();
+  private final BHDescriptor myNotExpression__BehaviorDescriptor = new NotExpression__BehaviorDescriptor();
+  private final BHDescriptor myBinaryOperation__BehaviorDescriptor = new BinaryOperation__BehaviorDescriptor();
+  private final BHDescriptor myBreakStatement__BehaviorDescriptor = new BreakStatement__BehaviorDescriptor();
+  private final BHDescriptor myContinueStatement__BehaviorDescriptor = new ContinueStatement__BehaviorDescriptor();
+  private final BHDescriptor myBlockStatement__BehaviorDescriptor = new BlockStatement__BehaviorDescriptor();
+  private final BHDescriptor myEnumClass__BehaviorDescriptor = new EnumClass__BehaviorDescriptor();
+  private final BHDescriptor myEnumConstantDeclaration__BehaviorDescriptor = new EnumConstantDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEnumConstantReference__BehaviorDescriptor = new EnumConstantReference__BehaviorDescriptor();
+  private final BHDescriptor myMulExpression__BehaviorDescriptor = new MulExpression__BehaviorDescriptor();
+  private final BHDescriptor myDivExpression__BehaviorDescriptor = new DivExpression__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter__BehaviorDescriptor = new ConceptFunctionParameter__BehaviorDescriptor();
+  private final BHDescriptor myClassifier__BehaviorDescriptor = new Classifier__BehaviorDescriptor();
+  private final BHDescriptor myClassifierType__BehaviorDescriptor = new ClassifierType__BehaviorDescriptor();
+  private final BHDescriptor myInterface__BehaviorDescriptor = new Interface__BehaviorDescriptor();
+  private final BHDescriptor myTypeVariableDeclaration__BehaviorDescriptor = new TypeVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myGenericDeclaration__BehaviorDescriptor = new GenericDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myTypeVariableReference__BehaviorDescriptor = new TypeVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myFloatingPointConstant__BehaviorDescriptor = new FloatingPointConstant__BehaviorDescriptor();
+  private final BHDescriptor myClassifierClassExpression__BehaviorDescriptor = new ClassifierClassExpression__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunction__BehaviorDescriptor = new ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myForeachStatement__BehaviorDescriptor = new ForeachStatement__BehaviorDescriptor();
+  private final BHDescriptor myAbstractForStatement__BehaviorDescriptor = new AbstractForStatement__BehaviorDescriptor();
+  private final BHDescriptor myForStatement__BehaviorDescriptor = new ForStatement__BehaviorDescriptor();
+  private final BHDescriptor myGenericNewExpression__BehaviorDescriptor = new GenericNewExpression__BehaviorDescriptor();
+  private final BHDescriptor myClosure__BehaviorDescriptor = new Closure__BehaviorDescriptor();
+  private final BHDescriptor myClosureParameterReference__BehaviorDescriptor = new ClosureParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myGreaterThanOrEqualsExpression__BehaviorDescriptor = new GreaterThanOrEqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myRemExpression__BehaviorDescriptor = new RemExpression__BehaviorDescriptor();
+  private final BHDescriptor myLessThanOrEqualsExpression__BehaviorDescriptor = new LessThanOrEqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myTryStatement__BehaviorDescriptor = new TryStatement__BehaviorDescriptor();
+  private final BHDescriptor myAbstractLoopStatement__BehaviorDescriptor = new AbstractLoopStatement__BehaviorDescriptor();
+  private final BHDescriptor myTernaryOperatorExpression__BehaviorDescriptor = new TernaryOperatorExpression__BehaviorDescriptor();
+  private final BHDescriptor mySwitchStatement__BehaviorDescriptor = new SwitchStatement__BehaviorDescriptor();
+  private final BHDescriptor mySwitchCase__BehaviorDescriptor = new SwitchCase__BehaviorDescriptor();
+  private final BHDescriptor myPrimitiveType__BehaviorDescriptor = new PrimitiveType__BehaviorDescriptor();
+  private final BHDescriptor myTryCatchStatement__BehaviorDescriptor = new TryCatchStatement__BehaviorDescriptor();
+  private final BHDescriptor myCatchClause__BehaviorDescriptor = new CatchClause__BehaviorDescriptor();
+  private final BHDescriptor myThrowStatement__BehaviorDescriptor = new ThrowStatement__BehaviorDescriptor();
+  private final BHDescriptor myRemarkStatement__BehaviorDescriptor = new RemarkStatement__BehaviorDescriptor();
+  private final BHDescriptor mySynchronizedStatement__BehaviorDescriptor = new SynchronizedStatement__BehaviorDescriptor();
+  private final BHDescriptor myAnonymousClass__BehaviorDescriptor = new AnonymousClass__BehaviorDescriptor();
+  private final BHDescriptor myWildCardType__BehaviorDescriptor = new WildCardType__BehaviorDescriptor();
+  private final BHDescriptor myLowerBoundType__BehaviorDescriptor = new LowerBoundType__BehaviorDescriptor();
+  private final BHDescriptor myUpperBoundType__BehaviorDescriptor = new UpperBoundType__BehaviorDescriptor();
+  private final BHDescriptor myLocalStaticFieldReference__BehaviorDescriptor = new LocalStaticFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myLocalStaticMethodCall__BehaviorDescriptor = new LocalStaticMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myArrayAccessExpression__BehaviorDescriptor = new ArrayAccessExpression__BehaviorDescriptor();
+  private final BHDescriptor myCommentedStatementsBlock__BehaviorDescriptor = new CommentedStatementsBlock__BehaviorDescriptor();
+  private final BHDescriptor myDoWhileStatement__BehaviorDescriptor = new DoWhileStatement__BehaviorDescriptor();
+  private final BHDescriptor myClassifierMember__BehaviorDescriptor = new ClassifierMember__BehaviorDescriptor();
+  private final BHDescriptor myIVisible__BehaviorDescriptor = new IVisible__BehaviorDescriptor();
+  private final BHDescriptor myThisConstructorInvocation__BehaviorDescriptor = new ThisConstructorInvocation__BehaviorDescriptor();
+  private final BHDescriptor myHexIntegerLiteral__BehaviorDescriptor = new HexIntegerLiteral__BehaviorDescriptor();
+  private final BHDescriptor myIntegerLiteral__BehaviorDescriptor = new IntegerLiteral__BehaviorDescriptor();
+  private final BHDescriptor myAnnotation__BehaviorDescriptor = new Annotation__BehaviorDescriptor();
+  private final BHDescriptor myAnnotationMethodDeclaration__BehaviorDescriptor = new AnnotationMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myAnnotationInstance__BehaviorDescriptor = new AnnotationInstance__BehaviorDescriptor();
+  private final BHDescriptor myHasAnnotation__BehaviorDescriptor = new HasAnnotation__BehaviorDescriptor();
+  private final BHDescriptor myAnnotationInstanceValue__BehaviorDescriptor = new AnnotationInstanceValue__BehaviorDescriptor();
+  private final BHDescriptor myIMemberContainer__BehaviorDescriptor = new IMemberContainer__BehaviorDescriptor();
+  private final BHDescriptor myDotExpression__BehaviorDescriptor = new DotExpression__BehaviorDescriptor();
+  private final BHDescriptor myIOperation__BehaviorDescriptor = new IOperation__BehaviorDescriptor();
+  private final BHDescriptor myFieldReferenceOperation__BehaviorDescriptor = new FieldReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myIStatementListContainer__BehaviorDescriptor = new IStatementListContainer__BehaviorDescriptor();
+  private final BHDescriptor myCharConstant__BehaviorDescriptor = new CharConstant__BehaviorDescriptor();
+  private final BHDescriptor myTypeDerivable__BehaviorDescriptor = new TypeDerivable__BehaviorDescriptor();
+  private final BHDescriptor myProperty__BehaviorDescriptor = new Property__BehaviorDescriptor();
+  private final BHDescriptor myPropertyImplementation__BehaviorDescriptor = new PropertyImplementation__BehaviorDescriptor();
+  private final BHDescriptor myDefaultPropertyImplementation__BehaviorDescriptor = new DefaultPropertyImplementation__BehaviorDescriptor();
+  private final BHDescriptor myPropertyReference__BehaviorDescriptor = new PropertyReference__BehaviorDescriptor();
+  private final BHDescriptor myCustomPropertyImplementation__BehaviorDescriptor = new CustomPropertyImplementation__BehaviorDescriptor();
+  private final BHDescriptor myGetAccessor__BehaviorDescriptor = new GetAccessor__BehaviorDescriptor();
+  private final BHDescriptor mySetAccessor__BehaviorDescriptor = new SetAccessor__BehaviorDescriptor();
+  private final BHDescriptor myDefaultSetAccessor__BehaviorDescriptor = new DefaultSetAccessor__BehaviorDescriptor();
+  private final BHDescriptor myInstanceMethodCallOperation__BehaviorDescriptor = new InstanceMethodCallOperation__BehaviorDescriptor();
+  private final BHDescriptor myIMethodCall__BehaviorDescriptor = new IMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myIInternalType__BehaviorDescriptor = new IInternalType__BehaviorDescriptor();
+  private final BHDescriptor myElsifClause__BehaviorDescriptor = new ElsifClause__BehaviorDescriptor();
+  private final BHDescriptor myInstanceInitializer__BehaviorDescriptor = new InstanceInitializer__BehaviorDescriptor();
+  private final BHDescriptor myArrayLengthOperation__BehaviorDescriptor = new ArrayLengthOperation__BehaviorDescriptor();
+  private final BHDescriptor myIValidIdentifier__BehaviorDescriptor = new IValidIdentifier__BehaviorDescriptor();
+  private final BHDescriptor myClassCreator__BehaviorDescriptor = new ClassCreator__BehaviorDescriptor();
+  private final BHDescriptor myPostfixIncrementExpression__BehaviorDescriptor = new PostfixIncrementExpression__BehaviorDescriptor();
+  private final BHDescriptor myPostfixDecrementExpression__BehaviorDescriptor = new PostfixDecrementExpression__BehaviorDescriptor();
+  private final BHDescriptor myBaseAssignmentExpression__BehaviorDescriptor = new BaseAssignmentExpression__BehaviorDescriptor();
+  private final BHDescriptor myVariableArityType__BehaviorDescriptor = new VariableArityType__BehaviorDescriptor();
+  private final BHDescriptor myIExtractMethodAvailable__BehaviorDescriptor = new IExtractMethodAvailable__BehaviorDescriptor();
+  private final BHDescriptor myStaticInitializer__BehaviorDescriptor = new StaticInitializer__BehaviorDescriptor();
+  private final BHDescriptor myIStaticContainerForMethods__BehaviorDescriptor = new IStaticContainerForMethods__BehaviorDescriptor();
+  private final BHDescriptor myIVariableAssignment__BehaviorDescriptor = new IVariableAssignment__BehaviorDescriptor();
+  private final BHDescriptor myUsingStatement__BehaviorDescriptor = new UsingStatement__BehaviorDescriptor();
+  private final BHDescriptor myBitwiseAndExpression__BehaviorDescriptor = new BitwiseAndExpression__BehaviorDescriptor();
+  private final BHDescriptor myBitwiseOrExpression__BehaviorDescriptor = new BitwiseOrExpression__BehaviorDescriptor();
+  private final BHDescriptor myBitwiseXorExpression__BehaviorDescriptor = new BitwiseXorExpression__BehaviorDescriptor();
+  private final BHDescriptor myIBLDeprecatable__BehaviorDescriptor = new IBLDeprecatable__BehaviorDescriptor();
+  private final BHDescriptor myStringType__BehaviorDescriptor = new StringType__BehaviorDescriptor();
+  private final BHDescriptor myNPENotEqualsExpression__BehaviorDescriptor = new NPENotEqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myNPEEqualsExpression__BehaviorDescriptor = new NPEEqualsExpression__BehaviorDescriptor();
+  private final BHDescriptor myBaseStringOperation__BehaviorDescriptor = new BaseStringOperation__BehaviorDescriptor();
+  private final BHDescriptor myIParameter__BehaviorDescriptor = new IParameter__BehaviorDescriptor();
+  private final BHDescriptor myShiftLeftExpression__BehaviorDescriptor = new ShiftLeftExpression__BehaviorDescriptor();
+  private final BHDescriptor myShiftRightExpression__BehaviorDescriptor = new ShiftRightExpression__BehaviorDescriptor();
+  private final BHDescriptor myCommentedStatement__BehaviorDescriptor = new CommentedStatement__BehaviorDescriptor();
+  private final BHDescriptor myTypeAnnotable__BehaviorDescriptor = new TypeAnnotable__BehaviorDescriptor();
+  private final BHDescriptor myIContainsStatementList__BehaviorDescriptor = new IContainsStatementList__BehaviorDescriptor();
+  private final BHDescriptor myILocalVariableElement__BehaviorDescriptor = new ILocalVariableElement__BehaviorDescriptor();
+  private final BHDescriptor myILocalVariableElementList__BehaviorDescriptor = new ILocalVariableElementList__BehaviorDescriptor();
+  private final BHDescriptor myIMethodLike__BehaviorDescriptor = new IMethodLike__BehaviorDescriptor();
+  private final BHDescriptor myPrefixIncrementExpression__BehaviorDescriptor = new PrefixIncrementExpression__BehaviorDescriptor();
+  private final BHDescriptor myPrefixDecrementExpression__BehaviorDescriptor = new PrefixDecrementExpression__BehaviorDescriptor();
+  private final BHDescriptor myAbstractUnaryNumberOperation__BehaviorDescriptor = new AbstractUnaryNumberOperation__BehaviorDescriptor();
+  private final BHDescriptor myConstructorInvocationStatement__BehaviorDescriptor = new ConstructorInvocationStatement__BehaviorDescriptor();
+  private final BHDescriptor myShiftRightUnsignedExpression__BehaviorDescriptor = new ShiftRightUnsignedExpression__BehaviorDescriptor();
+  private final BHDescriptor myIVariableReference__BehaviorDescriptor = new IVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myIIncompleteParen__BehaviorDescriptor = new IIncompleteParen__BehaviorDescriptor();
+  private final BHDescriptor myPlaceholderMember__BehaviorDescriptor = new PlaceholderMember__BehaviorDescriptor();
+  private final BHDescriptor myIBinaryLike__BehaviorDescriptor = new IBinaryLike__BehaviorDescriptor();
+  private final BHDescriptor myUnknownLocalCall__BehaviorDescriptor = new UnknownLocalCall__BehaviorDescriptor();
+  private final BHDescriptor myUnknownDotCall__BehaviorDescriptor = new UnknownDotCall__BehaviorDescriptor();
+  private final BHDescriptor myPropertyValueReference__BehaviorDescriptor = new PropertyValueReference__BehaviorDescriptor();
+  private final BHDescriptor myLocalInstanceMethodCall__BehaviorDescriptor = new LocalInstanceMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myILocalDeclaration__BehaviorDescriptor = new ILocalDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myILocalReference__BehaviorDescriptor = new ILocalReference__BehaviorDescriptor();
+  private final BHDescriptor myUnknownNew__BehaviorDescriptor = new UnknownNew__BehaviorDescriptor();
+  private final BHDescriptor myIncompleteMemberDeclaration__BehaviorDescriptor = new IncompleteMemberDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myITryCatchStatement__BehaviorDescriptor = new ITryCatchStatement__BehaviorDescriptor();
+  private final BHDescriptor myIGenericType__BehaviorDescriptor = new IGenericType__BehaviorDescriptor();
+  private final BHDescriptor myIConditional__BehaviorDescriptor = new IConditional__BehaviorDescriptor();
+  private final BHDescriptor myLongLiteral__BehaviorDescriptor = new LongLiteral__BehaviorDescriptor();
+  private final BHDescriptor myCustomSetterPropertyImplementation__BehaviorDescriptor = new CustomSetterPropertyImplementation__BehaviorDescriptor();
+  private final BHDescriptor myIWillBeClassifier__BehaviorDescriptor = new IWillBeClassifier__BehaviorDescriptor();
+  private final BHDescriptor myFloatingPointFloatConstant__BehaviorDescriptor = new FloatingPointFloatConstant__BehaviorDescriptor();
+  private final BHDescriptor myLocalPropertyReference__BehaviorDescriptor = new LocalPropertyReference__BehaviorDescriptor();
+  private final BHDescriptor myJavaImports__BehaviorDescriptor = new JavaImports__BehaviorDescriptor();
+  private final BHDescriptor mySingleLineComment__BehaviorDescriptor = new SingleLineComment__BehaviorDescriptor();
+  private final BHDescriptor myCommentPart__BehaviorDescriptor = new CommentPart__BehaviorDescriptor();
+  private final BHDescriptor myTextCommentPart__BehaviorDescriptor = new TextCommentPart__BehaviorDescriptor();
+  private final BHDescriptor myTokens__BehaviorDescriptor = new Tokens__BehaviorDescriptor();
+  private final BHDescriptor myIClassifier__BehaviorDescriptor = new IClassifier__BehaviorDescriptor();
+  private final BHDescriptor myIClassifierMember__BehaviorDescriptor = new IClassifierMember__BehaviorDescriptor();
+  private final BHDescriptor myIClassifierType__BehaviorDescriptor = new IClassifierType__BehaviorDescriptor();
+  private final BHDescriptor myLocalInstanceFieldReference__BehaviorDescriptor = new LocalInstanceFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myLocalMethodCall__BehaviorDescriptor = new LocalMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myUnaryMinus__BehaviorDescriptor = new UnaryMinus__BehaviorDescriptor();
+  private final BHDescriptor myIYetUnresolved__BehaviorDescriptor = new IYetUnresolved__BehaviorDescriptor();
+  private final BHDescriptor myITypeApplicable__BehaviorDescriptor = new ITypeApplicable__BehaviorDescriptor();
+  private final BHDescriptor myUnknownNameRef__BehaviorDescriptor = new UnknownNameRef__BehaviorDescriptor();
+  private final BHDescriptor myUnknownConsCall__BehaviorDescriptor = new UnknownConsCall__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -433,407 +433,407 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myClassConcept_BehaviorDescriptor;
+        return myClassConcept__BehaviorDescriptor;
       case 1:
-        return myFieldDeclaration_BehaviorDescriptor;
+        return myFieldDeclaration__BehaviorDescriptor;
       case 2:
-        return myVariableDeclaration_BehaviorDescriptor;
+        return myVariableDeclaration__BehaviorDescriptor;
       case 3:
-        return myType_BehaviorDescriptor;
+        return myType__BehaviorDescriptor;
       case 4:
-        return myExpression_BehaviorDescriptor;
+        return myExpression__BehaviorDescriptor;
       case 5:
-        return myParameterDeclaration_BehaviorDescriptor;
+        return myParameterDeclaration__BehaviorDescriptor;
       case 6:
-        return myAssignmentExpression_BehaviorDescriptor;
+        return myAssignmentExpression__BehaviorDescriptor;
       case 7:
-        return myVariableReference_BehaviorDescriptor;
+        return myVariableReference__BehaviorDescriptor;
       case 8:
-        return myBaseMethodCall_BehaviorDescriptor;
+        return myBaseMethodCall__BehaviorDescriptor;
       case 9:
-        return myBaseMethodDeclaration_BehaviorDescriptor;
+        return myBaseMethodDeclaration__BehaviorDescriptor;
       case 10:
-        return myStatementList_BehaviorDescriptor;
+        return myStatementList__BehaviorDescriptor;
       case 11:
-        return myBooleanConstant_BehaviorDescriptor;
+        return myBooleanConstant__BehaviorDescriptor;
       case 12:
-        return myConstructorDeclaration_BehaviorDescriptor;
+        return myConstructorDeclaration__BehaviorDescriptor;
       case 13:
-        return myEqualsExpression_BehaviorDescriptor;
+        return myEqualsExpression__BehaviorDescriptor;
       case 14:
-        return myExpressionStatement_BehaviorDescriptor;
+        return myExpressionStatement__BehaviorDescriptor;
       case 15:
-        return myStatement_BehaviorDescriptor;
+        return myStatement__BehaviorDescriptor;
       case 16:
-        return myIfStatement_BehaviorDescriptor;
+        return myIfStatement__BehaviorDescriptor;
       case 17:
-        return myInstanceMethodDeclaration_BehaviorDescriptor;
+        return myInstanceMethodDeclaration__BehaviorDescriptor;
       case 18:
-        return myIntegerConstant_BehaviorDescriptor;
+        return myIntegerConstant__BehaviorDescriptor;
       case 19:
-        return myLocalVariableDeclaration_BehaviorDescriptor;
+        return myLocalVariableDeclaration__BehaviorDescriptor;
       case 20:
-        return myLocalVariableDeclarationStatement_BehaviorDescriptor;
+        return myLocalVariableDeclarationStatement__BehaviorDescriptor;
       case 21:
-        return myLocalVariableReference_BehaviorDescriptor;
+        return myLocalVariableReference__BehaviorDescriptor;
       case 22:
-        return myLongType_BehaviorDescriptor;
+        return myLongType__BehaviorDescriptor;
       case 23:
-        return myMinusExpression_BehaviorDescriptor;
+        return myMinusExpression__BehaviorDescriptor;
       case 24:
-        return myParameterReference_BehaviorDescriptor;
+        return myParameterReference__BehaviorDescriptor;
       case 25:
-        return myPlusExpression_BehaviorDescriptor;
+        return myPlusExpression__BehaviorDescriptor;
       case 26:
-        return myReturnStatement_BehaviorDescriptor;
+        return myReturnStatement__BehaviorDescriptor;
       case 27:
-        return myVoidType_BehaviorDescriptor;
+        return myVoidType__BehaviorDescriptor;
       case 28:
-        return myStaticFieldDeclaration_BehaviorDescriptor;
+        return myStaticFieldDeclaration__BehaviorDescriptor;
       case 29:
-        return myThisExpression_BehaviorDescriptor;
+        return myThisExpression__BehaviorDescriptor;
       case 30:
-        return mySuperConstructorInvocation_BehaviorDescriptor;
+        return mySuperConstructorInvocation__BehaviorDescriptor;
       case 31:
-        return myStringLiteral_BehaviorDescriptor;
+        return myStringLiteral__BehaviorDescriptor;
       case 32:
-        return myStaticFieldReference_BehaviorDescriptor;
+        return myStaticFieldReference__BehaviorDescriptor;
       case 33:
-        return myShortType_BehaviorDescriptor;
+        return myShortType__BehaviorDescriptor;
       case 34:
-        return myNullLiteral_BehaviorDescriptor;
+        return myNullLiteral__BehaviorDescriptor;
       case 35:
-        return myIntegerType_BehaviorDescriptor;
+        return myIntegerType__BehaviorDescriptor;
       case 36:
-        return myFloatType_BehaviorDescriptor;
+        return myFloatType__BehaviorDescriptor;
       case 37:
-        return myDoubleType_BehaviorDescriptor;
+        return myDoubleType__BehaviorDescriptor;
       case 38:
-        return myCharType_BehaviorDescriptor;
+        return myCharType__BehaviorDescriptor;
       case 39:
-        return myByteType_BehaviorDescriptor;
+        return myByteType__BehaviorDescriptor;
       case 40:
-        return myBooleanType_BehaviorDescriptor;
+        return myBooleanType__BehaviorDescriptor;
       case 41:
-        return myArrayType_BehaviorDescriptor;
+        return myArrayType__BehaviorDescriptor;
       case 42:
-        return myCastExpression_BehaviorDescriptor;
+        return myCastExpression__BehaviorDescriptor;
       case 43:
-        return mySuperMethodCall_BehaviorDescriptor;
+        return mySuperMethodCall__BehaviorDescriptor;
       case 44:
-        return myNotEqualsExpression_BehaviorDescriptor;
+        return myNotEqualsExpression__BehaviorDescriptor;
       case 45:
-        return myWhileStatement_BehaviorDescriptor;
+        return myWhileStatement__BehaviorDescriptor;
       case 46:
-        return myParenthesizedExpression_BehaviorDescriptor;
+        return myParenthesizedExpression__BehaviorDescriptor;
       case 47:
-        return myAndExpression_BehaviorDescriptor;
+        return myAndExpression__BehaviorDescriptor;
       case 48:
-        return myOrExpression_BehaviorDescriptor;
+        return myOrExpression__BehaviorDescriptor;
       case 49:
-        return myStaticMethodCall_BehaviorDescriptor;
+        return myStaticMethodCall__BehaviorDescriptor;
       case 50:
-        return myStaticMethodDeclaration_BehaviorDescriptor;
+        return myStaticMethodDeclaration__BehaviorDescriptor;
       case 51:
-        return myGreaterThanExpression_BehaviorDescriptor;
+        return myGreaterThanExpression__BehaviorDescriptor;
       case 52:
-        return myLessThanExpression_BehaviorDescriptor;
+        return myLessThanExpression__BehaviorDescriptor;
       case 53:
-        return myNotExpression_BehaviorDescriptor;
+        return myNotExpression__BehaviorDescriptor;
       case 54:
-        return myBinaryOperation_BehaviorDescriptor;
+        return myBinaryOperation__BehaviorDescriptor;
       case 55:
-        return myBreakStatement_BehaviorDescriptor;
+        return myBreakStatement__BehaviorDescriptor;
       case 56:
-        return myContinueStatement_BehaviorDescriptor;
+        return myContinueStatement__BehaviorDescriptor;
       case 57:
-        return myBlockStatement_BehaviorDescriptor;
+        return myBlockStatement__BehaviorDescriptor;
       case 58:
-        return myEnumClass_BehaviorDescriptor;
+        return myEnumClass__BehaviorDescriptor;
       case 59:
-        return myEnumConstantDeclaration_BehaviorDescriptor;
+        return myEnumConstantDeclaration__BehaviorDescriptor;
       case 60:
-        return myEnumConstantReference_BehaviorDescriptor;
+        return myEnumConstantReference__BehaviorDescriptor;
       case 61:
-        return myMulExpression_BehaviorDescriptor;
+        return myMulExpression__BehaviorDescriptor;
       case 62:
-        return myDivExpression_BehaviorDescriptor;
+        return myDivExpression__BehaviorDescriptor;
       case 63:
-        return myConceptFunctionParameter_BehaviorDescriptor;
+        return myConceptFunctionParameter__BehaviorDescriptor;
       case 64:
-        return myClassifier_BehaviorDescriptor;
+        return myClassifier__BehaviorDescriptor;
       case 65:
-        return myClassifierType_BehaviorDescriptor;
+        return myClassifierType__BehaviorDescriptor;
       case 66:
-        return myInterface_BehaviorDescriptor;
+        return myInterface__BehaviorDescriptor;
       case 67:
-        return myTypeVariableDeclaration_BehaviorDescriptor;
+        return myTypeVariableDeclaration__BehaviorDescriptor;
       case 68:
-        return myGenericDeclaration_BehaviorDescriptor;
+        return myGenericDeclaration__BehaviorDescriptor;
       case 69:
-        return myTypeVariableReference_BehaviorDescriptor;
+        return myTypeVariableReference__BehaviorDescriptor;
       case 70:
-        return myFloatingPointConstant_BehaviorDescriptor;
+        return myFloatingPointConstant__BehaviorDescriptor;
       case 71:
-        return myClassifierClassExpression_BehaviorDescriptor;
+        return myClassifierClassExpression__BehaviorDescriptor;
       case 72:
-        return myConceptFunction_BehaviorDescriptor;
+        return myConceptFunction__BehaviorDescriptor;
       case 73:
-        return myForeachStatement_BehaviorDescriptor;
+        return myForeachStatement__BehaviorDescriptor;
       case 74:
-        return myAbstractForStatement_BehaviorDescriptor;
+        return myAbstractForStatement__BehaviorDescriptor;
       case 75:
-        return myForStatement_BehaviorDescriptor;
+        return myForStatement__BehaviorDescriptor;
       case 76:
-        return myGenericNewExpression_BehaviorDescriptor;
+        return myGenericNewExpression__BehaviorDescriptor;
       case 77:
-        return myClosure_BehaviorDescriptor;
+        return myClosure__BehaviorDescriptor;
       case 78:
-        return myClosureParameterReference_BehaviorDescriptor;
+        return myClosureParameterReference__BehaviorDescriptor;
       case 79:
-        return myGreaterThanOrEqualsExpression_BehaviorDescriptor;
+        return myGreaterThanOrEqualsExpression__BehaviorDescriptor;
       case 80:
-        return myRemExpression_BehaviorDescriptor;
+        return myRemExpression__BehaviorDescriptor;
       case 81:
-        return myLessThanOrEqualsExpression_BehaviorDescriptor;
+        return myLessThanOrEqualsExpression__BehaviorDescriptor;
       case 82:
-        return myTryStatement_BehaviorDescriptor;
+        return myTryStatement__BehaviorDescriptor;
       case 83:
-        return myAbstractLoopStatement_BehaviorDescriptor;
+        return myAbstractLoopStatement__BehaviorDescriptor;
       case 84:
-        return myTernaryOperatorExpression_BehaviorDescriptor;
+        return myTernaryOperatorExpression__BehaviorDescriptor;
       case 85:
-        return mySwitchStatement_BehaviorDescriptor;
+        return mySwitchStatement__BehaviorDescriptor;
       case 86:
-        return mySwitchCase_BehaviorDescriptor;
+        return mySwitchCase__BehaviorDescriptor;
       case 87:
-        return myPrimitiveType_BehaviorDescriptor;
+        return myPrimitiveType__BehaviorDescriptor;
       case 88:
-        return myTryCatchStatement_BehaviorDescriptor;
+        return myTryCatchStatement__BehaviorDescriptor;
       case 89:
-        return myCatchClause_BehaviorDescriptor;
+        return myCatchClause__BehaviorDescriptor;
       case 90:
-        return myThrowStatement_BehaviorDescriptor;
+        return myThrowStatement__BehaviorDescriptor;
       case 91:
-        return myRemarkStatement_BehaviorDescriptor;
+        return myRemarkStatement__BehaviorDescriptor;
       case 92:
-        return mySynchronizedStatement_BehaviorDescriptor;
+        return mySynchronizedStatement__BehaviorDescriptor;
       case 93:
-        return myAnonymousClass_BehaviorDescriptor;
+        return myAnonymousClass__BehaviorDescriptor;
       case 94:
-        return myWildCardType_BehaviorDescriptor;
+        return myWildCardType__BehaviorDescriptor;
       case 95:
-        return myLowerBoundType_BehaviorDescriptor;
+        return myLowerBoundType__BehaviorDescriptor;
       case 96:
-        return myUpperBoundType_BehaviorDescriptor;
+        return myUpperBoundType__BehaviorDescriptor;
       case 97:
-        return myLocalStaticFieldReference_BehaviorDescriptor;
+        return myLocalStaticFieldReference__BehaviorDescriptor;
       case 98:
-        return myLocalStaticMethodCall_BehaviorDescriptor;
+        return myLocalStaticMethodCall__BehaviorDescriptor;
       case 99:
-        return myArrayAccessExpression_BehaviorDescriptor;
+        return myArrayAccessExpression__BehaviorDescriptor;
       case 100:
-        return myCommentedStatementsBlock_BehaviorDescriptor;
+        return myCommentedStatementsBlock__BehaviorDescriptor;
       case 101:
-        return myDoWhileStatement_BehaviorDescriptor;
+        return myDoWhileStatement__BehaviorDescriptor;
       case 102:
-        return myClassifierMember_BehaviorDescriptor;
+        return myClassifierMember__BehaviorDescriptor;
       case 103:
-        return myIVisible_BehaviorDescriptor;
+        return myIVisible__BehaviorDescriptor;
       case 104:
-        return myThisConstructorInvocation_BehaviorDescriptor;
+        return myThisConstructorInvocation__BehaviorDescriptor;
       case 105:
-        return myHexIntegerLiteral_BehaviorDescriptor;
+        return myHexIntegerLiteral__BehaviorDescriptor;
       case 106:
-        return myIntegerLiteral_BehaviorDescriptor;
+        return myIntegerLiteral__BehaviorDescriptor;
       case 107:
-        return myAnnotation_BehaviorDescriptor;
+        return myAnnotation__BehaviorDescriptor;
       case 108:
-        return myAnnotationMethodDeclaration_BehaviorDescriptor;
+        return myAnnotationMethodDeclaration__BehaviorDescriptor;
       case 109:
-        return myAnnotationInstance_BehaviorDescriptor;
+        return myAnnotationInstance__BehaviorDescriptor;
       case 110:
-        return myHasAnnotation_BehaviorDescriptor;
+        return myHasAnnotation__BehaviorDescriptor;
       case 111:
-        return myAnnotationInstanceValue_BehaviorDescriptor;
+        return myAnnotationInstanceValue__BehaviorDescriptor;
       case 112:
-        return myIMemberContainer_BehaviorDescriptor;
+        return myIMemberContainer__BehaviorDescriptor;
       case 113:
-        return myDotExpression_BehaviorDescriptor;
+        return myDotExpression__BehaviorDescriptor;
       case 114:
-        return myIOperation_BehaviorDescriptor;
+        return myIOperation__BehaviorDescriptor;
       case 115:
-        return myFieldReferenceOperation_BehaviorDescriptor;
+        return myFieldReferenceOperation__BehaviorDescriptor;
       case 116:
-        return myIStatementListContainer_BehaviorDescriptor;
+        return myIStatementListContainer__BehaviorDescriptor;
       case 117:
-        return myCharConstant_BehaviorDescriptor;
+        return myCharConstant__BehaviorDescriptor;
       case 118:
-        return myTypeDerivable_BehaviorDescriptor;
+        return myTypeDerivable__BehaviorDescriptor;
       case 119:
-        return myProperty_BehaviorDescriptor;
+        return myProperty__BehaviorDescriptor;
       case 120:
-        return myPropertyImplementation_BehaviorDescriptor;
+        return myPropertyImplementation__BehaviorDescriptor;
       case 121:
-        return myDefaultPropertyImplementation_BehaviorDescriptor;
+        return myDefaultPropertyImplementation__BehaviorDescriptor;
       case 122:
-        return myPropertyReference_BehaviorDescriptor;
+        return myPropertyReference__BehaviorDescriptor;
       case 123:
-        return myCustomPropertyImplementation_BehaviorDescriptor;
+        return myCustomPropertyImplementation__BehaviorDescriptor;
       case 124:
-        return myGetAccessor_BehaviorDescriptor;
+        return myGetAccessor__BehaviorDescriptor;
       case 125:
-        return mySetAccessor_BehaviorDescriptor;
+        return mySetAccessor__BehaviorDescriptor;
       case 126:
-        return myDefaultSetAccessor_BehaviorDescriptor;
+        return myDefaultSetAccessor__BehaviorDescriptor;
       case 127:
-        return myInstanceMethodCallOperation_BehaviorDescriptor;
+        return myInstanceMethodCallOperation__BehaviorDescriptor;
       case 128:
-        return myIMethodCall_BehaviorDescriptor;
+        return myIMethodCall__BehaviorDescriptor;
       case 129:
-        return myIInternalType_BehaviorDescriptor;
+        return myIInternalType__BehaviorDescriptor;
       case 130:
-        return myElsifClause_BehaviorDescriptor;
+        return myElsifClause__BehaviorDescriptor;
       case 131:
-        return myInstanceInitializer_BehaviorDescriptor;
+        return myInstanceInitializer__BehaviorDescriptor;
       case 132:
-        return myArrayLengthOperation_BehaviorDescriptor;
+        return myArrayLengthOperation__BehaviorDescriptor;
       case 133:
-        return myIValidIdentifier_BehaviorDescriptor;
+        return myIValidIdentifier__BehaviorDescriptor;
       case 134:
-        return myClassCreator_BehaviorDescriptor;
+        return myClassCreator__BehaviorDescriptor;
       case 135:
-        return myPostfixIncrementExpression_BehaviorDescriptor;
+        return myPostfixIncrementExpression__BehaviorDescriptor;
       case 136:
-        return myPostfixDecrementExpression_BehaviorDescriptor;
+        return myPostfixDecrementExpression__BehaviorDescriptor;
       case 137:
-        return myBaseAssignmentExpression_BehaviorDescriptor;
+        return myBaseAssignmentExpression__BehaviorDescriptor;
       case 138:
-        return myVariableArityType_BehaviorDescriptor;
+        return myVariableArityType__BehaviorDescriptor;
       case 139:
-        return myIExtractMethodAvailable_BehaviorDescriptor;
+        return myIExtractMethodAvailable__BehaviorDescriptor;
       case 140:
-        return myStaticInitializer_BehaviorDescriptor;
+        return myStaticInitializer__BehaviorDescriptor;
       case 141:
-        return myIStaticContainerForMethods_BehaviorDescriptor;
+        return myIStaticContainerForMethods__BehaviorDescriptor;
       case 142:
-        return myIVariableAssignment_BehaviorDescriptor;
+        return myIVariableAssignment__BehaviorDescriptor;
       case 143:
-        return myUsingStatement_BehaviorDescriptor;
+        return myUsingStatement__BehaviorDescriptor;
       case 144:
-        return myBitwiseAndExpression_BehaviorDescriptor;
+        return myBitwiseAndExpression__BehaviorDescriptor;
       case 145:
-        return myBitwiseOrExpression_BehaviorDescriptor;
+        return myBitwiseOrExpression__BehaviorDescriptor;
       case 146:
-        return myBitwiseXorExpression_BehaviorDescriptor;
+        return myBitwiseXorExpression__BehaviorDescriptor;
       case 147:
-        return myIBLDeprecatable_BehaviorDescriptor;
+        return myIBLDeprecatable__BehaviorDescriptor;
       case 148:
-        return myStringType_BehaviorDescriptor;
+        return myStringType__BehaviorDescriptor;
       case 149:
-        return myNPENotEqualsExpression_BehaviorDescriptor;
+        return myNPENotEqualsExpression__BehaviorDescriptor;
       case 150:
-        return myNPEEqualsExpression_BehaviorDescriptor;
+        return myNPEEqualsExpression__BehaviorDescriptor;
       case 151:
-        return myBaseStringOperation_BehaviorDescriptor;
+        return myBaseStringOperation__BehaviorDescriptor;
       case 152:
-        return myIParameter_BehaviorDescriptor;
+        return myIParameter__BehaviorDescriptor;
       case 153:
-        return myShiftLeftExpression_BehaviorDescriptor;
+        return myShiftLeftExpression__BehaviorDescriptor;
       case 154:
-        return myShiftRightExpression_BehaviorDescriptor;
+        return myShiftRightExpression__BehaviorDescriptor;
       case 155:
-        return myCommentedStatement_BehaviorDescriptor;
+        return myCommentedStatement__BehaviorDescriptor;
       case 156:
-        return myTypeAnnotable_BehaviorDescriptor;
+        return myTypeAnnotable__BehaviorDescriptor;
       case 157:
-        return myIContainsStatementList_BehaviorDescriptor;
+        return myIContainsStatementList__BehaviorDescriptor;
       case 158:
-        return myILocalVariableElement_BehaviorDescriptor;
+        return myILocalVariableElement__BehaviorDescriptor;
       case 159:
-        return myILocalVariableElementList_BehaviorDescriptor;
+        return myILocalVariableElementList__BehaviorDescriptor;
       case 160:
-        return myIMethodLike_BehaviorDescriptor;
+        return myIMethodLike__BehaviorDescriptor;
       case 161:
-        return myPrefixIncrementExpression_BehaviorDescriptor;
+        return myPrefixIncrementExpression__BehaviorDescriptor;
       case 162:
-        return myPrefixDecrementExpression_BehaviorDescriptor;
+        return myPrefixDecrementExpression__BehaviorDescriptor;
       case 163:
-        return myAbstractUnaryNumberOperation_BehaviorDescriptor;
+        return myAbstractUnaryNumberOperation__BehaviorDescriptor;
       case 164:
-        return myConstructorInvocationStatement_BehaviorDescriptor;
+        return myConstructorInvocationStatement__BehaviorDescriptor;
       case 165:
-        return myShiftRightUnsignedExpression_BehaviorDescriptor;
+        return myShiftRightUnsignedExpression__BehaviorDescriptor;
       case 166:
-        return myIVariableReference_BehaviorDescriptor;
+        return myIVariableReference__BehaviorDescriptor;
       case 167:
-        return myIIncompleteParen_BehaviorDescriptor;
+        return myIIncompleteParen__BehaviorDescriptor;
       case 168:
-        return myPlaceholderMember_BehaviorDescriptor;
+        return myPlaceholderMember__BehaviorDescriptor;
       case 169:
-        return myIBinaryLike_BehaviorDescriptor;
+        return myIBinaryLike__BehaviorDescriptor;
       case 170:
-        return myUnknownLocalCall_BehaviorDescriptor;
+        return myUnknownLocalCall__BehaviorDescriptor;
       case 171:
-        return myUnknownDotCall_BehaviorDescriptor;
+        return myUnknownDotCall__BehaviorDescriptor;
       case 172:
-        return myPropertyValueReference_BehaviorDescriptor;
+        return myPropertyValueReference__BehaviorDescriptor;
       case 173:
-        return myLocalInstanceMethodCall_BehaviorDescriptor;
+        return myLocalInstanceMethodCall__BehaviorDescriptor;
       case 174:
-        return myILocalDeclaration_BehaviorDescriptor;
+        return myILocalDeclaration__BehaviorDescriptor;
       case 175:
-        return myILocalReference_BehaviorDescriptor;
+        return myILocalReference__BehaviorDescriptor;
       case 176:
-        return myUnknownNew_BehaviorDescriptor;
+        return myUnknownNew__BehaviorDescriptor;
       case 177:
-        return myIncompleteMemberDeclaration_BehaviorDescriptor;
+        return myIncompleteMemberDeclaration__BehaviorDescriptor;
       case 178:
-        return myITryCatchStatement_BehaviorDescriptor;
+        return myITryCatchStatement__BehaviorDescriptor;
       case 179:
-        return myIGenericType_BehaviorDescriptor;
+        return myIGenericType__BehaviorDescriptor;
       case 180:
-        return myIConditional_BehaviorDescriptor;
+        return myIConditional__BehaviorDescriptor;
       case 181:
-        return myLongLiteral_BehaviorDescriptor;
+        return myLongLiteral__BehaviorDescriptor;
       case 182:
-        return myCustomSetterPropertyImplementation_BehaviorDescriptor;
+        return myCustomSetterPropertyImplementation__BehaviorDescriptor;
       case 183:
-        return myIWillBeClassifier_BehaviorDescriptor;
+        return myIWillBeClassifier__BehaviorDescriptor;
       case 184:
-        return myFloatingPointFloatConstant_BehaviorDescriptor;
+        return myFloatingPointFloatConstant__BehaviorDescriptor;
       case 185:
-        return myLocalPropertyReference_BehaviorDescriptor;
+        return myLocalPropertyReference__BehaviorDescriptor;
       case 186:
-        return myJavaImports_BehaviorDescriptor;
+        return myJavaImports__BehaviorDescriptor;
       case 187:
-        return mySingleLineComment_BehaviorDescriptor;
+        return mySingleLineComment__BehaviorDescriptor;
       case 188:
-        return myCommentPart_BehaviorDescriptor;
+        return myCommentPart__BehaviorDescriptor;
       case 189:
-        return myTextCommentPart_BehaviorDescriptor;
+        return myTextCommentPart__BehaviorDescriptor;
       case 190:
-        return myTokens_BehaviorDescriptor;
+        return myTokens__BehaviorDescriptor;
       case 191:
-        return myIClassifier_BehaviorDescriptor;
+        return myIClassifier__BehaviorDescriptor;
       case 192:
-        return myIClassifierMember_BehaviorDescriptor;
+        return myIClassifierMember__BehaviorDescriptor;
       case 193:
-        return myIClassifierType_BehaviorDescriptor;
+        return myIClassifierType__BehaviorDescriptor;
       case 194:
-        return myLocalInstanceFieldReference_BehaviorDescriptor;
+        return myLocalInstanceFieldReference__BehaviorDescriptor;
       case 195:
-        return myLocalMethodCall_BehaviorDescriptor;
+        return myLocalMethodCall__BehaviorDescriptor;
       case 196:
-        return myUnaryMinus_BehaviorDescriptor;
+        return myUnaryMinus__BehaviorDescriptor;
       case 197:
-        return myIYetUnresolved_BehaviorDescriptor;
+        return myIYetUnresolved__BehaviorDescriptor;
       case 198:
-        return myITypeApplicable_BehaviorDescriptor;
+        return myITypeApplicable__BehaviorDescriptor;
       case 199:
-        return myUnknownNameRef_BehaviorDescriptor;
+        return myUnknownNameRef__BehaviorDescriptor;
       case 200:
-        return myUnknownConsCall_BehaviorDescriptor;
+        return myUnknownConsCall__BehaviorDescriptor;
       default:
         return null;
     }

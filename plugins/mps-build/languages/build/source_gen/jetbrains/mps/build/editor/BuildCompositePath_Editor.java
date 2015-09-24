@@ -20,12 +20,12 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildCompositePath__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -78,7 +78,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_n78otj_a0a0(EditorContext editorContext, SNode node) {
-    IFile f = BuildCompositePath_BehaviorDescriptor.getFile_idIG8oXsODon.invoke(node, Context.defaultContext());
+    IFile f = BuildCompositePath__BehaviorDescriptor.getFile_idIG8oXsODon.invoke(node, Context.defaultContext());
     if (f == null) {
       return Color.BLACK;
     }
@@ -91,7 +91,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
     }
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BuildCompositePath_BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(node, BuildRelativePath_BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
+      return BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(node, BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
     }
   }
   private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
@@ -171,7 +171,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        IFile f = BuildCompositePath_BehaviorDescriptor.getFile_idIG8oXsODon.invoke(node, Context.defaultContext());
+        IFile f = BuildCompositePath__BehaviorDescriptor.getFile_idIG8oXsODon.invoke(node, Context.defaultContext());
         return (f != null ? f.getPath() : "unknown");
       }
       public void setText(String s) {

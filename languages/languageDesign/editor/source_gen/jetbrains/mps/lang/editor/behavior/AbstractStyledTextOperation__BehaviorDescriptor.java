@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractStyledTextOperation_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractStyledTextOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -41,7 +41,7 @@ public final class AbstractStyledTextOperation_BehaviorDescriptor extends BaseBH
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 
-  /*package*/ AbstractStyledTextOperation_BehaviorDescriptor() {
+  /*package*/ AbstractStyledTextOperation__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

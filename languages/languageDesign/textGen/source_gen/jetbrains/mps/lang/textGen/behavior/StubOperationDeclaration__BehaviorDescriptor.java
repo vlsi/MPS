@@ -20,7 +20,7 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class StubOperationDeclaration_BehaviorDescriptor extends BaseBHDescriptor {
+public final class StubOperationDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bacbf19e457bd3bL, "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -33,7 +33,7 @@ public final class StubOperationDeclaration_BehaviorDescriptor extends BaseBHDes
   }
 
 
-  /*package*/ StubOperationDeclaration_BehaviorDescriptor() {
+  /*package*/ StubOperationDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

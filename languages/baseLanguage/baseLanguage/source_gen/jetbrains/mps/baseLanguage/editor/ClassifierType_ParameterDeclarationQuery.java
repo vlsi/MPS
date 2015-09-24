@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 public class ClassifierType_ParameterDeclarationQuery implements ParametersInformation<SNode> {
   public ClassifierType_ParameterDeclarationQuery() {
@@ -36,7 +36,7 @@ public class ClassifierType_ParameterDeclarationQuery implements ParametersInfor
         if (SNodeOperations.getIndexInParent(param) == SNodeOperations.getIndexInParent(argument)) {
           styledText.setBold(true);
         }
-        styledText.append(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(param));
+        styledText.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(param));
         styledText.setBold(false);
       }
     }

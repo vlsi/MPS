@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 /**
  * This describes a group of related dispatch methods, i.e. which dispatch to each other
@@ -88,7 +88,7 @@ public class DispatchGroupDescriptor {
     if (SNodeOperations.isInstanceOf(typ2, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return false;
     }
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ1).equals(BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ2));
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ1).equals(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ2));
   }
   private int typeHashCode(SNode typ) {
     {
@@ -97,6 +97,6 @@ public class DispatchGroupDescriptor {
         return SLinkOperations.getTarget(cls, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")).hashCode();
       }
     }
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ).hashCode();
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(typ).hashCode();
   }
 }

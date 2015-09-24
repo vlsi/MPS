@@ -16,7 +16,7 @@ public class MatchParensRegexp_Behavior {
   public static int call_getIndex_1223361984345(SNode __thisNode__) {
     SNode parens = __thisNode__;
     List<SNode> parensList = new ArrayList<SNode>();
-    Regexp_BehaviorDescriptor.getString_idhMuDF1A.invoke(Regexp_BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(__thisNode__), parensList);
+    Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(Regexp__BehaviorDescriptor.getTopLevelRegexp_idhNm6Oh5.invoke(__thisNode__), parensList);
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 }

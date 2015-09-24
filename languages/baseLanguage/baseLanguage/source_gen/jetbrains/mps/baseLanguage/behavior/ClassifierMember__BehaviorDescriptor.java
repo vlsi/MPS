@@ -32,7 +32,7 @@ import java.util.HashSet;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ClassifierMember__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -57,7 +57,7 @@ public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor 
     final Wrappers._T<SNode> _contextClassifier = new Wrappers._T<SNode>(contextClassifier);
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x427c475b3d6201deL, "jetbrains.mps.baseLanguage.structure.StaticKind"))) {
       // todo: read specification! 
-      _contextClassifier.value = Classifier_BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
+      _contextClassifier.value = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
     }
 
     // public 
@@ -71,7 +71,7 @@ public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor 
     // default 
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(_contextClassifier.value);
-    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__));
+    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__));
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == null)) {
       return eq_ns8cua_a0a0l0r(contextNodePackage, contextClassifierPackage);
     }
@@ -92,7 +92,7 @@ public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor 
         return Sequence.fromIterable(possibleClassifiers).isNotEmpty();
       } else {
         // 2 
-        SNode leftClassifier = DotExpression_BehaviorDescriptor.getClassifier_idhEwIPI9.invoke(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
+        SNode leftClassifier = DotExpression__BehaviorDescriptor.getClassifier_idhEwIPI9.invoke(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
         final Set<SNode> extendedClassifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), ClassifierScopeUtils.getExtendedClassifiers(leftClassifier));
         return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -108,10 +108,10 @@ public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor 
     // do nothing by default 
   }
   private static Boolean isVisible_id5laDzmpBPv8(@NotNull SNode __thisNode__, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_BehaviorDescriptor.isVisible_id70J2WaK_oVl.invoke(__thisNode__, SNodeOperations.cast(IClassifierType_BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(contextClassifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), contextNode);
+    return ClassifierMember__BehaviorDescriptor.isVisible_id70J2WaK_oVl.invoke(__thisNode__, SNodeOperations.cast(IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(contextClassifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), contextNode);
   }
   private static Boolean isStatic_id6r77ob2USS8(@NotNull SNode __thisNode__) {
-    return ClassifierMember_BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(__thisNode__);
+    return ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(__thisNode__);
   }
   private static Boolean needsEmptyLineBefore_idzB21h1tQit(@NotNull SNode __thisNode__) {
     return false;
@@ -123,7 +123,7 @@ public final class ClassifierMember_BehaviorDescriptor extends BaseBHDescriptor 
     return false;
   }
 
-  /*package*/ ClassifierMember_BehaviorDescriptor() {
+  /*package*/ ClassifierMember__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class XmlValuePart_BehaviorDescriptor extends BaseBHDescriptor {
+public final class XmlValuePart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -39,7 +39,7 @@ public final class XmlValuePart_BehaviorDescriptor extends BaseBHDescriptor {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"))) {
       SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"));
       if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
-        return XmlValuePart_BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
+        return XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
       }
       return false;
     }
@@ -48,7 +48,7 @@ public final class XmlValuePart_BehaviorDescriptor extends BaseBHDescriptor {
   private static Boolean isLastPositionAllowed_id2EZ251g0bSp(@NotNull SNode __thisNode__) {
     SNode right = SNodeOperations.getNextSibling(__thisNode__);
     if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
-      return XmlValuePart_BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
+      return XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
     }
     return true;
   }
@@ -59,7 +59,7 @@ public final class XmlValuePart_BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
 
-  /*package*/ XmlValuePart_BehaviorDescriptor() {
+  /*package*/ XmlValuePart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

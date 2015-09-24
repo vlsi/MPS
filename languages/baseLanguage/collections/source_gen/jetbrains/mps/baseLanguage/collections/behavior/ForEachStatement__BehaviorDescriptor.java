@@ -23,11 +23,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ForEachStatement_BehaviorDescriptor extends BaseBHDescriptor {
+public final class ForEachStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -44,10 +44,10 @@ public final class ForEachStatement_BehaviorDescriptor extends BaseBHDescriptor 
         return Scopes.forVariables(kind, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable")), ScopeUtils.lazyParentScope(__thisNode__, kind));
       }
     }
-    return AbstractLoopStatement_BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
+    return AbstractLoopStatement__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
   }
 
-  /*package*/ ForEachStatement_BehaviorDescriptor() {
+  /*package*/ ForEachStatement__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

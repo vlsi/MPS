@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class AbstractionVarRef_BehaviorDescriptor extends BaseBHDescriptor {
+public final class AbstractionVarRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fe548fL, "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
@@ -26,7 +26,7 @@ public final class AbstractionVarRef_BehaviorDescriptor extends BaseBHDescriptor
   }
 
 
-  /*package*/ AbstractionVarRef_BehaviorDescriptor() {
+  /*package*/ AbstractionVarRef__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
