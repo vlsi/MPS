@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
@@ -8,7 +8,6 @@
   <facets>
     <facet type="tests" />
     <facet type="java" />
-    <facet pluginId="jetbrains.mps.ide.make" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>

@@ -24,17 +24,6 @@
 
   <depends>com.intellij.modules.mps</depends>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.ide.make.actions.Make_PluginInitializer</implementation-class>
-    </component>
-
-  </application-components>
-
-  <project-components>
-    <component><implementation-class>jetbrains.mps.ide.make.actions.TransientModelsNotification</implementation-class></component>
-  </project-components>
-
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

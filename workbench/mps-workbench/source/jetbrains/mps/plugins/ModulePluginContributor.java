@@ -18,7 +18,9 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.ModuleNameUtil;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +29,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Properties;
 
 public class ModulePluginContributor extends PluginContributor {
@@ -97,14 +98,18 @@ public class ModulePluginContributor extends PluginContributor {
     // of another module, the fact we use loadOwnClass later prevents loading it second time.
     // However, shall update fallback solution (try to load from config name, then try to load from fallback name)
     // unless switch to files here
-    URL res = myModule.getClassLoader().getResource("/META-INF/startup.properties");
+    IFile dir = ((AbstractModule) myModule).getModuleSourceDir();
+    if (dir == null) {
+      return null;
+    }
+    IFile cfg = dir.getDescendant("/META-INF/startup.properties");
     // Note, META-INF location won't work for groups of modules distributed as a single plugin, shall come up with better approach
-    if (res == null) {
+    if (!cfg.exists()) {
       return null;
     }
     InputStream is = null;
     try {
-      is = res.openStream();
+      is = cfg.openInputStream();
       Properties rv = new Properties();
       rv.load(is);
       return rv;
