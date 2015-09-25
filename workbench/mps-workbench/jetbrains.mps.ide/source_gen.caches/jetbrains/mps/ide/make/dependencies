@@ -149,7 +149,6 @@
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.make.MakeTask" />
     <classNode dependClassName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />

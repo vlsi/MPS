@@ -5304,67 +5304,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="9D0Ba05vjP" role="3cqZAp">
-          <node concept="22lmx$" id="2BjwmTxVsTS" role="3clFbw">
-            <node concept="3clFbC" id="2BjwmTxVx3U" role="3uHU7w">
-              <node concept="10M0yZ" id="2BjwmTxVxgf" role="3uHU7w">
-                <ref role="1PxDUh" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
-                <ref role="3cqZAo" to="et5u:~IMessageHandler.NULL_HANDLER" resolve="NULL_HANDLER" />
-              </node>
-              <node concept="37vLTw" id="2BjwmTxVwzh" role="3uHU7B">
-                <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
-              </node>
-            </node>
-            <node concept="3clFbC" id="9D0Ba05vk2" role="3uHU7B">
-              <node concept="37vLTw" id="3GM_nagTBPB" role="3uHU7B">
-                <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
-              </node>
-              <node concept="10Nm6u" id="9D0Ba05vk3" role="3uHU7w" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="9D0Ba05vjQ" role="3clFbx">
-            <node concept="3SKdUt" id="2BjwmTxVx__" role="3cqZAp">
-              <node concept="3SKdUq" id="2BjwmTxVx_U" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH." />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7JDtVAB53ZC" role="3cqZAp">
-              <node concept="3SKdUq" id="7JDtVAB547V" role="3SKWNk">
-                <property role="3SKdUp" value="This code is left here in 3.2 for compatibility reasons. Legacy MakeSession constuctors might be still in use" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7JDtVAB54k4" role="3cqZAp">
-              <node concept="3SKdUq" id="7JDtVAB54nd" role="3SKWNk">
-                <property role="3SKdUp" value="along with IMakeService, assuming null for default 'Make' view. After 3.2, once legacy constructors are gone," />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7JDtVAB5PNq" role="3cqZAp">
-              <node concept="3SKdUq" id="7JDtVAB5PNF" role="3SKWNk">
-                <property role="3SKdUp" value="remove this code altogether (rely on notnull for session.getMessageHandler()" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="7JDtVAB54BD" role="3cqZAp">
-              <node concept="37vLTI" id="7JDtVAB54MF" role="3clFbG">
-                <node concept="2ShNRf" id="7JDtVAB54TG" role="37vLTx">
-                  <node concept="1pGfFk" id="7JDtVAB5Nrg" role="2ShVmc">
-                    <ref role="37wK5l" to="drpk:~DefaultMakeMessageHandler.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="DefaultMakeMessageHandler" />
-                    <node concept="2OqwBi" id="7JDtVAB5OOB" role="37wK5m">
-                      <node concept="1rXfSq" id="7JDtVAB5OxE" role="2Oq$k0">
-                        <ref role="37wK5l" node="9D0Ba05vfM" resolve="getSession" />
-                      </node>
-                      <node concept="liA8E" id="7JDtVAB5Pg$" role="2OqNvi">
-                        <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="7JDtVAB54BB" role="37vLTJ">
-                  <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="9D0Ba05vk5" role="3cqZAp">
           <node concept="2OqwBi" id="9D0Ba05vk6" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagT_RG" role="2Oq$k0">
