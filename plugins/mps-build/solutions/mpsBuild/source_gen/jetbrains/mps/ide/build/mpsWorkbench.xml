@@ -422,15 +422,14 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+      <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <chunk>
         <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
-      </chunk>
-      <chunk bootstrap="true">
-        <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/jetbrains.mps.ide.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" />
       </chunk>
       <chunk>
         <module file="${mps_home}/workbench/mps-workbench/pluginSolutions/baseLanguage.lightweightdsl/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.msd" />
+        <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/jetbrains.mps.ide.msd" />
         <module file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core/jetbrains.mps.lang.core.pluginSolution.msd" />
         <module file="${mps_home}/languages/languageDesign/migration/solutions/actions/jetbrains.mps.lang.migration.actions.msd" />
         <module file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/jetbrains.mps.lang.script.pluginSolution.msd" />
@@ -626,6 +625,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+        <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
@@ -684,6 +684,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+        <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
@@ -948,10 +949,12 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/baseLanguage.lightweightdsl/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/migration/solutions/actions/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/source_gen" />
     <delete dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem/source_gen" />
   </target>

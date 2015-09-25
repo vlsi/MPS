@@ -102,7 +102,7 @@ public class ModulePluginContributor extends PluginContributor {
     if (dir == null) {
       return null;
     }
-    IFile cfg = dir.getDescendant("/META-INF/startup.properties");
+    IFile cfg = dir.getDescendant("startup.properties");
     // Note, META-INF location won't work for groups of modules distributed as a single plugin, shall come up with better approach
     if (!cfg.exists()) {
       return null;

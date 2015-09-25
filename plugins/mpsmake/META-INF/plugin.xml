@@ -17,7 +17,7 @@
 <idea-plugin>
   <id>jetbrains.mps.ide.make</id>
   <name>Make</name>
-  <description>Allows to transform models</description>
+  <description>Make IDE Integration</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="139.1" until-build="142.1"/>

@@ -7,7 +7,6 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
@@ -73,6 +72,7 @@
     <import index="xj2j" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.projectplugins(MPS.Workbench/)" />
     <import index="qv9x" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.custom(MPS.Workbench/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="tprt" ref="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
@@ -476,12 +476,6 @@
       <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
       <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
     </language>
-    <language id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings">
-      <concept id="2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" flags="nn" index="1rwKMM">
-        <property id="2722628536111969418" name="constraintsKind" index="1rwKMK" />
-        <child id="2722628536112144966" name="order" index="1rxHDW" />
-      </concept>
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
@@ -560,13 +554,13 @@
     </language>
   </registry>
   <node concept="9BnSX" id="56$$T0PTxjs">
-    <property role="9BnSZ" value="jebrains.mps.ide.make" />
+    <property role="9BnSZ" value="jetbrains.mps.ide.make" />
     <property role="3FCvg6" value="true" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
-    <property role="9BnSL" value="Allows to transform models" />
+    <property role="9BnSL" value="Make IDE Integration" />
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="TrG5h" value="MPS Generation support" />
+    <property role="TrG5h" value="Make" />
     <property role="9BnSO" value="139.1" />
     <property role="9BnSK" value="3.3" />
     <property role="2PJ1tZ" value="true" />
@@ -6159,9 +6153,10 @@
             <node concept="37vLTw" id="2BHiRxeuyVT" role="37wK5m">
               <ref role="3cqZAo" node="HC2C4Pzeod" resolve="myShowPopupBox" />
             </node>
-            <node concept="1rwKMM" id="2U9T7gdkUeR" role="37wK5m">
-              <property role="1rwKMK" value="field" />
-              <node concept="3cmrfG" id="2U9T7gdkUeT" role="1rxHDW">
+            <node concept="2YIFZM" id="4Wx5HgQkDU1" role="37wK5m">
+              <ref role="37wK5l" to="tprt:7tKonudf8V6" resolve="createFieldConstraints" />
+              <ref role="1Pybhc" to="tprt:7tKonudf8V5" resolve="LayoutUtil" />
+              <node concept="3cmrfG" id="4Wx5HgQkEHZ" role="37wK5m">
                 <property role="3cmrfH" value="1" />
               </node>
             </node>
