@@ -19,9 +19,18 @@
   </extensions>
   <actions>
     <action id="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" class="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action"></action>
+    <action id="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" class="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action"></action>
+    <action id="jetbrains.mps.migration.component.plugin.FindDeprecated_Action" class="jetbrains.mps.migration.component.plugin.FindDeprecated_Action"></action>
+    <action id="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" class="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action"></action>
     <group id="jetbrains.mps.migration.component.plugin.MigationAssistantActions_ActionGroup">
       <reference ref="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
       <add-to-group group-id="ToolsMenu" anchor="last" />
+    </group>
+    <group id="jetbrains.mps.migration.component.plugin.Migration_ActionGroup">
+      <reference ref="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" />
+      <reference ref="jetbrains.mps.migration.component.plugin.FindDeprecated_Action" />
+      <reference ref="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
+      <add-to-group group-id="migration" anchor="last" />
     </group>
   </actions>
 </idea-plugin>
