@@ -53,8 +53,8 @@
     <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
   </path>
   
-  <path id="path.java.library.junit-4.11">
-    <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
+  <path id="path.java.library.junit-4.12">
+    <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
   </path>
   
   <path id="path.java.library.tools">
@@ -3470,7 +3470,7 @@
         <library jar="jmock-junit3-2.5.1.jar" />
         <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="objenesis-1.0.jar" />
-        <library jar="/lib/junit-4.11.jar" />
+        <library jar="/lib/junit-4.12.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.libs.msd" />
       </module>
     </echoxml>
@@ -3504,6 +3504,9 @@
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    </copy>
+    <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
+      <fileset file="${mps_home}/lib/junit-4.12.jar" />
     </copy>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
@@ -4401,7 +4404,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
-        <path refid="path.java.library.junit-4.11" />
+        <path refid="path.java.library.junit-4.12" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -9495,7 +9498,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.textGen#1233678176149" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.logging, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.textGen#1233678176149" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.textGen, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
     <mkdir dir="${mps_home}/languages/languageDesign/textGen/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.textGen#1233678176149" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.textGen#1233678176149" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -9527,7 +9530,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
@@ -10434,9 +10436,9 @@
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/objenesis-1.0.jar" />
+        <fileset file="${mps_home}/lib/junit-4.12.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
