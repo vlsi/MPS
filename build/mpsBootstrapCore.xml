@@ -355,39 +355,39 @@
     <jar destfile="${build.layout}/lib/mps-editor-api.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-editor-api" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behavior.runtime.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behavior.runtime.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.behavior.runtime.jar/META-INF/module.xml">
+    <mkdir dir="${build.tmp}/default/mps-behavior-runtime.jar" />
+    <mkdir dir="${build.tmp}/default/mps-behavior-runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-behavior-runtime.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.lang.behavior.runtime" type="solution" uuid="d936855b-48da-4812-a8a0-2bfddd633ac4">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.behavior.runtime-src.jar" descriptor="jetbrains.mps.lang.behavior.runtime.msd" />
+        <sources jar="mps-behavior-runtime-src.jar" descriptor="jetbrains.mps.lang.behavior.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/lib/jetbrains.mps.lang.behavior.runtime.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/lib/mps-behavior-runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-behavior-runtime" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.behavior.runtime.jar" />
+      <fileset dir="${build.tmp}/default/mps-behavior-runtime.jar" />
     </jar>
-    <jar destfile="${build.layout}/lib/jetbrains.mps.lang.behavior.runtime-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/lib/mps-behavior-runtime-src.jar" duplicate="preserve">
       <zipfileset file="${mps_home}/core/aspects/behavior/behavior-runtime/jetbrains.mps.lang.behavior.runtime.msd" prefix="module" />
       <zipfileset dir="${mps_home}/core/aspects/behavior/behavior-runtime" includes="icons/**, resources/**" prefix="module" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behavior.api.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.behavior.api.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.behavior.api.jar/META-INF/module.xml">
+    <mkdir dir="${build.tmp}/default/mps-behavior-api.jar" />
+    <mkdir dir="${build.tmp}/default/mps-behavior-api.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-behavior-api.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.lang.behavior.api" type="solution" uuid="d936855b-48da-4812-a8a0-2bfddd633ac5">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.behavior.api-src.jar" descriptor="jetbrains.mps.lang.behavior.api.msd" />
+        <sources jar="mps-behavior-api-src.jar" descriptor="jetbrains.mps.lang.behavior.api.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/lib/jetbrains.mps.lang.behavior.api.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/lib/mps-behavior-api.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.behavior.api.jar" />
+      <fileset dir="${build.tmp}/default/mps-behavior-api.jar" />
     </jar>
-    <jar destfile="${build.layout}/lib/jetbrains.mps.lang.behavior.api-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/lib/mps-behavior-api-src.jar" duplicate="preserve">
       <zipfileset file="${mps_home}/core/aspects/behavior/behavior-api/jetbrains.mps.lang.behavior.api.msd" prefix="module" />
       <zipfileset dir="${mps_home}/core/aspects/behavior/behavior-api" includes="icons/**, resources/**" prefix="module" />
     </jar>

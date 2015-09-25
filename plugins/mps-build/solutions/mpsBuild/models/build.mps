@@ -320,8 +320,12 @@
         <property id="5253498789149547713" name="reexport" index="3bR36h" />
         <reference id="5253498789149547705" name="module" index="3bR37D" />
       </concept>
+      <concept id="978600701690054692" name="jetbrains.mps.build.mps.structure.GeneratorInternal_String" flags="ng" index="1cIVw3">
+        <property id="978600701690054695" name="path" index="1cIVw0" />
+      </concept>
       <concept id="7655580649838764660" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml" flags="ng" index="1kK7hY">
         <reference id="7655580649838764661" name="module" index="1kK7hZ" />
+        <child id="506537499308757750" name="sourcesJarLocation" index="3SGgvt" />
       </concept>
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
       <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
@@ -2414,7 +2418,7 @@
         <node concept="3981dx" id="36zc_GPwDhf" role="39821P">
           <node concept="3_J27D" id="36zc_GPwDhg" role="Nbhlr">
             <node concept="3Mxwew" id="36zc_GPwDhh" role="3MwsjC">
-              <property role="3MwjfP" value="jetbrains.mps.lang.behavior.runtime.jar" />
+              <property role="3MwjfP" value="mps-behavior-runtime.jar" />
             </node>
           </node>
           <node concept="Saw0i" id="36zc_GPwDhi" role="39821P">
@@ -2428,6 +2432,9 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
+              <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-runtime-src.jar" />
+              </node>
             </node>
           </node>
         </node>
@@ -2444,14 +2451,14 @@
           </node>
           <node concept="3_J27D" id="36zc_GPwDhs" role="Nbhlr">
             <node concept="3Mxwew" id="36zc_GPwDht" role="3MwsjC">
-              <property role="3MwjfP" value="jetbrains.mps.lang.behavior.runtime-src.jar" />
+              <property role="3MwjfP" value="mps-behavior-runtime-src.jar" />
             </node>
           </node>
         </node>
         <node concept="3981dx" id="36zc_GPwFZD" role="39821P">
           <node concept="3_J27D" id="36zc_GPwFZE" role="Nbhlr">
             <node concept="3Mxwew" id="36zc_GPwFZF" role="3MwsjC">
-              <property role="3MwjfP" value="jetbrains.mps.lang.behavior.api.jar" />
+              <property role="3MwjfP" value="mps-behavior-api.jar" />
             </node>
           </node>
           <node concept="Saw0i" id="36zc_GPwFZG" role="39821P">
@@ -2465,6 +2472,9 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
+              <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-api-src.jar" />
+              </node>
             </node>
           </node>
         </node>
@@ -2481,7 +2491,7 @@
           </node>
           <node concept="3_J27D" id="36zc_GPwFZB" role="Nbhlr">
             <node concept="3Mxwew" id="36zc_GPwFZC" role="3MwsjC">
-              <property role="3MwjfP" value="jetbrains.mps.lang.behavior.api-src.jar" />
+              <property role="3MwjfP" value="mps-behavior-api-src.jar" />
             </node>
           </node>
         </node>
