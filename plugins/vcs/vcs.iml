@@ -37,6 +37,6 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="components" />
-    <orderEntry type="module" module-name="gensources" />
+    <orderEntry type="module" module-name="kernel-resources" />
   </component>
 </module>

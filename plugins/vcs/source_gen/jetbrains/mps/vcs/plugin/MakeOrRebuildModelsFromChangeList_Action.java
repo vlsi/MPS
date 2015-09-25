@@ -8,17 +8,28 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.make.actions.MakeActionImpl;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import java.util.ArrayList;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.generator.GenerationFacade;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,16 +46,14 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY)));
-    if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
+    List<SModel> models = MakeOrRebuildModelsFromChangeList_Action.this.getModels2Build(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY), event);
+    if (IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild).actionText();
-    if (text != null) {
-      event.getPresentation().setText(text);
-      return true;
-    }
-    return false;
+    String what = (ListSequence.fromList(models).count() == 1 ? "model " + ListSequence.fromList(models).first().getModelName() : "selected models");
+    String fmt = (MakeOrRebuildModelsFromChangeList_Action.this.rebuild ? "Rebuild %s" : "Make %s");
+    event.getPresentation().setText(String.format(fmt, what));
+    return true;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -71,8 +80,23 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY)));
-    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models).cleanMake(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).executeAction();
+    final MPSProject project = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    List<IResource> resources = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IListSequence<IResource>>() {
+      public IListSequence<IResource> compute() {
+        List<SModel> models = MakeOrRebuildModelsFromChangeList_Action.this.getModels2Build(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY), event);
+        if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
+          return Sequence.fromIterable(new ModelsToResources(models).resources(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).toListSequence();
+        }
+        return ListSequence.fromList(new ArrayList<IResource>());
+      }
+    });
+    if (ListSequence.fromList(resources).isEmpty()) {
+      return;
+    }
+    MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), MakeOrRebuildModelsFromChangeList_Action.this.rebuild);
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      IMakeService.INSTANCE.get().make(session, resources);
+    }
   }
   @NotNull
   public String getActionId() {
@@ -82,5 +106,24 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     res.append(((Object) this.rebuild).toString());
     res.append("!");
     return res.toString();
+  }
+  private List<SModel> getModels2Build(VirtualFile[] virtualFiles, final AnActionEvent event) {
+    if (virtualFiles != null) {
+      return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
+        public boolean accept(VirtualFile vf) {
+          return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
+        }
+      }).select(new ISelector<VirtualFile, SModel>() {
+        public SModel select(VirtualFile vf) {
+          return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf));
+        }
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel m) {
+          return m != null && GenerationFacade.canGenerate(m);
+        }
+      }).toListSequence();
+    } else {
+      return ListSequence.fromList(new ArrayList<SModel>());
+    }
   }
 }

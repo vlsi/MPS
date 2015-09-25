@@ -19896,9 +19896,6 @@
     <node concept="2sgV4H" id="4rWmS7H8AP8" role="1l3spa">
       <ref role="1l3spb" node="5yMuYWFN8P1" resolve="mpsPlugins" />
     </node>
-    <node concept="2sgV4H" id="5rNMDvYzfUO" role="1l3spa">
-      <ref role="1l3spb" node="5rNMDvYzelV" resolve="mpsMakePlugin" />
-    </node>
   </node>
   <node concept="1l3spW" id="7wEVz0c3rKX">
     <property role="TrG5h" value="mpsPluginDist" />
