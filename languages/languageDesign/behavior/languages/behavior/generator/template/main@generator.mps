@@ -3930,12 +3930,12 @@
     <node concept="3UR2Jj" id="4eYijs7k7GY" role="lGtFl">
       <node concept="TZ5HA" id="4eYijs7k7GZ" role="TZ5H$">
         <node concept="1dT_AC" id="4eYijs7k7H0" role="1dT_Ay">
-          <property role="1dT_AB" value="will be removed after 3.3" />
+          <property role="1dT_AB" value="Will be removed after 3.3" />
         </node>
       </node>
       <node concept="TZ5HA" id="4eYijs7k9V2" role="TZ5H$">
         <node concept="1dT_AC" id="4eYijs7k9V3" role="1dT_Ay">
-          <property role="1dT_AB" value="need to support the legacy static direct method calls" />
+          <property role="1dT_AB" value="Need to support the legacy static direct method calls" />
         </node>
       </node>
     </node>
@@ -5324,6 +5324,29 @@
         </node>
       </node>
     </node>
+    <node concept="2AHcQZ" id="s7_iJZFK1B" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="3UR2Jj" id="s7_iJZFT9a" role="lGtFl">
+      <node concept="TZ5HA" id="s7_iJZFZsq" role="TZ5H$">
+        <node concept="1dT_AC" id="s7_iJZFZsr" role="1dT_Ay">
+          <property role="1dT_AB" value="Will be removed after 3.3" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="s7_iJZFZss" role="TZ5H$">
+        <node concept="1dT_AC" id="s7_iJZFZst" role="1dT_Ay">
+          <property role="1dT_AB" value="Need to support compilation of the legacy behavior descriptors before the language is rebuilt" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="s7_iJZGsb9" role="TZ5H$">
+        <node concept="1dT_AC" id="s7_iJZGeDB" role="1dT_Ay">
+          <property role="1dT_AB" value="This class is not involved in the actual method invocation" />
+        </node>
+        <node concept="1dT_AC" id="s7_iJZGsba" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="ZzGQLJ4YSu">
     <property role="TrG5h" value="InterfaceLegacyBehaviorDescriptor" />
@@ -5735,10 +5758,18 @@
         <node concept="1dT_AC" id="21W_mNezvVR" role="1dT_Ay">
           <property role="1dT_AB" value="Will be removed after 3.3" />
         </node>
+        <node concept="1dT_AC" id="s7_iJZGboi" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="s7_iJZGdQP" role="TZ5H$">
+        <node concept="1dT_AC" id="s7_iJZGdQQ" role="1dT_Ay">
+          <property role="1dT_AB" value="Need to support compilation of the legacy behavior descriptors before the language is rebuilt" />
+        </node>
       </node>
       <node concept="TZ5HA" id="21W_mNezvVS" role="TZ5H$">
         <node concept="1dT_AC" id="21W_mNezvVT" role="1dT_Ay">
-          <property role="1dT_AB" value="Need to suppport compilation; this class does not involved in the actual method invocation" />
+          <property role="1dT_AB" value="This interface is not involved in the actual method invocation" />
         </node>
       </node>
     </node>
