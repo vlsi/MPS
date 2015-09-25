@@ -21,13 +21,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myD__BehaviorDescriptor = new D__BehaviorDescriptor();
   private final BHDescriptor myA__BehaviorDescriptor = new A__BehaviorDescriptor();
   private final BHDescriptor myB__BehaviorDescriptor = new B__BehaviorDescriptor();
+  private final BHDescriptor myK__BehaviorDescriptor = new K__BehaviorDescriptor();
   private final BHDescriptor myF__BehaviorDescriptor = new F__BehaviorDescriptor();
   private final BHDescriptor myG__BehaviorDescriptor = new G__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[11];
+    myConceptBehaviorIds = new long[12];
     myConceptBehaviorIds[0] = 0x10b2a2acd713731eL;
     myConceptBehaviorIds[1] = 0x10b2a2acd7137351L;
     myConceptBehaviorIds[2] = 0x3a674fdfabfcc7faL;
@@ -37,8 +38,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[6] = 0x549fa4aa12af52b3L;
     myConceptBehaviorIds[7] = 0x559729dec0466d3cL;
     myConceptBehaviorIds[8] = 0x559729dec0466d3dL;
-    myConceptBehaviorIds[9] = 0x75783c3114f90130L;
-    myConceptBehaviorIds[10] = 0x75783c3114f90190L;
+    myConceptBehaviorIds[9] = 0x66c9579bde227bd6L;
+    myConceptBehaviorIds[10] = 0x75783c3114f90130L;
+    myConceptBehaviorIds[11] = 0x75783c3114f90190L;
   }
 
   @Deprecated
@@ -71,8 +73,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 8:
         return myB__BehaviorDescriptor;
       case 9:
-        return myF__BehaviorDescriptor;
+        return myK__BehaviorDescriptor;
       case 10:
+        return myF__BehaviorDescriptor;
+      case 11:
         return myG__BehaviorDescriptor;
       default:
         return null;

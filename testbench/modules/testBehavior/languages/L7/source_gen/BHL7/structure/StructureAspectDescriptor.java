@@ -23,16 +23,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptI1 = new ConceptDescriptorBuilder("BHL7.structure.I1", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af5261L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptI2 = new ConceptDescriptorBuilder("BHL7.structure.I2", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x549fa4aa12af528cL)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptI3 = new ConceptDescriptorBuilder("BHL7.structure.I3", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd713731eL)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptK = new ConceptDescriptorBuilder("BHL7.structure.K", MetaIdFactory.conceptId(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x66c9579bde227bd6L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH, myConceptI1, myConceptI2, myConceptI3);
+    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH, myConceptI1, myConceptI2, myConceptI3, myConceptK);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0q, conceptFqName)) {
       case 0:
         return myConceptA;
       case 1:
@@ -55,9 +56,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptI2;
       case 10:
         return myConceptI3;
+      case 11:
+        return myConceptK;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"BHL7.structure.A", "BHL7.structure.B", "BHL7.structure.C", "BHL7.structure.D", "BHL7.structure.E", "BHL7.structure.F", "BHL7.structure.G", "BHL7.structure.H", "BHL7.structure.I1", "BHL7.structure.I2", "BHL7.structure.I3"};
+  private static String[] stringSwitchCases_1htk8d_a0a0q = new String[]{"BHL7.structure.A", "BHL7.structure.B", "BHL7.structure.C", "BHL7.structure.D", "BHL7.structure.E", "BHL7.structure.F", "BHL7.structure.G", "BHL7.structure.H", "BHL7.structure.I1", "BHL7.structure.I2", "BHL7.structure.I3", "BHL7.structure.K"};
 }

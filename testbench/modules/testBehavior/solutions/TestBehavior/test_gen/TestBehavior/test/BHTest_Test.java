@@ -24,6 +24,7 @@ import BHL7.behavior.H__BehaviorDescriptor;
 import BHL7.behavior.I2__BehaviorDescriptor;
 import BHL7.behavior.I3__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import BHL7.behavior.K__BehaviorDescriptor;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -269,6 +270,18 @@ public class BHTest_Test extends TestCase {
       }
     });
   }
+  public void test_methodResolving() throws Exception {
+    SNode nodeC = createC_a2wy8c_a0a0qb0();
+    SNode nodeB = createB_a2wy8c_a0b0qb0();
+    SNode nodeA = createA_a2wy8c_a0c0qb0();
+    SNode nodeK = createK_a2wy8c_a0d0qb0();
+    Assert.assertSame(1, K__BehaviorDescriptor.foo_id6r9lTJu8BJM.invoke(nodeK, nodeB));
+    Assert.assertSame(1, K__BehaviorDescriptor.foo_id6r9lTJu8BJM.invoke(nodeK, nodeC));
+    Assert.assertSame(2, K__BehaviorDescriptor.foo_id6r9lTJu8BMG.invoke(nodeK, nodeC));
+    Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeC));
+    Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeB));
+    Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeA));
+  }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     myProject = env.openProject(new File(PROJECT_PATH));
@@ -481,6 +494,26 @@ public class BHTest_Test extends TestCase {
   private static SNode createE_a2wy8c_a0a0ob0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x10b2a2acd7137351L, "BHL7.structure.E"), null, null, false);
+    return n1;
+  }
+  private static SNode createC_a2wy8c_a0a0qb0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x4dcf589c68321a72L, "BHL7.structure.C"), null, null, false);
+    return n1;
+  }
+  private static SNode createB_a2wy8c_a0b0qb0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3dL, "BHL7.structure.B"), null, null, false);
+    return n1;
+  }
+  private static SNode createA_a2wy8c_a0c0qb0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
+    return n1;
+  }
+  private static SNode createK_a2wy8c_a0d0qb0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x66c9579bde227bd6L, "BHL7.structure.K"), null, null, false);
     return n1;
   }
 }

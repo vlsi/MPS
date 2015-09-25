@@ -19,6 +19,7 @@
     <classNode dependClassName="BHL7.behavior.I1__BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.I2__BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.I3__BehaviorDescriptor" />
+    <classNode dependClassName="BHL7.behavior.K__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
