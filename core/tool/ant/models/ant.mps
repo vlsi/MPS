@@ -4312,7 +4312,7 @@
             <property role="Xl_RC" value="diffutils-1.2.1.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqDTqM" role="3g7hyw">
-            <property role="Xl_RC" value="junit-4.11.jar" />
+            <property role="Xl_RC" value="junit-4.12.jar" />
           </node>
           <node concept="17QB3L" id="70B3qCBD4_q" role="3g7fb8" />
         </node>

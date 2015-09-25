@@ -1,3 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ed6lggvwbbjvsx3elqsyyknm4u6u5nj" />
+<dependencies version="2" modelHash="ako01wphcoz3hfxdrxpp0fj8oexz31y">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+  <dep model="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="daup8mt2inym11vjvm9j4szeppithbf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6deuqmq9nipei28k7knwe1behxthsbt" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-31swei63etw3gkz7h9fb4ssyna19jti" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7dzc23b8v3yt2dbvllbgrkmzafqgjpq" />
+  <common hash="29ow00svwmkcuily9mda79e73l63sz7" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="4003657351907886467" name="Arg" hash="-bo0i2fh2bb0pt6bqblxrjw6pobgpg2d">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Arg.java" />
+  </source>
+  <source id="4003657351907889245" name="MyExecuteStreamHandler" hash="-2bk2xbfxww9b9ks7qiqsa3qu7rk847y">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="MyExecuteStreamHandler.java" />
+  </source>
+  <source id="4003657351907889440" name="Macro" hash="-33n2a5eyhfojgl22ng35hq0oy6mg3ap">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Macro.java" />
+  </source>
+  <source id="4003657351907890119" name="JvmArgs" hash="-55klr9vqo8wqm9d39ynqjckzdqfi6hi">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JvmArgs.java" />
+  </source>
+  <source id="4003657351907890310" name="MpsLoadTask" hash="3236rc9tuz2oa7pb211cs69jrhm67ec">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MpsLoadTask.java" />
+  </source>
+  <source id="4003657351907893424" name="LibraryDataType" hash="86a0qoswfk6wnmq7fwbw17hsbhgoqp9">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="LibraryDataType.java" />
+  </source>
+  <source id="3983419922566758952" name="MPSClasspathUtil" hash="-a8yjyd5qfuggggctrj863c3u1rani0e">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <dep model="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="MPSClasspathUtil.java" />
+  </source>
+  <source id="3449270742160220910" name="ExcludeNested" hash="-b2txiz6ysyu8nt3ixcnar79vzja3zhs">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExcludeNested.java" />
+  </source>
+</dependencies>
 
