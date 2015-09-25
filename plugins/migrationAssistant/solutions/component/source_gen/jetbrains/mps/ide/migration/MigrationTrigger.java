@@ -14,7 +14,7 @@ import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;

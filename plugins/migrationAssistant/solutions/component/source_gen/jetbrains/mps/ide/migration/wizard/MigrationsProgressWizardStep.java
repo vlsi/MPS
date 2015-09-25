@@ -32,7 +32,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
