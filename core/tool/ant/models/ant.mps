@@ -4278,10 +4278,10 @@
             <property role="Xl_RC" value="mps-tool.jar" />
           </node>
           <node concept="Xl_RD" id="7$zBrXAvNSZ" role="3g7hyw">
-            <property role="Xl_RC" value="jetbrains.mps.lang.behavior.api.jar" />
+            <property role="Xl_RC" value="mps-behavior-api.jar" />
           </node>
           <node concept="Xl_RD" id="7$zBrXAvOsP" role="3g7hyw">
-            <property role="Xl_RC" value="jetbrains.mps.lang.behavior.runtime.jar" />
+            <property role="Xl_RC" value="mps-behavior-runtime.jar" />
           </node>
           <node concept="17QB3L" id="70B3qCBD4_m" role="3g7fb8" />
         </node>
