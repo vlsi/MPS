@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="mps.jetbrains.mps.lang.behavior">
     <CLASSES>
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/jetbrains.mps.lang.behavior.api.jar!/" />
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/jetbrains.mps.lang.behavior.runtime.jar!/" />
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-behavior-api.jar!/" />
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-behavior-runtime.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
