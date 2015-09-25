@@ -13,8 +13,47 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="BaseClassifierType_BehaviorDescriptor.java">
+      <unit at="9,0,18,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,82,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java">
+      <unit at="10,0,33,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
+    </file>
+    <file name="DefaultClassifierFieldDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="DefaultClassifierMethodCallOperation_BehaviorDescriptor.java">
+      <unit at="10,0,33,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
+    </file>
+    <file name="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java">
+      <unit at="13,0,45,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="DefaultClassifierType_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
+    </file>
+    <file name="DefaultClassifier_BehaviorDescriptor.java">
+      <unit at="10,0,39,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
+    </file>
+    <file name="IClassifierPart_BehaviorDescriptor.java">
+      <unit at="11,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
+    </file>
+    <file name="IClassifier_BehaviorDescriptor.java">
+      <unit at="14,0,22,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
+    </file>
+    <file name="IMemberOperation_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />
+    </file>
+    <file name="IMember_BehaviorDescriptor.java">
+      <unit at="14,0,23,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor" />
+    </file>
+    <file name="SuperClassifierExpresson_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
+    </file>
+    <file name="ThisClassifierExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877255427">
@@ -38,7 +77,7 @@
       </scope>
       <unit id="1213877255427" at="16,0,28,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior" />
     </file>
-    <file name="IClassifierPart_BehaviorDescriptor.java">
+    <file name="IClassifierPart__BehaviorDescriptor.java">
       <node id="1213877255427" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1213877255427" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="1213877255427" at="30,0,31,0" concept="7" trace="getMainClassifier_idhEwIfO4" />
@@ -47,7 +86,7 @@
       <node id="1213877255434" at="38,80,39,48" concept="5" />
       <node id="1213877255451" at="41,206,42,236" concept="1" />
       <node id="1213877255459" at="44,5,45,18" concept="6" />
-      <node id="1213877255427" at="48,52,49,20" concept="9" />
+      <node id="1213877255427" at="48,53,49,20" concept="9" />
       <node id="1213877255427" at="53,108,54,21" concept="1" />
       <node id="1213877255427" at="58,113,59,49" concept="5" />
       <node id="1213877255427" at="60,26,61,56" concept="11" />
@@ -60,7 +99,7 @@
       <node id="1213877255427" at="91,40,92,19" concept="6" />
       <node id="1213877255427" at="35,0,37,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877255445" at="40,67,43,7" concept="3" />
-      <node id="1213877255427" at="48,0,51,0" concept="0" trace="IClassifierPart_BehaviorDescriptor#()V" />
+      <node id="1213877255427" at="48,0,51,0" concept="0" trace="IClassifierPart__BehaviorDescriptor#()V" />
       <node id="1213877255427" at="59,49,62,5" concept="3" />
       <node id="1213877255427" at="73,49,76,5" concept="3" />
       <node id="1213877255427" at="52,0,56,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -74,7 +113,7 @@
       <node id="1213877255427" at="57,0,70,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877255427" at="35,63,35,63" />
       <scope id="1213877255450" at="41,206,42,236" />
-      <scope id="1213877255427" at="48,52,49,20" />
+      <scope id="1213877255427" at="48,53,49,20" />
       <scope id="1213877255427" at="53,108,54,21" />
       <scope id="1213877255427" at="60,26,61,56" />
       <scope id="1213877255427" at="64,13,65,46" />
@@ -120,20 +159,20 @@
         <var name="node" id="1213877255427" />
         <var name="parameters" id="1213877255427" />
       </scope>
-      <unit id="1213877255427" at="26,0,95,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
+      <unit id="1213877255427" at="26,0,95,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877274999">
     <file name="DefaultClassifierType_Behavior.java">
       <unit id="1213877274999" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_Behavior" />
     </file>
-    <file name="DefaultClassifierType_BehaviorDescriptor.java">
+    <file name="DefaultClassifierType__BehaviorDescriptor.java">
       <node id="1213877274999" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="1213877274999" at="26,0,27,0" concept="7" trace="REGISTRY" />
       <node id="1213877274999" at="28,0,29,0" concept="7" trace="getMembers_idhEwINC$" />
       <node id="1213877274999" at="30,0,31,0" concept="7" trace="BH_METHODS" />
-      <node id="1213877275002" at="35,99,36,249" concept="6" />
-      <node id="1213877274999" at="39,58,40,20" concept="9" />
+      <node id="1213877275002" at="35,99,36,250" concept="6" />
+      <node id="1213877274999" at="39,59,40,20" concept="9" />
       <node id="1213877274999" at="44,108,45,21" concept="1" />
       <node id="1213877274999" at="49,113,50,49" concept="5" />
       <node id="1213877274999" at="51,26,52,56" concept="11" />
@@ -146,7 +185,7 @@
       <node id="1213877274999" at="82,40,83,19" concept="6" />
       <node id="1213877274999" at="32,0,34,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877274999" at="35,0,38,0" concept="8" trace="getMembers_idhEwINC$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1213877274999" at="39,0,42,0" concept="0" trace="DefaultClassifierType_BehaviorDescriptor#()V" />
+      <node id="1213877274999" at="39,0,42,0" concept="0" trace="DefaultClassifierType__BehaviorDescriptor#()V" />
       <node id="1213877274999" at="50,49,53,5" concept="3" />
       <node id="1213877274999" at="64,49,67,5" concept="3" />
       <node id="1213877274999" at="43,0,47,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -157,8 +196,8 @@
       <node id="1213877274999" at="62,0,73,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1213877274999" at="48,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877274999" at="32,63,32,63" />
-      <scope id="1213877274999" at="35,99,36,249" />
-      <scope id="1213877274999" at="39,58,40,20" />
+      <scope id="1213877274999" at="35,99,36,250" />
+      <scope id="1213877274999" at="39,59,40,20" />
       <scope id="1213877274999" at="44,108,45,21" />
       <scope id="1213877274999" at="51,26,52,56" />
       <scope id="1213877274999" at="55,13,56,69" />
@@ -198,20 +237,20 @@
         <var name="node" id="1213877274999" />
         <var name="parameters" id="1213877274999" />
       </scope>
-      <unit id="1213877274999" at="24,0,86,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
+      <unit id="1213877274999" at="24,0,86,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877352964">
     <file name="IMember_Behavior.java">
-      <node id="1213877353023" at="15,75,16,305" concept="6" />
+      <node id="1213877353023" at="15,75,16,306" concept="6" />
       <node id="1213877352964" at="15,0,18,0" concept="8" trace="call_getContainer_1213877353020#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877353022" at="15,75,16,305" />
+      <scope id="1213877353022" at="15,75,16,306" />
       <scope id="1213877352964" at="15,0,18,0">
         <var name="__thisNode__" id="1213877352964" />
       </scope>
       <unit id="1213877352964" at="13,0,19,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior" />
     </file>
-    <file name="IMember_BehaviorDescriptor.java">
+    <file name="IMember__BehaviorDescriptor.java">
       <node id="1213877352964" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1213877352964" at="30,0,31,0" concept="7" trace="REGISTRY" />
       <node id="1213877352964" at="32,0,33,0" concept="7" trace="getVisiblity_idhEwIBC5" />
@@ -223,17 +262,17 @@
       <node id="1213877352964" at="38,0,39,0" concept="7" trace="getOperationConcept_id2D1PBM_bxJ5" />
       <node id="1213877352964" at="40,0,41,0" concept="7" trace="BH_METHODS" />
       <node id="1213877352968" at="45,76,46,225" concept="6" />
-      <node id="1213877352975" at="48,83,49,225" concept="5" />
+      <node id="1213877352975" at="48,83,49,226" concept="5" />
       <node id="1213877352986" at="50,41,51,135" concept="11" />
       <node id="1213877352998" at="52,5,53,34" concept="6" />
-      <node id="1213877353003" at="55,79,56,166" concept="5" />
-      <node id="1213877353011" at="56,166,57,173" concept="1" />
+      <node id="1213877353003" at="55,79,56,167" concept="5" />
+      <node id="1213877353011" at="56,167,57,173" concept="1" />
       <node id="1213877353018" at="57,173,58,18" concept="6" />
-      <node id="1213877353023" at="60,76,61,305" concept="6" />
+      <node id="1213877353023" at="60,76,61,306" concept="6" />
       <node id="8179323502814694223" at="63,106,64,16" concept="6" />
       <node id="4593153787954614852" at="66,107,67,16" concept="6" />
       <node id="3044950653914717128" at="69,107,70,57" concept="6" />
-      <node id="1213877352964" at="73,44,74,20" concept="9" />
+      <node id="1213877352964" at="73,45,74,20" concept="9" />
       <node id="1213877352964" at="78,108,79,21" concept="1" />
       <node id="1213877352964" at="83,113,84,49" concept="5" />
       <node id="1213877352964" at="85,26,86,56" concept="11" />
@@ -252,12 +291,12 @@
       <node id="1213877352964" at="128,40,129,19" concept="6" />
       <node id="1213877352964" at="42,0,44,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877352964" at="45,0,48,0" concept="8" trace="getVisiblity_idhEwIBC5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877352984" at="49,225,52,5" concept="3" />
+      <node id="1213877352984" at="49,226,52,5" concept="3" />
       <node id="1213877352964" at="60,0,63,0" concept="8" trace="getContainer_idhEwIBCW#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877352964" at="63,0,66,0" concept="8" trace="canBeReferent_id762MQfghnJQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="1213877352964" at="66,0,69,0" concept="8" trace="canOperationBeChild_id3YYagzpL_8S#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="1213877352964" at="69,0,72,0" concept="8" trace="getOperationConcept_id2D1PBM_bxJ5#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="1213877352964" at="73,0,76,0" concept="0" trace="IMember_BehaviorDescriptor#()V" />
+      <node id="1213877352964" at="73,0,76,0" concept="0" trace="IMember__BehaviorDescriptor#()V" />
       <node id="1213877352964" at="84,49,87,5" concept="3" />
       <node id="1213877352964" at="108,49,111,5" concept="3" />
       <node id="1213877352964" at="77,0,81,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -272,11 +311,11 @@
       <scope id="1213877352964" at="42,63,42,63" />
       <scope id="1213877352964" at="45,76,46,225" />
       <scope id="1213877352985" at="50,41,51,135" />
-      <scope id="1213877352964" at="60,76,61,305" />
+      <scope id="1213877352964" at="60,76,61,306" />
       <scope id="1213877352964" at="63,106,64,16" />
       <scope id="1213877352964" at="66,107,67,16" />
       <scope id="1213877352964" at="69,107,70,57" />
-      <scope id="1213877352964" at="73,44,74,20" />
+      <scope id="1213877352964" at="73,45,74,20" />
       <scope id="1213877352964" at="78,108,79,21" />
       <scope id="1213877352964" at="85,26,86,56" />
       <scope id="1213877352964" at="89,13,90,48" />
@@ -347,19 +386,19 @@
         <var name="node" id="1213877352964" />
         <var name="parameters" id="1213877352964" />
       </scope>
-      <unit id="1213877352964" at="28,0,132,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor" />
+      <unit id="1213877352964" at="28,0,132,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877402147">
     <file name="BaseClassifierType_Behavior.java">
       <unit id="1213877402147" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior" />
     </file>
-    <file name="BaseClassifierType_BehaviorDescriptor.java">
+    <file name="BaseClassifierType__BehaviorDescriptor.java">
       <node id="1213877402147" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1213877402147" at="25,0,26,0" concept="7" trace="REGISTRY" />
       <node id="1213877402147" at="27,0,28,0" concept="7" trace="getMembers_idhEwINC$" />
       <node id="1213877402147" at="29,0,30,0" concept="7" trace="BH_METHODS" />
-      <node id="1213877402147" at="35,55,36,20" concept="9" />
+      <node id="1213877402147" at="35,56,36,20" concept="9" />
       <node id="1213877402147" at="40,108,41,21" concept="1" />
       <node id="1213877402147" at="45,113,46,49" concept="5" />
       <node id="1213877402147" at="47,26,48,56" concept="11" />
@@ -370,7 +409,7 @@
       <node id="1213877402147" at="70,48,71,22" concept="6" />
       <node id="1213877402147" at="76,40,77,19" concept="6" />
       <node id="1213877402147" at="31,0,33,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877402147" at="35,0,38,0" concept="0" trace="BaseClassifierType_BehaviorDescriptor#()V" />
+      <node id="1213877402147" at="35,0,38,0" concept="0" trace="BaseClassifierType__BehaviorDescriptor#()V" />
       <node id="1213877402147" at="46,49,49,5" concept="3" />
       <node id="1213877402147" at="58,49,61,5" concept="3" />
       <node id="1213877402147" at="39,0,43,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -381,7 +420,7 @@
       <node id="1213877402147" at="44,0,55,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1213877402147" at="56,0,67,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877402147" at="31,63,31,63" />
-      <scope id="1213877402147" at="35,55,36,20" />
+      <scope id="1213877402147" at="35,56,36,20" />
       <scope id="1213877402147" at="40,108,41,21" />
       <scope id="1213877402147" at="47,26,48,56" />
       <scope id="1213877402147" at="51,14,52,58" />
@@ -416,18 +455,18 @@
         <var name="method" id="1213877402147" />
         <var name="parameters" id="1213877402147" />
       </scope>
-      <unit id="1213877402147" at="23,0,80,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
+      <unit id="1213877402147" at="23,0,80,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877428704">
     <file name="IMemberOperation_Behavior.java">
       <unit id="1213877428704" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_Behavior" />
     </file>
-    <file name="IMemberOperation_BehaviorDescriptor.java">
+    <file name="IMemberOperation__BehaviorDescriptor.java">
       <node id="1213877428704" at="19,0,20,0" concept="7" trace="CONCEPT" />
       <node id="1213877428704" at="20,0,21,0" concept="7" trace="REGISTRY" />
       <node id="1213877428704" at="23,0,24,0" concept="7" trace="BH_METHODS" />
-      <node id="1213877428704" at="29,53,30,20" concept="9" />
+      <node id="1213877428704" at="29,54,30,20" concept="9" />
       <node id="1213877428704" at="34,108,35,21" concept="1" />
       <node id="1213877428704" at="39,113,40,49" concept="5" />
       <node id="1213877428704" at="41,26,42,56" concept="11" />
@@ -438,7 +477,7 @@
       <node id="1213877428704" at="64,48,65,22" concept="6" />
       <node id="1213877428704" at="70,40,71,19" concept="6" />
       <node id="1213877428704" at="25,0,27,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877428704" at="29,0,32,0" concept="0" trace="IMemberOperation_BehaviorDescriptor#()V" />
+      <node id="1213877428704" at="29,0,32,0" concept="0" trace="IMemberOperation__BehaviorDescriptor#()V" />
       <node id="1213877428704" at="40,49,43,5" concept="3" />
       <node id="1213877428704" at="52,49,55,5" concept="3" />
       <node id="1213877428704" at="33,0,37,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -449,7 +488,7 @@
       <node id="1213877428704" at="38,0,49,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1213877428704" at="50,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877428704" at="25,63,25,63" />
-      <scope id="1213877428704" at="29,53,30,20" />
+      <scope id="1213877428704" at="29,54,30,20" />
       <scope id="1213877428704" at="34,108,35,21" />
       <scope id="1213877428704" at="41,26,42,56" />
       <scope id="1213877428704" at="45,14,46,58" />
@@ -484,14 +523,14 @@
         <var name="method" id="1213877428704" />
         <var name="parameters" id="1213877428704" />
       </scope>
-      <unit id="1213877428704" at="18,0,74,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />
+      <unit id="1213877428704" at="18,0,74,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877480555">
     <file name="DefaultClassifierMethodDeclaration_Behavior.java">
       <unit id="1213877480555" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_Behavior" />
     </file>
-    <file name="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java">
+    <file name="DefaultClassifierMethodDeclaration__BehaviorDescriptor.java">
       <node id="1213877480555" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1213877480555" at="30,0,31,0" concept="7" trace="REGISTRY" />
       <node id="1213877480555" at="32,0,33,0" concept="7" trace="getVisiblity_idhEwIBC5" />
@@ -501,11 +540,11 @@
       <node id="1213877480555" at="37,0,38,0" concept="7" trace="BH_METHODS" />
       <node id="1213877480558" at="42,76,43,178" concept="6" />
       <node id="1233077655320" at="45,80,46,16" concept="6" />
-      <node id="8884554759541375753" at="48,84,49,92" concept="6" />
-      <node id="3044950653914726529" at="51,107,52,117" concept="5" />
-      <node id="3044950653914726544" at="52,117,53,179" concept="1" />
+      <node id="8884554759541375753" at="48,84,49,93" concept="6" />
+      <node id="3044950653914726529" at="51,107,52,118" concept="5" />
+      <node id="3044950653914726544" at="52,118,53,179" concept="1" />
       <node id="3044950653914726548" at="53,179,54,18" concept="6" />
-      <node id="1213877480555" at="57,71,58,20" concept="9" />
+      <node id="1213877480555" at="57,72,58,20" concept="9" />
       <node id="1213877480555" at="62,108,63,21" concept="1" />
       <node id="1213877480555" at="67,113,68,49" concept="5" />
       <node id="1213877480555" at="69,26,70,56" concept="11" />
@@ -523,7 +562,7 @@
       <node id="1213877480555" at="42,0,45,0" concept="8" trace="getVisiblity_idhEwIBC5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877480555" at="45,0,48,0" concept="8" trace="canBeAnnotated_idhWp4PwP#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="1213877480555" at="48,0,51,0" concept="8" trace="getAdditionalIcon_id4mxbjAOAE$e#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
-      <node id="1213877480555" at="57,0,60,0" concept="0" trace="DefaultClassifierMethodDeclaration_BehaviorDescriptor#()V" />
+      <node id="1213877480555" at="57,0,60,0" concept="0" trace="DefaultClassifierMethodDeclaration__BehaviorDescriptor#()V" />
       <node id="1213877480555" at="68,49,71,5" concept="3" />
       <node id="1213877480555" at="86,49,89,5" concept="3" />
       <node id="1213877480555" at="61,0,65,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -537,8 +576,8 @@
       <scope id="1213877480555" at="39,63,39,63" />
       <scope id="1213877480555" at="42,76,43,178" />
       <scope id="1213877480555" at="45,80,46,16" />
-      <scope id="1213877480555" at="48,84,49,92" />
-      <scope id="1213877480555" at="57,71,58,20" />
+      <scope id="1213877480555" at="48,84,49,93" />
+      <scope id="1213877480555" at="57,72,58,20" />
       <scope id="1213877480555" at="62,108,63,21" />
       <scope id="1213877480555" at="69,26,70,56" />
       <scope id="1213877480555" at="73,13,74,48" />
@@ -592,13 +631,13 @@
         <var name="node" id="1213877480555" />
         <var name="parameters" id="1213877480555" />
       </scope>
-      <unit id="1213877480555" at="28,0,110,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
+      <unit id="1213877480555" at="28,0,110,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877512818">
     <file name="ThisClassifierExpression_Behavior.java">
       <node id="1218740027719" at="20,183,21,178" concept="6" />
-      <node id="1213877512822" at="22,5,23,305" concept="6" />
+      <node id="1213877512822" at="22,5,23,306" concept="6" />
       <node id="1219068414646" at="25,91,26,48" concept="5" />
       <node id="1219068549216" at="27,266,28,56" concept="1" />
       <node id="1219068414681" at="29,5,30,18" concept="6" />
@@ -611,7 +650,7 @@
       <scope id="1219068414652" at="26,48,29,5">
         <var name="current" id="1219068414653" />
       </scope>
-      <scope id="1213877512821" at="19,76,23,305" />
+      <scope id="1213877512821" at="19,76,23,306" />
       <scope id="1219068414645" at="25,91,30,18">
         <var name="result" id="1219068414647" />
       </scope>
@@ -623,18 +662,18 @@
       </scope>
       <unit id="1213877512818" at="17,0,33,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
     </file>
-    <file name="ThisClassifierExpression_BehaviorDescriptor.java">
+    <file name="ThisClassifierExpression__BehaviorDescriptor.java">
       <node id="1213877512818" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="1213877512818" at="29,0,30,0" concept="7" trace="REGISTRY" />
       <node id="1213877512818" at="31,0,32,0" concept="7" trace="getClassifier_idhEwJeDN" />
       <node id="1213877512818" at="32,0,33,0" concept="7" trace="getPossibleClassifiers_idhJm8WEN" />
       <node id="1213877512818" at="34,0,35,0" concept="7" trace="BH_METHODS" />
       <node id="1218740027719" at="40,183,41,178" concept="6" />
-      <node id="1213877512822" at="42,5,43,305" concept="6" />
+      <node id="1213877512822" at="42,5,43,306" concept="6" />
       <node id="1219068414646" at="45,92,46,48" concept="5" />
       <node id="1219068549216" at="47,266,48,56" concept="1" />
       <node id="1219068414681" at="49,5,50,18" concept="6" />
-      <node id="1213877512818" at="53,61,54,20" concept="9" />
+      <node id="1213877512818" at="53,62,54,20" concept="9" />
       <node id="1213877512818" at="58,108,59,21" concept="1" />
       <node id="1213877512818" at="63,113,64,49" concept="5" />
       <node id="1213877512818" at="65,26,66,56" concept="11" />
@@ -649,7 +688,7 @@
       <node id="1213877512818" at="36,0,38,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1218739994704" at="39,77,42,5" concept="3" />
       <node id="1219068414652" at="46,48,49,5" concept="2" />
-      <node id="1213877512818" at="53,0,56,0" concept="0" trace="ThisClassifierExpression_BehaviorDescriptor#()V" />
+      <node id="1213877512818" at="53,0,56,0" concept="0" trace="ThisClassifierExpression__BehaviorDescriptor#()V" />
       <node id="1213877512818" at="64,49,67,5" concept="3" />
       <node id="1213877512818" at="80,49,83,5" concept="3" />
       <node id="1213877512818" at="57,0,61,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -664,7 +703,7 @@
       <scope id="1213877512818" at="36,63,36,63" />
       <scope id="1218739994705" at="40,183,41,178" />
       <scope id="1219068414659" at="47,266,48,56" />
-      <scope id="1213877512818" at="53,61,54,20" />
+      <scope id="1213877512818" at="53,62,54,20" />
       <scope id="1213877512818" at="58,108,59,21" />
       <scope id="1213877512818" at="65,26,66,56" />
       <scope id="1213877512818" at="69,13,70,49" />
@@ -681,7 +720,7 @@
         <var name="current" id="1219068414653" />
       </scope>
       <scope id="1213877512818" at="53,0,56,0" />
-      <scope id="1213877512818" at="39,77,43,305" />
+      <scope id="1213877512818" at="39,77,43,306" />
       <scope id="1213877512818" at="57,0,61,0">
         <var name="array" id="1213877512818" />
         <var name="constructor" id="1213877512818" />
@@ -714,18 +753,18 @@
         <var name="node" id="1213877512818" />
         <var name="parameters" id="1213877512818" />
       </scope>
-      <unit id="1213877512818" at="27,0,102,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_BehaviorDescriptor" />
+      <unit id="1213877512818" at="27,0,102,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877527939">
     <file name="IClassifier_Behavior.java">
       <node id="1213877527943" at="16,116,17,243" concept="5" />
       <node id="1213877527954" at="18,29,19,24" concept="6" />
-      <node id="1213877527959" at="20,5,21,306" concept="6" />
+      <node id="1213877527959" at="20,5,21,307" concept="6" />
       <node id="1213877527952" at="17,243,20,5" concept="3" />
       <node id="1213877527939" at="16,0,23,0" concept="8" trace="call_getContextClassifier_1213877527940#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877527953" at="18,29,19,24" />
-      <scope id="1213877527942" at="16,116,21,306">
+      <scope id="1213877527942" at="16,116,21,307">
         <var name="classifier" id="1213877527944" />
       </scope>
       <scope id="1213877527939" at="16,0,23,0">
@@ -734,7 +773,7 @@
       </scope>
       <unit id="1213877527939" at="14,0,24,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
     </file>
-    <file name="IClassifier_BehaviorDescriptor.java">
+    <file name="IClassifier__BehaviorDescriptor.java">
       <node id="1213877527939" at="33,0,34,0" concept="7" trace="CONCEPT" />
       <node id="1213877527939" at="34,0,35,0" concept="7" trace="REGISTRY" />
       <node id="1213877527939" at="36,0,37,0" concept="7" trace="createType_idhEwJimy" />
@@ -750,18 +789,18 @@
       <node id="1213877527986" at="51,177,52,18" concept="6" />
       <node id="1217433727145" at="54,79,55,16" concept="6" />
       <node id="1213877527991" at="57,78,58,48" concept="5" />
-      <node id="1213877528001" at="60,104,61,55" concept="1" />
+      <node id="1213877528001" at="60,105,61,55" concept="1" />
       <node id="1213877528018" at="63,5,64,18" concept="6" />
       <node id="1213877528023" at="66,99,67,48" concept="5" />
-      <node id="1213877528033" at="69,162,70,57" concept="1" />
-      <node id="1213877528053" at="72,253,73,57" concept="1" />
-      <node id="1213877528066" at="75,618,76,57" concept="1" />
-      <node id="1213877528086" at="78,256,79,327" concept="5" />
-      <node id="1213877528093" at="80,254,81,59" concept="1" />
+      <node id="1213877528033" at="69,163,70,57" concept="1" />
+      <node id="1213877528053" at="72,254,73,57" concept="1" />
+      <node id="1213877528066" at="75,621,76,57" concept="1" />
+      <node id="1213877528086" at="78,257,79,328" concept="5" />
+      <node id="1213877528093" at="80,256,81,59" concept="1" />
       <node id="1213877528120" at="84,5,85,18" concept="6" />
       <node id="1213877528127" at="87,80,88,48" concept="5" />
       <node id="1213877528137" at="90,206,91,236" concept="1" />
-      <node id="1213877528154" at="94,95,95,141" concept="1" />
+      <node id="1213877528154" at="94,96,95,142" concept="1" />
       <node id="1213877528166" at="96,5,97,18" concept="6" />
       <node id="1221661952304" at="102,38,103,259" concept="6" />
       <node id="1221662025359" at="106,87,107,267" concept="5" />
@@ -773,8 +812,8 @@
       <node id="1221661897769" at="112,174,113,22" concept="6" />
       <node id="1213877527943" at="117,117,118,243" concept="5" />
       <node id="1213877527954" at="119,29,120,24" concept="6" />
-      <node id="1213877527959" at="121,5,122,306" concept="6" />
-      <node id="1213877527939" at="125,48,126,20" concept="9" />
+      <node id="1213877527959" at="121,5,122,307" concept="6" />
+      <node id="1213877527939" at="125,49,126,20" concept="9" />
       <node id="1213877527939" at="130,108,131,21" concept="1" />
       <node id="1213877527939" at="135,113,136,49" concept="5" />
       <node id="1213877527939" at="137,26,138,56" concept="11" />
@@ -794,14 +833,14 @@
       <node id="1213877527939" at="46,0,48,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877527939" at="54,0,57,0" concept="8" trace="createSuperType_idhHOGPWW#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877527999" at="59,253,62,7" concept="3" />
-      <node id="1213877528031" at="68,99,71,7" concept="3" />
+      <node id="1213877528031" at="68,100,71,7" concept="3" />
       <node id="1213877528051" at="71,7,74,7" concept="3" />
       <node id="1213877528064" at="74,7,77,7" concept="3" />
-      <node id="1213877528091" at="79,327,82,9" concept="3" />
+      <node id="1213877528091" at="79,328,82,9" concept="3" />
       <node id="1213877528135" at="89,67,92,7" concept="3" />
       <node id="1213877528152" at="93,5,96,5" concept="2" />
       <node id="1213877527952" at="118,243,121,5" concept="3" />
-      <node id="1213877527939" at="125,0,128,0" concept="0" trace="IClassifier_BehaviorDescriptor#()V" />
+      <node id="1213877527939" at="125,0,128,0" concept="0" trace="IClassifier__BehaviorDescriptor#()V" />
       <node id="1213877527939" at="136,49,139,5" concept="3" />
       <node id="1213877527939" at="160,49,163,5" concept="3" />
       <node id="1221661952194" at="101,0,105,0" concept="4" trace="createNewMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -826,16 +865,16 @@
       <node id="1213877527939" at="134,0,157,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877527939" at="46,63,46,63" />
       <scope id="1213877527939" at="54,79,55,16" />
-      <scope id="1213877528000" at="60,104,61,55" />
-      <scope id="1213877528032" at="69,162,70,57" />
-      <scope id="1213877528052" at="72,253,73,57" />
-      <scope id="1213877528065" at="75,618,76,57" />
-      <scope id="1213877528092" at="80,254,81,59" />
+      <scope id="1213877528000" at="60,105,61,55" />
+      <scope id="1213877528032" at="69,163,70,57" />
+      <scope id="1213877528052" at="72,254,73,57" />
+      <scope id="1213877528065" at="75,621,76,57" />
+      <scope id="1213877528092" at="80,256,81,59" />
       <scope id="1213877528136" at="90,206,91,236" />
-      <scope id="1213877528153" at="94,95,95,141" />
+      <scope id="1213877528153" at="94,96,95,142" />
       <scope id="1221661952202" at="102,38,103,259" />
       <scope id="1213877527953" at="119,29,120,24" />
-      <scope id="1213877527939" at="125,48,126,20" />
+      <scope id="1213877527939" at="125,49,126,20" />
       <scope id="1213877527939" at="130,108,131,21" />
       <scope id="1213877527939" at="137,26,138,56" />
       <scope id="1213877527939" at="141,13,142,46" />
@@ -865,7 +904,7 @@
         <var name="part" id="1213877528164" />
       </scope>
       <scope id="1213877527939" at="125,0,128,0" />
-      <scope id="1213877528085" at="78,256,82,9">
+      <scope id="1213877528085" at="78,257,82,9">
         <var name="contextClassifier" id="1213877528087" />
       </scope>
       <scope id="1221661952194" at="101,0,105,0" />
@@ -883,7 +922,7 @@
       <scope id="1213877528133" at="88,48,93,5">
         <var name="child" id="1213877528150" />
       </scope>
-      <scope id="1213877527939" at="117,117,122,306">
+      <scope id="1213877527939" at="117,117,122,307">
         <var name="classifier" id="1213877527944" />
       </scope>
       <scope id="1213877527939" at="172,0,177,0" />
@@ -920,7 +959,7 @@
         <var name="method" id="1213877527939" />
         <var name="parameters" id="1213877527939" />
       </scope>
-      <scope id="1213877528030" at="68,99,83,7" />
+      <scope id="1213877528030" at="68,100,83,7" />
       <scope id="1213877527939" at="99,158,115,6" />
       <scope id="1213877528029" at="67,48,84,5">
         <var name="member" id="1213877528118" />
@@ -944,25 +983,25 @@
         <var name="node" id="1213877527939" />
         <var name="parameters" id="1213877527939" />
       </scope>
-      <unit id="1221661952191" at="100,15,115,5" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor$1" />
-      <unit id="1213877527939" at="32,0,184,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
+      <unit id="1221661952191" at="100,15,115,5" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor$1" />
+      <unit id="1213877527939" at="32,0,184,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1214047465024">
     <file name="DefaultClassifierFieldDeclaration_Behavior.java">
       <unit id="1214047465024" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_Behavior" />
     </file>
-    <file name="DefaultClassifierFieldDeclaration_BehaviorDescriptor.java">
+    <file name="DefaultClassifierFieldDeclaration__BehaviorDescriptor.java">
       <node id="1214047465024" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1214047465024" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="1214047465024" at="30,0,31,0" concept="7" trace="getVisiblity_idhEwIBC5" />
       <node id="1214047465024" at="31,0,32,0" concept="7" trace="getOperationConcept_id2D1PBM_bxJ5" />
       <node id="1214047465024" at="33,0,34,0" concept="7" trace="BH_METHODS" />
       <node id="1214047523550" at="38,76,39,178" concept="6" />
-      <node id="3044950653914725039" at="41,107,42,117" concept="5" />
-      <node id="3044950653914725054" at="42,117,43,179" concept="1" />
+      <node id="3044950653914725039" at="41,107,42,118" concept="5" />
+      <node id="3044950653914725054" at="42,118,43,179" concept="1" />
       <node id="3044950653914725058" at="43,179,44,18" concept="6" />
-      <node id="1214047465024" at="47,70,48,20" concept="9" />
+      <node id="1214047465024" at="47,71,48,20" concept="9" />
       <node id="1214047465024" at="52,108,53,21" concept="1" />
       <node id="1214047465024" at="57,113,58,49" concept="5" />
       <node id="1214047465024" at="59,26,60,56" concept="11" />
@@ -976,7 +1015,7 @@
       <node id="1214047465024" at="92,40,93,19" concept="6" />
       <node id="1214047465024" at="35,0,37,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1214047465024" at="38,0,41,0" concept="8" trace="getVisiblity_idhEwIBC5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1214047465024" at="47,0,50,0" concept="0" trace="DefaultClassifierFieldDeclaration_BehaviorDescriptor#()V" />
+      <node id="1214047465024" at="47,0,50,0" concept="0" trace="DefaultClassifierFieldDeclaration__BehaviorDescriptor#()V" />
       <node id="1214047465024" at="58,49,61,5" concept="3" />
       <node id="1214047465024" at="72,49,75,5" concept="3" />
       <node id="1214047465024" at="51,0,55,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -989,7 +1028,7 @@
       <node id="1214047465024" at="70,0,83,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1214047465024" at="35,63,35,63" />
       <scope id="1214047465024" at="38,76,39,178" />
-      <scope id="1214047465024" at="47,70,48,20" />
+      <scope id="1214047465024" at="47,71,48,20" />
       <scope id="1214047465024" at="52,108,53,21" />
       <scope id="1214047465024" at="59,26,60,56" />
       <scope id="1214047465024" at="63,13,64,48" />
@@ -1035,26 +1074,26 @@
         <var name="method" id="1214047465024" />
         <var name="parameters" id="1214047465024" />
       </scope>
-      <unit id="1214047465024" at="26,0,96,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
+      <unit id="1214047465024" at="26,0,96,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1217434042657">
     <file name="SuperClassifierExpresson_Behavior.java">
-      <node id="1217434044390" at="15,76,16,305" concept="6" />
+      <node id="1217434044390" at="15,76,16,306" concept="6" />
       <node id="1217434042657" at="15,0,18,0" concept="8" trace="call_getClassifier_1217434044387#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1217434044389" at="15,76,16,305" />
+      <scope id="1217434044389" at="15,76,16,306" />
       <scope id="1217434042657" at="15,0,18,0">
         <var name="__thisNode__" id="1217434042657" />
       </scope>
       <unit id="1217434042657" at="13,0,19,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
     </file>
-    <file name="SuperClassifierExpresson_BehaviorDescriptor.java">
+    <file name="SuperClassifierExpresson__BehaviorDescriptor.java">
       <node id="1217434042657" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="1217434042657" at="26,0,27,0" concept="7" trace="REGISTRY" />
       <node id="1217434042657" at="28,0,29,0" concept="7" trace="getClassifier_idhHOIkvz" />
       <node id="1217434042657" at="30,0,31,0" concept="7" trace="BH_METHODS" />
-      <node id="1217434044390" at="35,77,36,305" concept="6" />
-      <node id="1217434042657" at="39,61,40,20" concept="9" />
+      <node id="1217434044390" at="35,77,36,306" concept="6" />
+      <node id="1217434042657" at="39,62,40,20" concept="9" />
       <node id="1217434042657" at="44,108,45,21" concept="1" />
       <node id="1217434042657" at="49,113,50,49" concept="5" />
       <node id="1217434042657" at="51,26,52,56" concept="11" />
@@ -1067,7 +1106,7 @@
       <node id="1217434042657" at="82,40,83,19" concept="6" />
       <node id="1217434042657" at="32,0,34,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1217434042657" at="35,0,38,0" concept="8" trace="getClassifier_idhHOIkvz#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1217434042657" at="39,0,42,0" concept="0" trace="SuperClassifierExpresson_BehaviorDescriptor#()V" />
+      <node id="1217434042657" at="39,0,42,0" concept="0" trace="SuperClassifierExpresson__BehaviorDescriptor#()V" />
       <node id="1217434042657" at="50,49,53,5" concept="3" />
       <node id="1217434042657" at="64,49,67,5" concept="3" />
       <node id="1217434042657" at="43,0,47,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1078,8 +1117,8 @@
       <node id="1217434042657" at="62,0,73,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1217434042657" at="48,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1217434042657" at="32,63,32,63" />
-      <scope id="1217434042657" at="35,77,36,305" />
-      <scope id="1217434042657" at="39,61,40,20" />
+      <scope id="1217434042657" at="35,77,36,306" />
+      <scope id="1217434042657" at="39,62,40,20" />
       <scope id="1217434042657" at="44,108,45,21" />
       <scope id="1217434042657" at="51,26,52,56" />
       <scope id="1217434042657" at="55,13,56,49" />
@@ -1118,20 +1157,20 @@
         <var name="node" id="1217434042657" />
         <var name="parameters" id="1217434042657" />
       </scope>
-      <unit id="1217434042657" at="24,0,86,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
+      <unit id="1217434042657" at="24,0,86,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1262430001741642949">
     <file name="DefaultClassifierFieldAccessOperation_Behavior.java">
       <unit id="1262430001741642949" at="10,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_Behavior" />
     </file>
-    <file name="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java">
+    <file name="DefaultClassifierFieldAccessOperation__BehaviorDescriptor.java">
       <node id="1262430001741642949" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741642949" at="25,0,26,0" concept="7" trace="REGISTRY" />
       <node id="1262430001741642949" at="27,0,28,0" concept="7" trace="lvalue_id1653mnvAgvW" />
       <node id="1262430001741642949" at="29,0,30,0" concept="7" trace="BH_METHODS" />
       <node id="1262430001741642947" at="34,90,35,16" concept="6" />
-      <node id="1262430001741642949" at="38,74,39,20" concept="9" />
+      <node id="1262430001741642949" at="38,75,39,20" concept="9" />
       <node id="1262430001741642949" at="43,108,44,21" concept="1" />
       <node id="1262430001741642949" at="48,113,49,49" concept="5" />
       <node id="1262430001741642949" at="50,26,51,56" concept="11" />
@@ -1144,7 +1183,7 @@
       <node id="1262430001741642949" at="81,40,82,19" concept="6" />
       <node id="1262430001741642949" at="31,0,33,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741642949" at="34,0,37,0" concept="8" trace="lvalue_id1653mnvAgvW#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
-      <node id="1262430001741642949" at="38,0,41,0" concept="0" trace="DefaultClassifierFieldAccessOperation_BehaviorDescriptor#()V" />
+      <node id="1262430001741642949" at="38,0,41,0" concept="0" trace="DefaultClassifierFieldAccessOperation__BehaviorDescriptor#()V" />
       <node id="1262430001741642949" at="49,49,52,5" concept="3" />
       <node id="1262430001741642949" at="61,49,64,5" concept="3" />
       <node id="1262430001741642949" at="42,0,46,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1156,7 +1195,7 @@
       <node id="1262430001741642949" at="59,0,72,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1262430001741642949" at="31,63,31,63" />
       <scope id="1262430001741642949" at="34,90,35,16" />
-      <scope id="1262430001741642949" at="38,74,39,20" />
+      <scope id="1262430001741642949" at="38,75,39,20" />
       <scope id="1262430001741642949" at="43,108,44,21" />
       <scope id="1262430001741642949" at="50,26,51,56" />
       <scope id="1262430001741642949" at="54,14,55,58" />
@@ -1195,7 +1234,7 @@
         <var name="method" id="1262430001741642949" />
         <var name="parameters" id="1262430001741642949" />
       </scope>
-      <unit id="1262430001741642949" at="23,0,85,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
+      <unit id="1262430001741642949" at="23,0,85,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

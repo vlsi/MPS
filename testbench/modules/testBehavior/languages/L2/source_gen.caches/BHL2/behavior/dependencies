@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="BHL2.behavior.A_Behavior" file="A_Behavior.java">
-    <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
+    <classNode dependClassName="BHL2.behavior.A__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="BHL2.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL2.behavior.A__BehaviorDescriptor" file="A__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -32,6 +40,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL2.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL2.behavior.B__BehaviorDescriptor" file="B__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -54,8 +70,8 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL2.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="BHL2.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL2.behavior.B_BehaviorDescriptor" />
+    <classNode dependClassName="BHL2.behavior.A__BehaviorDescriptor" />
+    <classNode dependClassName="BHL2.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

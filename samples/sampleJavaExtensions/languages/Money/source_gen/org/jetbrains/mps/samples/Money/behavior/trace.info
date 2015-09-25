@@ -15,6 +15,36 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,58,0" name="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="ConvertTo_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="org.jetbrains.mps.samples.Money.behavior.ConvertTo_BehaviorDescriptor" />
+    </file>
+    <file name="CurrencyDefTable_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.Money.behavior.CurrencyDefTable_BehaviorDescriptor" />
+    </file>
+    <file name="CurrencyUnit_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="org.jetbrains.mps.samples.Money.behavior.CurrencyUnit_BehaviorDescriptor" />
+    </file>
+    <file name="CurrentStockPrice_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_BehaviorDescriptor" />
+    </file>
+    <file name="GetAmount_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="org.jetbrains.mps.samples.Money.behavior.GetAmount_BehaviorDescriptor" />
+    </file>
+    <file name="GetCurrency_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="org.jetbrains.mps.samples.Money.behavior.GetCurrency_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyLiteral_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyType_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" />
+    </file>
+    <file name="MovingAverage_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage_BehaviorDescriptor" />
+    </file>
+    <file name="StockSymbol_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958233292670">
     <file name="CurrentStockPrice_Behavior.java">
@@ -35,7 +65,7 @@
       </scope>
       <unit id="4001135958233292670" at="17,0,30,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_Behavior" />
     </file>
-    <file name="CurrentStockPrice_BehaviorDescriptor.java">
+    <file name="CurrentStockPrice__BehaviorDescriptor.java">
       <node id="4001135958233292670" at="29,0,30,0" concept="6" trace="CONCEPT" />
       <node id="4001135958233292670" at="30,0,31,0" concept="6" trace="REGISTRY" />
       <node id="4001135958233292670" at="32,0,33,0" concept="6" trace="getCurrentPrice_id3u6SZi0yq4L" />
@@ -44,7 +74,7 @@
       <node id="4001135958235466134" at="42,5,43,407" concept="4" />
       <node id="4001135958235466708" at="44,31,45,47" concept="5" />
       <node id="4001135958234902808" at="46,5,47,24" concept="5" />
-      <node id="4001135958233292670" at="50,54,51,20" concept="8" />
+      <node id="4001135958233292670" at="50,55,51,20" concept="8" />
       <node id="4001135958233292670" at="55,108,56,21" concept="1" />
       <node id="4001135958233292670" at="60,113,61,49" concept="4" />
       <node id="4001135958233292670" at="62,26,63,56" concept="10" />
@@ -58,7 +88,7 @@
       <node id="4001135958233292670" at="36,0,38,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4001135958235475504" at="39,83,42,5" concept="2" />
       <node id="4001135958235466385" at="43,407,46,5" concept="2" />
-      <node id="4001135958233292670" at="50,0,53,0" concept="0" trace="CurrentStockPrice_BehaviorDescriptor#()V" />
+      <node id="4001135958233292670" at="50,0,53,0" concept="0" trace="CurrentStockPrice__BehaviorDescriptor#()V" />
       <node id="4001135958233292670" at="61,49,64,5" concept="2" />
       <node id="4001135958233292670" at="75,49,78,5" concept="2" />
       <node id="4001135958233292670" at="54,0,58,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -72,7 +102,7 @@
       <scope id="4001135958233292670" at="36,63,36,63" />
       <scope id="4001135958235475507" at="40,193,41,47" />
       <scope id="4001135958235466388" at="44,31,45,47" />
-      <scope id="4001135958233292670" at="50,54,51,20" />
+      <scope id="4001135958233292670" at="50,55,51,20" />
       <scope id="4001135958233292670" at="55,108,56,21" />
       <scope id="4001135958233292670" at="62,26,63,56" />
       <scope id="4001135958233292670" at="66,13,67,55" />
@@ -114,7 +144,7 @@
         <var name="node" id="4001135958233292670" />
         <var name="parameters" id="4001135958233292670" />
       </scope>
-      <unit id="4001135958233292670" at="28,0,97,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_BehaviorDescriptor" />
+      <unit id="4001135958233292670" at="28,0,97,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235787086">
@@ -131,14 +161,14 @@
       </scope>
       <unit id="4001135958235787086" at="12,0,21,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol_Behavior" />
     </file>
-    <file name="StockSymbol_BehaviorDescriptor.java">
+    <file name="StockSymbol__BehaviorDescriptor.java">
       <node id="4001135958235787086" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4001135958235787086" at="26,0,27,0" concept="6" trace="REGISTRY" />
       <node id="4001135958235787086" at="28,0,29,0" concept="6" trace="isValidSymbol_id3u6SZi0FV5q" />
       <node id="4001135958235787086" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="4001135958235787616" at="36,51,37,19" concept="5" />
       <node id="4001135958235787621" at="38,5,39,73" concept="5" />
-      <node id="4001135958235787086" at="42,48,43,20" concept="8" />
+      <node id="4001135958235787086" at="42,49,43,20" concept="8" />
       <node id="4001135958235787086" at="47,108,48,21" concept="1" />
       <node id="4001135958235787086" at="52,113,53,49" concept="4" />
       <node id="4001135958235787086" at="54,26,55,56" concept="10" />
@@ -151,7 +181,7 @@
       <node id="4001135958235787086" at="85,40,86,19" concept="5" />
       <node id="4001135958235787086" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4001135958235787614" at="35,98,38,5" concept="2" />
-      <node id="4001135958235787086" at="42,0,45,0" concept="0" trace="StockSymbol_BehaviorDescriptor#()V" />
+      <node id="4001135958235787086" at="42,0,45,0" concept="0" trace="StockSymbol__BehaviorDescriptor#()V" />
       <node id="4001135958235787086" at="53,49,56,5" concept="2" />
       <node id="4001135958235787086" at="67,49,70,5" concept="2" />
       <node id="4001135958235787086" at="46,0,50,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -164,7 +194,7 @@
       <node id="4001135958235787086" at="51,0,64,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4001135958235787086" at="32,63,32,63" />
       <scope id="4001135958235787615" at="36,51,37,19" />
-      <scope id="4001135958235787086" at="42,48,43,20" />
+      <scope id="4001135958235787086" at="42,49,43,20" />
       <scope id="4001135958235787086" at="47,108,48,21" />
       <scope id="4001135958235787086" at="54,26,55,56" />
       <scope id="4001135958235787086" at="58,13,59,77" />
@@ -205,7 +235,7 @@
         <var name="node" id="4001135958235787086" />
         <var name="parameters" id="4001135958235787086" />
       </scope>
-      <unit id="4001135958235787086" at="24,0,89,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol_BehaviorDescriptor" />
+      <unit id="4001135958235787086" at="24,0,89,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235925005">
@@ -218,13 +248,13 @@
       </scope>
       <unit id="4001135958235925005" at="12,0,18,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage_Behavior" />
     </file>
-    <file name="MovingAverage_BehaviorDescriptor.java">
+    <file name="MovingAverage__BehaviorDescriptor.java">
       <node id="4001135958235925005" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4001135958235925005" at="26,0,27,0" concept="6" trace="REGISTRY" />
       <node id="4001135958235925005" at="28,0,29,0" concept="6" trace="calculate_id3u6SZi0GsCg" />
       <node id="4001135958235925005" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="4001135958236072964" at="35,92,36,16" concept="5" />
-      <node id="4001135958235925005" at="39,50,40,20" concept="8" />
+      <node id="4001135958235925005" at="39,51,40,20" concept="8" />
       <node id="4001135958235925005" at="44,108,45,21" concept="1" />
       <node id="4001135958235925005" at="49,113,50,49" concept="4" />
       <node id="4001135958235925005" at="51,26,52,56" concept="10" />
@@ -237,7 +267,7 @@
       <node id="4001135958235925005" at="82,40,83,19" concept="5" />
       <node id="4001135958235925005" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4001135958235925005" at="35,0,38,0" concept="7" trace="calculate_id3u6SZi0GsCg#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="4001135958235925005" at="39,0,42,0" concept="0" trace="MovingAverage_BehaviorDescriptor#()V" />
+      <node id="4001135958235925005" at="39,0,42,0" concept="0" trace="MovingAverage__BehaviorDescriptor#()V" />
       <node id="4001135958235925005" at="50,49,53,5" concept="2" />
       <node id="4001135958235925005" at="64,49,67,5" concept="2" />
       <node id="4001135958235925005" at="43,0,47,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -249,7 +279,7 @@
       <node id="4001135958235925005" at="48,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4001135958235925005" at="32,63,32,63" />
       <scope id="4001135958235925005" at="35,92,36,16" />
-      <scope id="4001135958235925005" at="39,50,40,20" />
+      <scope id="4001135958235925005" at="39,51,40,20" />
       <scope id="4001135958235925005" at="44,108,45,21" />
       <scope id="4001135958235925005" at="51,26,52,56" />
       <scope id="4001135958235925005" at="55,13,56,49" />
@@ -288,20 +318,20 @@
         <var name="node" id="4001135958235925005" />
         <var name="parameters" id="4001135958235925005" />
       </scope>
-      <unit id="4001135958235925005" at="24,0,86,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage_BehaviorDescriptor" />
+      <unit id="4001135958235925005" at="24,0,86,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/6451560055131607330">
     <file name="MoneyType_Behavior.java">
       <unit id="6451560055131607330" at="10,0,13,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType_Behavior" />
     </file>
-    <file name="MoneyType_BehaviorDescriptor.java">
+    <file name="MoneyType__BehaviorDescriptor.java">
       <node id="6451560055131607330" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="6451560055131607330" at="27,0,28,0" concept="6" trace="REGISTRY" />
       <node id="6451560055131607330" at="29,0,30,0" concept="6" trace="getVariableSuffixes_idhEwIzNo" />
       <node id="6451560055131607330" at="31,0,32,0" concept="6" trace="BH_METHODS" />
       <node id="6451560055131612334" at="36,90,37,105" concept="5" />
-      <node id="6451560055131607330" at="40,46,41,20" concept="8" />
+      <node id="6451560055131607330" at="40,47,41,20" concept="8" />
       <node id="6451560055131607330" at="45,108,46,21" concept="1" />
       <node id="6451560055131607330" at="50,113,51,49" concept="4" />
       <node id="6451560055131607330" at="52,26,53,56" concept="10" />
@@ -314,7 +344,7 @@
       <node id="6451560055131607330" at="83,40,84,19" concept="5" />
       <node id="6451560055131607330" at="33,0,35,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6451560055131607330" at="36,0,39,0" concept="7" trace="getVariableSuffixes_idhEwIzNo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="6451560055131607330" at="40,0,43,0" concept="0" trace="MoneyType_BehaviorDescriptor#()V" />
+      <node id="6451560055131607330" at="40,0,43,0" concept="0" trace="MoneyType__BehaviorDescriptor#()V" />
       <node id="6451560055131607330" at="51,49,54,5" concept="2" />
       <node id="6451560055131607330" at="65,49,68,5" concept="2" />
       <node id="6451560055131607330" at="44,0,48,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -326,7 +356,7 @@
       <node id="6451560055131607330" at="49,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6451560055131607330" at="33,63,33,63" />
       <scope id="6451560055131607330" at="36,90,37,105" />
-      <scope id="6451560055131607330" at="40,46,41,20" />
+      <scope id="6451560055131607330" at="40,47,41,20" />
       <scope id="6451560055131607330" at="45,108,46,21" />
       <scope id="6451560055131607330" at="52,26,53,56" />
       <scope id="6451560055131607330" at="56,13,57,55" />
@@ -365,7 +395,7 @@
         <var name="node" id="6451560055131607330" />
         <var name="parameters" id="6451560055131607330" />
       </scope>
-      <unit id="6451560055131607330" at="25,0,87,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" />
+      <unit id="6451560055131607330" at="25,0,87,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/6451560055131620545">
@@ -404,14 +434,14 @@
       </scope>
       <unit id="6451560055131620545" at="15,0,39,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_Behavior" />
     </file>
-    <file name="MoneyLiteral_BehaviorDescriptor.java">
+    <file name="MoneyLiteral__BehaviorDescriptor.java">
       <node id="6451560055131620545" at="30,0,31,0" concept="6" trace="CONCEPT" />
       <node id="6451560055131620545" at="31,0,32,0" concept="6" trace="REGISTRY" />
       <node id="6451560055131620545" at="33,0,34,0" concept="6" trace="getVariableExpectedName_idhEwJgm_" />
       <node id="6451560055131620545" at="34,0,35,0" concept="6" trace="convertAmountAdvanced_idx3u75dl$Hd" />
       <node id="6451560055131620545" at="36,0,37,0" concept="6" trace="BH_METHODS" />
-      <node id="6451560055131621046" at="41,88,42,278" concept="4" />
-      <node id="6451560055131621105" at="42,278,43,390" concept="1" />
+      <node id="6451560055131621046" at="41,88,42,279" concept="4" />
+      <node id="6451560055131621105" at="42,279,43,390" concept="1" />
       <node id="6451560055131621117" at="43,390,44,16" concept="5" />
       <node id="595452003767176058" at="46,107,47,245" concept="4" />
       <node id="595452003767176169" at="47,245,48,275" concept="4" />
@@ -424,7 +454,7 @@
       <node id="595452003767179677" at="60,20,61,83" concept="1" />
       <node id="595452003767176401" at="62,7,63,18" concept="5" />
       <node id="595452003767176406" at="64,5,65,25" concept="5" />
-      <node id="6451560055131620545" at="68,49,69,20" concept="8" />
+      <node id="6451560055131620545" at="68,50,69,20" concept="8" />
       <node id="6451560055131620545" at="73,108,74,21" concept="1" />
       <node id="6451560055131620545" at="78,113,79,49" concept="4" />
       <node id="6451560055131620545" at="80,26,81,56" concept="10" />
@@ -440,7 +470,7 @@
       <node id="595452003767176296" at="50,16,53,5" concept="2" />
       <node id="595452003767176322" at="53,5,56,5" concept="2" />
       <node id="595452003767178553" at="59,67,62,7" concept="2" />
-      <node id="6451560055131620545" at="68,0,71,0" concept="0" trace="MoneyLiteral_BehaviorDescriptor#()V" />
+      <node id="6451560055131620545" at="68,0,71,0" concept="0" trace="MoneyLiteral__BehaviorDescriptor#()V" />
       <node id="6451560055131620545" at="79,49,82,5" concept="2" />
       <node id="6451560055131620545" at="95,49,98,5" concept="2" />
       <node id="6451560055131620545" at="72,0,76,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -457,7 +487,7 @@
       <scope id="595452003767176297" at="51,37,52,62" />
       <scope id="595452003767176323" at="54,37,55,63" />
       <scope id="595452003767178555" at="60,20,61,83" />
-      <scope id="6451560055131620545" at="68,49,69,20" />
+      <scope id="6451560055131620545" at="68,50,69,20" />
       <scope id="6451560055131620545" at="73,108,74,21" />
       <scope id="6451560055131620545" at="80,26,81,56" />
       <scope id="6451560055131620545" at="84,13,85,59" />
@@ -513,7 +543,7 @@
         <var name="__thisNode__" id="6451560055131620545" />
         <var name="amount" id="595452003767176055" />
       </scope>
-      <unit id="6451560055131620545" at="29,0,117,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" />
+      <unit id="6451560055131620545" at="29,0,117,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

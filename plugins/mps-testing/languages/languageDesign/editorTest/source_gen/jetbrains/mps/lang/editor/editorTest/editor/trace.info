@@ -561,13 +561,13 @@
       <node id="3447504547918701881" at="27,54,28,56" concept="2" />
       <node id="1231693361386" at="30,75,31,61" concept="6" />
       <node id="1231694405061" at="31,61,32,39" concept="2" />
-      <node id="4510086454784748857" at="32,39,33,513" concept="2" />
+      <node id="4510086454784748857" at="32,39,33,514" concept="2" />
       <node id="3447504547918701881" at="37,0,38,0" concept="3" trace="myNode" />
       <node id="3447504547918701881" at="38,65,39,25" concept="2" />
       <node id="3447504547918701881" at="41,54,42,56" concept="2" />
       <node id="1231693361386" at="44,75,45,61" concept="6" />
       <node id="1231694405061" at="45,61,46,39" concept="2" />
-      <node id="4510086454784748857" at="46,39,47,513" concept="2" />
+      <node id="4510086454784748857" at="46,39,47,514" concept="2" />
       <node id="3447504547918701881" at="24,0,27,0" concept="1" trace="SimplePropertyAttributeActions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3447504547918701881" at="27,0,30,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3447504547918701881" at="38,0,41,0" concept="1" trace="SimplePropertyAttributeActions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -586,7 +586,7 @@
       <scope id="3447504547918701881" at="27,0,30,0">
         <var name="editorContext" id="3447504547918701881" />
       </scope>
-      <scope id="3447504547918702510" at="30,75,33,513">
+      <scope id="3447504547918702510" at="30,75,33,514">
         <var name="attributedNode" id="1231693361387" />
       </scope>
       <scope id="3447504547918701881" at="38,0,41,0">
@@ -595,7 +595,7 @@
       <scope id="3447504547918701881" at="41,0,44,0">
         <var name="editorContext" id="3447504547918701881" />
       </scope>
-      <scope id="3447504547918702510" at="44,75,47,513">
+      <scope id="3447504547918702510" at="44,75,47,514">
         <var name="attributedNode" id="1231693361387" />
       </scope>
       <scope id="3447504547918701881" at="18,0,22,0">

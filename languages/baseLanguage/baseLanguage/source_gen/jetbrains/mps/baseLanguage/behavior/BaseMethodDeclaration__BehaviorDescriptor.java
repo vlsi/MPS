@@ -219,7 +219,7 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
     return true;
   }
   private static Boolean hasSameSignature_idhEwIB0z(@NotNull SNode __thisNode__, SNode checked) {
-    if (neq_o0xmos_a0a0cc(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(checked, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+    if (neq_mtsu90_a0a0cc(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(checked, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
@@ -512,7 +512,7 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
     }
     return quotedNode_3;
   }
-  private static boolean neq_o0xmos_a0a0cc(Object a, Object b) {
+  private static boolean neq_mtsu90_a0a0cc(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

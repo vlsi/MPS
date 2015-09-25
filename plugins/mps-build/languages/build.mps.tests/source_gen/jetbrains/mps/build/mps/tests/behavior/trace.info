@@ -19,31 +19,46 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,58,0" name="jetbrains.mps.build.mps.tests.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="BuildModuleTestsPlugin_BehaviorDescriptor.java">
+      <unit at="11,0,24,0" name="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_TestModule_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_TestModules_BehaviorDescriptor.java">
+      <unit at="14,0,33,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_TestModules_Content_BehaviorDescriptor.java">
+      <unit at="9,0,21,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4005526075820610553">
     <file name="BuildModuleTestsPlugin_Behavior.java">
       <unit id="4005526075820610553" at="10,0,13,0" name="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_Behavior" />
     </file>
-    <file name="BuildModuleTestsPlugin_BehaviorDescriptor.java">
+    <file name="BuildModuleTestsPlugin__BehaviorDescriptor.java">
       <node id="4005526075820610553" at="35,0,36,0" concept="10" trace="CONCEPT" />
       <node id="4005526075820610553" at="36,0,37,0" concept="10" trace="REGISTRY" />
       <node id="4005526075820610553" at="38,0,39,0" concept="10" trace="getImportedLibraries_id3zFnP6MwWdL" />
       <node id="4005526075820610553" at="39,0,40,0" concept="10" trace="fetchDependencies_id57YmpYyL8F1" />
       <node id="4005526075820610553" at="41,0,42,0" concept="10" trace="BH_METHODS" />
-      <node id="4005526075820618775" at="46,98,47,98" concept="2" />
-      <node id="4101476690147448925" at="47,98,48,244" concept="7" />
+      <node id="4005526075820618775" at="46,98,47,99" concept="2" />
+      <node id="4101476690147448925" at="47,99,48,244" concept="7" />
       <node id="3340252814672915881" at="50,149,51,43" concept="6" />
       <node id="5905179409467643456" at="51,43,52,0" concept="9" />
       <node id="5905179409467643432" at="52,0,53,25" concept="8" />
       <node id="3643570831019325717" at="53,25,54,91" concept="6" />
       <node id="3340252814673116988" at="54,91,55,259" concept="6" />
-      <node id="3340252814672948083" at="55,259,56,496" concept="6" />
+      <node id="3340252814672948083" at="55,259,56,497" concept="6" />
       <node id="3340252814672948204" at="57,34,58,227" concept="6" />
       <node id="185990153992839338" at="59,33,60,50" concept="8" />
       <node id="3340252814672948224" at="60,50,61,89" concept="2" />
       <node id="185990153992650037" at="61,89,62,55" concept="2" />
       <node id="3340252814672948284" at="62,55,63,47" concept="2" />
-      <node id="4005526075820610553" at="68,59,69,20" concept="12" />
+      <node id="4005526075820610553" at="68,60,69,20" concept="12" />
       <node id="4005526075820610553" at="73,108,74,21" concept="2" />
       <node id="4005526075820610553" at="78,113,79,49" concept="6" />
       <node id="4005526075820610553" at="80,26,81,56" concept="14" />
@@ -62,7 +77,7 @@
       <node id="4101476690143383739" at="119,240,120,462" concept="2" />
       <node id="4101476690143383739" at="120,462,121,14" concept="7" />
       <node id="4005526075820610553" at="43,0,45,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4005526075820610553" at="68,0,71,0" concept="1" trace="BuildModuleTestsPlugin_BehaviorDescriptor#()V" />
+      <node id="4005526075820610553" at="68,0,71,0" concept="1" trace="BuildModuleTestsPlugin__BehaviorDescriptor#()V" />
       <node id="4005526075820610553" at="79,49,82,5" concept="4" />
       <node id="4005526075820610553" at="96,49,99,5" concept="4" />
       <node id="4005526075820610553" at="46,0,50,0" concept="11" trace="getImportedLibraries_id3zFnP6MwWdL#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
@@ -72,13 +87,13 @@
       <node id="4005526075820610553" at="112,0,117,0" concept="5" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="3340252814673125821" at="58,227,64,7" concept="4" />
       <node id="4101476690143383739" at="117,0,123,0" concept="11" trace="createBwfTaskLibraryDependency_s7wj2j_a0a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3340252814672948097" at="56,496,65,5" concept="4" />
+      <node id="3340252814672948097" at="56,497,65,5" concept="4" />
       <node id="4005526075820610553" at="82,5,91,5" concept="13" />
       <node id="4005526075820610553" at="94,0,105,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="4005526075820610553" at="77,0,93,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="4005526075820610553" at="50,0,67,0" concept="11" trace="fetchDependencies_id57YmpYyL8F1#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
       <scope id="4005526075820610553" at="43,63,43,63" />
-      <scope id="4005526075820610553" at="68,59,69,20" />
+      <scope id="4005526075820610553" at="68,60,69,20" />
       <scope id="4005526075820610553" at="73,108,74,21" />
       <scope id="4005526075820610553" at="80,26,81,56" />
       <scope id="4005526075820610553" at="84,13,85,60" />
@@ -140,16 +155,16 @@
         <var name="artifacts" id="4005526075820636122" />
         <var name="builder" id="4005526075820636124" />
       </scope>
-      <unit id="4005526075820610553" at="34,0,124,0" name="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_BehaviorDescriptor" />
+      <unit id="4005526075820610553" at="34,0,124,0" name="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4560297596904469364">
     <file name="BuildMpsLayout_TestModules_Behavior.java">
-      <node id="4560297596904469376" at="19,39,20,111" concept="7" />
+      <node id="4560297596904469376" at="19,39,20,112" concept="7" />
       <node id="4560297596904469374" at="19,0,22,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4560297596904469369" at="17,100,22,15" concept="7" />
       <node id="4560297596904469364" at="17,0,24,0" concept="11" trace="call_hasModule_4560297596904469365#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="4560297596904469375" at="19,39,20,111" />
+      <scope id="4560297596904469375" at="19,39,20,112" />
       <scope id="4560297596904469374" at="19,0,22,0">
         <var name="it" id="4560297596904469374" />
       </scope>
@@ -161,14 +176,14 @@
       <unit id="4560297596904469374" at="18,224,22,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Behavior$1" />
       <unit id="4560297596904469364" at="15,0,25,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Behavior" />
     </file>
-    <file name="BuildMpsLayout_TestModules_BehaviorDescriptor.java">
+    <file name="BuildMpsLayout_TestModules__BehaviorDescriptor.java">
       <node id="4560297596904469364" at="39,0,40,0" concept="10" trace="CONCEPT" />
       <node id="4560297596904469364" at="40,0,41,0" concept="10" trace="REGISTRY" />
       <node id="4560297596904469364" at="42,0,43,0" concept="10" trace="hasModule_id3X9rC2XzJdP" />
       <node id="4560297596904469364" at="43,0,44,0" concept="10" trace="fetchDependencies_id57YmpYyL8F1" />
       <node id="4560297596904469364" at="44,0,45,0" concept="10" trace="getScope_id3fifI_xCJOQ" />
       <node id="4560297596904469364" at="46,0,47,0" concept="10" trace="BH_METHODS" />
-      <node id="4560297596904469376" at="53,39,54,111" concept="7" />
+      <node id="4560297596904469376" at="53,39,54,112" concept="7" />
       <node id="4560297596904469398" at="58,149,59,43" concept="6" />
       <node id="5959944170642870348" at="59,43,60,64" concept="6" />
       <node id="4560297596904469404" at="60,64,61,0" concept="9" />
@@ -176,14 +191,14 @@
       <node id="4560297596904469407" at="62,30,63,49" concept="8" />
       <node id="4560297596904469409" at="63,49,64,69" concept="8" />
       <node id="3944198881082691993" at="64,69,65,67" concept="6" />
-      <node id="3944198881082731004" at="67,50,68,105" concept="7" />
+      <node id="3944198881082731004" at="67,50,68,106" concept="7" />
       <node id="4560297596904469430" at="71,73,72,27" concept="6" />
       <node id="2887318893669674604" at="73,105,74,220" concept="2" />
       <node id="2887318893669703556" at="75,14,76,246" concept="2" />
       <node id="4560297596904469440" at="78,35,79,44" concept="2" />
       <node id="5959944170642851837" at="81,5,82,0" concept="9" />
       <node id="2887318893670203435" at="82,0,83,21" concept="8" />
-      <node id="2887318893670203351" at="85,50,86,105" concept="7" />
+      <node id="2887318893670203351" at="85,50,86,106" concept="7" />
       <node id="2887318893670203439" at="88,7,89,189" concept="6" />
       <node id="2887318893670203471" at="90,52,91,21" concept="6" />
       <node id="2887318893670203465" at="91,21,92,79" concept="6" />
@@ -193,9 +208,9 @@
       <node id="2887318893670416205" at="97,209,98,551" concept="2" />
       <node id="2887318893670416218" at="99,31,100,260" concept="2" />
       <node id="4005526075819064092" at="106,447,107,232" concept="6" />
-      <node id="4005526075819084483" at="108,28,109,105" concept="7" />
+      <node id="4005526075819084483" at="108,28,109,106" concept="7" />
       <node id="4005526075819043812" at="111,5,112,16" concept="7" />
-      <node id="4560297596904469364" at="115,63,116,20" concept="12" />
+      <node id="4560297596904469364" at="115,64,116,20" concept="12" />
       <node id="4560297596904469364" at="120,108,121,21" concept="2" />
       <node id="4560297596904469364" at="125,113,126,49" concept="6" />
       <node id="4560297596904469364" at="127,26,128,56" concept="14" />
@@ -217,7 +232,7 @@
       <node id="2887318893670203363" at="85,0,88,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="2887318893670416216" at="98,551,101,9" concept="4" />
       <node id="4005526075819065940" at="107,232,110,7" concept="4" />
-      <node id="4560297596904469364" at="115,0,118,0" concept="1" trace="BuildMpsLayout_TestModules_BehaviorDescriptor#()V" />
+      <node id="4560297596904469364" at="115,0,118,0" concept="1" trace="BuildMpsLayout_TestModules__BehaviorDescriptor#()V" />
       <node id="4560297596904469364" at="126,49,129,5" concept="4" />
       <node id="4560297596904469364" at="145,49,148,5" concept="4" />
       <node id="4560297596904469364" at="119,0,123,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -239,16 +254,16 @@
       <node id="4560297596904469364" at="124,0,142,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="4560297596904469364" at="58,0,105,0" concept="11" trace="fetchDependencies_id57YmpYyL8F1#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
       <scope id="4560297596904469364" at="48,63,48,63" />
-      <scope id="4560297596904469375" at="53,39,54,111" />
-      <scope id="3944198881082731003" at="67,50,68,105" />
+      <scope id="4560297596904469375" at="53,39,54,112" />
+      <scope id="3944198881082731003" at="67,50,68,106" />
       <scope id="2887318893669589978" at="73,105,74,220" />
       <scope id="2887318893669699119" at="75,14,76,246" />
       <scope id="4560297596904469439" at="78,35,79,44" />
-      <scope id="2887318893670203353" at="85,50,86,105" />
+      <scope id="2887318893670203353" at="85,50,86,106" />
       <scope id="2887318893670203411" at="95,29,96,258" />
       <scope id="2887318893670416217" at="99,31,100,260" />
-      <scope id="4005526075819065942" at="108,28,109,105" />
-      <scope id="4560297596904469364" at="115,63,116,20" />
+      <scope id="4005526075819065942" at="108,28,109,106" />
+      <scope id="4560297596904469364" at="115,64,116,20" />
       <scope id="4560297596904469364" at="120,108,121,21" />
       <scope id="4560297596904469364" at="127,26,128,56" />
       <scope id="4560297596904469364" at="131,13,132,72" />
@@ -336,24 +351,24 @@
         <var name="artifacts" id="4560297596904469392" />
         <var name="builder" id="4560297596904469394" />
       </scope>
-      <unit id="4560297596904469374" at="52,224,56,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor$1" />
-      <unit id="3944198881082731002" at="66,255,70,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor$2" />
-      <unit id="2887318893670203363" at="84,251,88,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor$3" />
-      <unit id="4560297596904469364" at="38,0,167,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor" />
+      <unit id="4560297596904469374" at="52,224,56,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$1" />
+      <unit id="3944198881082731002" at="66,255,70,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$2" />
+      <unit id="2887318893670203363" at="84,251,88,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$3" />
+      <unit id="4560297596904469364" at="38,0,167,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4560297596904469639">
     <file name="BuildMpsLayout_TestModules_Content_Behavior.java">
       <unit id="4560297596904469639" at="10,0,13,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_Behavior" />
     </file>
-    <file name="BuildMpsLayout_TestModules_Content_BehaviorDescriptor.java">
+    <file name="BuildMpsLayout_TestModules_Content__BehaviorDescriptor.java">
       <node id="4560297596904469639" at="25,0,26,0" concept="10" trace="CONCEPT" />
       <node id="4560297596904469639" at="26,0,27,0" concept="10" trace="REGISTRY" />
       <node id="4560297596904469639" at="28,0,29,0" concept="10" trace="contains_id3X9rC2XzJi8" />
       <node id="4560297596904469639" at="29,0,30,0" concept="10" trace="getModules_id3X9rC2XzJij" />
       <node id="4560297596904469639" at="31,0,32,0" concept="10" trace="BH_METHODS" />
-      <node id="4560297596904469644" at="36,92,37,151" concept="7" />
-      <node id="4560297596904469639" at="40,71,41,20" concept="12" />
+      <node id="4560297596904469644" at="36,92,37,152" concept="7" />
+      <node id="4560297596904469639" at="40,72,41,20" concept="12" />
       <node id="4560297596904469639" at="45,108,46,21" concept="2" />
       <node id="4560297596904469639" at="50,113,51,49" concept="6" />
       <node id="4560297596904469639" at="52,26,53,56" concept="14" />
@@ -366,7 +381,7 @@
       <node id="4560297596904469639" at="83,40,84,19" concept="7" />
       <node id="4560297596904469639" at="33,0,35,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4560297596904469639" at="36,0,39,0" concept="11" trace="contains_id3X9rC2XzJi8#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-      <node id="4560297596904469639" at="40,0,43,0" concept="1" trace="BuildMpsLayout_TestModules_Content_BehaviorDescriptor#()V" />
+      <node id="4560297596904469639" at="40,0,43,0" concept="1" trace="BuildMpsLayout_TestModules_Content__BehaviorDescriptor#()V" />
       <node id="4560297596904469639" at="51,49,54,5" concept="4" />
       <node id="4560297596904469639" at="65,49,68,5" concept="4" />
       <node id="4560297596904469639" at="44,0,48,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -377,8 +392,8 @@
       <node id="4560297596904469639" at="63,0,74,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="4560297596904469639" at="49,0,62,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4560297596904469639" at="33,63,33,63" />
-      <scope id="4560297596904469639" at="36,92,37,151" />
-      <scope id="4560297596904469639" at="40,71,41,20" />
+      <scope id="4560297596904469639" at="36,92,37,152" />
+      <scope id="4560297596904469639" at="40,72,41,20" />
       <scope id="4560297596904469639" at="45,108,46,21" />
       <scope id="4560297596904469639" at="52,26,53,56" />
       <scope id="4560297596904469639" at="56,13,57,71" />
@@ -418,14 +433,14 @@
         <var name="node" id="4560297596904469639" />
         <var name="parameters" id="4560297596904469639" />
       </scope>
-      <unit id="4560297596904469639" at="24,0,87,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_BehaviorDescriptor" />
+      <unit id="4560297596904469639" at="24,0,87,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4560297596904469658">
     <file name="BuildMpsLayout_TestModule_Behavior.java">
       <unit id="4560297596904469658" at="10,0,13,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_Behavior" />
     </file>
-    <file name="BuildMpsLayout_TestModule_BehaviorDescriptor.java">
+    <file name="BuildMpsLayout_TestModule__BehaviorDescriptor.java">
       <node id="4560297596904469658" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="4560297596904469658" at="27,0,28,0" concept="10" trace="REGISTRY" />
       <node id="4560297596904469658" at="29,0,30,0" concept="10" trace="contains_id3X9rC2XzJi8" />
@@ -433,7 +448,7 @@
       <node id="4560297596904469658" at="32,0,33,0" concept="10" trace="BH_METHODS" />
       <node id="4560297596904469665" at="37,92,38,192" concept="7" />
       <node id="4560297596904469678" at="40,88,41,209" concept="7" />
-      <node id="4560297596904469658" at="44,62,45,20" concept="12" />
+      <node id="4560297596904469658" at="44,63,45,20" concept="12" />
       <node id="4560297596904469658" at="49,108,50,21" concept="2" />
       <node id="4560297596904469658" at="54,113,55,49" concept="6" />
       <node id="4560297596904469658" at="56,26,57,56" concept="14" />
@@ -448,7 +463,7 @@
       <node id="4560297596904469658" at="34,0,36,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4560297596904469658" at="37,0,40,0" concept="11" trace="contains_id3X9rC2XzJi8#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="4560297596904469658" at="40,0,43,0" concept="11" trace="getModules_id3X9rC2XzJij#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="4560297596904469658" at="44,0,47,0" concept="1" trace="BuildMpsLayout_TestModule_BehaviorDescriptor#()V" />
+      <node id="4560297596904469658" at="44,0,47,0" concept="1" trace="BuildMpsLayout_TestModule__BehaviorDescriptor#()V" />
       <node id="4560297596904469658" at="55,49,58,5" concept="4" />
       <node id="4560297596904469658" at="71,49,74,5" concept="4" />
       <node id="4560297596904469658" at="48,0,52,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -461,7 +476,7 @@
       <scope id="4560297596904469658" at="34,63,34,63" />
       <scope id="4560297596904469658" at="37,92,38,192" />
       <scope id="4560297596904469658" at="40,88,41,209" />
-      <scope id="4560297596904469658" at="44,62,45,20" />
+      <scope id="4560297596904469658" at="44,63,45,20" />
       <scope id="4560297596904469658" at="49,108,50,21" />
       <scope id="4560297596904469658" at="56,26,57,56" />
       <scope id="4560297596904469658" at="60,13,61,71" />
@@ -505,14 +520,14 @@
         <var name="node" id="4560297596904469658" />
         <var name="parameters" id="4560297596904469658" />
       </scope>
-      <unit id="4560297596904469658" at="25,0,93,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_BehaviorDescriptor" />
+      <unit id="4560297596904469658" at="25,0,93,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7bb3f1f1-7557-4f02-8802-5f9a48253a88(jetbrains.mps.build.mps.tests.behavior)/4560297596904469685">
     <file name="BuildMpsLayout_TestModuleGroup_Behavior.java">
       <unit id="4560297596904469685" at="10,0,13,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_Behavior" />
     </file>
-    <file name="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor.java">
+    <file name="BuildMpsLayout_TestModuleGroup__BehaviorDescriptor.java">
       <node id="4560297596904469685" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="4560297596904469685" at="27,0,28,0" concept="10" trace="REGISTRY" />
       <node id="4560297596904469685" at="29,0,30,0" concept="10" trace="contains_id3X9rC2XzJi8" />
@@ -520,7 +535,7 @@
       <node id="4560297596904469685" at="32,0,33,0" concept="10" trace="BH_METHODS" />
       <node id="4560297596904469694" at="37,92,38,383" concept="7" />
       <node id="4560297596904469708" at="40,88,41,343" concept="7" />
-      <node id="4560297596904469685" at="44,67,45,20" concept="12" />
+      <node id="4560297596904469685" at="44,68,45,20" concept="12" />
       <node id="4560297596904469685" at="49,108,50,21" concept="2" />
       <node id="4560297596904469685" at="54,113,55,49" concept="6" />
       <node id="4560297596904469685" at="56,26,57,56" concept="14" />
@@ -535,7 +550,7 @@
       <node id="4560297596904469685" at="34,0,36,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4560297596904469685" at="37,0,40,0" concept="11" trace="contains_id3X9rC2XzJi8#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="4560297596904469685" at="40,0,43,0" concept="11" trace="getModules_id3X9rC2XzJij#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="4560297596904469685" at="44,0,47,0" concept="1" trace="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor#()V" />
+      <node id="4560297596904469685" at="44,0,47,0" concept="1" trace="BuildMpsLayout_TestModuleGroup__BehaviorDescriptor#()V" />
       <node id="4560297596904469685" at="55,49,58,5" concept="4" />
       <node id="4560297596904469685" at="71,49,74,5" concept="4" />
       <node id="4560297596904469685" at="48,0,52,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -548,7 +563,7 @@
       <scope id="4560297596904469685" at="34,63,34,63" />
       <scope id="4560297596904469685" at="37,92,38,383" />
       <scope id="4560297596904469685" at="40,88,41,343" />
-      <scope id="4560297596904469685" at="44,67,45,20" />
+      <scope id="4560297596904469685" at="44,68,45,20" />
       <scope id="4560297596904469685" at="49,108,50,21" />
       <scope id="4560297596904469685" at="56,26,57,56" />
       <scope id="4560297596904469685" at="60,13,61,71" />
@@ -592,7 +607,7 @@
         <var name="node" id="4560297596904469685" />
         <var name="parameters" id="4560297596904469685" />
       </scope>
-      <unit id="4560297596904469685" at="25,0,93,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_BehaviorDescriptor" />
+      <unit id="4560297596904469685" at="25,0,93,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

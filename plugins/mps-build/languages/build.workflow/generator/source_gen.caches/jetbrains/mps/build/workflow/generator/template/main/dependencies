@@ -10,9 +10,9 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfProjectPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />

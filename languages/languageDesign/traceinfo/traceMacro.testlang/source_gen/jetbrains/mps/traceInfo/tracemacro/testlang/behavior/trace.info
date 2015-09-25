@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="GeneratedForeach_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

@@ -15,12 +15,18 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="NList_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="Node_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)/1262430001741703821">
     <file name="Node_CopyWithTraceOperation_Behavior.java">
       <unit id="1262430001741703821" at="10,0,13,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_Behavior" />
     </file>
-    <file name="Node_CopyWithTraceOperation_BehaviorDescriptor.java">
+    <file name="Node_CopyWithTraceOperation__BehaviorDescriptor.java">
       <node id="1262430001741703821" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1262430001741703821" at="25,0,26,0" concept="6" trace="REGISTRY" />
       <node id="1262430001741703821" at="27,0,28,0" concept="6" trace="applicableToNode_id1653mnvAgrs" />
@@ -28,7 +34,7 @@
       <node id="1262430001741703821" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="1262430001741703819" at="35,100,36,16" concept="5" />
       <node id="1262430001741720080" at="38,100,39,16" concept="5" />
-      <node id="1262430001741703821" at="42,64,43,20" concept="8" />
+      <node id="1262430001741703821" at="42,65,43,20" concept="8" />
       <node id="1262430001741703821" at="47,108,48,21" concept="1" />
       <node id="1262430001741703821" at="52,113,53,49" concept="4" />
       <node id="1262430001741703821" at="54,26,55,56" concept="10" />
@@ -43,7 +49,7 @@
       <node id="1262430001741703821" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741703821" at="35,0,38,0" concept="7" trace="applicableToNode_id1653mnvAgrs#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
       <node id="1262430001741703821" at="38,0,41,0" concept="7" trace="applicableToLink_id1653mnvAgvK#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
-      <node id="1262430001741703821" at="42,0,45,0" concept="0" trace="Node_CopyWithTraceOperation_BehaviorDescriptor#()V" />
+      <node id="1262430001741703821" at="42,0,45,0" concept="0" trace="Node_CopyWithTraceOperation__BehaviorDescriptor#()V" />
       <node id="1262430001741703821" at="53,49,56,5" concept="2" />
       <node id="1262430001741703821" at="65,49,68,5" concept="2" />
       <node id="1262430001741703821" at="46,0,50,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -56,7 +62,7 @@
       <scope id="1262430001741703821" at="32,63,32,63" />
       <scope id="1262430001741703821" at="35,100,36,16" />
       <scope id="1262430001741703821" at="38,100,39,16" />
-      <scope id="1262430001741703821" at="42,64,43,20" />
+      <scope id="1262430001741703821" at="42,65,43,20" />
       <scope id="1262430001741703821" at="47,108,48,21" />
       <scope id="1262430001741703821" at="54,26,55,56" />
       <scope id="1262430001741703821" at="58,14,59,58" />
@@ -99,7 +105,7 @@
         <var name="method" id="1262430001741703821" />
         <var name="parameters" id="1262430001741703821" />
       </scope>
-      <unit id="1262430001741703821" at="23,0,91,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
+      <unit id="1262430001741703821" at="23,0,91,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

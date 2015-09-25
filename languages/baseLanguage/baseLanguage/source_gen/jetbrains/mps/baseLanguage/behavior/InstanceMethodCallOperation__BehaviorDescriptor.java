@@ -79,7 +79,7 @@ public final class InstanceMethodCallOperation__BehaviorDescriptor extends BaseB
   private static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, final String methodName) {
     return Sequence.fromIterable(Members.visibleInstanceMethods(IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(__thisNode__), __thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_1r460m_a0a0a0a0a0a0a91(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
+        return eq_76007u_a0a0a0a0a0a0a91(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
     }).toListSequence();
   }
@@ -185,7 +185,7 @@ public final class InstanceMethodCallOperation__BehaviorDescriptor extends BaseB
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_1r460m_a0a0a0a0a0a0a91(Object a, Object b) {
+  private static boolean eq_76007u_a0a0a0a0a0a0a91(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -12,20 +12,32 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AbstractConsoleScript_BehaviorDescriptor.java">
+      <unit at="12,0,16,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,50,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ConsoleScript_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
+    </file>
+    <file name="Execute_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
+    </file>
+    <file name="RefactorOperation_BehaviorDescriptor.java">
+      <unit at="9,0,35,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">
     <file name="AbstractConsoleScript_Behavior.java">
       <unit id="1734392475491235553" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
     </file>
-    <file name="AbstractConsoleScript_BehaviorDescriptor.java">
+    <file name="AbstractConsoleScript__BehaviorDescriptor.java">
       <node id="1734392475491235553" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1734392475491235553" at="25,0,26,0" concept="6" trace="REGISTRY" />
       <node id="1734392475491235553" at="27,0,28,0" concept="6" trace="getCommands_id1whNchEKZry" />
       <node id="1734392475491235553" at="29,0,30,0" concept="6" trace="BH_METHODS" />
-      <node id="1734392475491235553" at="35,58,36,20" concept="8" />
+      <node id="1734392475491235553" at="35,59,36,20" concept="8" />
       <node id="1734392475491235553" at="40,108,41,21" concept="1" />
       <node id="1734392475491235553" at="45,113,46,49" concept="4" />
       <node id="1734392475491235553" at="47,26,48,56" concept="10" />
@@ -36,7 +48,7 @@
       <node id="1734392475491235553" at="70,48,71,22" concept="5" />
       <node id="1734392475491235553" at="76,40,77,19" concept="5" />
       <node id="1734392475491235553" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1734392475491235553" at="35,0,38,0" concept="0" trace="AbstractConsoleScript_BehaviorDescriptor#()V" />
+      <node id="1734392475491235553" at="35,0,38,0" concept="0" trace="AbstractConsoleScript__BehaviorDescriptor#()V" />
       <node id="1734392475491235553" at="46,49,49,5" concept="2" />
       <node id="1734392475491235553" at="58,49,61,5" concept="2" />
       <node id="1734392475491235553" at="39,0,43,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -47,7 +59,7 @@
       <node id="1734392475491235553" at="44,0,55,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1734392475491235553" at="56,0,67,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1734392475491235553" at="31,63,31,63" />
-      <scope id="1734392475491235553" at="35,58,36,20" />
+      <scope id="1734392475491235553" at="35,59,36,20" />
       <scope id="1734392475491235553" at="40,108,41,21" />
       <scope id="1734392475491235553" at="47,26,48,56" />
       <scope id="1734392475491235553" at="51,14,52,58" />
@@ -82,20 +94,20 @@
         <var name="method" id="1734392475491235553" />
         <var name="parameters" id="1734392475491235553" />
       </scope>
-      <unit id="1734392475491235553" at="23,0,80,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
+      <unit id="1734392475491235553" at="23,0,80,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235576">
     <file name="ConsoleScript_Behavior.java">
       <unit id="1734392475491235576" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
     </file>
-    <file name="ConsoleScript_BehaviorDescriptor.java">
+    <file name="ConsoleScript__BehaviorDescriptor.java">
       <node id="1734392475491235576" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="1734392475491235576" at="26,0,27,0" concept="6" trace="REGISTRY" />
       <node id="1734392475491235576" at="28,0,29,0" concept="6" trace="getCommands_id1whNchEKZry" />
       <node id="1734392475491235576" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="1734392475491235582" at="35,89,36,187" concept="5" />
-      <node id="1734392475491235576" at="39,50,40,20" concept="8" />
+      <node id="1734392475491235576" at="39,51,40,20" concept="8" />
       <node id="1734392475491235576" at="44,108,45,21" concept="1" />
       <node id="1734392475491235576" at="49,113,50,49" concept="4" />
       <node id="1734392475491235576" at="51,26,52,56" concept="10" />
@@ -108,7 +120,7 @@
       <node id="1734392475491235576" at="82,40,83,19" concept="5" />
       <node id="1734392475491235576" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1734392475491235576" at="35,0,38,0" concept="7" trace="getCommands_id1whNchEKZry#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="1734392475491235576" at="39,0,42,0" concept="0" trace="ConsoleScript_BehaviorDescriptor#()V" />
+      <node id="1734392475491235576" at="39,0,42,0" concept="0" trace="ConsoleScript__BehaviorDescriptor#()V" />
       <node id="1734392475491235576" at="50,49,53,5" concept="2" />
       <node id="1734392475491235576" at="64,49,67,5" concept="2" />
       <node id="1734392475491235576" at="43,0,47,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -120,7 +132,7 @@
       <node id="1734392475491235576" at="48,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1734392475491235576" at="32,63,32,63" />
       <scope id="1734392475491235576" at="35,89,36,187" />
-      <scope id="1734392475491235576" at="39,50,40,20" />
+      <scope id="1734392475491235576" at="39,51,40,20" />
       <scope id="1734392475491235576" at="44,108,45,21" />
       <scope id="1734392475491235576" at="51,26,52,56" />
       <scope id="1734392475491235576" at="55,13,56,51" />
@@ -159,14 +171,14 @@
         <var name="node" id="1734392475491235576" />
         <var name="parameters" id="1734392475491235576" />
       </scope>
-      <unit id="1734392475491235576" at="24,0,86,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
+      <unit id="1734392475491235576" at="24,0,86,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">
     <file name="RefactorOperation_Behavior.java">
       <unit id="2663801026049983654" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />
     </file>
-    <file name="RefactorOperation_BehaviorDescriptor.java">
+    <file name="RefactorOperation__BehaviorDescriptor.java">
       <node id="2663801026049983654" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="2663801026049983654" at="25,0,26,0" concept="6" trace="REGISTRY" />
       <node id="2663801026049983654" at="27,0,28,0" concept="6" trace="getShortHelp_idqgIopNa9Hb" />
@@ -174,7 +186,7 @@
       <node id="2663801026049983654" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="2663801026050030057" at="35,94,36,57" concept="5" />
       <node id="2663801026050030496" at="38,94,39,351" concept="5" />
-      <node id="2663801026049983654" at="42,54,43,20" concept="8" />
+      <node id="2663801026049983654" at="42,55,43,20" concept="8" />
       <node id="2663801026049983654" at="47,108,48,21" concept="1" />
       <node id="2663801026049983654" at="52,113,53,49" concept="4" />
       <node id="2663801026049983654" at="54,26,55,56" concept="10" />
@@ -189,7 +201,7 @@
       <node id="2663801026049983654" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2663801026049983654" at="35,0,38,0" concept="7" trace="getShortHelp_idqgIopNa9Hb#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="2663801026049983654" at="38,0,41,0" concept="7" trace="getHelpPage_id64VftqEen2L#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="2663801026049983654" at="42,0,45,0" concept="0" trace="RefactorOperation_BehaviorDescriptor#()V" />
+      <node id="2663801026049983654" at="42,0,45,0" concept="0" trace="RefactorOperation__BehaviorDescriptor#()V" />
       <node id="2663801026049983654" at="53,49,56,5" concept="2" />
       <node id="2663801026049983654" at="65,49,68,5" concept="2" />
       <node id="2663801026049983654" at="46,0,50,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -202,7 +214,7 @@
       <scope id="2663801026049983654" at="32,63,32,63" />
       <scope id="2663801026049983654" at="35,94,36,57" />
       <scope id="2663801026049983654" at="38,94,39,351" />
-      <scope id="2663801026049983654" at="42,54,43,20" />
+      <scope id="2663801026049983654" at="42,55,43,20" />
       <scope id="2663801026049983654" at="47,108,48,21" />
       <scope id="2663801026049983654" at="54,26,55,56" />
       <scope id="2663801026049983654" at="58,14,59,58" />
@@ -245,7 +257,7 @@
         <var name="method" id="2663801026049983654" />
         <var name="parameters" id="2663801026049983654" />
       </scope>
-      <unit id="2663801026049983654" at="23,0,91,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
+      <unit id="2663801026049983654" at="23,0,91,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

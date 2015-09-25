@@ -38,7 +38,7 @@ public final class SwitchMacro__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_i6m7ss_a0a = new SwitchMacro__BehaviorDescriptor.Pattern_x9rcis_a0a0a0a9();
+      GeneratedMatchingPattern pattern_i6m7ss_a0a = new SwitchMacro__BehaviorDescriptor.Pattern_paxv6k_a0a0a0a9();
       SNode coercedNode_i6m7ss_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x11008e5fed8L, "sourceNodeQuery"))), pattern_i6m7ss_a0a);
       if (coercedNode_i6m7ss_a0a != null) {
         return ((SNode) pattern_i6m7ss_a0a.getFieldValue("patternVar_concept"));
@@ -94,9 +94,9 @@ public final class SwitchMacro__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_x9rcis_a0a0a0a9 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_paxv6k_a0a0a0a9 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_x9rcis_a0a0a0a9() {
+    public Pattern_paxv6k_a0a0a0a9() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");

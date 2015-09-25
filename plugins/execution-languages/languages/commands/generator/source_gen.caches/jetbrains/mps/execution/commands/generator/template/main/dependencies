@@ -6,11 +6,11 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

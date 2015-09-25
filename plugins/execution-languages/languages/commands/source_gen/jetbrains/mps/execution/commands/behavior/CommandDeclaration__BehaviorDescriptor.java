@@ -74,7 +74,7 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0d0u(CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
+            return eq_f5121k_a0a0a0a0a0a0a0a0a0a0d0u(CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -95,7 +95,7 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0c0v(CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
+            return eq_f5121k_a0a0a0a0a0a0a0a0a0a0c0v(CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -194,10 +194,10 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), (SNode) p0);
     return n1;
   }
-  private static boolean eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0d0u(Object a, Object b) {
+  private static boolean eq_f5121k_a0a0a0a0a0a0a0a0a0a0d0u(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_q2hrnc_a0a0a0a0a0a0a0a0a0a0c0v(Object a, Object b) {
+  private static boolean eq_f5121k_a0a0a0a0a0a0a0a0a0a0c0v(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

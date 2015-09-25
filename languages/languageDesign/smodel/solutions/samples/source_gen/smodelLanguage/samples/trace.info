@@ -270,8 +270,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145580307798">
     <file name="Children.java">
-      <node id="1180478737036" at="17,55,18,83" concept="1" />
-      <node id="1145581051477" at="18,83,19,215" concept="5" />
+      <node id="1180478737036" at="17,55,18,84" concept="1" />
+      <node id="1145581051477" at="18,84,19,215" concept="5" />
       <node id="1145581102186" at="19,215,20,196" concept="5" />
       <node id="1171504714290" at="20,196,21,59" concept="5" />
       <node id="1171504740787" at="21,59,22,51" concept="5" />
@@ -787,8 +787,8 @@
       <node id="1177034236531" at="29,101,30,105" concept="1" />
       <node id="1177034263665" at="30,105,31,77" concept="1" />
       <node id="1206660310271" at="31,77,32,105" concept="1" />
-      <node id="1180485643169" at="35,60,36,115" concept="5" />
-      <node id="1180543578597" at="39,72,40,181" concept="5" />
+      <node id="1180485643169" at="35,60,36,116" concept="5" />
+      <node id="1180543578597" at="39,72,40,182" concept="5" />
       <node id="1180544050716" at="43,31,44,173" concept="5" />
       <node id="1180543735907" at="44,173,45,38" concept="5" />
       <node id="1180543816745" at="45,38,46,48" concept="5" />
@@ -829,10 +829,10 @@
       <node id="1180543684770" at="43,0,59,0" concept="4" trace="concept_types#()V" />
       <node id="1180456939140" at="60,0,76,0" concept="4" trace="concept_hierarchy1#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
       <scope id="1173133630405" at="20,122,20,122" />
-      <scope id="1180482960667" at="35,60,36,115">
+      <scope id="1180482960667" at="35,60,36,116">
         <var name="b" id="1180485643170" />
       </scope>
-      <scope id="1180542870139" at="39,72,40,181">
+      <scope id="1180542870139" at="39,72,40,182">
         <var name="applicableParams" id="1180543578598" />
       </scope>
       <scope id="1180482960664" at="35,0,38,0">
@@ -980,9 +980,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1226362060907">
     <file name="LinkRef.java">
       <node id="1226362136275" at="11,23,12,179" concept="5" />
-      <node id="1226362204661" at="12,179,13,92" concept="5" />
+      <node id="1226362204661" at="12,179,13,93" concept="5" />
       <node id="1226362100988" at="11,0,15,0" concept="4" trace="test1#()V" />
-      <scope id="1226362100991" at="11,23,13,92">
+      <scope id="1226362100991" at="11,23,13,93">
         <var name="link" id="1226362136276" />
         <var name="singular" id="1226362204662" />
       </scope>

@@ -932,7 +932,7 @@
       <node id="1199569939113" at="131,230,132,40" concept="2" />
       <node id="1199569939113" at="132,40,133,34" concept="2" />
       <node id="1199569939113" at="133,34,134,22" concept="7" />
-      <node id="1237539515002" at="136,109,137,228" concept="7" />
+      <node id="1237539515002" at="136,109,137,229" concept="7" />
       <node id="1199569939113" at="139,87,140,238" concept="6" />
       <node id="1199569939113" at="140,238,141,33" concept="7" />
       <node id="1199569939113" at="144,118,145,49" concept="9" />
@@ -992,7 +992,7 @@
       <scope id="1199569939113" at="68,101,69,50" />
       <scope id="1199569939113" at="86,89,87,65" />
       <scope id="1199569939113" at="97,122,98,139" />
-      <scope id="1237539509376" at="136,109,137,228" />
+      <scope id="1237539509376" at="136,109,137,229" />
       <scope id="1199569939113" at="144,118,145,49" />
       <scope id="1199569939113" at="154,41,155,35" />
       <scope id="1199569939113" at="160,17,161,98" />
@@ -4293,7 +4293,7 @@
       <node id="1229718500328" at="129,242,130,40" concept="2" />
       <node id="1229718500328" at="130,40,131,34" concept="2" />
       <node id="1229718500328" at="131,34,132,22" concept="7" />
-      <node id="1237540662348" at="134,109,135,228" concept="7" />
+      <node id="1237540662348" at="134,109,135,229" concept="7" />
       <node id="1229718500328" at="137,87,138,250" concept="6" />
       <node id="1229718500328" at="138,250,139,33" concept="7" />
       <node id="1229718500328" at="142,118,143,49" concept="9" />
@@ -4354,7 +4354,7 @@
       <scope id="1229718500328" at="68,101,69,50" />
       <scope id="1229718500328" at="86,89,87,65" />
       <scope id="1229718500328" at="97,122,98,139" />
-      <scope id="1237540662347" at="134,109,135,228" />
+      <scope id="1237540662347" at="134,109,135,229" />
       <scope id="1229718500328" at="142,118,143,49" />
       <scope id="1229718500328" at="152,41,153,35" />
       <scope id="1229718500328" at="158,17,159,98" />
@@ -4904,16 +4904,16 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)/4347515475159511344">
     <file name="InvokeFunctionOperation_parameters.java">
-      <node id="4347515475159511353" at="19,78,20,310" concept="7" />
-      <node id="4347515475159511382" at="22,137,23,104" concept="2" />
+      <node id="4347515475159511353" at="19,78,20,311" concept="7" />
+      <node id="4347515475159511382" at="22,137,23,105" concept="2" />
       <node id="4347515475159511380" at="25,98,26,16" concept="7" />
       <node id="4347515475159511344" at="17,0,19,0" concept="1" trace="InvokeFunctionOperation_parameters#()V" />
       <node id="4347515475159511344" at="19,0,22,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
       <node id="4347515475159511344" at="22,0,25,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
       <node id="4347515475159511344" at="25,0,28,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="4347515475159511344" at="17,47,17,47" />
-      <scope id="4347515475159511347" at="19,78,20,310" />
-      <scope id="4347515475159511344" at="22,137,23,104" />
+      <scope id="4347515475159511347" at="19,78,20,311" />
+      <scope id="4347515475159511344" at="22,137,23,105" />
       <scope id="4347515475159511344" at="25,98,26,16" />
       <scope id="4347515475159511344" at="17,0,19,0" />
       <scope id="4347515475159511344" at="19,0,22,0">
@@ -4937,7 +4937,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)/4347515475159511413">
     <file name="CompactInvokeFunctionExpression_parameters.java">
       <node id="4347515475159511422" at="19,78,20,403" concept="7" />
-      <node id="4347515475159511448" at="22,137,23,104" concept="2" />
+      <node id="4347515475159511448" at="22,137,23,105" concept="2" />
       <node id="4347515475159511455" at="25,98,26,16" concept="7" />
       <node id="4347515475159511413" at="17,0,19,0" concept="1" trace="CompactInvokeFunctionExpression_parameters#()V" />
       <node id="4347515475159511413" at="19,0,22,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
@@ -4945,7 +4945,7 @@
       <node id="4347515475159511413" at="25,0,28,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="4347515475159511413" at="17,55,17,55" />
       <scope id="4347515475159511416" at="19,78,20,403" />
-      <scope id="4347515475159511413" at="22,137,23,104" />
+      <scope id="4347515475159511413" at="22,137,23,105" />
       <scope id="4347515475159511413" at="25,98,26,16" />
       <scope id="4347515475159511413" at="17,0,19,0" />
       <scope id="4347515475159511413" at="19,0,22,0">

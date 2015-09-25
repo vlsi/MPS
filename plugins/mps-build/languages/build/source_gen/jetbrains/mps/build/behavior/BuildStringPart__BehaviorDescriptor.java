@@ -40,7 +40,7 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
     if (SNodeOperations.getIndexInParent(__thisNode__) == 0) {
       return false;
     }
-    return eq_avidk7_a0b0m(SNodeOperations.getConceptDeclaration(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConceptDeclaration(__thisNode__));
+    return eq_5tsa61_a0b0m(SNodeOperations.getConceptDeclaration(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConceptDeclaration(__thisNode__));
   }
   private static Boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
     return true;
@@ -104,7 +104,7 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_avidk7_a0b0m(Object a, Object b) {
+  private static boolean eq_5tsa61_a0b0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

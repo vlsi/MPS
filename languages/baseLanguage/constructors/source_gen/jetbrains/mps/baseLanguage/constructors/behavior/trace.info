@@ -12,21 +12,51 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="ArgumentClause_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ArgumentClause_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CustomArgumentClause_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomArgumentClause_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorContainer_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorContainer_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorParameterReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorParameter_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameter_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorUsage_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorUsage_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructor_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_BehaviorDescriptor" />
+    </file>
+    <file name="ListArgumentsClause_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListArgumentsClause_BehaviorDescriptor" />
+    </file>
+    <file name="ListCustomParameter_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListCustomParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ListParameterReference_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListParameterReference_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:cf54bb52-3dc2-4193-8c77-3acf5e21bf95(jetbrains.mps.baseLanguage.constructors.behavior)/3041831561922029481">
     <file name="CustomConstructor_Behavior.java">
       <unit id="3041831561922029481" at="10,0,13,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_Behavior" />
     </file>
-    <file name="CustomConstructor_BehaviorDescriptor.java">
+    <file name="CustomConstructor__BehaviorDescriptor.java">
       <node id="3041831561922029481" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="3041831561922029481" at="26,0,27,0" concept="6" trace="REGISTRY" />
       <node id="3041831561922029481" at="28,0,29,0" concept="6" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="3041831561922029481" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="3041831561922044926" at="35,85,36,186" concept="5" />
-      <node id="3041831561922029481" at="39,54,40,20" concept="8" />
+      <node id="3041831561922029481" at="39,55,40,20" concept="8" />
       <node id="3041831561922029481" at="44,108,45,21" concept="1" />
       <node id="3041831561922029481" at="49,113,50,49" concept="4" />
       <node id="3041831561922029481" at="51,26,52,56" concept="10" />
@@ -39,7 +69,7 @@
       <node id="3041831561922029481" at="82,40,83,19" concept="5" />
       <node id="3041831561922029481" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3041831561922029481" at="35,0,38,0" concept="7" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3041831561922029481" at="39,0,42,0" concept="0" trace="CustomConstructor_BehaviorDescriptor#()V" />
+      <node id="3041831561922029481" at="39,0,42,0" concept="0" trace="CustomConstructor__BehaviorDescriptor#()V" />
       <node id="3041831561922029481" at="50,49,53,5" concept="2" />
       <node id="3041831561922029481" at="64,49,67,5" concept="2" />
       <node id="3041831561922029481" at="43,0,47,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -51,7 +81,7 @@
       <node id="3041831561922029481" at="48,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3041831561922029481" at="32,63,32,63" />
       <scope id="3041831561922029481" at="35,85,36,186" />
-      <scope id="3041831561922029481" at="39,54,40,20" />
+      <scope id="3041831561922029481" at="39,55,40,20" />
       <scope id="3041831561922029481" at="44,108,45,21" />
       <scope id="3041831561922029481" at="51,26,52,56" />
       <scope id="3041831561922029481" at="55,13,56,57" />
@@ -90,7 +120,7 @@
         <var name="node" id="3041831561922029481" />
         <var name="parameters" id="3041831561922029481" />
       </scope>
-      <unit id="3041831561922029481" at="24,0,86,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_BehaviorDescriptor" />
+      <unit id="3041831561922029481" at="24,0,86,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

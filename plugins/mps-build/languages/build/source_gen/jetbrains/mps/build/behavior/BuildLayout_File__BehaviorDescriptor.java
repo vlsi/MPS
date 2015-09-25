@@ -52,13 +52,13 @@ public final class BuildLayout_File__BehaviorDescriptor extends BaseBHDescriptor
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")) && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(__thisNode__)) {
         SNode required = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
-        return eq_mnlny_a0b0b0a0q(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
+        return eq_7uaiaq_a0b0b0a0q(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
       }
     }
     if (artifactId instanceof LocalSourcePathArtifact) {
       LocalSourcePathArtifact art = (LocalSourcePathArtifact) artifactId;
       if (!(art.isFolder()) && art.getRoot() == SNodeOperations.getContainingRoot(__thisNode__)) {
-        return eq_mnlny_a0a0b0b0q(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
+        return eq_7uaiaq_a0a0b0b0q(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
       }
     }
     return false;
@@ -149,10 +149,10 @@ public final class BuildLayout_File__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_mnlny_a0b0b0a0q(Object a, Object b) {
+  private static boolean eq_7uaiaq_a0b0b0a0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_mnlny_a0a0b0b0q(Object a, Object b) {
+  private static boolean eq_7uaiaq_a0a0b0b0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

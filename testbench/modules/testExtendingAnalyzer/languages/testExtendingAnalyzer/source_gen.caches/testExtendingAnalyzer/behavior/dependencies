@@ -11,8 +11,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="testExtendingAnalyzer.behavior.NullSafeDotExpression_BehaviorDescriptor" />
-    <classNode dependClassName="testExtendingAnalyzer.behavior.NullUnsafeDotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="testExtendingAnalyzer.behavior.NullSafeDotExpression__BehaviorDescriptor" />
+    <classNode dependClassName="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression_Behavior" file="NullSafeDotExpression_Behavior.java">
@@ -20,11 +20,20 @@
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression_BehaviorDescriptor" file="NullSafeDotExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression__BehaviorDescriptor" file="NullSafeDotExpression__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
@@ -46,11 +55,20 @@
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression_BehaviorDescriptor" file="NullUnsafeDotExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor" file="NullUnsafeDotExpression__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />

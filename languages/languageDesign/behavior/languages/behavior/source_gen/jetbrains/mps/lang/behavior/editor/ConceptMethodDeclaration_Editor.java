@@ -38,7 +38,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -345,7 +345,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_gmtuod_c9c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeNonVirtual(String.class, node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethodConceptName_1225196403980", new Object[]{});
+        return ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethodConceptName_idhP3pnOc.invoke(node);
       }
       public void setText(String s) {
       }

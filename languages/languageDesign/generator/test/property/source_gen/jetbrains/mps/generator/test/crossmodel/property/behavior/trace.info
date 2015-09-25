@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="BeanProperty_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.BeanProperty_BehaviorDescriptor" />
+    </file>
+    <file name="Bean_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.Bean_BehaviorDescriptor" />
+    </file>
+    <file name="InitOp_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.InitOp_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

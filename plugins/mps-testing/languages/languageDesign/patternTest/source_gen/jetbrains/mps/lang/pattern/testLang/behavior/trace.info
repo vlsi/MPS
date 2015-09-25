@@ -15,6 +15,27 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="ListValue_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
+    </file>
+    <file name="PatternTest_BehaviorDescriptor.java">
+      <unit at="14,0,49,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyValue_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="TestListReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestPropertyVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="VariableValue_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">
     <file name="PatternTest_Behavior.java">
@@ -26,7 +47,7 @@
       </scope>
       <unit id="394224946578869061" at="13,0,19,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
     </file>
-    <file name="PatternTest_BehaviorDescriptor.java">
+    <file name="PatternTest__BehaviorDescriptor.java">
       <node id="394224946578869061" at="27,0,28,0" concept="6" trace="CONCEPT" />
       <node id="394224946578869061" at="28,0,29,0" concept="6" trace="REGISTRY" />
       <node id="394224946578869061" at="30,0,31,0" concept="6" trace="getPatternTestName_idlS$o0er$H8" />
@@ -41,14 +62,14 @@
       <node id="7885114646737405087" at="46,80,47,49" concept="4" />
       <node id="7885114646737405094" at="47,49,48,30" concept="1" />
       <node id="7885114646737405103" at="48,30,49,19" concept="5" />
-      <node id="2433982077498361212" at="51,77,52,161" concept="5" />
+      <node id="2433982077498361212" at="51,77,52,162" concept="5" />
       <node id="7885114646737540818" at="54,88,55,49" concept="4" />
       <node id="7885114646737540824" at="55,49,56,30" concept="1" />
       <node id="7885114646737540829" at="56,30,57,19" concept="5" />
       <node id="7885114646737405105" at="59,75,60,24" concept="5" />
       <node id="7885114646737405107" at="62,76,63,24" concept="5" />
       <node id="3403446150498856037" at="65,88,66,16" concept="5" />
-      <node id="394224946578869061" at="69,48,70,20" concept="8" />
+      <node id="394224946578869061" at="69,49,70,20" concept="8" />
       <node id="394224946578869061" at="74,108,75,21" concept="1" />
       <node id="394224946578869061" at="79,113,80,49" concept="4" />
       <node id="394224946578869061" at="81,26,82,56" concept="10" />
@@ -71,7 +92,7 @@
       <node id="394224946578869061" at="59,0,62,0" concept="7" trace="getTestCase_idhGBgWVd#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="394224946578869061" at="62,0,65,0" concept="7" trace="getTestName_idhGBohAB#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="394224946578869061" at="65,0,68,0" concept="7" trace="isMpsStartRequired_id2RMg39tmiFh#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-      <node id="394224946578869061" at="69,0,72,0" concept="0" trace="PatternTest_BehaviorDescriptor#()V" />
+      <node id="394224946578869061" at="69,0,72,0" concept="0" trace="PatternTest__BehaviorDescriptor#()V" />
       <node id="394224946578869061" at="80,49,83,5" concept="2" />
       <node id="394224946578869061" at="106,49,109,5" concept="2" />
       <node id="394224946578869061" at="73,0,77,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -85,11 +106,11 @@
       <node id="394224946578869061" at="78,0,103,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="394224946578869061" at="40,63,40,63" />
       <scope id="394224946578869061" at="43,86,44,191" />
-      <scope id="394224946578869061" at="51,77,52,161" />
+      <scope id="394224946578869061" at="51,77,52,162" />
       <scope id="394224946578869061" at="59,75,60,24" />
       <scope id="394224946578869061" at="62,76,63,24" />
       <scope id="394224946578869061" at="65,88,66,16" />
-      <scope id="394224946578869061" at="69,48,70,20" />
+      <scope id="394224946578869061" at="69,49,70,20" />
       <scope id="394224946578869061" at="74,108,75,21" />
       <scope id="394224946578869061" at="81,26,82,56" />
       <scope id="394224946578869061" at="85,13,86,57" />
@@ -158,7 +179,7 @@
         <var name="node" id="394224946578869061" />
         <var name="parameters" id="394224946578869061" />
       </scope>
-      <unit id="394224946578869061" at="26,0,128,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
+      <unit id="394224946578869061" at="26,0,128,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

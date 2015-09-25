@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="DeclMigrationData_Component_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="decl.behavior.DeclMigrationData_Component_BehaviorDescriptor" />
+    </file>
+    <file name="DeclMigrationData_WholeModule_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="decl.behavior.DeclMigrationData_WholeModule_BehaviorDescriptor" />
+    </file>
+    <file name="NewComponentMember_BehaviorDescriptor.java">
+      <unit at="10,0,13,0" name="decl.behavior.NewComponentMember_BehaviorDescriptor" />
+    </file>
+    <file name="NewComponent_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="decl.behavior.NewComponent_BehaviorDescriptor" />
+    </file>
+    <file name="OldComponentMember_BehaviorDescriptor.java">
+      <unit at="10,0,13,0" name="decl.behavior.OldComponentMember_BehaviorDescriptor" />
+    </file>
+    <file name="OldComponent_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="decl.behavior.OldComponent_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

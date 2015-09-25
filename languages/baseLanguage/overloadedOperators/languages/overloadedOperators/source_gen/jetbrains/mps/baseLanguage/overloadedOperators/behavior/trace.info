@@ -17,6 +17,36 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,50,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="BinaryOperationReference_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BinaryOperationReference_BehaviorDescriptor" />
+    </file>
+    <file name="ContainerImport_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
+    </file>
+    <file name="CustomOperatorDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="CustomOperatorUsage_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
+    </file>
+    <file name="CustomOperator_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperator_BehaviorDescriptor" />
+    </file>
+    <file name="LeftOperand_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.LeftOperand_BehaviorDescriptor" />
+    </file>
+    <file name="Operator_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.Operator_BehaviorDescriptor" />
+    </file>
+    <file name="OverloadedBinaryOperator_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_BehaviorDescriptor" />
+    </file>
+    <file name="OverloadedOperatorContainer_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
+    </file>
+    <file name="RightOperand_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.RightOperand_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/1141736782992984502">
     <file name="CustomOperatorUsage_Behavior.java">
@@ -40,7 +70,7 @@
       </scope>
       <unit id="1141736782992984502" at="19,0,30,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior" />
     </file>
-    <file name="CustomOperatorUsage_BehaviorDescriptor.java">
+    <file name="CustomOperatorUsage__BehaviorDescriptor.java">
       <node id="1141736782992984502" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1141736782992984502" at="30,0,31,0" concept="8" trace="REGISTRY" />
       <node id="1141736782992984502" at="32,0,33,0" concept="8" trace="getVisibleCustomOperators_idZogSShiOAT" />
@@ -49,7 +79,7 @@
       <node id="1141736782992986333" at="40,48,41,257" concept="6" />
       <node id="1141736782993465854" at="42,40,43,252" concept="2" />
       <node id="1141736782992986474" at="44,5,45,18" concept="7" />
-      <node id="1141736782992984502" at="48,56,49,20" concept="10" />
+      <node id="1141736782992984502" at="48,57,49,20" concept="10" />
       <node id="1141736782992984502" at="53,108,54,21" concept="2" />
       <node id="1141736782992984502" at="58,113,59,49" concept="6" />
       <node id="1141736782992984502" at="60,26,61,56" concept="12" />
@@ -62,7 +92,7 @@
       <node id="1141736782992984502" at="91,40,92,19" concept="7" />
       <node id="1141736782992984502" at="36,0,38,0" concept="9" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1141736782992986380" at="41,257,44,5" concept="3" />
-      <node id="1141736782992984502" at="48,0,51,0" concept="1" trace="CustomOperatorUsage_BehaviorDescriptor#()V" />
+      <node id="1141736782992984502" at="48,0,51,0" concept="1" trace="CustomOperatorUsage__BehaviorDescriptor#()V" />
       <node id="1141736782992984502" at="59,49,62,5" concept="4" />
       <node id="1141736782992984502" at="71,49,74,5" concept="4" />
       <node id="1141736782992984502" at="52,0,56,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -75,7 +105,7 @@
       <node id="1141736782992984502" at="69,0,82,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1141736782992984502" at="36,63,36,63" />
       <scope id="1141736782992986381" at="42,40,43,252" />
-      <scope id="1141736782992984502" at="48,56,49,20" />
+      <scope id="1141736782992984502" at="48,57,49,20" />
       <scope id="1141736782992984502" at="53,108,54,21" />
       <scope id="1141736782992984502" at="60,26,61,56" />
       <scope id="1141736782992984502" at="64,14,65,58" />
@@ -122,7 +152,7 @@
         <var name="method" id="1141736782992984502" />
         <var name="parameters" id="1141736782992984502" />
       </scope>
-      <unit id="1141736782992984502" at="28,0,95,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
+      <unit id="1141736782992984502" at="28,0,95,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/6677452554239147646">
@@ -130,13 +160,13 @@
       <node id="1569627462441168526" at="19,85,20,24" concept="6" />
       <node id="1569627462441168532" at="21,393,22,708" concept="2" />
       <node id="1569627462441168561" at="23,12,24,238" concept="2" />
-      <node id="6677452554240637511" at="25,5,26,586" concept="7" />
+      <node id="6677452554240637511" at="25,5,26,588" concept="7" />
       <node id="1569627462441168559" at="23,10,25,5" concept="0" />
       <node id="1569627462441168508" at="20,24,25,5" concept="4" />
       <node id="6677452554239147646" at="19,0,28,0" concept="9" trace="call_getFunctionName_6677452554240637506#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="1569627462441168509" at="21,393,22,708" />
       <scope id="1569627462441168560" at="23,12,24,238" />
-      <scope id="6677452554240637509" at="19,85,26,586">
+      <scope id="6677452554240637509" at="19,85,26,588">
         <var name="operatorName" id="1569627462441168527" />
       </scope>
       <scope id="6677452554239147646" at="19,0,28,0">
@@ -144,7 +174,7 @@
       </scope>
       <unit id="6677452554239147646" at="17,0,29,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
     </file>
-    <file name="OverloadedBinaryOperator_BehaviorDescriptor.java">
+    <file name="OverloadedBinaryOperator__BehaviorDescriptor.java">
       <node id="6677452554239147646" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="6677452554239147646" at="32,0,33,0" concept="8" trace="REGISTRY" />
       <node id="6677452554239147646" at="34,0,35,0" concept="8" trace="getExpectedReturnType_idhEwIGRD" />
@@ -155,12 +185,12 @@
       <node id="1569627462441168526" at="46,84,47,24" concept="6" />
       <node id="1569627462441168532" at="48,393,49,708" concept="2" />
       <node id="1569627462441168561" at="50,12,51,238" concept="2" />
-      <node id="6677452554240637511" at="52,5,53,586" concept="7" />
-      <node id="3044950653914724723" at="55,125,56,143" concept="6" />
-      <node id="3044950653914724738" at="56,143,57,192" concept="2" />
+      <node id="6677452554240637511" at="52,5,53,588" concept="7" />
+      <node id="3044950653914724723" at="55,125,56,144" concept="6" />
+      <node id="3044950653914724738" at="56,144,57,192" concept="2" />
       <node id="3044950653914724743" at="57,192,58,193" concept="2" />
       <node id="3044950653914724747" at="58,193,59,18" concept="7" />
-      <node id="6677452554239147646" at="62,61,63,20" concept="10" />
+      <node id="6677452554239147646" at="62,62,63,20" concept="10" />
       <node id="6677452554239147646" at="67,108,68,21" concept="2" />
       <node id="6677452554239147646" at="72,113,73,49" concept="6" />
       <node id="6677452554239147646" at="74,26,75,56" concept="12" />
@@ -176,7 +206,7 @@
       <node id="6677452554239147646" at="40,0,42,0" concept="9" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1569627462441168559" at="50,10,52,5" concept="0" />
       <node id="6677452554239147646" at="43,0,46,0" concept="9" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6677452554239147646" at="62,0,65,0" concept="1" trace="OverloadedBinaryOperator_BehaviorDescriptor#()V" />
+      <node id="6677452554239147646" at="62,0,65,0" concept="1" trace="OverloadedBinaryOperator__BehaviorDescriptor#()V" />
       <node id="6677452554239147646" at="73,49,76,5" concept="4" />
       <node id="6677452554239147646" at="89,49,92,5" concept="4" />
       <node id="6677452554239147646" at="66,0,70,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -193,7 +223,7 @@
       <scope id="6677452554239147646" at="43,85,44,187" />
       <scope id="1569627462441168509" at="48,393,49,708" />
       <scope id="1569627462441168560" at="50,12,51,238" />
-      <scope id="6677452554239147646" at="62,61,63,20" />
+      <scope id="6677452554239147646" at="62,62,63,20" />
       <scope id="6677452554239147646" at="67,108,68,21" />
       <scope id="6677452554239147646" at="74,26,75,56" />
       <scope id="6677452554239147646" at="78,13,79,57" />
@@ -224,7 +254,7 @@
       <scope id="6677452554239147646" at="55,0,61,0">
         <var name="__thisConcept__" id="6677452554239147646" />
       </scope>
-      <scope id="6677452554239147646" at="46,84,53,586">
+      <scope id="6677452554239147646" at="46,84,53,588">
         <var name="operatorName" id="1569627462441168527" />
       </scope>
       <scope id="6677452554239147646" at="46,0,55,0">
@@ -246,20 +276,20 @@
         <var name="node" id="6677452554239147646" />
         <var name="parameters" id="6677452554239147646" />
       </scope>
-      <unit id="6677452554239147646" at="30,0,113,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_BehaviorDescriptor" />
+      <unit id="6677452554239147646" at="30,0,113,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/7363434029342255602">
     <file name="ContainerImport_Behavior.java">
       <unit id="7363434029342255602" at="10,0,13,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_Behavior" />
     </file>
-    <file name="ContainerImport_BehaviorDescriptor.java">
+    <file name="ContainerImport__BehaviorDescriptor.java">
       <node id="7363434029342255602" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="7363434029342255602" at="27,0,28,0" concept="8" trace="REGISTRY" />
       <node id="7363434029342255602" at="29,0,30,0" concept="8" trace="getPresentation_idhEwIMiw" />
       <node id="7363434029342255602" at="31,0,32,0" concept="8" trace="BH_METHODS" />
       <node id="7363434029342256051" at="36,80,37,555" concept="7" />
-      <node id="7363434029342255602" at="40,52,41,20" concept="10" />
+      <node id="7363434029342255602" at="40,53,41,20" concept="10" />
       <node id="7363434029342255602" at="45,108,46,21" concept="2" />
       <node id="7363434029342255602" at="50,113,51,49" concept="6" />
       <node id="7363434029342255602" at="52,26,53,56" concept="12" />
@@ -272,7 +302,7 @@
       <node id="7363434029342255602" at="83,40,84,19" concept="7" />
       <node id="7363434029342255602" at="33,0,35,0" concept="9" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7363434029342255602" at="36,0,39,0" concept="9" trace="getPresentation_idhEwIMiw#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7363434029342255602" at="40,0,43,0" concept="1" trace="ContainerImport_BehaviorDescriptor#()V" />
+      <node id="7363434029342255602" at="40,0,43,0" concept="1" trace="ContainerImport__BehaviorDescriptor#()V" />
       <node id="7363434029342255602" at="51,49,54,5" concept="4" />
       <node id="7363434029342255602" at="65,49,68,5" concept="4" />
       <node id="7363434029342255602" at="44,0,48,0" concept="5" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -284,7 +314,7 @@
       <node id="7363434029342255602" at="49,0,62,0" concept="5" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="7363434029342255602" at="33,63,33,63" />
       <scope id="7363434029342255602" at="36,80,37,555" />
-      <scope id="7363434029342255602" at="40,52,41,20" />
+      <scope id="7363434029342255602" at="40,53,41,20" />
       <scope id="7363434029342255602" at="45,108,46,21" />
       <scope id="7363434029342255602" at="52,26,53,56" />
       <scope id="7363434029342255602" at="56,13,57,51" />
@@ -323,7 +353,7 @@
         <var name="node" id="7363434029342255602" />
         <var name="parameters" id="7363434029342255602" />
       </scope>
-      <unit id="7363434029342255602" at="25,0,87,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
+      <unit id="7363434029342255602" at="25,0,87,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

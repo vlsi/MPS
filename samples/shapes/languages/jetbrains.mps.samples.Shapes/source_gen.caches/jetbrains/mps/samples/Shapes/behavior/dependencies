@@ -6,11 +6,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Circle__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Square__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
@@ -28,6 +28,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" file="Canvas_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.util.behavior.IMainClass_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor" file="Canvas__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Void" />
@@ -58,6 +70,14 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" file="Circle_BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle__BehaviorDescriptor" file="Circle__BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -74,7 +94,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -95,6 +115,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" file="ColorReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor" file="ColorReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
@@ -134,7 +160,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -142,6 +168,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" file="Shape_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" file="Shape__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -159,7 +193,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -171,6 +205,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" file="Square_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Square__BehaviorDescriptor" file="Square__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -188,7 +230,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

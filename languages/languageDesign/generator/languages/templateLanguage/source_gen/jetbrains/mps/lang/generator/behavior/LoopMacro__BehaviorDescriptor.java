@@ -55,7 +55,7 @@ public final class LoopMacro__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_cdqxf8_a0a = new LoopMacro__BehaviorDescriptor.Pattern_bt774s_a0a0a0a21();
+      GeneratedMatchingPattern pattern_cdqxf8_a0a = new LoopMacro__BehaviorDescriptor.Pattern_yu5qw4_a0a0a0a21();
       SNode coercedNode_cdqxf8_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x10fef5e42d7L, "sourceNodesQuery"))), pattern_cdqxf8_a0a);
       if (coercedNode_cdqxf8_a0a != null) {
         return ((SNode) pattern_cdqxf8_a0a.getFieldValue("patternVar_concept"));
@@ -140,9 +140,9 @@ public final class LoopMacro__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_bt774s_a0a0a0a21 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_yu5qw4_a0a0a0a21 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_bt774s_a0a0a0a21() {
+    public Pattern_yu5qw4_a0a0a0a21() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType");

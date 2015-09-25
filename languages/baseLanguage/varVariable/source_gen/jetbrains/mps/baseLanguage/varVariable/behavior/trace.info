@@ -15,17 +15,20 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="VarVariableDeclaration_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)/8425555512443914486">
     <file name="VarVariableDeclaration_Behavior.java">
       <unit id="8425555512443914486" at="10,0,13,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" />
     </file>
-    <file name="VarVariableDeclaration_BehaviorDescriptor.java">
+    <file name="VarVariableDeclaration__BehaviorDescriptor.java">
       <node id="8425555512443914486" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="8425555512443914486" at="22,0,23,0" concept="6" trace="REGISTRY" />
       <node id="8425555512443914486" at="25,0,26,0" concept="6" trace="BH_METHODS" />
       <node id="8425555512443914489" at="27,63,28,360" concept="1" />
-      <node id="8425555512443914486" at="32,59,33,20" concept="8" />
+      <node id="8425555512443914486" at="32,60,33,20" concept="8" />
       <node id="8425555512443914486" at="37,108,38,21" concept="1" />
       <node id="8425555512443914486" at="42,113,43,49" concept="4" />
       <node id="8425555512443914486" at="44,26,45,56" concept="10" />
@@ -36,7 +39,7 @@
       <node id="8425555512443914486" at="67,48,68,22" concept="5" />
       <node id="8425555512443914486" at="73,40,74,19" concept="5" />
       <node id="8425555512443914486" at="27,0,30,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8425555512443914486" at="32,0,35,0" concept="0" trace="VarVariableDeclaration_BehaviorDescriptor#()V" />
+      <node id="8425555512443914486" at="32,0,35,0" concept="0" trace="VarVariableDeclaration__BehaviorDescriptor#()V" />
       <node id="8425555512443914486" at="43,49,46,5" concept="2" />
       <node id="8425555512443914486" at="55,49,58,5" concept="2" />
       <node id="8425555512443914486" at="36,0,40,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -47,7 +50,7 @@
       <node id="8425555512443914486" at="41,0,52,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8425555512443914486" at="53,0,64,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8425555512443914486" at="27,63,28,360" />
-      <scope id="8425555512443914486" at="32,59,33,20" />
+      <scope id="8425555512443914486" at="32,60,33,20" />
       <scope id="8425555512443914486" at="37,108,38,21" />
       <scope id="8425555512443914486" at="44,26,45,56" />
       <scope id="8425555512443914486" at="48,14,49,58" />
@@ -82,7 +85,7 @@
         <var name="method" id="8425555512443914486" />
         <var name="parameters" id="8425555512443914486" />
       </scope>
-      <unit id="8425555512443914486" at="20,0,77,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
+      <unit id="8425555512443914486" at="20,0,77,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

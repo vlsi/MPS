@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" file="DecisionTable_Behavior.java">
@@ -29,6 +29,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" file="DecisionTable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor" file="DecisionTable__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

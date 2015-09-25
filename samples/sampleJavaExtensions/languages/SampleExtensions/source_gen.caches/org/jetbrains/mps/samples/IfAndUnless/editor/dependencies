@@ -39,7 +39,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor" file="MyIfStatement_Editor.java">

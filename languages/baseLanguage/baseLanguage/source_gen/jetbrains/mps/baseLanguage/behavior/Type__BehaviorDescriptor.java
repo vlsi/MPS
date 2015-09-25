@@ -143,7 +143,7 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Boolean isSupersetOf_idhKBOZqh(@NotNull SNode __thisNode__, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0o = new Type__BehaviorDescriptor.Pattern_75htfn_a0a0a0a34(__thisNode__);
+      GeneratedMatchingPattern pattern_smb55n_a0o = new Type__BehaviorDescriptor.Pattern_whj271_a0a0a0a34(__thisNode__);
       SNode coercedNode_smb55n_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0o);
       if (coercedNode_smb55n_a0o != null) {
         return true;
@@ -268,9 +268,9 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_75htfn_a0a0a0a34 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_whj271_a0a0a0a34 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_smb55n_a0a0a0a41;
-    public Pattern_75htfn_a0a0a0a34(Object parameter_smb55n_a0a0a0a41) {
+    public Pattern_whj271_a0a0a0a34(Object parameter_smb55n_a0a0a0a41) {
       this.AntiquotationField_smb55n_a0a0a0a41 = parameter_smb55n_a0a0a0a41;
     }
     public SConcept getConcept() {

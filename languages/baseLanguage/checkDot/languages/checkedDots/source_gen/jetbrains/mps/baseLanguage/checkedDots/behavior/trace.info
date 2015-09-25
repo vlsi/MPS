@@ -16,6 +16,9 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="CheckedDotExpression_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:4f21a85f-2360-4902-a7db-0bcdaedbbb5c(jetbrains.mps.baseLanguage.checkedDots.behavior)/3674434577577159919">
     <file name="CheckedDotExpression_Behavior.java">
@@ -41,7 +44,7 @@
       <unit id="4697831301626073845" at="23,273,27,5" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior$1" />
       <unit id="3674434577577159919" at="17,0,34,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior" />
     </file>
-    <file name="CheckedDotExpression_BehaviorDescriptor.java">
+    <file name="CheckedDotExpression__BehaviorDescriptor.java">
       <node id="3674434577577159919" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="3674434577577159919" at="29,0,30,0" concept="7" trace="REGISTRY" />
       <node id="3674434577577159919" at="31,0,32,0" concept="7" trace="hasLocalContextInside_id3bYdGv2TyNM" />
@@ -55,7 +58,7 @@
       <node id="4697831301626073941" at="51,52,52,17" concept="5" />
       <node id="671730757938930442" at="54,87,55,16" concept="5" />
       <node id="1262430001741718801" at="57,90,58,17" concept="5" />
-      <node id="3674434577577159919" at="61,57,62,20" concept="9" />
+      <node id="3674434577577159919" at="61,58,62,20" concept="9" />
       <node id="3674434577577159919" at="66,108,67,21" concept="1" />
       <node id="3674434577577159919" at="71,113,72,49" concept="4" />
       <node id="3674434577577159919" at="73,26,74,56" concept="11" />
@@ -73,7 +76,7 @@
       <node id="4697831301626073845" at="45,0,48,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3674434577577159919" at="54,0,57,0" concept="8" trace="allowsNullOperand_id3Yy2P0QQESt#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="3674434577577159919" at="57,0,60,0" concept="8" trace="lvalue_id1653mnvAgpj#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
-      <node id="3674434577577159919" at="61,0,64,0" concept="0" trace="CheckedDotExpression_BehaviorDescriptor#()V" />
+      <node id="3674434577577159919" at="61,0,64,0" concept="0" trace="CheckedDotExpression__BehaviorDescriptor#()V" />
       <node id="3674434577577159919" at="72,49,75,5" concept="2" />
       <node id="3674434577577159919" at="88,49,91,5" concept="2" />
       <node id="3674434577577159919" at="65,0,69,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -91,7 +94,7 @@
       <scope id="4697831301626073783" at="48,22,49,18" />
       <scope id="3674434577577159919" at="54,87,55,16" />
       <scope id="3674434577577159919" at="57,90,58,17" />
-      <scope id="3674434577577159919" at="61,57,62,20" />
+      <scope id="3674434577577159919" at="61,58,62,20" />
       <scope id="3674434577577159919" at="66,108,67,21" />
       <scope id="3674434577577159919" at="73,26,74,56" />
       <scope id="3674434577577159919" at="77,13,78,61" />
@@ -142,8 +145,8 @@
         <var name="node" id="3674434577577159919" />
         <var name="parameters" id="3674434577577159919" />
       </scope>
-      <unit id="4697831301626073845" at="44,273,48,5" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor$1" />
-      <unit id="3674434577577159919" at="27,0,112,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+      <unit id="4697831301626073845" at="44,273,48,5" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression__BehaviorDescriptor$1" />
+      <unit id="3674434577577159919" at="27,0,112,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

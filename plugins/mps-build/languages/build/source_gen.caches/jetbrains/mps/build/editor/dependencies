@@ -32,8 +32,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildCompositePath_Actions" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -736,7 +736,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_File_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_File__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -928,7 +928,7 @@
   <dependency className="jetbrains.mps.build.editor.BuildLayout_JarManifest_Editor" file="BuildLayout_JarManifest_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.build.editor.create_JarManifestName" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
@@ -1156,7 +1156,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
@@ -1204,7 +1204,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
@@ -1278,7 +1278,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Delete" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
@@ -1363,7 +1363,7 @@
   <dependency className="jetbrains.mps.build.editor.BuildSourceProjectRelativePath_Editor" file="BuildSourceProjectRelativePath_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
@@ -1883,7 +1883,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -2009,9 +2009,9 @@
   <dependency className="jetbrains.mps.build.editor.BuildTextStringPart_Editor" file="BuildTextStringPart_Editor.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringPart__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSimpleName_text" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -2032,7 +2032,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildVarRefStringPart_Editor" file="BuildVarRefStringPart_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.build.editor.delete_BuildStringPart" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
@@ -2440,7 +2440,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />

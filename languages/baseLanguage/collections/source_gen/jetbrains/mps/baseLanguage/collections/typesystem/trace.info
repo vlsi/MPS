@@ -787,8 +787,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1178725705162">
     <file name="typeof_ContainsOperation_InferenceRule.java">
       <node id="6126991172893688470" at="22,115,23,111" concept="9" />
-      <node id="2762046050488366609" at="24,5,25,103" concept="9" />
-      <node id="2762046050488366609" at="25,103,26,215" concept="9" />
+      <node id="2762046050488366609" at="24,5,25,104" concept="9" />
+      <node id="2762046050488366609" at="25,104,26,215" concept="9" />
       <node id="2762046050488366609" at="26,215,27,397" concept="4" />
       <node id="5332044122260178142" at="30,7,31,206" concept="9" />
       <node id="5332044122260178142" at="31,206,32,217" concept="9" />
@@ -1034,9 +1034,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1178725705459">
     <file name="typeof_AddElementOperation_InferenceRule.java">
       <node id="2141797557973018714" at="20,115,21,110" concept="9" />
-      <node id="914905809784375258" at="22,5,23,103" concept="9" />
-      <node id="914905809784375258" at="23,103,24,214" concept="9" />
-      <node id="914905809784375258" at="24,214,25,446" concept="4" />
+      <node id="914905809784375258" at="22,5,23,104" concept="9" />
+      <node id="914905809784375258" at="23,104,24,214" concept="9" />
+      <node id="914905809784375258" at="24,214,25,447" concept="4" />
       <node id="9103385281676385015" at="28,7,29,206" concept="9" />
       <node id="9103385281676385015" at="29,206,30,217" concept="9" />
       <node id="9103385281676385015" at="30,217,31,358" concept="4" />
@@ -1061,7 +1061,7 @@
       <scope id="1178725705459" at="43,68,44,102" />
       <scope id="1178725705459" at="46,30,47,17" />
       <scope id="1178725705459" at="18,0,20,0" />
-      <scope id="914905809784375258" at="22,5,25,446">
+      <scope id="914905809784375258" at="22,5,25,447">
         <var name="_info_12389875345" id="914905809784375258" />
         <var name="_nodeToCheck_1029348928467" id="914905809784375258" />
       </scope>
@@ -1094,9 +1094,9 @@
     <file name="typeof_AddAllElementsOperation_InferenceRule.java">
       <node id="1184856504412" at="23,115,24,104" concept="9" />
       <node id="1184856504413" at="24,104,25,112" concept="9" />
-      <node id="1264839739508747000" at="26,5,27,103" concept="9" />
-      <node id="1264839739508747000" at="27,103,28,215" concept="9" />
-      <node id="1264839739508747000" at="28,215,29,440" concept="4" />
+      <node id="1264839739508747000" at="26,5,27,104" concept="9" />
+      <node id="1264839739508747000" at="27,104,28,215" concept="9" />
+      <node id="1264839739508747000" at="28,215,29,441" concept="4" />
       <node id="1264839739508747001" at="31,5,32,204" concept="9" />
       <node id="1264839739508747001" at="32,204,33,215" concept="9" />
       <node id="1264839739508747001" at="33,215,34,392" concept="4" />
@@ -1105,7 +1105,7 @@
       <node id="1184856504432" at="39,211,40,256" concept="4" />
       <node id="1184856504436" at="43,5,44,44" concept="9" />
       <node id="1184856504436" at="44,44,45,209" concept="9" />
-      <node id="1184856504436" at="45,209,46,461" concept="4" />
+      <node id="1184856504436" at="45,209,46,462" concept="4" />
       <node id="1178725705477" at="49,50,50,175" concept="10" />
       <node id="1178725705477" at="52,68,53,102" concept="0" />
       <node id="1178725705477" at="52,68,53,102" concept="10" />
@@ -1139,7 +1139,7 @@
       <scope id="1178725705477" at="55,30,56,17" />
       <scope id="1196777966018" at="64,31,65,193" />
       <scope id="1178725705477" at="21,0,23,0" />
-      <scope id="1264839739508747000" at="26,5,29,440">
+      <scope id="1264839739508747000" at="26,5,29,441">
         <var name="_info_12389875345" id="1264839739508747000" />
         <var name="_nodeToCheck_1029348928467" id="1264839739508747000" />
       </scope>
@@ -1151,7 +1151,7 @@
         <var name="_info_12389875345" id="1184856504432" />
         <var name="_nodeToCheck_1029348928467" id="1184856504432" />
       </scope>
-      <scope id="1184856504436" at="43,5,46,461">
+      <scope id="1184856504436" at="43,5,46,462">
         <var name="_info_12389875345" id="1184856504436" />
         <var name="_nodeToCheck_1029348928467" id="1184856504436" />
       </scope>
@@ -1186,9 +1186,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1178725705520">
     <file name="typeof_RemoveElementOperation_InferenceRule.java">
       <node id="7668447476859120323" at="20,115,21,110" concept="9" />
-      <node id="7668447476859120324" at="22,5,23,103" concept="9" />
-      <node id="7668447476859120324" at="23,103,24,215" concept="9" />
-      <node id="7668447476859120324" at="24,215,25,446" concept="4" />
+      <node id="7668447476859120324" at="22,5,23,104" concept="9" />
+      <node id="7668447476859120324" at="23,104,24,215" concept="9" />
+      <node id="7668447476859120324" at="24,215,25,447" concept="4" />
       <node id="7668447476859120335" at="28,7,29,206" concept="9" />
       <node id="7668447476859120335" at="29,206,30,217" concept="9" />
       <node id="7668447476859120335" at="30,217,31,358" concept="4" />
@@ -1213,7 +1213,7 @@
       <scope id="1178725705520" at="43,68,44,102" />
       <scope id="1178725705520" at="46,30,47,17" />
       <scope id="1178725705520" at="18,0,20,0" />
-      <scope id="7668447476859120324" at="22,5,25,446">
+      <scope id="7668447476859120324" at="22,5,25,447">
         <var name="_info_12389875345" id="7668447476859120324" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120324" />
       </scope>
@@ -1245,9 +1245,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1178725705538">
     <file name="typeof_GetElementOperation_InferenceRule.java">
       <node id="2141797557973018804" at="22,115,23,110" concept="9" />
-      <node id="5380162141339074461" at="24,5,25,103" concept="9" />
-      <node id="5380162141339074461" at="25,103,26,215" concept="9" />
-      <node id="5380162141339074461" at="26,215,27,446" concept="4" />
+      <node id="5380162141339074461" at="24,5,25,104" concept="9" />
+      <node id="5380162141339074461" at="25,104,26,215" concept="9" />
+      <node id="5380162141339074461" at="26,215,27,447" concept="4" />
       <node id="1184856469305" at="30,7,31,206" concept="9" />
       <node id="1184856469305" at="31,206,32,211" concept="9" />
       <node id="1184856469305" at="32,211,33,310" concept="4" />
@@ -1280,7 +1280,7 @@
       <scope id="1178725705538" at="48,30,49,17" />
       <scope id="1196777966027" at="53,30,54,223" />
       <scope id="1178725705538" at="20,0,22,0" />
-      <scope id="5380162141339074461" at="24,5,27,446">
+      <scope id="5380162141339074461" at="24,5,27,447">
         <var name="_info_12389875345" id="5380162141339074461" />
         <var name="_nodeToCheck_1029348928467" id="5380162141339074461" />
       </scope>
@@ -1504,9 +1504,9 @@
     <file name="typeof_RemoveAllElementsOperation_InferenceRule.java">
       <node id="7668447476859120280" at="23,115,24,110" concept="9" />
       <node id="7668447476859120281" at="24,110,25,118" concept="9" />
-      <node id="7668447476859120282" at="26,5,27,103" concept="9" />
-      <node id="7668447476859120282" at="27,103,28,215" concept="9" />
-      <node id="7668447476859120282" at="28,215,29,446" concept="4" />
+      <node id="7668447476859120282" at="26,5,27,104" concept="9" />
+      <node id="7668447476859120282" at="27,104,28,215" concept="9" />
+      <node id="7668447476859120282" at="28,215,29,447" concept="4" />
       <node id="7668447476859120293" at="31,5,32,204" concept="9" />
       <node id="7668447476859120293" at="32,204,33,215" concept="9" />
       <node id="7668447476859120293" at="33,215,34,404" concept="4" />
@@ -1557,7 +1557,7 @@
       <scope id="7668447476859120300" at="64,31,65,193" />
       <scope id="1196777966061" at="71,30,72,220" />
       <scope id="1178725705593" at="21,0,23,0" />
-      <scope id="7668447476859120282" at="26,5,29,446">
+      <scope id="7668447476859120282" at="26,5,29,447">
         <var name="_info_12389875345" id="7668447476859120282" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120282" />
       </scope>
@@ -1610,12 +1610,12 @@
     <file name="typeof_ReverseOperation_InferenceRule.java">
       <node id="7180718995162664341" at="19,115,20,110" concept="9" />
       <node id="1184856571984" at="20,110,21,104" concept="9" />
-      <node id="7180718995162664345" at="22,5,23,103" concept="9" />
-      <node id="7180718995162664345" at="23,103,24,215" concept="9" />
+      <node id="7180718995162664345" at="22,5,23,104" concept="9" />
+      <node id="7180718995162664345" at="23,104,24,215" concept="9" />
       <node id="7180718995162664345" at="24,215,25,334" concept="4" />
       <node id="7668447476859120548" at="27,5,28,44" concept="9" />
       <node id="7668447476859120548" at="28,44,29,215" concept="9" />
-      <node id="7668447476859120548" at="29,215,30,342" concept="4" />
+      <node id="7668447476859120548" at="29,215,30,343" concept="4" />
       <node id="1184856636291" at="32,5,33,44" concept="9" />
       <node id="1184856636291" at="33,44,34,209" concept="9" />
       <node id="1184856636291" at="34,209,35,328" concept="4" />
@@ -1640,7 +1640,7 @@
         <var name="_info_12389875345" id="7180718995162664345" />
         <var name="_nodeToCheck_1029348928467" id="7180718995162664345" />
       </scope>
-      <scope id="7668447476859120548" at="27,5,30,342">
+      <scope id="7668447476859120548" at="27,5,30,343">
         <var name="_info_12389875345" id="7668447476859120548" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120548" />
       </scope>
@@ -2166,7 +2166,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1179262299939">
     <file name="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java">
       <node id="1944196602935396574" at="23,114,24,181" concept="9" />
-      <node id="1944196602935396582" at="25,192,26,81" concept="4" />
+      <node id="1944196602935396582" at="25,192,26,82" concept="4" />
       <node id="1179262412845" at="27,5,28,55" concept="10" />
       <node id="1179262299939" at="30,50,31,164" concept="10" />
       <node id="1179262299939" at="33,68,34,102" concept="0" />
@@ -2193,7 +2193,7 @@
       <node id="1179262299939" at="23,0,30,0" concept="8" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196777966186" at="39,0,51,0" concept="14" trace="_quotation_createNode_gxg199_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1179262299939" at="21,75,21,75" />
-      <scope id="1944196602935354004" at="25,192,26,81" />
+      <scope id="1944196602935354004" at="25,192,26,82" />
       <scope id="1179262299939" at="30,50,31,164" />
       <scope id="1179262299939" at="33,68,34,102" />
       <scope id="1179262299939" at="36,27,37,16" />
@@ -2757,8 +2757,8 @@
       <node id="1201873006966" at="25,209,26,286" concept="4" />
       <node id="1201873088202" at="27,5,28,96" concept="9" />
       <node id="1201874216771" at="28,96,29,98" concept="9" />
-      <node id="7668447476859120479" at="30,5,31,121" concept="9" />
-      <node id="7668447476859120479" at="31,121,32,215" concept="9" />
+      <node id="7668447476859120479" at="30,5,31,122" concept="9" />
+      <node id="7668447476859120479" at="31,122,32,215" concept="9" />
       <node id="7668447476859120479" at="32,215,33,444" concept="4" />
       <node id="1201873049497" at="36,7,37,211" concept="9" />
       <node id="1201873049497" at="37,211,38,211" concept="9" />
@@ -2862,8 +2862,8 @@
     <file name="typeof_GetKeysOperation_InferenceRule.java">
       <node id="1201874360962" at="21,129,22,96" concept="9" />
       <node id="1201874371667" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120481" at="24,5,25,117" concept="9" />
-      <node id="7668447476859120481" at="25,117,26,215" concept="9" />
+      <node id="7668447476859120481" at="24,5,25,118" concept="9" />
+      <node id="7668447476859120481" at="25,118,26,215" concept="9" />
       <node id="7668447476859120481" at="26,215,27,444" concept="4" />
       <node id="1201874414202" at="29,5,30,58" concept="9" />
       <node id="1201874414202" at="30,58,31,209" concept="9" />
@@ -2970,8 +2970,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1202115927796">
     <file name="typeof_MappingOperation_InferenceRule.java">
       <node id="1203508136831" at="22,115,23,102" concept="9" />
-      <node id="6199045382345392512" at="24,5,25,103" concept="9" />
-      <node id="6199045382345392512" at="25,103,26,215" concept="9" />
+      <node id="6199045382345392512" at="24,5,25,104" concept="9" />
+      <node id="6199045382345392512" at="25,104,26,215" concept="9" />
       <node id="6199045382345392512" at="26,215,27,382" concept="4" />
       <node id="1203507994173" at="28,5,29,99" concept="9" />
       <node id="5380162141333161506" at="30,5,31,195" concept="9" />
@@ -3118,8 +3118,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1202120950726">
     <file name="typeof_WhereOperation_InferenceRule.java">
       <node id="1203177832282" at="22,115,23,102" concept="9" />
-      <node id="2762046050488366454" at="24,5,25,103" concept="9" />
-      <node id="2762046050488366454" at="25,103,26,215" concept="9" />
+      <node id="2762046050488366454" at="24,5,25,104" concept="9" />
+      <node id="2762046050488366454" at="25,104,26,215" concept="9" />
       <node id="2762046050488366454" at="26,215,27,382" concept="4" />
       <node id="1225884077242" at="30,7,31,197" concept="9" />
       <node id="1225884077242" at="31,197,32,211" concept="9" />
@@ -3256,8 +3256,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1202129057670">
     <file name="typeof_SelectOperation_InferenceRule.java">
       <node id="1225884177658" at="22,115,23,110" concept="9" />
-      <node id="1611944601324093272" at="24,5,25,103" concept="9" />
-      <node id="1611944601324093272" at="25,103,26,215" concept="9" />
+      <node id="1611944601324093272" at="24,5,25,104" concept="9" />
+      <node id="1611944601324093272" at="25,104,26,215" concept="9" />
       <node id="1611944601324093272" at="26,215,27,390" concept="4" />
       <node id="1203177754378" at="28,5,29,100" concept="9" />
       <node id="1240677567421" at="29,100,30,110" concept="9" />
@@ -3491,8 +3491,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1205679968096">
     <file name="typeof_SortOperation_InferenceRule.java">
       <node id="1205680579640" at="23,115,24,102" concept="9" />
-      <node id="7668447476859120587" at="25,5,26,103" concept="9" />
-      <node id="7668447476859120587" at="26,103,27,215" concept="9" />
+      <node id="7668447476859120587" at="25,5,26,104" concept="9" />
+      <node id="7668447476859120587" at="26,104,27,215" concept="9" />
       <node id="7668447476859120587" at="27,215,28,382" concept="4" />
       <node id="1205680505277" at="31,7,32,197" concept="9" />
       <node id="1205680505277" at="32,197,33,211" concept="9" />
@@ -3715,8 +3715,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1205842228688">
     <file name="typeof_VisitAllOperation_InferenceRule.java">
       <node id="1225883650310" at="22,115,23,102" concept="9" />
-      <node id="7668447476859120591" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120591" at="25,103,26,215" concept="9" />
+      <node id="7668447476859120591" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120591" at="25,104,26,215" concept="9" />
       <node id="7668447476859120591" at="26,215,27,382" concept="4" />
       <node id="1225883621916" at="30,7,31,197" concept="9" />
       <node id="1225883621916" at="31,197,32,211" concept="9" />
@@ -3843,8 +3843,8 @@
     <file name="typeof_MapRemoveOperation_InferenceRule.java">
       <node id="1207233776692" at="22,124,23,96" concept="9" />
       <node id="1207233776693" at="23,96,24,98" concept="9" />
-      <node id="7668447476859120487" at="25,5,26,112" concept="9" />
-      <node id="7668447476859120487" at="26,112,27,215" concept="9" />
+      <node id="7668447476859120487" at="25,5,26,113" concept="9" />
+      <node id="7668447476859120487" at="26,113,27,215" concept="9" />
       <node id="7668447476859120487" at="27,215,28,444" concept="4" />
       <node id="1207233776711" at="31,7,32,202" concept="9" />
       <node id="1207233776711" at="32,202,33,211" concept="9" />
@@ -4038,8 +4038,8 @@
     <file name="typeof_MapClearOperation_InferenceRule.java">
       <node id="1208542413607" at="21,124,22,96" concept="9" />
       <node id="1208542413609" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120485" at="24,5,25,112" concept="9" />
-      <node id="7668447476859120485" at="25,112,26,215" concept="9" />
+      <node id="7668447476859120485" at="24,5,25,113" concept="9" />
+      <node id="7668447476859120485" at="25,113,26,215" concept="9" />
       <node id="7668447476859120485" at="26,215,27,444" concept="4" />
       <node id="488824563362430574" at="29,5,30,53" concept="9" />
       <node id="488824563362430574" at="30,53,31,214" concept="9" />
@@ -4135,8 +4135,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1209728239442">
     <file name="typeof_ComparatorSortOperation_InferenceRule.java">
       <node id="1209728259188" at="22,116,23,102" concept="9" />
-      <node id="7668447476859120537" at="24,5,25,104" concept="9" />
-      <node id="7668447476859120537" at="25,104,26,215" concept="9" />
+      <node id="7668447476859120537" at="24,5,25,105" concept="9" />
+      <node id="7668447476859120537" at="25,105,26,215" concept="9" />
       <node id="7668447476859120537" at="26,215,27,382" concept="4" />
       <node id="1209728259189" at="28,5,29,100" concept="9" />
       <node id="1209728259190" at="31,7,32,198" concept="9" />
@@ -4417,8 +4417,8 @@
     <file name="typeof_SmartClosureParameterDeclaration_InferenceRule.java">
       <node id="1230315924141" at="35,466,36,104" concept="9" />
       <node id="2684739085678948053" at="36,104,37,108" concept="9" />
-      <node id="2684739085678948077" at="38,7,39,332" concept="9" />
-      <node id="2684739085678948077" at="39,332,40,217" concept="9" />
+      <node id="2684739085678948077" at="38,7,39,333" concept="9" />
+      <node id="2684739085678948077" at="39,333,40,217" concept="9" />
       <node id="2684739085678948077" at="40,217,41,332" concept="4" />
       <node id="2684739085678948093" at="43,7,44,118" concept="9" />
       <node id="7668447476859120558" at="47,13,48,54" concept="9" />
@@ -4434,7 +4434,7 @@
       <node id="8149391245973656861" at="66,7,67,0" concept="12" />
       <node id="7192154694571036219" at="67,0,68,86" concept="9" />
       <node id="6902868426313419228" at="68,86,69,37" concept="11" />
-      <node id="4837286298388759139" at="71,141,72,82" concept="11" />
+      <node id="4837286298388759139" at="71,142,72,82" concept="11" />
       <node id="6902868426313559289" at="72,82,73,90" concept="4" />
       <node id="4695112407844173847" at="78,62,79,108" concept="9" />
       <node id="4695112407844173848" at="79,108,80,117" concept="4" />
@@ -4445,14 +4445,14 @@
       <node id="4695112407844173856" at="89,57,90,36" concept="4" />
       <node id="4695112407844173856" at="90,36,91,38" concept="4" />
       <node id="4695112407844173868" at="91,38,92,61" concept="4" />
-      <node id="4695112407844173876" at="93,213,94,289" concept="4" />
+      <node id="4695112407844173876" at="93,213,94,290" concept="4" />
       <node id="7192154694571036454" at="98,7,99,190" concept="9" />
-      <node id="7192154694571036460" at="99,190,100,155" concept="9" />
-      <node id="7192154694571049870" at="102,205,103,281" concept="4" />
+      <node id="7192154694571036460" at="99,190,100,156" concept="9" />
+      <node id="7192154694571049870" at="102,205,103,282" concept="4" />
       <node id="7192154694571049880" at="105,7,106,0" concept="12" />
       <node id="7192154694571049882" at="106,0,107,180" concept="9" />
-      <node id="7192154694571049890" at="108,206,109,282" concept="4" />
-      <node id="7192154694571049896" at="109,282,110,279" concept="4" />
+      <node id="7192154694571049890" at="108,206,109,283" concept="4" />
+      <node id="7192154694571049896" at="109,283,110,280" concept="4" />
       <node id="8149391245973694440" at="111,7,112,0" concept="12" />
       <node id="4660288602099522949" at="113,7,114,74" concept="9" />
       <node id="4660288602099522949" at="114,74,115,72" concept="9" />
@@ -4512,7 +4512,7 @@
       <node id="1225551170076" at="151,0,154,0" concept="8" trace="overrides#()Z" />
       <node id="7668447476859120570" at="159,39,162,5" concept="7" />
       <node id="2328072685354621300" at="178,39,181,5" concept="7" />
-      <node id="6902868426313559256" at="70,99,74,9" concept="6" />
+      <node id="6902868426313559256" at="70,100,74,9" concept="6" />
       <node id="4837286298388759086" at="77,225,81,11" concept="7" />
       <node id="7192154694571049888" at="107,180,111,7" concept="7" />
       <node id="7668447476859120570" at="158,237,162,5" concept="0" />
@@ -4522,7 +4522,7 @@
       <node id="2684739085678948077" at="37,108,42,7" concept="0" />
       <node id="7668447476859120558" at="46,29,51,13" concept="0" />
       <node id="7668447476859120577" at="51,13,56,13" concept="0" />
-      <node id="7192154694571049864" at="100,155,105,7" concept="6" />
+      <node id="7192154694571049864" at="100,156,105,7" concept="6" />
       <node id="9033423951293505984" at="123,11,128,11" concept="0" />
       <node id="2328072685354621229" at="132,106,137,7" concept="0" />
       <node id="2328072685354623572" at="137,7,142,7" concept="0" />
@@ -4548,8 +4548,8 @@
       <node id="1225551170076" at="34,0,145,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1225551170076" at="32,66,32,66" />
       <scope id="1212689055890" at="64,26,65,15" />
-      <scope id="4695112407844173875" at="93,213,94,289" />
-      <scope id="7192154694571049869" at="102,205,103,281" />
+      <scope id="4695112407844173875" at="93,213,94,290" />
+      <scope id="7192154694571049869" at="102,205,103,282" />
       <scope id="8149391245973737684" at="121,59,122,21" />
       <scope id="1225551170076" at="145,50,146,184" />
       <scope id="1225551170076" at="148,68,149,102" />
@@ -4557,11 +4557,11 @@
       <scope id="7668447476859120570" at="160,31,161,193" />
       <scope id="2328072685354621300" at="179,31,180,195" />
       <scope id="1225551170076" at="32,0,34,0" />
-      <scope id="6902868426313559259" at="71,141,73,90" />
+      <scope id="6902868426313559259" at="71,142,73,90" />
       <scope id="4837286298388759087" at="78,62,80,117">
         <var name="T_typevar_4695112407844173847" id="4695112407844173847" />
       </scope>
-      <scope id="7192154694571049889" at="108,206,110,279" />
+      <scope id="7192154694571049889" at="108,206,110,280" />
       <scope id="6902868426313559341" at="167,30,169,431" />
       <scope id="2328072685354621300" at="181,5,183,167" />
       <scope id="2684739085678948077" at="38,7,41,332">
@@ -4594,14 +4594,14 @@
         <var name="argument" id="1225551170076" />
       </scope>
       <scope id="1225551170076" at="151,0,154,0" />
-      <scope id="4837286298388758709" at="70,99,74,9" />
-      <scope id="6902868426313559256" at="70,99,74,9">
+      <scope id="4837286298388758709" at="70,100,74,9" />
+      <scope id="6902868426313559256" at="70,100,74,9">
         <var name="tvd" id="6902868426313559257" />
       </scope>
       <scope id="4695112407844173846" at="77,225,81,11" />
       <scope id="7668447476859120570" at="158,237,162,5" />
       <scope id="2328072685354621300" at="177,234,181,5" />
-      <scope id="7192154694571049864" at="100,155,105,7">
+      <scope id="7192154694571049864" at="100,156,105,7">
         <var name="type" id="7192154694571049865" />
       </scope>
       <scope id="7668447476859120570" at="157,30,162,5" />
@@ -4681,9 +4681,9 @@
       <node id="1225622529097" at="24,193,25,209" concept="9" />
       <node id="1225622529097" at="25,209,26,309" concept="4" />
       <node id="1225625140805" at="27,5,28,104" concept="9" />
-      <node id="7668447476859120538" at="29,5,30,103" concept="9" />
-      <node id="7668447476859120538" at="30,103,31,215" concept="9" />
-      <node id="7668447476859120538" at="31,215,32,434" concept="4" />
+      <node id="7668447476859120538" at="29,5,30,104" concept="9" />
+      <node id="7668447476859120538" at="30,104,31,215" concept="9" />
+      <node id="7668447476859120538" at="31,215,32,435" concept="4" />
       <node id="1225622627558" at="35,7,36,197" concept="9" />
       <node id="1225622627558" at="36,197,37,211" concept="9" />
       <node id="1225622627558" at="37,211,38,346" concept="4" />
@@ -4721,7 +4721,7 @@
         <var name="_info_12389875345" id="1225622529097" />
         <var name="_nodeToCheck_1029348928467" id="1225622529097" />
       </scope>
-      <scope id="7668447476859120538" at="29,5,32,434">
+      <scope id="7668447476859120538" at="29,5,32,435">
         <var name="_info_12389875345" id="7668447476859120538" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120538" />
       </scope>
@@ -4761,9 +4761,9 @@
       <node id="1225645926703" at="24,193,25,209" concept="9" />
       <node id="1225645926703" at="25,209,26,309" concept="4" />
       <node id="1225645926712" at="27,5,28,104" concept="9" />
-      <node id="7668447476859120549" at="29,5,30,103" concept="9" />
-      <node id="7668447476859120549" at="30,103,31,215" concept="9" />
-      <node id="7668447476859120549" at="31,215,32,434" concept="4" />
+      <node id="7668447476859120549" at="29,5,30,104" concept="9" />
+      <node id="7668447476859120549" at="30,104,31,215" concept="9" />
+      <node id="7668447476859120549" at="31,215,32,435" concept="4" />
       <node id="1225645926725" at="35,7,36,197" concept="9" />
       <node id="1225645926725" at="36,197,37,211" concept="9" />
       <node id="1225645926725" at="37,211,38,346" concept="4" />
@@ -4801,7 +4801,7 @@
         <var name="_info_12389875345" id="1225645926703" />
         <var name="_nodeToCheck_1029348928467" id="1225645926703" />
       </scope>
-      <scope id="7668447476859120549" at="29,5,32,434">
+      <scope id="7668447476859120549" at="29,5,32,435">
         <var name="_info_12389875345" id="7668447476859120549" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120549" />
       </scope>
@@ -4934,8 +4934,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1225727805374">
     <file name="typeof_FindFirstOperation_InferenceRule.java">
       <node id="1225727823542" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120469" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120469" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120469" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120469" at="25,111,26,215" concept="9" />
       <node id="7668447476859120469" at="26,215,27,384" concept="4" />
       <node id="1225727913024" at="29,5,30,51" concept="9" />
       <node id="1225727913024" at="30,51,31,209" concept="9" />
@@ -5048,8 +5048,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1225730450691">
     <file name="typeof_FindLastOperation_InferenceRule.java">
       <node id="1225730451735" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120470" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120470" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120470" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120470" at="25,111,26,215" concept="9" />
       <node id="7668447476859120470" at="26,215,27,384" concept="4" />
       <node id="1225730451748" at="29,5,30,51" concept="9" />
       <node id="1225730451748" at="30,51,31,209" concept="9" />
@@ -5162,8 +5162,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226566979417">
     <file name="typeof_AddSetElementOperation_InferenceRule.java">
       <node id="1226567148394" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120527" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120527" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120527" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120527" at="25,111,26,215" concept="9" />
       <node id="7668447476859120527" at="26,215,27,385" concept="4" />
       <node id="1226567249137" at="30,7,31,205" concept="9" />
       <node id="1226567249137" at="31,205,32,211" concept="9" />
@@ -5245,8 +5245,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226591539034">
     <file name="typeof_RemoveSetElementOperation_InferenceRule.java">
       <node id="1226591558447" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120531" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120531" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120531" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120531" at="25,111,26,215" concept="9" />
       <node id="7668447476859120531" at="26,215,27,385" concept="4" />
       <node id="1226591558460" at="30,7,31,205" concept="9" />
       <node id="1226591558460" at="31,205,32,211" concept="9" />
@@ -5328,8 +5328,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226592772950">
     <file name="typeof_AddAllSetElementsOperation_InferenceRule.java">
       <node id="1226593404958" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120526" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120526" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120526" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120526" at="25,111,26,215" concept="9" />
       <node id="7668447476859120526" at="26,215,27,385" concept="4" />
       <node id="1226593455235" at="30,7,31,205" concept="9" />
       <node id="1226593455235" at="31,205,32,211" concept="9" />
@@ -5459,8 +5459,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226594103503">
     <file name="typeof_RemoveAllSetElementsOperation_InferenceRule.java">
       <node id="1226594108923" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120530" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120530" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120530" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120530" at="25,111,26,215" concept="9" />
       <node id="7668447476859120530" at="26,215,27,385" concept="4" />
       <node id="1226594108936" at="30,7,31,205" concept="9" />
       <node id="1226594108936" at="31,205,32,211" concept="9" />
@@ -6015,8 +6015,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226934632457">
     <file name="typeof_ClearSetOperation_InferenceRule.java">
       <node id="1226934681270" at="21,122,22,104" concept="9" />
-      <node id="7668447476859120528" at="23,5,24,110" concept="9" />
-      <node id="7668447476859120528" at="24,110,25,215" concept="9" />
+      <node id="7668447476859120528" at="23,5,24,111" concept="9" />
+      <node id="7668447476859120528" at="24,111,25,215" concept="9" />
       <node id="7668447476859120528" at="25,215,26,384" concept="4" />
       <node id="1226934702238" at="28,5,29,51" concept="9" />
       <node id="1226934702238" at="29,51,30,209" concept="9" />
@@ -6101,9 +6101,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227022291587">
     <file name="typeof_RemoveAtElementOperation_InferenceRule.java">
       <node id="1227022325815" at="22,115,23,104" concept="9" />
-      <node id="7668447476859120474" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120474" at="25,103,26,215" concept="9" />
-      <node id="7668447476859120474" at="26,215,27,434" concept="4" />
+      <node id="7668447476859120474" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120474" at="25,104,26,215" concept="9" />
+      <node id="7668447476859120474" at="26,215,27,435" concept="4" />
       <node id="1227022345453" at="30,7,31,195" concept="9" />
       <node id="1227022345453" at="31,195,32,211" concept="9" />
       <node id="1227022345453" at="32,211,33,310" concept="4" />
@@ -6136,7 +6136,7 @@
       <scope id="1227022291587" at="48,30,49,17" />
       <scope id="1227022348018" at="53,30,54,223" />
       <scope id="1227022291587" at="20,0,22,0" />
-      <scope id="7668447476859120474" at="24,5,27,434">
+      <scope id="7668447476859120474" at="24,5,27,435">
         <var name="_info_12389875345" id="7668447476859120474" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120474" />
       </scope>
@@ -6173,9 +6173,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227022545670">
     <file name="typeof_ClearAllElementsOperation_InferenceRule.java">
       <node id="1227022555843" at="21,115,22,104" concept="9" />
-      <node id="7668447476859120471" at="23,5,24,103" concept="9" />
-      <node id="7668447476859120471" at="24,103,25,215" concept="9" />
-      <node id="7668447476859120471" at="25,215,26,434" concept="4" />
+      <node id="7668447476859120471" at="23,5,24,104" concept="9" />
+      <node id="7668447476859120471" at="24,104,25,215" concept="9" />
+      <node id="7668447476859120471" at="25,215,26,435" concept="4" />
       <node id="1227022564431" at="28,5,29,44" concept="9" />
       <node id="1227022564431" at="29,44,30,209" concept="9" />
       <node id="1227022564431" at="30,209,31,286" concept="4" />
@@ -6203,7 +6203,7 @@
       <scope id="1227022545670" at="40,30,41,17" />
       <scope id="1227022566885" at="45,30,46,220" />
       <scope id="1227022545670" at="19,0,21,0" />
-      <scope id="7668447476859120471" at="23,5,26,434">
+      <scope id="7668447476859120471" at="23,5,26,435">
         <var name="_info_12389875345" id="7668447476859120471" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120471" />
       </scope>
@@ -6235,9 +6235,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227022638839">
     <file name="typeof_AddFirstElementOperation_InferenceRule.java">
       <node id="7668447476858956366" at="20,115,21,110" concept="9" />
-      <node id="7668447476858956367" at="22,5,23,103" concept="9" />
-      <node id="7668447476858956367" at="23,103,24,215" concept="9" />
-      <node id="7668447476858956367" at="24,215,25,446" concept="4" />
+      <node id="7668447476858956367" at="22,5,23,104" concept="9" />
+      <node id="7668447476858956367" at="23,104,24,215" concept="9" />
+      <node id="7668447476858956367" at="24,215,25,447" concept="4" />
       <node id="7668447476858956378" at="28,7,29,206" concept="9" />
       <node id="7668447476858956378" at="29,206,30,217" concept="9" />
       <node id="7668447476858956378" at="30,217,31,358" concept="4" />
@@ -6262,7 +6262,7 @@
       <scope id="1227022638839" at="43,68,44,102" />
       <scope id="1227022638839" at="46,30,47,17" />
       <scope id="1227022638839" at="18,0,20,0" />
-      <scope id="7668447476858956367" at="22,5,25,446">
+      <scope id="7668447476858956367" at="22,5,25,447">
         <var name="_info_12389875345" id="7668447476858956367" />
         <var name="_nodeToCheck_1029348928467" id="7668447476858956367" />
       </scope>
@@ -6294,9 +6294,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227022714857">
     <file name="typeof_AddLastElementOperation_InferenceRule.java">
       <node id="1227022724662" at="20,115,21,104" concept="9" />
-      <node id="7668447476858956358" at="22,5,23,103" concept="9" />
-      <node id="7668447476858956358" at="23,103,24,215" concept="9" />
-      <node id="7668447476858956358" at="24,215,25,434" concept="4" />
+      <node id="7668447476858956358" at="22,5,23,104" concept="9" />
+      <node id="7668447476858956358" at="23,104,24,215" concept="9" />
+      <node id="7668447476858956358" at="24,215,25,435" concept="4" />
       <node id="1227022724675" at="28,7,29,206" concept="9" />
       <node id="1227022724675" at="29,206,30,211" concept="9" />
       <node id="1227022724675" at="30,211,31,346" concept="4" />
@@ -6321,7 +6321,7 @@
       <scope id="1227022714857" at="43,68,44,102" />
       <scope id="1227022714857" at="46,30,47,17" />
       <scope id="1227022714857" at="18,0,20,0" />
-      <scope id="7668447476858956358" at="22,5,25,434">
+      <scope id="7668447476858956358" at="22,5,25,435">
         <var name="_info_12389875345" id="7668447476858956358" />
         <var name="_nodeToCheck_1029348928467" id="7668447476858956358" />
       </scope>
@@ -6353,9 +6353,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227026148894">
     <file name="typeof_RemoveFirstElementOperation_InferenceRule.java">
       <node id="1227026150601" at="19,115,20,104" concept="9" />
-      <node id="7668447476859120475" at="21,5,22,103" concept="9" />
-      <node id="7668447476859120475" at="22,103,23,215" concept="9" />
-      <node id="7668447476859120475" at="23,215,24,434" concept="4" />
+      <node id="7668447476859120475" at="21,5,22,104" concept="9" />
+      <node id="7668447476859120475" at="22,104,23,215" concept="9" />
+      <node id="7668447476859120475" at="23,215,24,435" concept="4" />
       <node id="1227026150623" at="26,5,27,44" concept="9" />
       <node id="1227026150623" at="27,44,28,209" concept="9" />
       <node id="1227026150623" at="28,209,29,322" concept="4" />
@@ -6375,7 +6375,7 @@
       <scope id="1227026148894" at="35,68,36,102" />
       <scope id="1227026148894" at="38,30,39,17" />
       <scope id="1227026148894" at="17,0,19,0" />
-      <scope id="7668447476859120475" at="21,5,24,434">
+      <scope id="7668447476859120475" at="21,5,24,435">
         <var name="_info_12389875345" id="7668447476859120475" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120475" />
       </scope>
@@ -6402,9 +6402,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1227026162503">
     <file name="typeof_RemoveLastElementOperation_InferenceRule.java">
       <node id="1227026164016" at="19,115,20,104" concept="9" />
-      <node id="7668447476859120476" at="21,5,22,103" concept="9" />
-      <node id="7668447476859120476" at="22,103,23,215" concept="9" />
-      <node id="7668447476859120476" at="23,215,24,434" concept="4" />
+      <node id="7668447476859120476" at="21,5,22,104" concept="9" />
+      <node id="7668447476859120476" at="22,104,23,215" concept="9" />
+      <node id="7668447476859120476" at="23,215,24,435" concept="4" />
       <node id="1227026164038" at="26,5,27,44" concept="9" />
       <node id="1227026164038" at="27,44,28,209" concept="9" />
       <node id="1227026164038" at="28,209,29,322" concept="4" />
@@ -6424,7 +6424,7 @@
       <scope id="1227026162503" at="35,68,36,102" />
       <scope id="1227026162503" at="38,30,39,17" />
       <scope id="1227026162503" at="17,0,19,0" />
-      <scope id="7668447476859120476" at="21,5,24,434">
+      <scope id="7668447476859120476" at="21,5,24,435">
         <var name="_info_12389875345" id="7668447476859120476" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120476" />
       </scope>
@@ -6551,8 +6551,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1235566720229">
     <file name="typeof_AnyOperation_InferenceRule.java">
       <node id="1235566732268" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120468" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120468" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120468" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120468" at="25,111,26,215" concept="9" />
       <node id="7668447476859120468" at="26,215,27,384" concept="4" />
       <node id="1235566732281" at="29,5,30,51" concept="9" />
       <node id="1235566732281" at="30,51,31,209" concept="9" />
@@ -6678,8 +6678,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1235566874836">
     <file name="typeof_AllOperation_InferenceRule.java">
       <node id="1235566876897" at="22,122,23,104" concept="9" />
-      <node id="7668447476859120467" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120467" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120467" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120467" at="25,111,26,215" concept="9" />
       <node id="7668447476859120467" at="26,215,27,384" concept="4" />
       <node id="1235566876911" at="29,5,30,51" concept="9" />
       <node id="1235566876911" at="30,51,31,209" concept="9" />
@@ -7165,10 +7165,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237470333097">
     <file name="typeof_GetIteratorOperation_InferenceRule.java">
       <node id="1237470428123" at="21,121,22,104" concept="9" />
-      <node id="1383381939051876065" at="23,5,24,109" concept="9" />
-      <node id="1383381939051876065" at="24,109,25,215" concept="9" />
+      <node id="1383381939051876065" at="23,5,24,110" concept="9" />
+      <node id="1383381939051876065" at="24,110,25,215" concept="9" />
       <node id="1383381939051876065" at="25,215,26,385" concept="4" />
-      <node id="2870391434971458918" at="28,5,29,246" concept="9" />
+      <node id="2870391434971458918" at="28,5,29,247" concept="9" />
       <node id="1240152218576" at="32,11,33,89" concept="9" />
       <node id="1240152218578" at="34,13,35,51" concept="9" />
       <node id="1240152218578" at="36,15,37,95" concept="9" />
@@ -7261,7 +7261,7 @@
       <node id="1240152218578" at="33,89,68,13" concept="0" />
       <node id="1240152218576" at="31,27,69,11" concept="0" />
       <node id="2870391434971458918" at="31,0,71,0" concept="8" trace="run#()V" />
-      <node id="2870391434971458918" at="29,246,71,139" concept="4" />
+      <node id="2870391434971458918" at="29,247,71,139" concept="4" />
       <node id="2870391434971458918" at="27,5,72,5" concept="0" />
       <node id="1237470333097" at="21,0,74,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1237470333097" at="19,54,19,54" />
@@ -7375,8 +7375,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237470917222">
     <file name="typeof_HasNextOperation_InferenceRule.java">
       <node id="1237470988790" at="21,120,22,104" concept="9" />
-      <node id="1383381939051876063" at="23,5,24,108" concept="9" />
-      <node id="1383381939051876063" at="24,108,25,215" concept="9" />
+      <node id="1383381939051876063" at="23,5,24,109" concept="9" />
+      <node id="1383381939051876063" at="24,109,25,215" concept="9" />
       <node id="1383381939051876063" at="25,215,26,385" concept="4" />
       <node id="1237471013663" at="28,5,29,49" concept="9" />
       <node id="1237471013663" at="29,49,30,209" concept="9" />
@@ -7461,8 +7461,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237471047473">
     <file name="typeof_GetNextOperation_InferenceRule.java">
       <node id="1237471059662" at="21,117,22,104" concept="9" />
-      <node id="1383381939051695194" at="23,5,24,105" concept="9" />
-      <node id="1383381939051695194" at="24,105,25,215" concept="9" />
+      <node id="1383381939051695194" at="23,5,24,106" concept="9" />
+      <node id="1383381939051695194" at="24,106,25,215" concept="9" />
       <node id="1383381939051695194" at="25,215,26,385" concept="4" />
       <node id="1237471059675" at="28,5,29,46" concept="9" />
       <node id="1237471059675" at="29,46,30,209" concept="9" />
@@ -7534,8 +7534,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237471103266">
     <file name="typeof_GetCurrentOperation_InferenceRule.java">
       <node id="1237471109733" at="21,120,22,104" concept="9" />
-      <node id="1383381939051876067" at="23,5,24,108" concept="9" />
-      <node id="1383381939051876067" at="24,108,25,215" concept="9" />
+      <node id="1383381939051876067" at="23,5,24,109" concept="9" />
+      <node id="1383381939051876067" at="24,109,25,215" concept="9" />
       <node id="1383381939051876067" at="25,215,26,385" concept="4" />
       <node id="1237471109746" at="28,5,29,49" concept="9" />
       <node id="1237471109746" at="29,49,30,209" concept="9" />
@@ -7607,8 +7607,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237471184664">
     <file name="typeof_MoveNextOperation_InferenceRule.java">
       <node id="1237471191123" at="21,121,22,104" concept="9" />
-      <node id="2762046050488366455" at="23,5,24,109" concept="9" />
-      <node id="2762046050488366455" at="24,109,25,215" concept="9" />
+      <node id="2762046050488366455" at="23,5,24,110" concept="9" />
+      <node id="2762046050488366455" at="24,110,25,215" concept="9" />
       <node id="2762046050488366455" at="25,215,26,385" concept="4" />
       <node id="1237471191136" at="28,5,29,50" concept="9" />
       <node id="1237471191136" at="29,50,30,209" concept="9" />
@@ -8022,8 +8022,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237549316054">
     <file name="typeof_GetEnumeratorOperation_InferenceRule.java">
       <node id="1237549347223" at="21,123,22,104" concept="9" />
-      <node id="2762046050488366612" at="23,5,24,111" concept="9" />
-      <node id="2762046050488366612" at="24,111,25,215" concept="9" />
+      <node id="2762046050488366612" at="23,5,24,112" concept="9" />
+      <node id="2762046050488366612" at="24,112,25,215" concept="9" />
       <node id="2762046050488366612" at="25,215,26,385" concept="4" />
       <node id="1237549347236" at="28,5,29,52" concept="9" />
       <node id="1237549347236" at="29,52,30,209" concept="9" />
@@ -8139,7 +8139,7 @@
       <node id="1562299158921037898" at="67,217,68,319" concept="4" />
       <node id="1237723275733" at="71,5,72,49" concept="9" />
       <node id="1237723275733" at="72,49,73,209" concept="9" />
-      <node id="1237723275733" at="73,209,74,330" concept="4" />
+      <node id="1237723275733" at="73,209,74,331" concept="4" />
       <node id="1237723040301" at="77,50,78,176" concept="10" />
       <node id="1237723040301" at="80,68,81,102" concept="0" />
       <node id="1237723040301" at="80,68,81,102" concept="10" />
@@ -8228,7 +8228,7 @@
         <var name="_info_12389875345" id="1562299158921037898" />
         <var name="_nodeToCheck_1029348928467" id="1562299158921037898" />
       </scope>
-      <scope id="1237723275733" at="71,5,74,330">
+      <scope id="1237723275733" at="71,5,74,331">
         <var name="_info_12389875345" id="1237723275733" />
         <var name="_nodeToCheck_1029348928467" id="1237723275733" />
       </scope>
@@ -8287,8 +8287,8 @@
       <node id="1237907234104" at="25,209,26,286" concept="4" />
       <node id="1237907234111" at="27,5,28,96" concept="9" />
       <node id="1237907234112" at="28,96,29,98" concept="9" />
-      <node id="7668447476859120480" at="30,5,31,103" concept="9" />
-      <node id="7668447476859120480" at="31,103,32,215" concept="9" />
+      <node id="7668447476859120480" at="30,5,31,104" concept="9" />
+      <node id="7668447476859120480" at="31,104,32,215" concept="9" />
       <node id="7668447476859120480" at="32,215,33,445" concept="4" />
       <node id="1237907234128" at="36,7,37,195" concept="9" />
       <node id="1237907234128" at="37,195,38,211" concept="9" />
@@ -8392,8 +8392,8 @@
     <file name="typeof_GetValuesOperation_InferenceRule.java">
       <node id="1237909258568" at="21,115,22,96" concept="9" />
       <node id="1237909258569" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120482" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120482" at="25,103,26,215" concept="9" />
+      <node id="7668447476859120482" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120482" at="25,104,26,215" concept="9" />
       <node id="7668447476859120482" at="26,215,27,445" concept="4" />
       <node id="1237909258585" at="29,5,30,44" concept="9" />
       <node id="1237909258585" at="30,44,31,209" concept="9" />
@@ -8628,8 +8628,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240151619985">
     <file name="typeof_RemoveOperation_InferenceRule.java">
       <node id="1240151823485" at="21,122,22,105" concept="9" />
-      <node id="2762046050488366458" at="23,5,24,110" concept="9" />
-      <node id="2762046050488366458" at="24,110,25,215" concept="9" />
+      <node id="2762046050488366458" at="23,5,24,111" concept="9" />
+      <node id="2762046050488366458" at="24,111,25,215" concept="9" />
       <node id="2762046050488366458" at="25,215,26,386" concept="4" />
       <node id="1240151843320" at="28,5,29,51" concept="9" />
       <node id="1240151843320" at="29,51,30,209" concept="9" />
@@ -8852,8 +8852,8 @@
     <file name="typeof_HeadMapOperation_InferenceRule.java">
       <node id="1240239989539" at="22,122,23,101" concept="9" />
       <node id="1240240024843" at="23,101,24,103" concept="9" />
-      <node id="7668447476859120483" at="25,5,26,110" concept="9" />
-      <node id="7668447476859120483" at="26,110,27,215" concept="9" />
+      <node id="7668447476859120483" at="25,5,26,111" concept="9" />
+      <node id="7668447476859120483" at="26,111,27,215" concept="9" />
       <node id="7668447476859120483" at="27,215,28,454" concept="4" />
       <node id="1240240108699" at="31,7,32,202" concept="9" />
       <node id="1240240108699" at="32,202,33,211" concept="9" />
@@ -8981,8 +8981,8 @@
     <file name="typeof_TailMapOperation_InferenceRule.java">
       <node id="1240240157656" at="22,122,23,101" concept="9" />
       <node id="1240240157657" at="23,101,24,103" concept="9" />
-      <node id="7668447476859120491" at="25,5,26,110" concept="9" />
-      <node id="7668447476859120491" at="26,110,27,215" concept="9" />
+      <node id="7668447476859120491" at="25,5,26,111" concept="9" />
+      <node id="7668447476859120491" at="26,111,27,215" concept="9" />
       <node id="7668447476859120491" at="27,215,28,454" concept="4" />
       <node id="1240240157673" at="31,7,32,204" concept="9" />
       <node id="1240240157673" at="32,204,33,211" concept="9" />
@@ -9110,8 +9110,8 @@
     <file name="typeof_SubMapOperation_InferenceRule.java">
       <node id="1240240358091" at="22,122,23,101" concept="9" />
       <node id="1240240358092" at="23,101,24,103" concept="9" />
-      <node id="7668447476859120490" at="25,5,26,110" concept="9" />
-      <node id="7668447476859120490" at="26,110,27,215" concept="9" />
+      <node id="7668447476859120490" at="25,5,26,111" concept="9" />
+      <node id="7668447476859120490" at="26,111,27,215" concept="9" />
       <node id="7668447476859120490" at="27,215,28,454" concept="4" />
       <node id="1240240358108" at="31,7,32,204" concept="9" />
       <node id="1240240358108" at="32,204,33,211" concept="9" />
@@ -9248,8 +9248,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240251380238">
     <file name="typeof_HeadSetOperation_InferenceRule.java">
       <node id="1240251421675" at="22,122,23,105" concept="9" />
-      <node id="7668447476859120529" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120529" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120529" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120529" at="25,111,26,215" concept="9" />
       <node id="7668447476859120529" at="26,215,27,385" concept="4" />
       <node id="1240251465113" at="30,7,31,206" concept="9" />
       <node id="1240251465113" at="31,206,32,211" concept="9" />
@@ -9355,8 +9355,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240251624474">
     <file name="typeof_TailSetOperation_InferenceRule.java">
       <node id="1240251634178" at="22,122,23,105" concept="9" />
-      <node id="7668447476859120533" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120533" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120533" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120533" at="25,111,26,215" concept="9" />
       <node id="7668447476859120533" at="26,215,27,385" concept="4" />
       <node id="1240251634191" at="30,7,31,208" concept="9" />
       <node id="1240251634191" at="31,208,32,211" concept="9" />
@@ -9462,8 +9462,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240251724629">
     <file name="typeof_SubSetOperation_InferenceRule.java">
       <node id="1240251732387" at="22,122,23,105" concept="9" />
-      <node id="7668447476859120532" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120532" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120532" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120532" at="25,111,26,215" concept="9" />
       <node id="7668447476859120532" at="26,215,27,385" concept="4" />
       <node id="1240251732401" at="30,7,31,208" concept="9" />
       <node id="1240251732401" at="31,208,32,211" concept="9" />
@@ -10116,8 +10116,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240325939754">
     <file name="typeof_AsSequenceOperation_InferenceRule.java">
       <node id="1240325949271" at="21,122,22,105" concept="9" />
-      <node id="2762046050488366608" at="23,5,24,110" concept="9" />
-      <node id="2762046050488366608" at="24,110,25,215" concept="9" />
+      <node id="2762046050488366608" at="23,5,24,111" concept="9" />
+      <node id="2762046050488366608" at="24,111,25,215" concept="9" />
       <node id="2762046050488366608" at="25,215,26,385" concept="4" />
       <node id="1240326003575" at="28,5,29,51" concept="9" />
       <node id="1240326003575" at="29,51,30,209" concept="9" />
@@ -10216,8 +10216,8 @@
       <node id="1240688372882" at="24,5,25,51" concept="9" />
       <node id="1240688372882" at="25,51,26,209" concept="9" />
       <node id="1240688372882" at="26,209,27,183" concept="4" />
-      <node id="7668447476859120539" at="29,5,30,110" concept="9" />
-      <node id="7668447476859120539" at="30,110,31,215" concept="9" />
+      <node id="7668447476859120539" at="29,5,30,111" concept="9" />
+      <node id="7668447476859120539" at="30,111,31,215" concept="9" />
       <node id="7668447476859120539" at="31,215,32,379" concept="4" />
       <node id="1240687879037" at="36,9,37,208" concept="9" />
       <node id="1240687879037" at="37,208,38,213" concept="9" />
@@ -10554,8 +10554,8 @@
     <file name="typeof_ValueAccessOperation_InferenceRule.java">
       <node id="1240825584221" at="21,122,22,96" concept="9" />
       <node id="1240825516045" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120492" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120492" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120492" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120492" at="25,111,26,215" concept="9" />
       <node id="7668447476859120492" at="26,215,27,444" concept="4" />
       <node id="1240825605656" at="29,5,30,51" concept="9" />
       <node id="1240825605656" at="30,51,31,209" concept="9" />
@@ -10639,8 +10639,8 @@
     <file name="typeof_KeyAccessOperation_InferenceRule.java">
       <node id="1240825643058" at="21,122,22,96" concept="9" />
       <node id="1240825643059" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120484" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120484" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120484" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120484" at="25,111,26,215" concept="9" />
       <node id="7668447476859120484" at="26,215,27,444" concept="4" />
       <node id="1240825643075" at="29,5,30,51" concept="9" />
       <node id="1240825643075" at="30,51,31,209" concept="9" />
@@ -10724,8 +10724,8 @@
     <file name="typeof_MappingsSetOperation_InferenceRule.java">
       <node id="1240854441569" at="21,122,22,96" concept="9" />
       <node id="1240854445546" at="22,96,23,98" concept="9" />
-      <node id="7668447476859120488" at="24,5,25,110" concept="9" />
-      <node id="7668447476859120488" at="25,110,26,215" concept="9" />
+      <node id="7668447476859120488" at="24,5,25,111" concept="9" />
+      <node id="7668447476859120488" at="25,111,26,215" concept="9" />
       <node id="7668447476859120488" at="26,215,27,444" concept="4" />
       <node id="1240854519783" at="28,5,29,100" concept="9" />
       <node id="1240854488447" at="30,5,31,51" concept="9" />
@@ -10969,8 +10969,8 @@
     <file name="typeof_PutAllOperation_InferenceRule.java">
       <node id="1240906967388" at="22,122,23,96" concept="9" />
       <node id="1240906971637" at="23,96,24,98" concept="9" />
-      <node id="7668447476859120489" at="25,5,26,110" concept="9" />
-      <node id="7668447476859120489" at="26,110,27,215" concept="9" />
+      <node id="7668447476859120489" at="25,5,26,111" concept="9" />
+      <node id="7668447476859120489" at="26,111,27,215" concept="9" />
       <node id="7668447476859120489" at="27,215,28,444" concept="4" />
       <node id="1240907008336" at="31,7,32,200" concept="9" />
       <node id="1240907008336" at="32,200,33,211" concept="9" />
@@ -11691,8 +11691,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1522217801069359740">
     <file name="typeof_ReduceLeftOperation_InferenceRule.java">
       <node id="1522217801069359744" at="22,122,23,110" concept="9" />
-      <node id="2762046050488366456" at="24,5,25,110" concept="9" />
-      <node id="2762046050488366456" at="25,110,26,215" concept="9" />
+      <node id="2762046050488366456" at="24,5,25,111" concept="9" />
+      <node id="2762046050488366456" at="25,111,26,215" concept="9" />
       <node id="2762046050488366456" at="26,215,27,396" concept="4" />
       <node id="1522217801069359758" at="29,5,30,51" concept="9" />
       <node id="1522217801069359758" at="30,51,31,215" concept="9" />
@@ -11818,8 +11818,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1522217801069396406">
     <file name="typeof_ReduceRightOperation_InferenceRule.java">
       <node id="1522217801069396409" at="22,122,23,110" concept="9" />
-      <node id="2762046050488366457" at="24,5,25,110" concept="9" />
-      <node id="2762046050488366457" at="25,110,26,215" concept="9" />
+      <node id="2762046050488366457" at="24,5,25,111" concept="9" />
+      <node id="2762046050488366457" at="25,111,26,215" concept="9" />
       <node id="2762046050488366457" at="26,215,27,396" concept="4" />
       <node id="1522217801069396423" at="29,5,30,51" concept="9" />
       <node id="1522217801069396423" at="30,51,31,215" concept="9" />
@@ -11946,8 +11946,8 @@
     <file name="typeof_FoldLeftOperation_InferenceRule.java">
       <node id="1522217801069396613" at="22,122,23,110" concept="9" />
       <node id="1522217801069396654" at="23,110,24,107" concept="9" />
-      <node id="2762046050488366610" at="25,5,26,110" concept="9" />
-      <node id="2762046050488366610" at="26,110,27,215" concept="9" />
+      <node id="2762046050488366610" at="25,5,26,111" concept="9" />
+      <node id="2762046050488366610" at="26,111,27,215" concept="9" />
       <node id="2762046050488366610" at="27,215,28,396" concept="4" />
       <node id="1522217801069396627" at="30,5,31,51" concept="9" />
       <node id="1522217801069396627" at="31,51,32,215" concept="9" />
@@ -12083,8 +12083,8 @@
     <file name="typeof_FoldRightOperation_InferenceRule.java">
       <node id="1522217801069421887" at="22,122,23,110" concept="9" />
       <node id="1522217801069421888" at="23,110,24,107" concept="9" />
-      <node id="2762046050488366611" at="25,5,26,110" concept="9" />
-      <node id="2762046050488366611" at="26,110,27,215" concept="9" />
+      <node id="2762046050488366611" at="25,5,26,111" concept="9" />
+      <node id="2762046050488366611" at="26,111,27,215" concept="9" />
       <node id="2762046050488366611" at="27,215,28,396" concept="4" />
       <node id="1522217801069421902" at="30,5,31,51" concept="9" />
       <node id="1522217801069421902" at="31,51,32,215" concept="9" />
@@ -12220,7 +12220,7 @@
     <file name="typeof_CustomMapCreator_InferenceRule.java">
       <node id="1576845966386918991" at="19,5,20,45" concept="9" />
       <node id="1576845966386918991" at="20,45,21,215" concept="9" />
-      <node id="1576845966386918991" at="21,215,22,328" concept="4" />
+      <node id="1576845966386918991" at="21,215,22,329" concept="4" />
       <node id="1576845966386918275" at="25,50,26,173" concept="10" />
       <node id="1576845966386918275" at="28,68,29,102" concept="0" />
       <node id="1576845966386918275" at="28,68,29,102" concept="10" />
@@ -12236,7 +12236,7 @@
       <scope id="1576845966386918275" at="28,68,29,102" />
       <scope id="1576845966386918275" at="31,30,32,16" />
       <scope id="1576845966386918275" at="16,0,18,0" />
-      <scope id="1576845966386918991" at="19,5,22,328">
+      <scope id="1576845966386918991" at="19,5,22,329">
         <var name="_info_12389875345" id="1576845966386918991" />
         <var name="_nodeToCheck_1029348928467" id="1576845966386918991" />
       </scope>
@@ -12375,12 +12375,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/2526372162255446590">
     <file name="typeof_AsUnmodifiableOperation_InferenceRule.java">
       <node id="2526372162255517322" at="21,116,22,106" concept="9" />
-      <node id="7668447476859018469" at="23,5,24,104" concept="9" />
-      <node id="7668447476859018469" at="24,104,25,215" concept="9" />
+      <node id="7668447476859018469" at="23,5,24,105" concept="9" />
+      <node id="7668447476859018469" at="24,105,25,215" concept="9" />
       <node id="7668447476859018469" at="25,215,26,392" concept="4" />
       <node id="2526372162255517331" at="28,5,29,45" concept="9" />
       <node id="2526372162255517331" at="29,45,30,215" concept="9" />
-      <node id="2526372162255517331" at="30,215,31,468" concept="4" />
+      <node id="2526372162255517331" at="30,215,31,469" concept="4" />
       <node id="2526372162255446590" at="34,50,35,180" concept="10" />
       <node id="2526372162255446590" at="37,68,38,102" concept="0" />
       <node id="2526372162255446590" at="37,68,38,102" concept="10" />
@@ -12415,7 +12415,7 @@
         <var name="_info_12389875345" id="7668447476859018469" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859018469" />
       </scope>
-      <scope id="2526372162255517331" at="28,5,31,468">
+      <scope id="2526372162255517331" at="28,5,31,469">
         <var name="_info_12389875345" id="2526372162255517331" />
         <var name="_nodeToCheck_1029348928467" id="2526372162255517331" />
       </scope>
@@ -13200,12 +13200,12 @@
     <file name="typeof_RemoveWhereOperation_InferenceRule.java">
       <node id="3055999550620863371" at="23,116,24,109" concept="9" />
       <node id="3055999550620867612" at="24,109,25,111" concept="9" />
-      <node id="3055999550620867617" at="26,5,27,104" concept="9" />
-      <node id="3055999550620867617" at="27,104,28,215" concept="9" />
+      <node id="3055999550620867617" at="26,5,27,105" concept="9" />
+      <node id="3055999550620867617" at="27,105,28,215" concept="9" />
       <node id="3055999550620867617" at="28,215,29,335" concept="4" />
       <node id="5380162141339074462" at="31,5,32,45" concept="9" />
       <node id="5380162141339074462" at="32,45,33,215" concept="9" />
-      <node id="5380162141339074462" at="33,215,34,349" concept="4" />
+      <node id="5380162141339074462" at="33,215,34,350" concept="4" />
       <node id="3055999550620863384" at="37,7,38,198" concept="9" />
       <node id="3055999550620863384" at="38,198,39,217" concept="9" />
       <node id="3055999550620863384" at="39,217,40,393" concept="4" />
@@ -13255,7 +13255,7 @@
         <var name="_info_12389875345" id="3055999550620867617" />
         <var name="_nodeToCheck_1029348928467" id="3055999550620867617" />
       </scope>
-      <scope id="5380162141339074462" at="31,5,34,349">
+      <scope id="5380162141339074462" at="31,5,34,350">
         <var name="_info_12389875345" id="5380162141339074462" />
         <var name="_nodeToCheck_1029348928467" id="5380162141339074462" />
       </scope>
@@ -13444,9 +13444,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/3358009230508699968">
     <file name="typeof_PopOperation_InferenceRule.java">
       <node id="3358009230508729162" at="19,115,20,111" concept="9" />
-      <node id="7668447476859120535" at="21,5,22,103" concept="9" />
-      <node id="7668447476859120535" at="22,103,23,215" concept="9" />
-      <node id="7668447476859120535" at="23,215,24,447" concept="4" />
+      <node id="7668447476859120535" at="21,5,22,104" concept="9" />
+      <node id="7668447476859120535" at="22,104,23,215" concept="9" />
+      <node id="7668447476859120535" at="23,215,24,448" concept="4" />
       <node id="3358009230508729169" at="26,5,27,44" concept="9" />
       <node id="3358009230508729169" at="27,44,28,215" concept="9" />
       <node id="3358009230508729169" at="28,215,29,335" concept="4" />
@@ -13466,7 +13466,7 @@
       <scope id="3358009230508699968" at="35,68,36,102" />
       <scope id="3358009230508699968" at="38,30,39,17" />
       <scope id="3358009230508699968" at="17,0,19,0" />
-      <scope id="7668447476859120535" at="21,5,24,447">
+      <scope id="7668447476859120535" at="21,5,24,448">
         <var name="_info_12389875345" id="7668447476859120535" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120535" />
       </scope>
@@ -13493,9 +13493,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/3358009230508799529">
     <file name="typeof_PushOperation_InferenceRule.java">
       <node id="3358009230508799532" at="20,115,21,111" concept="9" />
-      <node id="7668447476859120536" at="22,5,23,103" concept="9" />
-      <node id="7668447476859120536" at="23,103,24,215" concept="9" />
-      <node id="7668447476859120536" at="24,215,25,447" concept="4" />
+      <node id="7668447476859120536" at="22,5,23,104" concept="9" />
+      <node id="7668447476859120536" at="23,104,24,215" concept="9" />
+      <node id="7668447476859120536" at="24,215,25,448" concept="4" />
       <node id="3358009230508993667" at="28,7,29,206" concept="9" />
       <node id="3358009230508993667" at="29,206,30,217" concept="9" />
       <node id="3358009230508993667" at="30,217,31,359" concept="4" />
@@ -13520,7 +13520,7 @@
       <scope id="3358009230508799529" at="43,68,44,102" />
       <scope id="3358009230508799529" at="46,30,47,17" />
       <scope id="3358009230508799529" at="18,0,20,0" />
-      <scope id="7668447476859120536" at="22,5,25,447">
+      <scope id="7668447476859120536" at="22,5,25,448">
         <var name="_info_12389875345" id="7668447476859120536" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120536" />
       </scope>
@@ -13716,7 +13716,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/360223900469176654">
     <file name="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java">
       <node id="360223900469176656" at="23,118,24,179" concept="9" />
-      <node id="360223900469176664" at="25,186,26,69" concept="4" />
+      <node id="360223900469176664" at="25,186,26,70" concept="4" />
       <node id="360223900469176674" at="27,5,28,49" concept="10" />
       <node id="360223900469176654" at="30,50,31,160" concept="10" />
       <node id="360223900469176654" at="33,68,34,102" concept="0" />
@@ -13743,7 +13743,7 @@
       <node id="360223900469176654" at="23,0,30,0" concept="8" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="360223900469176675" at="39,0,51,0" concept="14" trace="_quotation_createNode_tkf239_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="360223900469176654" at="21,67,21,67" />
-      <scope id="360223900469176663" at="25,186,26,69" />
+      <scope id="360223900469176663" at="25,186,26,70" />
       <scope id="360223900469176654" at="30,50,31,160" />
       <scope id="360223900469176654" at="33,68,34,102" />
       <scope id="360223900469176654" at="36,27,37,16" />
@@ -13778,7 +13778,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/360223900469239436">
     <file name="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java">
       <node id="360223900469239438" at="23,117,24,178" concept="9" />
-      <node id="360223900469239446" at="25,186,26,69" concept="4" />
+      <node id="360223900469239446" at="25,186,26,70" concept="4" />
       <node id="360223900469239456" at="27,5,28,49" concept="10" />
       <node id="360223900469239436" at="30,50,31,159" concept="10" />
       <node id="360223900469239436" at="33,68,34,102" concept="0" />
@@ -13805,7 +13805,7 @@
       <node id="360223900469239436" at="23,0,30,0" concept="8" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="360223900469239457" at="39,0,51,0" concept="14" trace="_quotation_createNode_m5bzh3_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="360223900469239436" at="21,65,21,65" />
-      <scope id="360223900469239445" at="25,186,26,69" />
+      <scope id="360223900469239445" at="25,186,26,70" />
       <scope id="360223900469239436" at="30,50,31,159" />
       <scope id="360223900469239436" at="33,68,34,102" />
       <scope id="360223900469239436" at="36,27,37,16" />
@@ -13938,8 +13938,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4073682006117732267">
     <file name="typeof_TestRemoveElementOperation_InferenceRule.java">
       <node id="4073682006117732270" at="22,116,23,106" concept="9" />
-      <node id="7668447476859120465" at="24,5,25,104" concept="9" />
-      <node id="7668447476859120465" at="25,104,26,215" concept="9" />
+      <node id="7668447476859120465" at="24,5,25,105" concept="9" />
+      <node id="7668447476859120465" at="25,105,26,215" concept="9" />
       <node id="7668447476859120465" at="26,215,27,392" concept="4" />
       <node id="4073682006117732283" at="30,7,31,207" concept="9" />
       <node id="4073682006117732283" at="31,207,32,217" concept="9" />
@@ -14281,12 +14281,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4611582986551020946">
     <file name="typeof_AsSynchronizedOperation_InferenceRule.java">
       <node id="4611582986551020949" at="21,116,22,106" concept="9" />
-      <node id="7668447476859018362" at="23,5,24,104" concept="9" />
-      <node id="7668447476859018362" at="24,104,25,215" concept="9" />
+      <node id="7668447476859018362" at="23,5,24,105" concept="9" />
+      <node id="7668447476859018362" at="24,105,25,215" concept="9" />
       <node id="7668447476859018362" at="25,215,26,392" concept="4" />
       <node id="4611582986551020962" at="28,5,29,45" concept="9" />
       <node id="4611582986551020962" at="29,45,30,215" concept="9" />
-      <node id="4611582986551020962" at="30,215,31,468" concept="4" />
+      <node id="4611582986551020962" at="30,215,31,469" concept="4" />
       <node id="4611582986551020946" at="34,50,35,180" concept="10" />
       <node id="4611582986551020946" at="37,68,38,102" concept="0" />
       <node id="4611582986551020946" at="37,68,38,102" concept="10" />
@@ -14321,7 +14321,7 @@
         <var name="_info_12389875345" id="7668447476859018362" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859018362" />
       </scope>
-      <scope id="4611582986551020962" at="28,5,31,468">
+      <scope id="4611582986551020962" at="28,5,31,469">
         <var name="_info_12389875345" id="4611582986551020962" />
         <var name="_nodeToCheck_1029348928467" id="4611582986551020962" />
       </scope>
@@ -14354,8 +14354,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4611582986551314347">
     <file name="typeof_OfTypeOperation_InferenceRule.java">
       <node id="4611582986551319118" at="23,116,24,106" concept="9" />
-      <node id="7668447476859120525" at="25,5,26,104" concept="9" />
-      <node id="7668447476859120525" at="26,104,27,215" concept="9" />
+      <node id="7668447476859120525" at="25,5,26,105" concept="9" />
+      <node id="7668447476859120525" at="26,105,27,215" concept="9" />
       <node id="7668447476859120525" at="27,215,28,392" concept="4" />
       <node id="4611582986551319127" at="30,5,31,45" concept="9" />
       <node id="4611582986551319127" at="31,45,32,215" concept="9" />
@@ -14487,7 +14487,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4998595809121260103">
     <file name="check_HashMapCreator_NonTypesystemRule.java">
-      <node id="1241447267829" at="22,116,23,501" concept="9" />
+      <node id="1241447267829" at="22,116,23,502" concept="9" />
       <node id="4998595809121264603" at="24,291,25,58" concept="9" />
       <node id="4998595809121264603" at="25,58,26,242" concept="9" />
       <node id="4998595809121260103" at="29,50,30,166" concept="10" />
@@ -14498,7 +14498,7 @@
       <node id="4998595809121260103" at="29,0,32,0" concept="8" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4998595809121260103" at="32,0,35,0" concept="8" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4998595809121260103" at="35,0,38,0" concept="8" trace="overrides#()Z" />
-      <node id="4998595809121264603" at="23,501,27,5" concept="7" />
+      <node id="4998595809121264603" at="23,502,27,5" concept="7" />
       <node id="4998595809121260103" at="22,0,29,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4998595809121260103" at="20,51,20,51" />
       <scope id="4998595809121260103" at="29,50,30,166" />
@@ -14564,7 +14564,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4998595809121271016">
     <file name="check_TreeMapCreator_NonTypesystemRule.java">
-      <node id="1241447284982" at="22,116,23,501" concept="9" />
+      <node id="1241447284982" at="22,116,23,502" concept="9" />
       <node id="4998595809121273803" at="24,297,25,58" concept="9" />
       <node id="4998595809121273803" at="25,58,26,242" concept="9" />
       <node id="4998595809121271016" at="29,50,30,166" concept="10" />
@@ -14575,7 +14575,7 @@
       <node id="4998595809121271016" at="29,0,32,0" concept="8" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4998595809121271016" at="32,0,35,0" concept="8" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4998595809121271016" at="35,0,38,0" concept="8" trace="overrides#()Z" />
-      <node id="4998595809121273803" at="23,501,27,5" concept="7" />
+      <node id="4998595809121273803" at="23,502,27,5" concept="7" />
       <node id="4998595809121271016" at="22,0,29,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4998595809121271016" at="20,51,20,51" />
       <scope id="4998595809121271016" at="29,50,30,166" />
@@ -14900,7 +14900,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4998595809121311852">
     <file name="check_SequenceOperation_NonTypesystemRule.java">
-      <node id="4998595809121349618" at="26,115,27,124" concept="9" />
+      <node id="4998595809121349618" at="26,115,27,125" concept="9" />
       <node id="4998595809122229800" at="28,219,29,60" concept="11" />
       <node id="4998595809122214466" at="29,60,30,68" concept="9" />
       <node id="4998595809122241351" at="32,41,33,94" concept="10" />
@@ -14921,7 +14921,7 @@
       <node id="4998595809122243464" at="40,12,44,7" concept="7" />
       <node id="4998595809121344263" at="40,10,45,5" concept="0" />
       <node id="4998595809122235508" at="30,68,38,7" concept="7" />
-      <node id="4998595809121341449" at="27,124,45,5" concept="7" />
+      <node id="4998595809121341449" at="27,125,45,5" concept="7" />
       <node id="4998595809121311852" at="26,0,47,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4998595809121311852" at="24,54,24,54" />
       <scope id="4998595809122241068" at="32,41,33,94" />
@@ -14957,7 +14957,7 @@
         <var name="status" id="4998595809121311852" />
         <var name="typeCheckingContext" id="4998595809121311852" />
       </scope>
-      <unit id="4998595809122241067" at="31,175,35,7" name="jetbrains.mps.baseLanguage.collections.typesystem.check_SequenceOperation_NonTypesystemRule$1" />
+      <unit id="4998595809122241067" at="31,176,35,7" name="jetbrains.mps.baseLanguage.collections.typesystem.check_SequenceOperation_NonTypesystemRule$1" />
       <unit id="4998595809121311852" at="23,0,57,0" name="jetbrains.mps.baseLanguage.collections.typesystem.check_SequenceOperation_NonTypesystemRule" />
     </file>
   </root>
@@ -15079,8 +15079,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5232196642625575001">
     <file name="typeof_HeadListOperation_InferenceRule.java">
       <node id="5232196642625575004" at="22,115,23,111" concept="9" />
-      <node id="7668447476859120472" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120472" at="25,103,26,215" concept="9" />
+      <node id="7668447476859120472" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120472" at="25,104,26,215" concept="9" />
       <node id="7668447476859120472" at="26,215,27,397" concept="4" />
       <node id="5232196642625575026" at="30,7,31,209" concept="9" />
       <node id="5232196642625575026" at="31,209,32,217" concept="9" />
@@ -15199,8 +15199,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5232196642625575076">
     <file name="typeof_TailListOperation_InferenceRule.java">
       <node id="5232196642625575121" at="22,115,23,111" concept="9" />
-      <node id="7668447476859120478" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120478" at="25,103,26,215" concept="9" />
+      <node id="7668447476859120478" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120478" at="25,104,26,215" concept="9" />
       <node id="7668447476859120478" at="26,215,27,397" concept="4" />
       <node id="5232196642625575134" at="30,7,31,209" concept="9" />
       <node id="5232196642625575134" at="31,209,32,217" concept="9" />
@@ -15319,8 +15319,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5633809102336885672">
     <file name="typeof_SubListOperation_InferenceRule.java">
       <node id="5633809102336891166" at="22,115,23,111" concept="9" />
-      <node id="7668447476859120477" at="24,5,25,103" concept="9" />
-      <node id="7668447476859120477" at="25,103,26,215" concept="9" />
+      <node id="7668447476859120477" at="24,5,25,104" concept="9" />
+      <node id="7668447476859120477" at="25,104,26,215" concept="9" />
       <node id="7668447476859120477" at="26,215,27,397" concept="4" />
       <node id="5633809102336891180" at="30,7,31,209" concept="9" />
       <node id="5633809102336891180" at="31,209,32,217" concept="9" />
@@ -15462,8 +15462,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5699792037748043367">
     <file name="typeof_TestAddElementOperation_InferenceRule.java">
       <node id="5699792037748117896" at="22,116,23,106" concept="9" />
-      <node id="7668447476859120464" at="24,5,25,104" concept="9" />
-      <node id="7668447476859120464" at="25,104,26,215" concept="9" />
+      <node id="7668447476859120464" at="24,5,25,105" concept="9" />
+      <node id="7668447476859120464" at="25,105,26,215" concept="9" />
       <node id="7668447476859120464" at="26,215,27,392" concept="4" />
       <node id="5699792037748117917" at="30,7,31,207" concept="9" />
       <node id="5699792037748117917" at="31,207,32,217" concept="9" />
@@ -15558,9 +15558,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5784983078884872753">
     <file name="typeof_PeekOperation_InferenceRule.java">
       <node id="5784983078884872756" at="19,115,20,111" concept="9" />
-      <node id="7668447476859120534" at="21,5,22,103" concept="9" />
-      <node id="7668447476859120534" at="22,103,23,215" concept="9" />
-      <node id="7668447476859120534" at="23,215,24,447" concept="4" />
+      <node id="7668447476859120534" at="21,5,22,104" concept="9" />
+      <node id="7668447476859120534" at="22,104,23,215" concept="9" />
+      <node id="7668447476859120534" at="23,215,24,448" concept="4" />
       <node id="5784983078884872768" at="26,5,27,44" concept="9" />
       <node id="5784983078884872768" at="27,44,28,215" concept="9" />
       <node id="5784983078884872768" at="28,215,29,335" concept="4" />
@@ -15580,7 +15580,7 @@
       <scope id="5784983078884872753" at="35,68,36,102" />
       <scope id="5784983078884872753" at="38,30,39,17" />
       <scope id="5784983078884872753" at="17,0,19,0" />
-      <scope id="7668447476859120534" at="21,5,24,447">
+      <scope id="7668447476859120534" at="21,5,24,448">
         <var name="_info_12389875345" id="7668447476859120534" />
         <var name="_nodeToCheck_1029348928467" id="7668447476859120534" />
       </scope>
@@ -15608,8 +15608,8 @@
     <file name="typeof_ContainsAllOperation_InferenceRule.java">
       <node id="6126991172893688513" at="22,115,23,111" concept="9" />
       <node id="6126991172893688543" at="23,111,24,115" concept="9" />
-      <node id="7668447476859120493" at="25,5,26,103" concept="9" />
-      <node id="7668447476859120493" at="26,103,27,215" concept="9" />
+      <node id="7668447476859120493" at="25,5,26,104" concept="9" />
+      <node id="7668447476859120493" at="26,104,27,215" concept="9" />
       <node id="7668447476859120493" at="27,215,28,397" concept="4" />
       <node id="7668447476859120494" at="30,5,31,204" concept="9" />
       <node id="7668447476859120494" at="31,204,32,215" concept="9" />
@@ -16507,7 +16507,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/7886927014685055227">
     <file name="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java">
       <node id="7886927014685056766" at="23,112,24,183" concept="9" />
-      <node id="7886927014685056785" at="25,186,26,69" concept="4" />
+      <node id="7886927014685056785" at="25,186,26,70" concept="4" />
       <node id="7886927014685056797" at="27,5,28,49" concept="10" />
       <node id="7886927014685055227" at="30,50,31,171" concept="10" />
       <node id="7886927014685055227" at="33,68,34,102" concept="0" />
@@ -16534,7 +16534,7 @@
       <node id="7886927014685055227" at="23,0,30,0" concept="8" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7886927014685056799" at="39,0,51,0" concept="14" trace="_quotation_createNode_pn6k9h_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="7886927014685055227" at="21,79,21,79" />
-      <scope id="7886927014685056774" at="25,186,26,69" />
+      <scope id="7886927014685056774" at="25,186,26,70" />
       <scope id="7886927014685055227" at="30,50,31,171" />
       <scope id="7886927014685055227" at="33,68,34,102" />
       <scope id="7886927014685055227" at="36,27,37,16" />

@@ -42,7 +42,7 @@ public final class CopySrcListMacro__BehaviorDescriptor extends BaseBHDescriptor
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery")));
     {
-      GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro__BehaviorDescriptor.Pattern_z09ggw_a0a0a1a9();
+      GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro__BehaviorDescriptor.Pattern_83f7lc_a0a0a1a9();
       SNode coercedNode_26ny8p_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_26ny8p_b0a);
       if (coercedNode_26ny8p_b0a != null) {
         return ((SNode) pattern_26ny8p_b0a.getFieldValue("patternVar_concept"));
@@ -98,9 +98,9 @@ public final class CopySrcListMacro__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_z09ggw_a0a0a1a9 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_83f7lc_a0a0a1a9 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_z09ggw_a0a0a1a9() {
+    public Pattern_83f7lc_a0a0a1a9() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");

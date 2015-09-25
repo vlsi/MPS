@@ -15,13 +15,13 @@
   </root>
   <root nodeRef="r:2a0121e0-959c-434f-b621-0b4c60f1f305(jetbrains.mps.execution.configurations.generator.template.preprocess@generator)/5916922432461069145">
     <file name="QueriesGenerated.java">
-      <node id="5916922432461075190" at="29,39,30,177" concept="6" />
+      <node id="5916922432461075190" at="29,39,30,179" concept="6" />
       <node id="5916922432461075294" at="36,46,37,409" concept="6" />
-      <node id="3977898382491957540" at="42,338,43,285" concept="5" />
+      <node id="3977898382491957540" at="42,340,43,285" concept="5" />
       <node id="5916922432461081709" at="43,285,44,103" concept="5" />
       <node id="2797684467151027654" at="44,103,45,388" concept="1" />
-      <node id="2797684467150976409" at="45,388,46,501" concept="5" />
-      <node id="5916922432461075326" at="46,501,47,234" concept="1" />
+      <node id="2797684467150976409" at="45,388,46,502" concept="5" />
+      <node id="5916922432461075326" at="46,502,47,234" concept="1" />
       <node id="2797684467150976424" at="47,234,48,204" concept="1" />
       <node id="2797684467151013938" at="53,85,54,63" concept="5" />
       <node id="2797684467151013938" at="54,63,55,30" concept="5" />
@@ -72,7 +72,7 @@
       <node id="5916922432461075268" at="32,9,50,7" concept="2" />
       <node id="2797684467151013938" at="53,0,75,0" concept="7" trace="_quotation_createNode_x583g4_a0b0a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5916922432461075158" at="27,103,51,5" concept="2" />
-      <scope id="5916922432461075187" at="29,39,30,177" />
+      <scope id="5916922432461075187" at="29,39,30,179" />
       <scope id="5916922432461075293" at="36,46,37,409" />
       <scope id="2797684467151013938" at="70,31,71,189" />
       <scope id="5916922432461075186" at="29,0,32,0">
@@ -86,7 +86,7 @@
       <scope id="2797684467151013938" at="68,166,72,5" />
       <scope id="5916922432461075284" at="34,53,39,22" />
       <scope id="2797684467150976412" at="78,30,83,170" />
-      <scope id="5916922432461075325" at="42,338,48,204">
+      <scope id="5916922432461075325" at="42,340,48,204">
         <var name="debuggerAssignment" id="2797684467150976410" />
         <var name="debuggerSettignsParameter" id="3977898382491957541" />
         <var name="debuggerSettings" id="5916922432461081710" />

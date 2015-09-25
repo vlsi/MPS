@@ -94,14 +94,14 @@ public final class BuildLayout_Folder__BehaviorDescriptor extends BaseBHDescript
       for (SNode c : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children")))) {
         if (SNodeOperations.isInstanceOf(c, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, "jetbrains.mps.build.structure.BuildLayout_Files"))) {
           SNode files = SNodeOperations.as(c, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, "jetbrains.mps.build.structure.BuildLayout_Files"));
-          if (ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, 0x262a04c08b56fb01L, "parameters"))).isEmpty() && eq_dmf7lh_a0a1a0a3a1a81(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(files, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, 0x262a04c08b56fb00L, "path"))))) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, 0x262a04c08b56fb01L, "parameters"))).isEmpty() && eq_jyy3az_a0a1a0a3a1a81(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(files, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, 0x262a04c08b56fb00L, "path"))))) {
             return true;
           }
         } else if (SNodeOperations.isInstanceOf(c, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"))) {
           SNode copy = SNodeOperations.as(c, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy"));
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copy, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"))) {
             SNode inputSet = SNodeOperations.cast(SLinkOperations.getTarget(copy, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"));
-            if (ListSequence.fromList(SLinkOperations.getChildren(inputSet, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245f7L, "selectors"))).isEmpty() && eq_dmf7lh_a0a1a1a0a0d0b0s(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(inputSet, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir"))))) {
+            if (ListSequence.fromList(SLinkOperations.getChildren(inputSet, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245f7L, "selectors"))).isEmpty() && eq_jyy3az_a0a1a1a0a0d0b0s(art.getSourcePath(), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(inputSet, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir"))))) {
               return true;
             }
           }
@@ -188,10 +188,10 @@ public final class BuildLayout_Folder__BehaviorDescriptor extends BaseBHDescript
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_dmf7lh_a0a1a0a3a1a81(Object a, Object b) {
+  private static boolean eq_jyy3az_a0a1a0a3a1a81(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_dmf7lh_a0a1a1a0a0d0b0s(Object a, Object b) {
+  private static boolean eq_jyy3az_a0a1a1a0a0d0b0s(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

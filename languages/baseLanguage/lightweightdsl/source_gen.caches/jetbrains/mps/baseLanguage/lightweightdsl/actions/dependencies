@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.ClassLike" file="ClassLike.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.intentions.ClassLikeInitHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction" />
@@ -65,8 +65,8 @@
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" file="SubstituteUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

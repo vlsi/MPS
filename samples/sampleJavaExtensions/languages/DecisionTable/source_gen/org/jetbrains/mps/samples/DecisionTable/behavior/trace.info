@@ -15,6 +15,9 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="DecisionTable_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:313b0e77-ca79-4386-be7b-42bffe9745bf(org.jetbrains.mps.samples.DecisionTable.behavior)/1987251859606942546">
     <file name="DecisionTable_Behavior.java">
@@ -68,7 +71,7 @@
       <unit id="3863300516938159659" at="42,18,46,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$4" />
       <unit id="1987251859606942546" at="21,0,50,0" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
     </file>
-    <file name="DecisionTable_BehaviorDescriptor.java">
+    <file name="DecisionTable__BehaviorDescriptor.java">
       <node id="1987251859606942546" at="32,0,33,0" concept="6" trace="CONCEPT" />
       <node id="1987251859606942546" at="33,0,34,0" concept="6" trace="REGISTRY" />
       <node id="1987251859606942546" at="35,0,36,0" concept="6" trace="referencedLVDs_id3mtcPBWFCmw" />
@@ -90,7 +93,7 @@
       <node id="1736299320260998340" at="67,39,68,356" concept="5" />
       <node id="3863300516938159663" at="71,37,72,348" concept="5" />
       <node id="3863300516938159673" at="74,8,75,18" concept="5" />
-      <node id="1987251859606942546" at="78,50,79,20" concept="8" />
+      <node id="1987251859606942546" at="78,51,79,20" concept="8" />
       <node id="1987251859606942546" at="83,108,84,21" concept="1" />
       <node id="1987251859606942546" at="88,113,89,49" concept="4" />
       <node id="1987251859606942546" at="90,26,91,56" concept="10" />
@@ -106,7 +109,7 @@
       <node id="3863300516938155447" at="58,0,61,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1736299320260998338" at="67,0,70,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3863300516938159659" at="71,0,74,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1987251859606942546" at="78,0,81,0" concept="0" trace="DecisionTable_BehaviorDescriptor#()V" />
+      <node id="1987251859606942546" at="78,0,81,0" concept="0" trace="DecisionTable__BehaviorDescriptor#()V" />
       <node id="1987251859606942546" at="89,49,92,5" concept="2" />
       <node id="1987251859606942546" at="105,49,108,5" concept="2" />
       <node id="1987251859606942546" at="82,0,86,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -125,7 +128,7 @@
       <scope id="3863300516938155448" at="58,37,59,352" />
       <scope id="1736299320260998339" at="67,39,68,356" />
       <scope id="3863300516938159660" at="71,37,72,348" />
-      <scope id="1987251859606942546" at="78,50,79,20" />
+      <scope id="1987251859606942546" at="78,51,79,20" />
       <scope id="1987251859606942546" at="83,108,84,21" />
       <scope id="1987251859606942546" at="90,26,91,56" />
       <scope id="1987251859606942546" at="94,13,95,54" />
@@ -187,11 +190,11 @@
         <var name="node" id="1987251859606942546" />
         <var name="parameters" id="1987251859606942546" />
       </scope>
-      <unit id="701359002710699834" at="53,302,57,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor$1" />
-      <unit id="3863300516938155447" at="57,18,61,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor$2" />
-      <unit id="1736299320260998338" at="66,305,70,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor$3" />
-      <unit id="3863300516938159659" at="70,18,74,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor$4" />
-      <unit id="1987251859606942546" at="31,0,127,0" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" />
+      <unit id="701359002710699834" at="53,302,57,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor$1" />
+      <unit id="3863300516938155447" at="57,18,61,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor$2" />
+      <unit id="1736299320260998338" at="66,305,70,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor$3" />
+      <unit id="3863300516938159659" at="70,18,74,5" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor$4" />
+      <unit id="1987251859606942546" at="31,0,127,0" name="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -77,7 +77,7 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         }
         final SNode methodClassifier = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         {
-          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new IMethodCall__BehaviorDescriptor.Pattern_w71mdo_a0a0a5a2a1a81(methodClassifier);
+          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new IMethodCall__BehaviorDescriptor.Pattern_rhcdro_a0a0a5a2a1a81(methodClassifier);
           SNode coercedNode_fq0410_f0c0b0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0b);
           if (coercedNode_fq0410_f0c0b0b != null) {
             SNode resultType;
@@ -206,11 +206,11 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_w71mdo_a0a0a5a2a1a81 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_rhcdro_a0a0a5a2a1a81 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_param;
     /*package*/ SNode patternVar_ignore;
     /*package*/ Object AntiquotationField_fq0410_a0a0a5a2a1a1;
-    public Pattern_w71mdo_a0a0a5a2a1a81(Object parameter_fq0410_a0a0a5a2a1a1) {
+    public Pattern_rhcdro_a0a0a5a2a1a81(Object parameter_fq0410_a0a0a5a2a1a1) {
       this.AntiquotationField_fq0410_a0a0a5a2a1a1 = parameter_fq0410_a0a0a5a2a1a1;
     }
     public SConcept getConcept() {

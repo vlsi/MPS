@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="L1.behavior.C1_BehaviorDescriptor" file="C1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+</dependenciesRoot>
 

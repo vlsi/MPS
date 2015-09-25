@@ -5,7 +5,7 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.PropertyMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -157,7 +157,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_EditorNodeExpression_InferenceRule" file="typeof_EditorNodeExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -172,7 +172,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FigureParameterMapping_InferenceRule" file="typeof_FigureParameterMapping_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -211,7 +211,7 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_LinkArgument_InferenceRule" file="typeof_LinkArgument_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -226,8 +226,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_NodeFunctionParameter_InferenceRule" file="typeof_NodeFunctionParameter_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -243,7 +243,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_PropertyArgument_InferenceRule" file="typeof_PropertyArgument_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />

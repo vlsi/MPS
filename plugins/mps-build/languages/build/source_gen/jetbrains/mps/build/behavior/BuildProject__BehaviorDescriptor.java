@@ -195,7 +195,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     SetSequence.fromSet(visited).addElement(__thisNode__);
     Scope rootScope = ScopeUtil.simpleRoleScope(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"));
     SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
-    if (neq_c16jze_a0e0eb(containingProject, __thisNode__)) {
+    if (neq_671s9y_a0e0eb(containingProject, __thisNode__)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -218,7 +218,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
         // we can only see what was strictly before us 
         rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode visibleNode) {
-            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !((eq_c16jze_a0a0a0a0a0b0a1a2a5a03(definedMacro.value, visibleNode)));
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !((eq_671s9y_a0a0a0a0a0b0a1a2a5a03(definedMacro.value, visibleNode)));
           }
         });
       }
@@ -327,10 +327,10 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean neq_c16jze_a0e0eb(Object a, Object b) {
+  private static boolean neq_671s9y_a0e0eb(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_c16jze_a0a0a0a0a0b0a1a2a5a03(Object a, Object b) {
+  private static boolean eq_671s9y_a0a0a0a0a0b0a1a2a5a03(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

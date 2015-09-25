@@ -16,6 +16,24 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.build.startup.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="ClassPathItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.startup.behavior.ClassPathItem_BehaviorDescriptor" />
+    </file>
+    <file name="MpsStartupScript_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleVmOptions_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.build.startup.behavior.SimpleVmOptions_BehaviorDescriptor" />
+    </file>
+    <file name="TextFile_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.build.startup.behavior.TextFile_BehaviorDescriptor" />
+    </file>
+    <file name="TextLine_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.startup.behavior.TextLine_BehaviorDescriptor" />
+    </file>
+    <file name="VmOptions_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.startup.behavior.VmOptions_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)/5842819808956701264">
     <file name="MpsStartupScript_Behavior.java">
@@ -25,8 +43,8 @@
       <node id="2693344784285059345" at="42,108,43,563" concept="6" />
       <node id="2693344784285196613" at="47,40,48,47" concept="6" />
       <node id="2693344784285220400" at="51,38,52,58" concept="6" />
-      <node id="5842819808956911450" at="56,109,57,297" concept="6" />
-      <node id="2693344784285261387" at="59,107,60,296" concept="6" />
+      <node id="5842819808956911450" at="56,109,57,298" concept="6" />
+      <node id="2693344784285261387" at="59,107,60,297" concept="6" />
       <node id="5842819808956911490" at="62,91,63,23" concept="6" />
       <node id="2693344784285016296" at="65,54,66,45" concept="6" />
       <node id="1731640411967575465" at="68,83,69,63" concept="5" />
@@ -59,8 +77,8 @@
       <scope id="2693344784285058738" at="42,108,43,563" />
       <scope id="2693344784285195990" at="47,40,48,47" />
       <scope id="2693344784285219772" at="51,38,52,58" />
-      <scope id="5842819808956911445" at="56,109,57,297" />
-      <scope id="2693344784285261048" at="59,107,60,296" />
+      <scope id="5842819808956911445" at="56,109,57,298" />
+      <scope id="2693344784285261048" at="59,107,60,297" />
       <scope id="5842819808956911482" at="62,91,63,23" />
       <scope id="2693344784285016296" at="65,54,66,45" />
       <scope id="1731640411967575465" at="70,30,72,192" />
@@ -120,14 +138,14 @@
         <var name="__thisNode__" id="5842819808956701264" />
         <var name="is64bit" id="2693344784285083618" />
       </scope>
-      <unit id="2693344784284736057" at="25,155,29,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$1" />
+      <unit id="2693344784284736057" at="25,156,29,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$1" />
       <unit id="2693344784284928086" at="29,25,33,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$2" />
-      <unit id="2693344784285027780" at="36,137,40,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$3" />
-      <unit id="2693344784285195989" at="46,177,50,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$4" />
+      <unit id="2693344784285027780" at="36,138,40,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$3" />
+      <unit id="2693344784285195989" at="46,178,50,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$4" />
       <unit id="2693344784285219771" at="50,18,54,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$5" />
       <unit id="5842819808956701264" at="22,0,76,0" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior" />
     </file>
-    <file name="MpsStartupScript_BehaviorDescriptor.java">
+    <file name="MpsStartupScript__BehaviorDescriptor.java">
       <node id="5842819808956701264" at="34,0,35,0" concept="7" trace="CONCEPT" />
       <node id="5842819808956701264" at="35,0,36,0" concept="7" trace="REGISTRY" />
       <node id="5842819808956701264" at="37,0,38,0" concept="7" trace="getDefaultVmoptions_id54lRqzvuHDj" />
@@ -144,10 +162,10 @@
       <node id="2693344784285059345" at="68,107,69,563" concept="6" />
       <node id="2693344784285196613" at="73,40,74,47" concept="6" />
       <node id="2693344784285220400" at="77,38,78,58" concept="6" />
-      <node id="5842819808956911450" at="82,108,83,297" concept="6" />
-      <node id="2693344784285261387" at="85,106,86,296" concept="6" />
+      <node id="5842819808956911450" at="82,108,83,298" concept="6" />
+      <node id="2693344784285261387" at="85,106,86,297" concept="6" />
       <node id="5842819808956911490" at="88,90,89,23" concept="6" />
-      <node id="5842819808956701264" at="92,53,93,20" concept="9" />
+      <node id="5842819808956701264" at="92,54,93,20" concept="9" />
       <node id="5842819808956701264" at="97,108,98,21" concept="2" />
       <node id="5842819808956701264" at="102,113,103,49" concept="5" />
       <node id="5842819808956701264" at="104,26,105,56" concept="11" />
@@ -182,10 +200,10 @@
       <node id="5842819808956701264" at="82,0,85,0" concept="8" trace="getPathToVmOptionsFile_id54lRqzvvwXi#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/lang/String;" />
       <node id="5842819808956701264" at="85,0,88,0" concept="8" trace="getVmOptionsFileName_id2lwFGYOYlNP#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/lang/String;" />
       <node id="5842819808956701264" at="88,0,91,0" concept="8" trace="getVmOptionsExtension_id54lRqzvvwXR#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="5842819808956701264" at="92,0,95,0" concept="1" trace="MpsStartupScript_BehaviorDescriptor#()V" />
+      <node id="5842819808956701264" at="92,0,95,0" concept="1" trace="MpsStartupScript__BehaviorDescriptor#()V" />
       <node id="5842819808956701264" at="103,49,106,5" concept="3" />
       <node id="5842819808956701264" at="129,49,132,5" concept="3" />
-      <node id="2693344784285016296" at="150,0,153,0" concept="8" trace="trim_z28c44_a0a0p#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2693344784285016296" at="150,0,153,0" concept="8" trace="trim_9sggks_a0a0p#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="5842819808956701264" at="96,0,100,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
       <node id="5842819808956701264" at="132,5,136,5" concept="10" />
       <node id="2693344784285027763" at="61,114,66,7" concept="6" />
@@ -207,10 +225,10 @@
       <scope id="5842819808956701264" at="68,107,69,563" />
       <scope id="2693344784285195990" at="73,40,74,47" />
       <scope id="2693344784285219772" at="77,38,78,58" />
-      <scope id="5842819808956701264" at="82,108,83,297" />
-      <scope id="5842819808956701264" at="85,106,86,296" />
+      <scope id="5842819808956701264" at="82,108,83,298" />
+      <scope id="5842819808956701264" at="85,106,86,297" />
       <scope id="5842819808956701264" at="88,90,89,23" />
-      <scope id="5842819808956701264" at="92,53,93,20" />
+      <scope id="5842819808956701264" at="92,54,93,20" />
       <scope id="5842819808956701264" at="97,108,98,21" />
       <scope id="5842819808956701264" at="104,26,105,56" />
       <scope id="5842819808956701264" at="108,13,109,84" />
@@ -310,12 +328,12 @@
         <var name="node" id="5842819808956701264" />
         <var name="parameters" id="5842819808956701264" />
       </scope>
-      <unit id="2693344784284736057" at="51,155,55,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor$1" />
-      <unit id="2693344784284928086" at="55,25,59,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor$2" />
-      <unit id="2693344784285027780" at="62,137,66,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor$3" />
-      <unit id="2693344784285195989" at="72,177,76,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor$4" />
-      <unit id="2693344784285219771" at="76,18,80,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor$5" />
-      <unit id="5842819808956701264" at="33,0,161,0" name="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor" />
+      <unit id="2693344784284736057" at="51,156,55,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor$1" />
+      <unit id="2693344784284928086" at="55,25,59,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor$2" />
+      <unit id="2693344784285027780" at="62,138,66,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor$3" />
+      <unit id="2693344784285195989" at="72,178,76,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor$4" />
+      <unit id="2693344784285219771" at="76,18,80,5" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor$5" />
+      <unit id="5842819808956701264" at="33,0,161,0" name="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

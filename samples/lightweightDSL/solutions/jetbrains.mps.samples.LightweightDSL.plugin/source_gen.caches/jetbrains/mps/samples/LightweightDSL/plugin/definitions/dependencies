@@ -18,7 +18,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.Translator_Queries" file="Translator_Queries.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Converter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

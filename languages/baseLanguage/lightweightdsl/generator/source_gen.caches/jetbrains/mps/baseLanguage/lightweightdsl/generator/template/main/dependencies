@@ -3,10 +3,10 @@
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeDescriptor_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeInstance_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ParameterDescriptor_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeDescriptor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeInstance__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.ParameterDescriptor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />

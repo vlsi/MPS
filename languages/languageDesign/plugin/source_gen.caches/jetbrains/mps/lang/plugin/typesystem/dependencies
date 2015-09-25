@@ -124,7 +124,7 @@
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -162,7 +162,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_ActionDataParameterDeclaration_InferenceRule" file="typeof_ActionDataParameterDeclaration_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />

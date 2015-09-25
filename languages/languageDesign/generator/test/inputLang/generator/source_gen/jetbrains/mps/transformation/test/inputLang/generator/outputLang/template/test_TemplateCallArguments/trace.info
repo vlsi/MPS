@@ -252,8 +252,8 @@
   </root>
   <root nodeRef="r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)/6736062018948523705">
     <file name="QueriesGenerated.java">
-      <node id="6736062018948589292" at="56,102,57,136" concept="8" />
-      <scope id="6736062018948583817" at="56,102,57,136" />
+      <node id="6736062018948589292" at="56,102,57,137" concept="8" />
+      <scope id="6736062018948583817" at="56,102,57,137" />
     </file>
     <file name="Switchswitch__InputNode.java">
       <node id="6736062018948523705" at="25,0,26,0" concept="3" trace="rules" />

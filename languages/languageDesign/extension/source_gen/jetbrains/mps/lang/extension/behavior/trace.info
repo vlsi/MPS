@@ -16,18 +16,51 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,74,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="ExtensionDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFieldDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFieldReference_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFunction_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionObjectGetter_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionPointDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionPointExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionPointType_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
+    </file>
+    <file name="Extension_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
+    </file>
+    <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
+    </file>
+    <file name="IRootWithUniqueName_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/1055884086725370254">
     <file name="Extension_Behavior.java">
       <unit id="1055884086725370254" at="10,0,13,0" name="jetbrains.mps.lang.extension.behavior.Extension_Behavior" />
     </file>
-    <file name="Extension_BehaviorDescriptor.java">
+    <file name="Extension__BehaviorDescriptor.java">
       <node id="1055884086725370254" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="1055884086725370254" at="26,0,27,0" concept="7" trace="REGISTRY" />
       <node id="1055884086725370254" at="28,0,29,0" concept="7" trace="getDescriptor_idUBgfI9eMAt" />
       <node id="1055884086725370254" at="30,0,31,0" concept="7" trace="BH_METHODS" />
       <node id="1055884086725369660" at="35,80,36,138" concept="6" />
-      <node id="1055884086725370254" at="39,46,40,20" concept="9" />
+      <node id="1055884086725370254" at="39,47,40,20" concept="9" />
       <node id="1055884086725370254" at="44,108,45,21" concept="2" />
       <node id="1055884086725370254" at="49,113,50,49" concept="5" />
       <node id="1055884086725370254" at="51,26,52,56" concept="11" />
@@ -40,7 +73,7 @@
       <node id="1055884086725370254" at="82,40,83,19" concept="6" />
       <node id="1055884086725370254" at="32,0,34,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1055884086725370254" at="35,0,38,0" concept="8" trace="getDescriptor_idUBgfI9eMAt#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1055884086725370254" at="39,0,42,0" concept="1" trace="Extension_BehaviorDescriptor#()V" />
+      <node id="1055884086725370254" at="39,0,42,0" concept="1" trace="Extension__BehaviorDescriptor#()V" />
       <node id="1055884086725370254" at="50,49,53,5" concept="3" />
       <node id="1055884086725370254" at="64,49,67,5" concept="3" />
       <node id="1055884086725370254" at="43,0,47,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -52,7 +85,7 @@
       <node id="1055884086725370254" at="48,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1055884086725370254" at="32,63,32,63" />
       <scope id="1055884086725370254" at="35,80,36,138" />
-      <scope id="1055884086725370254" at="39,46,40,20" />
+      <scope id="1055884086725370254" at="39,47,40,20" />
       <scope id="1055884086725370254" at="44,108,45,21" />
       <scope id="1055884086725370254" at="51,26,52,56" />
       <scope id="1055884086725370254" at="55,13,56,52" />
@@ -91,20 +124,20 @@
         <var name="node" id="1055884086725370254" />
         <var name="parameters" id="1055884086725370254" />
       </scope>
-      <unit id="1055884086725370254" at="24,0,86,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
+      <unit id="1055884086725370254" at="24,0,86,0" name="jetbrains.mps.lang.extension.behavior.Extension__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/1262430001741719871">
     <file name="ExtensionFieldReference_Behavior.java">
       <unit id="1262430001741719871" at="10,0,13,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_Behavior" />
     </file>
-    <file name="ExtensionFieldReference_BehaviorDescriptor.java">
+    <file name="ExtensionFieldReference__BehaviorDescriptor.java">
       <node id="1262430001741719871" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741719871" at="25,0,26,0" concept="7" trace="REGISTRY" />
       <node id="1262430001741719871" at="27,0,28,0" concept="7" trace="lvalue_id1653mnvAgpj" />
       <node id="1262430001741719871" at="29,0,30,0" concept="7" trace="BH_METHODS" />
       <node id="1262430001741719869" at="34,90,35,16" concept="6" />
-      <node id="1262430001741719871" at="38,60,39,20" concept="9" />
+      <node id="1262430001741719871" at="38,61,39,20" concept="9" />
       <node id="1262430001741719871" at="43,108,44,21" concept="2" />
       <node id="1262430001741719871" at="48,113,49,49" concept="5" />
       <node id="1262430001741719871" at="50,26,51,56" concept="11" />
@@ -117,7 +150,7 @@
       <node id="1262430001741719871" at="81,40,82,19" concept="6" />
       <node id="1262430001741719871" at="31,0,33,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741719871" at="34,0,37,0" concept="8" trace="lvalue_id1653mnvAgpj#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
-      <node id="1262430001741719871" at="38,0,41,0" concept="1" trace="ExtensionFieldReference_BehaviorDescriptor#()V" />
+      <node id="1262430001741719871" at="38,0,41,0" concept="1" trace="ExtensionFieldReference__BehaviorDescriptor#()V" />
       <node id="1262430001741719871" at="49,49,52,5" concept="3" />
       <node id="1262430001741719871" at="61,49,64,5" concept="3" />
       <node id="1262430001741719871" at="42,0,46,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -129,7 +162,7 @@
       <node id="1262430001741719871" at="59,0,72,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1262430001741719871" at="31,63,31,63" />
       <scope id="1262430001741719871" at="34,90,35,16" />
-      <scope id="1262430001741719871" at="38,60,39,20" />
+      <scope id="1262430001741719871" at="38,61,39,20" />
       <scope id="1262430001741719871" at="43,108,44,21" />
       <scope id="1262430001741719871" at="50,26,51,56" />
       <scope id="1262430001741719871" at="54,14,55,58" />
@@ -168,7 +201,7 @@
         <var name="method" id="1262430001741719871" />
         <var name="parameters" id="1262430001741719871" />
       </scope>
-      <unit id="1262430001741719871" at="23,0,85,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
+      <unit id="1262430001741719871" at="23,0,85,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/195736285282737605">
@@ -191,7 +224,7 @@
       </scope>
       <unit id="195736285282737605" at="15,0,27,0" name="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_Behavior" />
     </file>
-    <file name="IRootWithUniqueName_BehaviorDescriptor.java">
+    <file name="IRootWithUniqueName__BehaviorDescriptor.java">
       <node id="195736285282737605" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="195736285282737605" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="195736285282737605" at="30,0,31,0" concept="7" trace="getId_id3vRuGRRXlj" />
@@ -201,7 +234,7 @@
       <node id="63012922131002398" at="39,49,40,42" concept="5" />
       <node id="63012922131002429" at="41,21,42,54" concept="2" />
       <node id="63012922130945368" at="43,5,44,190" concept="6" />
-      <node id="195736285282737605" at="47,56,48,20" concept="9" />
+      <node id="195736285282737605" at="47,57,48,20" concept="9" />
       <node id="195736285282737605" at="52,108,53,21" concept="2" />
       <node id="195736285282737605" at="57,113,58,49" concept="5" />
       <node id="195736285282737605" at="59,26,60,56" concept="11" />
@@ -214,7 +247,7 @@
       <node id="195736285282737605" at="90,40,91,19" concept="6" />
       <node id="195736285282737605" at="34,0,36,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="63012922131002412" at="40,42,43,5" concept="3" />
-      <node id="195736285282737605" at="47,0,50,0" concept="1" trace="IRootWithUniqueName_BehaviorDescriptor#()V" />
+      <node id="195736285282737605" at="47,0,50,0" concept="1" trace="IRootWithUniqueName__BehaviorDescriptor#()V" />
       <node id="195736285282737605" at="58,49,61,5" concept="3" />
       <node id="195736285282737605" at="72,49,75,5" concept="3" />
       <node id="195736285282737605" at="51,0,55,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -227,7 +260,7 @@
       <node id="195736285282737605" at="56,0,69,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="195736285282737605" at="34,63,34,63" />
       <scope id="63012922131002413" at="41,21,42,54" />
-      <scope id="195736285282737605" at="47,56,48,20" />
+      <scope id="195736285282737605" at="47,57,48,20" />
       <scope id="195736285282737605" at="52,108,53,21" />
       <scope id="195736285282737605" at="59,26,60,56" />
       <scope id="195736285282737605" at="63,13,64,44" />
@@ -271,20 +304,20 @@
         <var name="node" id="195736285282737605" />
         <var name="parameters" id="195736285282737605" />
       </scope>
-      <unit id="195736285282737605" at="26,0,94,0" name="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor" />
+      <unit id="195736285282737605" at="26,0,94,0" name="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/3175313036448544059">
     <file name="ExtensionPointType_Behavior.java">
       <unit id="3175313036448544059" at="10,0,13,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_Behavior" />
     </file>
-    <file name="ExtensionPointType_BehaviorDescriptor.java">
+    <file name="ExtensionPointType__BehaviorDescriptor.java">
       <node id="3175313036448544059" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="3175313036448544059" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="3175313036448544059" at="30,0,31,0" concept="7" trace="getPresentation_idhEwIMiw" />
       <node id="3175313036448544059" at="32,0,33,0" concept="7" trace="BH_METHODS" />
       <node id="3175313036448550135" at="37,80,38,559" concept="6" />
-      <node id="3175313036448544059" at="41,55,42,20" concept="9" />
+      <node id="3175313036448544059" at="41,56,42,20" concept="9" />
       <node id="3175313036448544059" at="46,108,47,21" concept="2" />
       <node id="3175313036448544059" at="51,113,52,49" concept="5" />
       <node id="3175313036448544059" at="53,26,54,56" concept="11" />
@@ -297,7 +330,7 @@
       <node id="3175313036448544059" at="84,40,85,19" concept="6" />
       <node id="3175313036448544059" at="34,0,36,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3175313036448544059" at="37,0,40,0" concept="8" trace="getPresentation_idhEwIMiw#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3175313036448544059" at="41,0,44,0" concept="1" trace="ExtensionPointType_BehaviorDescriptor#()V" />
+      <node id="3175313036448544059" at="41,0,44,0" concept="1" trace="ExtensionPointType__BehaviorDescriptor#()V" />
       <node id="3175313036448544059" at="52,49,55,5" concept="3" />
       <node id="3175313036448544059" at="66,49,69,5" concept="3" />
       <node id="3175313036448544059" at="45,0,49,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -309,7 +342,7 @@
       <node id="3175313036448544059" at="50,0,63,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3175313036448544059" at="34,63,34,63" />
       <scope id="3175313036448544059" at="37,80,38,559" />
-      <scope id="3175313036448544059" at="41,55,42,20" />
+      <scope id="3175313036448544059" at="41,56,42,20" />
       <scope id="3175313036448544059" at="46,108,47,21" />
       <scope id="3175313036448544059" at="53,26,54,56" />
       <scope id="3175313036448544059" at="57,13,58,51" />
@@ -348,7 +381,7 @@
         <var name="node" id="3175313036448544059" />
         <var name="parameters" id="3175313036448544059" />
       </scope>
-      <unit id="3175313036448544059" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
+      <unit id="3175313036448544059" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/5234729458457669520">
@@ -361,13 +394,13 @@
       </scope>
       <unit id="5234729458457669520" at="15,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_Behavior" />
     </file>
-    <file name="ExtensionDeclaration_BehaviorDescriptor.java">
+    <file name="ExtensionDeclaration__BehaviorDescriptor.java">
       <node id="5234729458457669520" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="5234729458457669520" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="5234729458457669520" at="30,0,31,0" concept="7" trace="getJavaName_id4y_vFkED6Yj" />
       <node id="5234729458457669520" at="32,0,33,0" concept="7" trace="BH_METHODS" />
       <node id="63012922130977724" at="37,80,38,397" concept="6" />
-      <node id="5234729458457669520" at="41,57,42,20" concept="9" />
+      <node id="5234729458457669520" at="41,58,42,20" concept="9" />
       <node id="5234729458457669520" at="46,108,47,21" concept="2" />
       <node id="5234729458457669520" at="51,113,52,49" concept="5" />
       <node id="5234729458457669520" at="53,26,54,56" concept="11" />
@@ -380,7 +413,7 @@
       <node id="5234729458457669520" at="84,40,85,19" concept="6" />
       <node id="5234729458457669520" at="34,0,36,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5234729458457669520" at="37,0,40,0" concept="8" trace="getJavaName_id4y_vFkED6Yj#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="5234729458457669520" at="41,0,44,0" concept="1" trace="ExtensionDeclaration_BehaviorDescriptor#()V" />
+      <node id="5234729458457669520" at="41,0,44,0" concept="1" trace="ExtensionDeclaration__BehaviorDescriptor#()V" />
       <node id="5234729458457669520" at="52,49,55,5" concept="3" />
       <node id="5234729458457669520" at="66,49,69,5" concept="3" />
       <node id="5234729458457669520" at="45,0,49,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -392,7 +425,7 @@
       <node id="5234729458457669520" at="50,0,63,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5234729458457669520" at="34,63,34,63" />
       <scope id="5234729458457669520" at="37,80,38,397" />
-      <scope id="5234729458457669520" at="41,57,42,20" />
+      <scope id="5234729458457669520" at="41,58,42,20" />
       <scope id="5234729458457669520" at="46,108,47,21" />
       <scope id="5234729458457669520" at="53,26,54,56" />
       <scope id="5234729458457669520" at="57,13,58,51" />
@@ -431,7 +464,7 @@
         <var name="node" id="5234729458457669520" />
         <var name="parameters" id="5234729458457669520" />
       </scope>
-      <unit id="5234729458457669520" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+      <unit id="5234729458457669520" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/63012922130945360">
@@ -449,14 +482,14 @@
       </scope>
       <unit id="63012922130945360" at="16,0,27,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" />
     </file>
-    <file name="ExtensionPointDeclaration_BehaviorDescriptor.java">
+    <file name="ExtensionPointDeclaration__BehaviorDescriptor.java">
       <node id="63012922130945360" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="63012922130945360" at="29,0,30,0" concept="7" trace="REGISTRY" />
       <node id="63012922130945360" at="31,0,32,0" concept="7" trace="getObjectClassifierType_id5Sg$D5FMgdu" />
       <node id="63012922130945360" at="33,0,34,0" concept="7" trace="BH_METHODS" />
       <node id="6778078592468845424" at="40,377,41,356" concept="6" />
       <node id="6778078592468845433" at="42,12,43,433" concept="6" />
-      <node id="63012922130945360" at="47,62,48,20" concept="9" />
+      <node id="63012922130945360" at="47,63,48,20" concept="9" />
       <node id="63012922130945360" at="52,108,53,21" concept="2" />
       <node id="63012922130945360" at="57,113,58,49" concept="5" />
       <node id="63012922130945360" at="59,26,60,56" concept="11" />
@@ -469,7 +502,7 @@
       <node id="63012922130945360" at="90,40,91,19" concept="6" />
       <node id="63012922130945360" at="35,0,37,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6778078592468845431" at="42,10,44,5" concept="0" />
-      <node id="63012922130945360" at="47,0,50,0" concept="1" trace="ExtensionPointDeclaration_BehaviorDescriptor#()V" />
+      <node id="63012922130945360" at="47,0,50,0" concept="1" trace="ExtensionPointDeclaration__BehaviorDescriptor#()V" />
       <node id="63012922130945360" at="58,49,61,5" concept="3" />
       <node id="63012922130945360" at="72,49,75,5" concept="3" />
       <node id="63012922130945360" at="51,0,55,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -484,7 +517,7 @@
       <scope id="63012922130945360" at="35,63,35,63" />
       <scope id="6778078592468845423" at="40,377,41,356" />
       <scope id="6778078592468845432" at="42,12,43,433" />
-      <scope id="63012922130945360" at="47,62,48,20" />
+      <scope id="63012922130945360" at="47,63,48,20" />
       <scope id="63012922130945360" at="52,108,53,21" />
       <scope id="63012922130945360" at="59,26,60,56" />
       <scope id="63012922130945360" at="63,13,64,63" />
@@ -524,20 +557,20 @@
         <var name="node" id="63012922130945360" />
         <var name="parameters" id="63012922130945360" />
       </scope>
-      <unit id="63012922130945360" at="27,0,94,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
+      <unit id="63012922130945360" at="27,0,94,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/658365993681963374">
     <file name="ExtensionFunction_Behavior.java">
       <unit id="658365993681963374" at="10,0,13,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_Behavior" />
     </file>
-    <file name="ExtensionFunction_BehaviorDescriptor.java">
+    <file name="ExtensionFunction__BehaviorDescriptor.java">
       <node id="658365993681963374" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="658365993681963374" at="27,0,28,0" concept="7" trace="REGISTRY" />
       <node id="658365993681963374" at="29,0,30,0" concept="7" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="658365993681963374" at="31,0,32,0" concept="7" trace="BH_METHODS" />
       <node id="658365993681963558" at="36,85,37,47" concept="6" />
-      <node id="658365993681963374" at="40,54,41,20" concept="9" />
+      <node id="658365993681963374" at="40,55,41,20" concept="9" />
       <node id="658365993681963374" at="45,108,46,21" concept="2" />
       <node id="658365993681963374" at="50,113,51,49" concept="5" />
       <node id="658365993681963374" at="52,26,53,56" concept="11" />
@@ -556,7 +589,7 @@
       <node id="658365993681963554" at="89,220,90,24" concept="6" />
       <node id="658365993681963374" at="33,0,35,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="658365993681963374" at="36,0,39,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="658365993681963374" at="40,0,43,0" concept="1" trace="ExtensionFunction_BehaviorDescriptor#()V" />
+      <node id="658365993681963374" at="40,0,43,0" concept="1" trace="ExtensionFunction__BehaviorDescriptor#()V" />
       <node id="658365993681963374" at="51,49,54,5" concept="3" />
       <node id="658365993681963374" at="65,49,68,5" concept="3" />
       <node id="658365993681963374" at="44,0,48,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -569,7 +602,7 @@
       <node id="658365993681963374" at="49,0,62,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="658365993681963374" at="33,63,33,63" />
       <scope id="658365993681963374" at="36,85,37,47" />
-      <scope id="658365993681963374" at="40,54,41,20" />
+      <scope id="658365993681963374" at="40,55,41,20" />
       <scope id="658365993681963374" at="45,108,46,21" />
       <scope id="658365993681963374" at="52,26,53,56" />
       <scope id="658365993681963374" at="56,13,57,57" />
@@ -614,20 +647,20 @@
         <var name="node" id="658365993681963374" />
         <var name="parameters" id="658365993681963374" />
       </scope>
-      <unit id="658365993681963374" at="25,0,93,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
+      <unit id="658365993681963374" at="25,0,93,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/6626851894249712499">
     <file name="ExtensionPointExpression_Behavior.java">
       <unit id="6626851894249712499" at="10,0,13,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_Behavior" />
     </file>
-    <file name="ExtensionPointExpression_BehaviorDescriptor.java">
+    <file name="ExtensionPointExpression__BehaviorDescriptor.java">
       <node id="6626851894249712499" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="6626851894249712499" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="6626851894249712499" at="30,0,31,0" concept="7" trace="getPresentation_idhEwIMiw" />
       <node id="6626851894249712499" at="32,0,33,0" concept="7" trace="BH_METHODS" />
       <node id="6626851894249714912" at="37,80,38,559" concept="6" />
-      <node id="6626851894249712499" at="41,61,42,20" concept="9" />
+      <node id="6626851894249712499" at="41,62,42,20" concept="9" />
       <node id="6626851894249712499" at="46,108,47,21" concept="2" />
       <node id="6626851894249712499" at="51,113,52,49" concept="5" />
       <node id="6626851894249712499" at="53,26,54,56" concept="11" />
@@ -640,7 +673,7 @@
       <node id="6626851894249712499" at="84,40,85,19" concept="6" />
       <node id="6626851894249712499" at="34,0,36,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6626851894249712499" at="37,0,40,0" concept="8" trace="getPresentation_idhEwIMiw#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="6626851894249712499" at="41,0,44,0" concept="1" trace="ExtensionPointExpression_BehaviorDescriptor#()V" />
+      <node id="6626851894249712499" at="41,0,44,0" concept="1" trace="ExtensionPointExpression__BehaviorDescriptor#()V" />
       <node id="6626851894249712499" at="52,49,55,5" concept="3" />
       <node id="6626851894249712499" at="66,49,69,5" concept="3" />
       <node id="6626851894249712499" at="45,0,49,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -652,7 +685,7 @@
       <node id="6626851894249712499" at="50,0,63,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6626851894249712499" at="34,63,34,63" />
       <scope id="6626851894249712499" at="37,80,38,559" />
-      <scope id="6626851894249712499" at="41,61,42,20" />
+      <scope id="6626851894249712499" at="41,62,42,20" />
       <scope id="6626851894249712499" at="46,108,47,21" />
       <scope id="6626851894249712499" at="53,26,54,56" />
       <scope id="6626851894249712499" at="57,13,58,51" />
@@ -691,28 +724,28 @@
         <var name="node" id="6626851894249712499" />
         <var name="parameters" id="6626851894249712499" />
       </scope>
-      <unit id="6626851894249712499" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
+      <unit id="6626851894249712499" at="26,0,88,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/8029776554053057792">
     <file name="ExtensionObjectGetter_Behavior.java">
-      <node id="6778078592468845455" at="16,92,17,485" concept="6" />
+      <node id="6778078592468845455" at="16,92,17,486" concept="6" />
       <node id="8029776554053057792" at="16,0,19,0" concept="8" trace="call_getReturnClassifierType_7261386713308443934#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7261386713308443937" at="16,92,17,485" />
+      <scope id="7261386713308443937" at="16,92,17,486" />
       <scope id="8029776554053057792" at="16,0,19,0">
         <var name="__thisNode__" id="8029776554053057792" />
       </scope>
       <unit id="8029776554053057792" at="14,0,20,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" />
     </file>
-    <file name="ExtensionObjectGetter_BehaviorDescriptor.java">
+    <file name="ExtensionObjectGetter__BehaviorDescriptor.java">
       <node id="8029776554053057792" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="8029776554053057792" at="27,0,28,0" concept="7" trace="REGISTRY" />
       <node id="8029776554053057792" at="29,0,30,0" concept="7" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="8029776554053057792" at="30,0,31,0" concept="7" trace="getReturnClassifierType_id6j5CbT7vrku" />
       <node id="8029776554053057792" at="32,0,33,0" concept="7" trace="BH_METHODS" />
       <node id="7261386713308443600" at="37,85,38,558" concept="6" />
-      <node id="6778078592468845455" at="40,91,41,485" concept="6" />
-      <node id="8029776554053057792" at="44,58,45,20" concept="9" />
+      <node id="6778078592468845455" at="40,91,41,486" concept="6" />
+      <node id="8029776554053057792" at="44,59,45,20" concept="9" />
       <node id="8029776554053057792" at="49,108,50,21" concept="2" />
       <node id="8029776554053057792" at="54,113,55,49" concept="5" />
       <node id="8029776554053057792" at="56,26,57,56" concept="11" />
@@ -727,7 +760,7 @@
       <node id="8029776554053057792" at="34,0,36,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8029776554053057792" at="37,0,40,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8029776554053057792" at="40,0,43,0" concept="8" trace="getReturnClassifierType_id6j5CbT7vrku#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8029776554053057792" at="44,0,47,0" concept="1" trace="ExtensionObjectGetter_BehaviorDescriptor#()V" />
+      <node id="8029776554053057792" at="44,0,47,0" concept="1" trace="ExtensionObjectGetter__BehaviorDescriptor#()V" />
       <node id="8029776554053057792" at="55,49,58,5" concept="3" />
       <node id="8029776554053057792" at="71,49,74,5" concept="3" />
       <node id="8029776554053057792" at="48,0,52,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -739,8 +772,8 @@
       <node id="8029776554053057792" at="53,0,68,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8029776554053057792" at="34,63,34,63" />
       <scope id="8029776554053057792" at="37,85,38,558" />
-      <scope id="8029776554053057792" at="40,91,41,485" />
-      <scope id="8029776554053057792" at="44,58,45,20" />
+      <scope id="8029776554053057792" at="40,91,41,486" />
+      <scope id="8029776554053057792" at="44,59,45,20" />
       <scope id="8029776554053057792" at="49,108,50,21" />
       <scope id="8029776554053057792" at="56,26,57,56" />
       <scope id="8029776554053057792" at="60,13,61,57" />
@@ -783,7 +816,7 @@
         <var name="node" id="8029776554053057792" />
         <var name="parameters" id="8029776554053057792" />
       </scope>
-      <unit id="8029776554053057792" at="25,0,93,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
+      <unit id="8029776554053057792" at="25,0,93,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

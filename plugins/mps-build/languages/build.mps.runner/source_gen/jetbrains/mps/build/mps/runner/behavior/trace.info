@@ -17,18 +17,24 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.build.mps.runner.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="BuildSolutionRunnerAspect_BehaviorDescriptor.java">
+      <unit at="13,0,35,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor" />
+    </file>
+    <file name="BuildSolutionRunnerPlugin_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerPlugin_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:19e846e2-aa6a-48a9-8367-2a1eda2709e7(jetbrains.mps.build.mps.runner.behavior)/2220861080744370264">
     <file name="BuildSolutionRunnerAspect_Behavior.java">
-      <node id="1350734474211111339" at="16,84,17,430" concept="6" />
+      <node id="1350734474211111339" at="16,84,17,431" concept="6" />
       <node id="2220861080744370264" at="16,0,19,0" concept="9" trace="call_getFQClassName_1350734474211110544#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1350734474211110547" at="16,84,17,430" />
+      <scope id="1350734474211110547" at="16,84,17,431" />
       <scope id="2220861080744370264" at="16,0,19,0">
         <var name="__thisNode__" id="2220861080744370264" />
       </scope>
       <unit id="2220861080744370264" at="14,0,20,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_Behavior" />
     </file>
-    <file name="BuildSolutionRunnerAspect_BehaviorDescriptor.java">
+    <file name="BuildSolutionRunnerAspect__BehaviorDescriptor.java">
       <node id="2220861080744370264" at="35,0,36,0" concept="8" trace="CONCEPT" />
       <node id="2220861080744370264" at="36,0,37,0" concept="8" trace="REGISTRY" />
       <node id="2220861080744370264" at="38,0,39,0" concept="8" trace="getClassName_id1aYLt$9dW4N" />
@@ -39,7 +45,7 @@
       <node id="2220861080744370264" at="44,0,45,0" concept="8" trace="BH_METHODS" />
       <node id="1350734474210954597" at="49,81,50,23" concept="6" />
       <node id="1350734474210956191" at="52,82,53,21" concept="6" />
-      <node id="1350734474211111339" at="55,83,56,430" concept="6" />
+      <node id="1350734474211111339" at="55,83,56,431" concept="6" />
       <node id="4560297596904469398" at="58,149,59,43" concept="5" />
       <node id="5959944170642870348" at="59,43,60,64" concept="5" />
       <node id="4560297596904469404" at="60,64,61,0" concept="7" />
@@ -53,7 +59,7 @@
       <node id="2887318893670416205" at="71,209,72,551" concept="1" />
       <node id="2887318893670416218" at="73,31,74,260" concept="1" />
       <node id="1350734474210969986" at="79,101,80,421" concept="6" />
-      <node id="2220861080744370264" at="83,62,84,20" concept="10" />
+      <node id="2220861080744370264" at="83,63,84,20" concept="10" />
       <node id="2220861080744370264" at="88,108,89,21" concept="1" />
       <node id="2220861080744370264" at="93,113,94,49" concept="5" />
       <node id="2220861080744370264" at="95,26,96,56" concept="12" />
@@ -75,7 +81,7 @@
       <node id="2220861080744370264" at="55,0,58,0" concept="9" trace="getFQClassName_id1aYLt$9eyUg#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2887318893670416216" at="72,551,75,9" concept="3" />
       <node id="2220861080744370264" at="79,0,82,0" concept="9" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <node id="2220861080744370264" at="83,0,86,0" concept="0" trace="BuildSolutionRunnerAspect_BehaviorDescriptor#()V" />
+      <node id="2220861080744370264" at="83,0,86,0" concept="0" trace="BuildSolutionRunnerAspect__BehaviorDescriptor#()V" />
       <node id="2220861080744370264" at="94,49,97,5" concept="3" />
       <node id="2220861080744370264" at="117,49,120,5" concept="3" />
       <node id="2220861080744370264" at="87,0,91,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -91,11 +97,11 @@
       <scope id="2220861080744370264" at="46,63,46,63" />
       <scope id="2220861080744370264" at="49,81,50,23" />
       <scope id="2220861080744370264" at="52,82,53,21" />
-      <scope id="2220861080744370264" at="55,83,56,430" />
+      <scope id="2220861080744370264" at="55,83,56,431" />
       <scope id="2887318893670203411" at="69,29,70,258" />
       <scope id="2887318893670416217" at="73,31,74,260" />
       <scope id="2220861080744370264" at="79,101,80,421" />
-      <scope id="2220861080744370264" at="83,62,84,20" />
+      <scope id="2220861080744370264" at="83,63,84,20" />
       <scope id="2220861080744370264" at="88,108,89,21" />
       <scope id="2220861080744370264" at="95,26,96,56" />
       <scope id="2220861080744370264" at="99,13,100,52" />
@@ -169,7 +175,7 @@
         <var name="node" id="2220861080744370264" />
         <var name="parameters" id="2220861080744370264" />
       </scope>
-      <unit id="2220861080744370264" at="34,0,139,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor" />
+      <unit id="2220861080744370264" at="34,0,139,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

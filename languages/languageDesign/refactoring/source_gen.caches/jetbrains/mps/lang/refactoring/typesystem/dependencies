@@ -87,7 +87,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.typesystem.typeof_ContextMemberOperation_InferenceRule" file="typeof_ContextMemberOperation_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />

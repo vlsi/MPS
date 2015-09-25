@@ -52,7 +52,7 @@ public final class RunConfiguration__BehaviorDescriptor extends BaseBHDescriptor
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind")) == null)) {
       return false;
     }
-    return neq_lflypm_a0b0m(SNodeOperations.getModel(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind"))), SNodeOperations.getModel(__thisNode__));
+    return neq_dhv8ye_a0b0m(SNodeOperations.getModel(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind"))), SNodeOperations.getModel(__thisNode__));
   }
   private static String getGeneratedFactoryName_id1XgDflG1h5w(@NotNull SNode __thisNode__) {
     return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_Factory";
@@ -108,7 +108,7 @@ public final class RunConfiguration__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean neq_lflypm_a0b0m(Object a, Object b) {
+  private static boolean neq_dhv8ye_a0b0m(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

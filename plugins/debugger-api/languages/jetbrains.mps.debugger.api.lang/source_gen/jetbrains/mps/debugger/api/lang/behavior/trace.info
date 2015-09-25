@@ -16,12 +16,54 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,70,0" name="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="BreakpointCreator_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
+    </file>
+    <file name="BreakpointableNodeItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptDeclarationReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor.java">
+      <unit at="11,0,28,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java">
+      <unit at="11,0,28,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
+    </file>
+    <file name="CreateBreakpointOperation_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerConfiguration_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerType_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
+    </file>
+    <file name="GetDebuggerSettings_Function_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741703317">
     <file name="GetDebuggerSettings_Function_Behavior.java">
       <unit id="1262430001741703317" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_Behavior" />
     </file>
-    <file name="GetDebuggerSettings_Function_BehaviorDescriptor.java">
+    <file name="GetDebuggerSettings_Function__BehaviorDescriptor.java">
       <node id="1262430001741703317" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703317" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="1262430001741703317" at="30,0,31,0" concept="7" trace="showName_id1653mnvAgry" />
@@ -29,7 +71,7 @@
       <node id="1262430001741703317" at="33,0,34,0" concept="7" trace="BH_METHODS" />
       <node id="1262430001741703315" at="38,92,39,16" concept="6" />
       <node id="658365993682019574" at="41,85,42,47" concept="6" />
-      <node id="1262430001741703317" at="45,65,46,20" concept="9" />
+      <node id="1262430001741703317" at="45,66,46,20" concept="9" />
       <node id="1262430001741703317" at="50,108,51,21" concept="2" />
       <node id="1262430001741703317" at="55,113,56,49" concept="5" />
       <node id="1262430001741703317" at="57,26,58,56" concept="11" />
@@ -51,7 +93,7 @@
       <node id="658365993682018707" at="95,30,97,453" concept="0" />
       <node id="1262430001741703317" at="38,0,41,0" concept="8" trace="showName_id1653mnvAgry#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
       <node id="1262430001741703317" at="41,0,44,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1262430001741703317" at="45,0,48,0" concept="1" trace="GetDebuggerSettings_Function_BehaviorDescriptor#()V" />
+      <node id="1262430001741703317" at="45,0,48,0" concept="1" trace="GetDebuggerSettings_Function__BehaviorDescriptor#()V" />
       <node id="1262430001741703317" at="56,49,59,5" concept="3" />
       <node id="1262430001741703317" at="70,49,73,5" concept="3" />
       <node id="1262430001741703317" at="49,0,53,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -65,7 +107,7 @@
       <scope id="1262430001741703317" at="35,63,35,63" />
       <scope id="1262430001741703317" at="38,92,39,16" />
       <scope id="1262430001741703317" at="41,85,42,47" />
-      <scope id="1262430001741703317" at="45,65,46,20" />
+      <scope id="1262430001741703317" at="45,66,46,20" />
       <scope id="1262430001741703317" at="50,108,51,21" />
       <scope id="1262430001741703317" at="57,26,58,56" />
       <scope id="1262430001741703317" at="61,13,62,57" />
@@ -114,14 +156,14 @@
         <var name="method" id="1262430001741703317" />
         <var name="parameters" id="1262430001741703317" />
       </scope>
-      <unit id="1262430001741703317" at="26,0,101,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
+      <unit id="1262430001741703317" at="26,0,101,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741720248">
     <file name="ConceptFunction_IsApplicableToConcept_Behavior.java">
       <unit id="1262430001741720248" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_Behavior" />
     </file>
-    <file name="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java">
+    <file name="ConceptFunction_IsApplicableToConcept__BehaviorDescriptor.java">
       <node id="1262430001741720248" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741720248" at="30,0,31,0" concept="7" trace="REGISTRY" />
       <node id="1262430001741720248" at="32,0,33,0" concept="7" trace="showName_id1653mnvAgry" />
@@ -129,11 +171,11 @@
       <node id="1262430001741720248" at="34,0,35,0" concept="7" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="1262430001741720248" at="36,0,37,0" concept="7" trace="BH_METHODS" />
       <node id="1262430001741720246" at="41,92,42,16" concept="6" />
-      <node id="3044950653914726367" at="44,125,45,143" concept="5" />
-      <node id="3044950653914726382" at="45,143,46,178" concept="2" />
+      <node id="3044950653914726367" at="44,125,45,144" concept="5" />
+      <node id="3044950653914726382" at="45,144,46,178" concept="2" />
       <node id="3044950653914726386" at="46,178,47,18" concept="6" />
       <node id="658365993682020132" at="49,85,50,47" concept="6" />
-      <node id="1262430001741720248" at="53,74,54,20" concept="9" />
+      <node id="1262430001741720248" at="53,75,54,20" concept="9" />
       <node id="1262430001741720248" at="58,108,59,21" concept="2" />
       <node id="1262430001741720248" at="63,113,64,49" concept="5" />
       <node id="1262430001741720248" at="65,26,66,56" concept="11" />
@@ -155,7 +197,7 @@
       <node id="1262430001741720248" at="38,0,40,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741720248" at="41,0,44,0" concept="8" trace="showName_id1653mnvAgry#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
       <node id="1262430001741720248" at="49,0,52,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1262430001741720248" at="53,0,56,0" concept="1" trace="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor#()V" />
+      <node id="1262430001741720248" at="53,0,56,0" concept="1" trace="ConceptFunction_IsApplicableToConcept__BehaviorDescriptor#()V" />
       <node id="1262430001741720248" at="64,49,67,5" concept="3" />
       <node id="1262430001741720248" at="78,49,81,5" concept="3" />
       <node id="1262430001741720248" at="57,0,61,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -170,7 +212,7 @@
       <scope id="1262430001741720248" at="38,63,38,63" />
       <scope id="1262430001741720248" at="41,92,42,16" />
       <scope id="1262430001741720248" at="49,85,50,47" />
-      <scope id="1262430001741720248" at="53,74,54,20" />
+      <scope id="1262430001741720248" at="53,75,54,20" />
       <scope id="1262430001741720248" at="58,108,59,21" />
       <scope id="1262430001741720248" at="65,26,66,56" />
       <scope id="1262430001741720248" at="69,13,70,57" />
@@ -226,18 +268,18 @@
         <var name="method" id="1262430001741720248" />
         <var name="parameters" id="1262430001741720248" />
       </scope>
-      <unit id="1262430001741720248" at="28,0,110,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
+      <unit id="1262430001741720248" at="28,0,110,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/2511103526757024634">
     <file name="DebuggerReference_Behavior.java">
       <unit id="2511103526757024634" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_Behavior" />
     </file>
-    <file name="DebuggerReference_BehaviorDescriptor.java">
+    <file name="DebuggerReference__BehaviorDescriptor.java">
       <node id="2511103526757024634" at="19,0,20,0" concept="7" trace="CONCEPT" />
       <node id="2511103526757024634" at="20,0,21,0" concept="7" trace="REGISTRY" />
       <node id="2511103526757024634" at="23,0,24,0" concept="7" trace="BH_METHODS" />
-      <node id="2511103526757024634" at="29,54,30,20" concept="9" />
+      <node id="2511103526757024634" at="29,55,30,20" concept="9" />
       <node id="2511103526757024634" at="34,108,35,21" concept="2" />
       <node id="2511103526757024634" at="39,113,40,49" concept="5" />
       <node id="2511103526757024634" at="41,26,42,56" concept="11" />
@@ -248,7 +290,7 @@
       <node id="2511103526757024634" at="64,48,65,22" concept="6" />
       <node id="2511103526757024634" at="70,40,71,19" concept="6" />
       <node id="2511103526757024634" at="25,0,27,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2511103526757024634" at="29,0,32,0" concept="1" trace="DebuggerReference_BehaviorDescriptor#()V" />
+      <node id="2511103526757024634" at="29,0,32,0" concept="1" trace="DebuggerReference__BehaviorDescriptor#()V" />
       <node id="2511103526757024634" at="40,49,43,5" concept="3" />
       <node id="2511103526757024634" at="52,49,55,5" concept="3" />
       <node id="2511103526757024634" at="33,0,37,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -259,7 +301,7 @@
       <node id="2511103526757024634" at="38,0,49,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="2511103526757024634" at="50,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="2511103526757024634" at="25,63,25,63" />
-      <scope id="2511103526757024634" at="29,54,30,20" />
+      <scope id="2511103526757024634" at="29,55,30,20" />
       <scope id="2511103526757024634" at="34,108,35,21" />
       <scope id="2511103526757024634" at="41,26,42,56" />
       <scope id="2511103526757024634" at="45,14,46,58" />
@@ -294,29 +336,29 @@
         <var name="method" id="2511103526757024634" />
         <var name="parameters" id="2511103526757024634" />
       </scope>
-      <unit id="2511103526757024634" at="18,0,74,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
+      <unit id="2511103526757024634" at="18,0,74,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/3044950653914719163">
     <file name="ConceptFunction_CreateBreakpoint_Behavior.java">
       <unit id="3044950653914719163" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_Behavior" />
     </file>
-    <file name="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java">
+    <file name="ConceptFunction_CreateBreakpoint__BehaviorDescriptor.java">
       <node id="3044950653914719163" at="31,0,32,0" concept="7" trace="CONCEPT" />
       <node id="3044950653914719163" at="32,0,33,0" concept="7" trace="REGISTRY" />
       <node id="3044950653914719163" at="34,0,35,0" concept="7" trace="getApplicableConceptFunctionParameter_id2D1PBM_bxJg" />
       <node id="3044950653914719163" at="35,0,36,0" concept="7" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="3044950653914719163" at="36,0,37,0" concept="7" trace="getThrowableTypes_id5op8ooRkkc7" />
       <node id="3044950653914719163" at="38,0,39,0" concept="7" trace="BH_METHODS" />
-      <node id="3044950653914719137" at="43,125,44,143" concept="5" />
-      <node id="3044950653914719152" at="44,143,45,178" concept="2" />
+      <node id="3044950653914719137" at="43,125,44,144" concept="5" />
+      <node id="3044950653914719152" at="44,144,45,178" concept="2" />
       <node id="3044950653914719157" at="45,178,46,178" concept="2" />
       <node id="3044950653914719161" at="46,178,47,18" concept="6" />
       <node id="658365993682017358" at="49,85,50,47" concept="6" />
-      <node id="658365993682200132" at="52,91,53,120" concept="5" />
-      <node id="658365993682200138" at="53,120,54,165" concept="2" />
+      <node id="658365993682200132" at="52,91,53,121" concept="5" />
+      <node id="658365993682200138" at="53,121,54,165" concept="2" />
       <node id="658365993682200145" at="54,165,55,18" concept="6" />
-      <node id="3044950653914719163" at="58,69,59,20" concept="9" />
+      <node id="3044950653914719163" at="58,70,59,20" concept="9" />
       <node id="3044950653914719163" at="63,108,64,21" concept="2" />
       <node id="3044950653914719163" at="68,113,69,49" concept="5" />
       <node id="3044950653914719163" at="70,26,71,56" concept="11" />
@@ -345,7 +387,7 @@
       <node id="658365993682200128" at="117,30,119,453" concept="0" />
       <node id="658365993682200128" at="117,30,119,453" concept="0" />
       <node id="3044950653914719163" at="49,0,52,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3044950653914719163" at="58,0,61,0" concept="1" trace="ConceptFunction_CreateBreakpoint_BehaviorDescriptor#()V" />
+      <node id="3044950653914719163" at="58,0,61,0" concept="1" trace="ConceptFunction_CreateBreakpoint__BehaviorDescriptor#()V" />
       <node id="3044950653914719163" at="69,49,72,5" concept="3" />
       <node id="3044950653914719163" at="85,49,88,5" concept="3" />
       <node id="3044950653914719163" at="62,0,66,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -361,7 +403,7 @@
       <node id="3044950653914719163" at="67,0,82,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3044950653914719163" at="40,63,40,63" />
       <scope id="3044950653914719163" at="49,85,50,47" />
-      <scope id="3044950653914719163" at="58,69,59,20" />
+      <scope id="3044950653914719163" at="58,70,59,20" />
       <scope id="3044950653914719163" at="63,108,64,21" />
       <scope id="3044950653914719163" at="70,26,71,56" />
       <scope id="3044950653914719163" at="74,13,75,57" />
@@ -426,14 +468,14 @@
         <var name="node" id="3044950653914719163" />
         <var name="parameters" id="3044950653914719163" />
       </scope>
-      <unit id="3044950653914719163" at="30,0,123,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
+      <unit id="3044950653914719163" at="30,0,123,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/3104811047188253888">
     <file name="ConceptFunction_IsApplicableBreakpoint_Behavior.java">
       <unit id="3104811047188253888" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_Behavior" />
     </file>
-    <file name="ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor.java">
+    <file name="ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor.java">
       <node id="3104811047188253888" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="3104811047188253888" at="30,0,31,0" concept="7" trace="REGISTRY" />
       <node id="3104811047188253888" at="32,0,33,0" concept="7" trace="showName_id1653mnvAgry" />
@@ -441,12 +483,12 @@
       <node id="3104811047188253888" at="34,0,35,0" concept="7" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="3104811047188253888" at="36,0,37,0" concept="7" trace="BH_METHODS" />
       <node id="3104811047188255094" at="41,92,42,16" concept="6" />
-      <node id="3104811047188255101" at="44,125,45,143" concept="5" />
-      <node id="3104811047188255108" at="45,143,46,178" concept="2" />
+      <node id="3104811047188255101" at="44,125,45,144" concept="5" />
+      <node id="3104811047188255108" at="45,144,46,178" concept="2" />
       <node id="3104811047188259161" at="46,178,47,178" concept="2" />
       <node id="3104811047188255113" at="47,178,48,18" concept="6" />
       <node id="3104811047188255118" at="50,85,51,47" concept="6" />
-      <node id="3104811047188253888" at="54,75,55,20" concept="9" />
+      <node id="3104811047188253888" at="54,76,55,20" concept="9" />
       <node id="3104811047188253888" at="59,108,60,21" concept="2" />
       <node id="3104811047188253888" at="64,113,65,49" concept="5" />
       <node id="3104811047188253888" at="66,26,67,56" concept="11" />
@@ -468,7 +510,7 @@
       <node id="3104811047188253888" at="38,0,40,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3104811047188253888" at="41,0,44,0" concept="8" trace="showName_id1653mnvAgry#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Boolean;" />
       <node id="3104811047188253888" at="50,0,53,0" concept="8" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3104811047188253888" at="54,0,57,0" concept="1" trace="ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor#()V" />
+      <node id="3104811047188253888" at="54,0,57,0" concept="1" trace="ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor#()V" />
       <node id="3104811047188253888" at="65,49,68,5" concept="3" />
       <node id="3104811047188253888" at="79,49,82,5" concept="3" />
       <node id="3104811047188253888" at="58,0,62,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -483,7 +525,7 @@
       <scope id="3104811047188253888" at="38,63,38,63" />
       <scope id="3104811047188253888" at="41,92,42,16" />
       <scope id="3104811047188253888" at="50,85,51,47" />
-      <scope id="3104811047188253888" at="54,75,55,20" />
+      <scope id="3104811047188253888" at="54,76,55,20" />
       <scope id="3104811047188253888" at="59,108,60,21" />
       <scope id="3104811047188253888" at="66,26,67,56" />
       <scope id="3104811047188253888" at="70,13,71,57" />
@@ -539,20 +581,20 @@
         <var name="method" id="3104811047188253888" />
         <var name="parameters" id="3104811047188253888" />
       </scope>
-      <unit id="3104811047188253888" at="28,0,111,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor" />
+      <unit id="3104811047188253888" at="28,0,111,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287051173">
     <file name="ConceptFunctionParameter_DebuggableNode_Behavior.java">
       <unit id="5452844340287051173" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_Behavior" />
     </file>
-    <file name="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java">
+    <file name="ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor.java">
       <node id="5452844340287051173" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287051173" at="27,0,28,0" concept="7" trace="REGISTRY" />
       <node id="5452844340287051173" at="29,0,30,0" concept="7" trace="getType_id27DJnJtIQ9C" />
       <node id="5452844340287051173" at="31,0,32,0" concept="7" trace="BH_METHODS" />
       <node id="5452844340287051289" at="36,75,37,47" concept="6" />
-      <node id="5452844340287051173" at="40,76,41,20" concept="9" />
+      <node id="5452844340287051173" at="40,77,41,20" concept="9" />
       <node id="5452844340287051173" at="45,108,46,21" concept="2" />
       <node id="5452844340287051173" at="50,113,51,49" concept="5" />
       <node id="5452844340287051173" at="52,26,53,56" concept="11" />
@@ -571,7 +613,7 @@
       <node id="5452844340287051285" at="89,221,90,24" concept="6" />
       <node id="5452844340287051173" at="33,0,35,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5452844340287051173" at="36,0,39,0" concept="8" trace="getType_id27DJnJtIQ9C#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5452844340287051173" at="40,0,43,0" concept="1" trace="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor#()V" />
+      <node id="5452844340287051173" at="40,0,43,0" concept="1" trace="ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor#()V" />
       <node id="5452844340287051173" at="51,49,54,5" concept="3" />
       <node id="5452844340287051173" at="65,49,68,5" concept="3" />
       <node id="5452844340287051173" at="44,0,48,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -584,7 +626,7 @@
       <node id="5452844340287051173" at="49,0,62,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5452844340287051173" at="33,63,33,63" />
       <scope id="5452844340287051173" at="36,75,37,47" />
-      <scope id="5452844340287051173" at="40,76,41,20" />
+      <scope id="5452844340287051173" at="40,77,41,20" />
       <scope id="5452844340287051173" at="45,108,46,21" />
       <scope id="5452844340287051173" at="52,26,53,56" />
       <scope id="5452844340287051173" at="56,13,57,47" />
@@ -629,20 +671,20 @@
         <var name="node" id="5452844340287051173" />
         <var name="parameters" id="5452844340287051173" />
       </scope>
-      <unit id="5452844340287051173" at="25,0,93,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
+      <unit id="5452844340287051173" at="25,0,93,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287052544">
     <file name="ConceptFunctionParameter_Concept_Behavior.java">
       <unit id="5452844340287052544" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_Behavior" />
     </file>
-    <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java">
+    <file name="ConceptFunctionParameter_Concept__BehaviorDescriptor.java">
       <node id="5452844340287052544" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287052544" at="27,0,28,0" concept="7" trace="REGISTRY" />
       <node id="5452844340287052544" at="29,0,30,0" concept="7" trace="getType_id27DJnJtIQ9C" />
       <node id="5452844340287052544" at="31,0,32,0" concept="7" trace="BH_METHODS" />
       <node id="5452844340287052551" at="36,75,37,47" concept="6" />
-      <node id="5452844340287052544" at="40,69,41,20" concept="9" />
+      <node id="5452844340287052544" at="40,70,41,20" concept="9" />
       <node id="5452844340287052544" at="45,108,46,21" concept="2" />
       <node id="5452844340287052544" at="50,113,51,49" concept="5" />
       <node id="5452844340287052544" at="52,26,53,56" concept="11" />
@@ -661,7 +703,7 @@
       <node id="5452844340287052547" at="89,227,90,24" concept="6" />
       <node id="5452844340287052544" at="33,0,35,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5452844340287052544" at="36,0,39,0" concept="8" trace="getType_id27DJnJtIQ9C#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5452844340287052544" at="40,0,43,0" concept="1" trace="ConceptFunctionParameter_Concept_BehaviorDescriptor#()V" />
+      <node id="5452844340287052544" at="40,0,43,0" concept="1" trace="ConceptFunctionParameter_Concept__BehaviorDescriptor#()V" />
       <node id="5452844340287052544" at="51,49,54,5" concept="3" />
       <node id="5452844340287052544" at="65,49,68,5" concept="3" />
       <node id="5452844340287052544" at="44,0,48,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -674,7 +716,7 @@
       <node id="5452844340287052544" at="49,0,62,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5452844340287052544" at="33,63,33,63" />
       <scope id="5452844340287052544" at="36,75,37,47" />
-      <scope id="5452844340287052544" at="40,69,41,20" />
+      <scope id="5452844340287052544" at="40,70,41,20" />
       <scope id="5452844340287052544" at="45,108,46,21" />
       <scope id="5452844340287052544" at="52,26,53,56" />
       <scope id="5452844340287052544" at="56,13,57,47" />
@@ -719,20 +761,20 @@
         <var name="node" id="5452844340287052544" />
         <var name="parameters" id="5452844340287052544" />
       </scope>
-      <unit id="5452844340287052544" at="25,0,93,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
+      <unit id="5452844340287052544" at="25,0,93,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287052604">
     <file name="ConceptFunctionParameter_Debug_Project_Behavior.java">
       <unit id="5452844340287052604" at="10,0,13,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_Behavior" />
     </file>
-    <file name="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java">
+    <file name="ConceptFunctionParameter_Debug_Project__BehaviorDescriptor.java">
       <node id="5452844340287052604" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287052604" at="28,0,29,0" concept="7" trace="REGISTRY" />
       <node id="5452844340287052604" at="30,0,31,0" concept="7" trace="getType_id27DJnJtIQ9C" />
       <node id="5452844340287052604" at="32,0,33,0" concept="7" trace="BH_METHODS" />
       <node id="5452844340287052611" at="37,75,38,47" concept="6" />
-      <node id="5452844340287052604" at="41,75,42,20" concept="9" />
+      <node id="5452844340287052604" at="41,76,42,20" concept="9" />
       <node id="5452844340287052604" at="46,108,47,21" concept="2" />
       <node id="5452844340287052604" at="51,113,52,49" concept="5" />
       <node id="5452844340287052604" at="53,26,54,56" concept="11" />
@@ -752,7 +794,7 @@
       <node id="5452844340287052607" at="89,30,91,460" concept="0" />
       <node id="5452844340287052607" at="89,30,91,460" concept="0" />
       <node id="5452844340287052604" at="37,0,40,0" concept="8" trace="getType_id27DJnJtIQ9C#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5452844340287052604" at="41,0,44,0" concept="1" trace="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor#()V" />
+      <node id="5452844340287052604" at="41,0,44,0" concept="1" trace="ConceptFunctionParameter_Debug_Project__BehaviorDescriptor#()V" />
       <node id="5452844340287052604" at="52,49,55,5" concept="3" />
       <node id="5452844340287052604" at="66,49,69,5" concept="3" />
       <node id="5452844340287052604" at="45,0,49,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -765,7 +807,7 @@
       <node id="5452844340287052604" at="50,0,63,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5452844340287052604" at="34,63,34,63" />
       <scope id="5452844340287052604" at="37,75,38,47" />
-      <scope id="5452844340287052604" at="41,75,42,20" />
+      <scope id="5452844340287052604" at="41,76,42,20" />
       <scope id="5452844340287052604" at="46,108,47,21" />
       <scope id="5452844340287052604" at="53,26,54,56" />
       <scope id="5452844340287052604" at="57,13,58,47" />
@@ -810,7 +852,7 @@
         <var name="node" id="5452844340287052604" />
         <var name="parameters" id="5452844340287052604" />
       </scope>
-      <unit id="5452844340287052604" at="26,0,95,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
+      <unit id="5452844340287052604" at="26,0,95,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

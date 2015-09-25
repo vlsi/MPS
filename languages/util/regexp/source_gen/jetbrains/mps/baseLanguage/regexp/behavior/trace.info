@@ -15,13 +15,196 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AtLeastNTimesRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,146,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BinaryRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BinaryRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="CharacterSymbolClassPart_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_BehaviorDescriptor" />
+    </file>
+    <file name="DotRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.DotRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="FindMatchExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchExpression_BehaviorDescriptor" />
+    </file>
+    <file name="FindMatchStatement_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ForEachMatchStatement_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ForEachMatchStatement_BehaviorDescriptor" />
+    </file>
+    <file name="FromNToMTimesRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="InlineRegexpExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.InlineRegexpExpression_BehaviorDescriptor" />
+    </file>
+    <file name="IntersectionSymbolClassPart_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />
+    </file>
+    <file name="IntervalSymbolClassPart_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_BehaviorDescriptor" />
+    </file>
+    <file name="LazyPlusRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyPlusRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="LazyQuestionRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyQuestionRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="LazyStarRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyStarRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="LineEndRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineEndRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="LineStartRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineStartRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="LiteralReplacement_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" />
+    </file>
+    <file name="LookRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="MatchParensRegexp_BehaviorDescriptor.java">
+      <unit at="12,0,32,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="MatchRegexpExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpExpression_BehaviorDescriptor" />
+    </file>
+    <file name="MatchRegexpOperation_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpOperation_BehaviorDescriptor" />
+    </file>
+    <file name="MatchRegexpStatement_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpStatement_BehaviorDescriptor" />
+    </file>
+    <file name="MatchVariableReferenceRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="MatchVariableReferenceReplacement_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_BehaviorDescriptor" />
+    </file>
+    <file name="MatchVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="NTimesRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="NegativeLookAheadRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookAheadRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="NegativeLookBehindRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookBehindRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="NegativeSymbolClassRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeSymbolClassRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="OrRegexp_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="ParensRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PlusRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PlusRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PositiveLookAheadRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookAheadRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PositiveLookBehindRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookBehindRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PositiveSymbolClassRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveSymbolClassRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PredefinedSymbolClassDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PredefinedSymbolClassRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor" />
+    </file>
+    <file name="PredefinedSymbolClasses_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClasses_BehaviorDescriptor" />
+    </file>
+    <file name="QuestionRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.QuestionRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="RegexpDeclarationReferenceRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="RegexpDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="RegexpExpression_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpExpression_BehaviorDescriptor" />
+    </file>
+    <file name="RegexpUsingConstruction_BehaviorDescriptor.java">
+      <unit at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpUsingConstruction_BehaviorDescriptor" />
+    </file>
+    <file name="Regexp_BehaviorDescriptor.java">
+      <unit at="10,0,30,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor" />
+    </file>
+    <file name="Regexps_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexps_BehaviorDescriptor" />
+    </file>
+    <file name="ReplaceBlock_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_BehaviorDescriptor" />
+    </file>
+    <file name="ReplaceRegexpOperation_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ReplaceWithRegexpExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ReplaceWithRegexpOperation_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpOperation_BehaviorDescriptor" />
+    </file>
+    <file name="Replacement_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_BehaviorDescriptor" />
+    </file>
+    <file name="SeqRegexp_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="SplitExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitExpression_BehaviorDescriptor" />
+    </file>
+    <file name="SplitOperation_BehaviorDescriptor.java">
+      <unit at="12,0,35,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitOperation_BehaviorDescriptor" />
+    </file>
+    <file name="StarRegexp_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StarRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="StringLiteralRegexp_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="SymbolClassPart_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_BehaviorDescriptor" />
+    </file>
+    <file name="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
+      <unit at="11,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
+    </file>
+    <file name="SymbolClassRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="UnaryRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
+    </file>
+    <file name="UnicodeCharacterRegexp_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877429450">
     <file name="Regexp_Behavior.java">
-      <node id="1223362844538" at="17,223,18,280" concept="8" />
+      <node id="1223362844538" at="17,223,18,281" concept="8" />
       <node id="1223362855008" at="19,5,20,24" concept="8" />
       <node id="1222433811275" at="22,77,23,27" concept="8" />
       <node id="1222857399071" at="25,96,26,31" concept="8" />
@@ -41,7 +224,7 @@
       <node id="1213877429450" at="16,0,22,0" concept="10" trace="call_getTopLevelRegexp_1223362823237#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1353467374624660259" at="35,43,42,5" concept="3" />
       <node id="1213877429450" at="31,0,45,0" concept="10" trace="call_escape_1353467374624660231#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1223362833712" at="17,223,18,280" />
+      <scope id="1223362833712" at="17,223,18,281" />
       <scope id="1222433790849" at="22,77,23,27" />
       <scope id="1222857160884" at="25,96,26,31" />
       <scope id="1222857178961" at="28,78,29,34" />
@@ -78,7 +261,7 @@
       </scope>
       <unit id="1213877429450" at="14,0,46,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
     </file>
-    <file name="Regexp_BehaviorDescriptor.java">
+    <file name="Regexp__BehaviorDescriptor.java">
       <node id="1213877429450" at="29,0,30,0" concept="9" trace="CONCEPT" />
       <node id="1213877429450" at="30,0,31,0" concept="9" trace="REGISTRY" />
       <node id="1213877429450" at="32,0,33,0" concept="9" trace="getTopLevelRegexp_idhNm6Oh5" />
@@ -91,9 +274,9 @@
       <node id="1213877429450" at="39,0,40,0" concept="9" trace="needParentheses_id1b8uQvZynii" />
       <node id="1213877429450" at="40,0,41,0" concept="9" trace="isValid_id48bMILtL4il" />
       <node id="1213877429450" at="42,0,43,0" concept="9" trace="BH_METHODS" />
-      <node id="1223362844538" at="48,223,49,280" concept="8" />
+      <node id="1223362844538" at="48,223,49,281" concept="8" />
       <node id="1223362855008" at="50,5,51,24" concept="8" />
-      <node id="1222864750014" at="53,73,54,171" concept="8" />
+      <node id="1222864750014" at="53,73,54,173" concept="8" />
       <node id="1222432449456" at="56,92,57,221" concept="8" />
       <node id="1222433811275" at="59,78,60,27" concept="8" />
       <node id="1222857399071" at="62,97,63,31" concept="8" />
@@ -105,9 +288,9 @@
       <node id="1353467374624660320" at="77,7,78,19" concept="2" />
       <node id="1353467374624660247" at="79,5,80,25" concept="8" />
       <node id="1353467374623880344" at="82,85,83,17" concept="8" />
-      <node id="4759120547781297404" at="87,416,88,21" concept="8" />
+      <node id="4759120547781297404" at="87,417,88,21" concept="8" />
       <node id="4759120547781297306" at="90,5,91,16" concept="8" />
-      <node id="1213877429450" at="94,43,95,20" concept="11" />
+      <node id="1213877429450" at="94,44,95,20" concept="11" />
       <node id="1213877429450" at="99,108,100,21" concept="2" />
       <node id="1213877429450" at="104,113,105,49" concept="7" />
       <node id="1213877429450" at="106,26,107,56" concept="13" />
@@ -137,7 +320,7 @@
       <node id="8330008649152995755" at="74,27,77,7" concept="5" />
       <node id="1213877429450" at="82,0,85,0" concept="10" trace="needParentheses_id1b8uQvZynii#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="4759120547781297365" at="86,86,89,7" concept="5" />
-      <node id="1213877429450" at="94,0,97,0" concept="1" trace="Regexp_BehaviorDescriptor#()V" />
+      <node id="1213877429450" at="94,0,97,0" concept="1" trace="Regexp__BehaviorDescriptor#()V" />
       <node id="1213877429450" at="105,49,108,5" concept="5" />
       <node id="1213877429450" at="135,49,138,5" concept="5" />
       <node id="1213877429450" at="98,0,102,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -153,8 +336,8 @@
       <node id="1213877429450" at="108,5,130,5" concept="12" />
       <node id="1213877429450" at="103,0,132,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877429450" at="44,63,44,63" />
-      <scope id="1223362833712" at="48,223,49,280" />
-      <scope id="1213877429450" at="53,73,54,171" />
+      <scope id="1223362833712" at="48,223,49,281" />
+      <scope id="1213877429450" at="53,73,54,173" />
       <scope id="1213877429450" at="56,92,57,221" />
       <scope id="1213877429450" at="59,78,60,27" />
       <scope id="1213877429450" at="62,97,63,31" />
@@ -162,8 +345,8 @@
       <scope id="1353467374624660331" at="69,45,70,15" />
       <scope id="8330008649152995756" at="75,34,76,24" />
       <scope id="1213877429450" at="82,85,83,17" />
-      <scope id="4759120547781297367" at="87,416,88,21" />
-      <scope id="1213877429450" at="94,43,95,20" />
+      <scope id="4759120547781297367" at="87,417,88,21" />
+      <scope id="1213877429450" at="94,44,95,20" />
       <scope id="1213877429450" at="99,108,100,21" />
       <scope id="1213877429450" at="106,26,107,56" />
       <scope id="1213877429450" at="110,13,111,53" />
@@ -254,15 +437,15 @@
         <var name="node" id="1213877429450" />
         <var name="parameters" id="1213877429450" />
       </scope>
-      <unit id="1213877429450" at="28,0,157,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor" />
+      <unit id="1213877429450" at="28,0,157,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877475221">
     <file name="MatchParensRegexp_Behavior.java">
       <node id="1223362558349" at="16,69,17,32" concept="7" />
       <node id="1223362558375" at="17,32,18,52" concept="7" />
-      <node id="1223362558381" at="18,52,19,145" concept="2" />
-      <node id="1223362558391" at="19,145,20,65" concept="8" />
+      <node id="1223362558381" at="18,52,19,147" concept="2" />
+      <node id="1223362558391" at="19,147,20,65" concept="8" />
       <node id="1213877475221" at="16,0,22,0" concept="10" trace="call_getIndex_1223361984345#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
       <scope id="1223361984348" at="16,69,20,65">
         <var name="parens" id="1223362558350" />
@@ -273,7 +456,7 @@
       </scope>
       <unit id="1213877475221" at="14,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_Behavior" />
     </file>
-    <file name="MatchParensRegexp_BehaviorDescriptor.java">
+    <file name="MatchParensRegexp__BehaviorDescriptor.java">
       <node id="1213877475221" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1213877475221" at="28,0,29,0" concept="9" trace="REGISTRY" />
       <node id="1213877475221" at="30,0,31,0" concept="9" trace="getString_idhMuDF1A" />
@@ -281,13 +464,13 @@
       <node id="1213877475221" at="32,0,33,0" concept="9" trace="getValue_idhOJcizo" />
       <node id="1213877475221" at="34,0,35,0" concept="9" trace="BH_METHODS" />
       <node id="1222856845886" at="39,92,40,57" concept="2" />
-      <node id="1222435316154" at="40,57,41,246" concept="8" />
+      <node id="1222435316154" at="40,57,41,247" concept="8" />
       <node id="1223362558349" at="43,74,44,32" concept="7" />
       <node id="1223362558375" at="44,32,45,52" concept="7" />
-      <node id="1223362558381" at="45,52,46,145" concept="2" />
-      <node id="1223362558391" at="46,145,47,65" concept="8" />
+      <node id="1223362558381" at="45,52,46,147" concept="2" />
+      <node id="1223362558391" at="46,147,47,65" concept="8" />
       <node id="4204903511793603848" at="49,72,50,46" concept="13" />
-      <node id="1213877475221" at="53,54,54,20" concept="11" />
+      <node id="1213877475221" at="53,55,54,20" concept="11" />
       <node id="1213877475221" at="58,108,59,21" concept="2" />
       <node id="1213877475221" at="63,113,64,49" concept="7" />
       <node id="1213877475221" at="65,26,66,56" concept="13" />
@@ -302,7 +485,7 @@
       <node id="1213877475221" at="100,40,101,19" concept="8" />
       <node id="1213877475221" at="36,0,38,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877475221" at="49,0,52,0" concept="10" trace="getValue_idhOJcizo#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877475221" at="53,0,56,0" concept="1" trace="MatchParensRegexp_BehaviorDescriptor#()V" />
+      <node id="1213877475221" at="53,0,56,0" concept="1" trace="MatchParensRegexp__BehaviorDescriptor#()V" />
       <node id="1213877475221" at="64,49,67,5" concept="5" />
       <node id="1213877475221" at="82,49,85,5" concept="5" />
       <node id="1213877475221" at="39,0,43,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -316,7 +499,7 @@
       <node id="1213877475221" at="62,0,79,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877475221" at="36,63,36,63" />
       <scope id="1213877475221" at="49,72,50,46" />
-      <scope id="1213877475221" at="53,54,54,20" />
+      <scope id="1213877475221" at="53,55,54,20" />
       <scope id="1213877475221" at="58,108,59,21" />
       <scope id="1213877475221" at="65,26,66,56" />
       <scope id="1213877475221" at="69,13,70,74" />
@@ -330,7 +513,7 @@
       <scope id="1213877475221" at="36,0,38,0">
         <var name="__thisNode__" id="1213877475221" />
       </scope>
-      <scope id="1213877475221" at="39,92,41,246" />
+      <scope id="1213877475221" at="39,92,41,247" />
       <scope id="1213877475221" at="49,0,52,0">
         <var name="__thisNode__" id="1213877475221" />
       </scope>
@@ -369,20 +552,20 @@
         <var name="node" id="1213877475221" />
         <var name="parameters" id="1213877475221" />
       </scope>
-      <unit id="1213877475221" at="26,0,104,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_BehaviorDescriptor" />
+      <unit id="1213877475221" at="26,0,104,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877492182">
     <file name="MatchVariableReferenceRegexp_Behavior.java">
       <unit id="1213877492182" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
     </file>
-    <file name="MatchVariableReferenceRegexp_BehaviorDescriptor.java">
+    <file name="MatchVariableReferenceRegexp__BehaviorDescriptor.java">
       <node id="1213877492182" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1213877492182" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1213877492182" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1213877492182" at="31,0,32,0" concept="9" trace="BH_METHODS" />
       <node id="1222610383089" at="36,92,37,221" concept="8" />
-      <node id="1213877492182" at="40,65,41,20" concept="11" />
+      <node id="1213877492182" at="40,66,41,20" concept="11" />
       <node id="1213877492182" at="45,108,46,21" concept="2" />
       <node id="1213877492182" at="50,113,51,49" concept="7" />
       <node id="1213877492182" at="52,26,53,56" concept="13" />
@@ -395,7 +578,7 @@
       <node id="1213877492182" at="83,40,84,19" concept="8" />
       <node id="1213877492182" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877492182" at="36,0,39,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1213877492182" at="40,0,43,0" concept="1" trace="MatchVariableReferenceRegexp_BehaviorDescriptor#()V" />
+      <node id="1213877492182" at="40,0,43,0" concept="1" trace="MatchVariableReferenceRegexp__BehaviorDescriptor#()V" />
       <node id="1213877492182" at="51,49,54,5" concept="5" />
       <node id="1213877492182" at="65,49,68,5" concept="5" />
       <node id="1213877492182" at="44,0,48,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -407,7 +590,7 @@
       <node id="1213877492182" at="49,0,62,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1213877492182" at="33,63,33,63" />
       <scope id="1213877492182" at="36,92,37,221" />
-      <scope id="1213877492182" at="40,65,41,20" />
+      <scope id="1213877492182" at="40,66,41,20" />
       <scope id="1213877492182" at="45,108,46,21" />
       <scope id="1213877492182" at="52,26,53,56" />
       <scope id="1213877492182" at="56,13,57,74" />
@@ -447,7 +630,7 @@
         <var name="node" id="1213877492182" />
         <var name="parameters" id="1213877492182" />
       </scope>
-      <unit id="1213877492182" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_BehaviorDescriptor" />
+      <unit id="1213877492182" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222431791866">
@@ -460,7 +643,7 @@
       <node id="8330008649152995423" at="26,23,27,23" concept="2" />
       <node id="8330008649152995432" at="29,36,30,26" concept="8" />
       <node id="8330008649152995440" at="31,13,32,28" concept="2" />
-      <node id="8330008649152995449" at="33,299,34,26" concept="8" />
+      <node id="8330008649152995449" at="33,300,34,26" concept="8" />
       <node id="8330008649152995456" at="35,13,36,25" concept="2" />
       <node id="8330008649152995474" at="38,42,39,23" concept="2" />
       <node id="8330008649152995483" at="41,36,42,26" concept="8" />
@@ -494,7 +677,7 @@
       <node id="1222431791866" at="16,0,70,0" concept="10" trace="call_toRegexp_8330008649152995372#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="8330008649152995405" at="22,32,23,22" />
       <scope id="8330008649152995431" at="29,36,30,26" />
-      <scope id="8330008649152995448" at="33,299,34,26" />
+      <scope id="8330008649152995448" at="33,300,34,26" />
       <scope id="8330008649152995482" at="41,36,42,26" />
       <scope id="8330008649152995499" at="45,42,46,26" />
       <scope id="8330008649152995521" at="50,116,51,23" />
@@ -536,7 +719,7 @@
       </scope>
       <unit id="1222431791866" at="14,0,74,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
     </file>
-    <file name="StringLiteralRegexp_BehaviorDescriptor.java">
+    <file name="StringLiteralRegexp__BehaviorDescriptor.java">
       <node id="1222431791866" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222431791866" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222431791866" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
@@ -544,9 +727,9 @@
       <node id="1222431791866" at="31,0,32,0" concept="9" trace="toRegexp_id7eq8FHGGy0G" />
       <node id="1222431791866" at="32,0,33,0" concept="9" trace="isHexChar_id7KMCQ$NHaYO" />
       <node id="1222431791866" at="34,0,35,0" concept="9" trace="BH_METHODS" />
-      <node id="1222433006828" at="39,92,40,253" concept="8" />
+      <node id="1222433006828" at="39,92,40,254" concept="8" />
       <node id="4759120547781297328" at="43,183,44,19" concept="8" />
-      <node id="4759120547781297335" at="45,5,46,261" concept="8" />
+      <node id="4759120547781297335" at="45,5,46,262" concept="8" />
       <node id="8330008649152995376" at="48,87,49,43" concept="7" />
       <node id="8330008649152995383" at="50,42,51,27" concept="7" />
       <node id="8330008649152995399" at="52,22,53,21" concept="2" />
@@ -555,7 +738,7 @@
       <node id="8330008649152995423" at="58,23,59,23" concept="2" />
       <node id="8330008649152995432" at="61,36,62,26" concept="8" />
       <node id="8330008649152995440" at="63,13,64,28" concept="2" />
-      <node id="8330008649152995449" at="65,299,66,26" concept="8" />
+      <node id="8330008649152995449" at="65,300,66,26" concept="8" />
       <node id="8330008649152995456" at="67,13,68,25" concept="2" />
       <node id="8330008649152995474" at="70,42,71,23" concept="2" />
       <node id="8330008649152995483" at="73,36,74,26" concept="8" />
@@ -572,7 +755,7 @@
       <node id="8330008649152995598" at="96,45,97,56" concept="2" />
       <node id="8330008649152995620" at="99,5,100,25" concept="8" />
       <node id="8949395081772969916" at="102,101,103,84" concept="8" />
-      <node id="1222431791866" at="106,56,107,20" concept="11" />
+      <node id="1222431791866" at="106,57,107,20" concept="11" />
       <node id="1222431791866" at="111,108,112,21" concept="2" />
       <node id="1222431791866" at="116,113,117,49" concept="7" />
       <node id="1222431791866" at="118,26,119,56" concept="13" />
@@ -598,7 +781,7 @@
       <node id="8330008649152995498" at="76,28,79,13" concept="5" />
       <node id="8330008649152995570" at="89,27,92,9" concept="5" />
       <node id="1222431791866" at="102,0,105,0" concept="10" trace="isHexChar_id7KMCQ$NHaYO#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;C)Ljava/lang/Boolean;" />
-      <node id="1222431791866" at="106,0,109,0" concept="1" trace="StringLiteralRegexp_BehaviorDescriptor#()V" />
+      <node id="1222431791866" at="106,0,109,0" concept="1" trace="StringLiteralRegexp__BehaviorDescriptor#()V" />
       <node id="1222431791866" at="117,49,120,5" concept="5" />
       <node id="1222431791866" at="135,49,138,5" concept="5" />
       <node id="4759120547781297334" at="158,0,161,0" concept="10" trace="isEmptyString#(Ljava/lang/String;)Z" />
@@ -618,11 +801,11 @@
       <node id="8330008649152995381" at="49,43,99,5" concept="3" />
       <node id="1222431791866" at="48,0,102,0" concept="10" trace="toRegexp_id7eq8FHGGy0G#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1222431791866" at="36,63,36,63" />
-      <scope id="1222431791866" at="39,92,40,253" />
+      <scope id="1222431791866" at="39,92,40,254" />
       <scope id="4759120547781297327" at="43,183,44,19" />
       <scope id="8330008649152995405" at="54,32,55,22" />
       <scope id="8330008649152995431" at="61,36,62,26" />
-      <scope id="8330008649152995448" at="65,299,66,26" />
+      <scope id="8330008649152995448" at="65,300,66,26" />
       <scope id="8330008649152995482" at="73,36,74,26" />
       <scope id="8330008649152995499" at="77,42,78,26" />
       <scope id="8330008649152995521" at="82,116,83,23" />
@@ -630,7 +813,7 @@
       <scope id="8330008649152995395" at="87,26,88,20" />
       <scope id="8330008649152995571" at="90,167,91,26" />
       <scope id="1222431791866" at="102,101,103,84" />
-      <scope id="1222431791866" at="106,56,107,20" />
+      <scope id="1222431791866" at="106,57,107,20" />
       <scope id="1222431791866" at="111,108,112,21" />
       <scope id="1222431791866" at="118,26,119,56" />
       <scope id="1222431791866" at="122,13,123,74" />
@@ -661,7 +844,7 @@
       <scope id="4759120547781297334" at="158,0,161,0">
         <var name="str" id="4759120547781297334" />
       </scope>
-      <scope id="1222431791866" at="42,77,46,261" />
+      <scope id="1222431791866" at="42,77,46,262" />
       <scope id="8330008649152995569" at="89,27,93,21" />
       <scope id="1222431791866" at="110,0,114,0">
         <var name="array" id="1222431791866" />
@@ -713,20 +896,20 @@
         <var name="__thisNode__" id="1222431791866" />
         <var name="s" id="8330008649152995624" />
       </scope>
-      <unit id="1222431791866" at="25,0,162,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" />
+      <unit id="1222431791866" at="25,0,162,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433039738">
     <file name="UnicodeCharacterRegexp_Behavior.java">
       <unit id="1222433039738" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
     </file>
-    <file name="UnicodeCharacterRegexp_BehaviorDescriptor.java">
+    <file name="UnicodeCharacterRegexp__BehaviorDescriptor.java">
       <node id="1222433039738" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222433039738" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="1222433039738" at="28,0,29,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222433039738" at="30,0,31,0" concept="9" trace="BH_METHODS" />
       <node id="1222433063059" at="35,92,36,177" concept="8" />
-      <node id="1222433039738" at="39,59,40,20" concept="11" />
+      <node id="1222433039738" at="39,60,40,20" concept="11" />
       <node id="1222433039738" at="44,108,45,21" concept="2" />
       <node id="1222433039738" at="49,113,50,49" concept="7" />
       <node id="1222433039738" at="51,26,52,56" concept="13" />
@@ -739,7 +922,7 @@
       <node id="1222433039738" at="82,40,83,19" concept="8" />
       <node id="1222433039738" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222433039738" at="35,0,38,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222433039738" at="39,0,42,0" concept="1" trace="UnicodeCharacterRegexp_BehaviorDescriptor#()V" />
+      <node id="1222433039738" at="39,0,42,0" concept="1" trace="UnicodeCharacterRegexp__BehaviorDescriptor#()V" />
       <node id="1222433039738" at="50,49,53,5" concept="5" />
       <node id="1222433039738" at="64,49,67,5" concept="5" />
       <node id="1222433039738" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -751,7 +934,7 @@
       <node id="1222433039738" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222433039738" at="32,63,32,63" />
       <scope id="1222433039738" at="35,92,36,177" />
-      <scope id="1222433039738" at="39,59,40,20" />
+      <scope id="1222433039738" at="39,60,40,20" />
       <scope id="1222433039738" at="44,108,45,21" />
       <scope id="1222433039738" at="51,26,52,56" />
       <scope id="1222433039738" at="55,13,56,74" />
@@ -791,20 +974,20 @@
         <var name="node" id="1222433039738" />
         <var name="parameters" id="1222433039738" />
       </scope>
-      <unit id="1222433039738" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
+      <unit id="1222433039738" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433139931">
     <file name="PredefinedSymbolClassRegexp_Behavior.java">
       <unit id="1222433139931" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
     </file>
-    <file name="PredefinedSymbolClassRegexp_BehaviorDescriptor.java">
+    <file name="PredefinedSymbolClassRegexp__BehaviorDescriptor.java">
       <node id="1222433139931" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222433139931" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222433139931" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222433139931" at="31,0,32,0" concept="9" trace="BH_METHODS" />
       <node id="1222433158002" at="36,92,37,322" concept="8" />
-      <node id="1222433139931" at="40,64,41,20" concept="11" />
+      <node id="1222433139931" at="40,65,41,20" concept="11" />
       <node id="1222433139931" at="45,108,46,21" concept="2" />
       <node id="1222433139931" at="50,113,51,49" concept="7" />
       <node id="1222433139931" at="52,26,53,56" concept="13" />
@@ -817,7 +1000,7 @@
       <node id="1222433139931" at="83,40,84,19" concept="8" />
       <node id="1222433139931" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222433139931" at="36,0,39,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222433139931" at="40,0,43,0" concept="1" trace="PredefinedSymbolClassRegexp_BehaviorDescriptor#()V" />
+      <node id="1222433139931" at="40,0,43,0" concept="1" trace="PredefinedSymbolClassRegexp__BehaviorDescriptor#()V" />
       <node id="1222433139931" at="51,49,54,5" concept="5" />
       <node id="1222433139931" at="65,49,68,5" concept="5" />
       <node id="1222433139931" at="44,0,48,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -829,7 +1012,7 @@
       <node id="1222433139931" at="49,0,62,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222433139931" at="33,63,33,63" />
       <scope id="1222433139931" at="36,92,37,322" />
-      <scope id="1222433139931" at="40,64,41,20" />
+      <scope id="1222433139931" at="40,65,41,20" />
       <scope id="1222433139931" at="45,108,46,21" />
       <scope id="1222433139931" at="52,26,53,56" />
       <scope id="1222433139931" at="56,13,57,74" />
@@ -869,7 +1052,7 @@
         <var name="node" id="1222433139931" />
         <var name="parameters" id="1222433139931" />
       </scope>
-      <unit id="1222433139931" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_BehaviorDescriptor" />
+      <unit id="1222433139931" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433930821">
@@ -882,18 +1065,18 @@
       </scope>
       <unit id="1222433930821" at="13,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
     </file>
-    <file name="OrRegexp_BehaviorDescriptor.java">
+    <file name="OrRegexp__BehaviorDescriptor.java">
       <node id="1222433930821" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222433930821" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222433930821" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222433930821" at="30,0,31,0" concept="9" trace="needParentheses_id1b8uQvZynii" />
       <node id="1222433930821" at="31,0,32,0" concept="9" trace="inParentheses_id1b8uQvZyDXU" />
       <node id="1222433930821" at="33,0,34,0" concept="9" trace="BH_METHODS" />
-      <node id="8330008649153448487" at="38,92,39,466" concept="7" />
-      <node id="1222434808099" at="39,466,40,160" concept="8" />
+      <node id="8330008649153448487" at="38,92,39,468" concept="7" />
+      <node id="1222434808099" at="39,468,40,162" concept="8" />
       <node id="1353467374623956032" at="42,85,43,16" concept="8" />
       <node id="1353467374623956863" at="45,83,46,227" concept="8" />
-      <node id="1222433930821" at="49,45,50,20" concept="11" />
+      <node id="1222433930821" at="49,46,50,20" concept="11" />
       <node id="1222433930821" at="54,108,55,21" concept="2" />
       <node id="1222433930821" at="59,113,60,49" concept="7" />
       <node id="1222433930821" at="61,26,62,56" concept="13" />
@@ -909,7 +1092,7 @@
       <node id="1222433930821" at="35,0,37,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222433930821" at="42,0,45,0" concept="10" trace="needParentheses_id1b8uQvZynii#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="1222433930821" at="45,0,48,0" concept="10" trace="inParentheses_id1b8uQvZyDXU#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-      <node id="1222433930821" at="49,0,52,0" concept="1" trace="OrRegexp_BehaviorDescriptor#()V" />
+      <node id="1222433930821" at="49,0,52,0" concept="1" trace="OrRegexp__BehaviorDescriptor#()V" />
       <node id="1222433930821" at="60,49,63,5" concept="5" />
       <node id="1222433930821" at="78,49,81,5" concept="5" />
       <node id="1222433930821" at="38,0,42,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -923,7 +1106,7 @@
       <scope id="1222433930821" at="35,63,35,63" />
       <scope id="1222433930821" at="42,85,43,16" />
       <scope id="1222433930821" at="45,83,46,227" />
-      <scope id="1222433930821" at="49,45,50,20" />
+      <scope id="1222433930821" at="49,46,50,20" />
       <scope id="1222433930821" at="54,108,55,21" />
       <scope id="1222433930821" at="61,26,62,56" />
       <scope id="1222433930821" at="65,13,66,74" />
@@ -937,7 +1120,7 @@
       <scope id="1222433930821" at="35,0,37,0">
         <var name="__thisNode__" id="1222433930821" />
       </scope>
-      <scope id="1222433930821" at="38,92,40,160">
+      <scope id="1222433930821" at="38,92,40,162">
         <var name="s" id="8330008649153448488" />
       </scope>
       <scope id="1222433930821" at="42,0,45,0">
@@ -974,20 +1157,20 @@
         <var name="node" id="1222433930821" />
         <var name="parameters" id="1222433930821" />
       </scope>
-      <unit id="1222433930821" at="25,0,100,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor" />
+      <unit id="1222433930821" at="25,0,100,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222434887346">
     <file name="ParensRegexp_Behavior.java">
       <unit id="1222434887346" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
     </file>
-    <file name="ParensRegexp_BehaviorDescriptor.java">
+    <file name="ParensRegexp__BehaviorDescriptor.java">
       <node id="1222434887346" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222434887346" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="1222434887346" at="28,0,29,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222434887346" at="30,0,31,0" concept="9" trace="BH_METHODS" />
-      <node id="1222435148313" at="35,92,36,294" concept="8" />
-      <node id="1222434887346" at="39,49,40,20" concept="11" />
+      <node id="1222435148313" at="35,92,36,296" concept="8" />
+      <node id="1222434887346" at="39,50,40,20" concept="11" />
       <node id="1222434887346" at="44,108,45,21" concept="2" />
       <node id="1222434887346" at="49,113,50,49" concept="7" />
       <node id="1222434887346" at="51,26,52,56" concept="13" />
@@ -1000,7 +1183,7 @@
       <node id="1222434887346" at="82,40,83,19" concept="8" />
       <node id="1222434887346" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222434887346" at="35,0,38,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222434887346" at="39,0,42,0" concept="1" trace="ParensRegexp_BehaviorDescriptor#()V" />
+      <node id="1222434887346" at="39,0,42,0" concept="1" trace="ParensRegexp__BehaviorDescriptor#()V" />
       <node id="1222434887346" at="50,49,53,5" concept="5" />
       <node id="1222434887346" at="64,49,67,5" concept="5" />
       <node id="1222434887346" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1011,8 +1194,8 @@
       <node id="1222434887346" at="62,0,73,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222434887346" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222434887346" at="32,63,32,63" />
-      <scope id="1222434887346" at="35,92,36,294" />
-      <scope id="1222434887346" at="39,49,40,20" />
+      <scope id="1222434887346" at="35,92,36,296" />
+      <scope id="1222434887346" at="39,50,40,20" />
       <scope id="1222434887346" at="44,108,45,21" />
       <scope id="1222434887346" at="51,26,52,56" />
       <scope id="1222434887346" at="55,13,56,74" />
@@ -1052,22 +1235,22 @@
         <var name="node" id="1222434887346" />
         <var name="parameters" id="1222434887346" />
       </scope>
-      <unit id="1222434887346" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_BehaviorDescriptor" />
+      <unit id="1222434887346" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222436753891">
     <file name="SeqRegexp_Behavior.java">
       <unit id="1222436753891" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
     </file>
-    <file name="SeqRegexp_BehaviorDescriptor.java">
+    <file name="SeqRegexp__BehaviorDescriptor.java">
       <node id="1222436753891" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222436753891" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="1222436753891" at="28,0,29,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222436753891" at="29,0,30,0" concept="9" trace="needParentheses_id1b8uQvZynii" />
       <node id="1222436753891" at="31,0,32,0" concept="9" trace="BH_METHODS" />
-      <node id="1222436787296" at="36,92,37,456" concept="8" />
+      <node id="1222436787296" at="36,92,37,458" concept="8" />
       <node id="1353467374623955989" at="39,85,40,16" concept="8" />
-      <node id="1222436753891" at="43,46,44,20" concept="11" />
+      <node id="1222436753891" at="43,47,44,20" concept="11" />
       <node id="1222436753891" at="48,108,49,21" concept="2" />
       <node id="1222436753891" at="53,113,54,49" concept="7" />
       <node id="1222436753891" at="55,26,56,56" concept="13" />
@@ -1082,7 +1265,7 @@
       <node id="1222436753891" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222436753891" at="36,0,39,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <node id="1222436753891" at="39,0,42,0" concept="10" trace="needParentheses_id1b8uQvZynii#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-      <node id="1222436753891" at="43,0,46,0" concept="1" trace="SeqRegexp_BehaviorDescriptor#()V" />
+      <node id="1222436753891" at="43,0,46,0" concept="1" trace="SeqRegexp__BehaviorDescriptor#()V" />
       <node id="1222436753891" at="54,49,57,5" concept="5" />
       <node id="1222436753891" at="70,49,73,5" concept="5" />
       <node id="1222436753891" at="47,0,51,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1093,9 +1276,9 @@
       <node id="1222436753891" at="68,0,79,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222436753891" at="52,0,67,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222436753891" at="33,63,33,63" />
-      <scope id="1222436753891" at="36,92,37,456" />
+      <scope id="1222436753891" at="36,92,37,458" />
       <scope id="1222436753891" at="39,85,40,16" />
-      <scope id="1222436753891" at="43,46,44,20" />
+      <scope id="1222436753891" at="43,47,44,20" />
       <scope id="1222436753891" at="48,108,49,21" />
       <scope id="1222436753891" at="55,26,56,56" />
       <scope id="1222436753891" at="59,13,60,74" />
@@ -1139,20 +1322,20 @@
         <var name="node" id="1222436753891" />
         <var name="parameters" id="1222436753891" />
       </scope>
-      <unit id="1222436753891" at="24,0,92,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_BehaviorDescriptor" />
+      <unit id="1222436753891" at="24,0,92,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437176020">
     <file name="RegexpDeclarationReferenceRegexp_Behavior.java">
       <unit id="1222437176020" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
     </file>
-    <file name="RegexpDeclarationReferenceRegexp_BehaviorDescriptor.java">
+    <file name="RegexpDeclarationReferenceRegexp__BehaviorDescriptor.java">
       <node id="1222437176020" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222437176020" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="1222437176020" at="28,0,29,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222437176020" at="30,0,31,0" concept="9" trace="BH_METHODS" />
-      <node id="1222437228567" at="35,92,36,444" concept="8" />
-      <node id="1222437176020" at="39,69,40,20" concept="11" />
+      <node id="1222437228567" at="35,92,36,446" concept="8" />
+      <node id="1222437176020" at="39,70,40,20" concept="11" />
       <node id="1222437176020" at="44,108,45,21" concept="2" />
       <node id="1222437176020" at="49,113,50,49" concept="7" />
       <node id="1222437176020" at="51,26,52,56" concept="13" />
@@ -1165,7 +1348,7 @@
       <node id="1222437176020" at="82,40,83,19" concept="8" />
       <node id="1222437176020" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222437176020" at="35,0,38,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222437176020" at="39,0,42,0" concept="1" trace="RegexpDeclarationReferenceRegexp_BehaviorDescriptor#()V" />
+      <node id="1222437176020" at="39,0,42,0" concept="1" trace="RegexpDeclarationReferenceRegexp__BehaviorDescriptor#()V" />
       <node id="1222437176020" at="50,49,53,5" concept="5" />
       <node id="1222437176020" at="64,49,67,5" concept="5" />
       <node id="1222437176020" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1176,8 +1359,8 @@
       <node id="1222437176020" at="62,0,73,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222437176020" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222437176020" at="32,63,32,63" />
-      <scope id="1222437176020" at="35,92,36,444" />
-      <scope id="1222437176020" at="39,69,40,20" />
+      <scope id="1222437176020" at="35,92,36,446" />
+      <scope id="1222437176020" at="39,70,40,20" />
       <scope id="1222437176020" at="44,108,45,21" />
       <scope id="1222437176020" at="51,26,52,56" />
       <scope id="1222437176020" at="55,13,56,74" />
@@ -1217,21 +1400,21 @@
         <var name="node" id="1222437176020" />
         <var name="parameters" id="1222437176020" />
       </scope>
-      <unit id="1222437176020" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_BehaviorDescriptor" />
+      <unit id="1222437176020" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437727387">
     <file name="NTimesRegexp_Behavior.java">
       <unit id="1222437727387" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
     </file>
-    <file name="NTimesRegexp_BehaviorDescriptor.java">
+    <file name="NTimesRegexp__BehaviorDescriptor.java">
       <node id="1222437727387" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222437727387" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222437727387" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222437727387" at="31,0,32,0" concept="9" trace="BH_METHODS" />
-      <node id="8330008649153449204" at="36,92,37,238" concept="7" />
-      <node id="1222437763293" at="37,238,38,335" concept="8" />
-      <node id="1222437727387" at="41,49,42,20" concept="11" />
+      <node id="8330008649153449204" at="36,92,37,239" concept="7" />
+      <node id="1222437763293" at="37,239,38,337" concept="8" />
+      <node id="1222437727387" at="41,50,42,20" concept="11" />
       <node id="1222437727387" at="46,108,47,21" concept="2" />
       <node id="1222437727387" at="51,113,52,49" concept="7" />
       <node id="1222437727387" at="53,26,54,56" concept="13" />
@@ -1243,7 +1426,7 @@
       <node id="1222437727387" at="78,48,79,22" concept="8" />
       <node id="1222437727387" at="84,40,85,19" concept="8" />
       <node id="1222437727387" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222437727387" at="41,0,44,0" concept="1" trace="NTimesRegexp_BehaviorDescriptor#()V" />
+      <node id="1222437727387" at="41,0,44,0" concept="1" trace="NTimesRegexp__BehaviorDescriptor#()V" />
       <node id="1222437727387" at="52,49,55,5" concept="5" />
       <node id="1222437727387" at="66,49,69,5" concept="5" />
       <node id="1222437727387" at="36,0,40,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -1255,7 +1438,7 @@
       <node id="1222437727387" at="64,0,75,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222437727387" at="50,0,63,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222437727387" at="33,63,33,63" />
-      <scope id="1222437727387" at="41,49,42,20" />
+      <scope id="1222437727387" at="41,50,42,20" />
       <scope id="1222437727387" at="46,108,47,21" />
       <scope id="1222437727387" at="53,26,54,56" />
       <scope id="1222437727387" at="57,13,58,74" />
@@ -1267,7 +1450,7 @@
       <scope id="1222437727387" at="33,0,35,0">
         <var name="__thisNode__" id="1222437727387" />
       </scope>
-      <scope id="1222437727387" at="36,92,38,335">
+      <scope id="1222437727387" at="36,92,38,337">
         <var name="s" id="8330008649153449205" />
       </scope>
       <scope id="1222437727387" at="41,0,44,0" />
@@ -1298,21 +1481,21 @@
         <var name="node" id="1222437727387" />
         <var name="parameters" id="1222437727387" />
       </scope>
-      <unit id="1222437727387" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_BehaviorDescriptor" />
+      <unit id="1222437727387" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609599871">
     <file name="AtLeastNTimesRegexp_Behavior.java">
       <unit id="1222609599871" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
     </file>
-    <file name="AtLeastNTimesRegexp_BehaviorDescriptor.java">
+    <file name="AtLeastNTimesRegexp__BehaviorDescriptor.java">
       <node id="1222609599871" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222609599871" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222609599871" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222609599871" at="31,0,32,0" concept="9" trace="BH_METHODS" />
-      <node id="8330008649153448568" at="36,92,37,238" concept="7" />
-      <node id="1222609647354" at="37,238,38,336" concept="8" />
-      <node id="1222609599871" at="41,56,42,20" concept="11" />
+      <node id="8330008649153448568" at="36,92,37,239" concept="7" />
+      <node id="1222609647354" at="37,239,38,338" concept="8" />
+      <node id="1222609599871" at="41,57,42,20" concept="11" />
       <node id="1222609599871" at="46,108,47,21" concept="2" />
       <node id="1222609599871" at="51,113,52,49" concept="7" />
       <node id="1222609599871" at="53,26,54,56" concept="13" />
@@ -1324,7 +1507,7 @@
       <node id="1222609599871" at="78,48,79,22" concept="8" />
       <node id="1222609599871" at="84,40,85,19" concept="8" />
       <node id="1222609599871" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222609599871" at="41,0,44,0" concept="1" trace="AtLeastNTimesRegexp_BehaviorDescriptor#()V" />
+      <node id="1222609599871" at="41,0,44,0" concept="1" trace="AtLeastNTimesRegexp__BehaviorDescriptor#()V" />
       <node id="1222609599871" at="52,49,55,5" concept="5" />
       <node id="1222609599871" at="66,49,69,5" concept="5" />
       <node id="1222609599871" at="36,0,40,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -1336,7 +1519,7 @@
       <node id="1222609599871" at="64,0,75,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222609599871" at="50,0,63,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222609599871" at="33,63,33,63" />
-      <scope id="1222609599871" at="41,56,42,20" />
+      <scope id="1222609599871" at="41,57,42,20" />
       <scope id="1222609599871" at="46,108,47,21" />
       <scope id="1222609599871" at="53,26,54,56" />
       <scope id="1222609599871" at="57,13,58,74" />
@@ -1348,7 +1531,7 @@
       <scope id="1222609599871" at="33,0,35,0">
         <var name="__thisNode__" id="1222609599871" />
       </scope>
-      <scope id="1222609599871" at="36,92,38,336">
+      <scope id="1222609599871" at="36,92,38,338">
         <var name="s" id="8330008649153448569" />
       </scope>
       <scope id="1222609599871" at="41,0,44,0" />
@@ -1379,21 +1562,21 @@
         <var name="node" id="1222609599871" />
         <var name="parameters" id="1222609599871" />
       </scope>
-      <unit id="1222609599871" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_BehaviorDescriptor" />
+      <unit id="1222609599871" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609846769">
     <file name="FromNToMTimesRegexp_Behavior.java">
       <unit id="1222609846769" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
     </file>
-    <file name="FromNToMTimesRegexp_BehaviorDescriptor.java">
+    <file name="FromNToMTimesRegexp__BehaviorDescriptor.java">
       <node id="1222609846769" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222609846769" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="1222609846769" at="29,0,30,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222609846769" at="31,0,32,0" concept="9" trace="BH_METHODS" />
-      <node id="8330008649153448599" at="36,92,37,238" concept="7" />
-      <node id="1353467374626527608" at="37,238,38,499" concept="8" />
-      <node id="1222609846769" at="41,56,42,20" concept="11" />
+      <node id="8330008649153448599" at="36,92,37,239" concept="7" />
+      <node id="1353467374626527608" at="37,239,38,501" concept="8" />
+      <node id="1222609846769" at="41,57,42,20" concept="11" />
       <node id="1222609846769" at="46,108,47,21" concept="2" />
       <node id="1222609846769" at="51,113,52,49" concept="7" />
       <node id="1222609846769" at="53,26,54,56" concept="13" />
@@ -1405,7 +1588,7 @@
       <node id="1222609846769" at="78,48,79,22" concept="8" />
       <node id="1222609846769" at="84,40,85,19" concept="8" />
       <node id="1222609846769" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222609846769" at="41,0,44,0" concept="1" trace="FromNToMTimesRegexp_BehaviorDescriptor#()V" />
+      <node id="1222609846769" at="41,0,44,0" concept="1" trace="FromNToMTimesRegexp__BehaviorDescriptor#()V" />
       <node id="1222609846769" at="52,49,55,5" concept="5" />
       <node id="1222609846769" at="66,49,69,5" concept="5" />
       <node id="1222609846769" at="36,0,40,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -1417,7 +1600,7 @@
       <node id="1222609846769" at="64,0,75,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222609846769" at="50,0,63,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222609846769" at="33,63,33,63" />
-      <scope id="1222609846769" at="41,56,42,20" />
+      <scope id="1222609846769" at="41,57,42,20" />
       <scope id="1222609846769" at="46,108,47,21" />
       <scope id="1222609846769" at="53,26,54,56" />
       <scope id="1222609846769" at="57,13,58,74" />
@@ -1429,7 +1612,7 @@
       <scope id="1222609846769" at="33,0,35,0">
         <var name="__thisNode__" id="1222609846769" />
       </scope>
-      <scope id="1222609846769" at="36,92,38,499">
+      <scope id="1222609846769" at="36,92,38,501">
         <var name="s" id="8330008649153448600" />
       </scope>
       <scope id="1222609846769" at="41,0,44,0" />
@@ -1460,17 +1643,17 @@
         <var name="node" id="1222609846769" />
         <var name="parameters" id="1222609846769" />
       </scope>
-      <unit id="1222609846769" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_BehaviorDescriptor" />
+      <unit id="1222609846769" at="25,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222857576752">
     <file name="SymbolClassRegexp_Behavior.java">
       <node id="1222857817731" at="14,96,15,47" concept="7" />
-      <node id="8173814113624650664" at="16,30,17,110" concept="2" />
+      <node id="8173814113624650664" at="16,30,17,111" concept="2" />
       <node id="1222860537181" at="18,5,19,29" concept="8" />
       <node id="1222857827442" at="15,47,18,5" concept="4" />
       <node id="1222857576752" at="14,0,21,0" concept="10" trace="call_partsToString_1222857748873#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <scope id="1222857827443" at="16,30,17,110" />
+      <scope id="1222857827443" at="16,30,17,111" />
       <scope id="1222857827442" at="15,47,18,5">
         <var name="part" id="1222857827446" />
       </scope>
@@ -1483,19 +1666,19 @@
       </scope>
       <unit id="1222857576752" at="12,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" />
     </file>
-    <file name="SymbolClassRegexp_BehaviorDescriptor.java">
+    <file name="SymbolClassRegexp__BehaviorDescriptor.java">
       <node id="1222857576752" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222857576752" at="28,0,29,0" concept="9" trace="REGISTRY" />
       <node id="1222857576752" at="30,0,31,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222857576752" at="31,0,32,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="1222857576752" at="32,0,33,0" concept="9" trace="partsToString_idhMS0769" />
       <node id="1222857576752" at="34,0,35,0" concept="9" trace="BH_METHODS" />
-      <node id="8173814113624650645" at="39,92,40,108" concept="8" />
-      <node id="8173814113624650634" at="42,86,43,475" concept="8" />
+      <node id="8173814113624650645" at="39,92,40,109" concept="8" />
+      <node id="8173814113624650634" at="42,86,43,476" concept="8" />
       <node id="1222857817731" at="45,97,46,47" concept="7" />
-      <node id="8173814113624650664" at="47,30,48,110" concept="2" />
+      <node id="8173814113624650664" at="47,30,48,111" concept="2" />
       <node id="1222860537181" at="49,5,50,29" concept="8" />
-      <node id="1222857576752" at="53,54,54,20" concept="11" />
+      <node id="1222857576752" at="53,55,54,20" concept="11" />
       <node id="1222857576752" at="58,108,59,21" concept="2" />
       <node id="1222857576752" at="63,113,64,49" concept="7" />
       <node id="1222857576752" at="65,26,66,56" concept="13" />
@@ -1512,7 +1695,7 @@
       <node id="1222857576752" at="39,0,42,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <node id="1222857576752" at="42,0,45,0" concept="10" trace="getRepresentation_id75Jea4IEZbM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1222857827442" at="46,47,49,5" concept="4" />
-      <node id="1222857576752" at="53,0,56,0" concept="1" trace="SymbolClassRegexp_BehaviorDescriptor#()V" />
+      <node id="1222857576752" at="53,0,56,0" concept="1" trace="SymbolClassRegexp__BehaviorDescriptor#()V" />
       <node id="1222857576752" at="64,49,67,5" concept="5" />
       <node id="1222857576752" at="82,49,85,5" concept="5" />
       <node id="1222857576752" at="57,0,61,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1524,10 +1707,10 @@
       <node id="1222857576752" at="80,0,91,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222857576752" at="62,0,79,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222857576752" at="36,63,36,63" />
-      <scope id="1222857576752" at="39,92,40,108" />
-      <scope id="1222857576752" at="42,86,43,475" />
-      <scope id="1222857827443" at="47,30,48,110" />
-      <scope id="1222857576752" at="53,54,54,20" />
+      <scope id="1222857576752" at="39,92,40,109" />
+      <scope id="1222857576752" at="42,86,43,476" />
+      <scope id="1222857827443" at="47,30,48,111" />
+      <scope id="1222857576752" at="53,55,54,20" />
       <scope id="1222857576752" at="58,108,59,21" />
       <scope id="1222857576752" at="65,26,66,56" />
       <scope id="1222857576752" at="69,13,70,74" />
@@ -1582,20 +1765,20 @@
         <var name="node" id="1222857576752" />
         <var name="parameters" id="1222857576752" />
       </scope>
-      <unit id="1222857576752" at="26,0,104,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
+      <unit id="1222857576752" at="26,0,104,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222861534672">
     <file name="LookRegexp_Behavior.java">
       <unit id="1222861534672" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
     </file>
-    <file name="LookRegexp_BehaviorDescriptor.java">
+    <file name="LookRegexp__BehaviorDescriptor.java">
       <node id="1222861534672" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222861534672" at="28,0,29,0" concept="9" trace="REGISTRY" />
       <node id="1222861534672" at="30,0,31,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222861534672" at="32,0,33,0" concept="9" trace="BH_METHODS" />
-      <node id="1222861557760" at="37,92,38,452" concept="8" />
-      <node id="1222861534672" at="41,47,42,20" concept="11" />
+      <node id="1222861557760" at="37,92,38,453" concept="8" />
+      <node id="1222861534672" at="41,48,42,20" concept="11" />
       <node id="1222861534672" at="46,108,47,21" concept="2" />
       <node id="1222861534672" at="51,113,52,49" concept="7" />
       <node id="1222861534672" at="53,26,54,56" concept="13" />
@@ -1608,7 +1791,7 @@
       <node id="1222861534672" at="84,40,85,19" concept="8" />
       <node id="1222861534672" at="34,0,36,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222861534672" at="37,0,40,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222861534672" at="41,0,44,0" concept="1" trace="LookRegexp_BehaviorDescriptor#()V" />
+      <node id="1222861534672" at="41,0,44,0" concept="1" trace="LookRegexp__BehaviorDescriptor#()V" />
       <node id="1222861534672" at="52,49,55,5" concept="5" />
       <node id="1222861534672" at="66,49,69,5" concept="5" />
       <node id="1222861534672" at="45,0,49,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1619,8 +1802,8 @@
       <node id="1222861534672" at="64,0,75,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222861534672" at="50,0,63,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222861534672" at="34,63,34,63" />
-      <scope id="1222861534672" at="37,92,38,452" />
-      <scope id="1222861534672" at="41,47,42,20" />
+      <scope id="1222861534672" at="37,92,38,453" />
+      <scope id="1222861534672" at="41,48,42,20" />
       <scope id="1222861534672" at="46,108,47,21" />
       <scope id="1222861534672" at="53,26,54,56" />
       <scope id="1222861534672" at="57,13,58,74" />
@@ -1660,29 +1843,29 @@
         <var name="node" id="1222861534672" />
         <var name="parameters" id="1222861534672" />
       </scope>
-      <unit id="1222861534672" at="26,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_BehaviorDescriptor" />
+      <unit id="1222861534672" at="26,0,88,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222867682828">
     <file name="UnaryRegexp_Behavior.java">
-      <node id="1353467374623956749" at="15,84,16,420" concept="8" />
+      <node id="1353467374623956749" at="15,84,16,421" concept="8" />
       <node id="1222867682828" at="15,0,18,0" concept="10" trace="call_inParentheses_1353467374623956744#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1353467374623956747" at="15,84,16,420" />
+      <scope id="1353467374623956747" at="15,84,16,421" />
       <scope id="1222867682828" at="15,0,18,0">
         <var name="__thisNode__" id="1222867682828" />
       </scope>
       <unit id="1222867682828" at="13,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
     </file>
-    <file name="UnaryRegexp_BehaviorDescriptor.java">
+    <file name="UnaryRegexp__BehaviorDescriptor.java">
       <node id="1222867682828" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222867682828" at="28,0,29,0" concept="9" trace="REGISTRY" />
       <node id="1222867682828" at="30,0,31,0" concept="9" trace="getString_idhMuDF1A" />
       <node id="1222867682828" at="31,0,32,0" concept="9" trace="inParentheses_id1b8uQvZyDW8" />
       <node id="1222867682828" at="33,0,34,0" concept="9" trace="BH_METHODS" />
-      <node id="8330008649153448539" at="38,92,39,238" concept="7" />
-      <node id="1222867684396" at="39,238,40,377" concept="8" />
-      <node id="1353467374623956749" at="42,83,43,420" concept="8" />
-      <node id="1222867682828" at="46,48,47,20" concept="11" />
+      <node id="8330008649153448539" at="38,92,39,239" concept="7" />
+      <node id="1222867684396" at="39,239,40,379" concept="8" />
+      <node id="1353467374623956749" at="42,83,43,421" concept="8" />
+      <node id="1222867682828" at="46,49,47,20" concept="11" />
       <node id="1222867682828" at="51,108,52,21" concept="2" />
       <node id="1222867682828" at="56,113,57,49" concept="7" />
       <node id="1222867682828" at="58,26,59,56" concept="13" />
@@ -1696,7 +1879,7 @@
       <node id="1222867682828" at="91,40,92,19" concept="8" />
       <node id="1222867682828" at="35,0,37,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1222867682828" at="42,0,45,0" concept="10" trace="inParentheses_id1b8uQvZyDW8#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-      <node id="1222867682828" at="46,0,49,0" concept="1" trace="UnaryRegexp_BehaviorDescriptor#()V" />
+      <node id="1222867682828" at="46,0,49,0" concept="1" trace="UnaryRegexp__BehaviorDescriptor#()V" />
       <node id="1222867682828" at="57,49,60,5" concept="5" />
       <node id="1222867682828" at="73,49,76,5" concept="5" />
       <node id="1222867682828" at="38,0,42,0" concept="10" trace="getString_idhMuDF1A#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
@@ -1708,8 +1891,8 @@
       <node id="1222867682828" at="71,0,82,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1222867682828" at="55,0,70,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1222867682828" at="35,63,35,63" />
-      <scope id="1222867682828" at="42,83,43,420" />
-      <scope id="1222867682828" at="46,48,47,20" />
+      <scope id="1222867682828" at="42,83,43,421" />
+      <scope id="1222867682828" at="46,49,47,20" />
       <scope id="1222867682828" at="51,108,52,21" />
       <scope id="1222867682828" at="58,26,59,56" />
       <scope id="1222867682828" at="62,13,63,74" />
@@ -1722,7 +1905,7 @@
       <scope id="1222867682828" at="35,0,37,0">
         <var name="__thisNode__" id="1222867682828" />
       </scope>
-      <scope id="1222867682828" at="38,92,40,377">
+      <scope id="1222867682828" at="38,92,40,379">
         <var name="s" id="8330008649153448540" />
       </scope>
       <scope id="1222867682828" at="42,0,45,0">
@@ -1756,18 +1939,18 @@
         <var name="node" id="1222867682828" />
         <var name="parameters" id="1222867682828" />
       </scope>
-      <unit id="1222867682828" at="26,0,95,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
+      <unit id="1222867682828" at="26,0,95,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137207004">
     <file name="ReplaceRegexpOperation_Behavior.java">
       <node id="3796137614137207012" at="15,90,16,43" concept="7" />
-      <node id="4161170987575526839" at="18,26,19,259" concept="2" />
+      <node id="4161170987575526839" at="18,26,19,260" concept="2" />
       <node id="3796137614137210642" at="21,5,22,25" concept="8" />
       <node id="4161170987575526829" at="17,203,20,7" concept="5" />
       <node id="3796137614137210650" at="16,43,21,5" concept="4" />
       <node id="3796137614137207004" at="15,0,24,0" concept="10" trace="call_getReplacementString_3796137614137207007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="4161170987575526830" at="18,26,19,259" />
+      <scope id="4161170987575526830" at="18,26,19,260" />
       <scope id="3796137614137210651" at="17,203,20,7" />
       <scope id="3796137614137210650" at="16,43,21,5">
         <var name="rep" id="3796137614137210654" />
@@ -1780,15 +1963,15 @@
       </scope>
       <unit id="3796137614137207004" at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
     </file>
-    <file name="ReplaceRegexpOperation_BehaviorDescriptor.java">
+    <file name="ReplaceRegexpOperation__BehaviorDescriptor.java">
       <node id="3796137614137207004" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137207004" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="3796137614137207004" at="28,0,29,0" concept="9" trace="getReplacementString_id3iI_KKp9qzv" />
       <node id="3796137614137207004" at="30,0,31,0" concept="9" trace="BH_METHODS" />
       <node id="3796137614137207012" at="35,89,36,43" concept="7" />
-      <node id="4161170987575526839" at="38,26,39,259" concept="2" />
+      <node id="4161170987575526839" at="38,26,39,260" concept="2" />
       <node id="3796137614137210642" at="41,5,42,25" concept="8" />
-      <node id="3796137614137207004" at="45,59,46,20" concept="11" />
+      <node id="3796137614137207004" at="45,60,46,20" concept="11" />
       <node id="3796137614137207004" at="50,108,51,21" concept="2" />
       <node id="3796137614137207004" at="55,113,56,49" concept="7" />
       <node id="3796137614137207004" at="57,26,58,56" concept="13" />
@@ -1801,7 +1984,7 @@
       <node id="3796137614137207004" at="88,40,89,19" concept="8" />
       <node id="3796137614137207004" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4161170987575526829" at="37,203,40,7" concept="5" />
-      <node id="3796137614137207004" at="45,0,48,0" concept="1" trace="ReplaceRegexpOperation_BehaviorDescriptor#()V" />
+      <node id="3796137614137207004" at="45,0,48,0" concept="1" trace="ReplaceRegexpOperation__BehaviorDescriptor#()V" />
       <node id="3796137614137207004" at="56,49,59,5" concept="5" />
       <node id="3796137614137207004" at="70,49,73,5" concept="5" />
       <node id="3796137614137207004" at="49,0,53,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1814,8 +1997,8 @@
       <node id="3796137614137207004" at="68,0,79,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="3796137614137207004" at="54,0,67,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3796137614137207004" at="32,63,32,63" />
-      <scope id="4161170987575526830" at="38,26,39,259" />
-      <scope id="3796137614137207004" at="45,59,46,20" />
+      <scope id="4161170987575526830" at="38,26,39,260" />
+      <scope id="3796137614137207004" at="45,60,46,20" />
       <scope id="3796137614137207004" at="50,108,51,21" />
       <scope id="3796137614137207004" at="57,26,58,56" />
       <scope id="3796137614137207004" at="61,13,62,60" />
@@ -1861,20 +2044,20 @@
         <var name="node" id="3796137614137207004" />
         <var name="parameters" id="3796137614137207004" />
       </scope>
-      <unit id="3796137614137207004" at="24,0,92,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor" />
+      <unit id="3796137614137207004" at="24,0,92,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538899">
     <file name="Replacement_Behavior.java">
       <unit id="3796137614137538899" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
     </file>
-    <file name="Replacement_BehaviorDescriptor.java">
+    <file name="Replacement__BehaviorDescriptor.java">
       <node id="3796137614137538899" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137538899" at="25,0,26,0" concept="9" trace="REGISTRY" />
       <node id="3796137614137538899" at="27,0,28,0" concept="9" trace="toString_id3iI_KKpaF_p" />
       <node id="3796137614137538899" at="29,0,30,0" concept="9" trace="BH_METHODS" />
       <node id="4161170987575807315" at="34,91,35,14" concept="8" />
-      <node id="3796137614137538899" at="38,48,39,20" concept="11" />
+      <node id="3796137614137538899" at="38,49,39,20" concept="11" />
       <node id="3796137614137538899" at="43,108,44,21" concept="2" />
       <node id="3796137614137538899" at="48,113,49,49" concept="7" />
       <node id="3796137614137538899" at="50,26,51,56" concept="13" />
@@ -1887,7 +2070,7 @@
       <node id="3796137614137538899" at="81,40,82,19" concept="8" />
       <node id="3796137614137538899" at="31,0,33,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3796137614137538899" at="34,0,37,0" concept="10" trace="toString_id3iI_KKpaF_p#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3796137614137538899" at="38,0,41,0" concept="1" trace="Replacement_BehaviorDescriptor#()V" />
+      <node id="3796137614137538899" at="38,0,41,0" concept="1" trace="Replacement__BehaviorDescriptor#()V" />
       <node id="3796137614137538899" at="49,49,52,5" concept="5" />
       <node id="3796137614137538899" at="63,49,66,5" concept="5" />
       <node id="3796137614137538899" at="42,0,46,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1899,7 +2082,7 @@
       <node id="3796137614137538899" at="47,0,60,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3796137614137538899" at="31,63,31,63" />
       <scope id="3796137614137538899" at="34,91,35,14" />
-      <scope id="3796137614137538899" at="38,48,39,20" />
+      <scope id="3796137614137538899" at="38,49,39,20" />
       <scope id="3796137614137538899" at="43,108,44,21" />
       <scope id="3796137614137538899" at="50,26,51,56" />
       <scope id="3796137614137538899" at="54,13,55,71" />
@@ -1939,13 +2122,13 @@
         <var name="node" id="3796137614137538899" />
         <var name="parameters" id="3796137614137538899" />
       </scope>
-      <unit id="3796137614137538899" at="23,0,85,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_BehaviorDescriptor" />
+      <unit id="3796137614137538899" at="23,0,85,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538913">
     <file name="LiteralReplacement_Behavior.java">
       <node id="3796137614137567971" at="17,193,18,19" concept="8" />
-      <node id="3796137614137567976" at="19,5,20,270" concept="8" />
+      <node id="3796137614137567976" at="19,5,20,271" concept="8" />
       <node id="3796137614137565590" at="22,88,23,43" concept="7" />
       <node id="3796137614137565597" at="24,42,25,27" concept="7" />
       <node id="3796137614137565613" at="26,22,27,21" concept="2" />
@@ -1954,7 +2137,7 @@
       <node id="3796137614137565637" at="32,23,33,23" concept="2" />
       <node id="3796137614137565646" at="35,36,36,26" concept="8" />
       <node id="3796137614137565654" at="37,13,38,28" concept="2" />
-      <node id="3796137614137565663" at="39,299,40,26" concept="8" />
+      <node id="3796137614137565663" at="39,300,40,26" concept="8" />
       <node id="3796137614137565670" at="41,13,42,25" concept="2" />
       <node id="3796137614137565688" at="44,42,45,23" concept="2" />
       <node id="3796137614137565697" at="47,36,48,26" concept="8" />
@@ -1994,7 +2177,7 @@
       <scope id="3796137614137567959" at="17,193,18,19" />
       <scope id="3796137614137565619" at="28,32,29,22" />
       <scope id="3796137614137565645" at="35,36,36,26" />
-      <scope id="3796137614137565662" at="39,299,40,26" />
+      <scope id="3796137614137565662" at="39,300,40,26" />
       <scope id="3796137614137565696" at="47,36,48,26" />
       <scope id="3796137614137565713" at="51,42,52,26" />
       <scope id="3796137614137565735" at="56,103,57,23" />
@@ -2010,7 +2193,7 @@
       <scope id="3796137614137567970" at="81,0,84,0">
         <var name="str" id="3796137614137567970" />
       </scope>
-      <scope id="3796137614137567955" at="16,78,20,270" />
+      <scope id="3796137614137567955" at="16,78,20,271" />
       <scope id="3796137614137538913" at="16,0,22,0">
         <var name="__thisNode__" id="3796137614137538913" />
       </scope>
@@ -2041,16 +2224,16 @@
       </scope>
       <unit id="3796137614137538913" at="14,0,85,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
     </file>
-    <file name="LiteralReplacement_BehaviorDescriptor.java">
+    <file name="LiteralReplacement__BehaviorDescriptor.java">
       <node id="3796137614137538913" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137538913" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="3796137614137538913" at="29,0,30,0" concept="9" trace="toString_id3iI_KKpaF_p" />
       <node id="3796137614137538913" at="30,0,31,0" concept="9" trace="isValid_id3iI_KKpaMFg" />
       <node id="3796137614137538913" at="31,0,32,0" concept="9" trace="toRegexp_id3iI_KKpaM6i" />
       <node id="3796137614137538913" at="33,0,34,0" concept="9" trace="BH_METHODS" />
-      <node id="3796137614137565914" at="38,91,39,262" concept="8" />
+      <node id="3796137614137565914" at="38,91,39,263" concept="8" />
       <node id="3796137614137567971" at="42,193,43,19" concept="8" />
-      <node id="3796137614137567976" at="44,5,45,270" concept="8" />
+      <node id="3796137614137567976" at="44,5,45,271" concept="8" />
       <node id="3796137614137565590" at="47,87,48,43" concept="7" />
       <node id="3796137614137565597" at="49,42,50,27" concept="7" />
       <node id="3796137614137565613" at="51,22,52,21" concept="2" />
@@ -2059,7 +2242,7 @@
       <node id="3796137614137565637" at="57,23,58,23" concept="2" />
       <node id="3796137614137565646" at="60,36,61,26" concept="8" />
       <node id="3796137614137565654" at="62,13,63,28" concept="2" />
-      <node id="3796137614137565663" at="64,299,65,26" concept="8" />
+      <node id="3796137614137565663" at="64,300,65,26" concept="8" />
       <node id="3796137614137565670" at="66,13,67,25" concept="2" />
       <node id="3796137614137565688" at="69,42,70,23" concept="2" />
       <node id="3796137614137565697" at="72,36,73,26" concept="8" />
@@ -2078,7 +2261,7 @@
       <node id="3796137614137565854" at="99,25,100,45" concept="7" />
       <node id="3796137614137565860" at="100,45,101,56" concept="2" />
       <node id="3796137614137565882" at="103,5,104,25" concept="8" />
-      <node id="3796137614137538913" at="107,55,108,20" concept="11" />
+      <node id="3796137614137538913" at="107,56,108,20" concept="11" />
       <node id="3796137614137538913" at="112,108,113,21" concept="2" />
       <node id="3796137614137538913" at="117,113,118,49" concept="7" />
       <node id="3796137614137538913" at="119,26,120,56" concept="13" />
@@ -2101,7 +2284,7 @@
       <node id="3796137614137565661" at="63,28,66,13" concept="5" />
       <node id="3796137614137565695" at="71,39,74,13" concept="5" />
       <node id="3796137614137565712" at="75,28,78,13" concept="5" />
-      <node id="3796137614137538913" at="107,0,110,0" concept="1" trace="LiteralReplacement_BehaviorDescriptor#()V" />
+      <node id="3796137614137538913" at="107,0,110,0" concept="1" trace="LiteralReplacement__BehaviorDescriptor#()V" />
       <node id="3796137614137538913" at="118,49,121,5" concept="5" />
       <node id="3796137614137538913" at="136,49,139,5" concept="5" />
       <node id="3796137614137567970" at="157,0,160,0" concept="10" trace="isEmptyString#(Ljava/lang/String;)Z" />
@@ -2122,11 +2305,11 @@
       <node id="3796137614137565595" at="48,43,103,5" concept="3" />
       <node id="3796137614137538913" at="47,0,106,0" concept="10" trace="toRegexp_id3iI_KKpaM6i#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="3796137614137538913" at="35,63,35,63" />
-      <scope id="3796137614137538913" at="38,91,39,262" />
+      <scope id="3796137614137538913" at="38,91,39,263" />
       <scope id="3796137614137567959" at="42,193,43,19" />
       <scope id="3796137614137565619" at="53,32,54,22" />
       <scope id="3796137614137565645" at="60,36,61,26" />
-      <scope id="3796137614137565662" at="64,299,65,26" />
+      <scope id="3796137614137565662" at="64,300,65,26" />
       <scope id="3796137614137565696" at="72,36,73,26" />
       <scope id="3796137614137565713" at="76,42,77,26" />
       <scope id="3796137614137565735" at="81,103,82,23" />
@@ -2134,7 +2317,7 @@
       <scope id="3796137614137565773" at="85,16,86,22" />
       <scope id="3796137614137565609" at="88,26,89,20" />
       <scope id="8942139995509155636" at="94,30,95,26" />
-      <scope id="3796137614137538913" at="107,55,108,20" />
+      <scope id="3796137614137538913" at="107,56,108,20" />
       <scope id="3796137614137538913" at="112,108,113,21" />
       <scope id="3796137614137538913" at="119,26,120,56" />
       <scope id="3796137614137538913" at="123,13,124,71" />
@@ -2161,7 +2344,7 @@
       <scope id="3796137614137567970" at="157,0,160,0">
         <var name="str" id="3796137614137567970" />
       </scope>
-      <scope id="3796137614137538913" at="41,77,45,270" />
+      <scope id="3796137614137538913" at="41,77,45,271" />
       <scope id="3796137614137538913" at="111,0,115,0">
         <var name="array" id="3796137614137538913" />
         <var name="constructor" id="3796137614137538913" />
@@ -2213,22 +2396,22 @@
         <var name="__thisNode__" id="3796137614137538913" />
         <var name="s" id="3796137614137565886" />
       </scope>
-      <unit id="3796137614137538913" at="25,0,161,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" />
+      <unit id="3796137614137538913" at="25,0,161,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137539492">
     <file name="MatchVariableReferenceReplacement_Behavior.java">
       <unit id="3796137614137539492" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
     </file>
-    <file name="MatchVariableReferenceReplacement_BehaviorDescriptor.java">
+    <file name="MatchVariableReferenceReplacement__BehaviorDescriptor.java">
       <node id="3796137614137539492" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137539492" at="28,0,29,0" concept="9" trace="REGISTRY" />
       <node id="3796137614137539492" at="30,0,31,0" concept="9" trace="toString_id3iI_KKpaF_p" />
       <node id="3796137614137539492" at="32,0,33,0" concept="9" trace="BH_METHODS" />
       <node id="3796137614137539498" at="37,91,38,46" concept="7" />
-      <node id="3796137614137539504" at="38,46,39,71" concept="2" />
-      <node id="3796137614137539509" at="39,71,40,230" concept="8" />
-      <node id="3796137614137539492" at="43,70,44,20" concept="11" />
+      <node id="3796137614137539504" at="38,46,39,72" concept="2" />
+      <node id="3796137614137539509" at="39,72,40,230" concept="8" />
+      <node id="3796137614137539492" at="43,71,44,20" concept="11" />
       <node id="3796137614137539492" at="48,108,49,21" concept="2" />
       <node id="3796137614137539492" at="53,113,54,49" concept="7" />
       <node id="3796137614137539492" at="55,26,56,56" concept="13" />
@@ -2240,7 +2423,7 @@
       <node id="3796137614137539492" at="80,48,81,22" concept="8" />
       <node id="3796137614137539492" at="86,40,87,19" concept="8" />
       <node id="3796137614137539492" at="34,0,36,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3796137614137539492" at="43,0,46,0" concept="1" trace="MatchVariableReferenceReplacement_BehaviorDescriptor#()V" />
+      <node id="3796137614137539492" at="43,0,46,0" concept="1" trace="MatchVariableReferenceReplacement__BehaviorDescriptor#()V" />
       <node id="3796137614137539492" at="54,49,57,5" concept="5" />
       <node id="3796137614137539492" at="68,49,71,5" concept="5" />
       <node id="3796137614137539492" at="47,0,51,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2252,7 +2435,7 @@
       <node id="3796137614137539492" at="66,0,77,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="3796137614137539492" at="52,0,65,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3796137614137539492" at="34,63,34,63" />
-      <scope id="3796137614137539492" at="43,70,44,20" />
+      <scope id="3796137614137539492" at="43,71,44,20" />
       <scope id="3796137614137539492" at="48,108,49,21" />
       <scope id="3796137614137539492" at="55,26,56,56" />
       <scope id="3796137614137539492" at="59,13,60,71" />
@@ -2295,20 +2478,20 @@
         <var name="node" id="3796137614137539492" />
         <var name="parameters" id="3796137614137539492" />
       </scope>
-      <unit id="3796137614137539492" at="26,0,90,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_BehaviorDescriptor" />
+      <unit id="3796137614137539492" at="26,0,90,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/658365993682020152">
     <file name="ReplaceBlock_Behavior.java">
       <unit id="658365993682020152" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_Behavior" />
     </file>
-    <file name="ReplaceBlock_BehaviorDescriptor.java">
+    <file name="ReplaceBlock__BehaviorDescriptor.java">
       <node id="658365993682020152" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="658365993682020152" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="658365993682020152" at="29,0,30,0" concept="9" trace="getExpectedReturnType_idhEwIGRD" />
       <node id="658365993682020152" at="31,0,32,0" concept="9" trace="BH_METHODS" />
       <node id="658365993682022010" at="36,85,37,47" concept="8" />
-      <node id="658365993682020152" at="40,49,41,20" concept="11" />
+      <node id="658365993682020152" at="40,50,41,20" concept="11" />
       <node id="658365993682020152" at="45,108,46,21" concept="2" />
       <node id="658365993682020152" at="50,113,51,49" concept="7" />
       <node id="658365993682020152" at="52,26,53,56" concept="13" />
@@ -2327,7 +2510,7 @@
       <node id="658365993682022006" at="89,223,90,24" concept="8" />
       <node id="658365993682020152" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="658365993682020152" at="36,0,39,0" concept="10" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="658365993682020152" at="40,0,43,0" concept="1" trace="ReplaceBlock_BehaviorDescriptor#()V" />
+      <node id="658365993682020152" at="40,0,43,0" concept="1" trace="ReplaceBlock__BehaviorDescriptor#()V" />
       <node id="658365993682020152" at="51,49,54,5" concept="5" />
       <node id="658365993682020152" at="65,49,68,5" concept="5" />
       <node id="658365993682020152" at="44,0,48,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2340,7 +2523,7 @@
       <node id="658365993682020152" at="49,0,62,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="658365993682020152" at="33,63,33,63" />
       <scope id="658365993682020152" at="36,85,37,47" />
-      <scope id="658365993682020152" at="40,49,41,20" />
+      <scope id="658365993682020152" at="40,50,41,20" />
       <scope id="658365993682020152" at="45,108,46,21" />
       <scope id="658365993682020152" at="52,26,53,56" />
       <scope id="658365993682020152" at="56,13,57,57" />
@@ -2385,7 +2568,7 @@
         <var name="node" id="658365993682020152" />
         <var name="parameters" id="658365993682020152" />
       </scope>
-      <unit id="658365993682020152" at="25,0,93,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_BehaviorDescriptor" />
+      <unit id="658365993682020152" at="25,0,93,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637182">
@@ -2399,7 +2582,7 @@
       <node id="8173814113624732672" at="25,21,26,21" concept="2" />
       <node id="8173814113624732681" at="28,34,29,24" concept="8" />
       <node id="8173814113624732689" at="30,11,31,26" concept="2" />
-      <node id="8173814113624732698" at="32,297,33,24" concept="8" />
+      <node id="8173814113624732698" at="32,298,33,24" concept="8" />
       <node id="8173814113624732705" at="34,11,35,23" concept="2" />
       <node id="8173814113624732723" at="37,40,38,21" concept="2" />
       <node id="8173814113624732732" at="40,34,41,24" concept="8" />
@@ -2417,7 +2600,7 @@
       <node id="8173814113624732907" at="65,5,66,8" concept="2" />
       <node id="8173814113624732912" at="67,26,68,18" concept="8" />
       <node id="8173814113624732919" at="69,5,70,25" concept="8" />
-      <node id="8173814113624732931" at="72,90,73,103" concept="7" />
+      <node id="8173814113624732931" at="72,90,73,104" concept="7" />
       <node id="8173814113624732959" at="75,27,76,22" concept="8" />
       <node id="8173814113624732969" at="77,7,78,19" concept="8" />
       <node id="8173814113624732939" at="79,5,80,15" concept="8" />
@@ -2431,7 +2614,7 @@
       <node id="8173814113624732910" at="66,8,69,5" concept="5" />
       <node id="8173814113624732950" at="74,22,77,7" concept="5" />
       <node id="8173814113624732882" at="61,10,65,5" concept="0" />
-      <node id="8173814113624732941" at="73,103,79,5" concept="5" />
+      <node id="8173814113624732941" at="73,104,79,5" concept="5" />
       <node id="8173814113624732677" at="26,21,36,9" concept="3" />
       <node id="8173814113624732728" at="38,21,48,9" concept="3" />
       <node id="8173814113624637182" at="72,0,82,0" concept="10" trace="call_escapeChar_8173814113624637238#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
@@ -2440,7 +2623,7 @@
       <node id="8173814113624637182" at="15,0,72,0" concept="10" trace="call_validateChar_8173814113624732613#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="8173814113624732654" at="21,30,22,20" />
       <scope id="8173814113624732680" at="28,34,29,24" />
-      <scope id="8173814113624732697" at="32,297,33,24" />
+      <scope id="8173814113624732697" at="32,298,33,24" />
       <scope id="8173814113624732731" at="40,34,41,24" />
       <scope id="8173814113624732748" at="44,40,45,24" />
       <scope id="8173814113624732770" at="49,114,50,21" />
@@ -2483,7 +2666,7 @@
       </scope>
       <unit id="8173814113624637182" at="13,0,83,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_Behavior" />
     </file>
-    <file name="SymbolClassPart_BehaviorDescriptor.java">
+    <file name="SymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637182" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637182" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624637182" at="28,0,29,0" concept="9" trace="validateChar_id75Jea4IFjf5" />
@@ -2498,7 +2681,7 @@
       <node id="8173814113624732672" at="46,21,47,21" concept="2" />
       <node id="8173814113624732681" at="49,34,50,24" concept="8" />
       <node id="8173814113624732689" at="51,11,52,26" concept="2" />
-      <node id="8173814113624732698" at="53,297,54,24" concept="8" />
+      <node id="8173814113624732698" at="53,298,54,24" concept="8" />
       <node id="8173814113624732705" at="55,11,56,23" concept="2" />
       <node id="8173814113624732723" at="58,40,59,21" concept="2" />
       <node id="8173814113624732732" at="61,34,62,24" concept="8" />
@@ -2516,11 +2699,11 @@
       <node id="8173814113624732907" at="86,5,87,8" concept="2" />
       <node id="8173814113624732912" at="88,26,89,18" concept="8" />
       <node id="8173814113624732919" at="90,5,91,25" concept="8" />
-      <node id="8173814113624732931" at="93,89,94,103" concept="7" />
+      <node id="8173814113624732931" at="93,89,94,104" concept="7" />
       <node id="8173814113624732959" at="96,27,97,22" concept="8" />
       <node id="8173814113624732969" at="98,7,99,19" concept="8" />
       <node id="8173814113624732939" at="100,5,101,15" concept="8" />
-      <node id="8173814113624637182" at="104,52,105,20" concept="11" />
+      <node id="8173814113624637182" at="104,53,105,20" concept="11" />
       <node id="8173814113624637182" at="109,108,110,21" concept="2" />
       <node id="8173814113624637182" at="114,113,115,49" concept="7" />
       <node id="8173814113624637182" at="116,26,117,56" concept="13" />
@@ -2542,7 +2725,7 @@
       <node id="8173814113624732819" at="77,25,80,7" concept="5" />
       <node id="8173814113624732910" at="87,8,90,5" concept="5" />
       <node id="8173814113624732950" at="95,22,98,7" concept="5" />
-      <node id="8173814113624637182" at="104,0,107,0" concept="1" trace="SymbolClassPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624637182" at="104,0,107,0" concept="1" trace="SymbolClassPart__BehaviorDescriptor#()V" />
       <node id="8173814113624637182" at="115,49,118,5" concept="5" />
       <node id="8173814113624637182" at="131,49,134,5" concept="5" />
       <node id="8173814113624732882" at="82,10,86,5" concept="0" />
@@ -2550,7 +2733,7 @@
       <node id="8173814113624637182" at="134,5,138,5" concept="12" />
       <node id="8173814113624637182" at="141,0,146,0" concept="6" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="8173814113624637182" at="147,0,152,0" concept="6" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="8173814113624732941" at="94,103,100,5" concept="5" />
+      <node id="8173814113624732941" at="94,104,100,5" concept="5" />
       <node id="8173814113624637182" at="118,5,126,5" concept="12" />
       <node id="8173814113624732677" at="47,21,57,9" concept="3" />
       <node id="8173814113624732728" at="59,21,69,9" concept="3" />
@@ -2563,7 +2746,7 @@
       <scope id="8173814113624637182" at="33,63,33,63" />
       <scope id="8173814113624732654" at="42,30,43,20" />
       <scope id="8173814113624732680" at="49,34,50,24" />
-      <scope id="8173814113624732697" at="53,297,54,24" />
+      <scope id="8173814113624732697" at="53,298,54,24" />
       <scope id="8173814113624732731" at="61,34,62,24" />
       <scope id="8173814113624732748" at="65,40,66,24" />
       <scope id="8173814113624732770" at="70,114,71,21" />
@@ -2572,7 +2755,7 @@
       <scope id="8173814113624732820" at="78,177,79,24" />
       <scope id="8173814113624732911" at="88,26,89,18" />
       <scope id="8173814113624732951" at="96,27,97,22" />
-      <scope id="8173814113624637182" at="104,52,105,20" />
+      <scope id="8173814113624637182" at="104,53,105,20" />
       <scope id="8173814113624637182" at="109,108,110,21" />
       <scope id="8173814113624637182" at="116,26,117,56" />
       <scope id="8173814113624637182" at="120,13,121,76" />
@@ -2641,20 +2824,20 @@
         <var name="__thisNode__" id="8173814113624637182" />
         <var name="s" id="8173814113624732924" />
       </scope>
-      <unit id="8173814113624637182" at="24,0,153,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_BehaviorDescriptor" />
+      <unit id="8173814113624637182" at="24,0,153,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637190">
     <file name="PredefinedSymbolClassSymbolClassPart_Behavior.java">
       <unit id="8173814113624637190" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
     </file>
-    <file name="PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor.java">
+    <file name="PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637190" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637190" at="27,0,28,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624637190" at="29,0,30,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="8173814113624637190" at="31,0,32,0" concept="9" trace="BH_METHODS" />
       <node id="8173814113624650548" at="36,86,37,322" concept="8" />
-      <node id="8173814113624637190" at="40,73,41,20" concept="11" />
+      <node id="8173814113624637190" at="40,74,41,20" concept="11" />
       <node id="8173814113624637190" at="45,108,46,21" concept="2" />
       <node id="8173814113624637190" at="50,113,51,49" concept="7" />
       <node id="8173814113624637190" at="52,26,53,56" concept="13" />
@@ -2667,7 +2850,7 @@
       <node id="8173814113624637190" at="83,40,84,19" concept="8" />
       <node id="8173814113624637190" at="33,0,35,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8173814113624637190" at="36,0,39,0" concept="10" trace="getRepresentation_id75Jea4IEZbM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8173814113624637190" at="40,0,43,0" concept="1" trace="PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624637190" at="40,0,43,0" concept="1" trace="PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor#()V" />
       <node id="8173814113624637190" at="51,49,54,5" concept="5" />
       <node id="8173814113624637190" at="65,49,68,5" concept="5" />
       <node id="8173814113624637190" at="44,0,48,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2679,7 +2862,7 @@
       <node id="8173814113624637190" at="49,0,62,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8173814113624637190" at="33,63,33,63" />
       <scope id="8173814113624637190" at="36,86,37,322" />
-      <scope id="8173814113624637190" at="40,73,41,20" />
+      <scope id="8173814113624637190" at="40,74,41,20" />
       <scope id="8173814113624637190" at="45,108,46,21" />
       <scope id="8173814113624637190" at="52,26,53,56" />
       <scope id="8173814113624637190" at="56,13,57,57" />
@@ -2718,20 +2901,20 @@
         <var name="node" id="8173814113624637190" />
         <var name="parameters" id="8173814113624637190" />
       </scope>
-      <unit id="8173814113624637190" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor" />
+      <unit id="8173814113624637190" at="25,0,87,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637220">
     <file name="IntervalSymbolClassPart_Behavior.java">
       <unit id="8173814113624637220" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
     </file>
-    <file name="IntervalSymbolClassPart_BehaviorDescriptor.java">
+    <file name="IntervalSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637220" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637220" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624637220" at="28,0,29,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="8173814113624637220" at="30,0,31,0" concept="9" trace="BH_METHODS" />
-      <node id="8173814113624650558" at="35,86,36,499" concept="8" />
-      <node id="8173814113624637220" at="39,60,40,20" concept="11" />
+      <node id="8173814113624650558" at="35,86,36,501" concept="8" />
+      <node id="8173814113624637220" at="39,61,40,20" concept="11" />
       <node id="8173814113624637220" at="44,108,45,21" concept="2" />
       <node id="8173814113624637220" at="49,113,50,49" concept="7" />
       <node id="8173814113624637220" at="51,26,52,56" concept="13" />
@@ -2744,7 +2927,7 @@
       <node id="8173814113624637220" at="82,40,83,19" concept="8" />
       <node id="8173814113624637220" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8173814113624637220" at="35,0,38,0" concept="10" trace="getRepresentation_id75Jea4IEZbM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8173814113624637220" at="39,0,42,0" concept="1" trace="IntervalSymbolClassPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624637220" at="39,0,42,0" concept="1" trace="IntervalSymbolClassPart__BehaviorDescriptor#()V" />
       <node id="8173814113624637220" at="50,49,53,5" concept="5" />
       <node id="8173814113624637220" at="64,49,67,5" concept="5" />
       <node id="8173814113624637220" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2755,8 +2938,8 @@
       <node id="8173814113624637220" at="62,0,73,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8173814113624637220" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8173814113624637220" at="32,63,32,63" />
-      <scope id="8173814113624637220" at="35,86,36,499" />
-      <scope id="8173814113624637220" at="39,60,40,20" />
+      <scope id="8173814113624637220" at="35,86,36,501" />
+      <scope id="8173814113624637220" at="39,61,40,20" />
       <scope id="8173814113624637220" at="44,108,45,21" />
       <scope id="8173814113624637220" at="51,26,52,56" />
       <scope id="8173814113624637220" at="55,13,56,57" />
@@ -2795,20 +2978,20 @@
         <var name="node" id="8173814113624637220" />
         <var name="parameters" id="8173814113624637220" />
       </scope>
-      <unit id="8173814113624637220" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_BehaviorDescriptor" />
+      <unit id="8173814113624637220" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637890">
     <file name="IntersectionSymbolClassPart_Behavior.java">
       <unit id="8173814113624637890" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
     </file>
-    <file name="IntersectionSymbolClassPart_BehaviorDescriptor.java">
+    <file name="IntersectionSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637890" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637890" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624637890" at="28,0,29,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="8173814113624637890" at="30,0,31,0" concept="9" trace="BH_METHODS" />
-      <node id="8173814113625142905" at="35,86,36,511" concept="8" />
-      <node id="8173814113624637890" at="39,64,40,20" concept="11" />
+      <node id="8173814113625142905" at="35,86,36,513" concept="8" />
+      <node id="8173814113624637890" at="39,65,40,20" concept="11" />
       <node id="8173814113624637890" at="44,108,45,21" concept="2" />
       <node id="8173814113624637890" at="49,113,50,49" concept="7" />
       <node id="8173814113624637890" at="51,26,52,56" concept="13" />
@@ -2821,7 +3004,7 @@
       <node id="8173814113624637890" at="82,40,83,19" concept="8" />
       <node id="8173814113624637890" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8173814113624637890" at="35,0,38,0" concept="10" trace="getRepresentation_id75Jea4IEZbM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8173814113624637890" at="39,0,42,0" concept="1" trace="IntersectionSymbolClassPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624637890" at="39,0,42,0" concept="1" trace="IntersectionSymbolClassPart__BehaviorDescriptor#()V" />
       <node id="8173814113624637890" at="50,49,53,5" concept="5" />
       <node id="8173814113624637890" at="64,49,67,5" concept="5" />
       <node id="8173814113624637890" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2832,8 +3015,8 @@
       <node id="8173814113624637890" at="62,0,73,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8173814113624637890" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8173814113624637890" at="32,63,32,63" />
-      <scope id="8173814113624637890" at="35,86,36,511" />
-      <scope id="8173814113624637890" at="39,64,40,20" />
+      <scope id="8173814113624637890" at="35,86,36,513" />
+      <scope id="8173814113624637890" at="39,65,40,20" />
       <scope id="8173814113624637890" at="44,108,45,21" />
       <scope id="8173814113624637890" at="51,26,52,56" />
       <scope id="8173814113624637890" at="55,13,56,57" />
@@ -2872,20 +3055,20 @@
         <var name="node" id="8173814113624637890" />
         <var name="parameters" id="8173814113624637890" />
       </scope>
-      <unit id="8173814113624637890" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />
+      <unit id="8173814113624637890" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637901">
     <file name="CharacterSymbolClassPart_Behavior.java">
       <unit id="8173814113624637901" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
     </file>
-    <file name="CharacterSymbolClassPart_BehaviorDescriptor.java">
+    <file name="CharacterSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637901" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637901" at="26,0,27,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624637901" at="28,0,29,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="8173814113624637901" at="30,0,31,0" concept="9" trace="BH_METHODS" />
-      <node id="8173814113624650578" at="35,86,36,256" concept="8" />
-      <node id="8173814113624637901" at="39,61,40,20" concept="11" />
+      <node id="8173814113624650578" at="35,86,36,257" concept="8" />
+      <node id="8173814113624637901" at="39,62,40,20" concept="11" />
       <node id="8173814113624637901" at="44,108,45,21" concept="2" />
       <node id="8173814113624637901" at="49,113,50,49" concept="7" />
       <node id="8173814113624637901" at="51,26,52,56" concept="13" />
@@ -2898,7 +3081,7 @@
       <node id="8173814113624637901" at="82,40,83,19" concept="8" />
       <node id="8173814113624637901" at="32,0,34,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8173814113624637901" at="35,0,38,0" concept="10" trace="getRepresentation_id75Jea4IEZbM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8173814113624637901" at="39,0,42,0" concept="1" trace="CharacterSymbolClassPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624637901" at="39,0,42,0" concept="1" trace="CharacterSymbolClassPart__BehaviorDescriptor#()V" />
       <node id="8173814113624637901" at="50,49,53,5" concept="5" />
       <node id="8173814113624637901" at="64,49,67,5" concept="5" />
       <node id="8173814113624637901" at="43,0,47,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2909,8 +3092,8 @@
       <node id="8173814113624637901" at="62,0,73,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8173814113624637901" at="48,0,61,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8173814113624637901" at="32,63,32,63" />
-      <scope id="8173814113624637901" at="35,86,36,256" />
-      <scope id="8173814113624637901" at="39,61,40,20" />
+      <scope id="8173814113624637901" at="35,86,36,257" />
+      <scope id="8173814113624637901" at="39,62,40,20" />
       <scope id="8173814113624637901" at="44,108,45,21" />
       <scope id="8173814113624637901" at="51,26,52,56" />
       <scope id="8173814113624637901" at="55,13,56,57" />
@@ -2949,19 +3132,19 @@
         <var name="node" id="8173814113624637901" />
         <var name="parameters" id="8173814113624637901" />
       </scope>
-      <unit id="8173814113624637901" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_BehaviorDescriptor" />
+      <unit id="8173814113624637901" at="24,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624650479">
     <file name="SymbolClassRegexpAndPart_Behavior.java">
       <unit id="8173814113624650479" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_Behavior" />
     </file>
-    <file name="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
+    <file name="SymbolClassRegexpAndPart__BehaviorDescriptor.java">
       <node id="8173814113624650479" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624650479" at="25,0,26,0" concept="9" trace="REGISTRY" />
       <node id="8173814113624650479" at="27,0,28,0" concept="9" trace="getRepresentation_id75Jea4IEZbM" />
       <node id="8173814113624650479" at="29,0,30,0" concept="9" trace="BH_METHODS" />
-      <node id="8173814113624650479" at="35,61,36,20" concept="11" />
+      <node id="8173814113624650479" at="35,62,36,20" concept="11" />
       <node id="8173814113624650479" at="40,108,41,21" concept="2" />
       <node id="8173814113624650479" at="45,113,46,49" concept="7" />
       <node id="8173814113624650479" at="47,26,48,56" concept="13" />
@@ -2972,7 +3155,7 @@
       <node id="8173814113624650479" at="70,48,71,22" concept="8" />
       <node id="8173814113624650479" at="76,40,77,19" concept="8" />
       <node id="8173814113624650479" at="31,0,33,0" concept="10" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624650479" at="35,0,38,0" concept="1" trace="SymbolClassRegexpAndPart_BehaviorDescriptor#()V" />
+      <node id="8173814113624650479" at="35,0,38,0" concept="1" trace="SymbolClassRegexpAndPart__BehaviorDescriptor#()V" />
       <node id="8173814113624650479" at="46,49,49,5" concept="5" />
       <node id="8173814113624650479" at="58,49,61,5" concept="5" />
       <node id="8173814113624650479" at="39,0,43,0" concept="6" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -2983,7 +3166,7 @@
       <node id="8173814113624650479" at="44,0,55,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8173814113624650479" at="56,0,67,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8173814113624650479" at="31,63,31,63" />
-      <scope id="8173814113624650479" at="35,61,36,20" />
+      <scope id="8173814113624650479" at="35,62,36,20" />
       <scope id="8173814113624650479" at="40,108,41,21" />
       <scope id="8173814113624650479" at="47,26,48,56" />
       <scope id="8173814113624650479" at="51,14,52,58" />
@@ -3018,7 +3201,7 @@
         <var name="method" id="8173814113624650479" />
         <var name="parameters" id="8173814113624650479" />
       </scope>
-      <unit id="8173814113624650479" at="23,0,80,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
+      <unit id="8173814113624650479" at="23,0,80,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

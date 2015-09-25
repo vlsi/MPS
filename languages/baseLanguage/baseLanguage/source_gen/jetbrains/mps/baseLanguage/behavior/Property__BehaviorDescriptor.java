@@ -116,12 +116,12 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
     if ((setterVisibility == null)) {
-      return eq_1nqubp_a0a0i0gb(contextNodePackage, contextClassifierPackage);
+      return eq_49ixrf_a0a0i0gb(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(setterVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       String declarationClassifierPackage = VisibilityUtil.packageName(Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__));
-      if (eq_1nqubp_a0b0k0gb(contextNodePackage, declarationClassifierPackage)) {
+      if (eq_49ixrf_a0b0k0gb(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
@@ -238,10 +238,10 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return false;
   }
-  private static boolean eq_1nqubp_a0a0i0gb(Object a, Object b) {
+  private static boolean eq_49ixrf_a0a0i0gb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_1nqubp_a0b0k0gb(Object a, Object b) {
+  private static boolean eq_49ixrf_a0b0k0gb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

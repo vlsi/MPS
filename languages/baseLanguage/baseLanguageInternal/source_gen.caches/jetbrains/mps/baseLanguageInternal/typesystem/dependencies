@@ -57,7 +57,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.typesystem.check_ExtractStaticMethodCall_NonTypesystemRule" file="check_ExtractStaticMethodCall_NonTypesystemRule.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />

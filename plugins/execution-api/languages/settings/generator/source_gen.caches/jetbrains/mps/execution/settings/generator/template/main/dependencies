@@ -3,10 +3,10 @@
   <dependency className="jetbrains.mps.execution.settings.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />

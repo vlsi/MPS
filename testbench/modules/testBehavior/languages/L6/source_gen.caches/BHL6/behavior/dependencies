@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="BHL6.behavior.A_Behavior" file="A_Behavior.java">
-    <classNode dependClassName="BHL6.behavior.A_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.A__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="BHL6.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.A__BehaviorDescriptor" file="A__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -30,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.B_Behavior" file="B_Behavior.java">
-    <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
@@ -38,6 +44,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="BHL6.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.B__BehaviorDescriptor" file="B__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -61,14 +77,14 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="BHL6.behavior.A_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.D_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.E_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.F_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.G_BehaviorDescriptor" />
-    <classNode dependClassName="BHL6.behavior.H_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.A__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.B__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.C__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.D__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.E__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.F__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.G__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.H__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -82,13 +98,21 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.C_Behavior" file="C_Behavior.java">
-    <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.C__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
   <dependency className="BHL6.behavior.C_BehaviorDescriptor" file="C_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.C__BehaviorDescriptor" file="C__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -112,12 +136,22 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.D_Behavior" file="D_Behavior.java">
-    <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="BHL6.behavior.D_BehaviorDescriptor" file="D_BehaviorDescriptor.java">
     <classNode dependClassName="BHL6.behavior.B_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.D__BehaviorDescriptor" file="D__BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -142,12 +176,20 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL6.behavior.E_Behavior" file="E_Behavior.java">
-    <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.C__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
   <dependency className="BHL6.behavior.E_BehaviorDescriptor" file="E_BehaviorDescriptor.java">
     <classNode dependClassName="BHL6.behavior.C_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.E__BehaviorDescriptor" file="E__BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.C__BehaviorDescriptor" />
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -174,6 +216,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL6.behavior.F_BehaviorDescriptor" file="F_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.F__BehaviorDescriptor" file="F__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -199,6 +249,14 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL6.behavior.G_BehaviorDescriptor" file="G_BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.F_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.G__BehaviorDescriptor" file="G__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -225,6 +283,14 @@
   </dependency>
   <dependency className="BHL6.behavior.H_BehaviorDescriptor" file="H_BehaviorDescriptor.java">
     <classNode dependClassName="BHL6.behavior.D_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="BHL6.behavior.H__BehaviorDescriptor" file="H__BehaviorDescriptor.java">
+    <classNode dependClassName="BHL6.behavior.D__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

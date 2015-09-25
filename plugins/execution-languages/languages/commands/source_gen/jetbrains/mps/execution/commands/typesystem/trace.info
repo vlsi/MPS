@@ -519,7 +519,7 @@
   </root>
   <root nodeRef="r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)/8294204555084580553">
     <file name="check_ReportErrorStatement_NonTypesystemRule.java">
-      <node id="8294204555084580574" at="22,236,23,220" concept="2" />
+      <node id="8294204555084580574" at="22,236,23,221" concept="2" />
       <node id="8294204555084580553" at="26,50,27,170" concept="7" />
       <node id="8294204555084580553" at="29,68,30,102" concept="0" />
       <node id="8294204555084580553" at="29,68,30,102" concept="7" />
@@ -531,7 +531,7 @@
       <node id="8294204555084580553" at="32,0,35,0" concept="5" trace="overrides#()Z" />
       <node id="8294204555084580553" at="21,0,26,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8294204555084580553" at="19,57,19,57" />
-      <scope id="8294204555084580558" at="22,236,23,220" />
+      <scope id="8294204555084580558" at="22,236,23,221" />
       <scope id="8294204555084580553" at="26,50,27,170" />
       <scope id="8294204555084580553" at="29,68,30,102" />
       <scope id="8294204555084580553" at="32,30,33,17" />
@@ -772,7 +772,7 @@
     <file name="typeof_CommandBuilderExpression_InferenceRule.java">
       <node id="946964771156863702" at="22,5,23,66" concept="6" />
       <node id="946964771156863702" at="23,66,24,208" concept="6" />
-      <node id="946964771156863702" at="24,208,25,556" concept="2" />
+      <node id="946964771156863702" at="24,208,25,557" concept="2" />
       <node id="946964771156863700" at="28,50,29,174" concept="7" />
       <node id="946964771156863700" at="31,68,32,102" concept="0" />
       <node id="946964771156863700" at="31,68,32,102" concept="7" />
@@ -795,7 +795,7 @@
       <scope id="946964771156863700" at="34,30,35,17" />
       <scope id="48168216977919326" at="39,237,40,179" />
       <scope id="946964771156863700" at="19,0,21,0" />
-      <scope id="946964771156863702" at="22,5,25,556">
+      <scope id="946964771156863702" at="22,5,25,557">
         <var name="_info_12389875345" id="946964771156863702" />
         <var name="_nodeToCheck_1029348928467" id="946964771156863702" />
       </scope>

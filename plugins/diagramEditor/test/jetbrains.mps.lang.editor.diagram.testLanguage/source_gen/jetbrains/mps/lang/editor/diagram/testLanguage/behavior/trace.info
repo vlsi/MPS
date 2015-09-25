@@ -15,17 +15,50 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,46,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="Diagram1_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram1_BehaviorDescriptor" />
+    </file>
+    <file name="Diagram2_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram2_BehaviorDescriptor" />
+    </file>
+    <file name="InputPort_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.InputPort_BehaviorDescriptor" />
+    </file>
+    <file name="NodeWithName_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithName_BehaviorDescriptor" />
+    </file>
+    <file name="NodeWithPortQueries_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPortQueries_BehaviorDescriptor" />
+    </file>
+    <file name="NodeWithPorts_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_BehaviorDescriptor" />
+    </file>
+    <file name="NodeWithSize_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_BehaviorDescriptor" />
+    </file>
+    <file name="Node_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Node_BehaviorDescriptor" />
+    </file>
+    <file name="OutputPort_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputPort_BehaviorDescriptor" />
+    </file>
+    <file name="OutputToInputPortConnector_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputToInputPortConnector_BehaviorDescriptor" />
+    </file>
+    <file name="RectangleNode_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.RectangleNode_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/5540569706414469751">
     <file name="NodeWithPorts_Behavior.java">
       <unit id="5540569706414469751" at="10,0,13,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_Behavior" />
     </file>
-    <file name="NodeWithPorts_BehaviorDescriptor.java">
+    <file name="NodeWithPorts__BehaviorDescriptor.java">
       <node id="5540569706414469751" at="20,0,21,0" concept="6" trace="CONCEPT" />
       <node id="5540569706414469751" at="21,0,22,0" concept="6" trace="REGISTRY" />
       <node id="5540569706414469751" at="24,0,25,0" concept="6" trace="BH_METHODS" />
       <node id="5540569706414469824" at="26,63,27,180" concept="1" />
-      <node id="5540569706414469751" at="31,50,32,20" concept="8" />
+      <node id="5540569706414469751" at="31,51,32,20" concept="8" />
       <node id="5540569706414469751" at="36,108,37,21" concept="1" />
       <node id="5540569706414469751" at="41,113,42,49" concept="4" />
       <node id="5540569706414469751" at="43,26,44,56" concept="10" />
@@ -36,7 +69,7 @@
       <node id="5540569706414469751" at="66,48,67,22" concept="5" />
       <node id="5540569706414469751" at="72,40,73,19" concept="5" />
       <node id="5540569706414469751" at="26,0,29,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5540569706414469751" at="31,0,34,0" concept="0" trace="NodeWithPorts_BehaviorDescriptor#()V" />
+      <node id="5540569706414469751" at="31,0,34,0" concept="0" trace="NodeWithPorts__BehaviorDescriptor#()V" />
       <node id="5540569706414469751" at="42,49,45,5" concept="2" />
       <node id="5540569706414469751" at="54,49,57,5" concept="2" />
       <node id="5540569706414469751" at="35,0,39,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -47,7 +80,7 @@
       <node id="5540569706414469751" at="40,0,51,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="5540569706414469751" at="52,0,63,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5540569706414469751" at="26,63,27,180" />
-      <scope id="5540569706414469751" at="31,50,32,20" />
+      <scope id="5540569706414469751" at="31,51,32,20" />
       <scope id="5540569706414469751" at="36,108,37,21" />
       <scope id="5540569706414469751" at="43,26,44,56" />
       <scope id="5540569706414469751" at="47,14,48,58" />
@@ -82,20 +115,20 @@
         <var name="method" id="5540569706414469751" />
         <var name="parameters" id="5540569706414469751" />
       </scope>
-      <unit id="5540569706414469751" at="19,0,76,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_BehaviorDescriptor" />
+      <unit id="5540569706414469751" at="19,0,76,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/8794120090377793952">
     <file name="NodeWithSize_Behavior.java">
       <unit id="8794120090377793952" at="10,0,13,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_Behavior" />
     </file>
-    <file name="NodeWithSize_BehaviorDescriptor.java">
+    <file name="NodeWithSize__BehaviorDescriptor.java">
       <node id="8794120090377793952" at="20,0,21,0" concept="6" trace="CONCEPT" />
       <node id="8794120090377793952" at="21,0,22,0" concept="6" trace="REGISTRY" />
       <node id="8794120090377793952" at="24,0,25,0" concept="6" trace="BH_METHODS" />
       <node id="8794120090377794010" at="26,63,27,177" concept="1" />
       <node id="8794120090377798782" at="27,177,28,178" concept="1" />
-      <node id="8794120090377793952" at="32,49,33,20" concept="8" />
+      <node id="8794120090377793952" at="32,50,33,20" concept="8" />
       <node id="8794120090377793952" at="37,108,38,21" concept="1" />
       <node id="8794120090377793952" at="42,113,43,49" concept="4" />
       <node id="8794120090377793952" at="44,26,45,56" concept="10" />
@@ -105,7 +138,7 @@
       <node id="8794120090377793952" at="60,14,61,58" concept="10" />
       <node id="8794120090377793952" at="67,48,68,22" concept="5" />
       <node id="8794120090377793952" at="73,40,74,19" concept="5" />
-      <node id="8794120090377793952" at="32,0,35,0" concept="0" trace="NodeWithSize_BehaviorDescriptor#()V" />
+      <node id="8794120090377793952" at="32,0,35,0" concept="0" trace="NodeWithSize__BehaviorDescriptor#()V" />
       <node id="8794120090377793952" at="43,49,46,5" concept="2" />
       <node id="8794120090377793952" at="55,49,58,5" concept="2" />
       <node id="8794120090377793952" at="26,0,30,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -116,7 +149,7 @@
       <node id="8794120090377793952" at="71,0,76,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8794120090377793952" at="41,0,52,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="8794120090377793952" at="53,0,64,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <scope id="8794120090377793952" at="32,49,33,20" />
+      <scope id="8794120090377793952" at="32,50,33,20" />
       <scope id="8794120090377793952" at="37,108,38,21" />
       <scope id="8794120090377793952" at="44,26,45,56" />
       <scope id="8794120090377793952" at="48,14,49,58" />
@@ -152,7 +185,7 @@
         <var name="method" id="8794120090377793952" />
         <var name="parameters" id="8794120090377793952" />
       </scope>
-      <unit id="8794120090377793952" at="19,0,77,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_BehaviorDescriptor" />
+      <unit id="8794120090377793952" at="19,0,77,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

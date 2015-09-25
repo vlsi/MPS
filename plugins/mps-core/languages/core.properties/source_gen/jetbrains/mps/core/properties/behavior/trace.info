@@ -15,18 +15,30 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.core.properties.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="PropertiesComment_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.core.properties.behavior.PropertiesComment_BehaviorDescriptor" />
+    </file>
+    <file name="PropertiesDeclaration_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.core.properties.behavior.PropertiesDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PropertiesFile_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.core.properties.behavior.PropertiesFile_BehaviorDescriptor" />
+    </file>
+    <file name="PropertiesLine_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.core.properties.behavior.PropertiesLine_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:0364da67-5b81-45ab-a520-f89192cc0c88(jetbrains.mps.core.properties.behavior)/8783955359823292450">
     <file name="PropertiesFile_Behavior.java">
       <unit id="8783955359823292450" at="10,0,13,0" name="jetbrains.mps.core.properties.behavior.PropertiesFile_Behavior" />
     </file>
-    <file name="PropertiesFile_BehaviorDescriptor.java">
+    <file name="PropertiesFile__BehaviorDescriptor.java">
       <node id="8783955359823292450" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="8783955359823292450" at="27,0,28,0" concept="6" trace="REGISTRY" />
       <node id="8783955359823292450" at="29,0,30,0" concept="6" trace="getUnitName_id4pl5GY7LKmR" />
       <node id="8783955359823292450" at="31,0,32,0" concept="6" trace="BH_METHODS" />
       <node id="8783955359823324447" at="36,80,37,235" concept="5" />
-      <node id="8783955359823292450" at="40,51,41,20" concept="8" />
+      <node id="8783955359823292450" at="40,52,41,20" concept="8" />
       <node id="8783955359823292450" at="45,108,46,21" concept="1" />
       <node id="8783955359823292450" at="50,113,51,49" concept="4" />
       <node id="8783955359823292450" at="52,26,53,56" concept="10" />
@@ -39,7 +51,7 @@
       <node id="8783955359823292450" at="83,40,84,19" concept="5" />
       <node id="8783955359823292450" at="33,0,35,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8783955359823292450" at="36,0,39,0" concept="7" trace="getUnitName_id4pl5GY7LKmR#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8783955359823292450" at="40,0,43,0" concept="0" trace="PropertiesFile_BehaviorDescriptor#()V" />
+      <node id="8783955359823292450" at="40,0,43,0" concept="0" trace="PropertiesFile__BehaviorDescriptor#()V" />
       <node id="8783955359823292450" at="51,49,54,5" concept="2" />
       <node id="8783955359823292450" at="65,49,68,5" concept="2" />
       <node id="8783955359823292450" at="44,0,48,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -51,7 +63,7 @@
       <node id="8783955359823292450" at="49,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="8783955359823292450" at="33,63,33,63" />
       <scope id="8783955359823292450" at="36,80,37,235" />
-      <scope id="8783955359823292450" at="40,51,41,20" />
+      <scope id="8783955359823292450" at="40,52,41,20" />
       <scope id="8783955359823292450" at="45,108,46,21" />
       <scope id="8783955359823292450" at="52,26,53,56" />
       <scope id="8783955359823292450" at="56,13,57,51" />
@@ -90,7 +102,7 @@
         <var name="node" id="8783955359823292450" />
         <var name="parameters" id="8783955359823292450" />
       </scope>
-      <unit id="8783955359823292450" at="25,0,87,0" name="jetbrains.mps.core.properties.behavior.PropertiesFile_BehaviorDescriptor" />
+      <unit id="8783955359823292450" at="25,0,87,0" name="jetbrains.mps.core.properties.behavior.PropertiesFile__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

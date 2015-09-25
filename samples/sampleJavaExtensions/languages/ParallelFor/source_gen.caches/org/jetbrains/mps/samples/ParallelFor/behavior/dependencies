@@ -11,15 +11,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass__BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_Behavior" file="NonThreadSafeClass_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_BehaviorDescriptor" file="NonThreadSafeClass_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass__BehaviorDescriptor" file="NonThreadSafeClass__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -52,6 +58,21 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" file="ParallelFor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor" file="ParallelFor__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -61,7 +82,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
@@ -91,10 +112,28 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" file="ParallelLoopVariable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" file="ThreadPool_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_Behavior" file="ThreadSafe_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" file="ThreadSafe_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe__BehaviorDescriptor" file="ThreadSafe__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

@@ -48,7 +48,7 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static String getDefaultVmoptions_id54lRqzvuHDj(@NotNull SNode __thisNode__, boolean is64bit) {
-    return trim_z28c44_a0a0p(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
+    return trim_9sggks_a0a0p(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented")));
       }
@@ -147,7 +147,7 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static String trim_z28c44_a0a0p(String str) {
+  public static String trim_9sggks_a0a0p(String str) {
     return (str == null ? null : str.trim());
   }
   private static SNode _quotation_createNode_p7akvg_a0a0a0a0d(Object parameter_1) {

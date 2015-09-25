@@ -70,7 +70,7 @@ public final class IMethodLike__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   private static Boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
-    return ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && eq_bxda5b_a0a0a0u(child, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
+    return ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invokeSpecial(__thisNode__, child) && eq_2wubdd_a0a0a0u(child, IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(__thisNode__)) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
   }
 
   /*package*/ IMethodLike__BehaviorDescriptor() {
@@ -127,7 +127,7 @@ public final class IMethodLike__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_bxda5b_a0a0a0u(Object a, Object b) {
+  private static boolean eq_2wubdd_a0a0a0u(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

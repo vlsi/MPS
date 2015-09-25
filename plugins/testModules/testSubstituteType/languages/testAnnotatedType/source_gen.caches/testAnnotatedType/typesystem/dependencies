@@ -29,8 +29,8 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeSubstitution" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor" />
-    <classNode dependClassName="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" />
+    <classNode dependClassName="testAnnotatedType.behavior.PresenceCondition__BehaviorDescriptor" />
+    <classNode dependClassName="testAnnotatedType.behavior.PrimType__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractSubstituteType_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime" />
   </dependency>

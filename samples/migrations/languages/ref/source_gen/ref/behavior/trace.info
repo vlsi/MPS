@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="NewComponentRef_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="ref.behavior.NewComponentRef_BehaviorDescriptor" />
+    </file>
+    <file name="OldComponentRef_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="ref.behavior.OldComponentRef_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

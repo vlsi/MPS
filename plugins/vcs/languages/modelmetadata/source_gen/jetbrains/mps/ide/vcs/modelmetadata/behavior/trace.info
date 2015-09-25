@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="ModelReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModelReference_BehaviorDescriptor" />
+    </file>
+    <file name="Model_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
+    </file>
+    <file name="ModuleReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.ModuleReference_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

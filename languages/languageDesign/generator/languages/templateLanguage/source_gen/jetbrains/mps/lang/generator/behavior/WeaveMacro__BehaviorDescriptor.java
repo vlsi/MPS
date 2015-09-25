@@ -42,7 +42,7 @@ public final class WeaveMacro__BehaviorDescriptor extends BaseBHDescriptor {
   private static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, 0x300c02df884261ebL, "nodesToWeaveQuery")));
     {
-      GeneratedMatchingPattern pattern_bvvctf_b0a = new WeaveMacro__BehaviorDescriptor.Pattern_4ghjwr_a0a0a1a9();
+      GeneratedMatchingPattern pattern_bvvctf_b0a = new WeaveMacro__BehaviorDescriptor.Pattern_jzewwl_a0a0a1a9();
       SNode coercedNode_bvvctf_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_bvvctf_b0a);
       if (coercedNode_bvvctf_b0a != null) {
         return ((SNode) pattern_bvvctf_b0a.getFieldValue("patternVar_concept"));
@@ -98,9 +98,9 @@ public final class WeaveMacro__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_4ghjwr_a0a0a1a9 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_jzewwl_a0a0a1a9 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_4ghjwr_a0a0a1a9() {
+    public Pattern_jzewwl_a0a0a1a9() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");

@@ -2392,11 +2392,11 @@
       <node id="3571912445009937379" at="74,112,75,62" concept="9" />
       <node id="3571912445009934896" at="77,112,78,67" concept="9" />
       <node id="3571912445009937430" at="80,112,81,66" concept="9" />
-      <node id="3571912445009937457" at="122,117,123,448" concept="9" />
+      <node id="3571912445009937457" at="122,117,123,449" concept="9" />
       <scope id="3571912445009937378" at="74,112,75,62" />
       <scope id="3571912445009934895" at="77,112,78,67" />
       <scope id="3571912445009937428" at="80,112,81,66" />
-      <scope id="3571912445009937448" at="122,117,123,448" />
+      <scope id="3571912445009937448" at="122,117,123,449" />
     </file>
     <file name="Templateweave__Statement.java">
       <node id="3571912445009934880" at="27,43,28,186" concept="9" />
@@ -2995,8 +2995,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/5857536350883030947">
     <file name="QueriesGenerated.java">
-      <node id="5857536350883039221" at="71,112,72,115" concept="9" />
-      <scope id="5857536350883039220" at="71,112,72,115" />
+      <node id="5857536350883039221" at="71,112,72,116" concept="9" />
+      <scope id="5857536350883039220" at="71,112,72,116" />
     </file>
     <file name="Templateprocess42.java">
       <node id="5857536350883030947" at="29,0,30,0" concept="4" trace="myNode" />
