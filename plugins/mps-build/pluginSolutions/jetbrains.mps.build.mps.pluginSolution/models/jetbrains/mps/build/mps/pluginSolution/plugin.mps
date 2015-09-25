@@ -11195,44 +11195,6 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbF" id="1q4WFGK3qHd" role="3cqZAp">
-                          <node concept="1rXfSq" id="4hiugqyzf94" role="3clFbG">
-                            <ref role="37wK5l" node="1q4WFGK39U1" resolve="copyIcon" />
-                            <node concept="2OqwBi" id="1q4WFGK3qHf" role="37wK5m">
-                              <node concept="37vLTw" id="3GM_nagTxpq" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1q4WFGK3qG8" resolve="instanceEx" />
-                              </node>
-                              <node concept="liA8E" id="1q4WFGK3qHh" role="2OqNvi">
-                                <ref role="37wK5l" to="f061:~ApplicationInfoEx.getWelcomeScreenCaptionUrl():java.lang.String" resolve="getWelcomeScreenCaptionUrl" />
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTz8g" role="37wK5m">
-                              <ref role="3cqZAo" node="1q4WFGK3qG7" resolve="iconsDir" />
-                            </node>
-                            <node concept="Xl_RD" id="1q4WFGK3qHj" role="37wK5m">
-                              <property role="Xl_RC" value="caption.png" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="1q4WFGK3qHk" role="3cqZAp">
-                          <node concept="1rXfSq" id="4hiugqyz5Xq" role="3clFbG">
-                            <ref role="37wK5l" node="1q4WFGK39U1" resolve="copyIcon" />
-                            <node concept="2OqwBi" id="1q4WFGK3qHm" role="37wK5m">
-                              <node concept="37vLTw" id="3GM_nagT$DK" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1q4WFGK3qG8" resolve="instanceEx" />
-                              </node>
-                              <node concept="liA8E" id="1q4WFGK3qHo" role="2OqNvi">
-                                <ref role="37wK5l" to="f061:~ApplicationInfoEx.getWelcomeScreenDeveloperSloganUrl():java.lang.String" resolve="getWelcomeScreenDeveloperSloganUrl" />
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTB15" role="37wK5m">
-                              <ref role="3cqZAo" node="1q4WFGK3qG7" resolve="iconsDir" />
-                            </node>
-                            <node concept="Xl_RD" id="1q4WFGK3qHq" role="37wK5m">
-                              <property role="Xl_RC" value="slogan.png" />
-                            </node>
-                          </node>
-                        </node>
                         <node concept="3clFbF" id="ES2LjmiraN" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyzhsd" role="3clFbG">
                             <ref role="37wK5l" node="1q4WFGK39U1" resolve="copyIcon" />

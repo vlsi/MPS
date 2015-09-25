@@ -118,8 +118,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         copyIcon(instanceEx.getSmallIconUrl(), iconsDir, "MPS16.png");
         copyIcon(instanceEx.getIconUrl(), iconsDir, "MPS32.png");
         copyIcon(instanceEx.getSplashImageUrl(), iconsDir, "splash.png");
-        copyIcon(instanceEx.getWelcomeScreenCaptionUrl(), iconsDir, "caption.png");
-        copyIcon(instanceEx.getWelcomeScreenDeveloperSloganUrl(), iconsDir, "slogan.png");
         copyIcon(instanceEx.getWelcomeScreenLogoUrl(), iconsDir, "logo.png");
         copyIcon(MPSApplicationInfo.getInstance().getDialogImageURL(), iconsDir, "dialogImage.png");
       }
@@ -664,7 +662,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNodeAccessUtil.setProperty(quotedNode_52, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "caption.png");
     quotedNode_43.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), quotedNode_52);
     quotedNode_28.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_43);
-    quotedNode_15.addChild(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x6b9a2011083d2d06L, "welcomeCaption"), quotedNode_28);
+    quotedNode_15.addChild(quotedNode_28);
     quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), null, null, false);
     quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_44, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), (String) parameter_13);
@@ -672,7 +670,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNodeAccessUtil.setProperty(quotedNode_53, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "slogan.png");
     quotedNode_44.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), quotedNode_53);
     quotedNode_29.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_44);
-    quotedNode_15.addChild(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb19db6L, "welcomeSlogan"), quotedNode_29);
+    quotedNode_15.addChild(quotedNode_29);
     quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), null, null, false);
     quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_45, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), (String) parameter_14);
