@@ -65,7 +65,7 @@
       <node id="3613324658897711776" at="170,71,171,18" concept="7" />
       <node id="3613324658897711779" at="174,74,175,18" concept="7" />
       <node id="3613324658897711786" at="187,58,188,36" concept="7" />
-      <node id="5085852630259266725" at="191,57,192,36" concept="7" />
+      <node id="7491858234833039520" at="191,57,192,36" concept="7" />
       <node id="3613324658897711442" at="196,0,197,0" concept="3" trace="myVirtualFile" />
       <node id="3613324658897711445" at="197,0,198,0" concept="3" trace="myIsMergedWithConflict" />
       <node id="3613324658897711789" at="198,51,199,28" concept="2" />
@@ -107,7 +107,7 @@
       <node id="3613324658897711392" at="169,0,173,0" concept="5" trace="addChangeList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
       <node id="3613324658897711399" at="173,0,177,0" concept="5" trace="findOrCreateList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
       <node id="3613324658897711434" at="186,0,190,0" concept="5" trace="getStatus#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/vcs/FileStatus;" />
-      <node id="5085852630259261762" at="190,0,194,0" concept="5" trace="getStatus#(Lcom/intellij/openapi/vcs/FilePath;)Lcom/intellij/openapi/vcs/FileStatus;" />
+      <node id="7491858234833036845" at="190,0,194,0" concept="5" trace="getStatus#(Lcom/intellij/openapi/vcs/FilePath;)Lcom/intellij/openapi/vcs/FileStatus;" />
       <node id="3613324658897711453" at="201,0,205,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/VcsKey;)V" />
       <node id="3613324658897711462" at="205,0,209,0" concept="5" trace="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Ljava/lang/String;Lcom/intellij/openapi/vcs/VcsKey;)V" />
       <node id="8222824327012887843" at="227,0,231,0" concept="5" trace="fileStatusesChanged#()V" />
@@ -159,7 +159,7 @@
       <scope id="3613324658897711775" at="170,71,171,18" />
       <scope id="3613324658897711778" at="174,74,175,18" />
       <scope id="3613324658897711785" at="187,58,188,36" />
-      <scope id="5085852630259261770" at="191,57,192,36" />
+      <scope id="7491858234833036853" at="191,57,192,36" />
       <scope id="3613324658897711788" at="198,51,199,28" />
       <scope id="3613324658897711793" at="202,100,203,36" />
       <scope id="3613324658897711799" at="206,90,207,36" />
@@ -219,8 +219,8 @@
       <scope id="3613324658897711434" at="186,0,190,0">
         <var name="virtualFile" id="3613324658897711437" />
       </scope>
-      <scope id="5085852630259261762" at="190,0,194,0">
-        <var name="path" id="5085852630259261766" />
+      <scope id="7491858234833036845" at="190,0,194,0">
+        <var name="path" id="7491858234833036849" />
       </scope>
       <scope id="3613324658897711453" at="201,0,205,0">
         <var name="change" id="3613324658897711456" />

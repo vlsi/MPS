@@ -178,6 +178,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
@@ -1370,28 +1371,6 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3clFb_" id="38_6U8fKv4W" role="jymVt">
-        <property role="TrG5h" value="moveChanges" />
-        <node concept="3Tm1VV" id="38_6U8fKv4X" role="1B3o_S" />
-        <node concept="3cqZAl" id="38_6U8fKv4Y" role="3clF45" />
-        <node concept="37vLTG" id="38_6U8fKv4Z" role="3clF46">
-          <property role="TrG5h" value="toList" />
-          <node concept="17QB3L" id="6sqsxb$DoV$" role="1tU5fm" />
-        </node>
-        <node concept="37vLTG" id="38_6U8fKv51" role="3clF46">
-          <property role="TrG5h" value="changes" />
-          <node concept="3uibUv" id="38_6U8fKv52" role="1tU5fm">
-            <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-            <node concept="3uibUv" id="38_6U8fKv53" role="11_B2D">
-              <ref role="3uigEE" to="1037:~Change" resolve="Change" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbS" id="38_6U8fKvaB" role="3clF47" />
-        <node concept="2AHcQZ" id="3tYsUK_U_qb" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
       <node concept="3clFb_" id="38_6U8fKv54" role="jymVt">
         <property role="TrG5h" value="setListsToDisappear" />
         <node concept="3Tm1VV" id="38_6U8fKv55" role="1B3o_S" />
@@ -1430,6 +1409,37 @@
         </node>
         <node concept="2AHcQZ" id="3tYsUK_U_q9" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="6vSrlVUNIoH" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getStatus" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="6vSrlVUNIoI" role="1B3o_S" />
+        <node concept="3uibUv" id="6vSrlVUNIoK" role="3clF45">
+          <ref role="3uigEE" to="jlcu:~FileStatus" resolve="FileStatus" />
+        </node>
+        <node concept="37vLTG" id="6vSrlVUNIoL" role="3clF46">
+          <property role="TrG5h" value="path" />
+          <node concept="3uibUv" id="6vSrlVUNIoM" role="1tU5fm">
+            <ref role="3uigEE" to="jlcu:~FilePath" resolve="FilePath" />
+          </node>
+          <node concept="2AHcQZ" id="6vSrlVUNIoN" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="6vSrlVUNIoO" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+        <node concept="3clFbS" id="6vSrlVUNIoP" role="3clF47">
+          <node concept="3cpWs6" id="6vSrlVUNJ2w" role="3cqZAp">
+            <node concept="10M0yZ" id="6vSrlVUNJ2x" role="3cqZAk">
+              <ref role="1PxDUh" to="jlcu:~FileStatus" resolve="FileStatus" />
+              <ref role="3cqZAo" to="jlcu:~FileStatus.NOT_CHANGED" resolve="NOT_CHANGED" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
