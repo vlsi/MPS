@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,10 +28,24 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface NodeWeaveFacility {
   /**
+   * @deprecated use {@link #weave(SNode, SContainmentLink, SNode, SNode)} instead. Since the method added in this release, no big deal
+   * to remove it once templates has been updated
+   *
    * Inject new node
    * @param contextParentNode node in output model to weave child to
    * @param childRole role for the child
    * @param outputNodeToWeave new child node
    */
+  @Deprecated
+  @ToRemove(version = 0)
   void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave);
+
+  /**
+   * Inject new node
+   * @param contextParentNode node in output model to weave child to
+   * @param childRole role for the child
+   * @param outputNodeToWeave new child node
+   * @param anchorNode optional child of <code>contextParentNode</code> in the role <code>childRole</code> to follow inserted child
+   */
+  void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave, @Nullable SNode anchorNode);
 }

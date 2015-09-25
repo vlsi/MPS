@@ -650,6 +650,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="hfgB$Qy" resolve="Weaving_MappingRule_ContextNodeQuery" />
     </node>
+    <node concept="1TJgyj" id="SFyHGUIP7S" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anchorQuery" />
+      <ref role="20lvS9" node="SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+    </node>
     <node concept="PrWs8" id="W$jG3B1LbI" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
@@ -1876,6 +1881,14 @@
   <node concept="PlHQZ" id="6pv6r6HKtLr">
     <property role="TrG5h" value="PersistGeneration" />
     <property role="1pbfSe" value="337704460" />
+  </node>
+  <node concept="1TIwiD" id="SFyHGUI$GV">
+    <property role="1pbfSe" value="1223022102" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="WeavingAnchorQuery" />
+    <property role="34LRSv" value="weaving anchor node " />
+    <property role="R4oN_" value="controls exect location in parent where node is weaved to" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
 </model>
 
