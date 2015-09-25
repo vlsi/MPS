@@ -5,6 +5,8 @@ package jetbrains.mps.lang.migration.runtime.base;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.Pair;
+import java.util.Collections;
 import jetbrains.mps.util.containers.EmptyIterable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,7 +18,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
-import java.util.Collections;
 
 public abstract class MigrationScriptBase implements MigrationScript {
   private DataCollector myDC = new MigrationScriptBase.EmptyDataCollector();
@@ -43,6 +44,10 @@ public abstract class MigrationScriptBase implements MigrationScript {
     // todo remove after 3.2 
     setDataCollector(c);
     return execute(module);
+  }
+
+  public Iterable<Pair<SNode, String>> check(SModule module) {
+    return Collections.emptyList();
   }
 
   public Iterable<MigrationScriptReference> requiresData() {
