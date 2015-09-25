@@ -35,7 +35,6 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
-    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -317,18 +316,6 @@
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
   </registry>
-  <node concept="tC5Ba" id="6MUcJMtBJD9">
-    <property role="TrG5h" value="MigationAssistantActions" />
-    <property role="3OnEW4" value="true" />
-    <node concept="ftmFs" id="6MUcJMtCifk" role="ftER_">
-      <node concept="tCFHf" id="6MUcJMtCifn" role="ftvYc">
-        <ref role="tCJdB" node="6MUcJMtBJJe" resolve="ExecuteMigrationAssistant" />
-      </node>
-    </node>
-    <node concept="tT9cl" id="6MUcJMtCifp" role="2f5YQi">
-      <ref role="tU$_T" to="tprs:hF$n$r$" resolve="IDEATools" />
-    </node>
-  </node>
   <node concept="sE7Ow" id="6MUcJMtBJJe">
     <property role="TrG5h" value="ExecuteMigrationAssistant" />
     <property role="2uzpH1" value="Run Migration Assistant" />
@@ -511,9 +498,6 @@
     <property role="9BnSO" value="139.1" />
     <property role="9BnSK" value="3.3" />
     <node concept="2zDL_w" id="mKSGn8$SCP" role="2zDKky">
-      <node concept="2zDL_x" id="mKSGn8$SUS" role="2zDL_s">
-        <ref role="2zDL_u" node="6MUcJMtBJD9" resolve="MigationAssistantActions" />
-      </node>
       <node concept="2zDL_x" id="5$zfhXzm2_b" role="2zDL_s">
         <ref role="2zDL_u" node="5$zfhXzhGmb" resolve="Migration" />
       </node>
@@ -1556,6 +1540,9 @@
       <ref role="tU$_T" node="5$zfhXzhGmz" resolve="IDEAMigration" />
     </node>
     <node concept="ftmFs" id="5$zfhXzhIip" role="ftER_">
+      <node concept="tCFHf" id="5$zfhXzqWjN" role="ftvYc">
+        <ref role="tCJdB" node="6MUcJMtBJJe" resolve="ExecuteMigrationAssistant" />
+      </node>
       <node concept="tCFHf" id="5$zfhXzhLyh" role="ftvYc">
         <ref role="tCJdB" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
       </node>
