@@ -15,8 +15,6 @@ import com.intellij.diff.merge.MergeRequest;
 import java.util.List;
 import com.intellij.diff.contents.DocumentContent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.io.Serializable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.diff.contents.FileContent;
 import java.io.File;
@@ -68,11 +66,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
     try {
       TextMergeRequest textRequest = (TextMergeRequest) request;
       List<DocumentContent> contents = textRequest.getContents();
-      byte[][] byteContents = ListSequence.fromList(contents).select(new ISelector<DocumentContent, byte[]>() {
-        public byte[] select(DocumentContent it) {
-          return getContentBytes(it);
-        }
-      }).toGenericArray(byte[].class);
+      byte[][] byteContents = {getContentBytes(ListSequence.fromList(contents).getElement(0)), getContentBytes(ListSequence.fromList(contents).getElement(1)), getContentBytes(ListSequence.fromList(contents).getElement(2))};
 
       final VirtualFile file = ((FileContent) textRequest.getOutputContent()).getFile();
 
