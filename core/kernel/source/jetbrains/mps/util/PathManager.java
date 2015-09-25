@@ -35,7 +35,6 @@ public class PathManager {
   private static final String FILE = "file";
   private static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
-  private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
 
   private static final String PROTOCOL_DELIMITER = ":";
@@ -44,10 +43,10 @@ public class PathManager {
   private static String ourHomePath;
   private static String ourIdeaPath;
 
-  private static final FilenameFilter MPS_JARS = new FilenameFilter() {
+  public static final FilenameFilter JAR_FILE_FILTER = new FilenameFilter() {
     @Override
     public boolean accept(File dir, String name) {
-      return name.startsWith(MPS_DASH) && name.endsWith(DOT_JAR);
+      return name.endsWith(DOT_JAR);
     }
   };
 
@@ -73,7 +72,6 @@ public class PathManager {
         root = root.getParentFile();
       }
     }
-
 
     ourHomePath = root.getAbsolutePath();
     if (ourHomePath.equals("/")) {
@@ -139,7 +137,7 @@ public class PathManager {
     File libDir = new File(getPackagedLibPath());
     if (libDir.exists() && libDir.isDirectory()) {
       List<String> paths = new ArrayList<String>();
-      for (File jar : libDir.listFiles(MPS_JARS)) {
+      for (File jar : libDir.listFiles(JAR_FILE_FILTER)) {
         paths.add(jar.getAbsolutePath());
       }
       if (paths.size() > 0) {

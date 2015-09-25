@@ -396,7 +396,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), deplDescriptor);
+    IFile sourcesDescriptorFile = ModulesMiner.getSourceDescriptorFile(getDescriptorFile().getPath(), deplDescriptor);
     if (sourcesDescriptorFile == null) {
       // todo: for now it's impossible
       assert descriptor instanceof DeploymentDescriptor;
@@ -623,6 +623,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myDescriptorFile != null ? myDescriptorFile.getParent() : null;
   }
 
+  @Nullable
   public IFile getDescriptorFile() {
 //    assertCanRead();   if getModuleSourceDir doesn't require read, why getDescriptorFile does?
     return myDescriptorFile;

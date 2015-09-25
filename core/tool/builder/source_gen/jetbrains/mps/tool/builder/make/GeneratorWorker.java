@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.net.URL;
 import java.net.MalformedURLException;
@@ -123,7 +123,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       for (String plugin : pluginsPath.split(File.pathSeparator)) {
         File lib = new File(plugin + File.separator + "lib");
         if (lib.exists() && lib.isDirectory()) {
-          SetSequence.fromSet(pluginsClasspath).addSequence(Sequence.fromIterable(Sequence.fromArray(lib.listFiles(PathManager.JARS))));
+          SetSequence.fromSet(pluginsClasspath).addSequence(Sequence.fromIterable(Sequence.fromArray(lib.listFiles(PathManager.JAR_FILE_FILTER))));
         }
       }
     }
