@@ -191,6 +191,11 @@
       <property role="20kJfa" value="usesFoldingCondition" />
       <ref role="20lvS9" node="gCpkWun" resolve="QueryFunction_NodeCondition" />
     </node>
+    <node concept="1TJgyj" id="5qrsiYWrGSD" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="collapseByDefaultCondition" />
+      <ref role="20lvS9" node="gCpkWun" resolve="QueryFunction_NodeCondition" />
+    </node>
     <node concept="1TJgyj" id="3Fwx_UqDAZ9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="addHints" />
@@ -222,6 +227,10 @@
     </node>
     <node concept="1TJgyi" id="gSS$Qof" role="1TKVEl">
       <property role="TrG5h" value="usesFolding" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5qrsiYWrGSx" role="1TKVEl">
+      <property role="TrG5h" value="collapseByDefault" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>

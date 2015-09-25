@@ -17,11 +17,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBracesBlock = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa8L)).super_("jetbrains.mps.lang.editor.editorTest.structure.TestBlockList").super_(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL)).parents("jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock").parentIds(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L)).create();
   /*package*/ final ConceptDescriptor myConceptBracesStubBlock = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75ed75ef06861df4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L)).alias("braces stub", "").create();
   /*package*/ final ConceptDescriptor myConceptClassReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.ClassReference", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x214b16e1c73042cfL)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(2399036385470202794L, "class", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), false)).references("class").alias("classref", "").create();
+  /*package*/ final ConceptDescriptor myConceptCollapsedByDefault = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
+  /*package*/ final ConceptDescriptor myConceptCollapsedConditionally = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
   /*package*/ final ConceptDescriptor myConceptComposition = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.Composition", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(3447504547918837407L, "children", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL), true, true, false)).children(new String[]{"children"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptDelTestAbstractChild = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).create();
   /*package*/ final ConceptDescriptor myConceptDelTestChild1 = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c480L)).super_("jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild").super_(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L)).parents("jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild").parentIds(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L)).create();
   /*package*/ final ConceptDescriptor myConceptDelTestChildContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(7803854675610223859L, "child", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L), false, false, false)).children(new String[]{"child"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptDelTestRoot = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a8839faL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(7803854675610450486L, "container", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L), true, false, false)).children(new String[]{"container"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptFoldingContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(866632705892284183L, "collapsed")).properties("collapsed").childDescriptors(new ConceptDescriptorBuilder.Link(6240706158490120945L, "collapsedByDefault", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L), true, false, false), new ConceptDescriptorBuilder.Link(866632705892246358L, "collapsedConditionally", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L), true, false, false)).children(new String[]{"collapsedByDefault", "collapsedConditionally"}, new boolean[]{false, false}).create();
   /*package*/ final ConceptDescriptor myConceptIBaseTestBlock = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptInspectorBlock = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L)).childDescriptors(new ConceptDescriptorBuilder.Link(3582597462265868798L, "block", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L), false, false, false)).children(new String[]{"block"}, new boolean[]{false}).alias("inspector", "").create();
   /*package*/ final ConceptDescriptor myConceptIntegerLiteral = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f68107L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5110219550150263048L, "value")).properties("value").create();
@@ -45,13 +48,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttractsFocusBlock, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestRoot, myConceptIBaseTestBlock, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSideTranformWrapper, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
+    return Arrays.asList(myConceptAttractsFocusBlock, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestRoot, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSideTranformWrapper, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ib, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lb, conceptFqName)) {
       case 0:
         return myConceptAttractsFocusBlock;
       case 1:
@@ -63,58 +66,64 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptClassReference;
       case 5:
-        return myConceptComposition;
+        return myConceptCollapsedByDefault;
       case 6:
-        return myConceptDelTestAbstractChild;
+        return myConceptCollapsedConditionally;
       case 7:
-        return myConceptDelTestChild1;
+        return myConceptComposition;
       case 8:
-        return myConceptDelTestChildContainer;
+        return myConceptDelTestAbstractChild;
       case 9:
-        return myConceptDelTestRoot;
+        return myConceptDelTestChild1;
       case 10:
-        return myConceptIBaseTestBlock;
+        return myConceptDelTestChildContainer;
       case 11:
-        return myConceptInspectorBlock;
+        return myConceptDelTestRoot;
       case 12:
-        return myConceptIntegerLiteral;
+        return myConceptFoldingContainer;
       case 13:
-        return myConceptNonEmptyProperty;
+        return myConceptIBaseTestBlock;
       case 14:
-        return myConceptNotEditableVaraileReference;
+        return myConceptInspectorBlock;
       case 15:
-        return myConceptPlusExpression;
+        return myConceptIntegerLiteral;
       case 16:
-        return myConceptReferenceAnnotataion;
+        return myConceptNonEmptyProperty;
       case 17:
-        return myConceptSideTranformWrapper;
+        return myConceptNotEditableVaraileReference;
       case 18:
-        return myConceptSimplePropertyAttribute;
+        return myConceptPlusExpression;
       case 19:
-        return myConceptSimplePropertyContainer;
+        return myConceptReferenceAnnotataion;
       case 20:
-        return myConceptStubBlock;
+        return myConceptSideTranformWrapper;
       case 21:
-        return myConceptSubstMiddlewareChild;
+        return myConceptSimplePropertyAttribute;
       case 22:
-        return myConceptSubstTestAbstractChild;
+        return myConceptSimplePropertyContainer;
       case 23:
-        return myConceptSubstTestBooleanPropertyChild;
+        return myConceptStubBlock;
       case 24:
-        return myConceptSubstTestEnumPropertyChild;
+        return myConceptSubstMiddlewareChild;
       case 25:
-        return myConceptSubstTestRoot;
+        return myConceptSubstTestAbstractChild;
       case 26:
-        return myConceptTestBlockList;
+        return myConceptSubstTestBooleanPropertyChild;
       case 27:
-        return myConceptVariableDeclarationBlock;
+        return myConceptSubstTestEnumPropertyChild;
       case 28:
-        return myConceptVariableDeclarationReference;
+        return myConceptSubstTestRoot;
       case 29:
+        return myConceptTestBlockList;
+      case 30:
+        return myConceptVariableDeclarationBlock;
+      case 31:
+        return myConceptVariableDeclarationReference;
+      case 32:
         return myConceptVerticalLayoutBlockList;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ib = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static String[] stringSwitchCases_1htk8d_a0a0lb = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }
