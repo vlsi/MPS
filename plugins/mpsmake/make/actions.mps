@@ -3549,26 +3549,6 @@
       <property role="IEkAT" value="false" />
       <node concept="3cqZAl" id="7tZeFupJF6B" role="3clF45" />
       <node concept="3clFbS" id="7tZeFupJF6D" role="3clF47">
-        <node concept="3clFbJ" id="1Y18t$8Yi_s" role="3cqZAp">
-          <node concept="3clFbS" id="1Y18t$8Yi_v" role="3clFbx">
-            <node concept="YS8fn" id="1Y18t$8YBiV" role="3cqZAp">
-              <node concept="2ShNRf" id="1Y18t$8YBkF" role="YScLw">
-                <node concept="1pGfFk" id="1Y18t$8YCHx" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1Y18t$8YAKy" role="3clFbw">
-            <node concept="2YIFZM" id="1Y18t$8YAsV" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="1Y18t$8YBcr" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInsideCommand():boolean" resolve="isInsideCommand" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="5wEedBsf0hQ" role="3cqZAp">
           <node concept="3cpWsn" id="5wEedBsf0hR" role="3cpWs9">
             <property role="TrG5h" value="project" />
@@ -3583,6 +3563,33 @@
             </node>
             <node concept="3uibUv" id="5wEedBsf0hS" role="1tU5fm">
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1Y18t$8Yi_s" role="3cqZAp">
+          <node concept="3clFbS" id="1Y18t$8Yi_v" role="3clFbx">
+            <node concept="YS8fn" id="1Y18t$8YBiV" role="3cqZAp">
+              <node concept="2ShNRf" id="1Y18t$8YBkF" role="YScLw">
+                <node concept="1pGfFk" id="1Y18t$8YCHx" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="6xMoDGgAx6X" role="37wK5m">
+                    <property role="Xl_RC" value="should be called outside of command" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1Y18t$8YAKy" role="3clFbw">
+            <node concept="2OqwBi" id="6xMoDGgAwNb" role="2Oq$k0">
+              <node concept="37vLTw" id="6xMoDGgAwFi" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wEedBsf0hR" resolve="project" />
+              </node>
+              <node concept="liA8E" id="6xMoDGgAx1S" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1Y18t$8YBcr" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.isCommandAction():boolean" resolve="isCommandAction" />
             </node>
           </node>
         </node>

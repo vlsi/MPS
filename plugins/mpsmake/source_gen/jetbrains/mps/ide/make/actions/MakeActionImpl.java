@@ -4,7 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.make.resources.IResource;
@@ -39,10 +38,10 @@ public class MakeActionImpl {
    * should be called outside of command
    */
   public void executeAction() {
-    if (ModelAccess.instance().isInsideCommand()) {
-      throw new IllegalStateException();
-    }
     final Project project = myParams.getProject();
+    if (project.getModelAccess().isCommandAction()) {
+      throw new IllegalStateException("should be called outside of command");
+    }
     // save all before launching make 
     new SaveRepositoryCommand(project.getRepository()).execute();
 
