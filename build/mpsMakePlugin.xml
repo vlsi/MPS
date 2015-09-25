@@ -38,7 +38,16 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}/solutions" />
+    <mkdir dir="${build.layout}/mps-make" />
+    <mkdir dir="${build.layout}/mps-make/META-INF" />
+    <copy todir="${build.layout}/mps-make/META-INF">
+      <fileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/mps-make/lib" />
+    <jar destfile="${build.layout}/mps-make/lib/icons.jar" duplicate="preserve">
+      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
+    </jar>
+    <mkdir dir="${build.layout}/mps-make/solutions" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.make.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.make.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.make.jar/META-INF/module.xml">
@@ -61,7 +70,7 @@
         <sources jar="jetbrains.mps.ide.make-src.jar" descriptor="jetbrains.mps.ide.make.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/solutions/jetbrains.mps.ide.make.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/mps-make/solutions/jetbrains.mps.ide.make.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.make" />
       <fileset dir="${mps_home}/plugins/mpsmake" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/mpsmake/source_gen" includes="**/trace.info, **/exports" />
@@ -70,7 +79,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake">
       <fileset dir="${mps_home}/plugins/mpsmake" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/solutions/jetbrains.mps.ide.make-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/mps-make/solutions/jetbrains.mps.ide.make-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/mpsmake/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
