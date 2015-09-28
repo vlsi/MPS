@@ -2666,7 +2666,56 @@
           </node>
           <node concept="3clFbJ" id="wfLGLyj7KB" role="3cqZAp">
             <node concept="3clFbS" id="wfLGLyj7KC" role="3clFbx">
-              <node concept="3cpWs6" id="wfLGLyj7L4" role="3cqZAp" />
+              <node concept="3SKdUt" id="6GJoCzxoggj" role="3cqZAp">
+                <node concept="3SKdUq" id="6GJoCzxoggn" role="3SKWNk">
+                  <property role="3SKdUp" value="referencing the field from an unknown non-java context" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="50tIfs8qzFg" role="3cqZAp">
+                <node concept="3SKdUq" id="50tIfs8qzFu" role="3SKWNk">
+                  <property role="3SKdUp" value="todo Should expandGenerics to something general like Object in case it's a generic type" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="50tIfs8qzFJ" role="3cqZAp">
+                <node concept="3SKdUq" id="50tIfs8qzFZ" role="3SKWNk">
+                  <property role="3SKdUp" value="but if we give an empty subst we'll get the same node with no substitutions" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="50tIfs8qzG1" role="3cqZAp">
+                <node concept="3SKdUq" id="50tIfs8qzG2" role="3SKWNk">
+                  <property role="3SKdUp" value="(expandGenerics impls are written in a way to return node as is if subst doesn't map it)" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="50tIfs8qzGC" role="3cqZAp">
+                <node concept="3SKdUq" id="50tIfs8qzGW" role="3SKWNk">
+                  <property role="3SKdUp" value="So we have to know the list of generic params, but there seems to be no link" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="50tIfs8q$nM" role="3cqZAp">
+                <node concept="3SKdUq" id="50tIfs8q$o8" role="3SKWNk">
+                  <property role="3SKdUp" value="from IGenericType to GenericDeclaration (its type params)" />
+                </node>
+              </node>
+              <node concept="1Z5TYs" id="6GJoCzxq7Sx" role="3cqZAp">
+                <node concept="mw_s8" id="6GJoCzxq7S$" role="1ZfhK$">
+                  <node concept="1Z2H0r" id="6GJoCzxq7Ow" role="mwGJk">
+                    <node concept="1YBJjd" id="6GJoCzxq7Rg" role="1Z2MuG">
+                      <ref role="1YBMHb" node="h7TVFKk" resolve="varRef" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="mw_s8" id="50tIfs8qzd8" role="1ZfhKB">
+                  <node concept="2OqwBi" id="50tIfs8qzkx" role="mwGJk">
+                    <node concept="37vLTw" id="50tIfs8qzd6" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2eR5sdQxkxI" resolve="fieldDecl" />
+                    </node>
+                    <node concept="3TrEf2" id="50tIfs8qzCL" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="6GJoCzxq9B6" role="3cqZAp" />
             </node>
             <node concept="3clFbC" id="wfLGLyj7L0" role="3clFbw">
               <node concept="37vLTw" id="3GM_nagT$xu" role="3uHU7B">
