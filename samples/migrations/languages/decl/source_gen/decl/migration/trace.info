@@ -17,7 +17,7 @@
   <root nodeRef="r:95faf3fd-a89c-4a10-a7cd-04dccacd63bd(decl.migration)/1986963296982667681">
     <file name="SampleDeclMigration.java">
       <node id="1986963296982667681" at="29,30,30,55" concept="5" />
-      <node id="1986963296984174199" at="32,35,33,57" concept="6" />
+      <node id="1986963296984174199" at="32,41,33,57" concept="6" />
       <node id="5321427680537310017" at="35,40,36,50" concept="5" />
       <node id="1986963296983815971" at="40,51,41,48" concept="5" />
       <node id="1986963296984178025" at="43,133,44,0" concept="7" />
@@ -108,7 +108,7 @@
         <var name="parameter_1" id="1986963296983872657" />
         <var name="parameter_2" id="1986963296983872657" />
       </scope>
-      <scope id="1986963296982667681" at="32,35,72,15">
+      <scope id="1986963296982667681" at="32,41,72,15">
         <var name="components" id="1986963296983815964" />
         <var name="models" id="1986963296983773088" />
         <var name="res" id="1986963296983824591" />

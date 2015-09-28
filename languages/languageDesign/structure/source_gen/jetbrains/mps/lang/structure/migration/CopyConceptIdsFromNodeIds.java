@@ -21,7 +21,7 @@ public class CopyConceptIdsFromNodeIds extends MigrationScriptBase {
   public String getCaption() {
     return "Copy Concept Ids from Node Ids";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {

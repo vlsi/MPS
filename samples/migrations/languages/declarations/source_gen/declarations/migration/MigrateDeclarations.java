@@ -33,7 +33,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using a TransformStatement";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new MigrateDeclarations.Pattern_9wc3oy_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

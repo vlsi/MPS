@@ -23,8 +23,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import java.util.Iterator;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -112,38 +112,34 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         }), "reference");
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
           public void invoke(Set<SNode> included) {
-            final MoveNodesBuilder moveNodesBuilder = Sequence.fromIterable(new ExtensionPoint<MoveNodesBuilder.MoveNodesBuilderProvider>("jetbrains.mps.ide.platform.MoveNodesBuilder").getObjects()).select(new ISelector<MoveNodesBuilder.MoveNodesBuilderProvider, MoveNodesBuilder>() {
-              public MoveNodesBuilder select(MoveNodesBuilder.MoveNodesBuilderProvider it) {
-                return it.createMoveNodesBuilder(currentModel.value.getModule(), project);
+            Iterable<MoveRefactoringContributor> msb = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+              public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
+                return it.createContributor(new MoveContext() {
+                  public SearchScope getSearchScope() {
+                    return project.getScope();
+                  }
+                });
               }
-            }).where(new IWhereFilter<MoveNodesBuilder>() {
-              public boolean accept(MoveNodesBuilder it) {
+            }).where(new IWhereFilter<MoveRefactoringContributor>() {
+              public boolean accept(MoveRefactoringContributor it) {
                 return it != null;
               }
-            }).foldLeft((MoveNodesBuilder) null, new ILeftCombinator<MoveNodesBuilder, MoveNodesBuilder>() {
-              public MoveNodesBuilder combine(MoveNodesBuilder s, MoveNodesBuilder it) {
-                return MoveNodesBuilder.CompositeBuilder.compose(s, it);
+            });
+
+            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
+              public void visit(MoveRefactoringContributor it) {
+                it.willBeMoved(nodesToMove);
               }
             });
-            final List<MoveNodesBuilder.IncompleteMoveNode> incompleteMoveNodes = ListSequence.fromList(nodesToMove).select(new ISelector<SNode, MoveNodesBuilder.IncompleteMoveNode>() {
-              public MoveNodesBuilder.IncompleteMoveNode select(SNode it) {
-                return moveNodesBuilder.moveNode(it);
+            newLocation.insertNodes(nodesToMove);
+            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
+              public void visit(MoveRefactoringContributor it) {
+                it.isMoved(nodesToMove);
               }
-            }).toListSequence();
-            moveNodesBuilder.commit(new Runnable() {
-              public void run() {
-                newLocation.insertNodes(nodesToMove);
-                {
-                  Iterator<SNode> node_it = ListSequence.fromList(nodesToMove).iterator();
-                  Iterator<MoveNodesBuilder.IncompleteMoveNode> inc_it = ListSequence.fromList(incompleteMoveNodes).iterator();
-                  SNode node_var;
-                  MoveNodesBuilder.IncompleteMoveNode inc_var;
-                  while (node_it.hasNext() && inc_it.hasNext()) {
-                    node_var = node_it.next();
-                    inc_var = inc_it.next();
-                    inc_var.setTarget(node_var);
-                  }
-                }
+            });
+            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
+              public void visit(MoveRefactoringContributor it) {
+                it.commit();
               }
             });
           }

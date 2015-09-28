@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.query.QueryExecutionContext;
 import jetbrains.mps.smodel.query.CommandUtil;
+import jetbrains.mps.smodel.query.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -37,9 +37,10 @@ public class MoveNodePart implements RefactoringPart {
     Iterable<SReference> references;
     SNode targetFromNode = myFrom.resolve(repository);
     {
+      final SearchScope scope = CommandUtil.createScope(searchScope);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return CommandUtil.createScope(searchScope);
+          return scope;
         }
       };
       if (targetFromNode != null) {

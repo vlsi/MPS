@@ -26,7 +26,7 @@ public class RemoveUITestPropertyFromTestInfo extends MigrationScriptBase {
   public String getCaption() {
     return "Remove the obsolete uiTest property from TestInfo concepts";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new RemoveUITestPropertyFromTestInfo.Pattern_vbjplg_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

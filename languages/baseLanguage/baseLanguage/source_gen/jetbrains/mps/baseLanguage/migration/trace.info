@@ -55,7 +55,7 @@
       <node id="1261499155764369865" at="56,0,67,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1261499155764378543" at="35,8,53,9" concept="2" />
       <node id="1261499155764369881" at="54,0,72,9" concept="2" />
-      <node id="1261499155764371938" at="28,35,83,5" concept="0" />
+      <node id="1261499155764371938" at="28,41,83,5" concept="0" />
       <node id="1261499155764368696" at="28,0,86,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1261499155764368696" at="25,30,26,46" />
       <scope id="1261499155764371938" at="32,52,33,23" />
@@ -106,7 +106,7 @@
         <var name="context" id="1261499155764371938" />
         <var name="scope" id="1261499155764371938" />
       </scope>
-      <scope id="1261499155764368696" at="28,35,84,16" />
+      <scope id="1261499155764368696" at="28,41,84,16" />
       <scope id="1261499155764368696" at="28,0,86,0">
         <var name="m" id="1261499155764368696" />
       </scope>
@@ -194,7 +194,7 @@
       <node id="4787009421625772293" at="78,45,94,7" concept="0" />
       <node id="4787009421625772293" at="78,0,97,0" concept="5" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4787009421625772292" at="37,114,63,9" concept="2" />
-      <node id="4787009421625772292" at="35,35,64,5" concept="0" />
+      <node id="4787009421625772292" at="35,41,64,5" concept="0" />
       <node id="4787009421625770137" at="35,0,67,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4787009421625772293" at="73,38,73,38" />
       <scope id="4787009421625772293" at="111,42,111,42" />
@@ -277,7 +277,7 @@
       <scope id="4787009421625772292" at="36,5,63,9">
         <var name="pattern" id="4787009421625772292" />
       </scope>
-      <scope id="4787009421625770137" at="35,35,65,16" />
+      <scope id="4787009421625770137" at="35,41,65,16" />
       <scope id="4787009421625770137" at="35,0,67,0">
         <var name="m" id="4787009421625770137" />
       </scope>
@@ -294,7 +294,7 @@
   <root nodeRef="r:1dca72a1-44ae-4339-a783-4859610b0285(jetbrains.mps.baseLanguage.migration)/9196563039720641373">
     <file name="ReplaceSingleLineCommentsWithGenericComments.java">
       <node id="9196563039720641373" at="24,30,25,112" concept="7" />
-      <node id="1986963296983773087" at="27,35,28,65" concept="6" />
+      <node id="1986963296983773087" at="27,41,28,65" concept="6" />
       <node id="4125235114146719252" at="30,39,31,0" concept="9" />
       <node id="4125235114147391516" at="31,0,32,55" concept="8" />
       <node id="4125235114146455925" at="34,43,35,527" concept="7" />
@@ -361,7 +361,7 @@
       <scope id="9196563039720651937" at="30,0,59,0">
         <var name="model" id="9196563039720651937" />
       </scope>
-      <scope id="9196563039720641373" at="27,35,60,16">
+      <scope id="9196563039720641373" at="27,41,60,16">
         <var name="models" id="1986963296983773088" />
       </scope>
       <scope id="9196563039720641373" at="27,0,62,0">

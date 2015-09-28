@@ -16,7 +16,7 @@
   <root nodeRef="r:2cad94ae-7a5e-484a-a104-c211cb3b0451(jetbrains.mps.baseLanguage.javadoc.migration)/1940294142325444048">
     <file name="MoveDocTagsIntoTagsChildCollection.java">
       <node id="1940294142325444048" at="17,30,18,48" concept="6" />
-      <node id="90258596274839801" at="20,35,21,44" concept="5" />
+      <node id="90258596274839801" at="20,41,21,44" concept="5" />
       <node id="90258596274843564" at="23,54,24,208" concept="6" />
       <node id="90258596274890111" at="27,35,28,51" concept="2" />
       <node id="7427066632717610915" at="32,54,33,204" concept="6" />
@@ -78,7 +78,7 @@
         <var name="it" id="7427066632717612898" />
       </scope>
       <scope id="1940294142325444048" at="60,0,63,0" />
-      <scope id="1940294142325444048" at="20,35,58,16">
+      <scope id="1940294142325444048" at="20,41,58,16">
         <var name="models" id="90258596274839802" />
       </scope>
       <scope id="1940294142325444048" at="20,0,60,0">
@@ -248,7 +248,7 @@
       <node id="4787009421625782763" at="74,0,83,0" concept="4" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4787009421625791148" at="94,0,103,0" concept="7" trace="_quotation_createNode_fgay1s_a0a0f#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4787009421625782762" at="34,106,60,9" concept="2" />
-      <node id="4787009421625782762" at="32,35,61,5" concept="0" />
+      <node id="4787009421625782762" at="32,41,61,5" concept="0" />
       <node id="4787009421625779235" at="32,0,64,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4787009421625782763" at="69,38,69,38" />
       <scope id="4787009421625782763" at="79,9,79,9" />
@@ -315,7 +315,7 @@
       <scope id="4787009421625782762" at="33,5,60,9">
         <var name="pattern" id="4787009421625782762" />
       </scope>
-      <scope id="4787009421625779235" at="32,35,62,16" />
+      <scope id="4787009421625779235" at="32,41,62,16" />
       <scope id="4787009421625779235" at="32,0,64,0">
         <var name="m" id="4787009421625779235" />
       </scope>

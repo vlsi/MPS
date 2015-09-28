@@ -5,7 +5,7 @@ package jetbrains.mps.lang.migration.pluginSolution.plugin;
 import jetbrains.mps.smodel.structure.Extension;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +22,7 @@ public class MoveConceptContributor implements MoveNodesContributor {
   }
 
   public void adjustMoveNodesItem(SNode moveNodeItem, SRepository repository) {
-    SNode oldNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(moveNodeItem, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), "virtual_tryToFindNode_7431903976166009863", new Object[]{repository});
+    SNode oldNode = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(SLinkOperations.getTarget(moveNodeItem, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), repository);
     if (SNodeOperations.isInstanceOf(oldNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       SLinkOperations.addNewChild(moveNodeItem, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x2b3f57492c165c59L, "specialization"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept")));
     }

@@ -29,7 +29,7 @@ public class SampleDeclMigration extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using smodel API";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     // get all old instances in all models of the module 
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

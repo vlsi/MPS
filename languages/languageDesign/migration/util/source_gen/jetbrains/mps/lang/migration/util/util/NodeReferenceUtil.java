@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeReferenceUtil {
@@ -17,7 +17,7 @@ public class NodeReferenceUtil {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference")));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f44fL, "nodeId"), targetNode.getNodeId().toString());
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f443L, "modelRef"), PersistenceFacade.getInstance().asString(SNodeOperations.getModel(targetNode).getReference()));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"), BehaviorReflection.invokeVirtual(String.class, targetNode, "virtual_getPresentation_1213877396640", new Object[]{}));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"), BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(targetNode));
     return result;
   }
   public static SNode makeDirect(SNode targetNode) {

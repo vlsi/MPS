@@ -22,14 +22,17 @@ import jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -121,6 +124,21 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
               AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(targetConcept) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
+
+              Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+                public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
+                  return it.createContributor(currentLanguage);
+                }
+              }).where(new IWhereFilter<MoveRefactoringContributor>() {
+                public boolean accept(MoveRefactoringContributor it) {
+                  return it != null;
+                }
+              }).toListSequence();
+              for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                 oldNode = builder.???(feature);
+                 newNode = builder.???(newFeature);
+                builder.???(oldNode, newNode);
+              }
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);
               return builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(builder, MoveFeatureUp.this.migrations(feature, newFeature), currentConcept), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));

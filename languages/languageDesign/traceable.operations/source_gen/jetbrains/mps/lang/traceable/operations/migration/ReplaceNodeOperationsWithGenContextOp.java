@@ -33,7 +33,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
   public String getCaption() {
     return "Replace SNode 'copy with trace' operations with genContext counterpart";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

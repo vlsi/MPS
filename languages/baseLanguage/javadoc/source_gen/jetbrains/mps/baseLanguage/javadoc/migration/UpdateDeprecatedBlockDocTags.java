@@ -29,7 +29,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   public String getCaption() {
     return "Add CommentLine child to DeprecatedBlockDocTags";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -93,7 +93,7 @@ public class MigrationsCheckUtil {
     final Map<SNode, Collection<String>> result = MapSequence.fromMap(new HashMap<SNode, Collection<String>>());
     Iterable<SNode> noVersionScripts = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVersionSet_5168866961621097742", new Object[]{}));
+        return !(IMigrationUnit_BehaviorDescriptor.isVersionSet_id4uVwhQyFpOe.invoke(it));
       }
     });
     Sequence.fromIterable(noVersionScripts).visitAll(new IVisitor<SNode>() {
@@ -110,17 +110,17 @@ public class MigrationsCheckUtil {
 
     Iterable<SNode> scriptsWithVersions = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVersionSet_5168866961621097742", new Object[]{});
+        return IMigrationUnit_BehaviorDescriptor.isVersionSet_id4uVwhQyFpOe.invoke(it);
       }
     });
 
     final Map<Integer, Integer> versions = MapSequence.fromMap(new HashMap<Integer, Integer>());
     Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        if (MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) == null) {
-          MapSequence.fromMap(versions).put(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}), 0);
+        if (MapSequence.fromMap(versions).get(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it)) == null) {
+          MapSequence.fromMap(versions).put(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it), 0);
         }
-        MapSequence.fromMap(versions).put(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}), MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) + 1);
+        MapSequence.fromMap(versions).put(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it), MapSequence.fromMap(versions).get(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it)) + 1);
       }
     });
 
@@ -140,7 +140,7 @@ public class MigrationsCheckUtil {
     if (maxVersion != langVersion - 1) {
       Sequence.fromIterable(scriptsWithVersions).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) == maxVersion;
+          return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) == maxVersion;
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -153,15 +153,15 @@ public class MigrationsCheckUtil {
     Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         // multiple scripts for one version? 
-        if (MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{})) > 1) {
+        if (MapSequence.fromMap(versions).get(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it)) > 1) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Multiple scripts for version " + BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) + " found");
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Multiple scripts for version " + IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) + " found");
         }
 
         // version with no scripts for it? 
-        if (BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) != minVersion && MapSequence.fromMap(versions).get(BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) - 1) == null) {
+        if (IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) != minVersion && MapSequence.fromMap(versions).get(IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) - 1) == null) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Missing script for version " + (BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{}) - 1));
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Missing script for version " + (IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) - 1));
         }
       }
     });

@@ -33,7 +33,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
   public String getCaption() {
     return "Migrate_ModelNodesOperation_concept";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Migrate_ModelNodesOperation_concept.Pattern_vs95qi_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

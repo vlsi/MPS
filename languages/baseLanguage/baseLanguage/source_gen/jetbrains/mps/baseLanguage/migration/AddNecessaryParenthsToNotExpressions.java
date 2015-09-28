@@ -32,7 +32,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
   public String getCaption() {
     return "Add necessary parentheses to NotExpressions";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a1();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {

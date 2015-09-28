@@ -19,7 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -64,11 +64,11 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return true;
     }
 
-    int maxFrom = BehaviorReflection.invokeVirtual(Integer.TYPE, ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
+    int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{});
+        return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
       }
-    }, false).first(), "virtual_fromVersion_5168866961621042645", new Object[]{});
+    }, false).first());
 
     if (lang.getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
       if (lang.getModuleDescriptor().getLanguageVersions().get(slang) != lang.getLanguageVersion()) {
@@ -108,11 +108,11 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
     if (ListSequence.fromList(scripts).isNotEmpty()) {
-      int maxFrom = BehaviorReflection.invokeVirtual(Integer.TYPE, ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
+      int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
-          return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_fromVersion_5168866961621042645", new Object[]{});
+          return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
         }
-      }, false).first(), "virtual_fromVersion_5168866961621042645", new Object[]{});
+      }, false).first());
       lang.setLanguageVersion(maxFrom + 1);
     } else {
       final int v = lang.getLanguageVersion();

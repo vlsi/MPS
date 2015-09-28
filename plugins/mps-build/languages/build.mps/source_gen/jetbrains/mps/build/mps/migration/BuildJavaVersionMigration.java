@@ -23,7 +23,7 @@ public class BuildJavaVersionMigration extends MigrationScriptBase {
   public String getCaption() {
     return "set java target version to 1.6 to build scripts where it was not specified";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> projects = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {

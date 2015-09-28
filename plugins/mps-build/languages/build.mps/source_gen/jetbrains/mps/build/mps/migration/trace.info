@@ -15,7 +15,7 @@
   <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/7498587351967223969">
     <file name="BuildJavaVersionMigration.java">
       <node id="7498587351967223969" at="23,30,24,88" concept="5" />
-      <node id="7498587351967112028" at="26,35,27,44" concept="4" />
+      <node id="7498587351967112028" at="26,41,27,44" concept="4" />
       <node id="7498587351967182278" at="29,54,30,196" concept="5" />
       <node id="4806800680213258574" at="34,39,35,88" concept="5" />
       <node id="7498587351967542211" at="40,41,41,195" concept="5" />
@@ -87,7 +87,7 @@
       <scope id="7498587351967527673" at="37,7,54,5">
         <var name="project" id="7498587351967527675" />
       </scope>
-      <scope id="7498587351967223969" at="26,35,63,16">
+      <scope id="7498587351967223969" at="26,41,63,16">
         <var name="javaProjects" id="4806800680213258568" />
         <var name="models" id="7498587351967112029" />
         <var name="projects" id="7498587351967182272" />

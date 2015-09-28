@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -29,11 +29,11 @@ public class GoToTarget_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("node")), "virtual_tryToFindNode_7431903976166009863", new Object[]{((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()});
+    SNode targetNode = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
     return targetNode != null;
   }
   @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) throws Exception {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
@@ -61,8 +61,8 @@ public class GoToTarget_Action extends BaseAction {
     return true;
   }
   @Override
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) throws Exception {
-    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("node")), "virtual_tryToFindNode_7431903976166009863", new Object[]{((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()});
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    SNode targetNode = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
     NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), targetNode, true, SNodeOperations.getParent(targetNode) != null);
   }
 }

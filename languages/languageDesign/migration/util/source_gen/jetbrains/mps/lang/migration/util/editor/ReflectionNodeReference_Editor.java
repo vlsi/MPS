@@ -19,7 +19,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
@@ -76,7 +76,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ktoyyv_a0c0(EditorContext editorContext, SNode node) {
-    if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_tryToFindNode_7431903976166009863", new Object[]{editorContext.getRepository()}) == null) {
+    if (AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository()) == null) {
       return MPSColors.YELLOW;
     } else {
       return null;

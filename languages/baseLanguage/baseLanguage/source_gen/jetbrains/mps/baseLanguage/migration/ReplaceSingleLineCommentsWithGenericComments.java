@@ -24,7 +24,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   public String getCaption() {
     return "Replace all non-textual nodes of SingleLineComment with the new generic way of commenting out code";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel model) {

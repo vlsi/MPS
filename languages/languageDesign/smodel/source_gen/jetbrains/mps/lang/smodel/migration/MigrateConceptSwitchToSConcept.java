@@ -25,7 +25,7 @@ public class MigrateConceptSwitchToSConcept extends MigrationScriptBase {
   public String getCaption() {
     return "Migrate \"concept switch\" to SConcept";
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {

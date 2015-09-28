@@ -8,13 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -22,14 +23,14 @@ public class check_NodeReference_NonTypesystemRule extends AbstractNonTypesystem
   public check_NodeReference_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNodeReference ref = BehaviorReflection.invokeVirtual(SNodeReference.class, nodeReference, "virtual_getNodeReference_5168866961623921507", new Object[]{});
+    SNodeReference ref = AbstractNodeReference_BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(nodeReference);
     if (!(ref != null)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeReference, "Invalid node reference", "9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)", "112372100253050975", null, errorTarget);
     }
-    SNode target = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeReference, "virtual_tryToFindNode_7431903976166009863", new Object[]{SNodeOperations.getModel(nodeReference).getModule().getRepository()});
+    SNode target = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(nodeReference, SNodeOperations.getModel(nodeReference).getModule().getRepository());
     if ((target != null)) {
-      if (!(eq_g9nlrm_a0a0a3a1(SPropertyOperations.getString(nodeReference, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")), BehaviorReflection.invokeVirtual(String.class, target, "virtual_getPresentation_1213877396640", new Object[]{})))) {
+      if (!(eq_g9nlrm_a0a0a3a1(SPropertyOperations.getString(nodeReference, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")), BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(target)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeReference, "Target node presenation does not correspond with saved value", "9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)", "2864063292004192073", null, errorTarget);
       }

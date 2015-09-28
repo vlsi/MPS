@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.HashMap;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesBuilder;
+import jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -186,20 +186,20 @@ public class MoveConcepts extends MoveNodesDefault {
               final Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
               MoveConceptUtil.copyNodesToModels(moveAspects, copyMap);
 
-              Iterable<MoveNodesBuilder> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveNodesBuilder.MoveNodesBuilderProvider>("jetbrains.mps.ide.platform.MoveNodesBuilder").getObjects()).select(new ISelector<MoveNodesBuilder.MoveNodesBuilderProvider, MoveNodesBuilder>() {
-                public MoveNodesBuilder select(MoveNodesBuilder.MoveNodesBuilderProvider it) {
-                  return it.createMoveNodesBuilder(sourceLanguage);
+              Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+                public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
+                  return it.createContributor(sourceLanguage);
                 }
-              }).where(new IWhereFilter<MoveNodesBuilder>() {
-                public boolean accept(MoveNodesBuilder it) {
+              }).where(new IWhereFilter<MoveRefactoringContributor>() {
+                public boolean accept(MoveRefactoringContributor it) {
                   return it != null;
                 }
               }).toListSequence();
-              for (MoveNodesBuilder builder : Sequence.fromIterable(moveNodesBuilders)) {
+              for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
                 for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
-                  MoveNodesBuilder.NodeReference oldNode = builder.createReference(mapping.key());
-                  MoveNodesBuilder.NodeReference newNode = builder.createReference(mapping.value());
-                  builder.moveNode(oldNode, newNode);
+                   oldNode = builder.???(mapping.key());
+                   newNode = builder.???(mapping.value());
+                  builder.???(oldNode, newNode);
                 }
               }
 

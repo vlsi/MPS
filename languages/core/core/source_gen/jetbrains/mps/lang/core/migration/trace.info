@@ -13,7 +13,7 @@
   <root nodeRef="r:6e2f6b6c-c426-4c13-8373-566bf53f96f9(jetbrains.mps.lang.core.migration)/8744537335501940341">
     <file name="PropertyAttributeId.java">
       <node id="8744537335501940341" at="21,30,22,48" concept="3" />
-      <node id="8744537335501983649" at="24,35,25,44" concept="2" />
+      <node id="8744537335501983649" at="24,41,25,44" concept="2" />
       <node id="8744537335501995442" at="27,54,28,205" concept="3" />
       <node id="8744537335502256807" at="32,42,33,283" concept="0" />
       <node id="8744537335502266412" at="35,7,36,0" concept="4" />
@@ -53,7 +53,7 @@
         <var name="attribute" id="8744537335501999457" />
       </scope>
       <scope id="8744537335501940341" at="50,0,53,0" />
-      <scope id="8744537335501940341" at="24,35,48,16">
+      <scope id="8744537335501940341" at="24,41,48,16">
         <var name="models" id="8744537335501983650" />
         <var name="propertyAttributes" id="8744537335501995436" />
         <var name="referenceAttributes" id="8744537335502264275" />

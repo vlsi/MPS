@@ -3515,7 +3515,7 @@
                                 <node concept="2OqwBi" id="2pywGSQXwMv" role="3clFbG">
                                   <node concept="1bf8Ab" id="2pywGSQXwLD" role="2Oq$k0" />
                                   <node concept="liA8E" id="2pywGSQXwV3" role="2OqNvi">
-                                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.setVersion(int):void" resolve="setVersion" />
+                                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.setVersion(int):void" resolve="setVersion" />
                                     <node concept="2YIFZM" id="2pywGSQX$Xc" role="37wK5m">
                                       <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
                                       <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
@@ -4547,7 +4547,7 @@
                     <ref role="3cqZAo" node="6PNr9t9OD5I" resolve="descriptor" />
                   </node>
                   <node concept="liA8E" id="6PNr9t9OD2L" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getVersion():int" resolve="getVersion" />
+                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getVersion():int" resolve="getVersion" />
                   </node>
                 </node>
               </node>
