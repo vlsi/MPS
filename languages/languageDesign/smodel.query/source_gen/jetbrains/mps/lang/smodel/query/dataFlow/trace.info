@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,13,0" name="jetbrains.mps.lang.smodel.query.dataFlow.DFABuilders" />
+    </file>
+  </root>
+  <root nodeRef="r:c9cc60ca-b246-4680-99c0-9d67e597abf3(jetbrains.mps.lang.smodel.query.dataFlow)/6423044698583136038">
+    <file name="WithStatement_DataFlow.java">
+      <node id="6423044698583136063" at="15,102,16,219" concept="1" />
+      <node id="6423044698583136819" at="16,219,17,219" concept="1" />
+      <node id="6423044698583136038" at="13,0,15,0" concept="0" trace="WithStatement_DataFlow#()V" />
+      <node id="6423044698583136038" at="15,0,19,0" concept="2" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="6423044698583136038" at="13,35,13,35" />
+      <scope id="6423044698583136038" at="13,0,15,0" />
+      <scope id="6423044698583136040" at="15,102,17,219" />
+      <scope id="6423044698583136038" at="15,0,19,0">
+        <var name="_context" id="6423044698583136038" />
+        <var name="operationContext" id="6423044698583136038" />
+      </scope>
+      <unit id="6423044698583136038" at="12,0,20,0" name="jetbrains.mps.lang.smodel.query.dataFlow.WithStatement_DataFlow" />
+    </file>
+  </root>
+</debug-info>
+
