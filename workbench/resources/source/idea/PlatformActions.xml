@@ -380,7 +380,7 @@
 
       <!-- Migrations -->
       <!-- MPS Patch -->
-      <group id="Migration" configurable="true" popup="true" compact="true">
+      <group id="Migration" text="Migration" configurable="true" popup="true" compact="true">
 
       </group>
 

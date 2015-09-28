@@ -85,7 +85,6 @@
         <child id="1227011543811" name="actualParameter" index="2J__8u" />
       </concept>
       <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
-        <reference id="1204992316090" name="point" index="2f8Tey" />
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" flags="lg" index="2zDL_w">
@@ -106,7 +105,6 @@
         <child id="1239975488603" name="updateFunction" index="2Oj6PV" />
       </concept>
       <concept id="1239975436002" name="jetbrains.mps.lang.plugin.structure.UpdateGroupFunction" flags="in" index="2OiTZ2" />
-      <concept id="1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" flags="ng" index="10WQ6h" />
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
         <reference id="1217252646389" name="key" index="1DUlNI" />
@@ -1687,9 +1685,6 @@
       <node concept="tCFHf" id="5$zfhXzhLyp" role="ftvYc">
         <ref role="tCJdB" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
       </node>
-      <node concept="10WQ6h" id="5$zfhXzr2uv" role="ftvYc">
-        <property role="TrG5h" value="migrations" />
-      </node>
     </node>
   </node>
   <node concept="sE7Ow" id="5$zfhXzhIiu">
@@ -2013,9 +2008,9 @@
     <property role="TrG5h" value="Migrations" />
     <property role="1XlLyE" value="true" />
     <property role="3GE5qa" value="migrationList" />
+    <property role="3OnEW4" value="true" />
     <node concept="tT9cl" id="5$zfhXzr3Gr" role="2f5YQi">
       <ref role="tU$_T" node="5$zfhXzhGmb" resolve="MigrationsMenu" />
-      <ref role="2f8Tey" node="5$zfhXzr2uv" resolve="migrations" />
     </node>
     <node concept="2OiAzN" id="5$zfhXzrTL2" role="ftER_">
       <node concept="2OiTZ2" id="5$zfhXzrTL4" role="2Oj6PV">

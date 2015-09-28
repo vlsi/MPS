@@ -21,12 +21,10 @@
     <action id="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" class="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action"></action>
     <action id="jetbrains.mps.migration.component.plugin.FindDeprecated_Action" class="jetbrains.mps.migration.component.plugin.FindDeprecated_Action"></action>
     <action id="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" class="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action"></action>
-    <group id="MigrationsMenu_ActionGroupmigrations" />
     <group id="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup">
       <reference ref="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
       <reference ref="jetbrains.mps.migration.component.plugin.FindDeprecated_Action" />
       <reference ref="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
-      <reference ref="MigrationsMenu_ActionGroupmigrations" />
       <add-to-group group-id="Migration" anchor="last" />
     </group>
   </actions>
