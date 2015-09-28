@@ -490,10 +490,10 @@
       <node id="4508017205455333757" at="120,0,123,0" concept="10" trace="getDescriptorFQName#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
       <node id="4018064806012226618" at="124,70,127,5" concept="9" />
       <node id="1581864402049066185" at="131,0,134,0" concept="10" trace="clearCache#()V" />
-      <node id="6799683357399163459" at="139,21,142,7" concept="1" />
-      <node id="6799683357399163459" at="139,21,142,7" concept="9" />
-      <node id="6799683357399163477" at="145,25,148,7" concept="1" />
-      <node id="6799683357399163477" at="145,25,148,7" concept="9" />
+      <node id="6799683357399163459" at="139,36,142,7" concept="1" />
+      <node id="6799683357399163459" at="139,36,142,7" concept="9" />
+      <node id="6799683357399163477" at="145,40,148,7" concept="1" />
+      <node id="6799683357399163477" at="145,40,148,7" concept="9" />
       <node id="5712848521224834996" at="157,0,160,0" concept="10" trace="accept#(Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;)Z" />
       <node id="2521103492729770051" at="163,0,166,0" concept="10" trace="accept#(Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;)Z" />
       <node id="5712848521224848946" at="166,7,169,5" concept="9" />
@@ -670,9 +670,9 @@
         <var name="module" id="4508017205454606841" />
       </scope>
       <scope id="1581864402049066185" at="131,0,134,0" />
-      <scope id="6799683357399163458" at="139,21,142,7" />
-      <scope id="6799683357399163459" at="139,21,142,7" />
-      <scope id="6799683357399163477" at="145,25,148,7" />
+      <scope id="6799683357399163458" at="139,36,142,7" />
+      <scope id="6799683357399163459" at="139,36,142,7" />
+      <scope id="6799683357399163477" at="145,40,148,7" />
       <scope id="5712848521224834996" at="157,0,160,0">
         <var name="it" id="5712848521224834996" />
       </scope>
@@ -718,7 +718,7 @@
       </scope>
       <scope id="1345304146527705900" at="112,27,116,18" />
       <scope id="4018064806012170174" at="124,70,128,62" />
-      <scope id="6799683357399163476" at="145,25,149,18" />
+      <scope id="6799683357399163476" at="145,40,149,18" />
       <scope id="6508209524260132951" at="176,0,180,0" />
       <scope id="6283001718997447844" at="278,9,282,7">
         <var name="data" id="3309033097910274791" />

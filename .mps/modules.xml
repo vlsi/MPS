@@ -201,6 +201,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
+      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/pluginSolution/jetbrains.mps.migration.pluginSolution.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" folder="platform.build" />
