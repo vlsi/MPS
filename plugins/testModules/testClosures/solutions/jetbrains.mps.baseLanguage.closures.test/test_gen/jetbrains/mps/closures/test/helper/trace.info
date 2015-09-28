@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/6374750171056867477">
+  <root nodeRef="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.helper@tests)/6374750171056867477">
     <file name="ClosureLiteraltargetFunType_Test.java">
       <node id="6374750171056867477" at="25,51,26,124" concept="2" />
       <node id="6374750171056867477" at="26,124,27,123" concept="2" />
@@ -35,13 +35,13 @@
       <node id="6374750171056899811" at="55,229,56,487" concept="2" />
       <node id="6374750171056899811" at="56,487,57,229" concept="2" />
       <node id="6374750171056899811" at="57,229,58,229" concept="2" />
-      <node id="6374750171056899811" at="58,229,59,453" concept="2" />
-      <node id="6374750171056899811" at="59,453,60,164" concept="2" />
+      <node id="6374750171056899811" at="58,229,59,449" concept="2" />
+      <node id="6374750171056899811" at="59,449,60,164" concept="2" />
       <node id="6374750171056899811" at="60,164,61,168" concept="2" />
       <node id="6374750171056899811" at="61,168,62,229" concept="2" />
       <node id="6374750171056899811" at="62,229,63,229" concept="2" />
-      <node id="6374750171056899811" at="63,229,64,451" concept="2" />
-      <node id="6374750171056899811" at="64,451,65,164" concept="2" />
+      <node id="6374750171056899811" at="63,229,64,447" concept="2" />
+      <node id="6374750171056899811" at="64,447,65,164" concept="2" />
       <node id="6374750171056899811" at="65,164,66,168" concept="2" />
       <node id="6374750171056899811" at="66,168,67,26" concept="6" />
       <node id="6374750171056867477" at="40,0,43,0" concept="4" trace="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
@@ -95,7 +95,7 @@
       <unit id="6374750171056867477" at="22,0,71,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
     </file>
   </root>
-  <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507395260">
+  <root nodeRef="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.helper@tests)/7178287329507395260">
     <file name="MockTemplateQueryContext.java">
       <node id="7178287329507546914" at="11,0,12,0" concept="3" trace="sessionObjects" />
       <node id="7439704124700861033" at="12,37,13,12" concept="9" />
@@ -131,7 +131,7 @@
       <unit id="7178287329507395260" at="10,0,31,0" name="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
     </file>
   </root>
-  <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507546162">
+  <root nodeRef="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.helper@tests)/7178287329507546162">
     <file name="ClosureLiteraltargetIface_Test.java">
       <node id="7178287329507546162" at="24,43,25,124" concept="2" />
       <node id="7178287329507546162" at="25,124,26,113" concept="2" />
@@ -227,8 +227,8 @@
       <node id="7178287329507581164" at="136,229,137,472" concept="2" />
       <node id="7178287329507581164" at="137,472,138,229" concept="2" />
       <node id="7178287329507581164" at="138,229,139,229" concept="2" />
-      <node id="7178287329507581164" at="139,229,140,437" concept="2" />
-      <node id="7178287329507581164" at="140,437,141,164" concept="2" />
+      <node id="7178287329507581164" at="139,229,140,433" concept="2" />
+      <node id="7178287329507581164" at="140,433,141,164" concept="2" />
       <node id="7178287329507581164" at="141,164,142,168" concept="2" />
       <node id="7178287329507581164" at="142,168,143,229" concept="2" />
       <node id="7178287329507581164" at="143,229,144,434" concept="2" />
@@ -376,7 +376,7 @@
       <unit id="7178287329507546162" at="21,0,150,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" />
     </file>
   </root>
-  <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7289865355732881079">
+  <root nodeRef="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.helper@tests)/7289865355732881079">
     <file name="Generics_Test.java">
       <node id="7289865355732881079" at="17,73,18,124" concept="2" />
       <node id="7289865355732881079" at="18,124,19,126" concept="2" />
@@ -386,9 +386,9 @@
       <node id="7289865355732881079" at="29,235,30,128" concept="2" />
       <node id="7289865355732881079" at="32,79,33,235" concept="5" />
       <node id="7289865355732881079" at="33,235,34,128" concept="2" />
-      <node id="7289865355732881079" at="28,0,32,0" concept="4" trace="test_NodeErrorCheck1046929382685553590#()V" />
+      <node id="7289865355732881079" at="28,0,32,0" concept="4" trace="test_NodeErrorCheck5462327771639049246#()V" />
       <node id="7289865355732881079" at="32,0,36,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
-      <node id="7289865355732881079" at="16,0,21,0" concept="4" trace="test_NodeErrorCheck1046929382685553590#()V" />
+      <node id="7289865355732881079" at="16,0,21,0" concept="4" trace="test_NodeErrorCheck5462327771639049246#()V" />
       <node id="7289865355732881079" at="21,0,26,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
       <scope id="7289865355732881079" at="17,73,19,126" />
       <scope id="7289865355732881079" at="22,77,24,130" />
