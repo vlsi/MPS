@@ -7,6 +7,7 @@
       <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.9.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/idea_rt.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/docs/apidocs" />
