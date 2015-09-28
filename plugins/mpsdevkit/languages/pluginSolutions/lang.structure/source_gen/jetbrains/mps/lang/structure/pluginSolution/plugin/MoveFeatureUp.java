@@ -26,12 +26,14 @@ import jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.platform.actions.core.MoveContext;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -127,17 +129,26 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
 
               Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
                 public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
-                  return it.createContributor(currentLanguage);
+                  return it.createContributor(new MoveContext() {
+                    public SearchScope getSearchScope() {
+                      return project.getScope();
+                    }
+                  });
                 }
               }).where(new IWhereFilter<MoveRefactoringContributor>() {
                 public boolean accept(MoveRefactoringContributor it) {
                   return it != null;
                 }
               }).toListSequence();
+
               for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
-                 oldNode = builder.???(feature);
-                 newNode = builder.???(newFeature);
-                builder.???(oldNode, newNode);
+                builder.willBeMoved(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature));
+              }
+              for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                builder.isMoved(ListSequence.fromListAndArray(new ArrayList<SNode>(), newFeature));
+              }
+              for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                builder.commit();
               }
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);

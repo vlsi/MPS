@@ -33,14 +33,16 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.HashMap;
-import jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.ide.platform.actions.core.MoveContext;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
@@ -186,27 +188,10 @@ public class MoveConcepts extends MoveNodesDefault {
               final Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
               MoveConceptUtil.copyNodesToModels(moveAspects, copyMap);
 
-              Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
-                public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
-                  return it.createContributor(sourceLanguage);
-                }
-              }).where(new IWhereFilter<MoveRefactoringContributor>() {
-                public boolean accept(MoveRefactoringContributor it) {
-                  return it != null;
-                }
-              }).toListSequence();
-              for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
-                for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
-                   oldNode = builder.???(mapping.key());
-                   newNode = builder.???(mapping.value());
-                  builder.???(oldNode, newNode);
-                }
-              }
-
               for (SNode concept : ListSequence.fromList(conceptsToMove)) {
                 SNode oldConcept = concept;
                 SNode newConcept = SNodeOperations.cast(MapSequence.fromMap(copyMap).get(concept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-                AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_u6ijv2_a0c0l0c0a0o0a91a5("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
+                AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_u6ijv2_a0c0i0c0a0o0a91a5("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
 
 
                 MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(sourceLanguage).setName("Move_concept_" + SPropertyOperations.getString(oldConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -220,8 +205,45 @@ public class MoveConcepts extends MoveNodesDefault {
                   public boolean accept(SNode it) {
                     return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "8260330507834347594");
                   }
-                }).first(), _quotation_createNode_u6ijv2_a0a21a11a2a0a41a0t0f(builder.getScript()));
+                }).first(), _quotation_createNode_u6ijv2_a0a21a8a2a0a41a0t0f(builder.getScript()));
                 executeAfterBuilder.addDependency(SNodeOperations.getModel(builder.getScript()));
+
+
+                Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+                  public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
+                    return it.createContributor(new MoveContext() {
+                      public SearchScope getSearchScope() {
+                        return project.getScope();
+                      }
+                    });
+                  }
+                }).where(new IWhereFilter<MoveRefactoringContributor>() {
+                  public boolean accept(MoveRefactoringContributor it) {
+                    return it != null;
+                  }
+                }).toListSequence();
+                List<IMapping<SNode, SNode>> mappings = SetSequence.fromSet(MapSequence.fromMap(copyMap).mappingsSet()).toListSequence();
+                List<SNode> keys = ListSequence.fromList(mappings).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
+                  public SNode select(IMapping<SNode, SNode> it) {
+                    return it.key();
+                  }
+                }).toListSequence();
+                List<SNode> values = ListSequence.fromList(mappings).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
+                  public SNode select(IMapping<SNode, SNode> it) {
+                    return it.value();
+                  }
+                }).toListSequence();
+
+                for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                  builder.willBeMoved(keys);
+                }
+                for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                  builder.isMoved(values);
+                }
+                for (MoveRefactoringContributor builder : Sequence.fromIterable(moveNodesBuilders)) {
+                  builder.commit();
+                }
+
               }
               MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage);
               MapSequence.fromMap(usagesMap).visitAll(new IVisitor<IMapping<SReference, SNode>>() {
@@ -358,13 +380,13 @@ public class MoveConcepts extends MoveNodesDefault {
     }
   }
 
-  private static SNode createDeprecatedNodeAnnotation_u6ijv2_a0c0l0c0a0o0a91a5(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_u6ijv2_a0c0i0c0a0o0a91a5(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), p0 + "");
     return n1;
   }
-  private static SNode _quotation_createNode_u6ijv2_a0a21a11a2a0a41a0t0f(Object parameter_1) {
+  private static SNode _quotation_createNode_u6ijv2_a0a21a8a2a0a41a0t0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

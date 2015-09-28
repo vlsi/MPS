@@ -1949,6 +1949,42 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="5ZhKIhen9$d" role="3cqZAp" />
+                      <node concept="3cpWs8" id="5ZhKIhfIHjU" role="3cqZAp">
+                        <node concept="3cpWsn" id="5ZhKIhfIHjX" role="3cpWs9">
+                          <property role="TrG5h" value="nodesToMoveWithDescendants" />
+                          <node concept="_YKpA" id="5ZhKIhfIHjQ" role="1tU5fm">
+                            <node concept="3Tqbb2" id="5ZhKIhfIHKW" role="_ZDj9" />
+                          </node>
+                          <node concept="2OqwBi" id="5ZhKIhfIXl2" role="33vP2m">
+                            <node concept="2OqwBi" id="5ZhKIhfIQmF" role="2Oq$k0">
+                              <node concept="37vLTw" id="5ZhKIhfIPzl" role="2Oq$k0">
+                                <ref role="3cqZAo" node="55uxGWy8qrL" resolve="nodesToMove" />
+                              </node>
+                              <node concept="3goQfb" id="5ZhKIhfIR_s" role="2OqNvi">
+                                <node concept="1bVj0M" id="5ZhKIhfIR_u" role="23t8la">
+                                  <node concept="3clFbS" id="5ZhKIhfIR_v" role="1bW5cS">
+                                    <node concept="3clFbF" id="5ZhKIhfISf1" role="3cqZAp">
+                                      <node concept="2OqwBi" id="5ZhKIhfISMq" role="3clFbG">
+                                        <node concept="37vLTw" id="5ZhKIhfISf0" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="5ZhKIhfIR_w" resolve="it" />
+                                        </node>
+                                        <node concept="2Rf3mk" id="5ZhKIhfITe7" role="2OqNvi">
+                                          <node concept="1xIGOp" id="5ZhKIhfIVrX" role="1xVPHs" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="Rh6nW" id="5ZhKIhfIR_w" role="1bW2Oz">
+                                    <property role="TrG5h" value="it" />
+                                    <node concept="2jxLKc" id="5ZhKIhfIR_x" role="1tU5fm" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="ANE8D" id="5ZhKIhfIY2e" role="2OqNvi" />
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="5ZhKIhemU1Z" role="3cqZAp">
                         <node concept="2OqwBi" id="5ZhKIhemUJo" role="3clFbG">
                           <node concept="37vLTw" id="5ZhKIhemU1X" role="2Oq$k0">
@@ -1964,8 +2000,8 @@
                                     </node>
                                     <node concept="liA8E" id="5ZhKIhemX0O" role="2OqNvi">
                                       <ref role="37wK5l" node="5ZhKIhemrKW" resolve="willBeMoved" />
-                                      <node concept="37vLTw" id="5ZhKIhemYoj" role="37wK5m">
-                                        <ref role="3cqZAo" node="55uxGWy8qrL" resolve="nodesToMove" />
+                                      <node concept="37vLTw" id="5ZhKIhfIYSC" role="37wK5m">
+                                        <ref role="3cqZAo" node="5ZhKIhfIHjX" resolve="nodesToMoveWithDescendants" />
                                       </node>
                                     </node>
                                   </node>
@@ -2007,8 +2043,8 @@
                                     </node>
                                     <node concept="liA8E" id="5ZhKIhen0dB" role="2OqNvi">
                                       <ref role="37wK5l" node="5ZhKIhemtbu" resolve="isMoved" />
-                                      <node concept="37vLTw" id="5ZhKIhen0dC" role="37wK5m">
-                                        <ref role="3cqZAo" node="55uxGWy8qrL" resolve="nodesToMove" />
+                                      <node concept="37vLTw" id="5ZhKIhfIZpp" role="37wK5m">
+                                        <ref role="3cqZAo" node="5ZhKIhfIHjX" resolve="nodesToMoveWithDescendants" />
                                       </node>
                                     </node>
                                   </node>

@@ -24,11 +24,11 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -126,15 +126,20 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               }
             });
 
+            final List<SNode> nodesToMoveWithDescendants = ListSequence.fromList(nodesToMove).translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode it) {
+                return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+              }
+            }).toListSequence();
             Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
               public void visit(MoveRefactoringContributor it) {
-                it.willBeMoved(nodesToMove);
+                it.willBeMoved(nodesToMoveWithDescendants);
               }
             });
             newLocation.insertNodes(nodesToMove);
             Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
               public void visit(MoveRefactoringContributor it) {
-                it.isMoved(nodesToMove);
+                it.isMoved(nodesToMoveWithDescendants);
               }
             });
             Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
