@@ -45,6 +45,9 @@ public abstract class MigrationScriptBase implements MigrationScript {
     setDataCollector(c);
     return execute(module);
   }
+  public boolean isRerunnable() {
+    return false;
+  }
 
   public Iterable<Pair<SNode, String>> check(SModule module) {
     return Collections.emptyList();
