@@ -16,18 +16,18 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public supertypesOf_FunctionType_SubtypingRule() {
+public class supertypesOf_ClosureLiteralType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public supertypesOf_ClosureLiteralType_SubtypingRule() {
   }
-  public SNode getSubOrSuperType(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface")) == null)) {
-      return FunctionType_BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(ft);
+  public SNode getSubOrSuperType(SNode closureLiteralType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if ((SLinkOperations.getTarget(closureLiteralType, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface")) == null)) {
+      return FunctionType_BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(closureLiteralType);
     } else {
-      return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a1(SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface"))), ft);
+      return ClosureLiteralUtil.fillParams(_quotation_createNode_dhclly_a0a0a0a1(SLinkOperations.getTarget(closureLiteralType, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface"))), closureLiteralType);
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+    return MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -35,7 +35,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-  private static SNode _quotation_createNode_8hodjs_a0a0a0a1(Object parameter_1) {
+  private static SNode _quotation_createNode_dhclly_a0a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);

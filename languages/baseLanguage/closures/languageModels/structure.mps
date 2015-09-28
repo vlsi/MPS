@@ -429,5 +429,16 @@
       <ref role="20lvS9" to="tpee:fz7vLUo" resolve="VariableReference" />
     </node>
   </node>
+  <node concept="1TIwiD" id="U7sbC7HC1h">
+    <property role="1pbfSe" value="373158155" />
+    <property role="TrG5h" value="ClosureLiteralType" />
+    <ref role="1TJDcQ" node="htajhBZ" resolve="FunctionType" />
+    <node concept="PrWs8" id="U7sbC7HC1i" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="PrWs8" id="U7sbC7HC1n" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hzdmp1d" resolve="IInternalType" />
+    </node>
+  </node>
 </model>
 

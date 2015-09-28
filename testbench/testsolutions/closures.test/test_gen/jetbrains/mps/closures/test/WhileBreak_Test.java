@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class WhileBreak_Test extends ClosuresBase_Test {
   public void test_mps6546() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
