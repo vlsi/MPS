@@ -10,6 +10,7 @@
     <dependency reexport="false">f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)</dependency>
     <dependency reexport="false">422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)</dependency>
     <dependency reexport="false">b3170ec7-82d9-4e10-a3f0-31baa75ffc0c(testSubtypingTest)</dependency>
+    <dependency reexport="false">709a7100-da7a-45a1-948b-53fdd43f5421(jetbrains.mps.baseLanguage.closures.test)</dependency>
   </dependencies>
   <languageVersions>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="3" />
