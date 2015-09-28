@@ -24,5 +24,7 @@ public interface ProjectMigration {
 
   boolean shouldBeExecuted(Project p);
 
+  boolean isRerunnable();
+
   void execute(Project p);
 }
