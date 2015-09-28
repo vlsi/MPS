@@ -85,6 +85,36 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertEquals("a1b2", IterableUtils.join(ListSequence.fromList(res), ""));
   }
+  public void test_iterate_wildcard() throws Exception {
+    List<Foo> foos = ListSequence.fromListAndArray(new ArrayList<Foo>(), new Foo());
+    List<? extends Foo> subfoos = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
+    List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
+    List<? super Bar> superbars = ListSequence.fromListAndArray(new ArrayList<Foo>(), new Foo());
+
+    int i = 1;
+    {
+      Iterator<Foo> a_it = ListSequence.fromList(foos).iterator();
+      Iterator<Bar> b_it = ListSequence.fromList(bars).iterator();
+      Foo a_var;
+      Bar b_var;
+      while (a_it.hasNext() && b_it.hasNext()) {
+        a_var = a_it.next();
+        b_var = b_it.next();
+        {
+          Iterator<? extends Foo> sa_it = ListSequence.fromList(subfoos).iterator();
+          Iterator<? super Bar> sb_it = ListSequence.fromList(superbars).iterator();
+          Foo sa_var;
+          Object sb_var;
+          while (sa_it.hasNext() && sb_it.hasNext()) {
+            sa_var = sa_it.next();
+            sb_var = sb_it.next();
+            i++;
+          }
+        }
+      }
+    }
+    Assert.assertSame(2, i);
+  }
   public MultiForeachTest_Test() {
   }
 }

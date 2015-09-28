@@ -12553,14 +12553,18 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="3clFbF" id="7cq3qQ1$w9l" role="3cqZAp">
-                              <node concept="2YIFZM" id="2cNTV2NnIBh" role="3clFbG">
-                                <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                            <node concept="3clFbF" id="U7sbC7D9jC" role="3cqZAp">
+                              <node concept="2YIFZM" id="U7sbC7Dah3" role="3clFbG">
+                                <ref role="37wK5l" to="tp2g:U7sbC7D0_V" resolve="clearBounds" />
                                 <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
-                                <node concept="1PxgMI" id="2cNTV2NnICj" role="37wK5m">
-                                  <ref role="1PxNhF" to="tpee:fz3vP1H" resolve="Type" />
-                                  <node concept="37vLTw" id="3GM_nagTw8s" role="1PxMeX">
-                                    <ref role="3cqZAo" node="63Mc_MOrsxR" resolve="type" />
+                                <node concept="2YIFZM" id="2cNTV2NnIBh" role="37wK5m">
+                                  <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                                  <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                                  <node concept="1PxgMI" id="2cNTV2NnICj" role="37wK5m">
+                                    <ref role="1PxNhF" to="tpee:fz3vP1H" resolve="Type" />
+                                    <node concept="37vLTw" id="3GM_nagTw8s" role="1PxMeX">
+                                      <ref role="3cqZAo" node="63Mc_MOrsxR" resolve="type" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

@@ -7479,6 +7479,7 @@
                               <node concept="YeOm9" id="hvkBivS" role="2ShVmc">
                                 <node concept="1Y3b0j" id="hvkBivT" role="YeSDq">
                                   <ref role="1Y3XeK" node="hvfPDEP" resolve="null.YieldingIterator" />
+                                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                   <node concept="3Tm1VV" id="hvkBivU" role="1B3o_S" />
                                   <node concept="xERo3" id="hvkBkoj" role="lGtFl">
                                     <ref role="2rW$FS" node="hvkBC4C" resolve="closure_yieldIt" />
