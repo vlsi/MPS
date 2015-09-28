@@ -27,7 +27,7 @@
       <reference ref="jetbrains.mps.migration.component.plugin.FindDeprecated_Action" />
       <reference ref="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
       <reference ref="MigrationsMenu_ActionGroupmigrations" />
-      <add-to-group group-id="migration" anchor="last" />
+      <add-to-group group-id="Migration" anchor="last" />
     </group>
   </actions>
 </idea-plugin>

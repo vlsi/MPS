@@ -1668,7 +1668,7 @@
     <property role="TrG5h" value="IDEAMigration" />
     <node concept="ftmFs" id="5$zfhXzhIig" role="ftER_" />
     <node concept="Xl_RD" id="5$zfhXzhIhK" role="3mKD$K">
-      <property role="Xl_RC" value="migration" />
+      <property role="Xl_RC" value="Migration" />
     </node>
   </node>
   <node concept="tC5Ba" id="5$zfhXzhGmb">
