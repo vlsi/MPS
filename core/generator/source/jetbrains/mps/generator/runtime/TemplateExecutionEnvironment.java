@@ -115,6 +115,10 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
+  /**
+   * Invoked from generated template code when a template that produces nodes to weave resides in another
+   * generator module or model (see reduce_TemplateInvocationWeave. XXX why model - 'generate generators' is per module option, shall check other module only)
+   */
   // FIXME part of NodeWeaveFacility?
   Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
